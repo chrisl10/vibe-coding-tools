@@ -6,7 +6,7 @@
 - **Source breadth target:** official docs (Next.js, MDN, web.dev, caniuse.com), practitioner blogs (filemint.dev, wuxwebtools, xictron), GitHub READMEs (Sharp, Squoosh), community posts (dev.to)
 - **Date started:** 2026-05-20
 
-## Initial queries (from the proposal step / Command Brief)
+## Initial queries (from `big-bang-space` / Command Brief)
 
 1. "AVIF browser support 2026 production"
 2. "Squoosh ImageOptim build 2026"

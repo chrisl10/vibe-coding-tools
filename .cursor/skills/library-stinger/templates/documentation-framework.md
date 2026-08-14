@@ -1,154 +1,160 @@
+---
+ai_description: |
+  Canonical Library Schema v2 for a repository. Use this file to decide where
+  PRDs, IRDs, knowledge, ADRs, reports, and human notes belong. Lifecycle is
+  represented by folder location. Never read or write library/notes/ as an AI.
+human_description: |
+  The rules for organizing repository planning and knowledge. Read this when
+  you are unsure where a document belongs or when a PRD or IRD changes state.
+---
+
 # Documentation Framework
 
-> Category: Standards | Version: 1.0 | Date: (fill in on init) | Status: Canonical
+Library Schema v2 gives every important document one obvious home. Think of it like labeled shelves: product plans, bug plans, reference knowledge, and scratch notes stay separate so people and AI tools can find the right source without guessing.
 
-The single source of truth for how documentation is written in this repository. Every document - feature PRDs, issue PRDs, QA reports, architecture docs, API references, guides - must conform to the standards defined here. If a document type is not covered, add a new section to this file rather than inventing a local convention.
+Version: **2.0**
+Updated: **August 2026**
 
----
+## Top-level map
 
-## 1. Document Types
-
-| Type | Purpose | Location | Primary audience |
-|---|---|---|---|
-| **Issue IRD** | Implementation plan for a specific GitHub issue | `library/requirements/issues/issue-<###>-<title>/ird-issue-<###>-<title>.md` | Implementation engineer |
-| **Feature PRD** | Planned feature spec (forward or retroactive) | `library/requirements/features/feature-<###>-<title>/prd-feature-<###>-<title>.md` (or `prd-feature-<###>-<title>-ck-<clickupId>.md` if from ClickUp) | Implementation engineer |
-| **QA Report (tied)** | Audit of an implementation against its plan | The plan's own `reports/<date>-qa-report.md` subfolder | Team lead, author of the feature |
-| **QA Report (standalone)** | Audit not tied to a single plan | `library/qa/<domain>/<date>-qa-report.md` | Team lead, audit reviewer |
-| **Architecture Doc** | System design, data flows, component relationships | `library/knowledge-base/architecture/` | Senior engineers, architects |
-| **API Reference** | Endpoint-by-endpoint documentation with schemas | `library/knowledge-base/api/` | Frontend devs, API consumers |
-| **How-to Guide** | Runbooks for setup, testing, deploying, adding features | `library/knowledge-base/how-to-guides/` | New engineers, DevOps |
-| **Integration Doc** | Third-party service configuration and error handling | `library/knowledge-base/integrations/` | DevOps, engineers wiring services |
-| **UX/UI Standard** | Visual design language - tokens, components, patterns | `library/knowledge-base/design/` | Designers, frontend devs |
-| **Feature Doc** | Completed feature reference (post-ship) | `library/knowledge-base/features/` | Any engineer joining the project |
-| **Spec** | Feature-level handoff spec for a UI flow | `library/knowledge-base/specs/` | Frontend engineers |
-| **Product Brief** | Product vision, scope, roadmap | `library/knowledge-base/product/` | Team, stakeholders |
-| **Standards Doc** | Rules for writing documentation itself | `library/knowledge-base/standards/` | All contributors |
-| **Release Notes** | What changed in each release | `library/knowledge-base/releases/` | All team members |
-
----
-
-## 2. Universal Document Header
-
-Every markdown file under `library/knowledge-base/` starts with:
-
-```markdown
-# <Document Title>
-
-> Category: <Type> | Version: <X.Y> | Date: <Month YYYY> | Status: <Active | Draft | Archived>
-
-<One-sentence description of what this document covers and who should read it.>
-
-**Related:**
-- [Link to related doc]
-- [Link to source code: `src/path/to/file.ts`]
+```text
+library/
+  knowledge/
+    public/
+    private/
+  requirements/
+    backlog/
+    in-work/
+    completed/
+    reports/
+  issues/
+    backlog/
+    in-work/
+    completed/
+  notes/
 ```
 
-- **Version** - starts at `1.0`; patch bumps (`1.0` → `1.1`) for additions, minor bumps (`1.x` → `2.0`) for reorganizations.
-- **Date** - current month/year on the last meaningful edit.
-- **Status** values:
-  - `Active` - current, should be kept up to date
-  - `Draft` - work in progress, not authoritative
-  - `Archived` - historical, no longer maintained
-  - `Canonical` - (for standards docs only) highest authority; overrides ad-hoc conventions
+| Folder | What belongs there | What does not belong there |
+| --- | --- | --- |
+| `knowledge/public/` | End-user guides, public overviews, and FAQs | Private architecture, security details, or product plans |
+| `knowledge/private/` | Architecture, ADRs, engineering standards, and internal explanations | Active product requirements or bug-fix plans |
+| `requirements/` | Product and feature work written as PRDs | Reactive bugs and incidents |
+| `issues/` | Reactive work written as IRDs and tied to GitHub issue numbers | Planned features |
+| `notes/` | Human-only scratch material | Anything authoritative or anything an AI agent should read |
 
-Requirements-type docs (issue IRDs, feature PRDs, QA reports) use a different header format documented in their respective guides.
+## Knowledge documents
 
----
+Knowledge files explain what is true now. They are reference material, not promises about future work.
 
-## 3. Filename Conventions
+Use `knowledge/public/` for information you would be comfortable publishing to customers. Use `knowledge/private/` for internal engineering, business, security, or architecture material. When unsure, start in `private/`.
 
-| Document type | Folder + filename pattern | Example |
-|---|---|---|
-| Issue IRD | `issue-<###>-<title>/ird-issue-<###>-<title>.md` (with sibling `reports/`) | `issue-046-stale-cached-responses/ird-issue-046-stale-cached-responses.md` |
-| Feature PRD | `feature-<###>-<title>/prd-feature-<###>-<title>.md` (with sibling `reports/`) | `feature-007-user-profile-export/prd-feature-007-user-profile-export.md` |
-| Feature PRD (from ClickUp) | `feature-<###>-<title>/prd-feature-<###>-<title>-ck-<clickupId>.md` | `feature-007-user-profile-export/prd-feature-007-user-profile-export-ck-86c8wq2k1.md` |
-| QA report (tied to plan) | `<plan-folder>/reports/<date>-qa-report.md` | `feature-007-user-profile-export/reports/2026-04-26-qa-report.md` |
-| QA report (standalone) | `library/qa/<domain>/<date>-qa-report.md` | `library/qa/auth/2026-04-26-qa-report.md` |
-| Knowledge-base | `<domain>/<kebab-slug>.md` (no numeric prefix) | `architecture/authentication-flow.md` |
+Architecture Decision Records live at:
 
-**Numbering rules:**
-- `<###>` is **3-digit zero-padded** (`006`, `046`, `093`, `100`). 4+ digit natural width.
-- Issue numbers follow the GitHub issue number.
-- Feature numbers are repo-local sequential; take `max + 1` from existing folders (open + `completed/`).
-- Titles are lowercase kebab-case, ≤60 chars.
-- The optional ClickUp suffix `-ck-<clickupId>` goes on the **main file only**, never on the folder name.
+```text
+library/knowledge/private/architecture/ADR-<number>-<kebab-slug>.md
+```
 
----
+An ADR records one important decision, its context, alternatives, and consequences. It does not replace a PRD.
 
-## 4. Folder Location Rules
+## Product Requirements Documents
 
-| Folder | Meaning |
-|---|---|
-| `library/requirements/features/feature-<###>-<title>/` | Feature work in progress. |
-| `library/requirements/features/completed/feature-<###>-<title>/` | Feature has shipped. Move the entire folder (PRD + `reports/`). |
-| `library/requirements/issues/issue-<###>-<title>/` | Issue work in progress (GitHub issue OPEN). |
-| `library/requirements/issues/completed/issue-<###>-<title>/` | Issue has been resolved (GitHub issue CLOSED). Move the entire folder (IRD + `reports/`). Symmetric to features. |
-| `<plan-folder>/reports/` | QA reports tied to that specific feature/issue. Travel with the folder when it moves. |
-| `library/qa/<domain>/` | Standalone QA reports - broad audits not tied to a single plan. |
+A PRD is a build blueprint and an inspection checklist for planned product work. New PRDs always begin in `requirements/backlog/`.
 
-Move folders when status changes. Never edit lifecycle state in frontmatter alone.
+```text
+library/requirements/backlog/prd-007-user-export/
+  prd-007-user-export-index.md
+  prd-007a-user-export-backend.md
+  prd-007b-user-export-interface.md
+  qa/
+```
 
----
+Rules:
 
-## 5. Writing Rules (all doc types)
+1. Use the next unused three-digit repository-local number.
+2. Keep the index and every sub-PRD inside one `prd-<number>-<slug>/` folder.
+3. Write testable acceptance criteria. A reviewer must be able to answer pass or fail from evidence.
+4. Create the PRD in `backlog/`, move the entire folder to `in-work/` when implementation begins, then move it to `completed/` only after the work ships and verification passes.
+5. Treat `completed/` as read-only history. Correct a shipped requirement with a new PRD or an explicitly documented amendment process.
 
-1. **Ground every claim in code.** Quote source with file path + line range; never paraphrase signatures.
-2. **One topic per document.** Split if a doc exceeds ~500 lines.
-3. **Progressive disclosure.** Open with "why this exists" and "who should read it"; deep details below.
-4. **Link out, don't duplicate.** If another doc covers a subtopic, link to it.
-5. **Diagrams use mermaid.** Prefer `flowchart TD` or `sequenceDiagram`. No explicit colors.
-6. **No time-sensitive language.** Avoid "currently", "recently", "as of". Use explicit dates.
-7. **No personal opinions.** Docs describe decisions and rationale, not preferences.
+## Issue Requirements Documents
 
----
+An IRD is a focused fix plan for a bug, incident, or other reactive issue. Its number matches the GitHub issue number.
 
-## 6. Cross-Linking Conventions
+```text
+library/issues/backlog/ird-042-stale-cache/
+  ird-042-stale-cache-index.md
+  qa/
+```
 
-- Use relative paths: `[title](../relative/path.md)`.
-- Link to code with file paths (and line numbers where useful): `` `src/routes/users.ts:42-80` ``.
-- PRDs and IRDs link to their related issues, features, and QA reports in a **Related** section at the end.
-- Knowledge-base docs link to the PRDs that drove them (when applicable) and to source code.
+Rules:
 
----
+1. Create the GitHub issue first.
+2. Use that issue number in the IRD folder and index filename.
+3. Keep an IRD single-scope. Do not create sub-IRDs.
+4. Move the entire folder from `backlog/` to `in-work/` when the fix begins, then to `completed/` after the issue is closed and the fix is verified.
 
-## 7. Diagram Rules
+## Reports and QA evidence
 
-- Mermaid preferred (renders everywhere GitHub does).
-- Use `flowchart TD` (top-down) for process flows; `sequenceDiagram` for temporal flows; `erDiagram` for data models.
-- Node IDs: no spaces (use `camelCase` or `under_scores`).
-- No explicit colors (breaks dark mode).
-- No `click` events.
-- Quote labels containing parentheses, brackets, or colons.
+Evidence tied to a PRD or IRD stays inside that document's `qa/` folder. This keeps the plan and proof together.
 
----
+Routine repository-wide reports that are not tied to one PRD or IRD live in:
 
-## 8. Versioning + Dates
+```text
+library/requirements/reports/<YYYY-MM-DD>-<type>-report.md
+```
 
-- **Versioning** is per-document, not repo-wide. Bump on meaningful content change.
-- **Dates** use the current month/year (from the system clock), not arbitrary timestamps.
-- Each document optionally ends with a **Changelog** section listing version bumps.
+Examples include a periodic security scan, repository-health audit, or general QA sweep.
 
----
+## Human notes
 
-## 9. Ownership
+`library/notes/` is a human-only scratch area. AI agents must not read it, write it, summarize it, or cite it. Notes are not authoritative. When a note becomes durable knowledge, a human moves or rewrites it into the appropriate `knowledge/` path.
 
-- Requirements docs (issue IRDs, feature PRDs) are owned by the implementation author. QA reports are owned by `quality-worker-bee`.
-- Knowledge-base docs are owned by the team collectively - anyone may edit with a PR.
-- Standards docs (this file included) require team consensus before changing.
+## Document frontmatter
 
----
+Every seeded folder README uses two descriptions:
 
-## 10. Bootstrap - After `initialize`
+- `ai_description` tells an AI what it may do in the folder.
+- `human_description` gives a quick plain-language explanation.
 
-When `library-worker-bee initialize` seeds a repo:
+Content documents may add fields such as status, version, owner, and updated date when the team's workflow requires them. Do not invent metadata that nobody maintains.
 
-1. Replace the placeholder "(fill in on init)" in the header above with the current month/year.
-2. Replace any project-name placeholders in the seeded README files with your repo's actual name.
-3. Edit any section of this framework that doesn't match your team's conventions - then commit.
-4. Start using the agent: ingest issues, plan features, document architecture.
+## Naming rules
 
----
+- Use lowercase kebab-case for folders and ordinary knowledge files.
+- Use `prd-<###>-<slug>` for PRD folders.
+- Use `ird-<issue-number>-<slug>` for IRD folders.
+- Use `ADR-<number>-<slug>.md` for ADRs.
+- Use ISO dates (`YYYY-MM-DD`) in report filenames.
+- Keep filenames stable after other documents link to them.
 
-## Changelog
+## Choosing the right document
 
-- v1.0 - Initial template seeded by `library-worker-bee`. Customize per repo.
+| If you need to... | Create or update... |
+| --- | --- |
+| Plan a new feature | PRD under `requirements/backlog/` |
+| Fix a tracked bug or incident | IRD under `issues/backlog/` |
+| Record why an architecture choice was made | ADR under `knowledge/private/architecture/` |
+| Explain how the system works now | Knowledge document |
+| Capture temporary personal thoughts | Human note under `notes/` |
+| Record independent proof for one plan | That PRD or IRD's `qa/` folder |
+| Record a repository-wide audit | `requirements/reports/` |
+
+## Lifecycle gate
+
+Folder location is the lifecycle status:
+
+```text
+backlog -> in-work -> completed
+```
+
+Do not copy a folder to the next state and leave the original behind. Move the entire folder. Do not mark work complete because code exists; move it only after its acceptance criteria are verified and required security and quality checks pass.
+
+## Bootstrap checklist
+
+After copying this example into a real repository:
+
+1. Replace project-specific placeholders with facts from the target repository.
+2. Confirm the public/private knowledge boundary with the team.
+3. Confirm who reviews security and quality evidence.
+4. Link the target repository's contribution and security policies.
+5. Create the first PRD or IRD only when real work exists. Do not fill the library with fake sample plans.

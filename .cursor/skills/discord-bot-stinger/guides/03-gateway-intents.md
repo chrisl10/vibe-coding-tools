@@ -1,4 +1,4 @@
-# 03 — Gateway Intents
+# 03: Gateway Intents
 
 How to declare the minimum required intents, understand privileged vs standard intents, and navigate the verification gate.
 
@@ -17,7 +17,7 @@ Privileged Intents require you to:
 1. Enable them in the **Discord Developer Portal** for your application.
 2. For bots in **fewer than 75 servers**: toggle ON in the portal, no review needed.
 3. For bots approaching **75 servers**: submit a Privileged Intent application before hitting 100.
-4. For bots at **100+ servers**: hard block — no new guild joins until verified.
+4. For bots at **100+ servers**: hard block, no new guild joins until verified.
 
 ---
 

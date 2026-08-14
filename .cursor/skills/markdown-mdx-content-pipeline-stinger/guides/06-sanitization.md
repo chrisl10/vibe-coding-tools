@@ -1,6 +1,6 @@
 # Sanitization
 
-XSS sanitization is non-negotiable for any pipeline that processes user-authored Markdown. MDX can embed arbitrary JSX — without sanitization, a malicious `<script>` or event handler in user content executes in the application's origin.
+XSS sanitization is non-negotiable for any pipeline that processes user-authored Markdown. MDX can embed arbitrary JSX: without sanitization, a malicious `<script>` or event handler in user content executes in the application's origin.
 
 ---
 

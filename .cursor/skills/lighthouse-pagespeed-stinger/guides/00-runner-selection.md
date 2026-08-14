@@ -63,19 +63,19 @@ Lighthouse mobile simulation defaults (LHCI default):
 - Network: 1.6 Mbps download, 750 Kbps upload, 150ms RTT
 - This simulates the **slowest 5-10% of user experiences**, not the median
 
-> Source: `research/external/2026-05-20-lhci-budget-assertions.md` — "Lighthouse CI runs mobile audits by default. Mobile simulates a slower device with 4x CPU slowdown and slow 3G network conditions."
+> Source: `research/external/2026-05-20-lhci-budget-assertions.md`: "Lighthouse CI runs mobile audits by default. Mobile simulates a slower device with 4x CPU slowdown and slow 3G network conditions."
 
 Desktop override in LHCI collect block:
 ```json
 "settings": { "preset": "desktop" }
 ```
 
-**Rule:** Always commit your form-factor and throttling settings to the repo config. Never compare scores run with different settings — the numbers are not comparable.
+**Rule:** Always commit your form-factor and throttling settings to the repo config. Never compare scores run with different settings; the numbers are not comparable.
 
 ---
 
 ## What the PWA category removal means (LH12)
 
-The fifth Lighthouse category — Progressive Web App (PWA) — was removed in Lighthouse 12 (May 2024). If you see five-category reports in older documentation, those are from Lighthouse 8-11. Current reports have four categories: Performance, Accessibility, Best Practices, SEO.
+The fifth Lighthouse category (Progressive Web App, PWA) was removed in Lighthouse 12 (May 2024). If you see five-category reports in older documentation, those are from Lighthouse 8-11. Current reports have four categories: Performance, Accessibility, Best Practices, SEO.
 
-> Source: `research/external/2026-05-20-lhci-github-actions-guide.md` — "The PWA category was removed in Lighthouse 12 (May 2024)."
+> Source: `research/external/2026-05-20-lhci-github-actions-guide.md`: "The PWA category was removed in Lighthouse 12 (May 2024)."

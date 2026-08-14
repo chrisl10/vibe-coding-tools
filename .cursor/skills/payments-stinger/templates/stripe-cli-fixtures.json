@@ -1,5 +1,5 @@
 {
-  "_comment": "payments-stinger — Stripe CLI fixture for a SaaS subscription end-to-end smoke test. Run with: stripe fixtures fixtures/sub-flow.json. See guides/06-testing-and-cli.md.",
+  "_comment": "payments-stinger, Stripe CLI fixture for a SaaS subscription end-to-end smoke test. Run with: stripe fixtures fixtures/sub-flow.json. See guides/08-testing-and-local-development.md.",
   "_when_to_use": "After deploying the webhook handler to a dev environment with `stripe listen` running, this fixture creates a customer, a price (idempotent via lookup_key), a Checkout Session in subscription mode, and triggers the canonical events to verify the end-to-end flow.",
   "fixtures": [
     {

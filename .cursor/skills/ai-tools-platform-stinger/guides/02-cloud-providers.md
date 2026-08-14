@@ -1,13 +1,13 @@
-# Cloud AI Providers — Bedrock, Vertex AI, Azure OpenAI, Direct APIs
+# Cloud AI Providers: Bedrock, Vertex AI, Azure OpenAI, Direct APIs
 
 ## Provider landscape (2026)
 
 Four paths to cloud AI in production:
 
-1. **Direct provider API** (Anthropic, OpenAI, Google AI Studio) — simplest; all features day-one; no infra overhead.
-2. **AWS Bedrock** — managed AWS service; IAM auth; VPC-private; enterprise compliance; some models lag direct API.
-3. **Google Vertex AI** — GCP managed; IAM auth; VPC-private; Gemini parity with AI Studio; additional MLOps tooling.
-4. **Azure OpenAI** — OpenAI models on Azure; enterprise SLA; regional deployment; SOC2/HIPAA/FedRAMP.
+1. **Direct provider API** (Anthropic, OpenAI, Google AI Studio): simplest; all features day-one; no infra overhead.
+2. **AWS Bedrock**: managed AWS service; IAM auth; VPC-private; enterprise compliance; some models lag direct API.
+3. **Google Vertex AI**: GCP managed; IAM auth; VPC-private; Gemini parity with AI Studio; additional MLOps tooling.
+4. **Azure OpenAI**: OpenAI models on Azure; enterprise SLA; regional deployment; SOC2/HIPAA/FedRAMP.
 
 ## When to use direct provider APIs
 
@@ -99,7 +99,7 @@ const client = new OpenAI({
 
 1. **Start with direct APIs** for development and early production.
 2. **Migrate to Bedrock/Vertex/Azure** only when compliance requirements or cloud consolidation justify the migration cost.
-3. **Use an AI gateway (Portkey)** in front of either path — it normalizes the API surface and makes future migrations much cheaper.
+3. **Use an AI gateway (Portkey)** in front of either path: it normalizes the API surface and makes future migrations much cheaper.
 
 ## Multi-provider resilience
 

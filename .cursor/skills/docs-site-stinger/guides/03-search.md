@@ -21,7 +21,7 @@ Is the site open-source AND publicly accessible AND has significant traffic?
         └── Otherwise → pagefind is the 2026 default for self-hosted sites
 ```
 
-> TODO: open question — Algolia DocSearch qualification criteria for 2026 not confirmed in research. Verify current eligibility at https://docsearch.algolia.com/ before recommending. Source: `research/research-summary.md` open question #4.
+> TODO: open question: Algolia DocSearch qualification criteria for 2026 not confirmed in research. Verify current eligibility at https://docsearch.algolia.com/ before recommending. Source: `research/research-summary.md` open question #4.
 
 ---
 

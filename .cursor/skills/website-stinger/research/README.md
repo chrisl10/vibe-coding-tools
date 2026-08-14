@@ -1,4 +1,4 @@
-# Research — website-stinger
+# Research: website-stinger
 
 This folder contains the source material for every claim in the `guides/` directory.
 
@@ -30,6 +30,6 @@ This folder contains the source material for every claim in the `guides/` direct
 
 Payload-specific deep research lives in its own dedicated stinger's research folder:
 
-`.cursor/skills/cms-payload-stinger/research/`
+`.claude/skills/website-stinger/research/`
 
-This is populated by `scripture-historian` (Phase 1.5 of the factory pipeline). The source PRDs in this folder reference Payload high-level architecture; detailed Payload implementation claims should cite `cms-payload-stinger/research/` files.
+This is populated by `scripture-historian` (Phase 1.5 of the factory pipeline). The source PRDs in this folder reference Payload high-level architecture; detailed Payload implementation claims should cite `website-stinger/research/` files.

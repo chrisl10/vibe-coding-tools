@@ -1,4 +1,4 @@
-# File Uploads & Tree UIs — research notes
+# File Uploads & Tree UIs: research notes
 
 **Retrieved:** 2026-04-25
 **For guide:** `guides/20-file-uploads-and-trees.md`
@@ -24,10 +24,10 @@ From `cursor-subagent-research-combined.md` (File Uploads & Tree UIs, ~line 845)
 
 ## Cross-references
 
-- `guides/13-ecosystem-catalog.md` does not cover uploads or trees — this guide is additive.
+- `guides/13-ecosystem-catalog.md` does not cover uploads or trees: this guide is additive.
 - Storage backend (S3 / R2 / GCS), signed URLs, lifecycle policies handed off to `devops-worker-bee`.
 - Per-upload auth scoping handed off to `security-worker-bee`.
-- Image transforms / CDN delivery (Cloudinary, Imgix, unpic) referenced from the source doc but out of scope here — flagged for `library-worker-bee` PRD if needed.
+- Image transforms / CDN delivery (Cloudinary, Imgix, unpic) referenced from the source doc but out of scope here: flagged for `library-worker-bee` PRD if needed.
 
 ## Notes
 

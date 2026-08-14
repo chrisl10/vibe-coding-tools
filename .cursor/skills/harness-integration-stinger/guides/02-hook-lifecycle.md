@@ -1,60 +1,50 @@
-# Guide 02: The Capture/Recall Hook Lifecycle
+# Guide 02: Hooks and Lifecycle Events, Per Harness
 
-**Sources:** `research/external/2026-06-16-hook-lifecycle.md`, `research/external/2026-06-16-architecture-build.md`
-
----
-
-## How hooks plug Hivemind in
-
-On hooks-based hosts (Claude Code, Codex, Cursor, Hermes shell hooks), Hivemind subscribes to the host's lifecycle events. Each event forks a small Node entry from the bundle. Two jobs run across the lifecycle:
-
-- **Capture** - write a trace of session activity to the Deep Lake `sessions` table.
-- **Recall** - inject relevant prior memory back into the agent at session start and on each prompt.
-
-```
-node "${CLAUDE_PLUGIN_ROOT}/bundle/<entry>.js"
-```
-
-The host invokes the entry with the event payload on stdin; the entry does its work and exits. Heavy work runs `async: true` so it never blocks the agent.
+**Sources:** `research/distilled-harness-integration.md` §2; queen-bee-stinger distilled-research-articles.md, Claude Code §Rules→Hooks; Cursor §Plugins→Hooks; ChatGPT Codex §Plugins→Hooks; Claude Cowork §Plugins ("What a plugin bundles"); `research/external/2026-08-14-hookbridge-loss-report-pattern.md`
 
 ---
 
-## Claude Code event set (7 events)
+## The event surface, per harness
 
-`harnesses/claude-code/hooks/hooks.json` wires seven events. This is the reference set - other hosts implement a subset.
-
-| Event | Entry (bundle) | Timeout | Async | Role |
-|---|---|---|---|---|
-| `SessionStart` | `session-start.js` + `session-notifications.js` + `session-start-setup.js` | 10s / 8s / 120s | last one async | Inject recall, surface notifications, background setup |
-| `UserPromptSubmit` | `capture.js` | 10s | yes | Capture prompt; inject prompt-time recall |
-| `PreToolUse` | `pre-tool-use.js` | 60s | no | Pre-tool gating/capture (runs before the tool) |
-| `PostToolUse` | `capture.js` | 15s | yes | Capture tool result |
-| `Stop` | `capture.js` + `graph-on-stop.js` | 30s | yes | Capture turn end; update graph |
-| `SubagentStop` | `capture.js` | - | yes | Capture subagent turn end |
-| `SessionEnd` | `capture.js` | - | yes | Final capture / flush |
-
-> The capture hooks write traces to the Deep Lake `sessions` table; recall is injected at `SessionStart` and `UserPromptSubmit`. Source: `research/external/2026-06-16-hook-lifecycle.md`.
+| Harness | Hook surface | Event count / notable subset | Handler types |
+|---|---|---|---|
+| Claude Code | `settings.json` (user/project/local) + plugin `hooks/hooks.json` | 26 documented events (`SessionStart`, `UserPromptSubmit`, `PreToolUse`, `PostToolUse`, `Stop`, `SubagentStart`/`SubagentStop`, `TaskCreated`/`TaskCompleted`, `FileChanged`, `PreCompact`/`PostCompact`, `Elicitation`, etc.) | `command`, `http`, `mcp_tool`, `prompt`, `agent` (experimental) |
+| Cursor | `hooks/hooks.json` (plugin) or agent-hook config | Agent hooks: `sessionStart`, `sessionEnd`, `preToolUse`, `postToolUse`, `postToolUseFailure`, `subagentStart`, `subagentStop`, `beforeShellExecution`, `afterShellExecution`, `beforeMCPExecution`, `afterMCPExecution`, `beforeReadFile`, `afterFileEdit`, `beforeSubmitPrompt`, `preCompact`, `stop`, `afterAgentResponse`, `afterAgentThought`; Tab hooks: `beforeTabFileRead`, `afterTabFileEdit`; app lifecycle: `workspaceOpen` | script `command`; community docs also note `type: "prompt"` (LLM-evaluated condition) |
+| Codex | `~/.codex/hooks.json` / `config.toml` `[hooks]` (user, project - trusted only) | 5 native events: `SessionStart`, `UserPromptSubmit`, `PreToolUse` (**Bash-only matcher**), `PostToolUse` (Bash-only native, Edit/Write approximated), `Stop`; plus `PermissionRequest`, `PreCompact`/`PostCompact`, `SubagentStart`/`SubagentStop`, `SessionEnd` | only `type: "command"` executes; `prompt`/`agent` types parsed but skipped; hooks require explicit trust review (hash-keyed) |
+| Cowork | Plugin `hooks/` only | Undocumented exact event list; hooks are Cowork-only - grayed out/inert in plain Chat | Plugin-bundled, same package format as Claude Code |
 
 ---
 
-## Per-host subsets
+## The gap is bigger than any one caveat
 
-| Host | Events | Notes |
+An independent, code-verified cross-harness hook compiler (`research/external/2026-08-14-hookbridge-loss-report-pattern.md`) confirms: "Claude Code supports 26 events. Codex supports 5." Of Claude Code's 26, **21 have no Codex equivalent at all** - a hard limit, not an approximation. The real shared-event floor across Claude Code and Codex is small:
+
+| Event | Claude Code | Codex |
 |---|---|---|
-| Claude Code | 7 (above) | Full set |
-| Codex | hook set in `~/.codex/hooks.json` | **PreToolUse matcher is Bash-only** |
-| Cursor | 6 lifecycle events (1.7+) | Wired in `~/.cursor/hooks.json` → `~/.cursor/hivemind/bundle/` |
-| Hermes | shell hooks in `config.yaml` | Plus the MCP server for direct recall |
+| `SessionStart` | Native | Native |
+| `UserPromptSubmit` | Native | Native |
+| `PreToolUse` | Native | Native (Bash only) |
+| `PostToolUse` | Native | Native (Bash only) - Edit/Write approximated |
+| `Stop` | Native | Native |
 
-When adding an event, add it to every hooks-based host that supports it - keep the capture surface consistent. See `examples/add-a-hook-event.md`.
+**Design any hook-driven capability around this five-event intersection first.** Treat everything past it (Cursor's rich `before*`/`after*` set, Claude Code's task/worktree/compaction events, Cowork's undocumented Cowork-only surface) as a harness-specific enhancement layered on top, not a baseline every harness must carry.
+
+Reusable severity vocabulary for documenting a gap, rather than a blanket "not supported":
+
+| Severity | Meaning |
+|---|---|
+| **Native** | Works perfectly on this harness |
+| **Approximated** | A workaround exists but with a real limitation (e.g. fires at session/turn end instead of in real time) |
+| **Hard limit** | Impossible on this harness, no workaround exists |
+| **Warning** | Supported, but with a caveat (e.g. an `async` flag is silently ignored) |
 
 ---
 
-## The two hard rules for hooks
+## The two hard rules that generalize across every harness with hooks
 
-### 1. Honor the timeout, dispatch heavy work async
+### 1. Honor the timeout; dispatch heavy work off the critical path
 
-Each event has a timeout. Capture and graph work is heavier than a fast recall inject, so it runs `async: true` - the host does not wait for it.
+Every hook system has a per-event timeout and a notion of "this can run async." Anything that only reacts (writes a log, records a trace, updates external state) should run off the critical path if the harness supports async dispatch; anything the agent needs the result of before continuing (recall injection, a permission decision) must stay well under its timeout.
 
 ```jsonc
 {
@@ -63,7 +53,7 @@ Each event has a timeout. Capture and graph work is heavier than a fast recall i
       "hooks": [
         {
           "type": "command",
-          "command": "node \"${CLAUDE_PLUGIN_ROOT}/bundle/capture.js\"",
+          "command": "your-handler-entry",
           "timeout": 15,
           "async": true
         }
@@ -73,26 +63,35 @@ Each event has a timeout. Capture and graph work is heavier than a fast recall i
 }
 ```
 
-Recall injection (SessionStart, UserPromptSubmit) is on the critical path - keep it well under its timeout. Capture (PostToolUse, Stop, SubagentStop, SessionEnd) is fire-and-forget - mark it `async`.
-
 ### 2. Fail open
 
-A hook must never crash the host. Wrap the entry body so any failure (network down, Deep Lake unreachable, bad payload) exits cleanly without a non-zero status that the host treats as a block. Capture failures are logged, not fatal - the agent keeps working.
+A hook must never crash the host or leave it hanging. Wrap the handler body so any failure (network down, dependency unreachable, bad payload) exits cleanly without a status the host treats as a block:
 
-> A hook that throws on the PreToolUse path can block the tool call. Always fail open. Source: `research/external/2026-06-16-hook-lifecycle.md`.
+```typescript
+try {
+  const payload = await readStdin();
+  await doWork(payload);
+} catch (err) {
+  logQuietly(err);   // never throw on the hook path
+} finally {
+  process.exit(0);   // fail open
+}
+```
+
+A hook that throws on a blocking event (Claude Code's `PreToolUse`, Codex's `PreToolUse`/`PermissionRequest`) can stop the tool call entirely if it exits non-zero unexpectedly. Always fail open on anything that isn't explicitly meant to deny.
 
 ---
 
-## Recall injection
+## Adding an event across every hooks-based harness
 
-At `SessionStart` and `UserPromptSubmit`, the entry queries Hivemind for relevant prior memory and emits it back to the host so the model sees it in context. This is the read side of the loop; capture is the write side. Both must stay fast and identical in behavior across hosts so memory recalled in one harness matches what another wrote.
+1. Decide whether the event is a **capture-style write** (record something, run async, tolerate a delay) or a **recall-style read** (must complete before the agent continues, stays on the critical path).
+2. Add it to Claude Code first if it exists there - the richest surface, easiest to verify against.
+3. Mirror it on every other harness whose event set actually supports it. Do not invent an approximation on a harness that hard-limits the event unless you're prepared to document the approximation's real limitation (see the severity vocabulary above).
+4. Resolve the handler path from each harness's own root/plugin variable - never hardcode an absolute path. Claude Code injects `${CLAUDE_PLUGIN_ROOT}`; other harnesses have their own equivalent.
+5. Set the timeout and async flag per the two hard rules above, per harness (a heavier default timeout on one harness doesn't mean the others tolerate the same latency).
+
+For a fully worked example of this flow (adding `SubagentStop` across four hosts, with concrete file diffs), see `examples/case-study-hivemind-six-host-installer.md` §3 and `examples/add-a-hook-event.md`.
 
 ---
 
-## Codex caveat: Bash-only PreToolUse matcher
-
-Codex's PreToolUse matcher only fires for Bash tool calls. Do not assume Codex captures pre-tool state for non-Bash tools - design any pre-tool logic to degrade gracefully when the matcher does not fire.
-
----
-
-*See also:* `guides/03-tool-contract.md` for the tool surface recall uses, and `examples/add-a-hook-event.md` for adding an event end-to-end.
+*See also:* `guides/03-mcp-registration.md` for when to reach for an MCP server instead of a hook, and `guides/04-capability-detection-and-degradation.md` for how to detect which events a target harness actually supports before you build against them.

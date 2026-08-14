@@ -10,7 +10,7 @@ Before finalizing any action item, confirm:
 
 1. **Who owns this?** One name. Not "the team", not "the BE team".
 2. **When does it close?** A concrete date within the next sprint or cycle.
-3. **What does done look like?** A verifiable, observable outcome — not a feeling.
+3. **What does done look like?** A verifiable, observable outcome: not a feeling.
 
 If any question cannot be answered in under 30 seconds, the item is not ready to commit.
 

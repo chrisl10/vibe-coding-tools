@@ -1,4 +1,4 @@
-# Docs-as-Code — CI Pipeline
+# Docs-as-Code: CI Pipeline
 
 Documentation without a CI gate drifts. The goal: every docs PR goes through the same quality gate as code PRs.
 
@@ -34,11 +34,11 @@ BasedOnStyles = Vale, Microsoft
     fail_on_error: true
 ```
 
-> TODO: open question — Vale configuration reference should be scraped from https://vale.sh/ before adding platform-specific rule examples. Current guidance is sufficient for the minimal setup.
+> TODO: open question: Vale configuration reference should be scraped from https://vale.sh/ before adding platform-specific rule examples. Current guidance is sufficient for the minimal setup.
 
 ### 2. Dead link checking (lychee)
 
-lychee is the 2026 recommended dead-link checker — faster than markdown-link-check and actively maintained.
+lychee is the 2026 recommended dead-link checker, faster than markdown-link-check and actively maintained.
 
 **GitHub Actions step:**
 ```yaml

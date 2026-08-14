@@ -1,6 +1,6 @@
-# Qdrant `strict_mode_config` — Rejecting Filters on Unindexed Fields
+# Qdrant `strict_mode_config`: Rejecting Filters on Unindexed Fields
 
-**Source:** Qdrant docs — https://qdrant.tech/documentation/concepts/strict-mode/
+**Source:** Qdrant docs: https://qdrant.tech/documentation/concepts/strict-mode/
 **Retrieved:** 2026-04-25
 **Status:** **LOAD-BEARING.** Cited in `guides/00-principles.md §6` and `guides/08-rag-strategy.md §4`.
 **Numbers tag:** benchmarked (latency impact documented in Qdrant docs).
@@ -9,13 +9,13 @@
 
 ## TL;DR
 
-`strict_mode_config: { enabled: true }` rejects Qdrant queries that filter on unindexed payload fields. Without strict mode, such queries silently degrade to full-scan (50–200ms per query); with strict mode, you get an explicit error so the gap is visible.
+`strict_mode_config: { enabled: true }` rejects Qdrant queries that filter on unindexed payload fields. Without strict mode, such queries silently degrade to full-scan (50-200ms per query); with strict mode, you get an explicit error so the gap is visible.
 
 ---
 
 ## Why this matters
 
-Qdrant's filter machinery relies on payload indexes. A filter on an unindexed field means scanning every point's payload — fine at 1K vectors, catastrophic at 1M. The performance cliff is silent: no error, just slow.
+Qdrant's filter machinery relies on payload indexes. A filter on an unindexed field means scanning every point's payload: fine at 1K vectors, catastrophic at 1M. The performance cliff is silent: no error, just slow.
 
 `strict_mode_config: { enabled: true }` makes the cliff visible. The query throws; the dev fixes the filter or adds the index.
 
@@ -65,7 +65,7 @@ Skipping any step is **must-fix**.
 - **Pro:** silent full-scans become explicit errors → operational visibility.
 - **Con:** new filter fields require a migration; cannot ad-hoc filter by an arbitrary field.
 
-For the deploying product, the trade-off is unambiguous — the cognitive layer's correctness depends on filter performance. Strict mode stays on.
+For the deploying product, the trade-off is unambiguous: the cognitive layer's correctness depends on filter performance. Strict mode stays on.
 
 ---
 

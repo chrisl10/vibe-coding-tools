@@ -71,7 +71,7 @@ module.exports = {
 | `useTransition` | NOT SUPPORTED (no Concurrent Mode) | Must refactor |
 | `useDeferredValue` | pass-through no-op | Check if behavior is relied on |
 | RSC / React Server Components | BLOCKED | Cannot migrate RSC to Preact |
-| Next.js App Router | FOOTGUN — do not attempt | Use Pages Router or stay on React |
+| Next.js App Router | FOOTGUN: do not attempt | Use Pages Router or stay on React |
 | `@types/react` | INCOMPATIBLE | Remove `@types/react`, use Preact types |
 
 ---

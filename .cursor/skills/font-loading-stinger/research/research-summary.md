@@ -39,14 +39,14 @@ agnostic metric override CSS generation. One command (`npx fontpie ./font.woff2
 --name FontName`) outputs production-ready `@font-face` CSS. This is the
 recommended tool for `next/font/local` users who want to verify override values
 and for non-Next.js projects. Safari had no support at tool release (2022) but
-gained `size-adjust` support in Safari 17 (Sep 2023) — 2026 guide should verify.
+gained `size-adjust` support in Safari 17 (Sep 2023): 2026 guide should verify.
 
 ### 5. font-converters.com/news/core-web-vitals-font-loading-2026 (practitioner, critical)
 **Why it matters:** The only 2026-dated comprehensive performance guide. Reports
 font loading causes 23% of LCP failures. Provides the 7-item complete 2026
 optimization checklist including `fetchpriority="high"` on the primary body font
 preload and the "optional for LCP-critical hero headings" recommendation.
-Published February 2026 — highest-recency practitioner source.
+Published February 2026, highest-recency practitioner source.
 
 ---
 
@@ -59,7 +59,7 @@ copy in 2026?**
 - `optional` is zero-CLS but the custom font only displays if it's cached or
   arrives within ~100ms. On first visit, users see the fallback forever.
 - `swap` is now the preferred default for body copy when paired with metric-
-  matched fallback overrides (`size-adjust` + `ascent-override`) — the CLS is
+  matched fallback overrides (`size-adjust` + `ascent-override`): the CLS is
   eliminated by CSS, not by avoiding the swap.
 - `optional` + `<link rel="preload">` is the gold standard for zero-jank with
   a chance of showing the web font (Chrome 83+ eliminates the double render
@@ -109,14 +109,14 @@ automatic CLS-safe fallback CSS without any manual metric calculation.
 
 ## Sources stinger-forge should re-fetch with deeper context
 
-- **https://nextjs.org/docs/app/api-reference/components/font** — the full API
+- **https://nextjs.org/docs/app/api-reference/components/font**: the full API
   reference has more options (`adjustFontFallback`, `variable`, `preload` flag)
   than covered here. `stinger-forge` should read the complete table.
-- **https://capsizefitters.vercel.app/** — listed in the Command Brief as a
+- **https://capsizefitters.vercel.app/**: listed in the Command Brief as a
   reference but not found in search results as a guide. `stinger-forge` should
   fetch this URL directly to understand the Capsize online tool workflow vs the
   `@capsizecss/core` npm API.
-- **https://github.com/nicholasgasior/fontpie** — the Command Brief links to
+- **https://github.com/nicholasgasior/fontpie**: the Command Brief links to
   this repo, but the fontpie tool is actually at `github.com/pixel-point/fontpie`.
   There may be a naming confusion; `stinger-forge` should verify the correct repo.
 

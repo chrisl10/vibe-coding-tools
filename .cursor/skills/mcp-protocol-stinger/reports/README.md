@@ -19,7 +19,7 @@ Example: `2026-06-16-hivemind-search-tool-mcp-audit.md`
 - Spec section / SDK symbol / JSON-RPC code citation for each finding
 - Concrete remediation steps per finding
 - A contract-stability call-out for any breaking change across the harnesses
-- Handoffs to `security-worker-bee` (credentials/OAuth, injection/OWASP), and `deeplake-dataset-worker-bee` (query/schema)
+- Handoffs to `security-worker-bee` (credentials/OAuth, injection/OWASP), and `vector-store-worker-bee` (query/schema)
 
 ## Accumulation
 

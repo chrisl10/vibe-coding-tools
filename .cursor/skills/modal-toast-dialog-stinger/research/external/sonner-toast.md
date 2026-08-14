@@ -1,4 +1,4 @@
-# Sonner Toast — External Source Note
+# Sonner Toast: External Source Note
 
 **Source:** https://sonner.emilkowal.ski/
 **Source type:** external/primary

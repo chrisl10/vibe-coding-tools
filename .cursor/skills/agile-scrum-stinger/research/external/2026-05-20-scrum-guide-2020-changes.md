@@ -35,7 +35,7 @@ Removed or softened prescriptive elements including:
 **Impact for the Bee:** Eliminates "proxy" and "us vs. them" dynamics. Entire Scrum Team is accountable for creating a valuable, useful Increment.
 
 ### 3. Introduction of Product Goal
-New concept — a long-term objective for the Scrum Team. The team must fulfill (or abandon) one Product Goal before taking on the next. Product Goal is the commitment for the Product Backlog.
+New concept: a long-term objective for the Scrum Team. The team must fulfill (or abandon) one Product Goal before taking on the next. Product Goal is the commitment for the Product Backlog.
 
 **Impact for the Bee:** Audit check: does the team have a Product Goal? Many teams skip this even in 2026.
 
@@ -45,7 +45,7 @@ Each of the three artifacts now has a formal commitment:
 - Sprint Backlog → Sprint Goal
 - Increment → Definition of Done
 
-**Impact for the Bee:** Sprint Goal and DoD are not optional extras — they are normative commitments.
+**Impact for the Bee:** Sprint Goal and DoD are not optional extras: they are normative commitments.
 
 ### 5. Self-Managing over Self-Organizing
 2017: "self-organizing" (who and how)
@@ -65,7 +65,7 @@ Removed IT-specific terminology (testing, system, design, requirement). Guide is
 ### 8. Servant-Leader Replaced
 "Servant-leader" removed. Scrum Masters are now "true leaders who serve the Scrum Team and the larger organization."
 
-**Impact for the Bee:** SMs are not secretaries or meeting organizers — they are leaders and coaches.
+**Impact for the Bee:** SMs are not secretaries or meeting organizers: they are leaders and coaches.
 
 ## Key Quotations
 
@@ -77,6 +77,6 @@ Removed IT-specific terminology (testing, system, design, requirement). Guide is
 
 ## Annotations for stinger-forge
 
-- Use for `guides/01-scrum-guide-reference.md` — the 2020 changes section should be called out explicitly because many practitioners are still working from 2017 knowledge
-- The "three questions removed" point is important for the ceremonies guide — teams still use them as community practice, but they must be labeled as such
+- Use for `guides/01-scrum-guide-reference.md`: the 2020 changes section should be called out explicitly because many practitioners are still working from 2017 knowledge
+- The "three questions removed" point is important for the ceremonies guide: teams still use them as community practice, but they must be labeled as such
 - The Product Goal addition is underimplemented in 2026 and should be a first-class audit check

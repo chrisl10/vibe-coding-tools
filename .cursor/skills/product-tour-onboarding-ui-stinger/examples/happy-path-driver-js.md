@@ -208,4 +208,4 @@ test('dashboard data-tour anchors exist', async ({ page }) => {
 - Tour shows only to users who signed up in the last 7 days (`isNewUser()`).
 - Tour shows only when the feature flag is enabled (`isFeatureEnabled`).
 - Tour shows only once per user (`hasSeenTour()` / `markTourSeen()`).
-- If a component is refactored and a `data-tour` attribute is removed, the CI smoke test fails on the next PR — surfacing the broken tour before deployment.
+- If a component is refactored and a `data-tour` attribute is removed, the CI smoke test fails on the next PR, surfacing the broken tour before deployment.

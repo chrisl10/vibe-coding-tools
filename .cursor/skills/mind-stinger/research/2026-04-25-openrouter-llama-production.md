@@ -1,8 +1,8 @@
-# OpenRouter — Llama 3.3 70B in Production
+# OpenRouter: Llama 3.3 70B in Production
 
-**Source:** OpenRouter docs — https://openrouter.ai/docs, https://openrouter.ai/models/meta-llama/Llama-3.3-70B-Instruct
+**Source:** OpenRouter docs: https://openrouter.ai/docs, https://openrouter.ai/models/meta-llama/Llama-3.3-70B-Instruct
 **Retrieved:** 2026-04-25
-**Status:** Informational — operational reference for `guides/19-llm-provider-config.md`.
+**Status:** Informational: operational reference for `guides/19-llm-provider-config.md`.
 **Numbers tag:** vendor-directional (rate limits and pricing change).
 
 ---
@@ -13,7 +13,7 @@ OpenRouter is the single LLM gateway for the deploying product. OpenAI-API-compa
 
 For Llama 3.3 70B at production scale:
 
-- Stable production tier latency: ~1.5–3.5s for typical coaching responses.
+- Stable production tier latency: ~1.5-3.5s for typical coaching responses.
 - Provider failover via `provider.allow_fallbacks: true`.
 - Rate limits sufficient at the deploying product's scale; tier upgrades available.
 
@@ -43,7 +43,7 @@ OpenRouter uses prepaid credit. **At $0 balance, all AI features silently fail**
 
 Required:
 
-1. **Auto-reload** in OpenRouter dashboard — minimum balance + auto-reload amount.
+1. **Auto-reload** in OpenRouter dashboard: minimum balance + auto-reload amount.
 2. **Low-balance webhook** → Slack/PagerDuty.
 3. **Monitor `OPENROUTER_BALANCE`** in observability dashboard.
 
@@ -70,11 +70,11 @@ await openai.chat.completions.create({
 
 Useful for:
 
-- **Cost optimization** — prefer cheaper provider for `modelFast`.
-- **Latency optimization** — prefer faster provider.
-- **Compliance** — exclude providers that don't meet residency.
+- **Cost optimization**: prefer cheaper provider for `modelFast`.
+- **Latency optimization**: prefer faster provider.
+- **Compliance**: exclude providers that don't meet residency.
 
-Document any usage in `library/knowledge-base/ai/coach-architecture.md`.
+Document any usage in `library/knowledge/private/ai/coach-architecture.md`.
 
 ---
 

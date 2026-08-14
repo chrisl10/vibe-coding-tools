@@ -9,11 +9,11 @@ Bulletproof-react divides state into five layered categories and recommends a de
 
 ## The five layers
 
-1. **Component state** — `useState`, `useReducer`. Start here. Lift only when needed.
-2. **Application (global UI) state** — Context+hooks for low-velocity; Zustand / Jotai / Redux Toolkit / MobX / XState when it gets heavier.
-3. **Server cache state** — TanStack Query (REST+GraphQL), SWR, Apollo, urql, RTK Query.
-4. **Form state** — React Hook Form, Formik, Final Form. Wrap in an abstracted `Form` component. Pair with Zod/Yup for validation.
-5. **URL state** — route params and query params via react-router-dom / Next.js router / nuqs.
+1. **Component state**: `useState`, `useReducer`. Start here. Lift only when needed.
+2. **Application (global UI) state**: Context+hooks for low-velocity; Zustand / Jotai / Redux Toolkit / MobX / XState when it gets heavier.
+3. **Server cache state**: TanStack Query (REST+GraphQL), SWR, Apollo, urql, RTK Query.
+4. **Form state**: React Hook Form, Formik, Final Form. Wrap in an abstracted `Form` component. Pair with Zod/Yup for validation.
+5. **URL state**: route params and query params via react-router-dom / Next.js router / nuqs.
 
 ## Key rules
 

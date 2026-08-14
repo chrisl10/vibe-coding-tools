@@ -1,4 +1,4 @@
-# Nextra v4 — Next.js App Router Docs
+# Nextra v4: Next.js App Router Docs
 
 Nextra v4 (2025/2026) moved to Next.js App Router. Built-in pagefind search. Best for teams with a Next.js monorepo who want docs alongside their application code.
 
@@ -81,13 +81,13 @@ pages/          (or app/ for App Router)
 Nextra v4 is an App Router rewrite. Key breaking changes from v3:
 - `pages/` directory still works but `app/` is recommended.
 - `getStaticProps`-based MDX data fetching is replaced by App Router conventions.
-- Theme config API changed — review https://nextra.site/docs for the v4 theme config reference.
+- Theme config API changed: review https://nextra.site/docs for the v4 theme config reference.
 
-> TODO: open question — Nextra v3 → v4 migration friction not fully characterized in research. Verify breaking changes at https://nextra.site/docs before recommending a migration from v3 to v4. Source: `research/research-summary.md` open question #5.
+> TODO: open question: Nextra v3 → v4 migration friction not fully characterized in research. Verify breaking changes at https://nextra.site/docs before recommending a migration from v3 to v4. Source: `research/research-summary.md` open question #5.
 
 ## Deployment
 
-Nextra v4 is a Next.js application — deploy anywhere Next.js runs:
+Nextra v4 is a Next.js application; deploy anywhere Next.js runs:
 - Vercel (native, zero-config)
 - Netlify (`@netlify/plugin-nextjs`)
 - Docker with `next start`

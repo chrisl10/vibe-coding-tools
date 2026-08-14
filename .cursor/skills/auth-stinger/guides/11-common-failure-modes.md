@@ -1,4 +1,4 @@
-# 11 — Common Failure Modes
+# 11: Common Failure Modes
 
 The catalog. Each failure mode has a name, a signature, and a fix. Use as a check-list during code review and during the audit-handoff.
 
@@ -44,7 +44,7 @@ Source: `research/2026-04-25-oauth-failure-modes.md`, OWASP Top 10 (A01: Broken 
 
 ### `nonce` not used or not validated
 
-**Signature**: replay attack — attacker captures a valid ID token and submits it later.
+**Signature**: replay attack, attacker captures a valid ID token and submits it later.
 
 **Fix**: client generates `nonce` per flow, sends in auth request, validates it matches in the returned ID token. Server stores the `nonce` in the pre-auth session.
 
@@ -90,7 +90,7 @@ Source: `research/2026-04-25-oauth-failure-modes.md`, OWASP Top 10 (A01: Broken 
 
 **Signature**: 30-day JWT. Leaked = 30 days of access.
 
-**Fix**: short access JWT (5–15 min) + refresh token rotation against a server-side store.
+**Fix**: short access JWT (5-15 min) + refresh token rotation against a server-side store.
 
 ## Authorization failures
 
@@ -198,7 +198,7 @@ Source: `research/2026-04-25-oauth-failure-modes.md`, OWASP Top 10 (A01: Broken 
 
 ### `link_account` events not logged
 
-**Signature**: account-linking attack — attacker links their email to victim's social account, takes over.
+**Signature**: account-linking attack, attacker links their email to victim's social account, takes over.
 
 **Fix**: account linking requires re-authentication; log the event; email the user with revert link.
 

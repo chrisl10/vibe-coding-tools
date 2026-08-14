@@ -7,14 +7,14 @@ url: https://nextjs.org/docs/app/api-reference/components/image
 date_accessed: 2026-05-20
 ---
 
-# Next.js Image Component — Official API Reference (App Router)
+# Next.js Image Component: Official API Reference (App Router)
 
 ## Key Findings
 
 ### `placeholder` prop
 
 - `"empty"` (default): No placeholder
-- `"blur"`: Show blurred version while loading — requires `blurDataURL`
+- `"blur"`: Show blurred version while loading: requires `blurDataURL`
 - `"data:image/..."`: Use a Data URL directly as placeholder
 
 ### `blurDataURL` prop
@@ -23,7 +23,7 @@ date_accessed: 2026-05-20
 - **Automatic for local static imports** of `.jpg`, `.png`, `.webp`, `.avif` (blur hash auto-generated)
 - **Must be provided manually** for remote/dynamic images
 - Recommended: use plaiceholder library or png-pixel.com to generate
-- Keep it small (10px or less) — it's enlarged/blurred automatically
+- Keep it small (10px or less): it's enlarged/blurred automatically
 - "A large blurDataURL may hurt performance."
 
 ### `remotePatterns` configuration (in `next.config.js`)
@@ -48,8 +48,8 @@ module.exports = {
 
 ### Wildcard Patterns
 
-- `*` — matches a single path segment or subdomain
-- `**` — matches any number of path segments at end OR subdomains at beginning
+- `*`: matches a single path segment or subdomain
+- `**`: matches any number of path segments at end OR subdomains at beginning
 - `**` syntax does NOT work in the middle of a pattern
 
 ### `loaderFile` (CDN override)
@@ -73,7 +73,7 @@ export default function myImageLoader({ src, width, quality }) {
 - Cloudinary: `loader: 'cloudinary'`
 - Akamai: `loader: 'akamai'`
 
-### Remote Images — Required Manual Props
+### Remote Images: Required Manual Props
 
 Since Next.js cannot access remote files at build time:
 - `width` and `height` must be provided manually
@@ -100,7 +100,7 @@ Primary reference for `guides/04-nextjs-image.md`. Covers the complete API surfa
 
 ## Direct Quotes / Data Points
 
-- `blurDataURL` is auto-populated "If src is a static import of a jpg, png, webp, or avif file, blurDataURL is added automatically — unless the image is animated."
+- `blurDataURL` is auto-populated "If src is a static import of a jpg, png, webp, or avif file, blurDataURL is added automatically: unless the image is animated."
 - "A large blurDataURL may hurt performance. Keep it small and simple."
 - `priority` prop "should be added to the image that will be the Largest Contentful Paint (LCP) element for each page."
 - "Note that any allowed remotePatterns that respond with a redirect will follow the redirect from the remote image server without validating remotePatterns again on the redirect location."

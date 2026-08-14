@@ -1,9 +1,9 @@
-# Microsoft GraphRAG — Pattern + Qdrant/Neo4j Implementations
+# Microsoft GraphRAG: Pattern + Qdrant/Neo4j Implementations
 
-**Source:** Microsoft GraphRAG paper — https://arxiv.org/abs/2404.16130; Microsoft GraphRAG repo — https://github.com/microsoft/graphrag; Qdrant + Neo4j case studies.
+**Source:** Microsoft GraphRAG paper: https://arxiv.org/abs/2404.16130; Microsoft GraphRAG repo: https://github.com/microsoft/graphrag; Qdrant + Neo4j case studies.
 **Retrieved:** 2026-04-25
 **Status:** Informational + reference for `guides/11-graphrag.md` and `references/generic-graph-db-choice.md`.
-**Numbers tag:** vendor-directional on lift percentages (case studies cite 20–25% lift on regulated verticals); the pattern itself is benchmarked by the Microsoft paper.
+**Numbers tag:** vendor-directional on lift percentages (case studies cite 20-25% lift on regulated verticals); the pattern itself is benchmarked by the Microsoft paper.
 
 ---
 
@@ -29,7 +29,7 @@ See `guides/11-graphrag.md §5`.
 
 ---
 
-## Qdrant + Neo4j (`QdrantNeo4jRetriever`) — the alternative pattern
+## Qdrant + Neo4j (`QdrantNeo4jRetriever`): the alternative pattern
 
 ```python
 # Pseudocode — typical pattern from Qdrant + Neo4j docs
@@ -68,10 +68,10 @@ See `guides/11-graphrag.md §9`.
 
 ## Why the deploying product uses Postgres, not Neo4j
 
-- **Sparse graph at coaching scale** — Postgres recursive CTE handles 2–3 hops at hundreds of nodes per user.
-- **No new infrastructure** — Postgres already in the stack.
-- **Transactional consistency** — entity + relationship inserts in one transaction with the source session.
-- **Gated feature** — adding ops surface for a flag-gated feature is wasteful.
+- **Sparse graph at coaching scale**: Postgres recursive CTE handles 2-3 hops at hundreds of nodes per user.
+- **No new infrastructure**: Postgres already in the stack.
+- **Transactional consistency**: entity + relationship inserts in one transaction with the source session.
+- **Gated feature**: adding ops surface for a flag-gated feature is wasteful.
 
 If the deploying product's graph density grows (thousands of nodes per user, deep traversal queries common), Neo4j becomes the substitution candidate. See `references/generic-graph-db-choice.md`.
 

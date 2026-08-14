@@ -1,4 +1,4 @@
-# 01 — Interview Procedure
+# 01: Interview Procedure
 
 The interview is the most load-bearing step in the bootstrap. A good
 interview makes the rest mechanical; a rushed interview produces a
@@ -14,7 +14,7 @@ aesthetic in their head. Your job is to get it out of their head in
 enough detail to write `00-design-brief.md`.
 
 Refuse to proceed past the interview until every section below has an
-answer. "Make it tasteful" or "you decide" is not an answer — push back.
+answer. "Make it tasteful" or "you decide" is not an answer: push back.
 
 ## The 12-question bank
 
@@ -76,7 +76,7 @@ Surface metaphor drives the utility layer:
 > from a card? Same surface, more shadow? A different tint? A dark
 > backdrop?"
 
-This distinguishes the product's depth tiers. Expect 2–4 tiers.
+This distinguishes the product's depth tiers. Expect 2 to 4 tiers.
 
 ### 7. Typography
 
@@ -97,15 +97,15 @@ the product favors.
 
 ### 9. Radius scale
 
-> "Do the corners feel sharp (2–4px), friendly (8–12px), soft (14–20px),
+> "Do the corners feel sharp (2-4px), friendly (8-12px), soft (14-20px),
 > or fully rounded (pill)? Are buttons and cards the same radius or
 > different?"
 
-Record 4–6 radius tokens.
+Record 4 to 6 radius tokens.
 
 ### 10. Iconography
 
-> "Outlined icons, filled icons, or duotone? What line weight — thin
+> "Outlined icons, filled icons, or duotone? What line weight: thin
 > (1px), regular (1.5px), or bold (2px)?"
 
 Pin this down. Icon inconsistency is the #1 way a system looks
@@ -135,7 +135,7 @@ Record these verbatim. They become §1 of `00-design-brief.md`.
   Push until you have the specific departures.
 - **Wildly mismatched anchors.** See Question 2.
 - **"It should be minimal."** Minimal is not an aesthetic. What kind
-  of minimal — editorial, technical, brutalist, soft?
+  of minimal: editorial, technical, brutalist, soft?
 - **"Accessibility is optional."** Not negotiable. Move on.
 
 ## Deliverable of the interview

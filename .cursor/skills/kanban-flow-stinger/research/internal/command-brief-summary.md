@@ -1,5 +1,5 @@
 ---
-title: "kanban-flow-worker-bee Command Brief — Domain Definition"
+title: "kanban-flow-worker-bee Command Brief: Domain Definition"
 source_url: internal://ai-tools/command-briefs/kanban-flow-worker-bee-command-brief.md
 source_type: internal-brief
 authority: high
@@ -17,9 +17,9 @@ topics:
 stinger: kanban-flow-stinger
 ---
 
-# kanban-flow-worker-bee Command Brief — Domain Definition
+# kanban-flow-worker-bee Command Brief: Domain Definition
 
-**Source:** Internal — Command Brief authored by `command-center`
+**Source:** Internal: Command Brief authored by `command-center`
 **File:** `ai-tools/command-briefs/kanban-flow-worker-bee-command-brief.md`
 **Created:** 2026-05-20
 
@@ -27,7 +27,7 @@ stinger: kanban-flow-stinger
 
 The Command Brief is the primary domain-definition document for the `kanban-flow-worker-bee` / `kanban-flow-stinger` pair. It defines the worker-bee's identity, responsibilities, expected inputs, expected outputs, critical directives, and proposed stinger structure.
 
-**Worker Bee identity:** `kanban-flow-worker-bee` is the flow-thinking coach of the Legion Army. It operates in the tradition of David J. Anderson's Kanban Method, the Lean/Theory of Constraints intellectual heritage, and the practical reality that most teams adopt Kanban in a tool (Linear, Jira, GitHub Projects, Trello) and then misuse it by ignoring WIP limits.
+**Worker Bee identity:** `kanban-flow-worker-bee` is the flow-thinking coach of the Hive. It operates in the tradition of David J. Anderson's Kanban Method, the Lean/Theory of Constraints intellectual heritage, and the practical reality that most teams adopt Kanban in a tool (Linear, Jira, GitHub Projects, Trello) and then misuse it by ignoring WIP limits.
 
 **Seven core actions the worker-bee performs:**
 1. Audit and redesign the visual board (column structure, WIP limit policies)
@@ -72,14 +72,14 @@ The Command Brief is the primary domain-definition document for the `kanban-flow
 - Q4: Does GitHub Projects now support native WIP limits, or is it still a manual workaround?
 
 **Open questions answers from research:**
-- Q1: **ANSWERED** — Linear does NOT have native WIP limits as of April 2026. See `external/2026-05-20-tool-wip-limits-honest-review.md`.
-- Q2: **NOT ANSWERED** — No 2025-2026 Vacanti/ActionableAgile Monte Carlo update found at normal research depth. Monte Carlo guidance gap remains. Escalate to stinger-forge.
-- Q3: **NOT ANSWERED** — No Kanban vs. Shape Up comparison found in 2025-2026. Shape Up is primarily documented in Basecamp's own materials (https://basecamp.com/shapeup) which are out of scope for this research run. Escalate to stinger-forge.
-- Q4: **ANSWERED** — GitHub Projects does NOT support native WIP limit enforcement. Column limits are soft visual indicators only. See `external/2026-05-20-github-projects-board-docs.md` and `external/2026-05-20-tool-wip-limits-honest-review.md`.
+- Q1: **ANSWERED**: Linear does NOT have native WIP limits as of April 2026. See `external/2026-05-20-tool-wip-limits-honest-review.md`.
+- Q2: **NOT ANSWERED**: No 2025-2026 Vacanti/ActionableAgile Monte Carlo update found at normal research depth. Monte Carlo guidance gap remains. Escalate to stinger-forge.
+- Q3: **NOT ANSWERED**: No Kanban vs. Shape Up comparison found in 2025-2026. Shape Up is primarily documented in Basecamp's own materials (https://basecamp.com/shapeup) which are out of scope for this research run. Escalate to stinger-forge.
+- Q4: **ANSWERED**: GitHub Projects does NOT support native WIP limit enforcement. Column limits are soft visual indicators only. See `external/2026-05-20-github-projects-board-docs.md` and `external/2026-05-20-tool-wip-limits-honest-review.md`.
 
 ## Annotations for stinger-forge
 
 - This brief is the authoritative source for the stinger's SKILL.md opening paragraphs, critical directives section, and the complete guide structure.
-- The seven critical directives map directly to the worker-bee's behavioral rules — stinger-forge should repeat them verbatim in SKILL.md.
+- The seven critical directives map directly to the worker-bee's behavioral rules: stinger-forge should repeat them verbatim in SKILL.md.
 - The five expected outputs map to five templates in `templates/`. The brief provides complete descriptions for all five.
 - Research gap: Monte Carlo forecasting for small teams (Q2) is the highest-priority unresolved question. The stinger should either reference Vacanti's book directly or note that the worker-bee escalates to an ActionableAgile Analytics session for probabilistic forecasting.

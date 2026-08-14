@@ -1,6 +1,6 @@
 # Rule File Examples
 
-Worked `.cursor/rules/*.mdc` examples. The first three are this repo's live Army rules; the rest are patterns for new rules.
+Worked `.cursor/rules/*.mdc` examples. The first three are this repo's live colony rules; the rest are patterns for new rules.
 
 ## 1. Always Apply: a short, always-true directive (live: `no-em-dashes.mdc`)
 
@@ -33,7 +33,7 @@ Never modify, delete, move, rename, or overwrite files that are part of another
 agent's active work. Touch only the files your own assigned task owns.
 ```
 
-**Pattern:** a crisp `description` lets the agent recognize relevance. (This repo marks it `alwaysApply: true` because it is a hard, Army-wide guardrail; a softer rule would set `alwaysApply: false` and rely on the description alone.)
+**Pattern:** a crisp `description` lets the agent recognize relevance. (This repo marks it `alwaysApply: true` because it is a hard, colony-wide guardrail; a softer rule would set `alwaysApply: false` and rely on the description alone.)
 
 ## 3. Process rule keyed on `description` (live: `plan-construction-protocol.mdc`)
 

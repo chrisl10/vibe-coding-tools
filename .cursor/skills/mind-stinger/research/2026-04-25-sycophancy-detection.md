@@ -9,12 +9,12 @@
 
 ## TL;DR
 
-LLMs exhibit measurable sycophancy — bias toward agreement with the user's stated position, especially over long-running profiles. For coaching, where honest challenge is the core value, sycophancy is an existential quality risk.
+LLMs exhibit measurable sycophancy: bias toward agreement with the user's stated position, especially over long-running profiles. For coaching, where honest challenge is the core value, sycophancy is an existential quality risk.
 
 the deploying product mitigates with two countermeasures:
 
-1. **Hardcoded `[COACHING_QUALITY]` block** — anti-sycophancy directive injected every turn.
-2. **`computeAgreementRate()`** — regex-based detection of agreement vs challenge patterns.
+1. **Hardcoded `[COACHING_QUALITY]` block**: anti-sycophancy directive injected every turn.
+2. **`computeAgreementRate()`**: regex-based detection of agreement vs challenge patterns.
 
 ---
 
@@ -22,8 +22,8 @@ the deploying product mitigates with two countermeasures:
 
 Two contributing factors:
 
-1. **RLHF training rewards agreement** — the model learns that affirmative responses get higher human-preference ratings. Reinforces over training.
-2. **Long user profiles drift the LLM toward the user's frame** — the model's persona accommodates the user's positioning, even when the user is wrong.
+1. **RLHF training rewards agreement**: the model learns that affirmative responses get higher human-preference ratings. Reinforces over training.
+2. **Long user profiles drift the LLM toward the user's frame**: the model's persona accommodates the user's positioning, even when the user is wrong.
 
 In coaching, both compound: a long-running member has a strong profile + consistent positioning, and the model accommodates.
 
@@ -31,7 +31,7 @@ In coaching, both compound: a long-running member has a strong profile + consist
 
 ## the deploying product's `computeAgreementRate()`
 
-Pattern-based detection (no LLM call — cheap):
+Pattern-based detection (no LLM call, cheap):
 
 **Agreement patterns:**
 ```
@@ -65,13 +65,13 @@ Higher = more sycophantic. Written to `AiTrace.agreementScore`.
 
 **Targets:**
 - User agreement > 0.7 over 30 days → flag for coach review.
-- Tenant-wide agreement > 0.6 → alert engineering — prompt cascade may have drifted.
+- Tenant-wide agreement > 0.6 → alert engineering: prompt cascade may have drifted.
 
 ---
 
 ## Why pattern-based, not LLM-based
 
-The LLM-based approach (judge another LLM call: "is this response sycophantic?") works but costs an LLM call per measurement. At 100K coaching turns/month with 100% sample rate, that's an extra 100K LLM calls — significant.
+The LLM-based approach (judge another LLM call: "is this response sycophantic?") works but costs an LLM call per measurement. At 100K coaching turns/month with 100% sample rate, that's an extra 100K LLM calls, significant.
 
 Pattern-based is approximate but cheap. It captures the most common agreement / challenge formulations. False positives ("perfect" in "perfect client") are dampened with negative lookahead. False negatives (a sycophantic response without these patterns) are accepted at the precision-vs-cost trade.
 
@@ -79,13 +79,13 @@ For deeper analysis, sample 50 high-agreement traces / month and have a human re
 
 ---
 
-## The lever — NOT temperature
+## The lever: NOT temperature
 
 When sycophancy trends up:
 
 1. Confirm the trend is signal, not noise (7-day + 30-day moving averages).
 2. Identify the change (correlate with `PromptVersion.createdAt`).
-3. The lever is the prompt cascade or coach personality — NOT temperature.
+3. The lever is the prompt cascade or coach personality: NOT temperature.
 
 **Do NOT:**
 - Lower temperature (it's randomness, not personality).

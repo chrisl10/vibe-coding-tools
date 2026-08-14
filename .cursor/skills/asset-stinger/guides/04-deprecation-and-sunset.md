@@ -1,4 +1,4 @@
-# Guide 04 — Deprecation and Sunset
+# Guide 04: Deprecation and Sunset
 
 Every registry row lives through five states. This guide is the runbook for moving rows through them safely, especially the end-of-life transitions.
 
@@ -14,7 +14,7 @@ draft → active → deprecated → archived → (deletable, only if usage_count
 | `active` | Row is in use | Yes | Yes (human fields only) |
 | `deprecated` | Scheduled for removal | Yes (with warnings in admin UI) | Limited (can change `sunset_at`, `notes`) |
 | `archived` | Past `sunset_at`, still referenced somewhere | No (hidden from feature-flag console, plan matrix, theme builder) | No |
-| (deleted) | Hard-deleted | — | — |
+| (deleted) | Hard-deleted | - | - |
 
 ## Transition rules
 
@@ -59,7 +59,7 @@ How:
 - Delete is executed via `pnpm registry:purge --key <key> --confirm`.
 - The delete is logged in `registry_audit_log` with `actor = <user>` and `justification = <text>`.
 
-## `usage_count` — how it is computed
+## `usage_count`: how it is computed
 
 Every catalog table exposes a `usage_count` column that is **computed**, not stored:
 
@@ -84,7 +84,7 @@ The function is called on demand (never cached) by the deprecation runbook and b
 
 ## The platform-admin deprecation digest
 
-Nightly job emits a digest to `library/qa/asset-registry/<YYYY-MM-DD>-deprecations-digest.md` summarizing:
+Nightly job emits a digest to `library/requirements/reports/asset-registry/<YYYY-MM-DD>-deprecations-digest.md` summarizing:
 
 - Rows newly `deprecated` in the last 24h.
 - Rows approaching `sunset_at` within 14 days.
@@ -133,7 +133,7 @@ Retiring a flag is a common operation and has its own short runbook:
 
 ## The "usage_count = 0 but still present" failure mode
 
-Sometimes a row's `usage_count` is zero but the asset is still referenced from code (typically via string-keyed legacy references — see Principle 6). The drift audit catches this under the `unregistered` class (the code reference exists with no corresponding registry link).
+Sometimes a row's `usage_count` is zero but the asset is still referenced from code (typically via string-keyed legacy references, see Principle 6). The drift audit catches this under the `unregistered` class (the code reference exists with no corresponding registry link).
 
 If you see this pattern, do NOT delete the registry row. File a drift item and let the next registration workflow recover the linkage.
 

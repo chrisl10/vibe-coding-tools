@@ -5,7 +5,7 @@
 
 ## Summary
 
-Three test levels: Unit (small, isolated), Integration (multi-part — the most valuable level), E2E (full-stack, Playwright). Tools: Vitest + Testing Library + MSW + Playwright.
+Three test levels: Unit (small, isolated), Integration (multi-part, the most valuable level), E2E (full-stack, Playwright). Tools: Vitest + Testing Library + MSW + Playwright.
 
 ## Key quote (on integration tests)
 
@@ -22,7 +22,7 @@ Three test levels: Unit (small, isolated), Integration (multi-part — the most 
 
 ## Philosophy
 
-Test the app "the way a real user uses it" — not implementation details. If you refactor from Redux to Zustand, tests should still pass because the output didn't change.
+Test the app "the way a real user uses it", not implementation details. If you refactor from Redux to Zustand, tests should still pass because the output didn't change.
 
 ## Relevance to this stinger
 

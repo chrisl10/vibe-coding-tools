@@ -1,6 +1,6 @@
 # Phase 10: Webhook & Outbound Integration System
 
-> **Site Template Guide** — PRD Phase 10 of 12
+> **Site Template Guide**: PRD Phase 10 of 12
 
 ---
 
@@ -14,14 +14,14 @@ Event-driven outbound webhooks with HMAC-SHA256 signing, exponential-backoff ret
 
 **In scope:**
 - `public.webhook_endpoints` and `public.webhook_deliveries` tables
-- `supabase/functions/notify-webhook/` — delivery + HMAC signature
+- `supabase/functions/notify-webhook/`: delivery + HMAC signature
 - Payload `afterChange` hook for `post.published` event (Payload mode only)
-- `src/routes/admin/webhooks/+page.server.ts` — delivery history UI
+- `src/routes/admin/webhooks/+page.server.ts`: delivery history UI
 - User-Agent header value configurable via `app_settings` (not hardcoded)
 
 **Out of scope:**
 - Inbound webhook processing (add separately if needed)
-- Retry cron job (mentioned as a future enhancement — manual retry via admin UI is sufficient at launch)
+- Retry cron job (mentioned as a future enhancement, manual retry via admin UI is sufficient at launch)
 
 ### Dependencies
 
@@ -33,7 +33,7 @@ Event-driven outbound webhooks with HMAC-SHA256 signing, exponential-backoff ret
 
 ## User Stories
 
-### Story 1 — Admin: Register a Webhook Endpoint
+### Story 1: Admin: Register a Webhook Endpoint
 
 > As an **Admin**, I want to register an outbound webhook URL that receives events when leads are captured or posts are published, so that I can trigger downstream automation.
 
@@ -42,7 +42,7 @@ Event-driven outbound webhooks with HMAC-SHA256 signing, exponential-backoff ret
 - Saved endpoint visible in the Supabase `webhook_endpoints` table
 - Admin can deactivate an endpoint without deleting it
 
-### Story 2 — System: Deliver a Signed Webhook
+### Story 2: System: Deliver a Signed Webhook
 
 > As the **System**, I want each webhook delivery to include an HMAC-SHA256 signature so that the receiving endpoint can verify authenticity.
 
@@ -50,9 +50,9 @@ Event-driven outbound webhooks with HMAC-SHA256 signing, exponential-backoff ret
 - `X-Webhook-Signature: sha256=<hex>` header present on every delivery
 - Signature is `HMAC-SHA256(endpoint.secret, JSON.stringify(payload))`
 - `X-Webhook-Event: <event_type>` header also present
-- User-Agent configurable via `app_settings.webhooks.user_agent` (default `Site-Webhook/1.0` — no hardcoded brand name)
+- User-Agent configurable via `app_settings.webhooks.user_agent` (default `Site-Webhook/1.0`, no hardcoded brand name)
 
-### Story 3 — Admin: View Delivery History
+### Story 3: Admin: View Delivery History
 
 > As an **Admin**, I want to view the last 100 webhook deliveries with their status, event type, and response code so that I can diagnose integration failures.
 
@@ -159,5 +159,5 @@ No brand name or domain is hardcoded in the Edge Function.
 ## Risks and Open Questions
 
 - **R-1:** The `notify-webhook` function has no retry cron job in this phase. Failed deliveries sit at `status = 'failed'` until manually retried from the admin UI. Add a Supabase cron job (via `pg_cron` extension) for automated retry in a follow-up phase.
-- **R-2:** Webhook delivery is fire-and-forget from the SvelteKit form action's perspective. If the Edge Function is slow (Supabase cold start), the user's form submission response is not delayed — but the webhook may be dropped if the Edge Function times out. Consider a Supabase database trigger instead of an HTTP call from the form action.
+- **R-2:** Webhook delivery is fire-and-forget from the SvelteKit form action's perspective. If the Edge Function is slow (Supabase cold start), the user's form submission response is not delayed, but the webhook may be dropped if the Edge Function times out. Consider a Supabase database trigger instead of an HTTP call from the form action.
 - **Q-1:** Should webhook secrets be auto-generated (UUID-based) at endpoint creation, or should admins provide their own? Auto-generation is safer (consistent entropy) but means secrets are not memorable. Auto-generate and display once on creation.

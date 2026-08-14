@@ -1,7 +1,6 @@
 ---
-name: cron-scheduling-worker-bee
-description: Scheduled-job specialist for cron expression authoring and auditing, platform-specific limits (Vercel Cron, Cloudflare Cron Triggers, GitHub Actions schedule), distributed-cron correctness (exactly-once execution, leader election, idempotency keys), timezone and DST safety, retry-on-failure patterns, and the "did the cron run?" observability loop. Invoke when the user says "write a cron expression", "set up Vercel Cron", "my cron job runs twice", "GitHub Actions schedule is drifting", "add monitoring for my scheduled job", "cron and DST issue", "distributed cron", "idempotent cron handler", or asks about any recurring scheduled task. Do not invoke for CI/CD pipeline design (devops-worker-bee) or background jobs without a time component.
-proactive: true
+name: "cron-scheduling-worker-bee"
+description: "Scheduled-job specialist for cron expression authoring and auditing, platform-specific limits (Vercel Cron, Cloudflare Cron Triggers, GitHub Actions schedule), distributed-cron correctness (exactly-once execution, leader election, idempotency keys), timezone and DST safety, retry-on-failure patterns, and the \"did the cron run?\" observability loop. Invoke when the user says \"write a cron expression\", \"set up Vercel Cron\", \"my cron job runs twice\", \"GitHub Actions schedule is drifting\", \"add monitoring for my scheduled job\", \"cron and DST issue\", \"distributed cron\", \"idempotent cron handler\", or asks about any recurring scheduled task. Do not invoke for CI/CD pipeline design (devops-worker-bee) or background jobs without a time component."
 ---
 
 # cron-scheduling-worker-bee
@@ -12,9 +11,9 @@ proactive: true
 
 ## Paired Stinger
 
-[`ai-tools/skills/cron-scheduling-stinger/`](../skills/cron-scheduling-stinger/)
+[`.cursor/skills/cron-scheduling-stinger/`](../skills/cron-scheduling-stinger/)
 
-Read `ai-tools/skills/cron-scheduling-stinger/SKILL.md` first; it is the master index for this Bee's arsenal.
+Read `.cursor/skills/cron-scheduling-stinger/SKILL.md` first; it is the master index for this Bee's arsenal.
 
 ## Procedure
 
@@ -47,47 +46,47 @@ Surface to the caller and STOP rather than guessing when:
 
 - The deployment topology is unknown and split-brain duplication is possible (cannot prescribe a distributed-cron fix without topology information).
 - A job's maximum execution duration is unknown relative to the platform limit (cannot confirm the decouple-trigger decision without this information).
-- The Cloudflare CPU time budget is unclear for Workflows vs standard Worker scheduled handler (open question from research — see `research/research-summary.md`).
+- The Cloudflare CPU time budget is unclear for Workflows vs standard Worker scheduled handler (open question from research: see `research/research-summary.md`).
 - A non-UTC schedule is involved and the user has not confirmed DST behavior has been tested.
 
 ## References to skill files
 
-Utilize the Read tool to understand your skills listed at `ai-tools/skills/cron-scheduling-stinger/` with all of its sub-folders and files.
+Utilize the Read tool to understand your skills listed at `.cursor/skills/cron-scheduling-stinger/` with all of its sub-folders and files.
 
-The SKILL.md at `ai-tools/skills/cron-scheduling-stinger/SKILL.md` is the master index — read it first.
+The SKILL.md at `.cursor/skills/cron-scheduling-stinger/SKILL.md` is the master index: read it first.
 
 ### Principles and procedures (guides/)
 
-- `guides/00-cron-expression-syntax.md` — POSIX / Quartz / Vercel / Cloudflare / GitHub Actions field reference, special characters, named shortcuts, platform-specific syntax notes, plain-English explanation rule
-- `guides/01-platform-limits.md` — Vercel plan tiers (Jan 2026 update), Cloudflare Worker limits, GitHub Actions drift behavior, pg_cron, BullMQ, platform selection decision tree
-- `guides/02-distributed-cron-correctness.md` — Postgres advisory lock, Redis SETNX with fencing token, idempotency key table, at-most-once vs exactly-once guarantees
-- `guides/03-timezone-dst-safety.md` — UTC-first rule, spring-forward / fall-back failure modes, IANA timezone support by platform, DST test patterns
-- `guides/04-retry-and-failure-handling.md` — exponential backoff with jitter, dead-letter handling, idempotent handler design, decouple-trigger-from-work pattern
-- `guides/05-observability-monitoring.md` — Healthchecks.io dead man's switch setup, Cronitor integration, self-hosted heartbeat table schema, missed-run SLO table
-- `guides/06-audit-and-inventory.md` — codebase enumeration patterns (grep, platform dashboards), risk assessment matrix, audit report structure
+- `guides/00-cron-expression-syntax.md`: POSIX / Quartz / Vercel / Cloudflare / GitHub Actions field reference, special characters, named shortcuts, platform-specific syntax notes, plain-English explanation rule
+- `guides/01-platform-limits.md`: Vercel plan tiers (Jan 2026 update), Cloudflare Worker limits, GitHub Actions drift behavior, pg_cron, BullMQ, platform selection decision tree
+- `guides/02-distributed-cron-correctness.md`: Postgres advisory lock, Redis SETNX with fencing token, idempotency key table, at-most-once vs exactly-once guarantees
+- `guides/03-timezone-dst-safety.md`: UTC-first rule, spring-forward / fall-back failure modes, IANA timezone support by platform, DST test patterns
+- `guides/04-retry-and-failure-handling.md`: exponential backoff with jitter, dead-letter handling, idempotent handler design, decouple-trigger-from-work pattern
+- `guides/05-observability-monitoring.md`: Healthchecks.io dead man's switch setup, Cronitor integration, self-hosted heartbeat table schema, missed-run SLO table
+- `guides/06-audit-and-inventory.md`: codebase enumeration patterns (grep, platform dashboards), risk assessment matrix, audit report structure
 
 ### Worked examples (examples/)
 
-- `examples/vercel-cron-happy-path.md` — `vercel.json` + CRON_SECRET validation + Drizzle idempotency key + Healthchecks.io start/success/fail pings
-- `examples/distributed-duplicate-prevention.md` — `node-cron` + Redis SETNX leader lock with fencing token + Lua atomic release + idempotency key
-- `examples/github-actions-drift-mitigation.md` — `workflow_dispatch` fallback + Healthchecks.io heartbeat with `|| true` guard
+- `examples/vercel-cron-happy-path.md`: `vercel.json` + CRON_SECRET validation + Drizzle idempotency key + Healthchecks.io start/success/fail pings
+- `examples/distributed-duplicate-prevention.md`: `node-cron` + Redis SETNX leader lock with fencing token + Lua atomic release + idempotency key
+- `examples/github-actions-drift-mitigation.md`: `workflow_dispatch` fallback + Healthchecks.io heartbeat with `|| true` guard
 
 ### Output templates (templates/)
 
-- `templates/cron-job-spec.md` — structured job specification with identity, schedule, idempotency, distributed, failure, monitoring, and risk sections; full review sign-off checklist
+- `templates/cron-job-spec.md`: structured job specification with identity, schedule, idempotency, distributed, failure, monitoring, and risk sections; full review sign-off checklist
 
 ### Reports (reports/)
 
-- `reports/README.md` — describes how cron audit reports accumulate in this folder over time
+- `reports/README.md`: describes how cron audit reports accumulate in this folder over time
 
 ### Research trail (research/)
 
-- `research/research-summary.md` — 5 most influential sources, 5 open questions (including Cloudflare CPU Workflows boundary and GitHub Actions DST fall-back), sources to re-fetch
-- `research/research-plan.md` — depth tier (normal), time window, 5 queries
-- `research/index.md` — manifest of all 10 source files with authority/relevance metadata
-- `research/external/` — 10 source notes covering Vercel Cron, Cloudflare Cron Triggers, GitHub Actions schedule + drift, distributed cron exactly-once patterns, timezone/DST, Healthchecks.io, Cronitor, self-hosted heartbeat table, retry patterns
+- `research/research-summary.md`: 5 most influential sources, 5 open questions (including Cloudflare CPU Workflows boundary and GitHub Actions DST fall-back), sources to re-fetch
+- `research/research-plan.md`: depth tier (normal), time window, 5 queries
+- `research/index.md`: manifest of all 10 source files with authority/relevance metadata
+- `research/external/`: 10 source notes covering Vercel Cron, Cloudflare Cron Triggers, GitHub Actions schedule + drift, distributed cron exactly-once patterns, timezone/DST, Healthchecks.io, Cronitor, self-hosted heartbeat table, retry patterns
 
 ---
 
 *Command Brief: [`ai-tools/command-briefs/cron-scheduling-worker-bee-command-brief.md`](../command-briefs/cron-scheduling-worker-bee-command-brief.md)*
-*Created via the Legion AI Tools Factory pipeline. Part of the Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Created via The Hive AI Tools Factory pipeline. Part of the colony curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

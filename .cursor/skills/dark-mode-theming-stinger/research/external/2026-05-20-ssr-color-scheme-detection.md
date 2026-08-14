@@ -13,9 +13,9 @@ url: https://nextjs.org/docs/app/building-your-application/rendering/server-comp
 
 During SSR, there is no `window`, no `localStorage`, and no `prefers-color-scheme` readable by the server. This creates a fundamental tension:
 
-1. **Server renders HTML** — no theme applied (or a hardcoded default)
-2. **Browser loads inline FOWT script** — reads `localStorage`, applies theme class
-3. **React hydrates** — virtual DOM expects server-rendered HTML; class mismatch triggers hydration warning
+1. **Server renders HTML**: no theme applied (or a hardcoded default)
+2. **Browser loads inline FOWT script**: reads `localStorage`, applies theme class
+3. **React hydrates**: virtual DOM expects server-rendered HTML; class mismatch triggers hydration warning
 
 **Solution A (most common): `suppressHydrationWarning` on `<html>`**
 
@@ -55,7 +55,7 @@ export default async function RootLayout({ children }) {
 }
 ```
 
-**Trade-off:** cookie-based SSR match requires `next-themes` to write a cookie (set `storageKey` equivalent as a cookie), adds middleware overhead, and the server cannot know `prefers-color-scheme` — so "system" preference still defaults to light on first load without a stored cookie.
+**Trade-off:** cookie-based SSR match requires `next-themes` to write a cookie (set `storageKey` equivalent as a cookie), adds middleware overhead, and the server cannot know `prefers-color-scheme`, so "system" preference still defaults to light on first load without a stored cookie.
 
 ## `useIsomorphicLayoutEffect`
 
@@ -81,4 +81,4 @@ if (!mounted) return <Skeleton />;
 return <Icon color={resolvedTheme === "dark" ? "white" : "black"} />;
 ```
 
-Use sparingly — most components should rely on CSS variables and not need to know the theme in JS.
+Use sparingly: most components should rely on CSS variables and not need to know the theme in JS.

@@ -52,5 +52,5 @@ without hardcoding new hex values.
 - Starter kits should use `oklch()` where possible so the palette stays
   extensible.
 - The glass-on-beige starter uses hex plus `color-mix()` for
-  shadows/derivations — this is pragmatic and acceptable, but new systems
+  shadows/derivations: this is pragmatic and acceptable, but new systems
   should default to oklch for any non-brand color.

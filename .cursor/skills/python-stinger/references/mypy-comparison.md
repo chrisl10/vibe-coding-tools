@@ -1,4 +1,4 @@
-# mypy — preserved alternative
+# mypy: preserved alternative
 
 > Demoted in favor of **pyright** (see `guides/12-typing-and-pydantic.md`). mypy is acceptable in legacy or when its plugin ecosystem is doing load-bearing work.
 
@@ -6,16 +6,16 @@
 
 - **Conformance.** pyright passes 97.8% of the official typing-spec test suite; mypy passes 58.3% (as of `research/2026-05-03-pyright-vs-mypy.md`). Real-world impact: code that follows the typing spec works in pyright; in mypy it might or might not.
 - **Speed.** pyright is faster (TypeScript engine, incremental).
-- **IDE integration.** pyright ships as Pylance in VS Code — zero extra install. mypy in VS Code requires a separate extension and is slower for live feedback.
-- **Modern features land first.** PEP 695 generics, `TypeIs`, `Self` type — pyright implements these on day one; mypy follows.
+- **IDE integration.** pyright ships as Pylance in VS Code: zero extra install. mypy in VS Code requires a separate extension and is slower for live feedback.
+- **Modern features land first.** PEP 695 generics, `TypeIs`, `Self` type: pyright implements these on day one; mypy follows.
 
 ## Why mypy is preserved as an alternative
 
 The single counter-argument: **plugin ecosystem.**
 
-- `mypy_django_plugin` — provides Django-aware type checking. Pyright has no plugin system, so Django's dynamic metaclass machinery (Manager.objects, signals, queryset chaining) produces false positives in pyright that the mypy plugin handles.
-- `pydantic.mypy` — Pydantic v2 ships its own plugin into mypy. Pyright basic mode handles Pydantic well too, but the plugin tightens validator/discriminator inference.
-- `mypy-zope`, `mypy-aiohttp`, `mypy-protobuf`, `sqlalchemy-stubs` — domain-specific plugins.
+- `mypy_django_plugin`: provides Django-aware type checking. Pyright has no plugin system, so Django's dynamic metaclass machinery (Manager.objects, signals, queryset chaining) produces false positives in pyright that the mypy plugin handles.
+- `pydantic.mypy`: Pydantic v2 ships its own plugin into mypy. Pyright basic mode handles Pydantic well too, but the plugin tightens validator/discriminator inference.
+- `mypy-zope`, `mypy-aiohttp`, `mypy-protobuf`, `sqlalchemy-stubs`: domain-specific plugins.
 
 If the team is already running mypy with these plugins, switching to pyright costs more than it saves. Keep mypy.
 
@@ -30,7 +30,7 @@ If the team is already running mypy with these plugins, switching to pyright cos
 - New project, no SQLAlchemy, default Django patterns.
 - Team uses VS Code (Pylance is free, fast, and ships out-of-the-box).
 - Need PEP 695 / new typing features now.
-- Strict mode is the goal — pyright `strict` mode is more comprehensive.
+- Strict mode is the goal: pyright `strict` mode is more comprehensive.
 
 ## Legacy-code recognition
 

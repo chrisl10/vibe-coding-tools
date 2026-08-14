@@ -5,7 +5,7 @@
 - **Page budget target:** 8-12 external source files
 - **Source breadth target:** official docs, practitioner blogs, benchmark leaderboards, GitHub issue threads, comparison reviews
 
-## Initial queries (from the proposal step)
+## Initial queries (from `big-bang-space`)
 
 1. "Claude Code Aider Cline 2026 comparison"
 2. "Windsurf Cascade Cursor 2026"
@@ -21,7 +21,7 @@
 
 ### Branch from "Windsurf Cascade Cursor 2026"
 - "Windsurf OpenAI acquisition Cognition AI Cursor AI coding IDE comparison 2026"
-  (Verification query — Command Brief stated OpenAI acquired Windsurf in Jan 2026; search confirms this is INCORRECT. Cognition AI acquired Windsurf for ~$250M in Dec 2025 after OpenAI deal collapsed.)
+  (Verification query: Command Brief stated OpenAI acquired Windsurf in Jan 2026; search confirms this is INCORRECT. Cognition AI acquired Windsurf for ~$250M in Dec 2025 after OpenAI deal collapsed.)
 
 ### Branch from "Devin Replit Agent autonomous coding 2026"
 - "Devin 2.0 Replit Agent autonomous coding 2026 review performance"

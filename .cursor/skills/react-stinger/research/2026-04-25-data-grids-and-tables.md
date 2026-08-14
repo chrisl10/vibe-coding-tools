@@ -1,4 +1,4 @@
-# Data Grids & Tables — research notes
+# Data Grids & Tables: research notes
 
 **Retrieved:** 2026-04-25
 **For guide:** `guides/16-data-grids-and-tables.md`
@@ -32,4 +32,4 @@ Decision axes:
 3. License tolerance (OSS-only vs commercial OK)
 4. Design system fit (TanStack > MUI X > Glide > AG Grid > Handsontable)
 
-No new web_search_exa expansions performed — the source doc URLs are the canonical product pages and licensing docs.
+No new web_search_exa expansions performed: the source doc URLs are the canonical product pages and licensing docs.

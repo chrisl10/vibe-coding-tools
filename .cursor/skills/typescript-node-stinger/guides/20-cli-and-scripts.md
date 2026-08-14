@@ -1,5 +1,7 @@
 # 20 - CLI & Scripts
 
+**Legacy/library case.** Hivemind's `hivemind` CLI bin and `scripts/*.mjs` build/audit helpers. A SvelteKit app's own `scripts/` (if any) follow general Node CLI practice, not this specific model.
+
 Two flavors of executable code outside the harness bundles: the `hivemind` CLI (shipped) and the `scripts/*.mjs` build/audit helpers (dev/build-time).
 
 ## The `hivemind` CLI

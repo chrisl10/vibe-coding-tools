@@ -1,4 +1,4 @@
-# 05 — Error Handling
+# 05: Error Handling
 
 Source: `research/2026-04-24-bulletproof-react-error-handling-security.md`.
 
@@ -84,11 +84,11 @@ Wrap in `<Suspense>` upstream. Errors are caught by the nearest `<ErrorBoundary>
 
 ## Common findings
 
-> **[Must-fix]** `src/app/routes/dashboard.tsx:10` — no error boundary on the route; a thrown error will crash the whole app. Add per `templates/error-boundary.tsx`.
+> **[Must-fix]** `src/app/routes/dashboard.tsx:10`: no error boundary on the route; a thrown error will crash the whole app. Add per `templates/error-boundary.tsx`.
 
-> **[Must-fix]** `src/app/App.tsx:22` — single app-level `<ErrorBoundary>` wrapping all routes. Add per-route boundaries. See `guides/05-error-handling.md §multiple-boundaries`.
+> **[Must-fix]** `src/app/App.tsx:22`: single app-level `<ErrorBoundary>` wrapping all routes. Add per-route boundaries. See `guides/05-error-handling.md §multiple-boundaries`.
 
-> **[Should-refactor]** `src/components/PostList.tsx:8` — `<Suspense fallback={null}>` renders nothing during loading, causing layout shift. Replace with a sized skeleton.
+> **[Should-refactor]** `src/components/PostList.tsx:8`: `<Suspense fallback={null}>` renders nothing during loading, causing layout shift. Replace with a sized skeleton.
 
 ## Example in action
 

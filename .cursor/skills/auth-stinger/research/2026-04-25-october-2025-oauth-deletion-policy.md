@@ -21,8 +21,8 @@ In October 2025 Google began enforcing automatic deletion of OAuth client IDs th
 
 - **Rarely-used flows**: admin import that runs quarterly; CLI tool used by a small subset of users; secondary auth flow that handles a niche provider.
 - **Staging / DR clients**: created for emergency rollback; never see traffic; deleted.
-- **Pre-launch clients**: created in dev, paused for re-design, returned to months later — deleted.
-- **Archived / legacy projects**: dormant projects with active clients — deleted.
+- **Pre-launch clients**: created in dev, paused for re-design, returned to months later, deleted.
+- **Archived / legacy projects**: dormant projects with active clients, deleted.
 
 ## Defenses
 
@@ -33,7 +33,7 @@ In October 2025 Google began enforcing automatic deletion of OAuth client IDs th
 
 ## Why it's load-bearing
 
-- A dormant client breaks production silently a year after launch — exactly the kind of bug that escapes regression tests.
+- A dormant client breaks production silently a year after launch: exactly the kind of bug that escapes regression tests.
 - The notification email lands in a generic project-owner inbox; teams that don't tend to that inbox miss it.
 - For Google Workspace add-ons or marketplace listings, deletion may also revoke marketplace listings.
 

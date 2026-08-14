@@ -1,6 +1,6 @@
 ---
-name: technical-writing-craft-stinger
-description: Writing docs well -- the Diataxis framework (tutorial / how-to / reference / explanation), inverted-pyramid prose structure, scannable headings, code-example discipline, the "what does the reader already know?" reader-lens, ghostwriting vs voice consistency, and the docs-as-code review workflow. Distinct from library-worker-bee (which owns docs-site architecture and where a doc lives); this stinger owns the craft of writing. Use when the user says "review this document", "is this doc well-written", "audit this page", "write a tutorial for X", "apply Diataxis", "ghostwrite this guide", "my docs PR needs a writing review", or any request about documentation quality rather than documentation tooling.
+name: "technical-writing-craft-stinger"
+description: "Writing docs well -- the Diataxis framework (tutorial / how-to / reference / explanation), inverted-pyramid prose structure, scannable headings, code-example discipline, the \\\\\\\"what does the reader already know?\\\\\\\" reader-lens, ghostwriting vs voice consistency, and the docs-as-code review workflow. Distinct from library-worker-bee (which owns docs-site architecture and where a doc lives); this stinger owns the craft of writing. Use when the user says \\\\\\\"review this document\\\\\\\", \\\\\\\"is this doc well-written\\\\\\\", \\\\\\\"audit this page\\\\\\\", \\\\\\\"write a tutorial for X\\\\\\\", \\\\\\\"apply Diataxis\\\\\\\", \\\\\\\"ghostwrite this guide\\\\\\\", \\\\\\\"my docs PR needs a writing review\\\\\\\", or any request about documentation quality rather than documentation tooling."
 ---
 
 # technical-writing-craft Stinger
@@ -112,4 +112,4 @@ When a request touches one of those concerns, name the correct Bee and step asid
 
 ---
 
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Part of The Hive, curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

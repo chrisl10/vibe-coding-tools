@@ -1,8 +1,10 @@
-# 08 — RAG Strategy
+# 08: RAG Strategy
+
+> **Alternative stack.** This guide documents the Qdrant plus Cohere `rerank-v3.5` implementation of two-stage retrieval, one fully supported option for a project that already runs it. For this repo's default retrieval substrate (Neon Postgres plus pgvector), see `guides/00-selection-and-defaults.md`, and hand schema and query work to `vector-store-stinger` and `retrieval-stinger`.
 
 Qdrant per-tenant collections, two-stage retrieval (vector + Cohere `rerank-v3.5`), HNSW tuning, top-K / top-N defaults, the GDPR vector deletion procedure, the cold-start handling, and the sharding plan.
 
-> **Doc reference:** `library/knowledge-base/ai/rag-vector-strategy.md` is canonical.
+> **Doc reference:** `library/knowledge/private/ai/rag-vector-strategy.md` is canonical.
 
 ---
 
@@ -57,7 +59,7 @@ Distance metric: Cosine
 
 `VECTOR_SIZE = 1024` in `qdrant-client.ts` is the single source of truth. **Never hardcode 1024 elsewhere.**
 
-**Why cosine:** measures angle, not magnitude — optimal for semantic text embeddings where direction (not length) carries meaning.
+**Why cosine:** measures angle, not magnitude: optimal for semantic text embeddings where direction (not length) carries meaning.
 
 ---
 
@@ -78,13 +80,13 @@ await client.createCollection(collectionName, {
 
 | Parameter | Value | Why |
 |---|---|---|
-| `m` | 16 | Edges per node — standard for 1024-dim vectors |
-| `ef_construct` | 200 | Search width during index build — higher = better quality, build cost amortized once |
+| `m` | 16 | Edges per node: standard for 1024-dim vectors |
+| `ef_construct` | 200 | Search width during index build: higher = better quality, build cost amortized once |
 | `on_disk` | `false` | Vectors in RAM for minimum latency |
-| `strict_mode_config.enabled` | `true` | Reject filters on unindexed fields — prevents silent full-scans |
+| `strict_mode_config.enabled` | `true` | Reject filters on unindexed fields: prevents silent full-scans |
 | `optimizers_config.default_segment_number` | `4` | Match Qdrant node CPU count |
 
-Adjusting any of these requires `library/knowledge-base/ai/rag-vector-strategy.md §4` update + measured eval pass.
+Adjusting any of these requires `library/knowledge/private/ai/rag-vector-strategy.md §4` update + measured eval pass.
 
 ---
 
@@ -116,7 +118,7 @@ const EPISODIC_TOP_N       = 3;
 
 ### Why two stages
 
-ANN recall is wide (cheap, slightly noisy). Cross-encoder rerank narrows to high-precision passages by scoring query-document pairs jointly. Vendor benchmarks consistently show rerank lifting precision by 15–30% on realistic retrieval tasks; for the deploying product, the lift shows up in `evaluateRetrievalPrecision()` scores.
+ANN recall is wide (cheap, slightly noisy). Cross-encoder rerank narrows to high-precision passages by scoring query-document pairs jointly. Vendor benchmarks consistently show rerank lifting precision by 15-30% on realistic retrieval tasks; for the deploying product, the lift shows up in `evaluateRetrievalPrecision()` scores.
 
 ---
 
@@ -214,7 +216,7 @@ Current 500-char chunks (~125 tokens) are well within the token limit. The 500-c
 
 ## 12. Operational notes
 
-**Backup:** Qdrant supports snapshots via REST API. Snapshots should be taken daily and stored in DO Spaces. Not yet automated — tracked as [the host repo's tracker](host repo issue tracker). mind-worker-bee flags this as a reliability gap on every RAG audit until closed.
+**Backup:** Qdrant supports snapshots via REST API. Snapshots should be taken daily and stored in DO Spaces. Not yet automated: tracked as [the host repo's tracker](host repo issue tracker). mind-worker-bee flags this as a reliability gap on every RAG audit until closed.
 
 **Monitoring:** Use Qdrant's `/metrics` endpoint to track collection sizes, query latency, index build status.
 
@@ -226,9 +228,9 @@ Current 500-char chunks (~125 tokens) are well within the token limit. The 500-c
 
 All LLM inference routes through OpenRouter (`https://openrouter.ai/api/v1`). OpenRouter:
 
-- Fully OpenAI API-compatible — same SDK.
-- Aggregates 450+ models — model swaps without infrastructure changes.
-- Uses prepaid credit balance — at $0, all AI features silently fail.
+- Fully OpenAI API-compatible: same SDK.
+- Aggregates 450+ models: model swaps without infrastructure changes.
+- Uses prepaid credit balance: at $0, all AI features silently fail.
 
 **Production safeguards:**
 
@@ -250,7 +252,7 @@ Every new Qdrant collection must complete:
 - [ ] Add to `ensureAllCollectionsForTenant()` parallel call.
 - [ ] Add to `deleteUserVectors()` GDPR procedure.
 - [ ] Document in collection inventory (§2).
-- [ ] Update `library/knowledge-base/ai/rag-vector-strategy.md`.
+- [ ] Update `library/knowledge/private/ai/rag-vector-strategy.md`.
 
 ---
 

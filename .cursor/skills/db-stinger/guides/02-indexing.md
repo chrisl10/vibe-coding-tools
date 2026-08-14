@@ -1,4 +1,4 @@
-# 02 — Indexing
+# 02: Indexing
 
 Pick the right index family per workload + column type. Choosing wrong is one of the top three causes of "we need a bigger database".
 
@@ -55,9 +55,9 @@ CREATE UNIQUE INDEX users_email_active
   ON users (email)
   WHERE deleted_at IS NULL;
 ```
-Partial uniqueness — soft-deleted users can have repeated emails; active users cannot.
+Partial uniqueness: soft-deleted users can have repeated emails; active users cannot.
 
-## FK indexes — must-fix
+## FK indexes: must-fix
 
 Postgres does **not** auto-create indexes on FK columns. Every FK gets a B-tree index:
 
@@ -129,7 +129,7 @@ For embedding columns (`vector(1536)`):
 CREATE INDEX ON documents USING hnsw (embedding vector_cosine_ops);
 ```
 
-`hnsw` is the 2026 default; `ivfflat` for very fast build / smaller datasets. Hand off retrieval strategy to `ai-platform-worker-bee`. See `06-special-purpose.md`.
+`hnsw` is the 2026 default; `ivfflat` for very fast build / smaller datasets. Hand off retrieval strategy to `mind-worker-bee`. See `06-special-purpose.md`.
 
 ## Anti-patterns
 
@@ -143,10 +143,10 @@ CREATE INDEX ON documents USING hnsw (embedding vector_cosine_ops);
 
 - Reindex periodically on hot tables: `REINDEX INDEX CONCURRENTLY` (PG 12+).
 - Watch for bloat: `scripts/bloat-check.sql`.
-- Monitor unused indexes via `pg_stat_user_indexes` — `idx_scan = 0` over a quarter is a candidate to drop.
+- Monitor unused indexes via `pg_stat_user_indexes`: `idx_scan = 0` over a quarter is a candidate to drop.
 
 ## Cross-references
 
-- `01-schema-design.md` — every queried column needs an index plan.
-- `05-performance-pooling.md` — interpret `EXPLAIN (ANALYZE, BUFFERS)` to confirm the index is used.
-- `templates/indexes-decision-tree.md` — printable cheat sheet.
+- `01-schema-design.md`: every queried column needs an index plan.
+- `05-performance-pooling.md`: interpret `EXPLAIN (ANALYZE, BUFFERS)` to confirm the index is used.
+- `templates/indexes-decision-tree.md`: printable cheat sheet.

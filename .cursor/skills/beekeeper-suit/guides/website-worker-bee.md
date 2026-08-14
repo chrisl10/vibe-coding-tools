@@ -1,71 +1,38 @@
-# Website Worker Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `website-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/website-worker-bee.md`](../../agents/website-worker-bee.md)
-**Stinger:** [`.cursor/skills/website-stinger/`](../../skills/website-stinger/)
-**Command Brief:** not available (synthesized from agent + stinger files)
-**Trigger policy:** on-demand
-
----
+# website-worker-bee
 
 ## Domain
+Builds production-grade SvelteKit (Svelte 5) + Payload CMS + Supabase websites end-to-end from a brief, applying a 12-phase site-template playbook: monorepo architecture, performance/security, SEO/AEO, analytics, Supabase backend with RLS, auth/RBAC, Payload admin, lead capture, blog, webhooks, conversion-rate optimization, and visual design tokens. Default CMS mode is Payload 3.x; a TypeScript-as-CMS fallback exists for simple one-page lead-gen sites. It is autonomous within a build but never picks brand identity, writes marketing copy, or deploys to production without explicit confirmation.
 
-`website-worker-bee` owns end-to-end website construction using the SvelteKit (Svelte 5) + Payload CMS + Supabase stack. Given a brief and brand inputs, it scaffolds a pnpm monorepo (`apps/web` + `apps/cms`), wires both apps to Vercel, and executes a 12-phase playbook covering monorepo setup, performance, SEO/AEO, analytics, Supabase schema + RLS, auth + RBAC, Payload admin, lead capture, blog, webhooks, visual design tokens, and conversion-rate optimization. The default CMS mode is Payload 3.x; a TypeScript-as-CMS fallback is available for one-page lead-gen sites that do not need a managed admin panel. The Bee is intentionally autonomous: it batches all clarifying questions at the start, then runs phase by phase with smoke checks and structured commits.
+## Paired Stinger
+[website-stinger](../../website-stinger) - the 12-phase guides in canonical execution order, the CMS-mode toggle, worked examples for full builds and the fallback path, and the Build Report authoring discipline.
 
 ## Trigger phrases
-
-Route to `website-worker-bee` when the user says any of:
-
-- "build a website"
+- "build a website for this brief"
 - "scaffold a SvelteKit site"
 - "spin up a marketing/lead-gen site"
 - "ship a website from scratch"
 - "create a SvelteKit + Supabase site"
-- "take this brand kit and ship a site"
-
-Or when the request implicitly involves building a new web presence end-to-end from a brief.
+- "here's the brief and brand inputs, build the repo"
 
 ## Do NOT route when
-
-- The request is a one-off page tweak or copy edit on an existing site — no Bee owns this; handle inline.
-- The request is a Lighthouse audit or performance review on an existing site — route to `quality-worker-bee`.
-- The request is deploy-only (e.g., "push to Vercel", "run CI") with no scaffolding involved — route to `devops-worker-bee` or handle directly.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let the broader one act as backup.
+- The ask is a one-off page tweak or copy edit on an existing site: this Bee is not invoked for incremental changes, not a handoff to a peer.
+- The ask is a Lighthouse audit on an existing site rather than a new build: not this Bee's invocation case.
+- The ask is a deploy-only request with no scaffolding work: not this Bee's invocation case.
+- The ask is SEO/AEO implementation depth: this Bee delegates Phase 3 to seo-aeo-worker-bee rather than doing it itself.
+- The ask is detailed Supabase schema/indexing design or advanced Payload Collections/Blocks configuration: handed off mid-build to db-worker-bee and website-worker-bee respectively.
 
 ## Inputs the Bee needs
+- A brief plus brand inputs, batched clarifying answers including the CMS-mode question (managed Payload admin vs. TypeScript-as-CMS fallback).
+- Target stack confirmation (SvelteKit + Payload + Supabase + Vercel) or documented deviation.
+- Explicit user confirmation before any production deploy, destructive SQL, or secret handling.
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- A working monorepo (`apps/web`, optionally `apps/cms`) with Vercel deployment wired.
+- A filled Build Report tracking each of the 12 phases pass/fail/skip with committed history (`feat(phase-N): <name>`).
+- Surfaced Risks and Open Questions from the source PRDs in the Build Report's Next steps.
 
-- A site brief (product description, target audience, desired pages/features)
-- Brand inputs: color palette, typography, logo (or explicit instruction to use neutral defaults)
-- CMS mode decision: does the site need a managed admin panel with blog/content management by non-developer editors? (defaults to Payload mode if absent)
-- Target repo path or workspace location — defaults to a new directory named after the product if not specified
-
-## Outputs the Bee produces
-
-- A working pnpm monorepo at the target path containing `apps/web` (SvelteKit) and, in Payload mode, `apps/cms` (Next.js + Payload 3.x), with Vercel configuration for both apps
-- A `build-report.md` in the repo root — 12-phase pass/fail/skip table with PRD citations, risks, open questions, and recommended downstream Bees
-
-## Multi-Bee sequences this Bee participates in
-
-- Plan execution loop — always closes with `security-worker-bee` then `quality-worker-bee`
-- Phase 3 delegates to `seo-aeo-worker-bee` (SvelteKit track) for sitemap, robots, and structured-data wiring
-- Phase 5 delegates to `db-worker-bee` for detailed schema design, index selection, and zero-downtime migration patterns
-- Phase 7 and Phase 9 delegate to `cms-payload-worker-bee` for Payload Collections, Blocks, Lexical rendering, and Live Preview
-
-## Critical directives the orchestrator should respect
-
-- Always read `SKILL.md` and `guides/00-principles.md` before any file write — architectural commitments are load-bearing
-- Never deploy secrets, run destructive SQL on shared Supabase projects, or trigger production builds without explicit user confirmation
-- Honor the canonical phase execution order: `1 → 2 → 5 → 6 → 7 → 3 → 4 → 8 → 9 → 10 → 12 → 11`
-- When a phase acceptance criterion cannot be met, mark it Skip with a one-line reason — never silently fudge
-- Never overwrite a non-empty target directory without confirmation
-- Surface every Risk (R-N) and Open Question (Q-N) from the source PRDs in the Build Report's Next steps
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
+## Commonly sequenced with
+- seo-aeo-worker-bee: for Phase 3, delegated on the SvelteKit track.
+- db-worker-bee: for Phase 5 detailed Supabase schema, indexing, and migration patterns.
+- website-worker-bee: for Phase 7/9 advanced Payload configuration and Lexical rendering.
+- security-worker-bee: for Phase 2/10 CSP tightening and HMAC implementation review.

@@ -1,4 +1,4 @@
-# 06 — FastAPI Service
+# 06: FastAPI Service
 
 When there's no Django (a microservice, a tiny tool, an LLM proxy, a webhook receiver), FastAPI is canonical. This guide covers the canonical FastAPI service shape.
 
@@ -9,10 +9,10 @@ See `guides/07-django-vs-fastapi.md` for the decision tree. Short version: FastA
 ## Hard rules
 
 1. **APIRouter per resource family.** Don't put every route on the main `app`.
-2. **Dependency injection via `Depends(...)`** — DB session, current user, settings, HTTP client are all DI dependencies.
-3. **Pydantic v2 schemas at every boundary** — request body, response model, query params for non-trivial filters.
+2. **Dependency injection via `Depends(...)`**: DB session, current user, settings, HTTP client are all DI dependencies.
+3. **Pydantic v2 schemas at every boundary**: request body, response model, query params for non-trivial filters.
 4. **Lifespan events** for startup / shutdown (HTTP client, DB pool, model loading).
-5. **Async-native.** Don't fight FastAPI with sync handlers — if you have sync code, run it in a threadpool with `fastapi.concurrency.run_in_threadpool` or `anyio.to_thread.run_sync`.
+5. **Async-native.** Don't fight FastAPI with sync handlers: if you have sync code, run it in a threadpool with `fastapi.concurrency.run_in_threadpool` or `anyio.to_thread.run_sync`.
 
 ## Canonical service skeleton
 
@@ -184,6 +184,6 @@ async def value_error_handler(request: Request, exc: ValueError):
 ## Sources
 
 - https://fastapi.tiangolo.com/
-- https://fastapi.tiangolo.com/advanced/events/ — lifespan events
-- https://www.python-httpx.org/async/ — AsyncClient lifecycle
+- https://fastapi.tiangolo.com/advanced/events/: lifespan events
+- https://www.python-httpx.org/async/: AsyncClient lifecycle
 - `research/2026-05-03-httpx-async-production.md`

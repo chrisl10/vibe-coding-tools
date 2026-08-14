@@ -7,7 +7,7 @@ A worked end-to-end example: greenfield project, OSS-by-policy, custom UI, frame
 - **Stack**: Next.js 15 App Router, Postgres + Prisma, custom design system.
 - **Audience**: B2B SaaS for an OSS-policy customer base; cannot ship hosted-provider SaaS auth.
 - **Required**: email + password, Google OAuth, passkeys, TOTP, organizations with roles.
-- **Custom UI**: yes — design system has `<Field>`, `<Button>`, `<Card>` primitives we want to use.
+- **Custom UI**: yes, design system has `<Field>`, `<Button>`, `<Card>` primitives we want to use.
 
 ## Provider decision
 
@@ -41,7 +41,7 @@ export const auth = betterAuth({
     enabled: true,
     requireEmailVerification: true,
     sendResetPassword: async ({ user, url }) => {
-      // Wire to email provider — see email-worker-bee once forged.
+      // Wire to email provider. No Bee owns email delivery yet; see the gap list.
       await sendEmail({ to: user.email, subject: 'Reset password', body: url });
     },
   },
@@ -162,7 +162,7 @@ await auth.api.updateMemberRole({
 Two-layer enforcement per `guides/09-rbac.md`:
 
 - Middleware: check `session.user.role` (set via Better Auth) before admin routes.
-- Data layer: every query filters by `organization_id IN (user's orgs)`. RLS at Postgres level — flagged for `db-worker-bee`.
+- Data layer: every query filters by `organization_id IN (user's orgs)`. RLS at Postgres level, flagged for `db-worker-bee`.
 
 Fill `templates/rbac-policy-table.md`.
 
@@ -184,7 +184,7 @@ await authClient.passkey.addPasskey();
 // Browser prompts for biometric / PIN.
 ```
 
-Conditional UI on sign-in field — supported via plugin.
+Conditional UI on sign-in field: supported via plugin.
 
 ## Audit handoff
 

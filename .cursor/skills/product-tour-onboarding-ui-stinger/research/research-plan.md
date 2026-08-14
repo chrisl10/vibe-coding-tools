@@ -5,7 +5,7 @@
 - **Page budget target:** ~30-50 unique pages (normal tier, focused domain)
 - **Source breadth target:** official docs, practitioner blogs, GitHub READMEs, comparison articles, community posts
 
-## Initial queries (from the proposal step via Command Brief)
+## Initial queries (from `big-bang-space` via Command Brief)
 
 1. "Userpilot Appcues Userflow 2026 comparison"
 2. "Driver.js Shepherd.js open source tour 2026"

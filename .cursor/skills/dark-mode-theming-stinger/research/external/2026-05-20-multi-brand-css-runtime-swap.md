@@ -35,7 +35,7 @@ The canonical multi-brand pattern uses `data-brand` (or `data-tenant`) attribute
 }
 ```
 
-The brand attribute is set once at the root and inherits down — no JS re-renders required.
+The brand attribute is set once at the root and inherits down: no JS re-renders required.
 
 ## Setting the brand attribute at runtime
 

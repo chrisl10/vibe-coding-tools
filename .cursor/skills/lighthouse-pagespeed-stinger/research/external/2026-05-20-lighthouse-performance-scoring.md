@@ -63,5 +63,5 @@ the lab-based Lighthouse Performance score.
   No. Lighthouse 12 uses the same weights as Lighthouse 10. TBT remains at 30%, not INP.
 - The PWA category (fifth category visible in older reports) was removed from Lighthouse 12 entirely.
   Stinger-forge should update any templates that reference five categories.
-- Contradiction to watch: some community articles (dev.to) still list TTI in the weights — these
+- Contradiction to watch: some community articles (dev.to) still list TTI in the weights: these
   reference Lighthouse 8 or earlier. Lighthouse 10+ dropped TTI.

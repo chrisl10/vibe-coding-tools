@@ -1,4 +1,4 @@
-# Stripe payments audit — `<repo-or-feature-name>`
+# Stripe payments audit, `<repo-or-feature-name>`
 
 **Auditor:** payments-worker-bee
 **Date:** YYYY-MM-DD
@@ -22,11 +22,11 @@
 
 ## Must-fix findings
 
-### M1. `<Short title — e.g., "Webhook handler does not verify Stripe-Signature">`
+### M1. `<Short title, e.g., "Webhook handler does not verify Stripe-Signature">`
 
 - **File:** `src/api/stripe/webhook.ts:42`
-- **Failure mode:** `<Number from guides/09-common-failure-modes.md, e.g., #4 — raw body broken by JSON middleware>`
-- **Citation:** `guides/02-webhook-verification.md §"The contract"`; [Stripe webhook signatures docs](https://docs.stripe.com/webhooks/signatures); `research/2026-04-25-webhook-signature-verification.md`
+- **Failure mode:** `<Number from guides/10-production-failure-modes.md, e.g., #5, raw body broken before signature verification>`
+- **Citation:** `guides/06-webhooks-and-provisioning.md §"The contract, in order"`; [Stripe webhook docs](https://docs.stripe.com/webhooks); `references/research/raw/stripe--webhooks--receive-and-verify.md`
 - **Impact:** `<money loss / double-charge / missed provisioning / security>`
 - **Fix:**
 
@@ -38,7 +38,7 @@
   const event = stripe.webhooks.constructEvent(rawBody, sig, WHSEC);
   ```
 
-- **Verification:** `<how the team confirms the fix — e.g., stripe trigger checkout.session.completed and observe the request returns 200 with the correct event.id in processed_webhook_events>`
+- **Verification:** `<how the team confirms the fix, e.g., stripe trigger checkout.session.completed and observe the request returns 200 with the correct event.id in processed_webhook_events>`
 
 ### M2. ...
 
@@ -69,16 +69,16 @@
 - **`security-worker-bee`:** `<e.g., webhook secret stored in plaintext .env committed to repo at infra/dev.env:3>`
 - **`db-worker-bee`:** `<e.g., processed_webhook_events table missing or not indexed>`
 - **`react-worker-bee`:** `<e.g., publishable key embedded as raw string in src/components/Pricing.tsx:5 instead of env var>`
-- **`library-worker-bee`:** `<e.g., no PRD covers what happens on failed dunning at day 21 — needs scoping>`
+- **`library-worker-bee`:** `<e.g., no PRD covers what happens on failed dunning at day 21, needs scoping>`
 - **`quality-worker-bee`:** `<post-fix verification needed for items M1, M3, S2>`
 
 ---
 
 ## What's NOT covered in this audit
 
-- `<e.g., Stripe Connect — out of scope; flag a separate engagement>`
-- `<e.g., PCI-DSS attestation paperwork — out of scope; talk to compliance>`
-- `<e.g., tax engine selection beyond Stripe Tax — out of scope v1>`
+- `<e.g., Stripe Connect, out of scope; flag a separate engagement>`
+- `<e.g., PCI-DSS attestation paperwork, out of scope; talk to compliance>`
+- `<e.g., tax engine selection beyond Stripe Tax, out of scope v1>`
 
 ---
 
@@ -96,6 +96,6 @@
 
 ## Appendix: where to look next
 
-- `guides/00-principles.md` — the four hard rules + severity rubric.
-- `guides/09-common-failure-modes.md` — catalog this audit pulled from.
-- `examples/saas-subscription-end-to-end.md` — what a clean implementation looks like.
+- `guides/09-security-and-pci-scope.md`, the non-negotiables + severity rubric.
+- `guides/10-production-failure-modes.md`, catalog this audit pulled from.
+- `examples/saas-subscription-end-to-end.md`, what a clean implementation looks like.

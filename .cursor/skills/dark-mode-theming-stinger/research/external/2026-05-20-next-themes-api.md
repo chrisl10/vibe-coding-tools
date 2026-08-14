@@ -19,9 +19,9 @@ url: https://github.com/pacocoursey/next-themes
 | `disableTransitionOnChange` | `false` | Temporarily suppresses all CSS transitions during theme switch to prevent color flicker. Recommended: `true`. |
 | `storageKey` | `"theme"` | localStorage key for persisted preference. Override for multi-tenant isolation: `"brand:theme"`. |
 | `themes` | `["light", "dark"]` | Array of allowed theme values. Add brand names for multi-brand setups. |
-| `value` | — | Map of theme names to attribute values. Useful when the attribute value differs from the theme name. |
-| `nonce` | — | CSP nonce string to inject into the blocking inline script. **Required for strict-CSP environments.** |
-| `forcedTheme` | — | Locks the theme for a specific page (e.g., auth pages always light). |
+| `value` | none | Map of theme names to attribute values. Useful when the attribute value differs from the theme name. |
+| `nonce` | none | CSP nonce string to inject into the blocking inline script. **Required for strict-CSP environments.** |
+| `forcedTheme` | none | Locks the theme for a specific page (e.g., auth pages always light). |
 
 ## FOWT-prevention inline script
 
@@ -56,6 +56,6 @@ export default function RootLayout({ children }) {
 
 ## Key patterns from issues / community (2025-2026)
 
-- **App Router streaming** — `next-themes` works with streaming but the blocking script fires before stream chunks arrive. No known issues as of v2.x.
-- **CSP nonce** — pass the `nonce` prop to have the library inject it into the `<script>` tag. Retrieve the nonce from `headers()` in a Server Component wrapper.
-- **`disableTransitionOnChange`** — the library temporarily sets `* { transition: none !important }` during the switch. Some animations may need `prefers-reduced-motion` override; the library does not automatically check this media query.
+- **App Router streaming**: `next-themes` works with streaming but the blocking script fires before stream chunks arrive. No known issues as of v2.x.
+- **CSP nonce**: pass the `nonce` prop to have the library inject it into the `<script>` tag. Retrieve the nonce from `headers()` in a Server Component wrapper.
+- **`disableTransitionOnChange`**: the library temporarily sets `* { transition: none !important }` during the switch. Some animations may need `prefers-reduced-motion` override; the library does not automatically check this media query.

@@ -39,14 +39,14 @@ The stinger must encode playbooks for these six layers, each as its own guide:
 
 ## Stinger Guide Structure (from Brief)
 
-- `guides/00-principles.md` — scope boundary, unified AST model (mdast → hast → html/jsx), four-layer processing model
-- `guides/01-compiler-selection.md` — decision matrix per target runtime
-- `guides/02-remark-rehype-pipeline.md` — canonical plugin ordering, .use() chain, GFM, frontmatter, directives
-- `guides/03-syntax-highlighting.md` — Shiki v3/v4 createHighlighter, expressive-code, starry-night, rehype-pretty-code
-- `guides/04-plugin-authoring.md` — unified plugin signature, unist-util-visit, TypeScript types, testing
-- `guides/05-math-diagrams.md` — remark-math + rehype-katex, Mermaid SSR workaround, D2, callout/admonition
-- `guides/06-sanitization.md` — rehype-sanitize schema, DOMPurify, iframe allowlisting, allowDangerousHtml
-- `guides/07-testing.md` — vitest fixtures, snapshot testing, XSS fuzzing
+- `guides/00-principles.md`: scope boundary, unified AST model (mdast to hast to html/jsx), four-layer processing model
+- `guides/01-compiler-selection.md`: decision matrix per target runtime
+- `guides/02-remark-rehype-pipeline.md`: canonical plugin ordering, .use() chain, GFM, frontmatter, directives
+- `guides/03-syntax-highlighting.md`: Shiki v3/v4 createHighlighter, expressive-code, starry-night, rehype-pretty-code
+- `guides/04-plugin-authoring.md`: unified plugin signature, unist-util-visit, TypeScript types, testing
+- `guides/05-math-diagrams.md`: remark-math + rehype-katex, Mermaid SSR workaround, D2, callout/admonition
+- `guides/06-sanitization.md`: rehype-sanitize schema, DOMPurify, iframe allowlisting, allowDangerousHtml
+- `guides/07-testing.md`: vitest fixtures, snapshot testing, XSS fuzzing
 
 ## Scope Boundary Overlaps
 

@@ -1,5 +1,7 @@
 # 01 - Build and Bundle
 
+> **npm package publishing case (legacy, secondary).** This guide, and guides 02-08 alongside it, apply when the artifact IS a published npm package: the original Hivemind scope this skill was forged for, still fully supported. If the task is a SvelteKit app deployed continuously to Vercel (this repo's primary case today), start at `guides/00-principles.md` and route to guides 09-16 instead.
+
 How Hivemind turns TypeScript source into shippable artifacts.
 
 ## The two-step build

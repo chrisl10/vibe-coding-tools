@@ -1,14 +1,14 @@
-# MCP Servers and IDE Plugins — The 2026 Vibe Coder Toolbox
+# MCP Servers and IDE Plugins: The 2026 Vibe Coder Toolbox
 
 ## What MCP servers are
 
-Model Context Protocol (MCP) servers are local services that give AI agents structured access to external tools and data sources — file systems, databases, APIs, web browsing, code execution. In Cursor, Claude Desktop, and compatible agents, MCP servers appear as tool-use capabilities the AI can invoke during a session.
+Model Context Protocol (MCP) servers are local services that give AI agents structured access to external tools and data sources: file systems, databases, APIs, web browsing, code execution. In Cursor, Claude Desktop, and compatible agents, MCP servers appear as tool-use capabilities the AI can invoke during a session.
 
-A good MCP stack turns your AI agent from a code suggester into a genuine agentic developer: it can read your database, push to GitHub, check PostHog events, scrape documentation, and search the web — all without copy-paste.
+A good MCP stack turns your AI agent from a code suggester into a genuine agentic developer: it can read your database, push to GitHub, check PostHog events, scrape documentation, and search the web, all without copy-paste.
 
 ## Must-have MCP servers (2026)
 
-### Tier 1 — Near-universal (install for every project)
+### Tier 1: Near-universal (install for every project)
 
 | Server | What it gives you | Install |
 |---|---|---|
@@ -17,7 +17,7 @@ A good MCP stack turns your AI agent from a code suggester into a genuine agenti
 | **Supabase** | Query tables, run SQL, list schema | `npx @supabase/mcp-server-supabase` |
 | **Context7** | Fetch official library documentation | `npx @upstash/context7-mcp` |
 
-### Tier 2 — Add based on your stack
+### Tier 2: Add based on your stack
 
 | Server | What it gives you | When to install |
 |---|---|---|
@@ -34,7 +34,7 @@ A good MCP stack turns your AI agent from a code suggester into a genuine agenti
 | **Slack** | Read channels; post messages; search history | Team projects with Slack |
 | **Resend** | Send emails; check delivery; manage templates | Projects using Resend for email |
 
-### Tier 3 — Specialist
+### Tier 3: Specialist
 
 | Server | What it gives you | When to install |
 |---|---|---|
@@ -114,9 +114,9 @@ Override or extend the global config per project:
 
 ### Cursor-native (built-in, no install needed)
 
-- **Cursor Composer / Agent mode** — multi-file editing with tool use; core of the vibe coding workflow.
-- **Cursor Tab** — inline completion; best-in-class for code suggestion.
-- **Cursor Chat** — codebase-aware Q&A; `@file` references.
+- **Cursor Composer / Agent mode**: multi-file editing with tool use; core of the vibe coding workflow.
+- **Cursor Tab**: inline completion; best-in-class for code suggestion.
+- **Cursor Chat**: codebase-aware Q&A; `@file` references.
 
 ### Recommended extensions (VS Code / Cursor extension marketplace)
 

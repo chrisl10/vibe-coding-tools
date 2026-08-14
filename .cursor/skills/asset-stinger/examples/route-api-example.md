@@ -1,6 +1,6 @@
-# Example — `Route` row (type=api)
+# Example: `Route` row (type=api)
 
-A fully-populated `api` route. This is a partner-facing (external-contract) webhook-receiver route — demonstrates every field including the longer sunset window rule.
+A fully-populated `api` route. This is a partner-facing (external-contract) webhook-receiver route: demonstrates every field including the longer sunset window rule.
 
 ## Code
 
@@ -64,6 +64,6 @@ Because `externalContract: true`, if this route is ever deprecated, the sunset w
 - [x] File exists at `api/src/routes/webhooks/stripe.ts`
 - [x] `type: webhook_inbound` matches code shape
 - [x] `(path, method, version)` unique
-- [x] `auth: service` — Stripe authenticates via signature
+- [x] `auth: service`: Stripe authenticates via signature
 - [x] `externalContract: true` flagged
 - [x] `featureKey` set

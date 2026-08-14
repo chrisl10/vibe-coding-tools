@@ -1,11 +1,11 @@
-# 11 — Server Components
+# 11: Server Components
 
 Source: `research/2026-04-24-server-components-boundary.md`.
 
 ## The mental model
 
 - **Every file in an RSC-capable framework is a Server Component by default.**
-- `'use client'` marks a file as the **entry point to the client bundle**. Everything it imports also enters the client bundle (transitively, until it hits another `'use client'` — RSC can't be an ancestor of a client import).
+- `'use client'` marks a file as the **entry point to the client bundle**. Everything it imports also enters the client bundle (transitively, until it hits another `'use client'`; RSC can't be an ancestor of a client import).
 - Client Components can have Server Components as **children** (passed as JSX), but cannot **import** them.
 
 ## The single biggest rule: push `'use client'` down
@@ -53,7 +53,7 @@ export function PostsListClient({ posts }: { posts: Post[] }) {
 
 Across the RSC → Client boundary, only serializable values pass:
 - primitives, `null`, plain objects/arrays of these
-- `Date` (serialized as string, you lose the type — convert explicitly)
+- `Date` (serialized as string, you lose the type; convert explicitly)
 - Server Actions (functions marked `'use server'`)
 - JSX (as children)
 - Promises (client reads via `use(promise)`)
@@ -103,7 +103,7 @@ export const API_SECRET = process.env.API_SECRET;
 
 This is always a must-fix finding when caught.
 
-## Server Actions — security baseline
+## Server Actions: security baseline
 
 Server Actions are **public HTTP endpoints**. Treat them exactly like a REST API route. Next.js 15 adds automatic Origin / Referer checks for form-initiated invocations, but does nothing else automatically.
 
@@ -154,7 +154,7 @@ await fetch(url, { next: { revalidate: 60 } });      // ISR-like
 await fetch(url, { next: { tags: ['posts'] } });     // invalidatable
 ```
 
-See Next.js caching docs — rules change enough that version-pinning matters.
+See Next.js caching docs: rules change enough that version-pinning matters.
 
 ## Pages Router → App Router migration
 
@@ -162,11 +162,11 @@ Out of scope for a dedicated guide. Canonical source: https://nextjs.org/docs/ap
 
 ## Common findings
 
-> **[Must-fix]** `app/dashboard/page.tsx:1` — `'use client'` at the top of the page forces every descendant into the client bundle, including 3 RSC-eligible charts. Push `'use client'` to leaf interactive components. See `guides/11-server-components.md §push-use-client-down`.
+> **[Must-fix]** `app/dashboard/page.tsx:1`: `'use client'` at the top of the page forces every descendant into the client bundle, including 3 RSC-eligible charts. Push `'use client'` to leaf interactive components. See `guides/11-server-components.md §push-use-client-down`.
 
-> **[Must-fix]** `app/api/upload/actions.ts:5` — Server Action reads `formData` without Zod parse and without auth check. Add both. See `guides/11-server-components.md §server-actions-security-baseline`.
+> **[Must-fix]** `app/api/upload/actions.ts:5`: Server Action reads `formData` without Zod parse and without auth check. Add both. See `guides/11-server-components.md §server-actions-security-baseline`.
 
-> **[Must-fix]** `src/lib/stripe.ts:1` — imports `process.env.STRIPE_SECRET`; imported by a `'use client'` component. Add `import 'server-only'` and restructure.
+> **[Must-fix]** `src/lib/stripe.ts:1`: imports `process.env.STRIPE_SECRET`; imported by a `'use client'` component. Add `import 'server-only'` and restructure.
 
 ## Example in action
 

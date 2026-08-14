@@ -8,7 +8,7 @@ One row per requested OAuth scope. Submitted with verification when sensitive / 
 
 ## Per-scope table
 
-| Scope | Tier | Why we request it (1–2 sentences) | What we do with the data | Where in our code | Minimum-data alternative considered |
+| Scope | Tier | Why we request it (1-2 sentences) | What we do with the data | Where in our code | Minimum-data alternative considered |
 |---|---|---|---|---|---|
 | `openid` | Non-sensitive | OpenID Connect sign-in | Identity assertion only; not stored | `auth/google/callback` | n/a |
 | `email` | Non-sensitive | Display email; key user identity | Stored in `users.email` | `users` table | n/a |
@@ -38,8 +38,8 @@ For each sensitive or restricted scope:
 
 For the verification demo video, every requested scope must be visibly used. Plan one shot per scope:
 
-- [ ] Scope `____` — show the consent prompt listing this scope
-- [ ] Scope `____` — show the in-app feature reading the data, with data on screen
-- [ ] Scope `____` — show the URL bar (full domain visible)
+- [ ] Scope `____`: show the consent prompt listing this scope
+- [ ] Scope `____`: show the in-app feature reading the data, with data on screen
+- [ ] Scope `____`: show the URL bar (full domain visible)
 
 Cite `guides/07-google-oauth-verification.md`.

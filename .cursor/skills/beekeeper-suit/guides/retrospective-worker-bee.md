@@ -1,70 +1,39 @@
-# Retrospective Worker Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `retrospective-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/retrospective-worker-bee.md`](../../agents/retrospective-worker-bee.md)
-**Stinger:** [`.cursor/skills/retrospective-stinger/`](../../skills/retrospective-stinger/)
-**Command Brief:** not available (synthesized from agent + stinger files)
-**Trigger policy:** on-demand
-
----
+# retrospective-worker-bee
 
 ## Domain
+This Bee is the Hive's Agile Coach for the retrospective surface. It owns the full retro lifecycle: format selection across nine canonical formats (Start/Stop/Continue, 4Ls, Sailboat, Mad/Sad/Glad, DAKI, Starfish, and more), a psychological safety pre-check before any format work, time-boxed facilitation planning, action-item discipline (owner, deadline, observable outcome, mandatory backlog placement), and async retro design for distributed teams. Its philosophy is that retros are behavior-change instruments, not complaint sessions, and the real output is what the team does differently next sprint.
 
-`retrospective-worker-bee` owns the full sprint retrospective lifecycle for engineering teams. It selects the right retro format from nine canonical options (Start/Stop/Continue, 4Ls, Sailboat, Mad/Sad/Glad, DAKI, Learning Matrix, 5 Whys, Hot Air Balloon, Starfish) based on team maturity, period valence, time budget, and remote/sync constraints. It runs a psychological safety pre-check using the Edmondson 7-item scale before any facilitation work, produces time-boxed facilitation plans with icebreakers and synthesis steps, and enforces action-item discipline (owner + deadline + observable outcome). Its core philosophy is that retros are behavior-change instruments, not complaint sessions — the output is what the team does differently next sprint, measured by action-item follow-through rate.
+## Paired Stinger
+[retrospective-stinger](../../retrospective-stinger) - the format matrix, psychological safety framework, and the action-item three-question filter.
 
 ## Trigger phrases
-
-Route to `retrospective-worker-bee` when the user says any of:
-
-- "run a retro"
-- "plan our retrospective"
-- "which retro format should we use"
-- "our retros produce no change"
-- "help with action items from the retro"
-- "how do we do an async retro"
+- "run a retro for our sprint"
+- "help plan our retrospective"
+- "which retro format should we use this cycle"
+- "our retros produce no actual change"
+- "help with action items coming out of the retro"
+- "how do we run an async retro across time zones"
 - "our team needs better retrospectives"
-- "review last sprint's action items"
-
-Or when the request implicitly involves sprint retrospective planning, facilitation, follow-through review, or async retro design.
 
 ## Do NOT route when
-
-- The user asks for an incident postmortem — route to `postmortem-worker-bee` (different cadence, participants, and root-cause methodology).
-- The request is about sprint planning, backlog grooming, or OKR-setting — those are separate ceremonies with conflicting objectives.
-- The request is about daily standups or standup facilitation.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let the broader one act as backup.
+- The task is an incident postmortem: different cadence and audience than a sprint retro, route to a postmortem-specific process if one exists, or flag the methodology difference.
+- The task is sprint planning or backlog grooming: these are separate ceremonies with conflicting objectives from a retro and should not be combined in the same session.
+- The task is OKR-setting: no Bee owns this domain in the Hive currently.
+- A significant architectural or process decision surfaces from the retro: hand off to `library-worker-bee` for formal documentation rather than documenting it as a retro artifact.
 
 ## Inputs the Bee needs
+- Team size, sprint length, remote/sync posture, and the period's valence (big win, incident recovery, conflict, onboarding)
+- Previous action items and their Done/In Progress/Dropped status, if this isn't the team's first retro
+- A psychological safety read, gathered via the Edmondson 7-item scale check before any format is chosen
+- Time budget for the session
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- A complete, time-boxed facilitation plan (icebreaker, prompts, timers, voting, synthesis, closing)
+- A scored review of previous action-item follow-through, surfaced as the retro's primary subject if below 50%
+- Captured action items passing the three-question filter (owner, deadline, done-looks-like)
+- A pointer to `library-worker-bee` for any decision worth formal documentation
 
-- Team size and whether the team is co-located or distributed (remote/async)
-- Sprint length and period valence (big win, incident recovery, conflict, onboarding)
-- Previous retro's action items if available (optional — Bee will note the absence and skip the follow-through review step)
-- Psychological safety context if known (optional — Bee will surface the safety pre-check regardless)
-
-## Outputs the Bee produces
-
-- A complete, time-boxed facilitation plan for the retro session (format selection with rationale, icebreaker, agenda steps, voting mechanism, synthesis, closing ritual) — referenced in `library/retros/[YYYY-MM-DD]-retro-[sprint].md` via `library-worker-bee`
-- A structured action-item list with owner, due date, and done-looks-like for every commitment captured during the session
-
-## Multi-Bee sequences this Bee participates in
-
-- Plan execution loop — always closes with `security-worker-bee` then `quality-worker-bee`
-- When a retro surfaces a significant process change or architectural decision, hands off to `library-worker-bee` for formal documentation
-
-## Critical directives the orchestrator should respect
-
-- Never skip the psychological safety pre-check — a retro run without minimum safety produces theater; surfacing the gap early is more valuable than a polished session.
-- Always enforce the three-question filter on every action item before it leaves the board: Who owns this? When does it close? What does done look like?
-- Open every retro with a follow-through review of the previous retro's action items — teams that skip this signal that action items are optional.
-- Surface the action-item follow-through rate before proceeding to format selection — below 50% means the retro's subject is "why aren't we following through?", not whatever format was planned.
-- Frame async as a first-class option, not a fallback — async retros see 42% higher participation from introverted team members.
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
+## Commonly sequenced with
+- `library-worker-bee` after: when the retro surfaces a process change or ADR-worthy decision
+- Any implementing Bee before: retro action items often become follow-up work for the Bee that owns the affected domain
+- Itself, next cycle: the opening review of this retro's action items feeds directly into the next one

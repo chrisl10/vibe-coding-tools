@@ -18,7 +18,7 @@ Every API request consists of:
 ## Key rules
 
 - Single `lib/api-client.ts` instance (fetch wrapper or axios).
-- Declare requests in `features/<feature>/api/<verb>-<resource>.ts` — colocated to the feature.
+- Declare requests in `features/<feature>/api/<verb>-<resource>.ts`: colocated to the feature.
 - Parse responses with Zod to enforce the type at the boundary.
 - Components consume hooks, not fetchers directly.
 

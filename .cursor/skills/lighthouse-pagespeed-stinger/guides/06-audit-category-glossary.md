@@ -10,7 +10,7 @@ Quick reference for the four Lighthouse 12 audit categories and the most importa
 
 **Score:** weighted average of five metrics (see below). 0-49 red, 50-89 orange, 90-100 green.
 
-### Metric weights (Lighthouse 10 / 12 — unchanged)
+### Metric weights (Lighthouse 10 / 12, unchanged)
 
 | Metric | Weight | What it measures |
 |--------|--------|-----------------|
@@ -26,7 +26,7 @@ Quick reference for the four Lighthouse 12 audit categories and the most importa
 
 TBT is the lab proxy for INP, but the correlation is imperfect. TBT only measures Long Tasks during load. INP measures the full interaction lifecycle (input delay + processing time + presentation delay) at any point in the session, including after load.
 
-**Good TBT does NOT guarantee good INP.** Always check field INP separately via PSI or CrUX API. — `research/external/2026-05-20-lab-vs-field-data-differences.md`
+**Good TBT does NOT guarantee good INP.** Always check field INP separately via PSI or CrUX API. (`research/external/2026-05-20-lab-vs-field-data-differences.md`)
 
 ### Desktop vs mobile thresholds differ
 
@@ -39,14 +39,14 @@ Desktop Lighthouse (no throttling) and mobile Lighthouse (4x CPU, 1.6 Mbps) use 
 **Score:** proportion of applicable audits passed, weighted by estimated user impact.
 
 Key audits:
-- `color-contrast` — text contrast ratio meets WCAG AA (4.5:1 for normal text)
-- `image-alt` — all `<img>` elements have alt text
-- `button-name` — all buttons have accessible names
-- `aria-*` audits — proper ARIA roles, labels, and attributes
-- `document-title` — `<title>` element is present
-- `html-has-lang` — `<html>` element has `lang` attribute
+- `color-contrast`: text contrast ratio meets WCAG AA (4.5:1 for normal text)
+- `image-alt`: all `<img>` elements have alt text
+- `button-name`: all buttons have accessible names
+- `aria-*` audits: proper ARIA roles, labels, and attributes
+- `document-title`: `<title>` element is present
+- `html-has-lang`: `<html>` element has `lang` attribute
 
-**Aggregation method for CI:** use `"pessimistic"` — accessibility failures are binary and you want the strictest gate. — `research/external/2026-05-20-lhci-budget-assertions.md`
+**Aggregation method for CI:** use `"pessimistic"`: accessibility failures are binary and you want the strictest gate. (`research/external/2026-05-20-lhci-budget-assertions.md`)
 
 ---
 
@@ -55,29 +55,29 @@ Key audits:
 **Score:** binary pass/fail audits covering security, modern web APIs, and deprecated patterns.
 
 Key audits:
-- `uses-https` — all page resources served over HTTPS
-- `no-vulnerable-libraries` — no JavaScript libraries with known CVEs
-- `csp-xss` — Content Security Policy in place
-- `geolocation-on-start` — geolocation not requested on page load without gesture
-- `inspector-issues` — no Chrome DevTools Issues (deprecations, violations)
-- `doctype` — document has a proper HTML5 doctype
+- `uses-https`: all page resources served over HTTPS
+- `no-vulnerable-libraries`: no JavaScript libraries with known CVEs
+- `csp-xss`: Content Security Policy in place
+- `geolocation-on-start`: geolocation not requested on page load without gesture
+- `inspector-issues`: no Chrome DevTools Issues (deprecations, violations)
+- `doctype`: document has a proper HTML5 doctype
 
 ---
 
 ## SEO category
 
-**Score:** technical SEO signals — NOT content quality or keyword relevance. Route content/strategy findings to `seo-aeo-worker-bee`.
+**Score:** technical SEO signals: NOT content quality or keyword relevance. Route content/strategy findings to `seo-aeo-worker-bee`.
 
 Key audits:
-- `is-crawlable` — page is not blocked by robots meta or X-Robots-Tag
-- `meta-description` — meta description is present
-- `document-title` — `<title>` element is present
-- `canonical` — `<link rel="canonical">` points to valid URL
-- `font-size` — legible font sizes for mobile
-- `tap-targets` — touch targets are properly sized and spaced
-- `structured-data` — structured data is valid (informational only, no score weight)
+- `is-crawlable`: page is not blocked by robots meta or X-Robots-Tag
+- `meta-description`: meta description is present
+- `document-title`: `<title>` element is present
+- `canonical`: `<link rel="canonical">` points to valid URL
+- `font-size`: legible font sizes for mobile
+- `tap-targets`: touch targets are properly sized and spaced
+- `structured-data`: structured data is valid (informational only, no score weight)
 
-**Aggregation method for CI:** use `"pessimistic"` — SEO technical audits are binary. — `research/external/2026-05-20-lhci-budget-assertions.md`
+**Aggregation method for CI:** use `"pessimistic"`: SEO technical audits are binary. (`research/external/2026-05-20-lhci-budget-assertions.md`)
 
 ---
 

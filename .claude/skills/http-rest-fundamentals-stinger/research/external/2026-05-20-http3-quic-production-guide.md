@@ -20,12 +20,12 @@ Production-focused HTTP/3 rollout guide as of May 2026. Establishes the four pre
 - "Alt-Svc is still the most common browser upgrade path into h3." 
 - nginx HTTP/3 knobs: `http3`, `http3_max_concurrent_streams`, `http3_stream_buffer_size`, `quic_retry`, `quic_host_key`, `quic_gso`, `quic_bpf`. The `0-RTT` with OpenSSL requires nginx 1.29.1+ (earlier OpenSSL builds cannot enable it regardless of `ssl_early_data`).
 - Deployment checklist: (1) Open/monitor UDP/443 not just TCP/443; (2) serve valid TLS certs and modern TLS stack; (3) advertise Alt-Svc where client population depends on it; (4) keep explicit fallback path to HTTP/2; (5) monitor QUIC handshake failure rate.
-- "Tooling mismatch: local curl may lack HTTP/3 even when the server is correct." — container a QUIC-capable client for CI verification.
+- "Tooling mismatch: local curl may lack HTTP/3 even when the server is correct.": container a QUIC-capable client for CI verification.
 - Common failure modes: UDP path blocked (QUIC never establishes, TCP fallback masks it), bad Alt-Svc (clients never discover h3), self-signed or mismatched certs (browsers refuse QUIC silently), tooling mismatch.
 
 ## Annotations for stinger-forge
 - `guides/06-http2-http3.md`: use this as the primary practical deployment reference alongside RFC 9114. The "four prerequisites" framing (TLS 1.3, UDP/443, Alt-Svc, implementation config) is stinger-forge-ready as a structured checklist.
 - `templates/`: HTTP/3 readiness assessment template should incorporate the four prerequisites plus the curl verification workflow.
 - `examples/http3-readiness-assessment.md`: model the example assessment on this guide's checklist pattern.
-- Nginx version note (1.29.1+ for 0-RTT with OpenSSL) is a specific, dateable fact — good for the audit guide.
-- Contradictions: none — consistent with RFC 9114 and w3techs stats.
+- Nginx version note (1.29.1+ for 0-RTT with OpenSSL) is a specific, dateable fact, good for the audit guide.
+- Contradictions: none, consistent with RFC 9114 and w3techs stats.

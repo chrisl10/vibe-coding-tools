@@ -1,6 +1,6 @@
 ---
-name: typography-font-stinger
-description: Typography and font-loading specialist for web products — variable fonts, Google Fonts vs Fontsource vs self-host, the FOIT/FOUT/FOFT loading story, font-display semantics, fluid type scales via clamp(), vertical rhythm, and the type-token architecture. Use when the user says "set up fonts", "audit our typography", "fix FOIT/FOUT", "build a type scale", "migrate to next/font", "self-host fonts", "fluid type", "variable fonts", "font performance", or when typography-font-worker-bee is invoked. Do NOT use for typeface selection or brand identity decisions (design-system-worker-bee), per-component application of type tokens (ux-ui-worker-bee), build pipeline font optimization (devops-worker-bee), or persisted user font preferences (db-worker-bee).
+name: "typography-font-stinger"
+description: "Typography and font-loading specialist for web products: variable fonts, Google Fonts vs Fontsource vs self-host, the FOIT/FOUT/FOFT loading story, font-display semantics, fluid type scales via clamp(), vertical rhythm, and the type-token architecture. Use when the user says \\\\\\\\\\\\\\\"set up fonts\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"audit our typography\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"fix FOIT/FOUT\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"build a type scale\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"migrate to next/font\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"self-host fonts\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"fluid type\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"variable fonts\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"font performance\\\\\\\\\\\\\\\", or when typography-font-worker-bee is invoked. Do NOT use for typeface selection or brand identity decisions (design-system-worker-bee), per-component application of type tokens (ux-ui-svelte-worker-bee), build pipeline font optimization (devops-worker-bee), or persisted user font preferences (db-worker-bee)."
 license: MIT
 ---
 
@@ -50,7 +50,7 @@ From the Command Brief, repeated here as guardrails for every implementation:
 |----------|------------------------|
 | Font loading strategy (next/font, Fontsource, self-host) | Typeface aesthetic selection - `design-system-worker-bee` |
 | Variable font axes, subsetting, `@font-face` config | Build pipeline subsetting CI steps - `devops-worker-bee` |
-| `font-display` semantics and FOIT/FOUT/FOFT remediation | Per-component type token application - `ux-ui-worker-bee` |
+| `font-display` semantics and FOIT/FOUT/FOFT remediation | Per-component type token application - `ux-ui-svelte-worker-bee` |
 | Fluid `clamp()` type scale arithmetic | LCP font impact analysis in broader CWV audit - `seo-aeo-worker-bee` |
 | Vertical rhythm and `line-height` tokens | Persisted user font preference schema - `db-worker-bee` |
 | Font-token CSS layer (`--font-*` custom properties) | Brand identity and palette decisions - `design-system-worker-bee` |

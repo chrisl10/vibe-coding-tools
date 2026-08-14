@@ -16,15 +16,15 @@ stinger: kanban-flow-stinger
 
 # WIP Limits for Engineering Teams: A Practical Guide (2026)
 
-**Source:** Uplevel Team Blog — "WIP Limits for Engineering Teams: A Practical Guide"
+**Source:** Uplevel Team Blog: "WIP Limits for Engineering Teams: A Practical Guide"
 **URL:** https://uplevelteam.com/blog/wip-limits
 **Published:** 2026-04-22
 
 ## Summary
 
-This is one of the most practically-grounded WIP limit guides available in 2026. It moves beyond theory to cover the common failure modes that kill WIP limit programs before they produce results. The article is written for engineering managers and team leads who need to implement limits that reflect actual team capacity — not just a number on a board.
+This is one of the most practically-grounded WIP limit guides available in 2026. It moves beyond theory to cover the common failure modes that kill WIP limit programs before they produce results. The article is written for engineering managers and team leads who need to implement limits that reflect actual team capacity, not just a number on a board.
 
-**Setting the right limit:** The most common formula: set each in-progress stage to team size plus one. For a 5-person team, limit is 6. The +1 buffer accommodates a blocked item without leaving someone idle — when one ticket is stuck waiting on review or a dependency, there is room to pull one more without blowing up the system. Exception: for pair/mob programming on complex work (platform migrations, architecture refactors), set WIP to the number of pairs, not individuals.
+**Setting the right limit:** The most common formula: set each in-progress stage to team size plus one. For a 5-person team, limit is 6. The +1 buffer accommodates a blocked item without leaving someone idle: when one ticket is stuck waiting on review or a dependency, there is room to pull one more without blowing up the system. Exception: for pair/mob programming on complex work (platform migrations, architecture refactors), set WIP to the number of pairs, not individuals.
 
 **The hidden WIP problem:** The article's most actionable insight is that production support rotations, incident response, architecture reviews, cross-team meetings, and migration spikes all consume capacity but rarely appear on the Kanban board. A team of 8 engineers where 2 are always on call is not a team of 8 for WIP planning. Either get this work on the board explicitly, or build it into the baseline limit calculation by calculating available capacity before setting limits.
 

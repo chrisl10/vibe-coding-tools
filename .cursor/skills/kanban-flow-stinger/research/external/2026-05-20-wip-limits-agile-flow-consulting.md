@@ -16,15 +16,15 @@ stinger: kanban-flow-stinger
 
 # Kanban WIP Limits: Practitioner Guide 2026
 
-**Source:** Agile Flow Consulting — "What Is Kanban? A Guide for Software Teams (2026)"
+**Source:** Agile Flow Consulting: "What Is Kanban? A Guide for Software Teams (2026)"
 **URL:** https://www.agileflowconsulting.com/blog/what-is-kanban-complete-guide
 **Published:** 2026-01-10
 
 ## Summary
 
-This practitioner guide for software teams covers the fundamentals of Kanban with strong emphasis on WIP limits as the single most impactful practice a team can implement. The author frames WIP limits as a mathematical forcing function grounded in Little's Law: if a team completes 5 items per week with 20 items in progress, average cycle time is 4 weeks; reduce WIP to 10 and cycle time drops to 2 weeks — no extra effort required.
+This practitioner guide for software teams covers the fundamentals of Kanban with strong emphasis on WIP limits as the single most impactful practice a team can implement. The author frames WIP limits as a mathematical forcing function grounded in Little's Law: if a team completes 5 items per week with 20 items in progress, average cycle time is 4 weeks; reduce WIP to 10 and cycle time drops to 2 weeks, no extra effort required.
 
-The guide provides a concrete case study: a 12-person engineering and analytics team at a major energy provider was running an average of 14 items in progress. After introducing throughput-derived WIP limits (not arbitrary caps), WIP dropped to 5 and the 85th-percentile cycle time fell from 62 days to 36 days — a 42% reduction. The team did not work harder; they simply stopped starting new work before finishing existing work.
+The guide provides a concrete case study: a 12-person engineering and analytics team at a major energy provider was running an average of 14 items in progress. After introducing throughput-derived WIP limits (not arbitrary caps), WIP dropped to 5 and the 85th-percentile cycle time fell from 62 days to 36 days, a 42% reduction. The team did not work harder; they simply stopped starting new work before finishing existing work.
 
 Key WIP-setting heuristic from the article: count current in-progress items, set the initial WIP limit to that count minus one. This creates the minimum friction needed to start changing behavior without provoking wholesale rejection.
 

@@ -1,4 +1,4 @@
-# Lucide React — Research Note
+# Lucide React: Research Note
 
 **Source type:** official-docs + GitHub releases  
 **Authority:** high  

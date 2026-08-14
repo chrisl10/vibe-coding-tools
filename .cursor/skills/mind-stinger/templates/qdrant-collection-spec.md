@@ -6,7 +6,7 @@ Use this shape when proposing a new Qdrant collection or when reviewing an exist
 
 ## Identification
 
-- **Collection name pattern:** `{type}-{tenantId}` (always — never global, never per-user)
+- **Collection name pattern:** `{type}-{tenantId}` (always, never global, never per-user)
 - **Where defined:** `COLLECTION_NAMES` in `lib/qdrant-client.ts`
 - **Created by:** `ensureAllCollectionsForTenant(tenantId)` at server startup + new-tenant creation
 
@@ -76,8 +76,8 @@ Use this shape when proposing a new Qdrant collection or when reviewing an exist
 - [ ] Add payload indexes via `ensureCollection()` (or extend `COMMON_INDEXES`).
 - [ ] Add to `ensureAllCollectionsForTenant()` parallel call.
 - [ ] Add to `deleteUserVectors()` GDPR procedure.
-- [ ] Document in `library/knowledge-base/ai/rag-vector-strategy.md §2` collection inventory.
-- [ ] Add `content_type` value(s) for this collection to `library/knowledge-base/ai/vector-payload-schema.md §2`.
+- [ ] Document in `library/knowledge/private/ai/rag-vector-strategy.md §2` collection inventory.
+- [ ] Add `content_type` value(s) for this collection to `library/knowledge/private/ai/vector-payload-schema.md §2`.
 
 ---
 
@@ -107,7 +107,7 @@ for (const idx of COMMON_INDEXES) {
 
 ---
 
-## Filter shape — every query MUST include `tenant_id`
+## Filter shape: every query MUST include `tenant_id`
 
 ```typescript
 // User-scoped query (most common):

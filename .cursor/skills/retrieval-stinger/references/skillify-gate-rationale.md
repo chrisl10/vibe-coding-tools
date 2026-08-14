@@ -1,6 +1,6 @@
 # Skillify Gate Rationale - why KEEP / MERGE / SKIP
 
-Reference for the codify quality bar. Mechanism is in `guides/07-skillify-codify.md`; this note is the why.
+Reference for the codify quality bar. Mechanism is in `guides/skillify-01-codify.md`; this note is the why.
 
 ## The gate
 

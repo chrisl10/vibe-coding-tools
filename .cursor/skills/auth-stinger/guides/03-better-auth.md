@@ -1,4 +1,4 @@
-# 03 — Better Auth
+# 03: Better Auth
 
 OSS, framework-agnostic, MIT-licensed. The 2026 momentum pick when you want full control without paying for a hosted provider.
 
@@ -7,16 +7,16 @@ Source: `research/2026-04-25-better-auth-momentum.md`, https://www.better-auth.c
 ## When Better Auth wins
 
 - You want to **own the data** end-to-end (users, sessions, accounts, MFA factors all in your DB).
-- You want **headless primitives** — your design system renders the form.
+- You want **headless primitives**: your design system renders the form.
 - You're framework-agnostic or working in something other than Next.js (SvelteKit, Nuxt, Remix, Hono, plain Express).
 - You want a path that scales without per-MAU pricing.
 - You want a single config object with everything wired (email / password, social, magic link, passkeys, MFA, organizations, RBAC).
 
 ## When Better Auth loses
 
-- You want zero auth UI work — Clerk's prebuilt UI ships in an afternoon; Better Auth makes you build the UI.
-- You want a SaaS support contract for auth — Better Auth is OSS; community-supported.
-- Enterprise SSO (SAML at multiple IdPs) — possible via plugin, but WorkOS is purpose-built.
+- You want zero auth UI work: Clerk's prebuilt UI ships in an afternoon; Better Auth makes you build the UI.
+- You want a SaaS support contract for auth: Better Auth is OSS; community-supported.
+- Enterprise SSO (SAML at multiple IdPs): possible via plugin, but WorkOS is purpose-built.
 
 ## Integration shape
 
@@ -70,18 +70,18 @@ npx @better-auth/cli@latest generate
 
 ## Critical config
 
-- **`trustedOrigins`** — list of origins allowed to use the auth API. Without this, CSRF on cross-origin POSTs is wide open. Cite https://www.better-auth.com/docs/concepts/security.
-- **Email verification** — `requireEmailVerification: true` for credentials flow. Otherwise account-takeover via typo'd email is trivial.
-- **Cookie config** — Better Auth ships secure defaults; verify with `scripts/cookie-attribute-checker.ts`.
-- **Secret key** — `BETTER_AUTH_SECRET` (a random 32+ byte string). Used for signing. Rotate via key rolling, not in-place replacement.
+- **`trustedOrigins`**: list of origins allowed to use the auth API. Without this, CSRF on cross-origin POSTs is wide open. Cite https://www.better-auth.com/docs/concepts/security.
+- **Email verification**: `requireEmailVerification: true` for credentials flow. Otherwise account-takeover via typo'd email is trivial.
+- **Cookie config**: Better Auth ships secure defaults; verify with `scripts/cookie-attribute-checker.ts`.
+- **Secret key**: `BETTER_AUTH_SECRET` (a random 32+ byte string). Used for signing. Rotate via key rolling, not in-place replacement.
 
 ## Plugin highlights
 
-- **`organization()`** — multi-tenant orgs with roles. Pair with `guides/09-rbac.md`.
-- **`twoFactor()`** — TOTP enrollment, recovery codes generated automatically.
-- **`passkey()`** — WebAuthn / passkeys, conditional UI.
-- **`magicLink({ sendMagicLink })`** — wire to your email provider; one-time tokens with short TTL.
-- **`admin()`** — admin user impersonation, ban/unban — extreme power, audit-log every call.
+- **`organization()`**: multi-tenant orgs with roles. Pair with `guides/09-rbac.md`.
+- **`twoFactor()`**: TOTP enrollment, recovery codes generated automatically.
+- **`passkey()`**: WebAuthn / passkeys, conditional UI.
+- **`magicLink({ sendMagicLink })`**: wire to your email provider; one-time tokens with short TTL.
+- **`admin()`**: admin user impersonation, ban/unban; extreme power, audit-log every call.
 
 ## Migration: Auth.js v4 / v5 → Better Auth
 
@@ -96,10 +96,10 @@ No forced re-login if the social-account linkage (`provider` + `providerAccountI
 
 ## Common pitfalls
 
-- **Skipping `trustedOrigins`** — silent CSRF in dev, becomes an audit finding in prod.
-- **Forgetting to verify the email** in credentials mode — see above.
-- **Storing `userId` as the only foreign key on tenant resources without RLS** — single-layer enforcement. See `guides/09-rbac.md`.
-- **Custom social provider config that omits PKCE** — OAuth 2.1 expects PKCE on auth-code flow even with a client secret.
+- **Skipping `trustedOrigins`**: silent CSRF in dev, becomes an audit finding in prod.
+- **Forgetting to verify the email** in credentials mode, see above.
+- **Storing `userId` as the only foreign key on tenant resources without RLS**: single-layer enforcement. See `guides/09-rbac.md`.
+- **Custom social provider config that omits PKCE**: OAuth 2.1 expects PKCE on auth-code flow even with a client secret.
 
 ## Audit handoff
 

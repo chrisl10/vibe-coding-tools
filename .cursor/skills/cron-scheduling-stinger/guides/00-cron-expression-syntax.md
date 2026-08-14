@@ -34,7 +34,7 @@ second minute hour DOM month DOW [year]
 |---|---|---|
 | `*` | every value | `* * * * *` = every minute |
 | `,` | list | `0 9,17 * * *` = 9am and 5pm |
-| `-` | range | `0 9-17 * * *` = every hour 9am–5pm |
+| `-` | range | `0 9-17 * * *` = every hour 9am-5pm |
 | `/` | step | `*/15 * * * *` = every 15 minutes |
 | `?` | no specific value (Quartz DOM/DOW only) | `0 12 ? * MON` |
 | `L` | last (Quartz only) | `0 0 L * *` = last day of month |
@@ -116,9 +116,9 @@ For complex expressions:
 
 | Expression | Intended | Actual |
 |---|---|---|
-| `* * * * *` | "Every minute" (sometimes) | Every minute — 1440x/day, verify this is intended |
+| `* * * * *` | "Every minute" (sometimes) | Every minute: 1440x/day, verify this is intended |
 | `0 0 1 * *` | 1st of month | Yes, but does NOT run monthly if DOW conflicts (depends on platform) |
-| `0 9 * * 1` | Every Monday 9am | UTC 9am — is this the right timezone? Ask. |
+| `0 9 * * 1` | Every Monday 9am | UTC 9am: is this the right timezone? Ask. |
 | `*/5 * * * *` | Every 5 minutes | GitHub Actions: expect actual intervals of 5-27 minutes under load |
 
 ---

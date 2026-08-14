@@ -1,6 +1,6 @@
 # Phase 11: Landing Page Conversion Optimization
 
-> **Site Template Guide** — PRD Phase 11 of 12
+> **Site Template Guide**: PRD Phase 11 of 12
 
 ---
 
@@ -8,7 +8,7 @@
 
 ### Goals
 
-Apply empirically validated CRO patterns to the homepage and primary landing pages. All patterns derive from A/B testing meta-analyses and behavioral psychology research — not aesthetic preferences. Implementation uses Svelte components and CSS; no Framer Motion or React-specific libraries.
+Apply empirically validated CRO patterns to the homepage and primary landing pages. All patterns derive from A/B testing meta-analyses and behavioral psychology research, not aesthetic preferences. Implementation uses Svelte components and CSS; no Framer Motion or React-specific libraries.
 
 ### Scope
 
@@ -24,7 +24,7 @@ Apply empirically validated CRO patterns to the homepage and primary landing pag
 - Copy writing or headline selection (user-provided)
 - Logo or testimonial sourcing (user-provided)
 - Heatmap or session recording (add via Microsoft Clarity, Hotjar, or PostHog separately)
-- Multivariate testing platform (Optimizely, VWO — add on demand)
+- Multivariate testing platform (Optimizely, VWO, add on demand)
 
 ### Dependencies
 
@@ -37,7 +37,7 @@ Apply empirically validated CRO patterns to the homepage and primary landing pag
 
 ## User Stories
 
-### Story 1 — Visitor: Above-the-Fold Hero
+### Story 1: Visitor: Above-the-Fold Hero
 
 > As a **Visitor**, I want the hero section to immediately communicate what the product does, who it's for, and what to do next, so that I decide within 5 seconds whether to read on.
 
@@ -49,7 +49,7 @@ Apply empirically validated CRO patterns to the homepage and primary landing pag
 
 **Research source:** HubSpot 2025 Landing Page Study: above-the-fold CTA + social proof within 200px of CTA lifts conversion 23% vs CTA without proximate proof.
 
-### Story 2 — Visitor: Mobile Sticky CTA
+### Story 2: Visitor: Mobile Sticky CTA
 
 > As a **Visitor** on a mobile device, I want a sticky CTA bar at the bottom of the viewport after scrolling 40% of the page, so that I can convert without scrolling back to the top.
 
@@ -62,7 +62,7 @@ Apply empirically validated CRO patterns to the homepage and primary landing pag
 
 **Research source:** Unbounce Mobile Conversion Report 2025: mobile sticky CTA adds 18% incremental conversions on pages >3 scrolls long.
 
-### Story 3 — Marketing Team: A/B Testing Scaffold
+### Story 3: Marketing Team: A/B Testing Scaffold
 
 > As a **Marketing Team Member**, I want a feature flag infrastructure that lets me test different hero headline variants without a code deploy, so that I can run A/B tests at will.
 
@@ -96,7 +96,7 @@ Visual always to the right on desktop, stacked below text on mobile. Image or pr
 |---|---|---|
 | Generic (avoid) | Submit, Click Here, Learn More | Baseline |
 | Action verb | Get Started | +14% vs generic (source: WordStream 2024) |
-| Action + benefit | Get Started — It's Free | +22% vs generic |
+| Action + benefit | Get Started: It's Free | +22% vs generic |
 | Outcome-focused | Book Your Consultation | +17% for service businesses |
 
 Never use "Submit". Always user-test at least two CTA copy variants.

@@ -48,5 +48,5 @@ The load-bearing files every note returns to:
 ## Open questions
 
 - Whether to promote a type-aware boundary audit (ts-morph) over the heuristic `audit-untyped-boundaries.mjs` - left heuristic for now to keep the Stinger dependency-free.
-- The exact Deep Lake SQL dialect surface (which functions/operators the query endpoint supports) - the guides stay conservative and defer dialect specifics to `deeplake-dataset-worker-bee`.
+- The exact Deep Lake SQL dialect surface (which functions/operators the query endpoint supports) - the guides stay conservative and defer dialect specifics to `vector-store-worker-bee`.
 - Whether the embedding model/dimensionality belongs in this Stinger or `embeddings-runtime-worker-bee` - the schema mechanics (the `FLOAT4[]` ColumnDef) are here; the model choice is `embeddings-runtime-worker-bee`.

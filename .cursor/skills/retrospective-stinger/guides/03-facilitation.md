@@ -1,4 +1,4 @@
-# 03 — Facilitation Playbook
+# 03: Facilitation Playbook
 
 *Derived from `research/external/2026-05-20-sprint-retrospective-formats-comprehensive.md` and `research/external/2026-05-20-format-selection-meetgeek.md`.*
 
@@ -13,10 +13,10 @@ Total time: 60-90 minutes (standard sprint). 45 minutes for 1-week sprints.
 | Opening / check-in | 5 min | Icebreaker + ESVP check (Explorer / Shopper / Vacationer / Prisoner) |
 | Previous actions review | 5-10 min | Score each prior action item: Done / In Progress / Dropped |
 | Safety check (if new team) | 5 min | Anonymous Edmondson mini-survey or thumbs check |
-| Brainstorm (silent) | 10-15 min | Each person writes cards independently — no discussion yet |
+| Brainstorm (silent) | 10-15 min | Each person writes cards independently: no discussion yet |
 | Share and cluster | 10-15 min | Read cards aloud, group into themes (affinity mapping) |
 | Vote on themes | 5 min | Dot voting: 3-5 dots per person on highest-priority themes |
-| Discuss top themes | 15-20 min | Go deep on the top 2-3 voted themes — ask "why?" at least once |
+| Discuss top themes | 15-20 min | Go deep on the top 2-3 voted themes: ask "why?" at least once |
 | Action items | 10 min | Apply the 3-question filter (who, when, done-looks-like) to each proposed action |
 | Closing ritual | 5 min | One word round + appreciation shout-out |
 
@@ -90,7 +90,7 @@ Alternative for high-stakes decisions: **Fist-to-five** (each person shows 0-5 f
 
 ## Discussion: "ask why at least once"
 
-When discussing a top-voted cluster, the facilitator's most important move is to ask "why?" at least once. Not as an interrogation — as genuine curiosity.
+When discussing a top-voted cluster, the facilitator's most important move is to ask "why?" at least once. Not as an interrogation: as genuine curiosity.
 
 "We keep missing estimates. Why?"
 "We don't have enough context on stories before sprint start."
@@ -119,7 +119,7 @@ See `guides/04-action-items.md` for the full discipline.
 End every retro with two things:
 
 1. **One-word round:** Each participant says one word describing how they feel leaving the retro. This is a quick emotional pulse and a natural close.
-2. **Appreciation:** One round of explicit appreciations (optional but high-value for team morale). "I want to appreciate [name] for [specific thing]." Keep it concrete — "thanks for being great" is not an appreciation.
+2. **Appreciation:** One round of explicit appreciations (optional but high-value for team morale). "I want to appreciate [name] for [specific thing]." Keep it concrete: "thanks for being great" is not an appreciation.
 
 ---
 
@@ -129,7 +129,7 @@ End every retro with two things:
 - **Allowing discussion during clustering.** This is a phase-ordering error. Cluster first, discuss after vote.
 - **Discussing more than 2-3 themes.** Teams that try to cover all themes produce shallow discussion and weak action items. Vote and cut.
 - **Leaving action items unassigned.** An action item with no owner is a wish, not a commitment.
-- **Running over time.** Time-box each segment visibly. The closing ritual is not optional — it communicates that the team's time and energy are respected.
+- **Running over time.** Time-box each segment visibly. The closing ritual is not optional: it communicates that the team's time and energy are respected.
 
 ---
 

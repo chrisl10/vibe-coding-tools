@@ -18,7 +18,7 @@ The official Slack comparison guide for HTTP Request URLs vs Socket Mode answers
 
 - **HTTP mode**: "Uses a request-response pattern with short-lived, stateless connections. Scales well horizontally and is simpler to route through proxies for caching and encryption."
 - **Socket Mode**: "Uses WebSocket for bidirectional, stateful communication with long-lived connections and low latency."
-- "Socket Mode is limited to 10 concurrent WebSocket connections per app." — Hard limit that makes it unsuitable for high-traffic public apps.
+- "Socket Mode is limited to 10 concurrent WebSocket connections per app." Hard limit that makes it unsuitable for high-traffic public apps.
 - "Socket Mode apps cannot be listed in the public Slack Marketplace."
 - Socket Mode IS recommended for production when: operating behind a corporate firewall, building internal/enterprise apps, wanting to avoid managing public endpoints.
 - "Both protocols remain current options that can be switched between at any time in app settings."
@@ -44,7 +44,7 @@ The official Slack comparison guide for HTTP Request URLs vs Socket Mode answers
 
 ## Annotations for stinger-forge
 
-- This directly answers the open question in the Command Brief — include this resolution at the top of `guides/00-setup-and-bolt.md`.
+- This directly answers the open question in the Command Brief: include this resolution at the top of `guides/00-setup-and-bolt.md`.
 - The 10-connection limit is a critical production constraint stinger-forge must include in the setup guide.
 - Stinger-forge should present a clear decision tree: "Will this app be listed in the Slack Marketplace? If yes → HTTP mode. If no → Socket Mode is viable."
 - The ability to switch between modes at any time (without reinstalling) is a useful developer ergonomics note.

@@ -5,7 +5,7 @@
 - **Page budget target:** ~15 sources
 - **Source breadth target:** official docs, practitioner blogs, GitHub READMEs, platform-specific tutorials
 
-## Initial queries (from the proposal step)
+## Initial queries (from `big-bang-space`)
 
 1. "Git rebase interactive workflow squash fixup 2026"
 2. "Git reflog recovery undo destructive operations 2026"
@@ -52,4 +52,4 @@ All 5 initial queries returned 6-8 high-quality results each. Key sources retrie
 | Git LFS | grizzlypeaksoftware.com LFS and alternatives | 2026-02-13 |
 | filter-repo | github.com/newren/git-filter-repo README | canonical |
 
-Files written to: `.cursor/skills/git-stinger/research/external/`
+Files written to: `.claude/skills/git-stinger/research/external/`

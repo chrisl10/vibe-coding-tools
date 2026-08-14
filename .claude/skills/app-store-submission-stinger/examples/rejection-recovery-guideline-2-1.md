@@ -1,4 +1,4 @@
-# Example: Rejection Recovery — Guideline 2.1 (Binary Quality)
+# Example: Rejection Recovery: Guideline 2.1 (Binary Quality)
 
 *Demonstrates: rejection diagnosis, two-interpretation protocol, remediation, successful resubmission*
 *Guides referenced: `guides/03-rejection-playbook.md`, `guides/00-principles.md`*
@@ -7,7 +7,7 @@
 
 ## Scenario
 
-**App:** "NutriLog" — a meal tracking app with barcode scanning
+**App:** "NutriLog", a meal tracking app with barcode scanning
 **Platform:** iOS
 **Submission history:** First submission, rejected
 **Rejection received:** Day 4 after submission
@@ -42,14 +42,14 @@ Two interpretations of this rejection:
 
 **Interpretation A:** There is a genuine crash in the barcode scanner on iOS 18.3.1 that was not present in testing.
 
-**Interpretation B:** The reviewer encountered a permission flow issue — the first time the camera permission dialog appears, the app crashed or the scanner view dismissed unexpectedly. This is distinct from a "crash" in the crash log sense.
+**Interpretation B:** The reviewer encountered a permission flow issue: the first time the camera permission dialog appears, the app crashed or the scanner view dismissed unexpectedly. This is distinct from a "crash" in the crash log sense.
 
 ---
 
 ## Step 2: Reproduce the issue
 
 Developer opens NutriLog on:
-- iPhone 15 Pro (iOS 18.3.1) — fresh install, no prior permissions granted
+- iPhone 15 Pro (iOS 18.3.1), fresh install, no prior permissions granted
 
 **Result:** On first tap of barcode scanner:
 1. `AVCaptureSession` permission dialog appears
@@ -57,7 +57,7 @@ Developer opens NutriLog on:
 3. App attempts to initialize `AVCaptureSession` before the permission result callback
 4. App crashes (EXC_CRASH)
 
-This is **Interpretation B** — a permission callback race condition, not a general barcode scanner crash.
+This is **Interpretation B**: a permission callback race condition, not a general barcode scanner crash.
 
 The crash was not caught in testing because the test device had camera permission already granted from a prior development build.
 

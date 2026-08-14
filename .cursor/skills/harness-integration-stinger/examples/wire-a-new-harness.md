@@ -1,6 +1,8 @@
 # Example: Wire a New Harness Adapter
 
-**Demonstrates:** `guides/00-architecture-and-wiring.md`, `guides/01-capability-detection-install.md`, `guides/03-tool-contract.md`
+*Part of the Hivemind six-host case study - see `examples/case-study-hivemind-six-host-installer.md` for the full context. This worked example predates and is not superseded by that file.*
+
+**Demonstrates:** `guides/00-decision-framework.md`, `guides/04-capability-detection-and-degradation.md`, `guides/05-portability-and-contracts.md`
 
 This example walks the full path of adding a seventh harness ("acme") so Hivemind captures and recalls through it like the existing six.
 
@@ -17,7 +19,7 @@ Pick wiring mechanism → add install-acme.ts (detect + wire) → add harnesses/
 
 ## Step 1: Pick the wiring mechanism
 
-Use the decision matrix in `guides/00-architecture-and-wiring.md`. Say Acme has a lifecycle-hook system but no MCP transport. → **Hooks.** It also loads a VS Code-style extension → ship one too, like Cursor.
+Use the decision matrix in `guides/00-decision-framework.md`. Say Acme has a lifecycle-hook system but no MCP transport. → **Hooks.** It also loads a VS Code-style extension → ship one too, like Cursor.
 
 ## Step 2: Add the installer (`src/cli/install-acme.ts`)
 
@@ -61,7 +63,7 @@ Add the events Acme supports, forking from the bundle. Resolve paths from Acme's
 
 ## Step 5: Expose the contracted tools
 
-Acme's extension (or skill/marker) must register `hivemind_search`/`hivemind_read`/`hivemind_index` with the exact same args and return shapes as every other host. Do not invent an Acme-only tool. See `guides/03-tool-contract.md`.
+Acme's extension (or skill/marker) must register `hivemind_search`/`hivemind_read`/`hivemind_index` with the exact same args and return shapes as every other host. Do not invent an Acme-only tool. See `guides/05-portability-and-contracts.md`.
 
 ## Step 6: Register in auto-detect
 

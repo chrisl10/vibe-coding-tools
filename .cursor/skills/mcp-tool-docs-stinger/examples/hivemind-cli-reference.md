@@ -1,4 +1,6 @@
-# Example: CLI Reference for `install` / `status` / `login`
+# Worked example (Hivemind-specific): CLI Reference for `install` / `status` / `login`
+
+> This is a worked example for one real product (Hivemind), not the general procedure. Read `guides/03-cli-docs.md` first for the domain-general CLI documentation conventions; come back here to see them applied to a real dispatch-based CLI.
 
 A worked CLI reference built from `src/cli/index.ts`. This is the shape the full `hivemind` command reference should take.
 

@@ -40,7 +40,7 @@ When a browser encounters text before the custom font is available, it exhibits 
 
 | Value | Block period | Swap period | Best for |
 |-------|-------------|-------------|----------|
-| `auto` | Browser-determined (usually 3s) | Usually infinite | Avoid — unpredictable |
+| `auto` | Browser-determined (usually 3s) | Usually infinite | Avoid: unpredictable |
 | `block` | 3 seconds | Infinite | Icon fonts where FOUT would break icon rendering |
 | `swap` | Very short (100ms) | Infinite | Body text where readability > zero CLS |
 | `fallback` | Very short (100ms) | 3 seconds | Balanced: shows text quickly, does not swap late |

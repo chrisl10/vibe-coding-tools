@@ -1,4 +1,4 @@
-# Command Brief Notes — ai-tools-platform-stinger
+# Command Brief Notes: ai-tools-platform-stinger
 
 ## Source
 

@@ -1,6 +1,6 @@
 # Recall Quality Evaluation - the method
 
-Reference for how recall changes are measured. The discipline is in `guides/10-recall-quality-eval.md`; this note is the definitions and the procedure.
+Reference for how recall changes are measured. The discipline is in `guides/deeplake-08-recall-quality-eval.md`; this note is the definitions and the procedure.
 
 ## The two metrics
 

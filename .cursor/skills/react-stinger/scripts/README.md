@@ -7,7 +7,7 @@ Three stub scanners react-stinger can invoke on a codebase. All are written in T
 AST scan for the first 8 anti-patterns in `guides/12-anti-patterns.md`. Emits a markdown report; exit code = number of must-fix findings.
 
 ```bash
-pnpm tsx .cursor/skills/react-stinger/scripts/scan-anti-patterns.ts src/
+pnpm tsx .claude/skills/react-stinger/scripts/scan-anti-patterns.ts src/
 ```
 
 Dependencies: `ts-morph`.
@@ -18,7 +18,7 @@ Checks built bundle sizes against per-route budgets from `react-stinger.budgets.
 
 ```bash
 pnpm build
-pnpm tsx .cursor/skills/react-stinger/scripts/bundle-budget-check.ts dist/
+pnpm tsx .claude/skills/react-stinger/scripts/bundle-budget-check.ts dist/
 ```
 
 See `guides/07-performance.md §bundle-budgets` for default budgets.
@@ -28,10 +28,10 @@ See `guides/07-performance.md §bundle-budgets` for default budgets.
 Reads `package.json` and reports React version, Compiler readiness, deprecated dependencies, and which version-specific idioms apply.
 
 ```bash
-pnpm tsx .cursor/skills/react-stinger/scripts/react-version-audit.ts
+pnpm tsx .claude/skills/react-stinger/scripts/react-version-audit.ts
 ```
 
-Run this **first** on any invocation — the output tells you which guides are relevant for the stack.
+Run this **first** on any invocation: the output tells you which guides are relevant for the stack.
 
 ## Adapting
 

@@ -1,6 +1,6 @@
 # Guide 04: Cursor SDK API
 
-Reference guide for `@cursor/sdk` — programmatic agent automation built on the same runtime powering Cursor's IDE.
+Reference guide for `@cursor/sdk`: programmatic agent automation built on the same runtime powering Cursor's IDE.
 
 **Package:** `@cursor/sdk` (public beta since April 29, 2026, npm first published April 26, 2026).
 **Install:** `npm install @cursor/sdk`
@@ -34,7 +34,7 @@ const result = await run.wait(); // RunResult
 await agent.dispose();
 ```
 
-## `Agent.create(options)` — option reference
+## `Agent.create(options)`: option reference
 
 ### Local runtime
 
@@ -78,7 +78,7 @@ const agent = await Agent.resume(agentId, {
 });
 ```
 
-## `run.stream()` — event types
+## `run.stream()`: event types
 
 `run.stream()` is an async generator yielding `SDKMessage` events discriminated on `type`:
 
@@ -93,7 +93,7 @@ const agent = await Agent.resume(agentId, {
 | `task` | `text` | Sub-task tracking |
 | `request` | - | Awaiting user input (rarely seen in SDK flows) |
 
-`tool_call` events ARE streamed incrementally — partial tool-call results are available before the tool completes. This resolves the Command Brief's open question.
+`tool_call` events ARE streamed incrementally: partial tool-call results are available before the tool completes. This resolves the Command Brief's open question.
 
 ### Lower-level callbacks
 

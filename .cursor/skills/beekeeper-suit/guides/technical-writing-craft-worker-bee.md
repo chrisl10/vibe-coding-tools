@@ -1,69 +1,39 @@
-# Technical Writing Craft Worker-Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `technical-writing-craft-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/technical-writing-craft-worker-bee.md`](../../../agents/technical-writing-craft-worker-bee.md)
-**Stinger:** [`.cursor/skills/technical-writing-craft-stinger/`](../../technical-writing-craft-stinger/)
-**Trigger policy:** proactive
-
----
+# technical-writing-craft-worker-bee
 
 ## Domain
+Owns the craft of writing technical documentation, not the platform that hosts it, the folder that organizes it, or the metadata that makes it discoverable: Diataxis mode correctness, inverted-pyramid prose structure, code-example discipline, voice and tone consistency, the reader-lens diagnostic, ghostwriting discipline, and docs-as-code PR review. It runs in three modes: review (auditing an existing document), ghostwriting (drafting one), and docs-as-code PR review (scoped to changed files).
 
-`technical-writing-craft-worker-bee` reviews and writes technical documentation as a craft. It owns the Diataxis framework (tutorial / how-to / reference / explanation), inverted-pyramid prose structure, code-example discipline, voice-and-tone consistency, the reader-lens diagnostic, ghostwriting discipline, and docs-as-code PR review. Every finding comes with a specific proposed fix, never a vague "improve this," and it respects a supplied house style over its defaults.
+## Paired Stinger
+[technical-writing-craft-stinger](../../technical-writing-craft-stinger) - the Diataxis guide (read first, every invocation), inverted-pyramid and code-example guides, voice/tone, reader-lens, ghostwriting structure, and the docs-as-code PR checklist.
 
 ## Trigger phrases
-
-Route to `technical-writing-craft-worker-bee` when the user says any of:
-
-- "Review this document" / "is this doc well-written" / "audit this page"
-- "Apply Diataxis"
-- "Ghostwrite this guide"
-- "Rewrite this introduction"
-- "Code example review" / "my docs PR needs a writing review"
-
-Or proactively when a PR diff touches documentation files and a writing-quality review has not been performed.
+- "review this document"
+- "is this doc well-written"
+- "audit this page"
+- "apply Diataxis to this guide"
+- "ghostwrite this how-to"
+- "my docs PR needs a writing review"
+- "does this code example hold up"
 
 ## Do NOT route when
-
-- The user wants docs-site architecture, platform decisions, or folder structure - that is `library-worker-bee`.
-- The user wants MCP tool spec enrichment or CLI reference docs - that is `mcp-tool-docs-worker-bee`.
-- The user wants README structure and conversion - that is `readme-writing-worker-bee`.
-- The user wants the deep narrative knowledge docs themselves authored - that is `knowledge-worker-bee` (this Bee reviews the prose craft, including theirs).
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let this one act as backup.
+- The ask is which platform should host the docs: route to docs-site-worker-bee.
+- The ask is knowledge-base folder structure or organization: route to library-worker-bee.
+- The ask is OpenAPI spec authorship or enrichment: route to api-docs-worker-bee.
+- The ask is a README-specific review: route to readme-writing-worker-bee.
+- The ask is SEO metadata for the doc: route to seo-aeo-worker-bee.
 
 ## Inputs the Bee needs
+- The document (or PR diff) to review, or a completed ghostwrite intake brief for drafting mode.
+- Any house style guide that should override the Bee's own voice/tone defaults.
+- The intended Diataxis mode if it's not obvious from the document itself.
+- For docs-as-code review: the scope is changed files only.
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- A filled scorecard and findings report with every Blocker paired to a specific rewrite proposal.
+- A self-reviewed draft in ghostwriting mode, plus any open Suggestions surfaced to the user.
+- Docs-as-code PR findings using the standard review-report template.
 
-- The document or section to review or ghostwrite.
-- The intended Diataxis mode (or let the Bee classify it).
-- Optional: the supplied house style guide to respect.
-
-If the document is missing, do not invoke yet - ask the user to paste it.
-
-## Outputs the Bee produces
-
-- A writing-craft review with the Diataxis mode classified and every finding paired with a specific proposed fix.
-- Ghostwritten or rewritten prose, self-reviewed against the Bee's own rubric before delivery.
-
-## Multi-Bee sequences this Bee participates in
-
-- Reviews prose produced by `library-worker-bee`, `knowledge-worker-bee`, and `readme-writing-worker-bee`; routes platform/folder decisions and tool-spec enrichment back to them.
-
-## Critical directives the orchestrator should respect
-
-- **Always classify Diataxis mode before offering any prose feedback** - mode-mixing is the root cause of most doc confusion.
-- **Never produce a finding without a specific fix** - propose the replacement text.
-- **Respect the supplied style guide; do not impose the default style when a house style exists.**
-- **Do not recommend platform changes, folder moves, or metadata edits** - those belong to peer Bees.
-- **In ghostwriting mode, self-review before delivering.**
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
-
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+## Commonly sequenced with
+- docs-site-worker-bee: once content is drafted, for platform publishing.
+- library-worker-bee: for where the finished doc should live in the knowledge base.
+- api-docs-worker-bee: when a reviewed document references or embeds an OpenAPI spec.

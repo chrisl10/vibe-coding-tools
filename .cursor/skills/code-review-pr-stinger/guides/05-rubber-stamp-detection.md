@@ -54,7 +54,7 @@ The Bee can pull PR timeline data when given GitHub API access:
 5. Emit a culture scorecard (see templates/culture-scorecard.md)
 ```
 
-The output is a markdown report at `library/qa/code-review/<date>-pr-culture-audit.md`.
+The output is a markdown report at `library/requirements/reports/code-review/<date>-pr-culture-audit.md`.
 
 ---
 

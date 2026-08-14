@@ -1,11 +1,11 @@
 ---
-name: cron-scheduling-stinger
-description: Scheduled-job specialist for cron expression authoring, platform-specific limits (Vercel Cron, Cloudflare Cron Triggers, GitHub Actions schedule), distributed-cron correctness (exactly-once execution, leader election, idempotency), timezone and DST safety, retry-on-failure patterns, and the "did the cron run?" observability loop (Healthchecks.io, Cronitor, self-hosted heartbeat tables). Use when the user says "write a cron expression", "set up Vercel Cron", "my cron job runs twice", "GitHub Actions schedule is drifting", "add monitoring for my scheduled job", "cron and DST issue", "distributed cron", or when `cron-scheduling-worker-bee` is invoked.
+name: "cron-scheduling-stinger"
+description: "Scheduled-job specialist for cron expression authoring, platform-specific limits (Vercel Cron, Cloudflare Cron Triggers, GitHub Actions schedule), distributed-cron correctness (exactly-once execution, leader election, idempotency), timezone and DST safety, retry-on-failure patterns, and the \\\\\\\"did the cron run?\\\\\\\" observability loop (Healthchecks.io, Cronitor, self-hosted heartbeat tables). Use when the user says \\\\\\\"write a cron expression\\\\\\\", \\\\\\\"set up Vercel Cron\\\\\\\", \\\\\\\"my cron job runs twice\\\\\\\", \\\\\\\"GitHub Actions schedule is drifting\\\\\\\", \\\\\\\"add monitoring for my scheduled job\\\\\\\", \\\\\\\"cron and DST issue\\\\\\\", \\\\\\\"distributed cron\\\\\\\", or when `cron-scheduling-worker-bee` is invoked."
 ---
 
 # cron-scheduling-stinger
 
-Procedural arsenal for `cron-scheduling-worker-bee`, the Legion Army's scheduled-job specialist. This stinger encodes everything needed to design, implement, secure, and monitor scheduled jobs across the platforms a Next.js / TypeScript / Node.js team typically uses.
+Procedural arsenal for `cron-scheduling-worker-bee`, the Hive's scheduled-job specialist. This stinger encodes everything needed to design, implement, secure, and monitor scheduled jobs across the platforms a Next.js / TypeScript / Node.js team typically uses.
 
 ## When this stinger applies
 
@@ -20,7 +20,7 @@ Load this stinger whenever the work involves:
 
 Do NOT load for:
 
-- Background jobs triggered by queue messages without a time component (no Stinger for this yet — handle inline)
+- Background jobs triggered by queue messages without a time component (no Stinger for this yet, handle inline)
 - CI/CD pipeline design (that is `devops-worker-bee`)
 - Database schema design for job metadata tables (that is `db-worker-bee`)
 
@@ -124,8 +124,8 @@ The `research/` folder was populated by `scripture-historian` at `normal` depth 
 - Vercel updated plan limits in January 2026: 100 cron jobs per project on all plans (was 2 on Hobby). Hobby plan still limited to once-per-day minimum frequency.
 - GitHub Actions `schedule:` drift is an active January 2026 incident; delays of 22+ minutes observed. GitHub now supports IANA timezone strings in `schedule:` as of early 2026.
 - Cloudflare free tier is the canonical workaround for Vercel Hobby users needing sub-hourly schedules.
-- `research/research-summary.md` lists 5 open questions for `stinger-forge` — see that file for details.
+- `research/research-summary.md` lists 5 open questions for `stinger-forge`: see that file for details.
 
 ---
 
-*Forged from `ai-tools/command-briefs/cron-scheduling-worker-bee-command-brief.md` and `research/`. Part of the Legion AI Tools Factory by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Forged from `ai-tools/command-briefs/cron-scheduling-worker-bee-command-brief.md` and `research/`. Part of The Hive by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

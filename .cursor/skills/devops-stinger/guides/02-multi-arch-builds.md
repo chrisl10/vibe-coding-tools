@@ -1,4 +1,4 @@
-# 02 — Multi-arch builds
+# 02: Multi-arch builds
 
 When to ship `linux/amd64` + `linux/arm64`, when not to, and how to make it cheap. Source: `research/2026-04-25-multi-arch-build-cost.md`.
 
@@ -57,7 +57,7 @@ runs-on: ${{ matrix.runs-on }}
 
 Then a final job uses `docker buildx imagetools create` to merge the per-arch tags into a manifest.
 
-### C. Depot — best (both arches, native, persistent cache)
+### C. Depot: best (both arches, native, persistent cache)
 
 ```yaml
 - uses: depot/setup-action@<sha>
@@ -106,6 +106,6 @@ But this triggers QEMU and is slow. Prefer per-host builds.
 
 ## See also
 
-- `guides/07-depot-integration.md` — Depot drop-in for native multi-arch.
-- `guides/08-caching-strategies.md` — cache scope across architectures.
-- `templates/.github/workflows/main-deploy.yml` — multi-arch via Depot.
+- `guides/07-depot-integration.md`: Depot drop-in for native multi-arch.
+- `guides/08-caching-strategies.md`: cache scope across architectures.
+- `templates/.github/workflows/main-deploy.yml`: multi-arch via Depot.

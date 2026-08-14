@@ -185,7 +185,7 @@ bot.on("guest_message", async (ctx) => {
 });
 ```
 
-> TODO: Full `answerGuestQuery` method signature and `guest_message` Update type fields — these were not fully captured in this research pass. Check https://core.telegram.org/bots/api for the complete method reference before implementing guest mode features.
+> TODO: Full `answerGuestQuery` method signature and `guest_message` Update type fields: these were not fully captured in this research pass. Check https://core.telegram.org/bots/api for the complete method reference before implementing guest mode features.
 
 ---
 

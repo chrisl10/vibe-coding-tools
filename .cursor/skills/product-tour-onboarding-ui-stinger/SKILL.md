@@ -1,6 +1,6 @@
 ---
-name: product-tour-onboarding-ui-stinger
-description: In-app product tour and onboarding UI specialist. Selects the right tour tool (Userpilot, Appcues, Userflow, Pendo Guides, Driver.js, Shepherd.js, Intro.js), implements tooltip/modal/hotspot/checklist components, wires segment-based trigger logic, and establishes a tour maintenance protocol that survives iterative UI changes. Invoke when the user says "set up a product tour", "build an onboarding checklist", "compare Driver.js vs Shepherd.js", "our tours keep breaking after deploys", "which product tour tool should we use", "add segment-based tour triggers", or "our tour is showing to the wrong users". Do NOT invoke for broader onboarding email sequences (lifecycle-email Bee), user-auth flows (auth-worker-bee), design token work (ux-ui-worker-bee), or analytics instrumentation (posthog/mixpanel Bees).
+name: "product-tour-onboarding-ui-stinger"
+description: "In-app product tour and onboarding UI specialist. Selects the right tour tool (Userpilot, Appcues, Userflow, Pendo Guides, Driver.js, Shepherd.js, Intro.js), implements tooltip/modal/hotspot/checklist components, wires segment-based trigger logic, and establishes a tour maintenance protocol that survives iterative UI changes. Invoke when the user says \\\\\\\"set up a product tour\\\\\\\", \\\\\\\"build an onboarding checklist\\\\\\\", \\\\\\\"compare Driver.js vs Shepherd.js\\\\\\\", \\\\\\\"our tours keep breaking after deploys\\\\\\\", \\\\\\\"which product tour tool should we use\\\\\\\", \\\\\\\"add segment-based tour triggers\\\\\\\", or \\\\\\\"our tour is showing to the wrong users\\\\\\\". Do NOT invoke for broader onboarding email sequences (lifecycle-email Bee), user-auth flows (auth-worker-bee), design token work (ux-ui-svelte-worker-bee), or analytics instrumentation (posthog/mixpanel Bees)."
 license: MIT
 ---
 
@@ -30,9 +30,9 @@ Load this stinger when `product-tour-onboarding-ui-worker-bee` is invoked. Trigg
 - User wants to audit existing tours for health and effectiveness.
 
 Do NOT load for:
-- Onboarding email sequences (out of scope — no Bee owns this yet).
+- Onboarding email sequences (out of scope: no Bee owns this yet).
 - User authentication flows (auth-worker-bee).
-- Design token system for tour tooltip styling (ux-ui-worker-bee).
+- Design token system for tour tooltip styling (ux-ui-svelte-worker-bee).
 - Analytics funnel instrumentation for tour events (posthog/mixpanel Bees).
 - Database schema for user-progress storage (db-worker-bee).
 
@@ -42,8 +42,8 @@ Do NOT load for:
 
 Read these files in order before producing any output:
 
-1. **`guides/00-principles.md`** — the three non-negotiables and the foreman's boundary; read on every invocation.
-2. **`guides/01-platform-selection.md`** — the four-axis decision framework for tool selection; required before any platform recommendation.
+1. **`guides/00-principles.md`**: the three non-negotiables and the foreman's boundary; read on every invocation.
+2. **`guides/01-platform-selection.md`**: the four-axis decision framework for tool selection; required before any platform recommendation.
 3. The guide(s) that match the user's specific task (see the guide index below).
 
 ---
@@ -64,15 +64,15 @@ Read these files in order before producing any output:
 
 ## Worked examples
 
-- `examples/happy-path-driver-js.md` — end-to-end implementation of a three-step product tour with Driver.js 9.x + React + `data-tour` anchors + localStorage persistence.
-- `examples/saas-platform-audit.md` — walkthrough of the qualification checklist applied to a 2,000-MAU SaaS startup choosing between Userpilot, Userflow, and Driver.js.
+- `examples/happy-path-driver-js.md`: end-to-end implementation of a three-step product tour with Driver.js 9.x + React + `data-tour` anchors + localStorage persistence.
+- `examples/saas-platform-audit.md`: walkthrough of the qualification checklist applied to a 2,000-MAU SaaS startup choosing between Userpilot, Userflow, and Driver.js.
 
 ---
 
 ## Output templates
 
-- `templates/tour-audit-report.md` — the tour health report template; produced for every standalone audit.
-- `templates/data-tour-registry.json` — the selector registry template; populate one entry per interactive element targeted by any tour.
+- `templates/tour-audit-report.md`: the tour health report template; produced for every standalone audit.
+- `templates/data-tour-registry.json`: the selector registry template; populate one entry per interactive element targeted by any tour.
 
 ---
 
@@ -81,7 +81,7 @@ Read these files in order before producing any output:
 - **Select stable element anchors (`data-tour` attributes) over class or text selectors.** CSS class names change with every CSS-in-JS rebuild; `data-tour` is a durable engineering contract. See `guides/06-maintenance-and-drift.md`.
 - **Never recommend a tour platform without running the qualification checklist first.** Wrong-tool selection costs months of migration. The checklist lives in `guides/01-platform-selection.md`.
 - **Treat tour maintenance as code maintenance.** A tour without a CI smoke test and selector registry will break silently. The maintenance protocol is `guides/06-maintenance-and-drift.md`.
-- **Route visual polish to `ux-ui-worker-bee`.** Tour tooltip/modal CSS must consume the product's design tokens; a parallel custom-CSS system in the tour layer is a maintenance trap.
+- **Route visual polish to `ux-ui-svelte-worker-bee`.** Tour tooltip/modal CSS must consume the product's design tokens; a parallel custom-CSS system in the tour layer is a maintenance trap.
 - **Do not instrument analytics yourself.** Flag what needs tracking; route to the appropriate analytics Bee.
 
 ---
@@ -102,4 +102,4 @@ Key sources:
 
 ---
 
-*Forged by stinger-forge from `product-tour-onboarding-ui-worker-bee-command-brief.md` and `research/`. Part of the Legion AI Tools Factory.*
+*Forged by stinger-forge from `product-tour-onboarding-ui-worker-bee-command-brief.md` and `research/`. Part of the Hive.*

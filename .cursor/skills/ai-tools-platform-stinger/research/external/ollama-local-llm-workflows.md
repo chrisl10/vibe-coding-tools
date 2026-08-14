@@ -11,7 +11,7 @@
 
 - Single binary; cross-platform (macOS/Linux/Windows); zero configuration for basic setup.
 - Model library with 50+ curated models available via `ollama pull <model>`.
-- OpenAI-compatible REST API at `localhost:11434/v1` — zero code changes to switch from cloud.
+- OpenAI-compatible REST API at `localhost:11434/v1`: zero code changes to switch from cloud.
 - Metal GPU acceleration on Apple Silicon; CUDA on NVIDIA; ROCm on AMD.
 - Multi-model serving: load multiple models; Ollama manages memory and context.
 - GGUF quantization: Q4_K_M is the sweet spot for quality/size on consumer hardware.
@@ -42,7 +42,7 @@
 
 ## Synthesis for stinger
 
-- Ollama is the unambiguous default for local LLM setup in 2026 — best ecosystem, easiest setup, OpenAI compat.
+- Ollama is the unambiguous default for local LLM setup in 2026: best ecosystem, easiest setup, OpenAI compat.
 - LM Studio for GUI users and Windows-first environments.
 - llama.cpp for production server deployments needing fine-grained control.
 - Apple Silicon (M2/M3 16GB+) is the most practical local inference hardware for developers.

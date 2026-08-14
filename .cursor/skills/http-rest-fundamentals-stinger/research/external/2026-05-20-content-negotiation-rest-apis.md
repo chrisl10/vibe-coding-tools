@@ -13,14 +13,14 @@ stinger: http-rest-fundamentals-stinger
 Published: 2026-03-08. APIScout Team.
 
 ## Summary
-Practical guide to implementing content negotiation in REST APIs. Ground truth: most APIs should support JSON only — content negotiation adds complexity that rarely pays off unless multi-format is genuinely needed. The `Vary: Accept` header is mandatory when supporting multiple formats or CDNs will serve the wrong cached response. Quality values (`q=`) must be parsed correctly. Returns 406 Not Acceptable for unsupported formats (not 200 with a default). Versioning via Accept header (content negotiation) is technically cleaner but practically worse than URL versioning.
+Practical guide to implementing content negotiation in REST APIs. Ground truth: most APIs should support JSON only; content negotiation adds complexity that rarely pays off unless multi-format is genuinely needed. The `Vary: Accept` header is mandatory when supporting multiple formats or CDNs will serve the wrong cached response. Quality values (`q=`) must be parsed correctly. Returns 406 Not Acceptable for unsupported formats (not 200 with a default). Versioning via Accept header (content negotiation) is technically cleaner but practically worse than URL versioning.
 
 ## Key quotations / statistics
 - "Most APIs should support JSON only — content negotiation adds complexity that rarely pays off unless you have specific multi-format needs."
 - "Always include the `Vary: Accept` header when supporting multiple formats — CDNs will serve wrong cached responses without it."
 - "Versioning via `Accept` header is technically cleaner than URL versioning but practically worse — harder to test, less visible, trickier to route."
 - Common mistakes: ignoring Accept header but returning wrong type, no 406 response, missing Content-Type header, no `Vary: Accept`, over-engineering formats.
-- CDN caching pitfall: "A CDN might cache the first response (say, JSON) and serve it for all subsequent requests — including those requesting CSV." — The `Vary: Accept` header prevents this.
+- CDN caching pitfall: "A CDN might cache the first response (say, JSON) and serve it for all subsequent requests — including those requesting CSV." The `Vary: Accept` header prevents this.
 - "The downside: Vary significantly reduces cache hit rates because cache keys become more specific."
 - Code example: Hono (edge runtime) implementation of multi-format endpoint with proper `Vary: Accept` header.
 

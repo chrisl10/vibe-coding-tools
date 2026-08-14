@@ -1,4 +1,6 @@
-# Example: MCP Tool Doc for `hivemind_search`
+# Worked example (Hivemind-specific): MCP Tool Doc for `hivemind_search`
+
+> This is a worked example for one real product (Hivemind), not the general procedure. Read `guides/01-mcp-tool-docs.md` first for the domain-general six-part tool-doc shape; come back here to see it applied end to end.
 
 A complete, honest tool doc built from `src/mcp/server.ts`. This is the shape every Hivemind MCP tool doc should take.
 

@@ -37,7 +37,7 @@ A December 2025 benchmark article measuring webhook vs long-polling performance 
 6. "Run a canary bot instance on polling; promote to webhook only when p95 latency < 300ms for 24h."
 
 **Telegram 2026 roadmap hint:**
-- "Telegram's 2026 roadmap (public talk, Dec 2025) hints at QUIC-based webhooks to cut handshake RTT. Early tester form is open; expect 15–25ms median savings in regions with 100+ ms TCP handshake loss."
+- "Telegram's 2026 roadmap (public talk, Dec 2025) hints at QUIC-based webhooks to cut handshake RTT. Early tester form is open; expect 15-25ms median savings in regions with 100+ ms TCP handshake loss."
 
 **Rate limits from supplementary source (fyw-telegram.com, Jan 2026):**
 - Global (sendMessage): 30 msg/s documented, ~32 msg/s empirical burst

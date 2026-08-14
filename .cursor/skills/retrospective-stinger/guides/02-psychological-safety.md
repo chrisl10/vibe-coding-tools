@@ -1,4 +1,4 @@
-# 02 — Psychological Safety: The Safety Gate
+# 02: Psychological Safety: The Safety Gate
 
 *Derived from `research/external/2026-05-20-psychological-safety-retroflow.md` and `research/external/2026-05-20-psychological-safety-agile-kollabe.md`.*
 
@@ -8,7 +8,7 @@
 
 A team that doesn't feel safe won't say what's actually wrong. They'll produce the retro board equivalent of a performance review: technically complete, substantively empty. Psychological safety is not a nice-to-have; it is a load-bearing prerequisite for retro honesty.
 
-The research anchor: 42% higher participation from introverted team members when input is anonymous (source: `research/external/2026-05-20-psychological-safety-retroflow.md`). Safety doesn't just help the nervous — it helps anyone who holds a minority view.
+The research anchor: 42% higher participation from introverted team members when input is anonymous (source: `research/external/2026-05-20-psychological-safety-retroflow.md`). Safety doesn't just help the nervous: it helps anyone who holds a minority view.
 
 ---
 
@@ -30,7 +30,7 @@ Rate each item 1-5 (1 = strongly disagree, 5 = strongly agree):
 
 **Interpretation:**
 - **< 3.0 average:** Low safety. Do NOT run a standard retro. See the mitigation playbook below.
-- **3.0 – 3.9:** Moderate safety. Use anonymous input tools as default. Brief the team on psychological safety before starting.
+- **3.0: 3.9:** Moderate safety. Use anonymous input tools as default. Brief the team on psychological safety before starting.
 - **4.0+:** High safety. Standard retro formats are appropriate. Consider attributed feedback.
 
 ---

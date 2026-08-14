@@ -1,4 +1,4 @@
-# Example: Portkey Gateway Setup — Virtual Keys + Fallback + Budget Cap
+# Example: Portkey Gateway Setup: Virtual Keys + Fallback + Budget Cap
 
 This is a complete end-to-end Portkey setup for a production SaaS application with Anthropic as primary and OpenAI as fallback.
 
@@ -10,7 +10,7 @@ This is a complete end-to-end Portkey setup for a production SaaS application wi
 - Cheap tier: Claude Haiku 3.5 (classification and routing tasks)
 - Requirement: budget cap of $500/month on the production workspace
 
-## Step 1 — Create virtual keys in Portkey dashboard
+## Step 1: Create virtual keys in Portkey dashboard
 
 In the Portkey dashboard (app.portkey.ai):
 1. "Virtual Keys" → "Add Key"
@@ -18,14 +18,14 @@ In the Portkey dashboard (app.portkey.ai):
 3. Create: `openai-fallback` pointing to your OpenAI API key
 4. Create: `anthropic-haiku` pointing to the same Anthropic key (separate for cost attribution)
 
-## Step 2 — Set budget caps
+## Step 2: Set budget caps
 
 On each virtual key:
 - `anthropic-prod`: $400/month cap
 - `openai-fallback`: $100/month cap (emergency use only)
 - `anthropic-haiku`: $50/month cap
 
-## Step 3 — Create a routing config
+## Step 3: Create a routing config
 
 Save as `portkey.config.json` in your project root (or define via Portkey dashboard):
 
@@ -58,7 +58,7 @@ Save as `portkey.config.json` in your project root (or define via Portkey dashbo
 }
 ```
 
-## Step 4 — Application integration (TypeScript)
+## Step 4: Application integration (TypeScript)
 
 ```typescript
 // lib/ai-client.ts
@@ -112,7 +112,7 @@ export async function classifyIntent(text: string): Promise<string> {
 }
 ```
 
-## Step 5 — Environment variables
+## Step 5: Environment variables
 
 ```bash
 # .env.local
@@ -122,7 +122,7 @@ PORTKEY_VIRTUAL_KEY_OPENAI_FALLBACK=openai-fallback
 PORTKEY_VIRTUAL_KEY_ANTHROPIC_HAIKU=anthropic-haiku
 ```
 
-## Step 6 — Verify in Portkey dashboard
+## Step 6: Verify in Portkey dashboard
 
 After running a few test requests:
 1. "Logs" → confirm requests are appearing with provider tags.
@@ -144,4 +144,4 @@ At 100K production chat messages/month (avg 2K tokens each):
 - With 30% semantic cache hit rate: ~$420/month
 - With Haiku for classification (assume 100K classification calls): +$80/month
 
-Total estimate: ~$500/month — within the budget cap.
+Total estimate: ~$500/month, within the budget cap.

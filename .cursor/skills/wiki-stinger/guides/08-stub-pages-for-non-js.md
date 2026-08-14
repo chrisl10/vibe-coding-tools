@@ -1,14 +1,14 @@
-# Guide 08 — Stub Pages for Non-TS/JS Files
+# Guide 08: Stub Pages for Non-TS/JS Files
 
 v1 entity extraction is TS/JS-first via `ts-morph`. Files in other languages (`.go`, `.py`, `.rs`, `.java`, `.sql`-other-than-DDL, `.yml`, etc.) get **filename-only stub pages** so the wiki acknowledges their existence and v2 multi-language extraction can find and upgrade them in place.
 
 ## When to write a stub
 
-In Phase 1 (Parse the chunk), for each file in the chunk whose extension is NOT in `{.ts, .tsx, .js, .jsx}` — and is also NOT a known special case handled elsewhere (`.sql` DDL goes to `sql-table`; `.prisma` / `schema.ts` go to `data-model`):
+In Phase 1 (Parse the chunk), for each file in the chunk whose extension is NOT in `{.ts, .tsx, .js, .jsx}`, and is also NOT a known special case handled elsewhere (`.sql` DDL goes to `sql-table`; `.prisma` / `schema.ts` go to `data-model`):
 
 1. Detect the language from the extension.
 2. Write a stub entity page per the rules below.
-3. Skip ALL further phases for that file — no concept extraction, no contradiction check, no ADR detection from its commit history (commits are still scanned for ADR signals at the chunk level, just not per-file).
+3. Skip ALL further phases for that file: no concept extraction, no contradiction check, no ADR detection from its commit history (commits are still scanned for ADR signals at the chunk level, just not per-file).
 
 ## Stub filename pattern
 
@@ -72,7 +72,7 @@ This collision logic only applies to stubs. TS/JS entities are uniquely named by
 
 ## What the stub page implies for lint mode
 
-[`guides/09-lint-mode.md`](09-lint-mode.md) treats `status: stub` as a known incomplete state. A stub is NOT an orphan even if no other page links to it — its presence is the marker, and v2 upgrade will populate `used_by:` from real extraction.
+[`guides/09-lint-mode.md`](09-lint-mode.md) treats `status: stub` as a known incomplete state. A stub is NOT an orphan even if no other page links to it: its presence is the marker, and v2 upgrade will populate `used_by:` from real extraction.
 
 Lint mode does flag a stub if:
 - `last_commit_hash` is older than the source file's actual last commit (the stub is stale and needs a refresh).
@@ -94,7 +94,7 @@ These special cases get full entity treatment in v1, NOT stubs:
 - `.prisma` schema files → `data-model` entities (one per `model` declaration).
 - `schema.ts` Drizzle files → `data-model` entities.
 - `.json` config files → may yield `config-key` entities if read at runtime by a known config loader.
-- `.yml` files for cron-job definitions (e.g., GitHub Actions cron) — file as `cron-job` if the structure is recognizable.
+- `.yml` files for cron-job definitions (e.g., GitHub Actions cron): file as `cron-job` if the structure is recognizable.
 
 Everything else outside `.ts/.tsx/.js/.jsx` and the special cases above → stub.
 

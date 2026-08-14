@@ -1,5 +1,7 @@
 # 16 - Node 22 Runtime
 
+**Applies to both contexts, with a stack-specific note.** The Node-runtime-feature guidance below (built-in `fetch`, top-level await, `node:` builtins) applies generally. For THIS repo's actual Node-version policy on Vercel (which majors are supported, how to pin `engines.node`, the Node 20 deprecation timeline), see `guides/29-node-version-policy-on-vercel.md` - Vercel's supported-version set differs from whatever a locally-run Hivemind install assumes.
+
 `engines.node` is `>=22`. That is a real constraint you can build on, and a real thing to enforce.
 
 ## What Node 22 gives you (use it; don't polyfill it)

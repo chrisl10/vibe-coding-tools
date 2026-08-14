@@ -1,6 +1,6 @@
-# Guide — `Surface` (04)
+# Guide: `Surface` (04)
 
-> **Applies to:** visual containers — cards, modals, sheets, nav bars, popovers, drawers, toasts, panels. Any UI primitive whose primary job is "hold other UI."
+> **Applies to:** visual containers: cards, modals, sheets, nav bars, popovers, drawers, toasts, panels. Any UI primitive whose primary job is "hold other UI."
 
 ## 1. Purpose
 
@@ -24,7 +24,7 @@ Key fields:
 | `statesSupported` | `String[]` | human | yes | e.g., `default`, `hover`, `elevated`, `dragging` |
 | `tokensConsumed` | `String[]` | generator | yes | keys into `DesignTokenDefinition.key` |
 | `featureKey` | `String?` | human | no | usually `generic-ui` or a specific feature |
-| `uxuiBriefRef` | `String` | human | yes | path into `library/knowledge-base/ux-ui/03-components/*.md` |
+| `uxuiBriefRef` | `String` | human | yes | path into `library/knowledge/private/ux-ui/03-components/*.md` |
 | `codePath` | `String` | generator | yes | |
 | `exportName` | `String` | generator | yes | |
 | `fileHash` | `String` | generator | yes | |
@@ -54,7 +54,7 @@ Key fields:
 
 Standard. Because surfaces are heavily consumed, deprecating a surface triggers a drift scan for every `Page.surfacesUsed` entry.
 
-Sunset window: 90 days, but `ux-ui-worker-bee` can extend to 180 if the visual system is in mid-refactor.
+Sunset window: 90 days, but `ux-ui-svelte-worker-bee` can extend to 180 if the visual system is in mid-refactor.
 
 ## 6. Relationships
 
@@ -64,13 +64,13 @@ Sunset window: 90 days, but `ux-ui-worker-bee` can extend to 180 if the visual s
 
 ## 7. Hand-offs
 
-- **ux-ui-worker-bee** — owns the semantic brief (`uxuiBriefRef`). You catalog; they define meaning.
+- **ux-ui-svelte-worker-bee**: owns the semantic brief (`uxuiBriefRef`). You catalog; they define meaning.
 - On any surface PR: you verify the row exists; they verify the code matches the brief.
 
 ## 8. Pitfalls
 
 - Registering a component as both `Surface` and `Control` because it visually looks like either. Pick one; a surface *contains*, a control *acts*.
-- Missing `uxuiBriefRef` — the surface becomes uncatalogued visually. Always link to a brief doc.
+- Missing `uxuiBriefRef`: the surface becomes uncatalogued visually. Always link to a brief doc.
 - `tokensConsumed` listing tokens that the brief forbids (e.g., a surface that uses a `--color-gold` literal where `--color-gold-ink` is required). Flag in drift audit.
 - Bolting new state values into `statesSupported` without ux-ui review (e.g., `shimmering` is not a brief state).
 
@@ -91,7 +91,7 @@ await prisma.surface.create({
       "space.4"
     ],
     featureKey: "generic-ui",
-    uxuiBriefRef: "library/knowledge-base/ux-ui/03-components/cards-and-surfaces.md#glass-card",
+    uxuiBriefRef: "library/knowledge/private/ux-ui/03-components/cards-and-surfaces.md#glass-card",
     codePath: "app/src/components/cards/CardGlass.tsx",
     exportName: "CardGlass",
     fileHash: "f1e2d3...",
@@ -115,4 +115,4 @@ See `examples/surface-example.md`.
 - [ ] Every `tokensConsumed` entry resolves to a real `DesignTokenDefinition`
 - [ ] `uxuiBriefRef` points at a real section in the ux-ui kb
 - [ ] `statesSupported` matches what the component actually implements
-- [ ] No re-implementation of `.glass-surface` or shadow stacks inline (flag with ux-ui-worker-bee)
+- [ ] No re-implementation of `.glass-surface` or shadow stacks inline (flag with ux-ui-svelte-worker-bee)

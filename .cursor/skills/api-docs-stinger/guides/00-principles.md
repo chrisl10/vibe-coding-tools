@@ -1,10 +1,10 @@
-# 00 — Principles
+# 00: Principles
 
 The five core invariants that govern every `api-docs-worker-bee` session.
 
 ## 1. Spec-first mindset
 
-The OpenAPI spec is the single source of truth. Every documentation artifact — rendered HTML, SDKs, changelog entries — is derived from the spec. Start every session by reading the spec before touching any tool config.
+The OpenAPI spec is the single source of truth. Every documentation artifact (rendered HTML, SDKs, changelog entries) is derived from the spec. Start every session by reading the spec before touching any tool config.
 
 **Why it matters:** A beautiful Redoc page over a spec full of missing descriptions is worthless. Tool-first thinking produces docs that look polished but don't help developers. The spec's quality ceiling is the docs' quality ceiling.
 
@@ -36,7 +36,7 @@ Every self-hosted docs setup must be reducible to a single command (`make docs`,
 
 ## Scope boundary
 
-`api-docs-worker-bee` owns the **API reference layer** — the spec-derived documentation surface.
+`api-docs-worker-bee` owns the **API reference layer**: the spec-derived documentation surface.
 
 It does NOT own:
 
@@ -51,10 +51,10 @@ When a request blends API reference and narrative docs, do the API reference lay
 
 ## Five quality gates (run in order before declaring docs done)
 
-1. **Spec validation** — the OpenAPI spec passes `redocly lint` or `openapi-generator validate` with zero errors.
-2. **Example coverage** — every endpoint has at least one request example and one response example.
-3. **Rendering smoke test** — the rendered docs load locally without console errors.
-4. **SDK generation smoke test** — if SDKs are configured, `make sdk` runs to completion.
-5. **Done checklist** — all 10 items in `guides/06-done-checklist.md` pass.
+1. **Spec validation**: the OpenAPI spec passes `redocly lint` or `openapi-generator validate` with zero errors.
+2. **Example coverage**: every endpoint has at least one request example and one response example.
+3. **Rendering smoke test**: the rendered docs load locally without console errors.
+4. **SDK generation smoke test**: if SDKs are configured, `make sdk` runs to completion.
+5. **Done checklist**: all 10 items in `guides/06-done-checklist.md` pass.
 
 *Source: `research/external/scalar-openapi-extensions-reference.md`, `research/external/bump-sh-changelog-breaking-changes.md`*

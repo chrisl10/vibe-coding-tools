@@ -1,6 +1,6 @@
-# 18 — Drag-and-Drop & Animation
+# 18: Drag-and-Drop & Animation
 
-Source: `research/2026-04-25-dnd-and-animation.md`. Drag-and-drop and motion are the things that make a UI *feel* premium — and the things most likely to break accessibility. This guide picks libraries and enforces the a11y floor.
+Source: `research/2026-04-25-dnd-and-animation.md`. Drag-and-drop and motion are the things that make a UI *feel* premium, and the things most likely to break accessibility. This guide picks libraries and enforces the a11y floor.
 
 ## TL;DR pick
 
@@ -36,17 +36,17 @@ The defaults: **dnd-kit** for drag-and-drop, **Motion** for animation, **auto-an
 - Use for page transitions, modal in/out, layout-id shared element transitions, draggable elements with snap.
 
 ### GSAP (the heavy lifter)
-- Use for complex sequences that React's render cycle resists — multi-step timelines, stagger, scroll-driven animation, SVG morphing.
+- Use for complex sequences that React's render cycle resists: multi-step timelines, stagger, scroll-driven animation, SVG morphing.
 - License changed in 2024: now free for commercial use under MIT-style terms. Verify current license before adopting.
 - Best paired with React via `useGSAP` hook (`@gsap/react`).
 
 ### Lottie (designer-authored animation)
 - After Effects → Bodymovin export → JSON → render in `lottie-react` or `@lottiefiles/dotlottie-react`.
 - Use for hero illustrations, success/empty-state animations, onboarding sequences. Don't use for UI motion (use Motion).
-- `dotLottie` is the modern format — smaller, animated, supports interactivity.
+- `dotLottie` is the modern format: smaller, animated, supports interactivity.
 
 ### Theatre.js (studio-grade choreography)
-- Visual editor for code-driven animations — adjust easings/keyframes in a panel, persist as JSON.
+- Visual editor for code-driven animations: adjust easings/keyframes in a panel, persist as JSON.
 - Use for marketing sites, product launches, branded experiences with multi-property choreography.
 - Overkill for in-product UI motion.
 
@@ -60,7 +60,7 @@ The defaults: **dnd-kit** for drag-and-drop, **Motion** for animation, **auto-an
 
 Drag-and-drop is the single most common source of a11y regressions. The floor:
 
-1. **Keyboard-operable.** Every drag must be doable via keyboard — usually space-to-pick-up, arrows-to-move, space-to-drop, escape-to-cancel. dnd-kit's `KeyboardSensor` handles this.
+1. **Keyboard-operable.** Every drag must be doable via keyboard: usually space-to-pick-up, arrows-to-move, space-to-drop, escape-to-cancel. dnd-kit's `KeyboardSensor` handles this.
 2. **Live region announcements.** When an item picks up, moves, drops, or cancels, a screen reader hears it. dnd-kit ships an `Announcements` API; provide labels per action (`onDragStart`, `onDragOver`, `onDragEnd`, `onDragCancel`).
 3. **`aria-grabbed` is deprecated.** Modern guidance is to manage focus and live region text instead. dnd-kit does this for you. Don't add `aria-grabbed` manually.
 4. **Reduced-motion respect.** `@media (prefers-reduced-motion: reduce)` must disable layout animations and DnD-induced motion. Motion supports this via `useReducedMotion()`. GSAP via `gsap.matchMedia()`.
@@ -181,16 +181,16 @@ export function FadeUp({ children }: { children: React.ReactNode }) {
 
 ## Common findings
 
-> **[Must-fix]** `src/features/board/KanbanBoard.tsx:1` — `react-dnd` in use; no keyboard sensor; no live announcements. Migrate to dnd-kit and provide the `accessibility.announcements` props. See this guide §a11y-floor.
+> **[Must-fix]** `src/features/board/KanbanBoard.tsx:1`: `react-dnd` in use; no keyboard sensor; no live announcements. Migrate to dnd-kit and provide the `accessibility.announcements` props. See this guide §a11y-floor.
 
-> **[Must-fix]** `src/components/Modal.tsx:5` — Motion fade-and-slide ignores `prefers-reduced-motion`. Wrap with `useReducedMotion`.
+> **[Must-fix]** `src/components/Modal.tsx:5`: Motion fade-and-slide ignores `prefers-reduced-motion`. Wrap with `useReducedMotion`.
 
-> **[Should-refactor]** `src/lottie/welcome.json` — 1.4 MB Lottie file. Re-export as dotLottie or split into smaller animations; cite bundle impact.
+> **[Should-refactor]** `src/lottie/welcome.json`: 1.4 MB Lottie file. Re-export as dotLottie or split into smaller animations; cite bundle impact.
 
 ---
 
 ## Handoffs
 
-- **Motion tokens (durations, easings, distances) and motion-design intent** → `ux-ui-worker-bee`. Durations and easings live in tokens, not magic numbers.
+- **Motion tokens (durations, easings, distances) and motion-design intent** → `ux-ui-svelte-worker-bee`. Durations and easings live in tokens, not magic numbers.
 - **Custom-built interactive canvas / 3D scenes** → React Three Fiber territory; outside this guide.
 - **Performance impact of layout animations under load** → `guides/07-performance.md` + Profiler trace.

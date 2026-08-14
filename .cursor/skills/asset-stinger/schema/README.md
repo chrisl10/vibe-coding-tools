@@ -1,18 +1,18 @@
-# Schema — Canonical Registry Assets
+# Schema: Canonical Registry Assets
 
-This directory holds the canonical schema artifacts the `asset-worker-bee` agent references when implementing the asset-registry schema foundation in a deploying product, and when scaffolding a blank-DB bootstrap or an existing-DB overlay. The shapes here are the generic, product-agnostic reference — any deploying product mirrors these into its own Prisma/SQL layer.
+This directory holds the canonical schema artifacts the `asset-worker-bee` agent references when implementing the asset-registry schema foundation in a deploying product, and when scaffolding a blank-DB bootstrap or an existing-DB overlay. The shapes here are the generic, product-agnostic reference: any deploying product mirrors these into its own Prisma/SQL layer.
 
 ## Files
 
 | File | Use when |
 |---|---|
 | [`registry-schema.prisma`](./registry-schema.prisma) | You are writing a Prisma migration or adding the registry models to the deploying product's `schema.prisma`. Mirror the shapes here. |
-| [`bootstrap.sql`](./bootstrap.sql) | Greenfield DB — no prior data. Runs the full `CREATE TABLE` set for every registry model. |
-| [`overlay.sql`](./overlay.sql) | Existing DB with live data — additive only. `CREATE TABLE IF NOT EXISTS` + `ALTER TABLE ADD COLUMN IF NOT EXISTS` for FK elevation on existing tables. |
+| [`bootstrap.sql`](./bootstrap.sql) | Greenfield DB, no prior data. Runs the full `CREATE TABLE` set for every registry model. |
+| [`overlay.sql`](./overlay.sql) | Existing DB with live data, additive only. `CREATE TABLE IF NOT EXISTS` + `ALTER TABLE ADD COLUMN IF NOT EXISTS` for FK elevation on existing tables. |
 
 ## These files are EXAMPLES
 
-They are not production artifacts. Use them as the starting point; the real migration goes through whatever migration flow the deploying product uses (Prisma `migrate dev`, raw SQL, etc.). Never commit `bootstrap.sql` or `overlay.sql` to the live migrations folder — they're reference material.
+They are not production artifacts. Use them as the starting point; the real migration goes through whatever migration flow the deploying product uses (Prisma `migrate dev`, raw SQL, etc.). Never commit `bootstrap.sql` or `overlay.sql` to the live migrations folder: they're reference material.
 
 ## Naming and map conventions (enforced)
 
@@ -54,7 +54,7 @@ The sync generator runs as DB role `sync_generator`. See `guides/03-sync-generat
 
 ## Related docs
 
-- [`../guides/00-principles.md`](../guides/00-principles.md) — the nine non-negotiables
-- [`../guides/01-registration-workflow.md`](../guides/01-registration-workflow.md) — registration flow
-- [`../guides/03-sync-generator-spec.md`](../guides/03-sync-generator-spec.md) — what writes what
-- [`../guides/05-hand-offs.md`](../guides/05-hand-offs.md) — scope boundaries
+- [`../guides/00-principles.md`](../guides/00-principles.md): the nine non-negotiables
+- [`../guides/01-registration-workflow.md`](../guides/01-registration-workflow.md): registration flow
+- [`../guides/03-sync-generator-spec.md`](../guides/03-sync-generator-spec.md): what writes what
+- [`../guides/05-hand-offs.md`](../guides/05-hand-offs.md): scope boundaries

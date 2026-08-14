@@ -1,4 +1,4 @@
-# 01 — Tool Selection
+# 01: Tool Selection
 
 Choosing the right API documentation renderer. Read `research/external/scalar-vs-swagger-redoc-comparison.md` and `research/external/managed-platform-comparison-mintlify-readme-stoplight.md` before running this guide.
 

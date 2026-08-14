@@ -37,7 +37,7 @@
 
 ### 5. AppStoreReview: Review Queue Delays in 2026
 **File:** `external/2026-05-20-app-store-review-times-2026.md`  
-**Why it matters:** Data-backed analysis explaining that review times are systematically longer in 2026 due to a 60-80% YoY increase in app submissions (104% in April 2026). New baseline: 2–5 days for new apps, 24–72 hours for updates. Expedited review is being approved less frequently. This source grounds the timeline guidance in `guides/05-timeline-and-process.md` with current evidence rather than Apple's stated 24-hour benchmark, which is no longer reliably achieved for new app submissions.
+**Why it matters:** Data-backed analysis explaining that review times are systematically longer in 2026 due to a 60-80% YoY increase in app submissions (104% in April 2026). New baseline: 2-5 days for new apps, 24-72 hours for updates. Expedited review is being approved less frequently. This source grounds the timeline guidance in `guides/05-timeline-and-process.md` with current evidence rather than Apple's stated 24-hour benchmark, which is no longer reliably achieved for new app submissions.
 
 ---
 

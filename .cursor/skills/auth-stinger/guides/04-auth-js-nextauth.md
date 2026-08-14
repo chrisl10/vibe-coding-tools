@@ -1,4 +1,4 @@
-# 04 — Auth.js (formerly NextAuth)
+# 04: Auth.js (formerly NextAuth)
 
 OSS, Next.js-native, the long-time default. v5 (formerly NextAuth.js v5) is the version to use in 2026.
 
@@ -7,15 +7,15 @@ Source: `research/2026-04-25-authjs-v5-status.md`, https://authjs.dev.
 ## When Auth.js wins
 
 - Next.js project where you want OSS auth and the team already knows the library.
-- A wide range of OAuth providers (50+) — almost any social IdP has a built-in Auth.js provider config.
+- A wide range of OAuth providers (50+): almost any social IdP has a built-in Auth.js provider config.
 - You want the lowest-friction integration with `next-auth/middleware` and Server Components.
 - You want a path you can self-host without paying anyone.
 
 ## When Auth.js loses
 
 - **DX gap vs Better Auth in 2026.** Better Auth ships a more cohesive plugin model (orgs, MFA, passkeys built-in) where Auth.js still has a sprawling adapter / provider matrix.
-- **You want a non-Next.js framework** — Auth.js core is framework-agnostic but the polished surface is Next.js. SvelteKit / SolidStart support is real but lags.
-- **You want prebuilt UI** — Auth.js is headless. Reach for Clerk or AuthKit (WorkOS).
+- **You want a non-Next.js framework**: Auth.js core is framework-agnostic but the polished surface is Next.js. SvelteKit / SolidStart support is real but lags.
+- **You want prebuilt UI**: Auth.js is headless. Reach for Clerk or AuthKit (WorkOS).
 
 ## Integration shape (v5, App Router)
 
@@ -91,19 +91,19 @@ Cite https://authjs.dev/getting-started/migrating-to-v5 for the canonical migrat
 
 ## Critical config
 
-- **`AUTH_SECRET`** — required in v5 (env var renamed from `NEXTAUTH_SECRET`). Random 32+ byte string.
-- **`AUTH_TRUST_HOST`** — required when running behind a reverse proxy (Vercel sets this implicitly; self-host needs it).
-- **`AUTH_URL`** — only required for non-Vercel deployments and dev tunnels.
-- **`callbacks.signIn`** — runs every sign-in; use to enforce email-domain allowlists, ban lists, MFA gates.
-- **`events.linkAccount`** — fire on account linking; useful for tracking the `external_accounts` row.
+- **`AUTH_SECRET`**: required in v5 (env var renamed from `NEXTAUTH_SECRET`). Random 32+ byte string.
+- **`AUTH_TRUST_HOST`**: required when running behind a reverse proxy (Vercel sets this implicitly; self-host needs it).
+- **`AUTH_URL`**: only required for non-Vercel deployments and dev tunnels.
+- **`callbacks.signIn`**: runs every sign-in; use to enforce email-domain allowlists, ban lists, MFA gates.
+- **`events.linkAccount`**: fire on account linking; useful for tracking the `external_accounts` row.
 
 ## Common pitfalls
 
-- **Migrating v4 → v5 without reading the migration guide** — half the config moves and half stays.
-- **`session: { strategy: 'jwt' }` by default reasoning** — Auth.js's docs lean toward JWT; it is *not* the right default for most apps. Pick deliberately per the table above.
-- **Trusting `session.user.email` for authorization** — emails are user-mutable; key on `user.id` (a stable `cuid` / `uuid`).
-- **No CSRF protection on credentials provider** — Auth.js builds in a CSRF token; if you're sidestepping the framework's form submission, you've sidestepped the protection. Don't.
-- **Forgetting `trustHost` behind a proxy** — login redirects break in subtle ways.
+- **Migrating v4 → v5 without reading the migration guide**: half the config moves and half stays.
+- **`session: { strategy: 'jwt' }` by default reasoning**: Auth.js's docs lean toward JWT; it is *not* the right default for most apps. Pick deliberately per the table above.
+- **Trusting `session.user.email` for authorization**: emails are user-mutable; key on `user.id` (a stable `cuid` / `uuid`).
+- **No CSRF protection on credentials provider**: Auth.js builds in a CSRF token; if you're sidestepping the framework's form submission, you've sidestepped the protection. Don't.
+- **Forgetting `trustHost` behind a proxy**: login redirects break in subtle ways.
 
 ## Migration: Auth.js → Better Auth or Clerk
 

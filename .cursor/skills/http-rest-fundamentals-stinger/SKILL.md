@@ -1,15 +1,15 @@
 ---
-name: http-rest-fundamentals-stinger
-description: HTTP and REST protocol authority — audits HTTP method safety/idempotency contracts, status-code honesty, header correctness (Cache-Control, ETag, Vary, CORS), conditional and range requests, HTTP/2 + HTTP/3 readiness, and REST architectural-style compliance. Activate when the user says "audit this API", "is this status code correct?", "why is CORS failing?", "explain preflight", "PUT vs PATCH", "HTTP/3 ready?", or when reviewing any route handler, OpenAPI spec, or HTTP trace. Do NOT activate for TLS/cipher config (devops-worker-bee), auth token semantics (auth-worker-bee), or crawler-facing metadata (seo-aeo-worker-bee).
+name: "http-rest-fundamentals-stinger"
+description: "'HTTP and REST protocol authority: audits HTTP method safety/idempotency contracts, status-code honesty, header correctness (Cache-Control, ETag, Vary, CORS), conditional and range requests, HTTP/2 + HTTP/3 readiness, and REST architectural-style compliance. Activate when the user says \\\\\\\"audit this API\\\\\\\", \\\\\\\"is this status code correct?\\\\\\\", \\\\\\\"why is CORS failing?\\\\\\\", \\\\\\\"explain preflight\\\\\\\", \\\\\\\"PUT vs PATCH\\\\\\\", \\\\\\\"HTTP/3 ready?\\\\\\\", or when reviewing any route handler, OpenAPI spec, or HTTP trace. Do NOT activate for TLS/cipher config (devops-worker-bee), auth token semantics (auth-worker-bee), or crawler-facing metadata (seo-aeo-worker-bee).'"
 ---
 
 # http-rest-fundamentals Stinger
 
-Procedural arsenal for `http-rest-fundamentals-worker-bee`, the HTTP and REST protocol authority in the Legion AI Army.
+Procedural arsenal for `http-rest-fundamentals-worker-bee`, the HTTP and REST protocol authority in the Hive.
 
 This stinger encodes the practical reference material needed to audit HTTP and REST usage authoritatively against RFC semantics. It is organized around eight concern areas, each with its own guide, plus templates for common deliverables and worked examples for the most frequently misunderstood scenarios.
 
-**Paired Bee:** `ai-tools/agents/http-rest-fundamentals-worker-bee.md`
+**Paired Bee:** `.cursor/agents/http-rest-fundamentals-worker-bee.md`
 **Command Brief:** `ai-tools/command-briefs/http-rest-fundamentals-worker-bee-command-brief.md`
 
 ---
@@ -121,4 +121,4 @@ http-rest-fundamentals-stinger/
 
 ---
 
-*Forged by `stinger-forge` from `http-rest-fundamentals-worker-bee-command-brief.md` and `research/`. Part of the Legion AI Tools Factory by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Forged by `stinger-forge` from `http-rest-fundamentals-worker-bee-command-brief.md` and `research/`. Part of The Hive by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

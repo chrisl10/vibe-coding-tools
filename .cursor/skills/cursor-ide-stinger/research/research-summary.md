@@ -1,6 +1,6 @@
 # Research Summary: cursor-ide-stinger
 
-Refocused 2026-06-16 on Hivemind's real Cursor surface: the Cursor 1.7+ hooks harness, the first-party Cursor extension, registering the Hivemind MCP server in Cursor, and the `.cursor/` Bee Army layout.
+Refocused 2026-06-16 on Hivemind's real Cursor surface: the Cursor 1.7+ hooks harness, the first-party Cursor extension, registering the Hivemind MCP server in Cursor, and the `.cursor/` colony layout.
 
 ## Scope
 
@@ -13,7 +13,7 @@ The definitive reference for the hooks wiring: the Cursor-specific `hooks.json` 
 Backs the `hooks.json` schema and confirms how Cursor's shape differs from Claude Code / Codex (no outer wrapper, sibling `matcher`).
 
 ### 3. `.cursor/rules/*.mdc` live rules (internal)
-The three shipped rules (`no-em-dashes`, `plan-construction-protocol`, `respect-agent-work-boundaries`) are the canonical `.mdc` examples and the Army's guardrails.
+The three shipped rules (`no-em-dashes`, `plan-construction-protocol`, `respect-agent-work-boundaries`) are the canonical `.mdc` examples and the colony's guardrails.
 
 ### 4. Cursor Rules official docs (`external/2026-05-20-cursor-rules-official-docs.md`)
 The authoritative definition of the four activation modes and the three frontmatter fields, for `guides/01` and `guides/02`.

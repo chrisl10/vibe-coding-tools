@@ -1,10 +1,10 @@
-# Guide — `Breakpoint` (14)
+# Guide: `Breakpoint` (14)
 
 > **Applies to:** responsive threshold tokens declared in `01-master-tokens.css` (e.g., `--bp-sm`, `--bp-md`, `--bp-lg`).
 
 ## 1. Purpose
 
-Breakpoints are special design tokens — they gate layout, not paint. Cataloging them ensures the responsive variants referenced in `Layout.responsiveVariants` resolve to real thresholds.
+Breakpoints are special design tokens: they gate layout, not paint. Cataloging them ensures the responsive variants referenced in `Layout.responsiveVariants` resolve to real thresholds.
 
 ## 2. DB table
 
@@ -34,7 +34,7 @@ Rarely deprecated; breakpoints are usually set once and rarely change. Sunset wi
 
 ## 7. Hand-offs
 
-- **ux-ui-worker-bee** owns the responsive system.
+- **ux-ui-svelte-worker-bee** owns the responsive system.
 
 ## 8. Pitfalls
 
@@ -49,8 +49,8 @@ await prisma.breakpoint.create({
     cssVarName: "--bp-md",
     minWidthPx: 768,
     semanticRole: "Tablet to desktop threshold",
-    uxuiBriefRef: "library/knowledge-base/ux-ui/00-design-brief.md#breakpoints",
-    codePath: "library/knowledge-base/ux-ui/01-master-tokens.css",
+    uxuiBriefRef: "library/knowledge/private/ux-ui/00-design-brief.md#breakpoints",
+    codePath: "library/knowledge/private/ux-ui/01-master-tokens.css",
     fileHash: "5a6b7c...",
     status: "draft",
     ownerTeam: "ux",

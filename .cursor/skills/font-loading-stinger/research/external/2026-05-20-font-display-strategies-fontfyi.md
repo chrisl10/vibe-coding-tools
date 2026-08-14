@@ -16,7 +16,7 @@ A practitioner comparison of `font-display` values focused on real-world perform
 ## Key quotations / statistics
 
 - "swap is the most widely recommended value."
-- "`swap` can be 'further optimized to mitigate layout shifts with font metric overrides.'" — Chrome documentation
+- "`swap` can be 'further optimized to mitigate layout shifts with font metric overrides.'" (Chrome documentation)
 - Chrome block period for `swap`: effectively 0ms; Firefox: slight variation due to `fallback_delay_short` preference.
 - "Browser Implementation (2026): Chrome has a zero-second block period, while Firefox defaults to 100ms." (for the block period under `swap`)
 - CLS mitigation with `swap`: "Use `size-adjust`, `ascent-override`, `descent-override`, and `line-gap-override` properties to size-match the fallback font to the web font."

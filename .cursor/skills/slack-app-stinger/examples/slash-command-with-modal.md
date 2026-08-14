@@ -165,8 +165,8 @@ async function createTicketInBackend(data: { title: string; priority: string; de
 
 ## Key patterns demonstrated
 
-1. **ACK before `views.open`** — `ack()` is called before `client.views.open()` because both operations happen within the 3-second window.
-2. **`private_metadata` for state passing** — the originating `channel_id` is encoded in `private_metadata` and decoded in the `view_submission` handler.
-3. **Validation before `ack()`** — invalid input returns `response_action: 'errors'` without closing the modal.
-4. **Async dispatch after `ack()`** — `createTicketAndNotify` is called without `await`, ensuring the handler returns immediately after `ack()`.
-5. **`optional: true` on input blocks** — marks a field as not required for submission; `value` will be `null` if left empty.
+1. **ACK before `views.open`**: `ack()` is called before `client.views.open()` because both operations happen within the 3-second window.
+2. **`private_metadata` for state passing**: the originating `channel_id` is encoded in `private_metadata` and decoded in the `view_submission` handler.
+3. **Validation before `ack()`**: invalid input returns `response_action: 'errors'` without closing the modal.
+4. **Async dispatch after `ack()`**: `createTicketAndNotify` is called without `await`, ensuring the handler returns immediately after `ack()`.
+5. **`optional: true` on input blocks**: marks a field as not required for submission; `value` will be `null` if left empty.

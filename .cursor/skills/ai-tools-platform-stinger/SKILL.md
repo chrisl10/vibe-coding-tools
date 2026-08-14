@@ -1,6 +1,6 @@
 ---
-name: ai-tools-platform-stinger
-description: The vibe coder's AI toolbox — AI gateways (Portkey, OpenRouter), cloud providers (Bedrock, Vertex AI), frontier model selection (Claude, GPT, Gemini), cheap-fallback routes (Haiku, Mini, Flash), local LLMs (Ollama, LM Studio), GPU cloud (Runpod, Modal, Together, Fireworks), and must-have MCPs and IDE plugins. Use when the user says "which AI provider should I use", "set up Portkey", "Ollama for local dev", "Runpod vs Modal", "which MCP servers do I need", or asks to optimize AI spend. Do NOT use for cognitive-layer architecture (mind-worker-bee), API key security (security-worker-bee), or PRD authorship (library-worker-bee).
+name: "ai-tools-platform-stinger"
+description: "The vibe coder's AI toolbox: AI gateways (Portkey, OpenRouter), cloud providers (Bedrock, Vertex AI), frontier model selection (Claude, GPT, Gemini), cheap-fallback routes (Haiku, Mini, Flash), local LLMs (Ollama, LM Studio), GPU cloud (Runpod, Modal, Together, Fireworks), and must-have MCPs and IDE plugins. Use when the user says \\\\\\\\\\\\\\\"which AI provider should I use\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"set up Portkey\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"Ollama for local dev\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"Runpod vs Modal\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"which MCP servers do I need\\\\\\\\\\\\\\\", or asks to optimize AI spend. Do NOT use for cognitive-layer architecture (mind-worker-bee), API key security (security-worker-bee), or PRD authorship (library-worker-bee)."
 ---
 
 # ai-tools-platform Stinger
@@ -23,7 +23,7 @@ Read the user's request and match to one mode. Most requests match one primary m
 
 ## First action on every invocation
 
-1. Read `guides/00-principles.md` — the non-negotiables that govern every output.
+1. Read `guides/00-principles.md`: the non-negotiables that govern every output.
 2. Match the request to the routing table above.
 3. Open the relevant guide(s) before producing any output.
 
@@ -93,7 +93,7 @@ Used to classify findings when auditing an existing AI tooling stack.
 
 Surface these explicitly rather than attempting them inline:
 
-- **security-worker-bee** — for API key vault strategy, PII audit in prompts, DPA compliance verification, model provider's data-retention policies.
-- **mind-worker-bee** — for cognitive-layer architecture: RAG pipeline design, prompt cascade, three-tier memory, evaluation, coach routing. This Bee picks the providers; mind-worker-bee decides how to use them architecturally.
-- **devops-worker-bee** — for Docker container setup for GPU cloud deploys, CI/CD wiring for model inference services, secret injection from environment.
-- **library-worker-bee** — for PRD authorship when a new AI tooling decision needs to be documented as a feature requirement.
+- **security-worker-bee**: for API key vault strategy, PII audit in prompts, DPA compliance verification, model provider's data-retention policies.
+- **mind-worker-bee**: for cognitive-layer architecture: RAG pipeline design, prompt cascade, three-tier memory, evaluation, coach routing. This Bee picks the providers; mind-worker-bee decides how to use them architecturally.
+- **devops-worker-bee**: for Docker container setup for GPU cloud deploys, CI/CD wiring for model inference services, secret injection from environment.
+- **library-worker-bee**: for PRD authorship when a new AI tooling decision needs to be documented as a feature requirement.

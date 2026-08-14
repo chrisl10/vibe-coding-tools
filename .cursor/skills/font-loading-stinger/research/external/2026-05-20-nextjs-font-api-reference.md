@@ -60,7 +60,7 @@ reduce CLS.
   `adjustFontFallback: true` (the default). No manual metric calculation is
   needed for Google Fonts users or `next/font/local` users.
 - The `fonts.ts` shared utility pattern must be the recommended pattern in
-  `guides/04-nextjs-font.md` — it prevents multiple font instances.
+  `guides/04-nextjs-font.md`: it prevents multiple font instances.
 - The `display: 'swap'` in `fonts.ts` is the explicit way to set font-display;
   without it, `next/font` uses its own default (likely `optional` for cached
   self-hosted fonts).

@@ -7,9 +7,9 @@
 
 GitHub historically defaulted `GITHUB_TOKEN` permissions to "Read and write" (a.k.a. permissive). New repos (post-2023) default to read-only, but many existing repos still inherit the older permissive default.
 
-A workflow without an explicit `permissions:` block inherits the repo default. If repo default is "Read and write", every job has full token write access — including `contents: write`, `packages: write`, `pull_requests: write`, etc. That's an enormous blast radius for a compromised action.
+A workflow without an explicit `permissions:` block inherits the repo default. If repo default is "Read and write", every job has full token write access, including `contents: write`, `packages: write`, `pull_requests: write`, etc. That's an enormous blast radius for a compromised action.
 
-## The fix — two parts
+## The fix: two parts
 
 ### Part 1: Set the repo default to read-only
 
@@ -33,7 +33,7 @@ jobs:
       packages: write     # only if pushing to GHCR
 ```
 
-Top-level `permissions: {}` (empty) is also valid — it means "no permissions" globally, then each job declares its own.
+Top-level `permissions: {}` (empty) is also valid: it means "no permissions" globally, then each job declares its own.
 
 ## The full permission keys
 
@@ -72,10 +72,10 @@ Equivalent to declaring every key as `write`. Always a Must-fix finding.
 
 ## What no `permissions:` block means
 
-Inherits the repo default. If the repo is properly configured (Part 1 above), this is read-only. If the repo isn't configured, this could be permissive — so devops-stinger enforces explicit per-job blocks regardless.
+Inherits the repo default. If the repo is properly configured (Part 1 above), this is read-only. If the repo isn't configured, this could be permissive, so devops-stinger enforces explicit per-job blocks regardless.
 
 ## Relevance to this Stinger
 
 - `guides/06-actions-security.md` §1, §3.
-- `scripts/audit-workflow.sh` — flags `permissions: write-all` (Must-fix) and missing `permissions:` block (Must-fix).
-- `templates/.github/workflows/*` — every workflow declares `permissions: {}` at top, then per-job blocks.
+- `scripts/audit-workflow.sh`: flags `permissions: write-all` (Must-fix) and missing `permissions:` block (Must-fix).
+- `templates/.github/workflows/*`: every workflow declares `permissions: {}` at top, then per-job blocks.

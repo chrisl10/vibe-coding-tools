@@ -1,73 +1,39 @@
-# Harness Integration Worker-Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `harness-integration-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/harness-integration-worker-bee.md`](../../../agents/harness-integration-worker-bee.md)
-**Stinger:** [`.cursor/skills/harness-integration-stinger/`](../../harness-integration-stinger/)
-**Trigger policy:** proactive
-
----
+# harness-integration-worker-bee
 
 ## Domain
+This Bee owns cross-harness capability integration for The Hive's four target harnesses (Claude Code, Cursor, ChatGPT Codex, Claude Cowork): where each component type (rules, commands, agents, skills, plugins) lives per harness, the wiring-mechanism decision (lifecycle hooks vs MCP server vs native extension vs plain instruction file), the hook/lifecycle event surface per harness and the real shared floor across them, MCP server registration per harness (including the Codex TOML trap and Cowork's cloud-reachability requirement), capability detection and graceful degradation when a harness lacks a feature, and cross-harness portability (the Agent Skills spec-six frontmatter, AGENTS.md as the shared rules baseline, plugin manifest differences). It also owns, as a fully preserved worked example, the Hivemind six-host case study (Claude Code, Codex, Cursor, Hermes, pi, OpenClaw) this Bee was originally built around, including the hivemind_search/read/index tool contract and the OpenClaw ClawHub bundle-scanner gate.
 
-`harness-integration-worker-bee` owns Hivemind's multi-harness integration surface: the shared core (`src/`) plus per-agent installers (`src/cli/install-*.ts`) and per-agent build outputs (`harnesses/<agent>/`) that wire Hivemind into Claude Code, Codex, Cursor, Hermes, pi, and OpenClaw. It covers capability detection and auto-install, the choice of wiring mechanism per host (lifecycle hooks vs native extension vs MCP server vs `AGENTS.md` marker block), the capture/recall hook lifecycle, MCP server registration (hermes), contracted tools (OpenClaw), and keeping the `hivemind_search`/`read`/`index` tool and command contract identical across every host. It defers to the dataset, embeddings, MCP-protocol, and CI Bees for their respective internals.
+## Paired Stinger
+[harness-integration-stinger](../../harness-integration-stinger) - the decision framework, per-harness placement/hook/MCP/portability guides, worked examples, and the Hivemind six-host case study.
 
 ## Trigger phrases
-
-Route to `harness-integration-worker-bee` when the user says any of:
-
-- "Wire a new harness" / "audit a harness adapter"
-- "Add a hook event"
-- "Register the MCP server in hermes" / "capability detection"
-- "Fix capability detection in install" / "install-*.ts"
-- "The OpenClaw bundle fails ClawHub" / "ClawHub bundle audit"
-
-Or when the harness integration surface (installers, hooks, native extensions, MCP registration, the AGENTS.md marker, the cross-host tool contract) is in scope.
+- "wire this capability into Claude Code and Cursor"
+- "add a hook event"
+- "register an MCP server across harnesses"
+- "audit a harness adapter"
+- "will this skill work in Cowork"
+- "what happens on a harness that doesn't support this"
+- "fix capability detection in install"
+- "the OpenClaw bundle fails ClawHub" (Hivemind case study)
 
 ## Do NOT route when
-
-- The user wants the Deep Lake dataset schema - that is `deeplake-dataset-worker-bee`.
-- The user wants the embeddings runtime - that is `embeddings-runtime-worker-bee`.
-- The user wants MCP wire-protocol internals beyond registration (tool design, transport, error model) - that is `mcp-protocol-worker-bee`. This Bee wires the host; the protocol Bee owns the contract.
-- The user wants the bundling or release CI topology - that is `ci-release-worker-bee`.
-- The user wants the Cursor-specific platform surface (hooks.json, the Cursor extension, the .cursor/ Bee Army layout) - that is `cursor-ide-worker-bee`. This Bee owns the other five hosts; cursor-ide owns the Cursor one.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let this one act as backup.
+- The question is about vector-store schema, not the adapter that calls it; that belongs to vector-store-stinger.
+- The question is about the embeddings runtime itself; that belongs to embeddings-runtime-stinger.
+- The question is about MCP wire-protocol internals (JSON-RPC framing, zod schemas, transport) rather than registering the server in a harness; that belongs to mcp-protocol-worker-bee.
+- The question is about the build/release CI pipeline topology; that belongs to ci-release-worker-bee.
+- The question is about retrieval ranking internals or the login token vault security audit; those are out of this Bee's scope entirely.
 
 ## Inputs the Bee needs
+- Which harness(es) are in scope (or "all four" for a contract-wide change).
+- The scenario type: new component placement, hook event, MCP registration, capability-detection/degradation question, portability check, distribution audit, or a Hivemind case-study question specifically.
+- The relevant source files or capability description (skill/agent/hook/MCP config being wired).
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- A component-placement or wiring-mechanism recommendation, a hook entry, an MCP server stanza per harness, or a portability fix.
+- A cross-harness contract-drift finding when a tool/hook change lands on only one harness without an explicit, classified degradation for the others.
+- An audit report against the harness-adapter checklist.
 
-- The host(s) in scope (Claude Code, Codex, Cursor, Hermes, pi, OpenClaw).
-- The integration concern: an installer, a hook event, capability detection, MCP registration, or a contract-stability check.
-- Access to the relevant `src/cli/install-*.ts` and `harnesses/<agent>/` paths.
-
-If the host or the integration concern is missing, do not invoke yet - ask the user which host and what they are wiring.
-
-## Outputs the Bee produces
-
-- New or audited per-host adapters (installers, hooks, native extensions, MCP registration).
-- Capability-detection fixes that stay cheap and side-effect free.
-- Cross-harness contract-stability findings (tool name/args/return shape parity across all six hosts).
-
-## Multi-Bee sequences this Bee participates in
-
-- **MCP feature build** - after `mcp-protocol-worker-bee` lands the tool contract and `mcp-tool-docs-worker-bee` documents it, `harness-integration-worker-bee` registers it across the six hosts.
-- **Plan execution loop** - the implementation Bee whose change `security-worker-bee` then `quality-worker-bee` close out.
-
-## Critical directives the orchestrator should respect
-
-- **Keep the tool and command contract identical across every host** - a one-host-only contract change is a Critical cross-harness recall break.
-- **Hooks must be fast and fail-open** - heavy work dispatched `async: true`; a hook crash must never block the host.
-- **Capability detection must be cheap and side-effect free** - detection that writes files or spawns work is Critical.
-- **Never hardcode bundle paths** - resolve per host (`${CLAUDE_PLUGIN_ROOT}`, `~/.<host>/hivemind/bundle/`).
-- **The OpenClaw bundle must pass the ClawHub static scanner** - no bare `spawn`/`execFileSync`.
-- **pi ships raw TypeScript; do not pre-compile it.**
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
-
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+## Commonly sequenced with
+- mcp-protocol-worker-bee: hands off MCP wire-protocol internals once registration is wired.
+- vector-store-worker-bee: owns the schema behind an MCP-backed memory tool's data layer.
+- ci-release-worker-bee: owns the build/release pipeline that ships the harness bundles.

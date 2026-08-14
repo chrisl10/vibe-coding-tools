@@ -45,11 +45,11 @@ caused FOIT while Chrome showed FOUT, and its strategic breakdown by font role
 
 ## Annotations for stinger-forge
 
-- The FOIT/FOUT/FOFT taxonomy section maps to `guides/00-principles.md` — use
+- The FOIT/FOUT/FOFT taxonomy section maps to `guides/00-principles.md`: use
   this source to explain the historical browser inconsistency that drove the
   `font-display` spec.
 - The strategic role-based breakdown (critical / secondary / decorative) belongs
   in `guides/01-font-display-decision-matrix.md` as a "use-case" decision row.
 - The unicode-range + selective preload guidance belongs in both
   `guides/02-preload-strategy.md` and `guides/03-variable-font-subsetting.md`.
-- Date: 2025-08-21 — recent and directly relevant.
+- Date: 2025-08-21, recent and directly relevant.

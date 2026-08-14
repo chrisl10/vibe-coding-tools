@@ -1,4 +1,4 @@
-# Tailwind v4 Dark Mode — dark-mode-theming-stinger
+# Tailwind v4 Dark Mode: dark-mode-theming-stinger
 
 *Covers: `@custom-variant dark`, selector strategy, Oxide engine compatibility, v3 → v4 migration, `darkMode` config deprecation.*
 
@@ -75,13 +75,13 @@ While `dark:*` utilities work correctly, the recommended pattern for 2026 is to 
 | `darkMode: 'class'` in `tailwind.config.js` | `@custom-variant dark (&:where(.dark, .dark *))` in `globals.css` |
 | `darkMode: 'media'` | `@custom-variant dark (@media (prefers-color-scheme: dark))` |
 | `darkMode: ['class', '[data-mode="dark"]']` | `@custom-variant dark (&:where([data-mode=dark], [data-mode=dark] *))` |
-| PostCSS `@tailwindcss/postcss` plugin | Same — install `@tailwindcss/postcss` |
+| PostCSS `@tailwindcss/postcss` plugin | Same: install `@tailwindcss/postcss` |
 
 ---
 
 ## Third-party library compatibility
 
-> TODO: open question — some component libraries (shadcn/ui, Radix UI, Mantine) may generate Tailwind utilities that assume v3 class conventions. Test the following before migrating to v4:
+> TODO: open question, some component libraries (shadcn/ui, Radix UI, Mantine) may generate Tailwind utilities that assume v3 class conventions. Test the following before migrating to v4:
 > 1. Dark mode utilities from the component library render correctly
 > 2. `dark:` prefixes from the library resolve to the v4 `@custom-variant` selector
 > 3. No duplicate specificity conflicts between library dark styles and app token overrides

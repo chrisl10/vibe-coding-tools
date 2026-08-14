@@ -11,7 +11,7 @@ stinger: font-loading-stinger
 # fontpie - CLI-generated metric-override CSS (GitHub)
 
 ## Summary
-Official README for `fontpie` by Pixel Point — a framework-agnostic CLI tool
+Official README for `fontpie` by Pixel Point, a framework-agnostic CLI tool
 that reads a web font file (WOFF2, WOFF, OTF, TTF) and outputs the complete
 `@font-face` CSS for the metric-adjusted fallback font. Uses the same
 ascent-override/descent-override/line-gap-override/size-adjust algorithm as
@@ -60,7 +60,7 @@ same team (Pixel Point) that builds for Next.js/Vercel.
 
 - Browser compatibility for metric override properties (as of tool release):
   - Chrome ✅ 87+, Edge ✅ 87+, Firefox ✅ 89+, Opera ✅ 73+, Safari ❌
-  - Note: Safari support for `size-adjust` was added in Safari 17 (2023) —
+  - Note: Safari support for `size-adjust` was added in Safari 17 (2023):
     check current status for 2026 production usage.
 
 ## Annotations for stinger-forge
@@ -68,13 +68,13 @@ same team (Pixel Point) that builds for Next.js/Vercel.
 - `fontpie` is the **primary tool recommendation** for
   `guides/05-cls-elimination.md` for non-Next.js projects or `next/font/local`
   users who want to verify the automatically generated values.
-- The output CSS template maps exactly to `templates/font-face-block.md` —
+- The output CSS template maps exactly to `templates/font-face-block.md`:
   use fontpie's output as the canonical template shape.
 - Safari compatibility note: the tool's README shows Safari ❌ at time of
   writing (2022), but `size-adjust` landed in Safari 17 (September 2023).
   The 2026 guide should verify current Safari support and note it as
   baseline-supported.
 - The `--fallback mono` option for monospace fonts is not covered in most
-  guides — worth noting for monospace web font use cases (code blocks).
+  guides, worth noting for monospace web font use cases (code blocks).
 - This tool was created by Pixel Point, the same company that contributed the
   Next.js `adjustFontFallback` implementation.

@@ -26,6 +26,6 @@ End-to-end HTTP caching guide covering Cache-Control directives, ETag and condit
 ## Annotations for stinger-forge
 - `guides/03-headers.md`: the caching strategy table by content type is stinger-forge-ready as a "recommended caching strategy" lookup table.
 - `guides/05-conditional-and-range.md`: the "ETag preferred over Last-Modified" hierarchy from RFC 9110 should be stated explicitly.
-- The `no-store` directive for sensitive data (auth tokens, payment data) is a security-relevant caching finding — pairs with `security-worker-bee` handoff.
+- The `no-store` directive for sensitive data (auth tokens, payment data) is a security-relevant caching finding: pairs with `security-worker-bee` handoff.
 - The `immutable` directive for hashed assets is a modern best practice not in older documentation.
 - `stale-while-revalidate` (RFC 5861) is worth a dedicated mention as a performance pattern for content that can tolerate occasional staleness.

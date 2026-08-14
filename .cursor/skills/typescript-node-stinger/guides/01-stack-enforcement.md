@@ -1,5 +1,7 @@
 # 01 - Stack Enforcement
 
+**Legacy/library case.** This guide applies when the deliverable IS a published npm package or CLI (the Hivemind case this skill was originally forged for), not the SvelteKit app itself. For the SvelteKit app's tsconfig/module-resolution answer, see `guides/23-tsconfig-for-sveltekit.md`. See `guides/00-principles.md`'s first-move classification.
+
 The Hivemind toolchain, slot by slot. One pick per slot, and every pick is what the repo already runs.
 
 ## The toolchain
@@ -48,7 +50,7 @@ Demoted picks live in `references/`. The short version:
 
 A push to substitute requires:
 
-1. **An ADR** at `library/architecture/ADR-<n>-<topic>.md` with Context / Decision / Consequences / Alternatives Considered.
+1. **An ADR** at `library/knowledge/private/architecture/ADR-<n>-<topic>.md` with Context / Decision / Consequences / Alternatives Considered.
 2. **Eval evidence** - the substitute beats the canonical pick on a metric the repo cares about (build time, bundle size, test speed, install reliability across harnesses).
 3. **A migration plan** - especially for anything touching the per-harness bundles or the Deep Lake client.
 4. **Re-demotion** - the previous canonical pick moves into `references/`.

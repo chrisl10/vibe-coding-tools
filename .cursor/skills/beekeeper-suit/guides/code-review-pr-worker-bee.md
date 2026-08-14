@@ -1,70 +1,40 @@
-# Code Review / PR Worker-Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `code-review-pr-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/code-review-pr-worker-bee.md`](../../../agents/code-review-pr-worker-bee.md)
-**Stinger:** [`.cursor/skills/code-review-pr-stinger/`](../../code-review-pr-stinger/)
-**Trigger policy:** proactive
-
----
+# code-review-pr-worker-bee
 
 ## Domain
+Owns code review as a culture and practice: PR description quality against a canonical six-element structure (motivation, context, what changed, what did NOT change, testing proof, reviewer hints), context-specific review checklist generation, PR size evaluation against a 400-line threshold with split strategies, rubber-stamp culture diagnosis, and coaching review comments into a three-tier taxonomy (blocker/suggestion/nit). Never approves or blocks a merge; merge decisions stay with humans and CI.
 
-`code-review-pr-worker-bee` owns code review culture and the PR lifecycle. It audits PR descriptions against the canonical six-element structure, generates context-specific review checklists, evaluates PR size (the 400-line threshold), diagnoses rubber-stamp patterns, and coaches review comments into the three-tier taxonomy (blocker / suggestion / nit). It treats review as mentorship and advises on human decisions rather than making merge calls itself.
+## Paired Stinger
+[code-review-pr-stinger](../../code-review-pr-stinger) - the six-element description structure, checklist generation by file type, the 400-line size heuristic with split strategies, async-review norms, rubber-stamp detection signals, and comment-coaching rewrites.
 
 ## Trigger phrases
-
-Route to `code-review-pr-worker-bee` when the user says any of:
-
-- "Audit our PR culture" / "improve code review"
-- "Write a PR description"
-- "Create a review checklist"
-- "Coach this review comment"
-- "Is this PR too large?"
-- "How do we improve code review on our team?"
-
-Or when reviewing any PR for description quality or cultural health.
+- "audit our PR culture"
+- "write a PR description for this diff"
+- "create a review checklist for this change"
+- "coach this review comment, it sounds too harsh"
+- "is this PR too large, should I split it"
+- "how do we improve code review on our team"
+- "why do our reviews feel like rubber stamps"
+- "review this PR for description quality"
 
 ## Do NOT route when
-
-- The user wants the security audit findings - that is `security-worker-bee`.
-- The user wants implementation correctness review of the TypeScript itself - that is `typescript-node-worker-bee`.
-- The user wants CI/CD pipeline setup - that is `ci-release-worker-bee`.
-- The user wants branch protection configuration - that is `github-repo-health-worker-bee`.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let this one act as backup.
+- The request is security audit findings; that is security-worker-bee.
+- The request is implementation correctness at the logic level; that is python-worker-bee or react-worker-bee.
+- The request is CI/CD pipeline setup; that is devops-worker-bee.
+- The request is branch protection configuration or enforcing a PR template at the repository-settings level; that is github-repo-health-worker-bee.
+- A review comment being coached contains an actual security finding; surface it separately to security-worker-bee rather than just softening the tone.
 
 ## Inputs the Bee needs
+- The PR diff or description, and which request type applies (description audit, checklist, size evaluation, culture diagnosis, comment coaching).
+- File types present in the diff, to scope a context-specific checklist.
+- For culture audits, repo-level metrics access (zero-comment PR rate, review latency) or a GitHub API token.
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- A scored PR description audit table (pass/fail/warn per element) plus a rewrite.
+- A context-specific three-phase review checklist.
+- A size-evaluation flag with a concrete split proposal, or a culture scorecard with a remediation plan.
 
-- The PR description, the review comment, or the team's review process in scope.
-- Optional: the PR diff size and the team's existing review norms.
-
-If the artifact to review is missing, do not invoke yet - ask the user to paste the PR description or comment.
-
-## Outputs the Bee produces
-
-- An audit table (pass/fail/warn per element) scored before any rewrite.
-- Rewritten PR descriptions including a "What did NOT change" section.
-- Review checklists and coached review comments (tone and clarity preserved, technical position intact).
-
-## Multi-Bee sequences this Bee participates in
-
-- Surfaces security findings to `security-worker-bee`, implementation-correctness questions to `typescript-node-worker-bee`, and protection configuration to `github-repo-health-worker-bee`.
-
-## Critical directives the orchestrator should respect
-
-- **Always score before rewriting** - emit the audit table first.
-- **Every PR description rewrite must include a "What did NOT change" section.**
-- **Never approve or block a merge** - merge decisions belong to humans and CI.
-- **Size threshold is advisory, not a hard block.**
-- **Comment coaching must preserve the reviewer's intent** - never invert the technical position.
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
-
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+## Commonly sequenced with
+- security-worker-bee: takes any security finding surfaced mid-comment-coaching.
+- python-worker-bee / react-worker-bee: own implementation correctness that this Bee's checklists point at but do not judge themselves.
+- github-repo-health-worker-bee: enforces PR templates and branch protection at the settings level that this Bee only coaches content for.
+- devops-worker-bee: owns the CI checks that a review checklist references but does not configure.

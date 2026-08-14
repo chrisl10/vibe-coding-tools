@@ -1,10 +1,10 @@
-# asset-worker-bee — Companion Resources
+# asset-worker-bee: Companion Resources
 
-This directory holds everything the `asset-worker-bee` agent needs to own the Universal Asset Registry. The pattern is generic — any product can adopt the registry; this Stinger describes the canonical 19-asset taxonomy, the registration workflow, the drift-audit mechanism, the sync-generator contract, and the deprecation/sunset rules. Organized into four layers: **guides** (workflow rules), **schema** (canonical Prisma + SQL), **examples** (exemplars to mirror), **templates** (seeds for kb + migrations).
+This directory holds everything the `asset-worker-bee` agent needs to own the Universal Asset Registry. The pattern is generic: any product can adopt the registry; this Stinger describes the canonical 19-asset taxonomy, the registration workflow, the drift-audit mechanism, the sync-generator contract, and the deprecation/sunset rules. Organized into four layers: **guides** (workflow rules), **schema** (canonical Prisma + SQL), **examples** (exemplars to mirror), **templates** (seeds for kb + migrations).
 
-> **Agent entry point:** [`.cursor/agents/asset-worker-bee.md`](../asset-worker-bee.md) (repo-local). The agent reads files from this directory by path; it does not auto-load everything into context.
+> **Agent entry point:** [`.claude/agents/asset-worker-bee.md`](../asset-worker-bee.md) (repo-local). The agent reads files from this directory by path; it does not auto-load everything into context.
 >
-> **Peer worker-bees:** [`library-worker-bee`](../library-worker-bee.md), [`quality-worker-bee`](../quality-worker-bee.md), [`security-worker-bee`](../security-worker-bee.md), [`ux-ui-worker-bee`](../ux-ui-worker-bee.md). Scope boundaries live in [`guides/05-hand-offs.md`](guides/05-hand-offs.md).
+> **Peer worker-bees:** [`library-worker-bee`](../library-worker-bee.md), [`quality-worker-bee`](../quality-worker-bee.md), [`security-worker-bee`](../security-worker-bee.md), [`ux-ui-svelte-worker-bee`](../ux-ui-svelte-worker-bee.md). Scope boundaries live in [`guides/05-hand-offs.md`](guides/05-hand-offs.md).
 
 ## Directory map
 
@@ -54,11 +54,11 @@ asset-stinger/
 │   ├── nav-entry-example.md
 │   └── drift-audit-report-example.md
 └── templates/
-    ├── registry-kb-README.md           # seed for library/knowledge-base/asset-registry/README.md
+    ├── registry-kb-README.md           # seed for library/knowledge/private/asset-registry/README.md
     └── registry-migration-template.sql # template for future additive registry migrations
 ```
 
-## Guides — which one to read
+## Guides: which one to read
 
 The agent dispatches based on user intent. Read the matching guide **before** acting.
 
@@ -74,7 +74,7 @@ The agent dispatches based on user intent. Read the matching guide **before** ac
 | "write a QA report" | Hand off to [`quality-worker-bee`](../quality-worker-bee.md). |
 | "write a PRD" | Draft; hand off to [`library-worker-bee`](../library-worker-bee.md) for numbering/invariants. |
 
-## Per-asset guides — which one to open
+## Per-asset guides: which one to open
 
 Every per-asset guide under `guides/assets/` follows the same template (see `_template.md`). Pattern-match your intent to the asset type.
 
@@ -87,7 +87,7 @@ Every per-asset guide under `guides/assets/` follows the same template (see `_te
 | **Content + i18n** | `15-content-entry`, `16-translation` |
 | **Rollout + billing bindings** | `17-feature-flag-binding`, `18-meter-binding`, `19-entitlement` |
 
-## Schema — which file to use
+## Schema: which file to use
 
 | Scenario | File |
 |---|---|
@@ -96,7 +96,7 @@ Every per-asset guide under `guides/assets/` follows the same template (see `_te
 | Writing a new Prisma model that mirrors the registry | `schema/registry-schema.prisma` |
 | Understanding which file to use when | `schema/README.md` |
 
-## Examples — which one to mirror
+## Examples: which one to mirror
 
 | Writing a… | Open |
 |---|---|
@@ -109,12 +109,12 @@ Every per-asset guide under `guides/assets/` follows the same template (see `_te
 | Nav entry (menu item) | [`examples/nav-entry-example.md`](examples/nav-entry-example.md) |
 | Drift audit report | [`examples/drift-audit-report-example.md`](examples/drift-audit-report-example.md) |
 
-## Templates — used to seed kb + future migrations
+## Templates: used to seed kb + future migrations
 
 | File | Purpose |
 |---|---|
-| `templates/registry-kb-README.md` | Seed copy for `library/knowledge-base/asset-registry/README.md` when the folder is first created. |
-| `templates/registry-migration-template.sql` | Starter SQL for any future registry migration — follows the additive-only invariant. |
+| `templates/registry-kb-README.md` | Seed copy for `library/knowledge/private/asset-registry/README.md` when the folder is first created. |
+| `templates/registry-migration-template.sql` | Starter SQL for any future registry migration, follows the additive-only invariant. |
 
 ## For the agent (self-operation notes)
 
@@ -129,4 +129,4 @@ When a user (or orchestrator) invokes you:
 
 ## Supersession
 
-This agent is new — it does not supersede any prior agent. It complements `library-worker-bee` (which owns generic documentation) with registry-specific authority.
+This agent is new: it does not supersede any prior agent. It complements `library-worker-bee` (which owns generic documentation) with registry-specific authority.

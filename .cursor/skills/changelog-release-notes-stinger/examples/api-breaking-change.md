@@ -20,7 +20,7 @@ Breaking: response shape changed - `data.users[]` becomes `data.items[]`
 ## Output (the changelog entry)
 
 ```markdown
-## [API] v1/users/list Deprecated — Migrate to v2/users by 2026-08-01
+## [API] v1/users/list Deprecated: Migrate to v2/users by 2026-08-01
 
 **The `/v1/users/list` endpoint is deprecated.** The replacement `GET /v2/users` is live today with cursor-based pagination and a larger default page size. The v1 endpoint continues to work until **2026-08-01**, when it will be removed.
 
@@ -72,5 +72,5 @@ Questions? Open a support ticket or post in #api-users on our developer Discord.
 
 This entry intentionally departs from the standard impact-first template because the primary audience is developers who need migration instructions, not end users discovering a new feature. Rules that changed:
 - Table format for API changes is more scannable than bullets.
-- Timeline section is mandatory for deprecations — users need to know the deadline.
+- Timeline section is mandatory for deprecations: users need to know the deadline.
 - A breaking change always justifies direct email, not a weekly digest.

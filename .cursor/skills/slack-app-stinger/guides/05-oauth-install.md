@@ -159,7 +159,7 @@ fetchInstallation: async (query) => {
 </a>
 ```
 
-Or use Bolt's auto-generated `/slack/install` URL — it handles `state` generation automatically.
+Or use Bolt's auto-generated `/slack/install` URL: it handles `state` generation automatically.
 
 ---
 

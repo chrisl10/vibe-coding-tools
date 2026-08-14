@@ -1,8 +1,8 @@
-# 20 — Common Failure Modes
+# 20: Common Failure Modes
 
 Recurring product-specific issues. The recurring gap patterns, the high-frequency bugs, the canonical fixes.
 
-> **Doc references:** `library/knowledge-base/ai/README.md` (open issues), `library/knowledge-base/ai/context-continuity.md §1` (the seven loss vectors), `library/knowledge-base/ai/observability-evaluation.md` (eval thresholds).
+> **Doc references:** `library/knowledge/private/ai/README.md` (open issues), `library/knowledge/private/ai/context-continuity.md §1` (the seven loss vectors), `library/knowledge/private/ai/observability-evaluation.md` (eval thresholds).
 
 ---
 
@@ -25,7 +25,7 @@ const coachType = await traceAICall({
 });
 ```
 
-**Doc to update:** `library/knowledge-base/ai/agent-orchestration.md §1`.
+**Doc to update:** `library/knowledge/private/ai/agent-orchestration.md §1`.
 
 ### 1.2 Auxiliary-collection retrieval gap
 
@@ -33,7 +33,7 @@ const coachType = await traceAICall({
 
 **Fix:** extend `buildVectorContext()` to query both collections; merge via separate top-3 from each, then rerank both together. See `examples/02-rag-audit-walkthrough.md` for the audit pattern.
 
-**Doc to update:** `library/knowledge-base/ai/knowledge-base.md §8`.
+**Doc to update:** `library/knowledge/private/ai/knowledge-base.md §8`.
 
 ### 1.3 Vector-backup automation gap
 
@@ -41,15 +41,15 @@ const coachType = await traceAICall({
 
 **Fix:** scheduled job (cron / k8s CronJob) calling Qdrant snapshot API + DO Spaces upload. Retain 30 daily snapshots.
 
-**Doc to update:** `library/knowledge-base/ai/rag-vector-strategy.md §15`.
+**Doc to update:** `library/knowledge/private/ai/rag-vector-strategy.md §15`.
 
 ### 1.4 Module path RAG gap
 
 **Symptom:** `buildCoachingPrompt` (module coaching) uses Postgres `CoachKnowledgeDocument` only; does not query Qdrant. Module sessions get text-budget knowledge only.
 
-**Fix:** migrate `buildCoachingPrompt()` to call `buildKnowledgeContextWithMeta()` for module sessions. Update the RAG status table in `library/knowledge-base/ai/README.md`.
+**Fix:** migrate `buildCoachingPrompt()` to call `buildKnowledgeContextWithMeta()` for module sessions. Update the RAG status table in `library/knowledge/private/ai/README.md`.
 
-**Doc to update:** `library/knowledge-base/ai/coach-architecture.md decision log` + `library/knowledge-base/ai/knowledge-base.md §4`.
+**Doc to update:** `library/knowledge/private/ai/coach-architecture.md decision log` + `library/knowledge/private/ai/knowledge-base.md §4`.
 
 ### 1.5 `PUT /api/admin/knowledge/:id` chunk leak
 
@@ -57,7 +57,7 @@ const coachType = await traceAICall({
 
 **Fix:** in `PUT` handler, call `removeKnowledgeDocument(id, tenantId)` before `indexKnowledgeDocument()`.
 
-**Doc to update:** `library/knowledge-base/ai/knowledge-base.md §3` (status: closed once fixed).
+**Doc to update:** `library/knowledge/private/ai/knowledge-base.md §3` (status: closed once fixed).
 
 ---
 
@@ -97,7 +97,7 @@ filter: {
 
 ### 2.4 Wrong Cohere `inputType`
 
-**Symptom:** `embed()` called with `"search_query"` at index time, or `"search_document"` at retrieval time. Retrieval quality drops 5–15%.
+**Symptom:** `embed()` called with `"search_query"` at index time, or `"search_document"` at retrieval time. Retrieval quality drops 5-15%.
 
 **Fix:** index = `"search_document"`; retrieval = `embedQuery()` (which uses `"search_query"` internally).
 
@@ -129,7 +129,7 @@ filter: {
 
 **Symptom:** `AiTrace.agreementScore` trending upward; no `PromptVersion` write in the last week.
 
-**Fix:** sycophancy can creep from upstream model updates (OpenRouter → Llama 3.3 70B → underlying provider changes). The lever is still the prompt cascade — strengthen `[COACHING_QUALITY]` or `[COACH_PERSONALITY]`. See `guides/17-evaluation-discipline.md §9`.
+**Fix:** sycophancy can creep from upstream model updates (OpenRouter → Llama 3.3 70B → underlying provider changes). The lever is still the prompt cascade: strengthen `[COACHING_QUALITY]` or `[COACH_PERSONALITY]`. See `guides/17-evaluation-discipline.md §9`.
 
 ### 2.10 Compaction job stuck in `COMPACTING`
 
@@ -149,7 +149,7 @@ filter: {
 | User says "the coach asked me to repeat what I just said" | Sub-agent blank slate (handoff bug) | `assembleContextPacket()` not built before routing |
 | Latency spike on coach response | Qdrant slow / Cohere slow / LLM slow | `retrievalLatencyMs`, `llmLatencyMs` per-trace breakdown |
 | "Locked: complete level X to unlock" returned | Level gate, not a bug | Verify `AiCoachConfig.levelAccess` |
-| Onboarding stuck — agent calls `complete_onboarding` immediately after `generate_welcome_post` | Critical safety rule violated | Sample the system prompt — is the rule still there? |
+| Onboarding stuck: agent calls `complete_onboarding` immediately after `generate_welcome_post` | Critical safety rule violated | Sample the system prompt: is the rule still there? |
 | Knowledge doc edits not appearing in coaching | `PUT` chunk leak | Issue 1.5 above |
 | Routing wrong on a phrase that should clearly map | Router prompt missing the rule | Update router prompt + eval |
 | All AI features silently failing | OpenRouter $0 balance | Check OpenRouter dashboard balance |
@@ -162,16 +162,16 @@ filter: {
 
 When invoked for a failure investigation:
 
-1. **Gather symptom** — what is the observed behavior?
-2. **Pull `AiTrace`** — last 24h, narrowed by `tenantId` + `coachType` + symptom-relevant filter.
-3. **Aggregate** — error rate, latency P50/P95, retrieval/routing/agreement scores.
-4. **Find inflection** — when did it start? Correlate with `PromptVersion`, deploys, model slot edits.
-5. **Sample worst traces** — read 5–10 in detail.
-6. **Match against §3 table** — is this a known pattern?
-7. **Hypothesize** — propose 1–2 falsifiable causes.
-8. **Test** — A/B if possible; otherwise targeted change with before/after measurement.
-9. **Report** — `library/qa/ai/<date>-failure-investigation.md` per `templates/audit-template.md`.
-10. **Update this guide** if the failure mode is new — add to §3 table.
+1. **Gather symptom**: what is the observed behavior?
+2. **Pull `AiTrace`**: last 24h, narrowed by `tenantId` + `coachType` + symptom-relevant filter.
+3. **Aggregate**: error rate, latency P50/P95, retrieval/routing/agreement scores.
+4. **Find inflection**: when did it start? Correlate with `PromptVersion`, deploys, model slot edits.
+5. **Sample worst traces**: read 5-10 in detail.
+6. **Match against §3 table**: is this a known pattern?
+7. **Hypothesize**: propose 1-2 falsifiable causes.
+8. **Test**: A/B if possible; otherwise targeted change with before/after measurement.
+9. **Report**: `library/requirements/reports/ai/<date>-failure-investigation.md` per `templates/audit-template.md`.
+10. **Update this guide** if the failure mode is new, add to §3 table.
 
 ---
 
@@ -188,7 +188,7 @@ When invoked for a failure investigation:
 - Session resume fails (no episodic).
 - Knowledge base context unavailable.
 - Fallback: serve raw last-10 turns from Postgres.
-- **Critical alert** — severe degradation.
+- **Critical alert**: severe degradation.
 
 ### Cohere outage
 
@@ -200,7 +200,7 @@ When invoked for a failure investigation:
 
 - All AI features silently fail.
 - Onboarding broken. Coaching broken. Matching broken.
-- **Critical alert** — must be alerted within 1 minute.
+- **Critical alert**: must be alerted within 1 minute.
 
 ### Deepgram outage
 
@@ -210,7 +210,7 @@ When invoked for a failure investigation:
 
 ---
 
-## 6. Common findings — the master list (cross-references)
+## 6. Common findings: the master list (cross-references)
 
 | Finding | Severity | Source |
 |---|---|---|

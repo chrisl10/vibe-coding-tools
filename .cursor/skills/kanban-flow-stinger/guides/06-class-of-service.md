@@ -1,4 +1,4 @@
-# 06 — Class of Service: Four Tiers and Queue-Bypass Rules
+# 06. Class of Service: Four Tiers and Queue-Bypass Rules
 
 *Sources: `research/internal/command-brief-summary.md`; `research/external/2026-05-20-wip-limits-atlassian-official.md`*
 
@@ -18,7 +18,7 @@ Anderson's Kanban Method defines four tiers. Each has a distinct cost-of-delay p
 
 ### Tier 1: Standard
 
-- **Cost of delay:** Linear — cost increases at a constant rate over time.
+- **Cost of delay:** Linear: cost increases at a constant rate over time.
 - **Examples:** planned features, routine improvements, tech debt.
 - **Queue treatment:** FIFO within the input queue.
 - **WIP limit:** subject to normal column limits.
@@ -26,7 +26,7 @@ Anderson's Kanban Method defines four tiers. Each has a distinct cost-of-delay p
 
 ### Tier 2: Fixed-Date
 
-- **Cost of delay:** Step function — nearly zero before the date, then infinite (or very high) after.
+- **Cost of delay:** Step function: nearly zero before the date, then infinite (or very high) after.
 - **Examples:** compliance deadlines, external event launches, contractual delivery dates.
 - **Queue treatment:** pull into active work when it needs to start to hit the date (work backwards from deadline).
 - **WIP limit:** subject to normal column limits unless the fixed date is imminent; in that case, escalate to the team lead.
@@ -34,7 +34,7 @@ Anderson's Kanban Method defines four tiers. Each has a distinct cost-of-delay p
 
 ### Tier 3: Expedite
 
-- **Cost of delay:** Near-infinite — every day of delay is critical.
+- **Cost of delay:** Near-infinite: every day of delay is critical.
 - **Examples:** production outages, security breaches, critical data corruption, highest-priority customer escalations.
 - **Queue treatment:** bypasses the input queue entirely; enters active work immediately.
 - **WIP limit:** the Expedite lane has its own limit of **1** (hard constraint). A second Expedite item cannot start until the first is done. If the team routinely exceeds 1 Expedite item, the Expedite lane has been misused and the class-of-service definitions need tightening.
@@ -44,7 +44,7 @@ Anderson's Kanban Method defines four tiers. Each has a distinct cost-of-delay p
 
 ### Tier 4: Intangible
 
-- **Cost of delay:** Low or unknown — the work has strategic value but no immediate revenue or risk impact.
+- **Cost of delay:** Low or unknown: the work has strategic value but no immediate revenue or risk impact.
 - **Examples:** exploratory research, tooling improvements, documentation, internal productivity investments.
 - **Queue treatment:** FIFO, pulled only when capacity exists.
 - **WIP limit:** subject to normal column limits; may have a lower per-class WIP limit to prevent intangible work from crowding out standard work.
@@ -88,4 +88,4 @@ Publish this definition in the team's handbook and review it quarterly. Escalati
 
 ---
 
-*Example: `examples/wip-limit-setup-happy-path.md` — includes class-of-service swimlane configuration in the Jira setup section*
+*Example: `examples/wip-limit-setup-happy-path.md`: includes class-of-service swimlane configuration in the Jira setup section*

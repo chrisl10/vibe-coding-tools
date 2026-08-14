@@ -1,4 +1,4 @@
-# Research Index — modal-toast-dialog-stinger
+# Research Index: modal-toast-dialog-stinger
 
 | File | Source type | Authority | Relevance | Topic |
 |---|---|---|---|---|

@@ -15,7 +15,7 @@ Walkthrough of an HTTP/3 readiness assessment for a typical Node.js (Express) + 
 
 ## Assessment findings
 
-### F1 — Nginx 1.24 does not support QUIC (HTTP/3)
+### F1: Nginx 1.24 does not support QUIC (HTTP/3)
 
 - **Finding:** HTTP/3 requires nginx 1.25+ with the `--with-http_v3_module` compile flag. Nginx 1.24 does not support QUIC.
 - **Impact:** HTTP/3 is not available; all connections use HTTP/2 or HTTP/1.1.
@@ -24,7 +24,7 @@ Walkthrough of an HTTP/3 readiness assessment for a typical Node.js (Express) + 
   - Switch to Caddy (built-in HTTP/3, no compile flags needed).
   - Add Cloudflare or another CDN with HTTP/3 support in front of the origin (no origin changes needed).
 
-### F2 — No Alt-Svc header advertising HTTP/3
+### F2: No Alt-Svc header advertising HTTP/3
 
 - **Finding:** The server does not send `Alt-Svc: h3=":443"; ma=86400`.
 - **Impact:** Even if HTTP/3 is enabled at the infrastructure level, clients will not automatically upgrade without this header.
@@ -33,13 +33,13 @@ Walkthrough of an HTTP/3 readiness assessment for a typical Node.js (Express) + 
 add_header Alt-Svc 'h3=":443"; ma=86400' always;
 ```
 
-### F3 — HTTP/1.1 domain sharding present in client-side code
+### F3: HTTP/1.1 domain sharding present in client-side code
 
 - **Finding:** Frontend code references `cdn1.example.com` and `cdn2.example.com` to work around HTTP/1.1 per-host connection limits.
 - **Impact:** With HTTP/2 (which is already in use), domain sharding creates new connections and defeats multiplexing. Performance regression.
 - **Recommendation:** Remove domain sharding. Serve all assets from one origin or CDN host.
 
-### Informational — Node.js has no built-in HTTP/3 as of 2026
+### Informational: Node.js has no built-in HTTP/3 as of 2026
 
 - **Observation:** Node.js does not have a first-class HTTP/3 implementation in its standard library. The application layer (Express, Fastify, etc.) cannot serve HTTP/3 directly.
 - **Recommendation:** Use a reverse proxy (Nginx 1.25+, Caddy) or CDN for HTTP/3 support. The application code is unchanged.

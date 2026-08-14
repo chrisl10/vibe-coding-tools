@@ -1,5 +1,7 @@
 # 05 - MCP SDK Tools
 
+**Legacy/library case.** Applies when the deliverable exposes an MCP server (Hivemind's case). Not part of this repo's SvelteKit app.
+
 The MCP server (`src/mcp/server.ts`) exposes Hivemind's shared memory to agents as Model Context Protocol tools. This is the API-layer discipline for this repo.
 
 ## The shape

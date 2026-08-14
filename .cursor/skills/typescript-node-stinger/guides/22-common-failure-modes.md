@@ -1,5 +1,7 @@
 # 22 - Common Failure Modes
 
+**The failure modes below are cataloged from the Hivemind/npm-library case.** For the SvelteKit-app equivalent footguns (wrong-context import extensions, `verbatimModuleSyntax` violations, missing `./$types` imports, `$app/*` unmocked in tests, deprecated Vitest browser-mode config, zod/valibot context confusion), see the "Common findings" section at the end of each of `guides/23` through `guides/29`. Both catalogs are worth scanning on a review - check which context applies first (`guides/00-principles.md`).
+
 The recurring footguns in this codebase. When you review TS/Node here, scan for these first - they account for most real findings.
 
 ## 1. Missing `.js` extension on a relative import

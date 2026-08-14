@@ -1,4 +1,4 @@
-# Guide 03: Code-First Libraries — Driver.js and Shepherd.js
+# Guide 03: Code-First Libraries (Driver.js and Shepherd.js)
 
 Use this guide for open-source library implementations. Sources: `research/external/2026-05-20-driverjs-react-integration.md`, `research/external/2026-05-20-oss-tour-libraries.md`, `research/external/2026-05-20-shepherdjs-react-integration.md`.
 
@@ -15,11 +15,11 @@ Use this guide for open-source library implementations. Sources: `research/exter
 | Accessibility | Manual additions required | Built-in (keyboard nav, focus management, modal overlays) |
 | React integration | `useRef` + `useEffect` pattern | `ShepherdTour` provider or `useShepherdTour` hook |
 | SSR safety | Safe to import; DOM calls only on invocation | Safe to import; activate client-side only |
-| Built-in persistence | None — teams implement localStorage | None — teams implement localStorage |
+| Built-in persistence | None: teams implement localStorage | None: teams implement localStorage |
 
 **Default recommendation:** Shepherd.js for production tours. Driver.js for lightweight spotlight use cases.
 
-**Avoid Intro.js for commercial SaaS** — AGPL v3 licensing requires a paid commercial license ($199+) for any product with a paid tier.
+**Avoid Intro.js for commercial SaaS**: AGPL v3 licensing requires a paid commercial license ($199+) for any product with a paid tier.
 
 ---
 
@@ -64,7 +64,7 @@ export function useDashboardTour() {
 ```
 
 **Key patterns:**
-- Use `useRef` to hold the driver instance — avoids recreation on re-renders.
+- Use `useRef` to hold the driver instance: avoids recreation on re-renders.
 - Gate behind a versioned localStorage key (`tour-v1-...`). The version prefix allows re-triggering after major tour updates.
 - Always add an SSR guard (`typeof window === 'undefined'`) for Next.js.
 - Call `.destroy()` in the `useEffect` cleanup to prevent memory leaks.
@@ -154,10 +154,10 @@ export function FeatureTour() {
 ```
 
 **Shepherd.js v15 key patterns:**
-- `showOn: () => boolean` — built-in per-step segment gate; use to check feature flags, user attributes, or localStorage state without a wrapper.
-- `beforeShowPromise: () => Promise<void>` — delays step display until a route has loaded. Use for multi-page tours.
-- `canClickTarget: true` — allows the user to click the highlighted element directly, enabling action-based progression ("click the button to continue").
-- `useModalOverlay: true` — enables the backdrop spotlight; recommended for all production tours.
+- `showOn: () => boolean`: built-in per-step segment gate; use to check feature flags, user attributes, or localStorage state without a wrapper.
+- `beforeShowPromise: () => Promise<void>`: delays step display until a route has loaded. Use for multi-page tours.
+- `canClickTarget: true`: allows the user to click the highlighted element directly, enabling action-based progression ("click the button to continue").
+- `useModalOverlay: true`: enables the backdrop spotlight; recommended for all production tours.
 
 **v14 → v15 migration:** Shepherd.js v15.0.0 removed the Svelte package and migrated to vanilla TypeScript internally. The React-facing API is backward-compatible for most cases. Check the CHANGELOG (`research/` note: Shepherd.js CHANGELOG is available at `github.com/shipshapecode/shepherd/blob/main/CHANGELOG.md`) if migrating from v14.
 

@@ -1,4 +1,4 @@
-# 09 — Pipeline shapes
+# 09: Pipeline shapes
 
 The four canonical pipelines every Node/Next.js repo needs. Source: `research/2026-04-25-pipeline-shapes-pr-main-release.md`.
 
@@ -22,7 +22,7 @@ The four canonical pipelines every Node/Next.js repo needs. Source: `research/20
 
 **Permissions:** `contents: read` only. Plus `security-events: write` if uploading SARIF.
 
-**Concurrency:** `cancel-in-progress: true` — cancel previous build on new push to same PR.
+**Concurrency:** `cancel-in-progress: true`: cancel previous build on new push to same PR.
 
 See `templates/.github/workflows/pr-build.yml`.
 
@@ -43,7 +43,7 @@ See `templates/.github/workflows/pr-build.yml`.
 
 **Permissions:** `contents: read`, `id-token: write`, `packages: write` (for GHCR).
 
-**Concurrency:** `cancel-in-progress: false` — never cancel a deploy.
+**Concurrency:** `cancel-in-progress: false`: never cancel a deploy.
 
 See `templates/.github/workflows/main-deploy.yml`.
 
@@ -53,10 +53,10 @@ See `templates/.github/workflows/main-deploy.yml`.
 
 **Goals:** signed, attested release. The image carries:
 
-- SBOM (`sbom: true`) — what's inside.
-- Provenance (`provenance: mode=max`) — how it was built, what source, what runner.
+- SBOM (`sbom: true`): what's inside.
+- Provenance (`provenance: mode=max`): how it was built, what source, what runner.
 - Signed via cosign / GitHub OIDC keyless signing (optional).
-- Tagged `:v1.2.3`, `:1.2`, `:1`, and `:latest` (carefully — `:latest` is opinionated).
+- Tagged `:v1.2.3`, `:1.2`, `:1`, and `:latest` (carefully, `:latest` is opinionated).
 
 **Stages:**
 
@@ -93,7 +93,7 @@ See `examples/nextjs-with-depot-oidc.md` for the full release wiring.
 
 See `templates/.github/workflows/main-deploy.yml` for deploy patterns this borrows.
 
-## 5. The deploy step — handed to `db-worker-bee` for migrations, cloud-platform Bee for runtime
+## 5. The deploy step: handed to `db-worker-bee` for migrations, cloud-platform Bee for runtime
 
 The image is pushed; what runs it is downstream. This Bee typically wires:
 
@@ -117,7 +117,7 @@ deploy:
       run: aws ecs update-service ...
 ```
 
-The migration step is `db-worker-bee`'s domain — its content (SQL, ORM commands, runtime checks) is theirs. `devops-worker-bee` ensures:
+The migration step is `db-worker-bee`'s domain: its content (SQL, ORM commands, runtime checks) is theirs. `devops-worker-bee` ensures:
 
 - The step runs **before** the new image is rolled out (or atomically, depending on strategy).
 - Secrets reach it via OIDC, not static creds.
@@ -166,5 +166,5 @@ A 30-second smoke catches "the image starts but immediately crashes" failures th
 - `templates/.github/workflows/pr-build.yml`
 - `templates/.github/workflows/main-deploy.yml`
 - `templates/.github/workflows/reusable-build.yml`
-- `examples/nextjs-with-depot-oidc.md` — full release flow.
-- `examples/node-api-multiarch-trivy.md` — multi-arch + Trivy gate.
+- `examples/nextjs-with-depot-oidc.md`: full release flow.
+- `examples/node-api-multiarch-trivy.md`: multi-arch + Trivy gate.

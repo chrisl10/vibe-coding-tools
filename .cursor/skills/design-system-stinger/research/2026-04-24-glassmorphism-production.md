@@ -1,4 +1,4 @@
-# Glassmorphism in Production — Performance, Fallbacks, Accessibility
+# Glassmorphism in Production: Performance, Fallbacks, Accessibility
 
 **Sources:**
 - https://pixcode.io/en/blog/css-glassmorphism-2025/ (2025-07-14)
@@ -42,7 +42,7 @@ iOS 26, iPadOS 26, macOS Tahoe 26, and visionOS converge on "Liquid Glass":
 semi-transparent material with real-time refraction, adaptive colorization,
 and explicit depth layering. Core properties Apple calls out:
 
-- **Depth.** Separation from background is load-bearing — flat glass reads
+- **Depth.** Separation from background is load-bearing: flat glass reads
   as flat.
 - **Light interaction.** Top-edge highlight + ambient rim simulate light
   hitting the glass.
@@ -59,6 +59,6 @@ on pinned surfaces only.
 - `starter-kits/glass-on-beige/` uses the reference implementation as its
   seed.
 - The Bee should refuse to ship a "glass" aesthetic that uses backdrop
-  blur alone — missing top-edge highlight = not glass.
+  blur alone: missing top-edge highlight = not glass.
 - Performance budget: ≤ 2 blurred glass surfaces visible simultaneously on
   mobile. `guides/04-authoring-utility-layer.md` documents this.

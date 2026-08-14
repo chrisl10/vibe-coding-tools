@@ -19,7 +19,7 @@ Practical status code and error object reference covering both the HTTP status c
 - Minimum status code set: "If you only use a few, use these: 200, 201, 204, 400, 401, 403, 404, 409, 422, 429, 500, 503."
 - Common mistake table: "200 for everything → clients can't distinguish success/failure by status code | Stack traces in production → security vulnerability, leaks internals | Missing Retry-After on 429 → clients retry immediately, making it worse."
 - Retry strategy: 429 (rate limited) → Wait Retry-After seconds; 500/502/503 → Exponential backoff; 400/401/403/404 → Do NOT retry.
-- Error object: must include `request_id` field for every error — "Debugging requires reproducing the issue" without it.
+- Error object: must include `request_id` field for every error: "Debugging requires reproducing the issue" without it.
 - "Consistent error schema is more important than a perfect schema."
 
 ## Annotations for stinger-forge

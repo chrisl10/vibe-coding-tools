@@ -106,7 +106,7 @@ Squoosh CLI does NOT support LQIP generation, responsive resizing, or build pipe
 
 ## ImageOptim (macOS only)
 
-ImageOptim applies lossless compression to JPEG and PNG files — it doesn't convert formats, it just strips metadata and optimizes encoding. Useful as a final step before publishing static assets from a design file.
+ImageOptim applies lossless compression to JPEG and PNG files: it doesn't convert formats, it just strips metadata and optimizes encoding. Useful as a final step before publishing static assets from a design file.
 
 ```bash
 # Install ImageOptim-CLI (macOS only)

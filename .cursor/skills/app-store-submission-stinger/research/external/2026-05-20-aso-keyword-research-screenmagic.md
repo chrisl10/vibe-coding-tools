@@ -25,7 +25,7 @@ Data-driven keyword research guide for iOS App Store optimization in 2026. Quant
 - "Refresh keywords every 30 days, ranking volatility punishes static listings."
 
 ## Annotations for stinger-forge
-- The 55–65% keyword ranking signal estimate from three independent analytics platforms is the strongest quantitative basis for the keyword-first ASO strategy recommendation in `guides/01-aso-strategy.md`.
+- The 55-65% keyword ranking signal estimate from three independent analytics platforms is the strongest quantitative basis for the keyword-first ASO strategy recommendation in `guides/01-aso-strategy.md`.
 - The per-locale keyword field insight ("treat it as 7 fields not 1") is a high-leverage localization tactic that most small teams miss.
 - The title pattern examples (Notion, Cal AI, Linear) are real 2026 examples stinger-forge can cite to make the guide concrete.
 - The 30-day keyword refresh cadence should be the default recommendation; monthly maintenance is the minimum viable ASO practice.

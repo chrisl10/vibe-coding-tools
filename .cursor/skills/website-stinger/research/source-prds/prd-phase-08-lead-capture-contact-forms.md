@@ -1,6 +1,6 @@
 # Phase 8: Lead Capture & Contact Forms
 
-> **Site Template Guide** — PRD Phase 8 of 12
+> **Site Template Guide**: PRD Phase 8 of 12
 
 ---
 
@@ -13,13 +13,13 @@ Two-step lead capture form with superforms + Zod validation, exit-intent popup, 
 ### Scope
 
 **In scope:**
-- `src/lib/schemas/lead.ts` — Zod schemas for Step 1 and Step 2
-- `src/routes/contact/+page.server.ts` — form action with validation and Supabase insert
-- `src/lib/components/LeadForm.svelte` — two-step form with progress indicator
-- `src/lib/components/LeadPopup.svelte` — exit-intent popup (mouse-leave detection)
+- `src/lib/schemas/lead.ts`: Zod schemas for Step 1 and Step 2
+- `src/routes/contact/+page.server.ts`: form action with validation and Supabase insert
+- `src/lib/components/LeadForm.svelte`: two-step form with progress indicator
+- `src/lib/components/LeadPopup.svelte`: exit-intent popup (mouse-leave detection)
 - Attribution merge from `localStorage` into lead payload
 - `generate_lead` GA4 event on success
-- `src/routes/api/notify-lead/+server.ts` — internal endpoint to trigger notification
+- `src/routes/api/notify-lead/+server.ts`: internal endpoint to trigger notification
 
 **Out of scope:**
 - A/B testing of form copy or layout (Phase 11)
@@ -35,29 +35,29 @@ Two-step lead capture form with superforms + Zod validation, exit-intent popup, 
 
 ## User Stories
 
-### Story 1 — Visitor: Complete Two-Step Lead Form
+### Story 1: Visitor: Complete Two-Step Lead Form
 
 > As a **Visitor**, I want to submit a contact form in two steps (basic info → details) so that the initial step feels low-friction and I'm progressively committed once I see the second step.
 
 **Acceptance criteria:**
 - Step 1 collects: name (required), email (required, validated), phone (optional)
 - Step 2 collects: message (optional), referral source (dropdown), referral name (conditional)
-- Step 1 validates before advancing — TypeScript compiler enforces field types
+- Step 1 validates before advancing: TypeScript compiler enforces field types
 - Step 2 submit button shows loading state during submission
 - On success: Step 3 (thank-you state) rendered within the same form component
 
-### Story 2 — Visitor: Referral Tracking
+### Story 2: Visitor: Referral Tracking
 
 > As a **Visitor**, I want to optionally select how I heard about the service so that the business can track referral sources.
 
 **Acceptance criteria:**
 - `referral_source` dropdown options: "A friend", "Search engine", "Social media", "Event", "Other"
 - `referral_name` text field shown only when `referral_source === 'friend'`
-- Both fields are optional — no validation error if left blank
+- Both fields are optional: no validation error if left blank
 
 Note: Options are generic and industry-agnostic. There is no "athlete", "coach", or sport-specific option.
 
-### Story 3 — System: Attribution Merge
+### Story 3: System: Attribution Merge
 
 > As the **System**, I want first-touch UTM attribution data merged into the lead record at insert time so that lead source can be analyzed without relying on GA4 session data.
 
@@ -67,7 +67,7 @@ Note: Options are generic and industry-agnostic. There is no "athlete", "coach",
 - If no UTM data (direct visit), fields are null in the database
 - `clearAttribution()` called after successful submission
 
-### Story 4 — Marketing Team: Exit-Intent Popup
+### Story 4: Marketing Team: Exit-Intent Popup
 
 > As a **Marketing Team Member**, I want an exit-intent popup to appear when a visitor moves their cursor toward the browser chrome (desktop only) so that I can capture leads who would otherwise leave without converting.
 
@@ -161,6 +161,6 @@ if (browser && window.gtag) {
 
 ## Risks and Open Questions
 
-- **R-1:** Exit-intent popup fires on any `mouseleave` with `clientY <= 0` — this includes moving to the browser's browser chrome, which is the intended trigger. On laptops with small screens, this can fire accidentally. Consider adding a `setTimeout` delay (e.g., user must be on the page ≥15 seconds) before enabling the listener.
+- **R-1:** Exit-intent popup fires on any `mouseleave` with `clientY <= 0`: this includes moving to the browser's browser chrome, which is the intended trigger. On laptops with small screens, this can fire accidentally. Consider adding a `setTimeout` delay (e.g., user must be on the page ≥15 seconds) before enabling the listener.
 - **R-2:** `referral_name` (free text) could contain PII. Ensure it is treated as PII in any data export or GDPR compliance review. Mention in the legal docs (Phase: optional, not covered here) and in the privacy policy.
 - **Q-1:** Should the `source` field be configurable at the component level (e.g., a hero form sets `source: 'hero'`) or always default to `contact_form`? The current design passes `source` as a hidden field; the component renders it. This is correct.

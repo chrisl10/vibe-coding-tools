@@ -8,7 +8,7 @@ Vasco Duarte's 2012-2026 body of work makes a falsifiable empirical claim: for t
 
 The central empirical finding (2025 interview, Maria Chec): "We looked at real team data: 3-point stories taking anywhere from a day to 100+ days. Replacing all story point values with '1' only changed the forecast by 8%." See `research/external/01-noestimates.md`.
 
-This means: story-point precision (distinguishing 3-point from 5-point stories) accounts for approximately 8% of forecast accuracy. The other 92% comes from throughput — how many items the team finishes per time unit. This is the statistical justification for NoEstimates.
+This means: story-point precision (distinguishing 3-point from 5-point stories) accounts for approximately 8% of forecast accuracy. The other 92% comes from throughput: how many items the team finishes per time unit. This is the statistical justification for NoEstimates.
 
 ### The Nokia case study
 
@@ -25,7 +25,7 @@ NoEstimates means:
 - Treat the backlog as a count, not a points total
 
 NoEstimates still requires:
-- Backlog decomposition (items need to be roughly similar in size — splitting large items is still necessary)
+- Backlog decomposition (items need to be roughly similar in size: splitting large items is still necessary)
 - Cycle-time data collection (Jira/Linear "lead time" or "cycle time" reports)
 - Honest communication about confidence levels
 
@@ -55,7 +55,7 @@ When a team is ready to try NoEstimates:
 
 1. **Export cycle-time data.** From Jira: `Time in Status` report → filter for "In Progress → Done" transitions. From Linear: `Cycle Time` analytics. Aim for 20-30+ completed items minimum.
 
-2. **Calculate throughput distribution.** Count items completed per week/sprint for the last 20+ time periods. You will see a distribution, not a fixed number. This variance is real — do not smooth it.
+2. **Calculate throughput distribution.** Count items completed per week/sprint for the last 20+ time periods. You will see a distribution, not a fixed number. This variance is real. Do not smooth it.
 
 3. **Count the backlog.** How many similar-sized items remain? Include a scope creep factor (typically 1.15x-1.3x based on the team's historical scope growth).
 

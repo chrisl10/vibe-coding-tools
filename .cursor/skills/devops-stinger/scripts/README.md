@@ -37,7 +37,7 @@ bash scripts/pin-actions-to-sha.sh               # rewrites .github/workflows/*.
 bash scripts/pin-actions-to-sha.sh path/to/dir
 ```
 
-Idempotent — already-SHA-pinned references are skipped. Review the diff with `git diff` before committing.
+Idempotent, already-SHA-pinned references are skipped. Review the diff with `git diff` before committing.
 
 Reference: `guides/06-actions-security.md` §2.
 

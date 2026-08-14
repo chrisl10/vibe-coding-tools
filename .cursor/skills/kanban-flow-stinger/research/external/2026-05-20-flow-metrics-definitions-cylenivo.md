@@ -17,7 +17,7 @@ stinger: kanban-flow-stinger
 
 # Flow Metrics Explained: Cycle Time, Lead Time, Throughput, WIP
 
-**Source:** Cylenivo — "Flow Metrics Explained: Cycle Time, Lead Time, Throughput, WIP"
+**Source:** Cylenivo: "Flow Metrics Explained: Cycle Time, Lead Time, Throughput, WIP"
 **URL:** https://cylenivo.org/flow-metrics/
 **Published:** Not dated (retrieved 2026-05-20)
 
@@ -27,10 +27,10 @@ This is a crisp, authoritative reference on the four core Kanban flow metrics pl
 
 **The four core metrics defined precisely:**
 
-- **Cycle Time:** Time from "work started" to "work done" on a ticket. Measures how fast the team moves once they pick something up — not how long it sat in the backlog. Cycle time is the metric the team itself can most directly influence.
+- **Cycle Time:** Time from "work started" to "work done" on a ticket. Measures how fast the team moves once they pick something up, not how long it sat in the backlog. Cycle time is the metric the team itself can most directly influence.
 - **Lead Time:** Time from "request entered the system" to "work done." Includes backlog wait, prioritization, everything upstream. Lead time is what stakeholders and customers actually feel.
 - **Throughput:** Number of tickets finished per unit of time (usually per week). Counts completions, not story points. This is the raw input for Monte Carlo forecasting.
-- **WIP (Work in Progress):** Number of tickets the team has started but not finished. Little's Law says Lead Time = WIP / Throughput — the math behind WIP limits.
+- **WIP (Work in Progress):** Number of tickets the team has started but not finished. Little's Law says Lead Time = WIP / Throughput: the math behind WIP limits.
 
 **Flow Efficiency:** Share of cycle time that is active work vs. waiting. Typical software teams land around 15-20%, meaning 80%+ of a ticket's lifetime is queue time. The article frames this explicitly as a system problem, not a people problem: "Developers aren't slow; the system has too many queues."
 
@@ -50,5 +50,5 @@ This is a crisp, authoritative reference on the four core Kanban flow metrics pl
 
 - **Critical** for `guides/02-flow-metrics.md`: this article provides the canonical simple definitions for all five metrics. The cycle time vs. lead time distinction with clear start/end clock descriptions is exactly what the worker-bee's critical directive demands ("Distinguish cycle time from lead time every time you use them").
 - **Supports** `guides/03-littles-law.md`: the explicit Little's Law link (Lead Time = WIP / Throughput) is stated cleanly for non-mathematical audiences.
-- The velocity vs. throughput contrast in the last section should be included in `guides/07-kanban-vs-scrum.md` — teams migrating from Scrum to Kanban need to unlearn velocity as a primary metric.
+- The velocity vs. throughput contrast in the last section should be included in `guides/07-kanban-vs-scrum.md`: teams migrating from Scrum to Kanban need to unlearn velocity as a primary metric.
 - The 15-20% flow efficiency benchmark (industry average) is a key statistic for `guides/02-flow-metrics.md`. Stinger-forge should note this alongside the Daniel Vacanti benchmark (he reports similar figures in Actionable Agile Metrics).

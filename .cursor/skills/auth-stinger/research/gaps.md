@@ -4,23 +4,23 @@ Known limitations of v1 of auth-stinger.
 
 ## Coverage gaps
 
-- **Mobile-native auth flows** — App Auth for iOS / Android is referenced but not deeply covered. Mobile keystore APIs, biometric prompts, deep-link callback handling.
-- **Device Flow / OAuth 2.0 Device Authorization Grant** — used for CLIs and TVs. Briefly mentioned; no dedicated guide.
-- **Federated identity between SaaS apps** (e.g., Okta-managed user consumed by your SaaS, then re-emitted to a sub-SaaS) — not covered.
-- **PASETO** as a JWT alternative — not covered. Smaller adoption; revisit.
-- **Self-hosted IdP** (Keycloak, Ory Kratos, Authentik) — referenced as out-of-scope for v1; recommended only when constraints demand.
+- **Mobile-native auth flows**: App Auth for iOS / Android is referenced but not deeply covered. Mobile keystore APIs, biometric prompts, deep-link callback handling.
+- **Device Flow / OAuth 2.0 Device Authorization Grant**: used for CLIs and TVs. Briefly mentioned; no dedicated guide.
+- **Federated identity between SaaS apps** (e.g., Okta-managed user consumed by your SaaS, then re-emitted to a sub-SaaS): not covered.
+- **PASETO** as a JWT alternative: not covered. Smaller adoption; revisit.
+- **Self-hosted IdP** (Keycloak, Ory Kratos, Authentik): referenced as out-of-scope for v1; recommended only when constraints demand.
 
 ## Provider gaps
 
-- **Auth0 / Okta CIC** — listed but not given a dedicated guide. If user demand materializes, add `guides/12-auth0.md`.
-- **Frontegg, Logto, Hanko, Descope** — known players, not in the matrix yet.
-- **Firebase Auth** — common in mobile; not covered. Adjacent to Supabase Auth but distinct.
+- **Auth0 / Okta CIC**: listed but not given a dedicated guide. If user demand materializes, add `guides/12-auth0.md`.
+- **Frontegg, Logto, Hanko, Descope**: known players, not in the matrix yet.
+- **Firebase Auth**: common in mobile; not covered. Adjacent to Supabase Auth but distinct.
 
 ## Topic gaps
 
-- **JWT key rotation / JWKS rollover** — referenced, not deeply covered.
-- **OAuth audit log retention requirements** (SOC 2, HIPAA, GDPR) — `security-worker-bee` territory; auth-worker-bee flags.
-- **Step-up auth UX patterns** — covered conceptually; UI patterns deferred to `react-worker-bee` and `ux-ui-worker-bee`.
+- **JWT key rotation / JWKS rollover**: referenced, not deeply covered.
+- **OAuth audit log retention requirements** (SOC 2, HIPAA, GDPR): `security-worker-bee` territory; auth-worker-bee flags.
+- **Step-up auth UX patterns**: covered conceptually; UI patterns deferred to `react-worker-bee` and `ux-ui-svelte-worker-bee`.
 
 ## Tooling gaps
 

@@ -1,4 +1,4 @@
-# 01 — HTTP Methods
+# 01. HTTP Methods
 
 Method semantics, safety, idempotency, and common misuse patterns.
 

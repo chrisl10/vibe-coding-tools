@@ -8,10 +8,10 @@ Render user-authored Markdown (and AI-generated Markdown) safely in a React chat
 
 For AI chat rendering, full MDX compilation (`@mdx-js/mdx`) is overkill and introduces unnecessary attack surface (JSX execution from user input). Instead:
 
-- **unified + remark-parse + remark-gfm + remark-rehype + rehype-sanitize + rehype-stringify** — server-side rendering
-- **DOMPurify** — client-side fallback for live preview
-- **NOT `allowDangerousHtml: true`** — never for user content
-- **NOT full MDX compilation** — no JSX execution from user input
+- **unified + remark-parse + remark-gfm + remark-rehype + rehype-sanitize + rehype-stringify**: server-side rendering
+- **DOMPurify**: client-side fallback for live preview
+- **NOT `allowDangerousHtml: true`**: never for user content
+- **NOT full MDX compilation**: no JSX execution from user input
 
 ---
 
@@ -163,6 +163,6 @@ export function LivePreview({ markdown }: { markdown: string }) {
 
 ## Performance note
 
-The unified pipeline is initialized once (`const chatProcessor = unified()...`) and reused across all renders. Do NOT create a new processor per message — it's expensive. The `process()` call itself is lightweight.
+The unified pipeline is initialized once (`const chatProcessor = unified()...`) and reused across all renders. Do NOT create a new processor per message; it's expensive. The `process()` call itself is lightweight.
 
 For very high request volume, consider caching rendered HTML by content hash (e.g., using Next.js `unstable_cache` or Redis) since the same AI message content is frequently repeated across users.

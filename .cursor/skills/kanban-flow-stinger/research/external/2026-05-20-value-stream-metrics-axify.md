@@ -17,7 +17,7 @@ stinger: kanban-flow-stinger
 
 # How to Use Value Stream Metrics to Improve Software Delivery Outcomes
 
-**Source:** Axify Blog — "How to Use Value Stream Metrics to Improve Software Delivery Outcomes"
+**Source:** Axify Blog: "How to Use Value Stream Metrics to Improve Software Delivery Outcomes"
 **URL:** https://axify.io/blog/value-stream-metrics
 **Published:** 2026-02-26
 
@@ -28,9 +28,9 @@ This article takes a value stream management perspective on flow metrics, integr
 **Precise metric definitions with 2026 benchmarks:**
 - **Lead Time:** Total time from stakeholder request to production. Top-performing teams achieve lead times under 24 hours. Sustaining that benchmark requires low WIP, small batch size, fast PR review, and stable CI.
 - **Cycle Time:** Time from when active work begins to completion. The top 25% of teams achieve a cycle time of 1.8 days.
-- **Flow Efficiency:** Ratio of active work time to total elapsed time. "In most software delivery environments, measured flow efficiency falls in the single digits up to roughly 15%, meaning the majority of elapsed time is queue time." This contradicts the 15-20% figure from Cylenivo — the Axify figure suggests even lower efficiency for most teams.
+- **Flow Efficiency:** Ratio of active work time to total elapsed time. "In most software delivery environments, measured flow efficiency falls in the single digits up to roughly 15%, meaning the majority of elapsed time is queue time." This contradicts the 15-20% figure from Cylenivo: the Axify figure suggests even lower efficiency for most teams.
 
-**Key insight on variability:** The article argues that lead time predictability is more important than raw lead time speed. "Predictable lead time enables realistic roadmap planning." High variance in lead time — even with a low average — destroys forecast accuracy and forces teams to add large schedule buffers.
+**Key insight on variability:** The article argues that lead time predictability is more important than raw lead time speed. "Predictable lead time enables realistic roadmap planning." High variance in lead time (even with a low average) destroys forecast accuracy and forces teams to add large schedule buffers.
 
 **Flow efficiency measurement method:**
 - Active Time: Time spent in "In Progress" states
@@ -54,4 +54,4 @@ This article takes a value stream management perspective on flow metrics, integr
 
 - **Critical** for `guides/02-flow-metrics.md`: the 1.8-day cycle time benchmark for top-25% teams and the sub-24-hour lead time target for elite teams are hard, citable numbers for the worker-bee to use when interpreting client data.
 - **Supports** `guides/04-cumulative-flow-diagram.md`: the concept that lead time variability (distribution spread on the CFD) is more diagnostic than the average is directly relevant to reading the CFD shape. Stinger-forge should connect this to the CFD "explosion" and "step" anti-patterns from the Command Brief.
-- **Note for stinger-forge:** There is a minor contradiction with Cylenivo (15-20% flow efficiency) vs. Axify (single digits to 15%). Both sources may be correct — teams with more mature practices could be at 15-20%, while the broader population sits lower. Flag this in the guide with both data points.
+- **Note for stinger-forge:** There is a minor contradiction with Cylenivo (15-20% flow efficiency) vs. Axify (single digits to 15%). Both sources may be correct: teams with more mature practices could be at 15-20%, while the broader population sits lower. Flag this in the guide with both data points.

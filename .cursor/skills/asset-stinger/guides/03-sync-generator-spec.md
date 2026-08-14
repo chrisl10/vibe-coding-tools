@@ -1,8 +1,8 @@
-# Guide 03 — Sync Generator Spec
+# Guide 03: Sync Generator Spec
 
 The contract between the codebase and the Universal Asset Registry. The generator is a single, deterministic CLI tool that scans the repo and upserts registry rows.
 
-This guide is the spec — what the generator does, what it touches, what it guarantees. The implementation lives (or will live) under `tools/registry-sync/`; the actual code is out of scope here.
+This guide is the spec: what the generator does, what it touches, what it guarantees. The implementation lives (or will live) under `tools/registry-sync/`; the actual code is out of scope here.
 
 ## Binary name
 
@@ -19,7 +19,7 @@ Subcommands:
 
 ## Scan paths
 
-The generator walks a **configured** set of directories. Paths are defined in `tools/registry-sync/config.ts` (or whatever the deploying product calls it), not guessed. Sample defaults — adapt to the deploying product's layout:
+The generator walks a **configured** set of directories. Paths are defined in `tools/registry-sync/config.ts` (or whatever the deploying product calls it), not guessed. Sample defaults, adapt to the deploying product's layout:
 
 | Asset type | Scan paths (sample) | Detection method |
 |---|---|---|
@@ -35,7 +35,7 @@ The generator walks a **configured** set of directories. Paths are defined in `t
 | `Display` | `app/src/components/**/*.tsx` with `@display(...)` | JSDoc annotation |
 | `Layout` | `app/src/components/layouts/*.tsx` | directory convention + `@layout(...)` |
 | `NavEntry` | `app/src/nav/entries.ts` | exported entries array |
-| `DesignTokenDefinition` | `library/knowledge-base/ux-ui/01-master-tokens.css` (or wherever the deploying product keeps its master tokens) | CSS custom property declarations |
+| `DesignTokenDefinition` | `library/knowledge/private/ux-ui/01-master-tokens.css` (or wherever the deploying product keeps its master tokens) | CSS custom property declarations |
 | `Icon` | `app/src/icons/**/*.svg` + `app/src/icons/index.ts` | exported registry |
 | `MediaAsset` | `public/media/**/*` + `app/src/media/manifest.ts` | manifest |
 | `Font` | `app/src/fonts/**/*.ts` | exported font declarations |
@@ -159,7 +159,7 @@ Sync runs against staging first. A separate production sync runs at deploy time 
 
 ```yaml
 - name: Full drift audit
-  run: pnpm registry:report --format=md > library/qa/asset-registry/$(date +%Y-%m-%d)-nightly-drift-audit.md
+  run: pnpm registry:report --format=md > library/requirements/reports/asset-registry/$(date +%Y-%m-%d)-nightly-drift-audit.md
 - name: Commit drift report
   run: git commit -am "asset-registry: nightly drift report"
 ```
@@ -168,9 +168,9 @@ Sync runs against staging first. A separate production sync runs at deploy time 
 
 Enforced at three layers:
 
-1. **Code** — the generator's upsert payload never includes human-only fields in `update`.
-2. **DB** — a column-grant pattern restricts the generator's role to generator-only columns.
-3. **Audit** — `registry_audit_log` records every write with `actor = sync-generator@ci | <user_id>`. Cross-role writes to protected columns are a policy violation.
+1. **Code**: the generator's upsert payload never includes human-only fields in `update`.
+2. **DB**: a column-grant pattern restricts the generator's role to generator-only columns.
+3. **Audit**: `registry_audit_log` records every write with `actor = sync-generator@ci | <user_id>`. Cross-role writes to protected columns are a policy violation.
 
 ## Human-exit hatch
 
@@ -192,7 +192,7 @@ Every manual write produces an entry in `registry_audit_log` with `actor = <user
 The first time the generator runs on a repo that already has code, it enters **backfill mode**:
 
 - All detected assets land as `status: draft` with `created_by: sync-generator@ci:backfill`.
-- A backfill report lands at `library/qa/asset-registry/backfill-<YYYY-MM-DD>.md`.
+- A backfill report lands at `library/requirements/reports/asset-registry/backfill-<YYYY-MM-DD>.md`.
 - Humans review, fill required fields, flip `status: active` asset-by-asset.
 - Backfill mode exits when fewer than 1% of detected assets remain in `draft` for more than 7 days (configurable).
 

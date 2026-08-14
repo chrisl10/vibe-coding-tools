@@ -1,6 +1,6 @@
 # preact-stinger
 
-Procedural arsenal for `preact-worker-bee`, the Legion Army's Preact 11 specialist.
+Procedural arsenal for `preact-worker-bee`, the Hive's Preact 11 specialist.
 
 This Stinger encodes the opinionated decision framework for Preact vs React, the signals API (v2 with createModel/useModel), the `preact/compat` migration playbook, the third-party embed widget pattern, and the Astro/Fresh integration guides.
 

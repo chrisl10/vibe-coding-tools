@@ -4,7 +4,7 @@ Printable cheat sheet. Keep within arm's reach during schema review.
 
 ---
 
-## Step 1 — What is the column type?
+## Step 1: What is the column type?
 
 | Column type | First-pass index family |
 |---|---|
@@ -17,7 +17,7 @@ Printable cheat sheet. Keep within arm's reach during schema review.
 | `vector` (pgvector) | HNSW (default 2026) or IVFFlat |
 | Append-only time-series scalar | BRIN |
 
-## Step 2 — What is the predicate shape?
+## Step 2: What is the predicate shape?
 
 | Predicate | Best |
 |---|---|
@@ -30,7 +30,7 @@ Printable cheat sheet. Keep within arm's reach during schema review.
 | `ILIKE '%foo%'` (substring) | GIN `pg_trgm` |
 | `<->` distance (vector) | HNSW or IVFFlat |
 
-## Step 3 — Apply modifiers
+## Step 3: Apply modifiers
 
 | Modifier | When |
 |---|---|
@@ -42,7 +42,7 @@ Printable cheat sheet. Keep within arm's reach during schema review.
 ## Must-have indexes
 
 - [ ] **Every primary key.** (Auto.)
-- [ ] **Every foreign key column.** (NOT auto — Postgres does not create these.)
+- [ ] **Every foreign key column.** (NOT auto: Postgres does not create these.)
 - [ ] **Every column in a frequent `WHERE` clause.**
 - [ ] **Every column in a frequent `ORDER BY` (when paired with the WHERE column).**
 - [ ] **Every `tsvector` column you query with `@@`.** (GIN)
@@ -52,7 +52,7 @@ Printable cheat sheet. Keep within arm's reach during schema review.
 
 - [ ] Indexing a column that's never filtered.
 - [ ] Multi-column index where the leading column rarely appears in the predicate.
-- [ ] Redundant index — `(a)` when `(a, b)` exists (the leading-column lookup uses the longer index).
+- [ ] Redundant index: `(a)` when `(a, b)` exists (the leading-column lookup uses the longer index).
 - [ ] `CREATE INDEX` (not `CONCURRENTLY`) on a hot table in production.
 - [ ] An invalid index (`indisvalid = false`) left in place after a failed concurrent build.
 

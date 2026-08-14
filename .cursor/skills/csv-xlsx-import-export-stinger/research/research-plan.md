@@ -5,7 +5,7 @@
 - **Page budget target:** ~100 pages / sources
 - **Source breadth target:** official docs, practitioner blogs, GitHub READMEs, comparison articles, pricing pages, security references
 
-## Initial queries (from the proposal step / Command Brief)
+## Initial queries (from `big-bang-space` / Command Brief)
 
 1. "OneSchema Flatfile column mapping UX 2026"
 2. "papaparse SheetJS streaming 100MB 2026"

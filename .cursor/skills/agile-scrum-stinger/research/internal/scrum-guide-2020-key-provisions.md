@@ -43,12 +43,12 @@ Five values: **Commitment, Focus, Openness, Respect, Courage**.
 
 **Key 2020 change:** The "Development Team" construct was removed. There are now only Developers. This eliminates the PO vs. Dev Team "us vs. them" dynamic.
 
-**Size guidance:** "10 or fewer people" — if larger, "they should consider reorganizing into multiple cohesive Scrum Teams."
+**Size guidance:** "10 or fewer people": if larger, "they should consider reorganizing into multiple cohesive Scrum Teams."
 
 **Audit checks:**
 - Are all three accountabilities (SM, PO, Developers) filled by real people with time and authority?
-- Is the team cross-functional — can they create a Done increment without external dependencies?
-- Is the team self-managing — do they choose who, how, AND what to work on?
+- Is the team cross-functional: can they create a Done increment without external dependencies?
+- Is the team self-managing: do they choose who, how, AND what to work on?
 - Is the team small enough (≤ 10)?
 
 ---
@@ -65,7 +65,7 @@ Five values: **Commitment, Focus, Openness, Respect, Courage**.
 
 **Audit checks:**
 - Does the PO have a clear Product Goal communicated to the team?
-- Is the PO available to the team — not part-time, not by proxy?
+- Is the PO available to the team, not part-time, not by proxy?
 - Does the PO actually order the backlog based on value (not just priority by stakeholder pressure)?
 
 ---
@@ -81,7 +81,7 @@ Five values: **Commitment, Focus, Openness, Respect, Courage**.
 **Audit checks:**
 - Do Developers self-organize their own work (no task assignments from SM or PO)?
 - Do Developers own and enforce the Definition of Done?
-- Do Developers hold themselves accountable for the Sprint Goal — or do they just work through a task list?
+- Do Developers hold themselves accountable for the Sprint Goal, or do they just work through a task list?
 
 ---
 
@@ -119,16 +119,16 @@ All events are timeboxed. Events serve as formal opportunities to inspect and ad
 **Key 2020 change:** Backlog Refinement is NOT a formal Scrum event. It is ongoing work (up to 10% of team capacity is the community guidance, but not normative).
 
 **Sprint Planning three topics (2020 addition):**
-1. Why is this Sprint valuable? (Sprint Goal — new primary topic)
+1. Why is this Sprint valuable? (Sprint Goal, new primary topic)
 2. What can be Done this Sprint?
 3. How will the chosen work get done?
 
 **Audit checks:**
 - Are all five events conducted? Are they timeboxed?
 - Does Sprint Planning begin with "why" (Sprint Goal) before "what"?
-- Is the Daily Scrum used for coordination toward the Sprint Goal — or just status reporting?
-- Does the Sprint Review include stakeholders who collaborate on next steps — or is it just a demo?
-- Does the Sprint Retrospective produce actionable improvements — with owner and target sprint?
+- Is the Daily Scrum used for coordination toward the Sprint Goal, or just status reporting?
+- Does the Sprint Review include stakeholders who collaborate on next steps, or is it just a demo?
+- Does the Sprint Retrospective produce actionable improvements, with owner and target sprint?
 
 ---
 
@@ -144,8 +144,8 @@ All events are timeboxed. Events serve as formal opportunities to inspect and ad
 
 **Audit checks:**
 - Is there a Product Goal visible to the whole team?
-- Is there a Sprint Goal for every Sprint — not just a list of stories?
-- Does the Sprint Goal provide coherence and flexibility — can the team negotiate scope if something is harder than expected while still achieving the Goal?
+- Is there a Sprint Goal for every Sprint, not just a list of stories?
+- Does the Sprint Goal provide coherence and flexibility: can the team negotiate scope if something is harder than expected while still achieving the Goal?
 - Is there a Definition of Done? Does every increment meet it before being considered Done?
 
 ---
@@ -158,7 +158,7 @@ All events are timeboxed. Events serve as formal opportunities to inspect and ad
 
 **Audit checks:**
 - Does a written DoD exist?
-- Does the DoD apply to every PBI — not just some stories?
+- Does the DoD apply to every PBI, not just some stories?
 - Is the DoD realistic enough that the team actually meets it every Sprint?
 - Is the DoD ambitious enough to produce a truly "potentially releasable" increment?
 - Is the DoD reviewed and updated in retrospectives?

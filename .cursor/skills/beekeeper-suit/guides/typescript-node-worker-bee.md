@@ -1,80 +1,41 @@
-# TypeScript/Node Worker-Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `typescript-node-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/typescript-node-worker-bee.md`](../../../agents/typescript-node-worker-bee.md)
-**Stinger:** [`.cursor/skills/typescript-node-stinger/`](../../typescript-node-stinger/)
-**Trigger policy:** proactive
-
----
+# typescript-node-worker-bee
 
 ## Domain
+Owns TypeScript/Node for Hivemind (`@deeplake/hivemind`) specifically: strict ESM on Node 22, tsconfig Node16 module resolution + ES2022 + strict, esbuild multi-harness bundling, Vitest with coverage-v8, zod boundary validation (zod ^4 in the app, zod/v3 in the MCP server), the Deep Lake SQL-API access client (retry, `Semaphore(5)`, SQL string-guarding), the single-sourced Deep Lake schema and `healMissingColumns`, MCP tool authorship, jscpd duplication discipline, and the npm publish contract. This is opinionated to the real Hivemind stack, not generic TypeScript advice.
 
-`typescript-node-worker-bee` is the Army's TypeScript/Node specialist, grounded in how Hivemind (`@deeplake/hivemind`) actually ships rather than generic tutorial tropes. It enforces the real Hivemind stack: strict ESM on Node 22, tsconfig Node16 module resolution with ES2022 target and `strict: true`, esbuild multi-harness bundling with `sync-versions` plus `define`, Vitest discipline (`vitest run` plus coverage-v8, tests mirroring `harnesses/`), zod at every external boundary (zod ^4 in the app, zod/v3 in the MCP server), jscpd duplication at threshold 7, and the lean husky lint-staged plus tsc gate with no ESLint or Prettier. It owns the `src/` layout and ESM import discipline, the Deep Lake SQL-API access patterns (`src/deeplake-api.ts`), the SQL guards (`sqlStr`/`sqlLike`/`sqlIdent`), the single-sourced schema and `healMissingColumns`, the MCP server tools, the esbuild bundle model, and the npm publish contract.
+## Paired Stinger
+[typescript-node-stinger](../../typescript-node-stinger) - stack enforcement, ESM/project-layout rules, the Deep Lake SQL-API client, zod-at-boundaries, MCP tool authoring, Vitest discipline, and deterministic audit scripts.
 
 ## Trigger phrases
-
-Route to `typescript-node-worker-bee` when the user says any of:
-
-- "Review this TypeScript code" / "Hivemind code review" / "audit this Node code"
-- "Fix an ESM import" / "the ESM import broke"
-- "Write a Vitest suite"
-- "Add a zod-validated MCP tool" / "add a zod schema"
-- "Tighten the tsconfig" / "tsconfig strict"
-- "jscpd is failing" / "jscpd duplication"
-- "Fix the esbuild bundle" / "esbuild bundle"
-- Anything touching a `.ts` or `.mjs` file in a PR
-
-Or when the request implicitly involves Hivemind's TypeScript/Node implementation patterns or its lean quality gate.
+- "review this TypeScript code"
+- "Hivemind code review"
+- "add a zod-validated MCP tool"
+- "write a Vitest suite for this"
+- "add a column to a Deep Lake table"
+- "fix the esbuild bundle"
+- "jscpd is failing"
+- "ESM import broke at runtime"
 
 ## Do NOT route when
-
-- The user wants Deep Lake table/index design from a data-engineering POV (schema shape, `ColumnDef`, indexing decision tree) - that is `deeplake-dataset-worker-bee`. (DeeplakeApi data-access patterns stay here; schema design belongs there.)
-- The user wants recall tuning, hybrid weighting, or the skillify gate - that is `retrieval-worker-bee`.
-- The user wants the embedding model or daemon - that is `embeddings-runtime-worker-bee`.
-- The user wants a security audit (SQL injection, the pre-tool-use gate, trace PII) - surface and hand off to `security-worker-bee`.
-- The user wants the build/CI/npm-release topology (workflows, files allowlist, pack-check) - that is `ci-release-worker-bee`.
-- The user wants PRD or IRD authoring - that is `library-worker-bee`.
-- The user wants post-implementation QA against a plan - that is `quality-worker-bee`.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let this one act as backup on the TypeScript implementation underneath.
+- The ask is Deep Lake table/index design from a data-engineering point of view rather than the TS access pattern: route to vector-store-worker-bee.
+- The ask is a security audit including auth/credential lifecycle: route to security-worker-bee (this Bee flags and enforces `sqlStr`/`sqlLike`/`sqlIdent` and env-only secrets, it does not audit).
+- The ask is recall ranking, embeddings strategy, or evals: route to retrieval-worker-bee or embeddings-runtime-worker-bee.
+- The ask is Dockerfile shape, GitHub Actions, or release automation: route to ci-release-worker-bee.
+- The ask is PRD authoring for a TypeScript feature: route to library-worker-bee.
 
 ## Inputs the Bee needs
+- `package.json` and `tsconfig.json` to confirm the stack (ESM, Node 22, Node16 resolution, strict mode) before ruling.
+- The classification of the invocation: code review, ESM/import audit, Deep Lake query audit, MCP tool add, Vitest setup, or schema change.
+- Whether the codebase actually matches the canonical Hivemind stack, or whether reduced-coverage flagging is needed for a divergent stack (CJS, Webpack, different test runner).
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- File:line-cited code review findings classified must-fix / should-refactor / style.
+- New or refactored MCP tools with zod/v3 `inputSchema`, Deep Lake queries routed through the SQL-API client, or Vitest suites mirroring the harness layout.
+- Deterministic audit-script output (untyped boundaries, unbatched queries, hardcoded secrets, swallowed catches, schema drift).
+- An audit report or ADR filed under `library/requirements/reports/typescript/` or `library/knowledge/private/architecture/`.
 
-- The TypeScript codebase or the specific files/branch in scope.
-- Access to `tsconfig.json`, `package.json`, `esbuild.config.mjs`, `vitest.config`, the `src/` tree, and the relevant `tests/` mirror.
-- Optional: specific focus (code review, ESM fix, Vitest suite, zod boundary, esbuild entry, tsconfig tightening).
-
-If codebase access is missing, do not invoke yet - ask the user to point at the files in scope.
-
-## Outputs the Bee produces
-
-- Code review findings classified by severity, each citing `path/to/file.ts:LN` plus the relevant guide in `typescript-node-stinger/guides/`.
-- Refactored or new TypeScript (ESM, strict, zod-guarded boundaries) in scope.
-- Vitest suites under `tests/` mirroring the harness layout.
-- A clean diff that keeps the gate green (`npm run ci` = typecheck + dup + test).
-
-## Multi-Bee sequences this Bee participates in
-
-- **Memory / retrieval feature** - `typescript-node-worker-bee` owns the TypeScript implementation patterns underneath the recall and codify pipeline that `retrieval-worker-bee`, `embeddings-runtime-worker-bee`, and `deeplake-dataset-worker-bee` design.
-- **Schema-touching feature** - implements the DeeplakeApi data-access side after `deeplake-dataset-worker-bee` designs the table.
-- **Plan execution loop** - the implementation Bee whose change `security-worker-bee` then `quality-worker-bee` close out.
-
-## Critical directives the orchestrator should respect
-
-- **Stack is canon, not recommendation.** Strict ESM on Node 22; tsconfig Node16 + ES2022 + strict; esbuild multi-harness bundling; Vitest; zod at boundaries; jscpd + tsc + husky as the gate. Substitutions create drift across the per-harness bundles.
-- **ESM only.** `"type": "module"`, `.js` extensions on relative imports, no `require`, no CJS.
-- **zod at every external boundary**, and no `any` crossing a function signature - `unknown` then narrow, or a zod schema.
-- **Deep Lake queries go through `src/deeplake-api.ts`** (Semaphore(5), retry on 429/5xx), never a hand-rolled `fetch`; every value goes through `sqlStr`/`sqlLike`, every identifier through `sqlIdent`.
-- **Schema and version are single-sourced** - columns in `src/deeplake-schema.ts` reach existing tables via `healMissingColumns`; the version flows from `package.json` through `sync-versions`.
-- **The gate is tsc + jscpd + husky, nothing else.** No ESLint, no Prettier.
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
-
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+## Commonly sequenced with
+- vector-store-worker-bee: for schema shape and indexing strategy behind a TS change.
+- security-worker-bee: for the audit pass this Bee's findings feed into.
+- ci-release-worker-bee: for the Dockerfile/CI shape wrapping the build this Bee enforces.
+- library-worker-bee: for PRD authorship once an architectural rationale is produced here.

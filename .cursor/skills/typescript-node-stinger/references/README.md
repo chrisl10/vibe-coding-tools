@@ -31,7 +31,7 @@ The canonical stack lives in `guides/01-stack-enforcement.md`:
 
 A push to substitute requires (per `guides/01-stack-enforcement.md`):
 
-1. **An ADR** at `library/architecture/ADR-<n>-<topic>.md` with Context / Decision / Consequences / Alternatives Considered.
+1. **An ADR** at `library/knowledge/private/architecture/ADR-<n>-<topic>.md` with Context / Decision / Consequences / Alternatives Considered.
 2. **Eval evidence** - the substitute beats the canonical pick on a metric the repo cares about (build time, bundle size, test speed, install reliability across harnesses).
 3. **A migration plan** - especially for anything touching the per-harness bundles or the Deep Lake client.
 4. **Re-demotion** - the previous canonical choice moves into this folder.

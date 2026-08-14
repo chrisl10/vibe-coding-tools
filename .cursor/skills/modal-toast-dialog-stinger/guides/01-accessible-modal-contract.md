@@ -1,4 +1,4 @@
-# Guide 01 — Accessible Modal Contract
+# Guide 01: Accessible Modal Contract
 
 The six-point contract that every overlay produced by `modal-toast-dialog-worker-bee` must satisfy. Check each point before declaring an overlay done.
 
@@ -16,8 +16,8 @@ Radix Dialog adds `aria-modal="true"` to `Dialog.Content` automatically. Verify 
 
 ### 2. Correct `role`
 
-- `role="dialog"` — general content overlays (forms, detail panels, confirmations with low consequence).
-- `role="alertdialog"` — destructive or urgent confirmations that require an immediate response. Screen readers announce `alertdialog` more urgently.
+- `role="dialog"`: general content overlays (forms, detail panels, confirmations with low consequence).
+- `role="alertdialog"`: destructive or urgent confirmations that require an immediate response. Screen readers announce `alertdialog` more urgently.
 
 Radix: `Dialog.Content` gets `role="dialog"`; `AlertDialog.Content` gets `role="alertdialog"` automatically.
 
@@ -64,7 +64,7 @@ Or use the `body-scroll-lock` package for cross-browser reliability.
 
 When the dialog closes, focus must return to the element that opened it (the trigger button or link).
 
-Radix Dialog returns focus to the last focused element automatically. Verify this in every overlay: open the dialog, navigate inside it, close it — confirm focus returns to the trigger.
+Radix Dialog returns focus to the last focused element automatically. Verify this in every overlay: open the dialog, navigate inside it, close it, and confirm focus returns to the trigger.
 
 ---
 
@@ -95,7 +95,7 @@ Radix's `Dialog.Title` and `Dialog.Description` wire `aria-labelledby` and `aria
 ## Checklist (copy into the audit report)
 
 - [ ] `aria-modal="true"` on dialog container
-- [ ] Correct `role` — `dialog` or `alertdialog`
+- [ ] Correct `role`: `dialog` or `alertdialog`
 - [ ] Focus moves into dialog on open
 - [ ] Tab/Shift+Tab cycle stays inside dialog
 - [ ] Escape closes dialog (or is intentionally disabled with documentation)

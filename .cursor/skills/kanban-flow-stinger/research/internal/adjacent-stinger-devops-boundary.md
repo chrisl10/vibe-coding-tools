@@ -1,6 +1,6 @@
 ---
-title: "Adjacent Stinger Review: devops-stinger — Escalation Boundary"
-source_url: internal://legion-code/.cursor/skills/devops-stinger/SKILL.md
+title: "Adjacent Stinger Review: devops-stinger, Escalation Boundary"
+source_url: internal://legion-code/.claude/skills/devops-stinger/SKILL.md
 source_type: internal-stinger
 authority: high
 relevance: medium
@@ -15,7 +15,7 @@ stinger: kanban-flow-stinger
 
 # Adjacent Stinger Review: devops-stinger Escalation Boundary
 
-**Source:** Internal — `.cursor/skills/devops-stinger/SKILL.md`
+**Source:** Internal: `.claude/skills/devops-stinger/SKILL.md`
 **Purpose:** Clarify the boundary between `kanban-flow-worker-bee` and `devops-worker-bee` to avoid domain overlap and ensure correct escalation paths in SKILL.md.
 
 ## Summary
@@ -31,7 +31,7 @@ The two worker-bees are clearly separated by their level of abstraction:
 **Where the two overlap (and how to handle it):**
 1. **Deployment frequency** (DORA metric): Both worker-bees care about it. `kanban-flow-worker-bee` treats deployment frequency as a throughput measure visible on the Kanban board (deployed cards per week). `devops-worker-bee` owns the CI/CD pipeline that enables frequent deployment. Rule: when the conversation is about "how often are we deploying and does it match our throughput target," that is `kanban-flow-worker-bee`. When the conversation is about "how do we make our CI/CD pipeline capable of deploying more frequently," that is `devops-worker-bee`.
 
-2. **Lead time for changes** (DORA metric): `kanban-flow-worker-bee` measures lead time as defined in Kanban — from ticket creation to deployment. The DORA "lead time for changes" (commit to production) is a subset. If a team's lead time is dominated by CI/CD pipeline wait times (slow builds, manual gates), `kanban-flow-worker-bee` should flag this and escalate to `devops-worker-bee`.
+2. **Lead time for changes** (DORA metric): `kanban-flow-worker-bee` measures lead time as defined in Kanban: from ticket creation to deployment. The DORA "lead time for changes" (commit to production) is a subset. If a team's lead time is dominated by CI/CD pipeline wait times (slow builds, manual gates), `kanban-flow-worker-bee` should flag this and escalate to `devops-worker-bee`.
 
 3. **Blocked items due to infrastructure dependencies**: A Kanban card blocked because it is waiting for a CI environment, a deployment credential, or an infrastructure prerequisite is in `devops-worker-bee`'s domain. `kanban-flow-worker-bee` surfaces the blockage via its flow metrics analysis; `devops-worker-bee` resolves the infrastructure cause.
 

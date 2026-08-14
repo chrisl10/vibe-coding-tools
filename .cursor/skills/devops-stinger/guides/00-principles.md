@@ -1,17 +1,17 @@
-# 00 — Principles
+# 00: Principles
 
 The non-negotiables. Read on every invocation.
 
 ## The ten principles
 
-### 1. Inventory the repo first — always
+### 1. Inventory the repo first, always
 
 Before recommending *anything*, capture:
 
-- `Dockerfile`(s) and `.dockerignore` — current base, stages, root user status, HEALTHCHECK presence.
-- `docker-compose*.yml` — services, profiles, depends_on conditions, secrets blocks.
-- `.github/workflows/*.yml` — actions used (and their pin form), `permissions:` blocks, OIDC vs. static creds, concurrency groups.
-- `package.json` — Node version (engines.node), package manager, scripts.
+- `Dockerfile`(s) and `.dockerignore`: current base, stages, root user status, HEALTHCHECK presence.
+- `docker-compose*.yml`: services, profiles, depends_on conditions, secrets blocks.
+- `.github/workflows/*.yml`: actions used (and their pin form), `permissions:` blocks, OIDC vs. static creds, concurrency groups.
+- `package.json`: Node version (engines.node), package manager, scripts.
 - Existing Depot wiring (`uses: depot/...`), existing scan tooling (Trivy, Scout, Snyk), existing make targets / Bake files.
 
 A recommendation written without reading the existing pipeline is wrong advice.
@@ -32,7 +32,7 @@ Every build defines its cache backend explicitly. The "cache is king" principle 
 
 - BuildKit named cache mounts for package managers (`--mount=type=cache,target=/root/.npm`).
 - Layer cache backend chosen deliberately: Depot persistent NVMe (best), registry cache (good), GHA cache backend (acceptable, 10 GB cap), no cache (finding).
-- Cache scope clear: per-branch, per-PR, shared across team — see `guides/08-caching-strategies.md`.
+- Cache scope clear: per-branch, per-PR, shared across team; see `guides/08-caching-strategies.md`.
 
 ### 4. Parity beats convenience
 
@@ -68,14 +68,14 @@ Even for a "simple" Node app:
 
 ### 8. OIDC over long-lived cloud credentials
 
-AWS, GCP, Azure, DigitalOcean, Cloudflare — all support OIDC federation from GitHub Actions. The Action requests a short-lived token via `id-token: write` permission; the cloud provider trusts the OIDC issuer. Repo secrets shrink from "long-lived AWS access keys" to nothing. Source: `research/2026-04-25-oidc-cloud-federation.md`.
+AWS, GCP, Azure, DigitalOcean, Cloudflare: all support OIDC federation from GitHub Actions. The Action requests a short-lived token via `id-token: write` permission; the cloud provider trusts the OIDC issuer. Repo secrets shrink from "long-lived AWS access keys" to nothing. Source: `research/2026-04-25-oidc-cloud-federation.md`.
 
 ### 9. Cite every finding
 
 Two citations per finding:
 
-- **Where in the user's repo** — `Dockerfile:14`, `.github/workflows/deploy.yml:31`, `docker-compose.yml:42`.
-- **Why it's a finding** — guide section + research note (`guides/06-actions-security.md §3` + `research/2026-04-25-actions-permissions-hardening.md`) or external URL.
+- **Where in the user's repo**: `Dockerfile:14`, `.github/workflows/deploy.yml:31`, `docker-compose.yml:42`.
+- **Why it's a finding**: guide section + research note (`guides/06-actions-security.md §3` + `research/2026-04-25-actions-permissions-hardening.md`) or external URL.
 
 ### 10. Severity discipline
 
@@ -84,8 +84,8 @@ Three levels only:
 | Severity | Example | Blocks PR? |
 |---|---|---|
 | Must-fix | Secret in `ARG`, `permissions: write-all`, action pinned to `@main`, `pull_request_target` + checkout of `head.sha`, root user in production image, base image at `:latest` | Yes |
-| Should-refactor | Missing concurrency group, missing HEALTHCHECK, no `.dockerignore`, no Trivy/Scout scan, no cache mount, GitHub-hosted runner used for ARM-only repeat builds | No — open follow-up |
-| Style | Layer ordering nit, label format, naming | No — suggestion |
+| Should-refactor | Missing concurrency group, missing HEALTHCHECK, no `.dockerignore`, no Trivy/Scout scan, no cache mount, GitHub-hosted runner used for ARM-only repeat builds | No, open follow-up |
+| Style | Layer ordering nit, label format, naming | No, suggestion |
 
 Calling a style nit "must-fix" destroys reviewer trust. Be disciplined.
 

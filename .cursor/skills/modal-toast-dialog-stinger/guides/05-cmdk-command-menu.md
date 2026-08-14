@@ -1,4 +1,4 @@
-# Guide 05 — cmdk Command Menu
+# Guide 05: cmdk Command Menu
 
 Complete implementation guide for the cmdk command palette in Next.js with shadcn/ui.
 

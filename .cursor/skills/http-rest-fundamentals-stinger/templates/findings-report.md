@@ -25,7 +25,7 @@
 
 {Issues that are security exploitable or will cause functional failures for clients}
 
-### C1 — {Short title}
+### C1: {Short title}
 
 - **Location:** {endpoint / file / line}
 - **Finding:** {What is wrong, specifically}
@@ -39,7 +39,7 @@
 
 {Issues that violate HTTP semantics in ways that break caches, clients, or monitoring}
 
-### H1 — {Short title}
+### H1: {Short title}
 
 - **Location:** {endpoint / file / line}
 - **Finding:** {What is wrong}
@@ -53,7 +53,7 @@
 
 {Issues that are technically incorrect but have limited immediate impact}
 
-### M1 — {Short title}
+### M1: {Short title}
 
 - **Location:** {endpoint / file / line}
 - **Finding:** {What is wrong}
@@ -79,4 +79,4 @@
 
 ---
 
-*Report template: `ai-tools/skills/http-rest-fundamentals-stinger/templates/findings-report.md`*
+*Report template: `.claude/skills/http-rest-fundamentals-stinger/templates/findings-report.md`*

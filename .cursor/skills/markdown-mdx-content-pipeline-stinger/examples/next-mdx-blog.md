@@ -81,7 +81,7 @@ export default defineConfig({
 
 ---
 
-## next.config.mjs (Velite prebuild — Turbopack safe)
+## next.config.mjs (Velite prebuild, Turbopack safe)
 
 ```mjs
 // next.config.mjs

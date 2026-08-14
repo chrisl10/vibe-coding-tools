@@ -2,7 +2,7 @@
 
 The shape for `PlatformConfig` model slots and the procedure for swapping a slot value.
 
-> **Source-of-truth:** `library/knowledge-base/ai/coach-architecture.md §3` + `library/knowledge-base/ai/README.md` (model slot table).
+> **Source-of-truth:** `library/knowledge/private/ai/coach-architecture.md §3` + `library/knowledge/private/ai/README.md` (model slot table).
 > **Code:** `lib/ai-client.ts` (`getAIModels`, `invalidateAIModelsCache`).
 
 ---
@@ -32,7 +32,7 @@ model PlatformConfig {
 
 ---
 
-## 2. Reader — `getAIModels()`
+## 2. Reader: `getAIModels()`
 
 ```typescript
 export async function getAIModels(): Promise<AIModels> {
@@ -54,7 +54,7 @@ export async function getAIModels(): Promise<AIModels> {
 
 ---
 
-## 3. Invalidation — `invalidateAIModelsCache()`
+## 3. Invalidation: `invalidateAIModelsCache()`
 
 ```typescript
 export async function invalidateAIModelsCache(): Promise<void> {
@@ -81,18 +81,18 @@ Without this call, the new slot values won't take effect for up to 1 hour.
 
 When swapping a slot (e.g., `modelChat` from Llama 3.3 70B to a different model):
 
-1. **Read current eval baseline** — pull last 7 days of `AiTrace.retrievalScore`, `routingCorrect`, `agreementScore` for the affected slot. Document baseline numbers.
-2. **Pre-prod test if possible** — point staging to the new model slot, run the golden eval suite, verify no > 5% regression.
+1. **Read current eval baseline**: pull last 7 days of `AiTrace.retrievalScore`, `routingCorrect`, `agreementScore` for the affected slot. Document baseline numbers.
+2. **Pre-prod test if possible**: point staging to the new model slot, run the golden eval suite, verify no > 5% regression.
 3. **Edit the slot** in SA AI Configuration screen.
 4. **Confirm `invalidateAIModelsCache()` was called** (handled by the route automatically).
-5. **Watch the metrics for 48 hours** — alert if any metric drops > 10% from baseline.
-6. **Rollback path:** revert the slot edit + re-invalidate. Document the regression in `library/qa/ai/<date>-slot-rollback.md`.
+5. **Watch the metrics for 48 hours**: alert if any metric drops > 10% from baseline.
+6. **Rollback path:** revert the slot edit + re-invalidate. Document the regression in `library/requirements/reports/ai/<date>-slot-rollback.md`.
 
 ---
 
 ## 5. Slot usage table
 
-Per-call slot mapping (the canonical table — drift is a finding):
+Per-call slot mapping (the canonical table, drift is a finding):
 
 | Use case | Slot | File |
 |---|---|---|
@@ -100,8 +100,8 @@ Per-call slot mapping (the canonical table — drift is a finding):
 | Routing classification | `fast` | `ai-coach-router.ts` |
 | Matching | `chat` | `ai-matching.ts` |
 | Onboarding agent | `chat` | `onboarding-ai.ts` |
-| Session summary — extract | `fast` | `coaching-llm.ts` |
-| Session summary — narrative | `chat` | `coaching-llm.ts` |
+| Session summary: extract | `fast` | `coaching-llm.ts` |
+| Session summary: narrative | `chat` | `coaching-llm.ts` |
 | Module opening message | `chat` | `coaching-llm.ts` |
 | Recursive summarization | `fast` | `media-summarizer.ts` |
 | Image / video frame description | `vision` | `image-processor.ts`, `video-processor.ts` |
@@ -117,7 +117,7 @@ Any per-feature override (e.g., a single experimental coach using a different mo
 
 - Read from `PlatformConfig` (separate field) or a feature-flag table.
 - Never hardcode a model literal.
-- Document in `library/knowledge-base/ai/coach-architecture.md`.
+- Document in `library/knowledge/private/ai/coach-architecture.md`.
 
 The current `getReferralAiConfig()` is the precedent: separate config, separate cache key, same pattern (DB-stored, Valkey-cached).
 

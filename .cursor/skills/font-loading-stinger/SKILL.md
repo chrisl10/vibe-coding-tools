@@ -1,6 +1,6 @@
 ---
-name: font-loading-stinger
-description: Production-focused font loading strategy specialist for 2026 web performance. Reviews, implements, and audits the web font loading pipeline: font-display descriptor selection (swap/optional/fallback/block/auto) with CLS risk analysis; <link rel="preload"> strategy for critical fonts; variable-font + Unicode-range subsetting pipeline (pyftsubset, glyphhanger, subfont); next/font App Router integration; and CLS-from-font-swap elimination via size-adjust, ascent-override, and metric-matched fallback stacks. Use when the user says "audit font loading", "fix FOIT", "CLS from font swap", "preload fonts", "subset variable font", "next/font config", "font-display strategy", "font performance", or invokes font-loading-worker-bee. Do NOT use for typeface selection or fluid type scales (typography-font-worker-bee), build-pipeline font subsetting in CI (devops-worker-bee), or Core Web Vitals measurement beyond CLS (seo-aeo-worker-bee).
+name: "font-loading-stinger"
+description: "Production-focused font loading strategy specialist for 2026 web performance. Reviews, implements, and audits the web font loading pipeline: font-display descriptor selection (swap/optional/fallback/block/auto) with CLS risk analysis; the link rel=preload strategy for critical fonts; variable-font + Unicode-range subsetting pipeline (pyftsubset, glyphhanger, subfont); next/font App Router integration; and CLS-from-font-swap elimination via size-adjust, ascent-override, and metric-matched fallback stacks. Use when the user says \\\\\\\"audit font loading\\\\\\\", \\\\\\\"fix FOIT\\\\\\\", \\\\\\\"CLS from font swap\\\\\\\", \\\\\\\"preload fonts\\\\\\\", \\\\\\\"subset variable font\\\\\\\", \\\\\\\"next/font config\\\\\\\", \\\\\\\"font-display strategy\\\\\\\", \\\\\\\"font performance\\\\\\\", or invokes font-loading-worker-bee. Do NOT use for typeface selection or fluid type scales (typography-font-worker-bee), build-pipeline font subsetting in CI (devops-worker-bee), or Core Web Vitals measurement beyond CLS (seo-aeo-worker-bee)."
 license: MIT
 ---
 
@@ -59,27 +59,27 @@ When a request crosses into a peer domain, complete the font-loading portion and
 
 Read the guides in this order for a full-scope audit:
 
-- `guides/00-principles.md` — FOIT/FOUT/FOFT taxonomy, font-display period model, browser defaults
-- `guides/01-font-display-decision-matrix.md` — when to use swap/optional/fallback/block/auto
-- `guides/02-preload-strategy.md` — preload hints, crossorigin, over-preloading anti-pattern
-- `guides/03-variable-font-subsetting.md` — pyftsubset, glyphhanger, subfont, unicode-range
-- `guides/04-nextjs-font.md` — next/font App Router vs Pages Router, fonts.ts patterns
-- `guides/05-cls-elimination.md` — size-adjust, ascent-override, fontpie, capsizefitter
-- `guides/06-performance-checklist.md` — 2026 targets: payload, preloads, CLS, zero double-fetches
+- `guides/00-principles.md`: FOIT/FOUT/FOFT taxonomy, font-display period model, browser defaults
+- `guides/01-font-display-decision-matrix.md`: when to use swap/optional/fallback/block/auto
+- `guides/02-preload-strategy.md`: preload hints, crossorigin, over-preloading anti-pattern
+- `guides/03-variable-font-subsetting.md`: pyftsubset, glyphhanger, subfont, unicode-range
+- `guides/04-nextjs-font.md`: next/font App Router vs Pages Router, fonts.ts patterns
+- `guides/05-cls-elimination.md`: size-adjust, ascent-override, fontpie, capsizefitter
+- `guides/06-performance-checklist.md`: 2026 targets: payload, preloads, CLS, zero double-fetches
 
 Examples:
 
-- `examples/happy-path-nextjs-inter.md` — Next.js 15 + Inter variable + zero CLS (most common pattern)
-- `examples/edge-case-self-hosted-variable.md` — paid font self-hosted with pyftsubset + metric override
+- `examples/happy-path-nextjs-inter.md`: Next.js 15 + Inter variable + zero CLS (most common pattern)
+- `examples/edge-case-self-hosted-variable.md`: paid font self-hosted with pyftsubset + metric override
 
 Templates:
 
-- `templates/font-face-block.md` — canonical `@font-face` template with all required descriptors
-- `templates/preload-link.md` — correct `<link rel="preload">` markup
-- `templates/nextfont-config.ts.md` — `app/fonts.ts` starter templates
+- `templates/font-face-block.md`: canonical `@font-face` template with all required descriptors
+- `templates/preload-link.md`: correct `<link rel="preload">` markup
+- `templates/nextfont-config.ts.md`: `app/fonts.ts` starter templates
 
 Research trail:
 
-- `research/research-summary.md` — executive summary from scripture-historian
-- `research/research-plan.md` — depth tier, queries, page budget
-- `research/index.md` — manifest of all source files
+- `research/research-summary.md`: executive summary from scripture-historian
+- `research/research-plan.md`: depth tier, queries, page budget
+- `research/index.md`: manifest of all source files

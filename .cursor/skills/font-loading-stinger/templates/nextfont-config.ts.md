@@ -1,4 +1,4 @@
-# Template: `app/fonts.ts` — next/font Configuration
+# Template: `app/fonts.ts`, next/font Configuration
 
 Replace all `{{...}}` placeholders. See `guides/04-nextjs-font.md` for complete API reference.
 

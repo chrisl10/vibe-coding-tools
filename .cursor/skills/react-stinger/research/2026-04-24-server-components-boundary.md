@@ -21,16 +21,16 @@
 
 ## Common failure modes
 
-- **"use client" at the root** — forces the entire app into the client bundle.
-- **Passing Date objects through the boundary** — serialized to string, loses type.
-- **Secret leakage** — a util that reads `process.env.SECRET` imported into a client file ships the secret to the browser. `server-only` guards against this.
+- **"use client" at the root**: forces the entire app into the client bundle.
+- **Passing Date objects through the boundary**: serialized to string, loses type.
+- **Secret leakage**: a util that reads `process.env.SECRET` imported into a client file ships the secret to the browser. `server-only` guards against this.
 
 ## Server Actions
 
 - A `'use server'` function is a POST endpoint.
 - Next.js adds CSRF / Origin-Referer checks automatically for form-action invocations.
 - **But you still must implement authn + authz inside the action.** No automatic session check.
-- **Always validate input with Zod** — Server Actions are public HTTP endpoints.
+- **Always validate input with Zod**: Server Actions are public HTTP endpoints.
 
 ## Relevance to this stinger
 

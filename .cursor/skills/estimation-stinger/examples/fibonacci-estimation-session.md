@@ -22,13 +22,13 @@ Team answers: "Testing took longer than expected. And we needed a database migra
 
 "Let's pick two reference stories from recent work."
 
-1-point reference: "Add a new field to the user settings page — label, input, and backend validation. No migration, no new endpoint." (Team agreement: this is our unit of 'a small but complete piece of work.')
+1-point reference: "Add a new field to the user settings page: label, input, and backend validation. No migration, no new endpoint." (Team agreement: this is our unit of 'a small but complete piece of work.')
 
-5-point reference: "Build the CSV export for the reports page — pagination, background job, download endpoint, email notification, and basic test coverage." (Team agreement: this is medium complexity with a few moving parts.)
+5-point reference: "Build the CSV export for the reports page: pagination, background job, download endpoint, email notification, and basic test coverage." (Team agreement: this is medium complexity with a few moving parts.)
 
 Write both on cards, paste in the Confluence refinement page, and keep them visible during all future estimation sessions.
 
-## Step 3: Planning Poker session — three stories
+## Step 3: Planning Poker session: three stories
 
 ### Story A: "Add 2FA toggle to account settings"
 
@@ -36,7 +36,7 @@ Product owner reads acceptance criteria. Team asks: Does this require a new auth
 
 Cards revealed: 3, 3, 5, 3, 8.
 
-The "8" outlier: backend engineer says "I'm thinking about the rate limiting we'd need on the verification endpoint, and the audit log entry — we don't have those patterns yet."
+The "8" outlier: backend engineer says "I'm thinking about the rate limiting we'd need on the verification endpoint, and the audit log entry: we don't have those patterns yet."
 
 Discussion: The mobile API change is new scope that wasn't in the AC. The team revises AC, then re-votes: 5, 5, 5, 5, 5. Record: **5 points**.
 
@@ -50,12 +50,12 @@ Quick agreement. The "2" estimator says "I was thinking about timezone handling,
 
 Cards revealed: 3, 5, 8, 13, 21.
 
-Wide divergence — major discussion value.
+Wide divergence: major discussion value.
 
 - "3" estimator: "I'm only thinking about the email channel, which we already have."
 - "21" estimator: "I'm thinking about building a channel abstraction, testing all three, updating the admin UI to configure them, and database changes."
 
-After discussion: the AC was ambiguous — "support channels" was interpreted differently. Team decides to split into three stories: (1) channel abstraction + email (3 pts), (2) SMS integration (5 pts), (3) Slack integration (5 pts). Each now has clear scope.
+After discussion: the AC was ambiguous: "support channels" was interpreted differently. Team decides to split into three stories: (1) channel abstraction + email (3 pts), (2) SMS integration (5 pts), (3) Slack integration (5 pts). Each now has clear scope.
 
 ## Outcome
 

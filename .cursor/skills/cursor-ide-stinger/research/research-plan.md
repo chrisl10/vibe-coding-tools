@@ -7,7 +7,7 @@ Refocused 2026-06-16 on Hivemind's real Cursor surface.
   - `harnesses/cursor/bundle/`: the built hook scripts.
   - `harnesses/cursor/extension/`: the first-party Cursor extension.
   - `src/mcp/server.ts`: the Hivemind MCP server.
-  - `.cursor/rules/*.mdc`, `.cursor/agents/`, `.cursor/skills/`, `.cursor/commands/`, `.cursor/model-comparison-matrix.md`: the Army layout.
+  - `.cursor/rules/*.mdc`, `.claude/agents/`, `.claude/skills/`, `.cursor/commands/`, `.cursor/model-comparison-matrix.md`: the colony layout.
 - **Backing reference:** Cursor official docs (hooks, rules, MCP).
 
 ## Queries

@@ -1,6 +1,6 @@
 # Example: Embedding Model Comparison for Hivemind Recall
 
-A filled-in comparison applying the Hivemind-scoped rubric from `guides/03-embedding-model-selection.md`. The question is narrow: is any candidate worth swapping in for `nomic-embed-text-v1.5` (q8, 768 dim) on Hivemind's recall?
+A filled-in comparison applying the Hivemind-scoped rubric from `guides/local-daemon-03-model-selection.md`. The question is narrow: is any candidate worth swapping in for `nomic-embed-text-v1.5` (q8, 768 dim) on Hivemind's recall?
 
 ## Context
 
@@ -24,7 +24,7 @@ A filled-in comparison applying the Hivemind-scoped rubric from `guides/03-embed
 ### 1. Dimension gate
 
 - nomic (q8/fp16) and bge-base-en-v1.5 are **768 dim**, drop-in candidates.
-- all-MiniLM-L6-v2 (384) and the 1024-dim model are **schema events**: adopting either means resizing the `FLOAT4[]` columns and re-embedding every record via the deeplake-dataset schema-heal path. That cost is only justified by a large, measured recall win.
+- all-MiniLM-L6-v2 (384) and the 1024-dim model are **schema events**: adopting either means resizing the `FLOAT4[]` columns and re-embedding every record via the vector-store schema-heal path. That cost is only justified by a large, measured recall win.
 
 ### 2. Recall quality on Hivemind's corpus
 
@@ -45,4 +45,4 @@ The daemon is CPU-bound and in-process. nomic q8 is fast and ~600MB. A bigger or
 
 ## If a swap is approved
 
-Use `templates/embedding-model-swap-plan.md`. If the chosen model is not 768 dim, also run `templates/dim-migration-checklist.md` and hand the column resize to deeplake-dataset-worker-bee.
+Use `templates/embedding-model-swap-plan.md`. If the chosen model is not 768 dim, also run `templates/dim-migration-checklist.md` and hand the column resize to vector-store-worker-bee.

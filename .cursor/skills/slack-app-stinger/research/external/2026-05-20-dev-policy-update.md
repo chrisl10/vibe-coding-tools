@@ -8,7 +8,7 @@ topic: policy
 stinger: slack-app-stinger
 ---
 
-# Slack App Developer Policy Updates — December 10, 2024
+# Slack App Developer Policy Updates: December 10, 2024
 
 ## Summary
 
@@ -24,8 +24,8 @@ On December 10, 2024, Slack updated its App Developer Policy with two significan
 
 ## What changed
 
-1. **Mandatory Marketplace review for commercial-scale apps** — Previously, developers could distribute apps at scale without going through Marketplace review by keeping them unlisted. This loophole is now explicitly closed.
-2. **LLM training prohibition made explicit** — The earlier policy implied data usage restrictions; the December 2024 update makes the LLM training prohibition unambiguous and absolute ("under any circumstances").
+1. **Mandatory Marketplace review for commercial-scale apps**: Previously, developers could distribute apps at scale without going through Marketplace review by keeping them unlisted. This loophole is now explicitly closed.
+2. **LLM training prohibition made explicit**: The earlier policy implied data usage restrictions; the December 2024 update makes the LLM training prohibition unambiguous and absolute ("under any circumstances").
 
 ## Policy context
 
@@ -35,7 +35,7 @@ On December 10, 2024, Slack updated its App Developer Policy with two significan
 
 ## Annotations for stinger-forge
 
-- Maps directly to `guides/06-app-directory.md` — include a "Policy Compliance" subsection.
+- Maps directly to `guides/06-app-directory.md`: include a "Policy Compliance" subsection.
 - The LLM training prohibition is the most consequential new constraint for developers building AI Slack bots in 2025-2026. Stinger-forge must flag it as a prominent warning.
-- The commercial-scale distribution rule means developers can no longer avoid Marketplace review by distributing "privately" at scale — stinger-forge should advise starting the Marketplace submission early in the app lifecycle.
+- The commercial-scale distribution rule means developers can no longer avoid Marketplace review by distributing "privately" at scale: stinger-forge should advise starting the Marketplace submission early in the app lifecycle.
 - This changelog entry is the most recent policy change found in the research window; no further policy updates were found between December 2024 and May 2026.

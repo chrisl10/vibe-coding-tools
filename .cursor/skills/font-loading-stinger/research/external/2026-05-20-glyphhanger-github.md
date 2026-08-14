@@ -7,7 +7,7 @@ relevance: high
 topic: subsetting
 ---
 
-# glyphhanger — zachleat/glyphhanger (GitHub)
+# glyphhanger: zachleat/glyphhanger (GitHub)
 
 ## Summary
 

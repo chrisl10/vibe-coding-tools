@@ -1,4 +1,4 @@
-# 01 — WIP Limits: Setting, Enforcing, and Iterating
+# 01. WIP Limits: Setting, Enforcing, and Iterating
 
 *Sources: `research/external/2026-05-20-wip-limits-agile-flow-consulting.md`; `research/external/2026-05-20-wip-limits-uplevel-engineering.md`; `research/external/2026-05-20-wip-limits-atlassian-official.md`*
 
@@ -6,13 +6,13 @@
 
 ## Why WIP limits exist
 
-WIP limits are the defining mechanism of Kanban. Without them, the board is a visualization tool, not a flow system. WIP accumulation directly increases cycle time via Little's Law (L = λW) — as WIP grows, cycle time grows proportionally if throughput holds constant.
+WIP limits are the defining mechanism of Kanban. Without them, the board is a visualization tool, not a flow system. WIP accumulation directly increases cycle time via Little's Law (L = λW): as WIP grows, cycle time grows proportionally if throughput holds constant.
 
 The Atlassian Kanban documentation names four goals WIP limits achieve:
-1. **Surface bottlenecks** — when a column fills to its limit and the downstream column is empty, the bottleneck becomes visible and actionable.
-2. **Reduce context switching** — people finish before starting, rather than juggling.
-3. **Enable flow optimization** — you cannot diagnose a system that never constrains itself.
-4. **Make capacity explicit** — limits reveal how much the team can actually handle vs how much they want to start.
+1. **Surface bottlenecks**: when a column fills to its limit and the downstream column is empty, the bottleneck becomes visible and actionable.
+2. **Reduce context switching**: people finish before starting, rather than juggling.
+3. **Enable flow optimization**: you cannot diagnose a system that never constrains itself.
+4. **Make capacity explicit**: limits reveal how much the team can actually handle vs how much they want to start.
 
 Source: `research/external/2026-05-20-wip-limits-atlassian-official.md`
 
@@ -56,7 +56,7 @@ Observe for two weeks. If the limit is never hit, reduce by one again. Repeat un
 
 **Global WIP limits** (total in-flight across all active stages) are a useful additional signal for leadership dashboards, but they do not replace per-stage limits because they cannot locate the bottleneck.
 
-**Swimlane WIP** (per class of service per stage) — see `guides/06-class-of-service.md`. The Jira swimlane bug (see `research/external/2026-05-20-tool-wip-limits-honest-review.md`) counts total WIP across all swimlanes for a column, not per swimlane. This means Jira's WIP limit display is unreliable when swimlanes are active.
+**Swimlane WIP** (per class of service per stage): see `guides/06-class-of-service.md`. The Jira swimlane bug (see `research/external/2026-05-20-tool-wip-limits-honest-review.md`) counts total WIP across all swimlanes for a column, not per swimlane. This means Jira's WIP limit display is unreliable when swimlanes are active.
 
 ---
 
@@ -88,7 +88,7 @@ From `research/external/2026-05-20-wip-limits-uplevel-engineering.md`:
 
 From `research/external/2026-05-20-wip-limits-agile-flow-consulting.md`:
 
-> A 12-person software delivery team implemented throughput-derived WIP limits over 6 weeks. Result: p85 cycle time fell from 62 days to 36 days — a 42% reduction. No additional headcount. No process change other than the WIP limits.
+> A 12-person software delivery team implemented throughput-derived WIP limits over 6 weeks. Result: p85 cycle time fell from 62 days to 36 days, a 42% reduction. No additional headcount. No process change other than the WIP limits.
 
 This is the canonical ROI reference. Use it when teams are skeptical that WIP limits alone will move the needle.
 
@@ -97,7 +97,7 @@ This is the canonical ROI reference. Use it when teams are skeptical that WIP li
 ## Common objections and responses
 
 **"WIP limits slow us down."**
-Response: WIP limits surface the slowdown that was already happening — it was invisible before because items were blocked quietly. Little's Law shows that reducing WIP reduces cycle time; the team was working hard but finishing slowly.
+Response: WIP limits surface the slowdown that was already happening: it was invisible before because items were blocked quietly. Little's Law shows that reducing WIP reduces cycle time; the team was working hard but finishing slowly.
 
 **"We can't have a limit because some work is urgent."**
 Response: Urgent work belongs in an Expedite swimlane with its own WIP limit of 1. The expedite lane is a bypass, not an exception to the system. See `guides/06-class-of-service.md`.
@@ -107,4 +107,4 @@ Response: This is a class-of-service problem, not a WIP limit problem. Use swiml
 
 ---
 
-*Example: `examples/wip-limit-setup-happy-path.md` — end-to-end from throughput data to Jira configuration*
+*Example: `examples/wip-limit-setup-happy-path.md`: end-to-end from throughput data to Jira configuration*

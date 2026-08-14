@@ -40,8 +40,8 @@
 
 ### Groq
 
-- LPU (Language Processing Unit) hardware — purpose-built for LLM inference.
-- ~2000 tokens/second for Llama 3.1 70B — 10-20x faster than GPU inference.
+- LPU (Language Processing Unit) hardware: purpose-built for LLM inference.
+- ~2000 tokens/second for Llama 3.1 70B: 10-20x faster than GPU inference.
 - No cold start; sub-second latency for first token.
 - Available models: Llama 3.1/3.2/3.3 family, Mixtral, Gemma 2, Whisper.
 - Free tier: 14,400 requests/day for Llama 3.1 70B.

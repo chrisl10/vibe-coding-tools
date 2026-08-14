@@ -1,4 +1,4 @@
-# research-plan.md — mind-stinger
+# research-plan.md: mind-stinger
 
 The search queries executed against vendor docs and primary sources during the initial stinger forge. Each query → one dated `2026-04-25-<slug>.md` note. Plus the Vectara NAACL 2025 chunking note as carried-over universal research.
 
@@ -29,9 +29,9 @@ The search queries executed against vendor docs and primary sources during the i
 
 ---
 
-## Carried over from retired ai-platform-stinger
+## Carried over from retired mind-stinger
 
-- `2026-04-25-vectara-naacl-2025-chunking.md` — load-bearing finding for fixed-size chunking. Verbatim copy of the original with product-specific notes appended.
+- `2026-04-25-vectara-naacl-2025-chunking.md`: load-bearing finding for fixed-size chunking. Verbatim copy of the original with product-specific notes appended.
 
 ---
 

@@ -1,4 +1,4 @@
-# 06 — HTTP/2 and HTTP/3
+# 06. HTTP/2 and HTTP/3
 
 Protocol upgrades, multiplexing, QUIC, and what changes for application developers.
 

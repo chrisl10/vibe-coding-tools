@@ -1,4 +1,4 @@
-# Tailwind CSS v4 `@theme` — CSS-First Configuration
+# Tailwind CSS v4 `@theme`: CSS-First Configuration
 
 **Sources:**
 - https://tailwindcss.com/docs/configuration (retrieved 2026-04-24)
@@ -14,7 +14,7 @@ Tailwind v4 kills `tailwind.config.js`. All customization moves into CSS via
 the `@theme` directive. Tokens declared inside `@theme` become both CSS custom
 properties (reachable as `var(--color-brand-500)`) and utility classes
 (`bg-brand-500`). This means the Bee's `01-master-tokens.css` can double as
-the Tailwind config — one source of truth.
+the Tailwind config: one source of truth.
 
 ## Key patterns
 
@@ -33,7 +33,7 @@ the Tailwind config — one source of truth.
 - Values MUST be declared top-level (not nested under `:root` or `@media`).
 - Tokens become utilities automatically: `--color-brand-500` generates
   `bg-brand-500`, `text-brand-500`, `border-brand-500`, etc.
-- `--*: initial;` inside `@theme` nukes the default theme — useful when a
+- `--*: initial;` inside `@theme` nukes the default theme, useful when a
   product wants only its own tokens.
 - Use `:root { --some-var: ... }` for runtime-overridable values that
   shouldn't generate utility classes (tenant overrides live here).
@@ -42,9 +42,9 @@ the Tailwind config — one source of truth.
 
 A typical multi-tenant glass-on-beige product uses BOTH:
 
-- `@theme { ... }` — tenant-themable brand tokens that wrap values in
+- `@theme { ... }`: tenant-themable brand tokens that wrap values in
   `var(--tenant-primary, #1B2B4B)` so runtime tenant overrides cascade.
-- `@theme inline { ... }` — fixed tokens (semantic state colors, spacing,
+- `@theme inline { ... }`: fixed tokens (semantic state colors, spacing,
   radii, shadows) that should be inlined at build time, not resolved at
   runtime.
 
@@ -58,4 +58,4 @@ brand colors go under `@theme`; everything else under `@theme inline`.
 - Each `starter-kits/*/01-master-tokens.css` uses `@theme` so it works as a
   drop-in Tailwind v4 config.
 - The Bee should flag a design system that declares tokens OUTSIDE
-  `@theme` as a drift — tokens must be discoverable by the utility generator.
+  `@theme` as a drift: tokens must be discoverable by the utility generator.

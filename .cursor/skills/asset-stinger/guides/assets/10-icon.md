@@ -1,4 +1,4 @@
-# Guide — `Icon` (10)
+# Guide: `Icon` (10)
 
 > **Applies to:** every SVG icon shipped in the app's icon registry.
 
@@ -41,14 +41,14 @@ Standard. Deprecating an icon used by many `NavEntry` / `CustomMenuItem` / `Cta`
 
 ## 7. Hand-offs
 
-- **ux-ui-worker-bee** — icon weight/style consistency (muted-stroke left nav, navy-stroke top nav, etc.) is their concern. You catalog; they audit visual consistency.
-- **security-worker-bee** — SVG content from third-party packs gets license + XSS review.
+- **ux-ui-svelte-worker-bee**: icon weight/style consistency (muted-stroke left nav, navy-stroke top nav, etc.) is their concern. You catalog; they audit visual consistency.
+- **security-worker-bee**: SVG content from third-party packs gets license + XSS review.
 
 ## 8. Pitfalls
 
-- Ingesting an SVG with embedded scripts — security risk. The generator strips `<script>` on import, but flag the drift anyway.
+- Ingesting an SVG with embedded scripts: security risk. The generator strips `<script>` on import, but flag the drift anyway.
 - Two icons with the same key across different packs. Keys are flat; namespace if needed (`lucide.chevron-right`).
-- Missing `license` — legal risk.
+- Missing `license`: legal risk.
 
 ## 9. Example
 

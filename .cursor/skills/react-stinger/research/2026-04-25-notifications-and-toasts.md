@@ -1,4 +1,4 @@
-# Notifications & Toasts — research notes
+# Notifications & Toasts: research notes
 
 **Retrieved:** 2026-04-25
 **For guide:** `guides/19-notifications-and-toasts.md`
@@ -24,7 +24,7 @@ From `cursor-subagent-research-combined.md` (Notifications & Toasts, ~line 1069)
 
 ## Cross-references
 
-- `guides/13-ecosystem-catalog.md` does not cover notifications — this guide is additive.
+- `guides/13-ecosystem-catalog.md` does not cover notifications: this guide is additive.
 - Worker / cron / queue infrastructure that fans out cross-channel notifications is handed off to `devops-worker-bee`.
 - Push token storage / rotation / auth posture handed off to `security-worker-bee`.
 

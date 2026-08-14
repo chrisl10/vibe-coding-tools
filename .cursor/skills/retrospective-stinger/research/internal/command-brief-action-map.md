@@ -80,7 +80,7 @@
 
 **Research needed:**
 - SMART criteria applied to retro action items (Specific, Measurable, Achievable, Relevant, Time-bound).
-- Single-owner rule (not "the team") — the Action Item Owner / Ambassador concept.
+- Single-owner rule (not "the team"): the Action Item Owner / Ambassador concept.
 - Quantity limit: 2-3 per retro; fewer with follow-through beats many without.
 - Placement: action items must land in the sprint board as actual tickets, not in a retro-only doc.
 - Accountability loop: review at standup visibility + review at next retro opening.
@@ -95,7 +95,7 @@
 **Research needed:**
 - Distinction between retro action items (behavioral, sprint-scoped) and decisions (architectural, process-changing, worth documenting).
 - Signal phrases that indicate a library-worthy decision: "we're changing how we do X permanently", "we need a new process for Y", "this is an ADR".
-- No specific research file needed — this is a workflow routing rule, not a domain-knowledge problem.
+- No specific research file needed: this is a workflow routing rule, not a domain-knowledge problem.
 
 ---
 

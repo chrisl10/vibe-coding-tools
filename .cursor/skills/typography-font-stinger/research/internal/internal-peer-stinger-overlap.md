@@ -3,7 +3,7 @@ source_type: internal
 authority: high
 relevance: high
 topic: peer stinger boundaries and handoff surfaces
-url: ai-tools/skills/design-system-stinger/ and ai-tools/skills/ux-ui-stinger/
+url: .claude/skills/design-system-stinger/ and .claude/skills/ux-ui-svelte-stinger/
 retrieved: 2026-05-20
 ---
 
@@ -21,13 +21,13 @@ Three peer Stingers share boundary surfaces with `typography-font-stinger`. Unde
 
 **Overlap risk:** Token naming conventions. Ensure `--font-family-*`, `--font-size-*`, `--line-height-*`, `--letter-spacing-*`, `--font-weight-*` naming in `tokens/typography.css` matches the token naming schema that `design-system-stinger` established for the project. The typography stinger does NOT invent token naming from scratch - it aligns with the existing schema.
 
-## 2. ux-ui-stinger (downstream)
+## 2. ux-ui-svelte-stinger (downstream)
 
 **Owns:** per-component application of type tokens, pixel-perfect component specifications against design brief.
 
-**Receives from typography-font-stinger:** The `tokens/typography.css` file with `--font-size-*`, `--line-height-*`, `--letter-spacing-*`, `--font-weight-*` variables. `ux-ui-stinger` uses these as `var()` references in component styles, never hardcoding raw sizes.
+**Receives from typography-font-stinger:** The `tokens/typography.css` file with `--font-size-*`, `--line-height-*`, `--letter-spacing-*`, `--font-weight-*` variables. `ux-ui-svelte-stinger` uses these as `var()` references in component styles, never hardcoding raw sizes.
 
-**Overlap risk:** Component-specific type overrides. If a component needs a non-standard type treatment (e.g., a display heading at 90px), `ux-ui-stinger` should define a component-scoped token that references a primitive in `tokens/typography.css`, not bypass the token layer.
+**Overlap risk:** Component-specific type overrides. If a component needs a non-standard type treatment (e.g., a display heading at 90px), `ux-ui-svelte-stinger` should define a component-scoped token that references a primitive in `tokens/typography.css`, not bypass the token layer.
 
 ## 3. devops-stinger (adjacent)
 
@@ -41,6 +41,6 @@ Three peer Stingers share boundary surfaces with `typography-font-stinger`. Unde
 
 ## Annotations for stinger-forge
 
-- Write `guides/05-font-token-layer.md` with explicit sections on "How to name tokens to align with design-system-stinger output" and "How ux-ui-stinger consumes these tokens."
+- Write `guides/05-font-token-layer.md` with explicit sections on "How to name tokens to align with design-system-stinger output" and "How ux-ui-svelte-stinger consumes these tokens."
 - Write `guides/06-performance-checklist.md` with a dedicated section on "Build pipeline boundary - what typography-font-stinger specifies vs. what devops-stinger implements."
 - In `SKILL.md`, include a "Peer Stinger boundaries" section that lists these four stingers and their handoff points.

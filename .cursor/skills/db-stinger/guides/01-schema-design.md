@@ -1,4 +1,4 @@
-# 01 — Schema Design
+# 01: Schema Design
 
 Postgres-first schema. Use the type system; don't reinvent it in app code.
 
@@ -22,10 +22,10 @@ CREATE TABLE example (
 - **`updated_at`:** maintained by a `BEFORE UPDATE` trigger. Don't trust application code.
 - **Soft delete:** `deleted_at TIMESTAMPTZ` only when the use case demands history. Default to hard delete; soft delete is a compliance / audit feature.
 
-## Type selection — the cheat sheet
+## Type selection: the cheat sheet
 
 ### Strings
-- `text` for everything. **Never** `varchar(n)` unless a constraint is enforced — `varchar(255)` is a MySQL holdover with no advantage in Postgres.
+- `text` for everything. **Never** `varchar(n)` unless a constraint is enforced: `varchar(255)` is a MySQL holdover with no advantage in Postgres.
 - Add a `CHECK (length(col) <= N)` if you need a length constraint.
 
 ### Numbers
@@ -57,7 +57,7 @@ CREATE INDEX ON events USING gin (payload jsonb_path_ops);
 
 ### Arrays
 - Ordered short lists where you read the whole array.
-- **Don't** use when you'd join on elements — use a child table.
+- **Don't** use when you'd join on elements: use a child table.
 
 ### Enums
 ```sql
@@ -66,7 +66,7 @@ ALTER TABLE orders ADD COLUMN status order_status NOT NULL DEFAULT 'pending';
 ```
 - Closed sets that change rarely.
 - Adding values is cheap on PG 12+ (`ALTER TYPE ... ADD VALUE`).
-- Removing is hard — switch to a lookup table if churn is expected.
+- Removing is hard: switch to a lookup table if churn is expected.
 
 ### Range types and `EXCLUDE`
 The killer feature for non-overlapping intervals:
@@ -91,7 +91,7 @@ Centralize a constraint in the type. Reuse across tables.
 ## Constraints
 
 ### `NOT NULL`
-Default-on for almost every column. The exception is genuine optionality (nullable FK to a deletable parent, optional user attribute). `NOT NULL` is not just safety — the planner uses it.
+Default-on for almost every column. The exception is genuine optionality (nullable FK to a deletable parent, optional user attribute). `NOT NULL` is not just safety: the planner uses it.
 
 ### `CHECK`
 Express invariants the database can enforce: `CHECK (price >= 0)`, `CHECK (started_at <= ended_at)`. Cheap to add; use generously.
@@ -111,17 +111,17 @@ CREATE INDEX ON posts (author_id);  -- MUST-FIX: every FK gets an index
 
 `ON DELETE` choice: `RESTRICT` (default-safe), `CASCADE` (cascading delete), `SET NULL` (preserve child, null the FK). Pick deliberately.
 
-## Normalization — and where to break it
+## Normalization: and where to break it
 
 3NF by default. Break it deliberately for:
-- **Denormalized counts** (`comments_count` on `posts`) — maintained by a trigger or app code; cite the trade-off in a comment.
+- **Denormalized counts** (`comments_count` on `posts`): maintained by a trigger or app code; cite the trade-off in a comment.
 - **Materialized views** for expensive read aggregates; refresh on a schedule.
-- **`jsonb` snapshots** of related data (denormalized order line items copied into `order_history`) — when historical accuracy matters and the source can change.
+- **`jsonb` snapshots** of related data (denormalized order line items copied into `order_history`), when historical accuracy matters and the source can change.
 
-## Audit columns — when
+## Audit columns: when
 
 The minimum: `created_at`, `updated_at`. Add when needed:
-- `created_by`, `updated_by` — for compliance / customer-support traceability.
+- `created_by`, `updated_by`: for compliance / customer-support traceability.
 - A separate `audit_log` table for tamper-evident history; use logical replication / triggers.
 
 For deeper audit, hand off to `security-worker-bee`.
@@ -140,6 +140,6 @@ These comments become discoverable via `pg_description`. db-worker-bee flags PII
 
 ## Cross-references
 
-- `02-indexing.md` — every column you filter on needs an index plan.
-- `03-migrations.md` — schema changes after launch require expand-backfill-contract.
-- `07-orm-choice.md` — the ORM you pick will or won't support these types fully.
+- `02-indexing.md`: every column you filter on needs an index plan.
+- `03-migrations.md`: schema changes after launch require expand-backfill-contract.
+- `07-orm-choice.md`: the ORM you pick will or won't support these types fully.

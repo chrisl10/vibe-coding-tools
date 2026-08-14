@@ -1,12 +1,12 @@
-# 15 — Agent Orchestration
+# 15: Agent Orchestration
 
 `runOrchestrator()` (classify → assemble → dispatch), `assembleContextPacket()` for parallel I/O, `AgentContextConfig` thread-scope policy. The current implementation, the routing-call tracing gap, and the planned full multi-agent dispatcher.
 
-> **Doc reference:** `library/knowledge-base/ai/agent-orchestration.md` is canonical.
+> **Doc reference:** `library/knowledge/private/ai/agent-orchestration.md` is canonical.
 
 ---
 
-## 1. `runOrchestrator()` — current architecture
+## 1. `runOrchestrator()`: current architecture
 
 ```
 runOrchestrator({tenantId, userId, sessionId, userMessage, memberLevel, coachType?})
@@ -45,13 +45,13 @@ Current state:
 
 - `routeToCoach()` classifies with Llama 3.1 8B (temperature 0, max_tokens 20).
 - `composeSystemPrompt()` builds the appropriate coach personality.
-- **The routing call is NOT traced** — only the main LLM call is.
+- **The routing call is NOT traced**: only the main LLM call is.
 
 This is one of the recurring gap patterns. Routing accuracy can only be evaluated indirectly. Fix: wrap the routing call in `traceAICall({ traceType: "routing", model: fastModel, ... })`.
 
 ---
 
-## 3. Context packet assembly — `assembleContextPacket()`
+## 3. Context packet assembly: `assembleContextPacket()`
 
 ```typescript
 export interface ContextPacket {
@@ -75,12 +75,12 @@ export async function assembleContextPacket(params: {
 
 ### Steps
 
-1. `getThreadScope()` — reads `AgentContextConfig` (Postgres query).
+1. `getThreadScope()`: reads `AgentContextConfig` (Postgres query).
 2. **Parallel I/O:**
-   - `buildKnowledgeContextWithMeta()` — Qdrant search + Cohere rerank.
-   - `getWorkingMemory()` — Valkey key read.
-   - `prisma.user.findUnique()` — member profile fields.
-3. `buildConversationWindow(turns, 12_000)` — token-budget windowing.
+   - `buildKnowledgeContextWithMeta()`: Qdrant search + Cohere rerank.
+   - `getWorkingMemory()`: Valkey key read.
+   - `prisma.user.findUnique()`: member profile fields.
+3. `buildConversationWindow(turns, 12_000)`: token-budget windowing.
 4. Return `ContextPacket`.
 
 The packet is returned alongside the response, available for tracing and debugging.
@@ -93,7 +93,7 @@ The packet is returned alongside the response, available for tracing and debuggi
 
 ---
 
-## 4. `AgentContextConfig` — context awareness scope
+## 4. `AgentContextConfig`: context awareness scope
 
 ```prisma
 model AgentContextConfig {
@@ -180,7 +180,7 @@ await prisma.aiChatSession.update({
 Main LLM call includes `SCRAPE_URL_TOOL` from `scrape-tool.ts`. Two-pass pattern:
 
 1. First completion returns `tool_calls`.
-2. `scrapeUrl(url)` executes — fetches URL, strips HTML, truncates to 8,000 chars.
+2. `scrapeUrl(url)` executes: fetches URL, strips HTML, truncates to 8,000 chars.
 3. Tool result added to messages.
 4. Second `traceAICall()` for the final text response.
 
@@ -224,7 +224,7 @@ Module coaches:
 |---|---|---|
 | `model` | `getAIModels().chat` (Llama 3.3 70B) | Coach quality requires the larger model |
 | `temperature` | `0.7` | Standard coaching warmth without runaway randomness |
-| `max_tokens` | `500` | Coach responses are 1–3 paragraphs |
+| `max_tokens` | `500` | Coach responses are 1-3 paragraphs |
 | `tools` | `[SCRAPE_URL_TOOL]` | URL scraping for global coach + onboarding paths |
 
 ---

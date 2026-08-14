@@ -1,4 +1,4 @@
-# Definition of Done — Startup / Early-Stage Template
+# Definition of Done: Startup / Early-Stage Template
 
 **Team context:** 2-5 person team, early product, may not yet have CI/CD pipeline
 **Maturity target:** Level 2 (Basic / Consistent)
@@ -32,7 +32,7 @@ A story or task is **Done** when ALL of the following are true:
 
 ## Guidance notes
 
-**On automated tests:** If the team does not yet have automated tests, the DoD may temporarily omit the test-pass requirement — but this should be treated as technical debt. Add "establish test baseline" as a Backlog item.
+**On automated tests:** If the team does not yet have automated tests, the DoD may temporarily omit the test-pass requirement, but this should be treated as technical debt. Add "establish test baseline" as a Backlog item.
 
 **On solo founders:** Peer code review is not always feasible. Substitute with a self-review checklist and a time buffer (review your own code the next morning, not immediately after writing it).
 
@@ -43,7 +43,7 @@ A story or task is **Done** when ALL of the following are true:
 ## How to use this template
 
 1. Copy this file to your team's Confluence, Notion, or shared wiki
-2. Discuss each item in a team session — remove anything the team cannot consistently meet
+2. Discuss each item in a team session: remove anything the team cannot consistently meet
 3. Post the DoD visibly (physical board, Slack pin, or sprint board header)
 4. Review and strengthen at every third Retrospective
 

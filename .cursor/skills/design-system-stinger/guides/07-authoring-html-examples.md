@@ -1,7 +1,7 @@
-# 07 — Authoring HTML Examples
+# 07: Authoring HTML Examples
 
 `05-html-examples/` is the "photograph gallery" of the design system.
-Each file is a static HTML render that can be opened by double-click —
+Each file is a static HTML render that can be opened by double-click:
 no server, no bundler, no build step.
 
 > Template: `../templates/html-example.html`.
@@ -20,21 +20,21 @@ no server, no bundler, no build step.
 
 Match the component briefs + screens:
 
-- `index.html` — the gallery landing page, links to the others.
-- `buttons-and-pills.html` — the button+badge showcase.
-- `cards-and-badges.html` — card variants + badge variants.
-- `nav-glass.html` — top+bottom+left nav shells.
-- `dashboard-engagement.html` — the dashboard screen assembled.
-- `messaging.html` — the messaging screen.
-- `profile-readonly.html` — the profile screen.
-- `_shared.css` — the token + utility layer, inlined.
+- `index.html`: the gallery landing page, links to the others.
+- `buttons-and-pills.html`: the button+badge showcase.
+- `cards-and-badges.html`: card variants + badge variants.
+- `nav-glass.html`: top+bottom+left nav shells.
+- `dashboard-engagement.html`: the dashboard screen assembled.
+- `messaging.html`: the messaging screen.
+- `profile-readonly.html`: the profile screen.
+- `_shared.css`: the token + utility layer, inlined.
 
-Typically 5–8 HTML files + `_shared.css`.
+Typically 5 to 8 HTML files + `_shared.css`.
 
 ## The `_shared.css` trick
 
 HTML examples must work when opened directly (file://). That means:
-- No `@import "tailwindcss"` — that's a build-time construct.
+- No `@import "tailwindcss"`: that's a build-time construct.
 - No external stylesheets except `_shared.css`.
 - Fonts via Google Fonts `@import` inside `_shared.css` is OK.
 
@@ -108,7 +108,7 @@ renders get their own HTML file if/when they diverge.
 2. **Never ship an HTML example that uses a hex value.** Every color,
    radius, and shadow references a token from `_shared.css`.
 3. **Keep page-local styles tiny.** If a page needs a dozen local
-   styles, the utility layer is missing something — promote the
+   styles, the utility layer is missing something: promote the
    common recipe.
 4. **No JavaScript unless genuinely required.** These are static
    renders. An accordion can be CSS-only with `<details>`.

@@ -13,12 +13,12 @@ retrieved: 2026-05-20
 
 The `typography-font-worker-bee` Command Brief defines an opinionated type-and-font specialist that owns the full technical typographic surface of web products. It covers font loading strategy selection, variable font configuration, fluid type scale construction via `clamp()`, vertical rhythm, and a reusable font-token layer.
 
-The Bee activates after `design-system-worker-bee` has chosen the typeface and before `ux-ui-worker-bee` applies tokens in components.
+The Bee activates after `design-system-worker-bee` has chosen the typeface and before `ux-ui-svelte-worker-bee` applies tokens in components.
 
 ## Scope boundary (critical for stinger-forge)
 
 - **Owns:** hosting strategy (next/font, Fontsource, self-host), `@font-face` config for variable fonts, `font-display` semantics, `clamp()` fluid type scales, vertical rhythm tokens, `tokens/typography.css` authorship.
-- **Does NOT own:** typeface aesthetic selection (`design-system-worker-bee`), per-component token application (`ux-ui-worker-bee`), build pipeline font optimization steps (`devops-worker-bee`), font preference DB schema (`db-worker-bee`).
+- **Does NOT own:** typeface aesthetic selection (`design-system-worker-bee`), per-component token application (`ux-ui-svelte-worker-bee`), build pipeline font optimization steps (`devops-worker-bee`), font preference DB schema (`db-worker-bee`).
 
 ## Expected input surface
 

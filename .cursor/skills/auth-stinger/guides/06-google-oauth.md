@@ -1,16 +1,16 @@
-# 06 — Google OAuth
+# 06: Google OAuth
 
 The deep dive. The Google Auth Platform reality, scope discipline, GIS migration, and the **October 2025 unused-client deletion policy**.
 
 Source: `research/2026-04-25-google-oauth-scopes-and-policies.md`, `research/2026-04-25-google-identity-services-migration.md`, `research/2026-04-25-october-2025-oauth-deletion-policy.md`, https://developers.google.com/identity/protocols/oauth2.
 
-## The Google Auth Platform — three pages
+## The Google Auth Platform: three pages
 
 Google consolidated the OAuth Consent Screen UI into the **Google Auth Platform** (Cloud Console → APIs & Services → OAuth consent screen). Three pages matter:
 
-1. **Branding** — app name, support email, app logo, homepage URL, privacy policy URL, terms of service URL. The privacy policy and terms URLs must be reachable; the logo is reviewed during verification.
-2. **Audience** — `Internal` (Workspace-only) vs `External`. External requires verification for sensitive / restricted scopes when in `Production`. `Testing` mode allows up to 100 test users without verification.
-3. **Data Access** — the scope list. Every scope here is a verification cost. Add only the minimum needed.
+1. **Branding**: app name, support email, app logo, homepage URL, privacy policy URL, terms of service URL. The privacy policy and terms URLs must be reachable; the logo is reviewed during verification.
+2. **Audience**: `Internal` (Workspace-only) vs `External`. External requires verification for sensitive / restricted scopes when in `Production`. `Testing` mode allows up to 100 test users without verification.
+3. **Data Access**: the scope list. Every scope here is a verification cost. Add only the minimum needed.
 
 Cite https://developers.google.com/workspace/guides/configure-oauth-consent.
 
@@ -56,16 +56,16 @@ See `guides/07-google-oauth-verification.md` for the verification process. See `
 10. Server creates a session and redirects user to the app.
 ```
 
-Use a library — `google-auth-library` (Node), `@auth/google-provider` (Auth.js), Better Auth's built-in Google provider, or Supabase's Google provider. The library should do steps 7–9. **Confirm it does — especially step 9 (signature verification, `iss` / `aud` / `exp` / `nonce` validation).**
+Use a library: `google-auth-library` (Node), `@auth/google-provider` (Auth.js), Better Auth's built-in Google provider, or Supabase's Google provider. The library should do steps 7-9. **Confirm it does, especially step 9 (signature verification, `iss` / `aud` / `exp` / `nonce` validation).**
 
 Cite RFC 6749 (OAuth 2.0), RFC 7636 (PKCE), OpenID Connect Core 1.0.
 
-## Google Identity Services (GIS) — for client-side sign-in
+## Google Identity Services (GIS): for client-side sign-in
 
 GIS is the modern client-side library at `https://accounts.google.com/gsi/client`. Two flows:
 
-- **One Tap / Sign In With Google** — embeddable button or popup. Returns an ID token to the page.
-- **Authorization Code flow** — initiates the Web Server flow above; usually you don't need this client-side.
+- **One Tap / Sign In With Google**: embeddable button or popup. Returns an ID token to the page.
+- **Authorization Code flow**: initiates the Web Server flow above; usually you don't need this client-side.
 
 ```html
 <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -90,15 +90,15 @@ The legacy Google Sign-In JavaScript Library (`apis.google.com/js/platform.js` a
 
 For production-mode external apps you must verify ownership of any domain you list in the consent screen (homepage URL, privacy policy, etc.). Verify via Google Search Console (DNS TXT, HTML file, or HTML tag). Without verification, the consent screen lists the domain with a warning that depresses click-through.
 
-## Unused-client deletion (October 2025 policy) — load-bearing
+## Unused-client deletion (October 2025 policy): load-bearing
 
-In October 2025 Google began deleting OAuth client IDs that have had no API traffic for **6 months**. Once deleted, a client ID is gone — you cannot recover it; users on that client see "deleted_client" errors.
+In October 2025 Google began deleting OAuth client IDs that have had no API traffic for **6 months**. Once deleted, a client ID is gone. You cannot recover it; users on that client see "deleted_client" errors.
 
 The risk:
 
-- A feature that uses Google sign-in for a **rarely-used flow** (e.g., an admin import that runs once a quarter) — the client looks idle to Google's metrics. Six months later, deleted.
-- A staging client that exists for emergency rollback — looks idle. Deleted.
-- A pre-launch client created during dev, paused for re-design, returned to months later — deleted.
+- A feature that uses Google sign-in for a **rarely-used flow** (e.g., an admin import that runs once a quarter): the client looks idle to Google's metrics. Six months later, deleted.
+- A staging client that exists for emergency rollback: looks idle. Deleted.
+- A pre-launch client created during dev, paused for re-design, returned to months later: deleted.
 
 The defenses:
 
@@ -106,7 +106,7 @@ The defenses:
 2. **A health-check item in the runbook.** Production-critical OAuth clients are listed in the ops doc with their last-used date; quarterly review confirms each has had traffic.
 3. **Email subscription.** Google sends a notification email 30 days before deletion to the project owner. Confirm the email is monitored and routes to a real human.
 
-Cite https://support.google.com/cloud/answer/13463073 (Google Cloud — OAuth client deletion) and `research/2026-04-25-october-2025-oauth-deletion-policy.md`.
+Cite https://support.google.com/cloud/answer/13463073 (Google Cloud: OAuth client deletion) and `research/2026-04-25-october-2025-oauth-deletion-policy.md`.
 
 ## Service accounts (machine-to-machine)
 
@@ -120,13 +120,13 @@ Cite https://developers.google.com/identity/protocols/oauth2/service-account, ht
 
 ## Common pitfalls
 
-- **Not registering every redirect URI** — including dev (`http://localhost:3000/auth/callback`), preview deploys, and staging. The error "redirect_uri_mismatch" is unforgiving.
-- **`http://` redirect URIs in production** — rejected. Use HTTPS.
-- **Skipping ID-token signature verification** — accepting `aud` and `exp` without verifying the signature means anyone can forge a token. The library should do it; confirm.
-- **Storing access tokens in `localStorage`** — XSS-readable. Use server-side session, return the user ID to the client.
-- **Treating refresh tokens as long-lived passwords** — they are. Rotate, bind to session, revoke on logout.
-- **Adding scopes incrementally without justification** — every new scope re-triggers consent and (for sensitive / restricted) re-verification.
-- **Not monitoring the unused-client-deletion email** — see above.
+- **Not registering every redirect URI**: including dev (`http://localhost:3000/auth/callback`), preview deploys, and staging. The error "redirect_uri_mismatch" is unforgiving.
+- **`http://` redirect URIs in production**: rejected. Use HTTPS.
+- **Skipping ID-token signature verification**: accepting `aud` and `exp` without verifying the signature means anyone can forge a token. The library should do it; confirm.
+- **Storing access tokens in `localStorage`**: XSS-readable. Use server-side session, return the user ID to the client.
+- **Treating refresh tokens as long-lived passwords**: they are. Rotate, bind to session, revoke on logout.
+- **Adding scopes incrementally without justification**: every new scope re-triggers consent and (for sensitive / restricted) re-verification.
+- **Not monitoring the unused-client-deletion email**, see above.
 
 ## Audit handoff
 

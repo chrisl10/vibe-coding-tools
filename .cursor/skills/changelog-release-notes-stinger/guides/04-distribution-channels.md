@@ -21,12 +21,12 @@ Minor / regular releases (2+ user-visible changes)
 Significant releases (major feature, breaking change, major milestone)
   └── In-app widget badge update
   └── Email digest (send immediately, not batched)
-  └── Community post (Slack, Discord, Twitter/X, LinkedIn — where the audience lives)
+  └── Community post (Slack, Discord, Twitter/X, LinkedIn, where the audience lives)
   └── Blog post / dedicated announcement page (for milestone releases)
 
 Breaking changes (API deprecations, behavior changes requiring user action)
   └── ALL of the above
-  └── Direct email to affected users (not a digest — a targeted message)
+  └── Direct email to affected users (not a digest: a targeted message)
   └── In-product banner or modal (not just the changelog widget)
 ```
 
@@ -36,7 +36,7 @@ Breaking changes (API deprecations, behavior changes requiring user action)
 
 ### In-app widget (always)
 
-Every published entry automatically increments the unread badge count. Users who open the widget see the entry. This is the minimum viable distribution step — no team should skip it.
+Every published entry automatically increments the unread badge count. Users who open the widget see the entry. This is the minimum viable distribution step: no team should skip it.
 
 **Action:** Publish to your chosen platform (Headway / FeatureBase / Productlane / Beamer). The badge updates automatically.
 

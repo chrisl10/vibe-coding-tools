@@ -1,5 +1,7 @@
 # 13 - jscpd & the Quality Gate
 
+**Legacy/library case: npm library / CLI publishing.** This deliberately-lean gate (no ESLint/Prettier) is Hivemind's own choice, not a rule for the SvelteKit app. For this repo's lint/format decision, see `guides/27-biome-vs-eslint-prettier.md`.
+
 The whole quality gate is three things: `tsc`, `jscpd`, and a husky pre-commit hook. There is no ESLint and no Prettier. Do not add them.
 
 ## `npm run ci` is the gate

@@ -1,4 +1,4 @@
-# Heroicons / Tabler / Phosphor — Research Note
+# Heroicons / Tabler / Phosphor: Research Note
 
 **Source type:** comparison  
 **Authority:** medium  
@@ -10,7 +10,7 @@
 - **Maintainer:** Tailwind Labs (same team as Tailwind CSS)
 - **Icon count:** ~292 icons in outline, solid, and mini (20px) variants
 - **Design style:** Clean, Tailwind-native aesthetic; 24px default viewBox
-- **Package:** `@heroicons/react` — pure ESM, fully tree-shakeable
+- **Package:** `@heroicons/react`: pure ESM, fully tree-shakeable
 - **Import pattern:**
   ```tsx
   import { ArrowRightIcon } from '@heroicons/react/24/outline';
@@ -25,7 +25,7 @@
 - **Maintainer:** Tabler (open source)
 - **Icon count:** 5500+ icons, single stroke weight
 - **Design style:** Consistent 2px stroke, 24px viewBox; works well in admin UIs
-- **Package:** `@tabler/icons-react` — ESM, tree-shakeable per icon
+- **Package:** `@tabler/icons-react`: ESM, tree-shakeable per icon
 - **Import pattern:**
   ```tsx
   import { IconArrowRight } from '@tabler/icons-react';
@@ -39,7 +39,7 @@
 - **Maintainer:** Phosphor Icons (open source)
 - **Icon count:** 1300+ icons across 6 weights (thin/light/regular/bold/fill/duotone)
 - **Design style:** Multi-weight system; versatile for design-system-heavy products
-- **Package:** `@phosphor-icons/react` — ESM, tree-shakeable per icon+weight combo
+- **Package:** `@phosphor-icons/react`: ESM, tree-shakeable per icon+weight combo
 - **Import pattern:**
   ```tsx
   import { ArrowRight } from '@phosphor-icons/react';

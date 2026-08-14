@@ -9,7 +9,7 @@
 - https://stack-auth.com
 - https://kinde.com
 - https://stytch.com
-- 2025–2026 community comparison threads (Better Auth's growth in 2026, Clerk's MAU pricing analysis)
+- 2025-2026 community comparison threads (Better Auth's growth in 2026, Clerk's MAU pricing analysis)
 
 **Retrieved:** 2026-04-25
 
@@ -49,6 +49,6 @@ The 2026 auth-provider landscape is mature but actively shifting. Clerk holds th
 
 ## Relevance
 
-- `guides/01-provider-choice-tree.md` — the decision tree.
-- `guides/02-clerk.md`, `guides/03-better-auth.md`, `guides/04-auth-js-nextauth.md`, `guides/05-supabase-auth.md` — per-provider deep dives.
-- `templates/provider-comparison-matrix.md` — fillable matrix.
+- `guides/01-provider-choice-tree.md`: the decision tree.
+- `guides/02-clerk.md`, `guides/03-better-auth.md`, `guides/04-auth-js-nextauth.md`, `guides/05-supabase-auth.md`: per-provider deep dives.
+- `templates/provider-comparison-matrix.md`: fillable matrix.

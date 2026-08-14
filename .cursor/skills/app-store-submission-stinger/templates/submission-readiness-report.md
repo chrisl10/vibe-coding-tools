@@ -24,7 +24,7 @@ Fill in this template before first submission or any major update submission. Ev
 | Screenshot captions include keywords (iOS 2026) | [ ] | |
 | App Preview / Promo Video (optional but recommended) | [ ] | |
 
-**Go/No-go:** [ ] PASS  [ ] FAIL — blockers: [list]
+**Go/No-go:** [ ] PASS  [ ] FAIL, blockers: [list]
 
 ---
 
@@ -50,7 +50,7 @@ Fill in this template before first submission or any major update submission. Ev
 | Location → Location Button used (if applicable, precise location) | [ ] | Deadline: Oct 28, 2026 |
 | Geofencing not in foreground service (if applicable) | [ ] | Deadline: Oct 28, 2026 |
 
-**Go/No-go:** [ ] PASS  [ ] FAIL — blockers: [list]
+**Go/No-go:** [ ] PASS  [ ] FAIL, blockers: [list]
 
 ---
 
@@ -63,8 +63,8 @@ Fill in this template before first submission or any major update submission. Ev
 | Rating result matches actual content | [ ] |
 | Children's app (under 13 target)? If yes, COPPA/GDPR-K audit complete | [ ] N/A  [ ] Yes, audited |
 
-**Result rating — iOS:** [4+ / 9+ / 12+ / 17+]
-**Result rating — Android:** [Everyone / Everyone 10+ / Teen / Mature 17+]
+**Result rating (iOS):** [4+ / 9+ / 12+ / 17+]
+**Result rating (Android):** [Everyone / Everyone 10+ / Teen / Mature 17+]
 
 ---
 
@@ -75,11 +75,11 @@ Fill in this template before first submission or any major update submission. Ev
 | All IAP products created in App Store Connect / Play Console | [ ] N/A  [ ] | |
 | All products have localized prices and descriptions | [ ] N/A  [ ] | |
 | Sandbox / test environment purchase tested end-to-end | [ ] N/A  [ ] | |
-| Restore Purchases button present and functional (iOS — required) | [ ] N/A  [ ] | Required: Guideline 3.1.1 |
+| Restore Purchases button present and functional (iOS, required) | [ ] N/A  [ ] | Required: Guideline 3.1.1 |
 | Subscription terms visible at point of conversion | [ ] N/A  [ ] | Price, period, renewal, cancel instructions |
 | No external payment references in UI or description | [ ] | |
 
-**Go/No-go:** [ ] PASS  [ ] N/A  [ ] FAIL — blockers: [list]
+**Go/No-go:** [ ] PASS  [ ] N/A  [ ] FAIL, blockers: [list]
 
 ---
 
@@ -117,7 +117,7 @@ Fill in this template before first submission or any major update submission. Ev
 | App Review Information | [ ] PASS  [ ] FAIL  [ ] WARN |
 | Build Quality | [ ] PASS  [ ] FAIL  [ ] WARN |
 
-**Final verdict:** [ ] GO — submit now  [ ] NO-GO — resolve blockers first
+**Final verdict:** [ ] GO: submit now  [ ] NO-GO: resolve blockers first
 
 **Blockers (if any):**
 1. [blocker 1]

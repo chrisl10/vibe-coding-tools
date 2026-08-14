@@ -5,7 +5,7 @@
 - **Page budget target:** 10-15 sources
 - **Source breadth target:** official docs, practitioner blogs, GitHub resources, industry surveys, engineering culture articles
 
-## Initial queries (from the proposal step / Command Brief)
+## Initial queries (from `big-bang-space` / Command Brief)
 
 1. "Code review best practices 2026"
 2. "Small PR culture trunk-based 2026"

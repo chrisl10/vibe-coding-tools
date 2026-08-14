@@ -4,7 +4,7 @@
 
 An unsubsetted variable font file includes every glyph in the font's character set: Latin, Greek, Cyrillic, Vietnamese, math symbols, currency symbols, arrows, and more. For Inter (a common production font), the full variable font is approximately 300-800 kB. For English-only web products, 95%+ of those glyphs will never be rendered.
 
-A properly subsetted Latin + Basic Latin variable font is typically 20-60 kB — an 80-95% reduction.
+A properly subsetted Latin + Basic Latin variable font is typically 20-60 kB: an 80-95% reduction.
 
 **Always subset before recommending self-hosting.** If a user is self-hosting an unsubsetted variable font, flag it as a critical performance issue.
 
@@ -23,7 +23,7 @@ A properly subsetted Latin + Basic Latin variable font is typically 20-60 kB —
 
 ---
 
-## `pyftsubset` — the production tool
+## `pyftsubset`: the production tool
 
 ### Installation
 
@@ -78,7 +78,7 @@ python3 -c "from fontTools.ttLib import TTFont; f=TTFont('output-font-variable-l
 
 ---
 
-## `glyphhanger` — URL-based auto-detection
+## `glyphhanger`: URL-based auto-detection
 
 `glyphhanger` crawls a URL, detects all characters actually used on the page, and produces a subsetted font with only those glyphs.
 
@@ -95,7 +95,7 @@ glyphhanger https://example.com \
 
 ---
 
-## `subfont` — zero-config automation
+## `subfont`: zero-config automation
 
 `subfont` analyzes your HTML, finds font references, downloads and subsets them, and replaces the `@font-face` with self-hosted references.
 
@@ -136,11 +136,11 @@ For fonts used across multiple scripts, split into separate `@font-face` declara
 }
 ```
 
-Google Fonts does this automatically when you embed via their CDN. When self-hosting, you need to replicate this split. The `pyftsubset` approach above produces one file per range — repeat the command with different `--unicodes` values.
+Google Fonts does this automatically when you embed via their CDN. When self-hosting, you need to replicate this split. The `pyftsubset` approach above produces one file per range: repeat the command with different `--unicodes` values.
 
 ---
 
-## Axis preservation — the critical check
+## Axis preservation: the critical check
 
 When subsetting a variable font, verify that the `wght` (weight) axis range is preserved:
 
@@ -174,7 +174,7 @@ If a self-hosted font file is larger than 80 kB after subsetting for Latin-only 
 
 ## References
 
-- `guides/01-font-display-decision-matrix.md` — `font-display` values to use in the `@font-face` rules produced by subsetting
-- `guides/06-performance-checklist.md` — file size targets and subsetting verification steps
-- `examples/edge-case-self-hosted-variable.md` — full pipeline: pyftsubset + @font-face + metric-matched fallback
-- `research/external/` — variable font subsetting sources, fonttools documentation
+- `guides/01-font-display-decision-matrix.md`: `font-display` values to use in the `@font-face` rules produced by subsetting
+- `guides/06-performance-checklist.md`: file size targets and subsetting verification steps
+- `examples/edge-case-self-hosted-variable.md`: full pipeline: pyftsubset + @font-face + metric-matched fallback
+- `research/external/`: variable font subsetting sources, fonttools documentation

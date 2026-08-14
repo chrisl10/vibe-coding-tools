@@ -25,7 +25,7 @@ The team is renaming `POST /users/invite` to `POST /invitations` in API v1.3.0 a
 - No `[BREAKING]` tag on the rename.
 - No migration guidance.
 - No deprecation timeline.
-- "Updated user object" is vague — is `invited_at` new (non-breaking) or replacing something?
+- "Updated user object" is vague: is `invited_at` new (non-breaking) or replacing something?
 
 ## Good changelog entry (after)
 

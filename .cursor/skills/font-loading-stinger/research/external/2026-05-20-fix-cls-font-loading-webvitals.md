@@ -34,7 +34,7 @@ A practical 2026 how-to on eliminating CLS from font loading. Provides a concret
 ## Annotations for stinger-forge
 
 - The Inter + Arial example with exact percentage values is a ready-to-use code snippet for `guides/05-cls-elimination.md`'s examples section. These values can be verified against the Google Fonts metric overrides dataset.
-- CLS improvement from 0.28 to 0.02 is the key motivating statistic (14x improvement) — include in the stinger's introduction section.
+- CLS improvement from 0.28 to 0.02 is the key motivating statistic (14x improvement): include in the stinger's introduction section.
 - Safari 17+ for `size-adjust` support is significant: Safari 17 was released in September 2023, meaning broad Safari support is now established. The stinger can recommend this without Safari caveats for most modern target browsers.
 - The automated tools list confirms the hierarchy: Next.js `adjustFontFallback: true` (zero-config) → Fontaine/Fontaine library (framework-agnostic) → Manual calculation (power user path).
 - The `local('Arial')` usage is key: the override applies to a local font reference, not a downloaded web font. This technique requires no additional HTTP requests.

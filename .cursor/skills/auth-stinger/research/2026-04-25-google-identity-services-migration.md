@@ -32,5 +32,5 @@ The legacy Google Sign-In JavaScript Library (`apis.google.com/js/platform.js` a
 
 ## Relevance
 
-- `guides/06-google-oauth.md` §"Google Identity Services (GIS) — for client-side sign-in".
+- `guides/06-google-oauth.md` §"Google Identity Services (GIS): for client-side sign-in".
 - `guides/00-principles.md` Principle 8.

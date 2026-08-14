@@ -64,8 +64,8 @@ jobs:
 
 ## Annotations for stinger-forge
 
-- Core source for `guides/03-ci-integration.md` — provides the exact YAML syntax, gotchas (fetch-depth), and both CI integration paths.
-- The `treosh/lighthouse-ci-action@v12` action is the recommended path for most teams — simpler than raw LHCI but built on top of it.
+- Core source for `guides/03-ci-integration.md`: provides the exact YAML syntax, gotchas (fetch-depth), and both CI integration paths.
+- The `treosh/lighthouse-ci-action@v12` action is the recommended path for most teams: simpler than raw LHCI but built on top of it.
 - Note that `lhci autorun` runs three steps internally: `collect`, `assert`, `upload`. These can also be run individually for more control.
 - The `configPath` option in the action points to a `lighthouserc.json` or `lighthouserc.js` file in the repo root.
 - Document the difference between `temporaryPublicStorage` (7-day retention, public) vs private LHCI server vs GitHub Actions artifacts.

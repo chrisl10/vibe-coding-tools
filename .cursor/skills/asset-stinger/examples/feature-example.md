@@ -1,4 +1,4 @@
-# Example — `Feature` row (exemplar)
+# Example: `Feature` row (exemplar)
 
 A fully-populated, `active`-status `Feature` row demonstrating every field correctly filled. Use this as the template when registering a new feature.
 
@@ -7,7 +7,7 @@ A fully-populated, `active`-status `Feature` row demonstrating every field corre
 - Feature: Billing add-ons (one-time purchases of usage bundles).
 - Shipped as part of BILL-007 (Platform Catalog).
 - Meterable: **no** (pure unit purchases, no usage tracking).
-- Flagged: **yes** — `billing.addons.enabled` controls tenant-level rollout.
+- Flagged: **yes**: `billing.addons.enabled` controls tenant-level rollout.
 - Plan tiers: Pro, Enterprise.
 
 ## Code

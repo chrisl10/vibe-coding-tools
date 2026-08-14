@@ -1,4 +1,4 @@
-# 03 — Little's Law: Diagnostics and Forecasting
+# 03. Little's Law: Diagnostics and Forecasting
 
 *Sources: `research/external/2026-05-20-littles-law-abstract-algorithms.md`; `research/external/2026-05-20-littles-law-agile-application.md`*
 
@@ -38,7 +38,7 @@ Each rearrangement answers a different question:
 > Team throughput: 8 items/week. Current WIP: 20 items. Current cycle time: 20/8 = 2.5 weeks.
 > Target cycle time: 1 week.
 > Required WIP limit: L = 8 × 1 = 8 items.
-> The team needs to reduce WIP from 20 to 8 to halve cycle time — without changing throughput.
+> The team needs to reduce WIP from 20 to 8 to halve cycle time, without changing throughput.
 
 ---
 
@@ -58,7 +58,7 @@ When large or slow-moving items stay in the system, they inflate L without contr
 
 ---
 
-## Steady-state requirement — when NOT to apply
+## Steady-state requirement: when NOT to apply
 
 Little's Law requires steady state: the arrival rate, throughput, and WIP must be stable over the measurement window. From `research/external/2026-05-20-littles-law-abstract-algorithms.md`:
 
@@ -80,7 +80,7 @@ Monte Carlo simulation uses throughput history to probabilistically forecast how
 
 Tools: ActionableAgile Analytics (https://actionableagile.com/), Troy Magennis FocusedObjective Resources (https://github.com/FocusedObjective/FocusedObjective.Resources).
 
-**Small team caveat:** With fewer than 15-20 historical data points, Monte Carlo results have wide confidence intervals. The simulation is still useful — it is more honest than planning-poker estimates — but present ranges rather than point forecasts to stakeholders.
+**Small team caveat:** With fewer than 15-20 historical data points, Monte Carlo results have wide confidence intervals. The simulation is still useful (it is more honest than planning-poker estimates), but present ranges rather than point forecasts to stakeholders.
 
 > TODO: Daniel Vacanti / ActionableAgile has not published 2025-2026 guidance specific to sub-5-person teams. Until resolved, recommend using the tools above with explicit confidence-interval reporting and caution stakeholders about the small-sample caveat.
 
@@ -107,4 +107,4 @@ See `templates/littles-law-forecast.md` for the WIP-scenario forecast table stub
 
 ---
 
-*Example: `examples/wip-limit-setup-happy-path.md` — includes a Little's Law calculation in the WIP limit derivation step*
+*Example: `examples/wip-limit-setup-happy-path.md`: includes a Little's Law calculation in the WIP limit derivation step*

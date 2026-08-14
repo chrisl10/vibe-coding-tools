@@ -11,7 +11,7 @@ The browser algorithm:
 2. Multiply effective display width by the device **DPR** (Device Pixel Ratio) to get the **required pixel width**.
 3. Select the smallest `srcset` candidate that is at least as wide as the required pixel width.
 
-This means `sizes` is evaluated **before CSS loads** — the browser makes the network request during HTML parsing, before it can evaluate layout. If `sizes` says `100vw` but the image renders at 33vw in a 3-column grid, the browser downloads an image 3x wider than needed.
+This means `sizes` is evaluated **before CSS loads**: the browser makes the network request during HTML parsing, before it can evaluate layout. If `sizes` says `100vw` but the image renders at 33vw in a 3-column grid, the browser downloads an image 3x wider than needed.
 
 ---
 

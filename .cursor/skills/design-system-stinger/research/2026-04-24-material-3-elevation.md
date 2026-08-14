@@ -19,7 +19,7 @@ Key principles:
   `shadowElevation` (drop shadow).
 - Dark mode relies on tonal overlays more heavily since shadows are less
   visible on dark backgrounds.
-- Overlay color comes from the primary color slot — so the whole surface
+- Overlay color comes from the primary color slot: so the whole surface
   stack inherits tenant/brand tint.
 - Five canonical elevation levels (0, 1, 2, 3, 4, 5) mapped to specific
   dp/tone values.
@@ -30,7 +30,7 @@ The glass-on-beige starter kit uses a different depth model:
 
 - **Three-cue glass** (top-edge highlight + direct shadow + ambient shadow)
   rather than tonal overlays.
-- Shadows tinted with navy (primary) via `color-mix()` — conceptually similar
+- Shadows tinted with navy (primary) via `color-mix()`: conceptually similar
   to M3's tonal tint but applied through the shadow channel, not the surface
   fill.
 - Four tiers (`depth-0..3`) rather than six.

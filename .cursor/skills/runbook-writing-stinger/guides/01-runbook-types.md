@@ -77,7 +77,7 @@ If you are unsure, use break-fix. It is the most complete template and covers th
 
 Several 2026 tools (Rundeck, AWS SSM Documents, Shoreline, Jupyter notebooks with live queries) blur the line between manual runbooks and automated remediation. This stinger covers **manual runbooks only**. Automated runbooks are an extension of infrastructure-as-code owned by `ci-release-worker-bee`. If the user's organization uses runbook automation, flag the boundary: `runbook-writing-worker-bee` authors the human-readable procedure; `ci-release-worker-bee` implements the automation that optionally executes it.
 
-> TODO: open question, a future `runbook-automation-worker-bee` could bridge this gap if demand surfaces.
+> TODO: open question, a future `runbook-writing-worker-bee` could bridge this gap if demand surfaces.
 
 ---
 

@@ -9,7 +9,7 @@
 
 ---
 
-## Initial queries (from Command Brief / the proposal step)
+## Initial queries (from Command Brief / `big-bang-space`)
 
 1. "Sprint retrospective formats 2026"
 2. "Async remote retrospective 2026"

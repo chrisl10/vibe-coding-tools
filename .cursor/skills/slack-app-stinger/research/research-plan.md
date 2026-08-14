@@ -5,7 +5,7 @@
 - **Page budget target:** 8-10 source files
 - **Source breadth target:** official Slack developer docs, practitioner blog posts, Slack changelog announcements, GitHub READMEs (Bolt SDKs)
 
-## Initial queries (from the proposal step via command brief)
+## Initial queries (from `big-bang-space` via command brief)
 
 1. "Slack Bolt SDK Node Python 2026"
 2. "Slack Block Kit modals 2026"

@@ -1,10 +1,10 @@
-# 04 — Image scanning
+# 04: Image scanning
 
 How to gate on CVE scan results in CI. Source: `research/2026-04-25-trivy-vs-scout.md`.
 
 ---
 
-## 1. Pick one scanner — Trivy or Docker Scout
+## 1. Pick one scanner: Trivy or Docker Scout
 
 | Scanner | Strengths | Trade-offs |
 |---|---|---|
@@ -40,28 +40,28 @@ How to gate on CVE scan results in CI. Source: `research/2026-04-25-trivy-vs-sco
     sarif_file: trivy-results.sarif
 ```
 
-**`exit-code: 1`** is the gate. **`ignore-unfixed: true`** keeps the gate sane — failing on a CRITICAL with no upstream fix yet just blocks shipping without a path to green.
+**`exit-code: 1`** is the gate. **`ignore-unfixed: true`** keeps the gate sane: failing on a CRITICAL with no upstream fix yet just blocks shipping without a path to green.
 
 ## 3. Severity policy
 
 | Finding | CI behavior |
 |---|---|
-| CRITICAL with fix available | Fail — must update base image or patch |
-| HIGH with fix available | Fail — must update base image or patch |
+| CRITICAL with fix available | Fail, must update base image or patch |
+| HIGH with fix available | Fail, must update base image or patch |
 | CRITICAL/HIGH unfixed | Pass with warning; track upstream |
 | MEDIUM/LOW | Report only; do not gate |
 
-This is the conservative starting policy. Loosen for a fast-moving startup; tighten for regulated workloads (HIPAA, PCI). Document the policy in-repo (`SECURITY.md` or `library/architecture/devops-scan-policy.md`).
+This is the conservative starting policy. Loosen for a fast-moving startup; tighten for regulated workloads (HIPAA, PCI). Document the policy in-repo (`SECURITY.md` or `library/knowledge/private/architecture/devops-scan-policy.md`).
 
 ## 4. Where to run the scan
 
 Two choices:
 
-### A. PR build — scan before merge
+### A. PR build: scan before merge
 
 Add the Trivy step to `.github/workflows/pr-build.yml`. Builds the image, scans, fails the PR on CRITICAL/HIGH. Catches regressions before merge.
 
-### B. Scheduled rebuild — catch new CVEs in unchanged images
+### B. Scheduled rebuild: catch new CVEs in unchanged images
 
 ```yaml
 on:
@@ -111,7 +111,7 @@ With `docker/build-push-action`:
 
 Consumers (security scanners, supply chain tooling) can verify what's in the image and how it was built. Source: `research/2026-04-25-sbom-provenance-attestation.md`.
 
-## 6. Dockerfile linting — Hadolint
+## 6. Dockerfile linting: Hadolint
 
 Catch many of these issues at lint time, before scan:
 
@@ -137,6 +137,6 @@ Hadolint catches `FROM:latest`, missing `USER`, missing version pins. Cheap; run
 
 ## See also
 
-- `guides/06-actions-security.md` — broader workflow-security context.
-- `templates/.github/workflows/pr-build.yml` — Trivy step wired in.
-- `examples/node-api-multiarch-trivy.md` — full worked example.
+- `guides/06-actions-security.md`: broader workflow-security context.
+- `templates/.github/workflows/pr-build.yml`: Trivy step wired in.
+- `examples/node-api-multiarch-trivy.md`: full worked example.

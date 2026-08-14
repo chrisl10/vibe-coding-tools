@@ -1,4 +1,4 @@
-# DRF (Django REST Framework) — preserved alternative
+# DRF (Django REST Framework): preserved alternative
 
 > Demoted in favor of **Django Ninja** (see `guides/05-django-ninja-api.md`). DRF is acceptable in legacy code; new endpoints should use Ninja.
 
@@ -12,7 +12,7 @@
 ## When DRF is still acceptable
 
 - **Existing DRF codebase.** Don't rewrite for taste. Migrate as you touch (`examples/07-drf-to-django-ninja-migration.md`).
-- **DRF-specific ecosystem dependencies** that aren't replaceable yet — though most have Ninja equivalents in 2026.
+- **DRF-specific ecosystem dependencies** that aren't replaceable yet, though most have Ninja equivalents in 2026.
 - **Generic class-based viewsets save you significant code** for a CRUD-shaped API where Pydantic schemas would feel repetitive.
 
 ## Legacy-code recognition

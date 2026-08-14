@@ -1,4 +1,4 @@
-# 05 — GitHub Actions architecture
+# 05: GitHub Actions architecture
 
 How to shape workflows so they scale beyond a single `.github/workflows/ci.yml`. Source: `research/2026-04-25-actions-reusable-workflows.md`.
 
@@ -57,11 +57,11 @@ jobs:
       tags: app:pr-${{ github.event.pull_request.number }}
 ```
 
-**Key rule:** the reusable workflow file lives in the same repo (`./.github/...`) or a separately versioned repo. Cross-org reusable workflows require explicit allowlists — see `guides/06-actions-security.md`.
+**Key rule:** the reusable workflow file lives in the same repo (`./.github/...`) or a separately versioned repo. Cross-org reusable workflows require explicit allowlists; see `guides/06-actions-security.md`.
 
 ## 2. Composite actions
 
-DRY for shared *steps* (not entire workflows). Example — a "setup project" action that handles checkout, Node, pnpm, and dep install:
+DRY for shared *steps* (not entire workflows). Example: a "setup project" action that handles checkout, Node, pnpm, and dep install:
 
 ```yaml
 # .github/actions/setup/action.yml
@@ -105,7 +105,7 @@ concurrency:
 - **PR builds:** `cancel-in-progress: true`. Each push cancels the previous build for that PR.
 - **Main / release builds:** `cancel-in-progress: false`. Never cancel a build that might be deploying.
 
-A PR-build workflow without a concurrency group is a Should-refactor finding — measurable Actions-minutes waste.
+A PR-build workflow without a concurrency group is a Should-refactor finding: measurable Actions-minutes waste.
 
 ## 4. Matrix strategies
 
@@ -132,7 +132,7 @@ jobs:
 Use for:
 
 - Multi-version Node testing (LTS support).
-- Multi-OS testing (when truly relevant — most webapps don't need Windows runners).
+- Multi-OS testing (when truly relevant, most webapps don't need Windows runners).
 - Multi-arch builds (see `guides/02-multi-arch-builds.md`).
 
 `fail-fast: false` lets all matrix legs finish even if one fails. Default is `true`; flip to `false` when you want to see the full failure surface.
@@ -168,7 +168,7 @@ The `environment:` block ties a job to a GitHub Environment, which can require m
 | `ubuntu-24.04` (or `-latest`) | Default for most jobs |
 | `ubuntu-24.04-arm64` (or larger arm64) | arm64 native build leg |
 | `depot-ubuntu-24.04` (Depot managed) | When you want Depot's runner improvements (10x cache, 30% faster CPU, sub-5s cold start) |
-| `self-hosted` | Avoid unless you have a real reason — you own the security model |
+| `self-hosted` | Avoid unless you have a real reason: you own the security model |
 
 Source: `research/2026-04-25-depot-vs-github-runners.md`.
 
@@ -176,11 +176,11 @@ Source: `research/2026-04-25-depot-vs-github-runners.md`.
 
 | File | Trigger |
 |---|---|
-| `.github/workflows/pr-build.yml` | `pull_request` — build, test, scan, no push |
-| `.github/workflows/main-deploy.yml` | `push: branches: [main]` — build, push to registry, deploy |
-| `.github/workflows/release.yml` | `push: tags: ['v*.*.*']` — build, push, SBOM, provenance, release notes |
-| `.github/workflows/reusable-build.yml` | `workflow_call` — shared by the above |
-| `.github/workflows/scheduled-rescan.yml` | `schedule: cron` — daily image rescan |
+| `.github/workflows/pr-build.yml` | `pull_request`: build, test, scan, no push |
+| `.github/workflows/main-deploy.yml` | `push: branches: [main]`: build, push to registry, deploy |
+| `.github/workflows/release.yml` | `push: tags: ['v*.*.*']`: build, push, SBOM, provenance, release notes |
+| `.github/workflows/reusable-build.yml` | `workflow_call`: shared by the above |
+| `.github/workflows/scheduled-rescan.yml` | `schedule: cron`: daily image rescan |
 
 Splitting prevents the "one ci.yml does everything via if-conditions" mess.
 
@@ -197,8 +197,8 @@ Splitting prevents the "one ci.yml does everything via if-conditions" mess.
 
 ## See also
 
-- `guides/06-actions-security.md` — `permissions:`, OIDC, fork PRs.
-- `guides/07-depot-integration.md` — Depot setup-action + build-push-action.
-- `templates/.github/workflows/reusable-build.yml` — canonical reusable build.
-- `templates/.github/workflows/pr-build.yml` — PR build calling reusable.
-- `templates/.github/workflows/main-deploy.yml` — main deploy calling reusable.
+- `guides/06-actions-security.md`: `permissions:`, OIDC, fork PRs.
+- `guides/07-depot-integration.md`: Depot setup-action + build-push-action.
+- `templates/.github/workflows/reusable-build.yml`: canonical reusable build.
+- `templates/.github/workflows/pr-build.yml`: PR build calling reusable.
+- `templates/.github/workflows/main-deploy.yml`: main deploy calling reusable.

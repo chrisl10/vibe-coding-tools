@@ -5,4 +5,4 @@ Cursor skill for the `typography-font-worker-bee` Bee. Encodes the 2026 state-of
 See `SKILL.md` for task routing and the seven non-negotiables. Deep implementation lives in `guides/`. Research trail is in `research/research-summary.md`.
 
 **Command Brief:** `ai-tools/command-briefs/typography-font-worker-bee-command-brief.md`
-**Paired Bee:** `ai-tools/agents/typography-font-worker-bee.md`
+**Paired Bee:** `.claude/agents/typography-font-worker-bee.md`

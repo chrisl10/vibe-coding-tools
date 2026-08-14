@@ -1,4 +1,4 @@
-# Example 03 — pytest + factory_boy test suite
+# Example 03: pytest + factory_boy test suite
 
 A complete test suite for an `orders` app. Covers services, selectors, API, and async tests.
 
@@ -222,6 +222,6 @@ uv run pytest -p no:randomly           # detect order-dependent tests
 - **factory_boy + pytest-factoryboy** for fixture authoring.
 - **`django_assert_num_queries`** to pin N+1 prevention.
 - **Async tests** with `httpx.AsyncClient` + `ASGITransport`.
-- **No JSON `loaddata`** — every test sets up via factories.
+- **No JSON `loaddata`**: every test sets up via factories.
 - **App-local conftest** for app-specific fixtures.
 - **`transaction=True`** on async tests that need real transactions.

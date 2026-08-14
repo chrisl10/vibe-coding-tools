@@ -19,7 +19,7 @@ Are you migrating from Telegraf?
 
 ---
 
-## grammY (TypeScript) — recommended for 2026
+## grammY (TypeScript): recommended for 2026
 
 **Version as of May 2026:** v1.43.0 (released May 16, 2026). No v2 exists; no breaking changes from v1 are announced.
 
@@ -52,7 +52,7 @@ bot.start();
 
 ---
 
-## aiogram 3.x (Python) — recommended for Python
+## aiogram 3.x (Python): recommended for Python
 
 **Version as of May 2026:** v3.28.2 (released May 10, 2026). Supports Bot API 10.0 (added within 2 days of Telegram's release).
 
@@ -116,4 +116,4 @@ Otherwise prefer aiogram 3.x for all new Python bots.
 
 ## Open question flagged from research
 
-> TODO: grammY plugin ecosystem survey — `guides/02-bot-features.md` covers core features. For FSM conversations specifically, the `@grammyjs/conversations` plugin and `@grammyjs/sessions` plugin details were not fully captured in this research pass. Check https://grammy.dev/plugins/ before implementing complex conversation flows.
+> TODO: grammY plugin ecosystem survey: `guides/02-bot-features.md` covers core features. For FSM conversations specifically, the `@grammyjs/conversations` plugin and `@grammyjs/sessions` plugin details were not fully captured in this research pass. Check https://grammy.dev/plugins/ before implementing complex conversation flows.

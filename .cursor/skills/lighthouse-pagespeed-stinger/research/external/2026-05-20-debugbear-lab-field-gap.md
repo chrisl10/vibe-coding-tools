@@ -50,7 +50,7 @@ often lower than CrUX field data for well-optimized sites.
 
 ## Annotations for stinger-forge
 
-- Complement to `web.dev/articles/lab-and-field-data-differences` — provides the quantified numbers
+- Complement to `web.dev/articles/lab-and-field-data-differences`: provides the quantified numbers
   (1.6 Mbps vs 41 Mbps) that are missing from the official doc.
 - The "slowest 5-10%" framing is excellent for explaining to stakeholders why Lighthouse scores
   look so bad even for well-performing sites. Encode this in `guides/02-lab-vs-field.md`.

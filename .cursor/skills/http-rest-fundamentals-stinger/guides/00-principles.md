@@ -1,4 +1,4 @@
-# 00 — Principles
+# 00. Principles
 
 Core reasoning model for every HTTP and REST audit.
 

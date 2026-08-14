@@ -1,4 +1,4 @@
-# 02 — SvelteKit Performance & Security
+# 02: SvelteKit Performance & Security
 
 Source PRD: `research/source-prds/prd-phase-02-sveltekit-performance-security.md`
 
@@ -10,7 +10,7 @@ Lock in SvelteKit image optimization, self-hosted fonts, security headers (via `
 
 ---
 
-## svelte.config.js — adapter and prerender
+## svelte.config.js: adapter and prerender
 
 ```js
 // apps/web/svelte.config.js
@@ -34,7 +34,7 @@ export default config;
 
 ---
 
-## vite.config.ts — enhanced images + Tailwind
+## vite.config.ts: enhanced images + Tailwind
 
 ```ts
 // apps/web/vite.config.ts
@@ -63,7 +63,7 @@ export default defineConfig({
 
 ---
 
-## Image optimization — @sveltejs/enhanced-img
+## Image optimization: @sveltejs/enhanced-img
 
 **Local static assets** use `<enhanced:img>` (generates AVIF/WebP at build time):
 
@@ -95,11 +95,11 @@ export default defineConfig({
 />
 ```
 
-Never use `next/image`. Never use `<img>` without `width`/`height` for remote images — it causes CLS.
+Never use `next/image`. Never use `<img>` without `width`/`height` for remote images: it causes CLS.
 
 ---
 
-## Self-hosted fonts — fontsource
+## Self-hosted fonts: fontsource
 
 Avoid Google Fonts DNS round-trips. Use fontsource instead:
 
@@ -127,7 +127,7 @@ Declare CSS variable in design tokens:
 
 ---
 
-## Security headers — hooks.server.ts
+## Security headers: hooks.server.ts
 
 SvelteKit's `hooks.server.ts` is the equivalent of Next.js's `next.config.js > headers()`. Apply all security headers here:
 

@@ -1,4 +1,4 @@
-# 11 — Landing Page Conversion Optimization
+# 11: Landing Page Conversion Optimization
 
 Source PRD: `research/source-prds/prd-phase-11-landing-page-conversion-optimization.md`
 
@@ -102,7 +102,7 @@ A sticky bottom bar below 768px captures scroll-time intent without blocking des
 
 Quantitative social proof outperforms qualitative (testimonials) by 3:1 for B2B. Include:
 
-1. **Metrics:** `X customers`, `Y stars`, `Z reviews` — source-backed numbers only, never invented.
+1. **Metrics:** `X customers`, `Y stars`, `Z reviews`: source-backed numbers only, never invented.
 2. **Logos:** recognizable brand logos (if permission granted).
 3. **Testimonials:** specific outcome quote + full name, title, company + headshot.
 
@@ -178,7 +178,7 @@ Performance ≥ 90 before Phase 11 is complete.
 
 ---
 
-## Form CRO — superforms patterns
+## Form CRO: superforms patterns
 
 - Two-step forms: +35% completion vs single-step for ≥5 fields (Formstack 2025).
 - Progress indicator (Step 1 of 2) reduces abandonment.
@@ -194,7 +194,7 @@ Performance ≥ 90 before Phase 11 is complete.
 | 11.1 | Hero: headline + subheadline + CTA + social proof above fold on desktop |
 | 11.2 | Mobile sticky CTA appears after 40% scroll at ≤768px viewport |
 | 11.3 | CTA button copy is action-verb specific (not "Submit") |
-| 11.4 | Social proof section present — no invented metrics; placeholders if real numbers unavailable |
+| 11.4 | Social proof section present: no invented metrics; placeholders if real numbers unavailable |
 | 11.5 | A/B flag infrastructure wired (`ab_tests` category in `app_settings`) |
 | 11.6 | Lighthouse Performance ≥ 90 on production build |
 | 11.7 | `apps/web/src/lib/flags.ts` present and importable |

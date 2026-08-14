@@ -43,7 +43,7 @@ Every QA report:
 
 ## Authorship and workflow
 
-QA reports - wherever they land - are authored by the **`quality-worker-bee`** agent (`.cursor/agents/quality-worker-bee.md`), not by `library-worker-bee`. The `library-worker-bee` agent owns the surrounding folder structure (the `reports/` subfolders inside feature/issue folders, this `library/qa/` tree, and the domain subfolders) - but the audit content itself (findings, verdict, acceptance-criteria matrix) is produced by `quality-worker-bee`.
+QA reports - wherever they land - are authored by the **`quality-worker-bee`** agent (`.claude/agents/quality-worker-bee.md`), not by `library-worker-bee`. The `library-worker-bee` agent owns the surrounding folder structure (the `reports/` subfolders inside feature/issue folders, this `library/qa/` tree, and the domain subfolders) - but the audit content itself (findings, verdict, acceptance-criteria matrix) is produced by `quality-worker-bee`.
 
 Typical flow:
 
@@ -55,7 +55,7 @@ Typical flow:
    - Standalone audit → `library/qa/<domain>/<date>-qa-report.md`
 4. **Archive** - feature reports follow the feature folder when it moves to `features/completed/`. Standalone reports stay in `library/qa/<domain>/`.
 
-See the `quality-worker-bee` agent (`.cursor/agents/quality-worker-bee.md`) for the full authoring workflow and report format.
+See the `quality-worker-bee` agent (`.claude/agents/quality-worker-bee.md`) for the full authoring workflow and report format.
 
 ## Invariants
 

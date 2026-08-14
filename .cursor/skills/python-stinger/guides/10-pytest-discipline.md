@@ -1,4 +1,4 @@
-# 10 — pytest Discipline
+# 10: pytest Discipline
 
 The canonical Django test stack: pytest + pytest-django + factory_boy + pytest-factoryboy. JSON `loaddata` fixtures are a finding.
 

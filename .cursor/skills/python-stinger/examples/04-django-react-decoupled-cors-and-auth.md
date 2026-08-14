@@ -1,4 +1,4 @@
-# Example 04 — Django + React decoupled architecture (CORS + auth wiring)
+# Example 04: Django + React decoupled architecture (CORS + auth wiring)
 
 End-to-end: Django backend with Ninja API + session auth; React frontend on a separate origin (`http://localhost:5173` in dev, `https://app.example.com` in prod).
 
@@ -75,7 +75,7 @@ class RequestIdMiddleware:
         return response
 ```
 
-### `apps/users/api.py` — session-aware endpoints
+### `apps/users/api.py`: session-aware endpoints
 
 ```python
 from ninja import Router, Schema
@@ -160,7 +160,7 @@ def fallback_handler(request, exc):
     )
 ```
 
-## React side (sketch — full React work hands off to react-worker-bee)
+## React side (sketch, full React work hands off to react-worker-bee)
 
 ### Vite environment
 
@@ -226,9 +226,9 @@ bootstrap();
 
 ## Handoffs
 
-- **Auth provider choice (Clerk / WorkOS / Auth0 / Supabase Auth)** — `auth-worker-bee`.
-- **React component / state / data-fetching shape** — `react-worker-bee`.
-- **Security audit (XSS surface, RBAC correctness, threat model)** — `security-worker-bee`.
+- **Auth provider choice (Clerk / WorkOS / Auth0 / Supabase Auth)**: `auth-worker-bee`.
+- **React component / state / data-fetching shape**: `react-worker-bee`.
+- **Security audit (XSS surface, RBAC correctness, threat model)**: `security-worker-bee`.
 
 ## Source
 

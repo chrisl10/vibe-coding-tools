@@ -9,12 +9,12 @@
 
 ### Portkey (2026)
 
-- Portkey positions as the "AI Gateway for Enterprises" — observability, reliability, and governance layer.
+- Portkey positions as the "AI Gateway for Enterprises": observability, reliability, and governance layer.
 - Virtual keys abstract provider credentials; one app secret maps to N provider keys in Portkey vault.
 - Budget caps enforced per virtual key, per workspace, or per time window.
 - Fallback routing: define ordered target list; Portkey retries on specified HTTP status codes.
 - Semantic caching: cosine similarity threshold on stored prompt/response pairs; configurable TTL.
-- Guardrails: PII detection, toxicity filtering, regex patterns — applied pre/post model call without code changes.
+- Guardrails: PII detection, toxicity filtering, regex patterns, applied pre/post model call without code changes.
 - Load balancing: weighted round-robin or least-latency routing across multiple provider accounts.
 - OpenAI-compatible API: `baseURL: "https://api.portkey.ai/v1"` is drop-in for any OpenAI SDK.
 - Pricing: Free (10K requests/month), Growth ($49/month), Scale (custom). Provider costs are pass-through.

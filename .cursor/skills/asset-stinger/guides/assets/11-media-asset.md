@@ -1,6 +1,6 @@
-# Guide — `MediaAsset` (11)
+# Guide: `MediaAsset` (11)
 
-> **Applies to:** images, logos, illustrations, lottie files, video clips shipped with the app. Not user-uploaded content — only platform-curated media.
+> **Applies to:** images, logos, illustrations, lottie files, video clips shipped with the app. Not user-uploaded content; only platform-curated media.
 
 ## 1. Purpose
 
@@ -36,7 +36,7 @@ Catalog every platform-owned media file so the theme builder, hero cards, illust
 
 ## 5. Lifecycle
 
-Standard. Large media files that are deprecated should trigger a deploy-size alarm — deprecated media is eligible for faster purge than the 180-day default to save bandwidth.
+Standard. Large media files that are deprecated should trigger a deploy-size alarm; deprecated media is eligible for faster purge than the 180-day default to save bandwidth.
 
 ## 6. Relationships
 
@@ -44,13 +44,13 @@ Standard. Large media files that are deprecated should trigger a deploy-size ala
 
 ## 7. Hand-offs
 
-- **ux-ui-worker-bee** — brief governs which hero images / illustrations are canonical.
-- **security-worker-bee** — reviews `usageRights` for licensing exposure.
+- **ux-ui-svelte-worker-bee**: brief governs which hero images / illustrations are canonical.
+- **security-worker-bee**: reviews `usageRights` for licensing exposure.
 
 ## 8. Pitfalls
 
-- Missing `altContentKey` on `kind: image` — breaks a11y.
-- Media files >2MB shipped in the app bundle — flag to deploy pipeline.
+- Missing `altContentKey` on `kind: image`: breaks a11y.
+- Media files >2MB shipped in the app bundle: flag to deploy pipeline.
 - Videos without poster images.
 
 ## 9. Example

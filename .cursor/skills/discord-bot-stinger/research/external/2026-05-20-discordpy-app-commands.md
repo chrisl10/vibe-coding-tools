@@ -76,5 +76,5 @@ async def colour_autocomplete(
 - **Directly informs templates/slash-command-discord-py.py**: Use `commands.Bot` (not raw `discord.Client`) since it auto-provides `self.tree`. Use `setup_hook` for sync.
 - **guides/02-slash-commands.md**: Document the guild-vs-global sync gap (guild = instant, global = ~1hr). This is a critical dev pattern the Command Brief explicitly calls out.
 - **guides/01-sdk-selection.md**: discord.py v2 is the stable Python SDK. No v3 in sight.
-- The autocomplete callback receives `(interaction, current: str)` and must return `list[app_commands.Choice[T]]` — max 25 choices.
+- The autocomplete callback receives `(interaction, current: str)` and must return `list[app_commands.Choice[T]]`, max 25 choices.
 - `Transformer` class enables custom type coercion from interaction data; key for complex option types.

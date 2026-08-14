@@ -155,9 +155,9 @@ For the token architecture pattern, always use `font.variable` on the root `<htm
 
 | Value | Block period | Swap period | Use when |
 |-------|-------------|-------------|----------|
-| `swap` | 100ms | Infinite | Body text, headings — text always visible |
-| `optional` | 100ms | None | Performance-first — font only if cached |
-| `fallback` | 100ms | 3 seconds | Balanced — text visible, but stops late swapping |
-| `block` | 3 seconds | Infinite | Avoid — produces FOIT |
+| `swap` | 100ms | Infinite | Body text, headings: text always visible |
+| `optional` | 100ms | None | Performance-first: font only if cached |
+| `fallback` | 100ms | 3 seconds | Balanced: text visible, but stops late swapping |
+| `block` | 3 seconds | Infinite | Avoid: produces FOIT |
 
 `next/font` default is `optional` when no `display` option is set. Explicitly specify `swap` for headings and body text in most projects.

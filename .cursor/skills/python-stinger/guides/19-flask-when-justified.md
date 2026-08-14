@@ -1,13 +1,13 @@
-# 19 — Flask When Justified
+# 19: Flask When Justified
 
-Flask is not in the canonical stack — Django (full-stack) and FastAPI (focused services) cover the space. But Flask is acceptable in narrow circumstances.
+Flask is not in the canonical stack: Django (full-stack) and FastAPI (focused services) cover the space. But Flask is acceptable in narrow circumstances.
 
 ## When Flask is the right pick
 
-- **Existing Flask codebase** — don't rewrite for taste. Add Pydantic / Ruff / pyright on top of Flask.
+- **Existing Flask codebase**: don't rewrite for taste. Add Pydantic / Ruff / pyright on top of Flask.
 - **Tiny services** with no async I/O, no ORM, no admin needs (a single-endpoint webhook handler, a status checker).
-- **Specific dependency** that's Flask-only and replacement isn't worth the cost (rare in 2026 — most Flask-only ecosystems have FastAPI equivalents).
-- **Library / SDK testing harness** — Flask's minimal surface is good for a test fixture HTTP server.
+- **Specific dependency** that's Flask-only and replacement isn't worth the cost (rare in 2026, most Flask-only ecosystems have FastAPI equivalents).
+- **Library / SDK testing harness**: Flask's minimal surface is good for a test fixture HTTP server.
 
 ## When Flask is wrong
 
@@ -103,7 +103,7 @@ app.register_blueprint(orders_bp)
 gunicorn 'app.main:app' --bind 0.0.0.0:8000 --workers 4 --worker-class sync
 ```
 
-WSGI only — Flask is not ASGI. If you need async, that's the signal to migrate to FastAPI.
+WSGI only: Flask is not ASGI. If you need async, that's the signal to migrate to FastAPI.
 
 ## Findings checklist
 

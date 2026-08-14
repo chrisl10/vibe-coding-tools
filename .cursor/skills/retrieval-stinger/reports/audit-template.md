@@ -1,6 +1,6 @@
 # Recall / Skillify Quality Audit - <topic>
 
-> Copy this into `library/qa/retrieval/<date>-<topic>.md` (or the feature/issue reports path) and fill it in. Delete the guidance blockquotes.
+> Copy this into `library/requirements/reports/retrieval/<date>-<topic>.md` (or the feature/issue reports path) and fill it in. Delete the guidance blockquotes.
 
 ## Metadata
 
@@ -49,7 +49,7 @@
 
 ## Cross-Bee handoffs
 
-> Anything handed off: schema -> deeplake-dataset-worker-bee; daemon -> embeddings-runtime-worker-bee; PII/scope-as-security -> security-worker-bee. Close-out order: security-worker-bee then quality-worker-bee.
+> Anything handed off: schema -> vector-store-worker-bee; daemon -> embeddings-runtime-worker-bee; PII/scope-as-security -> security-worker-bee. Close-out order: security-worker-bee then quality-worker-bee.
 
 ## Recommended actions
 

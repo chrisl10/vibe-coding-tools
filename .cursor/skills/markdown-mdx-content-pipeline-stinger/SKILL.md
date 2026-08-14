@@ -1,12 +1,12 @@
 ---
-name: markdown-mdx-content-pipeline-stinger
-description: Markdown/MDX processing specialist - MDX 3/compiler selection, remark/rehype plugin pipelines, Shiki v4/expressive-code/starry-night syntax highlighting, GFM, AST manipulation, custom directive plugins, math/Mermaid diagram embedding, and XSS sanitization. Use when building or auditing any content processing pipeline that takes .md/.mdx source to HTML/JSX output.
+name: "markdown-mdx-content-pipeline-stinger"
+description: "Markdown/MDX processing specialist - MDX 3/compiler selection, remark/rehype plugin pipelines, Shiki v4/expressive-code/starry-night syntax highlighting, GFM, AST manipulation, custom directive plugins, math/Mermaid diagram embedding, and XSS sanitization. Use when building or auditing any content processing pipeline that takes .md/.mdx source to HTML/JSX output."
 license: MIT
 ---
 
 # markdown-mdx-content-pipeline-stinger
 
-Markdown and MDX processing stack — from raw `.md`/`.mdx` file to final HTML/JSX/React output. This stinger encodes the 2026 state of the unified/remark/rehype ecosystem, the Shiki family (Shiki v4, expressive-code, starry-night), compiler selection, plugin authoring patterns, math/diagram embedding, and sanitization.
+Markdown and MDX processing stack: from raw `.md`/`.mdx` file to final HTML/JSX/React output. This stinger encodes the 2026 state of the unified/remark/rehype ecosystem, the Shiki family (Shiki v4, expressive-code, starry-night), compiler selection, plugin authoring patterns, math/diagram embedding, and sanitization.
 
 ---
 
@@ -31,19 +31,19 @@ Do NOT activate for:
 
 ---
 
-## Quick reference — canonical 2026 stack
+## Quick reference: canonical 2026 stack
 
 | Layer | Recommended (2026) | Legacy / Avoid |
 |---|---|---|
 | Compiler (Next.js blog) | Velite + `@next/mdx` | next-mdx-remote (archived), Contentlayer |
-| Compiler (route MDX) | `@next/mdx` | — |
+| Compiler (route MDX) | `@next/mdx` | none |
 | Syntax highlighting | Shiki v4 / rehype-pretty-code | Prism, Highlight.js |
-| Highlighting (Starlight) | expressive-code | — |
-| GFM | remark-gfm | — |
+| Highlighting (Starlight) | expressive-code | none |
+| GFM | remark-gfm | none |
 | Math | remark-math + rehype-katex | MathJax (heavier) |
-| Diagrams | Mermaid via `next/script` (CSR) or rehype-mermaid (SSR build) | — |
+| Diagrams | Mermaid via `next/script` (CSR) or rehype-mermaid (SSR build) | none |
 | Sanitization (server) | rehype-sanitize | none |
-| Sanitization (client) | DOMPurify | — |
+| Sanitization (client) | DOMPurify | none |
 
 ---
 
@@ -51,23 +51,23 @@ Do NOT activate for:
 
 Read each guide before authoring any output in its domain.
 
-- `guides/00-principles.md` — scope boundary, unified AST model (mdast → hast → html/jsx), the four processing layers (parse, transform, compile, render)
-- `guides/01-compiler-selection.md` — decision matrix: @next/mdx vs next-mdx-remote v6 vs Velite vs Contentlayer2 vs @mdx-js/mdx direct
-- `guides/02-remark-rehype-pipeline.md` — canonical plugin ordering, the `.use()` chain, GFM/frontmatter/directive plugins
-- `guides/03-syntax-highlighting.md` — Shiki v3→v4 migration, expressive-code, starry-night, rehype-pretty-code
-- `guides/04-plugin-authoring.md` — unified plugin function signature, unist-util-visit visitor pattern, TypeScript types
-- `guides/05-math-diagrams.md` — remark-math + rehype-katex, Mermaid SSR workaround, D2, callout/admonition directive
-- `guides/06-sanitization.md` — rehype-sanitize schema design, DOMPurify, allowDangerousHtml safety
-- `guides/07-testing.md` — vitest fixtures, snapshot testing MDX output, XSS payload fuzzing
+- `guides/00-principles.md`: scope boundary, unified AST model (mdast to hast to html/jsx), the four processing layers (parse, transform, compile, render)
+- `guides/01-compiler-selection.md`: decision matrix: @next/mdx vs next-mdx-remote v6 vs Velite vs Contentlayer2 vs @mdx-js/mdx direct
+- `guides/02-remark-rehype-pipeline.md`: canonical plugin ordering, the `.use()` chain, GFM/frontmatter/directive plugins
+- `guides/03-syntax-highlighting.md`: Shiki v3 to v4 migration, expressive-code, starry-night, rehype-pretty-code
+- `guides/04-plugin-authoring.md`: unified plugin function signature, unist-util-visit visitor pattern, TypeScript types
+- `guides/05-math-diagrams.md`: remark-math + rehype-katex, Mermaid SSR workaround, D2, callout/admonition directive
+- `guides/06-sanitization.md`: rehype-sanitize schema design, DOMPurify, allowDangerousHtml safety
+- `guides/07-testing.md`: vitest fixtures, snapshot testing MDX output, XSS payload fuzzing
 
 ## Examples index
 
-- `examples/next-mdx-blog.md` — full Next.js 15 App Router MDX blog with Velite, remark-gfm, remark-math, rehype-katex, rehype-pretty-code (Shiki v4)
-- `examples/ai-chat-renderer.md` — safe rendering of user-authored Markdown in an AI chat UI with DOMPurify + allowlist
+- `examples/next-mdx-blog.md`: full Next.js 15 App Router MDX blog with Velite, remark-gfm, remark-math, rehype-katex, rehype-pretty-code (Shiki v4)
+- `examples/ai-chat-renderer.md`: safe rendering of user-authored Markdown in an AI chat UI with DOMPurify + allowlist
 
 ## Templates index
 
-- `templates/plugin-boilerplate.ts` — typed TypeScript boilerplate for a unified remark or rehype plugin
+- `templates/plugin-boilerplate.ts`: typed TypeScript boilerplate for a unified remark or rehype plugin
 
 ---
 
@@ -97,5 +97,5 @@ Read each guide before authoring any output in its domain.
 
 ---
 
-*Part of the Legion AI Tools Factory. Paired Bee: `markdown-mdx-content-pipeline-worker-bee`.*
+*Part of the Hive. Paired Bee: `markdown-mdx-content-pipeline-worker-bee`.*
 *Research: 10 external sources (2025-11 to 2026-05), depth tier: normal.*

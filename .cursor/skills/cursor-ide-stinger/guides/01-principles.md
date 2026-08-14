@@ -9,7 +9,7 @@ This repo (`@deeplake/hivemind`, TS ^6 / Node >=22 / ESM) integrates with Cursor
 1. **The hooks harness.** `src/cli/install-cursor.ts` merges `~/.cursor/hooks.json` (Cursor 1.7+) and copies built hook scripts to `~/.cursor/hivemind/bundle/`. Six lifecycle events are wired so Hivemind captures sessions, recalls memory, and builds the code graph. This is `guides/04`.
 2. **The extension.** `harnesses/cursor/extension/` is a first-party VS Code/Cursor extension (its own webpack + `package.json`). It surfaces health, onboarding, a dashboard webview, the codebase graph, and skill sync, and can wire/refresh the same hooks. This is `guides/06`.
 3. **The MCP server in Cursor.** `src/mcp/server.ts` (stdio) exposes `hivemind_search` / `hivemind_read` / `hivemind_index`. Registering it inside Cursor is a `mcp.json` entry. This is `guides/03`.
-4. **The `.cursor/` Bee Army platform.** The rules (`.mdc`), agents (`*.md`), skills/Stingers, commands (`the-beekeeper`, `the-smoker`), and `model-comparison-matrix.md` that make the Army run inside Cursor. Authoring rules is `guides/02`; the layout is `guides/05`.
+4. **The `.cursor/` colony.** The rules (`.mdc`), agents (`*.md`), skills/Stingers, commands (`the-beekeeper`, `the-smoker`), and `model-comparison-matrix.md` that make the colony run inside Cursor. Authoring rules is `guides/02`; the layout is `guides/05`.
 
 Everything this Bee does lives in one of those four. If a task is about the TypeScript quality, the MCP tool schemas, or another agent's harness, it belongs to a different Bee (see "When to defer" below).
 

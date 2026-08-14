@@ -29,4 +29,4 @@ Tree-sitter follows real syntactic boundaries. A chunk is a whole function or cl
 
 ## Boundary
 
-Querying the `codebase` table for structural matches is retrieval-worker-bee's. The table schema/DDL is deeplake-dataset-worker-bee's. Language coverage is bounded by available tree-sitter grammars; an unsupported language yields file-level nodes only, and that gap should be stated.
+Querying the `codebase` table for structural matches is retrieval-worker-bee's. The table schema/DDL is vector-store-worker-bee's. Language coverage is bounded by available tree-sitter grammars; an unsupported language yields file-level nodes only, and that gap should be stated.

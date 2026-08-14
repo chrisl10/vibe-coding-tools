@@ -1,4 +1,4 @@
-# Edge Case — Cookie-Based SSR Theme Match
+# Edge Case: Cookie-Based SSR Theme Match
 
 *Demonstrates: serving the correct theme class from the server using a cookie, eliminating all FOWT including the pre-script window. Covers `guides/04-ssr-hydration-safety.md`.*
 
@@ -85,11 +85,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
 ### 3. Cookie policy checklist
 
-- [ ] `SameSite=Lax` — protects against CSRF while allowing cross-site navigation
-- [ ] `Secure` — only sent over HTTPS in production
-- [ ] `path=/` — applies to all routes
-- [ ] `max-age=31536000` — 1 year expiry (long-lived preference)
-- [ ] No `HttpOnly` — the client needs to read/write this cookie
+- [ ] `SameSite=Lax`: protects against CSRF while allowing cross-site navigation
+- [ ] `Secure`: only sent over HTTPS in production
+- [ ] `path=/`: applies to all routes
+- [ ] `max-age=31536000`: 1 year expiry (long-lived preference)
+- [ ] No `HttpOnly`: the client needs to read/write this cookie
 - [ ] Confirm with `security-worker-bee` that this cookie does not carry sensitive data
 
 ---
@@ -100,13 +100,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 |-----------|--------|
 | First visit (no cookie) always renders "light" when OS is dark | One FOWT on very first visit; corrected by FOWT script |
 | Cookie must be sent on every request | Adds ~20 bytes to every HTTP request header |
-| "System" theme stored as "system" in cookie | Server cannot resolve — renders as light |
+| "System" theme stored as "system" in cookie | Server cannot resolve: renders as light |
 
 ---
 
 ## When NOT to use
 
-- Simple apps with no server-side personalization — the `suppressHydrationWarning` + FOWT script approach (`examples/happy-path-app-router.md`) is sufficient and simpler
+- Simple apps with no server-side personalization: the `suppressHydrationWarning` + FOWT script approach (`examples/happy-path-app-router.md`) is sufficient and simpler
 - Apps with strict cookie size budgets
 - Static export sites (no server runtime to read cookies)
 

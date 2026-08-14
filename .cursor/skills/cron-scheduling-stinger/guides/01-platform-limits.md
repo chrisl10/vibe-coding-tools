@@ -46,7 +46,7 @@ export async function GET(request: Request) {
 }
 ```
 
-Set `CRON_SECRET` in Vercel's environment variables. Never skip this check — Vercel's cron endpoint is publicly addressable.
+Set `CRON_SECRET` in Vercel's environment variables. Never skip this check: Vercel's cron endpoint is publicly addressable.
 
 ### Sub-hourly workaround for Hobby users
 
@@ -143,7 +143,7 @@ on:
 SELECT cron.schedule('nightly-cleanup', '0 2 * * *', $$DELETE FROM sessions WHERE expired_at < now()$$);
 ```
 
-- Runs inside PostgreSQL — no external scheduler needed.
+- Runs inside PostgreSQL: no external scheduler needed.
 - Timezone: UTC by default; configure with `cron.timezone` GUC.
 - Suitable for database maintenance tasks (vacuuming, archival, cleanup).
 - Does not handle distributed deployments (pg_cron runs once per database instance).

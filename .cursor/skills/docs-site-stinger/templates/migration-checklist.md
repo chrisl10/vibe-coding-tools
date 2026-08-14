@@ -8,7 +8,7 @@ Use when migrating from one docs platform to another.
 ---
 
 ## Pre-migration
-- [ ] Platform selection completed — target platform selected with trade-off named
+- [ ] Platform selection completed: target platform selected with trade-off named
 - [ ] Full content inventory: list all pages + their current URLs
 - [ ] GitBook / source platform export completed (Markdown/PDF/HTML as available)
 - [ ] Custom CSS, theming, macros, and plugins catalogued

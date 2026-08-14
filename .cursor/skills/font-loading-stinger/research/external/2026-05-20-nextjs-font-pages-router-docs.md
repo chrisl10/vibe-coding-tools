@@ -52,4 +52,4 @@ is the key distinction the Command Brief flags as critical.
   side-by-side code block for App Router vs Pages Router to avoid the runtime
   errors the Command Brief warns about.
 - Same font object API (`subsets`, `display`, `weight`, etc.) works in both
-  routers — the difference is only the application file and HTML element.
+  routers: the difference is only the application file and HTML element.

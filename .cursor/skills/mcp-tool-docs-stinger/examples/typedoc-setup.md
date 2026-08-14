@@ -1,4 +1,6 @@
-# Example: TypeDoc Setup for the TS Public API
+# Worked example (Hivemind-specific): TypeDoc Setup for the TS Public API
+
+> This is a worked example for one real product (Hivemind), not the general procedure. Read `guides/02-typedoc.md` first for the domain-general TypeScript API reference generation practice (including when to reach for API Extractor alongside TypeDoc); come back here to see TypeDoc applied to a real package.
 
 End-to-end setup for rendering Hivemind's TypeScript public API with TypeDoc.
 

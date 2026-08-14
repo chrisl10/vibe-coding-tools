@@ -83,8 +83,8 @@
 
 - **Auth / credential findings:** {Token lifecycle, credential storage -> security-worker-bee}
 - **Security findings:** {SQL injection in handlers, OWASP-level issues -> security-worker-bee}
-- **Deeplake findings:** {Query semantics, schema, vector search -> deeplake-dataset-worker-bee}
+- **Deeplake findings:** {Query semantics, schema, vector search -> vector-store-worker-bee}
 
 ---
 
-*Report template: \`.cursor/skills/mcp-protocol-stinger/templates/findings-report.md\`*
+*Report template: \`.claude/skills/mcp-protocol-stinger/templates/findings-report.md\`*

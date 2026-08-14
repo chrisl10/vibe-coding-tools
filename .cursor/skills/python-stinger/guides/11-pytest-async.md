@@ -1,4 +1,4 @@
-# 11 — pytest async
+# 11: pytest async
 
 Async tests for Ninja, FastAPI, async Django views, and Channels consumers.
 
@@ -7,7 +7,7 @@ Async tests for Ninja, FastAPI, async Django views, and Channels consumers.
 1. **`asyncio_mode = "auto"`** in `pyproject.toml`. Tests defined as `async def` run in pytest-asyncio's loop automatically.
 2. **`@pytest.mark.asyncio`** is unnecessary in `auto` mode but explicit in `strict` mode.
 3. **Async fixtures** use `@pytest_asyncio.fixture` (or `@pytest.fixture` in `auto` mode if pytest-asyncio is recent).
-4. **`async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app))`** for in-process FastAPI / Ninja testing — no real network.
+4. **`async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app))`** for in-process FastAPI / Ninja testing: no real network.
 5. **Channels `WebsocketCommunicator`** for testing consumers.
 
 ## Configuration
@@ -124,6 +124,6 @@ async def test_external_call(async_client):
 ## Sources
 
 - https://pytest-asyncio.readthedocs.io/
-- https://www.python-httpx.org/advanced/transports/ — `ASGITransport`
+- https://www.python-httpx.org/advanced/transports/: `ASGITransport`
 - https://channels.readthedocs.io/en/stable/topics/testing.html
 - `research/2026-05-03-django-async-views.md`

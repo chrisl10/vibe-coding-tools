@@ -6,7 +6,7 @@ Copy this file, rename, fill the sections. Keep it under ~200 lines; link out to
 
 ---
 
-# Guide — `<AssetType>` (NN-<asset>.md)
+# Guide: `<AssetType>` (NN-<asset>.md)
 
 > **Applies to:** <short description of what this asset is>
 
@@ -35,7 +35,7 @@ Where does the asset live in the repo? How does the sync generator detect it?
 
 - **Scan path(s):** `<path glob>`
 - **Detection method:** <annotation, filename convention, export pattern>
-- **Required annotations:** `@xyz <value>` — see `guides/03-sync-generator-spec.md` for the full annotation reference.
+- **Required annotations:** `@xyz <value>`. See `guides/03-sync-generator-spec.md` for the full annotation reference.
 
 ## 4. Registration fields
 

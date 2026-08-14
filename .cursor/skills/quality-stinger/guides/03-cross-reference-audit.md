@@ -17,7 +17,7 @@ A plan's items typically appear as:
 You can extract manually or use the bundled helper:
 
 ```bash
-python3 scripts/extract-plan-items.py library/requirements/features/feature-007-search/prd-feature-007-search.md > /tmp/traceability-skeleton.md
+python3 scripts/extract-plan-items.py library/requirements/<lifecycle>/prd-007-search/prd-feature-007-search.md > /tmp/traceability-skeleton.md
 ```
 
 The helper emits a markdown table skeleton with `ID | Plan Requirement | Status | Implementation Location | Notes` rows and blanks for Status / Implementation Location. See the script header for flags.

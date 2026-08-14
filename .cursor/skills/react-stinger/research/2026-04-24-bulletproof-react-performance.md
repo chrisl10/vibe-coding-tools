@@ -9,13 +9,13 @@ Performance advice prioritizes architectural wins (code splitting, colocation, c
 
 ## Key techniques (in order of priority)
 
-1. **Route-level code splitting** (lazy routes). Avoid over-splitting — too many requests is worse than a large chunk.
+1. **Route-level code splitting** (lazy routes). Avoid over-splitting: too many requests is worse than a large chunk.
 2. **Split state by locality.** Don't stuff everything into one store; close-to-consumer is faster.
 3. **State initializer function** for expensive initial values: `useState(() => myExpensiveFn())`.
 4. **Atomic state libraries** (Jotai) when many small pieces of state drive many components.
-5. **Use Context wisely** — low-velocity data only. For higher-velocity, use `use-context-selector` or a proper store.
-6. **Prefer zero-runtime styling** — Tailwind / vanilla-extract / CSS Modules over emotion / styled-components under heavy re-render.
-7. **Children as a rerender optimization** — pass JSX as `children` instead of rendering inside the state-holding component. The children subtree is isolated from parent state updates.
+5. **Use Context wisely**: low-velocity data only. For higher-velocity, use `use-context-selector` or a proper store.
+6. **Prefer zero-runtime styling**: Tailwind / vanilla-extract / CSS Modules over emotion / styled-components under heavy re-render.
+7. **Children as a rerender optimization**: pass JSX as `children` instead of rendering inside the state-holding component. The children subtree is isolated from parent state updates.
 8. **Prefetch data** with `queryClient.prefetchQuery` for anticipated navigations.
 
 ## Key quote (children-as-optimization)

@@ -1,4 +1,4 @@
-# Charts & Data Visualization — research notes
+# Charts & Data Visualization: research notes
 
 **Retrieved:** 2026-04-25
 **For guide:** `guides/17-charts-and-viz.md`
@@ -25,10 +25,10 @@ From `cursor-subagent-research-combined.md` (Charts & Data Visualization, ~line 
 ## Cross-references
 
 - `guides/13-ecosystem-catalog.md` lists Recharts and Visx as defaults. This guide expands to shadcn Charts / Nivo / ECharts / Tremor / Observable Plot with a chart-shape and customization-depth decision tree.
-- Color and contrast tokens are owned by `ux-ui-worker-bee` — explicitly handed off in the guide.
+- Color and contrast tokens are owned by `ux-ui-svelte-worker-bee`: explicitly handed off in the guide.
 
 ## Notes
 
 The chart starter in the guide deliberately uses CSS variable references (`var(--color-accent)`, `var(--color-fg-muted)`) rather than hex colors so charts inherit the design system's tokens without per-chart edits. This pattern matches how shadcn Charts is built and is the canonical approach for 2026.
 
-No new web_search_exa expansions — source doc URLs cover the canonical references.
+No new web_search_exa expansions: source doc URLs cover the canonical references.

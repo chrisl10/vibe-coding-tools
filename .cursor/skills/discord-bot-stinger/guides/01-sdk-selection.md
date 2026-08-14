@@ -1,4 +1,4 @@
-# 01 — SDK Selection
+# 01: SDK Selection
 
 Choose the right SDK before writing any code. The choice drives the language, toolchain, and ecosystem you inherit.
 
@@ -6,7 +6,7 @@ Choose the right SDK before writing any code. The choice drives the language, to
 
 ---
 
-## discord.js (Node.js / TypeScript) — recommended default
+## discord.js (Node.js / TypeScript): recommended default
 
 **Use when:** TypeScript ecosystem, team is JS-native, or you want the most community resources.
 
@@ -19,7 +19,7 @@ Choose the right SDK before writing any code. The choice drives the language, to
 
 ---
 
-## discord.py (Python) — recommended for Python stacks
+## discord.py (Python): recommended for Python stacks
 
 **Use when:** Python ecosystem, data-heavy bots, or tight integration with Python ML/data tooling.
 
@@ -30,11 +30,11 @@ Choose the right SDK before writing any code. The choice drives the language, to
 
 ### Pycord note
 
-Pycord (`py-cord`) is a maintained fork of the original discord.py library with its own release cadence and documentation at `docs.pycord.dev`. It has grown in adoption since 2024. This stinger defaults to the Rapptz `discord.py` main-line because it has the most community support, the most Stack Overflow answers, and is the SDK the Discord developer documentation links to. If the user's project already uses Pycord, apply the same patterns — the API surface is nearly identical.
+Pycord (`py-cord`) is a maintained fork of the original discord.py library with its own release cadence and documentation at `docs.pycord.dev`. It has grown in adoption since 2024. This stinger defaults to the Rapptz `discord.py` main-line because it has the most community support, the most Stack Overflow answers, and is the SDK the Discord developer documentation links to. If the user's project already uses Pycord, apply the same patterns; the API surface is nearly identical.
 
 ---
 
-## Serenity + Poise (Rust) — for performance-critical bots
+## Serenity + Poise (Rust): for performance-critical bots
 
 **Use when:** extreme performance requirements, embedded environments, or Rust-native teams.
 
@@ -42,7 +42,7 @@ Pycord (`py-cord`) is a maintained fork of the original discord.py library with 
 - Slash command pattern: `poise` macros (`#[poise::command(slash_command)]`)
 - DAVE voice support: available via `songbird` with a DAVE-compliant backend.
 
-> **TODO — open question:** Serenity/Poise Rust API was not fully covered in the research sweep. Confirm current `poise` slash command macro syntax from `docs.rs/poise` before advising on a Rust bot project.
+> **TODO: open question:** Serenity/Poise Rust API was not fully covered in the research sweep. Confirm current `poise` slash command macro syntax from `docs.rs/poise` before advising on a Rust bot project.
 
 ---
 
@@ -68,6 +68,6 @@ Default / greenfield?
 
 ## What NOT to mix
 
-- Do not mix `discord.py` 1.x patterns with 2.x — the `commands.Bot` + `@bot.command` pattern is legacy; use `app_commands.CommandTree` for slash commands.
+- Do not mix `discord.py` 1.x patterns with 2.x: the `commands.Bot` + `@bot.command` pattern is legacy; use `app_commands.CommandTree` for slash commands.
 - Do not mix `discord.js` v13 style (`client.on('interaction')` + manual type checking) with v14 builders API.
 - Do not use the Discord.NET (C#) patterns as reference for JS/Python; they are structurally different.

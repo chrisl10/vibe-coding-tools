@@ -1,6 +1,20 @@
 # 02 - Project Layout & ESM
 
-How Hivemind is organized, and the ESM import rules that hold it together.
+**Applies to both contexts.** ESM is the baseline either way; the import-extension rule differs by context (see the SvelteKit section below vs the Hivemind `src/` tree further down). Read the section matching the project type classified in `guides/00-principles.md`.
+
+## SvelteKit app layout and import rules (primary case)
+
+`src/routes/` is the file-system router - `+page.svelte`, `+page.ts`/`+page.server.ts`, `+layout.svelte`, `+server.ts` per route, per SvelteKit convention. `src/lib/` holds shared code (components, server-only modules under `src/lib/server/` if the project follows that convention, utilities) reachable via the `$lib` alias. `src/app.d.ts` declares the ambient `App.Locals`/`App.PageData`/`App.Error` types. `src/hooks.server.ts` holds the `handle` request hook.
+
+**Import-extension rule for this case: no `.js` extension needed on relative TS imports.** SvelteKit's generated tsconfig uses `moduleResolution: "bundler"` (`guides/23-tsconfig-for-sveltekit.md`) - Vite resolves imports, not Node's own runtime loader, so `import { foo } from './bar'` (no extension) is correct here, unlike the Hivemind case below. Adding a `.js` extension to a relative import in SvelteKit app code "to be consistent with the other guide" is a **should-refactor** - it's importing the wrong context's rule.
+
+**Type-only imports must say so explicitly** (`import type { Foo } from './foo'`) because of `verbatimModuleSyntax: true` - see `guides/23-tsconfig-for-sveltekit.md` for why. A plain-value import of a type-only symbol is a **must-fix** here (it fails the Svelte compiler, not just a lint rule).
+
+Route-generated types (`RouteParams`, `PageData`, `Actions`, etc.) come from `./$types`, never hand-written - see `guides/24-typing-sveltekit-load-actions-endpoints.md`.
+
+## Hivemind npm-library / CLI layout (secondary case)
+
+**Legacy/library case**: the following describes how Hivemind (`@deeplake/hivemind`), the original npm-published package this section was written from, is organized. Applies when the deliverable IS a published package, not a SvelteKit app - see `guides/00-principles.md`'s first-move classification.
 
 ## The `src/` tree
 
@@ -23,7 +37,7 @@ How Hivemind is organized, and the ESM import rules that hold it together.
 
 `harnesses/` holds the per-harness packaging (claude-code, codex, cursor, openclaw, hermes, pi) plus `mcp/`. `tests/` mirrors `harnesses/`. `scripts/*.mjs` holds build/audit helpers.
 
-## ESM import rules (enforce these)
+## ESM import rules for the npm-library/CLI case (enforce these under Node16/NodeNext resolution)
 
 1. **`.js` on relative imports.** Source is `.ts`, the import specifier is `.js`:
    ```ts

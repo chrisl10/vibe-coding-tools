@@ -1,20 +1,20 @@
-# Black + isort + flake8 — preserved alternative
+# Black + isort + flake8: preserved alternative
 
 > Demoted in favor of **Ruff** (see `guides/13-ruff-config.md`). The three-tool stack is the legacy that Ruff supersedes.
 
 ## Why Ruff replaced this
 
 - **One tool.** Black + isort + flake8 (+ `pyupgrade`, `autoflake`, `pydocstyle`) require three to six pieces of dev infra wired up consistently. Ruff replaces all of them with one binary, one config, one CI step.
-- **Speed.** Ruff is 10–100x faster than the tools it replaces.
+- **Speed.** Ruff is 10-100x faster than the tools it replaces.
 - **Drop-in formatter.** `ruff format` produces output identical to Black in 99.9%+ of cases.
 - **Single config.** All settings in `[tool.ruff]` in `pyproject.toml`. No separate `.flake8`, `setup.cfg [flake8]`, `[tool.isort]`, `[tool.black]`.
 - **Plugin parity.** Ruff re-implements 1000+ lint rules from flake8, its plugins, isort, pyupgrade, pydocstyle, autoflake, and more.
 
 ## When the legacy stack is still acceptable
 
-- **Existing config that works** — migration is easy (`guides/13-ruff-config.md`), but not urgent. Run them alongside Ruff during transition.
+- **Existing config that works**: migration is easy (`guides/13-ruff-config.md`), but not urgent. Run them alongside Ruff during transition.
 - **A custom flake8 plugin** with no Ruff equivalent. Rare in 2026.
-- **Pylint is doing real work** — Pylint is more aggressive than Ruff (semantic analysis, refactoring suggestions). Pylint can stay alongside Ruff; they're complementary.
+- **Pylint is doing real work**: Pylint is more aggressive than Ruff (semantic analysis, refactoring suggestions). Pylint can stay alongside Ruff; they're complementary.
 
 ## Legacy-code recognition
 

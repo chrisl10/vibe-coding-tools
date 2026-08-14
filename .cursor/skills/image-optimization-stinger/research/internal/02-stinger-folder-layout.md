@@ -10,12 +10,12 @@ date_accessed: 2026-05-20
 
 ## Pipeline Position
 
-scripture-historian (Phase 1.5) → **stinger-forge reads this folder** (Phase 2) → bee-creator (Phase 3) → hive-registrar (Phase 4)
+scripture-historian (Phase 1.5) → **stinger-forge reads this folder** (Phase 2) → bee-creator (Phase 3) → full-access-registrar (Phase 4)
 
 ## Expected stinger-forge Output Layout
 
 ```
-ai-tools/skills/image-optimization-stinger/
+.claude/skills/image-optimization-stinger/
 ├── SKILL.md                          # Primary entrypoint for the Bee
 ├── guides/
 │   ├── 00-principles.md              # Format hierarchy, LCP thinking, SSRF guard
@@ -47,7 +47,7 @@ ai-tools/skills/image-optimization-stinger/
 - Guides are consumed at task-time (Bee deep-dives into relevant guide)
 - Templates are copy-paste-ready production code snippets
 - Research folder is input to stinger-forge; not shipped to end users
-- The `image-optimization-worker-bee` subagent file lives at `.cursor/agents/image-optimization-worker-bee.md`
+- The `image-optimization-worker-bee` subagent file lives at `.claude/agents/image-optimization-worker-bee.md`
 
 ## Refresh Cadence
 

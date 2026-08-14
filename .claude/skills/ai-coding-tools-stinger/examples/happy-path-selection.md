@@ -1,4 +1,4 @@
-# Example: Happy Path Selection — Senior Dev, TypeScript Monorepo
+# Example: Happy Path Selection: Senior Dev, TypeScript Monorepo
 
 *Demonstrates `guides/01-selection-rubric.md` and `guides/04-prompt-and-context-discipline.md`*
 
@@ -12,19 +12,19 @@ A senior software engineer working on a TypeScript/Node.js monorepo (12 packages
 
 ## Running the five-question intake
 
-**Q1 — Autonomy tolerance:** 3 (hybrid-agent tier; wants execution + review)
+**Q1: Autonomy tolerance:** 3 (hybrid-agent tier; wants execution + review)
 - **Outcome:** Tier 2 tools (Claude Code, Aider, Cline, Windsurf) are in scope
 
-**Q2 — Monthly budget:** $50/month
+**Q2: Monthly budget:** $50/month
 - **Outcome:** Claude Code Pro ($20/month) or Aider with API costs (~$20-50/month). Both fit.
 
-**Q3 — Editor:** VS Code
+**Q3: Editor:** VS Code
 - **Outcome:** No JetBrains constraint. All tools in scope.
 
-**Q4 — Language/framework:** TypeScript dominant
-- **Outcome:** No polyglot edge case; all Tier 2 tools handle TypeScript well. Note SWE-bench is Python-only — Aider's polyglot leaderboard is more relevant.
+**Q4: Language/framework:** TypeScript dominant
+- **Outcome:** No polyglot edge case; all Tier 2 tools handle TypeScript well. Note SWE-bench is Python-only: Aider's polyglot leaderboard is more relevant.
 
-**Q5 — Task type:** Feature development (multi-file, supervised)
+**Q5: Task type:** Feature development (multi-file, supervised)
 - **Outcome:** Tier 2 hybrid-agent is confirmed.
 
 ---
@@ -37,7 +37,7 @@ A senior software engineer working on a TypeScript/Node.js monorepo (12 packages
 2. **Aider** in terminal for multi-file feature work and refactors
 
 **Rationale:**
-- Aider's architect/editor pattern gives 3-5x cost reduction vs Claude Code at comparable quality (8.4/10 vs 9.5/10) — within budget at ~$20-35/month
+- Aider's architect/editor pattern gives 3-5x cost reduction vs Claude Code at comparable quality (8.4/10 vs 9.5/10): within budget at ~$20-35/month
 - Cursor handles the interactive layer so Aider focuses on autonomous batch tasks
 - TypeScript monorepo + Aider: use `read: [ARCHITECTURE.md, packages/*/package.json]` in `.aider.conf.yml` to keep monorepo structure in context
 

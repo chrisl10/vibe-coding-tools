@@ -77,7 +77,7 @@ describe('Markdown pipeline', () => {
 
 ## Sanitization tests (XSS)
 
-These tests verify that malicious payloads are stripped — not just that valid content renders correctly.
+These tests verify that malicious payloads are stripped, not just that valid content renders correctly.
 
 ```markdown
 <!-- __fixtures__/xss-script-tag.md -->
@@ -194,4 +194,4 @@ Add to GitHub Actions:
   run: npm test
 ```
 
-Run with updated snapshots only in a dedicated update PR — not on every push.
+Run with updated snapshots only in a dedicated update PR, not on every push.

@@ -1,4 +1,4 @@
-# Example 03 — AiTrace Investigation: Low Retrieval Precision
+# Example 03: AiTrace Investigation: Low Retrieval Precision
 
 The investigation pattern when `evaluateRetrievalPrecision()` dips below 0.4.
 
@@ -14,7 +14,7 @@ Operations alerts:
 
 ---
 
-## Step 1 — Define the window
+## Step 1: Define the window
 
 The alert time is the inflection. Pull traces:
 
@@ -37,7 +37,7 @@ WHERE tenant_id = 'clx9vy200012vu8kj0'
 
 ---
 
-## Step 2 — Aggregate
+## Step 2: Aggregate
 
 | Window | N | Mean | P25 | P05 |
 |---|---|---|---|---|
@@ -63,7 +63,7 @@ Per-coach breakdown:
 
 ---
 
-## Step 3 — Find the inflection
+## Step 3: Find the inflection
 
 Correlate with `PromptVersion` and deploys:
 
@@ -76,7 +76,7 @@ ORDER BY created_at;
 
 No `PromptVersion` writes in the window. **Hypothesis 2 weakened.**
 
-Check deploy log: deploy at 2026-04-24 11:47 UTC — 13 minutes before the alert window. Diff:
+Check deploy log: deploy at 2026-04-24 11:47 UTC, 13 minutes before the alert window. Diff:
 
 ```diff
 - const KNOWLEDGE_CANDIDATES = 20;
@@ -85,13 +85,13 @@ Check deploy log: deploy at 2026-04-24 11:47 UTC — 13 minutes before the alert
 + const KNOWLEDGE_TOP_N      = 3;
 ```
 
-**Found.** A contributor "tuned" the constants to reduce token usage without doc update or eval pass. Going from 20 candidates to 5 means the rerank step has only 5 to choose from — and rerank's value comes from selecting from a wider candidate set.
+**Found.** A contributor "tuned" the constants to reduce token usage without doc update or eval pass. Going from 20 candidates to 5 means the rerank step has only 5 to choose from, and rerank's value comes from selecting from a wider candidate set.
 
 Drift from `guides/08-rag-strategy.md §5` (canonical: 20 / 5).
 
 ---
 
-## Step 4 — Sample worst traces (confirm)
+## Step 4: Sample worst traces (confirm)
 
 Pull 10 traces with lowest `retrievalScore` from the incident window. Read each:
 
@@ -99,11 +99,11 @@ Pull 10 traces with lowest `retrievalScore` from the incident window. Read each:
 
 > Trace `ai_t_2026_0424_91a3`: query "how do I structure my Dream 100 list". 3 chunks returned, only 1 about Dream 100, 2 about onboarding. Score 0.16.
 
-Pattern matches Hypothesis 3 — too few candidates to rerank → reranker can't recover from a narrow ANN result.
+Pattern matches Hypothesis 3: too few candidates to rerank → reranker can't recover from a narrow ANN result.
 
 ---
 
-## Step 5 — Hypothesis: confirmed
+## Step 5: Hypothesis: confirmed
 
 `KNOWLEDGE_CANDIDATES = 5` and `KNOWLEDGE_TOP_N = 3` is the cause.
 
@@ -111,7 +111,7 @@ The contributor was likely trying to reduce token spend on the system prompt. Th
 
 ---
 
-## Step 6 — Remediation
+## Step 6: Remediation
 
 ```diff
 // lib/knowledge-context.ts
@@ -128,7 +128,7 @@ Deploy. Watch the 4 hours after deploy.
 
 ---
 
-## Step 7 — Verify
+## Step 7: Verify
 
 | Window | N | Mean |
 |---|---|---|
@@ -140,13 +140,13 @@ Recovered. ✓
 
 ---
 
-## Step 8 — Doc update + post-mortem
+## Step 8: Doc update + post-mortem
 
-Update `library/knowledge-base/ai/rag-vector-strategy.md §6` to add:
+Update `library/knowledge/private/ai/rag-vector-strategy.md §6` to add:
 
 > **The 20/5 constants are calibrated.** Reducing `KNOWLEDGE_CANDIDATES` below 20 narrows the rerank input set and degrades precision faster than expected. Any change requires a measured eval pass on the golden set with delta > 5%.
 
-Post-mortem at `library/qa/ai/2026-04-25-incident-retrieval-drop.md`:
+Post-mortem at `library/requirements/reports/ai/2026-04-25-incident-retrieval-drop.md`:
 
 - **Cause:** undocumented constant tuning in `knowledge-context.ts`.
 - **Detection:** automated alert at 0.32 mean (threshold 0.4).

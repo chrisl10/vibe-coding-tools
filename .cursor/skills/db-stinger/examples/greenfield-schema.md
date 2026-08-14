@@ -1,4 +1,4 @@
-# Worked Example — Greenfield Schema
+# Worked Example: Greenfield Schema
 
 A clean greenfield Postgres schema for a small SaaS app: users, organizations, projects, tasks, comments, with audit hooks, PII flags, and `pgvector`-ready document table. Source: `guides/01-schema-design.md`, `guides/02-indexing.md`.
 
@@ -140,7 +140,7 @@ CREATE TABLE documents (
 );
 
 CREATE INDEX documents_organization_id_idx ON documents (organization_id);
--- HNSW for retrieval; cosine similarity. Hand off retrieval strategy to ai-platform-worker-bee.
+-- HNSW for retrieval; cosine similarity. Hand off retrieval strategy to mind-worker-bee.
 CREATE INDEX documents_embedding_hnsw ON documents
   USING hnsw (embedding vector_cosine_ops);
 ```
@@ -149,18 +149,18 @@ CREATE INDEX documents_embedding_hnsw ON documents
 
 | Decision | Source |
 |---|---|
-| `BIGINT GENERATED ALWAYS AS IDENTITY` over `BIGSERIAL` | `guides/01-schema-design.md` §default-scaffolding — modern syntax |
-| `email` domain | `guides/01-schema-design.md` §custom-domains — centralized constraint |
-| Partial unique index on `slug` and `email` | `guides/02-indexing.md` §partial — soft-delete coexistence |
-| Expression index on `lower(email)` | `guides/02-indexing.md` §expression — case-insensitive lookup |
-| Every FK has a B-tree index | `guides/02-indexing.md` §FK-indexes — must-fix rule |
-| Partial index on `tasks (assignee_id, due_date) WHERE status IN ('open', ...)` | `guides/02-indexing.md` §partial — dashboard hot query |
-| GIN on `metadata jsonb_path_ops` | `guides/02-indexing.md` §jsonb — `@>` containment fast |
+| `BIGINT GENERATED ALWAYS AS IDENTITY` over `BIGSERIAL` | `guides/01-schema-design.md` §default-scaffolding: modern syntax |
+| `email` domain | `guides/01-schema-design.md` §custom-domains: centralized constraint |
+| Partial unique index on `slug` and `email` | `guides/02-indexing.md` §partial: soft-delete coexistence |
+| Expression index on `lower(email)` | `guides/02-indexing.md` §expression: case-insensitive lookup |
+| Every FK has a B-tree index | `guides/02-indexing.md` §FK-indexes: must-fix rule |
+| Partial index on `tasks (assignee_id, due_date) WHERE status IN ('open', ...)` | `guides/02-indexing.md` §partial: dashboard hot query |
+| GIN on `metadata jsonb_path_ops` | `guides/02-indexing.md` §jsonb: `@>` containment fast |
 | Stored generated `tsvector` for FTS | `guides/06-special-purpose.md` §postgres-fts |
 | `vector(1536)` matches embedding model | `guides/06-special-purpose.md` §pgvector |
-| `hnsw` index over `ivfflat` | `guides/02-indexing.md` §pgvector — 2026 default |
-| `COMMENT ON COLUMN ... IS 'PII'` | `guides/01-schema-design.md` §pii-flags — surfaces to security-worker-bee |
-| Partitioning skipped | `guides/04-partitioning.md` §when — under threshold |
+| `hnsw` index over `ivfflat` | `guides/02-indexing.md` §pgvector: 2026 default |
+| `COMMENT ON COLUMN ... IS 'PII'` | `guides/01-schema-design.md` §pii-flags: surfaces to security-worker-bee |
+| Partitioning skipped | `guides/04-partitioning.md` §when: under threshold |
 
 ## Pre-launch checklist
 
@@ -174,10 +174,10 @@ CREATE INDEX documents_embedding_hnsw ON documents
 
 ## Handoffs from this schema
 
-- `security-worker-bee` — audit RLS policies; verify PII flags map to retention + encryption-at-rest config.
-- `react-worker-bee` — data-layer plan for the UI (TanStack Query / RSC / route loader).
-- `ai-platform-worker-bee` — retrieval over `documents.embedding` (chunking, top-k, reranking).
-- `quality-worker-bee` — verification queries after first deploy.
+- `security-worker-bee`: audit RLS policies; verify PII flags map to retention + encryption-at-rest config.
+- `react-worker-bee`: data-layer plan for the UI (TanStack Query / RSC / route loader).
+- `mind-worker-bee`: retrieval over `documents.embedding` (chunking, top-k, reranking).
+- `quality-worker-bee`: verification queries after first deploy.
 
 ---
 

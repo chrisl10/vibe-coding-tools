@@ -14,14 +14,14 @@ Modern session cookies require `HttpOnly` + `Secure` + `SameSite` + (often) `__H
 
 ## Cookie attributes
 
-- **`HttpOnly`** — JS cannot read. XSS-resistant.
-- **`Secure`** — HTTPS-only.
-- **`SameSite=Lax`** — blocks most CSRF. Top-level GET navigation still allowed.
-- **`SameSite=Strict`** — blocks even top-level navigation; UX cost. For high-sensitivity flows.
-- **`SameSite=None`** — sent in third-party context. Requires Secure. Pair with CSRF token.
-- **`__Host-` prefix** — browser-enforced: Secure + Path=/ + no Domain. Use for high-sensitivity sessions.
-- **`Path`** — explicit, default `/`.
-- **`Max-Age` / `Expires`** — explicit; otherwise session cookie (cleared on browser close).
+- **`HttpOnly`**: JS cannot read. XSS-resistant.
+- **`Secure`**: HTTPS-only.
+- **`SameSite=Lax`**: blocks most CSRF. Top-level GET navigation still allowed.
+- **`SameSite=Strict`**: blocks even top-level navigation; UX cost. For high-sensitivity flows.
+- **`SameSite=None`**: sent in third-party context. Requires Secure. Pair with CSRF token.
+- **`__Host-` prefix**: browser-enforced: Secure + Path=/ + no Domain. Use for high-sensitivity sessions.
+- **`Path`**: explicit, default `/`.
+- **`Max-Age` / `Expires`**: explicit; otherwise session cookie (cleared on browser close).
 
 ## CSRF defense
 
@@ -39,12 +39,12 @@ Modern session cookies require `HttpOnly` + `Secure` + `SameSite` + (often) `__H
 
 ## Storage anti-patterns
 
-- **`localStorage` for tokens** — XSS-readable. Never use for sessions.
-- **`sessionStorage`** — same as localStorage but tab-scoped. Same XSS issue.
-- **JS variable** — gone on refresh; not session storage.
+- **`localStorage` for tokens**: XSS-readable. Never use for sessions.
+- **`sessionStorage`**: same as localStorage but tab-scoped. Same XSS issue.
+- **JS variable**: gone on refresh; not session storage.
 
 ## Relevance
 
-- `guides/10-session-storage.md` — full deep dive.
-- `templates/session-cookie-config.ts` — fillable config.
-- `scripts/cookie-attribute-checker.ts` — runtime verification.
+- `guides/10-session-storage.md`: full deep dive.
+- `templates/session-cookie-config.ts`: fillable config.
+- `scripts/cookie-attribute-checker.ts`: runtime verification.

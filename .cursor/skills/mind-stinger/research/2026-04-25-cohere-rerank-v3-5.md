@@ -1,9 +1,9 @@
-# Cohere `rerank-v3.5` — Two-Stage Retrieval
+# Cohere `rerank-v3.5`: Two-Stage Retrieval
 
-**Source:** Cohere docs — https://docs.cohere.com/docs/rerank-overview, https://docs.cohere.com/reference/rerank
+**Source:** Cohere docs: https://docs.cohere.com/docs/rerank-overview, https://docs.cohere.com/reference/rerank
 **Retrieved:** 2026-04-25
 **Status:** **LOAD-BEARING.** Cited in `guides/00-principles.md §7` and `guides/10-cohere-embedding-and-rerank.md`.
-**Numbers tag:** vendor-directional on lift percentage (Cohere claims 15–30% precision lift); benchmarked on calling latency (~200ms typical).
+**Numbers tag:** vendor-directional on lift percentage (Cohere claims 15-30% precision lift); benchmarked on calling latency (~200ms typical).
 
 ---
 
@@ -14,7 +14,7 @@ Cohere `rerank-v3.5` is a cross-encoder reranker. In the deploying product's two
 1. **Qdrant ANN** retrieves top-K=20 candidates.
 2. **Cohere rerank-v3.5** scores query-document pairs jointly and returns top-N=5.
 
-Cross-encoder rerank lifts retrieval precision over single-stage ANN by ~15–30% on realistic retrieval tasks (vendor-directional; reproducible on the deploying product's golden set as `evaluateRetrievalPrecision` mean).
+Cross-encoder rerank lifts retrieval precision over single-stage ANN by ~15-30% on realistic retrieval tasks (vendor-directional; reproducible on the deploying product's golden set as `evaluateRetrievalPrecision` mean).
 
 ---
 

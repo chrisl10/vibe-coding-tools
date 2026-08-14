@@ -24,7 +24,7 @@ Status updates will be posted at **[your status page URL]**.
 <!-- Fill-in guide:
 - Window sizing rule: Announce a window 50-100% longer than your expected completion time.
   If the migration takes 1 hour, announce 1.5-2 hours. Completing early is a positive surprise.
-- [DATE]: Use the format "Wednesday, May 21, 2026" — not just "05/21/26"
+- [DATE]: Use the format "Wednesday, May 21, 2026", not just "05/21/26"
 - [START TIME] to [END TIME] UTC: Always include UTC. Include local times for major geographies if your user base is concentrated.
 - [What to expect]: Be specific about degradation level:
   DEGRADED = slower, some features unavailable

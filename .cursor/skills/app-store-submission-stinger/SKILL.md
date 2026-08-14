@@ -1,6 +1,6 @@
 ---
-name: app-store-submission-stinger
-description: App store submission specialist for iOS (App Store Connect + TestFlight) and Android (Google Play Console). Covers App Store Optimization (keywords, screenshots, preview assets), submission workflow, privacy compliance (Apple nutrition labels, PrivacyInfo.xcprivacy, Google data safety forms), rejection diagnosis and remediation, age rating questionnaires, In-App Purchase setup (StoreKit 2, Google Play Billing Library), and realistic timeline expectations. Invoke when the user says "submit my app", "App Store rejection", "ASO strategy", "privacy nutrition label", "set up IAP", "Google Play review", "expedited review", or when preparing any mobile app for store publication. Do NOT invoke for UI design of the app itself (ux-ui-worker-bee), client-side StoreKit / billing implementation code (react-worker-bee / python-worker-bee), or app security audits (security-worker-bee).
+name: "app-store-submission-stinger"
+description: "App store submission specialist for iOS (App Store Connect + TestFlight) and Android (Google Play Console). Covers App Store Optimization (keywords, screenshots, preview assets), submission workflow, privacy compliance (Apple nutrition labels, PrivacyInfo.xcprivacy, Google data safety forms), rejection diagnosis and remediation, age rating questionnaires, In-App Purchase setup (StoreKit 2, Google Play Billing Library), and realistic timeline expectations. Invoke when the user says \\\\\\\"submit my app\\\\\\\", \\\\\\\"App Store rejection\\\\\\\", \\\\\\\"ASO strategy\\\\\\\", \\\\\\\"privacy nutrition label\\\\\\\", \\\\\\\"set up IAP\\\\\\\", \\\\\\\"Google Play review\\\\\\\", \\\\\\\"expedited review\\\\\\\", or when preparing any mobile app for store publication. Do NOT invoke for UI design of the app itself (ux-ui-svelte-worker-bee), client-side StoreKit / billing implementation code (react-worker-bee / python-worker-bee), or app security audits (security-worker-bee)."
 license: MIT
 ---
 
@@ -20,7 +20,7 @@ Before acting, orient around these five questions:
 2. **Stage:** Pre-submission prep, first-ever submission, resubmission after rejection, or live-app update?
 3. **Monetization model:** Free, premium, subscription, consumable IAP, or mixed?
 4. **Special categories:** Children's content? Health data? Financial services? Gambling?
-5. **Rejection present?** If yes — paste the full rejection text including reason codes.
+5. **Rejection present?** If yes, paste the full rejection text including reason codes.
 
 Your answer to (4) gates the entire workflow. Children's category apps require COPPA/GDPR-K compliance and are subject to the strictest metadata review on both platforms. Flag children's issues at the top of every report.
 
@@ -37,10 +37,10 @@ See `guides/01-aso-strategy.md`.
 Keywords account for approximately 55-65% of the organic ranking signal on iOS (the keyword field is the dominant lever). On Android, keywords embedded in the long description are indexed and matter almost as much as the title. Weak ASO = poor discoverability even after a clean submission.
 
 **Quick checklist:**
-- Title: ≤30 characters (iOS), ≤50 characters (Android) — include primary keyword
-- Subtitle (iOS) / Short description (Android): ≤30 characters — different keyword from title
+- Title: ≤30 characters (iOS), ≤50 characters (Android): include primary keyword
+- Subtitle (iOS) / Short description (Android): ≤30 characters, different keyword from title
 - iOS keyword field: 100 characters, comma-separated, no spaces after commas, no repeated words, no app name
-- Screenshots: 3-10 per device size (iOS requires multiple device sizes); caption text is now indexed by Apple as of 2026 — include keywords in captions
+- Screenshots: 3-10 per device size (iOS requires multiple device sizes); caption text is now indexed by Apple as of 2026: include keywords in captions
 - Refresh ASO metadata every 30 days for live apps
 
 See `guides/01-aso-strategy.md` for the full keyword research methodology and screenshot story sequencing.
@@ -52,12 +52,12 @@ See `guides/02-compliance-checklist.md`.
 Both platforms require explicit privacy declarations before submission. Missing or incorrect declarations are now a top-5 rejection trigger on both platforms.
 
 **iOS critical items:**
-- Privacy nutrition label (App Store Connect > App Privacy) — every data type collected must be declared
-- PrivacyInfo.xcprivacy manifest — required for any SDK using one of Apple's 5 required-reason API categories (file timestamp, system boot time, disk space, user defaults, active keyboard); the manifest is typically missing from third-party SDKs, not the app target
-- Age rating: complete the questionnaire in App Store Connect (honest answers — Apple cross-checks)
+- Privacy nutrition label (App Store Connect > App Privacy): every data type collected must be declared
+- PrivacyInfo.xcprivacy manifest: required for any SDK using one of Apple's 5 required-reason API categories (file timestamp, system boot time, disk space, user defaults, active keyboard); the manifest is typically missing from third-party SDKs, not the app target
+- Age rating: complete the questionnaire in App Store Connect (honest answers, Apple cross-checks)
 
 **Android critical items:**
-- Data Safety form (Play Console > Store presence > App content > Data safety) — maps data collection to declared types
+- Data Safety form (Play Console > Store presence > App content > Data safety): maps data collection to declared types
 - April 2026 policy changes (deadline: October 28, 2026):
   - Contacts permissions → must use Android Contact Picker
   - Precise location → must offer Android Location Button
@@ -70,7 +70,7 @@ See `guides/02-compliance-checklist.md` for the full checklist with field-by-fie
 
 See `guides/05-timeline-and-process.md`.
 
-Upload the build (Xcode Organizer / bundletool), complete all metadata, set version information, and submit for review. Key action: do NOT submit the same build twice in rapid succession — it can trigger an automated flag.
+Upload the build (Xcode Organizer / bundletool), complete all metadata, set version information, and submit for review. Key action: do NOT submit the same build twice in rapid succession: it can trigger an automated flag.
 
 **Timeline expectations (2026 baselines):**
 - iOS new app: 2-5 days (previously ≤24 hours; volume increase has shifted this)
@@ -86,10 +86,10 @@ See `guides/03-rejection-playbook.md`.
 
 When a rejection arrives, the first thing to do is NOT re-submit. Read the rejection carefully and identify whether it is:
 
-- **Policy rejection** — guidelines violation (2.x, 3.x, 4.x on iOS; DeveloperPolicies section on Android)
-- **Metadata rejection** — inaccurate title, description, screenshots, or keywords
-- **Binary rejection** — crash, functionality issue, or missing feature
-- **Legal rejection** — IP, privacy, or legal compliance issue
+- **Policy rejection**: guidelines violation (2.x, 3.x, 4.x on iOS; DeveloperPolicies section on Android)
+- **Metadata rejection**: inaccurate title, description, screenshots, or keywords
+- **Binary rejection**: crash, functionality issue, or missing feature
+- **Legal rejection**: IP, privacy, or legal compliance issue
 
 Apple rejection notes are frequently terse. When the note is ambiguous, produce two interpretations and two remediation paths. Do NOT re-submit with only one fix until you have ruled out the second interpretation.
 
@@ -100,7 +100,7 @@ See `guides/03-rejection-playbook.md` for the full taxonomy and remediation patt
 See `guides/04-iap-setup.md`.
 
 For iOS, use StoreKit 2 (StoreKit 1 deprecated at WWDC 2024; this is now the only recommended API path). Five production patterns that prevent the most common bugs:
-1. Never hardcode prices — fetch from StoreKit
+1. Never hardcode prices: fetch from StoreKit
 2. Always finish transactions after granting access (or use `.finish()` in SK2)
 3. Start the transaction listener at app entry, not at purchase time
 4. Handle the grace period for subscription lapses
@@ -128,7 +128,7 @@ These are the guardrails baked into every action this Stinger enables:
 |---|---|
 | `guides/00-principles.md` | Foundation: gatekeeper mindset, how reviewers work |
 | `guides/01-aso-strategy.md` | Pre-submission: keyword strategy, screenshots, metadata |
-| `guides/02-compliance-checklist.md` | Privacy, age rating, data safety — both platforms |
+| `guides/02-compliance-checklist.md` | Privacy, age rating, data safety (both platforms) |
 | `guides/03-rejection-playbook.md` | Diagnosing and remediating any rejection |
 | `guides/04-iap-setup.md` | StoreKit 2 and Google Play Billing Library 7 setup |
 | `guides/05-timeline-and-process.md` | Review timelines, expedited review, TestFlight |
@@ -159,10 +159,10 @@ Key sources consulted:
 - Google Play Policy Update: April 15, 2026 (official; 3 breaking changes)
 - PrivacyInfo.xcprivacy enforcement guide (Mobile App Wiki, 2026)
 - StoreKit 2 SwiftUI guide (Swift Crafted, updated for iOS 26 / Swift 6.2)
-- App Store review queue delay analysis (AppStoreReview, 2026 — 104% volume increase)
+- App Store review queue delay analysis (AppStoreReview, 2026; 104% volume increase)
 
 ---
 
 *Command Brief: `ai-tools/command-briefs/app-store-submission-worker-bee-command-brief.md`*
-*Research: `ai-tools/skills/app-store-submission-stinger/research/`*
-*Part of the Legion AI Tools Factory. Created 2026-05-20.*
+*Research: `.cursor/skills/app-store-submission-stinger/research/`*
+*Part of the Hive. Created 2026-05-20.*

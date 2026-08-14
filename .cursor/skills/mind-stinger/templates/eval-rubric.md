@@ -2,7 +2,7 @@
 
 Canonical shape for an LLM-as-judge prompt that returns `{ score, reasoning }`. Use for retrieval precision, faithfulness, routing accuracy, or any custom eval.
 
-> **Source-of-truth:** `library/knowledge-base/ai/observability-evaluation.md §3` + `guides/17-evaluation-discipline.md`.
+> **Source-of-truth:** `library/knowledge/private/ai/observability-evaluation.md §3` + `guides/17-evaluation-discipline.md`.
 
 ---
 
@@ -33,11 +33,11 @@ Evaluate now. Return only JSON.
 
 ### Required:
 
-- **One dimension per judge.** Don't judge "retrieval AND faithfulness AND tone" in one call — calibrate separately.
-- **0.0–1.0 score range.** Don't use 0–10, 1–5, A/B/C, etc. Standardizes thresholds.
+- **One dimension per judge.** Don't judge "retrieval AND faithfulness AND tone" in one call: calibrate separately.
+- **0.0-1.0 score range.** Don't use 0-10, 1-5, A/B/C, etc. Standardizes thresholds.
 - **`reasoning` field.** Required for human spot-checks. The judge must justify itself.
-- **Calibration anchors (1.0 / 0.5 / 0.0 examples)** when possible — improves judge consistency.
-- **`response_format: json_object`** in the LLM call — or parse-and-retry on parse failure.
+- **Calibration anchors (1.0 / 0.5 / 0.0 examples)** when possible: improves judge consistency.
+- **`response_format: json_object`** in the LLM call, or parse-and-retry on parse failure.
 
 ---
 
@@ -72,7 +72,7 @@ Evaluate now. Return only JSON.`;
 ### Targets
 
 - **> 0.7** healthy.
-- **0.4–0.7** watch list.
+- **0.4-0.7** watch list.
 - **< 0.4** sustained over 100 traces → **alert** (per `guides/17-evaluation-discipline.md §1`).
 
 ---
@@ -146,8 +146,8 @@ Evaluate now. Return only JSON.`;
 
 Per `guides/17-evaluation-discipline.md §3`:
 
-1. **Sample 50–100 cases** from a golden set.
-2. **Have a human label** them (pass/fail or 0–1).
+1. **Sample 50-100 cases** from a golden set.
+2. **Have a human label** them (pass/fail or 0-1).
 3. **Run the judge** on the same set.
 4. **Measure agreement** (Cohen's kappa or simple accuracy).
 5. **If agreement < 0.7**, refine the judge prompt or switch judge models.
@@ -179,7 +179,7 @@ See `templates/ai-trace-record.ts` example 3.
 | Anti-pattern | Why bad |
 |---|---|
 | Multi-dimension judge ("score retrieval, faithfulness, AND tone") | Each dimension calibrates differently |
-| 0–10 score (instead of 0.0–1.0) | Diverges from the rest of the eval suite |
+| 0-10 score (instead of 0.0-1.0) | Diverges from the rest of the eval suite |
 | No `reasoning` field | Cannot human-audit the judge |
 | `temperature` > 0.2 | Judge output should be near-deterministic |
 | `response_format` not `json_object` | Parse failures inflate variance |

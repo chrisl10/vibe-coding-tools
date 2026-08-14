@@ -14,7 +14,7 @@
 
 ## Feature breakdown
 
-### Feature 1: {{feature name — e.g., "Chat assistant"}}
+### Feature 1: {{feature name, e.g., "Chat assistant"}}
 
 | Field | Value |
 |---|---|
@@ -38,7 +38,7 @@
 
 ---
 
-### Feature 2: {{feature name — e.g., "Document summarization"}}
+### Feature 2: {{feature name, e.g., "Document summarization"}}
 
 *(Repeat table above)*
 
@@ -46,7 +46,7 @@
 
 ---
 
-### Feature 3: {{feature name — e.g., "Intent classification"}}
+### Feature 3: {{feature name, e.g., "Intent classification"}}
 
 *(Repeat table above)*
 
@@ -85,8 +85,8 @@
 - [ ] Enable prompt caching on system prompts > 1K tokens (saves 40-70% on cached tokens)
 - [ ] Route classification tasks to cheap tier (GPT-4o-mini or Gemini Flash)
 - [ ] Use batch API for async summarization (50% discount)
-- [ ] Add semantic gateway caching (Portkey) — typical 20-40% cache hit rate for Q&A workloads
-- [ ] Evaluate model downgrade for Feature {{N}} — quality delta may be acceptable
+- [ ] Add semantic gateway caching (Portkey): typical 20-40% cache hit rate for Q&A workloads
+- [ ] Evaluate model downgrade for Feature {{N}}: quality delta may be acceptable
 
 **Estimated spend after optimization: ${{X}} ({{X}}% reduction)**
 

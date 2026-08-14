@@ -1,4 +1,4 @@
-# Index Families — Decision Tree
+# Index Families: Decision Tree
 
 **Sources:**
 - https://www.postgresql.org/docs/current/indexes.html
@@ -12,7 +12,7 @@
 
 ## Summary
 
-Postgres ships seven index access methods. Choosing wrong is one of the top three causes of "we need a bigger database" — almost always the answer is "you need the right index, not a bigger box".
+Postgres ships seven index access methods. Choosing wrong is one of the top three causes of "we need a bigger database": almost always the answer is "you need the right index, not a bigger box".
 
 ## The decision tree
 
@@ -35,12 +35,12 @@ Ask, in order:
 
 ## Index modifiers (compose with the above)
 
-- **Partial** — `WHERE status = 'active'` — index only the rows you query. Halves index size when most rows are not interesting.
-- **Covering** (`INCLUDE`) — append non-key columns to enable index-only scans. Massive read speedup; writes pay for the extra columns.
-- **Expression** — `lower(email)`, `(payload->>'tenant_id')` — index a derived value. Required for case-insensitive searches and `jsonb` field shortcuts.
-- **Unique** — enforce uniqueness; `UNIQUE INDEX ... WHERE ...` for partial uniqueness.
+- **Partial**: `WHERE status = 'active'`: index only the rows you query. Halves index size when most rows are not interesting.
+- **Covering** (`INCLUDE`): append non-key columns to enable index-only scans. Massive read speedup; writes pay for the extra columns.
+- **Expression**: `lower(email)`, `(payload->>'tenant_id')`: index a derived value. Required for case-insensitive searches and `jsonb` field shortcuts.
+- **Unique**: enforce uniqueness; `UNIQUE INDEX ... WHERE ...` for partial uniqueness.
 
-## FK indexes — the must-fix
+## FK indexes: the must-fix
 
 Postgres does **not** auto-create indexes on foreign keys. Every FK that participates in a join, an `ON DELETE`, or an `ON UPDATE` needs a B-tree index. The first hot join under load tips a missing one.
 
@@ -48,10 +48,10 @@ Postgres does **not** auto-create indexes on foreign keys. Every FK that partici
 
 ## `pgvector` indexes (special-purpose)
 
-- `ivfflat` — partition-based; faster build, slower query at scale; tune `lists` parameter.
-- `hnsw` — graph-based; slower build, faster query; tune `m` and `ef_construction`. **2026 default for most workloads** because build is now reasonable on `pgvector` 0.8+.
+- `ivfflat`: partition-based; faster build, slower query at scale; tune `lists` parameter.
+- `hnsw`: graph-based; slower build, faster query; tune `m` and `ef_construction`. **2026 default for most workloads** because build is now reasonable on `pgvector` 0.8+.
 
-Hand off to `ai-platform-worker-bee` for retrieval strategy; `db-worker-bee` picks the index family and the column shape.
+Hand off to `mind-worker-bee` for retrieval strategy; `db-worker-bee` picks the index family and the column shape.
 
 ## Relevance to this stinger
 

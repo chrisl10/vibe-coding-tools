@@ -1,4 +1,4 @@
-# 06 — Bot Verification Checklist
+# 06: Bot Verification Checklist
 
 Step-by-step guide to the Discord bot verification process for bots approaching or exceeding 100 server installations.
 
@@ -11,7 +11,7 @@ Step-by-step guide to the Discord bot verification process for bots approaching 
 | Milestone | Action |
 |-----------|--------|
 | **75 guilds** | Begin the application immediately. Process takes 1-5 business days. |
-| **100 guilds** | Hard block — Discord stops allowing new guild joins until verification is approved. |
+| **100 guilds** | Hard block: Discord stops allowing new guild joins until verification is approved. |
 
 Do not wait until 90 guilds. Start the process at 75.
 
@@ -22,7 +22,7 @@ Do not wait until 90 guilds. Start the process at 75.
 Complete all of these before submitting the application:
 
 - [ ] Bot has a **support server** (a publicly joinable Discord server for bot support).
-- [ ] Bot has a **Privacy Policy URL** — a publicly accessible page describing what data you collect, how long you retain it, and how users can request deletion.
+- [ ] Bot has a **Privacy Policy URL**: a publicly accessible page describing what data you collect, how long you retain it, and how users can request deletion.
   - If you're requesting `GUILD_MEMBERS` or `GUILD_PRESENCES`, the privacy policy must specify a maximum data retention window. Discord typically requires **30 days or less** for member/presence data.
 - [ ] Bot has a **Terms of Service URL** (recommended, not strictly required, but improves approval odds).
 - [ ] The Developer Portal entry for your bot has all required fields filled: description, tags, support server, policy URLs.

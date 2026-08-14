@@ -44,7 +44,7 @@ target "api" {
 }
 ```
 
-## PR build — amd64 only, Trivy gates
+## PR build: amd64 only, Trivy gates
 
 ```yaml
 name: PR build
@@ -70,7 +70,7 @@ jobs:
       - uses: actions/checkout@<sha>
       - uses: depot/setup-action@<sha>
 
-      - name: Build (amd64 only on PRs — fast)
+      - name: Build (amd64 only on PRs, fast)
         uses: depot/build-push-action@<sha>
         with:
           project: ${{ vars.DEPOT_PROJECT_ID }}
@@ -101,7 +101,7 @@ jobs:
           docker stop api
 ```
 
-## Main deploy — multi-arch push to GHCR
+## Main deploy: multi-arch push to GHCR
 
 ```yaml
 name: Main deploy
@@ -148,10 +148,10 @@ jobs:
 
 ## Why amd64-only on PRs but multi-arch on main
 
-- PR builds get reviewed and re-built on every push. Cutting arm64 (4-10x slower under QEMU on a free runner — without Depot, anyway) makes PRs faster. With Depot, both archs are native, so this is mostly habit.
+- PR builds get reviewed and re-built on every push. Cutting arm64 (4-10x slower under QEMU on a free runner, without Depot, anyway) makes PRs faster. With Depot, both archs are native, so this is mostly habit.
 - Main builds run once per merge and ship to production. arm64 must be built and pushed.
 
-If your team is fully on Depot, building multi-arch on PRs is fine — both arches are native and fast.
+If your team is fully on Depot, building multi-arch on PRs is fine: both arches are native and fast.
 
 ## Local dev
 
@@ -162,7 +162,7 @@ make build TAG=local
 # or via Bake
 depot bake api
 
-# multi-arch local (rare — for debugging arm64 from amd64 host)
+# multi-arch local (rare, for debugging arm64 from amd64 host)
 docker buildx bake api-multiarch
 ```
 
@@ -171,7 +171,7 @@ docker buildx bake api-multiarch
 - PR build: ~70 sec warm (amd64-only), ~2.5 min cold.
 - Main deploy: ~2 min build (multi-arch native via Depot), ~30 sec push.
 - Trivy gate catches regressions; scheduled rescan picks up new CVEs.
-- Devs on M-series pull the arm64 manifest — no QEMU, no surprises.
+- Devs on M-series pull the arm64 manifest: no QEMU, no surprises.
 
 ## See also
 

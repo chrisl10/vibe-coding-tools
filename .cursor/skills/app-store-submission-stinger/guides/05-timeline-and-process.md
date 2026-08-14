@@ -38,7 +38,7 @@ Apple's historically stated "approximately 24 hours" average is no longer repres
    - Support URL and marketing URL
    - App Review Information: demo account credentials if app requires login (reviewers will be locked out without these)
 
-3. **Check the App Review Information section** — provide:
+3. **Check the App Review Information section**: provide:
    - Contact information
    - Demo account username and password (mandatory if any flow requires login)
    - Notes for the reviewer explaining any non-obvious features
@@ -73,10 +73,10 @@ TestFlight builds also require App Review, but the standard is lower:
 - Beta reviews typically complete within 1-2 days
 - Beta apps must still comply with most App Review Guidelines
 - App Store privacy labels are NOT required for TestFlight-only apps (until App Store submission)
-- PrivacyInfo.xcprivacy IS required if the app uses required-reason APIs — this catches many developers by surprise
+- PrivacyInfo.xcprivacy IS required if the app uses required-reason APIs: this catches many developers by surprise
 
 **Beta groups:**
-- Internal testers (up to 100 — Apple ID employees): no review required
+- Internal testers (up to 100, Apple ID employees): no review required
 - External testers (up to 10,000): requires beta app review before first invitation
 
 ---
@@ -97,7 +97,7 @@ Expedited review is a real escalation path, but treat it as a scarce resource.
 
 **2026 reality:** Approval rate is down significantly. Research documents ~30% approval rate in 2026 vs ~55% in previous years. Use expedited review only when truly critical. See `research/external/2026-05-20-app-store-review-times-2026.md`.
 
-> **TODO: open question** — The "twice a year" hard limit for expedited review is cited in community sources but not confirmed in Apple's documentation, which says only "extenuating circumstances." Treat expedited review as effectively rate-limited regardless of the exact cap. (See `research/research-summary.md` open question #2.)
+> **TODO: open question**: The "twice a year" hard limit for expedited review is cited in community sources but not confirmed in Apple's documentation, which says only "extenuating circumstances." Treat expedited review as effectively rate-limited regardless of the exact cap. (See `research/research-summary.md` open question #2.)
 
 ---
 
@@ -145,7 +145,7 @@ The EU Digital Markets Act required Apple to open iOS distribution in the EU. Ke
 - **Alternative payment providers:** EU apps under Apple's Alternative Terms Addendum can offer third-party payment options for digital goods
 - **"No mix & match" rule:** Apps using Apple's Alternative Terms cannot offer both App Store IAP and an alternative PSP on the same storefront. The exact definition of "storefront" (per-country vs per-platform) has not been fully clarified.
 
-> **TODO: open question** — The EU DMA "no mix & match" storefront scope definition is not definitively clarified in Apple's public documentation as of research date. Until this is clarified, assume "per country" scope — i.e., if you offer an alternative PSP in Germany (EU), you must also remove App Store IAP in Germany. (See `research/research-summary.md` open question #1.)
+> **TODO: open question**: The EU DMA "no mix & match" storefront scope definition is not definitively clarified in Apple's public documentation as of research date. Until this is clarified, assume "per country" scope, i.e., if you offer an alternative PSP in Germany (EU), you must also remove App Store IAP in Germany. (See `research/research-summary.md` open question #1.)
 
 For apps NOT using the Alternative Terms, behavior is unchanged. The EU App Store operates with the same submission process as all other regions.
 

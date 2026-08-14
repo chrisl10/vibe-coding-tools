@@ -55,10 +55,10 @@ language. Be warm but direct; avoid generic praise.
 
 Every default prompt MUST:
 
-- Open with `"You are the {Display Name} Coach for the community."` — the LLM uses this as identity anchor.
+- Open with `"You are the {Display Name} Coach for the community."`: the LLM uses this as identity anchor.
 - State the **scope** in one sentence (who this coach works with, what they focus on).
-- List 2–4 specific focus bullets — keeps the model on-brief.
-- End with a **tone directive** (1–2 adjectives + 1 behavioral line).
+- List 2-4 specific focus bullets: keeps the model on-brief.
+- End with a **tone directive** (1-2 adjectives + 1 behavioral line).
 
 For level coaches, add a **journey-progress acknowledgment** if applicable (e.g., "members who have completed Level 1 and are ready to scale").
 
@@ -70,7 +70,7 @@ For specialized coaches with overlap potential, add a **soft cross-suggestion** 
 
 | Anti-pattern | Why bad |
 |---|---|
-| "You are an expert in business and you know everything..." | Vague — no behavioral anchor |
+| "You are an expert in business and you know everything..." | Vague: no behavioral anchor |
 | Long bullet lists (10+ focus areas) | Dilutes attention |
 | "Be empathetic, helpful, kind, supportive, encouraging, warm, friendly..." | Stacked adjectives degrade signal |
 | "Always agree with the member" | Contradicts `[COACHING_QUALITY]` |
@@ -99,4 +99,4 @@ function getDefaultGlobalPrompt(coachType: string): string {
 }
 ```
 
-**Always update `library/knowledge-base/ai/coach-architecture.md` and `library/knowledge-base/ai/prompt-engineering.md` first.** See `examples/01-add-new-coach-type.md`.
+**Always update `library/knowledge/private/ai/coach-architecture.md` and `library/knowledge/private/ai/prompt-engineering.md` first.** See `examples/01-add-new-coach-type.md`.

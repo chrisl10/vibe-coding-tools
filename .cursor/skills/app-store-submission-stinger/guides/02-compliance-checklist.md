@@ -8,7 +8,7 @@
 
 ### 1. Privacy Nutrition Label (App Store Connect > App Privacy)
 
-Complete the privacy label BEFORE submission. It is required — the submit button is blocked until the label is filled in.
+Complete the privacy label BEFORE submission. It is required: the submit button is blocked until the label is filled in.
 
 #### Data type mapping
 
@@ -77,7 +77,7 @@ Complete every applicable section honestly. Apple's reviewers verify against the
 - No behavioral advertising
 - No IAP without parental approval mechanism (iOS 18+ Screen Time enforced)
 - No links to external websites without age-gating
-- Apple holds children's apps to a higher metadata accuracy standard — every screenshot must reflect exactly what the app does at the targeted age level
+- Apple holds children's apps to a higher metadata accuracy standard: every screenshot must reflect exactly what the app does at the targeted age level
 
 ---
 
@@ -98,7 +98,7 @@ Do NOT underdeclare. Google's Play Protect scanner detects data transmissions an
 
 Access: Play Console > Store presence > App content > App ratings
 
-Google uses IARC (International Age Rating Coalition). Complete the questionnaire — it is mandatory. The questionnaire generates ratings for 35+ rating bodies (ESRB, PEGI, USK, etc.) simultaneously.
+Google uses IARC (International Age Rating Coalition). Complete the questionnaire: it is mandatory. The questionnaire generates ratings for 35+ rating bodies (ESRB, PEGI, USK, etc.) simultaneously.
 
 **After completing:** Download the IARC certificate. If a regulator ever queries your rating, this certificate is your documentation.
 
@@ -131,7 +131,7 @@ Three breaking policy changes landed on April 15, 2026. Any Android app in the a
 
 **What changed:** Geofencing is no longer on the approved list of `foregroundServiceType` values. Apps doing geofencing must move to a background location approach or eliminate the foreground service.
 
-> **TODO: open question** — Does the Google Play account transfer policy (May 27, 2026) affect pending informal transfers? Research flagged uncertainty about whether transfers in progress before that date are grandfathered. Recommend completing any pending transfers through the official Console transfer tool before May 27, 2026. (See `research/research-summary.md` open question #5.)
+> **TODO: open question**: Does the Google Play account transfer policy (May 27, 2026) affect pending informal transfers? Research flagged uncertainty about whether transfers in progress before that date are grandfathered. Recommend completing any pending transfers through the official Console transfer tool before May 27, 2026. (See `research/research-summary.md` open question #5.)
 
 ---
 

@@ -1,4 +1,4 @@
-# 07 — ORM Choice
+# 07: ORM Choice
 
 Drizzle vs Prisma vs raw SQL. Workload-shaped, not religious.
 
@@ -42,7 +42,7 @@ const u = await db.select().from(users).where(eq(users.email, 'a@b.com'));
 - Type-safe SQL; types flow without codegen.
 - Edge / serverless friendly; tiny bundle.
 - Full Postgres feature coverage including `jsonb`, arrays, ranges, custom types.
-- Migrations via `drizzle-kit` — generates SQL diffs.
+- Migrations via `drizzle-kit`: generates SQL diffs.
 
 **Weaknesses:**
 - Smaller community than Prisma.
@@ -80,13 +80,13 @@ const u = await prisma.user.findUnique({
 
 **Strengths:**
 - Industry-leading DX; generated client is autocomplete-perfect.
-- Strong migration tooling — `prisma migrate dev` / `deploy` with shadow DB.
+- Strong migration tooling: `prisma migrate dev` / `deploy` with shadow DB.
 - Visual schema (Prisma Studio); ecosystem.
 - Good for complex relational reads (`include` / `select`).
 
 **Weaknesses:**
 - Codegen step in build; client heavy in serverless.
-- Postgres feature gaps — advanced `jsonb`, `EXCLUDE`, range types fall to `$queryRaw`.
+- Postgres feature gaps: advanced `jsonb`, `EXCLUDE`, range types fall to `$queryRaw`.
 - Connection pooling needs `pgbouncer=true` flag in connection string AND PgBouncer in transaction mode.
 - Historical N+1 risks resolved in v5+ but still possible on large `include` graphs.
 
@@ -115,7 +115,7 @@ const u = await db.selectFrom('users').where('email', '=', 'a@b.com').selectAll(
 
 **Strengths:**
 - Zero abstraction tax; full Postgres feature access.
-- Easiest migration: SQL is SQL — pairs perfectly with `pgroll`.
+- Easiest migration: SQL is SQL: pairs perfectly with `pgroll`.
 - Tiny bundle; fastest cold start.
 - Kysely adds compile-time type safety to raw SQL.
 
@@ -137,7 +137,7 @@ const u = await db.selectFrom('users').where('email', '=', 'a@b.com').selectAll(
 | N+1 ergonomics | Manual joins | `include` (footgun) | Manual joins |
 | Team SQL fluency required | Medium | Low | High |
 
-## N+1 patterns — flag and hand off
+## N+1 patterns: flag and hand off
 
 The most common N+1 in any ORM:
 
@@ -164,9 +164,9 @@ The fix is always one of:
 
 | ORM | Tool | Diff-based or declarative? | `pgroll` compatibility |
 |---|---|---|---|
-| Drizzle | `drizzle-kit` | Diff | Yes — emits raw SQL |
-| Prisma | `prisma migrate` | Declarative + shadow DB | Partial — Prisma owns history |
-| Raw SQL | hand-rolled SQL files | n/a | Yes — `pgroll` IS the migration tool |
+| Drizzle | `drizzle-kit` | Diff | Yes: emits raw SQL |
+| Prisma | `prisma migrate` | Declarative + shadow DB | Partial: Prisma owns history |
+| Raw SQL | hand-rolled SQL files | n/a | Yes: `pgroll` IS the migration tool |
 
 For zero-downtime at scale, raw SQL + `pgroll` is the most flexible. Drizzle + `pgroll` works well. Prisma + `pgroll` requires extra coordination because Prisma wants to own the migration history.
 
@@ -184,7 +184,7 @@ Use `templates/ADR.md`. The ADR should:
 
 ## Cross-references
 
-- `01-schema-design.md` — Postgres features that ORM choice affects.
-- `03-migrations.md` — migration story per ORM.
+- `01-schema-design.md`: Postgres features that ORM choice affects.
+- `03-migrations.md`: migration story per ORM.
 - `templates/drizzle-schema-starter.ts`, `templates/prisma-schema-starter.prisma`.
 - Hand off N+1 to `react-worker-bee`.

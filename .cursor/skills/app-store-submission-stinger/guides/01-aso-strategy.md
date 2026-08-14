@@ -6,7 +6,7 @@
 
 ## Why ASO matters before submission
 
-Submission and ASO are not sequential — they are parallel. A clean app that no one finds generates the same revenue as an app that never shipped. More immediately: keyword violations (trademark terms, misleading titles) are a top-10 rejection trigger on both platforms. Fixing ASO before submission prevents metadata rejections.
+Submission and ASO are not sequential; they are parallel. A clean app that no one finds generates the same revenue as an app that never shipped. More immediately: keyword violations (trademark terms, misleading titles) are a top-10 rejection trigger on both platforms. Fixing ASO before submission prevents metadata rejections.
 
 ---
 
@@ -31,7 +31,7 @@ Language: English field applies globally unless you have localized versions
 
 **Do NOT include:**
 - Your own app name or brand name (they are already indexed)
-- Competitor app names (policy violation — will trigger rejection)
+- Competitor app names (policy violation, will trigger rejection)
 - Trademarked terms you do not own
 - Duplicate words appearing in title or subtitle
 
@@ -52,7 +52,7 @@ Example: `Budget Tracker - Personal Finance` (30 chars)
 
 ### Screenshot caption indexing (2026 update)
 
-Apple now indexes caption text in app screenshots as a search ranking signal. This is a significant 2026 change. Include your primary and secondary keywords in screenshot captions — they count.
+Apple now indexes caption text in app screenshots as a search ranking signal. This is a significant 2026 change. Include your primary and secondary keywords in screenshot captions: they count.
 
 See `examples/happy-path-ios-submission.md` for an end-to-end ASO setup walkthrough.
 
@@ -102,7 +102,7 @@ Screenshots are the highest-conversion element in your store listing. On iOS, th
 - Locale-appropriate screenshots required for localized listings
 
 **Conversion-optimized story sequence:**
-1. Frame 1: Core value proposition — what does this app do in one action?
+1. Frame 1: Core value proposition (what does this app do in one action?)
 2. Frame 2: The most compelling feature or moment of delight
 3. Frame 3: Secondary feature or social proof element
 4. Frames 4-10: Supporting use cases; end with a strong call to action or lifestyle frame

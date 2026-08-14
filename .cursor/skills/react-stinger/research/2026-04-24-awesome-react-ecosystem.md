@@ -39,16 +39,16 @@ awesome-react is a meta-index of thousands of React projects. The value for this
 | Error tracking | **Sentry** | React + RSC integrations |
 | Bundle analysis | **rollup-plugin-visualizer** (Vite), **@next/bundle-analyzer** | Built-in per bundler |
 | Icons | **Lucide** or **Tabler** | Tree-shakeable SVGs |
-| Auth | Stack-dependent — Clerk / Auth.js / WorkOS | Don't roll your own |
+| Auth | Stack-dependent: Clerk / Auth.js / WorkOS | Don't roll your own |
 
 ## Deliberately *not* recommended
 
-- **Redux (legacy, not Toolkit)** — use Redux Toolkit if you need Redux.
-- **Moment.js** — frozen in maintenance mode. Use date-fns / Temporal.
-- **Enzyme** — abandoned. Use RTL.
-- **styled-components / emotion for new projects** — runtime cost, RSC-incompatible. Use Tailwind / CSS Modules / vanilla-extract.
-- **Recoil** — Meta deprecated. Use Jotai.
+- **Redux (legacy, not Toolkit)**: use Redux Toolkit if you need Redux.
+- **Moment.js**: frozen in maintenance mode. Use date-fns / Temporal.
+- **Enzyme**: abandoned. Use RTL.
+- **styled-components / emotion for new projects**: runtime cost, RSC-incompatible. Use Tailwind / CSS Modules / vanilla-extract.
+- **Recoil**: Meta deprecated. Use Jotai.
 
 ## Relevance to this stinger
 
-Spine of `guides/13-ecosystem-catalog.md`. The "deliberately not recommended" list is important — opinionation means saying no, too.
+Spine of `guides/13-ecosystem-catalog.md`. The "deliberately not recommended" list is important: opinionation means saying no, too.

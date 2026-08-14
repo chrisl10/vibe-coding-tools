@@ -1,6 +1,6 @@
 ---
-name: runbook-writing-stinger
-description: Operational runbook authorship specialist covering canonical templates (break-fix, scheduled operation, diagnostic), the no-implied-context audit protocol, exact-command discipline, escalation path architecture, rollback procedure standards, runbook-as-test (game day) methodology, and postmortem-to-runbook linkage. Activate when the user says "write a runbook", "audit this runbook", "our runbooks are out of date", "we need a runbook for this alert", "turn this postmortem into a runbook", "schedule a game day", "our on-call docs are weak", or when `runbook-writing-worker-bee` is invoked. Do NOT activate for incident management tooling setup (PagerDuty/OpsGenie, route to ci-release-worker-bee), infrastructure provisioning decisions (route to ci-release-worker-bee), or documentation culture/process design beyond the runbook format (route to library-worker-bee).
+name: "runbook-writing-stinger"
+description: "Operational runbook authorship specialist covering canonical templates (break-fix, scheduled operation, diagnostic), the no-implied-context audit protocol, exact-command discipline, escalation path architecture, rollback procedure standards, runbook-as-test (game day) methodology, and postmortem-to-runbook linkage. Activate when the user says \\\\\\\"write a runbook\\\\\\\", \\\\\\\"audit this runbook\\\\\\\", \\\\\\\"our runbooks are out of date\\\\\\\", \\\\\\\"we need a runbook for this alert\\\\\\\", \\\\\\\"turn this postmortem into a runbook\\\\\\\", \\\\\\\"schedule a game day\\\\\\\", \\\\\\\"our on-call docs are weak\\\\\\\", or when `runbook-writing-worker-bee` is invoked. Do NOT activate for incident management tooling setup (PagerDuty/OpsGenie, route to ci-release-worker-bee), infrastructure provisioning decisions (route to ci-release-worker-bee), or documentation culture/process design beyond the runbook format (route to library-worker-bee)."
 ---
 
 # runbook-writing-stinger
@@ -87,7 +87,7 @@ The following were surfaced by `scripture-historian` and were not resolved by th
 4. **Freshness KPIs**: Added postmortem action item completion rate as a KPI in `guides/07-done-checklist.md`. User should decide whether to track in a dashboard.
 5. **Storage tooling**: This stinger is tool-agnostic (Notion, Confluence, Slab, Git/Backstage all work). Tool-specific tips are callouts in `guides/00-principles.md`.
 
-> TODO: open question, if the user's org uses runbook automation tools (Rundeck, Shoreline, AWS SSM), a future `runbook-automation-worker-bee` would own the integration layer. Flag this need if it surfaces.
+> TODO: open question, if the user's org uses runbook automation tools (Rundeck, Shoreline, AWS SSM), a future `runbook-writing-worker-bee` would own the integration layer. Flag this need if it surfaces.
 
 ---
 
@@ -135,4 +135,4 @@ runbook-writing-stinger/
 
 ---
 
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Part of The Hive, curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

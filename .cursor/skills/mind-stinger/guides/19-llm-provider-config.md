@@ -1,12 +1,14 @@
-# 19 — LLM Provider Config
+# 19: LLM Provider Config
+
+> **Alternative stack.** OpenRouter is the alternative stack's gateway choice. The model-slot-in-config pattern (never hardcode a model name) is stack-neutral and applies whether the gateway is OpenRouter, a direct Anthropic/OpenAI SDK call, or the Vercel AI SDK's provider abstraction. See `guides/00-selection-and-defaults.md` and `guides/svelte-streaming-endpoints.md` for this repo's SvelteKit-side streaming pattern.
 
 OpenRouter setup, `PlatformConfig` model slots, `getAIModels()` cache, switching models procedure. The reason models live in DB and not in code.
 
-> **Doc reference:** `library/knowledge-base/ai/coach-architecture.md §3`. Code: `lib/ai-client.ts`.
+> **Doc reference:** `library/knowledge/private/ai/coach-architecture.md §3`. Code: `lib/ai-client.ts`.
 
 ---
 
-## 1. OpenRouter — the only gateway
+## 1. OpenRouter: the only gateway
 
 All LLM inference routes through `https://openrouter.ai/api/v1` via the OpenAI-compatible SDK. One client, one auth, one credit balance.
 
@@ -22,7 +24,7 @@ _client = new OpenAI({
 });
 ```
 
-`HTTP-Referer` and `X-Title` are OpenRouter conventions for attribution and analytics — keep them.
+`HTTP-Referer` and `X-Title` are OpenRouter conventions for attribution and analytics: keep them.
 
 | Env var | Value |
 |---|---|
@@ -34,7 +36,7 @@ _client = new OpenAI({
 
 ---
 
-## 2. The three model slots — `PlatformConfig`
+## 2. The three model slots: `PlatformConfig`
 
 Models live in `PlatformConfig` (DB), not in code. SA-editable via the AI Configuration screen.
 
@@ -46,7 +48,7 @@ Models live in `PlatformConfig` (DB), not in code. SA-editable via the AI Config
 
 ---
 
-## 3. `getAIModels()` — the cached reader
+## 3. `getAIModels()`: the cached reader
 
 ```typescript
 export async function getAIModels(): Promise<{
@@ -64,7 +66,7 @@ export async function getAIModels(): Promise<{
 
 ---
 
-## 4. `invalidateAIModelsCache()` — must be called after slot edits
+## 4. `invalidateAIModelsCache()`: must be called after slot edits
 
 After SA saves new model selections in the Super Admin platform-config route:
 
@@ -79,23 +81,23 @@ Without the invalidation, the new slot values won't take effect for up to 1 hour
 
 ## 5. Why models live in DB, not code
 
-1. **Hot-swap without redeploy** — SA changes `modelChat` from `Llama-3.3-70B` to `claude-3-5-sonnet` without engineering involvement.
-2. **A/B by tenant possible** — extending to per-tenant model slots is a schema change, not a code change.
-3. **Cost lever in admin hands** — switching from a premium to a cheaper model is a SA decision, not a deploy.
-4. **Provider failover via OpenRouter** — OpenRouter handles provider-level failover; the slot value can stay stable while the underlying model gets routed.
+1. **Hot-swap without redeploy**: SA changes `modelChat` from `Llama-3.3-70B` to `claude-3-5-sonnet` without engineering involvement.
+2. **A/B by tenant possible**: extending to per-tenant model slots is a schema change, not a code change.
+3. **Cost lever in admin hands**: switching from a premium to a cheaper model is a SA decision, not a deploy.
+4. **Provider failover via OpenRouter**: OpenRouter handles provider-level failover; the slot value can stay stable while the underlying model gets routed.
 
 ---
 
-## 6. Switching models — procedure
+## 6. Switching models: procedure
 
 When SA wants to change a slot:
 
-1. **Read the current eval baseline** — pull last 7 days of `AiTrace.retrievalScore`, `routingCorrect`, `agreementScore` for the affected slot.
-2. **Set up A/B if possible** — `PlatformConfig` is platform-wide today; per-tenant slots would enable A/B. Until then, pre-prod testing is the path.
+1. **Read the current eval baseline**: pull last 7 days of `AiTrace.retrievalScore`, `routingCorrect`, `agreementScore` for the affected slot.
+2. **Set up A/B if possible**: `PlatformConfig` is platform-wide today; per-tenant slots would enable A/B. Until then, pre-prod testing is the path.
 3. **Edit the slot** in SA AI Configuration.
 4. **Call `invalidateAIModelsCache()`** (handled automatically by the SA route).
-5. **Watch the metrics for 48 hours** — alert if any metric drops > 10% from baseline.
-6. **Rollback path** — revert the slot edit, re-invalidate the cache.
+5. **Watch the metrics for 48 hours**: alert if any metric drops > 10% from baseline.
+6. **Rollback path**: revert the slot edit, re-invalidate the cache.
 
 For routing slot (`modelFast`), expect routing accuracy to be most affected. For chat slot (`modelChat`), expect coaching rubric scores. For vision slot, watch image/video processing success rate.
 
@@ -128,7 +130,7 @@ OpenRouter operates on prepaid credit. **At $0, all AI features silently fail** 
 
 **Required production safeguards:**
 
-1. **Auto-reload** in OpenRouter dashboard — minimum balance + auto-reload amount.
+1. **Auto-reload** in OpenRouter dashboard: minimum balance + auto-reload amount.
 2. **Low-balance webhook** → Slack/PagerDuty alert.
 3. **Monitor `OPENROUTER_BALANCE`** in the observability dashboard.
 
@@ -140,7 +142,7 @@ OpenRouter supports `provider.order` and `provider.allow_fallbacks` to control w
 - Latency optimization (preferring a faster provider).
 - Compliance (excluding providers that don't meet residency requirements).
 
-These settings can be added to the `openai.chat.completions.create` call via `extra_body: { provider: { ... } }`. Document any usage in `library/knowledge-base/ai/coach-architecture.md`.
+These settings can be added to the `openai.chat.completions.create` call via `extra_body: { provider: { ... } }`. Document any usage in `library/knowledge/private/ai/coach-architecture.md`.
 
 ### Rate limits
 
@@ -148,21 +150,21 @@ OpenRouter has tier-based rate limits. Production tier is sufficient for current
 
 ---
 
-## 9. Per-feature model overrides — when allowed
+## 9. Per-feature model overrides: when allowed
 
 Most calls use the slot pattern (`modelChat`, `modelFast`, `modelVision`). Some calls have specific needs:
 
-- **Routing** — explicit `modelFast` (cost).
-- **Matching** — `modelChat` (reasoning).
-- **Eval-as-judge** — explicit `modelFast` (cost; calibrate quarterly).
-- **Image/video frame description** — `modelVision`.
-- **Recursive summarization** — `modelFast` (cost; quality acceptable for factual extraction).
+- **Routing**: explicit `modelFast` (cost).
+- **Matching**: `modelChat` (reasoning).
+- **Eval-as-judge**: explicit `modelFast` (cost; calibrate quarterly).
+- **Image/video frame description**: `modelVision`.
+- **Recursive summarization**: `modelFast` (cost; quality acceptable for factual extraction).
 
-These overrides are **always read from `getAIModels()`** — never hardcoded.
+These overrides are **always read from `getAIModels()`**: never hardcoded.
 
 ---
 
-## 10. The model slot table — the canonical reference
+## 10. The model slot table: the canonical reference
 
 For any LLM call in the codebase, ask: which slot does it use?
 
@@ -172,8 +174,8 @@ For any LLM call in the codebase, ask: which slot does it use?
 | Routing classification | `fast` | `ai-coach-router.ts` |
 | Matching | `chat` | `ai-matching.ts` |
 | Onboarding agent | `chat` | `onboarding-ai.ts` |
-| Session summary — extract | `fast` | `coaching-llm.ts` |
-| Session summary — narrative | `chat` | `coaching-llm.ts` |
+| Session summary: extract | `fast` | `coaching-llm.ts` |
+| Session summary: narrative | `chat` | `coaching-llm.ts` |
 | Module opening message | `chat` | `coaching-llm.ts` |
 | Recursive summarization (`MediaSummarizer`) | `fast` | `media-summarizer.ts` |
 | Image / video frame description | `vision` | `image-processor.ts`, `video-processor.ts` |

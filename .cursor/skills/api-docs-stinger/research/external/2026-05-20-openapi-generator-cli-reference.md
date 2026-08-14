@@ -8,7 +8,7 @@ topic: sdk-generation
 stinger: api-docs-stinger
 ---
 
-# openapi-generator — GitHub README
+# openapi-generator: GitHub README
 
 ## Summary
 
@@ -19,7 +19,7 @@ The reference open-source SDK generator for OpenAPI specs (Apache-2.0). Supports
 - "OpenAPI Generator allows generation of API client libraries (SDK generation), server stubs, documentation and configuration automatically given an OpenAPI Spec (both 2.0 and 3.0 are supported)."
 - Latest stable: v7.22.0 released 2026-04-28 (actively maintained)
 - 5,665 open issues (maintenance burden warning)
-- Requires Java runtime — `openapi-generator-cli` via Homebrew installs `openjdk@11` and many deps
+- Requires Java runtime: `openapi-generator-cli` via Homebrew installs `openjdk@11` and many deps
 - TypeScript generators: `typescript-axios`, `typescript-fetch`, `typescript-node`, `typescript-angular`, `typescript-rxjs` and more
 - Go generator: `go` (net/http client)
 - Python generator: `python` (uses requests/urllib3)

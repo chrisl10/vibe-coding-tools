@@ -46,7 +46,7 @@ A February 2026 guide covering the Fibonacci sequence as the de facto standard f
 - **Use both**: T-shirt sizing for high-level epics; convert to Fibonacci for sprint-ready stories
 
 ## Annotations for stinger-forge
-- The reference story table above should appear directly in `guides/03-estimation.md` — it is the most practical tool for teaching relative estimation.
+- The reference story table above should appear directly in `guides/03-estimation.md`: it is the most practical tool for teaching relative estimation.
 - Critical coaching directive: Never convert story points to hours. The moment a team does this, estimation gaming begins.
 - The Planning Poker Protocol belongs in `templates/sprint-planning-agenda.md` as the estimation ceremony section.
 - Companion sources: freescrumpoker.com/articles/fibonacci-vs-tshirt-sizing.html and teachingagile.com/scrum/psm-1/estimation/story-points provide additional depth.

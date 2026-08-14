@@ -1,4 +1,4 @@
-# Mintlify — Setup, 2026 Pricing, and Headless Mode
+# Mintlify: Setup, 2026 Pricing, and Headless Mode
 
 Mintlify is the fastest path from zero to polished, hosted docs. The key 2026 development: headless mode (Enterprise-only, February 2026) allows custom Astro frontends.
 

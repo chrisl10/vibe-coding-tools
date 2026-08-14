@@ -1,4 +1,4 @@
-# 04 — Action-Item Discipline
+# 04: Action-Item Discipline
 
 *Derived from `research/external/2026-05-20-action-items-follow-through-scrumtool.md` and `research/external/2026-05-20-action-items-agile-coach-medium.md`.*
 
@@ -10,9 +10,9 @@ Only 50% of retro action items are ever completed. This is the primary failure m
 
 The five structural failure modes:
 
-1. **No owner.** "We should improve documentation" — who owns it?
-2. **No deadline.** "At some point this sprint" — when?
-3. **Too large.** "Fix our CI pipeline" — what's the first step?
+1. **No owner.** "We should improve documentation", who owns it?
+2. **No deadline.** "At some point this sprint", when?
+3. **Too large.** "Fix our CI pipeline": what's the first step?
 4. **Invisible on the backlog.** Action items not placed in the sprint backlog have a near-zero completion rate. Out of sight, out of sprint.
 5. **No accountability loop.** The next retro opens without reviewing the previous retro's actions. The implicit message: commitments are optional.
 
@@ -37,9 +37,9 @@ Apply at the commitment step, before any action item is marked as confirmed:
 
 1. **Who owns this?** (One name must be stated aloud.)
 2. **When does it close?** (A specific date or sprint.)
-3. **What does done look like?** (A concrete, observable outcome — not "improved" or "better".)
+3. **What does done look like?** (A concrete, observable outcome: not "improved" or "better".)
 
-If any answer is missing, the item is either refined on the spot or removed from the board. A vague action item that makes it into the backlog is worse than no action item — it occupies space and creates false accountability.
+If any answer is missing, the item is either refined on the spot or removed from the board. A vague action item that makes it into the backlog is worse than no action item: it occupies space and creates false accountability.
 
 ---
 
@@ -47,7 +47,7 @@ If any answer is missing, the item is either refined on the spot or removed from
 
 Action items that live in a retro doc, a shared notes file, or a separate "actions" board have a dramatically lower completion rate than items in the team's main sprint backlog. This is not opinion; it is the ScrumTool structural finding (2026-04-11, `research/external/2026-05-20-action-items-follow-through-scrumtool.md`).
 
-During the retro, as each action item is confirmed: open the sprint backlog tool and add it before moving on. Do not defer — the probability of adding it later drops sharply.
+During the retro, as each action item is confirmed: open the sprint backlog tool and add it before moving on. Do not defer: the probability of adding it later drops sharply.
 
 ---
 
@@ -69,7 +69,7 @@ The research is consistent: three focused, owned, sized action items with high f
 
 1. Dot-vote the candidates to surface the top three.
 2. Apply the 3-question filter to the top three.
-3. Explicitly acknowledge the rest as "not this sprint" — they are not lost, just deferred.
+3. Explicitly acknowledge the rest as "not this sprint": they are not lost, just deferred.
 
 Teams that commit to more than three actions per retro consistently under-deliver. Teams that commit to three and close all three build momentum.
 
@@ -92,7 +92,7 @@ Status (next retro): Done / In Progress / Dropped
 
 ## The Agile Coach's 3-sprint rule
 
-Teams that explicitly track and review action item closure rates for three consecutive sprints see significant improvement even without changing their retro format. The act of measurement creates accountability. Recommend adding a follow-through rate metric to the team's sprint review dashboard (not the retro board — the sprint review, so it's visible to stakeholders and leadership).
+Teams that explicitly track and review action item closure rates for three consecutive sprints see significant improvement even without changing their retro format. The act of measurement creates accountability. Recommend adding a follow-through rate metric to the team's sprint review dashboard (not the retro board: the sprint review, so it's visible to stakeholders and leadership).
 
 ---
 

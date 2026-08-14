@@ -1,12 +1,12 @@
-# 19 — Notifications & Toasts
+# 19: Notifications & Toasts
 
 Source: `research/2026-04-25-notifications-and-toasts.md`. Notifications are three different problems wearing the same name. Pick by *channel*, not by library popularity.
 
 ## The three notification surfaces
 
-1. **Toast** — ephemeral, in-page, "just happened" feedback. Lives ~3-5s. Library: Sonner.
-2. **In-app inbox** — persistent, per-user, cross-channel notification center (the bell icon). Library/infra: Novu, Knock.
-3. **OS push** — Web Push, iOS APNs, Android FCM. Wakes users outside the app. Infra: OneSignal, FCM, APNs (often through Novu/Knock).
+1. **Toast**: ephemeral, in-page, "just happened" feedback. Lives ~3-5s. Library: Sonner.
+2. **In-app inbox**: persistent, per-user, cross-channel notification center (the bell icon). Library/infra: Novu, Knock.
+3. **OS push**: Web Push, iOS APNs, Android FCM. Wakes users outside the app. Infra: OneSignal, FCM, APNs (often through Novu/Knock).
 
 Most apps need #1 (toasts) immediately, #2 (inbox) in the second year, and #3 (push) only when retention strategy demands it. Don't conflate them.
 
@@ -110,7 +110,7 @@ export function SaveButton() {
 }
 ```
 
-The `toast.promise` pattern is the canonical "show feedback for an in-flight action" — never roll a custom one when this exists.
+The `toast.promise` pattern is the canonical "show feedback for an in-flight action": never roll a custom one when this exists.
 
 ## Starter (Novu in-app inbox)
 
@@ -134,10 +134,10 @@ The `<Inbox />` renders the bell, the dropdown, marks-as-read, and the empty sta
 
 ## Toast accessibility floor
 
-- Toasts must be wrapped in an `aria-live` region (Sonner handles this — `polite` for success, `assertive` for errors).
+- Toasts must be wrapped in an `aria-live` region (Sonner handles this: `polite` for success, `assertive` for errors).
 - Auto-dismiss must be defeatable; either pause-on-hover/focus or expose a close button. Sonner has both.
 - Don't put critical state-changing actions in a toast. Confirmations belong in a dialog (Radix Dialog), not a swipe-away.
-- Reduced motion: Sonner respects `prefers-reduced-motion` by default — don't override the swipe animation.
+- Reduced motion: Sonner respects `prefers-reduced-motion` by default: don't override the swipe animation.
 
 ---
 
@@ -153,11 +153,11 @@ The `<Inbox />` renders the bell, the dropdown, marks-as-read, and the empty sta
 
 ## Common findings
 
-> **[Should-refactor]** `src/components/Toast.tsx:1` — homemade toast component with no `aria-live` region. Replace with Sonner. See this guide §toast-accessibility-floor.
+> **[Should-refactor]** `src/components/Toast.tsx:1`: homemade toast component with no `aria-live` region. Replace with Sonner. See this guide §toast-accessibility-floor.
 
-> **[Must-fix]** `src/features/notifications/handler.ts:1` — sends email, in-app, and push in three separate code paths. Migrate to a Novu/Knock workflow so channel logic lives outside product code. Cite the duplication.
+> **[Must-fix]** `src/features/notifications/handler.ts:1`: sends email, in-app, and push in three separate code paths. Migrate to a Novu/Knock workflow so channel logic lives outside product code. Cite the duplication.
 
-> **[Should-refactor]** `package.json:50` — `react-toastify` (legacy aesthetic, slow updates). Migrate to Sonner.
+> **[Should-refactor]** `package.json:50`: `react-toastify` (legacy aesthetic, slow updates). Migrate to Sonner.
 
 ---
 
@@ -166,4 +166,4 @@ The `<Inbox />` renders the bell, the dropdown, marks-as-read, and the empty sta
 - **Worker / queue / fan-out infrastructure** for cross-channel delivery → `devops-worker-bee`. The notification *worker* (cron, webhook receiver, retry logic) is theirs. The *React surface* (Inbox component, toast call sites) is ours.
 - **Email template authoring (MJML, React Email)** → out of scope; flag for `library-worker-bee` PRD if the design team needs templates.
 - **Push token storage and rotation, auth posture** → `security-worker-bee`.
-- **Notification copy / tone / cadence policy** → `ux-ui-worker-bee` for copy, product for cadence.
+- **Notification copy / tone / cadence policy** → `ux-ui-svelte-worker-bee` for copy, product for cadence.

@@ -1,69 +1,40 @@
-# README Writing Worker-Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `readme-writing-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/readme-writing-worker-bee.md`](../../../agents/readme-writing-worker-bee.md)
-**Stinger:** [`.cursor/skills/readme-writing-stinger/`](../../readme-writing-stinger/)
-**Trigger policy:** proactive
-
----
+# readme-writing-worker-bee
 
 ## Domain
+This Bee owns the `README.md` as a conversion surface, not a manual. A visitor makes a go/no-go decision in about 30 seconds, and every structural choice derives from that constraint. It classifies the project type (OSS library, internal tool, SaaS, CLI, monorepo), audits or authors the README against the canonical 2026 section order, applies badge discipline (3 to 5 badges, status-only), and validates the final output against a 12-point done checklist. It also handles README-driven development for greenfield projects with no code yet.
 
-`readme-writing-worker-bee` treats the README as a conversion surface - a landing page, not a manual. It authors, audits, and restructures `README.md` files using the canonical section order, badge discipline, the OSS vs internal-tool register split (value-prop-first for OSS, context-first and operational for internal), and README-driven development. It emits an audit table before any rewrite and a done checklist after, and it insists the quickstart works copy-paste on a fresh machine.
+## Paired Stinger
+[readme-writing-stinger](../../readme-writing-stinger) - the structure checklist, badge discipline rules, OSS-vs-internal register guide, and the RDD framework.
 
 ## Trigger phrases
-
-Route to `readme-writing-worker-bee` when the user says any of:
-
-- "Write a README" / "README for this project"
-- "Audit my README" / "improve my README" / "my README is too long"
-- "README-driven development"
-- "Badges are broken"
-- "Quickstart doesn't work"
-
-Or when starting a greenfield project that needs a README before code.
+- "write a README for this project"
+- "audit my README"
+- "improve my README, it's too long"
+- "our badges are broken"
+- "we're starting a greenfield project and need a README first"
+- "is this README OSS-register or internal-register"
+- "README-driven development for this feature"
 
 ## Do NOT route when
-
-- The user wants the full documentation-site or `library/` architecture - that is `library-worker-bee`.
-- The user wants code-entity extraction into a wiki - that is `wiki-worker-bee`.
-- The user wants CI badge pipeline wiring - that is `ci-release-worker-bee`.
-- The user wants MCP tool or CLI reference docs - that is `mcp-tool-docs-worker-bee`.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let this one act as backup.
+- The README has grown past 2,000 words and needs a full documentation site instead: hand off to `library-worker-bee` for docs-site architecture rather than continuing to restructure a single file.
+- The task is per-entity code extraction into a wiki: route to `wiki-worker-bee`.
+- The task is CI badge pipeline wiring itself (making the CI produce the badge data): route to `devops-worker-bee`; this Bee only decides which badges belong and how they're displayed.
+- The request is for `.rst` format: route to `python-worker-bee` for the ecosystem-specific convention.
+- Credentials, legal boilerplate, or proprietary context appear and it's unclear whether the repo is OSS or internal: stop and ask rather than guessing, since the wrong register risks exposing internal data publicly.
 
 ## Inputs the Bee needs
+- The project type (OSS / internal / SaaS / CLI / monorepo), asked explicitly if ambiguous
+- The existing README, read in full, before proposing any changes
+- Whether this is an audit, a rewrite, or a greenfield RDD kickoff
+- Any CI badge URLs, to check they don't point at private systems in a public README
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- An audit table (pass/fail/warn per section) before any rewrite
+- The final README written to the repo root or the existing path
+- A badge set trimmed to 3-5 status-only badges
+- A completed 12-point done checklist, acknowledged by the user if not fully passing
 
-- The existing README (for an audit) or the project context (for a fresh write).
-- The register: OSS or internal tool.
-- Optional: the install command and quickstart steps to verify.
-
-If neither an existing README nor project context is supplied, do not invoke yet - ask the user.
-
-## Outputs the Bee produces
-
-- An audit table surfacing what is already good before any rewrite.
-- A restructured README in the canonical section order with disciplined badges and a copy-paste quickstart.
-- A done checklist.
-
-## Multi-Bee sequences this Bee participates in
-
-- Hands documentation-site/library architecture to `library-worker-bee`, entity extraction to `wiki-worker-bee`, and badge pipeline wiring to `ci-release-worker-bee`.
-
-## Critical directives the orchestrator should respect
-
-- **README is a landing page, not a manual** - no walls of prose; a section over 30 lines without a code example belongs elsewhere.
-- **Every section must earn its place** - convert a visitor or retain a contributor, or cut it.
-- **Quickstart must work copy-paste** on a fresh machine.
-- **Audit before you rewrite** - surface intentional choices that look like mistakes.
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
-
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+## Commonly sequenced with
+- `library-worker-bee` after: when the README exceeds 2,000 words and needs docs-site extraction
+- `devops-worker-bee` before: CI pipeline must exist before its badge can be wired into the README
+- `wiki-worker-bee` alongside: when the same effort also needs per-entity documentation extraction

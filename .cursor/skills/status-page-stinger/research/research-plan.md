@@ -5,7 +5,7 @@
 - **Page budget target:** ~100 pages
 - **Source breadth target:** official docs, practitioner blogs, comparison articles, community discussions, GitHub READMEs, API references
 
-## Initial queries (from Command Brief / the proposal step)
+## Initial queries (from Command Brief / `big-bang-space`)
 
 1. "Better Stack status page 2026"
 2. "Instatus Cachet self-host 2026"

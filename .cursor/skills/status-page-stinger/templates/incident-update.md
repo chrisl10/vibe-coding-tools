@@ -7,7 +7,7 @@
 
 **Update [HH:MM UTC]:** [One to two sentences describing what is known now and what is being done.]
 
-[OPTIONAL — include only if a real workaround exists:]
+[OPTIONAL, include only if a real workaround exists:]
 > **Workaround:** If you need to [do X], you can [workaround Y] as a temporary measure.
 
 We will provide the next update by **[TIME] UTC**.

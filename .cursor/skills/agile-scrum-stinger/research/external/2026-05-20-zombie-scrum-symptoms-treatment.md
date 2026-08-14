@@ -12,11 +12,11 @@ url: https://www.scrum.org/resources/blog/zombie-scrum-symptoms-causes-and-treat
 
 # Zombie Scrum: Symptoms, Causes, and Treatment
 
-Source: Scrum.org (Johannes Schartau and Christiaan Verwijs — authors of The Zombie Scrum Survival Guide)
+Source: Scrum.org (Johannes Schartau and Christiaan Verwijs, authors of The Zombie Scrum Survival Guide)
 
 ## Summary
 
-The canonical Scrum.org reference for Zombie Scrum — teams that go through the motions of Scrum without generating outcomes, engaging stakeholders, or continuously improving. The source book is published by Pearson in the Professional Scrum Series. Estimate: 70% of Scrum adoptions exhibit Zombie Scrum symptoms.
+The canonical Scrum.org reference for Zombie Scrum: teams that go through the motions of Scrum without generating outcomes, engaging stakeholders, or continuously improving. The source book is published by Pearson in the Professional Scrum Series. Estimate: 70% of Scrum adoptions exhibit Zombie Scrum symptoms.
 
 ## Definition
 
@@ -37,7 +37,7 @@ Zombie Scrum teams:
 - No feedback loop with real users
 
 ### Symptom 2: No working software (limited DoD)
-- Completed functionality treated as "nice to have — can finish next sprint"
+- Completed functionality treated as "nice to have, can finish next sprint"
 - Very limited and unambitious Definition of Done
 - No drive to extend the DoD
 - Spillovers every Sprint; Sprint Goals never achieved
@@ -45,7 +45,7 @@ Zombie Scrum teams:
 ### Symptom 3: No response to Sprint outcomes
 - Team morale very low
 - Items carried over without question
-- No urgency — "There's always a next Sprint"
+- No urgency: "There's always a next Sprint"
 - Boring, complaint-filled retrospectives with no improvement actions
 
 ### Symptom 4: No autonomy
@@ -67,13 +67,13 @@ Secondary causes:
 
 ## Treatment Protocol
 
-1. **Take responsibility** — Someone must step up; don't wait for management
-2. **Assess the situation** — Gather data; make the problem visible with evidence
-3. **Create awareness** — Show what is being lost (business outcomes missed) due to Zombie Scrum
-4. **Find other survivors** — Build a network of those who see the same issues
-5. **Start small** — One visible dysfunction at a time; short feedback cycles
-6. **Stay positive** — Highlight what works; avoid cynicism
-7. **Celebrate** — Even small improvements
+1. **Take responsibility**: Someone must step up; don't wait for management
+2. **Assess the situation**: Gather data; make the problem visible with evidence
+3. **Create awareness**: Show what is being lost (business outcomes missed) due to Zombie Scrum
+4. **Find other survivors**: Build a network of those who see the same issues
+5. **Start small**: One visible dysfunction at a time; short feedback cycles
+6. **Stay positive**: Highlight what works; avoid cynicism
+7. **Celebrate**: Even small improvements
 
 ### Specific interventions
 - Shorten Sprint length (3-4 weeks → 1-2 weeks) to create urgency
@@ -89,7 +89,7 @@ Secondary causes:
 
 > "In Zombie Scrum, there's no joy, and certainly no drive for improvement. And nobody really seems to care."
 
-> "Zombie Scrum isn't just broken Scrum, it's Scrum without outcomes, without learning, and without life." — Agile Academy Dictionary
+> "Zombie Scrum isn't just broken Scrum, it's Scrum without outcomes, without learning, and without life." (Agile Academy Dictionary)
 
 ## Annotations for stinger-forge
 

@@ -5,7 +5,7 @@
 - **Page budget target:** ~50-80 sources (normal tier, comprehensive coverage)
 - **Source breadth target:** official docs, practitioner blogs, GitHub READMEs, State of Agile reports, community anti-pattern catalogs, estimation guides, framework comparison articles
 
-## Initial queries (from Command Brief / the proposal step)
+## Initial queries (from Command Brief / big-bang-space)
 
 1. "Scrum Guide 2020 production 2026"
 2. "Scrum vs ScrumBan vs Kanban 2026"
@@ -43,10 +43,10 @@
 
 ## Reference URLs to scrape (from Command Brief)
 
-- https://scrumguides.org/scrum-guide.html (Scrum Guide 2020 — authoritative)
+- https://scrumguides.org/scrum-guide.html (Scrum Guide 2020, authoritative)
 - https://www.scrum.org/resources/blog/scrumban-scrum-and-kanban (ScrumBan overview)
 - https://www.mountaingoatsoftware.com/blog/what-are-story-points (Story points canonical)
-- https://basecamp.com/shapeup (Shape Up — alternative framework)
+- https://basecamp.com/shapeup (Shape Up, alternative framework)
 - https://www.infoq.com/minibooks/kanban-scrum-minibook/ (Kanban vs Scrum minibook)
 
 ## File output targets

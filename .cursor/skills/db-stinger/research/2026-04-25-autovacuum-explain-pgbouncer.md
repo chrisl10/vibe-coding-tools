@@ -1,4 +1,4 @@
-# Performance & Pooling — Autovacuum, Bloat, EXPLAIN, PgBouncer
+# Performance & Pooling: Autovacuum, Bloat, EXPLAIN, PgBouncer
 
 **Sources:**
 - https://www.postgresql.org/docs/current/routine-vacuuming.html
@@ -11,7 +11,7 @@
 
 **Retrieved:** 2026-04-25
 
-## Autovacuum — why hot tables need their own settings
+## Autovacuum: why hot tables need their own settings
 
 Autovacuum kicks in when dead tuples exceed `autovacuum_vacuum_threshold + autovacuum_vacuum_scale_factor * reltuples`. The defaults (50 + 20% of rows) are wrong for hot tables.
 
@@ -30,8 +30,8 @@ ALTER TABLE hot_table SET (
 ## Bloat detection
 
 Two flavors:
-- **Table bloat** — dead tuples not yet reclaimed; live rows surrounded by tombstones; sequential scans waste I/O.
-- **Index bloat** — historic versions of indexed values consume B-tree pages; index scans deepen.
+- **Table bloat**: dead tuples not yet reclaimed; live rows surrounded by tombstones; sequential scans waste I/O.
+- **Index bloat**: historic versions of indexed values consume B-tree pages; index scans deepen.
 
 `scripts/bloat-check.sql` reports per-table and per-index bloat ratios. > 30% bloat warrants attention; > 50% is a fire.
 
@@ -41,11 +41,11 @@ Two flavors:
 
 Order of operations when reading a plan:
 
-1. **Headline node** — top of the tree. Is it `Seq Scan`, `Index Scan`, `Index Only Scan`, `Bitmap Heap Scan`?
-2. **Rows estimated vs. actual** — the rule-of-thumb is "if the estimate is off by 10x at any node, statistics are stale or the planner is missing context".
-3. **Buffer hits and reads** — `shared hit` means cache; `shared read` means disk. Lots of `read` on a hot query = working set doesn't fit memory or `effective_cache_size` is wrong.
-4. **Loop counts on nested loops** — `Nested Loop` × N inner-loop calls is the classic N+1 plan.
-5. **Sort method** — `external sort` = `work_mem` is too small (or the query is over-sorting).
+1. **Headline node**: top of the tree. Is it `Seq Scan`, `Index Scan`, `Index Only Scan`, `Bitmap Heap Scan`?
+2. **Rows estimated vs. actual**: the rule-of-thumb is "if the estimate is off by 10x at any node, statistics are stale or the planner is missing context".
+3. **Buffer hits and reads**: `shared hit` means cache; `shared read` means disk. Lots of `read` on a hot query = working set doesn't fit memory or `effective_cache_size` is wrong.
+4. **Loop counts on nested loops**: `Nested Loop` × N inner-loop calls is the classic N+1 plan.
+5. **Sort method**: `external sort` = `work_mem` is too small (or the query is over-sorting).
 
 `auto_explain` extension logs slow queries' plans automatically.
 
@@ -54,7 +54,7 @@ Order of operations when reading a plan:
 | Mode | When | Pitfalls |
 |---|---|---|
 | **Session** (default) | Long-lived clients, prepared statements (PG < 14), `LISTEN/NOTIFY`, session `SET` | Pool exhaustion easy under spike; connection-per-client |
-| **Transaction** | Stateless web/serverless workloads — release after each transaction | No cross-transaction state — no `LISTEN/NOTIFY`, no session `SET`, prepared statements broken on PG < 14 |
+| **Transaction** | Stateless web/serverless workloads: release after each transaction | No cross-transaction state: no `LISTEN/NOTIFY`, no session `SET`, prepared statements broken on PG < 14 |
 | **Statement** | Pure read-only stateless | No multi-statement transactions; rarely the right choice |
 
 **Default for serverless:** transaction mode. Sized at `pool_size = (max_connections - reserved) / num_pgbouncers`. Each app instance opens 1-2 PgBouncer connections, not N database connections.

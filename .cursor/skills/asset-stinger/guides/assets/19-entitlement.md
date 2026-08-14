@@ -1,6 +1,6 @@
-# Guide — `FeatureEntitlement` (19)
+# Guide: `FeatureEntitlement` (19)
 
-> **Applies to:** the grant matrix between `Plan` / `AddOn` and `Feature` — "which features does this plan include, and at what limits?"
+> **Applies to:** the grant matrix between `Plan` / `AddOn` and `Feature`: "which features does this plan include, and at what limits?"
 
 ## 1. Purpose
 
@@ -31,7 +31,7 @@ Constraint: `planKey IS NOT NULL XOR addonKey IS NOT NULL` (exactly one source o
 
 - On `Feature` rollout to a plan, admin UI writes a row.
 - On `AddOn` purchase, admin UI writes a row per granted feature.
-- The sync generator does not create entitlements — this is pure human intent.
+- The sync generator does not create entitlements; this is pure human intent.
 
 ## 4. Runtime semantics
 
@@ -58,15 +58,15 @@ Standard. Deprecating an entitlement (a plan loses a feature) triggers notificat
 
 ## 7. Hand-offs
 
-- **Billing engine** — doesn't read entitlements (it reads `Plan`, `AddOn`, `Meter`). Entitlements are product-gating, not billing computation.
-- **library-worker-bee** — pricing feature PRDs cross-link here.
+- **Billing engine**: doesn't read entitlements (it reads `Plan`, `AddOn`, `Meter`). Entitlements are product-gating, not billing computation.
+- **library-worker-bee**: pricing feature PRDs cross-link here.
 
 ## 8. Pitfalls
 
 - Confusing "entitled" with "flagged on." A user may be entitled to a feature but have the flag off (rollout in progress). Both must be true.
-- Double-granting a feature via plan + addon — the resolver should return the more permissive limit but not double-count in metering.
-- Missing `gracePeriodDays` on a hard limit — users hit the wall with no warning. Bad UX.
-- Entitlement row with `planKey` AND `addonKey` — constraint violation, but worth a code review too.
+- Double-granting a feature via plan + addon: the resolver should return the more permissive limit but not double-count in metering.
+- Missing `gracePeriodDays` on a hard limit: users hit the wall with no warning. Bad UX.
+- Entitlement row with `planKey` AND `addonKey`: constraint violation, but worth a code review too.
 
 ## 9. Example
 
@@ -97,4 +97,4 @@ await prisma.featureEntitlement.create({
 - [ ] If `limitValue` is set, `limitMeterKey` is usually also set (for usage-tracked limits)
 - [ ] `softLimit` and `hardLimit` both meaningful (e.g., soft at 80%, hard at 100%)
 - [ ] `gracePeriodDays` present for any `hardLimit: true`
-- [ ] Not a duplicate — compound unique is honored
+- [ ] Not a duplicate: compound unique is honored

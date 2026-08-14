@@ -1,69 +1,40 @@
-# Branching Strategy Worker-Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `branching-strategy-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/branching-strategy-worker-bee.md`](../../../agents/branching-strategy-worker-bee.md)
-**Stinger:** [`.cursor/skills/branching-strategy-stinger/`](../../branching-strategy-stinger/)
-**Trigger policy:** proactive
-
----
+# branching-strategy-worker-bee
 
 ## Domain
+Owns the strategic and tactical decisions behind how this repo structures its version-control workflow: branching model selection (trunk-based, GitHub Flow, GitLab Flow, GitFlow), migration between models, release and hotfix branch patterns, the merge-vs-rebase call, the long-lived-branch trap, and the feature-flag vs feature-branch decision. Defaults to trunk-based development for teams with the prerequisites and GitHub Flow otherwise; never recommends GitFlow without requiring explicit justification. Produces a branching policy document, not pipeline or ruleset configuration.
 
-`branching-strategy-worker-bee` is the branching strategy advisor for Git-based teams. It owns model selection (trunk-based development, GitHub Flow, GitFlow), release and hotfix branch patterns, the merge-vs-rebase argument, the long-lived-branch trap, the feature-flag vs feature-branch decision, and Merge Queue setup. It anchors recommendations to release cadence and the 2-working-day branch-lifetime threshold, and it explicitly separates merge strategy from branch model.
+## Paired Stinger
+[branching-strategy-stinger](../../branching-strategy-stinger) - the 9-factor model-selection matrix, release/hotfix protocols, merge-vs-rebase guardrails, the feature-flag decision matrix, and the merge-queue setup checklist.
 
 ## Trigger phrases
-
-Route to `branching-strategy-worker-bee` when the user says any of:
-
-- "Which branching model should we use"
-- "GitFlow or trunk-based?"
-- "Merge or rebase?"
-- "Feature flag or branch?" / "should I use a feature flag or a branch?"
-- "Set up Merge Queue" / "set up GitHub Merge Queue"
-- "Migrate from GitFlow" / "we have too many merge conflicts" / "our release process is broken"
-
-Or when a PR, retrospective, or architecture discussion surfaces branching pain.
+- "which branching model should we use"
+- "we have too many merge conflicts"
+- "our release process is broken"
+- "GitFlow or trunk-based, which fits us"
+- "merge or rebase, what's our policy"
+- "should this be a feature flag or a branch"
+- "set up GitHub Merge Queue"
+- "our branches sit open for weeks"
 
 ## Do NOT route when
-
-- The user wants the Git mechanics (interactive rebase, conflict resolution, history rewriting) - that is `git-worker-bee`. This Bee picks the model; git runs the operation.
-- The user wants branch protection ruleset configuration - that is `github-repo-health-worker-bee`.
-- The user wants CI/CD pipeline topology - that is `ci-release-worker-bee`.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let this one act as backup.
+- The request is Git mechanics: interactive rebase, conflict resolution, history rewriting; that is git-worker-bee.
+- The request is branch protection ruleset configuration in GitHub/GitLab; that is github-repo-health-worker-bee, not devops-worker-bee.
+- The request is CI/CD pipeline topology, including adding a `merge_group:` trigger for a merge queue; that is devops-worker-bee.
+- The request is choosing a feature-flag platform (LaunchDarkly vs Unleash vs Statsig) or writing flag implementation code; this Bee scopes the flag-vs-branch decision only, then routes implementation to react-worker-bee or python-worker-bee.
+- The team just shipped a release under a new model and wants release notes; that is changelog-release-notes-worker-bee.
 
 ## Inputs the Bee needs
+- Release cadence, team size, product type, and whether multi-version support is required.
+- Existing feature-flag infrastructure, or lack of it.
+- A `git log --graph`, branch list, or `.github/` folder if available, inspected before asking further questions.
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- A branching policy document (`docs/engineering/branching-policy.md`) covering model, naming, merge strategy, hotfix/release protocol, and feature-flag policy.
+- A model recommendation with the GitFlow-bias explicitly stated and a merge-vs-rebase ruling.
+- A routed list of protection-ruleset and CI-trigger deltas for the appropriate sibling Bees.
 
-- The team's release cadence (the single strongest predictor of the right model).
-- The current branching pain (merge conflicts, long-lived branches, release confusion).
-- Optional: team size and whether multiple released versions are maintained.
-
-If release cadence is missing, do not invoke yet - ask for it before recommending a model.
-
-## Outputs the Bee produces
-
-- A model recommendation (trunk-based / GitHub Flow / GitFlow) justified by cadence, with merge-strategy and feature-flag-vs-branch guidance.
-- Migration plans (e.g., GitFlow to trunk-based) and Merge Queue setup.
-
-## Multi-Bee sequences this Bee participates in
-
-- Routes Git mechanics to `git-worker-bee`, protection-ruleset configuration to `github-repo-health-worker-bee`, and CI topology to `ci-release-worker-bee`.
-
-## Critical directives the orchestrator should respect
-
-- **Always ask for release cadence before recommending a model.**
-- **Never recommend GitFlow as a default** - state the bias explicitly and require justification.
-- **Always surface the 2-working-day threshold** for branch lifetime.
-- **Distinguish merge strategy from branch model** - they are independent choices.
-- **Route protection-ruleset configuration to `github-repo-health-worker-bee`, not `ci-release-worker-bee`.**
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
-
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+## Commonly sequenced with
+- git-worker-bee: handles the rebase mechanics and conflict resolution once the model is chosen.
+- github-repo-health-worker-bee: configures the branch protection rulesets this Bee's policy calls for.
+- devops-worker-bee: wires CI pipeline triggers, including merge-queue support.
+- changelog-release-notes-worker-bee: communicates releases once the new branching/release model produces one.

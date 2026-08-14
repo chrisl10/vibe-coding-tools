@@ -11,7 +11,7 @@ Problems:
 
 - Static credentials live forever until manually rotated. Most teams forget.
 - Secrets can be exfiltrated by any compromised step. The credential is then valid until rotated.
-- Repo-level secrets are world-readable to any branch — a fork PR can't read them, but any push to `main` or any branch with a workflow that uses them can.
+- Repo-level secrets are world-readable to any branch, a fork PR can't read them, but any push to `main` or any branch with a workflow that uses them can.
 
 OIDC federation solves all of this.
 
@@ -94,16 +94,16 @@ Workload Identity Federation:
 
 ## DigitalOcean / Cloudflare / Vercel
 
-All support OIDC federation. Pattern is similar — vendor's GitHub Action presents the OIDC token, the vendor exchanges for short-lived API access.
+All support OIDC federation. Pattern is similar: vendor's GitHub Action presents the OIDC token, the vendor exchanges for short-lived API access.
 
-## Subject claim filtering — narrow as possible
+## Subject claim filtering: narrow as possible
 
 The `sub` claim in the OIDC token is structured as:
 
-- `repo:<org>/<repo>:ref:refs/heads/main` — workflow on main
-- `repo:<org>/<repo>:ref:refs/tags/v1.2.3` — workflow on a tag
-- `repo:<org>/<repo>:environment:production` — job using the `production` environment
-- `repo:<org>/<repo>:pull_request` — workflow on a pull_request
+- `repo:<org>/<repo>:ref:refs/heads/main`: workflow on main
+- `repo:<org>/<repo>:ref:refs/tags/v1.2.3`: workflow on a tag
+- `repo:<org>/<repo>:environment:production`: job using the `production` environment
+- `repo:<org>/<repo>:pull_request`: workflow on a pull_request
 
 Trust policies should match the *narrowest* claim that satisfies the use case:
 
@@ -122,6 +122,6 @@ The principle: OIDC where supported; repo secrets only for SaaS without OIDC; en
 
 - `guides/06-actions-security.md` §4.
 - `guides/07-depot-integration.md` §2 (Depot OIDC).
-- `templates/.github/workflows/main-deploy.yml` — uses OIDC.
-- `examples/nextjs-with-depot-oidc.md` — full worked migration.
+- `templates/.github/workflows/main-deploy.yml`: uses OIDC.
+- `examples/nextjs-with-depot-oidc.md`: full worked migration.
 - A pipeline using static cloud credentials when OIDC is supported is a Must-fix finding.

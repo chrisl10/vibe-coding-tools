@@ -1,4 +1,4 @@
-# Guide — `Meter` binding (18)
+# Guide: `Meter` binding (18)
 
 > **Applies to:** the link between the new `Feature` spine and the existing `Meter` table (see the deploying product's schema).
 
@@ -25,7 +25,7 @@ Soft FK because: platform-level meters (cross-feature storage, for example) may 
 
 - A feature can have multiple meters (e.g., `ai.coaching` might use `ai.tokens.input`, `ai.tokens.output`, `ai.inference.count`).
 - A meter can belong to one feature only (if `featureKey` is set).
-- Meters with no `featureKey` are allowed but render with a warning in the meter-catalog UI — "consider assigning a feature."
+- Meters with no `featureKey` are allowed but render with a warning in the meter-catalog UI: "consider assigning a feature."
 
 ## 5. Hand-offs
 
@@ -36,7 +36,7 @@ Soft FK because: platform-level meters (cross-feature storage, for example) may 
 ## 6. Pitfalls
 
 - A feature's code starts recording usage against an unregistered meter key. The recorder should fail loud; if it fails silent, drift audit must catch it.
-- A deprecated meter still referenced by `Feature.meterable: true` — block the deprecation until all features are cut over.
+- A deprecated meter still referenced by `Feature.meterable: true`: block the deprecation until all features are cut over.
 
 ## 7. Example binding
 

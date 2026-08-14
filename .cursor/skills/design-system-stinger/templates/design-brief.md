@@ -1,13 +1,13 @@
-# {{product}} UX/UI — Core Design Brief
+# {{product}} UX/UI: Core Design Brief
 
 > **{{product}} · Source of Truth for every UI decision**
-> **Status:** Authoritative — supersedes {{prior_doc_or_"N/A"}} as of {{YYYY-MM-DD}}
-> **Owner:** `ux-ui-worker-bee` agent + skill
+> **Status:** Authoritative: supersedes {{prior_doc_or_"N/A"}} as of {{YYYY-MM-DD}}
+> **Owner:** `ux-ui-svelte-worker-bee` agent + skill
 > **Companion assets:** [`01-master-tokens.css`](01-master-tokens.css) · [`02-{{utility_layer_name}}.css`](02-{{utility_layer_name}}.css) · [`03-components/`](03-components/) · [`04-screens/`](04-screens/) · [`05-html-examples/`](05-html-examples/)
 
 This brief describes the **target state** of the {{product}} UI. When current
 code diverges from this document, this document wins and the code must be
-changed to match — not the other way around.
+changed to match, not the other way around.
 
 ---
 
@@ -90,7 +90,7 @@ Nine sizes: `--text-10` through `--text-48` with companion
 
 ## 3. Surfaces & Depth
 
-{{short description of the surface metaphor — glass, paper, flat, etc.}}
+{{short description of the surface metaphor: glass, paper, flat, etc.}}
 
 ### 3.1 The recipe
 
@@ -112,7 +112,7 @@ Nine sizes: `--text-10` through `--text-48` with companion
 - Display face: {{name}}.
 - Body face: {{name}}.
 - Type scale: nine sizes (see §2.7).
-- Line length: 55–75ch for body copy.
+- Line length: 55-75ch for body copy.
 - Paragraph spacing: `--space-paragraph` (18px default).
 
 ---
@@ -130,12 +130,12 @@ Nine sizes: `--text-10` through `--text-48` with companion
 
 Summary of each component group. Full briefs in `03-components/`.
 
-- [`buttons-and-ctas.md`](03-components/buttons-and-ctas.md) — primary, secondary, outline, ghost.
-- [`badges-and-pills.md`](03-components/badges-and-pills.md) — status, tier, count.
-- [`cards-and-surfaces.md`](03-components/cards-and-surfaces.md) — card, nested card, hero.
-- [`inputs-and-search.md`](03-components/inputs-and-search.md) — text, textarea, select.
-- [`nav-<location>.md`](03-components/) — one per nav zone.
-- [`progress-bars.md`](03-components/progress-bars.md) — standard, hero.
+- [`buttons-and-ctas.md`](03-components/buttons-and-ctas.md): primary, secondary, outline, ghost.
+- [`badges-and-pills.md`](03-components/badges-and-pills.md): status, tier, count.
+- [`cards-and-surfaces.md`](03-components/cards-and-surfaces.md): card, nested card, hero.
+- [`inputs-and-search.md`](03-components/inputs-and-search.md): text, textarea, select.
+- [`nav-<location>.md`](03-components/): one per nav zone.
+- [`progress-bars.md`](03-components/progress-bars.md): standard, hero.
 - {{...additional component groups...}}
 
 ---
@@ -181,10 +181,10 @@ Summary per screen. Full briefs in `04-screens/`.
 
 ## 11+ Product-specific sections
 
-{{any feature that needs its own contract — AI chat, icon customizer,
+{{any feature that needs its own contract: AI chat, icon customizer,
 admin mode, etc.}}
 
 ---
 
-*This document is owned by `ux-ui-worker-bee`. Changes follow the commit
-message convention `ux-ui-worker-bee: <section>: <change>`.*
+*This document is owned by `ux-ui-svelte-worker-bee`. Changes follow the commit
+message convention `ux-ui-svelte-worker-bee: <section>: <change>`.*

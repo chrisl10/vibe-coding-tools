@@ -5,7 +5,7 @@
 - **Page budget target:** 10-12 source files
 - **Source breadth target:** official docs, authoritative blogs, GitHub READMEs, academic research, practitioner guides
 
-## Initial queries (from the proposal step)
+## Initial queries (from `big-bang-space`)
 
 1. "ADR Architecture Decision Record 2026"
 2. "Nygard ADR format lightweight 2026"

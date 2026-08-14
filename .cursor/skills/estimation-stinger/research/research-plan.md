@@ -5,7 +5,7 @@
 - **Page budget target:** ~30-40 unique sources across 5 topic areas
 - **Source breadth target:** official docs / practitioner blogs / academic research papers / tool websites / podcast transcripts / agile education sites
 
-## Initial queries (from the proposal step)
+## Initial queries (from `big-bang-space`)
 
 1. "NoEstimates Vasco Duarte 2026"
 2. "Story points Fibonacci scrum 2026"
@@ -48,6 +48,6 @@
 
 ## Output location
 
-`ai-tools/skills/estimation-stinger/research/external/` - individual source files
-`ai-tools/skills/estimation-stinger/research/index.md` - manifest
-`ai-tools/skills/estimation-stinger/research/research-summary.md` - handoff summary
+`.claude/skills/estimation-stinger/research/external/` - individual source files
+`.claude/skills/estimation-stinger/research/index.md` - manifest
+`.claude/skills/estimation-stinger/research/research-summary.md` - handoff summary

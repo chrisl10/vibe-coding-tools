@@ -1,5 +1,5 @@
 ---
-title: "GitHub Projects Board Layout — Official Docs 2026"
+title: "GitHub Projects Board Layout: Official Docs 2026"
 source_url: https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/customizing-the-board-layout
 source_type: official-docs
 authority: high
@@ -13,9 +13,9 @@ topics:
 stinger: kanban-flow-stinger
 ---
 
-# GitHub Projects Board Layout — Official Documentation
+# GitHub Projects Board Layout: Official Documentation
 
-**Source:** GitHub Docs — "Customizing the board layout"
+**Source:** GitHub Docs: "Customizing the board layout"
 **URL:** https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/customizing-the-board-layout
 **Published:** Not dated (current as of retrieval 2026-05-20)
 
@@ -28,7 +28,7 @@ Official GitHub documentation for the board layout in GitHub Projects. This is t
 - Teams create a Kanban board by setting the column field to a "Status" field (single select field or iteration field).
 - Items can be dragged between columns; dragging an item changes its field value to match the column.
 
-**Column limits — the critical finding:**
+**Column limits, the critical finding:**
 The official documentation states clearly: "Setting a limit does not restrict anyone from adding cards that would exceed the column's limit, nor does it restrict any automations from adding cards."
 
 This confirms the DEV Community practitioner finding: GitHub Projects column limits are soft visual indicators only. The column shows the current count and the limit (e.g., "3/2" displayed in red when over limit), but there is NO enforcement. Anyone can add cards beyond the limit at any time.
@@ -43,7 +43,7 @@ Column limits are per-view (unique to each view in the project), not global. Thi
 5. Click Save
 
 **Additional board features:**
-- Grouping by field values creates horizontal sections (swimlanes equivalent) — useful for organizing by work stream, team, or urgency
+- Grouping by field values creates horizontal sections (swimlanes equivalent): useful for organizing by work stream, team, or urgency
 - Field sums can be displayed per column (e.g., sum of story points per column)
 - Board can be created from any single select or iteration field, not just Status
 
@@ -52,7 +52,7 @@ Column limits are per-view (unique to each view in the project), not global. Thi
 - Cumulative flow diagrams
 - Cycle time analytics
 - Throughput charts
-- Any flow metrics — must export to CSV and use external tooling
+- Any flow metrics: must export to CSV and use external tooling
 
 ## Key quotations / statistics
 

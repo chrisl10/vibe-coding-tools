@@ -44,7 +44,7 @@ tasks), not the full interaction processing or presentation delay phases.
 
 ## Annotations for stinger-forge
 
-- This is the primary source for `guides/02-lab-vs-field.md` — the most important conceptual guide in the stinger.
+- This is the primary source for `guides/02-lab-vs-field.md`: the most important conceptual guide in the stinger.
 - The INP/TBT limitation is the single most critical piece of information: a site can have excellent TBT
   (under 200ms) but terrible field INP because INP captures interaction processing and presentation delay
   too. Example cited: Discord homepage has 3+ seconds TBT but INP of 81ms.

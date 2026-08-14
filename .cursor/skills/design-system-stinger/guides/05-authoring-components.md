@@ -1,7 +1,7 @@
-# 05 — Authoring Component Briefs
+# 05: Authoring Component Briefs
 
 Each file in `03-components/<group>.md` is one component group's contract.
-Target: 8–15 briefs for a real product. 80–300 lines each.
+Target: 8 to 15 briefs for a real product. 80 to 300 lines each.
 
 > Template: `../templates/component-spec.md`.
 > Research backing: `../research/2026-04-24-shadcn-radix-patterns.md`.
@@ -10,14 +10,14 @@ Target: 8–15 briefs for a real product. 80–300 lines each.
 
 Group by *role*, not by element:
 
-- `buttons-and-ctas.md` — all button variants together (primary, secondary,
+- `buttons-and-ctas.md`: all button variants together (primary, secondary,
   outline, ghost, link).
-- `badges-and-pills.md` — all small-label surfaces together.
-- `cards-and-surfaces.md` — card, card-hero, card-nested, list-item.
-- `inputs-and-search.md` — text input, textarea, select, search.
-- `nav-<location>.md` — one per nav zone (top, bottom, left, right).
+- `badges-and-pills.md`: all small-label surfaces together.
+- `cards-and-surfaces.md`: card, card-hero, card-nested, list-item.
+- `inputs-and-search.md`: text input, textarea, select, search.
+- `nav-<location>.md`: one per nav zone (top, bottom, left, right).
 
-Typical count: 8–15 groups for a full product.
+Typical count: 8 to 15 groups for a full product.
 
 ## The canonical doc shape
 
@@ -67,16 +67,16 @@ supersedes. For greenfield, omit this section or write "N/A — greenfield".>
 ## Variants
 
 Four is the common ceiling. More than four signals the group is too
-broad — split it.
+broad: split it.
 
 For buttons:
-- `primary` — one per screen, the main CTA.
-- `secondary` — the "glass CTA" / default button.
-- `outline` — transparent, for tertiary actions.
-- `ghost` — toolbar / row actions.
+- `primary`: one per screen, the main CTA.
+- `secondary`: the "glass CTA" / default button.
+- `outline`: transparent, for tertiary actions.
+- `ghost`: toolbar / row actions.
 
 Describe each with:
-- The aesthetic intent ("the glass CTA — most buttons").
+- The aesthetic intent ("the glass CTA, most buttons").
 - The exact token composition.
 - A representative use ("Send DM", "Cancel", "Expand").
 
@@ -96,11 +96,11 @@ Mobile floor: 44px (Apple HIG). Do not ship `sm` on touch-primary.
 
 All five, always:
 
-1. **Rest** — the default.
-2. **Hover** — token-derived hover tint via `color-mix()`.
-3. **Active/press** — `.press-scale` or equivalent.
-4. **Focus-visible** — 2px brand outline, 2px offset. Never remove.
-5. **Disabled** — opacity 0.5, `pointer-events: none`.
+1. **Rest**: the default.
+2. **Hover**: token-derived hover tint via `color-mix()`.
+3. **Active/press**: `.press-scale` or equivalent.
+4. **Focus-visible**: 2px brand outline, 2px offset. Never remove.
+5. **Disabled**: opacity 0.5, `pointer-events: none`.
 
 Some components add: loading (spinner or skeleton), error, success.
 
@@ -114,7 +114,7 @@ Explicit list. Example for a primary button:
 - `--shadow-elevated`, `--shadow-gold-glow`.
 - `--dur-instant`, `--ease-out-subtle`.
 
-This is the audit trail: `ux-ui-worker-bee` later enforces that component
+This is the audit trail: `ux-ui-svelte-worker-bee` later enforces that component
 code uses only tokens on this list.
 
 ## Example
@@ -131,10 +131,10 @@ Complete, copy-pasteable JSX (if React/Vue) or HTML + scoped CSS:
 ```
 
 Prefer semantic class names over raw Tailwind utilities where the recipe
-is non-trivial — the CSS utility layer exists to eliminate the inline
+is non-trivial: the CSS utility layer exists to eliminate the inline
 gradient shown above.
 
-## "Replaces (in current code)" — load-bearing for migrations
+## "Replaces (in current code)": load-bearing for migrations
 
 If the product has shipped code, name the files/classes this brief
 supersedes:
@@ -150,7 +150,7 @@ supersedes:
   by `variant="primary"` class.
 ```
 
-This section is the migration receipt. `ux-ui-worker-bee` uses it to
+This section is the migration receipt. `ux-ui-svelte-worker-bee` uses it to
 enforce.
 
 For greenfield products, write `N/A — greenfield`.

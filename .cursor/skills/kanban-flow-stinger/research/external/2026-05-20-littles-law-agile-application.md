@@ -1,5 +1,5 @@
 ---
-title: "Little's Law in Agile Software Development — Applied to WIP and Forecasting"
+title: "Little's Law in Agile Software Development: Applied to WIP and Forecasting"
 source_url: https://agilelaws.com/littles-law.html
 source_type: practitioner-blog
 authority: high
@@ -17,7 +17,7 @@ stinger: kanban-flow-stinger
 
 # Little's Law in Agile: WIP = Throughput × Cycle Time
 
-**Source:** Agile Laws — "Little's Law"
+**Source:** Agile Laws: "Little's Law"
 **URL:** https://agilelaws.com/littles-law.html
 **Author:** Sean Sweeney
 **Published:** Not dated (retrieved 2026-05-20)
@@ -44,13 +44,13 @@ This reference-style article applies Little's Law exclusively to Agile/Kanban so
 3. Detect non-steady-state systems (if the formula's implied values don't match observed metrics, the system is not in steady state)
 4. Communicate trade-offs to stakeholders in plain arithmetic
 
-**The steady-state assumption in Agile:** The article notes that Little's Law requires a stable system in equilibrium. Software teams often violate this with sudden influxes of urgent work, team size changes, or technology migrations. When the formula's outputs are wildly inconsistent with observed metrics, that is itself a diagnostic signal — the system is not in steady state and needs stabilization before flow metrics become reliable.
+**The steady-state assumption in Agile:** The article notes that Little's Law requires a stable system in equilibrium. Software teams often violate this with sudden influxes of urgent work, team size changes, or technology migrations. When the formula's outputs are wildly inconsistent with observed metrics, that is itself a diagnostic signal: the system is not in steady state and needs stabilization before flow metrics become reliable.
 
 ## Key quotations / statistics
 
 - "WIP = Throughput x Cycle Time (L = λ x W)."
 - "W = L / λ: Average Cycle Time = Average Work in Progress / Average Throughput."
-- "Increasing WIP to 18 stories without increasing throughput: Cycle time becomes 18 ÷ 5 = 3.6 weeks" (from 2 weeks — an 80% increase).
+- "Increasing WIP to 18 stories without increasing throughput: Cycle time becomes 18 ÷ 5 = 3.6 weeks" (from 2 weeks, an 80% increase).
 - "Teams overloaded with too much work will see delivery slow, even if they are busy."
 - "Limiting WIP improves focus, flow, and predictability."
 
@@ -59,4 +59,4 @@ This reference-style article applies Little's Law exclusively to Agile/Kanban so
 - **Critical** for `guides/03-littles-law.md`: the worked 5-story/week example with the WIP 10 → 18 → 3.6 week cycle time calculation is exactly the kind of concrete illustration the worker-bee needs for its "Little's Law forecast" output template.
 - **Supports** `templates/littles-law-forecast.md`: stinger-forge should use the WIP-scenario table structure from this article (show cycle time at WIP = 10, 15, 18, 25 with constant throughput) as the template scaffold.
 - The "forecasting application" section directly supports the worker-bee's expected output: "a table showing predicted cycle time under 3-5 WIP scenarios."
-- Note: this source does not discuss Monte Carlo simulation. For probabilistic forecasting on small teams, stinger-forge needs to reference Daniel Vacanti's Actionable Agile Metrics (see Command Brief reference material) — the Monte Carlo extension of Little's Law. This is a known gap in the research at normal depth tier.
+- Note: this source does not discuss Monte Carlo simulation. For probabilistic forecasting on small teams, stinger-forge needs to reference Daniel Vacanti's Actionable Agile Metrics (see Command Brief reference material): the Monte Carlo extension of Little's Law. This is a known gap in the research at normal depth tier.

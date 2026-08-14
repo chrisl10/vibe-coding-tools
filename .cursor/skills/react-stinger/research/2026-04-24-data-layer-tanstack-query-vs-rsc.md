@@ -1,4 +1,4 @@
-# Data Layer — TanStack Query vs SWR vs Server Components
+# Data Layer: TanStack Query vs SWR vs Server Components
 
 **Sources:**
 - https://tanstack.com/query/latest/docs/framework/react/overview
@@ -23,7 +23,7 @@
 | Remix / React Router v7 (framework) | Route loaders + actions |
 | Vite SPA | **TanStack Query** |
 | Small Next.js dashboard | SWR acceptable |
-| Anything GraphQL-heavy | urql or Apollo — TanStack Query can still wrap the client |
+| Anything GraphQL-heavy | urql or Apollo: TanStack Query can still wrap the client |
 
 ## Why TanStack Query over SWR (default)
 

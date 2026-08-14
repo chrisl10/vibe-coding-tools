@@ -7,7 +7,7 @@ relevance: high
 topic: mdx_compiler
 ---
 
-# Build a Next.js MDX Blog in 2026 — Faster Than WordPress, Costs EUR5/Month
+# Build a Next.js MDX Blog in 2026: Faster Than WordPress, Costs EUR5/Month
 
 ## Summary
 A 2026 practitioner post demonstrating a complete production MDX blog setup with Next.js using next-mdx-remote for content loading. Covers the cost-competitive case for self-hosted MDX blogs vs headless CMS. Emphasizes the fundamental difference between `next-mdx-remote` and `@next/mdx`: next-mdx-remote is for disk-backed blogs with frontmatter while @next/mdx is for MDX-as-page-routes.

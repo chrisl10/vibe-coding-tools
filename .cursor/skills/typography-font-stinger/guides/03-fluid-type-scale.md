@@ -6,7 +6,7 @@
 
 ## What is a fluid type scale?
 
-A fluid type scale uses CSS `clamp()` to interpolate font sizes smoothly between a minimum and maximum viewport width. Unlike media-query breakpoint steps, `clamp()` produces a continuous curve — no sudden jumps.
+A fluid type scale uses CSS `clamp()` to interpolate font sizes smoothly between a minimum and maximum viewport width. Unlike media-query breakpoint steps, `clamp()` produces a continuous curve: no sudden jumps.
 
 ```css
 font-size: clamp(min, preferred, max);
@@ -158,4 +158,4 @@ Then in component CSS:
 <h1 className="text-h1 leading-tight">Page Title</h1>
 ```
 
-**Important:** Do NOT use Tailwind's built-in `text-sm`, `text-xl` etc. alongside fluid custom properties — they conflict and produce inconsistent sizing. Pick one system.
+**Important:** Do NOT use Tailwind's built-in `text-sm`, `text-xl` etc. alongside fluid custom properties: they conflict and produce inconsistent sizing. Pick one system.

@@ -1,5 +1,7 @@
 # 14 - npm & Publishing
 
+**Legacy/library case: npm library / CLI publishing.** Applies when the deliverable IS a published npm package. For this repo's package-manager default (pnpm, not npm), see `guides/28-pnpm-and-monorepo-options.md`.
+
 The package is `@deeplake/hivemind`, published to npm as a public scoped package. The package manager is **npm** - not pnpm, not yarn. Everything below reflects the real `package.json`.
 
 ## npm, not pnpm/yarn

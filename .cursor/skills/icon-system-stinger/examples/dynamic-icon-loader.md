@@ -1,4 +1,4 @@
-# Example — Dynamic Icon Loader (CMS-driven icon names)
+# Example: Dynamic Icon Loader (CMS-driven icon names)
 
 **Demonstrates:** `guides/02-dynamic-import-icon-name.md`, `guides/03-accessibility-contract.md`
 
@@ -22,7 +22,7 @@ Even if the bundler technically supports tree-shaking of ESM, dynamic property a
 
 Build a map of only the icons your app actually uses. See `examples/lucide-icon-component.md` for the full typed implementation. This is the recommended default.
 
-**Bundle impact:** Only icons in `LUCIDE_ICONS` are included. Updating the map requires a code change — which is the desired behavior, because new icons should be a deliberate addition to the bundle.
+**Bundle impact:** Only icons in `LUCIDE_ICONS` are included. Updating the map requires a code change, which is the desired behavior, because new icons should be a deliberate addition to the bundle.
 
 ## Solution B: Large icon set with full-library map
 
@@ -80,7 +80,7 @@ export function DynamicIconCloud({ name, size = 24, label }: DynamicIconProps) {
 ```
 
 **Limitations:**
-- Requires `"use client"` — not compatible with RSC.
+- Requires `"use client"`: not compatible with RSC.
 - Fetches icons from Iconify CDN at runtime; adds latency for the first render of each new icon.
 - Not suitable for icons in SSR-critical content.
 
@@ -91,4 +91,4 @@ export function DynamicIconCloud({ name, size = 24, label }: DynamicIconProps) {
 | Known icon set, <200 icons, SSR compatible | Solution A (curated map) |
 | Admin tool, full Lucide set, bundle budget irrelevant | Solution B (full-library map) |
 | Admin tool, multi-library icons, CDN acceptable | Solution C (Iconify CDN) |
-| Above-the-fold icon with dynamic name | Static named import — do not use dynamic loading |
+| Above-the-fold icon with dynamic name | Static named import; do not use dynamic loading |

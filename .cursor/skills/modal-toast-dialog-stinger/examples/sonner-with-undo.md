@@ -1,4 +1,4 @@
-# Example — Sonner Toast with Undo
+# Example: Sonner Toast with Undo
 
 *Demonstrates: `guides/02-toast-notification-taxonomy.md` (Tier 1 ephemeral feedback), `guides/00-primitive-selection-matrix.md` (when Sonner is correct).*
 
@@ -66,10 +66,10 @@ export function ArchiveButton({ itemId, itemName, onArchive, onRestore }: Archiv
 | Factor | Archive (toast OK) | Delete account (AlertDialog required) |
 |---|---|---|
 | Reversible? | Yes (restore from archive) | No |
-| Undo window sufficient? | Yes (5s is enough) | N/A — irreversible |
-| Consequence of missing toast? | Item archived unexpectedly — recoverable | Account destroyed — unrecoverable |
+| Undo window sufficient? | Yes (5s is enough) | N/A, irreversible |
+| Consequence of missing toast? | Item archived unexpectedly, recoverable | Account destroyed, unrecoverable |
 
-## Error variant — persistent error toast
+## Error variant: persistent error toast
 
 ```tsx
 async function handleSave() {

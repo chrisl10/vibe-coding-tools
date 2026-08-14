@@ -11,7 +11,7 @@ Both run inside `src/shell/grep-core.ts` against the `memory.summary` and `sessi
 
 ## Role 1: the silent fallback
 
-When embeddings are off, the daemon is down, or a column is NULL, recall runs lexical with no error (`guides/03-bm25-fallback.md`). This is the reliability guarantee - recall never hard-fails for lack of an optional dependency. Off is a shipped configuration.
+When embeddings are off, the daemon is down, or a column is NULL, recall runs lexical with no error (`guides/deeplake-03-bm25-fallback.md`). This is the reliability guarantee - recall never hard-fails for lack of an optional dependency. Off is a shipped configuration.
 
 ## Role 2: the keyword-precise arm
 

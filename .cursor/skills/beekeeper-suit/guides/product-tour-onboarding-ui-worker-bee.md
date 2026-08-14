@@ -1,71 +1,40 @@
-# Product Tour & Onboarding UI Worker Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `product-tour-onboarding-ui-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/product-tour-onboarding-ui-worker-bee.md`](../../agents/product-tour-onboarding-ui-worker-bee.md)
-**Stinger:** [`.cursor/skills/product-tour-onboarding-ui-stinger/`](../../skills/product-tour-onboarding-ui-stinger/)
-**Command Brief:** not available (synthesized from agent + stinger files)
-**Trigger policy:** on-demand
-
----
+# product-tour-onboarding-ui-worker-bee
 
 ## Domain
+This Bee owns the in-app guided-experience layer: product tours, tooltips, hotspots, modals, onboarding checklists, and the segment/trigger logic that decides who sees what and when. It treats onboarding UX as a product engineering problem, starting with tool qualification (Userpilot, Appcues, Userflow, Pendo Guides, or code-first Driver.js/Shepherd.js/Intro.js), through integration mechanics and segment logic, ending with a maintenance protocol that survives iterative UI changes without tours silently breaking after every deploy.
 
-`product-tour-onboarding-ui-worker-bee` owns the in-app guided-experience layer: product tours, tooltips, hotspots, modals, onboarding checklists, and the trigger/segmentation logic that decides who sees what when. It treats onboarding UX as a product engineering problem — starting with tool qualification, moving through integration mechanics and segment logic, and ending with a maintenance protocol that keeps tours alive across iterative UI changes. It covers the full spectrum from no-code SaaS platforms (Userpilot, Appcues, Userflow, Pendo Guides) to code-first open-source libraries (Driver.js, Shepherd.js, Intro.js). Tour drift prevention, selector registries, and CI smoke tests for `data-tour` attribute existence are first-class concerns. This Bee hands off to specialist Bees for visual tokens, component architecture, user-progress schema, and analytics event instrumentation.
+## Paired Stinger
+[product-tour-onboarding-ui-stinger](../../product-tour-onboarding-ui-stinger) - platform selection framework, tooltip/modal/hotspot component patterns, and the selector-registry maintenance protocol.
 
 ## Trigger phrases
-
-Route to `product-tour-onboarding-ui-worker-bee` when the user says any of:
-
-- "set up a product tour"
+- "set up a product tour for new users"
 - "build an onboarding checklist"
-- "compare Driver.js vs Shepherd.js"
+- "compare Driver.js vs Shepherd.js for us"
 - "our tours keep breaking after deploys"
 - "which product tour tool should we use"
-- "segment-based tour triggers"
+- "wire up segment-based tour triggers"
 - "our tour is showing to the wrong users"
 
-Or when the request implicitly involves adding in-app guided walkthroughs, tooltips, hotspots, or activation checklists to a web app.
-
 ## Do NOT route when
-
-- The user asks about onboarding **email sequences** — no Bee owns this yet; flag and defer to the caller.
-- The request is about **user authentication or auth flows** — route to `auth-worker-bee`.
-- The request is about **design tokens, spacing, or visual polish** for tour components — route to `ux-ui-worker-bee`.
-- The request is about **analytics event instrumentation** for tour funnels (PostHog, Mixpanel) — route to the appropriate analytics Bee.
-- The request is about the **user-progress database schema** for tracking completion — route to `db-worker-bee`.
-- The request is about **custom React component architecture** for a fully custom tour — route to `react-worker-bee`.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let the broader one act as backup.
+- The task is broader onboarding email sequences: no Bee owns this yet, flag it and defer rather than guessing.
+- The task is user-auth flows themselves: route to `auth-worker-bee`.
+- The task is design token work for tour visuals (spacing, color, typography of the tooltip/modal chrome): route to `ux-ui-svelte-worker-bee`; tour CSS must consume design tokens, not invent a parallel system.
+- The task is analytics event instrumentation for tour funnels: route to the appropriate analytics Bee (PostHog/Mixpanel); this Bee flags what needs tracking but does not instrument it.
+- The task is user-progress database schema (the table backing checklist completion state): route to `db-worker-bee`.
 
 ## Inputs the Bee needs
+- Team size, MAU, budget, and engineering involvement level, to qualify no-code vs. code-first tooling
+- Whether the ask is platform selection, component implementation, trigger logic, checklist UI, or maintenance/drift diagnosis
+- Existing selector conventions (class names vs. `data-tour` attributes) in the target app
+- Prior tour analytics, if a follow-through or drift diagnosis is in scope
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- A ranked platform recommendation with integration steps, or implemented tour/tooltip/modal/hotspot components
+- Segment-trigger wiring using the three-gate idiom (`hasSeenTour && isInSegment && flagEnabled`)
+- A selector registry and CI smoke test checking `data-tour` attribute existence
+- A tour health report at `library/requirements/reports/onboarding/` or a feature-tied report
 
-- **Target app context** — React/Next.js or other framework, and whether the DOM uses CSS-in-JS (affects anchor strategy).
-- **Tour goal or problem statement** — e.g., "add a first-run tour", "fix broken tours", "show different tours per segment".
-- **Team/budget constraints** — MAU scale, engineering involvement level, and budget range (optional — Bee will ask via the qualification checklist if absent; defaults to running the four-axis decision framework).
-
-## Outputs the Bee produces
-
-- **Platform recommendation or implementation code** — ranked tool selection with integration steps, or working Driver.js/Shepherd.js tour code with `data-tour` anchors, localStorage persistence, and segment gating.
-- **Tour health report** — written to `library/qa/onboarding/<date>-tour-audit.md` (standalone audits) or `library/requirements/features/<feature>/reports/<date>-tour-review.md` (feature-tied work), using `templates/tour-audit-report.md`.
-- **Selector registry** — `templates/data-tour-registry.json` populated with one entry per targeted element; delivered alongside any implementation.
-
-## Multi-Bee sequences this Bee participates in
-
-- Plan execution loop — always closes with `security-worker-bee` then `quality-worker-bee`
-
-## Critical directives the orchestrator should respect
-
-- **Enforce stable `data-tour` anchors.** Never let the Bee target elements by CSS class or text content. CSS-in-JS class names like `.css-4mrg2x7c` rebuild with every deployment; `data-tour` attributes are a durable contract between engineering and the tour layer.
-- **Require the qualification checklist before any platform name.** The Bee must run the four-axis decision framework (cost, code-depth, team size, DOM stability) from `guides/01-platform-selection.md` before recommending Userpilot, Appcues, Userflow, Pendo, Driver.js, or Shepherd.js. Wrong-tool selection costs months of migration.
-- **Mandate a maintenance protocol alongside every implementation.** Every tour deliverable must include a selector registry (`templates/data-tour-registry.json`) and a Playwright CI smoke test for `data-tour` attribute existence. A tour without these is technical debt from day one.
-- **Route visual work out immediately.** Tour tooltip/modal CSS must consume the product's design tokens via `ux-ui-worker-bee`; a parallel custom-CSS system in the tour layer is a maintenance trap.
-- **Do not instrument analytics — flag and route.** The Bee identifies what needs tracking and routes to the appropriate analytics Bee; it does not write PostHog or Mixpanel instrumentation itself.
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
+## Commonly sequenced with
+- `react-worker-bee` before or during: component architecture for a custom tour implementation
+- `ux-ui-svelte-worker-bee` after: visual polish and token application on tour chrome
+- `db-worker-bee` before: user-progress schema for checklist state persistence

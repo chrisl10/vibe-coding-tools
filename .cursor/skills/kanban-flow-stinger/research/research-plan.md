@@ -5,7 +5,7 @@
 - **Page budget target:** ~25 sources (5 queries x 5 sources each)
 - **Source breadth target:** practitioner blogs, tool documentation (Linear/Jira/GitHub Projects), conference proceedings (LSSC/Agile Alliance), academic queueing-theory sources, community references (ActionableAgile, Lean community)
 
-## Initial queries (from the proposal step / Command Brief)
+## Initial queries (from `big-bang-space` / Command Brief)
 
 1. "Kanban WIP limits production 2026"
 2. "Flow efficiency metrics cycle time 2026"
@@ -22,7 +22,7 @@
 
 ## Internal sources to include
 
-- `kanban-flow-worker-bee-command-brief.md` — domain definition, identity, responsibilities, critical directives
+- `kanban-flow-worker-bee-command-brief.md`: domain definition, identity, responsibilities, critical directives
 - Adjacent stinger review: `devops-stinger` (nearest neighbor for escalation paths)
 
 ## Execution log

@@ -25,7 +25,7 @@ Fill for every Google OAuth client headed to production. Cite the Google Cloud C
 
 ## Scopes (Data Access)
 
-| Scope | Tier | Justification (1–2 sentences) |
+| Scope | Tier | Justification (1-2 sentences) |
 |---|---|---|
 | `openid` | Non-sensitive | Required for OIDC sign-in |
 | `email` | Non-sensitive | Display user email in app |
@@ -34,7 +34,7 @@ Fill for every Google OAuth client headed to production. Cite the Google Cloud C
 
 Ship with `templates/scope-justification-template.md` filled per scope.
 
-- [ ] No scope marked "we might use this later" — every scope is in active code
+- [ ] No scope marked "we might use this later": every scope is in active code
 - [ ] Sensitive scopes flagged for verification
 - [ ] Restricted scopes flagged for verification + CASA
 
@@ -43,7 +43,7 @@ Ship with `templates/scope-justification-template.md` filled per scope.
 - [ ] Authorized JavaScript origins:
   - [ ] `https://app.example.com`
   - [ ] `https://app-staging.example.com`
-  - [ ] (preview deployments — see Vercel / Netlify pattern if needed)
+  - [ ] (preview deployments, see Vercel / Netlify pattern if needed)
   - [ ] `http://localhost:3000` (dev only; remove for production-only client)
 - [ ] Authorized redirect URIs:
   - [ ] `https://app.example.com/api/auth/callback/google`
@@ -73,7 +73,7 @@ No wildcards. Each URI explicit.
 ## Operations
 
 - [ ] Production OAuth `client_id` and `client_secret` stored in secret manager (NOT in code)
-- [ ] Synthetic monthly call configured (deletion-policy defense — `guides/06-google-oauth.md` §"Unused-client deletion")
+- [ ] Synthetic monthly call configured (deletion-policy defense, `guides/06-google-oauth.md` §"Unused-client deletion")
 - [ ] Runbook entry with `client_id`, owner, last-used date, re-verification triggers
 - [ ] Cross-Account Protection (RISC) subscriber configured (optional but recommended)
 - [ ] Owner email alias confirmed (deletion notification routes to a human)

@@ -55,6 +55,6 @@ If an existing React codebase uses `use(promise)` or `use(context)`, compat will
 - `useState`, `useEffect`, `useRef`, `useMemo`, `useCallback`, `useContext`, `useReducer`
 - `Context.Provider` / `useContext`
 - Class components (via compat)
-- `lazy` / `Suspense` (limited — no streaming)
+- `lazy` / `Suspense` (limited, no streaming)
 - `memo` / `forwardRef`
 - Most ecosystem libraries that use only stable React hooks

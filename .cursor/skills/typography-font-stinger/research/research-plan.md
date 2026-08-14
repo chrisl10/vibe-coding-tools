@@ -53,8 +53,8 @@
 ## Internal source notes
 
 - Command Brief: `c:\Users\mario\GitHub\legion-code\ai-tools\command-briefs\typography-font-worker-bee-command-brief.md`
-- Peer Stinger overlap: `ai-tools/skills/design-system-stinger/` (token architecture boundary)
-- Peer Stinger overlap: `ai-tools/skills/ux-ui-stinger/` (per-component type token consumption)
+- Peer Stinger overlap: `.claude/skills/design-system-stinger/` (token architecture boundary)
+- Peer Stinger overlap: `.claude/skills/ux-ui-svelte-stinger/` (per-component type token consumption)
 
 ## Output structure
 

@@ -76,7 +76,7 @@ const blurDataURL = await generateLQIP('./public/hero.jpg');
 />
 ```
 
-**Recommended library for Next.js:** `plaiceholder` (`npm i plaiceholder sharp`) — provides `getPlaiceholder()` which returns a `base64` LQIP string ready for `blurDataURL`. Pairs cleanly with App Router data fetching.
+**Recommended library for Next.js:** `plaiceholder` (`npm i plaiceholder sharp`): provides `getPlaiceholder()` which returns a `base64` LQIP string ready for `blurDataURL`. Pairs cleanly with App Router data fetching.
 
 > Source: `research/external/2026-05-20-plaiceholder-nextjs-blurdataurl.md`
 
@@ -86,7 +86,7 @@ const blurDataURL = await generateLQIP('./public/hero.jpg');
 
 Use when: hero images where the placeholder needs to represent the color tone of the image faithfully, without any JavaScript decoding at runtime.
 
-`@unpic/placeholder` converts a BlurHash string to a CSS gradient that can be used as a CSS `background` — no canvas, no JS.
+`@unpic/placeholder` converts a BlurHash string to a CSS gradient that can be used as a CSS `background`: no canvas, no JS.
 
 ```javascript
 import { blurhashToCssGradientString } from '@unpic/placeholder';
@@ -116,8 +116,8 @@ const gradient = blurhashToCssGradientString('L6PZfSi_.AyE_3t7t7R**0o#DgR4');
 ## ThumbHash (when BlurHash isn't faithful enough)
 
 **ThumbHash** is a newer algorithm from Evan Wallace (2023, actively maintained) that improves on BlurHash in three ways:
-1. Encodes the **aspect ratio** in the hash — the placeholder can be rendered without knowing the image dimensions.
-2. Supports **alpha channels** — correct for product images with transparency.
+1. Encodes the **aspect ratio** in the hash: the placeholder can be rendered without knowing the image dimensions.
+2. Supports **alpha channels**: correct for product images with transparency.
 3. Higher fidelity for saturated / gradient images.
 
 Use ThumbHash when:

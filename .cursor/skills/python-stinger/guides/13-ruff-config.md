@@ -1,4 +1,4 @@
-# 13 — Ruff Configuration
+# 13: Ruff Configuration
 
 Ruff replaces Black + isort + flake8 + pyupgrade + autoflake + pydocstyle. One tool. One config. Sub-second on most repos.
 
@@ -81,12 +81,12 @@ docstring-code-format = true
 | Code | What it catches | Why it's on |
 |---|---|---|
 | `E` / `W` | pycodestyle errors / warnings | Baseline syntax/whitespace hygiene |
-| `F` | Pyflakes — unused imports, undefined names | Catches real bugs |
-| `I` | isort — import order | Eliminates churn-y diffs |
-| `UP` | pyupgrade — modernize old syntax | `Optional[T]` → `T \| None`, `List` → `list`, etc. |
-| `B` | flake8-bugbear — subtle bugs | Mutable default args (`B006`), no-op assertions, etc. |
-| `SIM` | flake8-simplify — readability | Combines `if/else` chains, `dict.get()` patterns |
-| `DJ` | flake8-django — Django anti-patterns | `null=True` on CharField, missing `__str__`, etc. |
+| `F` | Pyflakes: unused imports, undefined names | Catches real bugs |
+| `I` | isort: import order | Eliminates churn-y diffs |
+| `UP` | pyupgrade: modernize old syntax | `Optional[T]` → `T \| None`, `List` → `list`, etc. |
+| `B` | flake8-bugbear: subtle bugs | Mutable default args (`B006`), no-op assertions, etc. |
+| `SIM` | flake8-simplify: readability | Combines `if/else` chains, `dict.get()` patterns |
+| `DJ` | flake8-django: Django anti-patterns | `null=True` on CharField, missing `__str__`, etc. |
 | `ASYNC` | flake8-async | Sync calls inside async def, blocking sleep |
 | `C4` | flake8-comprehensions | List → comprehension, set/dict literals |
 | `S` | flake8-bandit | Security smells (eval, hashlib.md5, hardcoded passwords) |
@@ -120,16 +120,16 @@ repos:
 
 ## Autofix policy
 
-- **`ruff check --fix`** in pre-commit — autofixes the safely-fixable subset.
+- **`ruff check --fix`** in pre-commit: autofixes the safely-fixable subset.
 - **Don't** run `--unsafe-fixes` blindly. Some fixes change semantics.
-- **`unfixable = ["F841"]`** — don't auto-remove unused vars. If a dev commented out the call site, the variable is intentional; auto-removing it loses context.
+- **`unfixable = ["F841"]`**: don't auto-remove unused vars. If a dev commented out the call site, the variable is intentional; auto-removing it loses context.
 
 ## Migrating from Black + isort + flake8
 
 1. Add Ruff to dev deps (`uv add --group dev ruff`).
 2. Add the `[tool.ruff]` block to `pyproject.toml`.
-3. Run `uv run ruff format .` — expect ~99.9% identical output to Black.
-4. Run `uv run ruff check --fix .` — autofix safe rules.
+3. Run `uv run ruff format .`: expect ~99.9% identical output to Black.
+4. Run `uv run ruff check --fix .`: autofix safe rules.
 5. Review the diff. Resolve remaining flake8-style violations.
 6. Remove `[tool.black]`, `.flake8`, `setup.cfg [flake8]`, `[tool.isort]` blocks.
 7. Drop `black`, `isort`, `flake8` from dev deps.

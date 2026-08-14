@@ -78,6 +78,6 @@ Common Scrum+Shape Up hybrids:
 ## Annotations for stinger-forge
 
 - Key source for `guides/06-framework-selection.md` Shape Up section
-- The "Scrum fatigue" concept — teams switching to Shape Up after years of sprint repetition — is a real phenomenon worth naming in the framework selection guide
-- Shape Up is not suitable for startups building MVPs (counter to popular perception) — important caveat
+- The "Scrum fatigue" concept (teams switching to Shape Up after years of sprint repetition) is a real phenomenon worth naming in the framework selection guide
+- Shape Up is not suitable for startups building MVPs (counter to popular perception): important caveat
 - The hybrid patterns section (Scrum+Shape Up) gives practical transition guidance

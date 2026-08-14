@@ -9,7 +9,7 @@ url: https://lavalink.dev/clients
 fetched: 2026-05-20
 ---
 
-# Lavalink 4 — Official Client Libraries Listing (2026)
+# Lavalink 4: Official Client Libraries Listing (2026)
 
 ## Summary
 
@@ -18,7 +18,7 @@ Official Lavalink docs listing of all client libraries with DAVE (Discord's E2EE
 ## Key quotations / statistics
 
 - DAVE (Discord's End-to-End Encrypted Voice) support is mandatory from **March 1, 2026**
-- Unmaintained clients listed: Lavacord, TsumiLink, Blue.ts, Nomia — "Unmaintained repositories have not received commits for at least 1 year"
+- Unmaintained clients listed: Lavacord, TsumiLink, Blue.ts, Nomia: "Unmaintained repositories have not received commits for at least 1 year"
 - Lavalink requires Java to run as server
 
 ## Full client library table with DAVE support
@@ -56,7 +56,7 @@ Official Lavalink docs listing of all client libraries with DAVE (Discord's E2EE
 
 - **guides/04-voice-pipeline.md**: Recommend **Shoukaku** or **Lavalink-Client** for discord.js bots (both have DAVE support and are actively maintained). Recommend **Mafic** for discord.py bots.
 - The DAVE requirement is a hard blocker for any unmaintained library post-March 2026. If a bot still uses an old client without DAVE, it cannot participate in voice calls.
-- NodeLink (https://github.com/PerformanC/NodeLink) is a Lavalink-compatible server alternative written in Node.js — lighter weight, useful for self-hosted deployments without Java.
+- NodeLink (https://github.com/PerformanC/NodeLink) is a Lavalink-compatible server alternative written in Node.js, lighter weight, useful for self-hosted deployments without Java.
 - Lavalink server setup: still requires Java (v17+ recommended). The Docker recipe is the cleanest approach for self-hosted bots.
-- LavaSrc plugin adds Spotify/Apple Music/Deezer support — important for music bots.
+- LavaSrc plugin adds Spotify/Apple Music/Deezer support: important for music bots.
 - SponsorBlock plugin adds skip-sponsored-segment support for YouTube content.

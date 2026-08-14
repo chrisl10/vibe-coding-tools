@@ -1,6 +1,6 @@
-# Deepgram STT — Batch (REST) for Video Processing
+# Deepgram STT: Batch (REST) for Video Processing
 
-**Source:** Deepgram docs — https://developers.deepgram.com/docs/, https://developers.deepgram.com/docs/nova-3
+**Source:** Deepgram docs: https://developers.deepgram.com/docs/, https://developers.deepgram.com/docs/nova-3
 **Retrieved:** 2026-04-25
 **Status:** **LOAD-BEARING** for the multimodal pipeline. Cited in `guides/14-multimodal-pipeline.md §6`.
 **Numbers tag:** benchmarked (Deepgram model card); operational details from production usage.
@@ -38,9 +38,9 @@ Per Deepgram docs, `nova-3` is their flagship English model. Best-in-class WER o
 
 Alternatives:
 
-- `nova-2-general` — previous generation; replaced by nova-3.
-- `enhanced-general` — older tier, not recommended.
-- `whisper-large` (via Deepgram) — multilingual but slower; for English-only deployments, nova-3 is faster and equal/better quality.
+- `nova-2-general`: previous generation; replaced by nova-3.
+- `enhanced-general`: older tier, not recommended.
+- `whisper-large` (via Deepgram): multilingual but slower; for English-only deployments, nova-3 is faster and equal/better quality.
 
 ---
 
@@ -58,7 +58,7 @@ Why 5 minutes:
 - 5 minutes balances request count vs latency.
 - p-limit 5 parallel chunks → ~10 minutes wall-clock for a 50-minute video.
 
-**Timestamp merging:** offset each chunk's transcript timestamps by `chunk_index × 300 seconds`. Critical — without this, video frame ↔ transcript alignment breaks.
+**Timestamp merging:** offset each chunk's transcript timestamps by `chunk_index × 300 seconds`. Critical: without this, video frame ↔ transcript alignment breaks.
 
 ---
 
@@ -67,10 +67,10 @@ Why 5 minutes:
 | Feature | Why |
 |---|---|
 | `punctuate: true` | Sentence boundaries for paragraph detection and downstream chunking |
-| `utterances: true` | Speaker turn detection — useful even in single-speaker for natural breaks |
+| `utterances: true` | Speaker turn detection: useful even in single-speaker for natural breaks |
 | `paragraphs: true` | Pre-segmented paragraphs for the recursive summarizer |
 
-Diarization (multi-speaker labels) is optional — the deploying product's videos are typically single-speaker (member's intro video, training video). Adding diarization for multi-speaker content (panel discussions, interviews) is a future enhancement.
+Diarization (multi-speaker labels) is optional: the deploying product's videos are typically single-speaker (member's intro video, training video). Adding diarization for multi-speaker content (panel discussions, interviews) is a future enhancement.
 
 ---
 
@@ -89,4 +89,4 @@ The video processor preserves partial output rather than losing the entire trans
 - Hardcoding `nova-3` (instead of a config-driven slot) is acceptable today (single canonical model). When/if the deploying product adds multilingual support, this becomes config-driven.
 - Streaming STT introduced without substitution policy is **must-fix**.
 - Chunk size drift from 5 minutes is **should-refactor** (operational tuning).
-- See `guides/14-multimodal-pipeline.md §5–6`.
+- See `guides/14-multimodal-pipeline.md §5-6`.

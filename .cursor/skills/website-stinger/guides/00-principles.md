@@ -1,4 +1,4 @@
-# 00 — Principles, Scope & Architectural Commitments
+# 00: Principles, Scope & Architectural Commitments
 
 Read before any file write. This guide encodes the load-bearing decisions for every downstream phase. Deviating without understanding these commitments creates cascading rework.
 
@@ -35,17 +35,17 @@ Document the choice in the Build Report Inputs section and the Phase 1 commit me
 
 ### 1. SvelteKit public site, Next.js CMS host
 
-`apps/web` is SvelteKit (Svelte 5) — the public-facing marketing site, blog, lead capture. `apps/cms` is Next.js + Payload — the content admin. They are separate Vercel projects deployed from the same monorepo via separate `vercel.json` files. SvelteKit cannot host Payload directly.
+`apps/web` is SvelteKit (Svelte 5): the public-facing marketing site, blog, lead capture. `apps/cms` is Next.js + Payload: the content admin. They are separate Vercel projects deployed from the same monorepo via separate `vercel.json` files. SvelteKit cannot host Payload directly.
 
 ### 2. REST-only Payload consumption from SvelteKit
 
-SvelteKit always consumes Payload over its REST API (`fetch('/api/posts')` in `+page.server.ts`). The Payload Local API (`payload.find()`) is only available inside the Next.js app — never use it from SvelteKit.
+SvelteKit always consumes Payload over its REST API (`fetch('/api/posts')` in `+page.server.ts`). The Payload Local API (`payload.find()`) is only available inside the Next.js app. Never use it from SvelteKit.
 
 ### 3. Dual Postgres namespace
 
 One Supabase project serves both apps:
-- `payload` schema — owned and managed by Payload's `@payloadcms/db-postgres` adapter. RLS is NOT applied here; Payload enforces access control in its own layer.
-- `public` schema — business data (leads, app_settings, analytics events). RLS is mandatory on every table.
+- `payload` schema: owned and managed by Payload's `@payloadcms/db-postgres` adapter. RLS is NOT applied here; Payload enforces access control in its own layer.
+- `public` schema: business data (leads, app_settings, analytics events). RLS is mandatory on every table.
 
 The Payload database connection string must have `CREATESCHEMA` or `SUPERUSER` rights to create the `payload` namespace. Use a separate Supabase role for Payload if the shared `postgres` role is not acceptable.
 
@@ -74,7 +74,7 @@ When Payload mode is not used: blog posts are TypeScript data objects. They are 
 
 ### 8. Token-based design system
 
-All visual decisions (color, spacing, radius, shadow, transition duration) are CSS custom properties in `app.css`. Brand changes are single-source updates. Dark mode is a CSS token inversion via `mode-watcher`'s `.dark` class — never a component-level conditional.
+All visual decisions (color, spacing, radius, shadow, transition duration) are CSS custom properties in `app.css`. Brand changes are single-source updates. Dark mode is a CSS token inversion via `mode-watcher`'s `.dark` class, never a component-level conditional.
 
 ### 9. Edge Functions for privileged operations
 
@@ -101,13 +101,13 @@ The SvelteKit app's origin (`PUBLIC_SITE_URL`) must be in Payload's `cors` array
 ```
 
 **Rationale for this order:**
-- Phase 1 (monorepo) before all else — no app structure means no files to edit.
-- Phase 2 (performance/security) before content — security headers must be present before public deployment.
-- Phase 5 (Supabase) before Phase 6 (auth) — auth tables depend on the schema.
-- Phase 6 (auth) before Phase 7 (admin) — admin access control depends on auth roles.
-- Phase 7 (Payload admin) before Phase 9 (blog) — blog Collections must exist in Payload before content routing in SvelteKit.
-- Phase 3 (SEO) after monorepo and before analytics — SEO metadata helpers are imported by analytics components.
-- Phase 12 (visual design) before Phase 11 (CRO) — design tokens must exist before applying CRO patterns that reference them.
+- Phase 1 (monorepo) before all else: no app structure means no files to edit.
+- Phase 2 (performance/security) before content: security headers must be present before public deployment.
+- Phase 5 (Supabase) before Phase 6 (auth): auth tables depend on the schema.
+- Phase 6 (auth) before Phase 7 (admin): admin access control depends on auth roles.
+- Phase 7 (Payload admin) before Phase 9 (blog): blog Collections must exist in Payload before content routing in SvelteKit.
+- Phase 3 (SEO) after monorepo and before analytics: SEO metadata helpers are imported by analytics components.
+- Phase 12 (visual design) before Phase 11 (CRO): design tokens must exist before applying CRO patterns that reference them.
 
 ---
 
@@ -126,7 +126,7 @@ When a phase is explicitly skipped (user opts out or inputs don't support it):
 - **Read this file and SKILL.md before any file write.** These commitments are load-bearing.
 - **Never deploy secrets, run destructive SQL on shared Supabase projects, or trigger production builds without explicit user confirmation.**
 - **Cite the phase number and the specific PRD section in every commit message and Build Report row.**
-- **When a phase's acceptance criterion cannot be met, mark it Skip with a rationale — never fudge.**
+- **When a phase's acceptance criterion cannot be met, mark it Skip with a rationale, never fudge.**
 - **Honor the canonical reading order.** It encodes dependencies.
 - **Never overwrite a non-empty target directory without confirmation.** Diff first.
 - **Surface every Risk (R-N) and Open Question (Q-N) from the source PRDs** in the Build Report's Next steps.

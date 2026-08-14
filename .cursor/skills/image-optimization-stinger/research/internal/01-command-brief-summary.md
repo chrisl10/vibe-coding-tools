@@ -25,17 +25,17 @@ date_accessed: 2026-05-20
 - Default to AVIF for all new raster content in 2026
 - Always pair AVIF with a WebP fallback (`<picture>` or Next.js format negotiation)
 - Never omit `sizes` on responsive images (default `100vw` causes LCP regression)
-- Validate `remotePatterns` — overly broad patterns are an SSRF vector
+- Validate `remotePatterns`: overly broad patterns are an SSRF vector
 - Cite specific performance numbers when recommending format conversions
 
 ## Proposed Guides Structure
 
-- `guides/00-principles.md` — format hierarchy, LCP-first thinking, SSRF guard
-- `guides/01-format-selection.md` — AVIF vs WebP vs legacy, 2026 browser data, decision tree
-- `guides/02-responsive-srcset.md` — srcset/sizes authoring, Next.js `sizes` prop, art direction
-- `guides/03-blur-placeholders.md` — LQIP via plaiceholder, BlurHash, ThumbHash, wiring blurDataURL
-- `guides/04-nextjs-image.md` — remote handling, remotePatterns security, CDN loaders, fill/priority
-- `guides/05-tooling-pipeline.md` — Squoosh CLI, Sharp, ImageOptim, npm scripts, GitHub Actions
+- `guides/00-principles.md`: format hierarchy, LCP-first thinking, SSRF guard
+- `guides/01-format-selection.md`: AVIF vs WebP vs legacy, 2026 browser data, decision tree
+- `guides/02-responsive-srcset.md`: srcset/sizes authoring, Next.js `sizes` prop, art direction
+- `guides/03-blur-placeholders.md`: LQIP via plaiceholder, BlurHash, ThumbHash, wiring blurDataURL
+- `guides/04-nextjs-image.md`: remote handling, remotePatterns security, CDN loaders, fill/priority
+- `guides/05-tooling-pipeline.md`: Squoosh CLI, Sharp, ImageOptim, npm scripts, GitHub Actions
 
 ## Boundary Notes
 

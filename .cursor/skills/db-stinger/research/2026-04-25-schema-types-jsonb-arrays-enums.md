@@ -1,4 +1,4 @@
-# Schema Types — `jsonb`, Arrays, Enums, Ranges, Custom Types
+# Schema Types: `jsonb`, Arrays, Enums, Ranges, Custom Types
 
 **Sources:**
 - https://www.postgresql.org/docs/current/datatype-json.html
@@ -13,7 +13,7 @@
 
 ## Summary
 
-Postgres ships a richer type system than most teams use. The default reflex of "everything is `varchar` and a few `int`" leaves `jsonb`, arrays, enums, ranges, and custom domains on the table — and recreates database problems badly in application code.
+Postgres ships a richer type system than most teams use. The default reflex of "everything is `varchar` and a few `int`" leaves `jsonb`, arrays, enums, ranges, and custom domains on the table, and recreates database problems badly in application code.
 
 ## `jsonb` vs separate columns
 
@@ -21,7 +21,7 @@ Postgres ships a richer type system than most teams use. The default reflex of "
 |---|---|
 | Field is genuinely schemaless (audit payloads, vendor blobs) | Field is filtered, sorted, joined, or aggregated regularly |
 | Schema varies by row (extension fields per tenant) | Schema is uniform across rows |
-| Field is rarely queried — read in full or not at all | Field appears in any `WHERE` more than once a week |
+| Field is rarely queried: read in full or not at all | Field appears in any `WHERE` more than once a week |
 | Field needs partial-update operators (`||`, `jsonb_set`) | Field updates are surgical and small |
 
 **Rule of thumb:** if 80% of fields inside the `jsonb` are queried, they are columns. `jsonb` is for the long tail. GIN indexes (`jsonb_path_ops`) make targeted predicates fast, but they cost write throughput.
@@ -29,7 +29,7 @@ Postgres ships a richer type system than most teams use. The default reflex of "
 ## Arrays
 
 - Use for ordered, short, homogeneous lists where the *order matters and you query the whole array* (tags-as-strings on a row, list of contributor IDs).
-- **Do not use** when you would join on the elements — make it a child table. Querying `WHERE x = ANY(arr)` works but doesn't scale once you need to filter, count, or join on the elements.
+- **Do not use** when you would join on the elements: make it a child table. Querying `WHERE x = ANY(arr)` works but doesn't scale once you need to filter, count, or join on the elements.
 - GIN indexes work on arrays (`anyarray_ops`).
 
 ## Enums
@@ -37,7 +37,7 @@ Postgres ships a richer type system than most teams use. The default reflex of "
 - Closed sets that change rarely: `status`, `tier`, `role`, `kind`.
 - Cheap (4 bytes), enforce at the type level, sort by definition order.
 - Adding a value is `ALTER TYPE ... ADD VALUE` and is non-blocking on PG 12+.
-- Removing a value is hard — use a lookup table if the set is going to churn.
+- Removing a value is hard: use a lookup table if the set is going to churn.
 
 ## Range types
 

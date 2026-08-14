@@ -24,7 +24,7 @@
 | Distribution coverage | [1-5]/5 | [Brief justification] |
 | Honest scope | [1-5]/5 | [Brief justification] |
 
-**Total: [X]/25** — [Healthy (18+) / Below threshold / Needs work]
+**Total: [X]/25**: [Healthy (18+) / Below threshold / Needs work]
 
 ---
 
@@ -46,7 +46,7 @@
 
 [Note any specific entries that break the pattern. Quote the inconsistent sentence(s).]
 
-**Recommendation:** [Specific, actionable — or "no action needed" if score is 4-5.]
+**Recommendation:** [Specific, actionable, or "no action needed" if score is 4-5.]
 
 ### Distribution coverage ([score]/5)
 

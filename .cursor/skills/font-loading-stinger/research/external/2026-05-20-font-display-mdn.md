@@ -36,14 +36,14 @@ that control the exact "short" and "extremely small" period durations.
   `gfx.downloadable_fonts.fallback_delay_short` control the "short" and
   "extremely small" period durations respectively.
 
-- Page last modified: **April 20, 2026** — confirming current spec alignment.
+- Page last modified: **April 20, 2026**, confirming current spec alignment.
 
 ## Annotations for stinger-forge
 
 - Use this as the spec citation in `guides/00-principles.md` when defining block,
   swap, and failure periods. The MDN definition is cross-browser authoritative.
 - The Firefox preference names are worth noting in `guides/01-font-display-decision-matrix.md`
-  as a cross-browser caveat — "extremely small" is not a fixed ms value.
+  as a cross-browser caveat: "extremely small" is not a fixed ms value.
 - This source resolves the "block" vs "swap" terminology used in the web.dev
   table: MDN confirms `swap` = "extremely small block period + infinite swap"
   while `fallback` = "extremely small block + short swap."

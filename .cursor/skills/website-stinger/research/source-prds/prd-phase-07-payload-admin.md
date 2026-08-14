@@ -1,6 +1,6 @@
 # Phase 7: Payload Admin Architecture
 
-> **Site Template Guide** — PRD Phase 7 of 12
+> **Site Template Guide**: PRD Phase 7 of 12
 > *Replaces the retired prd-phase-07-admin-spa-architecture.md (Vite SPA)*
 
 ---
@@ -13,12 +13,12 @@ Configure Payload 3.x's built-in React admin panel as the content management int
 
 This phase applies **only in Payload CMS mode**. For TypeScript-as-CMS fallback mode, this phase is skipped entirely.
 
-For full Payload implementation details, invoke `cms-payload-worker-bee` which reads from `cms-payload-stinger/`.
+For full Payload implementation details, invoke `website-worker-bee` (Payload is owned by website-stinger; no separate Payload Bee exists) which reads from `website-stinger/`.
 
 ### Scope
 
 **In scope:**
-- `apps/cms/payload.config.ts` — adapter, CORS, collections, globals, secret
+- `apps/cms/payload.config.ts`: adapter, CORS, collections, globals, secret
 - Collections: Posts, Pages, Media, Users
 - Globals: SiteSettings
 - `payload generate:types` → `payload-types.ts`
@@ -27,8 +27,8 @@ For full Payload implementation details, invoke `cms-payload-worker-bee` which r
 
 **Out of scope:**
 - Custom React field components (add on demand)
-- Payload plugins (form-builder, etc. — optional add-ons)
-- Payload Live Preview setup (advanced, see `cms-payload-stinger/guides/05-live-preview.md`)
+- Payload plugins (form-builder, etc., optional add-ons)
+- Payload Live Preview setup (advanced, see `website-stinger/guides/05-live-preview.md`)
 - Payload deployment and environment variables (Phase 7 is local/staging; prod deploy is separate)
 
 ### Dependencies
@@ -40,7 +40,7 @@ For full Payload implementation details, invoke `cms-payload-worker-bee` which r
 
 ## User Stories
 
-### Story 1 — Content Editor: Access Payload Admin
+### Story 1: Content Editor: Access Payload Admin
 
 > As a **Content Editor**, I want to log into the Payload admin panel and create, edit, and publish blog posts so that I can manage content without modifying code.
 
@@ -50,7 +50,7 @@ For full Payload implementation details, invoke `cms-payload-worker-bee` which r
 - Published post visible via GET `/api/posts?where[status][equals]=published`
 - Draft post NOT visible in the above query
 
-### Story 2 — Developer: CORS Allows SvelteKit Frontend
+### Story 2: Developer: CORS Allows SvelteKit Frontend
 
 > As a **Developer**, I want `apps/web` to fetch Payload's REST API without CORS errors so that the blog listing and post pages load correctly.
 
@@ -59,7 +59,7 @@ For full Payload implementation details, invoke `cms-payload-worker-bee` which r
 - `OPTIONS /api/posts` from `http://localhost:5173` returns 200 with correct CORS headers
 - No CORS errors in browser console when `apps/web` fetches from Payload
 
-### Story 3 — Developer: Type-Safe Payload Consumption
+### Story 3: Developer: Type-Safe Payload Consumption
 
 > As a **Developer**, I want `payload-types.ts` generated so that TypeScript enforces the shape of Payload API responses in `apps/web`.
 
@@ -128,5 +128,5 @@ Critical settings:
 
 - **R-1:** CORS misconfiguration is the most common Payload production bug. CORS must include the exact origin including protocol (`https://` not just `domain.com`). Test `OPTIONS /api/posts` from the SvelteKit origin before calling Phase 7 done.
 - **R-2:** Lexical rich text produces a JSON object, not HTML. SvelteKit cannot render Lexical JSON natively. Solutions: (a) Payload `afterChange` hook stores rendered HTML in a separate field; (b) use `@payloadcms/richtext-lexical/html-converter` in a Payload API route; (c) community package `payload-lexical-svelte`. Choose before Phase 9.
-- **Q-1:** Should Payload users and Supabase users be linked (same email, same person)? For most sites, they are separate: Payload users are internal CMS editors (typically 2–5 people), Supabase users are end-users. Define the boundary explicitly.
+- **Q-1:** Should Payload users and Supabase users be linked (same email, same person)? For most sites, they are separate: Payload users are internal CMS editors (typically 2 to 5 people), Supabase users are end-users. Define the boundary explicitly.
 - **Q-2:** How should `payload-types.ts` be shared between `apps/cms` and `apps/web`? Options: (a) pnpm workspace `packages/payload-types/` package; (b) tsconfig path alias pointing to the generated file in `apps/cms`; (c) copy via a build step. Option (a) is the most robust.

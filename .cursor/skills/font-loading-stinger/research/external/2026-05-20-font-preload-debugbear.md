@@ -54,7 +54,7 @@ causes, and explains the fetchpriority attribute for LCP image prioritization.
   delay) that justifies the "never preload more than 2-3 font files" directive
   in `guides/02-preload-strategy.md`.
 - The CORS double-fetch mechanism should be explained with the browser warning
-  message verbatim in the guide — it's the most common font preload mistake.
+  message verbatim in the guide: it's the most common font preload mistake.
 - The `fetchpriority="high"` attribute for the single most critical font should
   appear in `templates/preload-link.md`.
 - The "preloaded but not used" warning causes (preload vs prefetch mix-up,

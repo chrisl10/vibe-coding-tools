@@ -1,4 +1,4 @@
-# CSS Token Architecture — dark-mode-theming-stinger
+# CSS Token Architecture: dark-mode-theming-stinger
 
 *Covers: `:root` / `.dark` variable layout, semantic naming convention, multi-brand block pattern, `color-scheme` property.*
 

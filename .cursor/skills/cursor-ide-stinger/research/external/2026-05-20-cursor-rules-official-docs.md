@@ -37,4 +37,4 @@ Team Rules (Enterprise/Business plans) apply across all repositories, support gl
 
 - Primary backing reference for `guides/01-principles.md` and `guides/02-rule-file-authoring.md`: the four activation modes (Always Apply / Apply Intelligently / Apply to Specific Files / Apply Manually) and the three frontmatter fields.
 - The glob pattern table backs the glob syntax section of guide 02.
-- Note: `.cursorrules` (legacy) is not used in this repo; the Army standardized on `.cursor/rules/*.mdc`.
+- Note: `.cursorrules` (legacy) is not used in this repo; the colony standardized on `.cursor/rules/*.mdc`.

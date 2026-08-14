@@ -1,4 +1,4 @@
-# 07 — Django vs FastAPI
+# 07: Django vs FastAPI
 
 The decision tree.
 

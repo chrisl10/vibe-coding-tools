@@ -9,7 +9,7 @@
 | Channel | Statuspage | Better Stack | Instatus |
 |---|---|---|---|
 | Email | Yes (included) | Yes (included) | Yes (included) |
-| SMS | Yes (included, internal; CREATE + RESOLVE only) | Yes ($29/mo per responder, unlimited) | Yes (BYOC — Twilio/Vonage/SNS) |
+| SMS | Yes (included, internal; CREATE + RESOLVE only) | Yes ($29/mo per responder, unlimited) | Yes (BYOC: Twilio/Vonage/SNS) |
 | Webhook | Yes | Yes | Yes |
 | Slack | Yes | Yes | Yes |
 | Discord | No | No | Yes |
@@ -22,7 +22,7 @@
 
 ## Email notifications
 
-Email is the default subscription channel and the most reliable delivery method. Every platform handles email internally — no external configuration needed.
+Email is the default subscription channel and the most reliable delivery method. Every platform handles email internally: no external configuration needed.
 
 **What to configure:**
 - Custom "From" domain: Always set up a custom sender domain (e.g., `status@yourdomain.com`). Platform-default sender addresses lower deliverability and reduce brand recognition. All four major platforms support custom sender domains.
@@ -48,8 +48,8 @@ Email is the default subscription channel and the most reliable delivery method.
 ### Instatus SMS (BYOC)
 - User must supply their own Twilio, Vonage, or Amazon SNS account credentials
 - **Compliance responsibility:** When using BYOC, the team owns all carrier compliance:
-  - A2P 10DLC registration (US) — required before sending bulk business SMS
-  - STOP keyword handling — must respond to STOP with an unsubscribe confirmation
+  - A2P 10DLC registration (US): required before sending bulk business SMS
+  - STOP keyword handling: must respond to STOP with an unsubscribe confirmation
   - Quiet hours rules per-carrier
   - DLT registration (India, if applicable)
 - See `research/external/2026-05-20-gdpr-canspam-compliance.md` for the full compliance checklist
@@ -65,7 +65,7 @@ Webhooks deliver incident updates as JSON payloads to a URL you specify. Use cas
 
 **Webhook best practices:**
 - Always verify the payload signature. All three major platforms include an HMAC signature header.
-- Return `200` quickly — offload processing to a queue. Most platforms retry up to 3 times on non-200 responses.
+- Return `200` quickly: offload processing to a queue. Most platforms retry up to 3 times on non-200 responses.
 - Log every webhook payload for debugging; status page incident webhooks are not re-deliverable on all platforms.
 
 **Payload shape (Statuspage example):**

@@ -1,4 +1,4 @@
-# 02 — Components and Composition
+# 02: Components and Composition
 
 Composition beats configuration. Small, focused components beat large flexible ones.
 
@@ -6,7 +6,7 @@ Source: `research/2026-04-24-bulletproof-react-components-styling.md`.
 
 ## Five rules
 
-### Rule 1 — Colocate
+### Rule 1: Colocate
 
 Keep the component, its styles, its tests, its hooks, and its types in one folder:
 
@@ -19,7 +19,7 @@ src/features/auth/components/login-form/
 
 Benefits: readable, moveable, deletable.
 
-### Rule 2 — No nested render functions
+### Rule 2: No nested render functions
 
 ```tsx
 // bad
@@ -35,7 +35,7 @@ function Component() { return <div><Items /></div>; }
 
 Nested render functions re-declare on every parent render, defeat Compiler optimization, and obscure the component tree.
 
-### Rule 3 — Limit props
+### Rule 3: Limit props
 
 If a component takes 8+ props, it's two components. Options:
 
@@ -55,11 +55,11 @@ If a component takes 8+ props, it's two components. Options:
 
 A `<Dialog size="md" title="..." onClose={...} showFooter footerContent={...} closable>` mess becomes this. See Radix UI / shadcn/ui for canonical implementations.
 
-### Rule 4 — Wrap 3rd-party components
+### Rule 4: Wrap 3rd-party components
 
 Never import `react-select`, `date-fns`, or `axios` directly in a feature. Wrap once in `src/components/ui/` or `src/lib/`. When the library needs replacing, one file changes.
 
-### Rule 5 — No default exports for components
+### Rule 5: No default exports for components
 
 Named exports only. Refactoring and grep-ability are far better. Exception: framework conventions (Next.js `page.tsx` and `layout.tsx` require default).
 
@@ -86,7 +86,7 @@ export function Input({ ref, ...props }: { ref?: Ref<HTMLInputElement> } & Input
 
 Source: `research/2026-04-24-react-19-actions-hooks.md`.
 
-## Styling — pick one
+## Styling: pick one
 
 | Choice | When |
 |---|---|
@@ -98,9 +98,9 @@ Source: `research/2026-04-24-react-19-actions-hooks.md`.
 
 ## Finding templates
 
-> **[Must-fix]** `src/components/modal.tsx:15` — 12 props on `Modal` including 4 boolean flags. Refactor to compound components per `guides/02-components-and-composition.md §rule-3`. See `examples/refactor-proposal-example.md §phase-2`.
+> **[Must-fix]** `src/components/modal.tsx:15`: 12 props on `Modal` including 4 boolean flags. Refactor to compound components per `guides/02-components-and-composition.md §rule-3`. See `examples/refactor-proposal-example.md §phase-2`.
 
-> **[Should-refactor]** `src/components/button.tsx:1` — `export default function Button` — convert to named export for grep-ability. Non-blocking; batch with other default-export conversions.
+> **[Should-refactor]** `src/components/button.tsx:1`: `export default function Button`, convert to named export for grep-ability. Non-blocking; batch with other default-export conversions.
 
 ## Example in action
 

@@ -11,17 +11,17 @@ Illustrates `guides/11-server-components.md` and the ADR format in `templates/AD
 
 ## Context
 
-`app/dashboard/layout.tsx` was originally a Client Component due to a `<ThemeProvider>` + an `useEffect` for analytics. This forced every descendant (charts, tables, hero, sidebar) into the client bundle. First-load JS for `/dashboard` ballooned to **412 KB gz** — 126 KB over budget (`guides/07-performance.md §bundle-budgets`).
+`app/dashboard/layout.tsx` was originally a Client Component due to a `<ThemeProvider>` + an `useEffect` for analytics. This forced every descendant (charts, tables, hero, sidebar) into the client bundle. First-load JS for `/dashboard` ballooned to **412 KB gz**, 126 KB over budget (`guides/07-performance.md §bundle-budgets`).
 
 Analysis of the render tree showed:
 
-- `<ThemeProvider>` — needs client (stores preference in `localStorage`).
-- `<AnalyticsTracker>` — needs client (runs `useEffect`).
-- `<DashboardHero>` — static, could be RSC. 38 KB.
-- `<RevenueChart>` — fetches + renders; can be RSC with `await getRevenue()`.
-- `<InteractiveFilter>` — needs client (controls state).
-- `<RecentActivity>` — pure data rendering. Can be RSC.
-- `<AIInsights>` — pure data rendering. Can be RSC.
+- `<ThemeProvider>`: needs client (stores preference in `localStorage`).
+- `<AnalyticsTracker>`: needs client (runs `useEffect`).
+- `<DashboardHero>`: static, could be RSC. 38 KB.
+- `<RevenueChart>`: fetches + renders; can be RSC with `await getRevenue()`.
+- `<InteractiveFilter>`: needs client (controls state).
+- `<RecentActivity>`: pure data rendering. Can be RSC.
+- `<AIInsights>`: pure data rendering. Can be RSC.
 
 Total eligible for RSC: ~240 KB of deps.
 
@@ -70,7 +70,7 @@ export default async function Page() {
 - `<InteractiveFilter>` cannot directly read server data; receives via props or calls a client fetch.
 
 **Neutral:**
-- `<RevenueChart>` is now server-rendered. Cannot be interactive (clicking bars). If future requirements demand interaction, promote to client and accept the bundle cost — write ADR-XXX.
+- `<RevenueChart>` is now server-rendered. Cannot be interactive (clicking bars). If future requirements demand interaction, promote to client and accept the bundle cost: write ADR-XXX.
 
 ## Alternatives considered
 

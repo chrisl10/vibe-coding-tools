@@ -1,5 +1,7 @@
 # 03 - Quality Gate
 
+> **npm package publishing case (legacy, secondary).** This is Hivemind's own gate (tsc + jscpd + vitest + husky), specific to that package. It does not describe this repo's SvelteKit app gate. For the SvelteKit-on-Vercel primary case, see `guides/00-principles.md` and guides 09-16; for that app's own test/lint/typecheck job shapes specifically, see `guides/09-github-actions-job-shapes-sveltekit.md`.
+
 The checks that stand between a change and `main`. Local and CI run the same recipe.
 
 ## `npm run ci` is the gate

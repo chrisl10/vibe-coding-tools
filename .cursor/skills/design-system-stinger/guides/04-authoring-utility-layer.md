@@ -1,4 +1,4 @@
-# 04 — Authoring the Utility Layer
+# 04: Authoring the Utility Layer
 
 The utility layer (`02-<aesthetic>.css`) sits between the tokens and the
 components. It composes tokens into named utilities that deliver the
@@ -40,10 +40,10 @@ cleanly without `!important` games.
 If the aesthetic is glass or translucent materials, every floating
 surface composes three shadow cues:
 
-1. **Top-edge highlight** — `inset 0 1px 0 var(--color-top-edge-light)`
+1. **Top-edge highlight**: `inset 0 1px 0 var(--color-top-edge-light)`
    (the rim of light).
-2. **Direct shadow** — tight, 1px offset, darker tint.
-3. **Ambient shadow** — soft, wide, lighter tint.
+2. **Direct shadow**: tight, 1px offset, darker tint.
+3. **Ambient shadow**: soft, wide, lighter tint.
 
 ```css
 .glass-surface {
@@ -57,7 +57,7 @@ surface composes three shadow cues:
 
 **Missing any cue = not glass.** This is the test.
 
-## Backdrop filter — if used at all
+## Backdrop filter: if used at all
 
 For pinned nav shells, modal backdrops, or any surface where real
 translucency matters:
@@ -175,7 +175,7 @@ Generic rule: every transition ≤ 80ms, every transform suppressed.
   coexist with these. Use this layer only for the PRODUCT-SPECIFIC
   named recipes that Tailwind can't express in one line.
 - A component. A utility is a single visual or behavioral cue. If it
-  starts needing slots and children, it's a component — promote it to
+  starts needing slots and children, it's a component: promote it to
   `03-components/`.
 - A semantic class. `.glass-surface` is visual; `.card-header` would be
   semantic. Keep them separate; the component brief uses both.

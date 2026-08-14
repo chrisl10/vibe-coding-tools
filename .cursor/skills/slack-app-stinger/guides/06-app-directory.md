@@ -33,7 +33,7 @@ Work through this checklist before submitting to the Marketplace. Incomplete ite
 
 ### App manifest and scopes
 
-- [ ] App uses only necessary OAuth scopes — no excessive-access scopes
+- [ ] App uses only necessary OAuth scopes: no excessive-access scopes
 - [ ] Prohibited scopes are absent: `admin.*`, `identity.*`, `search:read`, `workflow.steps:execute`, `triggers:*`
 - [ ] `socket_mode_enabled: false` in manifest
 
@@ -103,7 +103,7 @@ The **App Directory** is the broader catalog of all apps that have received dist
 
 ## Marketplace monetization
 
-Slack does not publish its revenue share percentages or monetization terms in public documentation (open question — not found in research). To list a paid app:
+Slack does not publish its revenue share percentages or monetization terms in public documentation (open question, not found in research). To list a paid app:
 
 1. Apply via the Marketplace submission form.
 2. Contact Slack's developer relations team at `developers@slack.com` or via the App Management console for monetization terms.
@@ -123,7 +123,7 @@ The review is NOT a full code review.
 
 ## Submission timeline expectations
 
-> TODO: open question — confirm 2026 review timeline with Slack. Historically, initial reviews have taken 2-4 weeks. Post the December 2024 policy update requiring Marketplace review for commercial-scale apps, the queue may be longer. Check `https://docs.slack.dev/changelog` for current estimates.
+> TODO: open question, confirm 2026 review timeline with Slack. Historically, initial reviews have taken 2-4 weeks. Post the December 2024 policy update requiring Marketplace review for commercial-scale apps, the queue may be longer. Check `https://docs.slack.dev/changelog` for current estimates.
 
 Plan for at least 4 weeks between submission and approval for initial Marketplace listings. Re-submissions after rejection are typically faster (1-2 weeks) if only content issues were flagged.
 

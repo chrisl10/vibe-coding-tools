@@ -1,4 +1,4 @@
-# 01 — Scrum Guide 2020 Audit Map
+# 01. Scrum Guide 2020 Audit Map
 
 The Scrum Guide 2020 (https://scrumguides.org) is 13 pages. Every normative claim in this stinger traces to it. This guide maps each Scrum Guide requirement to an actionable audit check, using the exact structure: Roles, Events, Artefacts, Commitments.
 
@@ -14,7 +14,7 @@ These are the most commonly violated because teams learned 2017:
 | "Self-organizing" | "Self-managing" |
 | Product Backlog Goal (implied) | "Product Goal" (explicit commitment) |
 | Sprint Goal (ceremony output) | Sprint Goal (Sprint Backlog commitment) |
-| Three Daily Scrum questions prescribed | No prescribed format — team decides |
+| Three Daily Scrum questions prescribed | No prescribed format: team decides |
 | Servant-leadership described for SM | "True leader" language added |
 
 ---
@@ -47,8 +47,8 @@ These are the most commonly violated because teams learned 2017:
 ### Developers
 **Guide requires:**
 - [ ] 10 or fewer people (recommended, not hard rule)
-- [ ] Cross-functional — must be able to create a "Done" Increment each Sprint
-- [ ] Self-managing — decide how to do the work, not told by someone outside
+- [ ] Cross-functional: must be able to create a "Done" Increment each Sprint
+- [ ] Self-managing: decide how to do the work, not told by someone outside
 
 **Common violations:**
 - Developers can't create Done Increment without external help (QA, ops, security teams outside the team)
@@ -66,7 +66,7 @@ These are the most commonly violated because teams learned 2017:
 
 **Common violations:**
 - "Sprint" of 6 weeks (exceeds maximum; violates cadence principle)
-- Sprint length varies ("we'll do 3 weeks this time") — undermines rhythm
+- Sprint length varies ("we'll do 3 weeks this time"): undermines rhythm
 - Sprint cancelled by management, not PO (authority violation)
 
 ### Sprint Planning
@@ -77,7 +77,7 @@ These are the most commonly violated because teams learned 2017:
 
 **Common violations:**
 - No Sprint Goal produced (most common; "our Sprint Goal is to finish the sprint backlog" is not a goal)
-- Only "What" addressed, not "Why" — team has tasks but no shared purpose
+- Only "What" addressed, not "Why": team has tasks but no shared purpose
 - Runs 30 minutes for 2-week Sprint (insufficient for real planning)
 
 ### Daily Scrum
@@ -86,7 +86,7 @@ These are the most commonly violated because teams learned 2017:
 - [ ] Developers plan collaboration and progress toward Sprint Goal
 - [ ] Format decided by the Developers (no prescribed questions)
 
-**IMPORTANT — Common misunderstanding:**
+**IMPORTANT: Common misunderstanding:**
 The three questions ("What did I do yesterday?", "What will I do today?", "What's blocking me?") were in the **2017 Guide**. The **2020 Guide removed them**. Teams using them are using community practice, not Scrum Guide requirement. Label accordingly.
 
 **Common violations:**
@@ -113,30 +113,30 @@ The three questions ("What did I do yesterday?", "What will I do today?", "What'
 - [ ] Most significant improvement added to next Sprint Backlog (optional but recommended)
 
 **Common violations:**
-- Retrospective produces no action items (most common — venting without commitment)
+- Retrospective produces no action items (most common, venting without commitment)
 - Action items have no owner or no timeline ("we should improve our code review process" → nobody owns it)
-- Retrospective skipped when Sprint didn't go well ("we don't have time for retro") — violates the principle that this is when retro is most needed
+- Retrospective skipped when Sprint didn't go well ("we don't have time for retro"), violates the principle that this is when retro is most needed
 
 ### Backlog Refinement
 **Guide says:** "Backlog Refinement is the act of breaking down and further defining Product Backlog items into smaller, more precise items. This is an ongoing activity to add details, estimates, and order. [...] The Scrum Team decides how and when refinement is done."
 
-**IMPORTANT — NOT a formal Scrum event:** Backlog Refinement is not listed as one of Scrum's five events. Teams that run it as a formal weekly meeting are making a team decision (often a good one), not following a Scrum Guide requirement. Label this as a team practice, not normative Scrum.
+**IMPORTANT: NOT a formal Scrum event:** Backlog Refinement is not listed as one of Scrum's five events. Teams that run it as a formal weekly meeting are making a team decision (often a good one), not following a Scrum Guide requirement. Label this as a team practice, not normative Scrum.
 
 ---
 
 ## Scrum Artefacts and Commitments Audit Checklist
 
-### Product Backlog — Commitment: Product Goal
+### Product Backlog: Commitment: Product Goal
 - [ ] Product Backlog exists and is maintained by PO
 - [ ] Product Goal is explicit, public, and the team can state it
-- [ ] Items are ordered (not prioritized — ordering implies ranking, not tiering)
+- [ ] Items are ordered (not prioritized, ordering implies ranking, not tiering)
 
-### Sprint Backlog — Commitment: Sprint Goal
+### Sprint Backlog: Commitment: Sprint Goal
 - [ ] Sprint Goal is created during Sprint Planning and is specific enough to fail
 - [ ] "Our Sprint Goal is to complete all planned stories" is not a Sprint Goal
 - [ ] Sprint Backlog is owned by Developers and updated daily
 
-### Increment — Commitment: Definition of Done
+### Increment: Commitment: Definition of Done
 - [ ] Definition of Done exists, is written, and is applied to every item
 - [ ] Increment is releasable (meets DoD) at end of Sprint, regardless of whether it is released
 - [ ] DoD is stricter than or equal to any organizational DoD

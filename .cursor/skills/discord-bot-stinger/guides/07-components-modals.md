@@ -1,6 +1,6 @@
-# 07 — Components & Modals
+# 07: Components & Modals
 
-Buttons, select menus, modals — how to author, namespace, and handle interactive component flows.
+Buttons, select menus, modals: how to author, namespace, and handle interactive component flows.
 
 *Sources: `research/external/2026-05-20-discord-components-modals.md`, `research/external/2026-05-20-discord-interactions-official.md`*
 
@@ -31,8 +31,8 @@ A `custom_id` uniquely identifies which component was pressed. Namespace them to
 ```
 
 Examples:
-- `confirm:1234567890:delete` — delete confirmation button for user 1234567890
-- `queue:0987654321:skip:track-abc` — skip button in a music queue flow
+- `confirm:1234567890:delete`: delete confirmation button for user 1234567890
+- `queue:0987654321:skip:track-abc`: skip button in a music queue flow
 
 Why include `userId`: without it, any user can click a button meant only for the person who triggered the command.
 
@@ -113,7 +113,7 @@ await submitted.reply({ content: "Feedback received!", ephemeral: true });
 - `custom_id` max 100 characters.
 - Can only be shown from a command or component interaction (not a bare message).
 - `TextInputStyle.Short` = single line; `TextInputStyle.Paragraph` = multi-line.
-- Only text inputs allowed inside modals — no buttons, selects, etc.
+- Only text inputs allowed inside modals: no buttons, selects, etc.
 
 ---
 

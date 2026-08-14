@@ -1,4 +1,4 @@
-# Example: Happy Path — New SaaS Product Status Page Setup (Instatus)
+# Example: Happy Path, New SaaS Product Status Page Setup (Instatus)
 
 *Demonstrates: `guides/00-platform-selection.md`, `guides/01-component-architecture.md`, `guides/03-subscriber-notifications.md`*
 
@@ -14,7 +14,7 @@ A B2B SaaS product ("Acme API") is setting up its first status page. Constraints
 - ~500 expected subscribers within 6 months
 - EU and US users
 
-**Platform chosen:** Instatus — value pricing, Slack/webhook native, 200-subscriber free tier covers the launch period.
+**Platform chosen:** Instatus: value pricing, Slack/webhook native, 200-subscriber free tier covers the launch period.
 
 ---
 

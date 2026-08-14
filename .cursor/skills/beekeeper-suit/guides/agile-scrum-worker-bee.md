@@ -1,66 +1,39 @@
-# Agile Scrum Worker Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `agile-scrum-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/agile-scrum-worker-bee.md`](../../agents/agile-scrum-worker-bee.md)
-**Stinger:** [`.cursor/skills/agile-scrum-stinger/`](../../skills/agile-scrum-stinger/)
-**Command Brief:** not available (synthesized from agent + stinger files)
-**Trigger policy:** on-demand
-
----
+# agile-scrum-worker-bee
 
 ## Domain
+Owns Scrum methodology coaching and process auditing in this repo's team workflow: the ceremonies (Sprint Planning, Daily Scrum, Sprint Review, Retrospective, Backlog Refinement), roles, artefacts, Definition of Done templates from startup to enterprise, estimation coaching (Fibonacci, Planning Poker, #NoEstimates), anti-pattern diagnosis (Zombie Scrum, HiPPO PO, no Sprint Goal, velocity gaming), and framework-fit recommendations (Scrum vs ScrumBan vs Kanban vs Shape Up). Its honesty-first audit gives one of two verdicts: "yes, and here's how to improve" or "no, and here's what you're actually doing."
 
-`agile-scrum-worker-bee` owns the full Scrum methodology surface: Sprint ceremonies (Sprint Planning, Daily Scrum, Sprint Review, Retrospective, Backlog Refinement), Scrum roles (Scrum Master, Product Owner, Developers), artefacts (Product Backlog, Sprint Backlog, Increment), commitments (Product Goal, Sprint Goal, Definition of Done), estimation techniques (Fibonacci, Planning Poker, #NoEstimates), and framework selection decisions (Scrum vs ScrumBan vs Kanban vs Shape Up). Its primary commitment is honesty: the "is this actually Scrum?" audit produces either "yes, and here are the improvements" or "no, and here is what you are actually doing and whether you should care." It does not configure project management tooling, implement CI/CD gates, or write code — it coaches, audits, and produces process artefacts. It always distinguishes Scrum Guide 2020 normative requirements from community practices, and never prescribes Scrum to a team for whom it is clearly a poor fit.
+## Paired Stinger
+[agile-scrum-stinger](../../agile-scrum-stinger) - Scrum Guide 2020 audit map, ceremony coaching per event, anti-pattern catalog, and the framework-selection decision matrix.
 
 ## Trigger phrases
-
-Route to `agile-scrum-worker-bee` when the user says any of:
-
-- "audit our Scrum process"
-- "is this Scrum?"
+- "audit our Scrum process, is this actually Scrum"
 - "write our Definition of Done"
-- "Sprint Planning help"
+- "help me run Sprint Planning"
 - "our retros don't produce anything"
 - "should we switch to Kanban"
-- "Scrum anti-patterns"
-
-Or when the request implicitly involves Scrum ceremony health, estimation technique selection, Scrum role dysfunction, framework selection, or process artefact creation (DoD, Sprint Goal, retrospective action items).
+- "what are we doing wrong with estimation"
+- "diagnose our Scrum anti-patterns"
+- "Fibonacci vs #NoEstimates for our team"
 
 ## Do NOT route when
-
-- The request is about configuring Jira, ClickUp, Azure DevOps, or any other project management tool — that is tooling, not framework; no Bee currently owns this explicitly, surface the boundary to the user.
-- The request is about code review, security review, or architectural guidance — route to `security-worker-bee`, `react-worker-bee`, or the appropriate domain Bee.
-- The request is about implementing CI/CD gates or deployment pipelines referenced in a DoD — route to `devops-worker-bee`.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let the broader one act as backup.
+- The request is configuring Jira, ClickUp, or Azure DevOps as tools; this Bee names it a tooling concern and stops, it does not configure the tool.
+- The request is implementing CI/deployment gates that back a Definition of Done; that is devops-worker-bee.
+- The request is code review, security review, or architecture guidance; route to the domain-specific Bee.
+- The framework-selection assessment clearly favors Kanban; acknowledge it and offer to route to a Kanban-specific Bee rather than keep coaching Scrum.
+- The team is 50+ people under a waterfall mandate; name the structural constraint rather than coaching ceremonies that won't fix it.
 
 ## Inputs the Bee needs
+- Current process description or artifacts (sprint length, ceremony cadence, existing DoD if any).
+- The specific classification of the request: audit, ceremony coaching, estimation, DoD authoring, anti-pattern diagnosis, or framework selection.
+- Team size and organizational context, since these gate whether Scrum coaching even applies.
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- A scored Scrum audit report with a Scrum / Scrum-but / framework-mismatch verdict.
+- A Definition of Done document (startup or enterprise tier).
+- Ceremony agendas, retrospective formats, or a named anti-pattern list with remediation.
 
-- Team context: team size, tenure, and current process description (needed for audit and framework selection)
-- Ceremony or artefact in scope: which ceremony, artefact, or decision the user is asking about
-- Maturity tier (optional — defaults to startup-level DoD and basic ceremony coaching if absent)
-
-## Outputs the Bee produces
-
-- Process artefacts written to the conversation or to a file: Scrum audit reports, Definition of Done documents, Sprint Planning agendas, retrospective format selections with facilitation notes, anti-pattern diagnoses with repair moves, framework selection recommendations
-- A framework fit verdict when a full audit is requested: Scrum / Scrum-but / framework mismatch, with a priority action plan
-
-## Multi-Bee sequences this Bee participates in
-
-- Plan execution loop — always closes with `security-worker-bee` then `quality-worker-bee`
-
-## Critical directives the orchestrator should respect
-
-- Always cite the Scrum Guide 2020 for every normative claim; label any claim not in the Guide as community practice or industry convention — conflating the two produces cargo-cult coaching.
-- Never prescribe Scrum to a team for whom it is clearly a poor fit; "you should consider Kanban" is a complete and successful output.
-- Retrospective action items must have an owner and a target sprint; the templates enforce this structure.
-- Hand off tooling questions (Jira, ClickUp configuration) and CI/deployment gate implementation (`devops-worker-bee`) at the boundary — surface the requirement, name the responsible owner, and stop.
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
+## Commonly sequenced with
+- devops-worker-bee: implements the CI/deployment gates a Definition of Done requires.
+- Tooling-configuration work (Jira/ClickUp/Azure DevOps): this Bee flags the requirement and stops, a different owner configures it.
+- Domain Bees (security, code review, architecture): take over once the conversation leaves process and enters implementation.

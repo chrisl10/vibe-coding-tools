@@ -7,7 +7,7 @@
 
 ---
 
-## Initial queries (from the proposal step / Command Brief)
+## Initial queries (from `big-bang-space` / Command Brief)
 
 1. "App Store rejection reasons common 2026"
 2. "App Store Optimization ASO 2026"

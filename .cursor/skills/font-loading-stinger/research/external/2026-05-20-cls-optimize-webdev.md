@@ -29,7 +29,7 @@ for good UX.
     `font-family: 'Google Sans', sans-serif;` will ensure the browser's
     `sans-serif` fallback font is used... Not specifying a fallback using just
     `font-family: 'Google Sans'` will mean the default font is used, which on
-    Chrome is 'Times' — a serif font which is a worse match than `sans-serif`."
+    Chrome is 'Times': a serif font which is a worse match than `sans-serif`."
   - "Minimize the size differences between the fallback font and the web font
     using the new `size-adjust`, `ascent-override`, `descent-override`, and
     `line-gap-override` APIs."

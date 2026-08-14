@@ -12,13 +12,13 @@ User's message:
 
 > "Hey, can you QA the work on the new admin export feature? I'm in a hurry, let's skip security this time."
 
-Plan file: `library/requirements/features/feature-021-admin-export/prd-feature-021-admin-export.md` (exists, covers an admin data-export feature).
+Plan file: `library/requirements/<lifecycle>/prd-021-admin-export/prd-feature-021-admin-export.md` (exists, covers an admin data-export feature).
 
 Diff: ~240 lines across 6 files, including a new MCP tool handler and a Deep Lake dataset write.
 
 Signals detected:
 
-- No security report exists in `library/requirements/features/feature-021-admin-export/reports/` (e.g., `<date>-security-report.md`).
+- No security report exists in `library/requirements/<lifecycle>/prd-021-admin-export/reports/` (e.g., `<date>-security-report.md`).
 - No commits on the branch with `security:` prefix or mentions of `security-worker-bee`.
 - The user's message explicitly says "skip security."
 
@@ -26,12 +26,12 @@ Signals detected:
 
 ## Output, Ordering-Violation Report
 
-Written to `library/requirements/features/feature-021-admin-export/reports/2026-04-24-qa-report.md`.
+Written to `library/requirements/<lifecycle>/prd-021-admin-export/reports/2026-04-24-qa-report.md`.
 
 ```markdown
 # QA Report: feature-021 admin-export, ORDERING VIOLATION
 
-**Plan document:** `library/requirements/features/feature-021-admin-export/prd-feature-021-admin-export.md`
+**Plan document:** `library/requirements/<lifecycle>/prd-021-admin-export/prd-feature-021-admin-export.md`
 **Audit date:** 2026-04-24
 **Base branch:** `main`
 **Head:** `feat/admin-export`
@@ -54,7 +54,7 @@ The ordering constraint is absolute per the `quality-worker-bee` principles (see
 
 ## What was NOT audited
 
-- Completeness against `library/requirements/features/feature-021-admin-export/prd-feature-021-admin-export.md`: not evaluated.
+- Completeness against `library/requirements/<lifecycle>/prd-021-admin-export/prd-feature-021-admin-export.md`: not evaluated.
 - Correctness of the implementation: not evaluated.
 - Traceability table: not produced.
 - Files Changed summary: not produced.
@@ -63,7 +63,7 @@ A full QA report will be generated when `security-worker-bee` has completed and 
 
 ## Signals detected
 
-- No security report present in `library/requirements/features/feature-021-admin-export/reports/`.
+- No security report present in `library/requirements/<lifecycle>/prd-021-admin-export/reports/`.
 - No commits on `feat/admin-export` with a `security:` prefix or `security-worker-bee` mention.
 - Invoking user requested "skip security this time."
 ```
@@ -76,4 +76,4 @@ A full QA report will be generated when `security-worker-bee` has completed and 
 - **Short report, not skipped entirely.** A missing report is indistinguishable from a missing audit (`00-principles.md` rule #4). Writing the ordering-violation report gives the invoker a paper trail.
 - **Does not override the user.** The user asked to skip security. The Bee refused, kindly but firmly. This is one of the few places the Bee overrides user instructions, and the reason is in the report.
 - **No traceability table.** Because the full audit did not run, the table would be misleading (either empty or half-filled). Explicitly stating "not produced" is more honest than producing a partial table.
-- **Filename matches a normal QA report.** `library/requirements/features/feature-021-admin-export/reports/2026-04-24-qa-report.md`, a re-run on the same date appends a slug suffix (per `guides/06-report-writing.md`); a re-run on a later date produces a sibling file. The title line makes the halt obvious either way.
+- **Filename matches a normal QA report.** `library/requirements/<lifecycle>/prd-021-admin-export/reports/2026-04-24-qa-report.md`, a re-run on the same date appends a slug suffix (per `guides/06-report-writing.md`); a re-run on a later date produces a sibling file. The title line makes the halt obvious either way.

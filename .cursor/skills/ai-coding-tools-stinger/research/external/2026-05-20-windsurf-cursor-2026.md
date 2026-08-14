@@ -16,7 +16,7 @@ A May 2026 practitioner comparison of Cursor, Windsurf, and Zed, including verif
 
 ## Key quotations / statistics
 
-- "Windsurf (originally built by Codeium) experienced a complex acquisition saga: May 2025 — OpenAI announced a $3 billion acquisition. July 2025 — The deal collapsed when Microsoft blocked it. December 2025 — Cognition AI ultimately acquired Windsurf for approximately $250 million."
+- "Windsurf (originally built by Codeium) experienced a complex acquisition saga: May 2025, OpenAI announced a $3 billion acquisition. July 2025, The deal collapsed when Microsoft blocked it. December 2025, Cognition AI ultimately acquired Windsurf for approximately $250 million."
 - "Cursor is now owned by Anysphere: Dominant market leader with $2B+ ARR and $29.3B valuation."
 - "Cursor features Agent Mode with up to 8 parallel Subagents, proprietary Composer 1.5 model, and Background Agents for autonomous tasks."
 - "Windsurf (now Cognition AI): Features Cascade agentic system for multi-file changes, SWE-1.5 proprietary model, and Fast Context with adaptive Memories."
@@ -40,7 +40,7 @@ Under Cognition ownership, Windsurf is merging with Devin's autonomous capabilit
 
 ## Annotations for stinger-forge
 
-- Use this as the primary source for the Windsurf section of `guides/00-tool-tiers.md` — Windsurf occupies both "interactive-pair" (Cascade within IDE) and "hybrid-agent" territory post-acquisition
-- The Cognition AI ownership is a sunset risk flag — see `guides/05-footguns.md` note about Windsurf trajectory uncertainty
+- Use this as the primary source for the Windsurf section of `guides/00-tool-tiers.md`: Windsurf occupies both "interactive-pair" (Cascade within IDE) and "hybrid-agent" territory post-acquisition
+- The Cognition AI ownership is a sunset risk flag: see `guides/05-footguns.md` note about Windsurf trajectory uncertainty
 - Cursor's $29.3B valuation and $2B+ ARR indicate market dominance that stinger-forge should reflect in `guides/01-selection-rubric.md` default recommendations
 - Cursor Background Agents (fully autonomous, run without IDE open) deserve a dedicated mention in `guides/00-tool-tiers.md` under "fully-autonomous" for scoped tasks

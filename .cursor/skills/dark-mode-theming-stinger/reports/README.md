@@ -1,4 +1,4 @@
-# Reports — dark-mode-theming-stinger
+# Reports: dark-mode-theming-stinger
 
 This folder accumulates past audit reports produced by `dark-mode-theming-worker-bee`. Each report follows the template at `templates/audit-report.template.md`.
 

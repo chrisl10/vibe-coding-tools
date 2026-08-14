@@ -1,4 +1,4 @@
-# Research Plan — db-stinger
+# Research Plan: db-stinger
 
 **Bee:** db-worker-bee
 **Forged:** 2026-04-25
@@ -13,37 +13,37 @@
 ## Authoritative sources to consult
 
 ### Primary (must fetch directly)
-- https://www.postgresql.org/docs/current/ — current Postgres docs (v17 at forge time)
-- https://www.postgresql.org/docs/current/indexes.html — definitive indexing reference
-- https://www.postgresql.org/docs/current/ddl-partitioning.html — declarative partitioning
-- https://www.postgresql.org/docs/current/datatype-json.html — JSON / JSONB
-- https://www.postgresql.org/docs/current/textsearch.html — Postgres FTS
-- https://www.postgresql.org/docs/current/routine-vacuuming.html — autovacuum
-- https://www.postgresql.org/docs/current/using-explain.html — EXPLAIN
-- https://github.com/dhamaniasad/awesome-postgres — curated ecosystem
+- https://www.postgresql.org/docs/current/: current Postgres docs (v17 at forge time)
+- https://www.postgresql.org/docs/current/indexes.html: definitive indexing reference
+- https://www.postgresql.org/docs/current/ddl-partitioning.html: declarative partitioning
+- https://www.postgresql.org/docs/current/datatype-json.html: JSON / JSONB
+- https://www.postgresql.org/docs/current/textsearch.html: Postgres FTS
+- https://www.postgresql.org/docs/current/routine-vacuuming.html: autovacuum
+- https://www.postgresql.org/docs/current/using-explain.html: EXPLAIN
+- https://github.com/dhamaniasad/awesome-postgres: curated ecosystem
 
 ### Migrations
-- https://github.com/xataio/pgroll — online migrations with expand-contract model
-- https://orm.drizzle.team/docs/migrations — Drizzle Kit migrations
-- https://www.prisma.io/docs/orm/prisma-migrate — Prisma Migrate
-- https://medium.com/@QuarkAndCode/database-schema-design-zero-downtime-migrations-postgres-8a02a5b52033 — zero-downtime migration patterns
+- https://github.com/xataio/pgroll: online migrations with expand-contract model
+- https://orm.drizzle.team/docs/migrations: Drizzle Kit migrations
+- https://www.prisma.io/docs/orm/prisma-migrate: Prisma Migrate
+- https://medium.com/@QuarkAndCode/database-schema-design-zero-downtime-migrations-postgres-8a02a5b52033: zero-downtime migration patterns
 
 ### Performance & pooling
-- https://www.pgbouncer.org/ — PgBouncer
-- https://supabase.com/docs/guides/database/connecting-to-postgres#connection-pooler — pooling in serverless
-- https://github.com/PacktPublishing/PostgreSQL-16-Performance-Tuning-Guide — perf tuning depth
+- https://www.pgbouncer.org/: PgBouncer
+- https://supabase.com/docs/guides/database/connecting-to-postgres#connection-pooler: pooling in serverless
+- https://github.com/PacktPublishing/PostgreSQL-16-Performance-Tuning-Guide: perf tuning depth
 
 ### Special-purpose
-- https://github.com/pgvector/pgvector — vector search
-- https://docs.tigerdata.com/ — TimescaleDB / Tiger Data
+- https://github.com/pgvector/pgvector: vector search
+- https://docs.tigerdata.com/: TimescaleDB / Tiger Data
 
 ### Serverless DB platforms
-- https://supabase.com/docs — Postgres + Auth + RLS + Realtime
-- https://neon.tech/docs — serverless Postgres + branching
-- https://docs.turso.tech/ — distributed libSQL/SQLite
-- https://planetscale.com/docs — serverless MySQL with branching
-- https://www.cockroachlabs.com/docs/ — distributed SQL
-- https://docs.tigerdata.com/ — TimescaleDB managed
+- https://supabase.com/docs: Postgres + Auth + RLS + Realtime
+- https://neon.tech/docs: serverless Postgres + branching
+- https://docs.turso.tech/: distributed libSQL/SQLite
+- https://planetscale.com/docs: serverless MySQL with branching
+- https://www.cockroachlabs.com/docs/: distributed SQL
+- https://docs.tigerdata.com/: TimescaleDB managed
 
 ## Search queries executed (semantic, question-shaped)
 

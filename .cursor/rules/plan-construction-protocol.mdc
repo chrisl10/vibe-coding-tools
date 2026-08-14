@@ -13,19 +13,22 @@ The first step is always to pick a worktree of `main` and create a new feature b
 
 ## Model routing (every step after step 1)
 
-For each task and sub-agent in the plan, name the best-fit model based on the scored rubric and routing heuristic in `legion-shared/model-comparison-matrix.md`. Match the task profile (reasoning depth, code quality, tool use, cost, speed, context, multimodal) to the model. State the chosen model inline with each step and a one-line justification tied to the matrix.
+For each task and sub-agent in the plan, name the best-fit model based on the rubric and routing heuristic in `.claude/model-comparison-matrix.md`. Match the task profile (reasoning depth, code quality, tool use, cost, speed, context, multimodal) to the model. State the chosen model inline with each step and a one-line justification tied to the matrix.
 
-Always use the most recent relevant version of each model. Map the matrix routing choice to one of these current spawnable slugs:
+Always use the most recent relevant version exposed by the target harness. Start with these current choices:
 
-- IDE-bound agentic coding: `composer-2.5` (or `composer-2.5-fast` for tight loops)
-- Deep reasoning / autonomous multi-file refactor: `claude-opus-4-8-thinking-high`
-- Broad agentic generalist (no single specialty dominant): `gpt-5.5-medium`
-- Balanced daily-driver: `claude-4.6-sonnet-medium-thinking`
-- High-throughput, cost-conscious agentic + multimodal: `gemini-3.5-flash`
-- CLI / terminal / DevOps automation: `gpt-5.3-codex-high`
-- Long-form creative / narrative: `claude-fable-5-thinking-high`
-- Open-weight / self-hosted / math-research swarms: `kimi-k2.5`
-- Build / scaffold automation: `grok-build-0.1`
+- Hard, ambiguous Codex work: `gpt-5.6-sol`
+- Balanced everyday Codex work: `gpt-5.6-terra`
+- Narrow, high-volume Codex work: `gpt-5.6-luna`
+- Maximum generally available Claude capability: `claude-fable-5`
+- Complex agentic coding in Claude: `claude-opus-5`
+- Balanced everyday Claude work: `claude-sonnet-5`
+- Fast Claude classification and subagent work: `claude-haiku-4-5`
+- Cursor-native agentic coding: `composer-2.5` or Cursor Auto
+- Google high-throughput agentic work: `gemini-3.6-flash`
+- Google low-cost automation: `gemini-3.5-flash-lite`
+
+Confirm that the target harness exposes the selected identifier. For Codex multi-agent dispatch, use only the exact identifiers listed in `.claude/model-comparison-matrix.md` and pass reasoning effort separately.
 
 ## Execution on /loop
 

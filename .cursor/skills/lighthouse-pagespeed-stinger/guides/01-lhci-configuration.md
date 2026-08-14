@@ -36,9 +36,9 @@ Running `lhci autorun` executes all three sequentially. You can also run them in
 }
 ```
 
-**`numberOfRuns: 3`** — always use at least 3. Lighthouse scores have natural variance; LHCI reports the median across runs. A single run is not a reliable gate.
+**`numberOfRuns: 3`**: always use at least 3. Lighthouse scores have natural variance; LHCI reports the median across runs. A single run is not a reliable gate.
 
-> "numberOfRuns: multiple runs reduce noise; three is a common starting point." — `research/external/2026-05-20-lhci-budget-assertions.md`
+> "numberOfRuns: multiple runs reduce noise; three is a common starting point." (`research/external/2026-05-20-lhci-budget-assertions.md`)
 
 For local dev server (e.g., Next.js):
 ```json
@@ -54,19 +54,19 @@ For local dev server (e.g., Next.js):
 ## `assert` block
 
 Two assertion types:
-- `minScore` — for 0-1 category scores (e.g., `"categories:performance": ["error", { "minScore": 0.9 }]`)
-- `maxNumericValue` — for millisecond/byte values (e.g., `"largest-contentful-paint": ["error", { "maxNumericValue": 2500 }]`)
+- `minScore`: for 0-1 category scores (e.g., `"categories:performance": ["error", { "minScore": 0.9 }]`)
+- `maxNumericValue`: for millisecond/byte values (e.g., `"largest-contentful-paint": ["error", { "maxNumericValue": 2500 }]`)
 
 Three severity levels:
-- `"off"` — skip the assertion
-- `"warn"` — log warning, don't fail the build
-- `"error"` — fail the build (non-zero exit code)
+- `"off"`: skip the assertion
+- `"warn"`: log warning, don't fail the build
+- `"error"`: fail the build (non-zero exit code)
 
-**`aggregationMethod` — critical gotcha:**
-- `"median-run"` — use the median value across runs. Use for category scores and metric values with natural variance.
-- `"pessimistic"` — use the worst-case value across runs. Use for binary audits (Accessibility, SEO) where you want maximum strictness.
+**`aggregationMethod` (critical gotcha):**
+- `"median-run"`: use the median value across runs. Use for category scores and metric values with natural variance.
+- `"pessimistic"`: use the worst-case value across runs. Use for binary audits (Accessibility, SEO) where you want maximum strictness.
 
-> Danger: using `"pessimistic"` on Performance score will cause almost every CI run to fail because the worst of 3 runs is almost always lower than the median. Always use `"median-run"` for Performance. — `research/external/2026-05-20-lhci-budget-assertions.md`
+> Danger: using `"pessimistic"` on Performance score will cause almost every CI run to fail because the worst of 3 runs is almost always lower than the median. Always use `"median-run"` for Performance. (`research/external/2026-05-20-lhci-budget-assertions.md`)
 
 **Production-ready assert block:**
 ```json
@@ -95,7 +95,7 @@ Three severity levels:
 3. Set `minScore` / `maxNumericValue` at the current value plus a 10-20% buffer.
 4. Then add the `assert` block to CI.
 
-> "Don't guess budgets. Base them on current performance." — `research/external/2026-05-20-lhci-budget-assertions.md`
+> "Don't guess budgets. Base them on current performance." (`research/external/2026-05-20-lhci-budget-assertions.md`)
 
 A budget gate that fails on day one with no remediation plan blocks deploys without unblocking the team.
 

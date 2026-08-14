@@ -1,4 +1,4 @@
-# 02 — Slash Commands
+# 02: Slash Commands
 
 How to author application commands (slash, user-context, message-context), register them, and handle interactions correctly.
 

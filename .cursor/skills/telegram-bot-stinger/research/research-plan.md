@@ -5,7 +5,7 @@
 - **Page budget target:** ~100 pages
 - **Source breadth target:** official Telegram docs, framework GitHub repos, practitioner blogs, PyPI/npm package pages, community tutorials, benchmark articles
 
-## Initial queries (from Command Brief / the proposal step)
+## Initial queries (from Command Brief / big-bang-space)
 
 - "Telegram Bot API new features 2026"
 - "grammY aiogram Telegram bot framework comparison 2026"

@@ -16,7 +16,7 @@ stinger: kanban-flow-stinger
 
 # Kanban vs Scrum in 2026: Decision Framework and Adoption Data
 
-**Source:** EITT Academy — "Scrum vs Kanban 2026 — which Agile framework is better?"
+**Source:** EITT Academy: "Scrum vs Kanban 2026 — which Agile framework is better?"
 **URL:** https://eitt.academy/knowledge-base/scrum-vs-kanban-agile-frameworks-comparison-2026/
 **Published:** 2026-04-29
 
@@ -28,7 +28,7 @@ This is the most data-rich Kanban-vs-Scrum source found in the research run. It 
 - 94% of IT teams use Agile frameworks
 - Scrum: 70% of Agile teams (Scrum.org, Scrum Alliance: 1.5M+ Scrum Masters globally)
 - Kanban: 25% of teams (mainly operations, support, DevOps)
-- Scrumban (hybrid): increasingly popular — 45% of Scrum teams add WIP limits after 2-3 years
+- Scrumban (hybrid): increasingly popular; 45% of Scrum teams add WIP limits after 2-3 years
 
 **Three-path decision framework:**
 
@@ -79,6 +79,6 @@ This is the most data-rich Kanban-vs-Scrum source found in the research run. It 
 ## Annotations for stinger-forge
 
 - **Critical** for `guides/07-kanban-vs-scrum.md`: the three-path decision framework is directly usable as the decision tree. The State of Agile 2026 adoption figures are citable proof that Kanban is the minority methodology, which helps frame WHY the worker-bee exists (most teams underuse it).
-- The 45% Scrumban adoption figure is significant — it validates the hybrid model as a mainstream reality, not a workaround. Stinger-forge should position Scrumban as a first-class option in the guide, not an afterthought.
-- The "1 day to start Kanban" vs "2-4 weeks for Scrum" setup comparison is useful for the worker-bee's coaching context — low barrier to adoption is a key selling point.
+- The 45% Scrumban adoption figure is significant: it validates the hybrid model as a mainstream reality, not a workaround. Stinger-forge should position Scrumban as a first-class option in the guide, not an afterthought.
+- The "1 day to start Kanban" vs "2-4 weeks for Scrum" setup comparison is useful for the worker-bee's coaching context: low barrier to adoption is a key selling point.
 - **Note:** this source does not cover Shape Up (Basecamp). The open question from the Command Brief about Kanban vs. Shape Up (Q3) was NOT answered by any source in this research run. Flag as an open question in the summary.

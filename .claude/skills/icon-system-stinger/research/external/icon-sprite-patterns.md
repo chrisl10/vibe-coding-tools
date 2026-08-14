@@ -1,4 +1,4 @@
-# Icon Sprite Patterns — Research Note
+# Icon Sprite Patterns: Research Note
 
 **Source type:** technical  
 **Authority:** high  

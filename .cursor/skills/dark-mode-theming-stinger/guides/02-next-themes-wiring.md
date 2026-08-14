@@ -1,4 +1,4 @@
-# next-themes Wiring — dark-mode-theming-stinger
+# next-themes Wiring: dark-mode-theming-stinger
 
 *Covers: ThemeProvider config, `attribute`, `storageKey`, `enableSystem`, `disableTransitionOnChange`, `nonce`, `themes`, `useTheme` hook.*
 
@@ -74,7 +74,7 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 ```
 
-FOWT script placement for Pages Router goes in `pages/_document.tsx` — see `guides/03-fowt-prevention.md`.
+FOWT script placement for Pages Router goes in `pages/_document.tsx`: see `guides/03-fowt-prevention.md`.
 
 ---
 
@@ -84,11 +84,11 @@ FOWT script placement for Pages Router goes in `pages/_document.tsx` — see `gu
 |------|-------|------|
 | `attribute` | `"class"` | Tailwind class-based dark mode (`dark:*` utilities) |
 | `attribute` | `"data-theme"` | CSS `[data-theme="dark"]` selector strategy |
-| `defaultTheme` | `"system"` | Most apps — respect OS preference by default |
+| `defaultTheme` | `"system"` | Most apps: respect OS preference by default |
 | `defaultTheme` | `"light"` | Brand apps that should default to light regardless of OS |
-| `enableSystem` | `true` | When `defaultTheme="system"` — reads `prefers-color-scheme` |
+| `enableSystem` | `true` | When `defaultTheme="system"`: reads `prefers-color-scheme` |
 | `enableSystem` | `false` | When you only want manual control, no system follow |
-| `disableTransitionOnChange` | `true` | Always — prevents CSS transition flicker during switch |
+| `disableTransitionOnChange` | `true` | Always: prevents CSS transition flicker during switch |
 | `storageKey` | Custom string | Multi-tenant apps where each brand/user has a separate key |
 | `nonce` | From headers | Strict CSP environments |
 | `themes` | `["light","dark","brand-a","brand-b"]` | Multi-brand apps with named themes |
@@ -133,8 +133,8 @@ Correct flow:
 
 Incorrect flows to prevent:
 - Overwriting localStorage with OS value on every visit (erases manual choice)
-- Using `systemTheme` as the resolved theme when `theme === "system"` — `next-themes` does this automatically via `resolvedTheme`
+- Using `systemTheme` as the resolved theme when `theme === "system"`: `next-themes` does this automatically via `resolvedTheme`
 
-> TODO: open question — cookie-based SSR match for "system" preference requires the server to default to "light" since it cannot read `prefers-color-scheme`. Confirm this is acceptable UX with the design team before implementing.
+> TODO: open question, cookie-based SSR match for "system" preference requires the server to default to "light" since it cannot read `prefers-color-scheme`. Confirm this is acceptable UX with the design team before implementing.
 
 *Example demonstrating this guide: `examples/happy-path-app-router.md`*

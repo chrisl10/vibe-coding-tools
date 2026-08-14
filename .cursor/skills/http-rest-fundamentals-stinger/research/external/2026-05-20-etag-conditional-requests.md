@@ -21,8 +21,8 @@ Full implementation guide for ETag-based conditional requests in REST APIs. Cove
 - "Strong vs weak validators: `ETag: 'abc'` means byte-identical (strong). `ETag: W/'abc'` means semantically equivalent but maybe not byte-identical (weak — useful when whitespace or compression differs but content is the same)."
 - "The `304 Not Modified` response has an empty body — bandwidth savings of 80-95% on read-heavy endpoints with long-lived data."
 - If-Match for PUT: "if (ifMatch && ifMatch !== currentETag) return res.status(412).set('ETag', currentETag).json({ error: 'Resource has been modified', currentVersion: currentETag })"
-- "Handle If-Match for PUT/PATCH requests (return 412 on mismatch, 428 if missing)" — 428 Precondition Required when the server requires a conditional header.
-- "Generate ETags from content hash using SHA-256" — use content hash as strong ETag for exact byte-identical matching.
+- "Handle If-Match for PUT/PATCH requests (return 412 on mismatch, 428 if missing)": 428 Precondition Required when the server requires a conditional header.
+- "Generate ETags from content hash using SHA-256": use content hash as strong ETag for exact byte-identical matching.
 
 ## Annotations for stinger-forge
 - `guides/05-conditional-and-range.md`: this guide covers both ETag use cases (caching and concurrency). Use the two-use-case framing: "cache revalidation" and "optimistic concurrency control."

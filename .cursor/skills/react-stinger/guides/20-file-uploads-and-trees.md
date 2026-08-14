@@ -1,4 +1,4 @@
-# 20 — File Uploads & Tree UIs
+# 20: File Uploads & Tree UIs
 
 Source: `research/2026-04-25-file-uploads-and-trees.md`. File uploads are easy to ship and easy to ship wrong (no resumability, no chunking, no progress, no cancellation). Tree UIs are easy to ship and easy to crash with virtualization gone wrong. This guide picks both.
 
@@ -21,7 +21,7 @@ For most teams: **react-dropzone** for the drop zone, **Uppy + tus** for serious
 
 ### react-dropzone (the drop-zone primitive)
 - Headless. You write the visual. It handles drag-and-drop, file selection, type validation.
-- Pairs with anything (Uppy, Uploadthing, custom uploads) — it's just the input surface.
+- Pairs with anything (Uppy, Uploadthing, custom uploads): it's just the input surface.
 - Use it as the input even when the *upload pipeline* is something else.
 
 ### Uppy (the upload pipeline)
@@ -41,7 +41,7 @@ For most teams: **react-dropzone** for the drop zone, **Uppy + tus** for serious
 - Lock-in to Uploadthing's hosting. Fine for solo / small teams; less appealing if you already run S3 / R2.
 
 ### React Arborist (the virtualized tree)
-- Virtualized tree component — renders thousands of nodes without choking.
+- Virtualized tree component: renders thousands of nodes without choking.
 - Built-in keyboard navigation, multi-select, drag-and-drop reorder.
 - Use for file managers, project navigators, tag trees, org charts.
 
@@ -51,7 +51,7 @@ For most teams: **react-dropzone** for the drop zone, **Uppy + tus** for serious
 
 For files >100 MB or any upload over a flaky network, "send the whole file in one POST" is broken. The fix:
 
-1. **Chunked transport.** Split the file into 5–20 MB chunks; upload each independently; reassemble server-side.
+1. **Chunked transport.** Split the file into 5 to 20 MB chunks; upload each independently; reassemble server-side.
 2. **Resumability.** If a chunk fails, retry it; if the whole upload fails, resume from the last successful chunk.
 3. **Progress.** Per-chunk progress aggregated to a per-file progress bar.
 4. **Cancellation.** AbortController on the in-flight chunk(s).
@@ -150,7 +150,7 @@ export function FileTree() {
 }
 ```
 
-For trees over a few hundred nodes, virtualization is non-negotiable — Arborist gives it to you for free.
+For trees over a few hundred nodes, virtualization is non-negotiable: Arborist gives it to you for free.
 
 ---
 
@@ -178,13 +178,13 @@ For trees over a few hundred nodes, virtualization is non-negotiable — Arboris
 
 ## Common findings
 
-> **[Must-fix]** `src/features/upload/Upload.tsx:1` — uploads via single `fetch` POST with no chunking; 200 MB files fail on flaky networks. Migrate to Uppy + tus or S3 multipart. See this guide §chunked-resumable-upload.
+> **[Must-fix]** `src/features/upload/Upload.tsx:1`: uploads via single `fetch` POST with no chunking; 200 MB files fail on flaky networks. Migrate to Uppy + tus or S3 multipart. See this guide §chunked-resumable-upload.
 
-> **[Must-fix]** `src/features/files/FileTree.tsx:1` — renders 8,000 nodes with naive recursion; main thread blocks on expand. Move to React Arborist (virtualized).
+> **[Must-fix]** `src/features/files/FileTree.tsx:1`: renders 8,000 nodes with naive recursion; main thread blocks on expand. Move to React Arborist (virtualized).
 
-> **[Should-refactor]** `src/features/upload/Drop.tsx:5` — drop zone is a `<div>` with no role / tabIndex / keyboard handler. Apply react-dropzone's `getRootProps()` + add `role="button"` and `tabIndex={0}`.
+> **[Should-refactor]** `src/features/upload/Drop.tsx:5`: drop zone is a `<div>` with no role / tabIndex / keyboard handler. Apply react-dropzone's `getRootProps()` + add `role="button"` and `tabIndex={0}`.
 
-> **[Must-fix]** `src/server/upload.ts:1` — file size + mime allowlist enforced only client-side. Re-enforce on the server. See `guides/11-server-components.md §server-actions` and `security-worker-bee` handoff.
+> **[Must-fix]** `src/server/upload.ts:1`: file size + mime allowlist enforced only client-side. Re-enforce on the server. See `guides/11-server-components.md §server-actions` and `security-worker-bee` handoff.
 
 ---
 
@@ -193,4 +193,4 @@ For trees over a few hundred nodes, virtualization is non-negotiable — Arboris
 - **Storage layer (S3 / R2 / GCS), signed URLs, lifecycle policies** → `devops-worker-bee`.
 - **Auth scoping per upload (who can write where)** → `security-worker-bee`.
 - **Image transforms / CDN delivery** → image-CDN territory (Cloudinary, Imgix, unpic). Out of scope for this guide; flag for library-worker-bee PRD if needed.
-- **Visual treatment of drop zones, progress, and tree rows** → `ux-ui-worker-bee`.
+- **Visual treatment of drop zones, progress, and tree rows** → `ux-ui-svelte-worker-bee`.

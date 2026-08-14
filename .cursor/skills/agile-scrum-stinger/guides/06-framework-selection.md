@@ -1,14 +1,14 @@
-# 06 — Framework Selection
+# 06. Framework Selection
 
 When to use Scrum, ScrumBan, Kanban, or Shape Up. Data-backed decision framework grounded in State of Agile 2026 research and structured comparison matrices.
 
 ---
 
-## State of Agile 2026 — baseline data
+## State of Agile 2026: baseline data
 
 - **70%** of Agile teams use Scrum or a Scrum variant (eitt.academy survey 2026)
 - **25%** primarily use Kanban
-- **45%** of Scrum teams adopt WIP limits (a Kanban practice) after 2-3 years — evidence for ScrumBan evolution
+- **45%** of Scrum teams adopt WIP limits (a Kanban practice) after 2-3 years: evidence for ScrumBan evolution
 - Shape Up adoption is growing but remains a small minority; strongest in product-led companies < 50 engineers
 
 ---
@@ -41,9 +41,9 @@ Score each dimension 1-3. Sum scores to reach a recommendation.
 - New teams that need the structure of prescribed roles, events, and artefacts
 
 ### Caution signals
-- > 30% of Sprint work is unplanned at Sprint start — consider ScrumBan
-- PO role cannot be filled with sufficient authority — the framework will not work as designed
-- Team size consistently > 10 — split the team before Scrum becomes unwieldy
+- > 30% of Sprint work is unplanned at Sprint start: consider ScrumBan
+- PO role cannot be filled with sufficient authority: the framework will not work as designed
+- Team size consistently > 10: split the team before Scrum becomes unwieldy
 
 ### Sprint length guidance
 - **1 week:** Maximum inspect-and-adapt; high ceremony overhead; best for early-stage product with rapid learning
@@ -56,7 +56,7 @@ Score each dimension 1-3. Sum scores to reach a recommendation.
 ## ScrumBan
 
 ### What it is
-ScrumBan is not a codified framework — it is an evolution pattern where Scrum teams add Kanban's WIP limits and pull-based workflow to their Scrum foundation. Not sanctioned by the Scrum Guide; developed by Corey Ladas (2008) and now widespread in practice.
+ScrumBan is not a codified framework: it is an evolution pattern where Scrum teams add Kanban's WIP limits and pull-based workflow to their Scrum foundation. Not sanctioned by the Scrum Guide; developed by Corey Ladas (2008) and now widespread in practice.
 
 ### Best fit for
 - Mature Scrum teams where Sprints feel artificial relative to the actual work flow
@@ -67,7 +67,7 @@ ScrumBan is not a codified framework — it is an evolution pattern where Scrum 
 1. **Keep Sprint cadence** (don't abandon Sprint rhythm immediately)
 2. **Add WIP limits** to the Sprint Backlog columns (In Progress: max N items)
 3. **Replace sprint commitment** with a replenishment trigger (pull new items when WIP falls below threshold)
-4. **Retain Retrospective and Sprint Review** — these improve quality; don't drop them
+4. **Retain Retrospective and Sprint Review**: these improve quality; don't drop them
 5. **Measure throughput** alongside velocity for 2-3 Sprints; compare predictive accuracy
 6. **Remove Sprint Planning** when the team can reliably self-replenish from the backlog
 
@@ -85,12 +85,12 @@ The research-backed trigger: when > 30% of Sprint work was unplanned at Sprint s
 - Teams that have moved beyond Scrum and want a more mature, flow-based model
 
 ### Core Kanban practices
-1. **Visualize the workflow** — explicit columns with clear start/end criteria
-2. **Limit WIP** — hard WIP limits per column
-3. **Manage flow** — track cycle time, lead time, throughput
-4. **Make policies explicit** — written entry criteria, exit criteria, escalation paths
-5. **Implement feedback loops** — Replenishment meeting (what enters the backlog), Delivery cadence (when items exit), Operations review (system health)
-6. **Improve collaboratively** — retrospective-equivalent practices (Kanban retrospective focuses on metrics, not feelings)
+1. **Visualize the workflow**: explicit columns with clear start/end criteria
+2. **Limit WIP**: hard WIP limits per column
+3. **Manage flow**: track cycle time, lead time, throughput
+4. **Make policies explicit**: written entry criteria, exit criteria, escalation paths
+5. **Implement feedback loops**: Replenishment meeting (what enters the backlog), Delivery cadence (when items exit), Operations review (system health)
+6. **Improve collaboratively**: retrospective-equivalent practices (Kanban retrospective focuses on metrics, not feelings)
 
 **Note:** For deep Kanban guidance, route to `kanban-flow-worker-bee`.
 
@@ -128,7 +128,7 @@ A product development framework for small, empowered teams. 6-week "cycles" (not
 
 ## Multi-framework reality
 
-Most mature teams blend frameworks. The framework selection question is not "pick one forever" — it is "what framework gives us the most value today, and where are we likely to evolve?"
+Most mature teams blend frameworks. The framework selection question is not "pick one forever": it is "what framework gives us the most value today, and where are we likely to evolve?"
 
 Common evolution path:
 1. New team: Scrum (structure, ceremony, roles)

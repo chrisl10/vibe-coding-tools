@@ -1,6 +1,8 @@
 # Example: Register the MCP Server in Hermes
 
-**Demonstrates:** `guides/05-mcp-registration.md`, `guides/03-tool-contract.md`
+*Part of the Hivemind six-host case study - see `examples/case-study-hivemind-six-host-installer.md` for the full context. Hermes is not one of The Hive's four current harnesses; this is retained as a worked MCP-registration pattern reference. This worked example predates and is not superseded by the case study file.*
+
+**Demonstrates:** `guides/03-mcp-registration.md`, `guides/05-portability-and-contracts.md`
 
 This example registers the Hivemind MCP server (`src/mcp/server.ts`) under `mcp_servers.hivemind` in `~/.hermes/config.yaml`, idempotently.
 

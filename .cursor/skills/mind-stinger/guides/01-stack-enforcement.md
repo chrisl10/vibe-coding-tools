@@ -1,8 +1,10 @@
-# 01 — Stack Enforcement
+# 01: Stack Enforcement
 
-The cognitive layer of the deploying product runs on an opinionated stack. Substitutions are findings. This guide is the canonical statement of what's in the stack, what each piece does, and the substitution policy.
+> **Alternative stack.** This guide documents the Qdrant plus Cohere plus Valkey plus OpenRouter stack in full. It is not this repo's default; for this repo's default retrieval substrate (Neon Postgres plus pgvector) see `guides/00-selection-and-defaults.md`. This guide remains the canonical implementation reference for a project that already runs this stack, or that has a specific, articulated need for it (see the escalation triggers in `guides/00-selection-and-defaults.md`). Everything below this point describes that stack as if it were the only option; read it with that context.
 
-> **Doc reference:** `library/knowledge-base/ai/README.md` (model slot table), `library/knowledge-base/ai/coach-architecture.md §3` (LLM provider), `library/knowledge-base/ai/rag-vector-strategy.md` (vector layer).
+The cognitive layer of a project running this stack runs on an opinionated set of choices. Substitutions away from *this stack, once a project has committed to it,* are findings. This guide is the canonical statement of what's in the stack, what each piece does, and the substitution policy.
+
+> **Doc reference:** `library/knowledge/private/ai/README.md` (model slot table), `library/knowledge/private/ai/coach-architecture.md §3` (LLM provider), `library/knowledge/private/ai/rag-vector-strategy.md` (vector layer).
 
 ---
 
@@ -17,10 +19,10 @@ The cognitive layer of the deploying product runs on an opinionated stack. Subst
 | Embedding | **Cohere `embed-english-v3.0`** (1024-dim cosine, two input types) | Top-tier English retrieval quality, batch 96/request, rate 10K texts/min. The English-only constraint is acceptable for the current product. |
 | Rerank | **Cohere `rerank-v3.5`** (top-K=20 → top-N=5 in two-stage) | Cross-encoder reranking is non-optional past 1k docs. Cohere's API is fast (~200ms) and pairs with Cohere embeddings. |
 | Vector DB | **Qdrant** per-tenant `{type}-{tenantId}` collections, HNSW `m: 16, ef_construct: 200`, cosine, `strict_mode: true`, `on_disk: false` | Best RPS + latency profile in the open-source vector DB tier. Per-tenant collections (not per-user) for memory efficiency at 10K+ users. |
-| Working memory | **Valkey** (Redis-compatible OSS fork) — `session:working:{sessionId}` TTL 7200s | Millisecond access, no embedding cost, auto-expires. Valkey vs Redis: Valkey is the post-2024 OSS-licensed continuation. |
+| Working memory | **Valkey** (Redis-compatible OSS fork): `session:working:{sessionId}` TTL 7200s | Millisecond access, no embedding cost, auto-expires. Valkey vs Redis: Valkey is the post-2024 OSS-licensed continuation. |
 | Session memory | **Postgres** (`AiChatSession.messages`, `summary`, `status`) | Durable audit log; schema-versioned; tooling-mature. |
-| Long-term memory | **Qdrant** `conversations-{tenantId}` for episodic + semantic; **Postgres** `GraphEntity`/`GraphRelationship` for graph (gated) | Postgres recursive CTE handles 2–3 hop traversals; no need for a graph DB at sparse-graph scale. |
-| Observability | **`AiTrace` Postgres** populated by `traceAICall()` (fire-and-forget) | Same DB as application data — no extra service. Langfuse integration is planned but NOT built. |
+| Long-term memory | **Qdrant** `conversations-{tenantId}` for episodic + semantic; **Postgres** `GraphEntity`/`GraphRelationship` for graph (gated) | Postgres recursive CTE handles 2-3 hop traversals; no need for a graph DB at sparse-graph scale. |
+| Observability | **`AiTrace` Postgres** populated by `traceAICall()` (fire-and-forget) | Same DB as application data: no extra service. Langfuse integration is planned but NOT built. |
 | Eval | **`ai-eval.ts`** (`evaluateRetrievalPrecision` / `evaluateRouting` / `computeAgreementRate`) using `modelFast` as judge | LLM-as-judge calibrated against the deploying product's coaching corpus. RAGAS/DeepEval/Braintrust would also work but adopting them is a substitution finding. |
 | STT | **Deepgram `nova-3`** (batch via REST), 5-minute audio chunks, p-limit 5 parallel | Best-in-class English STT. Streaming STT is not in scope today (batch only). |
 
@@ -30,18 +32,18 @@ The cognitive layer of the deploying product runs on an opinionated stack. Subst
 
 A push to substitute requires:
 
-1. **Update the corresponding `library/knowledge-base/ai/<doc>.md` first.** The substitution is a doc change, not a code change.
-2. **Eval evidence** — show the new component meets or beats the canonical one on the deploying product's metrics (retrieval precision > 0.7, routing accuracy > 90%, sycophancy < 0.6) on a held-out golden set.
-3. **Migration plan** — for stateful components (Qdrant, Valkey, Postgres), a phased migration with parallel-running and a measurable cutover date.
-4. **Reference-folder demotion of the previous choice** — the canonical alternative goes into `references/` for context.
+1. **Update the corresponding `library/knowledge/private/ai/<doc>.md` first.** The substitution is a doc change, not a code change.
+2. **Eval evidence**: show the new component meets or beats the canonical one on the deploying product's metrics (retrieval precision > 0.7, routing accuracy > 90%, sycophancy < 0.6) on a held-out golden set.
+3. **Migration plan**: for stateful components (Qdrant, Valkey, Postgres), a phased migration with parallel-running and a measurable cutover date.
+4. **Reference-folder demotion of the previous choice**: the canonical alternative goes into `references/` for context.
 
 Without all four, the substitution is a finding (must-fix if it's already in code, should-refactor if it's a proposal in review).
 
 ---
 
-## 3. Wiring map — typical file layout
+## 3. Wiring map: typical file layout
 
-The exact paths are whatever the host repo defines. The "Typical file" column shows the recommended layout — most host codebases settle on something like a `lib/` folder with one file per concern. Reading from this layout is the recommended convention; deviations are not findings on their own, but if the host repo's `library/knowledge-base/ai/` defines a different layout, follow the docs.
+The exact paths are whatever the host repo defines. The "Typical file" column shows the recommended layout; most host codebases settle on something like a `lib/` folder with one file per concern. Reading from this layout is the recommended convention; deviations are not findings on their own, but if the host repo's `library/knowledge/private/ai/` defines a different layout, follow the docs.
 
 | Typical file | Layer | Public surface |
 |---|---|---|
@@ -76,7 +78,7 @@ The exact paths are whatever the host repo defines. The "Typical file" column sh
 
 When a contributor proposes a substitution, walk:
 
-1. **Is it documented?** Did the contributor update `library/knowledge-base/ai/<doc>.md` first? If no → **must-fix: docs first**.
+1. **Is it documented?** Did the contributor update `library/knowledge/private/ai/<doc>.md` first? If no → **must-fix: docs first**.
 2. **Is the substitution justified by an eval?** Without numbers, vendor claims are directional. → **must-fix: show the eval lift on our golden set**.
 3. **What's the migration plan?** Stateful component → phased migration with parallel-running window. → **must-fix: produce migration plan**.
 4. **What's the rollback story?** If the substitution underperforms on day 30, what's the path back? → **must-fix: rollback documented**.
@@ -108,10 +110,10 @@ If all five are clean, the substitution is approvable.
 
 Locked-down dependencies (the canonical stack):
 
-- Cohere SDK — version pinned in `api/package.json`. Verify the SDK supports `rerank-v3.5` and `embed-english-v3.0` input types `search_document` / `search_query`.
-- `@qdrant/js-client-rest` — version pinned. Verify it exposes `strict_mode_config` and HNSW config.
-- `openai` (used as OpenRouter client) — version pinned.
-- `@deepgram/sdk` — version pinned. Verify it exposes `nova-3` model + `paragraphs` / `utterances` / `punctuate` features.
+- Cohere SDK: version pinned in `api/package.json`. Verify the SDK supports `rerank-v3.5` and `embed-english-v3.0` input types `search_document` / `search_query`.
+- `@qdrant/js-client-rest`: version pinned. Verify it exposes `strict_mode_config` and HNSW config.
+- `openai` (used as OpenRouter client): version pinned.
+- `@deepgram/sdk`: version pinned. Verify it exposes `nova-3` model + `paragraphs` / `utterances` / `punctuate` features.
 
 When a dep is bumped, the corresponding research note in `research/` is updated. See `research/2026-04-25-qdrant-hnsw-tuning.md`, `research/2026-04-25-cohere-rerank-v3-5.md`, etc.
 
@@ -119,4 +121,4 @@ When a dep is bumped, the corresponding research note in `research/` is updated.
 
 ## 7. References folder cross-link
 
-Generic alternatives (Mastra / Vercel AI SDK / LangGraph / Pydantic AI / pgvector / Pinecone / Weaviate / Portkey / LiteLLM / Langfuse / Braintrust / BGE-M3 / Voyage / OpenAI embeddings) are in `references/` as **demoted context** — useful when reading vendor blog posts or evaluating future substitutions, NOT useful as activ
+Generic alternatives (Mastra / Vercel AI SDK / LangGraph / Pydantic AI / pgvector / Pinecone / Weaviate / Portkey / LiteLLM / Langfuse / Braintrust / BGE-M3 / Voyage / OpenAI embeddings) are in `references/` as **demoted context**: useful when reading vendor blog posts or evaluating future substitutions, NOT useful as activ

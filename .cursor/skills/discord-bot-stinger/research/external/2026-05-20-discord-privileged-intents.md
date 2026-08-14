@@ -20,7 +20,7 @@ Official Discord documentation defining the three privileged Gateway intents. Un
 - "Unverified apps may use Privileged Intents freely, but must enable them in their app's settings."
 - "However, verified apps (required for apps in 100+ guilds) will need to apply for access to these intents when they are in 75 servers or more."
 - "apps in fewer than 100 servers can use Privileged Intents without needing to apply; just turn them on from the bot's page on the Developer Portal"
-- Intent application opens at **75 servers** (not 100) — applies to the verification form too.
+- Intent application opens at **75 servers** (not 100), applies to the verification form too.
 
 ## Three privileged intents
 

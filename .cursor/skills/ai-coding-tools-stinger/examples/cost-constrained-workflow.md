@@ -1,4 +1,4 @@
-# Example: Cost-Constrained Workflow — Solo Founder, API Budget
+# Example: Cost-Constrained Workflow: Solo Founder, API Budget
 
 *Demonstrates `guides/01-selection-rubric.md` and `guides/03-model-routing.md`*
 
@@ -6,25 +6,25 @@
 
 ## Scenario
 
-A solo founder building a SaaS product in Python/FastAPI + React. Self-funded; hard budget cap of $30/month for all AI tools. Autonomy tolerance: 2-3. Uses VS Code. Cannot afford $20+/month subscriptions — must pay per API call only. Has been spending $80/month on Claude directly via the API and wants to cut costs without sacrificing too much quality.
+A solo founder building a SaaS product in Python/FastAPI + React. Self-funded; hard budget cap of $30/month for all AI tools. Autonomy tolerance: 2-3. Uses VS Code. Cannot afford $20+/month subscriptions, must pay per API call only. Has been spending $80/month on Claude directly via the API and wants to cut costs without sacrificing too much quality.
 
 ---
 
 ## Running the five-question intake
 
-**Q1 — Autonomy tolerance:** 2-3 (hybrid-agent, but cost-conscious)
+**Q1: Autonomy tolerance:** 2-3 (hybrid-agent, but cost-conscious)
 - **Outcome:** Tier 2. But budget constraint rules out Claude Code Pro ($20/month subscription) as the primary tool when combined with other API costs.
 
-**Q2 — Monthly budget:** $30/month hard cap; API billing only
+**Q2: Monthly budget:** $30/month hard cap; API billing only
 - **Outcome:** Aider is the dominant fit. No subscription tools. Aider with architect/editor routing using cheap models.
 
-**Q3 — Editor:** VS Code
+**Q3: Editor:** VS Code
 - **Outcome:** No constraint. Aider runs in terminal; VS Code for editing.
 
-**Q4 — Language:** Python + React (polyglot)
+**Q4: Language:** Python + React (polyglot)
 - **Outcome:** Aider's polyglot leaderboard is the relevant benchmark (not SWE-bench Python-only). Use models that rank well on Aider's leaderboard.
 
-**Q5 — Task type:** Feature development, bug fixes, iterative product work
+**Q5: Task type:** Feature development, bug fixes, iterative product work
 - **Outcome:** Tier 2 hybrid-agent confirmed.
 
 ---

@@ -49,7 +49,7 @@ Answer four questions in order:
 → **Beamer**. Requires passing user metadata (userId, plan) to the widget init.
 
 ### "We're open-source or want full control / no vendor lock-in"
-→ **Keep a Changelog markdown** (`CHANGELOG.md` at repo root). Use `conventional-changelog` or `release-please` for automation. Widget/distribution is out of scope — GitHub Releases serves as the distribution channel.
+→ **Keep a Changelog markdown** (`CHANGELOG.md` at repo root). Use `conventional-changelog` or `release-please` for automation. Widget/distribution is out of scope: GitHub Releases serves as the distribution channel.
 
 ---
 

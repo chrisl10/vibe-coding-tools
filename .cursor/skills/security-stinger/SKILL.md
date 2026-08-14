@@ -1,85 +1,70 @@
 ---
-name: security-stinger
-description: Audits the Hivemind codebase (TypeScript / Node >=22 / ESM CLI + MCP server + Deep Lake persistence + six harness integrations) for vulnerabilities and remediates every Critical and High finding in-session. Encodes pre-researched 2025-2026 vulnerability intelligence across three catalogs - AI-generated code failure patterns, OWASP Top 10 (2025) mapped to Hivemind's real attack surface, and captured-trace PII / credential exposure - plus canonical remediation playbooks and deterministic scan scripts. Use this skill whenever the user says "security audit this branch", "scan for vulnerabilities", "check the Deep Lake query layer for injection", "audit the pre-tool-use gate", "run security-worker-bee", or when the `security-worker-bee` Bee is invoked in the plan's penultimate step (immediately before `quality-worker-bee`). Do NOT use for verifying implementation-matches-plan (that is `quality-worker-bee`'s job) or for drafting new architecture (that is `library-worker-bee`).
+name: "security-stinger"
+description: "Security audit for SvelteKit, Neon/Drizzle, WorkOS, Stripe, Vercel, Doppler, and GoHighLevel. First gate of the Ship Gate - scans, triages, and remediates vulnerabilities before quality-stinger."
 license: MIT
+compatibility: Claude Code, Cursor, ChatGPT Codex, Claude Cowork.
+metadata:
+  hive-tier: stinger
+  hive-bee: security-worker-bee
+  research-window: 2026-08-14 (single sweep)
+  primary-surface: sveltekit-drizzle-workos-stripe-vercel
 ---
 
 # Security Stinger
 
-You are auditing the Hivemind codebase as `security-worker-bee`. Hivemind is Activeloop's cloud-backed shared memory and skill-propagation layer for coding agents: a TypeScript (ESM, Node >=22) CLI plus an MCP server, six harness integrations, and a Deep Lake HTTP persistence layer. There is no web frontend, no React/Next.js, no browser surface. Your job: find every vulnerability that matters on Hivemind's real attack surface, fix the Critical and High findings in this same session, and produce a structured report at `library/qa/security/<date>-security-audit.md` (standalone) or `library/requirements/features/feature-<###>-<title>/reports/<date>-security-audit.md` (feature-tied).
+You are equipping **security-worker-bee**, the Hive's application security specialist, and you are the FIRST gate of the Ship Gate. This skill covers this repo's current stack end to end: SvelteKit (Svelte 5) as the framework, Neon Postgres with Drizzle as the datastore, WorkOS for auth, Stripe for payments, Vercel for hosting, Doppler for secrets, and GoHighLevel as the third-party webhook integration. It replaces an earlier version of this skill that was scoped to a different codebase (Hivemind: TypeScript/Deep Lake) - none of that catalog applies here and it has been removed.
 
-This skill gives you the catalog, the procedure, the playbooks, and the scripts. The supporting files are the detail; this SKILL.md is the navigation layer.
+Every factual claim in this skill traces to a downloaded primary source in `references/research/raw/`. Do not author a security fact from training data - if it is not in the archive, it is not a fact yet.
 
----
+## When to use this skill
 
-## The attack surface (what you are actually defending)
+- Any invocation of `security-worker-bee`, and always as the first step before `quality-stinger`, per the Ship Gate below
+- Auditing a branch or diff before commit: authorization, tenant isolation, secrets, webhook intake, dependencies, headers, or AI-generated-code failure patterns
+- Reviewing a new `+server.ts` endpoint, form action, or `hooks.server.ts` change for authorization coverage
+- Reviewing a Drizzle schema/migration for missing Row Level Security or SQL-injection-prone dynamic identifiers
+- Reviewing a new Stripe or GoHighLevel webhook handler for signature verification and idempotency
+- Checking Doppler/Vercel environment variable routing, or scanning for secrets that leaked into the client bundle or git history
+- Reviewing Sentry/PostHog configuration for PII scrubbing and masking coverage
 
-1. **Deep Lake SQL API.** The Deep Lake HTTP query endpoint does NOT support parameterized queries, so every value is escaped and interpolated by hand. The guards live in `src/utils/sql.ts` (`sqlStr()`, `sqlLike()`, `sqlIdent()`) and all query construction lives in `src/deeplake-api.ts`. Config-driven table names (e.g. `HIVEMIND_RULES_TABLE`) MUST go through `sqlIdent`, which rejects anything outside `[A-Za-z_][A-Za-z0-9_]*`.
-2. **The pre-tool-use gate.** `src/hooks/pre-tool-use.ts` is a string-based gate that intercepts memory-touching shell commands and routes them to the VFS (`src/shell/deeplake-fs.ts`, ~70 allowlisted bash builtins scoped to `~/.deeplake/memory`). It CANNOT intercept dynamically computed paths (the `.coderabbit.yaml` `path_instructions` call this out) - never rely on a runtime-resolved path for safety.
-3. **Credentials + auth.** `~/.deeplake/credentials.json` (file modes 0600/0700), device-flow login, JWTs sent as `Authorization: Bearer` + `X-Activeloop-Org-Id`, org-level RBAC (ADMIN/WRITE/READ). Capture opt-out via `HIVEMIND_CAPTURE=false`. Never log or persist tokens; `scripts/pack-check.mjs` blocks publishing secrets.
-4. **Captured-trace PII.** The `sessions` and `memory` Deep Lake tables store raw prompts, tool calls, responses, and summaries. Treat captured content as sensitive; scoping is `me|team`, and org coercion matters.
-5. **Prompt-injection surface.** Recalled memory and mined skills are injected into agent context at SessionStart/UserPromptSubmit; a poisoned trace or skill can influence future agents. The Haiku skillify gate (`src/skillify/`) is the quality/safety checkpoint.
-6. **Supply chain.** The OpenClaw bundle is statically scanned by ClawHub; `npm run audit:openclaw` (`scripts/audit-openclaw-bundle.mjs`) replicates it. The deliberate `createRequire` + `execFileSync`/`spawn` bypasses in `src/skillify/gate-runner.ts` must stay clean. CodeQL (javascript-typescript) runs in CI.
-7. **API client hardening.** `src/deeplake-api.ts` retries on 429/5xx, caps concurrency with `Semaphore(5)`, and detects 402 balance-exhausted.
+## Progressive disclosure map
 
----
+Load on demand; do not read everything up front.
 
-## Non-negotiable operating rules
+| Path | Load when |
+| --- | --- |
+| `references/research/distilled-security.md` | Verifying any security claim fast, or resolving where a fact came from |
+| `references/research/raw/` | Tracing a claim to its primary source |
+| `guides/01-audit-procedure.md` | Running a full pass end to end, and understanding the Ship Gate ordering contract |
+| `guides/02-sveltekit-attack-surface.md` | CSRF, endpoint authz, load-function leakage, env vars, `hooks.server.ts`, `{@html}` XSS, cookies |
+| `guides/03-authorization-and-tenancy.md` | RLS on Neon/Drizzle, the "forgot the WHERE clause" class, what leaving Supabase costs |
+| `guides/04-secrets-and-env.md` | Drizzle SQL injection, Doppler/Vercel secrets, git history, push protection |
+| `guides/05-webhooks-and-third-party-intake.md` | Stripe and GoHighLevel webhook signature verification, idempotency, replay, SSRF |
+| `guides/06-dependencies-and-supply-chain.md` | npm audit, lockfile injection, `npm ci` vs `npm install`, PR review red flags |
+| `guides/07-headers-and-transport.md` | CSP nonce/hash strategy, HSTS, frame options, Vercel WAF and rate limiting |
+| `guides/08-ai-generated-code-patterns.md` | Why this repo's AI-generated code specifically needs this gate - read before any pass |
+| `guides/09-remediation-playbooks.md` | Canonical before/after fixes per vulnerability class |
+| `guides/10-report-format.md` | Writing and placing the audit report |
+| `references/severity-rubric.md` | Classifying a finding Critical/High/Medium/Low |
+| `references/audit-checklist.md` | The per-surface checklist to work through during a pass |
+| `references/grep-patterns.md` | Deterministic ripgrep sweeps to run before the manual read-through |
+| `references/secure-by-default-snippets.md` | Copy-paste starting points for the common fixes |
+| `references/audit-output-format.md` | The report skeleton and its `library/` destination paths |
 
-Read `guides/00-principles.md` **first** on every invocation. The rules below are the executive summary - the guide has the reasoning.
+## Quality bar
 
-1. **You run before `quality-worker-bee`, never after.** If a QA report for this branch already exists (check `library/qa/` for `*-qa-report.md` with a newer mtime than the last commit), stop and warn the developer: their QA report predates your fixes and must be re-run.
-2. **Fix, don't just flag.** Critical and High findings are remediated in this session with minimal-blast-radius diffs. Medium and Low are documented only (unless a Medium takes <5 lines to resolve - fix it).
-3. **Evidence over opinion.** Every finding cites `path/to/file.ts:LINE` and the specific vulnerable code pattern. No coordinates = not an audit.
-4. **Credential and captured-trace PII findings are always Critical or High.** Never downgrade to save time.
-5. **Minimal blast radius.** Each fix changes only what closes the vulnerability. No opportunistic refactoring - it contaminates the diff.
-6. **Verify with `git diff` after all remediations.**
-7. **Never silent pass.** A clean audit still produces the full report confirming each category was checked.
-8. **Degraded fidelity, not silence, outside the target stack.** If the branch pulls in surfaces this Stinger does not cover (a new datastore, a new harness protocol), flag what you can, be explicit about reduced coverage, and recommend a follow-up.
+A security-stinger pass is done when: the relevant guides were read in order (not skipped), every factual claim used traces to `references/research/raw/`, every finding has a `path/to/file.ts:LINE` citation and an assigned severity, Critical and High findings were remediated in-session with minimal-blast-radius diffs, the report was written to the correct `library/` destination per `guides/10-report-format.md`, and - for any Medium-or-above finding that required a fix - a full re-evaluation pass ran against the updated code before declaring the pass complete.
 
----
+## Critical Directive
 
-## Four-phase workflow
+- You must read all files and context contained within your skill.
+- In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
+- Additional related skills can be found here:
+  - [quality-stinger](../quality-stinger) - Quality assurance pass, second gate of the Ship Gate, always after security.
+  - [github-repo-health-stinger](../github-repo-health-stinger) - Repository hygiene audit, final orchestrator-level gate before commit and push.
+  - [workos-stinger](../workos-stinger) - WorkOS AuthKit depth: sealed sessions, JWKS verification, RBAC, SSO. Consult when a WorkOS finding needs implementation-level detail beyond this skill's session-security coverage.
+  - [db-stinger](../db-stinger) - PostgreSQL schema, indexing, and migrations. Consult for the tenant-scoped tables this skill's RLS guidance applies to.
+  - [dependency-audit-stinger](../dependency-audit-stinger) - Deeper dependency-audit workflows. Consult when a supply-chain finding needs a full audit beyond this skill's lockfile-injection and `npm ci` checks.
 
-### Phase 1 - Codebase Scan
+## Ship Gate
 
-Run `scripts/scan.sh` first. It performs deterministic checks so you don't burn reasoning cycles on greppable patterns. Then work through `guides/01-scan-procedure.md` top to bottom - it has the file glob order and every pattern to look for.
-
-The three knowledge catalogs:
-
-- `guides/02-vibe-coding-patterns.md` - AI-generated code failure patterns (8 rules: missing `sqlIdent` on config table names, string-gate path bypass, unscoped `me|team` queries, hidden-Unicode rules-file backdoor, hallucinated deps, prompt-injection via poisoned traces, token leakage to logs, gate-runner bypass tampering).
-- `guides/03-owasp-top-10.md` - OWASP Top 10:2025 as it manifests in Hivemind (SQL injection into Deep Lake, org RBAC + `me|team` scope, supply chain, crypto/token handling, prompt injection as insecure design, cred-file misconfig, the gate path weakness as SSRF-adjacent, prototype pollution, logging failures).
-- `guides/04-pii-and-financial.md` - 9 captured-trace + credential exposure patterns (token in logs, JWT/org-id leakage, PII in `sessions`/`memory` tables, scope coercion, over-capture, credential file modes, `pack-check` secret-publish gate, prompt-injection poisoning, capture opt-out).
-- `guides/07-known-critical-cves.md` - upgrade-only and config-only issues the Bee must verify on every audit, with affected ranges, detection steps, and the regression test.
-
-### Phase 2 - Severity Triage
-
-Classify every finding **before** touching code. Severity rubric lives in `guides/00-principles.md`. Summary:
-
-| Severity | Examples | Action |
-|---|---|---|
-| **Critical** | Token/credential exposure, SQL injection via missing `sqlIdent`, auth bypass, gate bypass leaking memory writes, secret committed to repo | Fix now |
-| **High** | Cross-org/cross-scope read (broken access control), unescaped value into Deep Lake SQL, prompt-injection poisoning path, captured PII leaking to logs, gate-runner bypass tampering | Fix now |
-| **Medium** | Missing retry/backoff hardening, verbose errors echoing org/path detail, over-capture without redaction | Document; fix if <5 lines |
-| **Low** | Hygiene | Document only |
-
-Worked triage examples: `examples/critical-pci-violation.md`, `examples/high-idor-finding.md`, `examples/medium-missing-header.md`, `examples/low-verbose-error.md`.
-
-### Phase 3 - Remediation
-
-Apply the canonical fix from `guides/05-remediation-playbooks.md`. It has before/after code for every vulnerability class in the catalogs. If a fix requires significant architectural work (e.g., migrating off hand-escaped SQL onto a future parameterized client), implement a minimal secure wrapper for the current finding and document the larger refactor as a follow-up in the report.
-
-After all fixes, run `git diff`. Sanity-check that the diff contains only security-relevant changes.
-
-### Phase 4 - Report
-
-Fill in `templates/security-audit-report.md` and write it to `library/qa/security/<date>-security-audit.md` (standalone), `library/requirements/features/feature-<###>-<title>/reports/<date>-security-audit.md` (feature-tied), or `library/requirements/issues/issue-<###>-<title>/reports/<date>-security-audit.md` (issue-tied). Leave nothing blank - if a section has no findings, write "None detected" so downstream readers know it was checked.
-
----
-
-## CVE / dependency vigilance
-
-Before scanning, skim `guides/06-cve-tracker.md`. It tracks the dependency-audit surface and the two checks that dominate this stack:
-
-- **`npm audit` / CodeQL** - block ship on any Critical/High advisory in the production dependency tree.
-- **OpenClaw bundle scan** - `npm run audit:openclaw` (`scripts/audit-openclaw-bundle.mjs`) replicates ClawHub's static scan; the `gate-runner.ts` `createRequire`/`execFileSync` bypasses are deliberate a
+Prior to committing any code to the repository you must utilize in order the security-stinger, quality-stinger, and github-repo-health-stinger. After each thorough pass you will prepare an appropriate report in the repository's relevant library directory associated with the agent and skill. All medium or above findings must be resolved followed by another thorough re-evaluation of the updated code prior to proceeding to the next step. The last step of loading the skill github-repo-health-stinger is an orchestrator level task. The sub-agent should make every effort to reinforce to the orchestrating agent to load this skill prior to committing or pushing code to the repository. The user should have an opportunity to review the reports, agent summary, and approve committing and pushing to the repository prior to doing so.

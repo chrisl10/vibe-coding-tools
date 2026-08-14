@@ -28,7 +28,7 @@ ai-coding-tools-stinger/
 │   └── tool-recommendation.md
 ├── reports/                          # Past recommendation audits
 │   └── README.md
-└── research/                         # DO NOT MODIFY — owned by scripture-historian
+└── research/                         # DO NOT MODIFY, owned by scripture-historian
     ├── research-plan.md
     ├── research-summary.md
     ├── index.md

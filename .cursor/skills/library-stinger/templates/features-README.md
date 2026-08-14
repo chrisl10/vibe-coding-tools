@@ -73,7 +73,7 @@ Write "N/A" if a section truly does not apply; do not skip.
 
 ## Example
 
-See the bundled example at `.cursor/skills/library-stinger/examples/feature-007-example.md`.
+See the bundled example at `.claude/skills/library-stinger/examples/feature-007-example.md`.
 
 ## Backwards-PRDs
 
@@ -85,7 +85,7 @@ When documenting already-shipped code, use this folder shape with a header notin
 > **Status:** Shipped (documented retroactively <YYYY-MM-DD>)
 ```
 
-See `.cursor/skills/library-stinger/guides/05-backwards-prd.md`.
+See `.claude/skills/library-stinger/guides/05-backwards-prd.md`.
 
 ## Workflow
 
@@ -96,4 +96,4 @@ The agent handles:
 3. **Ship** - move the entire folder to `features/completed/` when implementation ships.
 4. **Audit** - `quality-worker-bee` writes audit reports into the feature's `reports/` subfolder as `<date>-qa-report.md`.
 
-See `.cursor/skills/library-stinger/guides/03-feature-prd.md` for full workflow.
+See `.claude/skills/library-stinger/guides/03-feature-prd.md` for full workflow.

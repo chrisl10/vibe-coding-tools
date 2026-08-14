@@ -1,10 +1,10 @@
-# 01 — Dockerfile patterns
+# 01: Dockerfile patterns
 
 The canonical patterns for Dockerfiles in Node / Next.js / TypeScript stacks. Source notes: `research/2026-04-25-multi-stage-size-reduction.md`, `research/2026-04-25-owasp-docker-cheatsheet.md`, `research/2026-04-25-buildkit-secret-mounts.md`.
 
 ---
 
-## 1. Multi-stage builds — always
+## 1. Multi-stage builds, always
 
 Even for a "simple" Node API. The pattern:
 
@@ -44,7 +44,7 @@ CMD ["node", "dist/server.js"]
 
 **Why:** the runtime stage carries no dev deps, no source, no toolchain. Up to 80% size reduction is the well-documented baseline (`research/2026-04-25-multi-stage-size-reduction.md`).
 
-## 2. Base image selection — Alpine vs. distroless
+## 2. Base image selection: Alpine vs. distroless
 
 | Choice | When to use | Trade-offs |
 |---|---|---|
@@ -57,7 +57,7 @@ CMD ["node", "dist/server.js"]
 
 Source: `research/2026-04-25-base-image-tradeoffs.md`.
 
-## 3. Non-root user — mandatory
+## 3. Non-root user: mandatory
 
 The official `node:*` images include a `node` user (UID 1000). Use it:
 
@@ -74,16 +74,16 @@ USER app
 
 Containers running as root are a Must-fix finding per OWASP Docker Cheatsheet (`research/2026-04-25-owasp-docker-cheatsheet.md`).
 
-## 4. HEALTHCHECK — mandatory in production stage
+## 4. HEALTHCHECK: mandatory in production stage
 
 ```dockerfile
 HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
   CMD node -e "fetch('http://localhost:3000/health').then(r=>process.exit(r.ok?0:1))" || exit 1
 ```
 
-Or, for non-HTTP services, a process-liveness check. A container without HEALTHCHECK is a Should-refactor finding — orchestrators (Compose, Kubernetes, ECS) cannot make readiness decisions without it.
+Or, for non-HTTP services, a process-liveness check. A container without HEALTHCHECK is a Should-refactor finding: orchestrators (Compose, Kubernetes, ECS) cannot make readiness decisions without it.
 
-## 5. BuildKit secret mounts — never `ARG` for secrets
+## 5. BuildKit secret mounts: never `ARG` for secrets
 
 **Wrong:**
 
@@ -135,7 +135,7 @@ RUN --mount=type=cache,id=yarn,target=/usr/local/share/.cache/yarn \
     yarn install --frozen-lockfile
 ```
 
-The cache persists across builds (in BuildKit; in CI, depends on the cache backend — see `guides/08-caching-strategies.md`).
+The cache persists across builds (in BuildKit; in CI, depends on the cache backend, see `guides/08-caching-strategies.md`).
 
 ## 7. `.dockerignore` discipline
 
@@ -176,7 +176,7 @@ Source code changes invalidate the layers below it but leave install layers cach
 
 ## 9. Production-mode env vars
 
-Set `NODE_ENV=production` in the runtime stage (not in the builder — `npm install` will skip dev deps). For Next.js, also `NEXT_TELEMETRY_DISABLED=1` if you don't want telemetry to phone home.
+Set `NODE_ENV=production` in the runtime stage (not in the builder, `npm install` will skip dev deps). For Next.js, also `NEXT_TELEMETRY_DISABLED=1` if you don't want telemetry to phone home.
 
 ## 10. Anti-patterns (Must-fix or Should-refactor)
 
@@ -194,9 +194,9 @@ Set `NODE_ENV=production` in the runtime stage (not in the builder — `npm inst
 
 ## See also
 
-- `templates/Dockerfile.node-app` — generic Node API reference Dockerfile.
-- `templates/Dockerfile.next-app` — Next.js standalone-output Dockerfile.
-- `templates/.dockerignore` — canonical ignore list.
-- `scripts/audit-dockerfile.sh` — static audit (latest tags, root user, ARG secrets, missing HEALTHCHECK).
-- `guides/02-multi-arch-builds.md` — when and how to ship arm64 alongside amd64.
-- `guides/04-image-scanning.md` — how to gate on scan results.
+- `templates/Dockerfile.node-app`: generic Node API reference Dockerfile.
+- `templates/Dockerfile.next-app`: Next.js standalone-output Dockerfile.
+- `templates/.dockerignore`: canonical ignore list.
+- `scripts/audit-dockerfile.sh`: static audit (latest tags, root user, ARG secrets, missing HEALTHCHECK).
+- `guides/02-multi-arch-builds.md`: when and how to ship arm64 alongside amd64.
+- `guides/04-image-scanning.md`: how to gate on scan results.

@@ -8,7 +8,7 @@ Demonstrates an implementation with multiple Critical findings (plan gaps, an N+
 
 ## Input, Plan document excerpt
 
-Plan file: `library/requirements/features/feature-013-library-search/prd-feature-013-library-search.md`
+Plan file: `library/requirements/<lifecycle>/prd-013-library-search/prd-feature-013-library-search.md`
 
 ```markdown
 # PRD: Library Search (Phase 3)
@@ -82,12 +82,12 @@ export async function searchCommand(query: string) {
 
 ## Output, QA Report
 
-Written to `library/requirements/features/feature-013-library-search/reports/2026-04-24-qa-report.md`.
+Written to `library/requirements/<lifecycle>/prd-013-library-search/reports/2026-04-24-qa-report.md`.
 
 ```markdown
 # QA Report: feature-013 Library Search
 
-**Plan document:** `library/requirements/features/feature-013-library-search/prd-feature-013-library-search.md`
+**Plan document:** `library/requirements/<lifecycle>/prd-013-library-search/prd-feature-013-library-search.md`
 **Audit date:** 2026-04-24
 **Base branch:** `main`
 **Head:** `feat/library-search`

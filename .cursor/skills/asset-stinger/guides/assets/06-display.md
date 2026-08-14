@@ -1,6 +1,6 @@
-# Guide — `Display` (06)
+# Guide: `Display` (06)
 
-> **Applies to:** non-interactive UI — badges, avatars, icon-labels, tags, skeletons, dividers, progress bars, empty states. Shows information; does not capture intent.
+> **Applies to:** non-interactive UI: badges, avatars, icon-labels, tags, skeletons, dividers, progress bars, empty states. Shows information; does not capture intent.
 
 ## 1. Purpose
 
@@ -51,12 +51,12 @@ Standard.
 
 ## 7. Hand-offs
 
-- **ux-ui-worker-bee** — owns the brief. Key brief areas: `badges-and-pills.md`, `progress-bars.md`, `cards-and-surfaces.md` (for dividers).
+- **ux-ui-svelte-worker-bee**: owns the brief. Key brief areas: `badges-and-pills.md`, `progress-bars.md`, `cards-and-surfaces.md` (for dividers).
 
 ## 8. Pitfalls
 
 - Registering a progress bar with a fourth height. Brief specifies three (thin/default/hero). Flag.
-- Badges that don't use `var(--radius-badge)` (4px) are drift — the brief's §3 rule.
+- Badges that don't use `var(--radius-badge)` (4px) are drift: the brief's §3 rule.
 - Confusing `icon_label` (text + icon paired) with a standalone `Icon` (see guide 10).
 
 ## 9. Example
@@ -69,7 +69,7 @@ await prisma.display.create({
     variants: ["thin", "default", "hero"],
     tokensConsumed: ["color.gold", "color.gold-ink", "radius.pill", "dur.default"],
     featureKey: "generic-ui",
-    uxuiBriefRef: "library/knowledge-base/ux-ui/03-components/progress-bars.md",
+    uxuiBriefRef: "library/knowledge/private/ux-ui/03-components/progress-bars.md",
     codePath: "app/src/components/progress/ProgressBar.tsx",
     exportName: "ProgressBar",
     fileHash: "12abc...",
@@ -87,5 +87,5 @@ await prisma.display.create({
 - [ ] Component has `@display` annotation
 - [ ] `kind` is correct (not confused with Control or Surface)
 - [ ] `variants` matches the brief's allowed set
-- [ ] `tokensConsumed` — no hex literals
+- [ ] `tokensConsumed`: no hex literals
 - [ ] `uxuiBriefRef` resolves

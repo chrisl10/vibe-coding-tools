@@ -18,11 +18,11 @@ The SlashCommandBuilder class is the primary way to build slash commands in disc
 ## Key quotations / statistics
 
 - Latest stable v14 as of retrieval: **14.25.1**
-- `setDefaultPermission(value: boolean)` — **deprecated**, use `setDefaultMemberPermissions` instead
-- `setDMPermission(enabled: boolean)` — **deprecated**, use `setContexts` instead
-- `setContexts(...contexts: RestOrArray<InteractionContextType>)` — the modern way to set where a command can be used (guild, bot DM, private channel)
-- `setIntegrationTypes(...integrationTypes: RestOrArray<ApplicationIntegrationType>)` — controls whether a command is available in guild-installed vs user-installed apps
-- `toJSON()` — serializes to `RESTPostAPIChatInputApplicationCommandsJSONBody`
+- `setDefaultPermission(value: boolean)`: **deprecated**, use `setDefaultMemberPermissions` instead
+- `setDMPermission(enabled: boolean)`: **deprecated**, use `setContexts` instead
+- `setContexts(...contexts: RestOrArray<InteractionContextType>)`: the modern way to set where a command can be used (guild, bot DM, private channel)
+- `setIntegrationTypes(...integrationTypes: RestOrArray<ApplicationIntegrationType>)`: controls whether a command is available in guild-installed vs user-installed apps
+- `toJSON()`: serializes to `RESTPostAPIChatInputApplicationCommandsJSONBody`
 
 ## Key builder pattern from docs
 
@@ -61,6 +61,6 @@ const pointsCommand = new SlashCommandBuilder()
 ## Annotations for stinger-forge
 
 - **Directly informs templates/slash-command-discord-js.ts**: Use `SlashCommandBuilder` fluent API, export `data` (the builder) + `execute` (the handler) per the recommended file structure from discordjs.guide.
-- **Deprecated methods** to warn about: `setDefaultPermission`, `setDMPermission` — should appear in audit checklist.
+- **Deprecated methods** to warn about: `setDefaultPermission`, `setDMPermission`, should appear in audit checklist.
 - **setContexts** is the current (non-deprecated) way to control where commands appear; this is a common migration gap in existing bots.
 - The separate `@discordjs/builders` package can be used independently for building payloads without the full client.

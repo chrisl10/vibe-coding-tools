@@ -1,4 +1,4 @@
-# Example: Next.js 15 + Inter Variable — Zero CLS Setup
+# Example: Next.js 15 + Inter Variable: Zero CLS Setup
 
 **Scenario:** A Next.js 15 App Router project that uses Inter as the primary body font and wants zero CLS, correct preloading, and a properly typed font token system.
 
@@ -135,8 +135,8 @@ The metric-matched fallback `@font-face` is generated automatically by `next/fon
 
 ## Guides referenced by this example
 
-- `guides/04-nextjs-font.md` — `next/font` App Router API, `variable` vs `className`, Tailwind integration
-- `guides/01-font-display-decision-matrix.md` — why `optional` for body copy
-- `guides/02-preload-strategy.md` — how next/font automates preload hints
-- `guides/05-cls-elimination.md` — what next/font generates under the hood
-- `guides/06-performance-checklist.md` — how to verify this setup passes all checks
+- `guides/04-nextjs-font.md`: `next/font` App Router API, `variable` vs `className`, Tailwind integration
+- `guides/01-font-display-decision-matrix.md`: why `optional` for body copy
+- `guides/02-preload-strategy.md`: how next/font automates preload hints
+- `guides/05-cls-elimination.md`: what next/font generates under the hood
+- `guides/06-performance-checklist.md`: how to verify this setup passes all checks

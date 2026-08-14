@@ -63,7 +63,7 @@ The `.catch(() => {})` prevents a Healthchecks.io network failure from breaking 
 Healthchecks.io free tier: **20 checks**. For teams with more than 20 scheduled jobs, either:
 - Self-host Healthchecks.io (open source, Docker-based)
 - Upgrade to the paid tier
-- Use Cronitor (different pricing model — 5 monitors free, then per-monitor pricing)
+- Use Cronitor (different pricing model: 5 monitors free, then per-monitor pricing)
 
 ---
 
@@ -119,7 +119,7 @@ CREATE UNIQUE INDEX cron_heartbeats_job_scheduled_ux
   ON cron_heartbeats (job_name, scheduled_at);
 ```
 
-The unique index on `(job_name, scheduled_at)` also serves as the idempotency key — the second invocation in a distributed scenario hits the constraint and aborts.
+The unique index on `(job_name, scheduled_at)` also serves as the idempotency key: the second invocation in a distributed scenario hits the constraint and aborts.
 
 ### Missed-run detection query
 

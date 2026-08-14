@@ -16,7 +16,7 @@ Source: Atlassian, updated February 2026
 
 ## Summary
 
-Authoritative practitioner reference from Atlassian (makers of Jira) on Definition of Done — what it is, how to create it, and how to maintain it. Includes the important DoD vs. Acceptance Criteria distinction. Published February 2026.
+Authoritative practitioner reference from Atlassian (makers of Jira) on Definition of Done: what it is, how to create it, and how to maintain it. Includes the important DoD vs. Acceptance Criteria distinction. Published February 2026.
 
 ## Core Definition
 
@@ -41,11 +41,11 @@ A story is complete when it meets BOTH its acceptance criteria AND the team's Do
 
 ## How to Create a DoD
 
-1. **Collaborate** — Engage the entire Scrum Team including developers, testers, product owners, and relevant stakeholders
-2. **Define Criteria** — Cover functionality, quality, performance, documentation, and compliance
-3. **Keep it SMART** — Specific, Measurable, Attainable, Relevant, Time-bound
-4. **Keep it Visible** — Print it out, post it on the wall, include it in the sprint board wiki
-5. **Review and Update** — Update in Sprint Reviews when bugs emerge; review quarterly
+1. **Collaborate**: Engage the entire Scrum Team including developers, testers, product owners, and relevant stakeholders
+2. **Define Criteria**: Cover functionality, quality, performance, documentation, and compliance
+3. **Keep it SMART**: Specific, Measurable, Attainable, Relevant, Time-bound
+4. **Keep it Visible**: Print it out, post it on the wall, include it in the sprint board wiki
+5. **Review and Update**: Update in Sprint Reviews when bugs emerge; review quarterly
 
 ## DoD as a Living Document
 
@@ -114,12 +114,12 @@ From GitScrum DoD best practices (2026):
 - **Stage 2 - Intermediate:** + integration tests, performance considerations
 - **Stage 3 - Advanced (high-performing teams):** + security scans, accessibility, deployment verification, monitoring
 
-Evolution strategy: Add one item per retrospective. Never add items you can't currently achieve — set aspirational items separately with a gap-closing plan.
+Evolution strategy: Add one item per retrospective. Never add items you can't currently achieve; set aspirational items separately with a gap-closing plan.
 
 ## Annotations for stinger-forge
 
 - Primary source for `guides/04-definition-of-done.md` and both DoD templates
-- The DoD vs. Acceptance Criteria distinction MUST be explained in the guide — it's the most common confusion
+- The DoD vs. Acceptance Criteria distinction MUST be explained in the guide: it's the most common confusion
 - The three maturity stages map perfectly to the startup/growth/enterprise template tiering
 - "Living document" principle = review DoD every retrospective and quarterly
 - Atlassian is authoritative because they own Jira, the primary tool where DoD is enforced

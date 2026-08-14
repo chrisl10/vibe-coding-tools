@@ -28,7 +28,7 @@ Configure upload to point at your server:
 
 **Limitations:** Lab data only (no RUM). Requires infra to run. Auth documentation is sparse beyond build tokens.
 
-> TODO: open question — verify LHCI server's current auth capabilities at https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/server.md before relying on its private-instance docs.
+> TODO: open question: verify LHCI server's current auth capabilities at https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/server.md before relying on its private-instance docs.
 
 ---
 
@@ -50,11 +50,11 @@ URL: https://developer.chrome.com/docs/crux/tools/crux-vis
 
 **Focus:** Core Web Vitals optimization, especially for improving Google search rankings. Powered by Lighthouse. Strips away everything except LCP, INP, CLS metrics.
 
-**Pricing:** ~$8,000/year (per third-party comparison, March 2026 — verify at https://treo.sh/docs before quoting).
+**Pricing:** ~$8,000/year (per third-party comparison, March 2026; verify at https://treo.sh/docs before quoting).
 
 **Best for:** content sites and ecommerce where organic search rankings drive revenue and the team wants CWV-specific guidance rather than a full Lighthouse score dashboard.
 
-> TODO: open question — verify Treo's current offering and pricing at https://treo.sh/docs. A third-party article from 2026-03-20 cited ~$8k/yr but Treo's own docs were not scraped during research.
+> TODO: open question: verify Treo's current offering and pricing at https://treo.sh/docs. A third-party article from 2026-03-20 cited ~$8k/yr but Treo's own docs were not scraped during research.
 
 ---
 
@@ -76,7 +76,7 @@ SpeedCurve was acquired by Embrace (mobile observability platform) in November 2
 
 **Critical note:** SpeedCurve Synthetic always loads from a **completely empty cache** on consistent Amazon EC2 hardware. This is equivalent to Lighthouse's cold-cache behavior. SpeedCurve LUX (RUM) captures actual user sessions including repeat visitors with warm caches, similar to CrUX.
 
-"The most important thing to track is consistency and changes within a single testing tool and settings." — SpeedCurve docs
+"The most important thing to track is consistency and changes within a single testing tool and settings." (SpeedCurve docs)
 
 ---
 

@@ -4,7 +4,7 @@
 
 Before prescribing a remedy, classify the symptom. The three failure modes are distinct and have different fixes.
 
-### FOIT — Flash of Invisible Text
+### FOIT: Flash of Invisible Text
 
 The browser hides text until the web font arrives. Users see a blank where content should be. LCP is delayed because the text paint is blocked. Caused by `font-display: block` (default in most browsers before this descriptor existed) or when no `font-display` is specified and the browser defaults to a block period.
 
@@ -12,15 +12,15 @@ The browser hides text until the web font arrives. Users see a blank where conte
 
 **Fix:** Use `font-display: swap`, `fallback`, or `optional`. Never use `block` for body text.
 
-### FOUT — Flash of Unstyled Text
+### FOUT: Flash of Unstyled Text
 
-The browser renders text immediately in a fallback (system) font, then swaps in the web font when it arrives. The swap causes a reflow — the fallback metrics differ from the web font metrics, shifting surrounding content. This reflow is the primary cause of CLS from fonts.
+The browser renders text immediately in a fallback (system) font, then swaps in the web font when it arrives. The swap causes a reflow: the fallback metrics differ from the web font metrics, shifting surrounding content. This reflow is the primary cause of CLS from fonts.
 
 **Symptom:** Text is visible immediately but jumps or shifts layout when the web font loads. CLS score is elevated. Identifiable in Chrome DevTools Layout Shift attribution as "font swap."
 
 **Fix:** Use `font-display: optional` (eliminates the swap entirely on slow connections) or use `swap` + metric-matched fallback overrides (`size-adjust`, `ascent-override`, `descent-override`, `line-gap-override`) to make the reflow invisible.
 
-### FOFT — Flash of Faux Text
+### FOFT: Flash of Faux Text
 
 The browser synthesizes bold or italic variants (using CSS transforms) before the actual bold/italic web font files arrive. Synthesized bold looks heavier; synthesized italic looks slanted. The visual quality is poor and distracting.
 
@@ -50,7 +50,7 @@ Period lengths per `font-display` value (see `guides/01-font-display-decision-ma
 | `fallback` | Extremely short (~100ms) | Short (~3s) |
 | `optional` | Extremely short (~100ms) | None (0s) |
 
-**Key insight for 2026:** `font-display: swap` has an infinite swap period, meaning the font can still arrive 30 seconds later and cause a layout shift. This is why `swap` alone is not safe for CLS — you must pair it with metric-matched fallback overrides (see `guides/05-cls-elimination.md`).
+**Key insight for 2026:** `font-display: swap` has an infinite swap period, meaning the font can still arrive 30 seconds later and cause a layout shift. This is why `swap` alone is not safe for CLS: you must pair it with metric-matched fallback overrides (see `guides/05-cls-elimination.md`).
 
 ---
 
@@ -79,9 +79,9 @@ font-display: swap (infinite swap period)
 
 The only two escape paths are:
 
-1. **`font-display: optional`** — eliminates the swap entirely; font is used only if it loads before the block period ends. Zero CLS, but first-load may render system font permanently on slow connections.
+1. **`font-display: optional`**: eliminates the swap entirely; font is used only if it loads before the block period ends. Zero CLS, but first-load may render system font permanently on slow connections.
 
-2. **`font-display: swap` + metric-matched fallback** — the swap happens but the visual delta is zero because the fallback font is configured to match the web font's metrics exactly. See `guides/05-cls-elimination.md`.
+2. **`font-display: swap` + metric-matched fallback**: the swap happens but the visual delta is zero because the fallback font is configured to match the web font's metrics exactly. See `guides/05-cls-elimination.md`.
 
 ---
 
@@ -91,4 +91,4 @@ The only two escape paths are:
 - Before recommending any `font-display` value
 - As the conceptual foundation for `guides/01-font-display-decision-matrix.md` and `guides/05-cls-elimination.md`
 
-*Cites: `research/external/` — FOIT/FOUT/FOFT sources, MDN font-display spec, web.dev font best practices*
+*Cites: `research/external/`: FOIT/FOUT/FOFT sources, MDN font-display spec, web.dev font best practices*

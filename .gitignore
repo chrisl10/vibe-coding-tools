@@ -47,6 +47,10 @@ typings/
 # TypeScript cache
 *.tsbuildinfo
 
+# Python validation cache
+__pycache__/
+*.py[cod]
+
 # Optional npm cache directory
 .npm
 

@@ -1,4 +1,4 @@
-# 06 — Done Checklist
+# 06: Done Checklist
 
 Run this checklist before declaring API documentation complete. All 10 items must pass or be explicitly acknowledged.
 

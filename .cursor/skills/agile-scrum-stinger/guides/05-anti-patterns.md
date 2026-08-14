@@ -1,4 +1,4 @@
-# 05 — Anti-Patterns
+# 05. Anti-Patterns
 
 A catalogued library of the most common Scrum anti-patterns, with diagnostic signals and named repair moves. Sources: Scrum.org official anti-pattern catalogs (2021-2026), Sprint Pathologies (Scrum.org), PO Anti-Patterns (Scrum.org), Zombie Scrum (Scrum.org / Christiaan Verwijs).
 
@@ -23,7 +23,7 @@ A catalogued library of the most common Scrum anti-patterns, with diagnostic sig
 
 ## Zombie Scrum
 
-**Definition:** The team goes through all the Scrum motions — Planning, Daily, Review, Retro — but no one believes the ceremonies produce value. The team is technically "doing Scrum" but is effectively disengaged.
+**Definition:** The team goes through all the Scrum motions (Planning, Daily, Review, Retro) but no one believes the ceremonies produce value. The team is technically "doing Scrum" but is effectively disengaged.
 
 **Diagnostic signals:**
 - Daily Scrum is a ritual nobody cares about
@@ -44,7 +44,7 @@ A catalogued library of the most common Scrum anti-patterns, with diagnostic sig
 
 ## No Sprint Goal
 
-**Definition:** The Sprint Backlog is the "goal" — the team commits to completing a list of stories with no shared purpose.
+**Definition:** The Sprint Backlog is the "goal": the team commits to completing a list of stories with no shared purpose.
 
 **Diagnostic signals:**
 - Sprint Planning ends with a list of stories but no one can articulate a business outcome
@@ -90,7 +90,7 @@ A catalogued library of the most common Scrum anti-patterns, with diagnostic sig
 **Root cause:** The organization has not accepted the PO role's authority; leadership sees the backlog as a tasking system, not a product roadmap.
 
 **Repair moves:**
-1. Scrum Master responsibility: educate leadership that mid-Sprint additions threaten the Sprint Goal (Scrum Guide explicitly allows PO to cancel Sprint if Sprint Goal becomes obsolete — but not to add work silently).
+1. Scrum Master responsibility: educate leadership that mid-Sprint additions threaten the Sprint Goal (Scrum Guide explicitly allows PO to cancel Sprint if Sprint Goal becomes obsolete, but not to add work silently).
 2. Create a "Stakeholder Request" intake process: requests go to the Product Backlog, not directly to the Sprint Backlog.
 3. Make the cost visible: when a HiPPO story is added, name what gets dropped from the Sprint Goal.
 
@@ -103,7 +103,7 @@ A catalogued library of the most common Scrum anti-patterns, with diagnostic sig
 **Diagnostic signals:**
 - SM is also the lead Developer or project manager
 - Retrospectives are skipped when the SM is on leave
-- Scrum Guide principles are not coached — they are unknown to the team
+- Scrum Guide principles are not coached: they are unknown to the team
 
 **Root cause:** Organization views the SM as a meeting organizer rather than as a coach. The role is deprioritized.
 
@@ -116,7 +116,7 @@ A catalogued library of the most common Scrum anti-patterns, with diagnostic sig
 
 ## Velocity as KPI
 
-**Definition:** Team velocity is used as a performance metric — compared across teams, tracked as a target, or used to evaluate Developers.
+**Definition:** Team velocity is used as a performance metric: compared across teams, tracked as a target, or used to evaluate Developers.
 
 **Diagnostic signals:**
 - Management reports team velocity in stakeholder updates
@@ -172,9 +172,9 @@ A catalogued library of the most common Scrum anti-patterns, with diagnostic sig
 
 | Scrum-but | Impact | Advice |
 |---|---|---|
-| "But we don't use story points" | Low — story points aren't in the Guide | Not a violation; call it accurately |
-| "But our Sprints are 6 weeks" | Medium — exceeds Guide's 4-week maximum | Acknowledge the deviation; assess if a shorter cycle would improve inspect-and-adapt |
-| "But we skip Retrospectives" | High — removes the continuous improvement mechanism | This is a critical violation of the framework's intent |
-| "But our PO doesn't attend Sprint Review" | High — removes the adaptation feedback loop | Address with organizational coaching |
+| "But we don't use story points" | Low: story points aren't in the Guide | Not a violation; call it accurately |
+| "But our Sprints are 6 weeks" | Medium: exceeds Guide's 4-week maximum | Acknowledge the deviation; assess if a shorter cycle would improve inspect-and-adapt |
+| "But we skip Retrospectives" | High: removes the continuous improvement mechanism | This is a critical violation of the framework's intent |
+| "But our PO doesn't attend Sprint Review" | High: removes the adaptation feedback loop | Address with organizational coaching |
 
-The honesty-first principle: label the deviation accurately. A team that skips Retros is not "doing Scrum with some modifications" — they're doing a subset that breaks the inspect-and-adapt cycle.
+The honesty-first principle: label the deviation accurately. A team that skips Retros is not "doing Scrum with some modifications": they're doing a subset that breaks the inspect-and-adapt cycle.

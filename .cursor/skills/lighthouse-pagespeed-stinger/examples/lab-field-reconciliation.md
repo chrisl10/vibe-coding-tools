@@ -47,10 +47,10 @@ TBT measures Long Tasks (> 50ms tasks) during page load. It does NOT measure:
 - Long Tasks triggered by user events after page load
 
 The likely culprits for high field INP with low TBT:
-1. **Heavy event handlers** — click/input handlers that run synchronous JS without yielding
-2. **Rendering work after interactions** — large component re-renders triggered by state changes
-3. **Third-party scripts** — analytics or chat widgets that block the main thread on interaction
-4. **Post-load Long Tasks** — code that loads lazily and blocks interactions once arrived
+1. **Heavy event handlers**: click/input handlers that run synchronous JS without yielding
+2. **Rendering work after interactions**: large component re-renders triggered by state changes
+3. **Third-party scripts**: analytics or chat widgets that block the main thread on interaction
+4. **Post-load Long Tasks**: code that loads lazily and blocks interactions once arrived
 
 ---
 

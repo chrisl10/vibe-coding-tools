@@ -1,18 +1,18 @@
 ---
-name: api-docs-stinger
-description: API documentation authority — Swagger UI / Redoc / Scalar / Mintlify / Stoplight / Bump.sh tool selection, OpenAPI spec enrichment with JSON examples, self-hosted and managed hosting, SDK generation (TypeScript / Python / Go via openapi-generator-cli and Fern/Speakeasy), and changelog discipline. Invoke when the user says "set up API docs", "which docs renderer should I use", "generate an SDK from my spec", "deploy my OpenAPI docs", "write an API changelog", "compare Redoc vs Scalar", or "publish API reference to GitHub Pages". Do NOT invoke for general documentation sites (library-worker-bee), API security scheme audits (security-worker-bee), or backend route design (python-worker-bee / react-worker-bee).
+name: "api-docs-stinger"
+description: "'API documentation authority: Swagger UI / Redoc / Scalar / Mintlify / Stoplight / Bump.sh tool selection, OpenAPI spec enrichment with JSON examples, self-hosted and managed hosting, SDK generation (TypeScript / Python / Go via openapi-generator-cli and Fern/Speakeasy), and changelog discipline. Invoke when the user says \\\\\\\"set up API docs\\\\\\\", \\\\\\\"which docs renderer should I use\\\\\\\", \\\\\\\"generate an SDK from my spec\\\\\\\", \\\\\\\"deploy my OpenAPI docs\\\\\\\", \\\\\\\"write an API changelog\\\\\\\", \\\\\\\"compare Redoc vs Scalar\\\\\\\", or \\\\\\\"publish API reference to GitHub Pages\\\\\\\". Do NOT invoke for general documentation sites (library-worker-bee), API security scheme audits (security-worker-bee), or backend route design (python-worker-bee / react-worker-bee).'"
 ---
 
 # api-docs-stinger
 
-Procedural arsenal for `api-docs-worker-bee`, the Legion AI Tools Factory's API documentation specialist. This stinger encodes the tool comparison matrix, the example-authoring discipline, the deployment playbooks for all major hosting targets, the SDK generation pipelines, and the changelog discipline that keeps API consumers informed without breaking them.
+Procedural arsenal for `api-docs-worker-bee`, the Hive's API documentation specialist. This stinger encodes the tool comparison matrix, the example-authoring discipline, the deployment playbooks for all major hosting targets, the SDK generation pipelines, and the changelog discipline that keeps API consumers informed without breaking them.
 
 ## When this stinger applies
 
 Load this stinger when `api-docs-worker-bee` is invoked. Typical triggers:
 
 - "Set up API docs for this project."
-- "Which renderer should I use — Redoc or Scalar?"
+- "Which renderer should I use: Redoc or Scalar?"
 - "Deploy my OpenAPI spec to GitHub Pages."
 - "Generate a TypeScript SDK from my spec."
 - "Write a changelog entry for this breaking API change."
@@ -30,9 +30,9 @@ Do NOT load it for:
 
 Read these in order before doing anything else:
 
-1. **`guides/00-principles.md`** — the spec-first mindset, the five quality gates, when to route elsewhere, and the core invariants.
-2. **`guides/01-tool-selection.md`** — the full tool comparison matrix and decision tree. Read this before recommending any renderer.
-3. **`research/research-summary.md`** — the intelligence gathered by `scripture-historian` covering Scalar, Redoc, Mintlify, SDK generators, and changelog tooling.
+1. **`guides/00-principles.md`**: the spec-first mindset, the five quality gates, when to route elsewhere, and the core invariants.
+2. **`guides/01-tool-selection.md`**: the full tool comparison matrix and decision tree. Read this before recommending any renderer.
+3. **`research/research-summary.md`**: the intelligence gathered by `scripture-historian` covering Scalar, Redoc, Mintlify, SDK generators, and changelog tooling.
 
 Then walk the remaining guides in task order. Each guide is short; the substantive intelligence comes from the research notes under `research/external/`.
 
@@ -108,4 +108,4 @@ These are non-negotiables. Full justification in `guides/00-principles.md`.
 ---
 
 *Command Brief: [`ai-tools/command-briefs/api-docs-worker-bee-command-brief.md`](../../command-briefs/api-docs-worker-bee-command-brief.md)*
-*Forged by `stinger-forge` from `api-docs-worker-bee-command-brief.md` and `research/`. Part of the Legion AI Tools Factory by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Forged by `stinger-forge` from `api-docs-worker-bee-command-brief.md` and `research/`. Part of The Hive by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

@@ -72,7 +72,7 @@
 |---|---|---|
 | Upload endpoint security review | security-worker-bee | {pending / done} |
 | Database bulk-insert performance | db-worker-bee | {pending / done / n/a} |
-| File drop-zone UI review | ux-ui-worker-bee | {pending / done / n/a} |
+| File drop-zone UI review | ux-ui-svelte-worker-bee | {pending / done / n/a} |
 
 ---
 

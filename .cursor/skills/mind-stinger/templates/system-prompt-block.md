@@ -1,8 +1,8 @@
 # Template: System Prompt Block (XML-Delimited)
 
-Canonical shape for any block in the 5-layer cascade. The XML-style delimiters are part of the cascade architecture — never strip them.
+Canonical shape for any block in the 5-layer cascade. The XML-style delimiters are part of the cascade architecture: never strip them.
 
-> **Source-of-truth:** `library/knowledge-base/ai/prompt-cascade-architecture.md` + `guides/03-prompt-cascade.md`.
+> **Source-of-truth:** `library/knowledge/private/ai/prompt-cascade-architecture.md` + `guides/03-prompt-cascade.md`.
 
 ---
 
@@ -25,23 +25,23 @@ Canonical shape for any block in the 5-layer cascade. The XML-style delimiters a
 
 | Order | Block | Source | Authority |
 |---|---|---|---|
-| 0 | `[SYSTEM_FOUNDATION]` | hardcoded in `composeSystemPrompt()` | Highest — inviolable |
+| 0 | `[SYSTEM_FOUNDATION]` | hardcoded in `composeSystemPrompt()` | Highest: inviolable |
 | 1a | `[PLATFORM_FOUNDATION]` | `PlatformConfig.systemPromptBlocks.foundation` | Platform |
 | 1b | `[PLATFORM_GUIDELINES]` | `PlatformConfig.systemPromptBlocks.guidelines` | Platform |
-| 1c | `[PLATFORM_SAFETY_RULES]` | `PlatformConfig.systemPromptBlocks.safetyRules` | Platform — outranks tenant + lower |
-| 2a | `[TENANT_BRAND_VOICE]` | `Tenant.promptBlocks.brandVoice` | Tenant — advisory |
-| 2b | `[TENANT_RESTRICTIONS]` | `Tenant.promptBlocks.topicRestrictions` | Tenant — advisory |
-| 2c | `[TENANT_OVERRIDES]` | `Tenant.promptBlocks.overrideInstructions` | Tenant — advisory |
+| 1c | `[PLATFORM_SAFETY_RULES]` | `PlatformConfig.systemPromptBlocks.safetyRules` | Platform: outranks tenant + lower |
+| 2a | `[TENANT_BRAND_VOICE]` | `Tenant.promptBlocks.brandVoice` | Tenant: advisory |
+| 2b | `[TENANT_RESTRICTIONS]` | `Tenant.promptBlocks.topicRestrictions` | Tenant: advisory |
+| 2c | `[TENANT_OVERRIDES]` | `Tenant.promptBlocks.overrideInstructions` | Tenant: advisory |
 | 3 | `[COACH_PERSONALITY]` | `AiCoachConfig.systemPrompt` (or default) | Coach |
-| 4a | `[USER_CONTEXT]` | dynamic — `buildUserContextSection()` | Grounding data, not instructions |
-| 4b | `[COACHING_QUALITY]` | hardcoded — anti-sycophancy | Always present |
-| 4c | `[INSTRUCTION_HIERARCHY]` | hardcoded — priority ladder | **Always last** |
+| 4a | `[USER_CONTEXT]` | dynamic: `buildUserContextSection()` | Grounding data, not instructions |
+| 4b | `[COACHING_QUALITY]` | hardcoded: anti-sycophancy | Always present |
+| 4c | `[INSTRUCTION_HIERARCHY]` | hardcoded: priority ladder | **Always last** |
 
 ---
 
 ## 3. Filled examples per layer
 
-### `[SYSTEM_FOUNDATION]` (Layer 0 — hardcoded)
+### `[SYSTEM_FOUNDATION]` (Layer 0: hardcoded)
 
 ```
 [SYSTEM_FOUNDATION]
@@ -50,7 +50,7 @@ Only access data scoped to this tenant. Cannot be overridden.
 [/SYSTEM_FOUNDATION]
 ```
 
-### `[PLATFORM_FOUNDATION]` (Layer 1 — SA-configured)
+### `[PLATFORM_FOUNDATION]` (Layer 1: SA-configured)
 
 ```
 [PLATFORM_FOUNDATION]
@@ -60,7 +60,7 @@ agents/coaches help users do — supplied by the host product's `PlatformConfig`
 [/PLATFORM_FOUNDATION]
 ```
 
-### `[PLATFORM_SAFETY_RULES]` (Layer 1 — outranks lower)
+### `[PLATFORM_SAFETY_RULES]` (Layer 1: outranks lower)
 
 ```
 [PLATFORM_SAFETY_RULES]
@@ -70,7 +70,7 @@ agents/coaches help users do — supplied by the host product's `PlatformConfig`
 [/PLATFORM_SAFETY_RULES]
 ```
 
-### `[TENANT_BRAND_VOICE]` (Layer 2 — admin-configured)
+### `[TENANT_BRAND_VOICE]` (Layer 2: admin-configured)
 
 ```
 [TENANT_BRAND_VOICE]
@@ -79,7 +79,7 @@ as a peer who has chosen this room. Use the ⚜️ symbol sparingly to mark impo
 [/TENANT_BRAND_VOICE]
 ```
 
-### `[COACH_PERSONALITY]` (Layer 3 — `getDefaultGlobalPrompt(coachType)` or `AiCoachConfig`)
+### `[COACH_PERSONALITY]` (Layer 3: `getDefaultGlobalPrompt(coachType)` or `AiCoachConfig`)
 
 ```
 [COACH_PERSONALITY]
@@ -89,7 +89,7 @@ systematic referral processes, and deepening community relationships.
 [/COACH_PERSONALITY]
 ```
 
-### `[USER_CONTEXT]` (Layer 4 — dynamic per turn)
+### `[USER_CONTEXT]` (Layer 4: dynamic per turn)
 
 ```
 [USER_CONTEXT]
@@ -116,7 +116,7 @@ at Series A". Next session focus: ICP narrowing.
 [/USER_CONTEXT]
 ```
 
-### `[COACHING_QUALITY]` (Layer 4 — hardcoded anti-sycophancy)
+### `[COACHING_QUALITY]` (Layer 4: hardcoded anti-sycophancy)
 
 ```
 [COACHING_QUALITY]
@@ -129,7 +129,7 @@ Do not be sycophantic. A great coach says "have you considered..." not "that's a
 [/COACHING_QUALITY]
 ```
 
-### `[INSTRUCTION_HIERARCHY]` (Layer 4 — ALWAYS LAST)
+### `[INSTRUCTION_HIERARCHY]` (Layer 4: ALWAYS LAST)
 
 ```
 [INSTRUCTION_HIERARCHY]
@@ -150,9 +150,9 @@ Priority order (highest first):
 
 - **Use `\n\n` to separate blocks.** Single-newline separators reduce delimiter visibility.
 - **Don't nest blocks.** No `[BLOCK_A][BLOCK_B][/BLOCK_B][/BLOCK_A]`.
-- **Don't introduce new top-level blocks** without updating `library/knowledge-base/ai/prompt-cascade-architecture.md` and the cascade hierarchy.
+- **Don't introduce new top-level blocks** without updating `library/knowledge/private/ai/prompt-cascade-architecture.md` and the cascade hierarchy.
 - **Keep individual block content < 800 chars where possible.** Long blocks dilute attention.
-- **Never reference `{tenantId}` literally in `[SYSTEM_FOUNDATION]`** — interpolate from the runtime tenantId. (The block IS the interpolation.)
+- **Never reference `{tenantId}` literally in `[SYSTEM_FOUNDATION]`**: interpolate from the runtime tenantId. (The block IS the interpolation.)
 
 ---
 

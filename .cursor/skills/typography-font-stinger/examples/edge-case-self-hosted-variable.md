@@ -1,6 +1,6 @@
 # Edge Case: Self-Hosted Variable Font with Manual Subsetting
 
-This example covers the full manual pipeline for self-hosting a variable font outside of `next/font` — useful when the typeface is a paid/licensed font not available on Google Fonts, or when the project is not Next.js.
+This example covers the full manual pipeline for self-hosting a variable font outside of `next/font`: useful when the typeface is a paid/licensed font not available on Google Fonts, or when the project is not Next.js.
 
 ---
 

@@ -1,6 +1,6 @@
-# Guide — `Route` (03)
+# Guide: `Route` (03)
 
-> **Applies to:** every addressable handler — page routes, API routes, webhooks (inbound/outbound), server actions, cron jobs, RPC handlers, middleware, and redirects. A single table with a `type` discriminator.
+> **Applies to:** every addressable handler: page routes, API routes, webhooks (inbound/outbound), server actions, cron jobs, RPC handlers, middleware, and redirects. A single table with a `type` discriminator.
 
 ## 1. Purpose
 
@@ -51,7 +51,7 @@ Detection varies by `type`:
 | `rpc` | `api/src/rpc/**/*.ts` | exported handler |
 
 **Required annotations:**
-- `@route <key>` (optional — generator can derive)
+- `@route <key>` (optional, generator can derive)
 - `@feature <key>` (if feature-bearing)
 - `@auth <value>`
 - `@rateLimit <value>` (optional)
@@ -67,7 +67,7 @@ Detection varies by `type`:
 
 ## 5. Lifecycle
 
-Standard. **External-contract routes** (`externalContract: true`) have a mandatory 180-day sunset window instead of 90 — partners need time.
+Standard. **External-contract routes** (`externalContract: true`) have a mandatory 180-day sunset window instead of 90; partners need time.
 
 Versioned routes (v1, v2 living side-by-side) each get their own row. Deprecating v1 doesn't deprecate v2.
 
@@ -79,16 +79,16 @@ Versioned routes (v1, v2 living side-by-side) each get their own row. Deprecatin
 
 ## 7. Hand-offs
 
-- **security-worker-bee** — every route with `externalContract: true` or `auth: public` gets a review.
-- **library-worker-bee** — route catalog feature PRDs get cross-linked.
-- **ux-ui-worker-bee** — not usually involved unless type=page.
+- **security-worker-bee**: every route with `externalContract: true` or `auth: public` gets a review.
+- **library-worker-bee**: route catalog feature PRDs get cross-linked.
+- **ux-ui-svelte-worker-bee**: not usually involved unless type=page.
 
 ## 8. Pitfalls
 
-- Treating one registered route as "covering" all its variants — `:id` parameterized routes register once, but authz differences between `GET /users/:id/public` vs `GET /users/:id/private` require separate registrations.
-- Missing `externalContract` flag on partner webhook endpoints — skips the longer sunset protection.
-- Registering middleware as type=api — middleware is its own type with no `method`.
-- `method: NA` for non-HTTP handlers (cron, server actions) — don't leave blank.
+- Treating one registered route as "covering" all its variants: `:id` parameterized routes register once, but authz differences between `GET /users/:id/public` vs `GET /users/:id/private` require separate registrations.
+- Missing `externalContract` flag on partner webhook endpoints: skips the longer sunset protection.
+- Registering middleware as type=api: middleware is its own type with no `method`.
+- `method: NA` for non-HTTP handlers (cron, server actions): don't leave blank.
 
 ## 9. Example
 

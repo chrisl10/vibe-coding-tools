@@ -2,7 +2,7 @@
 
 This directory holds everything the `wiki-worker-bee` Bee needs to do its job. Organized into six layers: **guides** (procedural rules), **references** (cheat sheets loaded on demand), **templates** (page seeds copied per write), **examples** (worked invocations to mirror), **reports** (output shapes and past runs), **research** (audit trail for the guides).
 
-> **Agent entry point:** [`.cursor/agents/wiki-worker-bee.md`](../../agents/wiki-worker-bee.md) (repo-local). The agent reads files from this directory by path; it does not auto-load everything into context.
+> **Agent entry point:** [`.claude/agents/wiki-worker-bee.md`](../../agents/wiki-worker-bee.md) (repo-local). The agent reads files from this directory by path; it does not auto-load everything into context.
 >
 
 ## Directory map
@@ -134,8 +134,8 @@ All templates use Obsidian-flavored YAML frontmatter and `[[wikilinks]]` - both 
 
 ## Sibling boundaries
 
-- `library-worker-bee` writes module narratives under `library/knowledge/private/<domain>/*.md`. wiki-worker-bee does not touch that prose. See [`.cursor/skills/library-stinger/README.md`](../library-stinger/README.md).
-- `quality-worker-bee` writes QA reports under `library/qa/` and feature/issue `reports/` folders. wiki-worker-bee does not touch these.
+- `library-worker-bee` writes module narratives under `library/knowledge/private/<domain>/*.md`. wiki-worker-bee does not touch that prose. See [`.claude/skills/library-stinger/README.md`](../library-stinger/README.md).
+- `quality-worker-bee` writes QA reports under `library/requirements/reports/` and feature/issue `reports/` folders. wiki-worker-bee does not touch these.
 - Hivemind's graph driver (`src/graph/`) owns `index.md`, `<type>/_index.md`, `log.md`, `hot.md`, `.hivemind/file-hashes.json` inside the knowledge area. wiki-worker-bee writes per-page content only.
 
 ## Future work (out of scope for v1)

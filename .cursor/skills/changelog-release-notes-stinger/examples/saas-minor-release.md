@@ -29,11 +29,11 @@ PRs merged this sprint:
 Export your reports, fixed two frustrating bugs, and made the invite email look great in Gmail.
 
 ### New
-- **CSV export on Reports** — download any report as a CSV from the new export button in the top-right corner of every report view. Supports all date ranges and filter combinations.
+- **CSV export on Reports**: download any report as a CSV from the new export button in the top-right corner of every report view. Supports all date ranges and filter combinations.
 
 ### Fixed
-- **Blank screen after switching workspaces** — opening a different workspace no longer requires a manual page reload to see the correct data.
-- **Invite emails in Gmail** — invitation emails now render correctly in Gmail instead of showing misaligned columns on mobile.
+- **Blank screen after switching workspaces**: opening a different workspace no longer requires a manual page reload to see the correct data.
+- **Invite emails in Gmail**: invitation emails now render correctly in Gmail instead of showing misaligned columns on mobile.
 
 ---
 
@@ -45,8 +45,8 @@ We started work on a bulk action menu for list views but it is not ready for the
 
 ## What was deliberately omitted
 
-- `Upgrade Postgres connection pool to PgBouncer` — invisible to users. No user behavior changed. Omit.
-- `Fix race condition in auth token refresh` — reframed as an observable symptom benefit. But since it is fully internal and users are unlikely to have noticed it as a distinct issue, it was folded into "Fixed" implicitly via the overall stability of the release. If it had caused visible sign-out bugs, it would appear explicitly.
+- `Upgrade Postgres connection pool to PgBouncer`: invisible to users. No user behavior changed. Omit.
+- `Fix race condition in auth token refresh`: reframed as an observable symptom benefit. But since it is fully internal and users are unlikely to have noticed it as a distinct issue, it was folded into "Fixed" implicitly via the overall stability of the release. If it had caused visible sign-out bugs, it would appear explicitly.
 
 ---
 
@@ -56,12 +56,12 @@ We started work on a bulk action menu for list views but it is not ready for the
 ## Distribution checklist for 2.4.0
 
 - [x] Published to changelog platform (Headway)
-- [x] In-app widget badge updated (automatic on publish — verified)
+- [x] In-app widget badge updated (automatic on publish, verified)
 - [ ] Email digest queued for Friday's weekly email
 - [ ] Community post drafted for #product-updates in Slack
-- [ ] Blog post scheduled (not needed — minor release)
-- [ ] Direct email sent to affected users (not needed — no breaking changes)
-- [ ] In-product banner added (not needed — no user action required)
+- [ ] Blog post scheduled (not needed: minor release)
+- [ ] Direct email sent to affected users (not needed: no breaking changes)
+- [ ] In-product banner added (not needed: no user action required)
 ```
 
 ---

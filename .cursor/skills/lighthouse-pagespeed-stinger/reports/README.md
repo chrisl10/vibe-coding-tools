@@ -8,8 +8,8 @@ This folder collects past Lighthouse audit reports produced by `lighthouse-pages
 |---------|-------------|
 | Quick inline audit | Inline chat reply (no file written) |
 | Formal audit for a feature or release | `docs/performance/YYYY-MM-DD-<slug>-lighthouse-audit.md` |
-| QA audit tied to a PRD | `library/requirements/features/<feature-folder>/reports/YYYY-MM-DD-lighthouse-audit.md` |
-| Standalone performance audit | `library/qa/performance/YYYY-MM-DD-<site>-audit.md` |
+| QA audit tied to a PRD | `library/requirements/<lifecycle>/<feature-folder>/reports/YYYY-MM-DD-lighthouse-audit.md` |
+| Standalone performance audit | `library/requirements/reports/performance/YYYY-MM-DD-<site>-audit.md` |
 
 ## Report format
 

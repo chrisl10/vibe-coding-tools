@@ -7,7 +7,7 @@ url: https://unifiedimagetools.com/en/articles/responsive-placeholders-lqip-sqip
 date_accessed: 2026-05-20
 ---
 
-# Placeholder Design LQIP/SQIP/BlurHash — Practical 2025
+# Placeholder Design LQIP/SQIP/BlurHash: Practical 2025
 
 ## Key Findings
 
@@ -15,7 +15,7 @@ date_accessed: 2026-05-20
 - **BlurHash**: DCT-based hash string (20-30 chars). Requires client-side JS decode. Best for mobile/PWA with lightweight constraints.
 - **ThumbHash**: More detail than BlurHash in same space, encodes aspect ratio, supports alpha. Better color accuracy.
 - LQIP payload: ~200-400 bytes for a 32x32 JPEG. Blurs natively via CSS `filter: blur()`.
-- BlurHash payload: ~20-30 characters (base83). Zero bytes on the wire for full image — but JS required to decode.
+- BlurHash payload: ~20-30 characters (base83). Zero bytes on the wire for full image, but JS required to decode.
 - ThumbHash payload: ~20-28 characters (base64). Slightly smaller than BlurHash at equivalent quality.
 
 ## LQIP Generation with Sharp

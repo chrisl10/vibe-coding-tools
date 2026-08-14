@@ -5,7 +5,7 @@
 - **Page budget target:** ~100 pages (executed as 8 focused source notes at normal depth)
 - **Source breadth target:** practitioner blogs, SRE community sites, official platform docs (PagerDuty, Google SRE), tool-comparison guides
 
-## Initial queries (from the proposal step)
+## Initial queries (from `big-bang-space`)
 
 1. "On-call runbook template 2026"
 2. "Runbook automation Notion Slab 2026"

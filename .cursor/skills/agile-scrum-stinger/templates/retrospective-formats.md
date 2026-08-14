@@ -57,7 +57,7 @@ Rules:
 - **Longed For:** "What did you desire that wasn't available?"
 
 ### Facilitation note
-"Lacked" and "Longed For" can overlap — combine if the team finds the distinction confusing.
+"Lacked" and "Longed For" can overlap: combine if the team finds the distinction confusing.
 
 ---
 

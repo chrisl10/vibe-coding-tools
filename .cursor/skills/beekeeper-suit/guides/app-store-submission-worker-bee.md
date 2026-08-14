@@ -1,69 +1,39 @@
-# App Store Submission Worker Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `app-store-submission-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/app-store-submission-worker-bee.md`](../../agents/app-store-submission-worker-bee.md)
-**Stinger:** [`.cursor/skills/app-store-submission-stinger/`](../../skills/app-store-submission-stinger/)
-**Command Brief:** not available (synthesized from agent + stinger files)
-**Trigger policy:** on-demand
-
----
+# app-store-submission-worker-bee
 
 ## Domain
+Owns mobile app publication for iOS (App Store Connect + TestFlight) and Android (Google Play Console) from the point the binary is ready to the point the app is live with optimized metadata, accurate compliance declarations, and working IAP. Covers App Store Optimization, privacy compliance (Apple nutrition labels, PrivacyInfo.xcprivacy, Google data safety forms), rejection diagnosis via a two-interpretation protocol, age rating questionnaires, In-App Purchase configuration (StoreKit 2, Google Play Billing Library 7+), and realistic 2026 review-timeline expectations. Every guideline citation includes a section number.
 
-`app-store-submission-worker-bee` owns the complete mobile app publication surface for iOS (App Store Connect + TestFlight) and Android (Google Play Console). Its domain starts when the app binary is ready and ends when the app is live on both stores with optimized metadata, accurate compliance declarations, and a working IAP configuration. This covers App Store Optimization (keywords, screenshots, preview assets, ASO refresh cadence), privacy compliance (Apple nutrition labels, PrivacyInfo.xcprivacy, Google data safety forms, April 2026 policy changes), rejection diagnosis and remediation using the two-interpretation protocol, age rating questionnaires, and In-App Purchase configuration (StoreKit 2 on iOS, Google Play Billing Library 7+ on Android). The Bee speaks in citations — every guideline reference includes a section number, every timeline estimate is a range with a confidence level, and every ambiguous rejection produces two interpretations before a fix is recommended.
+## Paired Stinger
+[app-store-submission-stinger](../../app-store-submission-stinger) - ASO strategy per platform, the full compliance checklist including April 2026 Android policy changes, the rejection playbook, and IAP setup patterns.
 
 ## Trigger phrases
-
-Route to `app-store-submission-worker-bee` when the user says any of:
-
-- "submit my app"
-- "App Store rejection" / "Google Play rejection"
-- "ASO strategy" / "keyword strategy for my app"
-- "privacy nutrition label" / "PrivacyInfo.xcprivacy" / "data safety form"
-- "set up IAP" / "StoreKit 2" / "Play Billing"
-- "expedited review" / "Guideline 2.1" / "Guideline 3.1.1"
-
-Or when the request implicitly involves preparing a mobile app binary for store publication, diagnosing a rejection notice, configuring In-App Purchases, or auditing compliance declarations on either platform.
+- "help me submit my app to the App Store"
+- "we got an App Store rejection, Guideline 2.1"
+- "write our ASO strategy, keywords and screenshots"
+- "fill out the privacy nutrition label"
+- "set up in-app purchases with StoreKit 2"
+- "why did Google Play reject our data safety form"
+- "is expedited review worth requesting"
+- "what's PrivacyInfo.xcprivacy and do we need it"
 
 ## Do NOT route when
-
-- The request is about UI design of the app itself — route to `ux-ui-worker-bee` instead.
-- The request is about writing client-side StoreKit or Google Play Billing implementation code — route to `react-worker-bee` or `python-worker-bee` instead.
-- The request is a security audit of the app binary — route to `security-worker-bee` instead.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let the broader one act as backup.
+- The request is UI design of the app itself; that is ux-ui-svelte-worker-bee.
+- The request is client-side StoreKit or Play Billing implementation code; that is react-worker-bee or python-worker-bee. This Bee specifies the IAP configuration, not the code.
+- The request is a security audit of the app binary; that is security-worker-bee.
+- The app is in a children's category and COPPA/GDPR-K compliance has not been reviewed by counsel; flag this and stop rather than proceeding.
+- The rejection is a Guideline 4.3 (spam/low value) case requiring a fundamental product change; escalate rather than treating it as a routine remediation.
 
 ## Inputs the Bee needs
+- Platform (iOS/Android/both), stage (pre-submission, first submit, resubmission, update), and monetization model.
+- Special category flags: children's content, health data, financial services, gambling.
+- Full rejection text, if a rejection is present.
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- A submission-readiness report with a go/no-go verdict per category and prioritized blockers.
+- ASO metadata (title, subtitle, keywords, screenshot captions) per platform.
+- A rejection-remediation plan with two interpretations and a drafted reply to the review team, when applicable.
 
-- **Platform** — iOS only, Android only, or both (required)
-- **Stage** — pre-submission prep, first-ever submission, resubmission after rejection, or live-app update (required)
-- **Monetization model** — free, premium, subscription, consumable IAP, or mixed (required)
-- **Special categories** — children's content, health data, financial services, or gambling (required; gates the entire workflow if present)
-- **Rejection text** — full rejection notice including reason codes, if a rejection is present (paste verbatim; do not paraphrase)
-
-## Outputs the Bee produces
-
-- **Submission-readiness report** — structured go/no-go verdict per category (ASO, compliance, age rating, IAP, build quality) with blockers in priority order and timeline estimates as ranges; rendered from `templates/submission-readiness-report.md`
-- **Rejection remediation plan** — type classification, two-interpretation analysis, remediation checklist, and draft reply to the review team; rendered from `templates/rejection-remediation-plan.md`
-- **Privacy label checklist** — iOS nutrition label and Android data safety form field-by-field completion; rendered from `templates/privacy-label-checklist.md`
-
-## Multi-Bee sequences this Bee participates in
-
-- Plan execution loop — always closes with `security-worker-bee` then `quality-worker-bee`
-
-## Critical directives the orchestrator should respect
-
-- Always cite the specific guideline section by number (e.g., "App Review Guideline 3.1.1", "Google Play Developer Policy: Impersonation") — developers use these citations when appealing or escalating to the review board.
-- Never recommend workarounds that violate platform policies — a bypass that passes today's review risks retroactive removal and developer account termination.
-- State timeline estimates as ranges with a confidence level — review times are non-deterministic; single-point estimates create false expectations and break release planning.
-- Flag children's category (COPPA / CIPA / GDPR-K) issues at the top of any report — these carry the highest regulatory and account-termination risk and must be immediately visible to the developer.
-- When a rejection is ambiguous, produce two interpretations and two remediation paths — one wrong interpretation wastes a full resubmission cycle (typically 2-5 days).
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
+## Commonly sequenced with
+- react-worker-bee / python-worker-bee: implement the StoreKit 2 or Play Billing code this Bee specifies.
+- ux-ui-svelte-worker-bee: owns the app UI that ASO screenshots and previews showcase.
+- security-worker-bee: audits the binary separately from this Bee's compliance-declaration work.

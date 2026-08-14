@@ -22,7 +22,7 @@ stinger: app-store-submission-stinger
 - "For a new app launch, prioritize these five items: (1) keyword-optimized title using 25–30 characters with your primary keyword, (2) all 100 characters used in the iOS keyword field, (3) at least 6 high-quality screenshots showing your core value proposition in the first 3 frames, (4) a description that hooks readers in the first paragraph, and (5) localization in at least 10 languages to maximize global reach from day one."
 
 ## Annotations for stinger-forge
-- The screenshot caption indexing discovery (2026 new factor) is a critical update for `guides/01-aso-strategy.md` — it changes the ROI calculation for screenshot design. Captions are now both conversion AND discovery assets.
+- The screenshot caption indexing discovery (2026 new factor) is a critical update for `guides/01-aso-strategy.md`: it changes the ROI calculation for screenshot design. Captions are now both conversion AND discovery assets.
 - The five-item priority list for new app launch is a ready-made "minimum viable ASO" checklist that stinger-forge can embed directly in the guide.
 - The 70 Custom Product Pages cap and A/B testing minimum of 7 days are concrete operational parameters that belong in the ASO guide.
 - This source is newer (April 2026) than the ScreenMagic and Applyra sources, which makes it the freshest citation for these specifics.

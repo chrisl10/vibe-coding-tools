@@ -1,6 +1,6 @@
 ---
-name: git-stinger
-description: Git mastery specialist - interactive rebase (squash, fixup, reword, drop), conflict resolution, history rewriting (git filter-repo, BFG), reset/reflog recovery, worktrees for parallel branches, hooks (Husky, lefthook), submodules vs subtrees, Git LFS, partial clone, and sparse checkout. Use when the user says "squash my commits", "I pushed a secret", "my repo is huge", "undo that rebase", "work on two branches at once", "set up Git hooks", "submodules vs subtrees", or needs any Git recovery operation. Do NOT use for CI/CD pipeline configuration (ci-release-worker-bee) or credential rotation after a secrets incident (security-worker-bee).
+name: "git-stinger"
+description: "Git mastery specialist - interactive rebase (squash, fixup, reword, drop), conflict resolution, history rewriting (git filter-repo, BFG), reset/reflog recovery, worktrees for parallel branches, hooks (Husky, lefthook), submodules vs subtrees, Git LFS, partial clone, and sparse checkout. Use when the user says \\\\\\\"squash my commits\\\\\\\", \\\\\\\"I pushed a secret\\\\\\\", \\\\\\\"my repo is huge\\\\\\\", \\\\\\\"undo that rebase\\\\\\\", \\\\\\\"work on two branches at once\\\\\\\", \\\\\\\"set up Git hooks\\\\\\\", \\\\\\\"submodules vs subtrees\\\\\\\", or needs any Git recovery operation. Do NOT use for CI/CD pipeline configuration (ci-release-worker-bee) or credential rotation after a secrets incident (security-worker-bee)."
 ---
 
 # git Stinger
@@ -151,4 +151,4 @@ git-stinger/
 
 ---
 
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Part of The Hive, curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

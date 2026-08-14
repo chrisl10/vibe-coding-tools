@@ -33,8 +33,8 @@ Use this template when an App Store or Google Play rejection arrives. Complete i
 
 Is the rejection note unambiguous? 
 
-- [ ] Yes, the issue is clear — proceed directly to remediation
-- [ ] No, the note could mean two things — complete both interpretations below
+- [ ] Yes, the issue is clear: proceed directly to remediation
+- [ ] No, the note could mean two things: complete both interpretations below
 
 ### Interpretation A:
 [describe what you think the reviewer meant]
@@ -89,7 +89,7 @@ Hi App Review Team,
 
 [Explain what you found / what caused it]
 
-[Describe the specific fix made — cite guideline section if relevant]
+[Describe the specific fix made, cite guideline section if relevant]
 
 [Optional: attach evidence video / screenshots]
 

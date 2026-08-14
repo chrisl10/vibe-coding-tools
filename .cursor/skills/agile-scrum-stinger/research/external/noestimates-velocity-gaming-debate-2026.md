@@ -11,7 +11,7 @@ stinger: agile-scrum-stinger
 # The #NoEstimates Debate - When Story Points Help and When They Hurt (February 2026)
 
 ## Summary
-A balanced February 2026 analysis of the #NoEstimates movement vs. story point estimation, covering when each approach is appropriate. Key insight: the estimation debate is a false dichotomy — the real question is "are we getting value from this ceremony?" Teams should use throughput-based forecasting when it's more accurate than velocity tracking, not as an ideology.
+A balanced February 2026 analysis of the #NoEstimates movement vs. story point estimation, covering when each approach is appropriate. Key insight: the estimation debate is a false dichotomy, and the real question is "are we getting value from this ceremony?" Teams should use throughput-based forecasting when it's more accurate than velocity tracking, not as an ideology.
 
 ## Key quotations / statistics
 - "Historical throughput data (how many items you finish per sprint) predicts delivery dates more reliably than summing up story points."

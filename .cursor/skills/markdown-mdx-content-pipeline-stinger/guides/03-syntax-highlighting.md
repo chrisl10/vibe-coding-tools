@@ -9,11 +9,11 @@ The 2026 syntax highlighting landscape for Markdown/MDX pipelines centers on the
 **Latest stable:** v4.0.0 (released February 27, 2026)
 **Node.js requirement:** ≥ 20 (Node 18 EOL April 2025)
 
-Shiki ships TextMate grammars — the same format used by VS Code and Sublime Text. It is the default highlighter in Vite, Astro, and Next.js ecosystems as of 2026.
+Shiki ships TextMate grammars: the same format used by VS Code and Sublime Text. It is the default highlighter in Vite, Astro, and Next.js ecosystems as of 2026.
 
 ### v3 → v4 migration
 
-Direct bump — no API changes to core functions. Only breaking changes:
+Direct bump: no API changes to core functions. Only breaking changes:
 - Node 18 support dropped
 - `createdBundledHighlighter()` renamed to `createBundledHighlighter()`
 - `CreatedBundledHighlighterOptions` renamed to `CreateBundledHighlighterOptions`
@@ -33,7 +33,7 @@ const html = await codeToHtml('const x = 1', {
 
 - Avoid the full Shiki bundle (exceeds the 1 MiB script limit)
 - Use fine-grained bundles with explicit grammar imports
-- No `vm` module needed — Shiki uses WASM, compatible with Workers runtime
+- No `vm` module needed: Shiki uses WASM, compatible with Workers runtime
 - Use `loadWasm` from `@shikijs/core` to supply the WASM binary explicitly
 
 ---
@@ -71,10 +71,10 @@ const z = 3
 ```
 ```
 
-- `{1,3-5}` — highlight lines 1, 3, 4, 5
-- `showLineNumbers` — show line numbers
-- `/word/` — highlight specific word
-- `title="..."` — show filename caption in rendered output
+- `{1,3-5}`: highlight lines 1, 3, 4, 5
+- `showLineNumbers`: show line numbers
+- `/word/`: highlight specific word
+- `title="..."`: show filename caption in rendered output
 
 ---
 
@@ -117,9 +117,9 @@ expressive-code adds beyond plain Shiki:
 **Use when:** you need GitHub-exact rendering (same grammars GitHub.com uses)
 
 - 600+ TextMate grammars; 46.9K weekly npm downloads
-- WASM-based; too heavy for browser bundles — server-side only
+- WASM-based; too heavy for browser bundles: server-side only
 - Produces AST objects (not just HTML) enabling flexible rendering
-- Companion package: `markdown-tm-language` — provides Markdown/MDX-specific grammars (CommonMark + GFM + frontmatter + directives + MDX)
+- Companion package: `markdown-tm-language`, provides Markdown/MDX-specific grammars (CommonMark + GFM + frontmatter + directives + MDX)
 
 **vs Shiki:** Shiki is more versatile, lighter, and easier to configure. Use starry-night only when GitHub-exact output is a hard requirement.
 

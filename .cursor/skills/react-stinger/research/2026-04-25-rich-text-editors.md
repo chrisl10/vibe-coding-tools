@@ -1,4 +1,4 @@
-# Rich Text & Block Editors — research notes
+# Rich Text & Block Editors: research notes
 
 **Retrieved:** 2026-04-25
 **For guide:** `guides/15-rich-text-editors.md`

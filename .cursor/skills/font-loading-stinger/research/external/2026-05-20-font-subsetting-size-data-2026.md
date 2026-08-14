@@ -8,7 +8,7 @@ topic: subsetting
 stinger: font-loading-stinger
 ---
 
-# Font Subsetting Now Cuts File Sizes 60-75% — Here's the Data (2026)
+# Font Subsetting Now Cuts File Sizes 60-75%: Here's the Data (2026)
 
 ## Summary
 Data-driven 2026 article quantifying font subsetting impact with concrete
@@ -70,4 +70,4 @@ February 2026.
   is production-ready content for the guide.
 - The multi-subset CSS example with `unicode-range` is the template for
   `templates/font-face-block.md`.
-- Published February 2026 — current data.
+- Published February 2026, current data.

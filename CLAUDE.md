@@ -1,23 +1,24 @@
-# Project guidance
+# Vibe Coding Tools project guidance
 
-This file mirrors the canonical Cursor rules in [`.cursor/rules/`](./.cursor/rules/) so the Claude Code and Cowork engines load the same always-on guidance. See [RULES.md](./RULES.md) for the full explanation of each.
+Claude Code loads this file as the always-on project briefing. Human explanations live under [`learn/guides/`](learn/guides/).
 
-## No em dashes
+## Operating rules
 
-Do not use em dashes (`—`) or en dashes (`–`) in any prose written for the user, including chat, documentation, commit messages, PR descriptions, and code comments. Use a comma, colon, parentheses, period, or semicolon instead. Regular hyphens are fine. Preserve dashes inside verbatim quotes, code, and literal data.
+1. Do not add em dashes or en dashes to authored prose. Use ordinary punctuation. Preserve literal data and verbatim source material.
+2. Protect user work. Never discard unrelated changes, rewrite history, or delete broad paths without clear authorization and a verified target.
+3. For multi-step work, create a feature branch from `main`, state the plan, use the smallest suitable specialist, and verify the result.
+4. Run the security gate before the independent quality gate. If quality changes the result, rerun security and quality.
+5. Before declaring a pull request ready, fetch `origin/main`, check mergeability, resolve conflicts, and verify again.
+6. During parallel work, each agent stays inside its assigned files and scope.
+7. Treat `learn/examples/library/` as an example only. A consumer repository's live planning system belongs in its own root `library/`.
 
-## Plan construction protocol
+## Component locations
 
-Every multi-step plan follows the same structure. Step one is always to branch off `main` into a feature branch; all work happens there. Every later step names the best-fit model for the task with a one-line justification. Nothing is declared done until it passes the ship gate (tests green, acceptance criteria met).
+- Agents: [`.claude/agents/`](.claude/agents/)
+- Skills: [`.claude/skills/`](.claude/skills/)
+- Commands: [`.claude/commands/`](.claude/commands/)
+- Rules: [`.claude/rules/`](.claude/rules/)
+- Hooks: [`.claude/hooks/`](.claude/hooks/)
+- Model guidance: [`.claude/model-comparison-matrix.md`](.claude/model-comparison-matrix.md)
 
-## PR conflict check
-
-Always check for and resolve merge conflicts before declaring a PR shippable. A PR with conflicts is not done.
-
-## Respect agent work boundaries
-
-Never modify or delete another agent's active work. During parallel or multi-agent sessions, each agent stays inside the files and scope it owns.
-
-## Documentation system
-
-Project planning lives in [`library/`](./library/). Knowledge docs, ADRs, PRDs, and IRDs follow Library Schema v2. See the [README](./README.md) for the full workflow.
+The `.claude/` tree is canonical. After changing a portable component, run `python learn/scripts/generate-harnesses.py`, inspect the generated `.cursor/` and `.codex/` changes, then validate all affected packages.

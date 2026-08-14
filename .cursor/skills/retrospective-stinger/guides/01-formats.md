@@ -1,4 +1,4 @@
-# 01 — Format Matrix
+# 01: Format Matrix
 
 *Derived from `research/external/2026-05-20-sprint-retrospective-formats-comprehensive.md` and `research/external/2026-05-20-format-selection-meetgeek.md`.*
 
@@ -54,7 +54,7 @@ Choose based on: (1) team maturity, (2) period valence, (3) time budget, (4) rem
 **Time budget:** 60-75 minutes.
 **Facilitation complexity:** Medium-high (requires facilitation skill to avoid devolution into complaint session).
 **Voting:** Affinity grouping before voting; focus action items on Mad items.
-**When NOT to use:** Teams with low psychological safety (emotional formats require more trust, not less). Do NOT use when a team hasn't built a baseline of psychological safety — run a safety exercise first.
+**When NOT to use:** Teams with low psychological safety (emotional formats require more trust, not less). Do NOT use when a team hasn't built a baseline of psychological safety: run a safety exercise first.
 
 ---
 

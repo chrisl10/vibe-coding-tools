@@ -1,4 +1,4 @@
-# SSR Hydration Safety — dark-mode-theming-stinger
+# SSR Hydration Safety: dark-mode-theming-stinger
 
 *Covers: `suppressHydrationWarning`, `useIsomorphicLayoutEffect`, `mounted` guard pattern, `typeof window` guards, `ThemeWrapper` skeleton.*
 
@@ -36,7 +36,7 @@ This prop tells React to silently accept attribute/content mismatches on the ele
 </html>
 ```
 
-Do NOT apply `suppressHydrationWarning` to child elements to paper over deeper mismatches — it should only be used on `<html>` for the theme class mismatch. Deeper mismatches indicate a real hydration bug that should be fixed.
+Do NOT apply `suppressHydrationWarning` to child elements to paper over deeper mismatches: it should only be used on `<html>` for the theme class mismatch. Deeper mismatches indicate a real hydration bug that should be fixed.
 
 ---
 
@@ -67,7 +67,7 @@ export function ThemeIcon() {
 }
 ```
 
-**When to use:** Only when the component renders *different content* based on the theme. Avoid for purely CSS-driven differences — those work correctly without any guard.
+**When to use:** Only when the component renders *different content* based on the theme. Avoid for purely CSS-driven differences: those work correctly without any guard.
 
 **When NOT to use:** For styling only. If the difference is `dark:bg-gray-900` vs. `bg-white`, let CSS handle it. The `mounted` guard is for JS-conditional renders.
 
@@ -117,7 +117,7 @@ Common locations requiring guards:
 - Any utility that reads cookies client-side
 - Event listeners on `window` or `document`
 
-In Next.js App Router, code that exclusively runs in Server Components cannot access browser APIs regardless of guards — but guards are still needed in code shared between client and server components.
+In Next.js App Router, code that exclusively runs in Server Components cannot access browser APIs regardless of guards, but guards are still needed in code shared between client and server components.
 
 ---
 
@@ -151,6 +151,6 @@ export default async function RootLayout({ children }) {
 
 **Trade-off:** If the user's preference is "system" and their OS is dark, this pattern serves light on the first request (no cookie stored yet). The FOWT prevention script corrects it immediately after. For most apps this is acceptable. For apps where first-paint perfection is critical, implement a cookie-write on theme selection and a middleware-based SSR match.
 
-> TODO: open question — server-cookie first paint match requires careful `SameSite`/`Secure` cookie policy. Confirm with `security-worker-bee` before deploying.
+> TODO: open question, server-cookie first paint match requires careful `SameSite`/`Secure` cookie policy. Confirm with `security-worker-bee` before deploying.
 
 *Example demonstrating this guide: `examples/edge-case-cookie-ssr.md`*

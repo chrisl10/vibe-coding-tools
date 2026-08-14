@@ -1,14 +1,14 @@
-# 08 — Companion Agent Handoff
+# 08: Companion Agent Handoff
 
 Once the seven-artifact folder is populated, this Bee's job is done.
-The companion Bee — `ux-ui-worker-bee` — takes ownership and enforces
+The companion Bee (`ux-ui-svelte-worker-bee`) takes ownership and enforces
 the system over time.
 
 ## The clean-handoff principle
 
 - `design-system-worker-bee` **creates**. It bootstraps from scratch for
   new products.
-- `ux-ui-worker-bee` **maintains**. It reviews PRs, flags drift, authors
+- `ux-ui-svelte-worker-bee` **maintains**. It reviews PRs, flags drift, authors
   incremental updates, archives superseded sections.
 
 The Bees are paired but strictly separated. After bootstrap, the
@@ -24,7 +24,7 @@ commissioned.
 ```markdown
 ## Change control
 
-The [`ux-ui-worker-bee`](../../../.cursor/agents/ux-ui-worker-bee.md) subagent
+The [`ux-ui-svelte-worker-bee`](../../../.claude/agents/ux-ui-svelte-worker-bee.md) subagent
 owns this folder. A PR that changes UI in a way not already described
 here must either (a) land an update to this folder as part of the same
 PR, or (b) be rejected by `quality-worker-bee` with a pointer back here.
@@ -55,13 +55,13 @@ Both Bees inherit:
 
 So the git log reads:
 - `design-system-worker-bee: initial: bootstrap ux-ui folder`
-- `ux-ui-worker-bee: cards-and-surfaces: add subtle hover lift`
-- `ux-ui-worker-bee: tokens: add --dur-xslow for modal entry`
+- `ux-ui-svelte-worker-bee: cards-and-surfaces: add subtle hover lift`
+- `ux-ui-svelte-worker-bee: tokens: add --dur-xslow for modal entry`
 
-### 4. Optional — stub the companion Bee
+### 4. Optional: stub the companion Bee
 
-If the consumer product doesn't yet have `ux-ui-worker-bee`, emit a stub
-at `.cursor/agents/ux-ui-worker-bee.md` with:
+If the consumer product doesn't yet have `ux-ui-svelte-worker-bee`, emit a stub
+at `.claude/agents/ux-ui-svelte-worker-bee.md` with:
 
 - A pointer to the new folder.
 - The list of guardrails (from `00-principles.md`).
@@ -91,8 +91,8 @@ Re-invoke `design-system-worker-bee` only when:
 3. **Platform expansion.** The product adds a surface (e.g., adds an
    iOS native app) that needs its own dedicated spec layer.
 
-For anything less than that — a new component, a new screen, a token
-addition, a dark-mode rollout — `ux-ui-worker-bee` handles it.
+For anything less than that (a new component, a new screen, a token
+addition, a dark-mode rollout), `ux-ui-svelte-worker-bee` handles it.
 
 ## The clean-ownership test
 

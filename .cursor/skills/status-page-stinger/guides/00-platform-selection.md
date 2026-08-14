@@ -55,7 +55,7 @@ Does the team have an OSS-only mandate?
 **Weaknesses:**
 - Subscriber pricing model scales steeply: $399/month for 2,000 subscribers
 - No built-in uptime monitoring (requires external monitoring to feed it)
-- **Critical:** Component status changes do NOT trigger subscriber notifications — only incidents do. Teams relying on component status alone to communicate downtime will silently fail to notify subscribers.
+- **Critical:** Component status changes do NOT trigger subscriber notifications: only incidents do. Teams relying on component status alone to communicate downtime will silently fail to notify subscribers.
 - Under-investment since 2016 Atlassian acquisition; UI and API surface has not seen major updates
 - SMS fires only on incident CREATE and RESOLVE, not on intermediate updates
 
@@ -85,7 +85,7 @@ Does the team have an OSS-only mandate?
 ### Instatus
 
 **Strengths:**
-- Broadest subscriber channel set: email, SMS (BYOC), voice calls (Business+), Slack, Discord, Teams, WhatsApp, RSS, webhooks — no other platform matches this in 2026
+- Broadest subscriber channel set: email, SMS (BYOC), voice calls (Business+), Slack, Discord, Teams, WhatsApp, RSS, webhooks: no other platform matches this in 2026
 - Jamstack pages: fast, CDN-delivered, customizable
 - 30+ languages and localization support
 - Strong value at $20/month
@@ -104,7 +104,7 @@ Does the team have an OSS-only mandate?
 
 **Strengths:**
 - Only purpose-built communication-focused open-source status page
-- BSD-3-Clause license (v2.x) — permissive, suitable for commercial use
+- BSD-3-Clause license (v2.x): permissive, suitable for commercial use
 - Self-hosted: full data control, no vendor lock-in, no subscriber pricing tiers
 - Active community; Docker deployment well documented
 
@@ -122,7 +122,7 @@ Does the team have an OSS-only mandate?
 ## Migration considerations
 
 **Migrating FROM Statuspage:**
-- Export subscriber list (CSV) before canceling — the Statuspage API supports this
+- Export subscriber list (CSV) before canceling: the Statuspage API supports this
 - Better Stack and Instatus both have migration-assist workflows
 - Component names can carry over but status history will not
 
@@ -130,7 +130,7 @@ Does the team have an OSS-only mandate?
 - All monitoring integrations must be re-configured (it bundles monitoring; moving off means reconfiguring your monitoring stack)
 
 **Migrating TO Cachet:**
-- Budget 1–2 engineering days for Docker setup, database initialization, and Nginx reverse proxy configuration
+- Budget 1-2 engineering days for Docker setup, database initialization, and Nginx reverse proxy configuration
 - Plan subscriber list re-import and re-opt-in campaign (GDPR requires fresh consent on platform migration)
 
 ---

@@ -7,7 +7,7 @@
 
 ## The problem: split-brain scheduling
 
-When your application runs on more than one replica, container, or region, every instance may independently fire the same cron job at the same scheduled time. The result is **split-brain scheduling**: the same job runs N times concurrently — once per replica.
+When your application runs on more than one replica, container, or region, every instance may independently fire the same cron job at the same scheduled time. The result is **split-brain scheduling**: the same job runs N times concurrently, once per replica.
 
 This is not hypothetical. It happens in:
 
@@ -52,7 +52,7 @@ export async function GET(request: Request) {
 
 **Lock key convention:** use a stable integer derived from the job name (e.g., `crc32("daily-cleanup")`). Document the mapping in your codebase.
 
-**Warning:** Advisory locks are session-scoped. If you use a connection pooler (PgBouncer in transaction mode), advisory locks will not work correctly — the lock is released when the connection returns to the pool. Use Prisma's `$executeRaw` directly against Postgres (not via PgBouncer) for advisory lock calls, or switch to the Redis pattern below.
+**Warning:** Advisory locks are session-scoped. If you use a connection pooler (PgBouncer in transaction mode), advisory locks will not work correctly: the lock is released when the connection returns to the pool. Use Prisma's `$executeRaw` directly against Postgres (not via PgBouncer) for advisory lock calls, or switch to the Redis pattern below.
 
 ---
 
@@ -90,7 +90,7 @@ export async function runWithRedisLock(lockKey: string, fn: () => Promise<void>)
 
 **Critical: always use a fencing token.** The release script uses Lua atomicity to verify the token before deleting, preventing a late-finishing instance from releasing a lock it no longer holds.
 
-**Lock TTL rule:** `TTL > (max_job_runtime * 1.5)`. If the job can run for 2 minutes, set TTL to 3+ minutes. If the job exceeds its TTL, the lock expires and another instance may run concurrently — this is a safety valve, not normal behavior. Alert if jobs approach TTL.
+**Lock TTL rule:** `TTL > (max_job_runtime * 1.5)`. If the job can run for 2 minutes, set TTL to 3+ minutes. If the job exceeds its TTL, the lock expires and another instance may run concurrently; this is a safety valve, not normal behavior. Alert if jobs approach TTL.
 
 ---
 

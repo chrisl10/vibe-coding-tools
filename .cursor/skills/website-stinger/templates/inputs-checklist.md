@@ -1,4 +1,4 @@
-# Inputs Checklist — website-stinger
+# Inputs Checklist: website-stinger
 
 Collect all inputs in a single batched question before scaffolding. Do not ask per-phase.
 
@@ -19,7 +19,7 @@ Collect all inputs in a single batched question before scaffolding. Do not ask p
 ## Site identity
 
 - Site name
-- Target audience (1–2 sentences)
+- Target audience (1 to 2 sentences)
 - Primary conversion action (e.g. "Book a consultation", "Start free trial", "Contact us")
 - Industry / vertical (for generic schema.org selection)
 
@@ -55,7 +55,7 @@ Collect all inputs in a single batched question before scaffolding. Do not ask p
 
 ## Phase opt-outs
 
-- List any phases to skip and why (e.g. "skip Phase 10 — no webhook integrations needed")
+- List any phases to skip and why (e.g. "skip Phase 10: no webhook integrations needed")
 - No opt-outs → proceed with all 12 phases in canonical order
 
 ---

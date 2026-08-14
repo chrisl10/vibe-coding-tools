@@ -107,7 +107,7 @@ await respond({
 
 ## Opening a modal from a slash command
 
-The `trigger_id` from the command payload is required to open a modal. It expires in 3 seconds — open the modal before or immediately after `ack()`:
+The `trigger_id` from the command payload is required to open a modal. It expires in 3 seconds; open the modal before or immediately after `ack()`:
 
 ```typescript
 app.command('/form', async ({ command, ack, client }) => {

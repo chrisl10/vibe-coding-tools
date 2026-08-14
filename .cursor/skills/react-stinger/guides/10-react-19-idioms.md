@@ -1,4 +1,4 @@
-# 10 — React 19 Idioms
+# 10: React 19 Idioms
 
 Source: `research/2026-04-24-react-19-actions-hooks.md`, `research/2026-04-24-react-compiler-1.md`.
 
@@ -91,7 +91,7 @@ Replaces many `useEffect`-for-fetch patterns. Requires a `<Suspense>` upstream.
 
 - Stable since October 2025.
 - **Enable it.** See `guides/07-performance.md §react-compiler`.
-- Run `eslint-plugin-react-compiler` first — fix all reports.
+- Run `eslint-plugin-react-compiler` first: fix all reports.
 - Remove defensive `useMemo` / `useCallback` once enabled. Keep them only for effect-dependency stability.
 
 ## Ref as a prop
@@ -138,11 +138,11 @@ Small API cleanup. Either form works in 19; prefer the new syntax in new code.
 
 ## Common findings
 
-> **[Should-refactor]** `src/components/button.tsx:1` — uses `forwardRef` in a React 19 codebase. Migrate to ref-as-prop. See `guides/10-react-19-idioms.md §ref-as-prop`.
+> **[Should-refactor]** `src/components/button.tsx:1`: uses `forwardRef` in a React 19 codebase. Migrate to ref-as-prop. See `guides/10-react-19-idioms.md §ref-as-prop`.
 
-> **[Must-fix]** `src/features/todos/TodoList.tsx:12` — manual `isSubmitting` state + submit handler in React 19. Use `useActionState`. See `guides/10-react-19-idioms.md §useActionState`.
+> **[Must-fix]** `src/features/todos/TodoList.tsx:12`: manual `isSubmitting` state + submit handler in React 19. Use `useActionState`. See `guides/10-react-19-idioms.md §useActionState`.
 
-> **[Should-refactor]** `src/App.tsx:3` — React Compiler available but not enabled; the codebase has 200+ defensive `useMemo` calls. Enable Compiler and remove.
+> **[Should-refactor]** `src/App.tsx:3`: React Compiler available but not enabled; the codebase has 200+ defensive `useMemo` calls. Enable Compiler and remove.
 
 ## Example in action
 

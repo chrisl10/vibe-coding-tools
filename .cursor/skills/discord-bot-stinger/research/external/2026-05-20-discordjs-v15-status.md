@@ -27,4 +27,4 @@ As of May 2026, discord.js v15 remains in a pre-release state. The official guid
 
 - **Critical for guides/00-principles.md and guides/01-sdk-selection.md**: The answer to the Command Brief question "Does discord.js v15 ship a stable release by May 2026, or is it still in release-candidate?" is confirmed: v15 is still pre-release as of 2026-05-20. `discord-bot-worker-bee` should recommend v14 (currently v14.25.1) for production work, with a note that v15 is usable for greenfield non-production projects.
 - **Contradictions**: None found; consistent across multiple sources (guide, GitHub milestone, docs).
-- The docs URL pattern for v14 is `discord.js.org/docs/packages/discord.js/14.x.y` — stinger-forge should use the latest v14.x for all code samples.
+- The docs URL pattern for v14 is `discord.js.org/docs/packages/discord.js/14.x.y`: stinger-forge should use the latest v14.x for all code samples.

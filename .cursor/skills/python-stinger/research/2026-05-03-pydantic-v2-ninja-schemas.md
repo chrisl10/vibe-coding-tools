@@ -1,12 +1,12 @@
-# 2026-05-03 — Pydantic v2 + Django Ninja schema patterns
+# 2026-05-03: Pydantic v2 + Django Ninja schema patterns
 
 ## Sources
 
-- https://docs.pydantic.dev/latest/ — Pydantic v2 docs
-- https://django-ninja.dev/guides/response/ — Ninja response guide
-- https://django-ninja.dev/guides/response/config-pydantic — `model_config` overrides
-- https://django-ninja.dev/guides/response/django-pydantic-create-schema/ — `create_schema` from Django models
-- https://github.com/vitalik/django-ninja/blob/master/ninja/schema.py — `Schema` source
+- https://docs.pydantic.dev/latest/: Pydantic v2 docs
+- https://django-ninja.dev/guides/response/: Ninja response guide
+- https://django-ninja.dev/guides/response/config-pydantic: `model_config` overrides
+- https://django-ninja.dev/guides/response/django-pydantic-create-schema/: `create_schema` from Django models
+- https://github.com/vitalik/django-ninja/blob/master/ninja/schema.py: `Schema` source
 
 ## Summary
 
@@ -28,14 +28,14 @@ Django Ninja's `Schema` is a thin subclass of Pydantic v2 `BaseModel` with `from
 - `model_config = ConfigDict(...)` is the v2 way (no more `class Config:`).
 - `model_validate(obj)` replaces `parse_obj`; `model_dump()` replaces `dict()`; `model_dump_json()` replaces `json()`.
 - Ninja's `Schema` includes a `model_validator(mode="wrap")` that wraps incoming objects in `DjangoGetter` so Pydantic can read Django manager / dotted-path attributes.
-- `create_schema(Model, fields=[...], exclude=[...])` is the dynamic alternative to `ModelSchema` — but explicit `ModelSchema` classes are preferred for editor support.
+- `create_schema(Model, fields=[...], exclude=[...])` is the dynamic alternative to `ModelSchema`, but explicit `ModelSchema` classes are preferred for editor support.
 
 ## Relevance to the Stinger
 
-- **`guides/05-django-ninja-api.md`** — full canonical API layer with these patterns.
-- **`guides/12-typing-and-pydantic.md`** — Pydantic v2 at every boundary.
-- **`templates/django-ninja-router.py`** — canonical router with request + response schemas + auth + pagination.
+- **`guides/05-django-ninja-api.md`**: full canonical API layer with these patterns.
+- **`guides/12-typing-and-pydantic.md`**: Pydantic v2 at every boundary.
+- **`templates/django-ninja-router.py`**: canonical router with request + response schemas + auth + pagination.
 
 ## Pull quote
 
-> "Under the hood Django Ninja uses Pydantic Models with all their power and benefits. The alias `Schema` was chosen to avoid confusion in code when using Django models, as Pydantic's model class is called Model by default, and conflicts with Django's Model class." — Django Ninja Pydantic config guide.
+> "Under the hood Django Ninja uses Pydantic Models with all their power and benefits. The alias `Schema` was chosen to avoid confusion in code when using Django models, as Pydantic's model class is called Model by default, and conflicts with Django's Model class." (Django Ninja Pydantic config guide)

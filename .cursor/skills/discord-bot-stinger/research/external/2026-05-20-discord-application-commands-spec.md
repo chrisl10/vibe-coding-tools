@@ -20,7 +20,7 @@ Official specification for all four application command types (CHAT_INPUT/slash,
 - Command names regex: `^[-_'\p{L}\p{N}\p{sc=Deva}\p{sc=Thai}]{1,32}$` (with unicode flag); must be lowercase where lowercase exists
 - USER and MESSAGE commands may be mixed case and include spaces
 - Autocomplete: "may not be set to true if choices are present"
-- "making a new command with an already-used name for your application will update the existing command" — POST is an upsert
+- "making a new command with an already-used name for your application will update the existing command": POST is an upsert
 - Command type PRIMARY_ENTRY_POINT (type 4) is for launching Activities from App Launcher
 
 ## Application command types
@@ -69,6 +69,6 @@ command
 ## Annotations for stinger-forge
 
 - **guides/02-slash-commands.md**: All 11 option types documented. The ATTACHMENT type (type 11) is important for bots that accept file uploads. The subcommand nesting rules (cannot mix top-level subcommands with subcommand groups) is a common gotcha.
-- **Autocomplete rule**: `autocomplete` and `choices` are mutually exclusive on the same option — cannot have both.
+- **Autocomplete rule**: `autocomplete` and `choices` are mutually exclusive on the same option: cannot have both.
 - **Registration as upsert**: Global commands can be re-deployed without deduplication concern; the same name = update operation.
-- **Permission management**: `PUT /applications/{id}/guilds/{guild_id}/commands/{cmd_id}/permissions` requires a Bearer token with `applications.commands.permissions.update` scope — not the bot token. This is a common surprise during first integration.
+- **Permission management**: `PUT /applications/{id}/guilds/{guild_id}/commands/{cmd_id}/permissions` requires a Bearer token with `applications.commands.permissions.update` scope, not the bot token. This is a common surprise during first integration.

@@ -1,4 +1,4 @@
-# nuqs — URL State
+# nuqs: URL State
 
 **Sources:**
 - https://nuqs.dev/

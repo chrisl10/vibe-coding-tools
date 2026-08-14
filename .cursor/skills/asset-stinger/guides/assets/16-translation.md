@@ -1,6 +1,6 @@
-# Guide — `ContentTranslation` (16)
+# Guide: `ContentTranslation` (16)
 
-> **Applies to:** localized values of a `ContentEntry`. One `ContentEntry` can have many `ContentTranslation` rows — one per supported locale.
+> **Applies to:** localized values of a `ContentEntry`. One `ContentEntry` can have many `ContentTranslation` rows, one per supported locale.
 
 ## 1. Purpose
 
@@ -31,7 +31,7 @@ All human.
 
 ## 5. Lifecycle
 
-Lightweight: `draft` → `machine_translated` → `human_reviewed` → `approved`. No standard "deprecated" state — translations live and die with their parent `ContentEntry`.
+Lightweight: `draft` → `machine_translated` → `human_reviewed` → `approved`. No standard "deprecated" state; translations live and die with their parent `ContentEntry`.
 
 When a `ContentEntry` is deprecated, its `ContentTranslation` rows remain but are hidden from the runtime.
 
@@ -41,14 +41,14 @@ When a `ContentEntry` is deprecated, its `ContentTranslation` rows remain but ar
 
 ## 7. Hand-offs
 
-- **Translation engine** (future) — reads from this table, caches in Valkey.
-- **library-worker-bee** — translation process documented in kb, not here.
+- **Translation engine** (future): reads from this table, caches in Valkey.
+- **library-worker-bee**: translation process documented in kb, not here.
 
 ## 8. Pitfalls
 
 - Shipping a feature that uses a `ContentEntry` whose translations are all `draft`. The release gate should block this.
 - Translating the `{firstName}` variable placeholder (should stay intact).
-- Writing to a translation for a deprecated key — runtime ignores it; waste of reviewer time.
+- Writing to a translation for a deprecated key: runtime ignores it; waste of reviewer time.
 
 ## 9. Example
 

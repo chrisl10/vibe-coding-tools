@@ -1,4 +1,4 @@
-# shadcn/ui + Radix UI — Component Contract Patterns
+# shadcn/ui + Radix UI: Component Contract Patterns
 
 **Sources:**
 - https://ui.shadcn.com/
@@ -13,7 +13,7 @@
 
 **Radix UI** ships unstyled, accessible primitives (Dialog, Popover, Select,
 etc.) with focus management, keyboard handling, and ARIA baked in.
-**shadcn/ui** is not an npm library — it is a CLI that copies Radix-wrapped,
+**shadcn/ui** is not an npm library: it is a CLI that copies Radix-wrapped,
 Tailwind-styled component source files INTO the consumer's repo.
 
 Key architectural facts:
@@ -22,7 +22,7 @@ Key architectural facts:
   `--foreground`). shadcn/ui uses `@theme` in Tailwind v4.
 - Components use `class-variance-authority` (cva) for variant APIs.
 - `cn()` utility (from `lib/utils.ts`) merges Tailwind classes safely.
-- Every shadcn/ui component is editable in place — there is no upstream to
+- Every shadcn/ui component is editable in place: there is no upstream to
   fight.
 
 ## Canonical component contract shape
@@ -56,7 +56,7 @@ every color reaches for a CSS custom property.
 - `guides/05-authoring-components.md` adopts the shadcn/ui contract shape as
   the default for component briefs: **variants → sizes → states → example**.
 - The "Replaces (in current code)" section in each component brief is the
-  Stinger's extension — shadcn/ui doesn't have it because it's the greenfield
+  Stinger's extension: shadcn/ui doesn't have it because it's the greenfield
   source; our Bee operates on existing products and must make migration
   explicit.
 - When a product already uses shadcn/ui, the Bee's component briefs should

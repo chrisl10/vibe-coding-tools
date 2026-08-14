@@ -8,7 +8,7 @@
 
 ## Scenario
 
-A marketing site built with Astro, SvelteKit, or plain HTML — no Next.js. The hero image needs:
+A marketing site built with Astro, SvelteKit, or plain HTML: no Next.js. The hero image needs:
 - A square crop on mobile (portrait phones)
 - A wide 16:9 crop on desktop
 - AVIF delivered to modern browsers, WebP to Safari <16.4

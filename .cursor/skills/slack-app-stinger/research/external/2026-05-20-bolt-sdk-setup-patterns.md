@@ -18,7 +18,7 @@ The official Slack Bolt for JavaScript "Building an App" guide covers the comple
 
 - "Bolt is a framework that lets you build Slack apps in a flash — it handles much of the foundational setup so you can focus on your app's functionality."
 - Token types required: `SLACK_BOT_TOKEN` (`xoxb-` prefix), `SLACK_SIGNING_SECRET`, `SLACK_APP_TOKEN` (`xapp-` prefix, Socket Mode only).
-- Bot tokens are associated with bot users and remain consistent across installations — they do not expire when the installing user leaves the workspace.
+- Bot tokens are associated with bot users and remain consistent across installations: they do not expire when the installing user leaves the workspace.
 - "Create apps in a test workspace to avoid disrupting real work."
 - Recommended scope for basic messaging: `chat:write`.
 

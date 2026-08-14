@@ -1,4 +1,4 @@
-# Research Plan — icon-system-stinger
+# Research Plan: icon-system-stinger
 
 **Depth tier:** normal  
 **Research model:** grok-4.3  
@@ -25,9 +25,9 @@
 
 ## Coverage plan
 
-- `external/lucide-react.md` — Lucide React API, tree-shaking status, 2026 ESM state
-- `external/iconify-react.md` — Iconify React component, API on-demand loading, RSC compatibility
-- `external/heroicons-tabler-phosphor.md` — comparative overview of Heroicons, Tabler, Phosphor
-- `external/icon-sprite-patterns.md` — SVG sprite generation, vite-plugin-svgr, SVGO
-- `external/icon-accessibility.md` — WAI-ARIA for icons, decorative vs semantic, icon button pattern
-- `internal/command-brief.md` — key extracts from icon-system-worker-bee-command-brief.md
+- `external/lucide-react.md`: Lucide React API, tree-shaking status, 2026 ESM state
+- `external/iconify-react.md`: Iconify React component, API on-demand loading, RSC compatibility
+- `external/heroicons-tabler-phosphor.md`: comparative overview of Heroicons, Tabler, Phosphor
+- `external/icon-sprite-patterns.md`: SVG sprite generation, vite-plugin-svgr, SVGO
+- `external/icon-accessibility.md`: WAI-ARIA for icons, decorative vs semantic, icon button pattern
+- `internal/command-brief.md`: key extracts from icon-system-worker-bee-command-brief.md

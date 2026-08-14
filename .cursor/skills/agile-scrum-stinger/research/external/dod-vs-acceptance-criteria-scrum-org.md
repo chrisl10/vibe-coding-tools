@@ -11,7 +11,7 @@ stinger: agile-scrum-stinger
 # Definition of Done vs Acceptance Criteria - Scrum.org Official Explanation
 
 ## Summary
-The official Scrum.org distinction between DoD and Acceptance Criteria. A commonly conflated pair of concepts — this source provides the normative separation from the Scrum authority. Essential for `guides/04-definition-of-done.md`.
+The official Scrum.org distinction between DoD and Acceptance Criteria. A commonly conflated pair of concepts: this source provides the normative separation from the Scrum authority. Essential for `guides/04-definition-of-done.md`.
 
 ## Key quotations / statistics
 - "The DoD is applied to every Product Backlog Item. It is a comprehensive checklist that ensures quality by including functionality, performance, security, compliance, and other necessary standards that apply to all increments."
@@ -37,5 +37,5 @@ Including AC in the DoD creates dysfunction: if customer feedback changes AC mid
 ## Annotations for stinger-forge
 - This disambiguation is REQUIRED in `guides/04-definition-of-done.md`. Many Scrum teams conflate these concepts.
 - The table above should appear verbatim (or near-verbatim) in the DoD guide.
-- The "slows forward progress" argument is the key reason NOT to include AC in DoD — teams get stuck in an infinite loop chasing changing customer expectations.
+- The "slows forward progress" argument is the key reason NOT to include AC in DoD: teams get stuck in an infinite loop chasing changing customer expectations.
 - Secondary source confirmation: applied-frameworks.com and theserverside.com both align with this Scrum.org framing.

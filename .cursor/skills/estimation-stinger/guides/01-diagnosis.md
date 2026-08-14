@@ -20,7 +20,7 @@ Always diagnose before recommending. The wrong framework applied to the wrong dy
 ### Category 2: Planning-fallacy optimism (inside-view estimates)
 
 **Symptoms:**
-- "The estimate is always for the happy path — we never account for testing or review."
+- "The estimate is always for the happy path: we never account for testing or review."
 - "We're consistently off by 2x-3x, even on familiar work."
 - "The developer who wrote the code always estimates lower than everyone else."
 
@@ -37,7 +37,7 @@ Always diagnose before recommending. The wrong framework applied to the wrong dy
 - "A '3' story for developer A takes 2 hours; a '3' for developer B takes 3 days."
 - "Our burndown charts are meaningless because points are inconsistent."
 
-**Root cause:** Story-point calibration drifts as team composition changes, work type shifts, or the reference story is forgotten. This is why the Maria Chec/Duarte research found that replacing all story points with "1" changed the forecast by only 8% — the size signal had already decayed. See `research/external/01-noestimates.md`.
+**Root cause:** Story-point calibration drifts as team composition changes, work type shifts, or the reference story is forgotten. This is why the Maria Chec/Duarte research found that replacing all story points with "1" changed the forecast by only 8%: the size signal had already decayed. See `research/external/01-noestimates.md`.
 
 **Recommended intervention:** Re-anchor with a calibration session (explicit reference stories at 1, 3, 5, 8). If the team has 6+ months of cycle-time data, evaluate switching from story-point velocity to throughput-based forecasting. The data may show the points were never adding accuracy.
 
@@ -46,7 +46,7 @@ Always diagnose before recommending. The wrong framework applied to the wrong dy
 ### Category 4: Stakeholder-commitment trap (estimates are treated as promises)
 
 **Symptoms:**
-- "When I estimate 3 weeks, the PM tells the client 3 weeks — no buffer, no confidence level."
+- "When I estimate 3 weeks, the PM tells the client 3 weeks: no buffer, no confidence level."
 - "Developers are scared to give honest estimates because they'll be held to them."
 - "Velocity gaming: we inflate points so we 'hit' the sprint."
 
@@ -61,7 +61,7 @@ Always diagnose before recommending. The wrong framework applied to the wrong dy
 **Symptoms:**
 - "We estimate every ticket to 4 decimal places but our epics have no size."
 - "We T-shirt size epics for the roadmap but then don't know how to break them down for sprints."
-- "The stakeholder asks for a release date for a 200-ticket project — all we have is sprint velocity."
+- "The stakeholder asks for a release date for a 200-ticket project: all we have is sprint velocity."
 
 **Root cause:** The estimation approach doesn't match the planning horizon. T-shirt sizing is appropriate for roadmap-level conversations (months out). Story points are appropriate for sprint-level work (weeks out). Monte Carlo is appropriate for project-level delivery dates (when you have both backlog size and throughput history).
 

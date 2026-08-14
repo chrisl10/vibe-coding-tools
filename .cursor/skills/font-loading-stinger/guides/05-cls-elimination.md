@@ -2,13 +2,13 @@
 
 ## The problem
 
-`font-display: swap` causes the browser to render text in a fallback (system) font, then swap it to the web font when it arrives. If the fallback font has different metrics than the web font — different x-height, ascent, descent, line-gap — the text occupies a different amount of vertical space. When the swap occurs, the browser reflows the layout, shifting elements below the text. This is the primary cause of CLS from fonts.
+`font-display: swap` causes the browser to render text in a fallback (system) font, then swap it to the web font when it arrives. If the fallback font has different metrics than the web font (different x-height, ascent, descent, line-gap), the text occupies a different amount of vertical space. When the swap occurs, the browser reflows the layout, shifting elements below the text. This is the primary cause of CLS from fonts.
 
 **The delta is typically small (1-5%) but significant.** CLS is a cumulative metric; even small shifts from fonts compound with other shifts (images, embeds) to push the score above 0.1 (the "needs improvement" threshold).
 
 ## The solution: metric-matched fallback
 
-Override the fallback font's metric descriptors in a separate `@font-face` declaration to match the web font's metrics. When the fallback font occupies the exact same vertical space as the web font, the swap becomes invisible — no layout shift.
+Override the fallback font's metric descriptors in a separate `@font-face` declaration to match the web font's metrics. When the fallback font occupies the exact same vertical space as the web font, the swap becomes invisible: no layout shift.
 
 The four override descriptors:
 
@@ -145,8 +145,8 @@ Use `local('Arial')` as the most universally available option. Avoid platform-sp
 
 ## References
 
-- `guides/00-principles.md` — CLS → font-swap consequence chain
-- `guides/01-font-display-decision-matrix.md` — why `swap` requires this guide's technique
-- `guides/04-nextjs-font.md` — `adjustFontFallback` option in next/font
-- `research/external/` — fontpie, capsizefitter, web.dev CLS, Chrome DevTools font rendering
-- `examples/edge-case-self-hosted-variable.md` — full implementation including fontpie values
+- `guides/00-principles.md`: CLS → font-swap consequence chain
+- `guides/01-font-display-decision-matrix.md`: why `swap` requires this guide's technique
+- `guides/04-nextjs-font.md`: `adjustFontFallback` option in next/font
+- `research/external/`: fontpie, capsizefitter, web.dev CLS, Chrome DevTools font rendering
+- `examples/edge-case-self-hosted-variable.md`: full implementation including fontpie values

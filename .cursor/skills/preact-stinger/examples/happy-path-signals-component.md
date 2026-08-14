@@ -1,4 +1,4 @@
-# Example: Happy Path — Signals Component
+# Example: Happy Path (Signals Component)
 
 > Demonstrates: `guides/01-signals-api.md`
 
@@ -104,8 +104,8 @@ export function TodoList() {
 ## What this example demonstrates
 
 - `createModel` encapsulates state, derived values, and actions in one testable unit.
-- `action` batches all mutations inside — `addTodo` causes one re-render.
+- `action` batches all mutations inside: `addTodo` causes one re-render.
 - `For` is used for keyed list rendering (v2 utility component).
 - `Show` is used for conditional rendering without unmounting (v2 utility component).
-- `remaining` is a `computed` — it updates automatically when `todos` changes.
+- `remaining` is a `computed`: it updates automatically when `todos` changes.
 - `useModel` subscribes the component to all signals returned by the model.

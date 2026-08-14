@@ -1,7 +1,6 @@
 ---
-name: kanban-flow-stinger
-description: >
-  Kanban method specialist — WIP limit design and enforcement, flow-metric calculation (cycle time, lead time, throughput, flow efficiency), Little's Law diagnostics, visual-board design, class-of-service policies, cumulative-flow-diagram interpretation, and tool-specific implementation (Linear, Jira, GitHub Projects). Use when the user says "set up WIP limits", "calculate cycle time", "apply Little's Law", "design our Kanban board", "Kanban vs Scrum", "our WIP is always exceeded", "why is our cycle time so long", or when `kanban-flow-worker-bee` is invoked. Do NOT use for sprint ceremonies / velocity (Scrum domain, no peer Bee yet), CI/CD pipeline design (devops-worker-bee), database schema for a custom metrics store (db-worker-bee), or building custom Kanban tooling in code (react-worker-bee / python-worker-bee).
+name: "kanban-flow-stinger"
+description: "Kanban method specialist: WIP limit design and enforcement, flow-metric calculation (cycle time, lead time, throughput, flow efficiency), Little's Law diagnostics, visual-board design, class-of-service policies, cumulative-flow-diagram interpretation, and tool-specific implementation (Linear, Jira, GitHub Projects). Use when the user says \\\\\\\\\\\\\\\"set up WIP limits\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"calculate cycle time\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"apply Little's Law\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"design our Kanban board\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"Kanban vs Scrum\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"our WIP is always exceeded\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\"why is our cycle time so long\\\\\\\\\\\\\\\", or when `kanban-flow-worker-bee` is invoked. Do NOT use for sprint ceremonies / velocity (Scrum domain, no peer Bee yet), CI/CD pipeline design (devops-worker-bee), database schema for a custom metrics store (db-worker-bee), or building custom Kanban tooling in code (react-worker-bee / python-worker-bee)."
 license: MIT
 ---
 
@@ -70,7 +69,7 @@ Open the guide that matches the user's question. Each guide is self-contained an
 | `guides/05-board-design.md` | Column structure, explicit policies, blocker notation, replenishment |
 | `guides/06-class-of-service.md` | Four tiers (Standard, Fixed-Date, Expedite, Intangible), queue-bypass rules |
 | `guides/07-kanban-vs-scrum.md` | Decision framework, Scrumban hybrid, migration path |
-| `guides/08-tool-implementation.md` | Linear, Jira, GitHub Projects — exact configuration steps and known bugs |
+| `guides/08-tool-implementation.md` | Linear, Jira, GitHub Projects: exact configuration steps and known bugs |
 
 ---
 
@@ -110,7 +109,7 @@ These numbers come from `research/external/2026-05-20-value-stream-metrics-axify
 
 ## Tool WIP limit status (2026)
 
-From `research/external/2026-05-20-tool-wip-limits-honest-review.md` — confirmed April 2026:
+From `research/external/2026-05-20-tool-wip-limits-honest-review.md`, confirmed April 2026:
 
 | Tool | Native WIP limit enforcement | Notes |
 |---|---|---|
@@ -126,12 +125,12 @@ From `research/external/2026-05-20-tool-wip-limits-honest-review.md` — confirm
 
 Two questions from `research/research-summary.md` remain unresolved:
 
-> TODO: Monte Carlo for small teams (< 5 people) — Vacanti/ActionableAgile has not published 2025-2026 guidance specific to small sample sizes. Until resolved, `guides/03-littles-law.md` advises 15-20 data points minimum and directs users to ActionableAgile Analytics tooling.
+> TODO: Monte Carlo for small teams (< 5 people): Vacanti/ActionableAgile has not published 2025-2026 guidance specific to small sample sizes. Until resolved, `guides/03-littles-law.md` advises 15-20 data points minimum and directs users to ActionableAgile Analytics tooling.
 
-> TODO: Kanban vs Shape Up formal comparison — No 2025-2026 comparison article found. `guides/07-kanban-vs-scrum.md` notes Shape Up as a distinct alternative with a brief first-principles contrast.
+> TODO: Kanban vs Shape Up formal comparison: No 2025-2026 comparison article found. `guides/07-kanban-vs-scrum.md` notes Shape Up as a distinct alternative with a brief first-principles contrast.
 
 ---
 
 *Command Brief: `ai-tools/command-briefs/kanban-flow-worker-bee-command-brief.md`*
-*Research: `ai-tools/skills/kanban-flow-stinger/research/` (17 files, normal depth, 2025-11 to 2026-05)*
-*Forged: 2026-05-20 by stinger-forge via the-queen slot-04*
+*Research: `.cursor/skills/kanban-flow-stinger/research/` (17 files, normal depth, 2025-11 to 2026-05)*
+*Forged: 2026-05-20 by stinger-forge via gods-hand slot-04*

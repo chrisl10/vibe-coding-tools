@@ -1,5 +1,7 @@
 # 21 - Deep Lake SDK & HF Transformers
 
+**Legacy/library case.** Hivemind-specific data/ML dependencies; not applicable to this repo's SvelteKit app.
+
 Two data/ML dependencies sit alongside the SQL-API client: the `deeplake` SDK (a hard dependency) and `@huggingface/transformers` (an optional one for local embeddings). This guide covers using both without breaking installs.
 
 ## The deeplake SDK vs the SQL-API client

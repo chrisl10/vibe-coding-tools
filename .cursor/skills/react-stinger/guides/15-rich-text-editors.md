@@ -1,6 +1,6 @@
-# 15 — Rich Text & Block Editors
+# 15: Rich Text & Block Editors
 
-Source: `research/2026-04-25-rich-text-editors.md`. Choosing a rich-text editor is a 2-year decision — the data model leaks into the database, the API, exports, and AI pipelines. Pick once, pick right.
+Source: `research/2026-04-25-rich-text-editors.md`. Choosing a rich-text editor is a 2-year decision: the data model leaks into the database, the API, exports, and AI pipelines. Pick once, pick right.
 
 ## TL;DR pick
 
@@ -127,17 +127,17 @@ That's a working slash-menu, drag-and-drop, block-based editor in 5 lines.
 
 ## Common findings
 
-> **[Should-refactor]** `src/features/notes/Editor.tsx:1` — uses `react-quill`. Quill is in maintenance; document model is brittle. Migrate to TipTap or BlockNote depending on Notion-likeness needed.
+> **[Should-refactor]** `src/features/notes/Editor.tsx:1`: uses `react-quill`. Quill is in maintenance; document model is brittle. Migrate to TipTap or BlockNote depending on Notion-likeness needed.
 
-> **[Must-fix]** `src/features/posts/render.tsx:5` — renders editor HTML via `dangerouslySetInnerHTML` with no sanitizer. Add `rehype-sanitize` or render from JSON via TipTap's read-only renderer. See `guides/13-ecosystem-catalog.md §markdown`.
+> **[Must-fix]** `src/features/posts/render.tsx:5`: renders editor HTML via `dangerouslySetInnerHTML` with no sanitizer. Add `rehype-sanitize` or render from JSON via TipTap's read-only renderer. See `guides/13-ecosystem-catalog.md §markdown`.
 
-> **[Should-refactor]** `package.json:24` — both `@tiptap/react` and `slate-react` present. Converge on one editor stack. Mixed editors leak into the export pipeline and the AI prompt format.
+> **[Should-refactor]** `package.json:24`: both `@tiptap/react` and `slate-react` present. Converge on one editor stack. Mixed editors leak into the export pipeline and the AI prompt format.
 
 ---
 
 ## Handoffs
 
 - **Realtime collaboration infra (Yjs server, Liveblocks, PartyKit)** → flag for `devops-worker-bee` or library-worker-bee PRD.
-- **Token / typography / spacing of the editor surface** → `ux-ui-worker-bee`.
-- **AI completions inside the editor** → `ai-platform-worker-bee`.
+- **Token / typography / spacing of the editor surface** → `ux-ui-svelte-worker-bee`.
+- **AI completions inside the editor** → `mind-worker-bee`.
 - **Server-side sanitization of editor HTML/JSON** → `security-worker-bee`.

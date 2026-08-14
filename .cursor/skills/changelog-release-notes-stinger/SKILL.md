@@ -1,6 +1,6 @@
 ---
-name: changelog-release-notes-stinger
-description: Writes the CHANGELOG.md and release notes for the @deeplake/hivemind npm package and CLI. Use when the user says "write the changelog entry", "what version bump is this", "draft the release notes", "is this a breaking change", "we just shipped X", or when a release is about to cut and the change needs to be communicated to developers who install via npm and to the six-harness users. Covers Keep-a-Changelog format for a CLI/library, semver discipline (what is patch vs minor vs breaking for an agent-memory tool plus its harness contracts, MCP tool surface, and Deep Lake schema), release-note copy craft (impact-first, honest scope), the sync-versions + release.yaml mechanics, and announcing across GitHub Releases, README, and the Slack community. Do NOT use for managing the build/release pipeline itself (ci-release-worker-bee) or marketing launch campaigns (out of scope for this Army).
+name: "changelog-release-notes-stinger"
+description: "Writes the CHANGELOG.md and release notes for the @deeplake/hivemind npm package and CLI. Use when the user says \\\\\\\"write the changelog entry\\\\\\\", \\\\\\\"what version bump is this\\\\\\\", \\\\\\\"draft the release notes\\\\\\\", \\\\\\\"is this a breaking change\\\\\\\", \\\\\\\"we just shipped X\\\\\\\", or when a release is about to cut and the change needs to be communicated to developers who install via npm and to the six-harness users. Covers Keep-a-Changelog format for a CLI/library, semver discipline (what is patch vs minor vs breaking for an agent-memory tool plus its harness contracts, MCP tool surface, and Deep Lake schema), release-note copy craft (impact-first, honest scope), the sync-versions + release.yaml mechanics, and announcing across GitHub Releases, README, and the Slack community. Do NOT use for managing the build/release pipeline itself (ci-release-worker-bee) or marketing launch campaigns (out of scope for this Hive)."
 ---
 
 # changelog-release-notes Stinger
@@ -21,7 +21,7 @@ Load this stinger for any of:
 
 Do NOT load for:
 - The build/release pipeline / CI internals themselves - that is `ci-release-worker-bee`.
-- Marketing landing pages or launch campaigns - out of scope for this Army.
+- Marketing landing pages or launch campaigns - out of scope for this Hive.
 - Internal sprint retrospectives - not a changelog.
 
 ## First action when this stinger is loaded

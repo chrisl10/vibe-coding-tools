@@ -9,4 +9,4 @@ This folder accumulates past docs-site-worker-bee run reports over time. Each re
 
 Reports are named by date and task: `YYYY-MM-DD-{team}-{task}.md`.
 
-No past reports yet — this folder is initially empty.
+No past reports yet: this folder is initially empty.

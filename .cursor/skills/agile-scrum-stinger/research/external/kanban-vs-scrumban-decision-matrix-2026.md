@@ -41,6 +41,6 @@ An IdeaPlan February 2026 direct comparison between Kanban and ScrumBan, focusin
 
 ## Annotations for stinger-forge
 - The WIP limit formula ("team_size - 1") is actionable, ready-to-use guidance for the ScrumBan transition section.
-- The "Minimum threshold on Ready column" concept is ScrumBan's key innovation — when Ready drops below threshold, planning is triggered automatically.
+- The "Minimum threshold on Ready column" concept is ScrumBan's key innovation: when Ready drops below threshold, planning is triggered automatically.
 - Companion source: `tempo.io/guides/kanban-scrum-scrumban` provides challenges and solutions for teams implementing each methodology.
 - Cross-reference: For teams coming from Scrum, the 5-step migration above should be in `guides/06-framework-selection.md`.

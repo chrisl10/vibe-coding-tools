@@ -50,7 +50,7 @@ The `include` option scopes which files use the Preact renderer to avoid conflic
 
 ## Signals in Astro islands
 
-`@preact/signals` works in Astro Preact islands. Shared signals (defined in a non-island module) can be imported by multiple islands for cross-island reactivity — the same pattern as Fresh.
+`@preact/signals` works in Astro Preact islands. Shared signals (defined in a non-island module) can be imported by multiple islands for cross-island reactivity: the same pattern as Fresh.
 
 ## compat mode
 

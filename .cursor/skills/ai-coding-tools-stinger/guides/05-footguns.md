@@ -1,14 +1,14 @@
-# Guide 05: Footguns — Known Failure Modes and How to Avoid Them
+# Guide 05: Footguns: Known Failure Modes and How to Avoid Them
 
 *Sources: `research/external/2026-05-20-cline-footguns.md`, `research/external/2026-05-20-aider-llm-leaderboard.md`, `research/external/2026-05-20-devin-replit-agent.md`, `research/external/2026-05-20-bolt-new-webcontainer.md`*
 
 ---
 
-## Cline failure modes (HIGH priority — read before recommending Cline)
+## Cline failure modes (HIGH priority: read before recommending Cline)
 
 Five documented failure modes from GitHub issues as of 2026-05-20. Source: `research/external/2026-05-20-cline-footguns.md`.
 
-> **TODO: open question** — Verify which of these failure modes have been resolved in Cline releases after May 2026. The issue report dates span 2025-early 2026.
+> **TODO: open question**: Verify which of these failure modes have been resolved in Cline releases after May 2026. The issue report dates span 2025-early 2026.
 
 ### 1. Claude Code + Cline tool name clash (Severity: HIGH)
 
@@ -118,6 +118,6 @@ Installing Cline as a VS Code extension inside Cursor IDE creates redundant agen
 
 ### Ownership uncertainty post-Cognition acquisition (Severity: LOW-MEDIUM for long-term projects)
 
-Windsurf is now owned by Cognition AI (makers of Devin). The product trajectory — whether Windsurf is maintained independently or merged into the Devin platform — was not definitively resolved as of 2026-05-20. Recommending Windsurf as a long-term primary tool for a team carries acquisition-uncertainty risk.
+Windsurf is now owned by Cognition AI (makers of Devin). The product trajectory (whether Windsurf is maintained independently or merged into the Devin platform) was not definitively resolved as of 2026-05-20. Recommending Windsurf as a long-term primary tool for a team carries acquisition-uncertainty risk.
 
 - **Fix:** For short-term or individual use, Windsurf is fine. For long-term team adoption, flag the uncertainty and recommend a backup tool (Cursor, Claude Code) in parallel.

@@ -45,7 +45,7 @@ Use this to add or audit a Hivemind harness adapter end-to-end. Copy it into a r
 ### If AGENTS.md marker:
 - [ ] Marker block wrapped in begin/end markers (idempotent replace)
 
-## 4. Tool / command contract (`guides/03-tool-contract.md`)
+## 4. Tool / command contract (`guides/05-portability-and-contracts.md`)
 
 - [ ] `hivemind_search`/`hivemind_read`/`hivemind_index` exposed with identical name, args, return shape
 - [ ] (OpenClaw) `hivemind_goal_add`/`hivemind_kpi_add` declared

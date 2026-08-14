@@ -30,7 +30,7 @@ Production-ready StoreKit 2 implementation guide updated for iOS 26, Xcode 26, a
 
 ## Annotations for stinger-forge
 - This is the primary source for `guides/04-iap-setup.md`'s iOS StoreKit 2 section. The five production patterns are battle-tested and should be surfaced as a "critical mistakes to avoid" callout.
-- The SubscriptionOfferView + iOS 26 note is important for minimum deployment target decisions — stinger-forge should note this as a capability gate.
+- The SubscriptionOfferView + iOS 26 note is important for minimum deployment target decisions: stinger-forge should note this as a capability gate.
 - The "restore purchases button required by App Store Review even though currentEntitlements handles it" is a compliance nuance that will prevent rejections.
-- Win-back offers section explains that they are delivered automatically by the App Store — stinger-forge should clarify that developers don't code trigger logic, only handle the resulting transaction.
+- Win-back offers section explains that they are delivered automatically by the App Store: stinger-forge should clarify that developers don't code trigger logic, only handle the resulting transaction.
 - The appTransactionID field for customer attribution is new in iOS 18.4+ and useful for cross-device user mapping.

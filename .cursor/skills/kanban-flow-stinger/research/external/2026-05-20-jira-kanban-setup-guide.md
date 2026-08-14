@@ -1,5 +1,5 @@
 ---
-title: "How to Set Up a Kanban Board in Jira — April 2026 Guide"
+title: "How to Set Up a Kanban Board in Jira: April 2026 Guide"
 source_url: https://hamsterstack.com/how-to/jira/set-up-kanban-board/
 source_type: practitioner-blog
 authority: medium
@@ -16,13 +16,13 @@ stinger: kanban-flow-stinger
 
 # How to Set Up a Kanban Board in Jira (April 2026 Guide)
 
-**Source:** HamsterStack — "How to set up Kanban board on Jira [April 2026 Guide]"
+**Source:** HamsterStack: "How to set up Kanban board on Jira [April 2026 Guide]"
 **URL:** https://hamsterstack.com/how-to/jira/set-up-kanban-board/
 **Published:** April 2026 (exact date not available)
 
 ## Summary
 
-Step-by-step Jira Kanban board configuration guide from April 2026. This complements the DEV Community source (honest WIP limit review) with detailed configuration instructions — it is the "how to configure" companion to the "here are the gotchas" article.
+Step-by-step Jira Kanban board configuration guide from April 2026. This complements the DEV Community source (honest WIP limit review) with detailed configuration instructions: it is the "how to configure" companion to the "here are the gotchas" article.
 
 **Complete setup sequence for Jira Kanban:**
 1. Navigate to project → Boards → Create board → Choose "Create a Kanban board"
@@ -53,4 +53,4 @@ Step-by-step Jira Kanban board configuration guide from April 2026. This complem
 
 - **Supports** `guides/08-tool-implementation.md` (Jira section): provides the exact navigation path for WIP limit configuration in Jira as of April 2026. The column-to-status mapping requirement is a critical prerequisite that many teams miss.
 - The "2-3 items per person per column" starting heuristic is a simpler entry point than team-size-plus-one for teams new to Jira Kanban configuration. Stinger-forge can offer both options in the guide.
-- The JQL-based quick filters section is useful for the class-of-service swimlane setup guide (`guides/06-class-of-service.md`) — teams can create swimlanes per service tier using JQL.
+- The JQL-based quick filters section is useful for the class-of-service swimlane setup guide (`guides/06-class-of-service.md`): teams can create swimlanes per service tier using JQL.

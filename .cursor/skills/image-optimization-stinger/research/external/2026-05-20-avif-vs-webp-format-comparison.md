@@ -16,7 +16,7 @@ date_accessed: 2026-05-20
 - Browser support for AVIF is above 95% globally as of early 2026; WebP near-universal at 97-98%
 - The remaining gap (older devices, legacy enterprise browsers) is why WebP fallback is still mandatory
 - For curated marketing images: AVIF as primary with WebP and JPEG fallbacks
-- Safari added AVIF support in 16.4 (March 2023) — the last major holdout
+- Safari added AVIF support in 16.4 (March 2023): the last major holdout
 
 ## Relevance to image-optimization-stinger
 

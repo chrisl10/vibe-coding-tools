@@ -8,7 +8,7 @@ topic: sdk-generation
 stinger: api-docs-stinger
 ---
 
-# Five SDK Generators Compared: Speakeasy, Stainless, Fern, APIMatic, and OpenAPI Generator — API Coding
+# Five SDK Generators Compared: Speakeasy, Stainless, Fern, APIMatic, and OpenAPI Generator: API Coding
 
 ## Summary
 
@@ -37,8 +37,8 @@ Published April 2026. Compares the five most widely deployed SDK generators for 
 ## Annotations for stinger-forge
 
 - This is the **primary source** for `guides/04-sdk-generation.md`.
-- The Fern/Postman acquisition (January 2026) changes the risk profile for Fern — note it prominently.
+- The Fern/Postman acquisition (January 2026) changes the risk profile for Fern. Note it prominently.
 - Speakeasy's air-gapped CLI suitability is a differentiator for enterprise/regulated environments.
-- The "openapi-generator needs a Java runtime" pain point is highly relevant for TypeScript teams — document it.
+- The "openapi-generator needs a Java runtime" pain point is highly relevant for TypeScript teams. Document it.
 - For most teams without enterprise budget: recommend openapi-generator for breadth + Fern OSS tier for quality TypeScript/Python output.
-- Resolves open question from Command Brief: Fern pricing is $250/SDK/mo after OSS tier — becomes cost-prohibitive vs openapi-generator-cli when generating more than 2-3 languages.
+- Resolves open question from Command Brief: Fern pricing is $250/SDK/mo after OSS tier, becomes cost-prohibitive vs openapi-generator-cli when generating more than 2-3 languages.

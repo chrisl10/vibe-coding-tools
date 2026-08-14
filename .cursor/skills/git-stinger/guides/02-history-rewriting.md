@@ -78,7 +78,7 @@ After running, the file will not exist in any commit in the local repo.
 ```bash
 # Create an expressions file:
 cat > ../replace-expressions.txt << 'EOF'
-AKIAIOSFODNN7EXAMPLE==>REDACTED_AWS_KEY
+<AWS_ACCESS_KEY_ID>==>REDACTED_AWS_KEY
 ghp_abc123def456==>REDACTED_GH_TOKEN
 EOF
 

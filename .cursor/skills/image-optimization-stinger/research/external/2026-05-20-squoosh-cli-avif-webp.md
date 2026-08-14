@@ -7,7 +7,7 @@ url: https://www.npmjs.com/package/@squoosh/cli
 date_accessed: 2026-05-20
 ---
 
-# @squoosh/cli — Official NPM Docs
+# @squoosh/cli: Official NPM Docs
 
 ## Key Findings
 
@@ -55,7 +55,7 @@ npx @squoosh/cli --avif '{"cqLevel":33}' --webp '{"quality":75}' *.jpg -d ./dist
 
 ## Known Limitation (AVIF)
 
-The `auto` optimizer does NOT reliably work with `--avif` — it outputs at ~quality 30 regardless of the target. Use explicit `cqLevel` values instead.
+The `auto` optimizer does NOT reliably work with `--avif`: it outputs at ~quality 30 regardless of the target. Use explicit `cqLevel` values instead.
 
 ## Dockerized Version
 

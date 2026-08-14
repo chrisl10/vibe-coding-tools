@@ -1,4 +1,4 @@
-# 08 — MFA and Passkeys
+# 08: MFA and Passkeys
 
 The factor hierarchy. Default to passkeys (WebAuthn); TOTP as the universal fallback; SMS only as a recovery channel; magic links with discipline.
 
@@ -6,11 +6,11 @@ Source: `research/2026-04-25-webauthn-and-totp.md`, https://www.w3.org/TR/webaut
 
 ## The factor hierarchy (best to worst)
 
-1. **Passkeys / WebAuthn (platform or roaming authenticator)** — phishing-resistant, hardware-bound, biometric or PIN unlock. Best default for new flows in 2026.
-2. **TOTP (RFC 6238)** — Google Authenticator / 1Password / Authy. Universal fallback. Good when passkeys aren't available.
-3. **Email magic link / one-time code** — when no second factor exists. Treat as identity-verification, not as a factor.
-4. **Push notifications via authenticator app** — Duo, Microsoft Authenticator. Phishing-vulnerable but better than SMS.
-5. **SMS / voice OTP** — **recovery only**, never primary. SIM-swap risk is real and increasingly common.
+1. **Passkeys / WebAuthn (platform or roaming authenticator)**: phishing-resistant, hardware-bound, biometric or PIN unlock. Best default for new flows in 2026.
+2. **TOTP (RFC 6238)**: Google Authenticator / 1Password / Authy. Universal fallback. Good when passkeys aren't available.
+3. **Email magic link / one-time code**: when no second factor exists. Treat as identity-verification, not as a factor.
+4. **Push notifications via authenticator app**: Duo, Microsoft Authenticator. Phishing-vulnerable but better than SMS.
+5. **SMS / voice OTP**: **recovery only**, never primary. SIM-swap risk is real and increasingly common.
 
 ## Default flow for a 2026 SaaS
 
@@ -56,7 +56,7 @@ if (!verification.verified) throw new Error('Verification failed');
 
 Authentication mirrors registration: `generateAuthenticationOptions` / `verifyAuthenticationResponse`.
 
-**Conditional UI** — let the browser autofill passkey selection on the username field. UX win; supported across all major browsers in 2026.
+**Conditional UI**: let the browser autofill passkey selection on the username field. UX win; supported across all major browsers in 2026.
 
 Use `@simplewebauthn/server` + `@simplewebauthn/browser` (or your provider's built-in: Better Auth's `passkey()` plugin, Clerk's passkey support, Supabase via WebAuthn extensions, Stytch's passkeys product).
 
@@ -114,10 +114,10 @@ await db.magic_links.create({
 
 Critical:
 
-- **Single-use** — mark redeemed on first use; reject reuse.
-- **Short TTL** — 10 minutes is the common floor.
-- **Hash the token** — leak via DB → still unusable without rainbow.
-- **Bind to the email** — token alone shouldn't grant a session for a different email.
+- **Single-use**: mark redeemed on first use; reject reuse.
+- **Short TTL**: 10 minutes is the common floor.
+- **Hash the token**: leak via DB → still unusable without rainbow.
+- **Bind to the email**: token alone shouldn't grant a session for a different email.
 - **Token in URL is fine** (per OAuth norm); don't put it in a URL fragment (logging exposure).
 
 ## SMS (recovery channel only)
@@ -126,27 +126,27 @@ If SMS must be present for a recovery flow:
 
 - Apply rate limits aggressively (3 sends per hour per phone, 5 per day).
 - Pin the verification UI (don't auto-fill from clipboard for OTP).
-- Treat a successful SMS recovery as a **higher-risk event** — log it, optionally re-prompt for a passkey on next login.
+- Treat a successful SMS recovery as a **higher-risk event**: log it, optionally re-prompt for a passkey on next login.
 - Never use SMS as the primary second factor.
 
 ## MFA enforcement policy
 
 Three modes:
 
-- **Optional** — user opts in. Lowest friction; lowest assurance.
-- **Step-up** — required for sensitive actions (changing password, deleting data, accessing billing).
-- **Required** — must enroll within first session, can't bypass.
+- **Optional**: user opts in. Lowest friction; lowest assurance.
+- **Step-up**: required for sensitive actions (changing password, deleting data, accessing billing).
+- **Required**: must enroll within first session, can't bypass.
 
 For B2B SaaS with admin tiers, "Required for admins, step-up for sensitive actions, optional for regular users" is a common policy.
 
 ## Common pitfalls
 
-- **MFA without recovery codes** — DoS at scale. Always issue 10 codes at enrollment.
-- **Recovery flow without MFA** — defeats the point. Recovery is itself MFA-protected (by SMS, by recovery code, or by hard identity verification).
-- **Allowing TOTP secret reuse across users** — impossible if generated per-user, but check the wiring.
-- **Storing TOTP secret unencrypted** — full account-takeover surface in a DB leak.
-- **Magic link with multi-use semantics** — link sent twice, both work, replay attack possible.
-- **SMS as primary** — SIM-swap. See above.
+- **MFA without recovery codes**: DoS at scale. Always issue 10 codes at enrollment.
+- **Recovery flow without MFA**: defeats the point. Recovery is itself MFA-protected (by SMS, by recovery code, or by hard identity verification).
+- **Allowing TOTP secret reuse across users**: impossible if generated per-user, but check the wiring.
+- **Storing TOTP secret unencrypted**: full account-takeover surface in a DB leak.
+- **Magic link with multi-use semantics**: link sent twice, both work, replay attack possible.
+- **SMS as primary**: SIM-swap. See above.
 
 ## Audit handoff
 

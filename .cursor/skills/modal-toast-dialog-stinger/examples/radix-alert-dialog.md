@@ -1,4 +1,4 @@
-# Example — Radix AlertDialog (Destructive Confirmation)
+# Example: Radix AlertDialog (Destructive Confirmation)
 
 *Demonstrates: `guides/00-primitive-selection-matrix.md` (pick AlertDialog), `guides/01-accessible-modal-contract.md` (six-point contract).*
 
@@ -62,14 +62,14 @@ export function DeleteAccountDialog({ onConfirm }: DeleteAccountDialogProps) {
 
 ## Accessibility contract verification
 
-- [x] `aria-modal="true"` — added by Radix `AlertDialog.Content` automatically
-- [x] `role="alertdialog"` — set by Radix automatically
-- [x] Focus trap — Radix built-in; Tab cycles between Cancel and Action buttons only
-- [x] Escape — Radix closes the dialog and calls Cancel (correct for this scenario)
-- [x] Scroll lock — applied by Radix to `<body>`
-- [x] Focus return — Radix returns focus to the trigger button on close
-- [x] `aria-labelledby` — `AlertDialog.Title` wires this automatically
-- [x] `aria-describedby` — `AlertDialog.Description` wires this automatically
+- [x] `aria-modal="true"`: added by Radix `AlertDialog.Content` automatically
+- [x] `role="alertdialog"`: set by Radix automatically
+- [x] Focus trap: Radix built-in; Tab cycles between Cancel and Action buttons only
+- [x] Escape: Radix closes the dialog and calls Cancel (correct for this scenario)
+- [x] Scroll lock: applied by Radix to `<body>`
+- [x] Focus return: Radix returns focus to the trigger button on close
+- [x] `aria-labelledby`: `AlertDialog.Title` wires this automatically
+- [x] `aria-describedby`: `AlertDialog.Description` wires this automatically
 
 ## Why not a toast with "Undo"?
 

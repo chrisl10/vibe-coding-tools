@@ -1,72 +1,44 @@
-# MCP Tool Docs Worker-Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `mcp-tool-docs-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/mcp-tool-docs-worker-bee.md`](../../../agents/mcp-tool-docs-worker-bee.md)
-**Stinger:** [`.cursor/skills/mcp-tool-docs-stinger/`](../../mcp-tool-docs-stinger/)
-**Trigger policy:** proactive
-
----
+# mcp-tool-docs-worker-bee
 
 ## Domain
+This Bee owns the tool, API, and CLI documentation surface for any project: turning real source into a usable, honest reference. It covers schema-selected tool documentation (name, purpose, input schema, output shape, side effects, annotations where the protocol defines them, examples - MCP tools first and foremost), the TypeScript public API rendered via TypeDoc (and API Extractor where a reviewable public-API contract is needed), a CLI's command reference, doc-to-code drift detection, and changelog discipline tied to a released artifact's version. This is a documentation authority, not a protocol-correctness authority: it transcribes real behavior, it does not judge whether that behavior is right.
 
-`mcp-tool-docs-worker-bee` owns Hivemind's tool, API, and CLI documentation surface - every artifact that turns real source into a usable reference. It covers MCP tool/resource documentation (honest name, purpose, zod input schema, output shape, side effects, examples), the TypeScript public API rendered with TypeDoc, the `hivemind` CLI command reference, doc-to-code sync, and changelog discipline tied to the `@deeplake/hivemind` npm package. Every doc is transcribed from the source (`src/mcp/server.ts`, `src/cli/index.ts`, the exported types), never paraphrased into something prettier-but-false.
+Hivemind's MCP tools, TypeScript public API, and `hivemind` CLI remain fully documented as a worked example (`examples/*.md` in the paired stinger) - the Bee's domain is general, Hivemind is its best-documented instance, not its boundary.
+
+## Paired Stinger
+[mcp-tool-docs-stinger](../../mcp-tool-docs-stinger) - general tool-doc, TypeScript API-reference, CLI-doc, doc-sync, and changelog guides, worked Hivemind examples, templates, and a 10-point done checklist.
 
 ## Trigger phrases
-
-Route to `mcp-tool-docs-worker-bee` when the user says any of:
-
-- "Document the MCP tools" / "document this MCP tool" / "write docs for hivemind_search"
-- "Is this tool description honest" / "doc honesty"
-- "Generate TypeDoc from the TS source" / "TypeDoc setup"
-- "Document the hivemind CLI" / "CLI reference"
-- "Keep docs in sync with code" / "doc-sync"
-
-Or when a PR touches `src/mcp/server.ts`, the CLI, or exported TS types and the reference docs need to follow.
+- "document the MCP tools"
+- "write docs for this tool"
+- "is this tool description honest?"
+- "generate a TypeScript API reference"
+- "document this CLI"
+- "keep docs in sync with code"
+- "write a changelog entry"
 
 ## Do NOT route when
-
-- The user wants MCP protocol or transport internals, or to build/audit the server itself - that is `mcp-protocol-worker-bee`. This Bee documents the tool; the protocol Bee builds it.
-- The user wants README authoring as a standalone deliverable - that is `readme-writing-worker-bee`.
-- The user wants the `library/` knowledge convention or narrative knowledge-capture docs - that is `library-worker-bee` or `knowledge-worker-bee`.
-- The user wants Deep Lake dataset schema design - that is `deeplake-dataset-worker-bee`.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let this one act as backup.
+- The ask is auditing whether a tool's schema, transport, or error handling is protocol-correct rather than documenting it; that belongs to mcp-protocol-worker-bee. This Bee documents what the code does; mcp-protocol-worker-bee rules on whether what the code does is right.
+- The ask is prose-quality review or ghostwriting (Diataxis mode, inverted pyramid, voice/tone, "is this well-written"); that belongs to technical-writing-craft-worker-bee.
+- The ask is OpenAPI/REST API documentation or SDK generation (Swagger UI/Redoc/Scalar selection, OpenAPI example enrichment, openapi-generator-cli/Fern/Speakeasy); that belongs to api-docs-worker-bee.
+- The ask is docs-site platform selection or hosting (Docusaurus/Starlight/Mintlify/GitBook, docs-as-code CI for a whole site, search setup); that belongs to docs-site-worker-bee.
+- The ask is standalone README authoring; that belongs to readme-writing-worker-bee.
+- The ask is the library/ knowledge-base convention or narrative knowledge-capture docs; those belong to library-worker-bee or knowledge-worker-bee.
+- The ask is Deeplake dataset schema design; that belongs to vector-store-worker-bee.
 
 ## Inputs the Bee needs
+- The actual source file for the surface being documented: the tool-registration code for schema-selected tools (`src/mcp/server.ts` for Hivemind), the CLI's dispatch/routing for a command surface (`src/cli/index.ts` and `src/commands/*` for Hivemind), or the exported TS types for an API reference.
+- Whether the request is new documentation, a drift check against existing docs, or a changelog entry tied to a version bump.
+- Which product is being documented - apply the general guides to that product's real source; reach for the Hivemind worked examples only when Hivemind itself is the target.
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- A tool doc with all six required parts: name, purpose, input schema, output shape, side effects (including annotation values where the protocol defines them), and at least one example.
+- A generated API reference (TypeDoc, and an API Extractor report where a reviewable contract is needed) - never a hand-forked copy.
+- A CLI command reference and a changelog entry tied to the artifact's released version, flagged `[BREAKING]` where relevant.
 
-- The source in scope (the tool handler, CLI command, or exported type to document).
-- Access to `src/mcp/server.ts`, `src/cli/index.ts`, and the TypeDoc config if present.
-- Optional: the target audience (npm consumer, harness user) and whether a changelog entry is also needed.
-
-If the source in scope is missing, do not invoke yet - ask the user to point at it.
-
-## Outputs the Bee produces
-
-- MCP tool docs carrying all six parts (name, purpose, input schema, output shape, side effects, example), matched to real behavior.
-- TypeDoc-rendered API reference from the TS doc comments (fix the source, regenerate; never a second copy).
-- `hivemind` CLI reference and doc-sync findings tied to the npm version.
-
-## Multi-Bee sequences this Bee participates in
-
-- **MCP feature build** - after `mcp-protocol-worker-bee` lands the tool contract, `mcp-tool-docs-worker-bee` documents it honestly; `harness-integration-worker-bee` wires it into hosts.
-- **Ship a release** - feeds the changelog discipline that `changelog-release-notes-worker-bee` owns for the user-facing release notes.
-
-## Critical directives the orchestrator should respect
-
-- **Read the source before writing a single line** - a tool doc that does not match `src/mcp/server.ts` is a bug, not documentation.
-- **Tool descriptions and schemas must match real behavior** - an MCP client picks tools off their descriptions; a dishonest one fires the wrong tool.
-- **Every MCP tool doc carries six parts.**
-- **TypeDoc renders from the TS types, not hand-written prose** - fix the doc comment in the source and regenerate.
-- **The changelog is tied to the npm version** (`sync-versions.mjs`).
-- **Do not scope-creep into protocol internals or README authoring.**
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
-
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+## Commonly sequenced with
+- mcp-protocol-worker-bee: supplies the correctness ruling this Bee's docs are transcribed from.
+- technical-writing-craft-worker-bee: reviews the prose quality of docs this Bee has already made factually honest.
+- api-docs-worker-bee: owns the OpenAPI/REST layer when a project has both a REST API and the TS/CLI/MCP surfaces this Bee owns.
+- docs-site-worker-bee: publishes this Bee's generated API reference inside a docs site.
+- library-worker-bee / knowledge-worker-bee: own adjacent narrative and library/ documentation this Bee does not touch.

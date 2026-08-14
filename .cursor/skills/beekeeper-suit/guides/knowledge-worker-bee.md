@@ -1,67 +1,37 @@
-# Knowledge Worker-Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `knowledge-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/knowledge-worker-bee.md`](../../../agents/knowledge-worker-bee.md)
-**Stinger:** [`.cursor/skills/knowledge-stinger/`](../../knowledge-stinger/)
-**Trigger policy:** on-demand
-
----
+# knowledge-worker-bee
 
 ## Domain
+This Bee authors the narrative, human-readable knowledge documentation under library/knowledge/private/<domain>/: system overviews with Mermaid diagrams, auth architecture docs with sequence diagrams, consolidated SQL schema references, Valkey key catalogs, security trust-boundary diagrams, coding standards, and every other deep technical doc that explains how a system works and why it was built that way. It works from ADRs and PRDs as source material but never copies spec language verbatim, and it never touches PRDs or IRDs itself.
 
-`knowledge-worker-bee` authors the human-readable, technically deep narrative documentation under `library/knowledge/private/<domain>/` - the docs that explain HOW systems work, WHY they were designed that way, and WHAT the operational ground truth is. For Hivemind that means system overviews with Mermaid diagrams, the Deep Lake table schema reference, the hybrid recall pipeline, the harness architecture, the auth/device-flow doc with sequence diagrams, security trust-boundary diagrams, and coding standards. It works from ADRs and PRDs as source material and never authors PRDs, IRDs, ADRs, or QA reports.
+## Paired Stinger
+[knowledge-stinger](../../knowledge-stinger) - domain taxonomy for library/knowledge/, the strict document-format spec, the analysis workflow, a blank template, and target-quality examples (system overview, auth architecture).
 
 ## Trigger phrases
-
-Route to `knowledge-worker-bee` when the user says any of:
-
-- "Document the auth architecture" / "document the device flow"
-- "Write the system overview"
-- "Create knowledge docs for this repo" / "build out the knowledge base"
-- "Document how recall works internally" / "document the hybrid recall pipeline"
-- "Document how X works internally"
-
-Or when the request implicitly involves deep, narrative, private-domain knowledge documentation.
+- "document the auth architecture"
+- "write the system overview"
+- "create knowledge docs for this repo"
+- "build out the knowledge base"
+- "same quality as the legion-secure wiki"
+- "document how our container runtime works internally"
 
 ## Do NOT route when
-
-- The user wants PRDs, IRDs, the `library/` lifecycle, or drift audits - that is `library-worker-bee`. This Bee owns the deep narrative; library owns the lifecycle and PRDs.
-- The user wants the atomic entity graph (per-entity pages, backlinks, ADR detection) - that is `wiki-worker-bee`. This Bee writes the prose story; wiki writes the atomic cross-reference web.
-- The user wants ADR authoring as a deliverable - that is `adr-writing-worker-bee` (this Bee reads ADRs as source, never writes them).
-- The user wants a QA report - that is `quality-worker-bee`.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let this one act as backup.
+- The ask is a PRD or an IRD; those are authored by library-worker-bee, and this Bee never writes them.
+- The ask is a QA report; that belongs to quality-worker-bee.
+- The ask is authoring a new ADR (the WHY-decision record itself, not the narrative doc built from it); that belongs to adr-writing-worker-bee.
+- The target file is under library/notes/; that folder is human-only, no agent writes there.
 
 ## Inputs the Bee needs
+- Which domain (auth, data, security, frontend, etc.) or "full knowledge base" scope.
+- The relevant ADRs to read first for the WHY behind the design.
+- The relevant PRDs to extract DDL, API specs, and technical considerations from.
+- Source code as ground truth for file paths and actual behavior.
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- Knowledge docs with the standard header (Category, Version, Date, Status) and a Related section linking 3-8 sibling docs and ADRs.
+- Mermaid diagrams (flowchart, sequenceDiagram, stateDiagram-v2) with no explicit colors and camelCase node IDs.
+- Complete SQL DDL and trust-boundary diagrams where the domain calls for them.
 
-- The domain or system to document (auth, recall, schema, harness architecture).
-- Source material: the relevant ADRs, PRDs, and code paths.
-- Optional: the desired diagram types (Mermaid system, sequence, trust-boundary).
-
-If the domain is unclear, do not invoke yet - ask the user what to document.
-
-## Outputs the Bee produces
-
-- Narrative knowledge docs under `library/knowledge/private/<domain>/`, with Mermaid diagrams where they add clarity.
-- Deep technical explanations grounded in the ADRs/PRDs that source them.
-
-## Multi-Bee sequences this Bee participates in
-
-- **Compounding documentation** - `wiki-worker-bee` builds the atomic entity graph, `library-worker-bee` writes the per-module narrative, and `knowledge-worker-bee` writes the deeper private-domain narratives from ADRs and PRDs.
-
-## Critical directives the orchestrator should respect
-
-- **Owns the `library/knowledge/` narrative domain only** - never PRDs, IRDs, ADRs, or QA reports.
-- **Works from ADRs and PRDs as source material** - it reads decisions, it does not record them.
-- **Deep and honest** - the docs are the operational ground truth, not marketing.
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
-
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+## Commonly sequenced with
+- library-worker-bee: supplies the PRDs this Bee reads as source material for the WHAT and HOW.
+- adr-writing-worker-bee: supplies the ADRs this Bee reads as source material for the WHY.
+- quality-worker-bee: authors the QA reports that sit alongside, but outside, this Bee's docs.

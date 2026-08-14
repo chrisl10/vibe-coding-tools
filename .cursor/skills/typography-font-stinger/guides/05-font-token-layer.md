@@ -226,4 +226,4 @@ For design-to-code pipelines using Tokens Studio (formerly Figma Tokens), the th
 }
 ```
 
-See `ai-tools/skills/design-system-stinger/` for the full design system token pipeline.
+See `.claude/skills/design-system-stinger/` for the full design system token pipeline.

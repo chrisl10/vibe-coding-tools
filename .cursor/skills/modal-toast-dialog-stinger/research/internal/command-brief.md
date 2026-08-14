@@ -1,4 +1,4 @@
-# Command Brief — Internal Source Note
+# Command Brief: Internal Source Note
 
 **Source type:** internal
 **Authority:** high
@@ -15,9 +15,9 @@
 2. Never re-implement the focus trap.
 3. Apply the toast-vs-dialog taxonomy before recommending a primitive.
 4. Validate keyboard navigation and focus return before declaring done.
-5. Defer motion/animation decisions to ux-ui-worker-bee.
+5. Defer motion/animation decisions to ux-ui-svelte-worker-bee.
 
 ### Overlap boundaries
-- `ux-ui-worker-bee`: owns design tokens and motion values.
+- `ux-ui-svelte-worker-bee`: owns design tokens and motion values.
 - `react-worker-bee`: owns component-tree architecture.
 - `security-worker-bee`: owns overlays that gate destructive/sensitive actions.

@@ -1,4 +1,4 @@
-# 11 — Common failure modes
+# 11: Common failure modes
 
 The recurring failures across Docker + Compose + Actions pipelines, with diagnosis order and fixes. Source: composite of all research notes.
 
@@ -10,7 +10,7 @@ The recurring failures across Docker + Compose + Actions pipelines, with diagnos
 
 **Diagnosis order:**
 
-1. Is there a `cache-to` step? (Many repos have `cache-from` only — read-only cache.) → `guides/08-caching-strategies.md` §3.
+1. Is there a `cache-to` step? (Many repos have `cache-from` only, read-only cache.) → `guides/08-caching-strategies.md` §3.
 2. Is `COPY . .` before `COPY package.json`? → reorder.
 3. Is the cache scope per-branch and the new branch is cold? → expected first build; subsequent builds should warm. If always cold, check 1 and 2.
 4. Is the cache backend full? GHA cache 10 GB cap → switch to registry cache or Depot.
@@ -25,7 +25,7 @@ The recurring failures across Docker + Compose + Actions pipelines, with diagnos
 1. Single-stage build? → multi-stage; runtime stage carries only artifacts. → `guides/01-dockerfile-patterns.md` §1.
 2. Base image is `node:20` (not `-alpine` or `-slim`)? → switch base.
 3. Dev deps in runtime image? → `pnpm install --prod` or copy only `dist/` + production `node_modules`.
-4. `.dockerignore` missing — `node_modules`, `.git`, build artifacts shipped into context? → add `.dockerignore`. → `guides/01-dockerfile-patterns.md` §7.
+4. `.dockerignore` missing: `node_modules`, `.git`, build artifacts shipped into context? → add `.dockerignore`. → `guides/01-dockerfile-patterns.md` §7.
 5. Source files in the runtime stage when only the build artifact is needed? → COPY only `dist/`.
 
 ## 3. "Secret leaked in image / build log"
@@ -71,7 +71,7 @@ After fixing: **rotate the leaked secret** even if the leak was internal. Image 
 
 1. `depends_on: [postgres]` (short form) only waits for container start. → use `condition: service_healthy`. → `guides/03-compose-for-dev.md` §2.
 2. Postgres / Redis service has no `healthcheck:` block. → add one.
-3. Migration job ordering wrong — app starts before migrations. → separate `migrate` service, `app: depends_on: migrate: condition: service_completed_successfully`.
+3. Migration job ordering wrong: app starts before migrations. → separate `migrate` service, `app: depends_on: migrate: condition: service_completed_successfully`.
 
 ## 7. "Multi-arch build is slow on every PR"
 
@@ -110,11 +110,11 @@ After fixing: **rotate the leaked secret** even if the leak was internal. Image 
 
 **Diagnosis order:**
 
-1. Local cache hides a bug — try `docker build --no-cache .` locally.
+1. Local cache hides a bug: try `docker build --no-cache .` locally.
 2. Different Docker version (CI on Buildx 0.x, local on Docker Desktop 25). Pin BuildKit version where possible.
 3. Different platform (M-series local, amd64 CI). Build local with `--platform=linux/amd64` to reproduce.
-4. Different `.dockerignore` semantics — verify via `docker buildx build --output=type=local,dest=context-dump` to see what's actually in context.
-5. Different env vars / build args. Bake file resolves this — same args local and CI. → `guides/10-local-ci-parity.md`.
+4. Different `.dockerignore` semantics: verify via `docker buildx build --output=type=local,dest=context-dump` to see what's actually in context.
+5. Different env vars / build args. Bake file resolves this: same args local and CI. → `guides/10-local-ci-parity.md`.
 
 ## 11. "PR build queue is backed up"
 
@@ -138,5 +138,5 @@ After fixing: **rotate the leaked secret** even if the leak was internal. Image 
 
 ## See also
 
-- All other guides — these failure modes reference back to specific sections.
-- `scripts/audit-dockerfile.sh` and `scripts/audit-workflow.sh` — automated detection of many of these.
+- All other guides: these failure modes reference back to specific sections.
+- `scripts/audit-dockerfile.sh` and `scripts/audit-workflow.sh`: automated detection of many of these.

@@ -13,7 +13,7 @@ git tag v4 <new-commit>
 git push --force --tags
 ```
 
-Anyone who pulls `actions/checkout@v4` afterwards gets the new commit — without changing their workflow file. If the new commit is malicious, every dependent workflow runs the malicious code.
+Anyone who pulls `actions/checkout@v4` afterwards gets the new commit, without changing their workflow file. If the new commit is malicious, every dependent workflow runs the malicious code.
 
 Commit SHAs (`<40-char-hex>`) are immutable in the sense that the same SHA always references the same content. A repo owner cannot retag a SHA to point at different content.
 
@@ -67,7 +67,7 @@ Combined with SHA pinning, this gives defense in depth.
 
 ## Tooling
 
-- `scripts/pin-actions-to-sha.sh` — rewrites tags to SHAs in a workflow directory, leaving version comments.
+- `scripts/pin-actions-to-sha.sh`: rewrites tags to SHAs in a workflow directory, leaving version comments.
 - Dependabot config (`.github/dependabot.yml`):
 
 ```yaml
@@ -84,6 +84,6 @@ Dependabot will PR updates to SHA pins.
 ## Relevance to this Stinger
 
 - `guides/06-actions-security.md` §2.
-- `scripts/audit-workflow.sh` — flags non-SHA-pinned actions as Must-fix.
-- `scripts/pin-actions-to-sha.sh` — automated rewrite.
+- `scripts/audit-workflow.sh`: flags non-SHA-pinned actions as Must-fix.
+- `scripts/pin-actions-to-sha.sh`: automated rewrite.
 - All `templates/.github/workflows/*` use `<sha>` placeholders with version comments.

@@ -1,4 +1,4 @@
-# Research Plan — auth-stinger
+# Research Plan: auth-stinger
 
 **Bee:** auth-worker-bee
 **Forged:** 2026-04-25

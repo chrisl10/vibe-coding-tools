@@ -1,6 +1,6 @@
 ---
-name: adr-writing-stinger
-description: Architecture Decision Records specialist covering Nygard format (Context / Decision / Consequences), MADR extended template, Y-statement framing, supersession and deprecation lifecycle, Log4brains and adr-tools CLI integration, and the "decisions, not docs" philosophy. Use when authoring a new ADR, superseding an existing decision, auditing the ADR log, setting up Log4brains, or onboarding a team to ADR practice. Do NOT use for general knowledge-base authoring (library-worker-bee), code entity extraction (wiki-worker-bee), or security review of the decisions themselves (security-worker-bee).
+name: "adr-writing-stinger"
+description: "Architecture Decision Records specialist covering Nygard format (Context / Decision / Consequences), MADR extended template, Y-statement framing, supersession and deprecation lifecycle, Log4brains and adr-tools CLI integration, and the \\\\\\\"decisions, not docs\\\\\\\" philosophy. Use when authoring a new ADR, superseding an existing decision, auditing the ADR log, setting up Log4brains, or onboarding a team to ADR practice. Do NOT use for general knowledge-base authoring (library-worker-bee), code entity extraction (wiki-worker-bee), or security review of the decisions themselves (security-worker-bee)."
 license: MIT
 ---
 
@@ -148,4 +148,4 @@ The research folder was populated by `scripture-historian` at normal depth (15 f
 
 ---
 
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Part of The Hive, curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

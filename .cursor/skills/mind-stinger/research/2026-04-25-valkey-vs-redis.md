@@ -1,9 +1,9 @@
-# Valkey vs Redis — Working Memory Choice
+# Valkey vs Redis: Working Memory Choice
 
-**Source:** Valkey docs — https://valkey.io/, Linux Foundation announcement (March 2024); Redis 7.4 license change announcement.
+**Source:** Valkey docs: https://valkey.io/, Linux Foundation announcement (March 2024); Redis 7.4 license change announcement.
 **Retrieved:** 2026-04-25
-**Status:** Informational — referenced in `guides/01-stack-enforcement.md`.
-**Numbers tag:** vendor-directional (no large-scale benchmark differentiating Valkey from Redis 7.4 yet, as Valkey is a fork — performance is functionally equivalent).
+**Status:** Informational: referenced in `guides/01-stack-enforcement.md`.
+**Numbers tag:** vendor-directional (no large-scale benchmark differentiating Valkey from Redis 7.4 yet, as Valkey is a fork, performance is functionally equivalent).
 
 ---
 
@@ -17,7 +17,7 @@ the deploying product uses Valkey for working memory (`session:working:{sessionI
 
 ## Why Valkey, not Redis
 
-1. **License clarity.** Redis 7.4+ uses SSPL/BSL — commercial use restrictions. Valkey is BSD-3-Clause — no restrictions.
+1. **License clarity.** Redis 7.4+ uses SSPL/BSL: commercial use restrictions. Valkey is BSD-3-Clause: no restrictions.
 2. **Drop-in compatible.** Same wire protocol. Existing `ioredis` / `redis` clients work without changes.
 3. **Linux Foundation governance.** Stable governance model.
 4. **Performance parity.** No measurable difference in current benchmarks (it's a fork of Redis 7.2.4).
@@ -47,7 +47,7 @@ All TTLs are documented in the corresponding `guides/`. Drift is **must-fix** un
 
 ## Persistence
 
-the deploying product runs Valkey with periodic RDB snapshots for durability. Working memory expiry (TTL) is the design — losing recent working memory is acceptable (`reconstructSession()` rebuilds from Postgres + Qdrant). Losing match-result caches and coach-persona caches is acceptable (rebuild on next access).
+the deploying product runs Valkey with periodic RDB snapshots for durability. Working memory expiry (TTL) is the design: losing recent working memory is acceptable (`reconstructSession()` rebuilds from Postgres + Qdrant). Losing match-result caches and coach-persona caches is acceptable (rebuild on next access).
 
 The only persistence-critical Valkey state is the `media:queue` list. Ensure it survives restarts (snapshot frequency tuned accordingly).
 

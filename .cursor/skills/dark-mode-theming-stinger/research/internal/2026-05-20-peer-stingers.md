@@ -8,11 +8,11 @@ date_retrieved: 2026-05-20
 
 # Peer Stinger Boundary Notes
 
-## ux-ui-stinger
+## ux-ui-svelte-stinger
 
-`ux-ui-stinger` governs per-component visual specs: spacing, typography, shadow depth, focus rings. `dark-mode-theming-stinger` governs the token layer those specs reference. The handoff: `dark-mode-theming-stinger` produces the CSS variable surface; `ux-ui-stinger` tells components which tokens to use for which visual role.
+`ux-ui-svelte-stinger` governs per-component visual specs: spacing, typography, shadow depth, focus rings. `dark-mode-theming-stinger` governs the token layer those specs reference. The handoff: `dark-mode-theming-stinger` produces the CSS variable surface; `ux-ui-svelte-stinger` tells components which tokens to use for which visual role.
 
-Do NOT overlap: `dark-mode-theming-stinger` should not write per-component CSS rules. `ux-ui-stinger` should not write the `:root`/`.dark` block — that is this stinger's territory.
+Do NOT overlap: `dark-mode-theming-stinger` should not write per-component CSS rules. `ux-ui-svelte-stinger` should not write the `:root`/`.dark` block: that is this stinger's territory.
 
 ## design-system-stinger
 

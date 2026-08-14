@@ -202,8 +202,8 @@ export const brandFont = localFont({
 
 ## References
 
-- `guides/01-font-display-decision-matrix.md` — `display` option selection
-- `guides/05-cls-elimination.md` — how `adjustFontFallback` works under the hood; when to add manual overrides
-- `guides/06-performance-checklist.md` — verifying next/font output in the browser
-- `examples/happy-path-nextjs-inter.md` — complete Next.js 15 + Inter setup with zero CLS
-- `research/external/` — Next.js font optimization docs, Fontsource comparison
+- `guides/01-font-display-decision-matrix.md`: `display` option selection
+- `guides/05-cls-elimination.md`: how `adjustFontFallback` works under the hood; when to add manual overrides
+- `guides/06-performance-checklist.md`: verifying next/font output in the browser
+- `examples/happy-path-nextjs-inter.md`: complete Next.js 15 + Inter setup with zero CLS
+- `research/external/`: Next.js font optimization docs, Fontsource comparison

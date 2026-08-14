@@ -23,14 +23,14 @@ Synthesized from: Atlassian Fibonacci story points guide (Feb 2026), FreeScrumPo
 
 **What the Guide DOES say:** The Sprint Backlog contains "the work the Developers deem necessary to achieve the Sprint Goal." PBIs in the Product Backlog are "sized" (2020 changed "estimated" to "sized" in the backlog section). The Developers determine how much work fits in the Sprint (not the PO).
 
-Estimation is a community practice layered on top of Scrum — not a Scrum requirement.
+Estimation is a community practice layered on top of Scrum, not a Scrum requirement.
 
 ---
 
 ## Technique 1: Fibonacci Story Points + Planning Poker
 
 ### What it is
-Story points measure relative complexity, effort, and uncertainty combined — not time. The Fibonacci sequence (1, 2, 3, 5, 8, 13, 21...) deliberately creates increasing gaps to reflect that larger items carry more uncertainty.
+Story points measure relative complexity, effort, and uncertainty combined, not time. The Fibonacci sequence (1, 2, 3, 5, 8, 13, 21...) deliberately creates increasing gaps to reflect that larger items carry more uncertainty.
 
 Planning Poker: each Developer picks a card privately, reveals simultaneously. The simultaneous reveal prevents anchoring bias. Outliers discuss; team converges.
 
@@ -49,10 +49,10 @@ Planning Poker: each Developer picks a card privately, reveals simultaneously. T
 - Teams planning to adopt #NoEstimates or throughput-based forecasting
 
 ### Key mechanics
-- Only Developers estimate — PO clarifies but does not vote
+- Only Developers estimate: PO clarifies but does not vote
 - Timebox each story to 5 minutes in Planning Poker; if no consensus, split the story
 - Use "reference stories": 2-3 completed stories as calibration anchors per point value
-- Never convert story points to hours — use velocity for forecasting
+- Never convert story points to hours: use velocity for forecasting
 - Velocity = sum of story points for all Done stories in a Sprint (partials count as zero)
 - "Yesterday's weather" principle: commit to ~100% of average velocity for next Sprint
 
@@ -132,7 +132,7 @@ Throughput-based forecasting: count stories completed per sprint (or per week) r
 Stories must be consistently small (fits in 1-3 days of work). If stories vary wildly in size, throughput counting is unreliable.
 
 ### Common misconception
-#NoEstimates does not mean "no planning" or "no forecasting" — it means counting stories instead of sizing them in points. Monte Carlo simulation over story count still produces probabilistic forecasts.
+#NoEstimates does not mean "no planning" or "no forecasting": it means counting stories instead of sizing them in points. Monte Carlo simulation over story count still produces probabilistic forecasts.
 
 ### When to avoid
 - New teams with no throughput history
@@ -171,10 +171,10 @@ Stories must be consistently small (fits in 1-3 days of work). If stories vary w
 
 ## Key Quotations for the Bee to Cite
 
-> "Velocity is a planning tool, not a performance metric. It tells you how much a team can realistically deliver — not how hard they're working." — Community consensus
+> "Velocity is a planning tool, not a performance metric. It tells you how much a team can realistically deliver — not how hard they're working." (Community consensus)
 
-> "Partially completed stories contribute zero to velocity. Only stories that meet the Definition of Done count." — TeachingAgile story points guide (2026)
+> "Partially completed stories contribute zero to velocity. Only stories that meet the Definition of Done count." (TeachingAgile story points guide, 2026)
 
-> "The most important thing to remember about planning poker is that it's the discussion, not the agreement that's important." — New Relic Agile Handbook
+> "The most important thing to remember about planning poker is that it's the discussion, not the agreement that's important." (New Relic Agile Handbook)
 
-> "Some teams practicing continuous delivery skip estimation entirely, focusing on keeping work small and maintaining consistent throughput. This can work for mature teams with truly consistent story sizes, but most teams benefit from the planning visibility that story point estimation provides." — FreeScrumPoker beginner's guide (Nov 2025)
+> "Some teams practicing continuous delivery skip estimation entirely, focusing on keeping work small and maintaining consistent throughput. This can work for mature teams with truly consistent story sizes, but most teams benefit from the planning visibility that story point estimation provides." (FreeScrumPoker beginner's guide, Nov 2025)

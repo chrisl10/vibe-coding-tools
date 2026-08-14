@@ -8,7 +8,7 @@ This example shows a production-ready Events API handler pattern: signature veri
 
 ## Edge case: Custom HTTP handler (not Bolt)
 
-Most apps should use Bolt — it handles signature verification automatically. This example shows what a bare Express handler must implement for parity.
+Most apps should use Bolt: it handles signature verification automatically. This example shows what a bare Express handler must implement for parity.
 
 ```typescript
 import express from 'express';
@@ -155,8 +155,8 @@ app.event('app_mention', async ({ event, say }) => {
 
 ## Key patterns demonstrated
 
-1. **`express.raw()` before `json()`** — signature verification requires the raw request body; parsing JSON first would break `crypto.createHmac`.
-2. **Acknowledge before processing** — `res.status(200).send()` is sent before any database or API calls.
-3. **Redis SETNX for deduplication** — `NX` flag means "only set if key does not exist"; returns `null` if already set.
-4. **1-hour TTL on deduplication keys** — balances memory usage with Slack's retry window (Slack retries within minutes).
-5. **`event.subtype` guard on `message` events** — message edits, deletions, and bot messages all have subtypes; filtering them prevents accidental double-processing.
+1. **`express.raw()` before `json()`**: signature verification requires the raw request body; parsing JSON first would break `crypto.createHmac`.
+2. **Acknowledge before processing**: `res.status(200).send()` is sent before any database or API calls.
+3. **Redis SETNX for deduplication**: `NX` flag means "only set if key does not exist"; returns `null` if already set.
+4. **1-hour TTL on deduplication keys**: balances memory usage with Slack's retry window (Slack retries within minutes).
+5. **`event.subtype` guard on `message` events**: message edits, deletions, and bot messages all have subtypes; filtering them prevents accidental double-processing.

@@ -1,6 +1,6 @@
 # Philosophy of Beekeeper-Suit
 
-Beekeeper-Suit is the smallest part of the Army and the most important. It does no work; it only routes. That constraint is load-bearing.
+Beekeeper-Suit is the smallest part of the colony and the most important. It does no work; it only routes. That constraint is load-bearing.
 
 ---
 
@@ -8,7 +8,7 @@ Beekeeper-Suit is the smallest part of the Army and the most important. It does 
 
 The primary orchestrator in any agentic system has a choice: try to be a polymath, or delegate to specialists. Polymath agents are confident, fast, and wrong often. Specialists are slower to invoke but produce outputs their authors can actually trust.
 
-The Army is built on the second bet. Every Bee has a single, narrow domain; every Stinger is forged specifically for that domain; and Beekeeper-Suit exists so the orchestrator never has to guess which specialist owns which problem.
+The colony is built on the second bet. Every Bee has a single, narrow domain; every Stinger is forged specifically for that domain; and Beekeeper-Suit exists so the orchestrator never has to guess which specialist owns which problem.
 
 ---
 
@@ -24,8 +24,8 @@ The Army is built on the second bet. Every Bee has a single, narrow domain; ever
 When the `hive-registrar` skill forges a new Bee, registration with Beekeeper-Suit is the final step. Unregistered Bees are invisible. The pipeline is:
 
 1. Command Brief.
-2. Stinger (the paired Cursor skill under `.cursor/skills/`).
-3. Subagent file (the Bee under `.cursor/agents/`).
+2. Stinger (the paired Cursor skill under `.claude/skills/`).
+3. Subagent file (the Bee under `.claude/agents/`).
 4. Beekeeper-Suit registration (update roster + add guide).
 
 Each phase produces an auditable artifact. Each phase is rerunnable. The whole pipeline is designed so that an Bee can be traced from idea to deployment without anyone opening a terminal log.

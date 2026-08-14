@@ -1,6 +1,6 @@
 ---
-name: readme-writing-stinger
-description: Authors, audits, and restructures README files so they convert visitors into users. Apply when the user says "write a README", "audit my README", "make my README better", "README for this project", "README-driven development", or when starting a new project and the README does not exist yet. Also apply when badges are broken or missing, the quickstart is not copy-paste runnable, or the user wants to differentiate between an OSS and an internal tool README. Do NOT apply for full documentation site architecture (library-worker-bee), per-entity code extraction (wiki-worker-bee), or CI badge pipeline wiring (ci-release-worker-bee).
+name: "readme-writing-stinger"
+description: "Authors, audits, and restructures README files so they convert visitors into users. Apply when the user says \\\\\\\"write a README\\\\\\\", \\\\\\\"audit my README\\\\\\\", \\\\\\\"make my README better\\\\\\\", \\\\\\\"README for this project\\\\\\\", \\\\\\\"README-driven development\\\\\\\", or when starting a new project and the README does not exist yet. Also apply when badges are broken or missing, the quickstart is not copy-paste runnable, or the user wants to differentiate between an OSS and an internal tool README. Do NOT apply for full documentation site architecture (library-worker-bee), per-entity code extraction (wiki-worker-bee), or CI badge pipeline wiring (ci-release-worker-bee)."
 ---
 
 # readme-writing-stinger
@@ -144,4 +144,4 @@ readme-writing-stinger/
 
 ---
 
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Part of The Hive, curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

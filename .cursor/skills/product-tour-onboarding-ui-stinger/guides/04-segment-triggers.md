@@ -57,11 +57,11 @@ const isInTourSegment = (user: User): boolean => {
 ```
 
 Common segment dimensions:
-- **Plan tier** — `user.plan === 'pro'` for feature-specific tours.
-- **Account age** — new users (< 7 days) for onboarding; recent activations for feature adoption.
-- **Role** — `user.role === 'admin'` for admin tours.
-- **Activation state** — users who have NOT completed a specific milestone (the tour's purpose).
-- **Cohort/experiment** — segment assigned by the feature flag system.
+- **Plan tier**: `user.plan === 'pro'` for feature-specific tours.
+- **Account age**: new users (< 7 days) for onboarding; recent activations for feature adoption.
+- **Role**: `user.role === 'admin'` for admin tours.
+- **Activation state**: users who have NOT completed a specific milestone (the tour's purpose).
+- **Cohort/experiment**: segment assigned by the feature flag system.
 
 ### Gate 3: Feature flag gate
 
@@ -73,9 +73,9 @@ const isTourFlagEnabled = (): boolean =>
 ```
 
 Using a feature flag to gate tours provides:
-- **Safe rollout** — enable for 10% of users first.
-- **Kill switch** — disable immediately if the tour is causing confusion or breakage.
-- **A/B testing** — compare conversion between tour variants.
+- **Safe rollout**: enable for 10% of users first.
+- **Kill switch**: disable immediately if the tour is causing confusion or breakage.
+- **A/B testing**: compare conversion between tour variants.
 
 The flag name should match the tour key for clarity. Using the same flag system as the rest of the product avoids a second configuration surface.
 
@@ -85,7 +85,7 @@ The flag name should match the tour key for clarity. Using the same flag system 
 
 **Do NOT:** Show tours on every login or page load without a behavioral trigger.
 
-**Do:** Show tours based on user behavior — first time reaching a specific page, first time triggering a feature, or after completing a prerequisite step.
+**Do:** Show tours based on user behavior: first time reaching a specific page, first time triggering a feature, or after completing a prerequisite step.
 
 ```typescript
 // BAD: triggers on every login
@@ -105,12 +105,12 @@ Behavioral triggers produce better completion rates because the user is already 
 
 ## "Don't show again" persistence contract
 
-Every tour must have a dismiss/skip path that permanently suppresses the tour for this user. This is not optional — a tour that cannot be permanently dismissed is hostile UX.
+Every tour must have a dismiss/skip path that permanently suppresses the tour for this user. This is not optional. A tour that cannot be permanently dismissed is hostile UX.
 
 Required implementations:
-1. **Explicit dismiss** — "Skip tour" or "Don't show again" button.
-2. **Completion** — tour is marked seen on the last step.
-3. **Implicit dismiss after N sessions** — if the user has seen the tour invite 3 times without starting, mark it seen to stop persisting.
+1. **Explicit dismiss**: "Skip tour" or "Don't show again" button.
+2. **Completion**: tour is marked seen on the last step.
+3. **Implicit dismiss after N sessions**: if the user has seen the tour invite 3 times without starting, mark it seen to stop persisting.
 
 ---
 
@@ -128,4 +128,4 @@ Shepherd.js v15 provides `showOn` at the step level:
 }
 ```
 
-This is cleaner than wrapping the entire tour in a condition — it allows a single tour to have steps that are conditionally shown based on user attributes.
+This is cleaner than wrapping the entire tour in a condition; it allows a single tour to have steps that are conditionally shown based on user attributes.

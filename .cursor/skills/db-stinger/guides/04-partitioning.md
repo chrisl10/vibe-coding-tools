@@ -1,4 +1,4 @@
-# 04 — Partitioning
+# 04: Partitioning
 
 Declarative partitioning splits a logical table into physical child tables routed by a partition key. Worth it on tables > 100M rows or > 100 GB, when queries filter by the partition key.
 
@@ -11,7 +11,7 @@ Source: `research/2026-04-25-partitioning.md`.
 - Data has a natural disposal cadence (drop old months, drop old tenants).
 - Bulk load patterns target one partition at a time.
 
-**Don't partition** when the table is < 10M rows or queries don't filter on the partition key — you'll scan every partition every time.
+**Don't partition** when the table is < 10M rows or queries don't filter on the partition key: you'll scan every partition every time.
 
 ## Strategy choice
 
@@ -85,10 +85,10 @@ Per-partition `CREATE TABLE` is repetitive. Options:
 
 - **Manual:** scheduled job that creates the next month's partition a week ahead.
 - **`pg_partman`:** mature extension that automates partition creation, retention, and rollover.
-- **Tiger Data hypertables:** for time-series, use this instead of rolling your own — see `06-special-purpose.md`.
+- **Tiger Data hypertables:** for time-series, use this instead of rolling your own: see `06-special-purpose.md`.
 
 ## Cross-references
 
-- `01-schema-design.md` — partition key must be in the primary key.
-- `03-migrations.md` — `ATTACH` / `DETACH` lock semantics.
-- `06-special-purpose.md` — Tiger Data hypertables vs. manual partitioning.
+- `01-schema-design.md`: partition key must be in the primary key.
+- `03-migrations.md`: `ATTACH` / `DETACH` lock semantics.
+- `06-special-purpose.md`: Tiger Data hypertables vs. manual partitioning.

@@ -8,7 +8,7 @@ topic: tool-comparison
 stinger: api-docs-stinger
 ---
 
-# Best API Documentation Tools 2026 — APIScout
+# Best API Documentation Tools 2026: APIScout
 
 ## Summary
 
@@ -58,7 +58,7 @@ Covers the four platforms that define the developer-facing API docs market in 20
 ## Annotations for stinger-forge
 
 - This is the **primary source** for the managed-platform layer in `guides/01-tool-selection.md`.
-- The `/llms.txt` support in Mintlify is a forward-looking differentiator — note it in the selection guide.
+- The `/llms.txt` support in Mintlify is a forward-looking differentiator: note it in the selection guide.
 - Stoplight's SmartBear acquisition (August 2023) and API Hub integration is a longevity risk to flag.
 - Scalar's MIT license with zero lock-in is the correct default recommendation for self-hosted setups.
 - Pricing data should be verified against live sites before publishing (changes frequently).

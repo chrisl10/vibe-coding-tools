@@ -11,7 +11,7 @@ sources:
 # LaunchDarkly SDK client.variation extraction
 
 ## Summary
-LaunchDarkly is the largest commercial feature-flag platform, predating OpenFeature. Its SDK uses one canonical evaluation method: `client.variation(flagKey, defaultValue)` — same shape across browser-side `launchdarkly-js-client-sdk`, server-side `launchdarkly-node-server-sdk`, and Node.js client-side. The Node server-side SDK additionally exposes typed methods (`boolVariation`, `stringVariation`, `numberVariation`, `jsonVariation`) which are recommended over the generic `variation`. There's also `variationDetail` returning `{ value, reason, variationIndex }`. Wiki-worker-bee's detection is the same as for OpenFeature in shape: aggregate call sites by flag key.
+LaunchDarkly is the largest commercial feature-flag platform, predating OpenFeature. Its SDK uses one canonical evaluation method: `client.variation(flagKey, defaultValue)`: same shape across browser-side `launchdarkly-js-client-sdk`, server-side `launchdarkly-node-server-sdk`, and Node.js client-side. The Node server-side SDK additionally exposes typed methods (`boolVariation`, `stringVariation`, `numberVariation`, `jsonVariation`) which are recommended over the generic `variation`. There's also `variationDetail` returning `{ value, reason, variationIndex }`. Wiki-worker-bee's detection is the same as for OpenFeature in shape: aggregate call sites by flag key.
 
 ## Key facts
 - Server-side Node SDK methods (recommended typed forms):
@@ -21,14 +21,14 @@ LaunchDarkly is the largest commercial feature-flag platform, predating OpenFeat
   - `client.jsonVariation(flagKey, context, defaultValue): Promise<any>`
 - Server-side generic: `client.variation(flagKey, context, defaultValue)`. NOTE arg order differs from client-side.
 - Client-side (browser/JS) generic: `client.variation(flagKey, defaultValue)`. Synchronous return because flags are bootstrapped at init.
-- Detail variants: `variationDetail`, `boolVariationDetail`, `stringVariationDetail`, `numberVariationDetail`, `jsonVariationDetail` — return `LDEvaluationDetail = { value, reason, variationIndex }`.
+- Detail variants: `variationDetail`, `boolVariationDetail`, `stringVariationDetail`, `numberVariationDetail`, `jsonVariationDetail`: return `LDEvaluationDetail = { value, reason, variationIndex }`.
 - Initialization: `LDClient.initialize(envKey, context, options)` (browser) or `LDClient.init(sdkKey, options)` (server). The `client` instance is shared application-wide (singleton convention).
 - Lifecycle events: `client.on('initialized')`, `client.on('failed')`, `client.on('ready')`. Important to document because flag evaluations BEFORE `ready` return fallback values.
 - Flag bootstrapping (browser): `client.identify(newContext)` switches the active context and triggers a flag refresh.
-- `client.allFlags()` returns `LDFlagSet = { [key]: value }` — useful for full-flag audits but rarely seen in app code.
+- `client.allFlags()` returns `LDFlagSet = { [key]: value }`: useful for full-flag audits but rarely seen in app code.
 - Bots/CLI in the LaunchDarkly ecosystem (not consumed by wiki-worker-bee, but useful context):
-  - `ldcli` lists flags from the LaunchDarkly API — could be a v2 enrichment source.
-  - The `find-code-references` integration scans repos for flag-key strings — same idea as wiki-worker-bee's read_at extraction.
+  - `ldcli` lists flags from the LaunchDarkly API: could be a v2 enrichment source.
+  - The `find-code-references` integration scans repos for flag-key strings: same idea as wiki-worker-bee's read_at extraction.
 
 ## Recommended approach for wiki-worker-bee
 
@@ -48,7 +48,7 @@ Detection heuristic for `feature-flag` (LaunchDarkly variant):
    - The shared rule: the FIRST string-literal argument is always the flag key.
 4. **Extract defaultValue:** the LAST positional argument is always the default. This works across browser and server SDK signatures.
 5. **Aggregate by flagKey:** one entity page per unique key, same as OpenFeature pattern.
-6. **React-specific:** `launchdarkly-react-client-sdk` provides `useFlags()` hook returning the full flag set. When detected, list as `read_at` for ALL keys discovered elsewhere — but the agent can't know which subset is actually used without dataflow analysis. Note this gap in the body.
+6. **React-specific:** `launchdarkly-react-client-sdk` provides `useFlags()` hook returning the full flag set. When detected, list as `read_at` for ALL keys discovered elsewhere, but the agent can't know which subset is actually used without dataflow analysis. Note this gap in the body.
 
 Entity page differs from OpenFeature only in the `provider: launchdarkly` frontmatter and any LaunchDarkly-specific concepts (variation index, reason codes, percentage rollout context) noted in the body.
 
@@ -57,14 +57,14 @@ For the **dual-provider gotcha** (project uses both OpenFeature AND LaunchDarkly
 For projects using LaunchDarkly's `useFlags()` React hook destructuring (`const { myFlag } = useFlags()`), the agent can't easily resolve which keys are read. Recommend: detect `useFlags()` calls and list ALL flag keys from the project as potentially-read (the body can mark "read at scope: <component>"). Better than missing them entirely.
 
 ## Sources
-- [Evaluating flags | LaunchDarkly](https://docs.launchdarkly.com/sdk/features/evaluating/) — date retrieved 2026-04-29 — canonical `variation` and typed-variation method docs.
-- [JavaScript SDK reference](https://docs.launchdarkly.com/sdk/client-side/javascript/) — date retrieved 2026-04-29 — browser SDK init and variation patterns.
-- [LDClient interface](https://launchdarkly.github.io/js-client-sdk/interfaces/LDClient.html) — date retrieved 2026-04-29 — full method signatures.
-- [Node.js client-side SDK reference](https://docs.launchdarkly.com/sdk/client-side/node-js/) — date retrieved 2026-04-29 — Node-specific patterns.
+- [Evaluating flags | LaunchDarkly](https://docs.launchdarkly.com/sdk/features/evaluating/): date retrieved 2026-04-29, canonical `variation` and typed-variation method docs.
+- [JavaScript SDK reference](https://docs.launchdarkly.com/sdk/client-side/javascript/): date retrieved 2026-04-29, browser SDK init and variation patterns.
+- [LDClient interface](https://launchdarkly.github.io/js-client-sdk/interfaces/LDClient.html): date retrieved 2026-04-29, full method signatures.
+- [Node.js client-side SDK reference](https://docs.launchdarkly.com/sdk/client-side/node-js/): date retrieved 2026-04-29, Node-specific patterns.
 
 ## Quotes worth preserving
-> "The variation method determines which variation of a flag LaunchDarkly serves to the current context. variation calls take the feature flag key and a fallback value." — LaunchDarkly docs
-> "In the Node.js server-side SDK, there is a variation method for each type, such as boolVariation or stringVariation. These typed methods return a Promise and are recommended over the generic variation method." — LaunchDarkly docs
+> "The variation method determines which variation of a flag LaunchDarkly serves to the current context. variation calls take the feature flag key and a fallback value.", LaunchDarkly docs
+> "In the Node.js server-side SDK, there is a variation method for each type, such as boolVariation or stringVariation. These typed methods return a Promise and are recommended over the generic variation method.", LaunchDarkly docs
 
 ## Open questions / gaps
 - Server-side Node SDK arg order differs from client-side: `(flagKey, context, defaultValue)` vs `(flagKey, defaultValue)`. Wiki-worker-bee's "last positional arg is the default" heuristic handles both, but document this.

@@ -1,4 +1,4 @@
-# Principles — dark-mode-theming-stinger
+# Principles: dark-mode-theming-stinger
 
 *Covers: scope boundary, token contract, the six non-negotiables, SSR invariants, FOWT definition.*
 
@@ -6,11 +6,11 @@
 
 ## Scope boundary
 
-`dark-mode-theming-worker-bee` owns exactly one layer: the **runtime theming layer** that sits between the token source-of-truth file (owned by `design-system-worker-bee`) and the component code (audited by `ux-ui-worker-bee`). It is not a palette author. It is not a component designer. It is the translator that makes tokens theme-aware at runtime.
+`dark-mode-theming-worker-bee` owns exactly one layer: the **runtime theming layer** that sits between the token source-of-truth file (owned by `design-system-worker-bee`) and the component code (audited by `ux-ui-svelte-worker-bee`). It is not a palette author. It is not a component designer. It is the translator that makes tokens theme-aware at runtime.
 
 **Do NOT cross into:**
 - Palette creation or source-of-truth token file authorship (`design-system-worker-bee`)
-- Per-component visual deltas (`ux-ui-worker-bee`)
+- Per-component visual deltas (`ux-ui-svelte-worker-bee`)
 - Persisted-preference DB schema (`db-worker-bee`)
 - CSS variable injection input validation for user-controlled inputs (`security-worker-bee`)
 
@@ -57,7 +57,7 @@ FOWT is the brief appearance of the incorrect theme immediately after the page l
 
 1. SSR renders HTML with no theme class (or a hardcoded default)
 2. JS loads and reads `localStorage` or `prefers-color-scheme`
-3. JS applies the correct theme class — this triggers a repaint
+3. JS applies the correct theme class: this triggers a repaint
 
 If step 3 is visible to the user (typically when the page is heavy and the class change happens after paint), the user sees a flash from the wrong theme to the correct one.
 
@@ -69,9 +69,9 @@ If step 3 is visible to the user (typically when the page is heavy and the class
 
 These must hold for any Next.js implementation this stinger produces:
 
-1. `suppressHydrationWarning` on `<html>` — the theme class will differ between SSR and client; React must not treat this as an error.
+1. `suppressHydrationWarning` on `<html>`: the theme class will differ between SSR and client; React must not treat this as an error.
 2. No direct `localStorage` access outside `typeof window !== "undefined"` guards in Server Components or during SSR execution.
-3. No `useTheme()` call that renders differently based on `resolvedTheme` without a `mounted` guard — the server has no resolved theme.
+3. No `useTheme()` call that renders differently based on `resolvedTheme` without a `mounted` guard: the server has no resolved theme.
 4. `meta[name="color-scheme"]` in `<head>` to tell the browser which scheme to use for OS-native chrome (scrollbars, form inputs) before CSS loads.
 
 *Sources: `research/external/2026-05-20-ssr-color-scheme-detection.md`, `research/external/2026-05-20-next-themes-api.md`*

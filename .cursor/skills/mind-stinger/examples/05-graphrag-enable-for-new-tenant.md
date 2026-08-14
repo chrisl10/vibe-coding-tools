@@ -1,4 +1,4 @@
-# Example 05 — Enable GraphRAG for a New Tenant
+# Example 05: Enable GraphRAG for a New Tenant
 
 Walkthrough for the gated GraphRAG path being enabled for a single tenant cohort, with eval evidence.
 
@@ -14,7 +14,7 @@ This is **the canonical "when to enable GraphRAG" signal** per `guides/11-graphr
 
 ---
 
-## Step 1 — Verify the signal (NOT vibes)
+## Step 1: Verify the signal (NOT vibes)
 
 Before enabling, confirm the gap is measurable.
 
@@ -30,7 +30,7 @@ Before enabling, confirm the gap is measurable.
 | **Cross-session connection** | **0.41** | **0.43** |
 | Actionability | 0.78 | 0.74 |
 
-The "cross-session connection" dimension (added by `quality-worker-bee` for this tenant) is below 0.5 — the coach isn't connecting current sessions to past commitments.
+The "cross-session connection" dimension (added by `quality-worker-bee` for this tenant) is below 0.5: the coach isn't connecting current sessions to past commitments.
 
 ### Pull trace data
 
@@ -48,9 +48,9 @@ Mean retrieval: 0.71 (healthy). Routing accuracy: 92%. Sycophancy: 0.48.
 
 ---
 
-## Step 2 — Verify the platform-flag-only constraint
+## Step 2: Verify the platform-flag-only constraint
 
-Currently `enableGraphRAG` is in `PlatformConfig.systemPromptBlocks` — **platform-wide**. This needs to become tenant-specific to enable a cohort.
+Currently `enableGraphRAG` is in `PlatformConfig.systemPromptBlocks`: **platform-wide**. This needs to become tenant-specific to enable a cohort.
 
 ### Schema change
 
@@ -101,7 +101,7 @@ async function shouldUseGraphRAG(tenantId: string, seed: string): Promise<boolea
 ### Doc update
 
 ```diff
-# library/knowledge-base/ai/graphrag-knowledge-graph.md §7
+# library/knowledge/private/ai/graphrag-knowledge-graph.md §7
 
 -**To enable:** Set `enableGraphRAG: true` in `PlatformConfig.systemPromptBlocks`...
 +**To enable per-tenant:** Set `Tenant.enableGraphRAG = true` for the target tenant.
@@ -112,7 +112,7 @@ async function shouldUseGraphRAG(tenantId: string, seed: string): Promise<boolea
 
 ---
 
-## Step 3 — Backfill the graph for the target tenant
+## Step 3: Backfill the graph for the target tenant
 
 GraphRAG retrieves entities from `GraphEntity` / `GraphRelationship` tables. These are populated by `graph-extraction-worker.ts` from session SUMMARIES (not raw transcripts) per `guides/11-graphrag.md §3`.
 
@@ -143,24 +143,24 @@ After backfill: ~80,000 `GraphEntity` rows, ~120,000 `GraphRelationship` rows. P
 
 ---
 
-## Step 4 — Run an eval pass before enablement
+## Step 4: Run an eval pass before enablement
 
 A/B test: half of users get GraphRAG (hash-based), half don't. Run for **2 weeks** to accumulate enough trace data.
 
 | Metric | A (GraphRAG) | B (vector-only) | Δ |
 |---|---|---|---|
 | Retrieval precision | 0.78 | 0.71 | +0.07 |
-| Routing accuracy | 92% | 92% | — |
+| Routing accuracy | 92% | 92% | 0 |
 | Cross-session connection (rubric) | 0.61 | 0.43 | **+0.18** |
 | Latency P50 | 1180 ms | 920 ms | +260 ms |
 | Latency P95 | 2300 ms | 1800 ms | +500 ms |
-| Sycophancy | 0.46 | 0.48 | — |
+| Sycophancy | 0.46 | 0.48 | ~0 |
 
 **Conclusion:** GraphRAG lifts cross-session connection 0.43 → 0.61 (+0.18, the gap signal). Latency cost: +260ms P50 / +500ms P95. Acceptable for this tenant.
 
 ---
 
-## Step 5 — Enable for the tenant
+## Step 5: Enable for the tenant
 
 ```sql
 UPDATE "Tenant" SET enable_graphrag = true WHERE id = 'clx9vy200012vu8kj0';
@@ -172,30 +172,30 @@ This activates the per-tenant flag. Half of users (hash-based A/B) get GraphRAG;
 
 ---
 
-## Step 6 — Watch the eval signals
+## Step 6: Watch the eval signals
 
 For 4 weeks post-enablement:
 
-- **Retrieval precision** — confirm sustained ≥ 0.75 (above platform target).
-- **Cross-session connection** — confirm sustained ≥ 0.55 (5-week running mean).
-- **Latency P95** — alert if exceeds 3000ms (degradation budget).
-- **Postgres load** — `traverseGraph()` is a recursive CTE; monitor query plan.
+- **Retrieval precision**: confirm sustained ≥ 0.75 (above platform target).
+- **Cross-session connection**: confirm sustained ≥ 0.55 (5-week running mean).
+- **Latency P95**: alert if exceeds 3000ms (degradation budget).
+- **Postgres load**: `traverseGraph()` is a recursive CTE; monitor query plan.
 
 If any signal regresses, set `Tenant.enableGraphRAG = false` for rollback. The data stays; just the retrieval path reverts.
 
 ---
 
-## Step 7 — Hand off
+## Step 7: Hand off
 
-- **`db-worker-bee`** — verify the recursive CTE in `traverseGraph()` is using indexes (`@@index([tenantId, fromEntityId])`). Watch query plan after backfill.
-- **`library-worker-bee`** — author the PRD if this is a paid feature.
-- **`quality-worker-bee`** — fold the cross-session-connection rubric into the standard QA suite for this tenant.
+- **`db-worker-bee`**: verify the recursive CTE in `traverseGraph()` is using indexes (`@@index([tenantId, fromEntityId])`). Watch query plan after backfill.
+- **`library-worker-bee`**: author the PRD if this is a paid feature.
+- **`quality-worker-bee`**: fold the cross-session-connection rubric into the standard QA suite for this tenant.
 
 ---
 
-## Step 8 — Document the enablement
+## Step 8: Document the enablement
 
-`library/qa/ai/2026-04-25-graphrag-enablement-clx9vy200012vu8kj0.md`:
+`library/requirements/reports/ai/2026-04-25-graphrag-enablement-clx9vy200012vu8kj0.md`:
 
 ```
 Tenant: clx9vy200012vu8kj0 (Foundry Strategy)
@@ -219,4 +219,4 @@ This is **not** a generic recommendation to enable GraphRAG. Per `guides/11-grap
 - Don't enable because "the code is built and available."
 - Don't enable without a measurable gap signal.
 
-GraphRAG provides relational multi-hop reasoning for the remaining 10–20% of cases that vector RAG handles poorly. Most tenants won't need it.
+GraphRAG provides relational multi-hop reasoning for the remaining 10-20% of cases that vector RAG handles poorly. Most tenants won't need it.

@@ -1,6 +1,6 @@
 # Qdrant Per-Tenant Collection Scaling
 
-**Source:** Qdrant docs — https://qdrant.tech/documentation/guides/multiple-partitions/
+**Source:** Qdrant docs: https://qdrant.tech/documentation/guides/multiple-partitions/
 **Retrieved:** 2026-04-25
 **Status:** **LOAD-BEARING.** Cited in `guides/08-rag-strategy.md §1`.
 **Numbers tag:** benchmarked (Qdrant docs explicitly warn against many small collections).
@@ -24,7 +24,7 @@ For 10K+ users with per-USER collections, this would mean 40K+ collections (4 co
 For the deploying product's expected scale:
 
 - **10K tenants × 4 collection types = 40K collections** if per-tenant.
-- **At 100K tenants × 4 = 400K collections** — operationally untenable.
+- **At 100K tenants × 4 = 400K collections**: operationally untenable.
 
 But the deploying product's growth model is more conservative (small number of well-onboarded tenants), so per-tenant is comfortable through ~10K tenants. Past that, two paths:
 
@@ -42,7 +42,7 @@ For 10K+ users PER TENANT with per-user collections: catastrophic. the deploying
 | Per-user, all-types | 10K × 100 × 4 = **4M** | catastrophic |
 | Per-tenant, all-types | 100 × 4 = 400 | comfortable |
 | Per-tenant, all-types **(current)** | 100 × 4 = 400 + payload filter on `user_id` | comfortable |
-| Single global per-type | 4 | one big shared collection — `tenant_id` enforcement at filter layer |
+| Single global per-type | 4 | one big shared collection: `tenant_id` enforcement at filter layer |
 
 the deploying product's choice (middle row) gets tenant isolation by collection naming AND `user_id` isolation by payload filter. Operationally simple, security-clean.
 
@@ -61,13 +61,13 @@ filter: {
 }
 ```
 
-Both fields are indexed (`COMMON_INDEXES`). Filter performance: 2–5ms.
+Both fields are indexed (`COMMON_INDEXES`). Filter performance: 2-5ms.
 
 ---
 
 ## When per-tenant breaks down
 
-- **At 10K+ tenants:** start sharding. Hash-shard tenants across 2–4 Qdrant instances; route queries by tenant.
+- **At 10K+ tenants:** start sharding. Hash-shard tenants across 2-4 Qdrant instances; route queries by tenant.
 - **At a single collection > 10GB:** consider on-disk mode for that collection or shard within a tenant.
 
 For the deploying product at current scale, per-tenant is comfortably within healthy.

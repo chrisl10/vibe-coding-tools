@@ -1,4 +1,4 @@
-# Research Plan — devops-stinger
+# Research Plan: devops-stinger
 
 **Bee:** devops-worker-bee
 **Forged:** 2026-04-25
@@ -80,11 +80,11 @@
 
 ## Inventory checklist (canonical first move on every invocation)
 
-- [ ] `Dockerfile` — base image, stages, USER, HEALTHCHECK, ARG/ENV usage.
-- [ ] `.dockerignore` — present? canonical?
-- [ ] `docker-compose*.yml` — services, profiles, healthchecks, secrets blocks.
-- [ ] `.github/workflows/*.yml` — actions used (and pin form), `permissions:` blocks, OIDC, concurrency.
-- [ ] `package.json` — Node version, package manager, scripts.
+- [ ] `Dockerfile`: base image, stages, USER, HEALTHCHECK, ARG/ENV usage.
+- [ ] `.dockerignore`: present? canonical?
+- [ ] `docker-compose*.yml`: services, profiles, healthchecks, secrets blocks.
+- [ ] `.github/workflows/*.yml`: actions used (and pin form), `permissions:` blocks, OIDC, concurrency.
+- [ ] `package.json`: Node version, package manager, scripts.
 - [ ] Existing Depot wiring (`uses: depot/...`).
 - [ ] Existing scan tooling (Trivy, Scout, Snyk).
 - [ ] Existing `Makefile` / `taskfile.yml` / `docker-bake.hcl`.

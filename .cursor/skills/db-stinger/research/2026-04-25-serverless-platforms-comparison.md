@@ -1,4 +1,4 @@
-# Serverless DB Platforms — Comparison
+# Serverless DB Platforms: Comparison
 
 **Sources:**
 - https://supabase.com/docs
@@ -15,7 +15,7 @@
 
 ## Summary
 
-Six platforms dominate the 2026 serverless-DB conversation. They differ on engine (Postgres vs MySQL vs SQLite vs distributed SQL), pricing model (scale-to-zero vs always-on minimums), branching, replication topology, and integrated services (auth, storage, realtime). The right pick is workload-shaped — not feature-list shaped.
+Six platforms dominate the 2026 serverless-DB conversation. They differ on engine (Postgres vs MySQL vs SQLite vs distributed SQL), pricing model (scale-to-zero vs always-on minimums), branching, replication topology, and integrated services (auth, storage, realtime). The right pick is workload-shaped: not feature-list shaped.
 
 ## The six platforms
 
@@ -25,23 +25,23 @@ Six platforms dominate the 2026 serverless-DB conversation. They differ on engin
 - **Pooler:** Supavisor (PgBouncer-compatible, transaction-mode-with-prepared-statements on PG ≥ 14).
 - **Branching:** preview branches per PR (Pro+ tier).
 - **When it wins:** SaaS app that needs Postgres + auth + RLS + storage + realtime in one deploy. Default for full-stack projects.
-- **Caveats:** auth UI is opinionated — heavy customization is friction.
+- **Caveats:** auth UI is opinionated: heavy customization is friction.
 
 ### Neon
 - **Engine:** Postgres (16 / 17), bottomless storage, separated compute and storage.
-- **Killer feature:** branching as first-class — every branch is a copy-on-write Postgres; ideal for preview environments and reset-on-PR.
+- **Killer feature:** branching as first-class: every branch is a copy-on-write Postgres; ideal for preview environments and reset-on-PR.
 - **Pooler:** built-in pooler + serverless driver (HTTP / WebSocket).
 - **Branching:** per-branch databases at zero compute cost when idle (scale-to-zero).
 - **When it wins:** dev workflow that lives or dies on per-PR DB branching; serverless app where idle cost matters.
-- **Caveats:** no auth / storage / realtime — pair with another service.
+- **Caveats:** no auth / storage / realtime: pair with another service.
 
 ### Turso
 - **Engine:** libSQL (SQLite fork), distributed.
-- **Killer feature:** edge replicas — read latency at the edge, write back to a primary.
+- **Killer feature:** edge replicas: read latency at the edge, write back to a primary.
 - **Pooler:** N/A (SQLite is embedded; HTTP API for serverless).
 - **Branching:** database forking via `turso db create --from-db`.
 - **When it wins:** read-heavy edge workloads, mostly-static data with frequent reads (CMS, content sites, multi-tenant where each tenant is its own DB).
-- **Caveats:** SQLite mental model — not Postgres. Limited concurrent writes (single-writer per database). Not the right choice for transactional SaaS with heavy writes.
+- **Caveats:** SQLite mental model: not Postgres. Limited concurrent writes (single-writer per database). Not the right choice for transactional SaaS with heavy writes.
 
 ### PlanetScale
 - **Engine:** MySQL 8 (Vitess underneath).
@@ -54,7 +54,7 @@ Six platforms dominate the 2026 serverless-DB conversation. They differ on engin
 ### CockroachDB Serverless
 - **Engine:** distributed SQL (Postgres-wire compatible).
 - **Killer feature:** horizontal scale and geo-replication; 5-9s availability with consensus replication.
-- **Pooler:** Postgres-compatible — use any pooler.
+- **Pooler:** Postgres-compatible: use any pooler.
 - **Branching:** N/A in the same sense; clusters scale up/down.
 - **When it wins:** workloads that genuinely need geographic distribution and resilience to a regional outage; financial / regulated workloads.
 - **Caveats:** not 100% Postgres-compatible (some features / extensions missing); higher latency per query than single-region Postgres; not free at scale.
@@ -64,8 +64,8 @@ Six platforms dominate the 2026 serverless-DB conversation. They differ on engin
 - **Killer feature:** hypertables + continuous aggregates + compression for time-series.
 - **Pooler:** Postgres-compatible.
 - **Branching:** N/A; Tiger Cloud handles HA.
-- **When it wins:** time-series workloads — IoT, observability, financial ticks, analytics events.
-- **Caveats:** specialty platform — overkill for general SaaS schemas.
+- **When it wins:** time-series workloads: IoT, observability, financial ticks, analytics events.
+- **Caveats:** specialty platform: overkill for general SaaS schemas.
 
 ## The choice tree
 
@@ -75,7 +75,7 @@ Six platforms dominate the 2026 serverless-DB conversation. They differ on engin
 4. **Committed to MySQL?** → PlanetScale (db-worker-bee flags this is non-Postgres).
 5. **Want integrated auth + RLS + storage + realtime + edge functions in one platform?** → Supabase.
 6. **Want world-class branching for dev workflow + serverless Postgres?** → Neon.
-7. **Otherwise:** Supabase or Neon — Supabase wins for full-stack monoliths, Neon wins when other platform services are already chosen (Clerk for auth, R2 for storage).
+7. **Otherwise:** Supabase or Neon: Supabase wins for full-stack monoliths, Neon wins when other platform services are already chosen (Clerk for auth, R2 for storage).
 
 ## Relevance to this stinger
 

@@ -131,4 +131,4 @@ If stinger-forge needs more depth on specific topics, these sources are recommen
 
 ---
 
-scripture-historian handoff complete. Research folder populated at .cursor/skills/git-stinger/research/. Stinger-forge may proceed.
+scripture-historian handoff complete. Research folder populated at .claude/skills/git-stinger/research/. Stinger-forge may proceed.

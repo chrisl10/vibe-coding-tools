@@ -1,4 +1,4 @@
-# Stripe Payments Audit — {{project-name}}
+# Stripe Payments Audit, {{project-name}}
 
 > **This file is a TEMPLATE skeleton, not a real audit.** Copy it, fill the curly-braced placeholders, and write the filled-in version into the host repo's `library/` tree (see `SKILL.md` Output conventions).
 
@@ -26,7 +26,7 @@ Ratings: Solid / Drifting / Needs work
 
 | Surface | Rating | Headline finding |
 |---|---|---|
-| Product choice (Checkout vs PI vs Links — `guides/01`) | | |
+| Product choice (Checkout vs PI vs Links, `guides/01`) | | |
 | Webhook contract (`guides/02`) | | |
 | Subscriptions (`guides/03`) | | |
 | Customer Portal (`guides/04`) | | |
@@ -39,8 +39,8 @@ Ratings: Solid / Drifting / Needs work
 
 ### Must-fix ({{count}})
 
-1. **`{{file:line}}`** — {{one-line summary}}
-   - Failure mode: {{number from guides/09-common-failure-modes.md}}
+1. **`{{file:line}}`**, {{one-line summary}}
+   - Failure mode: {{number from guides/10-production-failure-modes.md}}
    - Citation: {{guide section + Stripe doc URL + research note}}
    - Impact: {{money loss / double-charge / missed provisioning / security}}
    - Fix: {{how}}
@@ -50,25 +50,25 @@ Ratings: Solid / Drifting / Needs work
 
 ### Should-refactor ({{count}})
 
-1. **`{{file:line}}`** — ...
+1. **`{{file:line}}`**, ...
 
 ### Style ({{count}})
 
-1. **`{{file:line}}`** — ...
+1. **`{{file:line}}`**, ...
 
 ## Cross-Bee handoffs
 
-- [ ] `db-worker-bee` — {{schema, indexes, processed_webhook_events table}}
-- [ ] `security-worker-bee` — {{secret storage, PII handling, RBAC on portal sessions}}
-- [ ] `react-worker-bee` — {{Stripe.js, Elements, EmbeddedCheckout}}
-- [ ] `library-worker-bee` — {{PRD scoping for any new payments feature}}
-- [ ] `quality-worker-bee` — {{post-fix verification}}
+- [ ] `db-worker-bee`, {{schema, indexes, processed_webhook_events table}}
+- [ ] `security-worker-bee`, {{secret storage, PII handling, RBAC on portal sessions}}
+- [ ] `react-worker-bee`, {{Stripe.js, Elements, EmbeddedCheckout}}
+- [ ] `library-worker-bee`, {{PRD scoping for any new payments feature}}
+- [ ] `quality-worker-bee`, {{post-fix verification}}
 
 ## What's NOT covered in this audit
 
-- {{e.g., Stripe Connect — out of scope; flag a separate engagement}}
-- {{e.g., PCI-DSS attestation paperwork — out of scope; talk to compliance}}
-- {{e.g., tax engine selection beyond Stripe Tax — out of scope v1}}
+- {{e.g., Stripe Connect, out of scope; flag a separate engagement}}
+- {{e.g., PCI-DSS attestation paperwork, out of scope; talk to compliance}}
+- {{e.g., tax engine selection beyond Stripe Tax, out of scope v1}}
 
 ## Acceptance checklist (hand to quality-worker-bee)
 

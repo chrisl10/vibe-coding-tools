@@ -1,4 +1,4 @@
-# 05 — Supabase Backend Foundation
+# 05: Supabase Backend Foundation
 
 Source PRD: `research/source-prds/prd-phase-05-supabase-backend-foundation.md`
 
@@ -28,7 +28,7 @@ Supabase Postgres
 
 ---
 
-## SvelteKit Supabase client — hooks.server.ts
+## SvelteKit Supabase client: hooks.server.ts
 
 ```ts
 // apps/web/src/hooks.server.ts

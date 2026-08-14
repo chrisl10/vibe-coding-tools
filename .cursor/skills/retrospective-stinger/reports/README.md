@@ -18,7 +18,7 @@ Examples:
 Each file is a completed version of `templates/facilitation-plan.md` plus the filled `templates/action-items.md`, combined into one document:
 
 1. Agenda (what was planned + what actually happened)
-2. Themes surfaced (top 3–5 with vote counts)
+2. Themes surfaced (top 3-5 with vote counts)
 3. Action items (owner, due, done-looks-like, status)
 4. Follow-through review from previous retro
 5. Retro health score (follow-through rate trend over last 3 retros)

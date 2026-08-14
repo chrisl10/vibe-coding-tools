@@ -7,7 +7,7 @@
 
 **Resolved [HH:MM UTC]:** This incident has been resolved. [One to two sentences on what was fixed and confirmed stable.]
 
-**Duration:** [X hours Y minutes] ([START TIME] UTC – [END TIME] UTC)
+**Duration:** [X hours Y minutes] ([START TIME] UTC to [END TIME] UTC)
 **Root cause:** [Plain-language explanation of what caused the incident. No jargon, no internal service names unless they are customer-visible.]
 **Preventative action:** [What specific action will prevent this recurrence. OR: "We are investigating preventative measures and will publish a post-mortem at [URL] by [DATE] UTC."]
 

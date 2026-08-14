@@ -1,10 +1,10 @@
-# 07 — Payload Admin Setup
+# 07: Payload Admin Setup
 
 Source PRD: `research/source-prds/prd-phase-07-payload-admin.md`
 
 This guide replaces the retired `guides/07-admin-spa.md` (Vite SPA). Payload's built-in React admin panel is the content management interface. No separate Vite SPA is scaffolded.
 
-For full Payload implementation details, invoke `cms-payload-worker-bee` (or read `cms-payload-stinger/SKILL.md`).
+For full Payload implementation details, invoke `website-worker-bee` (Payload is owned by website-stinger; no separate Payload Bee exists) (or read `website-stinger/SKILL.md`).
 
 ---
 
@@ -14,7 +14,7 @@ Configure Payload's admin panel in `apps/cms`: define Collections and Globals, w
 
 ---
 
-## payload.config.ts — baseline
+## payload.config.ts: baseline
 
 ```ts
 // apps/cms/src/payload.config.ts

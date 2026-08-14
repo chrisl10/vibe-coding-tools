@@ -1,4 +1,4 @@
-# 20 — Scripting and Packaging
+# 20: Scripting and Packaging
 
 One-off scripts, internal CLI tools, distributable packages. Patterns that scale from "a script in the repo" to "a published wheel".
 
@@ -132,7 +132,7 @@ if __name__ == "__main__":
 
 Now `python -m mypackage hello --name Mario` works.
 
-## Distributable package — `[project.scripts]`
+## Distributable package: `[project.scripts]`
 
 ```toml
 [project]

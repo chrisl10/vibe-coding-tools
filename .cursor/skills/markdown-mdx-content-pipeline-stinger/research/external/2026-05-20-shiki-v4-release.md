@@ -10,7 +10,7 @@ topic: syntax_highlighting
 # Shiki v4.0.0 Release Blog Post
 
 ## Summary
-Shiki v4.0.0 released February 27, 2026. Key change: drops Node.js 18 support (Node 18 EOL April 2025), removes a set of deprecated APIs. No core API changes — `codeToHtml`, `createHighlighter`, etc. remain unchanged. Introduces `@shikijs/primitive` and `@shikijs/markdown-exit` packages.
+Shiki v4.0.0 released February 27, 2026. Key change: drops Node.js 18 support (Node 18 EOL April 2025), removes a set of deprecated APIs. No core API changes: `codeToHtml`, `createHighlighter`, etc. remain unchanged. Introduces `@shikijs/primitive` and `@shikijs/markdown-exit` packages.
 
 ## Key quotations / statistics
 - "Released February 27, 2026"
@@ -34,6 +34,6 @@ Shiki v4.0.0 released February 27, 2026. Key change: drops Node.js 18 support (N
 
 ## Annotations for stinger-forge
 - Informs `guides/03-syntax-highlighting.md`: include v3→v4 migration section
-- The "direct bump" messaging is important — teams on v3 should upgrade without fear
+- The "direct bump" messaging is important: teams on v3 should upgrade without fear
 - Node 20 requirement is a gotcha for teams on legacy CI environments
 - @shikijs/markdown-exit may be relevant for the Markdown processing pipeline; worth monitoring

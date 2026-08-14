@@ -56,5 +56,5 @@ A data-backed April 2026 comparison of Scrum and Kanban, citing State of Agile 2
 ## Annotations for stinger-forge
 - The 45% ScrumBan adoption stat from State of Agile 2026 is a compelling data point for `guides/06-framework-selection.md`.
 - The "30%+ unplanned work" threshold is a practical trigger for Scrum-to-ScrumBan migration recommendation.
-- Companion to `ideaplan.io` and `teachingagile.com` comparison sources — all consistent in framework selection guidance.
+- Companion to `ideaplan.io` and `teachingagile.com` comparison sources: all consistent in framework selection guidance.
 - Cross-reference: `teachingagile.com/kanban/articles/kanban-vs-scrum-vs-scrumban` provides a detailed decision matrix.

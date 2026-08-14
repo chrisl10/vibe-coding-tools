@@ -1,6 +1,6 @@
-# Guide — `Control` (05)
+# Guide: `Control` (05)
 
-> **Applies to:** interactive UI primitives — buttons, inputs, toggles, selects, sliders, checkboxes, radios, links, menu-items. Anything whose primary job is "capture user intent."
+> **Applies to:** interactive UI primitives: buttons, inputs, toggles, selects, sliders, checkboxes, radios, links, menu-items. Anything whose primary job is "capture user intent."
 
 ## 1. Purpose
 
@@ -22,7 +22,7 @@ Key fields:
 | `statesSupported` | `String[]` | human | yes | `default`, `hover`, `active`, `focus_visible`, `disabled`, `loading` |
 | `tokensConsumed` | `String[]` | generator | yes | |
 | `featureKey` | `String?` | human | no | |
-| `uxuiBriefRef` | `String` | human | yes | e.g., `library/knowledge-base/ux-ui/03-components/buttons-and-ctas.md` |
+| `uxuiBriefRef` | `String` | human | yes | e.g., `library/knowledge/private/ux-ui/03-components/buttons-and-ctas.md` |
 | `codePath` | `String` | generator | yes | |
 | `exportName` | `String` | generator | yes | |
 | `fileHash` | `String` | generator | yes | |
@@ -44,7 +44,7 @@ Key fields:
 
 ## 5. Lifecycle
 
-Standard. Control deprecation is usually tied to a variant rename or a broader design-system shift. Cross-check the `ux-ui-worker-bee` brief before deprecating.
+Standard. Control deprecation is usually tied to a variant rename or a broader design-system shift. Cross-check the `ux-ui-svelte-worker-bee` brief before deprecating.
 
 ## 6. Relationships
 
@@ -54,15 +54,15 @@ Standard. Control deprecation is usually tied to a variant rename or a broader d
 
 ## 7. Hand-offs
 
-- **ux-ui-worker-bee** — enforces "four button variants only" (primary / secondary / outline / ghost). If a `variants` array lists a fifth (e.g., `gradient`), flag.
-- **security-worker-bee** — controls that accept user input (`kind: input`, `select`, `slider`) review for input validation coverage during feature-PRD security review.
+- **ux-ui-svelte-worker-bee**: enforces "four button variants only" (primary / secondary / outline / ghost). If a `variants` array lists a fifth (e.g., `gradient`), flag.
+- **security-worker-bee**: controls that accept user input (`kind: input`, `select`, `slider`) review for input validation coverage during feature-PRD security review.
 
 ## 8. Pitfalls
 
 - Registering a `button` control with five variants. Brief says four. Flag.
 - Missing `loading` state on controls that trigger async work.
-- `statesSupported` listing `hover` for a touch-only control — violates accessibility and brief.
-- Confusing a `link` (navigation) with a `button` (action). A link has `href`; a button has `onClick`. Register correctly — the a11y contract differs.
+- `statesSupported` listing `hover` for a touch-only control: violates accessibility and brief.
+- Confusing a `link` (navigation) with a `button` (action). A link has `href`; a button has `onClick`. Register correctly; the a11y contract differs.
 
 ## 9. Example
 
@@ -78,7 +78,7 @@ await prisma.control.create({
       "dur.fast", "ease.out-subtle"
     ],
     featureKey: "generic-ui",
-    uxuiBriefRef: "library/knowledge-base/ux-ui/03-components/buttons-and-ctas.md",
+    uxuiBriefRef: "library/knowledge/private/ux-ui/03-components/buttons-and-ctas.md",
     codePath: "app/src/components/buttons/Button.tsx",
     exportName: "Button",
     fileHash: "b1c2d3...",
@@ -95,7 +95,7 @@ await prisma.control.create({
 ## 10. Checklist
 
 - [ ] Component file exists with `@control` annotation
-- [ ] `kind` is correct (button vs link vs input — critical for a11y)
+- [ ] `kind` is correct (button vs link vs input, critical for a11y)
 - [ ] `variants` count and names match the ux-ui brief
 - [ ] `statesSupported` includes every state the component implements (no more, no less)
 - [ ] `uxuiBriefRef` cites the controlling brief doc

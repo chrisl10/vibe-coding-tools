@@ -1,71 +1,40 @@
-# MCP Protocol Worker-Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `mcp-protocol-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/mcp-protocol-worker-bee.md`](../../../agents/mcp-protocol-worker-bee.md)
-**Stinger:** [`.cursor/skills/mcp-protocol-stinger/`](../../mcp-protocol-stinger/)
-**Trigger policy:** proactive
-
----
+# mcp-protocol-worker-bee
 
 ## Domain
+This Bee is The Hive's MCP protocol authority for building and auditing **any** MCP server, not one product. It covers: the choice between tools, resources, and prompts; zod input schemas including the versioned zod v3/v4 SDK-compatibility trap; stdio vs Streamable HTTP transport; JSON-RPC request/response/notification framing; error semantics (the JSON-RPC error channel vs. the tool-result channel); capability negotiation; authentication patterns for remote/HTTP servers (API keys, bearer tokens, OAuth 2.1); testing an MCP server end to end; and registering a server in each of the four harnesses The Hive supports (Claude Code, Cursor, ChatGPT Codex, Claude Cowork). It also carries a fully worked example, the Hivemind server (hivemind_search/read/index), showing every principle applied to one real codebase. This is a correctness and implementation authority, not a documentation authority.
 
-`mcp-protocol-worker-bee` owns the MCP protocol surface and tool-contract correctness for Hivemind. It builds and audits MCP servers and tool contracts with `@modelcontextprotocol/sdk`: the choice between MCP primitives (tools, resources, prompts), tool design and naming, zod/v3 input schemas, stdio vs HTTP transport, the JSON-RPC 2.0 framing underneath MCP, error semantics (the JSON-RPC error channel vs the tool-result channel, standard codes, honest messages), capability negotiation at initialize, and the stability of the tool contract across the six consuming harnesses. It is grounded in the actual Hivemind server (`src/mcp/server.ts`): tools `hivemind_search` / `hivemind_read` / `hivemind_index`, `~/.deeplake/credentials.json` auth, `zod/v3` schemas, stdio transport, built to `mcp/bundle/`.
+## Paired Stinger
+[mcp-protocol-stinger](../../mcp-protocol-stinger) - transport, tool/resource/prompt-design, zod-schema, error-model, capability-negotiation, authentication, testing, and four-harness-registration guides, a Hivemind worked-example guide, plus a findings-report and tool-contract-checklist template.
 
 ## Trigger phrases
-
-Route to `mcp-protocol-worker-bee` when the user says any of:
-
-- "Audit this MCP server" / "audit MCP server"
-- "Add a hivemind_ tool" / "is this tool schema right?"
-- "Tool schema (zod/v3)" / "why does zod v4 break the schema?"
+- "audit this MCP server"
+- "add a tool to this MCP server"
+- "is this tool schema right?"
 - "stdio or HTTP transport?"
-- "What JSON-RPC error code do I return?"
-- "Tool vs resource"
-
-Or when the request implicitly involves building or auditing an MCP server, tool contracts, transport, or the JSON-RPC error model.
+- "what JSON-RPC error code do I return?"
+- "tool vs resource, which one"
+- "why does zod v4 break the schema?"
+- "how do I add auth to my MCP server?"
+- "register this MCP server in Codex/Cowork/Cursor/Claude Code"
 
 ## Do NOT route when
-
-- The user wants to *document* an existing MCP tool (name/purpose/schema/output/examples) - that is `mcp-tool-docs-worker-bee`. This Bee builds and audits the protocol; the docs Bee describes it.
-- The user wants to *wire* the MCP server into a host (registration, installers, capability detection) - that is `harness-integration-worker-bee`. This Bee owns the protocol internals; harness-integration owns plugging it into hosts.
-- The user wants Deep Lake credential or OAuth lifecycle - that is `security-worker-bee` (and the schema/query internals are `deeplake-dataset-worker-bee`).
-- The user wants process sandboxing, TLS, or build/release topology - that is `ci-release-worker-bee`.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let this one act as backup.
+- The ask is writing or reviewing documentation of a tool for consumers (name/purpose/schema/output/side-effects/examples, TypeDoc, CLI reference, changelog) rather than auditing whether the tool and its wiring are correct; that belongs to mcp-tool-docs-worker-bee. This Bee rules on protocol correctness; mcp-tool-docs-worker-bee transcribes that correct behavior into reference docs.
+- The ask is credential storage or OAuth-token lifecycle hardening; that belongs to security-worker-bee.
+- The ask is process sandboxing or TLS for where an MCP subprocess runs; that belongs to ci-release-worker-bee.
+- The ask is backend datastore query semantics, schema, or search internals behind a tool; that belongs to the relevant data-layer worker-bee (e.g. vector-store-worker-bee for Hivemind's Deep Lake specifically).
 
 ## Inputs the Bee needs
+- The server file, a tool handler, or a harness MCP config under review.
+- The scope of the audit: transport, primitive choice, schemas, error model, capability negotiation, authentication, testing, harness registration, or cross-consumer contract stability.
+- Whether a proposed change is additive or breaking across the consumers/harnesses that depend on it.
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- A severity-tagged findings report citing the spec section, SDK symbol, or JSON-RPC code for each ruling.
+- A corrected zod schema, transport decision, auth pattern, or error-channel routing.
+- A BREAKING-change flag when a tool rename, arg change, or output-shape change would affect any consumer.
+- A harness-registration fix (e.g. catching the Codex TOML trap, or flagging that a stdio-only server needs a public-HTTP deployment before it can register as a Claude Cowork connector).
 
-- The MCP server or tool handler in scope (`src/mcp/server.ts` or a specific handler).
-- The protocol decision: a new tool, a schema review, a transport choice, or an error-code question.
-- Optional: the consuming harnesses affected by a contract change.
-
-If the server or tool in scope is missing, do not invoke yet - ask the user to point at the handler.
-
-## Outputs the Bee produces
-
-- MCP server and tool-contract audit findings, each citing the spec section, SDK symbol, or JSON-RPC code.
-- New or corrected zod/v3 input schemas and tool handlers.
-- Transport and error-model rulings (two-channel separation, capability negotiation).
-
-## Multi-Bee sequences this Bee participates in
-
-- **MCP feature build** - `mcp-protocol-worker-bee` designs and audits the tool contract; `mcp-tool-docs-worker-bee` documents it; `harness-integration-worker-bee` registers it across the six hosts; `security-worker-bee` then `quality-worker-bee` close out.
-
-## Critical directives the orchestrator should respect
-
-- **Cite the spec section, SDK symbol, or JSON-RPC code for every ruling.**
-- **Never conflate the JSON-RPC error channel with the tool-result channel** - the MCP analog of HTTP "200 with error body".
-- **The zod import at the SDK boundary MUST be `zod/v3`** - the SDK generates JSON Schemas against v3 internals; v4 yields a wrong/empty schema.
-- **Treat tool names, argument shapes, and parseable output as a cross-harness contract** - a rename is breaking, not a refactor.
-- **Do not audit Deep Lake credential/OAuth lifecycle or query/schema internals** - hand off to the right Bee.
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
-
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+## Commonly sequenced with
+- mcp-tool-docs-worker-bee: documents the tool contract once this Bee confirms it is correct.
+- security-worker-bee: picks up credential/OAuth lifecycle findings surfaced during an audit.
+- the relevant data-layer worker-bee (e.g. vector-store-worker-bee): picks up backend query/schema internals findings surfaced during an audit.

@@ -24,7 +24,7 @@ Use this checklist before putting any Telegram bot into production.
 
 - [ ] All `answerCallbackQuery` calls happen within 30 seconds
 - [ ] All `answerPreCheckoutQuery` calls happen within 10 seconds
-- [ ] Session state is persistent (Redis, Postgres) — not in-memory (lost on restart)
+- [ ] Session state is persistent (Redis, Postgres): not in-memory (lost on restart)
 - [ ] Error handler installed (`bot.catch(...)`)
 - [ ] Update deduplication in place if multiple bot instances may run (idempotent `update_id` handling)
 

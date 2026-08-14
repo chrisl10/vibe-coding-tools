@@ -1,4 +1,4 @@
-# Example 06 — Django Channels WebSocket consumer
+# Example 06: Django Channels WebSocket consumer
 
 A chat-room consumer with auth, message validation, group broadcast, and database persistence. Daphne deployment notes included.
 

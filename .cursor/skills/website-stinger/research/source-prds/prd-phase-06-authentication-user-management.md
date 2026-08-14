@@ -1,6 +1,6 @@
 # Phase 6: Authentication & Multi-Role User Management
 
-> **Site Template Guide** — PRD Phase 6 of 12
+> **Site Template Guide**: PRD Phase 6 of 12
 
 ---
 
@@ -20,7 +20,7 @@ Wire Supabase Auth for end-users. Define RBAC roles. Protect SvelteKit routes vi
 - Documentation of Payload Auth vs Supabase Auth boundary
 
 **Out of scope:**
-- Payload Auth configuration (Phase 7 / `cms-payload-stinger`)
+- Payload Auth configuration (Phase 7 / `website-stinger` (owns the Payload CMS surface))
 - OAuth social login (add via Supabase dashboard; no code changes required for basic flows)
 - MFA (add later via Supabase Auth settings)
 
@@ -36,8 +36,8 @@ Wire Supabase Auth for end-users. Define RBAC roles. Protect SvelteKit routes vi
 
 | System | Users | Admin UI | Protected routes |
 |---|---|---|---|
-| **Supabase Auth** | End-users, lead submitters, registered members, SvelteKit admin users | SvelteKit login page at `/login` | `/admin`, `/dashboard` — guarded by `hooks.server.ts` |
-| **Payload Auth** | CMS editors and admins who use the Payload admin panel | Payload admin at `apps/cms` URL | Payload Collections — guarded by Payload's `access` objects |
+| **Supabase Auth** | End-users, lead submitters, registered members, SvelteKit admin users | SvelteKit login page at `/login` | `/admin`, `/dashboard`: guarded by `hooks.server.ts` |
+| **Payload Auth** | CMS editors and admins who use the Payload admin panel | Payload admin at `apps/cms` URL | Payload Collections: guarded by Payload's `access` objects |
 
 **Critical boundary:** Never use Payload Auth to protect SvelteKit routes. Never use Supabase Auth to protect Payload Collections.
 
@@ -45,7 +45,7 @@ Wire Supabase Auth for end-users. Define RBAC roles. Protect SvelteKit routes vi
 
 ## User Stories
 
-### Story 1 — Admin User: Login to SvelteKit Admin
+### Story 1: Admin User: Login to SvelteKit Admin
 
 > As an **Admin**, I want to log in via a form at `/login` so that I can access the leads dashboard and webhook management pages.
 
@@ -55,7 +55,7 @@ Wire Supabase Auth for end-users. Define RBAC roles. Protect SvelteKit routes vi
 - On failure: returns form error via superforms fail()
 - Session cookie set by `@supabase/ssr`
 
-### Story 2 — Route Guard: Protect Admin Routes
+### Story 2: Route Guard: Protect Admin Routes
 
 > As the **System**, I want unauthenticated requests to `/admin` and `/dashboard` to be redirected to `/login` so that private data is not exposed.
 
@@ -64,7 +64,7 @@ Wire Supabase Auth for end-users. Define RBAC roles. Protect SvelteKit routes vi
 - Unauthenticated → `throw redirect(303, '/login?redirectTo=<path>')`
 - Non-admin role visiting `/admin` → `throw redirect(303, '/')`
 
-### Story 3 — Admin: Manage User Roles
+### Story 3: Admin: Manage User Roles
 
 > As an **Admin**, I want to promote a member to editor or admin via the SvelteKit admin UI so that content editors can access the leads and settings pages.
 
@@ -74,13 +74,13 @@ Wire Supabase Auth for end-users. Define RBAC roles. Protect SvelteKit routes vi
 - Edge Function verifies caller has `admin` role before updating `profiles.role`
 - Role change reflected immediately on next session refresh
 
-### Story 4 — User: Password Reset
+### Story 4: User: Password Reset
 
 > As a **User**, I want to request a password reset email so that I can regain access if I forget my password.
 
 **Acceptance criteria:**
 - `POST /forgot-password?/reset` calls `supabase.auth.resetPasswordForEmail()` with `redirectTo: PUBLIC_SITE_URL + '/reset-password'`
-- `PUBLIC_SITE_URL` is used — no hardcoded domain in the codebase
+- `PUBLIC_SITE_URL` is used: no hardcoded domain in the codebase
 - Email delivers a working reset link
 - `/reset-password` page updates password via `supabase.auth.updateUser()`
 
@@ -122,7 +122,7 @@ const { error } = await supabase.auth.resetPasswordForEmail(email, {
 });
 ```
 
-`PUBLIC_SITE_URL` is the env var — never a hardcoded domain string. This is the critical fix vs the NST Sports pattern where `https://leads.nstsports.com/reset-password` was hardcoded.
+`PUBLIC_SITE_URL` is the env var, never a hardcoded domain string. This is the critical fix vs the NST Sports pattern where `https://leads.nstsports.com/reset-password` was hardcoded.
 
 ---
 

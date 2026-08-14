@@ -59,13 +59,13 @@ services:
 
 ## Common mount targets
 
-- `/root/.npmrc` — npm token
-- `/run/secrets/<name>` — generic
-- `/tmp/<name>` — anything custom
+- `/root/.npmrc`: npm token
+- `/run/secrets/<name>`: generic
+- `/tmp/<name>`: anything custom
 
 ## Relevance to this Stinger
 
-- `guides/00-principles.md` §5 — the principle.
-- `guides/01-dockerfile-patterns.md` §5 — the pattern.
-- `guides/03-compose-for-dev.md` §3 — Compose secrets equivalent.
+- `guides/00-principles.md` §5: the principle.
+- `guides/01-dockerfile-patterns.md` §5: the pattern.
+- `guides/03-compose-for-dev.md` §3: Compose secrets equivalent.
 - `scripts/audit-dockerfile.sh` flags `ARG.*SECRET|TOKEN|PASSWORD|KEY|CREDENTIAL` as Must-fix.

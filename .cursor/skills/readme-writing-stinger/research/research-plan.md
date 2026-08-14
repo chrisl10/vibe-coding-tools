@@ -5,7 +5,7 @@
 - **Page budget target:** 4-6 sources
 - **Source breadth target:** blog posts (practitioner), GitHub repos (curated list), official docs (Shields.io), practitioner guides
 
-## Initial queries (from the proposal step / Command Brief)
+## Initial queries (from `big-bang-space` / Command Brief)
 
 - "README structure open source 2026"
 - "README driven development RDD 2026"

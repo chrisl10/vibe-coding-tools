@@ -1,4 +1,4 @@
-# Research Plan — ai-tools-platform-stinger
+# Research Plan: ai-tools-platform-stinger
 
 **Depth tier:** normal
 **Research model:** grok-4.3

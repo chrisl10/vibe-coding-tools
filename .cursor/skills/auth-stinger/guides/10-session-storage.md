@@ -1,15 +1,15 @@
-# 10 — Session Storage
+# 10: Session Storage
 
 Cookies, JWT vs opaque, refresh-token rotation, CSRF defense.
 
 Source: `research/2026-04-25-cookie-security-and-csrf.md`, `research/2026-04-25-oauth2-and-token-strategy.md`, OWASP Session Management Cheat Sheet.
 
-## Token types — get the vocabulary right
+## Token types: get the vocabulary right
 
-- **Access token** — short-lived (5–60 min), bearer credential for API calls. JWT or opaque.
-- **Refresh token** — longer-lived (days–months), used only to obtain new access tokens. Bearer credential.
-- **ID token** — only in OpenID Connect. JWT signed by the IdP, asserts the user's identity. Used at sign-in; not used for API auth.
-- **Session token / cookie** — your app's own session identifier. Sent as `Cookie:` on every request.
+- **Access token**: short-lived (5-60 min), bearer credential for API calls. JWT or opaque.
+- **Refresh token**: longer-lived (days-months), used only to obtain new access tokens. Bearer credential.
+- **ID token**: only in OpenID Connect. JWT signed by the IdP, asserts the user's identity. Used at sign-in; not used for API auth.
+- **Session token / cookie**: your app's own session identifier. Sent as `Cookie:` on every request.
 
 The mistake to avoid: conflating these. ID tokens are not for API auth. Access tokens are not for session management. Refresh tokens never go to the client more than once (they're rotated on use).
 
@@ -23,9 +23,9 @@ The mistake to avoid: conflating these. ID tokens are not for API auth. Access t
 | DB read on each request | None | Yes |
 | Best for | High-RPS read-only API at large scale | Most apps |
 
-**Default to opaque sessions** with a server-side store (DB or Redis). Revocation matters more than the saved DB read. JWT sessions are for cases where the read is genuinely a bottleneck — and even then, prefer short-lived JWTs (5 min) + refresh against a server-side store.
+**Default to opaque sessions** with a server-side store (DB or Redis). Revocation matters more than the saved DB read. JWT sessions are for cases where the read is genuinely a bottleneck, and even then, prefer short-lived JWTs (5 min) + refresh against a server-side store.
 
-## Cookie attributes — the floor
+## Cookie attributes: the floor
 
 ```
 Set-Cookie: session=<opaque-id>;
@@ -39,11 +39,11 @@ Set-Cookie: session=<opaque-id>;
 
 Required:
 
-- **`HttpOnly`** — JS cannot read; defends against XSS exfiltration.
-- **`Secure`** — sent only over HTTPS; defends against MITM on plain-HTTP.
-- **`SameSite=Lax`** — defends against CSRF for state-changing requests in most browsers. Promote to `Strict` for high-sensitivity sessions; promote to `None` only when needed (cross-site embed).
-- **`Path=/`** — explicit. Don't accidentally scope a session to `/api`.
-- **`Max-Age`** — explicit; not a session cookie. Decide your TTL.
+- **`HttpOnly`**: JS cannot read; defends against XSS exfiltration.
+- **`Secure`**: sent only over HTTPS; defends against MITM on plain-HTTP.
+- **`SameSite=Lax`**: defends against CSRF for state-changing requests in most browsers. Promote to `Strict` for high-sensitivity sessions; promote to `None` only when needed (cross-site embed).
+- **`Path=/`**: explicit. Don't accidentally scope a session to `/api`.
+- **`Max-Age`**: explicit; not a session cookie. Decide your TTL.
 
 The `__Host-` prefix:
 
@@ -53,7 +53,7 @@ Set-Cookie: __Host-session=<id>; HttpOnly; Secure; SameSite=Lax; Path=/
 
 `__Host-` cookies must be `Secure`, `Path=/`, no `Domain` attribute. Browsers enforce this; it prevents cookie injection from a subdomain. Use for high-sensitivity sessions, especially when serving cross-origin.
 
-## CSRF — when SameSite isn't enough
+## CSRF: when SameSite isn't enough
 
 `SameSite=Lax` blocks most CSRF, but not:
 
@@ -87,17 +87,17 @@ Cite OAuth 2.0 RFC 6749 §10.4, https://datatracker.ietf.org/doc/html/draft-ietf
 
 Two clocks:
 
-- **Idle timeout** — extended on activity. Common: 30 min idle.
-- **Absolute timeout** — hard cap, never extended. Common: 30 days. Forces a fresh sign-in.
+- **Idle timeout**: extended on activity. Common: 30 min idle.
+- **Absolute timeout**: hard cap, never extended. Common: 30 days. Forces a fresh sign-in.
 
 Both apply. Web banking: idle 5 min, absolute 1 day. SaaS: idle 30 min, absolute 30 days. Cite OWASP Session Management Cheat Sheet.
 
 ## Where to store the session token
 
-- **Server-side opaque token in HttpOnly cookie** — default. Server holds the row.
-- **Client-side JWT in HttpOnly cookie** — when DB read is genuinely too costly.
-- **Client-side JWT in `localStorage`** — **never**. XSS-readable.
-- **Mobile / native app** — secure keystore (iOS Keychain, Android Keystore), not preferences.
+- **Server-side opaque token in HttpOnly cookie**: default. Server holds the row.
+- **Client-side JWT in HttpOnly cookie**: when DB read is genuinely too costly.
+- **Client-side JWT in `localStorage`**: **never**. XSS-readable.
+- **Mobile / native app**: secure keystore (iOS Keychain, Android Keystore), not preferences.
 
 ## Logout
 
@@ -124,13 +124,13 @@ Cite https://owasp.org/www-community/attacks/Session_fixation.
 
 ## Common pitfalls
 
-- **`localStorage` for tokens** — XSS-readable.
-- **No `HttpOnly`** — XSS exfiltrates the session.
-- **`SameSite=None` without CSRF token** — wide open.
-- **JWT sessions with no rotation, no deny-list, 30-day TTL** — a leaked token is good for 30 days.
-- **No refresh-token rotation** — leaked refresh = account ownership.
-- **Skipping session ID regeneration at sign-in** — session fixation.
-- **Logout that only clears the client cookie** — server still honors the token.
+- **`localStorage` for tokens**: XSS-readable.
+- **No `HttpOnly`**: XSS exfiltrates the session.
+- **`SameSite=None` without CSRF token**: wide open.
+- **JWT sessions with no rotation, no deny-list, 30-day TTL**: a leaked token is good for 30 days.
+- **No refresh-token rotation**: leaked refresh = account ownership.
+- **Skipping session ID regeneration at sign-in**: session fixation.
+- **Logout that only clears the client cookie**: server still honors the token.
 
 ## Audit handoff
 

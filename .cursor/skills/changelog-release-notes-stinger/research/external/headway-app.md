@@ -15,18 +15,18 @@ url: https://headwayapp.co
 
 ## Feature set (as of 2026)
 
-- **Dedicated changelog page** — public URL (e.g., `yourapp.headwayapp.co` or custom domain on paid plans).
-- **Embeddable widget** — small JS snippet; appears as a bell/notification icon with unread count badge.
-- **Email subscribers** — users can opt-in to email digests of new entries.
-- **Categories/labels** — tag entries (New Feature, Improvement, Bug Fix, etc.) with color coding.
-- **Rich text editor** — no-code entry authoring with image support.
-- **Changelog RSS feed** — for power users and aggregators.
-- **Read receipts** — knows when a logged-in user has seen entries (requires user identifier setup).
+- **Dedicated changelog page**: public URL (e.g., `yourapp.headwayapp.co` or custom domain on paid plans).
+- **Embeddable widget**: small JS snippet; appears as a bell/notification icon with unread count badge.
+- **Email subscribers**: users can opt-in to email digests of new entries.
+- **Categories/labels**: tag entries (New Feature, Improvement, Bug Fix, etc.) with color coding.
+- **Rich text editor**: no-code entry authoring with image support.
+- **Changelog RSS feed**: for power users and aggregators.
+- **Read receipts**: knows when a logged-in user has seen entries (requires user identifier setup).
 
 ## Pricing (2026 approx.)
 
-- **Free tier** — up to 3 seats, 1 project, basic widget.
-- **Paid tiers** — start at ~$29/mo for custom domains, multiple projects, advanced widget customization.
+- **Free tier**: up to 3 seats, 1 project, basic widget.
+- **Paid tiers**: start at ~$29/mo for custom domains, multiple projects, advanced widget customization.
 
 ## Integration pattern
 
@@ -55,5 +55,5 @@ url: https://headwayapp.co
 
 ## Applicability
 
-- `guides/01-tool-selection.md` — best for: small teams, apps without heavy CRM, speed of setup matters.
-- `guides/02-tool-setup.md` — the JS snippet above is the reference integration.
+- `guides/01-tool-selection.md`: best for: small teams, apps without heavy CRM, speed of setup matters.
+- `guides/02-tool-setup.md`: the JS snippet above is the reference integration.

@@ -24,5 +24,5 @@ Official Android Developer Blog post explaining the April 2026 policy updates in
 ## Annotations for stinger-forge
 - The pre-review check announcement (October 27, 2026) is a significant workflow change: Play Console will auto-flag certain permission issues before developers submit. Stinger-forge should note this as a tool in the compliance checklist guide.
 - The Play Policy Insights integration in Android Studio is a developer-tooling signal: the ecosystem is moving toward in-IDE policy compliance feedback, not just post-submission rejection.
-- The 7-day cool-down for account transfers is operationally important for business acquisitions / team handoffs — note in `guides/05-timeline-and-process.md`.
+- The 7-day cool-down for account transfers is operationally important for business acquisitions / team handoffs: note in `guides/05-timeline-and-process.md`.
 - This source resolves the "what does READ_CONTACTS require now?" question: a Play Developer Declaration form, not just a permission request.

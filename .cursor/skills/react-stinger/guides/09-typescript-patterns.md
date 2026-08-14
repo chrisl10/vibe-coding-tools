@@ -1,4 +1,4 @@
-# 09 — TypeScript Patterns
+# 09: TypeScript Patterns
 
 Source: `research/2026-04-24-forms-rhf-zod.md`, `research/2026-04-24-bulletproof-react-api-layer.md`.
 
@@ -118,9 +118,9 @@ type UserPatch = Pick<User, 'name' | 'email'> & { id: User['id'] };
 
 ## Never use `Function` / `object` / `{}`
 
-- `Function` — structurally any function. Use `(...args: never) => unknown` or a specific signature.
-- `object` — any non-primitive. Use `Record<string, unknown>` if you mean a dictionary.
-- `{}` — "not null / undefined" — almost never what you meant.
+- `Function`: structurally any function. Use `(...args: never) => unknown` or a specific signature.
+- `object`: any non-primitive. Use `Record<string, unknown>` if you mean a dictionary.
+- `{}`: "not null / undefined", almost never what you meant.
 
 ## Prop types
 
@@ -138,7 +138,7 @@ interface ButtonProps { ... }  // fine, but prefer type for primitive-union case
 
 Both work; pick one and be consistent across the codebase. `type` is slightly more flexible for unions and mapped types.
 
-## `enum` — avoid
+## `enum`: avoid
 
 `enum` has non-obvious bundle and runtime behavior. Prefer union literal types:
 
@@ -153,12 +153,12 @@ Exception: tsc `const enum` for private constants is fine if isolatedModules all
 
 ## Common findings
 
-> **[Must-fix]** `src/features/users/api/get-user.ts:10` — `return res.data as User`. Parse with Zod at the boundary. See `guides/09-typescript-patterns.md §zod-at-boundary`.
+> **[Must-fix]** `src/features/users/api/get-user.ts:10`: `return res.data as User`. Parse with Zod at the boundary. See `guides/09-typescript-patterns.md §zod-at-boundary`.
 
-> **[Must-fix]** `tsconfig.json:3` — `strict: false`. Enable. Batch fixes by feature folder.
+> **[Must-fix]** `tsconfig.json:3`: `strict: false`. Enable. Batch fixes by feature folder.
 
-> **[Should-refactor]** `src/types/routes.ts:2` — `as Record<string, string>` widens path literals. Replace with `satisfies`.
+> **[Should-refactor]** `src/types/routes.ts:2`: `as Record<string, string>` widens path literals. Replace with `satisfies`.
 
 ## Example in action
 
-See `examples/code-review-example-before-after.md` — several TS findings appear.
+See `examples/code-review-example-before-after.md`: several TS findings appear.

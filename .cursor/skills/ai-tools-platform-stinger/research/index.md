@@ -1,4 +1,4 @@
-# Research Index — ai-tools-platform-stinger
+# Research Index: ai-tools-platform-stinger
 
 | File | Source type | Authority | Relevance | Topic |
 |---|---|---|---|---|
@@ -12,6 +12,6 @@
 
 ## Coverage gaps
 
-- Fine-tuning workflows (deliberately out of scope — inference only per the command brief).
+- Fine-tuning workflows (deliberately out of scope: inference only per the command brief).
 - Embedding model comparison (partially covered in `guides/03-model-selection.md`; not a primary focus).
-- RAG pipeline architecture (out of scope — that is `mind-worker-bee`'s domain).
+- RAG pipeline architecture (out of scope: that is `mind-worker-bee`'s domain).

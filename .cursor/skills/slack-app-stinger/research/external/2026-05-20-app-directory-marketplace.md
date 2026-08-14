@@ -17,7 +17,7 @@ The official Slack Marketplace guidelines define eligibility requirements, prohi
 ## Eligibility requirements
 
 - **Minimum installation threshold:** Installed on at least 5 active workspaces (used in past 28 days).
-- **Functional Slack integration:** Must include actual Slack functionality — Sign in with Slack alone is insufficient.
+- **Functional Slack integration:** Must include actual Slack functionality: Sign in with Slack alone is insufficient.
 - **Fully tested:** Cannot be in private beta or still in development.
 - **Appropriate scopes:** Must use only necessary OAuth scopes; legacy and excessive-access scopes are blocked.
 
@@ -58,8 +58,8 @@ The Slack Marketplace team conducts:
 ## Annotations for stinger-forge
 
 - Maps directly to `guides/06-app-directory.md`.
-- The December 2024 LLM data-use prohibition is a brand-new policy constraint that stinger-forge must highlight prominently — many AI-powered Slack apps could inadvertently violate this.
-- The "5 active workspaces" threshold is the most common reason apps are rejected prematurely — stinger-forge should include this as a pre-submission checklist item.
+- The December 2024 LLM data-use prohibition is a brand-new policy constraint that stinger-forge must highlight prominently: many AI-powered Slack apps could inadvertently violate this.
+- The "5 active workspaces" threshold is the most common reason apps are rejected prematurely: stinger-forge should include this as a pre-submission checklist item.
 - Socket Mode apps (`socket_mode_enabled: true` in manifest) cannot be listed in the Marketplace. Stinger-forge must link this to `guides/00-setup-and-bolt.md` where socket mode is configured.
-- Slack does not publish explicit revenue share percentages for paid Marketplace listings in public documentation — stinger-forge should note this gap and direct developers to contact Slack's developer relations team for monetization terms.
+- Slack does not publish explicit revenue share percentages for paid Marketplace listings in public documentation: stinger-forge should note this gap and direct developers to contact Slack's developer relations team for monetization terms.
 - Cross-reference: `external/2026-05-20-dev-policy-update.md` for the December 2024 policy change details.

@@ -19,24 +19,24 @@ The official Slack Modals surface reference describes the view stack architectur
 - "Modals are focused surfaces that allow you to collect data from users, or display dynamic and interactive information."
 - View stack maximum: 3 views at a time; only one visible at any moment.
 - Block limits: Messages = up to 50 blocks each; Modals and Home tabs = up to 100 blocks each.
-- `private_metadata`: max 3000 characters — used to pass state between views (e.g., carry context from slash command through a chained modal flow).
-- `callback_id`: max 255 characters — required for identifying interactions in `view_submission` handlers.
-- `external_id`: max 255 characters — unique per-team identifier useful for deduplicating modal opens.
+- `private_metadata`: max 3000 characters; used to pass state between views (e.g., carry context from slash command through a chained modal flow).
+- `callback_id`: max 255 characters; required for identifying interactions in `view_submission` handlers.
+- `external_id`: max 255 characters; unique per-team identifier useful for deduplicating modal opens.
 - `clear_on_close: true` clears the entire view stack when the user closes the modal.
-- `notify_on_close: true` sends a `view_closed` event when the user closes without submitting — allows cleanup or logging.
+- `notify_on_close: true` sends a `view_closed` event when the user closes without submitting: allows cleanup or logging.
 
 ## Block Kit component types (current as of retrieval)
 
 Official block types for use inside modals:
-- `section` — text + optional accessory element
-- `divider` — horizontal rule
-- `image` — standalone image block
-- `actions` — row of interactive elements (buttons, select menus)
-- `context` — small text/image annotations
-- `input` — wraps an input element; required for `view_submission` data collection
-- `header` — plain-text heading
-- `rich_text` — formatted rich text (Slack's own rich text format)
-- `video` — embed a video
+- `section`: text + optional accessory element
+- `divider`: horizontal rule
+- `image`: standalone image block
+- `actions`: row of interactive elements (buttons, select menus)
+- `context`: small text/image annotations
+- `input`: wraps an input element; required for `view_submission` data collection
+- `header`: plain-text heading
+- `rich_text`: formatted rich text (Slack's own rich text format)
+- `video`: embed a video
 
 Interactive elements available inside `input` blocks: `plain_text_input`, `email_text_input`, `number_input`, `url_text_input`, `datepicker`, `timepicker`, `datetimepicker`, `checkboxes`, `radio_buttons`, `static_select`, `multi_static_select`, `external_select`, `multi_external_select`, `users_select`, `multi_users_select`, `conversations_select`, `channels_select`.
 

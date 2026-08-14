@@ -30,7 +30,7 @@ A deep-dive from Katie Hempenius (Google Chrome team) on the `size-adjust`, `asc
 
 - This is the primary source for `guides/05-cls-elimination.md`. The mathematical derivation of `ascent-override`, `descent-override`, `line-gap-override`, and `size-adjust` should be lifted directly.
 - The Poppins worked example with Arial and Roboto fallbacks is a perfect template to adapt for the stinger's example section.
-- The `adjustFontFallback` option in `next/font` (which defaults to `true`) automates exactly this process — confirmed by this article. This resolves the open question from the command brief: "Does next/font v15 handle size-adjust fallback generation automatically?" — YES, it has since Next 13.
+- The `adjustFontFallback` option in `next/font` (which defaults to `true`) automates exactly this process, confirmed by this article. This resolves the open question from the command brief: "Does next/font v15 handle size-adjust fallback generation automatically?": YES, it has since Next 13.
 - The 90% compatibility note (same values across OS) simplifies the recommendation path for most projects.
-- Cross-reference with `fontpie` and `capsizefitter` tools mentioned in the command brief — they automate the same formulas documented here.
+- Cross-reference with `fontpie` and `capsizefitter` tools mentioned in the command brief: they automate the same formulas documented here.
 - Font tables explainer (hhea vs typo vs win) is essential context for the edge-case handling in the cls-elimination guide.

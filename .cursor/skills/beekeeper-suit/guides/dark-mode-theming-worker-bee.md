@@ -1,72 +1,40 @@
-# Dark Mode Theming Worker Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `dark-mode-theming-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/dark-mode-theming-worker-bee.md`](../../agents/dark-mode-theming-worker-bee.md)
-**Stinger:** [`.cursor/skills/dark-mode-theming-stinger/`](../../skills/dark-mode-theming-stinger/)
-**Command Brief:** not available (synthesized from agent + stinger files)
-**Trigger policy:** on-demand
-
----
+# dark-mode-theming-worker-bee
 
 ## Domain
+This Bee owns the runtime theming layer for React/Next.js apps in this repo: the surface that turns design tokens into theme-aware CSS variables and wires them to user preference. That spans `prefers-color-scheme` detection, `next-themes` integration, flash-of-wrong-theme (FOWT) prevention scripting, SSR hydration safety, Tailwind v4 dark-mode configuration, and multi-brand or white-label runtime theme swapping via CSS variable overrides.
 
-`dark-mode-theming-worker-bee` owns the runtime theming layer for React/Next.js applications — the surface that translates design tokens into theme-aware CSS variables and wires them to user preferences. It covers the full stack from `prefers-color-scheme` detection through `next-themes` ThemeProvider integration, FOWT (flash-of-wrong-theme) prevention via blocking inline scripts, SSR hydration safety (`suppressHydrationWarning`, `typeof window` guards, mounted guard pattern), Tailwind v4 dark-mode configuration via `@custom-variant`, and multi-brand/white-label runtime theme swapping via CSS variable overrides scoped to `data-brand` attributes. It does not own palette creation, per-component visual decisions, persisted-preference DB schemas, or auth-gated per-user themes.
+## Paired Stinger
+[dark-mode-theming-stinger](../../dark-mode-theming-stinger) - the token architecture, next-themes wiring, FOWT prevention, and SSR hydration guides, plus the six non-negotiables checklist.
 
 ## Trigger phrases
-
-Route to `dark-mode-theming-worker-bee` when the user says any of:
-
 - "set up dark mode"
-- "next-themes keeps flashing" / "FOWT fix"
-- "dark mode on SSR" / "hydration mismatch suppressHydrationWarning"
-- "CSS variable token architecture" / "CSS variable token layer"
-- "Tailwind v4 dark mode" / "@custom-variant dark"
-- "multi-brand theming" / "white-label theme runtime swap"
-- "prefers-color-scheme in Next.js"
-- "audit dark mode"
-
-Or when the request implicitly involves wiring a theme provider, eliminating a white flash on page load, fixing SSR/hydration theme mismatches, or setting up runtime CSS variable overrides for multiple brands.
+- "next-themes keeps flashing"
+- "dark mode on SSR"
+- "multi-brand theming"
+- "CSS variable token layer"
+- "Tailwind v4 dark mode"
+- "suppress hydration warning"
+- "FOWT fix"
 
 ## Do NOT route when
-
-- The user wants to **create a color palette or author the source-of-truth token file** — that belongs to `design-system-worker-bee`.
-- The user asks **which token maps to a specific component state or visual role** — that belongs to `ux-ui-worker-bee`.
-- The user wants to **design the `user_preferences.theme` DB schema or persist theme choices server-side** — that belongs to `db-worker-bee`.
-- The user asks to **validate that a `data-brand` value from URL params or user input is safe** — that belongs to `security-worker-bee`.
-- The user needs **auth-gated per-user theme (RBAC + server-side preference)** — route to `auth-worker-bee` + `db-worker-bee`.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let the broader one act as backup.
+- The ask is creating a color palette or picking brand colors from scratch: that's design-system-worker-bee, which owns token source-of-truth.
+- The ask is which token to apply to a specific component's visual state: that's ux-ui-svelte-worker-bee.
+- The ask is designing the `user_preferences.theme` database schema: that's db-worker-bee.
+- The ask is validating a `data-brand` value pulled from user input: that's security-worker-bee.
+- The ask is auth-gated per-user theme with RBAC: that's auth-worker-bee plus db-worker-bee.
 
 ## Inputs the Bee needs
+- The existing token layer file (`globals.css` or `tokens.css`) if one exists
+- `app/layout.tsx` / `pages/_document.tsx` and `pages/_app.tsx`
+- Any existing `ThemeProvider` wrapper and Tailwind config version (v3 vs v4)
+- Whether multi-brand or white-label theming is in scope
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- Updated or new CSS token layer with semantic and primitive variables
+- `ThemeProvider` wiring code and FOWT-prevention inline script
+- An audit report scoring the setup against the six non-negotiables
 
-- The **React/Next.js router type** (App Router vs. Pages Router) — determines ThemeProvider placement and FOWT script location.
-- The **Tailwind version** (v3 vs. v4) — determines whether `darkMode: 'class'` config or `@custom-variant` is used.
-- The **existing token/CSS files** (`globals.css`, `tokens.css`) — required for audit or refactor tasks; can be discovered by reading the repo if not stated.
-- **Brand/tenant identifiers** if multi-brand theming is in scope — optional; defaults to single-brand setup if absent.
-
-## Outputs the Bee produces
-
-- **Code blocks or file writes** implementing the CSS variable token layer (`:root` / `.dark` blocks in `globals.css`), `ThemeProvider` wiring, FOWT-prevention inline script, and Tailwind v4 `@custom-variant` configuration — delivered at the relevant file paths.
-- **Audit report** (when auditing) — structured markdown using `templates/audit-report.template.md`, written to `reports/`.
-
-## Multi-Bee sequences this Bee participates in
-
-- Plan execution loop — always closes with `security-worker-bee` (CSS variable injection validation for any user-controlled brand/tenant input) then `quality-worker-bee`.
-
-## Critical directives the orchestrator should respect
-
-- **Never emit raw hex values in component code.** All color references must go through `var(--token-name)`; raw values bypass the theming system and cannot be audited.
-- **Always inject the FOWT-prevention script before first paint.** A visible flash destroys user trust and is not recoverable after hydration.
-- **Distinguish `prefers-color-scheme` (system preference) from persisted preference (`localStorage` / cookie).** System preference is the fallback; overwriting it with the OS value erases the user's manual choice.
-- **Require `typeof window` guards in every SSR-executed code path that reads theme state.** `next-themes` returns `undefined` during SSR; unguarded reads throw or cause hydration mismatches.
-- **Scope multi-brand overrides to CSS variables, not JS state.** CSS variable overrides are zero-JS and zero-rerender; JS state causes full-tree re-renders.
-- **Separate semantic tokens from primitive tokens.** Semantic tokens are theme-agnostic building blocks; primitive tokens are not.
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
+## Commonly sequenced with
+- design-system-worker-bee: supplies the palette and token source of truth this Bee wires into runtime theming
+- ux-ui-svelte-worker-bee: decides which token applies to which component state
+- security-worker-bee: reviews any brand or tenant value sourced from user input before it drives a CSS override

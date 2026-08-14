@@ -58,7 +58,7 @@ rolling), but BigQuery releases are monthly.
   rates than LCP (LCP at 68.9%, CLS at 81.3%, INP at 87.1%).
 - The CrUX Dashboard deprecation is important to document: teams that used it for historical
   tracking need to migrate to CrUX Vis or BigQuery queries.
-- The RTT addition replaces ECT — document this in the PSI API section of `guides/02-lab-vs-field.md`.
+- The RTT addition replaces ECT: document this in the PSI API section of `guides/02-lab-vs-field.md`.
 - The 28-day rolling window is the key update frequency for PSI/CrUX API; BigQuery is monthly.
   This affects how quickly teams see the impact of optimizations in field data.
 - Note: FID was removed from tools on September 9, 2024. Any LHCI assertions referencing FID

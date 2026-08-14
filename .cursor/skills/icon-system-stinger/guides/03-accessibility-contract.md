@@ -1,4 +1,4 @@
-# Guide 03 — Accessibility Contract
+# Guide 03: Accessibility Contract
 
 Source: `research/external/icon-accessibility.md`
 
@@ -9,8 +9,8 @@ Every icon in a React application falls into one of three categories. The catego
 **Definition:** The icon accompanies visible text that conveys the same information. Removing the icon would not reduce the information available to the user.
 
 **Required attributes on the `<svg>` element:**
-- `aria-hidden="true"` — removes the icon from the accessibility tree
-- `focusable="false"` — prevents keyboard focus on the SVG in legacy environments
+- `aria-hidden="true"`: removes the icon from the accessibility tree
+- `focusable="false"`: prevents keyboard focus on the SVG in legacy environments
 
 ```tsx
 // Correct
@@ -32,14 +32,14 @@ Every icon in a React application falls into one of three categories. The catego
 
 **Required:** An accessible name via one of these approaches:
 
-### 2A — `aria-label` on the container (preferred)
+### 2A: `aria-label` on the container (preferred)
 ```tsx
 <span role="img" aria-label="Verified">
   <CheckCircle aria-hidden="true" focusable="false" size={20} />
 </span>
 ```
 
-### 2B — Visually hidden text
+### 2B: Visually hidden text
 ```tsx
 <span>
   <CheckCircle aria-hidden="true" focusable="false" size={20} />
@@ -47,7 +47,7 @@ Every icon in a React application falls into one of three categories. The catego
 </span>
 ```
 
-### 2C — `<title>` inside the SVG (inline SVG only; less consistent screen reader support)
+### 2C: `<title>` inside the SVG (inline SVG only; less consistent screen reader support)
 ```tsx
 <svg role="img" aria-labelledby="check-title" width="20" height="20">
   <title id="check-title">Verified</title>

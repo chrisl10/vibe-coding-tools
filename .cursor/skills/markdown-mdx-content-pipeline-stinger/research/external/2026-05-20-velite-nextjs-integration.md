@@ -48,7 +48,7 @@ export default defineConfig({
 ```
 
 ## Annotations for stinger-forge
-- Informs `guides/01-compiler-selection.md`: Velite section — this is the primary recommended path for 2026 Next.js MDX content
+- Informs `guides/01-compiler-selection.md`: Velite section, this is the primary recommended path for 2026 Next.js MDX content
 - The `s.mdx()` schema type is the key API surface to document
 - The Turbopack compatibility note is a critical differentiator vs Contentlayer/next-mdx-remote
 - Include the prebuild pattern as the canonical code example

@@ -1,4 +1,4 @@
-# Platform Selection Matrix — Fill-In Template
+# Platform Selection Matrix: Fill-In Template
 
 Use this template to produce a scored recommendation. Fill in each cell before naming a winner.
 
@@ -55,7 +55,7 @@ Score 1-5 per dimension (5 = best fit for this team).
 
 **One-line reason:** {e.g., "open-source, $0 budget, JS/TS team, needs deep customization"}
 
-**Named trade-off:** {e.g., "v0.x semver — pin versions; minor upgrades may have breaking changes"}
+**Named trade-off:** {e.g., "v0.x semver: pin versions; minor upgrades may have breaking changes"}
 
 **Fallback:** {e.g., "Docusaurus v3.10 if React component integration proves necessary"}
 

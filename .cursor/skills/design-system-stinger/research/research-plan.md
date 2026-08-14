@@ -1,4 +1,4 @@
-# Research Plan — design-system-stinger
+# Research Plan: design-system-stinger
 
 **Forged:** 2026-04-24
 **Bee:** `design-system-worker-bee`
@@ -32,30 +32,30 @@ questions in IDEAS, SUGGESTIONS, QUESTIONS.
 
 ## Authoritative sources to consult directly
 
-- https://cursor.com/docs/skills — Cursor skill spec (already in references)
-- https://tailwindcss.com — Tailwind v4 @theme, CSS-first config
-- https://m3.material.io — Material Design 3 elevation + tokens
-- https://developer.apple.com/design/human-interface-guidelines — Apple HIG
+- https://cursor.com/docs/skills: Cursor skill spec (already in references)
+- https://tailwindcss.com: Tailwind v4 @theme, CSS-first config
+- https://m3.material.io: Material Design 3 elevation + tokens
+- https://developer.apple.com/design/human-interface-guidelines: Apple HIG
   depth, materials, glass
-- https://www.radix-ui.com/primitives — Radix patterns
-- https://ui.shadcn.com — shadcn component shape
-- https://www.designtokens.org — W3C Design Tokens Community Group
-- https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch — oklch()
-- https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix — color-mix()
+- https://www.radix-ui.com/primitives: Radix patterns
+- https://ui.shadcn.com: shadcn component shape
+- https://www.designtokens.org: W3C Design Tokens Community Group
+- https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch: oklch()
+- https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix: color-mix()
 - https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
-- https://refactoringui.com — Refactoring UI by Adam Wathan + Steve Schoger
+- https://refactoringui.com: Refactoring UI by Adam Wathan + Steve Schoger
 
 ## Open questions the Stinger must answer
 
 1. **Tailwind bridge.** Should the Bee emit a starter `@theme` block so tokens
    are usable from Tailwind v4 utilities without a second source-of-truth?
-   Decision: **yes** — include a bridge section in `guides/03-authoring-tokens.md`
+   Decision: **yes**, include a bridge section in `guides/03-authoring-tokens.md`
    and ship a sample `@theme` block in each starter kit.
-2. **Sizing envelope for a new product's design system.** Decision: **800–1500
-   lines for the master brief, 8–15 component briefs, 5–10 screen briefs,
-   200–400 lines for tokens CSS, 150–300 lines for utility CSS.** Surface this
+2. **Sizing envelope for a new product's design system.** Decision: **800-1500
+   lines for the master brief, 8-15 component briefs, 5-10 screen briefs,
+   200-400 lines for tokens CSS, 150-300 lines for utility CSS.** Surface this
    as a sizing table in `guides/02-authoring-design-brief.md`.
-3. **Migration from ad-hoc CSS.** Decision: **yes** — author a dedicated edge
+3. **Migration from ad-hoc CSS.** Decision: **yes**, author a dedicated edge
    case in `examples/02-migration-from-ad-hoc.md` that walks through extracting
    a messy Tailwind/inline-style codebase into the seven-artifact structure.
 4. **Design Tokens JSON round-trip.** Decision: **out of scope for bootstrap
@@ -63,7 +63,7 @@ questions in IDEAS, SUGGESTIONS, QUESTIONS.
    translatable to DTCG JSON later via a small script, but the canonical source
    remains `01-master-tokens.css`.
 
-## Internal reference — the gold standard
+## Internal reference: the gold standard
 
 `/sessions/gifted-nice-dijkstra/mnt/uploads/ux-ui.zip` (183 KB, 32 files)
 unzipped to `/tmp/ux-ui-extract/ux-ui/` for inspection:
