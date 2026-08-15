@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CLAUDE = ROOT / ".claude"
 CURSOR = ROOT / ".cursor"
 CODEX = ROOT / ".codex"
+AGENTS = ROOT / ".agents"
 CODEX_PLUGIN = CODEX / "plugins" / "vibe-coding-tools"
 
 
@@ -73,8 +74,16 @@ def normalize_skill_frontmatter(path: Path) -> None:
     for line in lines:
         field = re.match(r"^(name|description):\s*(.*)$", line)
         if field and field.group(2) not in {"|", "|-", ">", ">-", ""}:
+            raw = field.group(2).strip()
+            if raw.startswith('"'):
+                try:
+                    value = json.loads(raw)
+                except json.JSONDecodeError:
+                    value = raw.strip('"')
+            else:
+                value = raw
             normalized.append(
-                f"{field.group(1)}: {json.dumps(field.group(2).strip().strip(chr(34)), ensure_ascii=False)}"
+                f"{field.group(1)}: {json.dumps(value, ensure_ascii=False)}"
             )
         else:
             normalized.append(line)
@@ -104,10 +113,8 @@ def generate_agents() -> None:
             normalized_agent_text(path, "cursor"), encoding="utf-8"
         )
         fields, body = read_agent(path)
-        body = body.replace(
-            ".claude/skills/", ".codex/plugins/vibe-coding-tools/skills/"
-        ).replace(
-            "../skills/", ".codex/plugins/vibe-coding-tools/skills/"
+        body = body.replace(".claude/skills/", ".agents/skills/").replace(
+            "../skills/", ".agents/skills/"
         )
         toml = "\n".join(
             [
@@ -130,21 +137,59 @@ def generate_cursor() -> None:
     translate_active_cursor_files()
 
 
-def generate_codex_project() -> None:
-    copy_tree(CLAUDE / "hooks", CODEX / "hooks")
+def generate_codex_skill_tree(target: Path) -> None:
+    prior_files = {}
+    if target.exists():
+        for existing in target.rglob("*"):
+            if existing.is_file():
+                try:
+                    prior_files[existing.relative_to(target)] = existing.read_bytes()
+                except OSError:
+                    pass
+        shutil.rmtree(target)
+    copy_tree(CLAUDE / "skills", target)
+    text_suffixes = {
+        ".css", ".env", ".hcl", ".html", ".ini", ".js", ".json", ".jsx",
+        ".md", ".mdc", ".mdx", ".mjs", ".prisma", ".py", ".sh", ".toml",
+        ".ts", ".tsx", ".txt", ".yaml", ".yml",
+    }
+    for path in target.rglob("*"):
+        if not path.is_file() or path.suffix.lower() not in text_suffixes:
+            continue
+        try:
+            text = path.read_text(encoding="utf-8")
+        except UnicodeDecodeError:
+            continue
+        normalized = re.sub(r"[ \t]+(?=\r?$)", "", text, flags=re.M)
+        prior = prior_files.get(path.relative_to(target))
+        if prior is not None:
+            try:
+                prior_text = prior.decode("utf-8")
+            except UnicodeDecodeError:
+                prior_text = None
+            if prior_text is not None:
+                prior_normalized = re.sub(
+                    r"[ \t]+(?=\r?$)", "", prior_text, flags=re.M
+                )
+                if prior_normalized.rstrip("\r\n") == normalized.rstrip("\r\n"):
+                    path.write_bytes(prior)
+                    continue
+        path.write_text(normalized, encoding="utf-8")
+    for path in target.glob("*/SKILL.md"):
+        text = path.read_text(encoding="utf-8")
+        text = text.replace(".claude/skills/", "../")
+        text = text.replace(
+            ".claude/model-comparison-matrix.md", "../../model-comparison-matrix.md"
+        )
+        path.write_text(text, encoding="utf-8")
 
-
-def generate_codex_plugin() -> None:
-    copy_tree(CLAUDE / "skills", CODEX_PLUGIN / "skills")
-    copy_tree(CLAUDE / "hooks", CODEX_PLUGIN / "hooks")
-    shutil.copy2(CLAUDE / "model-comparison-matrix.md", CODEX_PLUGIN / "model-comparison-matrix.md")
     command_skills = {
         "the-beekeeper": CLAUDE / "commands" / "the-beekeeper.md",
         "the-smoker": CLAUDE / "commands" / "the-smoker.md",
     }
     for name, source in command_skills.items():
-        target = CODEX_PLUGIN / "skills" / name
-        target.mkdir(parents=True, exist_ok=True)
+        command_target = target / name
+        command_target.mkdir(parents=True, exist_ok=True)
         command_text = source.read_text(encoding="utf-8")
         match = re.match(r"^---\r?\n.*?\r?\n---\r?\n(.*)$", command_text, re.S)
         body = (match.group(1) if match else command_text).lstrip()
@@ -156,10 +201,34 @@ def generate_codex_plugin() -> None:
             if name == "the-beekeeper"
             else "Run the repository delivery pipeline from planning through verified review."
         )
-        (target / "SKILL.md").write_text(
+        (command_target / "SKILL.md").write_text(
             f"---\nname: {name}\ndescription: {description}\n---\n\n{body}",
             encoding="utf-8",
         )
+        metadata = "\n".join([
+            "interface:",
+            f'  display_name: "{name}"',
+            f'  short_description: "{description}"',
+            f'  default_prompt: "Use ${name} for this request."',
+            "policy:",
+            "  allow_implicit_invocation: false",
+            "",
+        ])
+        metadata_path = command_target / "agents" / "openai.yaml"
+        metadata_path.parent.mkdir(parents=True, exist_ok=True)
+        metadata_path.write_text(metadata, encoding="utf-8")
+
+
+def generate_codex_project() -> None:
+    copy_tree(CLAUDE / "hooks", CODEX / "hooks")
+    generate_codex_skill_tree(AGENTS / "skills")
+    shutil.copy2(CLAUDE / "model-comparison-matrix.md", AGENTS / "model-comparison-matrix.md")
+
+
+def generate_codex_plugin() -> None:
+    generate_codex_skill_tree(CODEX_PLUGIN / "skills")
+    copy_tree(CLAUDE / "hooks", CODEX_PLUGIN / "hooks")
+    shutil.copy2(CLAUDE / "model-comparison-matrix.md", CODEX_PLUGIN / "model-comparison-matrix.md")
 
 
 def generate_catalog() -> None:
@@ -199,8 +268,8 @@ def generate_catalog() -> None:
         "| Source capability | Claude Code | Codex | Cursor |",
         "|---|---|---|---|",
         "| 75 agents | PRESERVE as Markdown | TRANSLATE to TOML project agents | PRESERVE as Markdown |",
-        "| 78 skills | PRESERVE | PRESERVE in plugin | PRESERVE |",
-        "| 2 commands | PRESERVE | TRANSLATE to skills | PRESERVE |",
+        "| 78 skills | PRESERVE | PRESERVE in `.agents/skills` and plugin | PRESERVE |",
+        "| 2 commands | PRESERVE | TRANSLATE to explicit skills in both Codex layers | PRESERVE |",
         "| 4 rules | TRANSLATE to Claude rules and CLAUDE.md | TRANSLATE to project instructions | PRESERVE as MDC |",
         "| 2 hooks | PRESERVE | TRANSLATE patch input, preserve outcomes | TRANSLATE event and output schema |",
         "",
@@ -230,7 +299,7 @@ def main() -> None:
     generate_codex_project()
     generate_codex_plugin()
     generate_catalog()
-    print("Generated Cursor mirror, Codex agents, and Codex plugin skills.")
+    print("Generated Cursor mirror, Codex agents, repository skills, and plugin skills.")
 
 
 if __name__ == "__main__":

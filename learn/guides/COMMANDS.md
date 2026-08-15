@@ -105,9 +105,10 @@ The strong version makes success observable. A reviewer can tell whether the wor
 |---|---|---|
 | Claude Code | `.claude/commands/*.md` | Markdown command |
 | Cursor | `.cursor/commands/*.md` | Markdown command |
-| Codex plugin | `skills/<command-name>/SKILL.md` | Command translated into a skill |
+| Codex repository | `.agents/skills/<command-name>/SKILL.md` | Command translated into an explicit-invocation project skill |
+| Codex plugin | `skills/<command-name>/SKILL.md` | The same translated skill in the installable plugin |
 
-Codex does not need a fake `.codex/commands/` mirror. The portable behavior is packaged as the `the-beekeeper` and `the-smoker` skills. This preserves what the command does while using Codex's supported format.
+Codex does not need a fake `.codex/commands/` mirror. The portable behavior is packaged in both Codex layers as the `the-beekeeper` and `the-smoker` skills. Invoke them explicitly as `$the-beekeeper` and `$the-smoker`. This preserves what each command does while using Codex's supported repository and plugin skill format.
 
 ## How to run a command
 

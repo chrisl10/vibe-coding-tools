@@ -16,8 +16,8 @@ This file is generated from the canonical `.claude` tree. Do not maintain the ro
 | Source capability | Claude Code | Codex | Cursor |
 |---|---|---|---|
 | 75 agents | PRESERVE as Markdown | TRANSLATE to TOML project agents | PRESERVE as Markdown |
-| 78 skills | PRESERVE | PRESERVE in plugin | PRESERVE |
-| 2 commands | PRESERVE | TRANSLATE to skills | PRESERVE |
+| 78 skills | PRESERVE | PRESERVE in `.agents/skills` and plugin | PRESERVE |
+| 2 commands | PRESERVE | TRANSLATE to explicit skills in both Codex layers | PRESERVE |
 | 4 rules | TRANSLATE to Claude rules and CLAUDE.md | TRANSLATE to project instructions | PRESERVE as MDC |
 | 2 hooks | PRESERVE | TRANSLATE patch input, preserve outcomes | TRANSLATE event and output schema |
 
