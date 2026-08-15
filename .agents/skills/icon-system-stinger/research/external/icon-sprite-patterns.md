@@ -1,8 +1,8 @@
 # Icon Sprite Patterns: Research Note
 
-**Source type:** technical
-**Authority:** high
-**Relevance:** high
+**Source type:** technical  
+**Authority:** high  
+**Relevance:** high  
 **Topic:** SVG sprite generation, tree-shake benchmarks, Vite/Next.js integration
 
 ## Tree-shaking named imports (2026 baseline)

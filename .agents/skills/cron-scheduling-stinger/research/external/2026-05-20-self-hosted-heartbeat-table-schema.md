@@ -51,7 +51,7 @@ CREATE TABLE job_runs (
     EXTRACT(EPOCH FROM (finished_at - started_at)) * 1000
   ) STORED,
   created_at      TIMESTAMPTZ DEFAULT NOW(),
-
+  
   -- Idempotency: prevent double-recording the same scheduled execution
   UNIQUE (job_name, scheduled_at)
 );

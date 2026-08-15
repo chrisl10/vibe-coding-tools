@@ -8,7 +8,7 @@
 ## Input (what the team provided)
 
 ```
-We're deprecating the /v1/users/list endpoint.
+We're deprecating the /v1/users/list endpoint. 
 New endpoint is /v2/users with cursor-based pagination.
 Old endpoint still works but will be removed on 2026-08-01.
 Migration guide: https://docs.example.com/migrate/v1-to-v2-users

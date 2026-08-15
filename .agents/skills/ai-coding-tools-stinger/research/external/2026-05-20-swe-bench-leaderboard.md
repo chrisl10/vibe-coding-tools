@@ -47,8 +47,8 @@ SWE-bench Verified is the primary authoritative benchmark for AI coding agents. 
 
 ## Canonical leaderboard URL
 
-Primary: https://www.swebench.com/verified
-Independent: https://www.vals.ai/benchmarks/swebench-06-13-2025
+Primary: https://www.swebench.com/verified  
+Independent: https://www.vals.ai/benchmarks/swebench-06-13-2025  
 CodeSOTA comprehensive: https://www.codesota.com/browse/agentic/swe-bench
 
 ## Annotations for stinger-forge

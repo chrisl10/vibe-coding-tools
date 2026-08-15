@@ -60,7 +60,7 @@ read:
 # Project: [Name] Monorepo
 
 ## Architecture
-12 packages under `packages/`. Shared utilities in `packages/shared`.
+12 packages under `packages/`. Shared utilities in `packages/shared`. 
 API in `packages/api`. Frontend in `packages/web`.
 
 ## Development Commands

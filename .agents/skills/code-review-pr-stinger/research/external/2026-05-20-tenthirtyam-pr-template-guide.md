@@ -26,7 +26,7 @@ A focused 2026 guide on GitHub pull request template design, covering the seven 
   2. **Type of change** - Conventional Commits type checklist (feat, fix, refactor, etc.)
   3. **Breaking changes** - Binary checklist + impact description + migration path
   4. **Documentation** - Checklist confirming docs added or updated
-  5. **Release notes** - "A short prose entry suitable for inclusion in a changelog."
+  5. **Release notes** - "A short prose entry suitable for inclusion in a changelog." 
   6. **Additional context** - Screenshots, migration instructions, benchmarks, related PRs, approach rationale
   7. **Onboarding reminder block** - HTML comment pointing to CONTRIBUTING.md, code of conduct, Conventional Commits
 - **Breaking changes section justification:** "An enhancement that ships without documentation creates a gap between what the project does and what contributors and users know it does."

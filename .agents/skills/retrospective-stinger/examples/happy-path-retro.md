@@ -82,7 +82,7 @@ Facilitator reads cards aloud. Team groups into clusters (no discussion, just "d
 
 **Theme 1: Scope-freeze policy (11 dots)**
 
-"Why are we getting late-breaking scope changes?" → "Because stakeholders can reach engineers directly." → "Why do stakeholders have direct access to engineers for scope requests?" → "We never set a policy."
+"Why are we getting late-breaking scope changes?" → "Because stakeholders can reach engineers directly." → "Why do stakeholders have direct access to engineers for scope requests?" → "We never set a policy." 
 
 Root cause: no scope-change protocol. Decision: define a scope-freeze policy with a process for exceptions.
 

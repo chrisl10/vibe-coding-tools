@@ -1,8 +1,8 @@
 # Research Plan: icon-system-stinger
 
-**Depth tier:** normal
-**Research model:** grok-4.3
-**Time window:** 2025-11 to 2026-05
+**Depth tier:** normal  
+**Research model:** grok-4.3  
+**Time window:** 2025-11 to 2026-05  
 **Page budget:** ~15 primary sources
 
 ## Queries executed

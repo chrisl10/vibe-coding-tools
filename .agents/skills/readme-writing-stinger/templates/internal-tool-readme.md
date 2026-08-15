@@ -2,7 +2,7 @@
 
 {2-3 sentences: what problem this solves, why it exists here (not a pitch, assume the reader knows the domain).}
 
-**Owner:** {team name}, `#{slack-channel}` on Slack
+**Owner:** {team name}, `#{slack-channel}` on Slack  
 **On-call:** {PagerDuty rotation name | @person | "file an issue in this repo"}
 
 ---

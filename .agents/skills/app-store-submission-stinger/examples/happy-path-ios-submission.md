@@ -88,7 +88,7 @@ Result: No SDK-level PrivacyInfo.xcprivacy gap. Manifest complete.
 
 FocusFlow questionnaire answers:
 - Cartoon violence: None
-- Mature/suggestive themes: None
+- Mature/suggestive themes: None  
 - Gambling: None
 - Health/medical: None (productivity timer)
 - Infrequent/mild simulated gambling: None

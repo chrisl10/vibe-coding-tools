@@ -1,8 +1,8 @@
 # Icon Audit Report
 
-**Branch / PR:** {{branch-or-pr}}
-**Date:** {{YYYY-MM-DD}}
-**Bee:** icon-system-worker-bee
+**Branch / PR:** {{branch-or-pr}}  
+**Date:** {{YYYY-MM-DD}}  
+**Bee:** icon-system-worker-bee  
 **Scope:** {{files or components audited}}
 
 ---
@@ -37,7 +37,7 @@
 | `{{icon-1}}` | {{decorative / semantic / interactive}} | `{{aria-hidden}} / {{aria-label}}` | {{PASS / FAIL}} | {{fix description or N/A}} |
 | `{{icon-2}}` | | | | |
 
-**Summary:**
+**Summary:**  
 - Total icons audited: {{n}}
 - PASS: {{n}}
 - FAIL: {{n}}

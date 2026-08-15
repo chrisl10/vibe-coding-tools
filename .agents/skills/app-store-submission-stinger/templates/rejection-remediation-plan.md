@@ -31,7 +31,7 @@ Use this template when an App Store or Google Play rejection arrives. Complete i
 
 ## Ambiguity check
 
-Is the rejection note unambiguous?
+Is the rejection note unambiguous? 
 
 - [ ] Yes, the issue is clear: proceed directly to remediation
 - [ ] No, the note could mean two things: complete both interpretations below

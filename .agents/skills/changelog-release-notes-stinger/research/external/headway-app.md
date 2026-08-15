@@ -9,8 +9,8 @@ url: https://headwayapp.co
 
 # Source: Headway App
 
-**URL:** https://headwayapp.co
-**Category:** Hosted changelog SaaS with embeddable widget
+**URL:** https://headwayapp.co  
+**Category:** Hosted changelog SaaS with embeddable widget  
 **Why it matters:** One of the most widely adopted lightweight changelog widgets; simple integration, clean UI, free tier.
 
 ## Feature set (as of 2026)

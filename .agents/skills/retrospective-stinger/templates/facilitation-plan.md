@@ -1,10 +1,10 @@
 # Facilitation Plan: [Sprint/Period Label]
 
-**Date:** [YYYY-MM-DD]
-**Format:** [e.g., Start/Stop/Continue | Sailboat | 4Ls | ...]
-**Duration:** [e.g., 60 min]
-**Mode:** [Sync in-person | Sync remote | Async]
-**Team size:** [N]
+**Date:** [YYYY-MM-DD]  
+**Format:** [e.g., Start/Stop/Continue | Sailboat | 4Ls | ...]  
+**Duration:** [e.g., 60 min]  
+**Mode:** [Sync in-person | Sync remote | Async]  
+**Team size:** [N]  
 **Facilitator:** [Name]
 
 ---
@@ -31,7 +31,7 @@ Purpose: lower activation energy, make it safe to speak.
 
 ### 0:05-0:10: Action Item Review (previous retro)
 
-Read each item aloud. Capture status (Done / In Progress / Dropped).
+Read each item aloud. Capture status (Done / In Progress / Dropped).  
 **Follow-through rate from last retro:** ___ of ___ = ___%
 
 If rate < 50%, pivot: the retro's subject is "why are we not following through?"

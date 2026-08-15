@@ -9,8 +9,8 @@ url: https://keepachangelog.com
 
 # Source: Keep a Changelog
 
-**URL:** https://keepachangelog.com
-**Author:** Olivier Lacan
+**URL:** https://keepachangelog.com  
+**Author:** Olivier Lacan  
 **Why it matters:** The de-facto community standard for markdown-based changelogs. Establishes the vocabulary and hierarchy that most changelog tools understand or import.
 
 ## Core conventions

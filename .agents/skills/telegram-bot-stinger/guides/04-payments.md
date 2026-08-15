@@ -85,7 +85,7 @@ await bot.send_invoice(
 bot.on("pre_checkout_query", async (ctx) => {
   // Validate the order (check inventory, user eligibility, etc.)
   const isValid = await validateOrder(ctx.preCheckoutQuery.invoice_payload);
-
+  
   if (isValid) {
     await ctx.answerPreCheckoutQuery(true);  // Approve
   } else {
@@ -118,7 +118,7 @@ bot.on("message:successful_payment", async (ctx) => {
   const payload = payment.invoice_payload;  // Your order ID from sendInvoice
   const starsAmount = payment.total_amount; // In Stars
   const chargeId = payment.telegram_payment_charge_id;
-
+  
   // Fulfill the order
   await fulfillOrder(payload, ctx.from!.id);
   await ctx.reply(`✅ Payment received! ${starsAmount} Stars. Enjoy your subscription!`);

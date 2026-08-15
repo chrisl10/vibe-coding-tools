@@ -12,7 +12,7 @@ Is the project in TypeScript / JavaScript?
   NO (Python)?
     Async-native, modern patterns → Use aiogram 3.x
     Legacy codebase / PTB 20+ existing → python-telegram-bot 21.x (compatible, not preferred)
-
+    
 Are you migrating from Telegraf?
   → Migrate to grammY. Telegraf has had zero npm releases in 2+ years (abandoned).
 ```

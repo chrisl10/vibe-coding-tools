@@ -6,7 +6,7 @@ alwaysApply: false
 
 # Rule: [Rule Name]
 
-<!--
+<!-- 
 FRONTMATTER GUIDE:
   alwaysApply: true  → Always included in every context (budget: ~2,000 tokens total across all alwaysApply rules)
   alwaysApply: false + globs set  → Apply to Specific Files (fires when a matching file is in context)

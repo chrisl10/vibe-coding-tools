@@ -1,8 +1,8 @@
 # Icon Accessibility: Research Note
 
-**Source type:** normative
-**Authority:** high
-**Relevance:** high
+**Source type:** normative  
+**Authority:** high  
+**Relevance:** high  
 **Topic:** WAI-ARIA APG, decorative/semantic/interactive model, icon button pattern
 
 ## The three icon categories

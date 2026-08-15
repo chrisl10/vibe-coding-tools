@@ -36,7 +36,7 @@ export default async function BlogPost() {
     'https://images.unsplash.com/photo-xxx?w=800',
     { size: 10 }
   );
-
+  
   return (
     <Image
       {...img}

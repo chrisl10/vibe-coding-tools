@@ -49,4 +49,4 @@ Cursor-skill wrapper for the `library-worker-bee` Bee's companion resource bundl
 | `library/requirements/issues/` | `library/issues/backlog/` |
 | `library/qa/` | `library/requirements/reports/` |
 
-See `guides/07-wiki-sync.md` for
+See `guides/07-wiki-sync.md` for 

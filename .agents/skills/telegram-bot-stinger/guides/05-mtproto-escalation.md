@@ -50,7 +50,7 @@ client = TelegramClient(
 
 async def main():
     await client.start()  # Opens interactive auth on first run
-
+    
     # Read from a channel
     async for message in client.iter_messages("@some_channel", limit=100):
         print(message.text)

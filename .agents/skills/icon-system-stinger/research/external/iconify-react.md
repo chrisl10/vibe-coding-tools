@@ -1,8 +1,8 @@
 # Iconify React: Research Note
 
-**Source type:** official-docs
-**Authority:** high
-**Relevance:** high
+**Source type:** official-docs  
+**Authority:** high  
+**Relevance:** high  
 **Topic:** Iconify React component, static vs CDN mode, RSC boundary
 
 ## Key findings (2026)

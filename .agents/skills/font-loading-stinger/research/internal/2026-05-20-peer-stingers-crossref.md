@@ -43,7 +43,7 @@ documented in the Command Brief and define what the Bee owns vs defers.
 - **Owns:** CI/CD subsetting pipeline automation (running `pyftsubset` as a
   build step, font optimization in the build system).
 - **font-loading-worker-bee feeds:** The exact CLI commands and unicode-range
-  values that the CI pipeline should run. `devops-worker-bee` wires them;
+  values that the CI pipeline should run. `devops-worker-bee` wires them; 
   `font-loading-worker-bee` defines the commands.
 
 ### lighthouse-pagespeed-worker-bee / lighthouse-pagespeed-stinger

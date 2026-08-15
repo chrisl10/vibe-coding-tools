@@ -17,7 +17,7 @@ Exponential backoff with jitter is the standard pattern for retrying failed cron
 ## Key quotations / statistics
 
 - "Exponential backoff with jitter prevents thundering herd problems when multiple clients retry failed operations simultaneously."
-- Formula for full jitter: `delay = random(0, min(cap, base * 2^attempt))`
+- Formula for full jitter: `delay = random(0, min(cap, base * 2^attempt))` 
 - "Only retry transient failures (5xx errors, 429 rate limits, network timeouts). Do NOT retry permanent 4xx errors (400, 401, 403, 404)."
 - "NEVER retry non-idempotent operations without an idempotency key, as this causes duplicate writes and data corruption."
 - From AWS guidelines: "Always set a maximum retry count (3-5 attempts) to prevent cascading failures and resource exhaustion."
@@ -52,21 +52,21 @@ async function withRetry<T>(
       return await fn();
     } catch (err) {
       const isLast = attempt === maxAttempts - 1;
-
+      
       // Check if error is retryable
       if (retryableErrors && !retryableErrors(err as Error)) {
         throw err; // Non-retryable, fail immediately
       }
-
+      
       if (isLast) {
         throw err; // Exhausted retries
       }
-
+      
       // Full jitter backoff
       const exponentialDelay = baseDelayMs * Math.pow(2, attempt);
       const cappedDelay = Math.min(maxDelayMs, exponentialDelay);
       const jitteredDelay = Math.random() * cappedDelay;
-
+      
       console.error(`[retry] attempt ${attempt + 1}/${maxAttempts} failed, retrying in ${Math.round(jitteredDelay)}ms`, err);
       await sleep(jitteredDelay);
     }
@@ -129,7 +129,7 @@ async function runJobWithDLQ(jobId: string, fn: () => Promise<void>) {
       message: `Cron job ${jobId} exhausted retries: ${String(err)}`,
       severity: 'high',
     });
-
+    
     await db.execute(sql`
       INSERT INTO job_dead_letters (job_id, error, failed_at)
       VALUES (${jobId}, ${String(err)}, NOW())

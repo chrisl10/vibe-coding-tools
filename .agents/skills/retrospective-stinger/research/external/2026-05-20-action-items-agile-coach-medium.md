@@ -29,7 +29,7 @@ Published 2026-05-15 (most recent source in the sweep). Authored by an experienc
 
 **Sprint board placement:** "Before the retro closes, every action item that passes the 3 questions becomes a ticket on the sprint board. It gets a label. It gets an owner. It gets a slot in the next sprint." The reasoning: "Retro improvements are not separate from delivery. They are the work that makes future delivery possible."
 
-**Three-step diagnostic:**
+**Three-step diagnostic:** 
 1. Pull up last sprint's retro action items. Count how many were closed. That number is the team's actual improvement rate.
 2. If below 70%, there is a follow-through problem, not a retrospective problem.
 3. Agree to track the retro action closure rate together: not to shame, but to make the invisible visible.

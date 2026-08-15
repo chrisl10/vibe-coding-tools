@@ -72,15 +72,15 @@ async function runWithRedisLock(
 ) {
   const lockKey = `cron:lock:${jobName}`;
   const lockValue = crypto.randomUUID(); // fencing token
-
+  
   // SET key value NX EX ttl (atomic - only sets if key doesn't exist)
   const acquired = await redis.set(lockKey, lockValue, 'NX', 'EX', ttlSeconds);
-
+  
   if (!acquired) {
     console.log(`[${jobName}] Lock held by another instance, skipping`);
     return;
   }
-
+  
   try {
     await fn();
   } finally {
@@ -103,7 +103,7 @@ When using queues or platforms that guarantee at-least-once delivery (the job WI
 // Idempotency key = job_type + schedule_period
 async function processWithIdempotency(jobType: string, scheduledAt: Date) {
   const idempotencyKey = `${jobType}:${Math.floor(scheduledAt.getTime() / 60000)}`; // Per-minute granularity
-
+  
   // Upsert execution record; unique constraint prevents duplicate processing
   const { rowCount } = await db.execute(sql`
     INSERT INTO job_executions (idempotency_key, job_type, started_at, status)
@@ -111,12 +111,12 @@ async function processWithIdempotency(jobType: string, scheduledAt: Date) {
     ON CONFLICT (idempotency_key) DO NOTHING
     RETURNING id
   `);
-
+  
   if (rowCount === 0) {
     console.log(`[${jobType}] Already executed for this period, skipping`);
     return;
   }
-
+  
   try {
     await runActualJob();
     await db.execute(sql`

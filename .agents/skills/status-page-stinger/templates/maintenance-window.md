@@ -31,6 +31,6 @@ Status updates will be posted at **[your status page URL]**.
   READ-ONLY = no writes accepted
   UNAVAILABLE = fully down
 - Send this 7 days before as the initial announcement.
-  Resend 24 hours before as a reminder.
+  Resend 24 hours before as a reminder. 
   Send a final reminder 1 hour before.
 -->

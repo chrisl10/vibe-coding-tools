@@ -59,7 +59,7 @@ Log4brains converts a markdown ADR corpus into a searchable, filterable HTML sit
 ```bash
 # npx (no global install required)
 npx log4brains init
-# Interactive setup: prompts for project name, package name (mono-repo),
+# Interactive setup: prompts for project name, package name (mono-repo), 
 # ADR directory path, and ADR format. Generates .log4brains.yml.
 
 # Or install globally
@@ -95,7 +95,7 @@ npx log4brains build
 # Output: .log4brains/out/, deploy this folder to GitHub Pages, Netlify, or Vercel
 
 # Superscede using Log4brains UI
-# (Use the "Supersede" button in the preview UI, or run adr-tools -s N and
+# (Use the "Supersede" button in the preview UI, or run adr-tools -s N and 
 #  update the superseded record manually)
 ```
 

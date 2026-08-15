@@ -107,11 +107,11 @@ async function onboarding(conversation: Conversation, ctx: Context) {
   await ctx.reply("What is your name?");
   const { message } = await conversation.wait();
   const name = message?.text ?? "Unknown";
-
+  
   await ctx.reply(`Hello ${name}! What is your email?`);
   const emailCtx = await conversation.wait();
   const email = emailCtx.message?.text ?? "";
-
+  
   await ctx.reply(`Registered ${name} with ${email}`);
 }
 

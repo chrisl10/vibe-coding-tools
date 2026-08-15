@@ -1,7 +1,7 @@
 # Research Summary: icon-system-stinger
 
-**Depth consumed:** normal
-**Time window:** 2025-11 to 2026-05
+**Depth consumed:** normal  
+**Time window:** 2025-11 to 2026-05  
 **Files written:** 6 source notes (1 internal, 5 external)
 
 ## Five most influential sources

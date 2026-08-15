@@ -21,16 +21,16 @@ Guideline 2.1 - Performance - App Completeness
 
 We discovered one or more bugs in your app when reviewed on iPhone running iOS 18.3.1.
 
-Specifically, tapping the barcode scanner button on the main logging screen causes the
+Specifically, tapping the barcode scanner button on the main logging screen causes the 
 app to crash.
 
 Next Steps
 
 Please review the details below, resolve the issues, and resubmit your app for review.
 
-Please ensure you have thoroughly tested your submission for iOS 18.3.1 on the devices
-listed above. If we misunderstood the intended behavior of your app, please reply to
-this message in Resolution Center to provide information on how this feature is
+Please ensure you have thoroughly tested your submission for iOS 18.3.1 on the devices 
+listed above. If we misunderstood the intended behavior of your app, please reply to 
+this message in Resolution Center to provide information on how this feature is 
 intended to work.
 ```
 
@@ -106,9 +106,9 @@ Hi App Review Team,
 
 Thank you for the detailed report. We reproduced the issue on iOS 18.3.1:
 
-The crash occurs on the very first launch when the camera permission has not yet been
-granted. Our AVCaptureSession initialization was not guarded against the
-`.notDetermined` authorization state — the session attempted to start before the user
+The crash occurs on the very first launch when the camera permission has not yet been 
+granted. Our AVCaptureSession initialization was not guarded against the 
+`.notDetermined` authorization state — the session attempted to start before the user 
 responded to the permission dialog.
 
 We have fixed the authorization state check in our camera setup flow. The fix:

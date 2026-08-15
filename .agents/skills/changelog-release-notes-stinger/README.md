@@ -10,4 +10,4 @@ Paired with `changelog-release-notes-worker-bee`, the specialist that turns merg
 - **Semver decisions** - patch vs minor vs breaking for an agent-memory CLI/library, with the wide contract surface: CLI, library API, harness contracts, MCP tool surface, and Deep Lake schema.
 - **Copy craft** - impact-first release notes, the Hivemind verb table, the honest scope note, the before/after test.
 - **Release mechanics** - how `package.json` -> `scripts/sync-versions.mjs` (prebuild) -> esbuild `define` single-sources the version, how `release.yaml` and `publish-smoke-test.yaml` cut and verify a release, and where the CHANGELOG plugs in.
-- **Audit** - a five-dimension scoring framework (cadence,
+- **Audit** - a five-dimension scoring framework (cadence, 

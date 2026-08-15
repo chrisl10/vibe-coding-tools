@@ -1,8 +1,8 @@
 # Heroicons / Tabler / Phosphor: Research Note
 
-**Source type:** comparison
-**Authority:** medium
-**Relevance:** medium
+**Source type:** comparison  
+**Authority:** medium  
+**Relevance:** medium  
 **Topic:** Comparative overview of Heroicons v2, Tabler 4.x, Phosphor 2.x
 
 ## Heroicons v2 (2026)

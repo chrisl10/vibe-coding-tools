@@ -70,9 +70,9 @@ async function runMonitoredJob(pingUrl: string, jobFn: () => Promise<void>) {
   try {
     // Signal start
     await fetch(`${pingUrl}/start`);
-
+    
     await jobFn();
-
+    
     // Signal success
     await fetch(pingUrl);
   } catch (err) {

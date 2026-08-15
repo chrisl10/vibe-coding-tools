@@ -9,8 +9,8 @@ url: https://productlane.com
 
 # Source: Productlane
 
-**URL:** https://productlane.com
-**Category:** Linear-native roadmap + changelog tool
+**URL:** https://productlane.com  
+**Category:** Linear-native roadmap + changelog tool  
 **Why it matters:** Purpose-built for teams using Linear. Turns Linear issues into a public roadmap and changelog with zero extra data entry.
 
 ## Feature set (as of 2026)

@@ -31,15 +31,15 @@
 
 <!-- Specific, measurable outcomes this module achieves. -->
 
--
--
+- 
+- 
 
 ## Non-Goals
 
 <!-- What this module explicitly does NOT do. Be precise. -->
 
--
--
+- 
+- 
 
 ---
 
@@ -85,7 +85,7 @@
 
 <!-- Unresolved questions that must be answered before implementation. -->
 
-- [ ]
+- [ ] 
 
 ---
 
@@ -93,4 +93,4 @@
 
 <!-- Link to relevant knowledge docs, ADRs, IRDs, or completed PRDs. Use relative paths. -->
 
--
+- 

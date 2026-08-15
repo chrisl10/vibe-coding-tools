@@ -46,5 +46,5 @@
 | "Google Play Billing Library 7 in-app purchases subscriptions Android 2026" | Exa web_search_exa | 5 results |
 | "App Store review time duration timeline expedited review 2026" | Exa web_search_exa | 5 results |
 
-**Total sources retrieved:** ~52 unique pages across 8 queries
+**Total sources retrieved:** ~52 unique pages across 8 queries  
 **Files written to `external/`:** 12 source notes

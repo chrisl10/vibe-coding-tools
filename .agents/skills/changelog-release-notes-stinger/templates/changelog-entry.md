@@ -41,4 +41,4 @@ We started work on [feature] but it is not ready for the quality bar we want. [E
 
 ## Release checklist
 
-- [ ] Version bump decided per `guides/02-semver-decisions.md` (patch / minor / major). Contract surfaces checked: CLI, library
+- [ ] Version bump decided per `guides/02-semver-decisions.md` (patch / minor / major). Contract surfaces checked: CLI, library 

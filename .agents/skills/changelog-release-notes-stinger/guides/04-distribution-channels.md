@@ -13,7 +13,7 @@ Not every release warrants every channel. Use this hierarchy:
 ```
 Every release
   └── In-app widget badge update (always)
-
+  
 Minor / regular releases (2+ user-visible changes)
   └── In-app widget badge update
   └── Email digest (if subscribers exist; weekly or per-release depending on cadence)

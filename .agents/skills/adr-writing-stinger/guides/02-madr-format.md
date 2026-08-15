@@ -31,8 +31,8 @@ Date: YYYY-MM-DD
 
 ## Context and Problem Statement
 
-<Describe the problem and the forces that make a decision necessary. What is the
-architectural challenge? Keep this factual and neutral, both proponents and opponents
+<Describe the problem and the forces that make a decision necessary. What is the 
+architectural challenge? Keep this factual and neutral, both proponents and opponents 
 of any option should recognize this description as accurate.>
 
 ## Decision Drivers

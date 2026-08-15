@@ -181,4 +181,4 @@ Bee delivers the above configurations as a findings report plus copy-paste snipp
 **Gotchas surfaced:**
 - `bat` on macOS is installed as `bat` (not `batcat` - that's Debian).
 - `eza --icons` requires a Nerd Font terminal; add `--no-icons` if icons render as boxes.
-- After installing zoxide, the `z` command
+- After installing zoxide, the `z` command 

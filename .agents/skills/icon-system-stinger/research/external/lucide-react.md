@@ -1,8 +1,8 @@
 # Lucide React: Research Note
 
-**Source type:** official-docs + GitHub releases
-**Authority:** high
-**Relevance:** high
+**Source type:** official-docs + GitHub releases  
+**Authority:** high  
+**Relevance:** high  
 **Topic:** Lucide React ESM exports, tree-shaking, 2026 API
 
 ## Key findings (2026)

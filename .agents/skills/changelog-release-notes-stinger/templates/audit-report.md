@@ -6,10 +6,10 @@
 
 ## Audit: [Product Name] Changelog
 
-**Audited by:** changelog-release-notes-worker-bee
-**Date:** [YYYY-MM-DD]
-**Changelog URL / path:** [URL or file path]
-**Entries reviewed:** [N] most recent entries (covering [date range])
+**Audited by:** changelog-release-notes-worker-bee  
+**Date:** [YYYY-MM-DD]  
+**Changelog URL / path:** [URL or file path]  
+**Entries reviewed:** [N] most recent entries (covering [date range])  
 **Time span:** [~N months]
 
 ---

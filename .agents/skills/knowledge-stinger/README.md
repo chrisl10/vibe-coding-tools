@@ -4,7 +4,7 @@ Companion skill to `library-stinger` for authoring **narrative knowledge documen
 
 ## Purpose
 
-`library-stinger` + `library-worker-bee` own PRDs, IRDs, and the documentation lifecycle.
+`library-stinger` + `library-worker-bee` own PRDs, IRDs, and the documentation lifecycle.  
 `knowledge-stinger` + `knowledge-worker-bee` own the knowledge/ domain - everything from system overviews to SQL schema references to coding standards.
 
 ## Directory map

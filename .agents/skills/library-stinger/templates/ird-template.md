@@ -29,15 +29,15 @@
      What is observed vs what is expected.
      Include reproduction steps if applicable. -->
 
-**Observed:**
+**Observed:** 
 
-**Expected:**
+**Expected:** 
 
 **Reproduction steps:**
 
-1.
-2.
-3.
+1. 
+2. 
+3. 
 
 ---
 
@@ -52,9 +52,9 @@
 <!-- Step-by-step approach. Cite specific files and line numbers where known.
      Keep scope to this one issue - no scope creep. -->
 
-1.
-2.
-3.
+1. 
+2. 
+3. 
 
 ---
 
@@ -71,7 +71,7 @@
 
 <!-- List every file this fix will modify. -->
 
--
+- 
 
 ---
 
@@ -79,7 +79,7 @@
 
 <!-- Explicitly list things this IRD does NOT fix to prevent scope creep. -->
 
--
+- 
 
 ---
 
@@ -87,4 +87,4 @@
 
 <!-- Link to related IRDs, PRDs, or knowledge docs. Use relative paths. -->
 
--
+- 

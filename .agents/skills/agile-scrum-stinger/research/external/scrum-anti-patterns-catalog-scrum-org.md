@@ -14,7 +14,7 @@ stinger: agile-scrum-stinger
 A canonical Scrum.org anti-patterns article by Stefan Wolpers identifying the ten most damaging Scrum dysfunctions. Although published 2021, confirmed current as of 2026: these patterns remain the community standard for Scrum dysfunction diagnosis. Authoritative because hosted on Scrum.org and cross-referenced by practitioners consistently.
 
 ## Key quotations / statistics
-- "#5 HIPPO-ism: The product creation process is at least partly driven by the beliefs of individuals of the higher management caste."
+- "#5 HIPPO-ism: The product creation process is at least partly driven by the beliefs of individuals of the higher management caste." 
 - "#7 Product Owner by Proxy: Your Product Owners do not represent a committee and are hence solely accountable for the maximization of value created on behalf of the customers. Nevertheless, in many organizations, stakeholders see Product Owners primarily as a tactical role, turning requirement documents into Jira tasks."
 - "#6 Hardening Sprint: A hardening Sprint is commonly a sign of a low grade of adoption of agile principles — the 'QA department' may still be a functional, non-agile silo."
 - "#1 No Product Vision, No Product Goal: If you don't know where you're going, any Product Backlog will get you there."

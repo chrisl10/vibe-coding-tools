@@ -110,4 +110,4 @@ Numbered for ordering. Read principles first; then the topic guide(s) the invoca
 
 ## When in doubt
 
-- **Unfamiliar provider?** Walk `guides/01-provider-choice-tree.md`; if the provider isn't covered, present the decision tree and recommend a
+- **Unfamiliar provider?** Walk `guides/01-provider-choice-tree.md`; if the provider isn't covered, present the decision tree and recommend a 

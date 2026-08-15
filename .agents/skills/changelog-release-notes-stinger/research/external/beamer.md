@@ -9,8 +9,8 @@ url: https://getbeamer.com
 
 # Source: Beamer
 
-**URL:** https://getbeamer.com
-**Category:** In-app changelog with engagement analytics and NPS
+**URL:** https://getbeamer.com  
+**Category:** In-app changelog with engagement analytics and NPS  
 **Why it matters:** Goes beyond pure changelog into user engagement: tracks who read what, measures NPS inline, supports user segmentation for targeted announcements.
 
 ## Feature set (as of 2026)

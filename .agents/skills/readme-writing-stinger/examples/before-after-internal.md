@@ -69,7 +69,7 @@ Talk to the platform team if something breaks.
 Syncs the production Deep Lake dataset to the downstream search index on a 15-minute cron schedule. Runs in
 the `infra-prod` namespace across all three environments (dev / staging / prod).
 
-**Owner:** Platform team, `#platform-eng` on Slack
+**Owner:** Platform team, `#platform-eng` on Slack  
 **On-call escalation:** PagerDuty → "Platform On-Call" rotation
 
 ---
@@ -95,7 +95,7 @@ npm install
 cp .env.example .env
 ```
 
-Fill in `.env` from the `data-sync-worker` item in **1Password > Platform** vault.
+Fill in `.env` from the `data-sync-worker` item in **1Password > Platform** vault.  
 Required keys: `DATASET_PATH`, `DATASET_TOKEN`, `SEARCH_INDEX_URL`, `SEARCH_INDEX_KEY`.
 
 ---

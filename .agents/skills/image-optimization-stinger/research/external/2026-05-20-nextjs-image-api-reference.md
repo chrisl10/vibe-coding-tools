@@ -33,7 +33,7 @@ module.exports = {
   images: {
     // Next.js 15.3.0+ (URL constructor syntax)
     remotePatterns: [new URL('https://example.com/account123/**')],
-
+    
     // Pre-15.3.0 (object syntax)
     remotePatterns: [{
       protocol: 'https',

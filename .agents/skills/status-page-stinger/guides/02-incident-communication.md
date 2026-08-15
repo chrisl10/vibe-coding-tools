@@ -47,7 +47,7 @@ When a P0/SEV0 or P1/SEV1 incident is declared, post an incident notice on the s
 ```
 **[INVESTIGATING] [Component name] - [One-line description]**
 
-We are aware of an issue affecting [component/feature]. [One sentence on observed impact: what users cannot do right now.]
+We are aware of an issue affecting [component/feature]. [One sentence on observed impact: what users cannot do right now.] 
 
 Our team is actively investigating. We will provide the next update by [TIME] [TIMEZONE].
 
@@ -67,7 +67,7 @@ Affected components: [list]
 ```
 **[IDENTIFIED] [Component name] - [One-line description]**
 
-**Update [HH:MM UTC]:** [One to two sentences on what was found and what is being done.]
+**Update [HH:MM UTC]:** [One to two sentences on what was found and what is being done.] 
 
 [Optional: workaround] If you need to [do X], you can [workaround Y] as a temporary measure.
 

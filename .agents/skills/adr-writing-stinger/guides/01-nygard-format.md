@@ -17,26 +17,26 @@ Date: YYYY-MM-DD
 
 ## Context
 
-<The forces at play: technical constraints, team size, time pressure, adjacent systems,
-regulatory requirements. Write this as "here is the situation we were in", not as
-justification for the decision. A reader who disagrees with the decision should still
+<The forces at play: technical constraints, team size, time pressure, adjacent systems, 
+regulatory requirements. Write this as "here is the situation we were in", not as 
+justification for the decision. A reader who disagrees with the decision should still 
 recognize this as an accurate description of the context.>
 
 ## Decision
 
-<The concrete choice made. Active voice, past tense. "We decided to fall back to BM25
-when embeddings are disabled." Not "BM25 should be used." Not "we plan to use."
+<The concrete choice made. Active voice, past tense. "We decided to fall back to BM25 
+when embeddings are disabled." Not "BM25 should be used." Not "we plan to use." 
 The decision is closed.>
 
 ## Consequences
 
-<The trade-offs accepted, positive, negative, and neutral. Be honest about the negatives;
-they are the most valuable part of this section. A future engineer considering a change
+<The trade-offs accepted, positive, negative, and neutral. Be honest about the negatives; 
+they are the most valuable part of this section. A future engineer considering a change 
 needs to know what was given up, not just what was gained.>
 
 ## Alternatives Considered
 
-<Each alternative that was seriously evaluated, with a brief explanation of why it was
+<Each alternative that was seriously evaluated, with a brief explanation of why it was 
 rejected. This section prevents "why didn't we just use X?" conversations six months later.>
 
 ### Alternative: <Name>

@@ -9,8 +9,8 @@ url: https://featurebase.app
 
 # Source: FeatureBase
 
-**URL:** https://featurebase.app
-**Category:** Feedback + changelog + roadmap platform
+**URL:** https://featurebase.app  
+**Category:** Feedback + changelog + roadmap platform  
 **Why it matters:** One of the most complete "customer communication" platforms; changelog is one component of a broader feedback loop including feature voting and roadmap.
 
 ## Feature set (as of 2026)
