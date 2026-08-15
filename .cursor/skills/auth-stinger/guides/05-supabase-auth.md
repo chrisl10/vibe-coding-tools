@@ -1,6 +1,6 @@
-# 05 — Supabase Auth
+# 05: Supabase Auth
 
-When already on Supabase. Pairs with Postgres Row-Level Security (RLS) — that's the lever.
+When already on Supabase. Pairs with Postgres Row-Level Security (RLS): that's the lever.
 
 Source: `research/2026-04-25-supabase-auth-and-rls.md`, https://supabase.com/docs/guides/auth.
 
@@ -12,9 +12,9 @@ Source: `research/2026-04-25-supabase-auth-and-rls.md`, https://supabase.com/doc
 
 ## When Supabase Auth loses
 
-- You're not on Supabase Postgres. Self-hosting GoTrue (Supabase Auth's underlying engine) outside Supabase Cloud is supported but uncommon — Better Auth or Auth.js is a smoother self-host path.
+- You're not on Supabase Postgres. Self-hosting GoTrue (Supabase Auth's underlying engine) outside Supabase Cloud is supported but uncommon; Better Auth or Auth.js is a smoother self-host path.
 - You need rich org / role models out of the box. Supabase Auth gives you JWT claims; org modeling is on you.
-- You need polished prebuilt UI past the Auth UI library — design-system custom forms work better.
+- You need polished prebuilt UI past the Auth UI library: design-system custom forms work better.
 
 ## Integration shape (Next.js App Router with `@supabase/ssr`)
 
@@ -55,7 +55,7 @@ export async function GET(req: Request) {
 }
 ```
 
-## RLS — the load-bearing piece
+## RLS: the load-bearing piece
 
 ```sql
 -- Enable on every tenant table.
@@ -70,7 +70,7 @@ create policy "users insert own posts" on public.posts
   for insert with check (auth.uid() = user_id);
 ```
 
-`auth.uid()` is the current Supabase user UUID, derived from the JWT. RLS enforces *at the database* — combined with middleware, this is the two-layer enforcement from `guides/00-principles.md` and `guides/09-rbac.md`.
+`auth.uid()` is the current Supabase user UUID, derived from the JWT. RLS enforces *at the database*; combined with middleware, this is the two-layer enforcement from `guides/00-principles.md` and `guides/09-rbac.md`.
 
 **Hand schema + RLS migration to `db-worker-bee`.** auth-worker-bee flags the requirement; db-worker-bee writes the SQL.
 
@@ -86,27 +86,27 @@ create policy "users read tenant posts" on public.posts
   );
 ```
 
-The `user_tenants` table is canonical. JWT custom claims can also encode tenant memberships — Supabase Auth Hooks let you inject a `tenants` claim at JWT issuance time, then test with `auth.jwt() ->> 'tenants' @> '["tenant-uuid"]'`.
+The `user_tenants` table is canonical. JWT custom claims can also encode tenant memberships: Supabase Auth Hooks let you inject a `tenants` claim at JWT issuance time, then test with `auth.jwt() ->> 'tenants' @> '["tenant-uuid"]'`.
 
 ## Critical config
 
-- **`NEXT_PUBLIC_SUPABASE_URL`** + **`NEXT_PUBLIC_SUPABASE_ANON_KEY`** — public; safe in client.
-- **`SUPABASE_SERVICE_ROLE_KEY`** — server-only; bypasses RLS. Never ship to the client. Use only in server routes that explicitly need to bypass RLS (admin tasks).
-- **Auth Hooks** (Pro tier) — modify JWTs at issuance. Use to add `tenants`, `roles` claims. Without Auth Hooks, fetch from `user_tenants` per-request.
-- **Email templates** — customize confirmation / recovery / magic-link emails in Supabase Dashboard. Default templates leak Supabase branding.
-- **Redirect URLs** — set in Dashboard → Auth → URL Configuration. Without these, OAuth and magic-link redirects fail closed.
+- **`NEXT_PUBLIC_SUPABASE_URL`** + **`NEXT_PUBLIC_SUPABASE_ANON_KEY`**: public; safe in client.
+- **`SUPABASE_SERVICE_ROLE_KEY`**: server-only; bypasses RLS. Never ship to the client. Use only in server routes that explicitly need to bypass RLS (admin tasks).
+- **Auth Hooks** (Pro tier): modify JWTs at issuance. Use to add `tenants`, `roles` claims. Without Auth Hooks, fetch from `user_tenants` per-request.
+- **Email templates**: customize confirmation / recovery / magic-link emails in Supabase Dashboard. Default templates leak Supabase branding.
+- **Redirect URLs**: set in Dashboard → Auth → URL Configuration. Without these, OAuth and magic-link redirects fail closed.
 
 ## Google OAuth via Supabase
 
-Configure in Dashboard → Auth → Providers → Google. Paste your own production Google OAuth `client_id` and `client_secret`. The Supabase callback URL is `https://<project>.supabase.co/auth/v1/callback` — register that as an authorized redirect URI in Google Cloud Console. The October 2025 unused-client-deletion policy applies — see `guides/06-google-oauth.md`.
+Configure in Dashboard → Auth → Providers → Google. Paste your own production Google OAuth `client_id` and `client_secret`. The Supabase callback URL is `https://<project>.supabase.co/auth/v1/callback`: register that as an authorized redirect URI in Google Cloud Console. The October 2025 unused-client-deletion policy applies: see `guides/06-google-oauth.md`.
 
 ## Common pitfalls
 
 - **Not enabling RLS** on a new table. Default is RLS-off, which means anon key + REST API exposes the table. Always: `alter table X enable row level security;` immediately on creation.
 - **Using `service_role` from the client.** Total bypass. Stops being a security boundary. Server-only.
-- **Trusting `auth.jwt() ->> 'email'`** — the `email` claim is from the IdP and may be unverified. Trust `auth.uid()` instead.
-- **Forgetting redirect URLs** — sign-in fails silently in prod with no clear error.
-- **Forgetting to verify the JWT on a custom backend** — if you have a non-Supabase backend reading Supabase JWTs, you must verify the signature against Supabase's JWKS.
+- **Trusting `auth.jwt() ->> 'email'`**: the `email` claim is from the IdP and may be unverified. Trust `auth.uid()` instead.
+- **Forgetting redirect URLs**: sign-in fails silently in prod with no clear error.
+- **Forgetting to verify the JWT on a custom backend**: if you have a non-Supabase backend reading Supabase JWTs, you must verify the signature against Supabase's JWKS.
 
 ## Audit handoff
 

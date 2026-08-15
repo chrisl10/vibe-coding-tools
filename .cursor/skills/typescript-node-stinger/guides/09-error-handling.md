@@ -1,5 +1,7 @@
 # 09 - Error Handling
 
+**Applies to both contexts.** "Narrow, surface, never swallow" is a general principle, not a Hivemind-specific one - a swallowed error in a SvelteKit `+page.server.ts` load function or form action is exactly as much a must-fix as a swallowed error in a Hivemind hook. The worked examples below are Hivemind-flavored; the discipline transfers directly.
+
 Hivemind runs inside an agent's lifecycle. A swallowed error here does not crash loudly - it silently drops a memory write or a capture, which is worse. The discipline is: narrow, surface, never swallow.
 
 ## The catch idiom

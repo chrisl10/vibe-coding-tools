@@ -1,4 +1,4 @@
-# Radix Dialog + AlertDialog — External Source Note
+# Radix Dialog + AlertDialog: External Source Note
 
 **Source:** https://www.radix-ui.com/primitives/docs/components/dialog
 **Source type:** external/primary
@@ -10,7 +10,7 @@
 
 ### Dialog vs AlertDialog
 - `Dialog` is for general content overlays (forms, detail panels, confirmations with low consequence).
-- `AlertDialog` is for destructive or irreversible actions — it forces the user to acknowledge by only providing action buttons (no backdrop dismiss, no Escape close by default).
+- `AlertDialog` is for destructive or irreversible actions: it forces the user to acknowledge by only providing action buttons (no backdrop dismiss, no Escape close by default).
 - Both use the same portal + focus trap infrastructure.
 
 ### API surface (2026 stable)

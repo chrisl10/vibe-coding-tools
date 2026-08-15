@@ -1,6 +1,6 @@
 ---
-name: icon-system-stinger
-description: Icon-system specialist for React/Next.js — library selection (Lucide, Heroicons, Tabler, Phosphor, Iconify), tree-shake-vs-SVG-sprite trade-off, dynamic-import-by-name pattern, custom SVG component authoring, and the accessibility contract (aria-hidden for decorative icons, aria-label for semantic icons, accessible name for icon buttons). Use when choosing an icon library, debugging bundle-size regressions from icon imports, wiring a dynamic icon loader, building a custom SVG wrapper, or auditing icon accessibility. Paired with `icon-system-worker-bee`.
+name: "icon-system-stinger"
+description: "Icon-system specialist for React/Next.js: library selection (Lucide, Heroicons, Tabler, Phosphor, Iconify), tree-shake-vs-SVG-sprite trade-off, dynamic-import-by-name pattern, custom SVG component authoring, and the accessibility contract (aria-hidden for decorative icons, aria-label for semantic icons, accessible name for icon buttons). Use when choosing an icon library, debugging bundle-size regressions from icon imports, wiring a dynamic icon loader, building a custom SVG wrapper, or auditing icon accessibility. Paired with `icon-system-worker-bee`."
 ---
 
 # icon-system Stinger
@@ -23,7 +23,7 @@ Load when `icon-system-worker-bee` is invoked. Typical triggers:
 
 Do NOT load for:
 
-- Icon size and color tokens (ux-ui-worker-bee owns those)
+- Icon size and color tokens (ux-ui-svelte-worker-bee owns those)
 - General React component architecture (react-worker-bee)
 - SVG sprite build-pipeline tooling at the bundler level (devops-worker-bee)
 - General bundle-optimization strategies beyond icon imports (devops-worker-bee)
@@ -32,8 +32,8 @@ Do NOT load for:
 
 ## First action when this stinger is loaded
 
-1. Read `guides/00-library-selection-matrix.md` — pick the right icon library first.
-2. Read `guides/01-tree-shake-vs-sprite.md` — choose the delivery strategy.
+1. Read `guides/00-library-selection-matrix.md`: pick the right icon library first.
+2. Read `guides/01-tree-shake-vs-sprite.md`: choose the delivery strategy.
 3. Read the per-task guide relevant to the request (02 through 04).
 4. Use `templates/icon-audit-report.md` to structure any output audit report.
 
@@ -144,4 +144,4 @@ icon-system-stinger/
 
 ---
 
-*Forged by stinger-forge from `icon-system-worker-bee-command-brief.md` and `research/`. Part of the Legion AI Tools Factory by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Forged by stinger-forge from `icon-system-worker-bee-command-brief.md` and `research/`. Part of The Hive by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

@@ -1,4 +1,4 @@
-# 05 — API Changelog Discipline
+# 05: API Changelog Discipline
 
 Writing API changelogs that keep consumers informed. Read `research/external/bump-sh-changelog-breaking-changes.md` before running this guide.
 
@@ -44,7 +44,7 @@ Returns the list of permissions for a specific user. No breaking changes.
 
 **Key rules:**
 1. Start with impact: who is affected and what breaks.
-2. Include migration steps — not just what changed, but how to fix it.
+2. Include migration steps: not just what changed, but how to fix it.
 3. Include a timeline when deprecating; never silently remove without warning.
 
 ## Semantic versioning for APIs

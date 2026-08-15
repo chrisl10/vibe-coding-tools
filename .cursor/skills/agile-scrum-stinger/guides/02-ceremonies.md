@@ -1,22 +1,22 @@
-# 02 — Ceremony Coaching
+# 02. Ceremony Coaching
 
 Per-ceremony coaching guide for all five Scrum events. Each section covers: purpose, duration formula, attendance, failure modes and repair moves, and diagnostic questions.
 
 ---
 
-## §1 — Sprint Planning
+## §1. Sprint Planning
 
 ### Purpose (Scrum Guide 2020)
 Establish the Sprint Goal (Why), select Backlog items (What), and plan how to create the Increment (How).
 
 ### Duration formula
-`Max 2 hours per Sprint week` — a 2-week Sprint gets 4 hours max; a 4-week Sprint gets 8 hours max.
+`Max 2 hours per Sprint week`: a 2-week Sprint gets 4 hours max; a 4-week Sprint gets 8 hours max.
 
 ### Attendance
 **Required:** Scrum Team (PO + SM + all Developers)
 **Optional:** SMEs the team invites
 
-### Sprint Goal — the most commonly missing output
+### Sprint Goal: the most commonly missing output
 The Sprint Goal is the single most commonly skipped output of Sprint Planning. Diagnostic questions:
 - "What business outcome are we creating this Sprint?"
 - "If a Developer's story fell apart mid-Sprint, would the Sprint still succeed?"
@@ -40,7 +40,7 @@ See `templates/sprint-planning-agenda.md`.
 
 ---
 
-## §2 — Daily Scrum
+## §2. Daily Scrum
 
 ### Purpose (Scrum Guide 2020)
 Developers plan their collaboration and inspect their progress toward the Sprint Goal. A 15-minute daily synchronization.
@@ -68,24 +68,24 @@ Alternative formats that work:
 | Runs long | Consistently >20 minutes | Strict hand signal for "this needs a separate conversation" |
 | Blocker venting session | 10+ minutes on a single blocker | Park the detail; SM books a follow-up with affected Developers only |
 | No Sprint Goal reference | No mention of Sprint Goal in a week of standups | Add "Are we on track for the Sprint Goal?" as standing first question |
-| Daily Scrum skipped | "We communicate on Slack anyway" | Not equivalent — async misses real-time coordination signals; re-establish habit |
+| Daily Scrum skipped | "We communicate on Slack anyway" | Not equivalent: async misses real-time coordination signals; re-establish habit |
 
 ---
 
-## §3 — Sprint Review
+## §3. Sprint Review
 
 ### Purpose (Scrum Guide 2020)
 Scrum Team and stakeholders inspect the Increment and adapt the Product Backlog. This is a collaborative working session, not a one-directional demo.
 
 ### Duration formula
-`Max 1 hour per Sprint week` — 2-week Sprint gets 2 hours max; 4-week Sprint gets 4 hours max.
+`Max 1 hour per Sprint week`: 2-week Sprint gets 2 hours max; 4-week Sprint gets 4 hours max.
 
 ### Attendance
 **Required:** Scrum Team + invited stakeholders
 **Without stakeholders:** The Sprint Review is a dry run, not a real review. Reschedule or note the gap.
 
 ### What may be reviewed
-Only **Done Increments** — items that meet the Definition of Done in full. Showing "almost done" or "95% done" work in Sprint Review is a common failure mode that erodes trust.
+Only **Done Increments**: items that meet the Definition of Done in full. Showing "almost done" or "95% done" work in Sprint Review is a common failure mode that erodes trust.
 
 ### Failure modes and repair moves
 
@@ -99,20 +99,20 @@ Only **Done Increments** — items that meet the Definition of Done in full. Sho
 
 ---
 
-## §4 — Sprint Retrospective
+## §4. Sprint Retrospective
 
 ### Purpose (Scrum Guide 2020)
-Inspect how the last Sprint went — people, interactions, processes, tools — and identify improvements to enact.
+Inspect how the last Sprint went (people, interactions, processes, tools) and identify improvements to enact.
 
 ### Duration formula
-`Max 45 minutes per Sprint week` — 2-week Sprint gets 90 minutes max; 4-week Sprint gets 3 hours max.
+`Max 45 minutes per Sprint week`: 2-week Sprint gets 90 minutes max; 4-week Sprint gets 3 hours max.
 
 ### Attendance
 **Required:** Scrum Team (all roles)
 **Stakeholders:** Do NOT attend (creates psychological safety risk)
 
 ### The action item rule
-Every Retrospective that produces no owned, time-boxed action items has failed. The output is not a list of feelings or themes — it is commitments to change behavior in the next Sprint.
+Every Retrospective that produces no owned, time-boxed action items has failed. The output is not a list of feelings or themes: it is commitments to change behavior in the next Sprint.
 
 **Required fields per action item:**
 - What: specific, measurable behavior change
@@ -125,7 +125,7 @@ See `templates/retrospective-formats.md` for:
 - 4Ls (Liked / Learned / Lacked / Longed For)
 - Sailboat (liked by teams that like metaphors)
 - Mad / Sad / Glad (useful when team morale needs explicit surfacing)
-- DAKI (Drop / Add / Keep / Improve — good for structural changes)
+- DAKI (Drop / Add / Keep / Improve, good for structural changes)
 - Starfish (useful when team is mature and wants granular improvement)
 
 ### Failure modes and repair moves
@@ -140,10 +140,10 @@ See `templates/retrospective-formats.md` for:
 
 ---
 
-## §5 — Backlog Refinement
+## §5. Backlog Refinement
 
 ### Important: NOT a formal Scrum event
-The Scrum Guide 2020 describes Backlog Refinement as an ongoing activity, not one of the five formal Scrum events. Teams that run a weekly "refinement meeting" are making a team decision. This is often a good decision — but it is not "required by Scrum."
+The Scrum Guide 2020 describes Backlog Refinement as an ongoing activity, not one of the five formal Scrum events. Teams that run a weekly "refinement meeting" are making a team decision. This is often a good decision, but it is not "required by Scrum."
 
 ### Purpose
 Add details, estimates (if used), and ordering to Product Backlog items so they are ready for future Sprint Planning sessions.
@@ -153,7 +153,7 @@ Community practice (not Scrum Guide) suggests spending approximately 10% of Spri
 
 ### Readiness criteria (useful heuristic, not normative)
 An item is "ready" for Sprint Planning when:
-- [ ] Title is specific (not "Fix bug" — "Fix null pointer in checkout flow when cart is empty")
+- [ ] Title is specific (not "Fix bug": "Fix null pointer in checkout flow when cart is empty")
 - [ ] Acceptance Criteria are written and agreed by PO + at least one Developer
 - [ ] Dependencies are identified
 - [ ] The team has a rough size estimate (if estimation is used)

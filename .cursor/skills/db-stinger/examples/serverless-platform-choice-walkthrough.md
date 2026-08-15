@@ -1,4 +1,4 @@
-# Worked Example — Serverless Platform Choice Walkthrough
+# Worked Example: Serverless Platform Choice Walkthrough
 
 A full platform-choice walkthrough for a hypothetical SaaS workload. Source: `guides/08-serverless-platforms.md`, `research/2026-04-25-serverless-platforms-comparison.md`.
 
@@ -57,7 +57,7 @@ Both Supabase and Neon are reasonable. Decisive factors:
 
 **Primary: Supabase** for these reasons:
 1. **Auth + RLS in one platform** halves the team's surface area. With 5 engineers, one fewer service to operate is real value.
-2. **Storage included** — user uploads have no separate vendor.
+2. **Storage included**: user uploads have no separate vendor.
 3. **Realtime + Edge Functions** are bonuses for future features (live cursors on tasks; webhook handlers).
 
 **Backup: Neon + Clerk + R2**, accepted if:
@@ -66,10 +66,10 @@ Both Supabase and Neon are reasonable. Decisive factors:
 - Idle cost becomes a primary concern (scale-to-zero on Neon vs always-on on Supabase).
 
 **Not recommended:**
-- **Turso** — write throughput on the project-tracking workload is too high for SQLite's single-writer model.
-- **CockroachDB** — workload doesn't justify the latency hit; geo distribution overkill.
-- **PlanetScale** — would force MySQL onto a TypeScript team that wants Postgres features (`jsonb`, `pgvector`, `EXCLUDE` constraints).
-- **Tiger Data** — paying for TimescaleDB they won't use.
+- **Turso**: write throughput on the project-tracking workload is too high for SQLite's single-writer model.
+- **CockroachDB**: workload doesn't justify the latency hit; geo distribution overkill.
+- **PlanetScale**: would force MySQL onto a TypeScript team that wants Postgres features (`jsonb`, `pgvector`, `EXCLUDE` constraints).
+- **Tiger Data**: paying for TimescaleDB they won't use.
 
 ## Migration story for the Q3 RAG feature
 
@@ -82,7 +82,7 @@ ALTER TABLE documents ADD COLUMN embedding vector(1536);
 CREATE INDEX ON documents USING hnsw (embedding vector_cosine_ops);
 ```
 
-Supabase has `pgvector` available out-of-the-box. db-worker-bee picks the index family (`hnsw`) and the column type (`vector(1536)` for OpenAI `text-embedding-3-small`); **`ai-platform-worker-bee` owns retrieval, chunking, top-k, and reranking**.
+Supabase has `pgvector` available out-of-the-box. db-worker-bee picks the index family (`hnsw`) and the column type (`vector(1536)` for OpenAI `text-embedding-3-small`); **`mind-worker-bee` owns retrieval, chunking, top-k, and reranking**.
 
 ## Connection pooling
 
@@ -99,7 +99,7 @@ Decision: **Supabase**. Revisit at 12-month mark if:
 
 - `guides/08-serverless-platforms.md`.
 - `research/2026-04-25-serverless-platforms-comparison.md`.
-- `templates/ADR.md` — wrap this walkthrough as an ADR for the team to ratify.
+- `templates/ADR.md`: wrap this walkthrough as an ADR for the team to ratify.
 
 ---
 

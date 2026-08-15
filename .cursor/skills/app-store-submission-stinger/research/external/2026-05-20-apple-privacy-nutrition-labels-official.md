@@ -26,6 +26,6 @@ Apple's canonical page on App Store privacy nutrition labels. Explains the oblig
 
 ## Annotations for stinger-forge
 - The four optional-disclosure criteria are the most important decision gate in the compliance checklist. Stinger-forge should embed them as a checklist: if even ONE criterion is not met, the data type MUST be declared.
-- The ability to update privacy label answers without an app update is a frequently missed operational fact — important for the post-launch update cadence guide.
+- The ability to update privacy label answers without an app update is a frequently missed operational fact: important for the post-launch update cadence guide.
 - The requirement to include third-party SDK data practices is where most developers get tripped up. Stinger-forge should recommend auditing every SDK's privacy manifest before first submission.
 - Cross-reference with the PrivacyInfo.xcprivacy technical note for the binary-level enforcement layer.

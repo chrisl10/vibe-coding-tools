@@ -4,8 +4,8 @@ Deterministic audit scripts that mind-worker-bee runs to surface findings withou
 
 | Script | Purpose | Exit code |
 |---|---|---|
-| `audit-untraced-llm-calls.ts` | Static AST scan — find LLM calls not wrapped in `traceAICall()` | # must-fix findings |
-| `audit-tenant-id-filters.ts` | Static AST scan — find Qdrant queries without `tenant_id` filter | # findings |
+| `audit-untraced-llm-calls.ts` | Static AST scan: find LLM calls not wrapped in `traceAICall()` | # must-fix findings |
+| `audit-tenant-id-filters.ts` | Static AST scan: find Qdrant queries without `tenant_id` filter | # findings |
 | `coach-routing-audit.ts` | Pull `AiTrace` rows, compute routing accuracy per coach, flag below 90% | # coaches flagged |
 | `retrieval-precision-snapshot.ts` | Pull `AiTrace.retrievalScore` distribution, flag sustained < 0.4 | 1 if alert, else 0 |
 
@@ -15,13 +15,13 @@ All scripts run with `pnpm tsx`:
 
 ```bash
 # Static audits — local, fast
-pnpm tsx .cursor/skills/mind-stinger/scripts/audit-untraced-llm-calls.ts api/src
-pnpm tsx .cursor/skills/mind-stinger/scripts/audit-tenant-id-filters.ts api/src
+pnpm tsx .claude/skills/mind-stinger/scripts/audit-untraced-llm-calls.ts api/src
+pnpm tsx .claude/skills/mind-stinger/scripts/audit-tenant-id-filters.ts api/src
 
 # Operational audits — DB access required
-pnpm tsx .cursor/skills/mind-stinger/scripts/coach-routing-audit.ts \
+pnpm tsx .claude/skills/mind-stinger/scripts/coach-routing-audit.ts \
   --tenantId=<id> --window=7d
-pnpm tsx .cursor/skills/mind-stinger/scripts/retrieval-precision-snapshot.ts \
+pnpm tsx .claude/skills/mind-stinger/scripts/retrieval-precision-snapshot.ts \
   --tenantId=<id> --window=7d
 ```
 
@@ -33,8 +33,8 @@ The static scripts are CI-safe (no DB access). Recommended:
 
 ```yaml
 # .github/workflows/mind-audit.yml
-- run: pnpm tsx .cursor/skills/mind-stinger/scripts/audit-untraced-llm-calls.ts api/src
-- run: pnpm tsx .cursor/skills/mind-stinger/scripts/audit-tenant-id-filters.ts api/src
+- run: pnpm tsx .claude/skills/mind-stinger/scripts/audit-untraced-llm-calls.ts api/src
+- run: pnpm tsx .claude/skills/mind-stinger/scripts/audit-tenant-id-filters.ts api/src
 ```
 
 Failing exit code → must-fix findings → blocks merge.
@@ -43,13 +43,13 @@ The operational scripts are best run as a weekly cron, with output posted to a S
 
 ## What the scripts DON'T cover
 
-- **Rerank skipping** — requires runtime tracing of `cohere-client.rerank()` calls.
-- **Coach persona drift** — needs a live comparison of `AiCoachConfig.systemPrompt` (DB) vs Valkey-cached value.
-- **`temperature` / `max_tokens` drift** — partial coverage (literal-detection in source) but tunable values from `getAIConfig()` need runtime inspection.
-- **Sycophancy creep** — already auto-computed by `computeAgreementRate()` and stored in `AiTrace.agreementScore`; reporting goes through `retrieval-precision-snapshot.ts` pattern (a similar script could be added).
-- **`PromptVersion` audit-on-change** — best done by code review, not static scan.
+- **Rerank skipping**: requires runtime tracing of `cohere-client.rerank()` calls.
+- **Coach persona drift**: needs a live comparison of `AiCoachConfig.systemPrompt` (DB) vs Valkey-cached value.
+- **`temperature` / `max_tokens` drift**: partial coverage (literal-detection in source) but tunable values from `getAIConfig()` need runtime inspection.
+- **Sycophancy creep**: already auto-computed by `computeAgreementRate()` and stored in `AiTrace.agreementScore`; reporting goes through `retrieval-precision-snapshot.ts` pattern (a similar script could be added).
+- **`PromptVersion` audit-on-change**: best done by code review, not static scan.
 
-These gaps are intentional — the scripts cover the highest-leverage deterministic checks, not everything.
+These gaps are intentional: the scripts cover the highest-leverage deterministic checks, not everything.
 
 ## Adding a new script
 

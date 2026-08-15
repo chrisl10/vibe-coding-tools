@@ -1,6 +1,6 @@
 ---
-name: quality-stinger
-description: Audits a completed implementation against its source plan document and produces a structured findings report. The report goes in the source plan's `reports/` subfolder (e.g., `library/requirements/features/feature-<###>-<title>/reports/<date>-qa-report.md` or `library/requirements/issues/issue-<###>-<title>/reports/<date>-qa-report.md`); standalone audits go to `library/qa/<domain>/<date>-qa-report.md`. Use when the user says "QA this", "audit the implementation", "check the plan against the code", "run quality-worker-bee", "verify the PRD was built", or when `security-worker-bee` has just finished and the loop ends with a QA pass before merge. Produces a markdown findings report with scorecard, severity-tagged findings, and a plan-item traceability table. Does not write code, fix issues, or author plans.
+name: "quality-stinger"
+description: "Audits a completed implementation against its source plan document and produces a structured findings report. The report goes in the source plan's `reports/` subfolder (e.g., `library/requirements/<lifecycle>/prd-{###}-{title}/reports/{date}-qa-report.md` or `library/issues/<lifecycle>/ird-{###}-{title}/reports/{date}-qa-report.md`); standalone audits go to `library/requirements/reports/{domain}/{date}-qa-report.md`. Use when the user says \\\\\\\"QA this\\\\\\\", \\\\\\\"audit the implementation\\\\\\\", \\\\\\\"check the plan against the code\\\\\\\", \\\\\\\"run quality-worker-bee\\\\\\\", \\\\\\\"verify the PRD was built\\\\\\\", or when `security-worker-bee` has just finished and the loop ends with a QA pass before merge. Produces a markdown findings report with scorecard, severity-tagged findings, and a plan-item traceability table. Does not write code, fix issues, or author plans."
 license: MIT
 ---
 
@@ -63,9 +63,9 @@ These are absolute. See `guides/00-principles.md` for the rationale behind each.
 
 A markdown report at one of:
 
-- `library/requirements/features/feature-<###>-<title>/reports/<date>-qa-report.md` (feature audits)
-- `library/requirements/issues/issue-<###>-<title>/reports/<date>-qa-report.md` (issue audits)
-- `library/qa/<domain>/<date>-qa-report.md` (standalone audits with no source plan)
+- `library/requirements/<lifecycle>/prd-<###>-<title>/reports/<date>-qa-report.md` (feature audits)
+- `library/issues/<lifecycle>/ird-<###>-<title>/reports/<date>-qa-report.md` (issue audits)
+- `library/requirements/reports/<domain>/<date>-qa-report.md` (standalone audits with no source plan)
 
 with these sections, in order:
 
@@ -106,8 +106,8 @@ Read these before producing your first report. They show the voice, depth, and s
 
 ## Report archive
 
-Per-stinger `reports/` has been retired. The teaching set (happy-path, blocker-heavy, ordering-violation) lives in [`examples/`](examples/). Real audit reports are written to the source plan's `reports/` subfolder under `library/requirements/`, or to `library/qa/<domain>/` for standalone audits.
+Per-stinger `reports/` has been retired. The teaching set (happy-path, blocker-heavy, ordering-violation) lives in [`examples/`](examples/). Real audit reports are written to the source plan's `reports/` subfolder under `library/requirements/`, or to `library/requirements/reports/<domain>/` for standalone audits.
 
 ---
 
-Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).
+Part of The Hive, curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).

@@ -1,4 +1,4 @@
-# FOWT Prevention — dark-mode-theming-stinger
+# FOWT Prevention: dark-mode-theming-stinger
 
 *Covers: blocking inline script strategy, App Router placement, Pages Router placement, CSP nonce, CDN caching edge cases.*
 
@@ -11,7 +11,7 @@
 FOWT (flash-of-wrong-theme) occurs because:
 
 1. The server renders HTML without knowing the user's theme preference
-2. The browser paints the HTML (wrong theme — usually light)
+2. The browser paints the HTML (wrong theme, usually light)
 3. JavaScript loads, reads `localStorage`, and applies the dark class
 4. The browser repaints (correct theme)
 
@@ -39,7 +39,7 @@ If you see FOWT with `next-themes` installed, the root cause is usually:
 
 1. Open Chrome DevTools → Performance tab → Record a page load
 2. Look for a repaint triggered by a class change on `<html>` after the first paint
-3. If present, FOWT is still occurring — check script injection timing
+3. If present, FOWT is still occurring: check script injection timing
 
 Quick visual test: throttle CPU to 4x slowdown in DevTools and do a hard refresh. If you see a white flash before the dark theme appears, FOWT is present.
 
@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
 
 `next-themes` injects the script as a sibling to `<body>` inside `<html>`. Placing `ThemeProvider` here ensures the script is early in the document.
 
-**Do NOT place `ThemeProvider` deep in the component tree** (e.g., inside a `<main>` wrapper or a specific page layout) — the script will arrive too late.
+**Do NOT place `ThemeProvider` deep in the component tree** (e.g., inside a `<main>` wrapper or a specific page layout): the script will arrive too late.
 
 ---
 
@@ -130,7 +130,7 @@ export function Providers({ children, nonce }: { children: React.ReactNode; nonc
 
 The nonce must be generated per-request in middleware and set as a response header (`x-nonce`).
 
-> TODO: open question — CSP nonce integration with `next-themes` inline script requires middleware-level nonce injection. Confirm with `security-worker-bee` before implementing in production.
+> TODO: open question, CSP nonce integration with `next-themes` inline script requires middleware-level nonce injection. Confirm with `security-worker-bee` before implementing in production.
 
 ---
 

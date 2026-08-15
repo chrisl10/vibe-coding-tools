@@ -1,4 +1,4 @@
-# Scripts — db-stinger
+# Scripts: db-stinger
 
 Deterministic helpers for db-worker-bee. Run by the Bee during audits; humans can run them too.
 
@@ -17,9 +17,9 @@ Reads `$DATABASE_URL` or defaults to local socket. Output: the plan + a checklis
 
 Three audits in one file:
 
-1. **FK columns without an index** — must-fix. Postgres does not auto-create FK indexes.
-2. **Redundant indexes** — should-refactor. `(a)` is redundant when `(a, b)` exists.
-3. **Unused indexes** — should-refactor (verify the stats window covers a full quarter before dropping).
+1. **FK columns without an index**: must-fix. Postgres does not auto-create FK indexes.
+2. **Redundant indexes**: should-refactor. `(a)` is redundant when `(a, b)` exists.
+3. **Unused indexes**: should-refactor (verify the stats window covers a full quarter before dropping).
 
 ```bash
 psql "$DATABASE_URL" -f audit-missing-indexes.sql
@@ -37,13 +37,13 @@ psql "$DATABASE_URL" -f bloat-check.sql
 
 Thresholds:
 - < 20%: healthy.
-- 20–50%: investigate; tune autovacuum.
+- 20-50%: investigate; tune autovacuum.
 - > 50%: fire.
 
 Source: `guides/05-performance-pooling.md`.
 
 ## Conventions
 
-- All scripts are read-only — they never mutate data or schema.
+- All scripts are read-only: they never mutate data or schema.
 - All scripts read connection from `$DATABASE_URL` (Postgres URI format).
 - All scripts cite their source guide in a comment header.

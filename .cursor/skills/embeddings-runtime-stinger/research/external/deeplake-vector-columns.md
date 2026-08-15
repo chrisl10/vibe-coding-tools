@@ -18,4 +18,4 @@
 - The `FLOAT4[]` column width is the hard constraint the embedding model must satisfy: 768, always, unless a schema migration is undertaken.
 - The `<#>` cosine path is why q8 quantization is acceptable; cosine recall is robust to small quantization error.
 - The hybrid record path means turning embeddings on is additive, which supports framing the on/off decision as "add semantic lift on top of lexical," not "switch recall engines."
-- Resizing a `FLOAT4[]` column is the deeplake-dataset schema-heal job; this stinger triggers it but does not execute it.
+- Resizing a `FLOAT4[]` column is the vector-store schema-heal job; this stinger triggers it but does not execute it.

@@ -1,4 +1,4 @@
-# 07 — REST vs RPC
+# 07. REST vs RPC
 
 Fielding's constraints, HATEOAS, versioning strategies, and the honest taxonomy of "REST" APIs.
 

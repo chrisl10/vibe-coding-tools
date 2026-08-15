@@ -81,7 +81,7 @@ For each data type collected:
 
 - [ ] Data Safety form declarations match app's privacy policy
 - [ ] Data Safety form declarations match what APK/AAB actually transmits (run network trace to verify)
-- [ ] No data types omitted because "we don't think users care" — declare everything
+- [ ] No data types omitted because "we don't think users care": declare everything
 
 ---
 

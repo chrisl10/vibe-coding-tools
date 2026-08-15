@@ -1,4 +1,4 @@
-# Reports — ai-coding-tools-stinger
+# Reports: ai-coding-tools-stinger
 
 This folder collects past recommendation audits and periodic refresh notes produced by `ai-coding-tools-worker-bee`.
 

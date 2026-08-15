@@ -6,4 +6,4 @@ This stinger encodes production-ready guidance for: CSV and XLSX parsing (papapa
 
 **Command Brief:** `ai-tools/command-briefs/csv-xlsx-import-export-worker-bee-command-brief.md`
 
-**Research Summary:** `ai-tools/skills/csv-xlsx-import-export-stinger/research/research-summary.md` (34 sources, depth: normal, date: 2026-05-20)
+**Research Summary:** `.claude/skills/csv-xlsx-import-export-stinger/research/research-summary.md` (34 sources, depth: normal, date: 2026-05-20)

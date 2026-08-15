@@ -4,10 +4,10 @@ This folder accumulates durable recommendation and audit reports produced by `em
 
 ## Report types
 
-- **On/off decision reports** - dated recommendations on whether to enable embeddings for a given workload, following the reasoning in `guides/05-embeddings-vs-bm25.md`.
-- **Model swap reports** - recorded model-swap decisions following `templates/embedding-model-swap-plan.md`.
-- **Dim migration reports** - completed dimension-change records following `templates/dim-migration-checklist.md`, noting the schema-heal handoff.
-- **Runtime audit reports** - review of an existing embeddings setup against the stinger's severity rubric (must-fix / should-refactor / style): dim/schema agreement, warmup discipline, batching, quantization choice.
+- **Provider/runtime selection reports** - dated recommendations on hosted provider vs self-hosted (see `guides/00-selection-matrix.md`), or on whether to enable embeddings for a given workload at all (see `guides/local-daemon-05-embeddings-vs-bm25.md` for the Hivemind-specific worked version of that question).
+- **Model swap reports** - recorded model or provider swap decisions following `templates/embedding-model-swap-plan.md`.
+- **Dim migration reports** - completed dimension-change records following `templates/dim-migration-checklist.md`, noting the schema-heal or column-migration handoff to `vector-store-worker-bee`.
+- **Runtime audit reports** - review of an existing embeddings setup against the stinger's severity rubric (must-fix / should-refactor / style): dim/schema agreement, `input_type` discipline (hosted), batching, caching, warmup discipline, quantization choice.
 
 ## Naming convention
 

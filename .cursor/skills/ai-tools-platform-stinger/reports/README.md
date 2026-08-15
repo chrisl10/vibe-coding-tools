@@ -1,13 +1,13 @@
-# Reports — ai-tools-platform-stinger
+# Reports: ai-tools-platform-stinger
 
 This folder accumulates durable recommendation and audit reports produced by `ai-tools-platform-worker-bee`.
 
 ## Report types
 
-- **Provider selection reports** — dated recommendations for a project's AI provider stack, following `templates/provider-comparison.md`.
-- **Cost estimate reports** — monthly AI spend projections following `templates/cost-estimate.md`.
-- **Stack audit reports** — review of an existing AI tooling setup against the stinger's severity rubric (must-fix / should-refactor / style).
-- **MCP toolbox audits** — inventory of installed MCP servers and recommendations for additions or removals.
+- **Provider selection reports**: dated recommendations for a project's AI provider stack, following `templates/provider-comparison.md`.
+- **Cost estimate reports**: monthly AI spend projections following `templates/cost-estimate.md`.
+- **Stack audit reports**: review of an existing AI tooling setup against the stinger's severity rubric (must-fix / should-refactor / style).
+- **MCP toolbox audits**: inventory of installed MCP servers and recommendations for additions or removals.
 
 ## Naming convention
 

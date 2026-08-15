@@ -1,10 +1,10 @@
-# 02 — Status Codes
+# 02. Status Codes
 
 Honesty audit guide. Every status code is a semantic contract with the client, caches, and monitoring systems. Lying with status codes is a first-class bug.
 
 ---
 
-## 2xx — Success
+## 2xx: Success
 
 ### 200 OK
 - The request succeeded and the response body contains the result.
@@ -29,7 +29,7 @@ Honesty audit guide. Every status code is a semantic contract with the client, c
 
 ---
 
-## 3xx — Redirection
+## 3xx: Redirection
 
 ### 301 Moved Permanently
 - The resource has permanently moved. The method MAY change to GET on redirect (RFC 9110 allows it; historically browsers change POST to GET). Cache the redirect indefinitely.
@@ -60,7 +60,7 @@ Honesty audit guide. Every status code is a semantic contract with the client, c
 
 ---
 
-## 4xx — Client Error
+## 4xx: Client Error
 
 ### 400 Bad Request
 - The request is malformed and cannot be processed. Use for syntactically invalid input (invalid JSON, missing required fields, schema validation failures when you can't distinguish validation from business logic).
@@ -100,7 +100,7 @@ Honesty audit guide. Every status code is a semantic contract with the client, c
 
 ---
 
-## 5xx — Server Error
+## 5xx: Server Error
 
 ### 500 Internal Server Error
 - Catch-all for unhandled server-side exceptions. Never return 500 for client errors; use 4xx.
@@ -116,7 +116,7 @@ Honesty audit guide. Every status code is a semantic contract with the client, c
 
 ---
 
-## RFC 9457 — Problem Details (`application/problem+json`)
+## RFC 9457: Problem Details (`application/problem+json`)
 
 For any 4xx or 5xx response with a body, use the Problem Details format (RFC 9457, superseding RFC 7807):
 

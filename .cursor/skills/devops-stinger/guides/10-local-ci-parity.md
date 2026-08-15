@@ -1,10 +1,10 @@
-# 10 — Local-CI parity
+# 10: Local-CI parity
 
 The only sustainable answer to "works on my machine" is "the same recipe runs locally and in CI". Source: `research/2026-04-25-docker-bake-hcl.md`.
 
 ---
 
-## 1. Docker Bake (HCL) — the shared definition
+## 1. Docker Bake (HCL): the shared definition
 
 `docker-bake.hcl` defines build targets once. Both local devs and CI invoke the same targets:
 
@@ -172,9 +172,9 @@ ci: fmt build test scan
 	@echo "CI-equivalent checks passed"
 ```
 
-A dev who runs `make ci` and gets green should expect a green PR build. If the PR build fails, the diff between `make ci` locally and CI is the bug — fix it in the Bake file, the Makefile, or the workflow.
+A dev who runs `make ci` and gets green should expect a green PR build. If the PR build fails, the diff between `make ci` locally and CI is the bug: fix it in the Bake file, the Makefile, or the workflow.
 
-## 7. Environment variables — `.env` discipline
+## 7. Environment variables: `.env` discipline
 
 Local: `.env` (gitignored) populates `process.env`.
 CI: secrets injected via `env:` block on the step (mapped from OIDC or repo secrets).
@@ -189,11 +189,11 @@ For Compose, `.env` populates `${VAR}` interpolation. For Bake, `--set` or env v
 |---|---|---|
 | `Dockerfile.dev` and `Dockerfile.prod` separate files (drift) | Should-refactor | Single Dockerfile with `--target` stages |
 | CI runs `docker build -t ... .` (no Bake), local devs run a Makefile | Should-refactor | Bake + Make wrapping Bake |
-| No `.env.example` — onboarding requires asking around | Style | Commit `.env.example` |
+| No `.env.example`, onboarding requires asking around | Style | Commit `.env.example` |
 | Per-developer scripts in `scripts/dev/` that aren't tested in CI | Should-refactor | Promote to `Makefile` targets, run `make ci` in CI |
 
 ## See also
 
-- `guides/07-depot-integration.md` — Depot Bake integration.
-- `guides/03-compose-for-dev.md` — Compose patterns.
-- `templates/docker-bake.hcl` — canonical Bake file.
+- `guides/07-depot-integration.md`: Depot Bake integration.
+- `guides/03-compose-for-dev.md`: Compose patterns.
+- `templates/docker-bake.hcl`: canonical Bake file.

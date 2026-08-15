@@ -1,4 +1,4 @@
-# 04 — Data Layer
+# 04: Data Layer
 
 Sources: `research/2026-04-24-bulletproof-react-api-layer.md`, `research/2026-04-24-data-layer-tanstack-query-vs-rsc.md`.
 
@@ -18,7 +18,7 @@ Before writing a fetch, ask:
 
 ## The 3-part request declaration
 
-Every request — in any of the strategies above — is declared in three parts, colocated:
+Every request (in any of the strategies above) is declared in three parts, colocated:
 
 ```ts
 // src/features/discussions/api/get-discussions.ts
@@ -48,9 +48,9 @@ export function useDiscussions() {
 
 Three parts:
 
-1. **Types + Zod schema** — the contract.
-2. **Fetcher** — uses the single shared `api` client. Can be called from RSC, route loaders, prefetch, tests.
-3. **Hook** — the component-facing API. Wraps the fetcher in `useQuery` / `useMutation`.
+1. **Types + Zod schema**: the contract.
+2. **Fetcher**: uses the single shared `api` client. Can be called from RSC, route loaders, prefetch, tests.
+3. **Hook**: the component-facing API. Wraps the fetcher in `useQuery` / `useMutation`.
 
 Source: `research/2026-04-24-bulletproof-react-api-layer.md`.
 
@@ -112,11 +112,11 @@ return (
 
 ## Common findings
 
-> **[Must-fix]** `src/features/posts/PostCard.tsx:12` — `fetch('/api/author/' + authorId)` inside a leaf component. Creates N+1 waterfall and un-cached requests. Lift to parent hook or RSC. See `guides/04-data-layer.md §the-3-part-request-declaration`.
+> **[Must-fix]** `src/features/posts/PostCard.tsx:12`: `fetch('/api/author/' + authorId)` inside a leaf component. Creates N+1 waterfall and un-cached requests. Lift to parent hook or RSC. See `guides/04-data-layer.md §the-3-part-request-declaration`.
 
-> **[Must-fix]** `src/hooks/usePosts.ts:1` — fetches with raw `fetch`; response typed as `Post[]` without parsing. Parse with Zod at the boundary. See `guides/09-typescript-patterns.md §zod-at-boundary`.
+> **[Must-fix]** `src/hooks/usePosts.ts:1`: fetches with raw `fetch`; response typed as `Post[]` without parsing. Parse with Zod at the boundary. See `guides/09-typescript-patterns.md §zod-at-boundary`.
 
-> **[Should-refactor]** `src/stores/posts-store.ts:5` — posts cache maintained in Zustand manually. Migrate to TanStack Query. See `guides/03-state-management.md §layer-3`.
+> **[Should-refactor]** `src/stores/posts-store.ts:5`: posts cache maintained in Zustand manually. Migrate to TanStack Query. See `guides/03-state-management.md §layer-3`.
 
 ## Example in action
 

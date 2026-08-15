@@ -2,7 +2,7 @@
 
 **Sources:** `research/external/2026-05-20-block-kit-modals.md`, `research/external/2026-05-20-slash-commands-interactive.md`
 
-> TODO: open question — verify the Block Kit component list against `https://docs.slack.dev/reference/block-kit/blocks` at the time of each app submission. Slack has not published deprecation notices for Block Kit components in the 6-month research window (Nov 2025 - May 2026), but the inventory may change.
+> TODO: open question, verify the Block Kit component list against `https://docs.slack.dev/reference/block-kit/blocks` at the time of each app submission. Slack has not published deprecation notices for Block Kit components in the 6-month research window (Nov 2025 - May 2026), but the inventory may change.
 
 ---
 
@@ -146,8 +146,8 @@ Use `"type": "mrkdwn"` in text objects to enable formatting. `"type": "plain_tex
 
 ## Common gotchas
 
-1. **`input` blocks only work inside modals and Home tabs** — not in regular messages. For interactive data collection in a message, use `actions` blocks with a modal flow instead.
-2. **`actions` blocks inside modals** do not trigger `view_submission` — only `input` blocks feed into the submission payload. Use `actions` in modals only for navigation (open/push other views), not for data collection.
+1. **`input` blocks only work inside modals and Home tabs**: not in regular messages. For interactive data collection in a message, use `actions` blocks with a modal flow instead.
+2. **`actions` blocks inside modals** do not trigger `view_submission`: only `input` blocks feed into the submission payload. Use `actions` in modals only for navigation (open/push other views), not for data collection.
 3. **`block_id` collisions** cause silent rendering failures. Always use unique, namespaced IDs.
 4. **`button` in `actions` with no `action_id`** will fire but cannot be routed to a handler. Always set `action_id` on every interactive element.
 

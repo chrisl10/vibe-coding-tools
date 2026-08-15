@@ -51,12 +51,12 @@ Published 2025-07-04. RetroFlow's remote retro guide broadens the async coverage
 - "Remote teams that use structured retrospective formats report 28% higher engagement (Scrum.org)."
 - "For teams spanning more than 6 time zones, async retrospectives often work better than forcing live meetings."
 - "Nothing kills engagement like feeling unheard. Always: review action items from last retro, celebrate completed improvements, show the before-and-after of changes."
-- On hybrid: "Async collection (24-48 hours) — Everyone adds items; Sync discussion (30-45 min call) — Discuss and prioritize together; Async action items — Document and assign after the call."
+- On hybrid: "Async collection (24-48 hours) (Everyone adds items; Sync discussion (30-45 min call)) Discuss and prioritize together; Async action items — Document and assign after the call."
 
 ## Annotations for stinger-forge
 
-- This source provides the synchronous remote layer that the pure async guide doesn't cover — stinger-forge should reference both in `guides/05-async-retro.md`.
+- This source provides the synchronous remote layer that the pure async guide doesn't cover: stinger-forge should reference both in `guides/05-async-retro.md`.
 - The Monday-to-Friday weekly cadence timeline is a practical template stinger-forge can embed directly in `guides/05-async-retro.md`.
-- "Show impact" principle (review last retro's action items, celebrate completions) reinforces the accountability loop — reference in both `guides/04-action-items.md` and `guides/05-async-retro.md`.
-- The remote-specific format table (with "why it works remotely" column) is a valuable addition to `guides/01-formats.md` — add an "async/remote" column to the format matrix.
+- "Show impact" principle (review last retro's action items, celebrate completions) reinforces the accountability loop: reference in both `guides/04-action-items.md` and `guides/05-async-retro.md`.
+- The remote-specific format table (with "why it works remotely" column) is a valuable addition to `guides/01-formats.md`: add an "async/remote" column to the format matrix.
 - Complements the distributed team scheduling guidance; stinger-forge should handle timezone spread as a first-class input in the format selection logic.

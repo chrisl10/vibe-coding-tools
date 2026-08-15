@@ -6,7 +6,7 @@
 
 ## What a component tree is
 
-A status page component tree is the public map of your service's health. Every component on the page represents a unit of service that users and paying customers care about. The goal is not to show your internal architecture — it is to show the status of the things your customers are paying for.
+A status page component tree is the public map of your service's health. Every component on the page represents a unit of service that users and paying customers care about. The goal is not to show your internal architecture; it is to show the status of the things your customers are paying for.
 
 ---
 
@@ -43,7 +43,7 @@ Group components by the answer to the question "which users care about this comp
 
 **Anti-patterns to avoid:**
 - Internal team grouping (users do not know or care which team owns which microservice)
-- Technical infrastructure grouping ("Database cluster", "Message queue") — users cannot translate these to their experience
+- Technical infrastructure grouping ("Database cluster", "Message queue"): users cannot translate these to their experience
 - Single mega-group with 30+ sub-components (defeats the purpose of groups)
 
 ---
@@ -76,7 +76,7 @@ Teams that mark a component as "Major Outage" without creating an incident will 
 3. Update the incident with status updates (each update triggers subscriber notifications)
 4. Resolve the incident (final notification fires)
 
-Component status on Statuspage is primarily cosmetic — it shows the page's visual status. The notification story runs through incidents.
+Component status on Statuspage is primarily cosmetic: it shows the page's visual status. The notification story runs through incidents.
 
 This limitation does NOT apply to Better Stack or Instatus, where component-level changes do notify subscribers.
 

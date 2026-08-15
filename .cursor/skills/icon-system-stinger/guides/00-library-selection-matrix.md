@@ -1,4 +1,4 @@
-# Guide 00 — Icon Library Selection Matrix
+# Guide 00: Icon Library Selection Matrix
 
 Source: `research/external/heroicons-tabler-phosphor.md`, `research/external/lucide-react.md`, `research/external/iconify-react.md`
 

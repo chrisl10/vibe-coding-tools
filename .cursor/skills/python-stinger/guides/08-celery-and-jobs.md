@@ -1,4 +1,4 @@
-# 08 — Celery and Background Jobs
+# 08: Celery and Background Jobs
 
 Celery + Redis is the canonical Django background-job stack. Production hardening is a known set of patterns.
 
@@ -9,8 +9,8 @@ Celery + Redis is the canonical Django background-job stack. Production hardenin
 3. **`acks_late=True` + idempotent task code** is the canonical pair. A worker crash mid-task safely re-runs.
 4. **`prefetch_multiplier=1`** for non-trivial tasks. Default 4 is wrong.
 5. **`transaction.on_commit(lambda: my_task.delay(obj.id))`** when the task depends on an object created in the same transaction.
-6. **Idempotency** — every task should be safe to run twice. Use `update_or_create` / `get_or_create` for ORM writes; check an idempotency key on the model; `SET NX EX` on Redis for distributed locks.
-7. **Queue separation** — route by task type. Run dedicated workers per queue.
+6. **Idempotency**: every task should be safe to run twice. Use `update_or_create` / `get_or_create` for ORM writes; check an idempotency key on the model; `SET NX EX` on Redis for distributed locks.
+7. **Queue separation**: route by task type. Run dedicated workers per queue.
 8. **Redis broker config**: `appendonly yes`, `maxmemory-policy noeviction` for the broker DB. Separate Redis instance from the cache.
 
 ## Canonical Celery app
@@ -148,7 +148,7 @@ Run beat as a separate process: `celery -A config worker -l INFO -Q default,emai
 - **One worker process per queue type** (or per resource profile). Email workers are I/O-bound; image-processing workers are CPU-bound.
 - **`-c <concurrency>`** = workers per process. For I/O-bound, use prefork with high concurrency or gevent. For CPU-bound, prefork concurrency = #cores.
 - **`--max-tasks-per-child=1000`** prevents memory leaks (worker recycles after 1000 tasks).
-- **Run under a process supervisor** (systemd, supervisord, Kubernetes Deployment) — handoff to `devops-worker-bee`.
+- **Run under a process supervisor** (systemd, supervisord, Kubernetes Deployment): handoff to `devops-worker-bee`.
 
 ## Monitoring
 

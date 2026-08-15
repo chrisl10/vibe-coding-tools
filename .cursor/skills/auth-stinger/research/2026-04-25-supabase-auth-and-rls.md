@@ -13,11 +13,11 @@ Supabase Auth (built on the open-source GoTrue project) provides email + passwor
 
 ## Key concepts
 
-- **`auth.uid()`** — current user UUID, derived from the JWT.
-- **`auth.jwt()`** — full JWT claims; can include custom claims via Auth Hooks.
-- **`anon` role** — public, unauthenticated; RLS enforces on this role's queries.
-- **`authenticated` role** — signed-in user; RLS enforces.
-- **`service_role` role** — bypasses RLS. Server-only.
+- **`auth.uid()`**: current user UUID, derived from the JWT.
+- **`auth.jwt()`**: full JWT claims; can include custom claims via Auth Hooks.
+- **`anon` role**: public, unauthenticated; RLS enforces on this role's queries.
+- **`authenticated` role**: signed-in user; RLS enforces.
+- **`service_role` role**: bypasses RLS. Server-only.
 
 ## RLS pattern
 
@@ -41,12 +41,12 @@ create policy "users read tenant posts" on public.posts
 
 ## Common failures
 
-- **RLS not enabled on a new table** — anon key + REST exposes it. Default is RLS-off; always enable on table creation.
-- **`service_role` from client** — total bypass. Server-only.
-- **Trusting `auth.jwt() ->> 'email'`** — IdP-asserted, may be unverified. Trust `auth.uid()`.
+- **RLS not enabled on a new table**: anon key + REST exposes it. Default is RLS-off; always enable on table creation.
+- **`service_role` from client**: total bypass. Server-only.
+- **Trusting `auth.jwt() ->> 'email'`**: IdP-asserted, may be unverified. Trust `auth.uid()`.
 
 ## Relevance
 
-- `guides/05-supabase-auth.md` — full deep dive.
-- `guides/09-rbac.md` — multi-tenancy patterns including RLS.
-- `guides/00-principles.md` Principle 3 — two-layer enforcement.
+- `guides/05-supabase-auth.md`: full deep dive.
+- `guides/09-rbac.md`: multi-tenancy patterns including RLS.
+- `guides/00-principles.md` Principle 3: two-layer enforcement.

@@ -7,13 +7,13 @@ url: https://nextjs.org/docs/messages/next-image-unconfigured-host
 date_accessed: 2026-05-20
 ---
 
-# Next.js `next/image` Unconfigured Host — Security Guide
+# Next.js `next/image` Unconfigured Host: Security Guide
 
 ## Key Findings
 
 ### SSRF Risk
 
-Overly broad `remotePatterns` (e.g., `hostname: "**"`) allow malicious actors to use the Next.js Image Optimization API as a proxy to fetch arbitrary external URLs — a Server-Side Request Forgery vector.
+Overly broad `remotePatterns` (e.g., `hostname: "**"`) allow malicious actors to use the Next.js Image Optimization API as a proxy to fetch arbitrary external URLs: a Server-Side Request Forgery vector.
 
 **Never use**: `hostname: '**'` without a protocol/pathname restriction.
 
@@ -32,7 +32,7 @@ Each part of the `src` URL is strictly matched:
 2. Loading from `assets.example.com` while configuring `example.com`
 3. Missing port during local/dev usage (e.g., `http://localhost:3000`)
 4. Too-narrow pathname pattern (`/images/` vs `/images/**`)
-5. When using `new URL()` constructor syntax: if no `search` is specified, `search` property defaults to `''` — meaning search params are NOT allowed
+5. When using `new URL()` constructor syntax: if no `search` is specified, `search` property defaults to `''`; meaning search params are NOT allowed
 
 ### Safe Patterns
 

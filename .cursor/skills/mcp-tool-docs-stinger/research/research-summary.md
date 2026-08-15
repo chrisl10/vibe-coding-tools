@@ -39,7 +39,7 @@ Confirmed against `scripts/sync-versions.mjs`: the version is single-sourced fro
 - MCP protocol/transport/handshake internals -> `mcp-protocol-worker-bee`.
 - README authoring -> `readme-writing-worker-bee`.
 - The `library/` knowledge convention -> `library-worker-bee` / `knowledge-worker-bee`.
-- Deeplake dataset schema design -> `deeplake-dataset-worker-bee`.
+- Deeplake dataset schema design -> `vector-store-worker-bee`.
 
 ## Verify-live items
 

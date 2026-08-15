@@ -1,4 +1,4 @@
-# Guide 03 — Stacking and Layering
+# Guide 03: Stacking and Layering
 
 Overlays from different primitives coexist in the same DOM. This guide covers the z-index strategy, portal coexistence, and nested overlay patterns.
 
@@ -77,7 +77,7 @@ Both portals mount to `document.body`, so z-index comparison works correctly bet
 When a Dialog opens inside a Vaul Drawer:
 1. Vaul has already applied scroll lock to `<body>`.
 2. Radix Dialog applies its own scroll lock on top.
-3. When the Dialog closes, Radix removes its lock — but Vaul's lock should persist until the Drawer closes.
+3. When the Dialog closes, Radix removes its lock, but Vaul's lock should persist until the Drawer closes.
 
 In practice, both Radix and Vaul use the same underlying `@radix-ui/react-remove-scroll` mechanism, which reference-counts the lock. This means the lock is correctly maintained until both are closed.
 

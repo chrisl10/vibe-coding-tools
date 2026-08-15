@@ -12,13 +12,13 @@
 ## The 5 most influential sources
 
 ### 1. `external/2026-05-20-action-items-agile-coach-medium.md`
-**Why it matters:** Published 2026-05-15 — five days before this sweep. Survey-backed (419 professionals, 5 countries): only 50% of retro action items ever get completed. Introduces the "3-question filter" (who owns this? when does it close? what does done look like?) as a live facilitation check. Includes a case study: teams went from 40% to 85% closure rate in 3 sprints by simply tracking and reviewing the number. This is the empirical anchor for `guides/04-action-items.md` and the most credible argument for why follow-through is the primary lever of retro health.
+**Why it matters:** Published 2026-05-15: five days before this sweep. Survey-backed (419 professionals, 5 countries): only 50% of retro action items ever get completed. Introduces the "3-question filter" (who owns this? when does it close? what does done look like?) as a live facilitation check. Includes a case study: teams went from 40% to 85% closure rate in 3 sprints by simply tracking and reviewing the number. This is the empirical anchor for `guides/04-action-items.md` and the most credible argument for why follow-through is the primary lever of retro health.
 
 ### 2. `external/2026-05-20-action-items-follow-through-scrumtool.md`
 **Why it matters:** Published 2026-04-11. ScrumTool's structural diagnosis of why action items die names five specific failure modes (no owner, no deadline, too large, invisible on backlog, no accountability). The four-component good action item (named owner, specific outcome, sprint deadline, backlog placement) is the template stinger-forge needs for `templates/action-items.md`. The "backlog placement" component is the key insight missing from most SMART frameworks.
 
 ### 3. `external/2026-05-20-format-selection-meetgeek.md`
-**Why it matters:** Published 2026-05-07. Provides the only "when NOT to use" guidance for each format found in the sweep — making it more useful for format selection logic than the comprehensive 30+ format catalog. The commitment step framing ("most retros fail at the commitment step, not the format") is the philosophical foundation for `guides/00-principles.md`. Published within two weeks of this research run, making it the most current practitioner voice.
+**Why it matters:** Published 2026-05-07. Provides the only "when NOT to use" guidance for each format found in the sweep: making it more useful for format selection logic than the comprehensive 30+ format catalog. The commitment step framing ("most retros fail at the commitment step, not the format") is the philosophical foundation for `guides/00-principles.md`. Published within two weeks of this research run, making it the most current practitioner voice.
 
 ### 4. `external/2026-05-20-psychological-safety-retroflow.md`
 **Why it matters:** Published 2025-09-22. Reproduces the Edmondson 7-item measurement scale verbatim. Provides the safety check gate logic (< 3/5 average = shift retro to safety-building). Cites Google Project Aristotle as empirical validation. The 42% introvert participation increase from anonymous feedback is the best argument for making anonymous input a default rather than an option. Primary source for `guides/02-psychological-safety.md`.
@@ -30,7 +30,7 @@
 
 ## Open questions for stinger-forge to resolve
 
-1. **Postmortem.io scope:** The Command Brief query mentions "Retro Lab Postmortem.io tools 2026" but no 2026 results surfaced for Postmortem.io as a sprint retrospective tool — it appears to focus on incident postmortems. Should `guides/05-async-retro.md` reference it, or is it out of scope for team-process retros? Check whether the brief intended a different tool (e.g., RetroMat, Retrium, or another "Retro Lab" product).
+1. **Postmortem.io scope:** The Command Brief query mentions "Retro Lab Postmortem.io tools 2026" but no 2026 results surfaced for Postmortem.io as a sprint retrospective tool: it appears to focus on incident postmortems. Should `guides/05-async-retro.md` reference it, or is it out of scope for team-process retros? Check whether the brief intended a different tool (e.g., RetroMat, Retrium, or another "Retro Lab" product).
 
 2. **Async mode gap in mainstream tools:** Neither GoRetro nor EasyRetro have native async modes as of 2026. Parabol has partial async via its standup feature but not a dedicated async retro mode. Should `guides/05-async-retro.md` recommend purpose-built async tools (RetroFlow, Neatro) separately from the mainstream tools, or treat Parabol as the async-capable option?
 
@@ -38,7 +38,7 @@
 
 4. **Edmondson 4-stage model detail:** The Command Brief specifies "Edmondson's four-stage model" for `guides/02-psychological-safety.md`. The research sources cite Edmondson's work extensively but primarily reference the 7-item scale and the general safety concept, not the four-stage model (inclusion safety, learner safety, contributor safety, challenger safety) by name. stinger-forge may need a targeted fetch of Edmondson's "The Fearless Organization" or Timothy Clark's 4-stage elaboration before writing `guides/02-psychological-safety.md`.
 
-5. **Learning Matrix format:** The Command Brief's format list includes "Learning Matrix" — this format did not appear in the research sources by name. It may be known under a different name (possibly the "4Ls" or "Team Radar"). stinger-forge should confirm whether Learning Matrix is a distinct format or an alternate name for a covered format before including it in `guides/01-formats.md`.
+5. **Learning Matrix format:** The Command Brief's format list includes "Learning Matrix": this format did not appear in the research sources by name. It may be known under a different name (possibly the "4Ls" or "Team Radar"). stinger-forge should confirm whether Learning Matrix is a distinct format or an alternate name for a covered format before including it in `guides/01-formats.md`.
 
 ---
 
@@ -54,7 +54,7 @@
 
 ## Scope not covered at normal depth (available at deep/extreme)
 
-- Retromat.org format library (300+ activities) — only skimmed
+- Retromat.org format library (300+ activities): only skimmed
 - Academic research on retro effectiveness metrics
 - Conference talks (Agile Alliance, ScrumGathering 2025-2026)
 - Scrum Guide 2020 retrospective section (referenced in Command Brief, not fetched)

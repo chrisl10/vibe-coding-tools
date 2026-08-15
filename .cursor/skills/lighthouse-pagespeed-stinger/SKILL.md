@@ -1,13 +1,13 @@
 ---
-name: lighthouse-pagespeed-stinger
-description: Lighthouse + PageSpeed Insights specialist for React/Next.js stacks. Covers running Lighthouse locally vs in CI (LHCI, GitHub Actions), all four audit categories (Performance, Accessibility, Best Practices, SEO), score budgets and performance budgets, the Lighthouse lab-vs-CrUX field-data gap (including the TBT/INP limitation), and performance tracking over time with Treo, SpeedCurve, or a self-hosted LHCI server. Use when the user says "set up Lighthouse CI", "add a performance budget to CI", "my Lighthouse score differs from CrUX", "compare Treo vs SpeedCurve", "write a custom Lighthouse plugin", "my field INP is bad but TBT is fine", "configure LHCI for GitHub Actions", "audit our site with Lighthouse", or when `lighthouse-pagespeed-worker-bee` is invoked. Do NOT use for SEO content strategy or keyword research (seo-aeo-worker-bee), accessibility remediation beyond Lighthouse-surfaced findings (future a11y Bee), or Core Web Vitals optimization implementation (react-worker-bee / performance-optimizer).
+name: "lighthouse-pagespeed-stinger"
+description: "Lighthouse + PageSpeed Insights specialist for React/Next.js stacks. Covers running Lighthouse locally vs in CI (LHCI, GitHub Actions), all four audit categories (Performance, Accessibility, Best Practices, SEO), score budgets and performance budgets, the Lighthouse lab-vs-CrUX field-data gap (including the TBT/INP limitation), and performance tracking over time with Treo, SpeedCurve, or a self-hosted LHCI server. Use when the user says \\\\\\\"set up Lighthouse CI\\\\\\\", \\\\\\\"add a performance budget to CI\\\\\\\", \\\\\\\"my Lighthouse score differs from CrUX\\\\\\\", \\\\\\\"compare Treo vs SpeedCurve\\\\\\\", \\\\\\\"write a custom Lighthouse plugin\\\\\\\", \\\\\\\"my field INP is bad but TBT is fine\\\\\\\", \\\\\\\"configure LHCI for GitHub Actions\\\\\\\", \\\\\\\"audit our site with Lighthouse\\\\\\\", or when `lighthouse-pagespeed-worker-bee` is invoked. Do NOT use for SEO content strategy or keyword research (seo-aeo-worker-bee), accessibility remediation beyond Lighthouse-surfaced findings (future a11y Bee), or Core Web Vitals optimization implementation (react-worker-bee / performance-optimizer)."
 ---
 
 # lighthouse-pagespeed-stinger
 
-Opinionated playbook for running Lighthouse and PageSpeed Insights correctly — in CI, locally, and as part of a long-term performance tracking strategy. Synthesized from the Lighthouse 12.6.1 + LHCI 0.15.x canon, the web.dev lab-vs-field framework, and 2025-2026 practitioner patterns.
+Opinionated playbook for running Lighthouse and PageSpeed Insights correctly: in CI, locally, and as part of a long-term performance tracking strategy. Synthesized from the Lighthouse 12.6.1 + LHCI 0.15.x canon, the web.dev lab-vs-field framework, and 2025-2026 practitioner patterns.
 
-**Read first:** `guides/00-runner-selection.md` — the decision tree for which tool to use before you touch any config.
+**Read first:** `guides/00-runner-selection.md`: the decision tree for which tool to use before you touch any config.
 
 ---
 
@@ -57,7 +57,7 @@ These are non-negotiables. They protect reproducibility, team trust, and the lab
 
 **Current version:** Lighthouse 12.6.1 (LHCI 0.15.x). Node 18+ required.
 
-**Four categories (not five — PWA removed in LH12, May 2024):**
+**Four categories (not five: PWA removed in LH12, May 2024):**
 - Performance
 - Accessibility
 - Best Practices
@@ -85,7 +85,7 @@ Each guide is a self-contained instruction set. Read in order on first use; jump
 
 | Guide | When to read |
 |-------|-------------|
-| `guides/00-runner-selection.md` | First — before choosing any tool |
+| `guides/00-runner-selection.md` | First: before choosing any tool |
 | `guides/01-lhci-configuration.md` | Setting up `lighthouserc.json`/yaml, `collect`/`assert`/`upload` |
 | `guides/02-lab-vs-field.md` | Reconciling Lighthouse scores vs CrUX / PSI field data |
 | `guides/03-ci-integration.md` | GitHub Actions workflow, LHCI setup, score gating |
@@ -97,20 +97,20 @@ Each guide is a self-contained instruction set. Read in order on first use; jump
 
 ## Templates
 
-- `templates/lighthouserc-starter.yaml` — Annotated production-ready LHCI config
-- `templates/custom-plugin-starter.js` — Scaffold for a custom Lighthouse plugin
+- `templates/lighthouserc-starter.yaml`: Annotated production-ready LHCI config
+- `templates/custom-plugin-starter.js`: Scaffold for a custom Lighthouse plugin
 
 ## Examples
 
-- `examples/happy-path-lhci-setup.md` — End-to-end LHCI setup from zero to CI-gating a Next.js app
-- `examples/lab-field-reconciliation.md` — Walking through a case where Lighthouse scores 90 but CrUX INP fails
+- `examples/happy-path-lhci-setup.md`: End-to-end LHCI setup from zero to CI-gating a Next.js app
+- `examples/lab-field-reconciliation.md`: Walking through a case where Lighthouse scores 90 but CrUX INP fails
 
 ## Reports
 
-- `reports/README.md` — Report template and location convention for audit reports
+- `reports/README.md`: Report template and location convention for audit reports
 
 ---
 
 *Command Brief: `ai-tools/command-briefs/lighthouse-pagespeed-worker-bee-command-brief.md`*
 *Research: `research/research-summary.md` (normal depth, 9 sources, May 2026)*
-*Forged by `stinger-forge` as part of the Legion AI Tools Factory by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama)*
+*Forged by `stinger-forge` as part of The Hive by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama)*

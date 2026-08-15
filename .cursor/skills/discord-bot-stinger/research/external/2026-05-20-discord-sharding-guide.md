@@ -63,4 +63,4 @@ const client = new Client({ shards: 'auto' });
 - **guides/05-scaling-ops.md**: Include the `ShardingManager` setup with `totalShards: 'auto'` + `mode: 'process'`. Warn that internal sharding (`shards: 'auto'`) is high-memory for large bots.
 - **Key pre-sharding discipline**: "Don't store guild objects in global variables. Don't iterate all guilds for cross-guild features without shard broadcasting. Use a database for shared state."
 - **HTTP bots are exempt**: Bots using the HTTP Interactions endpoint instead of Gateway don't need sharding at all.
-- Highly available architecture (Kubernetes + NATS JetStream) referenced for 100k+ guilds — this is overkill for most bots. The ShardingManager approach covers most use cases up to ~50k guilds on a single machine.
+- Highly available architecture (Kubernetes + NATS JetStream) referenced for 100k+ guilds: this is overkill for most bots. The ShardingManager approach covers most use cases up to ~50k guilds on a single machine.

@@ -1,76 +1,38 @@
-# Markdown/MDX Content Pipeline Worker Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `markdown-mdx-content-pipeline-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/markdown-mdx-content-pipeline-worker-bee.md`](../../agents/markdown-mdx-content-pipeline-worker-bee.md)
-**Stinger:** [`.cursor/skills/markdown-mdx-content-pipeline-stinger/`](../../skills/markdown-mdx-content-pipeline-stinger/)
-**Command Brief:** not available (synthesized from agent + stinger files)
-**Trigger policy:** on-demand
-
----
+# markdown-mdx-content-pipeline-worker-bee
 
 ## Domain
+This Bee owns the full pipeline from raw .md/.mdx source to HTML/JSX output: compiler selection (Velite, @next/mdx, @mdx-js/mdx, with next-mdx-remote flagged as archived and Contentlayer as abandoned), the remark/rehype plugin chain and its ordering, syntax highlighting via Shiki v4, GFM, AST manipulation, custom directive plugins, math (KaTeX) and Mermaid/D2 diagram embedding, and XSS sanitization via rehype-sanitize and DOMPurify.
 
-`markdown-mdx-content-pipeline-worker-bee` owns the full Markdown/MDX content processing stack — everything between a raw `.md`/`.mdx` source file and its final HTML/JSX/React output. This includes compiler selection (Velite, @next/mdx, next-mdx-remote, @mdx-js/mdx, Contentlayer2), the remark/rehype plugin chain, syntax highlighting (Shiki v4, expressive-code, starry-night, rehype-pretty-code), math rendering (KaTeX, MathJax), diagram embedding (Mermaid, D2), custom directive plugins, and XSS sanitization (rehype-sanitize, DOMPurify). It is opinionated about the 2026 ecosystem: it prefers Velite over archived next-mdx-remote, Shiki v4 over Prism/Highlight.js, and treats sanitization as non-negotiable for user-authored content. It does not own platform selection, the React component map, or broader security audits beyond sanitization config.
+## Paired Stinger
+[markdown-mdx-content-pipeline-stinger](../../markdown-mdx-content-pipeline-stinger) - the 2026 compiler decision matrix, canonical plugin-chain ordering, Shiki v4 migration notes, plugin-authoring boilerplate, and sanitization schema guidance.
 
 ## Trigger phrases
-
-Route to `markdown-mdx-content-pipeline-worker-bee` when the user says any of:
-
-- "set up MDX"
-- "configure Shiki"
+- "set up MDX for this project"
+- "configure Shiki syntax highlighting"
 - "write a remark plugin"
-- "rehype plugin chain"
-- "sanitize user markdown"
-- "embed Mermaid diagrams"
-- "migrate from Contentlayer"
-- "migrate from next-mdx-remote"
-- "math in markdown"
-- "audit unified pipeline"
-
-Or when the request implicitly involves compiling, transforming, or rendering `.md`/`.mdx` files through the unified/remark/rehype ecosystem.
+- "audit our rehype plugin chain"
+- "sanitize user-authored markdown"
+- "embed Mermaid diagrams in MDX"
+- "migrate off next-mdx-remote"
+- "add math rendering to markdown"
 
 ## Do NOT route when
-
-- The user is choosing between docs platforms (Starlight, Docusaurus, Mintlify) — route to `docs-site-worker-bee`, which owns platform selection; this Bee picks up once the platform is decided.
-- The user wants to design or audit the `mdx-components.tsx` component map (which React components replace which HTML elements) — route to `react-worker-bee`.
-- The sanitization audit reveals broader XSS concerns beyond rehype-sanitize/DOMPurify config (CSP headers, stored XSS via database, rendered JSX from untrusted sources at scale) — route to `security-worker-bee`.
-- The user wants to generate SDKs or enrich an OpenAPI spec from MDX documentation — route to `api-docs-worker-bee`.
-- The request is about SEO/AEO concerns on rendered pages — route to `seo-aeo-worker-bee`.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let the broader one act as backup.
+- The ask is choosing a docs platform (Starlight, Docusaurus, Mintlify) rather than the compile pipeline; that belongs to docs-site-worker-bee.
+- The ask is designing the mdx-components.tsx React component map; that belongs to react-worker-bee.
+- The sanitization audit reveals a broader XSS concern beyond rehype-sanitize/DOMPurify config, such as CSP headers or stored XSS; that belongs to security-worker-bee.
+- The ask is generating SDKs or enriching an OpenAPI spec from MDX docs; that belongs to api-docs-worker-bee.
 
 ## Inputs the Bee needs
+- The current or intended compiler and whether the content source is trusted (docs) or user-generated (chat, comments).
+- The existing remark/rehype plugin chain, if any, and its ordering.
+- Whether math, diagrams, or custom directives are in scope for this request.
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- A configuration diff or working plugin chain with pinned versions.
+- A sanitization schema (docs allowlist vs. user-generated strict allowlist).
+- A vitest fixture set for representative inputs and XSS sanitization tests, when setting up a new pipeline.
 
-- Target framework or runtime (Next.js App Router, Astro, Vite, plain Node.js) — required to select the right compiler
-- Whether content is trusted (author-written) or user-generated — required to determine sanitization strictness
-- Existing compiler/stack if this is an audit or migration (e.g., "we use next-mdx-remote v5") — optional; Bee will ask if undecided
-- Specific feature request (syntax highlighting, math, diagrams, custom plugin) — optional; defaults to a full pipeline audit if absent
-
-## Outputs the Bee produces
-
-- Configuration PR diff or code artifact: `velite.config.ts`, `next.config.mjs`, or `.use()` plugin chain with pinned versions and inline comments explaining each plugin's role
-- Advisory markdown when no code change is needed: compiler decision rationale, migration steps, sanitization checklist, or plugin ordering correction
-
-## Multi-Bee sequences this Bee participates in
-
-- Plan execution loop — always closes with `security-worker-bee` then `quality-worker-bee`
-- Docs platform setup — `docs-site-worker-bee` selects the platform, then hands off to this Bee for highlighting and plugin configuration
-- New content site bootstrap — this Bee wires the MDX pipeline after `react-worker-bee` scaffolds the component map
-
-## Critical directives the orchestrator should respect
-
-- **Prefer Shiki v4 over Prism or Highlight.js for new projects.** Shiki ships TextMate grammars, is the 2026 default in Vite/Astro/Next.js, and supports rich transformers; Prism is unmaintained and Highlight.js lacks transformer support.
-- **Never skip sanitization for user-generated Markdown.** MDX can embed arbitrary JSX; without `rehype-sanitize` or DOMPurify, a malicious `<script>` or event handler in user-authored content executes in the application's origin — a critical XSS vector.
-- **Flag next-mdx-remote as archived for any new project.** It was archived by Hashicorp in 2026 (v6.0.0 final, February 2026); recommend Velite for new Next.js content sites.
-- **`rehype-sanitize` MUST come after `rehype-raw` in the plugin chain.** Placing sanitize before raw allows raw HTML nodes to survive sanitization — the sanitizer sees no HTML because `rehypeRaw` hasn't parsed it yet.
-- **Pin plugin versions.** The unified ecosystem releases breaking AST changes without major semver bumps; `"*"` or `"latest"` breaks pipelines silently.
-- **Distinguish MDX compile (server/build) from MDX render (client/RSC).** Conflating these layers produces subtly broken CSR/SSR configurations with security implications; `allowDangerousHtml: true` is only safe at compile time for fully trusted source.
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
+## Commonly sequenced with
+- docs-site-worker-bee: decides the platform before this Bee configures the pipeline on top of it.
+- react-worker-bee: builds the component map this Bee's compiled output renders through.
+- security-worker-bee: takes broader XSS findings beyond sanitizer configuration.

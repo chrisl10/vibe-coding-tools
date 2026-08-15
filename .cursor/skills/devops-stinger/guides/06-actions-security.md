@@ -1,4 +1,4 @@
-# 06 — GitHub Actions security
+# 06: GitHub Actions security
 
 The hardening checklist. Every workflow goes through this. Source: `research/2026-04-25-actions-permissions-hardening.md`, `research/2026-04-25-actions-pin-to-sha.md`, `research/2026-04-25-oidc-cloud-federation.md`.
 
@@ -21,11 +21,11 @@ jobs:
     steps: ...
 ```
 
-A workflow without an explicit `permissions:` block inherits the repo default. If the repo default is "Read and write" (the GitHub default until you change it), every job gets full write — a Must-fix finding.
+A workflow without an explicit `permissions:` block inherits the repo default. If the repo default is "Read and write" (the GitHub default until you change it), every job gets full write: a Must-fix finding.
 
 Set repo to read-only default + explicit per-job opt-in. Source: GitHub Actions security hardening docs.
 
-## 2. Pin actions to commit SHA — never `@main`, prefer SHA over `@v4`
+## 2. Pin actions to commit SHA: never `@main`, prefer SHA over `@v4`
 
 Tags are mutable. A repo owner can retag `v4` to point at malicious code. The Tj-actions/changed-files supply-chain attack (March 2025) demonstrated exactly this.
 
@@ -67,7 +67,7 @@ Default is read-only at repo level (Section 1); each job grants only what it nee
 
 Never use `permissions: write-all`. Never omit `permissions:` in a job that mutates state. Source: `research/2026-04-25-actions-permissions-hardening.md`.
 
-## 4. OIDC for cloud — not long-lived credentials
+## 4. OIDC for cloud: not long-lived credentials
 
 Static cloud credentials in repo secrets:
 
@@ -104,12 +104,12 @@ OIDC federation:
 
 A pipeline that has OIDC available but uses static cloud credentials is a Must-fix finding. Source: `research/2026-04-25-oidc-cloud-federation.md`.
 
-## 5. Fork PR safety — `pull_request` vs `pull_request_target`
+## 5. Fork PR safety: `pull_request` vs `pull_request_target`
 
 | Trigger | Code that runs | Secrets accessible |
 |---|---|---|
-| `pull_request` | The PR's code (forked or not) | None — secrets unavailable to fork PRs |
-| `pull_request_target` | The base branch's code | All secrets — runs in the trusted context |
+| `pull_request` | The PR's code (forked or not) | None, secrets unavailable to fork PRs |
+| `pull_request_target` | The base branch's code | All secrets, runs in the trusted context |
 
 `pull_request_target` is for jobs that label/comment on a PR without running its code. **The danger:** a workflow that uses `pull_request_target` and then `actions/checkout` with `ref: ${{ github.event.pull_request.head.sha }}` runs the fork's code with the trusted secrets. That is **arbitrary code execution from any fork**, on any open PR. Multiple high-profile compromises have happened this way.
 
@@ -139,7 +139,7 @@ Settings → Actions → General → "Allow specific actions and reusable workfl
 
 A repo where any random `xyz/whatever-action@v1` can be added is over-trusting. The allowlist is cheap; maintain it.
 
-## 7. Secret scope — environment-protected
+## 7. Secret scope: environment-protected
 
 For secrets that *must* be static (rare), put them behind environment protection:
 
@@ -160,7 +160,7 @@ GitHub Environments can require:
 - Wait timer.
 - Deployment branch / tag restriction (only `main` can target `production`).
 
-Repo-level secrets are world-readable to any workflow on any branch. Environment-protected secrets are scoped — use them.
+Repo-level secrets are world-readable to any workflow on any branch. Environment-protected secrets are scoped, use them.
 
 ## 8. Logs and `set-output` / `add-mask`
 
@@ -173,7 +173,7 @@ Mask any secret-derived value before echoing:
     echo "TOKEN=$TOKEN" >> $GITHUB_ENV
 ```
 
-Never `echo $SECRET`. Never write secrets to step outputs without masking — they appear in logs.
+Never `echo $SECRET`. Never write secrets to step outputs without masking: they appear in logs.
 
 ## 9. Audit script
 
@@ -202,7 +202,7 @@ Run as a PR check.
 
 ## See also
 
-- `guides/05-actions-architecture.md` — concurrency, reusable, matrix.
-- `guides/07-depot-integration.md` — Depot OIDC.
-- `scripts/audit-workflow.sh` — automated check.
-- `scripts/pin-actions-to-sha.sh` — tag → SHA rewriter.
+- `guides/05-actions-architecture.md`: concurrency, reusable, matrix.
+- `guides/07-depot-integration.md`: Depot OIDC.
+- `scripts/audit-workflow.sh`: automated check.
+- `scripts/pin-actions-to-sha.sh`: tag → SHA rewriter.

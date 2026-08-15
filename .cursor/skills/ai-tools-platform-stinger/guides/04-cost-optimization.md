@@ -1,4 +1,4 @@
-# Cost Optimization — AI Spend Discipline
+# Cost Optimization: AI Spend Discipline
 
 ## The three levers
 
@@ -8,7 +8,7 @@ AI spend is a function of: (tokens sent) × (price per token) × (call volume). 
 2. **Price reduction:** model tiering, cheap fallbacks, gateway caching, batch APIs.
 3. **Volume reduction:** caching responses, deduplication, async batching.
 
-## Lever 1 — Prompt caching
+## Lever 1: Prompt caching
 
 The highest-ROI optimization for production systems with repeated system prompts.
 
@@ -57,7 +57,7 @@ cache = caching.CachedContent.create(
 
 Cached content charged at 25% of standard input rate. Minimum 4096 tokens to create a cache.
 
-## Lever 2 — Model tiering strategy
+## Lever 2: Model tiering strategy
 
 Design a tiering router before building your LLM pipeline:
 
@@ -78,7 +78,7 @@ function selectModel(task: LLMTask): string {
 
 The key insight: most sub-tasks in an agentic pipeline are `low` or `medium` complexity. Only the final synthesis / reasoning step is `high`. Routing aggressively to the cheap tier reduces average cost by 60-80%.
 
-## Lever 3 — Batch APIs
+## Lever 3: Batch APIs
 
 For non-interactive workloads (nightly reports, bulk embedding, document processing):
 
@@ -109,7 +109,7 @@ const batch = await anthropic.messages.batches.create({
 });
 ```
 
-## Lever 4 — Gateway-level caching (Portkey)
+## Lever 4: Gateway-level caching (Portkey)
 
 Portkey supports semantic and exact-match caching. For RAG pipelines where similar queries recur frequently:
 

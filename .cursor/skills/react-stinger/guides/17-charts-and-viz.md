@@ -1,4 +1,4 @@
-# 17 — Charts & Data Visualization
+# 17: Charts & Data Visualization
 
 Source: `research/2026-04-25-charts-and-viz.md`. Charts are the visible tip of a long pipeline (data layer, color tokens, accessibility). Pick by *chart shape* and *customization depth*, not by what looks coolest in a marketing site.
 
@@ -22,7 +22,7 @@ For most product teams in 2026: **shadcn Charts** for in-app dashboards, **Recha
 
 ### shadcn Charts (the default for new dashboards)
 - Built on Recharts; you copy the components into your repo and own them.
-- Themed via your CSS variables (the same OKLCH tokens `ux-ui-worker-bee` defines).
+- Themed via your CSS variables (the same OKLCH tokens `ux-ui-svelte-worker-bee` defines).
 - Pairs trivially with Tailwind v4 + shadcn/ui.
 - Trade-off: chart shape catalog is what shadcn ships. For exotic charts, drop down to Recharts directly or step up to ECharts/Visx.
 
@@ -42,7 +42,7 @@ For most product teams in 2026: **shadcn Charts** for in-app dashboards, **Recha
 - Trade-off: not React-idiomatic; you'll wrap it (`echarts-for-react`) and the API style won't match the rest of your codebase.
 
 ### Tremor (dashboards as components)
-- Pre-built React dashboard primitives — KPI cards, sparklines, tables, charts — that compose into an analytics page in an afternoon.
+- Pre-built React dashboard primitives (KPI cards, sparklines, tables, charts) that compose into an analytics page in an afternoon.
 - Built on Tailwind. Best when the whole product is a dashboard (Linear-style admin).
 - Trade-off: opinionated layout. Outside its niche it's overkill.
 
@@ -65,8 +65,8 @@ For most product teams in 2026: **shadcn Charts** for in-app dashboards, **Recha
 ## Decision axes
 
 1. **Chart shape.** Standard (line/bar/area/pie): Recharts, shadcn Charts, ECharts. Exotic (sankey, sunburst, treemap, calendar heatmap): Nivo, ECharts. Bespoke / publication-grade: Visx, Observable Plot.
-2. **Data scale.** <1k points: anything. 1k–10k: Recharts works. 10k+: ECharts or Canvas-based custom.
-3. **Theming depth.** Token-driven theming is best in shadcn Charts and Visx (you write the colors). Recharts is fine with effort. Nivo and ECharts have their own theming systems — bridge them to your tokens.
+2. **Data scale.** <1k points: anything. 1k to 10k: Recharts works. 10k+: ECharts or Canvas-based custom.
+3. **Theming depth.** Token-driven theming is best in shadcn Charts and Visx (you write the colors). Recharts is fine with effort. Nivo and ECharts have their own theming systems: bridge them to your tokens.
 4. **Interactivity.** Tooltips/legends/zoom: Recharts, Nivo, ECharts all handle. Brushing, linked views, custom interactions: Visx, ECharts.
 
 ---
@@ -100,7 +100,7 @@ export function RevenueLine({ data }: { data: Point[] }) {
 }
 ```
 
-Note the CSS variable references — that's how you keep the chart in lockstep with `ux-ui-worker-bee`'s tokens.
+Note the CSS variable references: that's how you keep the chart in lockstep with `ux-ui-svelte-worker-bee`'s tokens.
 
 ## Starter (shadcn Charts)
 
@@ -111,7 +111,7 @@ Use the CLI: `npx shadcn@latest add chart`. The generated component is yours; th
 ## Accessibility floor
 
 - Every chart has a `<title>` (describing what's measured) and a `<desc>` summary, or an `aria-label` on the SVG root.
-- Colors must pass WCAG contrast against the background — no relying on hue alone to encode categories. Pair color with shape, dash, or label.
+- Colors must pass WCAG contrast against the background: no relying on hue alone to encode categories. Pair color with shape, dash, or label.
 - Provide a tabular fallback (`<table>` rendering the same data) for screen readers. shadcn Charts ships this pattern.
 - Tooltips must be reachable by keyboard, not just on hover.
 
@@ -131,16 +131,16 @@ Use the CLI: `npx shadcn@latest add chart`. The generated component is yours; th
 
 ## Common findings
 
-> **[Should-refactor]** `src/features/dashboard/Revenue.tsx:1` — Chart.js wrapped through `react-chartjs-2` for a single line chart. Migrate to Recharts to match the rest of the React codebase.
+> **[Should-refactor]** `src/features/dashboard/Revenue.tsx:1`: Chart.js wrapped through `react-chartjs-2` for a single line chart. Migrate to Recharts to match the rest of the React codebase.
 
-> **[Must-fix]** `src/features/dashboard/Pie.tsx:12` — colors are hex literals (`#ff6b6b`). Replace with `var(--chart-1)` etc. to inherit dark/light mode and brand changes. Hand off to `ux-ui-worker-bee` for token mapping.
+> **[Must-fix]** `src/features/dashboard/Pie.tsx:12`: colors are hex literals (`#ff6b6b`). Replace with `var(--chart-1)` etc. to inherit dark/light mode and brand changes. Hand off to `ux-ui-svelte-worker-bee` for token mapping.
 
-> **[Must-fix]** `src/charts/Bar.tsx:1` — no `<title>` / `<desc>` on the SVG; tooltips are mouse-only. Add a tabular fallback. See `guides/17-charts-and-viz.md §accessibility-floor`.
+> **[Must-fix]** `src/charts/Bar.tsx:1`: no `<title>` / `<desc>` on the SVG; tooltips are mouse-only. Add a tabular fallback. See `guides/17-charts-and-viz.md §accessibility-floor`.
 
 ---
 
 ## Handoffs
 
-- **Color, gradient, and contrast token decisions** → `ux-ui-worker-bee`. Every chart color is a token, never a literal.
+- **Color, gradient, and contrast token decisions** → `ux-ui-svelte-worker-bee`. Every chart color is a token, never a literal.
 - **Data layer (cursor pagination, downsampling, server-side aggregations)** → `db-worker-bee` for the API; this guide assumes data already lives in the component.
 - **Chart performance budgets at extreme scale** → `guides/07-performance.md` plus a Profiler trace.

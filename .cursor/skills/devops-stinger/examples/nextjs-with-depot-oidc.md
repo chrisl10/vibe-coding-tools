@@ -58,7 +58,7 @@ In AWS:
 In Depot:
 
 1. Create project, note `DEPOT_PROJECT_ID`.
-2. Configure GitHub OIDC trust in project settings — allow `<org>/<repo>` on `main` and tags `v*`.
+2. Configure GitHub OIDC trust in project settings: allow `<org>/<repo>` on `main` and tags `v*`.
 
 In GitHub repo:
 

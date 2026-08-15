@@ -34,8 +34,8 @@ Include:
 
 ## Alternatives considered
 
-- **{{Alt 1}}** — {{why rejected}}
-- **{{Alt 2}}** — {{why rejected}}
+- **{{Alt 1}}**: {{why rejected}}
+- **{{Alt 2}}**: {{why rejected}}
 
 ## References
 

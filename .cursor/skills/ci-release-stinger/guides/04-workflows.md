@@ -1,5 +1,7 @@
 # 04 - Workflows (GitHub Actions architecture)
 
+> **npm package publishing case (legacy, secondary).** This describes Hivemind's own `.github/workflows/` layout (esbuild multi-harness bundle, cross-node-install, ClawHub publish). For the SvelteKit-on-Vercel primary case's GitHub Actions job shapes, see `guides/09-github-actions-job-shapes-sveltekit.md` and `guides/00-principles.md`.
+
 The real `.github/workflows/` layout. This is the "CI architecture" of Hivemind.
 
 ## The five workflows

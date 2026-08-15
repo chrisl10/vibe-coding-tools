@@ -47,5 +47,5 @@ The official Scrum Guide (November 2020), authored and maintained by Ken Schwabe
 - Key 2020 change: "self-managing" (who, how, and what) replaces "self-organizing" (who and how only).
 - Key 2020 change: Product Goal introduced as commitment for the Product Backlog.
 - The PDF version at https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf is the downloadable canonical text.
-- The Guide itself says nothing about story points, velocity, or Jira — these are all community practices.
+- The Guide itself says nothing about story points, velocity, or Jira: these are all community practices.
 - The Guide says Backlog Refinement is "ongoing" but does not prescribe it as a formal event.

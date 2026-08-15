@@ -7,11 +7,11 @@ Merge conflicts, rebase conflicts, rerere, and mergetool configuration.
 ## Anatomy of a conflict marker
 
 ```
-<<<<<<< HEAD
+  <<<<<<< HEAD
 your version of the code
-=======
+  =======
 incoming version of the code
->>>>>>> feature/new-login
+  >>>>>>> feature/new-login
 ```
 
 - `<<<<<<< HEAD` - the current branch's version
@@ -177,13 +177,13 @@ git config --global merge.conflictstyle diff3
 
 Conflict markers become:
 ```
-<<<<<<< HEAD
+  <<<<<<< HEAD
 your version
-||||||| common ancestor
+  ||||||| common ancestor
 original version
-=======
+  =======
 incoming version
->>>>>>> feature/new-login
+  >>>>>>> feature/new-login
 ```
 
 The ancestor block makes it much easier to understand what both sides changed from.

@@ -11,7 +11,7 @@ date_accessed: 2026-05-20
 
 ## Key Findings
 
-- **Sharp**: 9M+ weekly downloads, libvips C library, ~25x faster than Squoosh, supports JPEG/PNG/WebP/AVIF/TIFF/GIF — the production default
+- **Sharp**: 9M+ weekly downloads, libvips C library, ~25x faster than Squoosh, supports JPEG/PNG/WebP/AVIF/TIFF/GIF: the production default
 - **Squoosh (`@squoosh/lib`)**: Google's WebAssembly codec project, best WebP/AVIF encoding *quality control*, slower throughput
 - Next.js internally uses Sharp for `next/image` automatic optimization (AVIF and WebP conversion)
 - Sharp AVIF: `quality: 60` looks like JPEG at quality 85 (AVIF is very efficient)
@@ -66,5 +66,5 @@ Answers the Command Brief open question on encoding support matrix. Sharp is the
 
 - "Sharp: 9M+ weekly downloads, libvips (C library), 25x faster than squoosh, supports JPEG/PNG/WebP/AVIF/TIFF/GIF"
 - "Next.js: Uses sharp for its `next/image` automatic optimization (AVIF and WebP conversion)"
-- "AVIF at quality 60 — AVIF is efficient — 60 looks like JPEG 85"
+- "AVIF at quality 60 (AVIF is efficient) 60 looks like JPEG 85"
 - "Choose sharp for production use cases from the start... use Squoosh CLI for build-time batch optimization of static assets in your deploy pipeline."

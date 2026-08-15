@@ -8,7 +8,7 @@ topic: changelog
 stinger: api-docs-stinger
 ---
 
-# API Change Management — Bump.sh Official Docs
+# API Change Management: Bump.sh Official Docs
 
 ## Summary
 
@@ -37,21 +37,21 @@ Official Bump.sh documentation for their automatic API changelog system. Covers 
 
 ### CLI / CI integration
 
-- `bump diff path/to/file.yml --fail-on-breaking` — exits non-zero on breaking change
+- `bump diff path/to/file.yml --fail-on-breaking`: exits non-zero on breaking change
 - In CI environments (`CI=1`), `--fail-on-breaking` is enabled by default
 - GitHub Action supports `diff` (PR comment) and `deploy` (publish docs) steps
 - `fail_on_breaking` option on GitHub Action: "Mark the action as failed when a breaking change is detected"
 
 ### Pricing (from concepts doc)
 
-- Docs mention private repo support — pricing details at bump.sh; not enumerated in docs pages
+- Docs mention private repo support: pricing details at bump.sh; not enumerated in docs pages
 - Public docs available on free tier
 
 ## Annotations for stinger-forge
 
-- This is the **primary source** for `guides/05-changelog.md` — specifically the breaking change taxonomy.
+- This is the **primary source** for `guides/05-changelog.md`: specifically the breaking change taxonomy.
 - The `--fail-on-breaking` CLI flag is the key CI gate pattern. Document it as the recommended CI check.
 - The Bump.sh breaking change criteria list should be reproduced verbatim in the changelog guide as the authoritative definition.
-- Resolves open question from Command Brief: Bump.sh supports private repos — pricing details need verification at bump.sh/pricing.
+- Resolves open question from Command Brief: Bump.sh supports private repos; pricing details need verification at bump.sh/pricing.
 - Contrast with manual `[BREAKING]` convention: Bump.sh automates detection; manual convention is for changelogs in repos without Bump.sh.
 - The GitHub Action PR comment with diff summary is a high-value workflow to document as a "recommended setup" example.

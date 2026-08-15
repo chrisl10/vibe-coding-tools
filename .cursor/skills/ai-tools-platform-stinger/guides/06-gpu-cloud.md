@@ -1,4 +1,4 @@
-# GPU Cloud — Runpod, Modal, Together AI, Fireworks, Groq
+# GPU Cloud: Runpod, Modal, Together AI, Fireworks, Groq
 
 GPU cloud inference is the right choice when:
 - You need more compute than local hardware provides but want privacy (your container, your model weights).
@@ -120,7 +120,7 @@ const response = await client.chat.completions.create({
 
 ## Groq
 
-**Fastest inference available.** LPU hardware delivers ~2000 tokens/second for Llama 3.1 70B — 10-20x faster than GPU-based inference. Zero cold start.
+**Fastest inference available.** LPU hardware delivers ~2000 tokens/second for Llama 3.1 70B: 10-20x faster than GPU-based inference. Zero cold start.
 
 ```typescript
 import Groq from "groq-sdk";
@@ -152,4 +152,4 @@ const response = await groq.chat.completions.create({
 
 ## Privacy note
 
-Together AI, Fireworks, and Groq are SaaS — your prompts pass through their infrastructure. For private data, use Modal or Runpod with your own model deployment in a private network.
+Together AI, Fireworks, and Groq are SaaS: your prompts pass through their infrastructure. For private data, use Modal or Runpod with your own model deployment in a private network.

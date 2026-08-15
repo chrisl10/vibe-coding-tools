@@ -70,18 +70,18 @@ mcprojsim --throughput "5,7,4,6,5,8,6,5,7,4,6,9" --backlog 48 --percentiles 50,8
 > - **Confident by August 11** (85% confidence) - this is our recommended commitment date
 > - **Contingency by August 25** (95% confidence)
 >
-> These forecasts update every sprint as new delivery data comes in. If scope changes, we re-run the forecast. The delta between July 28 and August 11 represents the natural variance in our delivery pace — it's not a negotiating position, it's the mathematical reality of building software."
+> These forecasts update every sprint as new delivery data comes in. If scope changes, we re-run the forecast. The delta between July 28 and August 11 represents the natural variance in our delivery pace; it's not a negotiating position, it's the mathematical reality of building software."
 
 ## What this demonstrates
 
 - Monte Carlo produces a **range**, not a point. Communicate all three percentiles.
-- The scope creep multiplier is essential — ignoring it systematically produces over-optimistic forecasts.
-- The forecast updates automatically as new sprint data arrives — run it every sprint, not just once.
+- The scope creep multiplier is essential: ignoring it systematically produces over-optimistic forecasts.
+- The forecast updates automatically as new sprint data arrives: run it every sprint, not just once.
 - Stakeholder conversations become evidence-based: "we can close the 2-sprint gap by cutting these 5 stories" is a negotiable trade, not a guess.
 
 ## NoEstimates interpretation
 
-Note: in this example, we did NOT use story points at all. We counted items and tracked throughput. This is exactly the #NoEstimates approach in practice. The team produced a more defensible delivery forecast than they would have from dividing total story points by velocity — because velocity was already variable (4-9 items/sprint), and that variability is correctly modeled in the Monte Carlo distribution.
+Note: in this example, we did NOT use story points at all. We counted items and tracked throughput. This is exactly the #NoEstimates approach in practice. The team produced a more defensible delivery forecast than they would have from dividing total story points by velocity, because velocity was already variable (4-9 items/sprint), and that variability is correctly modeled in the Monte Carlo distribution.
 
 ---
 

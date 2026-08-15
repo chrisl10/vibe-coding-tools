@@ -1,4 +1,4 @@
-# Guide 00: Tool Tiers — The 2026 AI Coding Tool Taxonomy
+# Guide 00: Tool Tiers: The 2026 AI Coding Tool Taxonomy
 
 *Sources: `research/external/2026-05-20-claude-code-aider-cline-comparison.md`, `research/external/2026-05-20-windsurf-cursor-2026.md`, `research/external/2026-05-20-devin-replit-agent.md`, `research/external/2026-05-20-continue-dev-open-source.md`, `research/external/2026-05-20-cursor-agent-mode-2026.md`, `research/external/2026-05-20-bolt-new-webcontainer.md`*
 
@@ -36,17 +36,17 @@ AI coding tools in 2026 fall cleanly into four tiers defined by autonomy level, 
 - Medium autonomy: the agent proposes and executes, the human reviews
 - Context scope: repository-wide (with search/indexing)
 
-**Best for:** Feature-level work, refactors, bug hunts, test generation — tasks where you want autonomous execution but stay in the loop.
+**Best for:** Feature-level work, refactors, bug hunts, test generation: tasks where you want autonomous execution but stay in the loop.
 
 **Claude Code** is a standalone CLI agent from Anthropic (launched 2025, post-Console separation). Locks to Claude models only. Best code quality scores (9.5/10). Strongest at complex multi-file reasoning. Source: `research/external/2026-05-20-claude-code-aider-cline-comparison.md`.
 
 **Aider** is an open-source CLI tool with 100+ model support via LiteLLM. Best-in-class cost efficiency via the architect/editor two-model pattern (3-5x cost reduction). Best for git-focused workflows (auto-commits, clean history). Source: `research/external/2026-05-20-aider-llm-leaderboard.md`.
 
-**Cline** is an open-source VS Code extension (formerly Claude Dev). Multiple backend models. Most appropriate for VS Code-native developers. Has documented reliability issues in production — see `guides/05-footguns.md` before recommending. Source: `research/external/2026-05-20-cline-footguns.md`.
+**Cline** is an open-source VS Code extension (formerly Claude Dev). Multiple backend models. Most appropriate for VS Code-native developers. Has documented reliability issues in production: see `guides/05-footguns.md` before recommending. Source: `research/external/2026-05-20-cline-footguns.md`.
 
 **Windsurf (Cascade)** uses a proprietary agentic model (Cascade) with context-aware reasoning across the full codebase. **Note: Windsurf is owned by Cognition AI (makers of Devin), NOT OpenAI.** OpenAI's $3B acquisition was blocked by Microsoft in July 2025; Cognition AI acquired Windsurf for ~$250M in December 2025. Product trajectory under Cognition ownership is in flux (see `research/external/2026-05-20-windsurf-cursor-2026.md`); a freshness flag is recommended for any Windsurf guidance.
 
-> **TODO: open question** — Is Windsurf being sunset in favor of Devin, or are they maintained as separate products under Cognition AI? Not definitively resolved in research. Surface to user when recommending Windsurf for long-term projects.
+> **TODO: open question**: Is Windsurf being sunset in favor of Devin, or are they maintained as separate products under Cognition AI? Not definitively resolved in research. Surface to user when recommending Windsurf for long-term projects.
 
 ---
 
@@ -64,7 +64,7 @@ AI coding tools in 2026 fall cleanly into four tiers defined by autonomy level, 
 
 **WARNING:** Never recommend Tier 3 tools for production repos without surfacing the scope-creep and irreversibility risk. Autonomous write access can produce wide-ranging changes that are difficult to audit after the fact.
 
-**Devin 2.0** from Cognition AI is the original "software engineer AI agent". Operates via a GitHub App with configurable repo access scope. Improved substantially from Devin 1.x early benchmarks. Requires Agent Compute Units (ACU) — pricing is per-compute, not per-token. Source: `research/external/2026-05-20-devin-replit-agent.md`.
+**Devin 2.0** from Cognition AI is the original "software engineer AI agent". Operates via a GitHub App with configurable repo access scope. Improved substantially from Devin 1.x early benchmarks. Requires Agent Compute Units (ACU): pricing is per-compute, not per-token. Source: `research/external/2026-05-20-devin-replit-agent.md`.
 
 **Cursor Background Agents** allow Cursor to run tasks asynchronously (on Cursor's infrastructure or locally) while the developer does other work. Shares context engine with Cursor's interactive features. Less isolated than Devin; best for teams already on Cursor.
 

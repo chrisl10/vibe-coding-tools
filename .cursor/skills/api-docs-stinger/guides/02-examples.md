@@ -1,4 +1,4 @@
-# 02 — JSON Example Authoring
+# 02: JSON Example Authoring
 
 Adding request and response examples to an OpenAPI spec. Read `research/external/scalar-openapi-extensions-reference.md` before running this guide.
 
@@ -81,9 +81,9 @@ Use `x-codeSamples` when you have a Scalar setup and want language-specific code
 
 For every endpoint, provide:
 
-1. **Success request body** (if the endpoint has a request body) — a realistic, valid payload. Not `{"string": "string"}`.
-2. **Success response** (200 or 201) — a realistic response object.
-3. **Error response** (400 or 422) — at least one example of a validation failure.
+1. **Success request body** (if the endpoint has a request body): a realistic, valid payload. Not `{"string": "string"}`.
+2. **Success response** (200 or 201): a realistic response object.
+3. **Error response** (400 or 422): at least one example of a validation failure.
 
 For `GET` endpoints with path/query parameters, add a realistic example value to each parameter's `example` field.
 

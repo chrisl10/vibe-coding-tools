@@ -1,4 +1,4 @@
-# Refactor Proposal — "Legacy App → 2026 Standards"
+# Refactor Proposal: "Legacy App → 2026 Standards"
 
 A phased refactor plan. Output shape when the invocation is "propose a refactor". The final artifact is handed to `library-worker-bee` for PRD authoring.
 
@@ -14,7 +14,7 @@ A phased refactor plan. Output shape when the invocation is "propose a refactor"
 
 ## Phases
 
-### Phase 1 — Structural refactor (no behavior change) — 2 weeks
+### Phase 1: Structural refactor (no behavior change), 2 weeks
 
 Move from layer-based (`src/components`, `src/services`, `src/reducers`) to feature-based per `guides/01-project-structure.md`.
 
@@ -26,9 +26,9 @@ Move from layer-based (`src/components`, `src/services`, `src/reducers`) to feat
 
 **Exit criteria:** All imports comply with unidirectional rules. CI green. No behavior change.
 
-**ADR:** ADR-101 — Feature-based architecture adoption.
+**ADR:** ADR-101: Feature-based architecture adoption.
 
-### Phase 2 — Component API cleanup — 2 weeks
+### Phase 2: Component API cleanup, 2 weeks
 
 Apply `guides/02-components-and-composition.md`.
 
@@ -40,7 +40,7 @@ Apply `guides/02-components-and-composition.md`.
 
 **Exit criteria:** All components ≤7 props, named exports only, 0 `any` in prop types.
 
-### Phase 3 — Data layer migration — 3 weeks
+### Phase 3: Data layer migration, 3 weeks
 
 **`guides/04-data-layer.md`.**
 
@@ -52,15 +52,15 @@ Apply `guides/02-components-and-composition.md`.
 
 **Exit criteria:** Zero `createSlice` for server data. `redux-saga` removed. Initial dashboard bundle ≤ 300 KB gz.
 
-**ADR:** ADR-102 — From Redux + sagas to TanStack Query for server state.
+**ADR:** ADR-102: From Redux + sagas to TanStack Query for server state.
 
-### Phase 4 — React 19 upgrade + Compiler — 2 weeks
+### Phase 4: React 19 upgrade + Compiler, 2 weeks
 
 **`guides/10-react-19-idioms.md`, `guides/07-performance.md §react-compiler`.**
 
 **Steps:**
 1. Upgrade `react` / `react-dom` to 19. Fix breaking changes (`UNSAFE_` lifecycles, PropTypes removals).
-2. Add `eslint-plugin-react-compiler`. Fix every violation. (This is the hardest step — expect real work.)
+2. Add `eslint-plugin-react-compiler`. Fix every violation. (This is the hardest step, expect real work.)
 3. Enable Compiler in Vite config.
 4. Migrate forms to React Hook Form + Zod (`guides/06-forms.md`).
 5. Remove defensive `useMemo` / `useCallback` now-handled-by-Compiler (except effect-dependency stability).
@@ -68,7 +68,7 @@ Apply `guides/02-components-and-composition.md`.
 
 **Exit criteria:** Compiler reports all files optimizable; INP < 200ms on primary flows.
 
-### Phase 5 — Testing + library swaps — 2 weeks
+### Phase 5: Testing + library swaps, 2 weeks
 
 **`guides/08-testing.md`, `guides/13-ecosystem-catalog.md`.**
 
@@ -81,7 +81,7 @@ Apply `guides/02-components-and-composition.md`.
 
 **Exit criteria:** 0 Enzyme tests remaining. `moment` not in `package.json`. Coverage ≥ 70%.
 
-### Phase 6 — SSR migration to Next.js App Router — 4 weeks
+### Phase 6: SSR migration to Next.js App Router, 4 weeks
 
 **`guides/11-server-components.md`.**
 
@@ -110,7 +110,7 @@ Apply `guides/02-components-and-composition.md`.
 ## Handoff
 
 - **This plan → `library-worker-bee`** for PRD authoring. The PRD will expand Phase 3 and Phase 6 into user-visible milestones, acceptance criteria, risk register, rollback plan.
-- **Per-phase ADRs → repo `library/architecture/ADR-<n>-<topic>.md`.**
+- **Per-phase ADRs → repo `library/knowledge/private/architecture/ADR-<n>-<topic>.md`.**
 - **Post-phase QA → `quality-worker-bee`.**
 
 ## References

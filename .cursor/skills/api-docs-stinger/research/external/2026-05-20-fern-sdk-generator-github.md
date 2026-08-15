@@ -8,7 +8,7 @@ topic: sdk-generation
 stinger: api-docs-stinger
 ---
 
-# Fern SDK Generator — GitHub README
+# Fern SDK Generator: GitHub README
 
 ## Summary
 
@@ -64,8 +64,8 @@ fern/
 ## Annotations for stinger-forge
 
 - Primary source for the Fern section of `guides/04-sdk-generation.md`.
-- The Postman acquisition (January 2026) is a longevity risk to note — Fern's roadmap may shift to serve Postman's enterprise priorities.
-- `fern generate` runs in Fern's cloud — important for teams with air-gap requirements (they need Speakeasy instead).
-- Fern also generates documentation (interactive UI + API reference) — it competes with Scalar/Redoc on the docs side too, which is worth noting in the tool selection guide.
-- The `generators.yml` + `fern.config.json` pattern is analogous to a Makefile target — document the equivalent in `templates/makefile-sdk-targets.md`.
+- The Postman acquisition (January 2026) is a longevity risk to note: Fern's roadmap may shift to serve Postman's enterprise priorities.
+- `fern generate` runs in Fern's cloud: important for teams with air-gap requirements (they need Speakeasy instead).
+- Fern also generates documentation (interactive UI + API reference): it competes with Scalar/Redoc on the docs side too, which is worth noting in the tool selection guide.
+- The `generators.yml` + `fern.config.json` pattern is analogous to a Makefile target. Document the equivalent in `templates/makefile-sdk-targets.md`.
 - Compare with `openapi-generator-cli`: Fern is more idiomatic output but cloud-dependent; openapi-generator is local/free but requires Java and produces less idiomatic TypeScript.

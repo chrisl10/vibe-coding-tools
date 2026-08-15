@@ -47,7 +47,7 @@ The research found multiple Pycord references (guide.pycord.dev, docs.pycord.dev
 |----------|-----|-----|
 | High | https://github.com/PythonistaGuild/Wavelink | Confirm still unmaintained; any revival would change voice recommendations |
 | High | https://lavalink.dev/clients | DAVE support table changes as clients update |
-| High | https://discordjs.guide/v15 | v15 release status — once stable, guides need updating |
+| High | https://discordjs.guide/v15 | v15 release status: once stable, guides need updating |
 | Medium | https://github.com/skick1234/DisTube | DAVE support status |
 | Medium | https://docs.rs/poise | Rust slash command pattern for Serenity section |
 | Low | https://discord.com/developers/docs/change-log | Quarterly API changes |

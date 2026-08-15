@@ -40,7 +40,7 @@ grep -r '"use server"' src/
 grep -r '"use client"' src/
 ```
 
-Result: none found — migration is safe to proceed.
+Result: none found. Migration is safe to proceed.
 
 ### 2. Install preact
 
@@ -96,7 +96,7 @@ npm run build
 
 ## Result
 
-Bundle reduced from 42KB to 8KB gzipped. No source file changes were required — only configuration.
+Bundle reduced from 42KB to 8KB gzipped. No source file changes were required: only configuration.
 
 ## Edge case: third-party library requiring `@types/react`
 

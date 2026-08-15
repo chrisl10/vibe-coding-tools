@@ -1,4 +1,4 @@
-# Tool Recommendation — Output Template
+# Tool Recommendation: Output Template
 
 *Fill in this template when `ai-coding-tools-worker-bee` produces a recommendation. Delete sections that don't apply to the user's scenario.*
 
@@ -6,9 +6,9 @@
 
 ## Recommendation summary
 
-**Recommended tool(s):** [Tool name(s) — e.g., "Cursor + Aider (architect/editor)"]
+**Recommended tool(s):** [Tool name(s), e.g., "Cursor + Aider (architect/editor)"]
 **Tier:** [Tier 1 interactive-pair | Tier 2 hybrid-agent | Tier 3 fully-autonomous | Tier 4 rapid-scaffold]
-**Confidence:** [High | Medium | Low] — [one-line rationale]
+**Confidence:** [High | Medium | Low]: [one-line rationale]
 
 ---
 

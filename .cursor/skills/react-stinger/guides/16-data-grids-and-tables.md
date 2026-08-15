@@ -1,6 +1,6 @@
-# 16 — Data Grids & Tables
+# 16: Data Grids & Tables
 
-Source: `research/2026-04-25-data-grids-and-tables.md`. The right table for 50 rows is the wrong table for 5 million. Pick by row count, edit depth, and license tolerance — not by which one you used last.
+Source: `research/2026-04-25-data-grids-and-tables.md`. The right table for 50 rows is the wrong table for 5 million. Pick by row count, edit depth, and license tolerance, not by which one you used last.
 
 ## TL;DR pick
 
@@ -21,7 +21,7 @@ The canonical pick for *most* product teams in 2026: **TanStack Table** for head
 ### TanStack Table (the headless default)
 - You want full visual control and you're already on shadcn / Tailwind / Radix.
 - Up to ~10,000 rows comfortably with virtualization (`@tanstack/react-virtual`).
-- Type-safe column defs; sorting, filtering, grouping, pagination — all opt-in.
+- Type-safe column defs; sorting, filtering, grouping, pagination: all opt-in.
 - Ships zero UI. You write the `<table>`, `<thead>`, `<tbody>`, cells. That's the point.
 
 ### AG Grid (the enterprise king)
@@ -30,13 +30,13 @@ The canonical pick for *most* product teams in 2026: **TanStack Table** for head
 - Trade-off: opinionated DOM, harder to theme to a custom design system. Budget for theming time.
 
 ### Handsontable (Excel-like data entry)
-- Your users will type into cells like a spreadsheet — formulas, fill-down, range paste, undo stack, validation.
+- Your users will type into cells like a spreadsheet: formulas, fill-down, range paste, undo stack, validation.
 - Commercial license required for production use in non-OSS apps. Read the license before adopting.
 - HyperFormula (free, MIT) handles the formula engine.
 
 ### Glide Data Grid (extreme-scale rendering)
 - You display 100k+ rows, need 60fps scroll, and a native-feeling cell editor.
-- Canvas-rendered, not DOM. Means no per-cell React reconciliation, but also no easy CSS theming — you style via the data-grid theme API.
+- Canvas-rendered, not DOM. Means no per-cell React reconciliation, but also no easy CSS theming: you style via the data-grid theme API.
 - Used by Glide and others for very large database UIs.
 
 ### MUI X DataGrid (the MUI-shop pick)
@@ -50,8 +50,8 @@ The canonical pick for *most* product teams in 2026: **TanStack Table** for head
 
 1. **Row count.**
    - <1,000: anything works, including raw `<table>`.
-   - 1,000–50,000: TanStack Table + virtualization, AG Grid, MUI X.
-   - 50,000–500,000: AG Grid (server-side row model), Glide Data Grid.
+   - 1,000 to 50,000: TanStack Table + virtualization, AG Grid, MUI X.
+   - 50,000 to 500,000: AG Grid (server-side row model), Glide Data Grid.
    - 500,000+: Glide Data Grid or server-driven pagination with TanStack Table.
 2. **Edit depth.**
    - Read-only / single-cell edit: TanStack Table.
@@ -141,16 +141,16 @@ Wrap in `useVirtualizer` from `@tanstack/react-virtual` once row count crosses ~
 
 ## Common findings
 
-> **[Must-fix]** `src/features/admin/UsersTable.tsx:1` — renders 50,000 rows in a plain `<table>`. Adds virtualization or move to AG Grid server-side row model. Cite Profiler frame time.
+> **[Must-fix]** `src/features/admin/UsersTable.tsx:1`: renders 50,000 rows in a plain `<table>`. Adds virtualization or move to AG Grid server-side row model. Cite Profiler frame time.
 
-> **[Should-refactor]** `package.json:42` — `react-table@7` (legacy). Migrate to TanStack Table v8+. The API is similar but type-safer.
+> **[Should-refactor]** `package.json:42`: `react-table@7` (legacy). Migrate to TanStack Table v8+. The API is similar but type-safer.
 
-> **[Must-fix]** `src/features/spreadsheet/Sheet.tsx:1` — Handsontable in production without a commercial license. Verify license terms with legal; this is a compliance issue.
+> **[Must-fix]** `src/features/spreadsheet/Sheet.tsx:1`: Handsontable in production without a commercial license. Verify license terms with legal; this is a compliance issue.
 
 ---
 
 ## Handoffs
 
-- **Token / spacing / typography of the table surface** → `ux-ui-worker-bee`.
+- **Token / spacing / typography of the table surface** → `ux-ui-svelte-worker-bee`.
 - **Server-side row model API design (cursor pagination, filter pushdown)** → `db-worker-bee`.
 - **License procurement (AG Grid, Handsontable, MUI X)** → `library-worker-bee` PRD.

@@ -10,7 +10,7 @@
 
 ## Summary
 
-React Hook Form is the default form library in 2026. It uses uncontrolled inputs (ref-based) for performance — minimal re-renders on typing. Zod is the default schema-validation layer; `@hookform/resolvers/zod` integrates them with a single `zodResolver(schema)` call.
+React Hook Form is the default form library in 2026. It uses uncontrolled inputs (ref-based) for performance: minimal re-renders on typing. Zod is the default schema-validation layer; `@hookform/resolvers/zod` integrates them with a single `zodResolver(schema)` call.
 
 ## Canonical pattern
 
@@ -44,10 +44,10 @@ function RegisterForm() {
 ## Best practices
 
 1. **Use Zod as the source of truth.** `z.infer<>` gives you the TypeScript type for free.
-2. **Share the schema between client and server.** Validate on both sides — client for UX, server as the security layer.
+2. **Share the schema between client and server.** Validate on both sides: client for UX, server as the security layer.
 3. **Abstract a `<Form>` and field components** (per bulletproof-react) so the library choice is swappable.
 4. **Mode defaults:** `onBlur` for most forms; `onChange` only when instant feedback is required.
-5. **Wire Zod + React Hook Form + React 19 Server Actions** via `formAction` on the `<form>` — RHF exposes the form data, Zod re-validates server-side, Server Action persists.
+5. **Wire Zod + React Hook Form + React 19 Server Actions** via `formAction` on the `<form>`: RHF exposes the form data, Zod re-validates server-side, Server Action persists.
 
 ## Relevance to this stinger
 

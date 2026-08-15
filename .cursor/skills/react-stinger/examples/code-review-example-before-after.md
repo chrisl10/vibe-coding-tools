@@ -1,4 +1,4 @@
-# Code Review Example — Before / After
+# Code Review Example: Before / After
 
 A worked React code review. Illustrates severity labels (`guides/00-principles.md §severity`), citations (`guides/00-principles.md §9`), and anti-pattern detection (`guides/12-anti-patterns.md`).
 
@@ -62,7 +62,7 @@ export const useUsers = create<{ users: any[]; setUsers: (u: any[]) => void }>((
 
 ### 1. [Must-fix] Server data stored in Zustand
 
-**`src/features/users/store.ts:3`** — User list is server-owned data. Zustand is the wrong layer per the 5-layer model in `guides/03-state-management.md §decision-tree`.
+**`src/features/users/store.ts:3`**: User list is server-owned data. Zustand is the wrong layer per the 5-layer model in `guides/03-state-management.md §decision-tree`.
 
 **Fix:** Replace with TanStack Query.
 
@@ -90,13 +90,13 @@ Delete the Zustand store. (Citation: `guides/04-data-layer.md §the-3-part-reque
 
 ### 2. [Must-fix] `any` for API response
 
-**`src/features/users/store.ts:3`**, **`user-search.tsx:4`** — `users: any[]` and `props: any`. Violates `guides/09-typescript-patterns.md §zod-at-boundary`. Fixed by #1 via the Zod schema.
+**`src/features/users/store.ts:3`**, **`user-search.tsx:4`**: `users: any[]` and `props: any`. Violates `guides/09-typescript-patterns.md §zod-at-boundary`. Fixed by #1 via the Zod schema.
 
 ---
 
 ### 3. [Must-fix] `useEffect` for derived state
 
-**`user-search.tsx:10-12`** — Anti-pattern #1 from `guides/12-anti-patterns.md`. `filtered` is derived from `users` + `query`. Compute during render.
+**`user-search.tsx:10-12`**: Anti-pattern #1 from `guides/12-anti-patterns.md`. `filtered` is derived from `users` + `query`. Compute during render.
 
 **Fix:**
 
@@ -110,56 +110,56 @@ Remove the `useState<any[]>([])` and `useEffect`. (Citation: https://react.dev/l
 
 ### 4. [Must-fix] `fetch` + useEffect instead of TanStack Query
 
-**`user-search.tsx:14-18`** — fetch in component, manual `isLoading`. Replaced by `useUsers()` from #1. Query already tracks `isLoading` / `isError` / `data`.
+**`user-search.tsx:14-18`**: fetch in component, manual `isLoading`. Replaced by `useUsers()` from #1. Query already tracks `isLoading` / `isError` / `data`.
 
 ---
 
 ### 5. [Must-fix] Index-as-key
 
-**`user-search.tsx:27`** — `{filtered.map((u, i) => <li key={i}>...)}`. Anti-pattern #11 from `guides/12-anti-patterns.md`. Use `u.id`.
+**`user-search.tsx:27`**: `{filtered.map((u, i) => <li key={i}>...)}`. Anti-pattern #11 from `guides/12-anti-patterns.md`. Use `u.id`.
 
 ---
 
 ### 6. [Must-fix] `'use client'` at a potentially-RSC-eligible level
 
-**`user-search.tsx:1`** — Component uses `useState` and form input, so `'use client'` is *correct*. **Not a finding by itself.** But look upstream: the page importing it should stay RSC. Spot check: `app/users/page.tsx` is currently `'use client'`; push down. See `guides/11-server-components.md §push-use-client-down`.
+**`user-search.tsx:1`**: Component uses `useState` and form input, so `'use client'` is *correct*. **Not a finding by itself.** But look upstream: the page importing it should stay RSC. Spot check: `app/users/page.tsx` is currently `'use client'`; push down. See `guides/11-server-components.md §push-use-client-down`.
 
 ---
 
 ### 7. [Must-fix] Default export
 
-**`user-search.tsx:4`** — `export default function UserSearch`. Codebase convention is named exports (`guides/02-components-and-composition.md §rule-5`). Change to `export function UserSearch`.
+**`user-search.tsx:4`**: `export default function UserSearch`. Codebase convention is named exports (`guides/02-components-and-composition.md §rule-5`). Change to `export function UserSearch`.
 
 ---
 
 ### 8. [Should-refactor] No URL state for search query
 
-**`user-search.tsx:7`** — `query` in `useState` means the search is lost on navigation and not shareable. Move to `nuqs`:
+**`user-search.tsx:7`**: `query` in `useState` means the search is lost on navigation and not shareable. Move to `nuqs`:
 
 ```tsx
 import { useQueryState, parseAsString } from 'nuqs';
 const [query, setQuery] = useQueryState('q', parseAsString.withDefault(''));
 ```
 
-(Citation: `guides/03-state-management.md §layer-4`.) Non-blocking — can be a follow-up PR.
+(Citation: `guides/03-state-management.md §layer-4`.) Non-blocking: can be a follow-up PR.
 
 ---
 
 ### 9. [Should-refactor] Case-sensitive search
 
-**`user-search.tsx:11`** — `u.name.includes(query)` is case-sensitive. Users expect case-insensitive. Addressed in the fix in #3.
+**`user-search.tsx:11`**: `u.name.includes(query)` is case-sensitive. Users expect case-insensitive. Addressed in the fix in #3.
 
 ---
 
 ### 10. [Must-fix] No accessibility attributes
 
-**`user-search.tsx:23`** — `<input>` has no associated label. Add `<label>Search users <input ... /></label>` with proper role. (Citation: `guides/06-forms.md §accessibility`.) Hand off to `ux-ui-worker-bee` if deeper a11y review is wanted.
+**`user-search.tsx:23`**: `<input>` has no associated label. Add `<label>Search users <input ... /></label>` with proper role. (Citation: `guides/06-forms.md §accessibility`.) Hand off to `ux-ui-svelte-worker-bee` if deeper a11y review is wanted.
 
 ---
 
 ### 11. [Style] Component file too long
 
-**`user-search.tsx`** — 87 lines. Near threshold. Consider extracting the list row into `<UserRow user={u} />`. Optional; batch with future changes.
+**`user-search.tsx`**: 87 lines. Near threshold. Consider extracting the list row into `<UserRow user={u} />`. Optional; batch with future changes.
 
 ## After (target code)
 
@@ -207,4 +207,4 @@ export function UserSearch() {
 
 **Recommendation:** Block merge. Address must-fix items in this PR; should-refactor as follow-ups. Re-run `scripts/scan-anti-patterns.ts` after the fix to confirm.
 
-**Cross-Bee handoff:** `ux-ui-worker-bee` for a11y deep-dive after the label fix lands.
+**Cross-Bee handoff:** `ux-ui-svelte-worker-bee` for a11y deep-dive after the label fix lands.

@@ -1,4 +1,4 @@
-# open-questions.md — mind-stinger
+# open-questions.md: mind-stinger
 
 Things mind-worker-bee doesn't know definitively. Each is paired with the question we'd answer it with.
 
@@ -36,9 +36,9 @@ Things mind-worker-bee doesn't know definitively. Each is paired with the questi
 
 ## 4. GraphRAG lift on the deploying product's specific coaching domain
 
-**Question:** Does GraphRAG provide a measurable lift on the deploying product's coaching context vs the 20–25% claimed in regulated-vertical case studies?
+**Question:** Does GraphRAG provide a measurable lift on the deploying product's coaching context vs the 20-25% claimed in regulated-vertical case studies?
 
-**How we'd answer:** Per `examples/05-graphrag-enable-for-new-tenant.md` — A/B vector vs vector+graph on a flagship tenant for 2 weeks; measure cross-session-connection rubric and retrieval precision.
+**How we'd answer:** Per `examples/05-graphrag-enable-for-new-tenant.md`: A/B vector vs vector+graph on a flagship tenant for 2 weeks; measure cross-session-connection rubric and retrieval precision.
 
 **Until answered:** GraphRAG is gated. Enable per-tenant only with the eval-evidence procedure in the example.
 
@@ -60,7 +60,7 @@ Things mind-worker-bee doesn't know definitively. Each is paired with the questi
 
 **How we'd answer:** A/B at different thresholds; measure (a) coaching rubric scores post-compaction, (b) "lost in the middle" failures, (c) compaction cost per session.
 
-**Until answered:** 40 is canonical. Calibrated for ~6,000–10,000 token raw history fitting alongside system prompt + knowledge.
+**Until answered:** 40 is canonical. Calibrated for ~6,000-10,000 token raw history fitting alongside system prompt + knowledge.
 
 ---
 
@@ -84,11 +84,11 @@ Things mind-worker-bee doesn't know definitively. Each is paired with the questi
 
 ---
 
-## 9. Module path migration to Qdrant — measured lift
+## 9. Module path migration to Qdrant: measured lift
 
 **Question:** Will migrating `buildCoachingPrompt()` (module path) from Postgres-only to Qdrant + rerank actually lift coaching quality?
 
-**How we'd answer:** A/B for one module type (e.g., `goals`) — Postgres-only vs Qdrant — for 2 weeks; compare retrieval precision + coaching rubric.
+**How we'd answer:** A/B for one module type (e.g., `goals`), Postgres-only vs Qdrant, for 2 weeks; compare retrieval precision + coaching rubric.
 
 **Until answered:** module path RAG gap is one of the recurring gap patterns. Migration is must-fix per `guides/20-common-failure-modes.md §1.4`. Eval lift is the validation step, not the precondition.
 

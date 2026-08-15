@@ -1,4 +1,4 @@
-# 02 — Flow Metrics: Definitions, Calculation, and Benchmarks
+# 02. Flow Metrics: Definitions, Calculation, and Benchmarks
 
 *Sources: `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md`; `research/external/2026-05-20-value-stream-metrics-axify.md`*
 
@@ -6,7 +6,7 @@
 
 ## The four core flow metrics
 
-These definitions come from `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md`. Apply them exactly — conflation is the primary source of team confusion.
+These definitions come from `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md`. Apply them exactly: conflation is the primary source of team confusion.
 
 ### 1. Cycle Time
 
@@ -16,7 +16,7 @@ These definitions come from `research/external/2026-05-20-flow-metrics-definitio
 - Clock ends: when the item exits the last active work stage (the "done" column).
 - **Unit:** calendar days (not working days, to keep the metric honest about wait time).
 
-Analogy: in a restaurant, cycle time is from "chef starts cooking" to "dish is served" — not from "customer seated."
+Analogy: in a restaurant, cycle time is from "chef starts cooking" to "dish is served," not from "customer seated."
 
 ### 2. Lead Time
 
@@ -40,7 +40,7 @@ Analogy: lead time starts when the customer places the order.
 
 **Definition:** The number of work items that have started but not yet completed, at a given moment.
 
-- Measure WIP at a specific point in time (snapshot), not as an average — snapshots are more actionable.
+- Measure WIP at a specific point in time (snapshot), not as an average: snapshots are more actionable.
 - WIP by stage (per-column WIP) is more useful than total WIP for bottleneck diagnosis.
 
 ### 5. Flow Efficiency (derived)
@@ -63,7 +63,7 @@ From `research/external/2026-05-20-value-stream-metrics-axify.md`:
 | Flow efficiency | 5-20% | 20%+ |
 | Cycle time (p75) | 3-10 days | 1.8 days |
 | Lead time | 5-30 days | Sub-24 hours |
-| Throughput | Team-dependent | — |
+| Throughput | Team-dependent | n/a |
 
 Use these benchmarks carefully: they aggregate across diverse team types. A team doing architectural spikes will have different numbers than a team doing support tickets. The useful comparison is *your own team's trend over time*, not a cross-industry average.
 
@@ -82,7 +82,7 @@ Cycle Time = Done Timestamp - First-Active-Stage-Entry Timestamp
 Compute the distribution, then report:
 - **p50 (median):** typical experience
 - **p85:** most items complete in this time or less (use for SLA commitments)
-- **p95:** the "tail" — rare outliers; investigate these items for systemic blockers
+- **p95:** the "tail": rare outliers; investigate these items for systemic blockers
 
 ### Throughput (rolling average)
 
@@ -125,4 +125,4 @@ Several sources (`research/external/2026-05-20-value-stream-metrics-axify.md`) d
 
 ---
 
-*Example: `examples/cycle-time-diagnosis.md` — diagnosing a cycle-time spike using CFD and percentile data*
+*Example: `examples/cycle-time-diagnosis.md`: diagnosing a cycle-time spike using CFD and percentile data*

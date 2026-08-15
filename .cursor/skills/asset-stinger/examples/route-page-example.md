@@ -1,4 +1,4 @@
-# Example — `Route` row (type=page)
+# Example: `Route` row (type=page)
 
 A page-type route. Demonstrates the `renderedPageKey` link back to the `Page` catalog.
 
@@ -53,7 +53,7 @@ export default function DashboardPage() {
 }
 ```
 
-## Registry row (Page) — linked
+## Registry row (Page): linked
 
 ```ts
 {

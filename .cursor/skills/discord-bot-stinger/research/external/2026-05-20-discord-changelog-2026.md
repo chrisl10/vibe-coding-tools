@@ -19,7 +19,7 @@ Official Discord changelog noting significant API changes in the research window
 
 - "To support our long-term privacy goals, we will only support E2EE calls starting on March 1st, 2026 for all audio and video conversations in direct messages (DMs), group messages (GDMs), voice channels, and Go Live streams on Discord."
 - "After that date, any client or application not updated for DAVE support will no longer be able to participate in Discord calls."
-- Create Guild endpoint (POST /guilds) restricted for applications starting **July 15, 2025** — bots can no longer create guilds, existing bot-owned guilds transferred to real users
+- Create Guild endpoint (POST /guilds) restricted for applications starting **July 15, 2025**: bots can no longer create guilds, existing bot-owned guilds transferred to real users
 - Rate limit on requesting all guild members in very large guilds: rolled out to all servers **October 1, 2025**
 
 ## Annotations for stinger-forge

@@ -1,5 +1,7 @@
 # 05 - Release Flow
 
+> **npm package publishing case (legacy, secondary).** Applies when the artifact IS a published npm package (the Hivemind case). For the continuously-deployed SvelteKit-on-Vercel primary case, there is no comparable "release cut" step by default - see `guides/16-release-automation-decision.md` for when (if ever) this repo's app surface needs one.
+
 How an `@deeplake/hivemind` release actually gets cut. The mechanics live in `release.yaml`; the prose lives with `changelog-release-notes-worker-bee`.
 
 ## The release.yaml shape

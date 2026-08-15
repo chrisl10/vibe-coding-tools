@@ -1,4 +1,4 @@
-# 18 — Deployment Runtimes
+# 18: Deployment Runtimes
 
 Picking the WSGI / ASGI server. Co-owned with `devops-worker-bee` (build, supervisor, autoscaling); the runtime choice itself lives here.
 
@@ -10,7 +10,7 @@ Picking the WSGI / ASGI server. Co-owned with `devops-worker-bee` (build, superv
 | Async Django (some `async def` views, no WebSockets) | **gunicorn + uvicorn workers** OR pure **uvicorn** | ASGI-capable; uvicorn is a Rust-fast HTTP/1.1 + HTTP/2 implementation |
 | FastAPI | **uvicorn** (or behind gunicorn for prefork) | FastAPI is async-native |
 | Channels (WebSockets) | **daphne** | Official Channels-tuned; uvicorn works but loses defaults |
-| Mixed Django + Channels | **daphne** for everything (or split — see below) | Daphne handles HTTP and WS in one process |
+| Mixed Django + Channels | **daphne** for everything (or split, see below) | Daphne handles HTTP and WS in one process |
 
 ## Canonical commands
 
@@ -45,7 +45,7 @@ daphne -b 0.0.0.0 -p 8001 config.asgi:application
 ## Worker-count rule of thumb
 
 - **CPU-bound (sync Django mostly)**: `(2 × cores) + 1`.
-- **I/O-bound async**: fewer workers, higher concurrency per worker — start with `cores` and tune.
+- **I/O-bound async**: fewer workers, higher concurrency per worker, start with `cores` and tune.
 - **`--max-requests 1000 --max-requests-jitter 100`** prevents memory leaks (worker recycles after 1000 requests, jitter prevents thundering herd).
 
 ## When to split daphne and gunicorn
@@ -56,14 +56,14 @@ If only WebSocket endpoints need ASGI, you can keep gunicorn for HTTP and add da
 - Nginx routes `/ws/*` to daphne, everything else to gunicorn.
 - Only one runtime understands Channels.
 
-This is conservative — if you're confident in async Django + Channels under daphne, run daphne for both.
+This is conservative: if you're confident in async Django + Channels under daphne, run daphne for both.
 
 ## Static files
 
 Django doesn't serve static files in production. Either:
 
-- **WhiteNoise** for tiny apps — `whitenoise.middleware.WhiteNoiseMiddleware` — simple, scales to medium.
-- **CDN-fronted bucket** (S3 / DigitalOcean Spaces / Cloudflare R2) for production — `STATICFILES_STORAGE = "storages.backends.s3.S3Storage"` etc.
+- **WhiteNoise** for tiny apps: `whitenoise.middleware.WhiteNoiseMiddleware`, simple, scales to medium.
+- **CDN-fronted bucket** (S3 / DigitalOcean Spaces / Cloudflare R2) for production: `STATICFILES_STORAGE = "storages.backends.s3.S3Storage"` etc.
 - Hand off the choice to `devops-worker-bee`.
 
 ## Health checks

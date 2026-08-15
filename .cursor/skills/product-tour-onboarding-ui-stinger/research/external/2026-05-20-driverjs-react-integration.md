@@ -11,7 +11,7 @@ stinger: product-tour-onboarding-ui-stinger
 # Driver.js Official Documentation: Installation and Basic Usage
 
 ## Summary
-Official installation and API reference for Driver.js. The library is installed via npm (`npm install driver.js`) and imported as a single ES module with a companion CSS file. The core API is minimal: create a `driver()` instance, configure it with steps and options, then call `.drive()` to start the tour. Driver.js supports both multi-step tours (via the `steps` array) and single-element highlighting (via `.highlight()`). The library is SSR-safe in the sense that it makes no DOM calls at import time — it only activates when `.drive()` or `.highlight()` is called. React integration requires managing the driver instance in a `useRef` to avoid re-initialization on re-renders, and calling `.drive()` inside a `useEffect` or user event handler.
+Official installation and API reference for Driver.js. The library is installed via npm (`npm install driver.js`) and imported as a single ES module with a companion CSS file. The core API is minimal: create a `driver()` instance, configure it with steps and options, then call `.drive()` to start the tour. Driver.js supports both multi-step tours (via the `steps` array) and single-element highlighting (via `.highlight()`). The library is SSR-safe in the sense that it makes no DOM calls at import time; it only activates when `.drive()` or `.highlight()` is called. React integration requires managing the driver instance in a `useRef` to avoid re-initialization on re-renders, and calling `.drive()` inside a `useEffect` or user event handler.
 
 ## Key quotations / statistics
 
@@ -36,6 +36,6 @@ driverObj.highlight({
 
 ## Annotations for stinger-forge
 - This is the canonical reference for the `guides/03-driver-js-shepherd-js.md` Driver.js section.
-- The absence of built-in state persistence is a material gap stinger-forge must address — include a localStorage pattern and a database pattern (for cross-device persistence) in the guide.
+- The absence of built-in state persistence is a material gap stinger-forge must address: include a localStorage pattern and a database pattern (for cross-device persistence) in the guide.
 - The `element` selector field accepts any valid CSS selector, including `[data-tour="step-name"]` attributes, which ties directly to the `data-tour` stable-anchor strategy in `guides/06-maintenance-and-drift.md`.
 - SSR safety: Driver.js is safe to import server-side; only DOM operations happen client-side on invocation. No special Next.js wrapper required, unlike some other tour libraries.

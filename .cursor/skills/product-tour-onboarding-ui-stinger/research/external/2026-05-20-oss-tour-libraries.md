@@ -11,7 +11,7 @@ stinger: product-tour-onboarding-ui-stinger
 # Best Open-Source Product Tour Libraries in 2026
 
 ## Summary
-Comparative review of the three dominant open-source product tour libraries — Driver.js, Shepherd.js, and Intro.js — as of 2026. Driver.js is smallest and fastest (zero dependencies), ideal for spotlight-style highlighting in React apps. Shepherd.js offers the most flexible API with built-in accessibility compliance; it is the most actively maintained (updated 17 days ago as of research date). Intro.js is the most established but uses AGPL v3 licensing that requires a paid commercial license for most SaaS products, and its maintenance cadence has slowed (last update 9 months ago). All three require teams to build targeting, analytics, localization, and experiment infrastructure on top — the "hidden cost" of open-source tours.
+Comparative review of the three dominant open-source product tour libraries (Driver.js, Shepherd.js, and Intro.js) as of 2026. Driver.js is smallest and fastest (zero dependencies), ideal for spotlight-style highlighting in React apps. Shepherd.js offers the most flexible API with built-in accessibility compliance; it is the most actively maintained (updated 17 days ago as of research date). Intro.js is the most established but uses AGPL v3 licensing that requires a paid commercial license for most SaaS products, and its maintenance cadence has slowed (last update 9 months ago). All three require teams to build targeting, analytics, localization, and experiment infrastructure on top: the "hidden cost" of open-source tours.
 
 ## Key quotations / statistics
 - Driver.js: zero dependencies, MIT license, best for lightweight spotlight highlighting. Updated 4 months ago.

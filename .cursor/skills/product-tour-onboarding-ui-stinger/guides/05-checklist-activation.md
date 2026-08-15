@@ -22,12 +22,12 @@ These are NOT the same metric. A checklist that users complete in one session wi
 
 Use this framework to decide what goes in the checklist:
 
-1. **Sign-up / Account creation** — already done by the time the checklist appears.
-2. **Account setup** — profile, company details, initial preferences. Low-friction; quick wins.
-3. **Core value action** — the single most predictive activation milestone (varies by product). This is the checklist's most important item.
-4. **Feature exploration** — guided exposure to secondary features that increase stickiness.
-5. **Integration / collaboration** — connecting external tools or inviting teammates. High retention signal.
-6. **Habit formation** — encouraging the first repeat use. Can be email-triggered rather than in-app.
+1. **Sign-up / Account creation**: already done by the time the checklist appears.
+2. **Account setup**: profile, company details, initial preferences. Low-friction; quick wins.
+3. **Core value action**: the single most predictive activation milestone (varies by product). This is the checklist's most important item.
+4. **Feature exploration**: guided exposure to secondary features that increase stickiness.
+5. **Integration / collaboration**: connecting external tools or inviting teammates. High retention signal.
+6. **Habit formation**: encouraging the first repeat use. Can be email-triggered rather than in-app.
 
 **Rule:** Design the checklist around stages 2-5. Stage 6 is better handled by lifecycle email.
 
@@ -45,7 +45,7 @@ Apply the same decay curve to checklists. If you need 8 items, split into two ch
 
 ### 1. Endowed progress
 
-Show users they are already partway through before they start. Marking the first item as complete by default (or pre-completing sign-up) exploits the endowed-progress effect — users who feel they've already started are more likely to continue.
+Show users they are already partway through before they start. Marking the first item as complete by default (or pre-completing sign-up) exploits the endowed-progress effect: users who feel they've already started are more likely to continue.
 
 ```tsx
 const checklistItems = [
@@ -57,7 +57,7 @@ const checklistItems = [
 
 ### 2. Zeigarnik effect
 
-Incomplete tasks are more psychologically salient than unstarted tasks. Showing the progress percentage prominently ("2 of 4 complete") exploits the Zeigarnik effect — users are drawn to finish what they started.
+Incomplete tasks are more psychologically salient than unstarted tasks. Showing the progress percentage prominently ("2 of 4 complete") exploits the Zeigarnik effect: users are drawn to finish what they started.
 
 ```tsx
 const progress = items.filter(i => i.completed).length / items.length;

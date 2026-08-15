@@ -110,7 +110,7 @@ remotePatterns: [
 ],
 ```
 
-**Security note:** Wildcards (`**`) in `hostname` match any subdomain. Be as specific as possible — a wildcard on `**.example.com` allows any subdomain of example.com to serve images through your Next.js image optimization pipeline, which could be exploited if example.com is user-controlled.
+**Security note:** Wildcards (`**`) in `hostname` match any subdomain. Be as specific as possible: a wildcard on `**.example.com` allows any subdomain of example.com to serve images through your Next.js image optimization pipeline, which could be exploited if example.com is user-controlled.
 
 > Source: `research/external/2026-05-20-nextjs-remotepatterns-security.md`
 
@@ -139,7 +139,7 @@ export default function cloudinaryLoader({ src, width, quality }) {
 />
 ```
 
-When using a custom loader with AVIF-capable CDNs, the CDN handles format selection via `Accept` headers — set `formats` in `next.config` is not needed.
+When using a custom loader with AVIF-capable CDNs, the CDN handles format selection via `Accept` headers: set `formats` in `next.config` is not needed.
 
 ---
 

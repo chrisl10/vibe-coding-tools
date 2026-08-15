@@ -1,4 +1,4 @@
-# 04 — Django Migrations
+# 04: Django Migrations
 
 Migrations are sacred. Get them wrong and you create undetectable drift between environments and break rollback.
 
@@ -30,15 +30,15 @@ If `makemigrations` produces a file you don't understand, stop. Read the diff. A
 
 The five-phase rule (`research/2026-05-03-django-zero-downtime-migrations.md`):
 
-1. **Expand** — add the new shape (column, table) **alongside** the old. Nullable, with a default if writes from the old code path need it.
-2. **Dual-write** — application writes both old and new shapes. Code lands; old code (writing only the old shape) is still rolling out.
-3. **Backfill** — batched copy of old → new. Run from a Celery task or management command. Batch + throttle + paginate by primary key + checkpoint. Never one giant `UPDATE`.
-4. **Switch reads** — application reads from new (behind a feature flag, ramped 1% → 10% → 50% → 100%). Keep the old read path live for rollback.
-5. **Contract** — drop the old column / table. Only after the rollback horizon (often a week+) has passed.
+1. **Expand**: add the new shape (column, table) **alongside** the old. Nullable, with a default if writes from the old code path need it.
+2. **Dual-write**: application writes both old and new shapes. Code lands; old code (writing only the old shape) is still rolling out.
+3. **Backfill**: batched copy of old → new. Run from a Celery task or management command. Batch + throttle + paginate by primary key + checkpoint. Never one giant `UPDATE`.
+4. **Switch reads**: application reads from new (behind a feature flag, ramped 1% → 10% → 50% → 100%). Keep the old read path live for rollback.
+5. **Contract**: drop the old column / table. Only after the rollback horizon (often a week+) has passed.
 
 Each phase ships as a **separate deploy**.
 
-### Renaming a column — the canonical example
+### Renaming a column: the canonical example
 
 The bad way: `migrations.RenameField('Order', 'shipping_addr', 'shipping_address')`. Locks the table, breaks any in-flight requests writing the old name during the deploy window.
 
@@ -121,7 +121,7 @@ class Migration(migrations.Migration):
 
 Notes:
 
-- Always use `apps.get_model("app_label", "ModelName")` — the historical model. Never import the model directly; the import-path version may not match the schema at this migration point.
+- Always use `apps.get_model("app_label", "ModelName")`: the historical model. Never import the model directly; the import-path version may not match the schema at this migration point.
 - Provide a reverse function or `migrations.RunPython.noop`. If truly irreversible, leave a comment in the file documenting why.
 - For batch writes inside `RunPython`, use `bulk_update` / `bulk_create`, not loops of `.save()`.
 
@@ -147,9 +147,9 @@ Findings:
 
 ## Tooling
 
-- **`django-pg-zero-downtime-migrations`** — overrides the schema editor to refuse unsafe operations and emit safe-version DDL.
-- **`django-syzygy`** — splits a single migration into pre-deploy and post-deploy phases automatically.
-- **`scripts/audit-applied-migrations.py`** in this Stinger — verify no edits to migrations already in `git log` of a deployed environment.
+- **`django-pg-zero-downtime-migrations`**: overrides the schema editor to refuse unsafe operations and emit safe-version DDL.
+- **`django-syzygy`**: splits a single migration into pre-deploy and post-deploy phases automatically.
+- **`scripts/audit-applied-migrations.py`** in this Stinger: verify no edits to migrations already in `git log` of a deployed environment.
 
 ## CI checks
 

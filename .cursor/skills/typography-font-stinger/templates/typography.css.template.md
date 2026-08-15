@@ -85,9 +85,9 @@
      proportional to font-size and works correctly with all text scaling.
      --------------------------------------------------------------------------- */
 
-  --line-height-heading: 1.15;   /* h1, h2, h3 — tight, intentional */
-  --line-height-subhead: 1.3;    /* h4, h5, h6 — intermediate */
-  --line-height-body:    1.6;    /* body paragraphs — comfortable reading */
+  --line-height-heading: 1.15;   /* h1, h2, h3: tight, intentional */
+  --line-height-subhead: 1.3;    /* h4, h5, h6: intermediate */
+  --line-height-body:    1.6;    /* body paragraphs: comfortable reading */
   --line-height-ui:      1.1;    /* buttons, labels, nav links */
   --line-height-caption: 1.45;   /* captions, footnotes */
   --line-height-code:    1.65;   /* code blocks */

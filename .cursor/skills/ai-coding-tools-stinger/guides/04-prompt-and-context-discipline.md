@@ -1,4 +1,4 @@
-# Guide 04: Prompt and Context Discipline — Per-Tool Best Practices
+# Guide 04: Prompt and Context Discipline: Per-Tool Best Practices
 
 *Sources: `research/external/2026-05-20-claude-code-best-practices.md`, `research/external/2026-05-20-aider-llm-leaderboard.md`, `research/external/2026-05-20-bolt-new-webcontainer.md`*
 
@@ -161,5 +161,5 @@ Source: `research/external/2026-05-20-bolt-new-webcontainer.md`
 
 ## Examples
 
-- `examples/happy-path-selection.md` — shows CLAUDE.md structure for a TypeScript monorepo scenario
-- `examples/cost-constrained-workflow.md` — shows `.aider.conf.yml` for architect/editor cost optimization
+- `examples/happy-path-selection.md`: shows CLAUDE.md structure for a TypeScript monorepo scenario
+- `examples/cost-constrained-workflow.md`: shows `.aider.conf.yml` for architect/editor cost optimization

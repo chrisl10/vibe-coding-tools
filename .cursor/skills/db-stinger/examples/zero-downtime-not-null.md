@@ -1,4 +1,4 @@
-# Worked Example — Zero-Downtime NOT NULL Column Add
+# Worked Example: Zero-Downtime NOT NULL Column Add
 
 Add a NOT NULL `preferred_name` column to a 100M-row `users` table without blocking writes. Source: `guides/03-migrations.md`, `templates/migration-plan.md`, `templates/expand-backfill-contract-checklist.md`.
 
@@ -15,11 +15,11 @@ Add a NOT NULL `preferred_name` column to a 100M-row `users` table without block
   -- 🚫 DO NOT DO THIS ON A 100M-ROW TABLE
   ALTER TABLE users ADD COLUMN preferred_name text NOT NULL DEFAULT name;
   ```
-  This takes `ACCESS EXCLUSIVE` and rewrites the entire table — minutes-to-hours of blocked writes. Source: `guides/03-migrations.md` §DDL-lock-class-table.
+  This takes `ACCESS EXCLUSIVE` and rewrites the entire table: minutes-to-hours of blocked writes. Source: `guides/03-migrations.md` §DDL-lock-class-table.
 
 ## Plan
 
-### Phase 1 — Expand (Deploy 1)
+### Phase 1: Expand (Deploy 1)
 
 ```sql
 -- Metadata-only: nullable column with no default
@@ -39,9 +39,9 @@ ALTER TABLE users ADD COLUMN preferred_name text;
 - [ ] App logs show dual-writes happening.
 - [ ] No regression in p99 write latency.
 
-**Observe** for at least one full deploy cycle — typically 24h.
+**Observe** for at least one full deploy cycle: typically 24h.
 
-### Phase 2 — Backfill (Background job)
+### Phase 2: Backfill (Background job)
 
 ```sql
 -- Batched backfill, throttled
@@ -99,7 +99,7 @@ ALTER TABLE users DROP CONSTRAINT preferred_name_nn;
 **Verification:**
 - [ ] `SELECT count(*) FROM users WHERE preferred_name IS NULL;` returns 0.
 - [ ] `\d users` shows `preferred_name text not null`.
-- [ ] Bloat check after backfill — large `UPDATE`s create dead tuples.
+- [ ] Bloat check after backfill: large `UPDATE`s create dead tuples.
 
 **Tune autovacuum on `users`** before this phase if not already:
 ```sql
@@ -110,13 +110,13 @@ ALTER TABLE users SET (
 );
 ```
 
-### Phase 3 — Contract (Deploy 2)
+### Phase 3: Contract (Deploy 2)
 
 **App code change:**
 - Reads: only `preferred_name`.
 - Writes: only `preferred_name`. Stop dual-writing.
 
-There is no DDL change in Phase 3 for this migration — the column already has the right shape. The contract is purely an app-code change that retires the dual-write code path.
+There is no DDL change in Phase 3 for this migration: the column already has the right shape. The contract is purely an app-code change that retires the dual-write code path.
 
 For migrations that add a *replacement* column (renaming `name` → `preferred_name`), Phase 3 would also `DROP COLUMN name` after observing no writes.
 
@@ -126,7 +126,7 @@ For migrations that add a *replacement* column (renaming `name` → `preferred_n
 
 ## Rollback
 
-- **Phase 1:** `ALTER TABLE users DROP COLUMN preferred_name;` — metadata-only.
+- **Phase 1:** `ALTER TABLE users DROP COLUMN preferred_name;`: metadata-only.
 - **Phase 2:** truncate the column or drop and re-add. Backfilled values are lost; recoverable from PITR.
 - **Phase 3:** the app-code path is the rollback target. Re-deploy the dual-write code if reading-from-only-`preferred_name` causes regression.
 

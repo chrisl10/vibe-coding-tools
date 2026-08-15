@@ -68,6 +68,6 @@ Example transformation:
 
 ## Annotations for stinger-forge
 - The four main formats (Start/Stop/Continue, 4Ls, Sailboat, Mad/Sad/Glad) should be in `templates/retrospective-formats.md` with facilitation notes.
-- The action item standard (What/Owner/Due/Criteria) must be in every retrospective template — this is a Critical Directive from the Command Brief.
+- The action item standard (What/Owner/Due/Criteria) must be in every retrospective template: this is a Critical Directive from the Command Brief.
 - The five-phase facilitation framework (Set Stage, Gather Data, Generate Insights, Decide, Close) from retroflow.org/blog/post/how-to-facilitate-retrospective is the canonical structure.
 - The "31% more likely to report satisfaction when action items are followed through" stat is compelling justification for the owner+deadline requirement.

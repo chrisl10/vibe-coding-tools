@@ -1,4 +1,4 @@
-# 03 — Migrations
+# 03: Migrations
 
 The expand-backfill-contract pattern is the discipline that keeps migrations from blocking production.
 
@@ -19,19 +19,19 @@ Split a single logical change into three deployments:
 
 App code reads/writes both shapes during expand+backfill, then only the new shape after contract.
 
-### Phase 1 — Expand
-- Add new column / table / index — non-destructive.
+### Phase 1: Expand
+- Add new column / table / index: non-destructive.
 - `CREATE INDEX CONCURRENTLY` (no lock; slower).
 - Add as `NULL`able with no default (metadata-only).
 - App code dual-writes to old and new.
 
-### Phase 2 — Backfill
+### Phase 2: Backfill
 - Populate the new column from the old one.
-- **Always batch:** `UPDATE ... WHERE id BETWEEN x AND y` in 10k–100k chunks.
-- Throttle by autovacuum lag — heavy backfill creates bloat fast.
+- **Always batch:** `UPDATE ... WHERE id BETWEEN x AND y` in 10k-100k chunks.
+- Throttle by autovacuum lag: heavy backfill creates bloat fast.
 - For NOT NULL transitions: add `CHECK (col IS NOT NULL) NOT VALID`, then `VALIDATE CONSTRAINT` separately (cheap lock), then `SET NOT NULL` (now metadata-only, since the constraint already proves it).
 
-### Phase 3 — Contract
+### Phase 3: Contract
 - App code reads/writes only the new shape.
 - Drop old column / index / constraint.
 - Do this after observing zero traffic to the old path for a full deploy cycle.
@@ -40,17 +40,17 @@ App code reads/writes both shapes during expand+backfill, then only the new shap
 
 | DDL | Lock class | Blocks reads? | Blocks writes? | Safe on large table? |
 |---|---|---|---|---|
-| `CREATE INDEX` | `SHARE` | no | yes | no — use `CONCURRENTLY` |
+| `CREATE INDEX` | `SHARE` | no | yes | no: use `CONCURRENTLY` |
 | `CREATE INDEX CONCURRENTLY` | `SHARE UPDATE EXCLUSIVE` | no | no | yes (slower; can fail invalid) |
-| `ADD COLUMN` (nullable, no default) | `ACCESS EXCLUSIVE` (brief) | brief | brief | yes — metadata-only |
-| `ADD COLUMN ... DEFAULT <const>` (PG 11+) | `ACCESS EXCLUSIVE` (brief) | brief | brief | yes — metadata-only |
-| `ADD COLUMN ... DEFAULT <expr>` | `ACCESS EXCLUSIVE` | yes | yes | **NO — table rewrite** |
-| `ADD COLUMN ... NOT NULL` | `ACCESS EXCLUSIVE` | yes | yes | **NO** — use expand-backfill-contract |
+| `ADD COLUMN` (nullable, no default) | `ACCESS EXCLUSIVE` (brief) | brief | brief | yes: metadata-only |
+| `ADD COLUMN ... DEFAULT <const>` (PG 11+) | `ACCESS EXCLUSIVE` (brief) | brief | brief | yes: metadata-only |
+| `ADD COLUMN ... DEFAULT <expr>` | `ACCESS EXCLUSIVE` | yes | yes | **NO: table rewrite** |
+| `ADD COLUMN ... NOT NULL` | `ACCESS EXCLUSIVE` | yes | yes | **NO**: use expand-backfill-contract |
 | `ALTER COLUMN ... TYPE` (compatible) | `ACCESS EXCLUSIVE` | brief | brief | maybe |
-| `ALTER COLUMN ... TYPE` (incompatible) | `ACCESS EXCLUSIVE` | yes | yes | **NO — table rewrite** |
-| `ALTER COLUMN ... SET NOT NULL` | `ACCESS EXCLUSIVE` | brief | brief | maybe — full scan unless `CHECK NOT NULL` validated first |
-| `DROP COLUMN` | `ACCESS EXCLUSIVE` (brief) | brief | brief | yes — metadata-only |
-| `ADD CONSTRAINT ... CHECK NOT VALID` | `ACCESS EXCLUSIVE` (brief) | brief | brief | yes — metadata-only |
+| `ALTER COLUMN ... TYPE` (incompatible) | `ACCESS EXCLUSIVE` | yes | yes | **NO: table rewrite** |
+| `ALTER COLUMN ... SET NOT NULL` | `ACCESS EXCLUSIVE` | brief | brief | maybe: full scan unless `CHECK NOT NULL` validated first |
+| `DROP COLUMN` | `ACCESS EXCLUSIVE` (brief) | brief | brief | yes: metadata-only |
+| `ADD CONSTRAINT ... CHECK NOT VALID` | `ACCESS EXCLUSIVE` (brief) | brief | brief | yes: metadata-only |
 | `VALIDATE CONSTRAINT` | `SHARE UPDATE EXCLUSIVE` | no | no | yes |
 | `ADD FOREIGN KEY ... NOT VALID` | `SHARE ROW EXCLUSIVE` (brief) | brief | brief | yes |
 
@@ -101,7 +101,7 @@ Don't `ALTER COLUMN ... TYPE` on a large table. Instead:
 
 ### Rename a column
 
-Single-step `ALTER TABLE ... RENAME COLUMN` is metadata-only and fast — but it requires every reader to pick up the new name simultaneously. In a multi-deploy world, instead:
+Single-step `ALTER TABLE ... RENAME COLUMN` is metadata-only and fast, but it requires every reader to pick up the new name simultaneously. In a multi-deploy world, instead:
 
 1. Add a new column; trigger to keep it synced.
 2. App code reads new, writes old.
@@ -136,9 +136,9 @@ During the migration, `pgroll` exposes both `migration_<n>_old` and `migration_<
 
 | ORM | Tool | Diff or declarative? | Plays nice with `pgroll`? |
 |---|---|---|---|
-| Drizzle | `drizzle-kit` | Diff-based | Yes — `drizzle-kit` writes raw SQL files |
-| Prisma | `prisma migrate` | Declarative + shadow DB | Partial — Prisma owns the migration history |
-| Raw SQL | hand-rolled | n/a | Yes — `pgroll` IS the migration tool |
+| Drizzle | `drizzle-kit` | Diff-based | Yes: `drizzle-kit` writes raw SQL files |
+| Prisma | `prisma migrate` | Declarative + shadow DB | Partial: Prisma owns the migration history |
+| Raw SQL | hand-rolled | n/a | Yes: `pgroll` IS the migration tool |
 
 For zero-downtime requirements at scale, raw SQL + `pgroll` is the most flexible. Prisma + `pgroll` requires extra coordination because Prisma wants to own the migration history.
 
@@ -148,12 +148,12 @@ Use `templates/migration-plan.md` and `templates/expand-backfill-contract-checkl
 
 - [ ] State the Postgres major version.
 - [ ] State the lock class of every DDL.
-- [ ] Identify any DDL that takes `ACCESS EXCLUSIVE` — these need expand-backfill-contract on tables > 1M rows.
+- [ ] Identify any DDL that takes `ACCESS EXCLUSIVE`: these need expand-backfill-contract on tables > 1M rows.
 - [ ] Specify the rollback path.
 - [ ] Specify verification queries (handed to `quality-worker-bee`).
 
 ## Cross-references
 
-- `04-partitioning.md` — partition `ATTACH` / `DETACH` lock behavior.
-- `05-performance-pooling.md` — bloat after backfill; autovacuum tuning.
+- `04-partitioning.md`: partition `ATTACH` / `DETACH` lock behavior.
+- `05-performance-pooling.md`: bloat after backfill; autovacuum tuning.
 - `templates/migration-plan.md`, `templates/expand-backfill-contract-checklist.md`.

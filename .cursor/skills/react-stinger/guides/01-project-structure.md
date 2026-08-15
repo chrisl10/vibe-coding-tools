@@ -1,4 +1,4 @@
-# 01 — Project Structure
+# 01: Project Structure
 
 The feature-based folder layout from bulletproof-react. Follow it. Deviations need justification.
 
@@ -40,7 +40,7 @@ Include only the subfolders the feature needs. Empty folders are clutter.
 
 ## Three rules that matter
 
-### Rule 1 — No cross-feature imports
+### Rule 1: No cross-feature imports
 
 `src/features/comments` must not import from `src/features/discussions`. Features compose **at the `app/` layer**, not by reaching into each other.
 
@@ -56,7 +56,7 @@ Enforce with ESLint `import/no-restricted-paths`:
 
 See `templates/eslint.config.js` for the full zone list.
 
-### Rule 2 — Unidirectional flow
+### Rule 2: Unidirectional flow
 
 `shared → features → app`. Shared imports nothing. Features import only from shared. App imports from features and shared. Enforces a DAG with no back-edges.
 
@@ -66,7 +66,7 @@ See `templates/eslint.config.js` for the full zone list.
   from: ['./src/features', './src/app'] }
 ```
 
-### Rule 3 — No barrel files
+### Rule 3: No barrel files
 
 `index.ts` files that re-export everything from a folder break Vite tree-shaking, slow builds, and hide circular dependencies. Import files directly:
 
@@ -78,7 +78,7 @@ import { Button } from '@/components';
 import { Button } from '@/components/ui/button/button';
 ```
 
-Exception: component libraries with an explicit public API (e.g., `src/components/ui/button/index.ts` that exports `Button` and its types) — acceptable at the *leaf* level, never at aggregator level.
+Exception: component libraries with an explicit public API (e.g., `src/components/ui/button/index.ts` that exports `Button` and its types): acceptable at the *leaf* level, never at aggregator level.
 
 ## Next.js App Router variant
 
@@ -90,14 +90,14 @@ Same layout under `src/`, but `app/` is the Next.js convention for routes and co
 - "Layer-based" (`components/`, `hooks/`, `services/` at root with no feature grouping) in any app >10 components.
 - Cross-feature imports.
 - Barrel files at aggregator levels.
-- `types.ts` floating in the repo root — put them in `features/<feature>/types/` or `src/types/`.
+- `types.ts` floating in the repo root: put them in `features/<feature>/types/` or `src/types/`.
 
 ## Worked example
 
-See `examples/refactor-proposal-example.md` — phase 1 reorganizes a layer-based `src/` into this feature-based layout.
+See `examples/refactor-proposal-example.md`: phase 1 reorganizes a layer-based `src/` into this feature-based layout.
 
 ## Finding template
 
 When flagging a project structure issue:
 
-> **[Should-refactor]** `src/services/userService.ts:1` — user-specific logic sits in a global `services/` layer rather than `src/features/users/api/`. Move per `guides/01-project-structure.md §feature-layout`. Enables future cross-feature-import rules.
+> **[Should-refactor]** `src/services/userService.ts:1`: user-specific logic sits in a global `services/` layer rather than `src/features/users/api/`. Move per `guides/01-project-structure.md §feature-layout`. Enables future cross-feature-import rules.

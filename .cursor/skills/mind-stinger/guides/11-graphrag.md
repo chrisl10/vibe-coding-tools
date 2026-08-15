@@ -1,8 +1,10 @@
-# 11 — GraphRAG
+# 11: GraphRAG
+
+> **Alternative stack, Qdrant-adjacent.** The graph entities and relationships here already live in Postgres; only the semantic-retrieval half of GraphRAG assumes the Qdrant path. See `guides/00-selection-and-defaults.md` for this repo's default.
 
 `GraphEntity` / `GraphRelationship` Postgres models, `graph-retriever.ts`, `findRelevantEntities()`, `traverseGraph()`, RRF fusion via `rrf.ts`. **Feature-flag gated.** Built but not active by default.
 
-> **Doc reference:** `library/knowledge-base/ai/graphrag-knowledge-graph.md` is canonical.
+> **Doc reference:** `library/knowledge/private/ai/graphrag-knowledge-graph.md` is canonical.
 
 ---
 
@@ -15,8 +17,8 @@ Pure vector RAG flattens structure. Vector search excels at "find memories simil
 > Member: "I'm struggling to stay consistent with my follow-up calls."
 
 - **Vector RAG retrieves:** sessions where "inconsistent follow-up calls" appeared.
-- **Skilled coach would do:** recall that this member had the same struggle 4 months ago, tried an accountability structure that worked for 6 weeks, then fell off. Coach can say: "We've been here before. The accountability partner structure worked — what happened to it?"
-- **Why vector RAG misses this:** the connection between current struggle, historical technique, and outcome is a *relationship chain* across multiple sessions — not semantic similarity within any single session.
+- **Skilled coach would do:** recall that this member had the same struggle 4 months ago, tried an accountability structure that worked for 6 weeks, then fell off. Coach can say: "We've been here before. The accountability partner structure worked. What happened to it?"
+- **Why vector RAG misses this:** the connection between current struggle, historical technique, and outcome is a *relationship chain* across multiple sessions, not semantic similarity within any single session.
 
 GraphRAG stores these relationships explicitly and enables traversal.
 
@@ -57,7 +59,7 @@ Extracted from coaching session **summaries** (NOT raw transcripts) by `graph-ex
 | `OUTCOME` | "Booked 5 discovery calls in a week for the first time" |
 | `BREAKTHROUGH` | "Stopped apologizing for price and closed 3 premium clients" |
 | `GOAL` | "Generate $50K in new revenue by end of Q2" |
-| `CONTEXT` | "Business slowed during school year — seasonal pattern" |
+| `CONTEXT` | "Business slowed during school year: seasonal pattern" |
 
 ---
 
@@ -76,7 +78,7 @@ model GraphRelationship {
 
 ---
 
-## 5. Storage — Postgres, not a graph DB
+## 5. Storage: Postgres, not a graph DB
 
 ```prisma
 model GraphEntity {
@@ -111,13 +113,13 @@ model GraphRelationship {
 }
 ```
 
-**Why Postgres, not Neo4j:** The coaching graph is sparse (hundreds of nodes per user, not millions). Postgres `WITH RECURSIVE` CTE handles 2–3 hop traversals efficiently. No new infrastructure.
+**Why Postgres, not Neo4j:** The coaching graph is sparse (hundreds of nodes per user, not millions). Postgres `WITH RECURSIVE` CTE handles 2-3 hop traversals efficiently. No new infrastructure.
 
 ---
 
-## 6. Retrieval — three stages
+## 6. Retrieval: three stages
 
-### Stage 1: `findRelevantEntities()` — Postgres full-text search
+### Stage 1: `findRelevantEntities()` (Postgres full-text search)
 
 ```typescript
 findRelevantEntities(query: string, userId, tenantId, limit = 10): Promise<GraphEntityResult[]>
@@ -127,7 +129,7 @@ Constructs a `tsquery` from the query (whitespace-split, words > 2 chars, append
 
 **Note:** Full-text search, NOT pgvector. The `GraphEntity` model has no embedding column.
 
-### Stage 2: `traverseGraph()` — recursive CTE
+### Stage 2: `traverseGraph()` (recursive CTE)
 
 ```typescript
 traverseGraph(matchedEntityIds: string[], userId, tenantId, maxDepth = 2): Promise<GraphTraversalResult[]>
@@ -135,19 +137,19 @@ traverseGraph(matchedEntityIds: string[], userId, tenantId, maxDepth = 2): Promi
 
 BFS up to `maxDepth` hops with cycle detection (`AND NOT (e2.id = ANY(eg.visited_path))`). Returns up to 30 entities ordered by `min_depth ASC, occurrence_count DESC`.
 
-### Stage 3: `reciprocalRankFusion()` — RRF
+### Stage 3: `reciprocalRankFusion()` (RRF)
 
 ```typescript
 reciprocalRankFusion(vectorResults: RankedResult[], graphResults: RankedResult[], k = 60): FusedResult[]
 ```
 
-Standard RRF: `score(d) = SUM(1 / (k + rank_i(d)))`. Items in both lists get additive scoring — they're retrieved both semantically and relationally.
+Standard RRF: `score(d) = SUM(1 / (k + rank_i(d)))`. Items in both lists get additive scoring: they're retrieved both semantically and relationally.
 
 Caller takes top 20 and runs Cohere rerank for final selection. **Top-20 from RRF, top-5 from rerank.**
 
 ---
 
-## 7. Feature flag — A/B by hash
+## 7. Feature flag: A/B by hash
 
 ```typescript
 async function shouldUseGraphRAG(tenantId: string, seed: string): Promise<boolean> {
@@ -205,7 +207,7 @@ GraphRAG adds latency (graph traversal + RRF fusion) and Postgres query cost. En
 - It sounds architecturally interesting.
 - The code is built and available.
 
-Vector RAG alone (vector search + episodic memory + reranking) handles 80–90% of coaching quality needs. GraphRAG provides relational multi-hop reasoning for the remaining cases in long-term coaching relationships.
+Vector RAG alone (vector search + episodic memory + reranking) handles 80-90% of coaching quality needs. GraphRAG provides relational multi-hop reasoning for the remaining cases in long-term coaching relationships.
 
 ---
 
@@ -215,10 +217,10 @@ The current implementation is **platform-wide** (the flag is in `PlatformConfig`
 
 If a contributor wants to enable GraphRAG for one tenant only, the path:
 
-1. Update `library/knowledge-base/ai/graphrag-knowledge-graph.md` with the per-tenant gating decision.
+1. Update `library/knowledge/private/ai/graphrag-knowledge-graph.md` with the per-tenant gating decision.
 2. Extend the schema (`Tenant.enableGraphRAG: boolean` or feature-flag table).
 3. Update `shouldUseGraphRAG()` to check tenant-level flag first, then platform.
-4. Run an eval pass on the tenant's golden set with GraphRAG on vs. off — adopt only if measured lift > 5% on retrieval precision or human-graded quality.
+4. Run an eval pass on the tenant's golden set with GraphRAG on vs. off, adopt only if measured lift > 5% on retrieval precision or human-graded quality.
 5. Hand PRD authoring to `library-worker-bee`.
 
 See `examples/05-graphrag-enable-for-new-tenant.md`.

@@ -1,10 +1,10 @@
--- payments-stinger — processed_webhook_events table
+-- payments-stinger, processed_webhook_events table
 --
 -- Purpose: idempotency for inbound Stripe webhooks. Insert event.id before
 -- processing inside a transaction; ON CONFLICT means the event was already
 -- handled, return early.
 --
--- See guides/05-idempotency.md and guides/02-webhook-verification.md.
+-- See guides/06-webhooks-and-provisioning.md and guides/09-security-and-pci-scope.md.
 --
 -- Hand to db-worker-bee for the actual migration, indexing strategy, and
 -- multi-tenant considerations (e.g., per-tenant partitioning if needed).
@@ -58,9 +58,9 @@ CREATE INDEX IF NOT EXISTS idx_pwe_unprocessed
 --   WHERE received_at < now() - interval '30 days'
 --     AND processed_at IS NOT NULL;
 --
--- Or — preferred — copy older rows to an archive table before deletion.
+-- Or, preferred, copy older rows to an archive table before deletion.
 
--- ----- Optional: per-consumer dedup for fan-out (see guides/08-event-fanout.md) -----
+-- ----- Optional: per-consumer dedup for fan-out (see guides/06-webhooks-and-provisioning.md, "Async work after the 200") -----
 --
 -- When one event triggers multiple downstream consumers, each consumer needs
 -- its own dedup row to avoid double side effects.

@@ -1,4 +1,4 @@
-# 08 — Lead Capture & Contact Forms
+# 08: Lead Capture & Contact Forms
 
 Source PRD: `research/source-prds/prd-phase-08-lead-capture-contact-forms.md`
 
@@ -45,7 +45,7 @@ export type LeadInput = z.infer<typeof leadSchema>;
 
 ---
 
-## Form action — +page.server.ts
+## Form action: +page.server.ts
 
 ```ts
 // apps/web/src/routes/contact/+page.server.ts

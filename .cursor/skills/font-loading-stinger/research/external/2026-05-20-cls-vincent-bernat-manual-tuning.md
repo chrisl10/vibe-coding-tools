@@ -52,7 +52,7 @@ font availability (Android lacks Georgia, replaces with Noto Serif).
 
 - Cross-platform note: "Android lacks most fonts found in other operating
   systems. It replaces *Georgia* with *Noto Serif*, which is not metrically
-  compatible." — Requires separate `@font-face` rules per fallback font.
+  compatible.": Requires separate `@font-face` rules per fallback font.
 
 ## Annotations for stinger-forge
 
@@ -60,8 +60,8 @@ font availability (Android lacks Georgia, replaces with Noto Serif).
   but different `src: local()`) is an important cross-platform CLS technique
   not covered in other sources. Include in `guides/05-cls-elimination.md` as
   an advanced section.
-- The "Android lacks Georgia" platform note should be a callout in the guide —
+- The "Android lacks Georgia" platform note should be a callout in the guide:
   production implementations need to account for Android fallback font availability.
 - The step-by-step tuning process complements the automated (fontpie/next/font)
   approach as a "manual tuning" path for maximum precision.
-- Published 2024 — within recency window, relevant methodology.
+- Published 2024, within recency window, relevant methodology.

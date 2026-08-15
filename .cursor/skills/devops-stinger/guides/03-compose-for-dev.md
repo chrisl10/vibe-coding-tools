@@ -1,6 +1,6 @@
-# 03 — Compose for dev
+# 03: Compose for dev
 
-Docker Compose conventions for the local dev loop. Production-shape Compose is a separate concern — most teams deploy via the registry, not via Compose. Source: `research/2026-04-25-compose-profiles-healthchecks.md`.
+Docker Compose conventions for the local dev loop. Production-shape Compose is a separate concern: most teams deploy via the registry, not via Compose. Source: `research/2026-04-25-compose-profiles-healthchecks.md`.
 
 ---
 
@@ -35,9 +35,9 @@ services:
 
 Run subsets:
 
-- `docker compose --profile app up` — app + Postgres
-- `docker compose --profile db-only up` — just Postgres (for migration testing)
-- `docker compose --profile app --profile tools up` — app + Postgres + adminer
+- `docker compose --profile app up`: app + Postgres
+- `docker compose --profile db-only up`: just Postgres (for migration testing)
+- `docker compose --profile app --profile tools up`: app + Postgres + adminer
 
 A service with **no profile** runs by default in every `up` invocation. Use profiles for any service that's "optional in dev" (admin tools, mailcatcher, monitoring).
 
@@ -91,7 +91,7 @@ services:
         condition: service_completed_successfully
 ```
 
-## 3. Compose secrets — never `environment:` for secrets
+## 3. Compose secrets: never `environment:` for secrets
 
 **Wrong:**
 
@@ -154,11 +154,11 @@ Run with `docker compose up --watch`. The container rebuilds or syncs as files c
 
 For Next.js, the dev server inside the container handles hot-reload natively if `src/` is synced.
 
-## 5. Networks — the default is fine
+## 5. Networks: the default is fine
 
 Compose creates a default bridge network. Services reach each other by service name (`postgres:5432`, `redis:6379`). Don't override unless you have a specific reason (multiple stacks sharing data, attach to external network for VPN routing, etc.).
 
-## 6. Dependency direction — explicit
+## 6. Dependency direction: explicit
 
 ```yaml
 services:
@@ -172,7 +172,7 @@ services:
         condition: service_started
 ```
 
-The worker depends on the app being *started* (not healthy — workers can survive a brief app outage), but Postgres/Redis must be healthy before the worker tries to read jobs.
+The worker depends on the app being *started* (not healthy, workers can survive a brief app outage), but Postgres/Redis must be healthy before the worker tries to read jobs.
 
 ## 7. The full canonical dev stack
 
@@ -197,7 +197,7 @@ See `templates/docker-compose.dev.yml` for a Next.js + Postgres + Redis + admine
 
 ## See also
 
-- `templates/docker-compose.dev.yml` — full reference dev stack.
-- `templates/docker-compose.prod.yml` — production-shape (rare in modern stacks; included for self-hosted).
-- `examples/compose-nextjs-postgres-redis.md` — worked example.
-- `guides/01-dockerfile-patterns.md` §5 — secrets in Dockerfiles.
+- `templates/docker-compose.dev.yml`: full reference dev stack.
+- `templates/docker-compose.prod.yml`: production-shape (rare in modern stacks; included for self-hosted).
+- `examples/compose-nextjs-postgres-redis.md`: worked example.
+- `guides/01-dockerfile-patterns.md` §5: secrets in Dockerfiles.

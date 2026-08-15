@@ -34,7 +34,7 @@ Comprehensive Scrum.org catalog of Product Owner anti-patterns, published Octobe
 | Delaying PO | PO waits until Sprint end to review Done items | Artificial queue; increased cycle time |
 
 ## Annotations for stinger-forge
-- The proxy PO anti-pattern is most common in enterprises with offshore/distributed teams — call this out explicitly in `guides/05-anti-patterns.md`.
-- The "delaying PO" anti-pattern creates a hidden queue problem — Done items wait for PO review, inflating cycle time artificially. This is often invisible to the team.
+- The proxy PO anti-pattern is most common in enterprises with offshore/distributed teams: call this out explicitly in `guides/05-anti-patterns.md`.
+- The "delaying PO" anti-pattern creates a hidden queue problem: Done items wait for PO review, inflating cycle time artificially. This is often invisible to the team.
 - Sprint stuffing violates the Developers' prerogative (2020 Scrum Guide: Developers own Sprint Backlog composition). This is a direct audit finding.
 - Companion source: `scrum.org/resources/blog/anti-patterns-product-owner` (March 2025) provides a newer complement covering similar patterns with fresh framing.

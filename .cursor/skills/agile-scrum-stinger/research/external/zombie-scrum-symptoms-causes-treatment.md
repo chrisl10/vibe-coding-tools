@@ -11,7 +11,7 @@ stinger: agile-scrum-stinger
 # Zombie Scrum - Symptoms, Causes, and Treatment (Scrum.org)
 
 ## Summary
-The canonical Scrum.org article defining "Zombie Scrum" — teams that go through Scrum motions without life or urgency. Teams complete ceremonies but produce no working software, have no drive for improvement, and lack stakeholder engagement. The article diagnoses causes and provides treatment protocols.
+The canonical Scrum.org article defining "Zombie Scrum": teams that go through Scrum motions without life or urgency. Teams complete ceremonies but produce no working software, have no drive for improvement, and lack stakeholder engagement. The article diagnoses causes and provides treatment protocols.
 
 ## Key quotations / statistics
 - "Zombie Scrum Teams may be going through the Scrum motions, but there is hardly any working software (or none at all). Completed functionality is often treated as a 'nice-to-have', and can be finished in any other sprint."
@@ -32,10 +32,10 @@ A team has Zombie Scrum if 3+ of these are true:
 - [ ] Velocity is flat for 6+ sprints
 
 ## Causes of Zombie Scrum
-1. No Product Goal or Product Vision — team has no north star
-2. Stakeholders don't engage — no urgency from outside
-3. Team not empowered — cannot make product decisions
-4. Unstable team composition — members constantly borrowed
+1. No Product Goal or Product Vision: team has no north star
+2. Stakeholders don't engage: no urgency from outside
+3. Team not empowered: cannot make product decisions
+4. Unstable team composition: members constantly borrowed
 
 ## Treatment Protocols
 1. **Start small**: Do one Sprint. Create one real Done increment. Show it works.
@@ -47,5 +47,5 @@ A team has Zombie Scrum if 3+ of these are true:
 ## Annotations for stinger-forge
 - Zombie Scrum is the name for the most common enterprise Scrum failure mode. It deserves its own section in `guides/05-anti-patterns.md`.
 - The diagnostic checklist can be adapted into the `templates/scrum-audit-report.md` checklist section.
-- The root cause is almost always organizational (no Product Goal, absent stakeholders), NOT team dysfunction — important framing for the auditor.
+- The root cause is almost always organizational (no Product Goal, absent stakeholders), NOT team dysfunction: important framing for the auditor.
 - Cross-reference with "No Product Vision/No Product Goal" anti-pattern from the top-10 catalog.

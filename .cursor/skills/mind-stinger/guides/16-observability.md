@@ -1,8 +1,8 @@
-# 16 — Observability
+# 16: Observability
 
 `AiTrace` schema, `traceAICall()` fire-and-forget, every-call-traced rule, the routing-call gap, the dashboard metrics, the LangFuse-not-built note.
 
-> **Doc reference:** `library/knowledge-base/ai/observability-evaluation.md` is canonical.
+> **Doc reference:** `library/knowledge/private/ai/observability-evaluation.md` is canonical.
 
 ---
 
@@ -46,11 +46,11 @@ model AiTrace {
 }
 ```
 
-`traceAICall()` writes one row fire-and-forget — never blocks or fails the caller.
+`traceAICall()` writes one row fire-and-forget, never blocks or fails the caller.
 
 ---
 
-## 3. `traceAICall()` — the only sanctioned path
+## 3. `traceAICall()`: the only sanctioned path
 
 ```typescript
 export async function traceAICall<T>(options: TraceOptions<T>): Promise<T>;
@@ -89,10 +89,10 @@ The `call` function is the actual LLM request. `traceAICall` executes it, record
 ## 4. The recurring tracing-gap patterns
 
 1. **Routing call not traced** (`runOrchestrator()` doesn't wrap `routeToCoach()`).
-2. **Tool-call second pass** — when the LLM calls `scrape_url` and a second LLM pass runs, BOTH passes must be traced.
-3. **Onboarding agent calls** — verify `streamOnboardingChat()` wraps every LLM call.
-4. **Matching call** — `runLLMMatching()` must trace.
-5. **Eval worker calls** — `evaluateRetrievalPrecision`, `evaluateRouting`, summary generation — must trace (with `traceType: "summarization"` for summaries).
+2. **Tool-call second pass**: when the LLM calls `scrape_url` and a second LLM pass runs, BOTH passes must be traced.
+3. **Onboarding agent calls**: verify `streamOnboardingChat()` wraps every LLM call.
+4. **Matching call**: `runLLMMatching()` must trace.
+5. **Eval worker calls**: `evaluateRetrievalPrecision`, `evaluateRouting`, summary generation; must trace (with `traceType: "summarization"` for summaries).
 
 Each unflagged-and-unfixed gap is a **must-fix** at next observability audit.
 
@@ -104,12 +104,12 @@ These columns are populated asynchronously by eval workers, not at trace-write t
 
 | Column | Populated by | When |
 |---|---|---|
-| `retrievalScore` | `evaluateRetrievalPrecision()` | Async after trace write — on a sample (e.g., 10–25%) |
+| `retrievalScore` | `evaluateRetrievalPrecision()` | Async after trace write: on a sample (e.g., 10-25%) |
 | `faithfulnessScore` | LLM-as-judge faithfulness eval | Same |
 | `routingCorrect` | `evaluateRouting()` | Same |
 | `agreementScore` | `computeAgreementRate()` | Async per-trace; cheap (regex, no LLM call) |
 
-A trace row written without these columns is normal — they fill in later.
+A trace row written without these columns is normal: they fill in later.
 
 ---
 
@@ -121,7 +121,7 @@ A trace row written without these columns is normal — they fill in later.
 - Requests per minute
 - LLM latency P50 / P95 / P99
 - Qdrant query latency P50 / P95
-- Error rate (failed LLM calls — `AiTrace.error IS NOT NULL`)
+- Error rate (failed LLM calls, `AiTrace.error IS NOT NULL`)
 - OpenRouter credit balance (alert if < $20)
 
 ### Daily
@@ -147,7 +147,7 @@ A trace row written without these columns is normal — they fill in later.
 
 ---
 
-## 7. LangFuse — NOT implemented
+## 7. LangFuse: NOT implemented
 
 Per the doc:
 
@@ -159,7 +159,7 @@ If LangFuse is added:
 2. Wrap `traceAICall()` to also emit a LangFuse trace.
 3. Configure sampling (10% for automated eval, 2% for human eval).
 
-LangFuse does NOT replace `AiTrace` — it provides a UI layer over the same data.
+LangFuse does NOT replace `AiTrace`: it provides a UI layer over the same data.
 
 A push to add LangFuse requires the substitution policy (`guides/01-stack-enforcement.md §2`).
 
@@ -170,13 +170,13 @@ A push to add LangFuse requires the substitution policy (`guides/01-stack-enforc
 When asked to investigate (low retrieval, bad routing, sycophancy spike, latency):
 
 1. **Define the window.** Last 24h? Last week? Specific incident time?
-2. **Pull the relevant traces** — filter by `tenantId`, `traceType`, `createdAt` window.
-3. **Aggregate by dimension** — coach type, model, time-of-day, retrieval-score bucket.
-4. **Find the inflection** — when did the metric change? Correlate with `PromptVersion.createdAt`, deploys, model slot changes.
-5. **Sample failing rows** — read 5–10 worst-scored traces in detail. Look for patterns (specific topic, specific user segment).
-6. **Hypothesize** — propose 1–2 causes. Prioritize the falsifiable one.
-7. **Test the hypothesis** — A/B if possible (one prompt vs. another); otherwise a targeted code change with measurement before/after.
-8. **Document in `library/qa/ai/<date>-trace-investigation.md`** — see `examples/03-aitrace-investigation-low-retrieval.md`.
+2. **Pull the relevant traces**: filter by `tenantId`, `traceType`, `createdAt` window.
+3. **Aggregate by dimension**: coach type, model, time-of-day, retrieval-score bucket.
+4. **Find the inflection**: when did the metric change? Correlate with `PromptVersion.createdAt`, deploys, model slot changes.
+5. **Sample failing rows**: read 5-10 worst-scored traces in detail. Look for patterns (specific topic, specific user segment).
+6. **Hypothesize**: propose 1-2 causes. Prioritize the falsifiable one.
+7. **Test the hypothesis**: A/B if possible (one prompt vs. another); otherwise a targeted code change with measurement before/after.
+8. **Document in `library/requirements/reports/ai/<date>-trace-investigation.md`**: see `examples/03-aitrace-investigation-low-retrieval.md`.
 
 ---
 

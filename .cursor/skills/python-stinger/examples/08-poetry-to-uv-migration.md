@@ -1,6 +1,6 @@
-# Example 08 — Poetry → uv migration
+# Example 08: Poetry → uv migration
 
-Full walkthrough with diff snippets. Real-world benchmark from production migrations: ~80% faster on `lock`, 78–88% faster on `sync`.
+Full walkthrough with diff snippets. Real-world benchmark from production migrations: ~80% faster on `lock`, 78-88% faster on `sync`.
 
 ## Preflight
 
@@ -13,7 +13,7 @@ git status
 git checkout -b chore/uv-migration
 ```
 
-## Step 1 — Convert with `migrate-to-uv`
+## Step 1: Convert with `migrate-to-uv`
 
 ```bash
 uvx migrate-to-uv
@@ -21,9 +21,9 @@ uvx migrate-to-uv
 
 This rewrites `pyproject.toml`, removing `[tool.poetry]` blocks and adding PEP 621 `[project]` metadata. It preserves dependency version pins by default.
 
-## Step 2 — Inspect the diff
+## Step 2: Inspect the diff
 
-### `pyproject.toml` — before (Poetry)
+### `pyproject.toml`: before (Poetry)
 
 ```toml
 [tool.poetry]
@@ -50,7 +50,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 ```
 
-### `pyproject.toml` — after (uv)
+### `pyproject.toml`: after (uv)
 
 ```toml
 [project]
@@ -90,24 +90,24 @@ Notes on the conversion:
 - `[tool.poetry.group.dev.dependencies]` → `[dependency-groups]` (PEP 735).
 - Build backend: `poetry-core` → `hatchling` (works out of the box; `uv_build` is also valid).
 
-## Step 3 — Generate the lockfile
+## Step 3: Generate the lockfile
 
 ```bash
 rm -f poetry.lock
 uv lock
 ```
 
-Inspect `uv.lock` — it's a Cargo-style lockfile with all transitive pins. Commit both `pyproject.toml` and `uv.lock`.
+Inspect `uv.lock`: it's a Cargo-style lockfile with all transitive pins. Commit both `pyproject.toml` and `uv.lock`.
 
-## Step 4 — Sync the venv
+## Step 4: Sync the venv
 
 ```bash
 uv sync --frozen
 ```
 
-Activates `.venv/` and installs from `uv.lock`. `--frozen` enforces "no automatic relock if pyproject changed" — this is what CI uses.
+Activates `.venv/` and installs from `uv.lock`. `--frozen` enforces "no automatic relock if pyproject changed": this is what CI uses.
 
-## Step 5 — Verify
+## Step 5: Verify
 
 ```bash
 # Run management commands inside the project venv
@@ -120,7 +120,7 @@ uv run ruff format --check .
 
 Replace `poetry run X` with `uv run X` everywhere.
 
-## Step 6 — Update `.python-version`
+## Step 6: Update `.python-version`
 
 ```bash
 echo "3.12" > .python-version
@@ -128,9 +128,9 @@ echo "3.12" > .python-version
 
 Allows `uv run` (and `uv python install` in CI) to pick the right interpreter without ambiguity.
 
-## Step 7 — CI updates
+## Step 7: CI updates
 
-### `.github/workflows/ci.yml` — before
+### `.github/workflows/ci.yml`: before
 
 ```yaml
 - name: Set up Python
@@ -152,7 +152,7 @@ Allows `uv run` (and `uv python install` in CI) to pick the right interpreter wi
   run: poetry run pytest
 ```
 
-### `.github/workflows/ci.yml` — after
+### `.github/workflows/ci.yml`: after
 
 ```yaml
 - name: Install uv
@@ -170,9 +170,9 @@ Allows `uv run` (and `uv python install` in CI) to pick the right interpreter wi
   run: uv run pytest
 ```
 
-The `enable-cache: true` is the single biggest CI speed-up — uv caches across runs.
+The `enable-cache: true` is the single biggest CI speed-up: uv caches across runs.
 
-## Step 8 — Dockerfile updates
+## Step 8: Dockerfile updates
 
 ### Before (Poetry)
 
@@ -186,7 +186,7 @@ COPY . .
 CMD ["gunicorn", "config.wsgi:application"]
 ```
 
-### After (uv) — see `templates/dockerfile-django-uv` for full multi-stage version
+### After (uv): see `templates/dockerfile-django-uv` for full multi-stage version
 
 ```dockerfile
 FROM python:3.12-slim
@@ -210,7 +210,7 @@ CMD ["gunicorn", "config.wsgi:application"]
 
 The two-stage `uv sync` (deps first, project last) maximizes Docker layer cache reuse.
 
-## Step 9 — Pre-commit hook
+## Step 9: Pre-commit hook
 
 ```yaml
 # .pre-commit-config.yaml
@@ -221,7 +221,7 @@ repos:
       - id: uv-lock              # refuses commits with stale uv.lock
 ```
 
-## Step 10 — README / contributor docs
+## Step 10: README / contributor docs
 
 Update install instructions:
 
@@ -240,7 +240,7 @@ Update install instructions:
 +4. `uv run python manage.py runserver`
 ```
 
-## Step 11 — Cleanup
+## Step 11: Cleanup
 
 ```bash
 # Remove Poetry artifacts that aren't auto-removed
@@ -275,7 +275,7 @@ From production migration of three services (marzeta.pl Dec 2025):
 | Cold Docker build | 145s | 78s | 46% faster |
 | Cached Docker build | 38s | 18s | 53% faster |
 
-The 80%+ wins on `lock` / `sync` directly translate to developer flow — `uv lock` finishes before you can context-switch.
+The 80%+ wins on `lock` / `sync` directly translate to developer flow: `uv lock` finishes before you can context-switch.
 
 ## Source
 

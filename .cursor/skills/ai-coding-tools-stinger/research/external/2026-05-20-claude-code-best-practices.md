@@ -25,9 +25,9 @@ Official Anthropic documentation for Claude Code best practices. Covers CLAUDE.m
 
 Claude reads and merges from multiple locations (broad to specific):
 
-1. `~/.claude/CLAUDE.md` — personal preferences across all projects
-2. `<repo-root>/CLAUDE.md` — project-level conventions (main one, committed to git)
-3. `<subdir>/CLAUDE.md` — module-specific rules loaded on demand
+1. `~/.claude/CLAUDE.md`: personal preferences across all projects
+2. `<repo-root>/CLAUDE.md`: project-level conventions (main one, committed to git)
+3. `<subdir>/CLAUDE.md`: module-specific rules loaded on demand
 
 Files are loaded at session start and delivered as a user message immediately after the system prompt. Enterprise prompt caching applies: first request pays full tokens; subsequent requests within ~5 minutes cache at a significantly lower rate.
 
@@ -63,5 +63,5 @@ For headless/autonomous tasks, provide Claude with:
 
 - `guides/04-prompt-and-context-discipline.md`: This is the primary source for the Claude Code section. Structure it as: CLAUDE.md placement → CLAUDE.md content → Explore-Plan-Code workflow → verification criteria pattern
 - The `/init` command is a valuable quick-start tip that deserves its own callout in the guide
-- The prompt caching note is relevant to `guides/03-model-routing.md` — Enterprise tier users get different effective token costs
+- The prompt caching note is relevant to `guides/03-model-routing.md`: Enterprise tier users get different effective token costs
 - Cross-link this guide with the `ai-tools-platform-stinger` for provider-level cost optimization (that Stinger owns the Portkey/OpenRouter layer)

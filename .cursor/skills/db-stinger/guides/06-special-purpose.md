@@ -1,14 +1,14 @@
-# 06 — Special-Purpose Postgres
+# 06: Special-Purpose Postgres
 
 `pgvector` (storage decision), Postgres FTS, logical replication / CDC, TimescaleDB / Tiger Data for time-series.
 
 Source: `research/2026-04-25-pgvector-fts-timeseries.md`.
 
-## `pgvector` — storage decision (db-worker-bee's territory)
+## `pgvector`: storage decision (db-worker-bee's territory)
 
 `pgvector` is the de facto standard Postgres extension for vector search. db-worker-bee picks:
 
-1. Column type and dimension (matches the embedding model — `vector(1536)` for OpenAI `text-embedding-3-small`, `vector(3072)` for `text-embedding-3-large`).
+1. Column type and dimension (matches the embedding model: `vector(1536)` for OpenAI `text-embedding-3-small`, `vector(3072)` for `text-embedding-3-large`).
 2. Index family: `ivfflat` or `hnsw`.
 3. Distance operator class.
 
@@ -34,11 +34,11 @@ CREATE INDEX ON documents USING hnsw (embedding vector_cosine_ops);
 |---|---|---|
 | `<->` | `vector_l2_ops` | Euclidean distance |
 | `<#>` | `vector_ip_ops` | Negative inner product |
-| `<=>` | `vector_cosine_ops` | Cosine distance — **most common for embeddings** |
+| `<=>` | `vector_cosine_ops` | Cosine distance: **most common for embeddings** |
 
 ### Hard handoff
 
-db-worker-bee picks the column type, dimension, index family, and distance op. **Retrieval strategy** (top-k, hybrid dense+sparse, query expansion, reranking with cross-encoder or ColBERT, eval framework) is `ai-platform-worker-bee`'s.
+db-worker-bee picks the column type, dimension, index family, and distance op. **Retrieval strategy** (top-k, hybrid dense+sparse, query expansion, reranking with cross-encoder or ColBERT, eval framework) is `mind-worker-bee`'s.
 
 When the user asks "should this be `ivfflat` or `hnsw`?", db-worker-bee answers. When the user asks "how should I chunk these PDFs and rerank the top-k?", db-worker-bee hands off.
 
@@ -74,7 +74,7 @@ LIMIT 20;
 - Typo tolerance is critical (use OpenSearch / Meilisearch / Typesense).
 - Faceted search with aggregations.
 - Multi-language ranking with custom analyzers.
-- Vector hybrid search (use `pgvector` + a hybrid retrieval layer; hand to ai-platform-worker-bee).
+- Vector hybrid search (use `pgvector` + a hybrid retrieval layer; hand to mind-worker-bee).
 
 For trigram-based fuzzy matching, `pg_trgm` extension + GIN index gives "similar to" results without leaving Postgres.
 
@@ -95,16 +95,16 @@ CREATE SUBSCRIPTION reporting_sub
 ### Use cases
 - Cross-region read replicas with selective tables.
 - CDC into a data warehouse (Snowflake / BigQuery / ClickHouse) via Debezium / Estuary / Fivetran.
-- Event-sourcing tail — `replication_slot` + `wal2json` decoder.
-- Zero-downtime major-version upgrades — replicate from old to new cluster.
+- Event-sourcing tail: `replication_slot` + `wal2json` decoder.
+- Zero-downtime major-version upgrades: replicate from old to new cluster.
 
 ### Gotchas
 - Replication slots must be consumed; an idle slot pins WAL and fills the disk.
-- DDL is **not** replicated — coordinate schema changes manually.
+- DDL is **not** replicated: coordinate schema changes manually.
 - Large transactions can stall the apply worker.
 - Sequences are not replicated (the values are; not the sequence state).
 
-## TimescaleDB / Tiger Data — time-series
+## TimescaleDB / Tiger Data: time-series
 
 Tiger Data (formerly TimescaleDB) is a Postgres extension purpose-built for time-series workloads.
 
@@ -173,14 +173,14 @@ SELECT add_retention_policy('measurements', INTERVAL '1 year');
 - Need automatic data lifecycle (retention, compression).
 
 ### When not to
-- General SaaS schemas — vanilla Postgres + manual partitioning per `04-partitioning.md` is simpler.
-- Heavy update workloads on time-series rows — hypertable updates work but the design assumes append-mostly.
+- General SaaS schemas: vanilla Postgres + manual partitioning per `04-partitioning.md` is simpler.
+- Heavy update workloads on time-series rows: hypertable updates work but the design assumes append-mostly.
 
 For the platform choice (Tiger Cloud vs self-hosted), see `08-serverless-platforms.md`.
 
 ## Cross-references
 
-- `02-indexing.md` — GIN for `jsonb` and FTS; GiST for ranges.
-- `04-partitioning.md` — Tiger hypertables vs. manual partitioning.
-- `08-serverless-platforms.md` — Tiger Data as a managed platform.
-- Hand off retrieval / RAG to `ai-platform-worker-bee`.
+- `02-indexing.md`: GIN for `jsonb` and FTS; GiST for ranges.
+- `04-partitioning.md`: Tiger hypertables vs. manual partitioning.
+- `08-serverless-platforms.md`: Tiger Data as a managed platform.
+- Hand off retrieval / RAG to `mind-worker-bee`.

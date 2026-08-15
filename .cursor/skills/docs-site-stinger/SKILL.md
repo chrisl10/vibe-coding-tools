@@ -1,6 +1,6 @@
 ---
-name: docs-site-stinger
-description: Documentation-site infrastructure specialist — platform selection (Docusaurus v3/v4, Mintlify, GitBook, MkDocs Material, Nextra v4, Starlight/Astro, Fern), the Diátaxis content pyramid, docs-as-code CI pipelines, and search setup (Algolia DocSearch, pagefind). Use when the user says "pick a docs platform", "set up Docusaurus", "migrate from GitBook", "add search to our docs", "docs-as-code CI", "Mintlify vs Starlight", or invokes `docs-site-worker-bee`. Do NOT use for OpenAPI spec enrichment or SDK generation (api-docs-worker-bee), internal knowledge-base authoring (library-worker-bee), or marketing website builds (website-worker-bee).
+name: "docs-site-stinger"
+description: "Documentation-site infrastructure specialist, platform selection (Docusaurus v3/v4, Mintlify, GitBook, MkDocs Material, Nextra v4, Starlight/Astro, Fern), the Diátaxis content pyramid, docs-as-code CI pipelines, and search setup (Algolia DocSearch, pagefind). Use when the user says \\\\\\\"pick a docs platform\\\\\\\", \\\\\\\"set up Docusaurus\\\\\\\", \\\\\\\"migrate from GitBook\\\\\\\", \\\\\\\"add search to our docs\\\\\\\", \\\\\\\"docs-as-code CI\\\\\\\", \\\\\\\"Mintlify vs Starlight\\\\\\\", or invokes `docs-site-worker-bee`. Do NOT use for OpenAPI spec enrichment or SDK generation (api-docs-worker-bee), internal knowledge-base authoring (library-worker-bee), or marketing website builds (website-worker-bee)."
 ---
 
 # docs-site Stinger
@@ -23,8 +23,8 @@ Opinionated playbook for `docs-site-worker-bee`. Equips the Bee to select, set u
 
 ## Entry point for any invocation
 
-1. Read `guides/00-platform-selection.md` — the scored decision tree. Always run this first when the platform is undecided.
-2. Read `guides/01-content-pyramid.md` — the Diátaxis model for structuring documentation content.
+1. Read `guides/00-platform-selection.md`: the scored decision tree. Always run this first when the platform is undecided.
+2. Read `guides/01-content-pyramid.md`: the Diátaxis model for structuring documentation content.
 3. Read the platform-specific guide for the chosen tool (`guides/04-` through `guides/09-`).
 4. Read `guides/02-docs-as-code.md` for CI/lint/preview setup.
 5. Read `guides/03-search.md` for search configuration.

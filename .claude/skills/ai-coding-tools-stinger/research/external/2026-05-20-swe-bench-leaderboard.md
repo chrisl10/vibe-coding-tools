@@ -19,7 +19,7 @@ SWE-bench Verified is the primary authoritative benchmark for AI coding agents. 
 - "The benchmark measures end-to-end autonomous coding performance, representing a 41× improvement from the initial 1.96% score achieved in October 2023"
 - "Human annotators have reviewed each instance to ensure problem descriptions are clear, test patches are correct, and tasks are solvable"
 
-## Top performers (May 2026) — language model focused (Bash-only evaluation)
+## Top performers (May 2026): language model focused (Bash-only evaluation)
 
 | Model | Score |
 |-------|-------|
@@ -29,7 +29,7 @@ SWE-bench Verified is the primary authoritative benchmark for AI coding agents. 
 | Gemini 3.1 Pro API (Google) | 80.60% |
 | GPT-5.2 API (OpenAI) | 80.00% |
 
-## Top performers — full agentic systems
+## Top performers: full agentic systems
 
 | Agent + System | Score |
 |----------------|-------|
@@ -54,8 +54,8 @@ CodeSOTA comprehensive: https://www.codesota.com/browse/agentic/swe-bench
 ## Annotations for stinger-forge
 
 - This is the authoritative source for `guides/02-benchmark-data.md`. ALL capability claims in that guide must cite SWE-bench with a date.
-- Note that SWE-bench scores primarily reflect the underlying LLM capability — not the scaffolded tool (Cursor, Aider, Cline) that wraps the model. The tool adds UX, context management, and workflow integration ON TOP of the model score.
+- Note that SWE-bench scores primarily reflect the underlying LLM capability, not the scaffolded tool (Cursor, Aider, Cline) that wraps the model. The tool adds UX, context management, and workflow integration ON TOP of the model score.
 - The 93.90% Claude Mythos Preview score is a research preview, not available in production tools. For production guidance, the practical ceiling is ~80%.
-- The benchmark covers Python repos only — stinger-forge should note this is not representative of polyglot codebases (JavaScript, TypeScript, Go, etc.).
+- The benchmark covers Python repos only: stinger-forge should note this is not representative of polyglot codebases (JavaScript, TypeScript, Go, etc.).
 - Stinger-forge should flag that SWE-bench scores change monthly. The guide must include the retrieval date and a "last verified" timestamp.
 - Aider's own polyglot leaderboard (aider.chat/docs/leaderboards) is a complementary source for non-Python benchmarks.

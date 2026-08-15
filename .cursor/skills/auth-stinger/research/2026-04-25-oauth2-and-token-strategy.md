@@ -15,18 +15,18 @@ OAuth 2.1 consolidates a decade of OAuth 2.0 best practices: PKCE required for p
 
 ## Token types
 
-- **Access token** — short-lived (5–60 min), bearer for API calls. JWT or opaque.
-- **Refresh token** — longer-lived (days–months), used only to obtain new access tokens.
-- **ID token** — OpenID Connect only. JWT signed by IdP, asserts user identity. For sign-in, not API auth.
-- **Session token / cookie** — your app's own session ID.
+- **Access token**: short-lived (5-60 min), bearer for API calls. JWT or opaque.
+- **Refresh token**: longer-lived (days-months), used only to obtain new access tokens.
+- **ID token**: OpenID Connect only. JWT signed by IdP, asserts user identity. For sign-in, not API auth.
+- **Session token / cookie**: your app's own session ID.
 
 ## Critical mistakes
 
 - **Conflating tokens**: ID token used for API auth. Access token used for session.
-- **Implicit flow** (`response_type=token`) — deprecated; tokens leak in URL fragments.
-- **No PKCE** — public clients (SPAs, mobile) must use PKCE; OAuth 2.1 also requires for confidential clients.
-- **No refresh-token rotation** — leaked refresh = persistent ownership.
-- **Skipping ID-token signature verification** — anyone can forge.
+- **Implicit flow** (`response_type=token`): deprecated; tokens leak in URL fragments.
+- **No PKCE**: public clients (SPAs, mobile) must use PKCE; OAuth 2.1 also requires for confidential clients.
+- **No refresh-token rotation**: leaked refresh = persistent ownership.
+- **Skipping ID-token signature verification**: anyone can forge.
 
 ## Refresh-token rotation
 
@@ -53,6 +53,6 @@ Most libraries do this; **confirm**.
 
 ## Relevance
 
-- `guides/06-google-oauth.md` — Google-specific flow.
-- `guides/10-session-storage.md` — token storage.
-- `guides/11-common-failure-modes.md` — what goes wrong.
+- `guides/06-google-oauth.md`: Google-specific flow.
+- `guides/10-session-storage.md`: token storage.
+- `guides/11-common-failure-modes.md`: what goes wrong.

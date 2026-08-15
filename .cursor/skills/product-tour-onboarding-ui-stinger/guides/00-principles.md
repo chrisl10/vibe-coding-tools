@@ -8,7 +8,7 @@ Three non-negotiables that govern every output this Bee produces. These are the 
 
 **Rule:** Never target an element by a CSS class name, auto-generated class (e.g., `.css-4mrg2x7c` from CSS-in-JS), or visible text string if you can add a `data-tour` attribute to the element.
 
-**Why:** Dynamic CSS classes rebuild with every deployment — from Product Fruits' 2026 maintenance guide: *"From Product Fruits' perspective, the element has vanished."* A `data-tour` attribute is a formal agreement between the engineering team and the tour layer. It persists across refactors, class renames, and framework upgrades.
+**Why:** Dynamic CSS classes rebuild with every deployment. From Product Fruits' 2026 maintenance guide: *"From Product Fruits' perspective, the element has vanished."* A `data-tour` attribute is a formal agreement between the engineering team and the tour layer. It persists across refactors, class renames, and framework upgrades.
 
 ```html
 <!-- BAD — breaks with any CSS-in-JS rebuild -->
@@ -18,9 +18,9 @@ Three non-negotiables that govern every output this Bee produces. These are the 
 <button data-tour="main-save-button">Save</button>
 ```
 
-**Bonus:** `data-tour` attributes are identical to `data-testid` in Playwright/Cypress. Adding them for tours also improves automated test coverage — a "two-for-one" (source: `research/external/2026-05-20-tour-maintenance-unbreakable.md`).
+**Bonus:** `data-tour` attributes are identical to `data-testid` in Playwright/Cypress. Adding them for tours also improves automated test coverage: a "two-for-one" (source: `research/external/2026-05-20-tour-maintenance-unbreakable.md`).
 
-**Escalation:** If the codebase uses a framework where you cannot add `data-tour` (e.g., a third-party embedded component), use text targeting as a fallback — not class-based targeting. Document the fallback explicitly in the selector registry.
+**Escalation:** If the codebase uses a framework where you cannot add `data-tour` (e.g., a third-party embedded component), use text targeting as a fallback, not class-based targeting. Document the fallback explicitly in the selector registry.
 
 ---
 
@@ -31,10 +31,10 @@ Three non-negotiables that govern every output this Bee produces. These are the 
 **Why:** The wrong tool for the team's size, stack, and maintenance capacity costs months of migration. Userpilot is ideal for a 5-person growth team; Driver.js is better for an engineering team that wants zero SaaS dependency. The same feature requirement ("show a tooltip on first visit") maps to radically different solutions depending on context.
 
 **The four qualification axes:**
-1. **Cost model** — MAU-based SaaS vs. one-time open-source; budget ceiling.
-2. **Code depth** — no-code visual builder vs. code-first configuration.
-3. **Team size / iteration speed** — can the team maintain custom tour code, or does a SaaS tool's drag-and-drop interface pay for itself?
-4. **DOM stability** — is the product's component tree stable enough for CSS-class targeting (SaaS default), or does it need a `data-tour` contract (required for CSS-in-JS products)?
+1. **Cost model**: MAU-based SaaS vs. one-time open-source; budget ceiling.
+2. **Code depth**: no-code visual builder vs. code-first configuration.
+3. **Team size / iteration speed**: can the team maintain custom tour code, or does a SaaS tool's drag-and-drop interface pay for itself?
+4. **DOM stability**: is the product's component tree stable enough for CSS-class targeting (SaaS default), or does it need a `data-tour` contract (required for CSS-in-JS products)?
 
 See the full decision matrix in `guides/01-platform-selection.md`.
 
@@ -59,10 +59,10 @@ See the full protocol in `guides/06-maintenance-and-drift.md`.
 
 | Concern | Owner |
 |---|---|
-| Tour tooltip/modal visual styling (tokens, spacing, color) | `ux-ui-worker-bee` |
+| Tour tooltip/modal visual styling (tokens, spacing, color) | `ux-ui-svelte-worker-bee` |
 | Custom tour component React architecture | `react-worker-bee` |
 | User-progress schema (DB table) | `db-worker-bee` |
 | Analytics event instrumentation (funnel, activation rate) | PostHog/Mixpanel Bees |
-| Onboarding email sequences | No Bee yet — flag and defer |
+| Onboarding email sequences | No Bee yet, flag and defer |
 
 When the user's request crosses a boundary, surface the handoff explicitly rather than doing the work for the peer Bee.

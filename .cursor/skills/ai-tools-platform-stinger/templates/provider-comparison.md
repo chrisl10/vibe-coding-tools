@@ -6,7 +6,7 @@
 
 ## Recommendation: {{use case title}}
 
-**Date:** {{YYYY-MM-DD}} — *Prices valid as of this date; verify before committing.*
+**Date:** {{YYYY-MM-DD}}, *Prices valid as of this date; verify before committing.*
 **Use case:** {{brief description of what the AI is doing}}
 **Scale:** {{estimated calls/day and avg tokens/call}}
 **Constraints:** {{budget, latency, privacy, compliance requirements}}
@@ -32,11 +32,11 @@
 
 ## Recommendation
 
-**Winner:** {{Provider A}} — {{one sentence why}}
+**Winner:** {{Provider A}}: {{one sentence why}}
 
-**Runner-up:** {{Provider B}} — {{one sentence on when to prefer this}}
+**Runner-up:** {{Provider B}}: {{one sentence on when to prefer this}}
 
-**Deciding factor:** {{the single most important reason for the choice — e.g., "40% cost advantage at stated volume", "best function-calling reliability", "only option with HIPAA BAA"}}
+**Deciding factor:** {{the single most important reason for the choice, e.g., "40% cost advantage at stated volume", "best function-calling reliability", "only option with HIPAA BAA"}}
 
 ---
 
@@ -58,7 +58,7 @@ const client = new {{SDK}}({
 
 **Fallback model:** {{cheap model name}} via {{provider}}
 **Cost at scale:** ${{X}}/month vs ${{Y}}/month for primary
-**Quality delta:** {{brief assessment — "adequate for classification", "noticeable quality drop on complex reasoning"}}
+**Quality delta:** {{brief assessment, "adequate for classification", "noticeable quality drop on complex reasoning"}}
 
 ---
 

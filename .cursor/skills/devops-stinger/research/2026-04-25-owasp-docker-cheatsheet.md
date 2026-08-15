@@ -1,4 +1,4 @@
-# OWASP Docker Security Cheat Sheet — synthesis
+# OWASP Docker Security Cheat Sheet: synthesis
 
 **Source:** https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html
 **Retrieved:** 2026-04-25

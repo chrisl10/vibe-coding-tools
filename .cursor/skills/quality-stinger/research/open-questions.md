@@ -16,7 +16,7 @@ The Command Brief's IDEAS section asks: "Should the Stinger add accessibility or
 
 ## 2. Is there existing QA report history to mirror?
 
-Reports now land alongside their source plan (e.g., `library/requirements/features/feature-<###>-<title>/reports/<date>-qa-report.md`) or under `library/qa/<domain>/` for standalone audits, but the original brief was silent on whether prior reports exist to set tone.
+Reports now land alongside their source plan (e.g., `library/requirements/<lifecycle>/prd-<###>-<title>/reports/<date>-qa-report.md`) or under `library/requirements/reports/<domain>/` for standalone audits, but the original brief was silent on whether prior reports exist to set tone.
 
 **Forge-time decision:** Assumed none exist (or that they should not constrain this Stinger's template). The `templates/qa-report.md` in this skill establishes the convention. If prior reports already exist in the host repo and differ materially, point me at one and I'll reconcile.
 

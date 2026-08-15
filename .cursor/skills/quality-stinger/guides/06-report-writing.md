@@ -8,19 +8,19 @@ How to produce the findings-report markdown. Use `templates/qa-report.md` as the
 
 Pick the path that matches the source plan. Reports are dated, so multiple audits can coexist without overwriting.
 
-- **Feature PRD audit:** `library/requirements/features/feature-<###>-<title>/reports/<YYYY-MM-DD>-qa-report.md`
-- **Issue IRD audit:** `library/requirements/issues/issue-<###>-<title>/reports/<YYYY-MM-DD>-qa-report.md`
-- **Standalone audit (no source plan):** `library/qa/<domain>/<YYYY-MM-DD>-qa-report.md`
+- **Feature PRD audit:** `library/requirements/<lifecycle>/prd-<###>-<title>/reports/<YYYY-MM-DD>-qa-report.md`
+- **Issue IRD audit:** `library/issues/<lifecycle>/ird-<###>-<title>/reports/<YYYY-MM-DD>-qa-report.md`
+- **Standalone audit (no source plan):** `library/requirements/reports/<domain>/<YYYY-MM-DD>-qa-report.md`
 
 Examples:
 
-- Plan `library/requirements/features/feature-007-search/prd-feature-007-search.md` -> report at `library/requirements/features/feature-007-search/reports/2026-04-26-qa-report.md`.
-- Plan `library/requirements/issues/issue-042-stale-cache/ird-issue-042-stale-cache.md` → report at `library/requirements/issues/issue-042-stale-cache/reports/2026-04-26-qa-report.md`.
-- Standalone audit of the auth surface → `library/qa/auth/2026-04-26-qa-report.md`.
+- Plan `library/requirements/<lifecycle>/prd-007-search/prd-feature-007-search.md` -> report at `library/requirements/<lifecycle>/prd-007-search/reports/2026-04-26-qa-report.md`.
+- Plan `library/issues/<lifecycle>/ird-042-stale-cache/ird-issue-042-stale-cache.md` → report at `library/issues/<lifecycle>/ird-042-stale-cache/reports/2026-04-26-qa-report.md`.
+- Standalone audit of the auth surface → `library/requirements/reports/auth/2026-04-26-qa-report.md`.
 
 If two audits run on the same date, suffix the second one with a slug (e.g., `2026-04-26-qa-report-post-security-fixes.md`) rather than overwriting.
 
-Create the `reports/` subfolder (or `library/qa/<domain>/`) if it does not exist.
+Create the `reports/` subfolder (or `library/requirements/reports/<domain>/`) if it does not exist.
 
 ---
 
@@ -47,7 +47,7 @@ A five-row table, one row per axis. Use ✅ / ⚠️ / ❌ exclusively, no yello
 |---------------|--------|-------|
 | Completeness  | ⚠️ | 1 of 7 plan items missing (US-3 BM25 fallback) |
 | Correctness   | ✅ | Implementations match plan behavior |
-| Alignment     | ✅ | Naming and structure match `library/requirements/features/feature-007-search/prd-feature-007-search.md` |
+| Alignment     | ✅ | Naming and structure match `library/requirements/<lifecycle>/prd-007-search/prd-feature-007-search.md` |
 | Gaps          | ⚠️ | Missing empty-result message; no degraded-mode label |
 | Detrimental   | ⚠️ | N+1 dataset read in `search-service.ts:search` |
 ```
@@ -155,7 +155,7 @@ Run through this list:
 - [ ] The Files Changed list matches the inventory from step 2 exactly.
 - [ ] No findings appear in more than one severity section.
 - [ ] No section is missing (write "None" if empty).
-- [ ] The file is saved at the correct path: feature audits in `library/requirements/features/feature-<###>-<title>/reports/`, issue audits in `library/requirements/issues/issue-<###>-<title>/reports/`, standalone audits in `library/qa/<domain>/`.
+- [ ] The file is saved at the correct path: feature audits in `library/requirements/<lifecycle>/prd-<###>-<title>/reports/`, issue audits in `library/issues/<lifecycle>/ird-<###>-<title>/reports/`, standalone audits in `library/requirements/reports/<domain>/`.
 
 Then write the file. Then stop.
 

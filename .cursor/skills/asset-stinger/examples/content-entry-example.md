@@ -1,4 +1,4 @@
-# Example — `ContentEntry` + `ContentTranslation` rows
+# Example: `ContentEntry` + `ContentTranslation` rows
 
 A templated greeting used on the dashboard. Demonstrates:
 - `kind: template` with `variables` schema
@@ -104,7 +104,7 @@ export const dashboardHeadingWelcome = {
 
 ## Release gate observation
 
-If the release targets `fr-FR` as a supported locale, the release cannot ship while `fr-FR` translation is `machine_translated` — the gate requires `approved`.
+If the release targets `fr-FR` as a supported locale, the release cannot ship while `fr-FR` translation is `machine_translated`: the gate requires `approved`.
 
 ## Checklist (filled)
 

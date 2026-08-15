@@ -1,8 +1,8 @@
-# 18 — Matching
+# 18: Matching
 
 `runLLMMatching()`, complementarity scoring, `AiMatchResult` caching, the 200-candidate cap, the referral intro generation.
 
-> **Doc reference:** `library/knowledge-base/ai/matching.md` is canonical.
+> **Doc reference:** `library/knowledge/private/ai/matching.md` is canonical.
 
 ---
 
@@ -119,18 +119,18 @@ Invalid scores filtered. Malformed JSON → empty `results: []`.
 
 ---
 
-## 7. Caching — Valkey
+## 7. Caching: Valkey
 
 ```typescript
 const MATCH_CACHE_TTL = 43200;  // 12 hours
 const cacheKey = `ai:match:${tenantId}:${requesterId}`;
 ```
 
-`cached: boolean` field tells the client whether seeing live or cached results. **Cache is NOT invalidated when new members join** — 12-hour TTL is the only expiry. By design (acceptable trade-off for cost reduction).
+`cached: boolean` field tells the client whether seeing live or cached results. **Cache is NOT invalidated when new members join**: 12-hour TTL is the only expiry. By design (acceptable trade-off for cost reduction).
 
 ---
 
-## 8. Persistence — `AiMatchResult`
+## 8. Persistence: `AiMatchResult`
 
 ```prisma
 model AiMatchResult {
@@ -149,7 +149,7 @@ model AiMatchResult {
 
 ---
 
-## 9. Referral AI — `generateIntroMessage()` (separate path)
+## 9. Referral AI: `generateIntroMessage()` (separate path)
 
 `referral-ai.ts` generates a personalized intro message when a member sends a referral. **Separate config** from matching:
 
@@ -166,11 +166,11 @@ Loaded via `getReferralAiConfig()` from `PlatformConfig`. Cached in Valkey under
 
 Context depth controls profile information in the intro:
 
-- `brief`: recipient expertise only (2–3 sentences).
+- `brief`: recipient expertise only (2-3 sentences).
 - `standard`: sender bio snippet + recipient expertise (2 short paragraphs).
-- `rich`: full sender + recipient context (2–3 paragraphs).
+- `rich`: full sender + recipient context (2-3 paragraphs).
 
-Channel (SMS, WhatsApp, Instagram DM) shortens output to 3–4 sentences.
+Channel (SMS, WhatsApp, Instagram DM) shortens output to 3-4 sentences.
 
 **On any LLM error,** `templateFallback()` silently generates a template-based message so referral creation never fails due to AI unavailability.
 
@@ -207,8 +207,8 @@ Most recent matching results without triggering a new LLM run. Lookup order: Val
 
 | # | Risk | Severity | Status |
 |---|---|---|---|
-| 1 | 200-candidate cap — large communities may have better matches outside the first 200 | Medium | Candidates fetched without scoring order |
-| 2 | Cache per-requester — adding a new member doesn't invalidate existing caches | Low | 12h TTL acceptable |
+| 1 | 200-candidate cap: large communities may have better matches outside the first 200 | Medium | Candidates fetched without scoring order |
+| 2 | Cache per-requester: adding a new member doesn't invalidate existing caches | Low | 12h TTL acceptable |
 | 3 | LLM returns `userId` not cross-validated against candidate list | Medium | Filtered by missing-profile lookup |
 
 mind-worker-bee flags these on every matching audit.

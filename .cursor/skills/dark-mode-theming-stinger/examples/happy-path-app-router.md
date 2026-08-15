@@ -1,4 +1,4 @@
-# Happy Path — Next.js 15 App Router + next-themes + Tailwind v4
+# Happy Path: Next.js 15 App Router + next-themes + Tailwind v4
 
 *Demonstrates: full dark-mode setup for the canonical 2026 stack. Covers guides 01 through 05.*
 

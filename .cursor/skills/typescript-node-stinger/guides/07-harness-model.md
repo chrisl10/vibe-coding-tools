@@ -1,5 +1,7 @@
 # 07 - The Harness Model
 
+**Legacy/library case.** Hivemind's multi-agent-harness packaging model; not applicable to this repo's SvelteKit app.
+
 Hivemind ships to many coding agents. Each one is a "harness" with its own packaging and install path. The same `src/` builds into per-harness bundles via `esbuild.config.mjs` (`guides/04`).
 
 ## The harnesses

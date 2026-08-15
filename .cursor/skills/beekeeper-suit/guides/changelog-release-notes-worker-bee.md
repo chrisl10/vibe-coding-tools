@@ -1,71 +1,39 @@
-# Changelog / Release Notes Worker-Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `changelog-release-notes-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/changelog-release-notes-worker-bee.md`](../../../agents/changelog-release-notes-worker-bee.md)
-**Stinger:** [`.cursor/skills/changelog-release-notes-stinger/`](../../changelog-release-notes-stinger/)
-**Trigger policy:** proactive
-
----
+# changelog-release-notes-worker-bee
 
 ## Domain
+Owns public product changelogs and release notes that users actually read: tool selection (Headway, FeatureBase, Productlane, Beamer, self-hosted markdown), impact-first copy craft that names user-visible behavior instead of implementation detail, honest scope notes (including what did NOT ship), and multi-channel distribution planning (in-app widget, email digest, blog, community). Also runs changelog quality audits. Never pastes raw commit logs as an entry.
 
-`changelog-release-notes-worker-bee` owns release communication for `@deeplake/hivemind` - Activeloop's cloud-backed shared memory for coding agents, shipped as a TypeScript library plus a CLI on npm. It turns a set of merged PRs into a Keep-a-Changelog CHANGELOG.md entry, picks the correct semver bump across this tool's contract surfaces (the CLI, the library API, the six harness contracts, the MCP tool surface, and the Deep Lake schema), drafts impact-first GitHub Release notes, confirms the change against the `sync-versions` plus release.yaml mechanics, and points the change at the right channels (GitHub Releases, README, and the community).
+## Paired Stinger
+[changelog-release-notes-stinger](../../changelog-release-notes-stinger) - the tool-selection decision matrix, the impact-first copy playbook, distribution-channel strategy by release significance, and the five-dimension audit rubric.
 
 ## Trigger phrases
-
-Route to `changelog-release-notes-worker-bee` when the user says any of:
-
-- "Write a changelog entry" / "write the changelog entry"
-- "Version bump" / "what version bump is this"
-- "Semver decision" / "is this a breaking change"
-- "Release notes" / "draft the release notes"
-- "We just shipped" / "we just shipped X"
-
-Or when a release is about to cut and the change needs to be communicated to npm consumers and the six-harness users.
+- "write my changelog entry for this release"
+- "set up a changelog tool for us"
+- "compare Headway vs FeatureBase"
+- "review our release notes, are they any good"
+- "plan our announcement strategy for this ship"
+- "we just shipped X, help me communicate it"
+- "audit our existing changelog"
+- "draft a breaking-change entry with a migration timeline"
 
 ## Do NOT route when
-
-- The user wants the build, CI workflows, or the npm publish pipeline itself - that is `ci-release-worker-bee`. This Bee writes the prose and picks the bump; ci-release drives the mechanics.
-- The user wants dependency CVE triage or SBOMs - that is `dependency-audit-worker-bee`.
-- The user wants MCP tool reference docs - that is `mcp-tool-docs-worker-bee`.
-- The user wants a marketing launch campaign or internal sprint retrospectives.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let this one act as backup.
+- The request is managing the deploy pipeline itself; that is devops-worker-bee.
+- The request is a full marketing launch campaign or landing page; that is website-worker-bee.
+- The team's existing changelog tool is undocumented and the platform name is unknown; ask before writing platform-specific integration code.
+- A breaking-change entry is requested but the deprecation timeline is unconfirmed; ask for the date before drafting rather than guessing.
+- An audit scores below 10/25; surface the finding and ask whether the user wants a full rewrite before proceeding on your own judgment.
 
 ## Inputs the Bee needs
+- Which intent applies: write an entry, set up a tool, audit an existing changelog, or plan an announcement.
+- Whether a changelog tool already exists, and its budget tier if choosing a new one.
+- The raw commit list or feature description to reframe into user-visible language.
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- An impact-first changelog entry with an honest-scope note where relevant.
+- A tool-selection decision or integration steps (JS snippet, React SDK, markdown bootstrap).
+- A distribution checklist matched to release significance, and an audit report scored across five dimensions.
 
-- The set of merged PRs or the change being released.
-- Which contract surface the change touches (CLI, library API, harness contract, MCP tools, Deep Lake schema) - this drives the semver bump.
-- Access to CHANGELOG.md and `package.json` (the version source of truth).
-
-If the change set is missing, do not invoke yet - ask the user what shipped.
-
-## Outputs the Bee produces
-
-- A Keep-a-Changelog CHANGELOG.md entry framed for the person installing or upgrading, not the next engineer.
-- The semver bump decision tied to the contract surface, matching what `sync-versions.mjs` inlines.
-- Impact-first GitHub Release notes and a distribution plan (Releases minimum; README note and community post for significant releases).
-
-## Multi-Bee sequences this Bee participates in
-
-- **Ship a release** - after the implementation Bees pass the Plan execution loop, `changelog-release-notes-worker-bee` writes the CHANGELOG entry and confirms the semver bump; `ci-release-worker-bee` then drives the build, workflows, and npm publish.
-
-## Critical directives the orchestrator should respect
-
-- **Never paste raw commit logs into the CHANGELOG** - re-frame for the installer/upgrader.
-- **Name the user-visible behavior, not the implementation.**
-- **Get the semver bump right** - a harness contract, MCP tool-surface, or Deep Lake schema change is the breaking-change surface.
-- **Include honest scope when relevant.**
-- **One source of truth for the version** - the CHANGELOG heading must match `sync-versions.mjs`.
-- **Distribute the release** - GitHub Releases is the minimum.
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
-
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+## Commonly sequenced with
+- devops-worker-bee: owns the deploy pipeline that produces the commits this Bee turns into entries.
+- website-worker-bee: takes over when the announcement grows into a full marketing campaign.
+- branching-strategy-worker-bee: upstream, since release/hotfix branch decisions shape when a changelog entry gets written.

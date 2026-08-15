@@ -1,8 +1,8 @@
-# 03 — Prompt Cascade
+# 03: Prompt Cascade
 
 The 5-layer `composeSystemPrompt()` cascade with XML-style delimiters. The `[INSTRUCTION_HIERARCHY]` block is always last. Every change is recorded in `PromptVersion`.
 
-> **Doc reference:** `library/knowledge-base/ai/prompt-cascade-architecture.md` is the canonical doc.
+> **Doc reference:** `library/knowledge/private/ai/prompt-cascade-architecture.md` is the canonical doc.
 
 ---
 
@@ -35,7 +35,7 @@ LAYER 4 — DYNAMIC USER CONTEXT
   + [INSTRUCTION_HIERARCHY]  (priority ladder — ALWAYS LAST)
 ```
 
-The `composeSystemPrompt()` function in `lib/ai-prompt-builder.ts` queries `PlatformConfig`, `Tenant`, `User`, and `buildKnowledgeContextWithMeta()` in parallel. Absent layers are silently skipped — the cascade degrades gracefully.
+The `composeSystemPrompt()` function in `lib/ai-prompt-builder.ts` queries `PlatformConfig`, `Tenant`, `User`, and `buildKnowledgeContextWithMeta()` in parallel. Absent layers are silently skipped: the cascade degrades gracefully.
 
 ---
 
@@ -129,7 +129,7 @@ Priority order (highest first):
 
 | Rule | Statement |
 |---|---|
-| 1 | **Layer 0 is inviolable.** `[SYSTEM_FOUNDATION]` is always first and always present — hardcoded, not configurable. |
+| 1 | **Layer 0 is inviolable.** `[SYSTEM_FOUNDATION]` is always first and always present: hardcoded, not configurable. |
 | 2 | **Platform blocks (Layer 1) take precedence.** The `[INSTRUCTION_HIERARCHY]` explicitly tells the model that `[PLATFORM_SAFETY_RULES]` and `[PLATFORM_FOUNDATION]` outrank lower layers. |
 | 3 | **Tenant blocks (Layer 2) are advisory.** They shape tone and impose restrictions, but are declared lower priority than platform rules. |
 | 4 | **Coach personality (Layer 3) is the persona.** It defines who the coach is. Absent an admin-created `AiCoachConfig`, the hardcoded default from `getDefaultGlobalPrompt()` is used. |
@@ -137,9 +137,9 @@ Priority order (highest first):
 
 ---
 
-## 4. The `[INSTRUCTION_HIERARCHY]` block — always last
+## 4. The `[INSTRUCTION_HIERARCHY]` block: always last
 
-The `[INSTRUCTION_HIERARCHY]` block is **always last** — closest to the conversation window. LLMs weight recent tokens more heavily; placing the priority ladder at the end is part of the prompt-injection defense (Defense Layer 1 in `prompt-cascade-architecture.md §6`).
+The `[INSTRUCTION_HIERARCHY]` block is **always last**, closest to the conversation window. LLMs weight recent tokens more heavily; placing the priority ladder at the end is part of the prompt-injection defense (Defense Layer 1 in `prompt-cascade-architecture.md §6`).
 
 **Reordering or removing this block is a must-fix finding.** The block must contain all 7 priorities in order.
 
@@ -160,7 +160,7 @@ Do not be sycophantic. A great coach says "have you considered..." not "that's a
 
 This block is **hardcoded, not configurable**. Per the doc decision log: "Core coaching quality requirement; should not be disableable." Admins cannot remove it via tenant blocks.
 
-If sycophancy rate trends up despite this block, the lever is the prompt cascade or coach personality — not the temperature. See `guides/17-evaluation-discipline.md`.
+If sycophancy rate trends up despite this block, the lever is the prompt cascade or coach personality, not the temperature. See `guides/17-evaluation-discipline.md`.
 
 ---
 
@@ -195,7 +195,7 @@ Edited via `/admin/settings`.
 
 Coach-specific persona prompt. Cached in Valkey for 10 minutes under `coach:persona:{tenantId}:{coachType}`. Falls back to `getDefaultGlobalPrompt(coachType)` when no active config exists. See `guides/04-prompt-engineering.md` for the canonical defaults.
 
-### Layer 4: Dynamic assembly — `buildUserContextSection()`
+### Layer 4: Dynamic assembly (`buildUserContextSection()`)
 
 Built fresh on every turn:
 - Queries member profile from `User`.
@@ -212,7 +212,7 @@ The cascade is part of a layered defense:
 |---|---|
 | 1. `[SYSTEM_FOUNDATION]` declaration | Tells model that user messages are data, not instructions. Reinforced by `[INSTRUCTION_HIERARCHY]`. |
 | 2. Input length limits | Chat messages limited to 4000 chars in Zod schema (`ai-chat.ts`). |
-| 3. Data isolation (architectural) | Retrieval filters in `assembleContextPacket()` enforced at app layer — even if injection succeeds, the LLM was never given other users' data. |
+| 3. Data isolation (architectural) | Retrieval filters in `assembleContextPacket()` enforced at app layer: even if injection succeeds, the LLM was never given other users' data. |
 | 4. Structured output for actions | Function calling constrains action space (e.g., onboarding `complete_onboarding`). |
 | 5. `prompt-sanitizer.ts` | Admin-supplied prompts checked for injection patterns before save. |
 
@@ -220,7 +220,7 @@ The cascade is part of a layered defense:
 
 ---
 
-## 8. `composeSystemPromptWithMeta()` — the tracing variant
+## 8. `composeSystemPromptWithMeta()`: the tracing variant
 
 Used by `ai-chat.ts` to capture knowledge retrieval metadata for `AiTrace.knowledgeChunks` and `AiTrace.retrievalLatencyMs`:
 

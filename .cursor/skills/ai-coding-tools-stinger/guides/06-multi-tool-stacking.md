@@ -1,4 +1,4 @@
-# Guide 06: Multi-Tool Stacking — Combining AI Coding Tools Effectively
+# Guide 06: Multi-Tool Stacking: Combining AI Coding Tools Effectively
 
 *This guide addresses an emerging 2026 pattern not fully covered by research. It is based on the tool tier taxonomy (`guides/00-tool-tiers.md`) and the footguns catalog (`guides/05-footguns.md`). Core data points are sourced from the research files; workflow recommendations are synthesized from the tier taxonomy.*
 
@@ -8,9 +8,9 @@
 
 Each tier excels at a different part of the development loop:
 
-- **Tier 1 (interactive-pair):** Fast completions while you type — Cursor Tab
-- **Tier 2 (hybrid-agent):** Autonomous multi-file tasks — Claude Code, Aider
-- **Tier 3 (fully-autonomous):** Unattended batch jobs — Devin, Cursor Background Agents
+- **Tier 1 (interactive-pair):** Fast completions while you type: Cursor Tab
+- **Tier 2 (hybrid-agent):** Autonomous multi-file tasks: Claude Code, Aider
+- **Tier 3 (fully-autonomous):** Unattended batch jobs: Devin, Cursor Background Agents
 
 A common pattern among high-productivity developers in 2026 is to combine Tier 1 for ongoing interactive work with Tier 2 for autonomous task batches. These combinations are additive rather than redundant.
 

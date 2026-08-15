@@ -1,4 +1,4 @@
-# AI Gateways — Portkey, OpenRouter, LiteLLM
+# AI Gateways: Portkey, OpenRouter, LiteLLM
 
 An AI gateway sits between your application code and the underlying model provider. It abstracts provider-specific SDKs, enables fallback routing, provides spend controls, and surfaces observability. For any production application calling more than one provider, a gateway is almost always worth the overhead.
 
@@ -10,7 +10,7 @@ An AI gateway sits between your application code and the underlying model provid
 - You want a single observability dashboard across all LLM calls.
 - You're running multi-provider A/B tests.
 
-If you're building a quick prototype with a single provider and no production SLA, skip the gateway — add it when the pain arrives.
+If you're building a quick prototype with a single provider and no production SLA, skip the gateway; add it when the pain arrives.
 
 ## Portkey
 
@@ -21,7 +21,7 @@ If you're building a quick prototype with a single provider and no production SL
 - Fallback routing: `strategy: fallback` with ordered provider list; automatic retry on 429 / 5xx.
 - Budget caps: per virtual key, per workspace, per time window.
 - Caching: semantic and exact-match caching to reduce spend.
-- Guardrails: PII detection, toxicity filtering, regex checks — applied before/after the model call.
+- Guardrails: PII detection, toxicity filtering, regex checks, applied before/after the model call.
 - Observability: traces per request, cost attribution, latency percentiles, error breakdown.
 - OpenAI-compatible API: drop-in replacement, just change `baseURL`.
 
@@ -61,7 +61,7 @@ const response = await portkey.chat.completions.create({
 - Single API key for every major provider (Anthropic, OpenAI, Google, Mistral, Meta, etc.).
 - Automatic model fallback and load balancing across providers.
 - Cost-based routing: OpenRouter can pick the cheapest provider for a given model family.
-- Streaming support, function calling, vision — all normalized.
+- Streaming support, function calling, vision: all normalized.
 - No built-in budget caps per-key (use Portkey on top for that).
 - OpenAI-compatible: `baseURL: "https://openrouter.ai/api/v1"`.
 

@@ -42,7 +42,7 @@ router.post('/users/:id/update', async (req, res) => {
 
 ## Audit findings
 
-### H1 — POST /users returns 200 instead of 201
+### H1: POST /users returns 200 instead of 201
 
 - **Finding:** Resource creation MUST return 201 Created + Location header per RFC 9110 §9.3.3.
 - **Impact:** Clients cannot distinguish "updated existing" from "created new" by status code. Caches may store the response incorrectly.
@@ -54,7 +54,7 @@ router.post('/users', async (req, res) => {
 });
 ```
 
-### C1 — DELETE /users/:id returns 200 with error body on failure
+### C1: DELETE /users/:id returns 200 with error body on failure
 
 - **Finding:** Returning 200 with `{"success": false}` is the "200 with error body" anti-pattern. The HTTP status says "success" while the body says "failure."
 - **Impact:** Monitoring systems, caches, and any client checking the status code first will misclassify this as success. Rate limit counters may not increment. APM error rate metrics will not reflect this failure.
@@ -74,13 +74,13 @@ router.delete('/users/:id', async (req, res) => {
 });
 ```
 
-### M1 — POST /users/:id/update uses verb in URL
+### M1: POST /users/:id/update uses verb in URL
 
 - **Finding:** REST resource URLs should not contain verbs. This is RPC-style.
 - **Impact:** Not an HTTP error, but violates REST uniform-interface constraint.
 - **Fix:** Change to `PATCH /users/:id`.
 
-### M2 — Validation error uses 400 instead of 422
+### M2: Validation error uses 400 instead of 422
 
 - **Finding:** The error is a semantic validation failure (valid JSON, but invalid business rules), not a syntactic malformation. RFC 9110 §15.5.21 defines 422 Unprocessable Content for this case.
 - **Fix:**

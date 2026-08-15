@@ -1,4 +1,4 @@
-# 05 — Django Ninja API
+# 05: Django Ninja API
 
 The canonical API layer. Pydantic v2 schemas + decorator-per-endpoint + automatic OpenAPI docs + native async support.
 
@@ -14,10 +14,10 @@ See `research/2026-05-03-django-ninja-vs-drf.md` and `references/drf-comparison.
 
 1. **Every endpoint declares request and response schemas.** Bare `def view(request, data: dict)` is a must-fix finding.
 2. **Schemas are Pydantic v2** (Ninja's `Schema` and `ModelSchema` are subclasses).
-3. **Auth is explicit** — declared on the router or the endpoint. Never assume "Django session probably works".
+3. **Auth is explicit**: declared on the router or the endpoint. Never assume "Django session probably works".
 4. **Pagination uses `ninja.pagination.paginate(...)`** for list endpoints.
-5. **Errors return a consistent envelope** — see "Error envelope" below.
-6. **Business logic is NOT in the endpoint** — call a service or selector from `apps/<name>/services.py` / `selectors.py`.
+5. **Errors return a consistent envelope**: see "Error envelope" below.
+6. **Business logic is NOT in the endpoint**: call a service or selector from `apps/<name>/services.py` / `selectors.py`.
 
 ## Canonical router shape
 
@@ -201,7 +201,7 @@ def list_orders(request):
     return selectors.order_list_for_user(user=request.user)
 ```
 
-The response automatically becomes `{"items": [...], "count": N}`. Cursor-based pagination requires a custom Paginator subclass — implement when you actually need it.
+The response automatically becomes `{"items": [...], "count": N}`. Cursor-based pagination requires a custom Paginator subclass: implement when you actually need it.
 
 ## Findings checklist
 

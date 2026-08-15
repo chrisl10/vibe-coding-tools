@@ -91,7 +91,7 @@ h1 { font-weight: 700; }
 .display { font-variation-settings: 'GRAD' 100, 'opsz' 32; }
 ```
 
-`font-variation-settings` does not cascade partially — if you set two axes in a rule and then override in a child, you must repeat all axes. See `research/external/2026-05-20-variable-fonts-production.md` for the cascade pitfall detail.
+`font-variation-settings` does not cascade partially: if you set two axes in a rule and then override in a child, you must repeat all axes. See `research/external/2026-05-20-variable-fonts-production.md` for the cascade pitfall detail.
 
 ---
 

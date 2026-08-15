@@ -1,4 +1,4 @@
-# Llama 3.1 8B — Classification at `temperature: 0`, `max_tokens: 20`
+# Llama 3.1 8B: Classification at `temperature: 0`, `max_tokens: 20`
 
 **Source:** Meta Llama 3.1 model card; Llama documentation; production routing patterns from public posts
 **Retrieved:** 2026-04-25
@@ -23,7 +23,7 @@ Llama 3.1 8B Instruct is the canonical classifier model for the deploying produc
 | Parameter | Value | Why |
 |---|---|---|
 | `model` | `Llama 3.1 8B Instruct` | ~10× cheaper than 70B. Routing accuracy at 8B is sufficient. |
-| `temperature` | `0` | Routing must be deterministic — same input → same coach. Stochasticity here is a bug, not a feature. |
+| `temperature` | `0` | Routing must be deterministic: same input → same coach. Stochasticity here is a bug, not a feature. |
 | `max_tokens` | `20` | One-word response. Higher wastes tokens. |
 | `response_format` | (default) | The classifier returns plain text; JSON mode adds overhead for one word. |
 
@@ -55,7 +55,7 @@ The `if unsure → main_community` rule is the safety net. Combined with the run
 
 ## Why 8B is sufficient for routing
 
-Routing is a closed-set classification (7 + module variants). 8B handles this well at `temperature: 0`. Going to 70B for routing is a should-refactor (cost) finding — the precision lift is < 2% on closed-set classification, not worth the 10× cost.
+Routing is a closed-set classification (7 + module variants). 8B handles this well at `temperature: 0`. Going to 70B for routing is a should-refactor (cost) finding: the precision lift is < 2% on closed-set classification, not worth the 10× cost.
 
 ---
 

@@ -1,9 +1,9 @@
-# React Architecture Review — {{project-name}}
+# React Architecture Review: {{project-name}}
 
 **Date:** {{YYYY-MM-DD}}
 **Reviewer:** react-worker-bee
 **Scope:** {{branch / diff / module}}
-**Stack:** {{captured from package.json — React X, bundler Y, state libs, data libs, test runner}}
+**Stack:** {{captured from package.json: React X, bundler Y, state libs, data libs, test runner}}
 
 ---
 
@@ -34,19 +34,19 @@ Ratings: 🟢 Solid · 🟡 Drifting · 🔴 Needs work
 
 ### Must-fix ({{count}})
 
-1. **`{{file:line}}`** — {{one-line summary}}
-   - Reason: {{citation — guide section or URL}}
+1. **`{{file:line}}`**: {{one-line summary}}
+   - Reason: {{citation: guide section or URL}}
    - Fix: {{how}}
 
 2. ...
 
 ### Should-refactor ({{count}})
 
-1. **`{{file:line}}`** — ...
+1. **`{{file:line}}`**: ...
 
 ### Style ({{count}})
 
-1. **`{{file:line}}`** — ...
+1. **`{{file:line}}`**: ...
 
 ## Metrics captured
 
@@ -61,11 +61,11 @@ Ratings: 🟢 Solid · 🟡 Drifting · 🔴 Needs work
 
 ## Cross-Bee handoffs
 
-- [ ] `ux-ui-worker-bee` — {{if any visual / token findings}}
-- [ ] `seo-aeo-worker-bee` — {{if any Next.js SEO findings}}
-- [ ] `security-worker-bee` — {{if any auth / Server Action / storage findings}}
-- [ ] `library-worker-bee` — {{if refactor big enough to warrant a PRD}}
-- [ ] `quality-worker-bee` — {{post-fix verification}}
+- [ ] `ux-ui-svelte-worker-bee`: {{if any visual / token findings}}
+- [ ] `seo-aeo-worker-bee`: {{if any Next.js SEO findings}}
+- [ ] `security-worker-bee`: {{if any auth / Server Action / storage findings}}
+- [ ] `library-worker-bee`: {{if refactor big enough to warrant a PRD}}
+- [ ] `quality-worker-bee`: {{post-fix verification}}
 
 ## Recommended next steps
 

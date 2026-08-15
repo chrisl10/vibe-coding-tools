@@ -163,14 +163,14 @@ import { For } from "@preact/signals";
 
 ## Migrating from v1 to v2
 
-The core API (`signal`, `computed`, `effect`, `batch`) is unchanged. v2 adds new exports. Existing v1 code runs unmodified — v2 is additive, not breaking.
+The core API (`signal`, `computed`, `effect`, `batch`) is unchanged. v2 adds new exports. Existing v1 code runs unmodified: v2 is additive, not breaking.
 
 ---
 
 ## Signals + vdom coexistence rules
 
-1. **Never call `signal.value` conditionally inside render** — React-style rules-of-hooks apply: signals read in render create dependencies at every call site.
-2. **Batch mutations in event handlers** — multiple `signal.value =` writes in a single event handler without `batch()` will cause multiple renders.
+1. **Never call `signal.value` conditionally inside render**; React-style rules-of-hooks apply: signals read in render create dependencies at every call site.
+2. **Batch mutations in event handlers**: multiple `signal.value =` writes in a single event handler without `batch()` will cause multiple renders.
 3. **Don't share a global signal between incompatible render trees** (e.g., two separate Preact roots) without explicit coordination.
 
 > See `examples/happy-path-signals-component.md` for a worked example.

@@ -1,4 +1,4 @@
-# Example: Compose dev stack — Next.js + Postgres + Redis
+# Example: Compose dev stack (Next.js + Postgres + Redis)
 
 A worked dev environment for a Next.js app with Postgres and Redis dependencies, using profiles, healthchecks, secrets, and Compose watch. Source: `guides/03-compose-for-dev.md`.
 
@@ -11,7 +11,7 @@ A worked dev environment for a Next.js app with Postgres and Redis dependencies,
 - Healthchecks gate the app start until Postgres + Redis are ready.
 - Migration job runs to completion before the app starts (no race conditions).
 - Secrets via files (`.secrets/`), not `environment:`.
-- Hot-reload via `develop.watch` — source changes sync; `package.json` changes rebuild.
+- Hot-reload via `develop.watch`: source changes sync; `package.json` changes rebuild.
 
 ## File layout
 
@@ -29,7 +29,7 @@ A worked dev environment for a Next.js app with Postgres and Redis dependencies,
 
 ## docker-compose.dev.yml
 
-See `templates/docker-compose.dev.yml` — used as-is for this example. Key behaviors:
+See `templates/docker-compose.dev.yml`, used as-is for this example. Key behaviors:
 
 ```yaml
 services:

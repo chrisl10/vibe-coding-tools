@@ -40,7 +40,7 @@ jobs:
 
 **`fetch-depth: 20` is non-negotiable.** Without it, LHCI's ancestor detection (used for base branch comparison and PR comments) throws "Could not find hash" errors. The default shallow clone (`fetch-depth: 1`) breaks this.
 
-> Source: `research/external/2026-05-20-lhci-github-actions-guide.md` — "Critical: Always set `fetch-depth: 20` or higher. Shallow clones break LHCI's ancestor detection."
+> Source: `research/external/2026-05-20-lhci-github-actions-guide.md`: "Critical: Always set `fetch-depth: 20` or higher. Shallow clones break LHCI's ancestor detection."
 
 ---
 
@@ -102,9 +102,9 @@ For Vercel preview deploys, set `url` to `$VERCEL_URL` and run LHCI after the de
 ## `lhci autorun` internals
 
 `lhci autorun` runs these three steps in sequence:
-1. `lhci collect` — runs Lighthouse N times against each URL
-2. `lhci assert` — checks results against `lighthouserc` assertions; exits non-zero if any `"error"` assertion fails
-3. `lhci upload` — sends results to `upload.target`
+1. `lhci collect`: runs Lighthouse N times against each URL
+2. `lhci assert`: checks results against `lighthouserc` assertions; exits non-zero if any `"error"` assertion fails
+3. `lhci upload`: sends results to `upload.target`
 
 Run them individually when you need to upload regardless of assertion failures:
 ```bash
@@ -143,5 +143,5 @@ Then in the Actions workflow:
 | "Could not find hash" ancestor detection error | Set `fetch-depth: 20` in checkout |
 | Performance score varies wildly between runs | Use `numberOfRuns: 3` and `aggregationMethod: "median-run"` |
 | CI fails immediately with new budget | Run without `assert` first, document baseline, then set budget with 10-20% buffer |
-| PWA category missing | Expected — removed in LH12. Four categories remain. |
+| PWA category missing | Expected: removed in LH12. Four categories remain. |
 | `temporaryPublicStorage` results visible publicly | Use LHCI server or `filesystem` target for private results |

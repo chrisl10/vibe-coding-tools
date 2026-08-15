@@ -1,4 +1,4 @@
-# 21 — Data and ML Wrappers
+# 21: Data and ML Wrappers
 
 Patterns when Python is the analytical / ML runtime. The cognitive layer (coaches, RAG, evals, vector DBs) hands off to `mind-worker-bee`; the Python implementation patterns underneath stay here.
 
@@ -39,7 +39,7 @@ def report_generate_csv(*, period_start, period_end) -> str:
     return buf.getvalue()
 ```
 
-For large data sets (> 100K rows), avoid `Model.objects.all()` → DataFrame — it pulls everything into memory. Use:
+For large data sets (> 100K rows), avoid `Model.objects.all()` → DataFrame: it pulls everything into memory. Use:
 
 - `pd.read_sql(query, connection)` with parameterized SQL for raw access.
 - Chunked iteration via `qs.iterator(chunk_size=1000)`.
@@ -110,7 +110,7 @@ def _run_inference(model, features: list[float]) -> PredictOut:
         return PredictOut(label=label, probability=float(probs[0, label]))
 ```
 
-For GPU serving, batch requests, or heavy-traffic scenarios, consider Triton, vLLM, or Ray Serve — that's an ML-platform decision, surface it to `mind-worker-bee`.
+For GPU serving, batch requests, or heavy-traffic scenarios, consider Triton, vLLM, or Ray Serve: that's an ML-platform decision, surface it to `mind-worker-bee`.
 
 ## Batch vs streaming pipelines
 
@@ -121,7 +121,7 @@ For GPU serving, batch requests, or heavy-traffic scenarios, consider Triton, vL
 | Long-running compute (> 60s) | Celery task with progress updates via `task.update_state()` or pubsub |
 | User-triggered async report | Django Ninja endpoint dispatches Celery task → returns task ID → frontend polls / subscribes |
 
-## LLM calls — the boundary
+## LLM calls: the boundary
 
 The Python wiring of an LLM call (the `mind-worker-bee` defines the cognitive design):
 
@@ -165,7 +165,7 @@ Every LLM call is:
 
 - Pydantic-typed at request and response boundaries.
 - Behind a configurable gateway URL (the `mind-worker-bee` picks the gateway).
-- Timed out — LLM calls can hang for a minute or more.
+- Timed out: LLM calls can hang for a minute or more.
 - Logged with token counts for cost / observability (handoff to `mind-worker-bee` for the AI-trace shape).
 
 ## Findings checklist
@@ -187,5 +187,5 @@ Every LLM call is:
 ## Sources
 
 - https://pandas.pydata.org/docs/
-- https://fastapi.tiangolo.com/advanced/events/ — lifespan for model loading
+- https://fastapi.tiangolo.com/advanced/events/: lifespan for model loading
 - https://docs.djangoproject.com/en/stable/ref/models/querysets/#iterator

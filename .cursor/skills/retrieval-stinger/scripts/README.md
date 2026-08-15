@@ -18,12 +18,12 @@ All scripts run with node (build first or use tsx):
 
 ```bash
 # Daemon + coverage - no fixtures needed
-node .cursor/skills/retrieval-stinger/scripts/daemon-health.ts
-node .cursor/skills/retrieval-stinger/scripts/embedding-coverage.ts
+node .claude/skills/retrieval-stinger/scripts/daemon-health.ts
+node .claude/skills/retrieval-stinger/scripts/embedding-coverage.ts
 
 # Fixture-driven
-node .cursor/skills/retrieval-stinger/scripts/bm25-vs-semantic.ts fixtures/recall-queries.json
-node .cursor/skills/retrieval-stinger/scripts/recall-precision.ts  fixtures/recall-fixtures.json --k=5
+node .claude/skills/retrieval-stinger/scripts/bm25-vs-semantic.ts fixtures/recall-queries.json
+node .claude/skills/retrieval-stinger/scripts/recall-precision.ts  fixtures/recall-fixtures.json --k=5
 ```
 
 Each script ships with a stubbed driver (`recall()`, `embedProbe()`, `runCount()`, `recallMode()`)
@@ -56,8 +56,8 @@ because a precision number over a pure-BM25 path would be misleading.
 as a scheduled job, not a merge gate (they need DB + daemon access):
 
 ```yaml
-- run: node .cursor/skills/retrieval-stinger/scripts/daemon-health.ts
-- run: node .cursor/skills/retrieval-stinger/scripts/embedding-coverage.ts
+- run: node .claude/skills/retrieval-stinger/scripts/daemon-health.ts
+- run: node .claude/skills/retrieval-stinger/scripts/embedding-coverage.ts
 ```
 
 Non-zero exit -> recall is degraded -> page the owner.

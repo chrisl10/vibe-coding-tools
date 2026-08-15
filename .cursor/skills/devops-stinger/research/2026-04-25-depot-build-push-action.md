@@ -18,8 +18,8 @@ Compatible inputs (per the action's README):
 
 Inputs **not** needed (Depot handles internally):
 
-- `cache-from`, `cache-to` — Depot has persistent NVMe cache shared across builds; no manual cache wiring.
-- `setup-buildx` step — `depot/setup-action` replaces it.
+- `cache-from`, `cache-to`: Depot has persistent NVMe cache shared across builds; no manual cache wiring.
+- `setup-buildx` step: `depot/setup-action` replaces it.
 
 ## The migration diff
 
@@ -48,9 +48,9 @@ Net: 5-line change. `cache-from`/`cache-to` deletions are optional (they'd be ig
 
 This is materially different from:
 
-- GHA cache backend (`type=gha`) — 10 GB cap, per-repo, per-branch scope, network restore.
-- Registry cache (`type=registry`) — pull cost on every restore, no cap but pay storage.
-- Inline cache (`type=inline`) — cache only in the final stage, requires pulling previous image.
+- GHA cache backend (`type=gha`): 10 GB cap, per-repo, per-branch scope, network restore.
+- Registry cache (`type=registry`): pull cost on every restore, no cap but pay storage.
+- Inline cache (`type=inline`): cache only in the final stage, requires pulling previous image.
 
 ## Multi-arch native
 
@@ -64,8 +64,8 @@ Depot project settings allow GitHub repo + branch claims as trusted issuers. The
 
 ## Relevance to this Stinger
 
-- `guides/07-depot-integration.md` — primary guide.
-- `templates/.github/workflows/reusable-build.yml` — uses `depot/setup-action` + `depot/build-push-action` by default.
-- `templates/.github/workflows/main-deploy.yml` — multi-arch via Depot.
-- `examples/nextjs-with-depot-oidc.md` — full migration.
+- `guides/07-depot-integration.md`: primary guide.
+- `templates/.github/workflows/reusable-build.yml`: uses `depot/setup-action` + `depot/build-push-action` by default.
+- `templates/.github/workflows/main-deploy.yml`: multi-arch via Depot.
+- `examples/nextjs-with-depot-oidc.md`: full migration.
 - Migration is positioned as a 5-line diff per workflow, not a re-architecture.

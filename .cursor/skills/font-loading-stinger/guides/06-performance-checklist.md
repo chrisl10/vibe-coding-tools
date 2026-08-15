@@ -83,7 +83,7 @@ Use this guide to audit an existing font setup or verify a new implementation be
 
 ## Section 6: double-fetch detection
 
-A double-fetch occurs when the browser initiates a font request twice — once without CORS headers (preload) and once with CORS headers (`@font-face`). The two requests are different and the preload is wasted.
+A double-fetch occurs when the browser initiates a font request twice: once without CORS headers (preload) and once with CORS headers (`@font-face`). The two requests are different and the preload is wasted.
 
 **How to detect:**
 
@@ -111,6 +111,6 @@ To trigger and observe font loading behavior on a warm cache:
 ## References
 
 - All preceding guides in this Stinger
-- `examples/happy-path-nextjs-inter.md` — reference implementation that passes this checklist
-- `examples/edge-case-self-hosted-variable.md` — self-hosted implementation that passes this checklist
-- `research/external/` — web.dev font best practices, Chrome DevTools font rendering, CLS spec
+- `examples/happy-path-nextjs-inter.md`: reference implementation that passes this checklist
+- `examples/edge-case-self-hosted-variable.md`: self-hosted implementation that passes this checklist
+- `research/external/`: web.dev font best practices, Chrome DevTools font rendering, CLS spec

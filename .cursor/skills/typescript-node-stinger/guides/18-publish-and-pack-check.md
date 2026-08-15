@@ -1,5 +1,7 @@
 # 18 - Publish & pack-check
 
+**Legacy/library case: npm library / CLI publishing.** Applies when the deliverable IS a published package. Not applicable to the SvelteKit app, which deploys via Vercel (`vercel-stinger`), not `npm publish`.
+
 Shipping `@deeplake/hivemind` is a chain of lifecycle scripts ending in a verified tarball. This guide is the release-mechanics discipline.
 
 ## The chain
@@ -30,7 +32,7 @@ A publish that skips `pack:check` is how a missing `files` entry ships a broken 
 ## What ships vs what doesn't
 
 - **Ships:** `bundle/`, each `harnesses/*/bundle` (and `dist` for openclaw), `mcp/bundle`, `harnesses/pi/extension-source`, the openclaw/codex skills, the plugin manifests, `.claude-plugin`, `scripts`, `README.md`, `LICENSE`. (`guides/14` has the full list.)
-- **Does not ship:** `src/`, `tests/`, the top-level `dist/` beyond what bundles need, dev config, the `.cursor/` army.
+- **Does not ship:** `src/`, `tests/`, the top-level `dist/` beyond what bundles need, dev config, the `.cursor/` colony.
 
 ## ensure-tree-sitter on install
 

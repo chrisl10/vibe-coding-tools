@@ -180,14 +180,14 @@ export const brandFont = localFont({
 });
 ```
 
-The subsetting in Step 1 still applies — `next/font/local` does not subset local font files.
+The subsetting in Step 1 still applies. `next/font/local` does not subset local font files.
 
 ---
 
 ## Guides referenced by this example
 
-- `guides/03-variable-font-subsetting.md` — pyftsubset commands and axis verification
-- `guides/05-cls-elimination.md` — fontpie and metric-matched fallback technique
-- `guides/02-preload-strategy.md` — preload markup with crossorigin
-- `guides/01-font-display-decision-matrix.md` — why swap + metric-matched fallback for heading fonts
-- `guides/06-performance-checklist.md` — verification steps
+- `guides/03-variable-font-subsetting.md`: pyftsubset commands and axis verification
+- `guides/05-cls-elimination.md`: fontpie and metric-matched fallback technique
+- `guides/02-preload-strategy.md`: preload markup with crossorigin
+- `guides/01-font-display-decision-matrix.md`: why swap + metric-matched fallback for heading fonts
+- `guides/06-performance-checklist.md`: verification steps

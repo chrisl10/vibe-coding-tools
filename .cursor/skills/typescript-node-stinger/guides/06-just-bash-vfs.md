@@ -1,5 +1,7 @@
 # 06 - just-bash & the VFS Shell
 
+**Legacy/library case.** Hivemind-specific shell engine; not applicable to this repo's SvelteKit app.
+
 Hivemind exposes its Deep Lake-backed memory as a filesystem-shaped shell. The engine is `just-bash ^2.14`, wired up in `src/shell/deeplake-shell.ts`. Paths like `/summaries/<user>/<id>.md` and `/sessions/<user>/<...>.jsonl` are virtual - they map onto Deep Lake rows, not real files.
 
 ## Why a VFS shell

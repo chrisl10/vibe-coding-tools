@@ -1,4 +1,4 @@
-# Local LLMs — Ollama, LM Studio, llama.cpp
+# Local LLMs: Ollama, LM Studio, llama.cpp
 
 ## When to run LLMs locally
 
@@ -10,8 +10,8 @@ Local inference is the right choice when:
 - **Customization:** you need a fine-tuned model or a model not available via any cloud provider.
 
 Local inference is NOT the right choice when:
-- You need frontier-tier quality (Claude 3.7, GPT-4.1) — 70B+ models require > 40GB VRAM to run quantized.
-- Latency matters more than privacy — even on good hardware, local 8B models are slower than cloud Haiku.
+- You need frontier-tier quality (Claude 3.7, GPT-4.1): 70B+ models require > 40GB VRAM to run quantized.
+- Latency matters more than privacy: even on good hardware, local 8B models are slower than cloud Haiku.
 
 ## Ollama (recommended)
 
@@ -143,5 +143,5 @@ make -j8
 
 1. Confirm the use case requires local (PII, trade secrets, regulated data, offline).
 2. Verify the model fits your hardware (use the size guide above).
-3. Test quality on your specific task before committing — local 8B is meaningfully weaker than cloud Sonnet.
-4. For production, use a GPU cloud private deployment (Modal or Runpod) if local hardware isn't feasible — same privacy guarantee, more compute.
+3. Test quality on your specific task before committing: local 8B is meaningfully weaker than cloud Sonnet.
+4. For production, use a GPU cloud private deployment (Modal or Runpod) if local hardware isn't feasible: same privacy guarantee, more compute.

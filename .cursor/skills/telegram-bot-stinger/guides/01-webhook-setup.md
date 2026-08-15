@@ -4,7 +4,7 @@
 
 ---
 
-## Webhook vs long-polling — decision guide
+## Webhook vs long-polling: decision guide
 
 | Condition | Recommendation |
 |---|---|
@@ -99,11 +99,11 @@ curl "https://api.telegram.org/bot{TOKEN}/getWebhookInfo"
 ```
 
 Key fields to check:
-- `url` — should match your endpoint
-- `has_custom_certificate` — should be `false` for Let's Encrypt
-- `pending_update_count` — growing number means your server isn't processing fast enough
-- `last_error_message` — the most recent delivery failure reason
-- `last_error_date` — Unix timestamp
+- `url`: should match your endpoint
+- `has_custom_certificate`: should be `false` for Let's Encrypt
+- `pending_update_count`: growing number means your server isn't processing fast enough
+- `last_error_message`: the most recent delivery failure reason
+- `last_error_date`: Unix timestamp
 
 Common errors:
 | Error | Fix |

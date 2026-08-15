@@ -40,7 +40,7 @@ await transaction.finish()
 // If you do not call finish(), StoreKit re-delivers the transaction on next launch
 ```
 
-**3. Start the transaction listener at app entry — not at purchase time**
+**3. Start the transaction listener at app entry, not at purchase time**
 ```swift
 @main
 struct YourApp: App {
@@ -94,7 +94,7 @@ Apple supports three introductory offer types:
 - **Pay as you go:** First N periods at discounted price
 - **Pay up front:** Discounted price for full X-period purchase
 
-Configure in App Store Connect under the subscription product. Present offers using `Product.SubscriptionOffer.introductoryOffer` — do not hard-code offer periods.
+Configure in App Store Connect under the subscription product. Present offers using `Product.SubscriptionOffer.introductoryOffer`; do not hard-code offer periods.
 
 ### iOS 26: new in 2026
 
@@ -107,13 +107,13 @@ Configure in App Store Connect under the subscription product. Present offers us
 
 Google Play Billing Library 7 (PBL 7) dropped legacy one-time purchase handling and introduced significant subscription API changes. PBL 7+ is required for all apps targeting API 35+.
 
-> **TODO: open question** — PBL 8.x has been mentioned in community sources but is not fully documented in research. Verify the current stable version at `developer.android.com/google/play/billing/release-notes` before finalizing implementation. (See `research/research-summary.md` open question #3.)
+> **TODO: open question**: PBL 8.x has been mentioned in community sources but is not fully documented in research. Verify the current stable version at `developer.android.com/google/play/billing/release-notes` before finalizing implementation. (See `research/research-summary.md` open question #3.)
 
 ### PBL 7 migration highlights
 
 **Major breaking changes from PBL 5/6:**
-- `SkuDetails` API is removed — replaced by `ProductDetails`
-- `BillingFlowParams.Builder().setSkuDetails()` is removed — replaced by `setProductDetailsParamsList()`
+- `SkuDetails` API is removed: replaced by `ProductDetails`
+- `BillingFlowParams.Builder().setSkuDetails()` is removed: replaced by `setProductDetailsParamsList()`
 - `BillingClient.queryPurchasesAsync()` must be called on purchase resume, not just purchase initiation
 
 **Core billing flow (PBL 7+):**
@@ -174,7 +174,7 @@ Before submitting any app with IAP to review:
 - [ ] All IAP products created in App Store Connect / Play Console
 - [ ] All products have localized prices and descriptions
 - [ ] Test purchase flow works end-to-end in sandbox / test environment
-- [ ] Restore Purchases button present and functional (iOS — required)
+- [ ] Restore Purchases button present and functional (iOS, required)
 - [ ] Subscription terms displayed clearly: price, period, renewal, cancellation instructions
 - [ ] Privacy policy covers payment data handling
 - [ ] No external payment references in the app UI (App Store) or app description (both)

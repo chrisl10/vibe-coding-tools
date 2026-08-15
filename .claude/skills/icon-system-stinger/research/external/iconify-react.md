@@ -1,4 +1,4 @@
-# Iconify React — Research Note
+# Iconify React: Research Note
 
 **Source type:** official-docs  
 **Authority:** high  
@@ -44,7 +44,7 @@ Iconify provides a self-hosted API server (`@iconify/api`) for production apps t
 
 ### When to prefer Iconify
 - Project needs icons from multiple libraries (Lucide + Material + Phosphor) in a single component.
-- Icon set is large (500+) and only a small subset is used per page — on-demand loading saves initial bundle.
+- Icon set is large (500+) and only a small subset is used per page: on-demand loading saves initial bundle.
 - Design system uses Iconify's unified icon naming scheme.
 
 ## Caveats

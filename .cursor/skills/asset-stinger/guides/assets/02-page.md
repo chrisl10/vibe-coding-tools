@@ -1,4 +1,4 @@
-# Guide — `Page` (02)
+# Guide: `Page` (02)
 
 > **Applies to:** any file that resolves to a user-facing URL and renders a UI screen. In this repo: Next.js App Router `page.tsx` files.
 
@@ -39,11 +39,11 @@ Key fields:
 ## 3. Code location and detection
 
 - **Scan path:** `app/src/app/**/page.tsx`
-- **Detection:** Next.js convention — a `page.tsx` inside `app/` resolves to a URL.
+- **Detection:** Next.js convention: a `page.tsx` inside `app/` resolves to a URL.
 - **Required annotations (JSDoc on default export):**
   - `@feature <key>` (if feature-owned)
   - `@prd <ref>` for new pages
-  - `@authRequirement <value>` — one of `public`, `authed`, `admin`, `platform_admin`
+  - `@authRequirement <value>`: one of `public`, `authed`, `admin`, `platform_admin`
   - `@flagGate <slug>` (optional)
 
 The generator derives `surfacesUsed`, `controlsUsed`, `displaysUsed`, `contentKeysUsed` by walking the component tree rooted at the default export and collecting `@surface`/`@control`/`@display`/`@content` annotations.
@@ -68,15 +68,15 @@ Standard. A deprecated `Page` shows a banner to platform-admins in the admin UI;
 
 ## 7. Hand-offs
 
-- **ux-ui-worker-bee** owns whether the page's visual composition matches the brief. You catalog; they review.
+- **ux-ui-svelte-worker-bee** owns whether the page's visual composition matches the brief. You catalog; they review.
 - **security-worker-bee** reviews `authRequirement` for every page that exposes sensitive data.
 - **library-worker-bee** cross-links the page to its owning feature PRD.
 
 ## 8. Pitfalls
 
-- Missing `@authRequirement` — the generator defaults to `authed`, which can silently expose internal-only pages. Always set explicitly.
+- Missing `@authRequirement`: the generator defaults to `authed`, which can silently expose internal-only pages. Always set explicitly.
 - Using `flagGate` and `planGate` simultaneously without verifying they don't lock each other out.
-- Stale `surfacesUsed` — refactors that remove a component leave the array pointing at a deleted `Surface` key. The drift audit catches this.
+- Stale `surfacesUsed`: refactors that remove a component leave the array pointing at a deleted `Surface` key. The drift audit catches this.
 - Deep dynamic routes (`[...slug]`) registered as a single key that hides per-segment authz. Split into multiple `Page` rows if authz differs.
 
 ## 9. Example

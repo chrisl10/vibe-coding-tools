@@ -1,4 +1,4 @@
-# Fern — API-First Docs + SDK Generation
+# Fern: API-First Docs + SDK Generation
 
 Fern is a purpose-built platform for API documentation that generates SDKs, MCP servers, and `llms.txt` from an OpenAPI spec. Best for teams that want docs and SDKs from a single source of truth.
 
@@ -20,7 +20,7 @@ Both features make Fern uniquely valuable for teams building AI-accessible APIs.
 - AI tooling (MCP server, `llms.txt`) is a priority.
 - OpenAPI reference documentation is the core content, not a supplement.
 
-Do NOT choose Fern for primarily guide/tutorial/conceptual content — Starlight or Docusaurus serves that better. Route OpenAPI spec authorship to `api-docs-worker-bee`.
+Do NOT choose Fern for primarily guide/tutorial/conceptual content: Starlight or Docusaurus serves that better. Route OpenAPI spec authorship to `api-docs-worker-bee`.
 
 ## Setup
 
@@ -47,7 +47,7 @@ fern/
 }
 ```
 
-## `generators.yml` — SDK + docs generation
+## `generators.yml`: SDK + docs generation
 
 ```yaml
 default-group: sdk
@@ -85,11 +85,11 @@ Fern auto-generates an MCP server with tools corresponding to each API endpoint.
 
 ## `llms.txt` generation
 
-Fern generates `/llms.txt` from the OpenAPI spec — a structured plaintext summary of your API surface that LLM-based tools can read. This is auto-included in hosted Fern docs.
+Fern generates `/llms.txt` from the OpenAPI spec: a structured plaintext summary of your API surface that LLM-based tools can read. This is auto-included in hosted Fern docs.
 
 ## Pricing
 
-> TODO: open question — Fern pricing is not publicly documented (contact sales for enterprise). Include "pricing: contact sales" in any recommendation and note the lack of a publicly available free tier. Source: `research/research-summary.md` open question #3.
+> TODO: open question: Fern pricing is not publicly documented (contact sales for enterprise). Include "pricing: contact sales" in any recommendation and note the lack of a publicly available free tier. Source: `research/research-summary.md` open question #3.
 
 ## Deployment
 

@@ -1,4 +1,4 @@
-# Guide 02 — Dynamic Import by Icon Name
+# Guide 02: Dynamic Import by Icon Name
 
 Source: `research/external/lucide-react.md`, `research/external/iconify-react.md`
 

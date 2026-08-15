@@ -6,7 +6,7 @@ End-to-end walkthrough: a developer discovers an AWS key was committed to the re
 
 ## Situation
 
-Developer commits a `.env` file containing `AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG` to `main`. The secret has been in history for 3 days.
+Developer commits a `.env` file containing `AWS_SECRET_ACCESS_KEY=<LEAKED_AWS_SECRET>` to `main`. The secret has been in history for 3 days.
 
 ---
 
@@ -48,7 +48,7 @@ git filter-repo --path .env --invert-paths
 
 # Option B: Replace only the secret value (keep the file, redact the value):
 cat > ../replace.txt << 'EOF'
-wJalrXUtnFEMI/K7MDENG==>REDACTED_AWS_SECRET
+<LEAKED_AWS_SECRET>==>REDACTED_AWS_SECRET
 EOF
 git filter-repo --replace-text ../replace.txt
 ```

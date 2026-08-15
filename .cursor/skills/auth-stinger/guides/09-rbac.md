@@ -1,4 +1,4 @@
-# 09 — RBAC and Authorization
+# 09: RBAC and Authorization
 
 Roles, permissions, ABAC, multi-tenancy, and the **two-layer enforcement** rule.
 
@@ -6,11 +6,11 @@ Source: `research/2026-04-25-rbac-and-multitenancy.md`, OWASP Authorization Chea
 
 ## The vocabulary
 
-- **Role** — a named bundle of permissions (`admin`, `editor`, `viewer`).
-- **Permission** — a verb on a resource (`posts:write`, `billing:read`).
-- **Tenant / org** — a multi-customer boundary (each customer's data is partitioned).
-- **ABAC (attribute-based)** — policy logic over attributes (`user.region == resource.region AND user.clearance >= resource.classification`).
-- **RLS (row-level security)** — DB-level enforcement; the database refuses to return rows the requester shouldn't see.
+- **Role**: a named bundle of permissions (`admin`, `editor`, `viewer`).
+- **Permission**: a verb on a resource (`posts:write`, `billing:read`).
+- **Tenant / org**: a multi-customer boundary (each customer's data is partitioned).
+- **ABAC (attribute-based)**: policy logic over attributes (`user.region == resource.region AND user.clearance >= resource.classification`).
+- **RLS (row-level security)**: DB-level enforcement; the database refuses to return rows the requester shouldn't see.
 
 ## The decision tree
 
@@ -132,8 +132,8 @@ Every shared resource carries `tenant_id`. Every query filters by membership. RL
 
 For data isolation requirements above shared schema, escalate to:
 
-- **Schema-per-tenant** — separate Postgres schema per tenant. Operationally heavier; helps with strict isolation requirements.
-- **DB-per-tenant** — separate database. For very large or compliance-bound customers.
+- **Schema-per-tenant**: separate Postgres schema per tenant. Operationally heavier; helps with strict isolation requirements.
+- **DB-per-tenant**: separate database. For very large or compliance-bound customers.
 - These are `db-worker-bee` decisions; auth-worker-bee flags the requirement.
 
 ## Common pitfalls
@@ -142,8 +142,8 @@ For data isolation requirements above shared schema, escalate to:
 - **Data-layer-only enforcement.** Middleware-less routes leak via unauthenticated 404 vs 403 timing.
 - **Storing role on the JWT, never refreshing.** A demoted admin keeps admin until token expiry. Either short-lived JWTs + refresh, or session DB lookups, or revocation list.
 - **Using `email` as the tenant key.** Emails change. Use stable UUIDs.
-- **Missing the negation case in policies** — "users can read posts" without "users can NOT read posts in other tenants" lets RLS evaluate `true` first.
-- **Granting `service_role` / superuser tokens to the application runtime** — defeats RLS. Use a constrained role.
+- **Missing the negation case in policies**: "users can read posts" without "users can NOT read posts in other tenants" lets RLS evaluate `true` first.
+- **Granting `service_role` / superuser tokens to the application runtime**: defeats RLS. Use a constrained role.
 
 ## Audit handoff
 

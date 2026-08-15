@@ -29,10 +29,10 @@ The goal is not to remove humans from the loop. It is to remove the step of "now
 3. Configure Mustache templates for each state transition (triggered, acknowledged, resolved)
 
 **Mustache template variables available:**
-- `{{incident.title}}` — PagerDuty incident title
-- `{{incident.status}}` — Current PagerDuty status
-- `{{service.name}}` — The PagerDuty service name
-- `{{escalation_policy.name}}` — Escalation policy name
+- `{{incident.title}}`: PagerDuty incident title
+- `{{incident.status}}`: Current PagerDuty status
+- `{{service.name}}`: The PagerDuty service name
+- `{{escalation_policy.name}}`: Escalation policy name
 
 **Example investigating template:**
 ```
@@ -88,7 +88,7 @@ No external API calls are needed for this basic flow. This is the primary advant
 **External PagerDuty integration with Better Stack status pages:**
 As of May 2026 research, there is no confirmed direct "PagerDuty alert → Better Stack status page" integration. Teams using PagerDuty as their primary alerter AND Better Stack only for status pages (not its monitoring) must use the Better Stack REST API or a middleware webhook to create incidents.
 
-> TODO: open question — Verify whether Better Stack has released native PagerDuty-to-status-page integration since May 2026. Check https://betterstack.com/changelog.
+> TODO (open question): Verify whether Better Stack has released native PagerDuty-to-status-page integration since May 2026. Check https://betterstack.com/changelog.
 
 ---
 

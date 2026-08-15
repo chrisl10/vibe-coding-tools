@@ -1,4 +1,4 @@
-# 00 — Principles
+# 00: Principles
 
 Core architectural decisions every Discord bot engineer should lock in before writing any code.
 
@@ -18,7 +18,7 @@ Two delivery paths exist for Discord interactions (slash commands, buttons, moda
 | **Requires** | A persistent process, reconnect logic, sharding | A public HTTPS endpoint + signature verification |
 | **Not suited for** | Cloud Functions / serverless with cold starts | Voice features or bots that react to raw message events |
 
-**Decision rule:** If your bot uses voice, needs to react to messages not addressed to it, or tracks member presence — use the gateway. If your bot is purely command-driven with no real-time event needs — consider the HTTP endpoint. Most production bots use the gateway because features are added there first and the SDK ecosystem is built around it.
+**Decision rule:** If your bot uses voice, needs to react to messages not addressed to it, or tracks member presence, use the gateway. If your bot is purely command-driven with no real-time event needs, consider the HTTP endpoint. Most production bots use the gateway because features are added there first and the SDK ecosystem is built around it.
 
 Critical detail: **even gateway bots respond to interactions over HTTP**, not the WebSocket. The gateway only DELIVERS the interaction payload; the bot still calls the REST API to respond.
 
@@ -39,7 +39,7 @@ const client = new Client({
 
 - `MessageContent`, `GuildMembers`, and `GuildPresences` are **Privileged Intents** requiring explicit approval beyond 75 servers.
 - Over-requesting intents increases the payload per event and widens the PII surface.
-- Under-requesting causes missing data silently — check the Discord docs for which events depend on which intents.
+- Under-requesting causes missing data silently: check the Discord docs for which events depend on which intents.
 
 ## 3. Token environment variable discipline
 

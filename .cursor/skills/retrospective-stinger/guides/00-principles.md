@@ -1,4 +1,4 @@
-# 00 — Principles: Retros Are Behavior-Change Instruments
+# 00: Principles: Retros Are Behavior-Change Instruments
 
 *Derived from `research/external/2026-05-20-format-selection-meetgeek.md` and `research/external/2026-05-20-action-items-agile-coach-medium.md`.*
 
@@ -8,7 +8,7 @@
 
 A retrospective is not a meeting. It is a behavior-change intervention. The output is not the sticky notes on the board, the voted-up themes, or the facilitation score. The output is what the team does differently in the next sprint.
 
-If the team runs a beautiful retro and nothing changes, the retro failed. If the team runs a rough retro in which three specific actions get owned, deadlined, and tracked — and those three actions close — the retro succeeded.
+If the team runs a beautiful retro and nothing changes, the retro failed. If the team runs a rough retro in which three specific actions get owned, deadlined, and tracked (and those three actions close) the retro succeeded.
 
 Measure retrospective health with one number: **action-item follow-through rate** (items closed by the next retro / items committed). A team at 40% follow-through is running retro theater. A team at 80%+ is running a behavior-change loop.
 
@@ -22,7 +22,7 @@ The implication: `retrospective-worker-bee` prioritizes action-item discipline o
 
 No format works without a minimum level of psychological safety. A team that doesn't feel safe won't say what's actually wrong; they'll say what's safe to say. The result is a retro that identifies surface-level symptoms and misses root causes.
 
-Before selecting a format, run the safety pre-check (see `guides/02-psychological-safety.md`). If the team is below threshold, the retro's first job is to build safety — either by shifting to an anonymous format, or by running a safety-building exercise before the main retro.
+Before selecting a format, run the safety pre-check (see `guides/02-psychological-safety.md`). If the team is below threshold, the retro's first job is to build safety: either by shifting to an anonymous format, or by running a safety-building exercise before the main retro.
 
 ## The async option is not a fallback
 
@@ -32,7 +32,7 @@ Async retros are a valid first choice for many teams, not a consolation prize wh
 
 Every retro should open with a review of the previous retro's action items. This single ritual communicates more about a team's retro culture than the format choice. Teams that skip it are signaling that action items are optional. Teams that open with it are signaling that commitments are real.
 
-If the previous retro's follow-through rate is below 50%, that is the subject of the retro — not whatever format was planned. Diagnosing why the team isn't following through is more valuable than generating another round of unexecuted actions.
+If the previous retro's follow-through rate is below 50%, that is the subject of the retro: not whatever format was planned. Diagnosing why the team isn't following through is more valuable than generating another round of unexecuted actions.
 
 ## The three-question filter (apply at commitment step)
 

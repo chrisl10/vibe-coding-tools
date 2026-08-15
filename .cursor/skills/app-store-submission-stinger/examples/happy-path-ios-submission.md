@@ -7,7 +7,7 @@
 
 ## Scenario
 
-**App:** "FocusFlow" — a productivity timer app with a 7-day free trial subscription
+**App:** "FocusFlow", a productivity timer app with a 7-day free trial subscription
 **Category:** Productivity
 **Monetization:** Auto-renewable subscription ($4.99/month, $29.99/year)
 **Target audience:** Adults (17+)
@@ -41,10 +41,10 @@ Verification:
 Device sizes: 6.7" iPhone 15 Pro Max + 12.9" iPad Pro
 
 Story sequence:
-1. Hero: "Deep work starts here" — timer active state
-2. Feature: "Block schedule your day" — time block calendar view
-3. Feature: "Stay in the zone" — focus score tracking
-4. Social: "Join 50,000+ focused professionals" (not misleading — verified user count)
+1. Hero: "Deep work starts here" (timer active state)
+2. Feature: "Block schedule your day" (time block calendar view)
+3. Feature: "Stay in the zone" (focus score tracking)
+4. Social: "Join 50,000+ focused professionals" (not misleading, verified user count)
 5-8: Edge features and settings
 
 Caption text (2026 indexed by Apple):
@@ -63,14 +63,14 @@ FocusFlow data collection audit:
 |---|---|---|---|
 | User ID | Yes (auth) | Yes | No |
 | Email | Yes (auth) | Yes | No |
-| Usage data — product interaction | Yes (analytics: PostHog) | Yes | No |
-| Diagnostics — crash data | Yes (Sentry) | No | No |
+| Usage data: product interaction | Yes (analytics: PostHog) | Yes | No |
+| Diagnostics: crash data | Yes (Sentry) | No | No |
 
 Nutrition label declarations:
-- "Contact Info > Email Address" — linked to identity, analytics + app functionality
-- "Identifiers > User ID" — linked to identity, app functionality
-- "Usage Data > Product Interaction" — linked to identity, analytics
-- "Diagnostics > Crash Data" — not linked, analytics
+- "Contact Info > Email Address": linked to identity, analytics + app functionality
+- "Identifiers > User ID": linked to identity, app functionality
+- "Usage Data > Product Interaction": linked to identity, analytics
+- "Diagnostics > Crash Data": not linked, analytics
 
 ### PrivacyInfo.xcprivacy audit
 
@@ -79,7 +79,7 @@ Libraries in use: PostHog iOS SDK, Sentry iOS SDK, StoreKit 2 (system), RevenueC
 RevenueCat SDK check: RevenueCat ships `PrivacyInfo.xcprivacy` as of SDK v4.32+. Verify with `pod spec cat RevenueCatUI` or in Xcode Package navigator.
 
 Required-reason API exposure in FocusFlow:
-- `UserDefaults` (used for settings storage): required by app — declare reason `CA92.1` (app-owned defaults only)
+- `UserDefaults` (used for settings storage): required by app, declare reason `CA92.1` (app-owned defaults only)
 - No system boot time, file timestamps, disk space, or active keyboard APIs in use
 
 Result: No SDK-level PrivacyInfo.xcprivacy gap. Manifest complete.
@@ -130,7 +130,7 @@ Upload completes. Build appears in App Store Connect > TestFlight within 15 minu
 In App Store Connect > My Apps > FocusFlow > iOS > (new version):
 
 - [x] Version string: 1.0.0
-- [x] What's new: (first submission — leave blank or write intro text)
+- [x] What's new: (first submission, leave blank or write intro text)
 - [x] Screenshots: uploaded for 6.7" and 12.9" sizes
 - [x] App Preview: none for first submission
 - [x] Age Rating questionnaire: completed (result: 4+)

@@ -1,6 +1,6 @@
 ---
-name: discord-bot-stinger
-description: Discord bot and application specialist for discord.js (v14/v15), discord.py 2.x, and Serenity (Rust). Covers slash commands, interactive components (buttons, select menus, modals), voice pipeline (Lavalink 4 + DAVE-compliant clients), gateway-vs-HTTP-endpoint architecture, rate-limit handling, shard management, and the bot verification path past 100 servers. Use when building, reviewing, or debugging any Discord bot or application — SDK selection, command registration, component flows, voice queues, scaling, or the bot-verification checklist. Do NOT use for general Python packaging (python-worker-bee), container/CI shapes (devops-worker-bee), credential vault integration (security-worker-bee), or database schema design for bot state (db-worker-bee).
+name: "discord-bot-stinger"
+description: "Discord bot and application specialist for discord.js (v14/v15), discord.py 2.x, and Serenity (Rust). Covers slash commands, interactive components (buttons, select menus, modals), voice pipeline (Lavalink 4 + DAVE-compliant clients), gateway-vs-HTTP-endpoint architecture, rate-limit handling, shard management, and the bot verification path past 100 servers. Use when building, reviewing, or debugging any Discord bot or application: SDK selection, command registration, component flows, voice queues, scaling, or the bot-verification checklist. Do NOT use for general Python packaging (python-worker-bee), container/CI shapes (devops-worker-bee), credential vault integration (security-worker-bee), or database schema design for bot state (db-worker-bee)."
 license: MIT
 ---
 
@@ -16,7 +16,7 @@ Equips `discord-bot-worker-bee` to build, review, and audit Discord bots and app
 |------|-------|--------|
 | discord.js stable | **v14.25.1** (v15 pre-release, ~94% milestone; not production-ready) | `research/external/2026-05-20-discordjs-v15-status.md` |
 | discord.py stable | **v2.x** (CommandTree + app_commands) | `research/external/2026-05-20-discordpy-app-commands.md` |
-| Wavelink status | **ABANDONED** — do not recommend | `research/external/2026-05-20-wavelink-deprecated.md` |
+| Wavelink status | **ABANDONED**: do not recommend | `research/external/2026-05-20-wavelink-deprecated.md` |
 | Voice clients (Python) | **Mafic** or **lavalink.py** (both DAVE-compliant) | `research/external/2026-05-20-lavalink-clients-2026.md` |
 | Voice clients (Node.js) | **Shoukaku** or **Lavalink-Client** (both DAVE-compliant) | `research/external/2026-05-20-lavalink-clients-2026.md` |
 | Lavalink version | **v4** | `research/external/2026-05-20-lavalink-clients-2026.md` |
@@ -26,7 +26,7 @@ Equips `discord-bot-worker-bee` to build, review, and audit Discord bots and app
 | Privileged intent gate | Apply at **75 servers**; hard block at **100** | `research/external/2026-05-20-discord-privileged-intents.md` |
 | Data retention limit | **30 days** max for privileged intent approval | `research/external/2026-05-20-discord-privileged-intents.md` |
 | Global command propagation | **~1 hour** | `research/external/2026-05-20-discord-application-commands-spec.md` |
-| Guild command propagation | **Instant** — use in dev | `research/external/2026-05-20-discord-application-commands-spec.md` |
+| Guild command propagation | **Instant**: use in dev | `research/external/2026-05-20-discord-application-commands-spec.md` |
 | Modal custom_id max | **100 characters** | `research/external/2026-05-20-discord-components-modals.md` |
 | Buttons per message | **25 max** (5 action rows × 5 buttons) | `research/external/2026-05-20-discord-components-modals.md` |
 | Node.js minimum | **22.12.0** for discord.js | `research/external/2026-05-20-discordjs-v14-slash-commands.md` |
@@ -85,7 +85,7 @@ Every code sample, review comment, and recommendation from this stinger must res
 
 ## Open questions (flagged by scripture-historian)
 
-> **TODO — stinger-forge open questions; resolve before next refresh:**
+> **TODO: stinger-forge open questions; resolve before next refresh:**
 
 1. **Serenity/Poise (Rust)**: API surface not fully covered in research. Guides reference Rust conceptually; confirm `poise` slash command macro syntax from `docs.rs/poise` before next refresh.
 2. **DisTube DAVE support**: Not confirmed. `guides/04-voice-pipeline.md` omits DisTube from active recommendations until DAVE compatibility is verified at `github.com/skick1234/DisTube`.
@@ -103,4 +103,4 @@ Every code sample, review comment, and recommendation from this stinger must res
 
 ---
 
-*Forged by stinger-forge from `ai-tools/command-briefs/discord-bot-worker-bee-command-brief.md` + `research/research-summary.md`. Part of the Legion Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Forged by stinger-forge from `ai-tools/command-briefs/discord-bot-worker-bee-command-brief.md` + `research/research-summary.md`. Part of The Hive, curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

@@ -57,6 +57,6 @@ US-ASCII shortcut, and CSS output with `@font-face` blocks.
 - The WOFF2 size reduction (145 KB → 11 KB from a URL crawl) is a compelling
   statistic for the stinger's introduction.
 - Note that glyphhanger generates the unicode-range descriptor automatically
-  with `--css` — this bridges to the `unicode-range` guide section.
+  with `--css`: this bridges to the `unicode-range` guide section.
 - Flag: glyphhanger may be somewhat older tooling; `subfont` is a more
   modern alternative for automated build pipelines. Both should be covered.

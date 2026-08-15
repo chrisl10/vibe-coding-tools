@@ -41,7 +41,7 @@ Is the image photographic / raster content?
 
 ## Encoding quality settings
 
-For AVIF and WebP, quality is not a simple percentage — it maps differently to perceived quality:
+For AVIF and WebP, quality is not a simple percentage: it maps differently to perceived quality:
 
 | Format | Quality setting | File size vs JPEG |
 |---|---|---|
@@ -69,7 +69,7 @@ Key rule: `<source>` elements are evaluated in order; the browser picks the firs
 
 ## CDN-level format negotiation
 
-Teams on the following CDNs get AVIF delivery for free via `Accept` header negotiation — no code changes required:
+Teams on the following CDNs get AVIF delivery for free via `Accept` header negotiation: no code changes required:
 
 | CDN | AVIF via Accept? | WebP via Accept? |
 |---|---|---|

@@ -9,12 +9,12 @@
 
 ## TL;DR
 
-LLM-as-judge is the workhorse for retrieval / faithfulness / routing evals — cheap and scales. It is NOT free: judge models hallucinate too. Calibrate the judge against human labels before trusting it.
+LLM-as-judge is the workhorse for retrieval / faithfulness / routing evals, cheap and scales. It is NOT free: judge models hallucinate too. Calibrate the judge against human labels before trusting it.
 
 Calibration procedure:
 
-1. Sample 50–100 cases from a golden set.
-2. Have a human label them (pass/fail or 0–1).
+1. Sample 50-100 cases from a golden set.
+2. Have a human label them (pass/fail or 0-1).
 3. Run the judge on the same set.
 4. Measure agreement (Cohen's kappa or simple accuracy).
 5. If agreement < 0.7, refine the judge prompt or switch judge models.
@@ -56,11 +56,11 @@ Calibration against human labels surfaces these biases. If kappa < 0.7, the judg
 
 ## Threshold (kappa)
 
-- **kappa ≥ 0.8** — strong agreement. Trust the judge.
-- **0.7 ≤ kappa < 0.8** — moderate agreement. Trust with caution; spot-check 5% of judge outputs.
-- **kappa < 0.7** — judge is uncalibrated. Refine or switch.
+- **kappa ≥ 0.8**: strong agreement. Trust the judge.
+- **0.7 ≤ kappa < 0.8**: moderate agreement. Trust with caution; spot-check 5% of judge outputs.
+- **kappa < 0.7**: judge is uncalibrated. Refine or switch.
 
-For the deploying product's `evaluateRetrievalPrecision()` (binary "is this chunk relevant?" labeling), Llama 3.1 8B as judge typically achieves 0.75–0.85 kappa with a well-crafted prompt.
+For the deploying product's `evaluateRetrievalPrecision()` (binary "is this chunk relevant?" labeling), Llama 3.1 8B as judge typically achieves 0.75-0.85 kappa with a well-crafted prompt.
 
 ---
 

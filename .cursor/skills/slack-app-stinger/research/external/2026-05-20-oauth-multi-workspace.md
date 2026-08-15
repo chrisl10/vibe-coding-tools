@@ -8,7 +8,7 @@ topic: oauth-install
 stinger: slack-app-stinger
 ---
 
-# Authenticating with OAuth — Bolt for JavaScript | Slack Developer Docs
+# Authenticating with OAuth: Bolt for JavaScript | Slack Developer Docs
 
 ## Summary
 
@@ -16,11 +16,11 @@ The Bolt OAuth guide describes the full OAuth 2.0 v2 installation flow for multi
 
 ## Key quotations / statistics
 
-- Bot tokens (`xoxb-`) are tied to the app, not the installing user — the app stays installed even if the installing user is deactivated.
-- `stateSecret` in Bolt auto-generates and validates the `state` parameter — bypassing this validation is a CSRF vulnerability.
+- Bot tokens (`xoxb-`) are tied to the app, not the installing user: the app stays installed even if the installing user is deactivated.
+- `stateSecret` in Bolt auto-generates and validates the `state` parameter: bypassing this validation is a CSRF vulnerability.
 - "Each workspace installation issues unique bot tokens that can be retrieved for incoming events."
 - `InstallationStore` interface requires two methods: `storeInstallation(installation)` and `fetchInstallation(query)`.
-- `clientId` and `clientSecret` must come from environment variables — never hardcoded.
+- `clientId` and `clientSecret` must come from environment variables: never hardcoded.
 - For org-wide installs (Enterprise Grid): the `Installation` object's `enterprise` field is populated; `isEnterpriseInstall: true` indicates an org-level install.
 - Token refresh applies to user tokens, not bot tokens. User tokens can expire if using granular OAuth scopes with refresh enabled.
 - Redirect URL must match exactly what is registered in app settings.
@@ -39,7 +39,7 @@ The Bolt OAuth guide describes the full OAuth 2.0 v2 installation flow for multi
 ## Annotations for stinger-forge
 
 - Maps directly to `guides/05-oauth-install.md`.
-- The `state` parameter validation step is a Critical Directive in the Command Brief — stinger-forge must show explicitly where Bolt enforces this and what happens if bypassed.
+- The `state` parameter validation step is a Critical Directive in the Command Brief: stinger-forge must show explicitly where Bolt enforces this and what happens if bypassed.
 - The `InstallationStore` interface is the correct abstraction for production multi-workspace apps; stinger-forge should provide a code scaffold showing a DB-backed implementation (e.g., Prisma model or SQLAlchemy model for storing `Installation` objects).
-- Org-wide install (Enterprise Grid) differs in scoping — the `fetchInstallation` query receives `enterpriseId` rather than `teamId`. Stinger-forge should note this as an advanced edge case.
-- Python equivalent: `http://docs.slack.dev/tools/bolt-python/concepts/authenticating-oauth` — same concepts, async-friendly `AsyncInstallationStore`.
+- Org-wide install (Enterprise Grid) differs in scoping: the `fetchInstallation` query receives `enterpriseId` rather than `teamId`. Stinger-forge should note this as an advanced edge case.
+- Python equivalent: `http://docs.slack.dev/tools/bolt-python/concepts/authenticating-oauth`: same concepts, async-friendly `AsyncInstallationStore`.

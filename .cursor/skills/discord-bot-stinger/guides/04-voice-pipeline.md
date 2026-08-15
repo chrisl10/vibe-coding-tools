@@ -1,4 +1,4 @@
-# 04 — Voice Pipeline
+# 04: Voice Pipeline
 
 Setting up voice playback using Lavalink 4 and DAVE-compliant client libraries.
 
@@ -12,7 +12,7 @@ Discord's E2EE audio protocol (DAVE) became mandatory for all voice channels on 
 
 ---
 
-## Wavelink is ABANDONED — do not use
+## Wavelink is ABANDONED: do not use
 
 The `research/external/2026-05-20-wavelink-deprecated.md` source note confirms the official `PythonistaGuild/Wavelink` repository states "Wavelink is no longer maintained." The `wavelink.dev` documentation URL in the Command Brief no longer reflects an actively maintained library. **Remove any existing wavelink references from bot code.**
 
@@ -63,7 +63,7 @@ class MyBot(commands.Bot):
 npm install shoukaku
 ```
 
-> **TODO — open question:** DisTube DAVE support was not confirmed during the research sweep. Do not recommend DisTube for voice until `github.com/skick1234/DisTube` confirms DAVE compatibility in CHANGELOG or issues.
+> **TODO: open question:** DisTube DAVE support was not confirmed during the research sweep. Do not recommend DisTube for voice until `github.com/skick1234/DisTube` confirms DAVE compatibility in CHANGELOG or issues.
 
 ---
 
@@ -79,7 +79,7 @@ docker run -p 2333:2333 \
   ghcr.io/lavalink-devs/lavalink:4
 ```
 
-> **TODO — open question:** The exact reference `docker-compose.yml` for Lavalink v4 was not retrieved. Fetch `https://lavalink.dev/getting-started/` for the current canonical Compose file snippet.
+> **TODO: open question:** The exact reference `docker-compose.yml` for Lavalink v4 was not retrieved. Fetch `https://lavalink.dev/getting-started/` for the current canonical Compose file snippet.
 
 **Lavalink configuration file (`application.yml`):**
 ```yaml

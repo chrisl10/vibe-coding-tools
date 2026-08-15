@@ -1,6 +1,6 @@
 # Phase 2: SvelteKit Performance & Security Configuration
 
-> **Site Template Guide** — PRD Phase 2 of 12
+> **Site Template Guide**: PRD Phase 2 of 12
 > *Replaces the retired prd-phase-02-nextjs-performance-security.md*
 
 ---
@@ -14,10 +14,10 @@ Lock in `apps/web` image optimization, self-hosted fonts, security headers, cach
 ### Scope
 
 **In scope:**
-- `apps/web/svelte.config.js` — adapter configuration and prerender settings
-- `apps/web/vite.config.ts` — `@sveltejs/enhanced-img`, Tailwind v4, manual chunks
-- `apps/web/src/hooks.server.ts` — security headers on every response
-- `apps/web/src/app.css` — fontsource import
+- `apps/web/svelte.config.js`: adapter configuration and prerender settings
+- `apps/web/vite.config.ts`: `@sveltejs/enhanced-img`, Tailwind v4, manual chunks
+- `apps/web/src/hooks.server.ts`: security headers on every response
+- `apps/web/src/app.css`: fontsource import
 - Image optimization for both local and remote (Payload Media / Supabase Storage) images
 - CSP baseline (to be tightened by `security-worker-bee`)
 
@@ -34,7 +34,7 @@ Lock in `apps/web` image optimization, self-hosted fonts, security headers, cach
 
 ## User Stories
 
-### Story 1 — Developer: Automatic Image Optimization
+### Story 1: Developer: Automatic Image Optimization
 
 > As a **Developer**, I want local static images to be automatically converted to AVIF/WebP at build time so that page load times are minimized without manual conversion.
 
@@ -45,7 +45,7 @@ Lock in `apps/web` image optimization, self-hosted fonts, security headers, cach
 - LCP hero image uses `fetchpriority="high"` and `loading="eager"`
 - Non-LCP images use `loading="lazy"`
 
-### Story 2 — Developer: Self-Hosted Fonts
+### Story 2: Developer: Self-Hosted Fonts
 
 > As a **Developer**, I want fonts loaded from `npm` (fontsource) rather than Google Fonts so that there are no third-party DNS round-trips in the font loading path.
 
@@ -54,18 +54,18 @@ Lock in `apps/web` image optimization, self-hosted fonts, security headers, cach
 - No `fonts.googleapis.com` requests in the Network tab
 - `font-display: swap` behavior provided by fontsource default
 
-### Story 3 — User: Security Headers
+### Story 3: User: Security Headers
 
 > As a **User**, I want the site to serve security headers on every response so that browser-side attacks are mitigated.
 
 **Acceptance criteria:**
-- `X-Frame-Options: SAMEORIGIN` — prevents clickjacking
-- `X-Content-Type-Options: nosniff` — prevents MIME-type sniffing
+- `X-Frame-Options: SAMEORIGIN`: prevents clickjacking
+- `X-Content-Type-Options: nosniff`: prevents MIME-type sniffing
 - `Referrer-Policy: strict-origin-when-cross-origin`
 - `Permissions-Policy: camera=(), microphone=(), geolocation=()`
 - `Content-Security-Policy` baseline present (to be tightened by `security-worker-bee` before launch)
 
-### Story 4 — Developer: Type-Safe Build
+### Story 4: Developer: Type-Safe Build
 
 > As a **Developer**, I want `pnpm build` in `apps/web` to complete without TypeScript errors so that type safety is enforced before deployment.
 
@@ -120,7 +120,7 @@ export default defineConfig({
 });
 ```
 
-### src/hooks.server.ts — security headers
+### src/hooks.server.ts: security headers
 
 ```ts
 import type { Handle } from '@sveltejs/kit';
@@ -166,6 +166,6 @@ export const load: PageServerLoad = async ({ setHeaders }) => {
 
 ## Risks and Open Questions
 
-- **R-1:** `@sveltejs/enhanced-img` processes only local static imports (`?enhanced` suffix). Remote images from Payload or Supabase Storage cannot be processed at build time — they must use plain `<img>` with explicit dimensions. Document this clearly in `guides/09-blog.md`.
+- **R-1:** `@sveltejs/enhanced-img` processes only local static imports (`?enhanced` suffix). Remote images from Payload or Supabase Storage cannot be processed at build time. They must use plain `<img>` with explicit dimensions. Document this clearly in `guides/09-blog.md`.
 - **R-2:** CSP `'unsafe-inline'` for scripts is broad. GA4's inline snippet requires it. Route CSP tightening through `security-worker-bee` to identify if `nonce`-based CSP is feasible given GA4 requirements.
 - **Q-1:** Does `@tailwindcss/vite` (Tailwind v4 Vite plugin) work correctly with Svelte 5's CSS scoping? Verify there are no class name conflicts between Tailwind utilities and Svelte-generated CSS.

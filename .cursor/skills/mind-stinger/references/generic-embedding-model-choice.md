@@ -1,4 +1,4 @@
-# Generic Embedding Model Choice (DEMOTED — the deploying product uses Cohere embed-english-v3.0)
+# Generic Embedding Model Choice (DEMOTED: the deploying product uses Cohere embed-english-v3.0)
 
 > **Status:** Demoted reference. the deploying product uses Cohere `embed-english-v3.0` for all vector embeddings (1024-dim cosine, two input types: `search_document` + `search_query`).
 >
@@ -12,7 +12,7 @@
 2. **Pairs naturally with Cohere `rerank-v3.5`.** Same vendor, same calibration, single API key, predictable rate limits.
 3. **1024 dims is manageable.** Higher-dim embedders (text-embedding-3-large at 3072) consume 3× the storage in Qdrant; the precision lift on coaching corpora is small.
 4. **Two-input-type discipline (`search_document` / `search_query`)** is built into the SDK and protects against the most common embedding bug (using the same input type at index and query time).
-5. **Rate limits are sufficient** — 96 texts/batch, 10K texts/min on paid plan — for current the deploying product's scale.
+5. **Rate limits are sufficient** (96 texts/batch, 10K texts/min on paid plan) for current the deploying product's scale.
 
 A push to substitute requires `guides/01-stack-enforcement.md §2`.
 
@@ -22,7 +22,7 @@ A push to substitute requires `guides/01-stack-enforcement.md §2`.
 
 ### BGE-M3 (BAAI)
 
-- **Pitch:** Open-source multilingual embedder, 1024-dim. Long-context support (8192 tokens) — enables late chunking.
+- **Pitch:** Open-source multilingual embedder, 1024-dim. Long-context support (8192 tokens): enables late chunking.
 - **Pros vs Cohere:** Open weights (self-host), multilingual, supports late chunking.
 - **Cons vs Cohere:** Self-hosting overhead; quality on English specifically slightly below Cohere v3 in some benchmarks; pairing with a self-hosted reranker (`bge-reranker-v2-m3`) is a separate ops concern.
 - **When to consider:** Multilingual product, self-hosted preference, late chunking experiments.

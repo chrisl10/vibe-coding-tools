@@ -18,7 +18,7 @@ When building a widget that is embedded in third-party pages (chat widget, feedb
 - Style conflicts with host CSS are common.
 - Host page may already have React loaded at a different version.
 
-Preact is 3KB vs React's 40KB — a 37KB saving that matters when the host page already has its own JS budget.
+Preact is 3KB vs React's 40KB: a 37KB saving that matters when the host page already has its own JS budget.
 
 ## Shadow DOM isolation (recommended)
 

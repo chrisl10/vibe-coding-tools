@@ -11,7 +11,7 @@ stinger: agile-scrum-stinger
 # Top 10 Worst Scrum Anti-Patterns (Scrum.org / Stefan Wolpers)
 
 ## Summary
-A canonical Scrum.org anti-patterns article by Stefan Wolpers identifying the ten most damaging Scrum dysfunctions. Although published 2021, confirmed current as of 2026 — these patterns remain the community standard for Scrum dysfunction diagnosis. Authoritative because hosted on Scrum.org and cross-referenced by practitioners consistently.
+A canonical Scrum.org anti-patterns article by Stefan Wolpers identifying the ten most damaging Scrum dysfunctions. Although published 2021, confirmed current as of 2026: these patterns remain the community standard for Scrum dysfunction diagnosis. Authoritative because hosted on Scrum.org and cross-referenced by practitioners consistently.
 
 ## Key quotations / statistics
 - "#5 HIPPO-ism: The product creation process is at least partly driven by the beliefs of individuals of the higher management caste." 
@@ -37,5 +37,5 @@ A canonical Scrum.org anti-patterns article by Stefan Wolpers identifying the te
 ## Annotations for stinger-forge
 - This is the primary source for `guides/05-anti-patterns.md`. All 10 patterns should be documented with diagnosis, root cause, and repair.
 - Companion sources: `scrum.org/resources/blog/sprint-anti-patterns` (Sprint-specific patterns) and `scrum.org/resources/blog/product-owner-anti-patterns` (PO-specific patterns) provide deeper coverage.
-- HIPPO-ism and PO by Proxy are the most common PO failures per the research — they belong in a "high severity" tier.
-- The "hardening sprint" anti-pattern directly violates the DoD — a team with a hardening sprint has no real DoD.
+- HIPPO-ism and PO by Proxy are the most common PO failures per the research: they belong in a "high severity" tier.
+- The "hardening sprint" anti-pattern directly violates the DoD: a team with a hardening sprint has no real DoD.

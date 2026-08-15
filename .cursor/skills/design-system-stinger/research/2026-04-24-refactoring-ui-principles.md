@@ -1,4 +1,4 @@
-# Refactoring UI — Core Principles
+# Refactoring UI: Core Principles
 
 **Sources:**
 - https://refactoringui.com/
@@ -19,7 +19,7 @@ and Working with Images.
 ## Load-bearing principles for this Stinger
 
 1. **Visual hierarchy is the most effective tool for making something feel
-   designed.** Not all elements are equal — combine size, weight, and color
+   designed.** Not all elements are equal: combine size, weight, and color
    to rank them.
 2. **Don't use grey text on colored backgrounds.** Colored backgrounds need
    tinted-of-the-same-hue text, not grey.
@@ -35,7 +35,7 @@ and Working with Images.
 8. **Define your shades up front.** Don't pick colors ad-hoc; define the
    palette before writing UI code.
 9. **Don't let lightness kill your saturation.** In HSL, extreme lightness
-   desaturates — use OKLCH or CIELCH for accessible palettes.
+   desaturates: use OKLCH or CIELCH for accessible palettes.
 10. **Accessible doesn't have to mean ugly.** 4.5:1 body contrast is a floor,
     not a ceiling.
 11. **Don't rely on color alone.** State changes need shape/weight/icon,
@@ -51,7 +51,7 @@ and Working with Images.
   product's own non-negotiables as a layer on top of these universal ones.
 - The interview in `guides/01-interview-procedure.md` probes for places where
   the user's aesthetic intuition violates one of these principles (common
-  trap: bright-gold text on cream background — a direct violation of
+  trap: bright-gold text on cream background, a direct violation of
   "don't use grey / low-contrast text on colored backgrounds").
 - `starter-kits/editorial-serif/` is the aesthetic that most directly
   inherits the Refactoring UI taste palette.

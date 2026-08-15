@@ -1,4 +1,4 @@
-# Guide 02 — Drift Audit
+# Guide 02: Drift Audit
 
 A drift audit compares the state of the codebase to the state of the Universal Asset Registry and reports every mismatch. Run on demand, on CI, and before every production release.
 
@@ -17,10 +17,10 @@ Six classes of drift, each with a canonical resolution:
 
 ## When to run
 
-- **On every PR** — in CI, fail if any new `unregistered`, `mismatched`, or `unlinked` drift appears in the diff.
-- **Nightly** — scheduled job, emits a full drift report to `library/qa/asset-registry/<YYYY-MM-DD>-drift-audit.md`.
-- **Pre-release** — gate a production deploy on zero `unregistered` + zero `unlinked` for any asset touched in the release.
-- **On demand** — when a human (or an orchestrator like a beekeeper-suit-skill) asks "check registry drift."
+- **On every PR**: in CI, fail if any new `unregistered`, `mismatched`, or `unlinked` drift appears in the diff.
+- **Nightly**: scheduled job, emits a full drift report to `library/requirements/reports/asset-registry/<YYYY-MM-DD>-drift-audit.md`.
+- **Pre-release**: gate a production deploy on zero `unregistered` + zero `unlinked` for any asset touched in the release.
+- **On demand**: when a human (or a top-tier orchestrator) asks "check registry drift."
 
 ## How to run
 
@@ -28,15 +28,15 @@ The sync generator (see `guides/03-sync-generator-spec.md`) has a `--check` mode
 
 ### Inputs
 
-1. **Generator's JSON report** (`dist/registry-drift.json`) — produced by `pnpm registry:check` or equivalent.
-2. **Registry snapshot** — SELECT from the platform DB (read-only replica recommended).
-3. **Git context** — `git rev-parse HEAD`, the PR URL if running in CI, the branch name.
+1. **Generator's JSON report** (`dist/registry-drift.json`): produced by `pnpm registry:check` or equivalent.
+2. **Registry snapshot**: SELECT from the platform DB (read-only replica recommended).
+3. **Git context**: `git rev-parse HEAD`, the PR URL if running in CI, the branch name.
 
 ### Outputs
 
 - **A drift report.** Two placement options:
-  - **Standalone** (nightly, pre-release, ad-hoc): `library/qa/asset-registry/<YYYY-MM-DD>-<slug>-drift-audit.md`
-  - **Feature-tied** (when the audit was scoped to a specific feature): `library/requirements/features/feature-<###>-<title>/reports/<YYYY-MM-DD>-asset-drift.md`
+  - **Standalone** (nightly, pre-release, ad-hoc): `library/requirements/reports/asset-registry/<YYYY-MM-DD>-<slug>-drift-audit.md`
+  - **Feature-tied** (when the audit was scoped to a specific feature): `library/requirements/<lifecycle>/prd-<###>-<title>/reports/<YYYY-MM-DD>-asset-drift.md`
 - **A PR comment** (for CI runs) summarizing drift introduced by the PR.
 - **A summary printed to stdout** for ad-hoc runs.
 
@@ -110,7 +110,7 @@ For each drift item the generator can auto-resolve, include the generated SQL or
 | Mismatched (human vs generator) | Warning | No |
 | Unlinked (feature-bearing) | **Critical** | Yes |
 | Debt (past sunset, usage_count > 0) | Warning | No |
-| Debt (past sunset, usage_count = 0) | Informational | No — eligible for hard delete |
+| Debt (past sunset, usage_count = 0) | Informational | No, eligible for hard delete |
 
 ## Resolution playbook
 
@@ -131,7 +131,7 @@ For each drift item the generator can auto-resolve, include the generated SQL or
 ### Stale
 
 1. The generator's `file_hash` doesn't match the catalog's stored hash. Let the generator upsert.
-2. If upsert would overwrite human fields (it shouldn't — see Principle 7), stop and escalate.
+2. If upsert would overwrite human fields (it shouldn't, see Principle 7), stop and escalate.
 
 ### Mismatched
 
@@ -152,14 +152,14 @@ For each drift item the generator can auto-resolve, include the generated SQL or
 
 ## Escalation
 
-If you find **cross-worker-bee drift** — e.g., a UX/UI token used in code that has no `DesignTokenDefinition` catalog row, but `ux-ui-worker-bee`'s brief says it *should* exist — file the drift *and* ping `ux-ui-worker-bee` via a cross-link in the report. You do not fix cross-worker-bee drift alone.
+If you find **cross-worker-bee drift** (e.g., a UX/UI token used in code that has no `DesignTokenDefinition` catalog row, but `ux-ui-svelte-worker-bee`'s brief says it *should* exist), file the drift *and* ping `ux-ui-svelte-worker-bee` via a cross-link in the report. You do not fix cross-worker-bee drift alone.
 
 ## History
 
 Every drift report is checked into one of:
 
-- `library/qa/asset-registry/` for standalone reports
-- `library/requirements/features/feature-<###>-<title>/reports/` for feature-tied reports
+- `library/requirements/reports/asset-registry/` for standalone reports
+- `library/requirements/<lifecycle>/prd-<###>-<title>/reports/` for feature-tied reports
 
 Reports are never deleted; the monotonic history is the audit trail.
 

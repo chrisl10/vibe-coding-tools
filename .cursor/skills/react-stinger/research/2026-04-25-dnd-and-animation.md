@@ -1,4 +1,4 @@
-# Drag-and-Drop & Animation — research notes
+# Drag-and-Drop & Animation: research notes
 
 **Retrieved:** 2026-04-25
 **For guide:** `guides/18-dnd-and-animation.md`
@@ -26,7 +26,7 @@ From `cursor-subagent-research-combined.md` (Drag-and-Drop & Animation, ~line 78
 ## Cross-references
 
 - `guides/13-ecosystem-catalog.md` already lists Framer Motion as the animation default. This guide expands to dnd-kit / SortableJS / GSAP / Lottie / Theatre.js / auto-animate and codifies the a11y floor.
-- Motion tokens (durations, easings, distances) are owned by `ux-ui-worker-bee` — explicitly handed off.
+- Motion tokens (durations, easings, distances) are owned by `ux-ui-svelte-worker-bee`: explicitly handed off.
 
 ## Notes
 

@@ -58,7 +58,7 @@ returned but `loadingExperience` will indicate no data.
   5. Use BigQuery for advanced analysis across dimensions
 - The PSI API's `loadingExperience` block is the primary way to surface CrUX data for
   specific URLs programmatically. Document the fallback from URL to origin level.
-- Note for stinger-forge: No country/ECT dimension in PSI/PSI API — only BigQuery has those.
+- Note for stinger-forge: No country/ECT dimension in PSI/PSI API: only BigQuery has those.
   This is a common source of confusion when teams try to debug geographic performance.
 - The CrUX Dashboard (deprecated November 2025) is NOT listed in this table. Teams using
   it need to migrate. Recommend CrUX Vis as a simpler replacement, or BigQuery for advanced use.

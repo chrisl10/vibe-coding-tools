@@ -1,4 +1,4 @@
-# 22 — Common Failure Modes
+# 22: Common Failure Modes
 
 The recurring issues. If you see these, name them and fix them.
 
@@ -94,7 +94,7 @@ def order_create(*, user, items):
     return order
 ```
 
-Signals are for cross-cutting concerns with no return value (cache invalidation, audit log) — not for business logic. Severity: must-fix.
+Signals are for cross-cutting concerns with no return value (cache invalidation, audit log), not for business logic. Severity: must-fix.
 
 ## 5. Fat models holding business logic
 
@@ -159,7 +159,7 @@ Order.objects.raw("SELECT * FROM orders WHERE user_id = %s", [user_id])
 
 ## 10. Edited applied migrations
 
-Migration in `apps/orders/migrations/0010_*.py` was applied to staging two months ago, then someone edited the file. Now `0010` differs between environments — undetectable drift, broken rollback.
+Migration in `apps/orders/migrations/0010_*.py` was applied to staging two months ago, then someone edited the file. Now `0010` differs between environments: undetectable drift, broken rollback.
 
 **Fix:** Add a new migration. Never edit an applied one. Severity: must-fix.
 
@@ -216,7 +216,7 @@ print(f"order created: {order.id}")
 
 ## 18. Missing `transaction.on_commit` for Channels broadcasts
 
-Same problem as Celery — the consumer might receive a group message about an object that hasn't committed yet. Wrap broadcasts in `transaction.on_commit`.
+Same problem as Celery: the consumer might receive a group message about an object that hasn't committed yet. Wrap broadcasts in `transaction.on_commit`.
 
 ## 19. Async ORM call with `select_related` chain ignored
 

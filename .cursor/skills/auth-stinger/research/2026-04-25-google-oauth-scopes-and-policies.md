@@ -35,7 +35,7 @@ Apps must comply with Google API Services User Data Policy:
 
 ## Relevance to this stinger
 
-- `guides/06-google-oauth.md` — full deep dive.
-- `guides/07-google-oauth-verification.md` — verification process.
-- `templates/scope-justification-template.md` — per-scope justification table.
-- `templates/google-oauth-consent-screen-checklist.md` — pre-submission checklist.
+- `guides/06-google-oauth.md`: full deep dive.
+- `guides/07-google-oauth-verification.md`: verification process.
+- `templates/scope-justification-template.md`: per-scope justification table.
+- `templates/google-oauth-consent-screen-checklist.md`: pre-submission checklist.

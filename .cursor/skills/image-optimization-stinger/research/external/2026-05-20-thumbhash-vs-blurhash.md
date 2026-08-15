@@ -15,7 +15,7 @@ ThumbHash advantages over BlurHash:
 - **Encodes more detail** in the same space
 - **Encodes the aspect ratio** (BlurHash does not)
 - **More accurate colors**
-- **Supports alpha** (transparency) — BlurHash does not
+- **Supports alpha** (transparency): BlurHash does not
 - Similar code complexity to BlurHash
 - Drawback: algorithm parameters are NOT configurable (auto-configured)
 
@@ -45,7 +45,7 @@ Both BlurHash and ThumbHash require client-side JavaScript to decode. This means
 
 ## Alternative: LQIP via plaiceholder
 
-plaiceholder generates a base64-encoded JPEG/PNG data URI (LQIP) that works as a CSS `background-image` — no JS decode step. This is what Next.js recommends for `blurDataURL`.
+plaiceholder generates a base64-encoded JPEG/PNG data URI (LQIP) that works as a CSS `background-image`: no JS decode step. This is what Next.js recommends for `blurDataURL`.
 
 ## Relevance to image-optimization-stinger
 
@@ -57,4 +57,4 @@ Answers the Command Brief open question on ThumbHash vs BlurHash. The tradeoff i
 - "One potential drawback compared to BlurHash is that the parameters of the algorithm are not configurable."
 - Benchmark from fast-thumbhash: "ThumbHash encode 14.4 µs vs BlurHash ~180 µs (12x faster)"
 - From SplatHash article: "Decode runs on every page load for every user. Encode runs once at upload. Optimize for decode."
-- From mux.com: "One big drawback is that these formats [BlurHash/ThumbHash] need to be decoded on the client side — and, unlike WebP or JPEG and blurring filters, no clients support this natively."
+- From mux.com: "One big drawback is that these formats [BlurHash/ThumbHash] need to be decoded on the client side, and, unlike WebP or JPEG and blurring filters, no clients support this natively."

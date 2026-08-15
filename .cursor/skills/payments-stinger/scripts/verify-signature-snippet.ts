@@ -1,5 +1,5 @@
 /**
- * payments-stinger — Minimal portable HMAC-SHA256 Stripe-Signature verification.
+ * payments-stinger, Minimal portable HMAC-SHA256 Stripe-Signature verification.
  *
  * Use this only when:
  *   - You can't / won't pull in the `stripe` SDK (e.g., a tiny edge runtime).
@@ -10,7 +10,7 @@
  * and edge cases the SDK maintainers think about so you don't have to.
  *
  * See:
- *   - guides/02-webhook-verification.md
+ *   - guides/06-webhooks-and-provisioning.md
  *   - https://docs.stripe.com/webhooks/signatures
  *   - https://github.com/stripe/stripe-go/blob/master/webhooks.go (canonical)
  */
@@ -18,7 +18,7 @@
 import { createHmac, timingSafeEqual } from 'node:crypto';
 
 export interface VerifyOptions {
-  /** Raw request body — exact bytes Stripe sent. NEVER JSON-parsed first. */
+  /** Raw request body, exact bytes Stripe sent. NEVER JSON-parsed first. */
   rawBody: string | Buffer;
   /** Value of the Stripe-Signature header. */
   header: string;

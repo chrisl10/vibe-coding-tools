@@ -1,4 +1,4 @@
-# Research Index — dark-mode-theming-stinger
+# Research Index: dark-mode-theming-stinger
 
 | File | Source type | Authority | Relevance | Topic |
 |------|-------------|-----------|-----------|-------|
@@ -9,4 +9,4 @@
 | `external/2026-05-20-multi-brand-css-runtime-swap.md` | Community | Medium | High | data-attribute theme switching, multi-tenant CSS overrides |
 | `external/2026-05-20-ssr-color-scheme-detection.md` | Framework docs | High | High | Next.js middleware cookie strategy, suppressHydrationWarning |
 | `internal/2026-05-20-command-brief.md` | Internal | Authoritative | High | Command Brief for dark-mode-theming-worker-bee |
-| `internal/2026-05-20-peer-stingers.md` | Internal | High | Medium | ux-ui-stinger and design-system-stinger boundary notes |
+| `internal/2026-05-20-peer-stingers.md` | Internal | High | Medium | ux-ui-svelte-stinger and design-system-stinger boundary notes |

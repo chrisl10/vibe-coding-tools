@@ -45,7 +45,7 @@ The official grammY guide on deployment types is the definitive practitioner res
 ```
 
 **Mutual exclusion rule:**
-- "You can't run both. `setWebhook` silently blocks `getUpdates` — calling the latter while a webhook is set returns 409 Conflict."
+- "You can't run both. `setWebhook` silently blocks `getUpdates`: calling the latter while a webhook is set returns 409 Conflict."
 - Fix: always `deleteWebhook` before switching to polling.
 - "getWebhookInfo is the source of truth for current mode."
 

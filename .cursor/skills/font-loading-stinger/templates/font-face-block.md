@@ -1,6 +1,6 @@
 # Template: Canonical `@font-face` Block
 
-Copy this template and replace all `{{...}}` placeholders. Do not omit any property — each one affects the font's rendering behavior.
+Copy this template and replace all `{{...}}` placeholders. Do not omit any property: each one affects the font's rendering behavior.
 
 ---
 

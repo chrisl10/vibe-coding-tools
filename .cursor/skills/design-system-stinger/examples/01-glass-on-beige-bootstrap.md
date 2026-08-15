@@ -1,7 +1,7 @@
-# Example 1 — Glass-on-Beige Bootstrap (Happy Path)
+# Example 1: Glass-on-Beige Bootstrap (Happy Path)
 
 A worked example of `design-system-worker-bee` bootstrapping a new design
-system for a hypothetical product called **LedgerLine** — a premium
+system for a hypothetical product called **LedgerLine**, a premium
 accounting app for creative freelancers. Aesthetic anchor: iOS Liquid
 Glass with a warm cream + forest palette.
 
@@ -64,7 +64,7 @@ Confirmed with user: "yes, proceed."
 ## 2. Scaffold
 
 ```
-library/knowledge-base/ledgerline-ux-ui/
+library/knowledge/private/ledgerline-ux-ui/
 ├── 00-design-brief.md
 ├── 01-master-tokens.css
 ├── 02-glass-and-depth.css
@@ -95,14 +95,14 @@ library/knowledge-base/ledgerline-ux-ui/
 
 ## 3. Master brief excerpt (per `guides/02-authoring-design-brief.md`)
 
-`00-design-brief.md` §1 — Core Principles:
+`00-design-brief.md` §1, Core Principles:
 
 > 1. **Cream stage, white paper.** The page background is always warm
 >    cream (`--color-background`, #F7F4ED). Every interactive surface is
 >    a white-glass card floating above it.
 > 2. **Numbers speak serif.** Every monetary value, invoice total, and
 >    dashboard metric renders in Fraunces. Body labels stay in Inter.
->    Justification: the product IS numbers — typographic distinction
+>    Justification: the product IS numbers, so typographic distinction
 >    reinforces what the reader should focus on.
 > 3. **Forest is a signal, not a surface.** Forest (`--color-accent`) is
 >    reserved for confirmed-state success (paid invoice, approved
@@ -116,7 +116,7 @@ library/knowledge-base/ledgerline-ux-ui/
 
 ## 4. Token layer excerpt (per `guides/03-authoring-tokens.md`)
 
-`01-master-tokens.css` — the brand tokens customized from the starter:
+`01-master-tokens.css`, the brand tokens customized from the starter:
 
 ```css
 @theme {
@@ -149,7 +149,7 @@ library/knowledge-base/ledgerline-ux-ui/
 
 ## 5. Utility layer excerpt
 
-`02-glass-and-depth.css` — near-identical to the starter kit, with the
+`02-glass-and-depth.css`, near-identical to the starter kit, with the
 addition of a product-specific `.toast-surface` utility (per the
 non-negotiable that toasts are glass, not inline alerts):
 
@@ -215,7 +215,7 @@ This is what delivers "numbers speak serif."
 
 ## 7. Screen brief sample
 
-`04-screens/invoice-detail.md` — ASCII skeleton:
+`04-screens/invoice-detail.md`, ASCII skeleton:
 
 ```
 ┌─────────────────────────────────────┐ ← top nav (glass, pinned)
@@ -242,13 +242,13 @@ briefs pixel-for-pixel. No hex literals, no Tailwind arbitrary values.
 
 ## 9. Handoff (per `guides/08-companion-agent-handoff.md`)
 
-`README.md` names `ux-ui-worker-bee` as the owner. Status table shows:
+`README.md` names `ux-ui-svelte-worker-bee` as the owner. Status table shows:
 - Design brief: Authored 2026-04-24.
 - Tokens: Authored 2026-04-24.
-- Code alignment: Pending (LedgerLine is greenfield — all briefs mark
-  "Replaces: N/A — greenfield").
+- Code alignment: Pending (LedgerLine is greenfield: all briefs mark
+  "Replaces: N/A, greenfield").
 
-`design-system-worker-bee` exits. `ux-ui-worker-bee` picks up.
+`design-system-worker-bee` exits. `ux-ui-svelte-worker-bee` picks up.
 
 ## Outcome
 

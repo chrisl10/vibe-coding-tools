@@ -12,7 +12,7 @@ The user's task follows this command. If no task was given, ask what they want d
 
 ## Step 1: Route via the roster
 
-Read `.cursor/skills/beekeeper-suit/SKILL.md` (the roster). Match the task to one or more Bees using each row's trigger keywords. When two Bees look close, open the per-Bee guide at `.cursor/skills/beekeeper-suit/guides/<bee-name>.md` and read its "Trigger phrases" and "Do NOT route when" sections to disambiguate. If nothing matches, handle the request inline or ask whether to forge a new Bee; never invent a Bee that is not in the roster.
+Read `.claude/skills/beekeeper-suit/SKILL.md` (the roster). Match the task to one or more Bees using each row's trigger keywords. When two Bees look close, open the per-Bee guide at `.claude/skills/beekeeper-suit/guides/<bee-name>.md` and read its "Trigger phrases" and "Do NOT route when" sections to disambiguate. If nothing matches, handle the request inline or ask whether to forge a new Bee; never invent a Bee that is not in the roster.
 
 ## Step 2: Plan the dispatch
 
@@ -22,7 +22,7 @@ Read `.cursor/skills/beekeeper-suit/SKILL.md` (the roster). Match the task to on
 
 ## Step 3: Dispatch each Bee ARMED (non-negotiable)
 
-Dispatch each selected Bee per the "Dispatching a Bee (the arming contract)" section of `.cursor/skills/beekeeper-suit/SKILL.md`.
+Dispatch each selected Bee per the "Dispatching a Bee (the arming contract)" section of `.claude/skills/beekeeper-suit/SKILL.md`.
 
 ## Step 4: Run the loop
 

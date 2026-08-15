@@ -50,7 +50,7 @@ export default function Counter({ count }: Props) {
 
 ## Sharing state between islands via signals
 
-Signals defined outside an island can be shared across multiple islands on the same page — this is Fresh's recommended cross-island state pattern:
+Signals defined outside an island can be shared across multiple islands on the same page; this is Fresh's recommended cross-island state pattern:
 
 ```ts
 // state.ts (shared module, imported by multiple islands)

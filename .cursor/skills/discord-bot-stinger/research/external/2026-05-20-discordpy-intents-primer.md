@@ -51,7 +51,7 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 
 ## Annotations for stinger-forge
 
-- **guides/00-principles.md**: The "Portal alone does not grant events; code and Portal must align" is a critical point — bots often enable intents in the portal but forget the code side. Both must agree.
-- **templates/slash-command-discord-py.py**: Should use `discord.Intents.default()` — no privileged intents unless the specific use case requires them.
+- **guides/00-principles.md**: The "Portal alone does not grant events; code and Portal must align" is a critical point: bots often enable intents in the portal but forget the code side. Both must agree.
+- **templates/slash-command-discord-py.py**: Should use `discord.Intents.default()`, no privileged intents unless the specific use case requires them.
 - The `intents.typing = False` / `intents.presences = False` optimizations are worth documenting as a performance tip for bots that don't need these events.
-- Member cache and `chunk_guilds_at_startup` configuration belongs in guides/05-scaling-ops.md — chunking all guilds at startup is expensive for large bots.
+- Member cache and `chunk_guilds_at_startup` configuration belongs in guides/05-scaling-ops.md: chunking all guilds at startup is expensive for large bots.

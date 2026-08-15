@@ -34,5 +34,5 @@ Use whatever IDs the plan itself uses; if the plan has none, invent IDs that mir
 The `scripts/extract-plan-items.py` helper parses a PRD markdown file and emits a skeleton of this table with the `Status` and `Implementation Location` columns left blank. Run it to speed the first pass:
 
 ```bash
-python3 scripts/extract-plan-items.py library/requirements/features/feature-007-search/prd-feature-007-search.md > traceability-skeleton.md
+python3 scripts/extract-plan-items.py library/requirements/<lifecycle>/prd-007-search/prd-feature-007-search.md > traceability-skeleton.md
 ```

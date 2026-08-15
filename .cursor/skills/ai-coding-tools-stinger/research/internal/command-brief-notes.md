@@ -11,7 +11,7 @@ stinger: ai-coding-tools-stinger
 
 ## Bee Identity
 
-`ai-coding-tools-worker-bee` is the Army's authority on every AI coding tool decision a developer faces. It sits at the intersection of developer tooling and AI agent ergonomics.
+`ai-coding-tools-worker-bee` is the Hive's authority on every AI coding tool decision a developer faces. It sits at the intersection of developer tooling and AI agent ergonomics.
 
 **Scope:** tool selection, tool configuration, context management, agent-mode decisions, benchmark interpretation, prompt discipline, cost evaluation.
 
@@ -79,7 +79,7 @@ stinger: ai-coding-tools-stinger
 
 - **Overlap with cursor-ide-worker-bee:** cursor-ide-worker-bee owns Cursor as a platform (rules authoring, MCP setup). ai-coding-tools-worker-bee owns Cursor as a coding workflow tool (when to use it vs Claude Code, context management).
 - **Refresh cadence:** Every 60-90 days. SWE-bench scores update continuously.
-- **Trigger policy:** PROACTIVE. This is the meta-question every developer using the Legion Army has daily.
+- **Trigger policy:** PROACTIVE. This is the meta-question every developer using the Hive has daily.
 - **Launch priority:** HIGH.
 
 ## Reference Material URLs (from Brief)

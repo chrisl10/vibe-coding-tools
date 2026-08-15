@@ -1,4 +1,4 @@
-# cmdk Command Menu — External Source Note
+# cmdk Command Menu: External Source Note
 
 **Source:** https://cmdk.paco.me/ + https://github.com/pacocoursey/cmdk
 **Source type:** external/primary

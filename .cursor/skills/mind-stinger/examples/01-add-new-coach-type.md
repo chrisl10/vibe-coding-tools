@@ -1,4 +1,4 @@
-# Example 01 — Add a New Coach Type
+# Example 01: Add a New Coach Type
 
 End-to-end walkthrough for adding a new coach type to the canonical lineup. Worked example: adding a hypothetical `pricing_strategist` coach.
 
@@ -14,10 +14,10 @@ mind-worker-bee's job: walk the contributor through the canonical add-coach chec
 
 ---
 
-## Step 1 — Update the docs first
+## Step 1: Update the docs first
 
 ```diff
-# library/knowledge-base/ai/coach-architecture.md §1
+# library/knowledge/private/ai/coach-architecture.md §1
 
 | Coach Type | Display Name | Purpose | Level Gate |
 |---|---|---|---|
@@ -32,7 +32,7 @@ mind-worker-bee's job: walk the contributor through the canonical add-coach chec
 ```
 
 ```diff
-# library/knowledge-base/ai/prompt-engineering.md §2
+# library/knowledge/private/ai/prompt-engineering.md §2
 
 + ### `pricing_strategist` — Pricing Strategist
 +
@@ -51,7 +51,7 @@ Get the doc PR reviewed and merged BEFORE the code change.
 
 ---
 
-## Step 2 — Update the `AiCoachType` enum
+## Step 2: Update the `AiCoachType` enum
 
 ```diff
 // api/prisma/schema.prisma
@@ -72,7 +72,7 @@ Run `pnpm prisma migrate dev --name add_pricing_strategist_coach`.
 
 ---
 
-## Step 3 — Update the routing classifier prompt
+## Step 3: Update the routing classifier prompt
 
 ```diff
 // lib/ai-coach-router.ts (or wherever ROUTING_PROMPT lives)
@@ -95,11 +95,11 @@ Guidelines:
 The member is currently at Level ${memberLevel}.`;
 ```
 
-Note the disambiguation rule: "offers" stays with `offer_doc`; "pricing models / raising rates / packaging tiers" go to `pricing_strategist`. The router is small (8B) — explicit examples reduce ambiguity.
+Note the disambiguation rule: "offers" stays with `offer_doc`; "pricing models / raising rates / packaging tiers" go to `pricing_strategist`. The router is small (8B): explicit examples reduce ambiguity.
 
 ---
 
-## Step 4 — Add the default prompt to `getDefaultGlobalPrompt()`
+## Step 4: Add the default prompt to `getDefaultGlobalPrompt()`
 
 ```diff
 // lib/ai-prompt-builder.ts
@@ -125,7 +125,7 @@ See `templates/coach-default-prompt.md` for the canonical shape.
 
 ---
 
-## Step 5 — Level gate (none for this coach)
+## Step 5: Level gate (none for this coach)
 
 `pricing_strategist` is not level-gated. No change needed in the level-gating logic.
 
@@ -133,7 +133,7 @@ If it WERE level-gated, the seed `AiCoachConfig` row for each tenant would inclu
 
 ---
 
-## Step 6 — Seed `AiCoachConfig` per tenant
+## Step 6: Seed `AiCoachConfig` per tenant
 
 A migration script creates an `AiCoachConfig` for each existing tenant:
 
@@ -172,9 +172,9 @@ await recordPromptVersion({
 
 ---
 
-## Step 7 — Update `AgentContextConfig` defaults
+## Step 7: Update `AgentContextConfig` defaults
 
-`pricing_strategist` is a global coach — defaults to `cross_session` per `getDefaultScope()`. Add a platform default row:
+`pricing_strategist` is a global coach: defaults to `cross_session` per `getDefaultScope()`. Add a platform default row:
 
 ```typescript
 await prisma.agentContextConfig.upsert({
@@ -186,9 +186,9 @@ await prisma.agentContextConfig.upsert({
 
 ---
 
-## Step 8 — Add eval cases
+## Step 8: Add eval cases
 
-Extend the golden routing dataset with 5–10 cases:
+Extend the golden routing dataset with 5 to 10 cases:
 
 ```jsonl
 {"query": "How do I price my new retainer offer?", "expected": "pricing_strategist"}
@@ -198,24 +198,24 @@ Extend the golden routing dataset with 5–10 cases:
 {"query": "Can you help me describe my offer in one sentence?", "expected": "offer_doc"}
 ```
 
-The boundary cases between `pricing_strategist` and `offer_doc` are most important — they're where the router will struggle.
+The boundary cases between `pricing_strategist` and `offer_doc` are most important: they're where the router will struggle.
 
 ---
 
-## Step 9 — Hand off
+## Step 9: Hand off
 
-- **`asset-worker-bee`** — register `pricing_strategist` in the coach asset registry.
-- **`db-worker-bee`** — confirm the `AiCoachConfig` index strategy supports the new coach type.
-- **`library-worker-bee`** — author the PRD if this is being shipped as a feature.
+- **`asset-worker-bee`**: register `pricing_strategist` in the coach asset registry.
+- **`db-worker-bee`**: confirm the `AiCoachConfig` index strategy supports the new coach type.
+- **`library-worker-bee`**: author the PRD if this is being shipped as a feature.
 
 ---
 
-## Step 10 — Verify
+## Step 10: Verify
 
 After deploy:
 
 1. Run `scripts/coach-routing-audit.ts` on the next 7 days. `pricing_strategist` should have ≥ 90% accuracy.
-2. Sample 10 traces routed to `pricing_strategist` — verify quality with the coaching rubric (`guides/17-evaluation-discipline.md §2`).
-3. Verify `AiTrace.agentTypeRouted` shows the new value (no schema migration needed — it's a string).
+2. Sample 10 traces routed to `pricing_strategist`: verify quality with the coaching rubric (`guides/17-evaluation-discipline.md §2`).
+3. Verify `AiTrace.agentTypeRouted` shows the new value (no schema migration needed: it's a string).
 
 If routing accuracy < 90%, the levers are §3's classifier prompt and the coach descriptions in §4. Refine the boundary rules between `offer_doc` and `pricing_strategist`.

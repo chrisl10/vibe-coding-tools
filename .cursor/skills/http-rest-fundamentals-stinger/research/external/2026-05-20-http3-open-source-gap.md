@@ -8,7 +8,7 @@ topic: http3
 stinger: http-rest-fundamentals-stinger
 ---
 
-# HTTP/3 Is Everywhere But Nowhere — HTTP Toolkit Blog (2025-03-12)
+# HTTP/3 Is Everywhere But Nowhere: HTTP Toolkit Blog (2025-03-12)
 
 Published: 2025-03-12. HTTP Toolkit (practitioner tool author).
 
@@ -27,5 +27,5 @@ Analysis of the HTTP/3 adoption split: 95% browser support and 35% website adver
 ## Annotations for stinger-forge
 - `guides/06-http2-http3.md`: critical nuance section. The browser+CDN HTTP/3 world and the origin-server/library HTTP/3 world are split. Most application code never sees HTTP/3; CDN handles it.
 - Audit implication: for teams behind a CDN, HTTP/3 readiness audit is mostly a CDN configuration question. For teams running origin servers directly (no CDN), HTTP/3 readiness requires checking runtime support explicitly.
-- The OpenSSL gap explains why frameworks like Next.js, Express, Django, FastAPI, etc. do not expose HTTP/3 configuration — they depend on Node/Python runtimes that depend on OpenSSL.
+- The OpenSSL gap explains why frameworks like Next.js, Express, Django, FastAPI, etc. do not expose HTTP/3 configuration: they depend on Node/Python runtimes that depend on OpenSSL.
 - Contradicts the "just enable it" framing common in 2026 CDN blogs. Stinger-forge should surface this split clearly.

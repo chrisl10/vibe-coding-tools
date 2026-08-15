@@ -123,8 +123,8 @@ client.login(process.env.DISCORD_TOKEN);
 
 ## What this example demonstrates
 
-- **Minimum intents**: only `Guilds` — no `MessageContent`, no `GuildMembers`.
+- **Minimum intents**: only `Guilds`, no `MessageContent`, no `GuildMembers`.
 - **DeferReply**: immediately defer before the slow API call.
 - **Error handling**: handles both pre-reply and post-deferral error paths.
 - **Guild-scoped registration**: fast iteration in dev, swap to global for prod.
-- **Token from env**: `process.env.DISCORD_TOKEN` — never hardcoded.
+- **Token from env**: `process.env.DISCORD_TOKEN`, never hardcoded.

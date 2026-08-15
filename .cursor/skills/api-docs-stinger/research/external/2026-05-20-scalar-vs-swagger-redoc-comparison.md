@@ -8,7 +8,7 @@ topic: tool-comparison
 stinger: api-docs-stinger
 ---
 
-# Scalar vs Swagger UI vs Redoc 2026 — APIScout
+# Scalar vs Swagger UI vs Redoc 2026: APIScout
 
 ## Summary
 

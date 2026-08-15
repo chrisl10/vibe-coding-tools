@@ -1,6 +1,6 @@
 ---
-name: terminal-bash-stinger
-description: Terminal productivity specialist - Bash/Zsh/Fish configuration, modern CLI tools (ripgrep, fd, fzf, bat, eza, zoxide), shell scripting best practices, dotfile architecture, tmux/Zellij setup, and just/make task automation. Use when the user says "improve my dotfiles", "review this shell script", "set up tmux", "modern CLI tools", "bash best practices", "just vs make", or "help me with my terminal setup". Do NOT use for CI/CD pipelines running in containers (ci-release-worker-bee) or TypeScript/Node build and packaging (typescript-node-worker-bee).
+name: "terminal-bash-stinger"
+description: "Terminal productivity specialist - Bash/Zsh/Fish configuration, modern CLI tools (ripgrep, fd, fzf, bat, eza, zoxide), shell scripting best practices, dotfile architecture, tmux/Zellij setup, and just/make task automation. Use when the user says \\\\\\\"improve my dotfiles\\\\\\\", \\\\\\\"review this shell script\\\\\\\", \\\\\\\"set up tmux\\\\\\\", \\\\\\\"modern CLI tools\\\\\\\", \\\\\\\"bash best practices\\\\\\\", \\\\\\\"just vs make\\\\\\\", or \\\\\\\"help me with my terminal setup\\\\\\\". Do NOT use for CI/CD pipelines running in containers (ci-release-worker-bee) or TypeScript/Node build and packaging (typescript-node-worker-bee)."
 ---
 
 # terminal-bash Stinger
@@ -103,4 +103,4 @@ terminal-bash-stinger/
 
 ---
 
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Part of The Hive, curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

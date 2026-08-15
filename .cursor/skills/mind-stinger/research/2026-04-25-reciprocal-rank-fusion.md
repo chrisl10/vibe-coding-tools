@@ -1,6 +1,6 @@
-# Reciprocal Rank Fusion (RRF) — Hybrid Retrieval
+# Reciprocal Rank Fusion (RRF): Hybrid Retrieval
 
-**Source:** Cormack, Clarke, Buettcher 2009 — *Reciprocal Rank Fusion outperforms Condorcet and individual Rank Learning Methods*. Canonical formulation widely adopted (Elasticsearch, Qdrant, OpenSearch).
+**Source:** Cormack, Clarke, Buettcher 2009: *Reciprocal Rank Fusion outperforms Condorcet and individual Rank Learning Methods*. Canonical formulation widely adopted (Elasticsearch, Qdrant, OpenSearch).
 **Retrieved:** 2026-04-25
 **Status:** **LOAD-BEARING** for the GraphRAG hybrid path. Cited in `guides/11-graphrag.md §6`.
 **Numbers tag:** benchmarked (canonical paper).
@@ -23,13 +23,13 @@ For document `d` appearing in list `i` at rank `rank_i(d)`:
 score(d) = Σ_i  1 / (k + rank_i(d))
 ```
 
-Items in BOTH lists get additive scoring — they're retrieved both semantically and relationally.
+Items in BOTH lists get additive scoring: they're retrieved both semantically and relationally.
 
 The `k=60` constant is the canonical default. It softens the contribution of top-ranked items so a single very-high-rank in one list doesn't dominate. Lower `k` gives more weight to top items; higher `k` evens out.
 
 ---
 
-## implementation — `rrf.ts`
+## implementation: `rrf.ts`
 
 ```typescript
 export function reciprocalRankFusion(
@@ -45,7 +45,7 @@ Returns fused results sorted by score descending. Caller (e.g., `knowledge-conte
 
 ## Why RRF specifically (not weighted sum)
 
-Weighted sum requires score normalization across lists with different scales. ANN scores (cosine similarity 0–1) are not comparable to graph traversal scores (depth + occurrence count). RRF works on **ranks**, not scores — sidesteps the normalization problem.
+Weighted sum requires score normalization across lists with different scales. ANN scores (cosine similarity 0-1) are not comparable to graph traversal scores (depth + occurrence count). RRF works on **ranks**, not scores: sidesteps the normalization problem.
 
 ---
 

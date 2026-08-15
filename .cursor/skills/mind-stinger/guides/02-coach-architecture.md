@@ -1,24 +1,24 @@
-# 02 — Coach Architecture
+# 02: Coach Architecture
 
 The 7 coach types as canon, the `routeToCoach()` Llama 3.1 8B classifier, level gating, the draft-coach guard, and the `main_community` fallback.
 
-> **Doc reference:** `library/knowledge-base/ai/coach-architecture.md` is the canonical doc. This guide is the playbook.
+> **Doc reference:** `library/knowledge/private/ai/coach-architecture.md` is the canonical doc. This guide is the playbook.
 
 ---
 
-## 1. The 7 coach types — canonical lineup
+## 1. The 7 coach types: canonical lineup
 
 | Coach Type | Display | Purpose | Level Gate | Notes |
 |---|---|---|---|---|
-| `main_community` | Community Coach | General Q&A — business, referrals, networking | — | **Default fallback.** Routing failures and unrecognised values fall here. |
-| `onboarding` | Onboarding Strategist (display name from `Tenant.onboardingAgentName`, default `"AI Agent"`) | Profile setup via SSE streaming | — | Distinct path — `streamOnboardingChat()`, not `runOrchestrator()`. |
-| `level_1` | Level 1 Coach | Foundations — ideal client, offer clarity | Level 1 |  |
-| `level_2` | Level 2 Coach | Scaling — positioning, referral systems | Level 2 |  |
-| `level_3` | Level 3 Coach | Mastery — leadership, high-value partnerships | Level 3 |  |
-| `offer_doc` | Offer Doc Coach | One-sentence referrable offer | — |  |
-| `special_gift_strategist` | Special Gift Strategist | Distinctive value, personal brand | — | Added April 2026. |
+| `main_community` | Community Coach | General Q&A: business, referrals, networking | None | **Default fallback.** Routing failures and unrecognised values fall here. |
+| `onboarding` | Onboarding Strategist (display name from `Tenant.onboardingAgentName`, default `"AI Agent"`) | Profile setup via SSE streaming | None | Distinct path: `streamOnboardingChat()`, not `runOrchestrator()`. |
+| `level_1` | Level 1 Coach | Foundations: ideal client, offer clarity | Level 1 |  |
+| `level_2` | Level 2 Coach | Scaling: positioning, referral systems | Level 2 |  |
+| `level_3` | Level 3 Coach | Mastery: leadership, high-value partnerships | Level 3 |  |
+| `offer_doc` | Offer Doc Coach | One-sentence referrable offer | None |  |
+| `special_gift_strategist` | Special Gift Strategist | Distinctive value, personal brand | None | Added April 2026. |
 
-Adding / removing / renaming a coach requires updating `library/knowledge-base/ai/coach-architecture.md` **first**. The doc is the source of truth; the enum, router prompt, default prompt, and DB seed follow.
+Adding / removing / renaming a coach requires updating `library/knowledge/private/ai/coach-architecture.md` **first**. The doc is the source of truth; the enum, router prompt, default prompt, and DB seed follow.
 
 ---
 
@@ -26,20 +26,20 @@ Adding / removing / renaming a coach requires updating `library/knowledge-base/a
 
 When a contributor proposes a new coach type:
 
-- [ ] **Doc updated** — `library/knowledge-base/ai/coach-architecture.md` reflects the new lineup.
-- [ ] **Enum updated** — `AiCoachType` Prisma enum includes the new value.
-- [ ] **Routing prompt updated** — the classifier prompt in `routeToCoach()` lists the new type with a `keyword → coachType` rule.
-- [ ] **Default prompt added** — `getDefaultGlobalPrompt(coachType)` in `ai-prompt-builder.ts` returns a default for the new type.
-- [ ] **Level gate set** — if level-gated, `AiCoachConfig.levelAccess` populated; the route check returns `locked: true` for under-level members.
-- [ ] **`AiCoachConfig` row** — DB seed creates an `AiCoachConfig` for each tenant (or a tenant migration script does it).
-- [ ] **Admin endpoint validated** — the new coach appears in `GET /api/admin/ai-coaches`.
-- [ ] **Eval cases added** — golden routing dataset extended with 5–10 cases for the new coach.
-- [ ] **Trace dimensions confirmed** — `AiTrace.agentTypeRouted` accepts the new value (it's a string, so this is a documentation step, not a migration).
-- [ ] **Asset registry entry** — handed to `asset-worker-bee`.
+- [ ] **Doc updated**: `library/knowledge/private/ai/coach-architecture.md` reflects the new lineup.
+- [ ] **Enum updated**: `AiCoachType` Prisma enum includes the new value.
+- [ ] **Routing prompt updated**: the classifier prompt in `routeToCoach()` lists the new type with a `keyword → coachType` rule.
+- [ ] **Default prompt added**: `getDefaultGlobalPrompt(coachType)` in `ai-prompt-builder.ts` returns a default for the new type.
+- [ ] **Level gate set**: if level-gated, `AiCoachConfig.levelAccess` populated; the route check returns `locked: true` for under-level members.
+- [ ] **`AiCoachConfig` row**: DB seed creates an `AiCoachConfig` for each tenant (or a tenant migration script does it).
+- [ ] **Admin endpoint validated**: the new coach appears in `GET /api/admin/ai-coaches`.
+- [ ] **Eval cases added**: golden routing dataset extended with 5 to 10 cases for the new coach.
+- [ ] **Trace dimensions confirmed**: `AiTrace.agentTypeRouted` accepts the new value (it's a string, so this is a documentation step, not a migration).
+- [ ] **Asset registry entry**: handed to `asset-worker-bee`.
 
 ---
 
-## 3. `routeToCoach()` — the classifier
+## 3. `routeToCoach()`: the classifier
 
 ```typescript
 // lib/ai-coach-router.ts
@@ -60,12 +60,12 @@ const response = await openai.chat.completions.create({
 | Parameter | Value | Why |
 |---|---|---|
 | `model` | `getAIModels().fast` (Llama 3.1 8B) | ~10× cheaper than 70B; classification accuracy sufficient. Using 70B is should-refactor (cost). |
-| `temperature` | `0` | Routing must be deterministic — same input → same coach. |
+| `temperature` | `0` | Routing must be deterministic: same input → same coach. |
 | `max_tokens` | `20` | One-word response. Higher wastes tokens. |
 
 ### The classifier prompt structure
 
-Per `library/knowledge-base/ai/prompt-engineering.md §11`:
+Per `library/knowledge/private/ai/prompt-engineering.md §11`:
 
 ```
 You are a routing classifier. Given a user message, determine which specialized
@@ -138,7 +138,7 @@ if (coachConfig?.levelAccess && memberLevel < coachConfig.levelAccess) {
 
 - Level gates apply to `level_1` / `level_2` / `level_3`.
 - A member at Level 0 routed to `level_2` returns `locked: true`.
-- The router itself does not enforce gating — it routes by message intent. The route is the gate.
+- The router itself does not enforce gating: it routes by message intent. The route is the gate.
 
 ---
 
@@ -163,9 +163,9 @@ When `moduleType` is provided in the request, the coaching path is different:
 
 | Path | Used when | Function | RAG? |
 |---|---|---|---|
-| Global coach | `moduleType` absent | `composeSystemPrompt()` → `buildKnowledgeContextWithMeta()` | **Yes** — Qdrant + Cohere rerank |
-| Module | `moduleType` present (`goals`, `ideal_client`, `offer`, `positioning`, `referral_strategy`) | `buildCoachingPrompt()` (in `coaching-llm.ts`) → Postgres `CoachKnowledgeDocument` | **No** — Postgres only |
-| Checklist | `checklistItemId` present | `Step.promptText` if available, else falls back to `buildGlobalCoachPrompt()` | **Partial** — RAG-active in fallback |
+| Global coach | `moduleType` absent | `composeSystemPrompt()` → `buildKnowledgeContextWithMeta()` | **Yes**: Qdrant + Cohere rerank |
+| Module | `moduleType` present (`goals`, `ideal_client`, `offer`, `positioning`, `referral_strategy`) | `buildCoachingPrompt()` (in `coaching-llm.ts`) → Postgres `CoachKnowledgeDocument` | **No**: Postgres only |
+| Checklist | `checklistItemId` present | `Step.promptText` if available, else falls back to `buildGlobalCoachPrompt()` | **Partial**: RAG-active in fallback |
 
 **The module path RAG gap** is one of the recurring gap patterns. `buildCoachingPrompt` predates the Qdrant infrastructure. Migrating module coaching to use `buildKnowledgeContextWithMeta()` would close this gap. See `guides/07-knowledge-base.md` and `guides/20-common-failure-modes.md`.
 

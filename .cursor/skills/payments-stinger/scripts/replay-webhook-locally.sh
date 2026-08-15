@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# payments-stinger — replay-webhook-locally.sh
+# payments-stinger, replay-webhook-locally.sh
 #
 # Replays a Stripe event against your local webhook handler. Two modes:
 #   1. Re-fire a SPECIFIC event ID (good for debugging a real production failure
@@ -18,7 +18,7 @@
 #   ./replay-webhook-locally.sh trigger checkout.session.completed
 #   ./replay-webhook-locally.sh trigger customer.subscription.updated
 #
-# See: guides/06-testing-and-cli.md, guides/09-common-failure-modes.md.
+# See: guides/08-testing-and-local-development.md, guides/10-production-failure-modes.md.
 
 set -euo pipefail
 

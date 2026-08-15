@@ -1,6 +1,6 @@
 ---
-name: dependency-audit-stinger
-description: npm supply-chain hygiene specialist for the @deeplake/hivemind package. Owns npm dependency update tooling (Renovate vs Dependabot for this repo), package-lock.json lockfile discipline (npm ci, minimumReleaseAge), npm audit triage (noise vs real, direct vs transitive), the optionalDependencies + tree-sitter native ABI risk (ensure-tree-sitter postinstall), SBOM generation for the npm package (Syft / CycloneDX), npm provenance (npm publish --provenance / Sigstore), socket.dev behavioral scanning, and the publish-time guards (files allowlist, pack-check.mjs, audit-openclaw, CodeQL). Use when the user says "audit our dependencies", "set up Renovate", "Renovate vs Dependabot", "socket.dev", "generate an SBOM", "npm audit is noisy", "lockfile hygiene", "npm provenance", "tree-sitter postinstall failing", "is our publish safe", or when dependency-audit-worker-bee is invoked. Do NOT use for application-code vulnerability remediation (security-worker-bee), Docker image scanning pipeline architecture (ci-release-worker-bee), or license compliance legal review (legal counsel).
+name: "dependency-audit-stinger"
+description: "npm supply-chain hygiene specialist: dependency updates, lockfile discipline, audit triage, SBOM, and provenance. Use when auditing dependencies, fixing lockfile noise, or checking publish safety."
 license: MIT
 ---
 
@@ -142,4 +142,4 @@ dependency-audit-stinger/
 
 ---
 
-*Forged by `stinger-forge`, retargeted to the `@deeplake/hivemind` npm package. Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Forged by `stinger-forge`, retargeted to the `@deeplake/hivemind` npm package. Part of The Hive, curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

@@ -1,4 +1,4 @@
-# 04 — CORS
+# 04. CORS
 
 Cross-Origin Resource Sharing: the preflight flow, the wildcard-with-credentials footgun, and common misconfigurations.
 

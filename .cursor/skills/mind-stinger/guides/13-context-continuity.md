@@ -1,8 +1,8 @@
-# 13 — Context Continuity
+# 13: Context Continuity
 
 The most critical AI architecture guide. Session state machine, 40-turn compaction with Valkey lock, `reconstructSession()`, TTL discipline.
 
-> **Doc reference:** `library/knowledge-base/ai/context-continuity.md` is canonical and the most load-bearing of the 15 docs. Every feature decision must be evaluated against: *will this cause the coach to lose context?*
+> **Doc reference:** `library/knowledge/private/ai/context-continuity.md` is canonical and the most load-bearing of the 15 docs. Every feature decision must be evaluated against: *will this cause the coach to lose context?*
 
 ---
 
@@ -72,7 +72,7 @@ Every `AiChatSession` has a `status` field driven by events:
 
 ### Why 40
 
-40 turns (~20 exchanges) ≈ 6,000–10,000 tokens of raw history. Fits comfortably alongside system prompt + knowledge in any current model's context window. Beyond 40 turns, "lost in the middle" degradation begins.
+40 turns (~20 exchanges) ≈ 6,000-10,000 tokens of raw history. Fits comfortably alongside system prompt + knowledge in any current model's context window. Beyond 40 turns, "lost in the middle" degradation begins.
 
 ### Implementation
 
@@ -96,7 +96,7 @@ export async function appendTurnAndMaybeCompact(
 }
 ```
 
-The compaction job is a `void` promise — runs in background without blocking the user's response.
+The compaction job is a `void` promise: runs in background without blocking the user's response.
 
 ### Atomicity guarantee
 
@@ -106,7 +106,7 @@ Watchdog lock `compact:lock:{sessionId}` with `NX` flag prevents concurrent comp
 - Lock is released.
 - Un-compacted turns remain in Valkey (no data loss).
 
-**Adjusting `COMPACTION_THRESHOLD = 40` requires updating `library/knowledge-base/ai/context-continuity.md` and a measured eval pass.**
+**Adjusting `COMPACTION_THRESHOLD = 40` requires updating `library/knowledge/private/ai/context-continuity.md` and a measured eval pass.**
 
 ---
 
@@ -147,7 +147,7 @@ MAX_ALWAYS_INCLUDE = 10  // most recent always included
 
 ---
 
-## 6. Context reconstruction on resume — `reconstructSession()`
+## 6. Context reconstruction on resume: `reconstructSession()`
 
 ```typescript
 export async function reconstructSession(
@@ -182,7 +182,7 @@ Step 5: setWorkingMemory(sessionId, turns)  // TTL reset to 2h
 Step 6: Update AiChatSession.status = "resumed"
 ```
 
-The reconstruction block is stored in Valkey but **NOT** appended to `AiChatSession.messages` — it's ephemeral working context, not canonical session history.
+The reconstruction block is stored in Valkey but **NOT** appended to `AiChatSession.messages`: it's ephemeral working context, not canonical session history.
 
 ---
 
@@ -215,14 +215,14 @@ If `AgentContextConfig.isEnabled === false`, scope defaults to `cross_session` (
 - All active sessions immediately fall to `RESUMED` state.
 - `reconstructSession()` runs against Qdrant on every turn.
 - Performance degrades but functionality is maintained.
-- Do NOT return empty context — always reconstruct from Qdrant.
+- Do NOT return empty context: always reconstruct from Qdrant.
 
 ### Qdrant outage
 
 - Session resumption fails (no episodic memory).
 - Knowledge base context unavailable.
 - Fallback: serve raw last-10 turns from Postgres only.
-- Log a critical alert — severe degradation.
+- Log a critical alert: severe degradation.
 
 ### Compaction job failure
 
@@ -237,7 +237,7 @@ If `AgentContextConfig.isEnabled === false`, scope defaults to `cross_session` (
 
 Every change to session/memory must validate:
 
-1. **Long session test:** simulate a 50-turn session. Verify compaction fires at turn 40. Verify turns 31–40 still accessible after compaction. Verify turns 1–30 summary retrievable from Qdrant.
+1. **Long session test:** simulate a 50-turn session. Verify compaction fires at turn 40. Verify turns 31-40 still accessible after compaction. Verify turns 1-30 summary retrievable from Qdrant.
 2. **Resume test:** create a 5-turn session. Manually delete the Valkey key. Send a new message. Verify response demonstrates awareness of previous 5 turns via Postgres + Qdrant.
 3. **Race test:** send two concurrent messages to the same session. Verify both stored, neither lost.
 4. **GDPR test:** delete a user. Verify all vectors deleted from all Qdrant collections via `deleteUserVectors()`. Verify Postgres records cascade-delete.

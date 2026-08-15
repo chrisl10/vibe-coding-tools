@@ -55,7 +55,7 @@ Mobile floor: `md` (44px). Do not ship `sm` on touch-primary surfaces.
 
 ## Replaces (in current code)
 
-{{list files/classes this spec supersedes, or "N/A — greenfield"}}
+{{list files/classes this spec supersedes, or "N/A, greenfield"}}
 
 ## Accessibility
 
@@ -72,4 +72,4 @@ Mobile floor: `md` (44px). Do not ship `sm` on touch-primary surfaces.
 
 ## Related components
 
-- [`{{other-component}}.md`]({{other-component}}.md) — {{relationship}}.
+- [`{{other-component}}.md`]({{other-component}}.md): {{relationship}}.

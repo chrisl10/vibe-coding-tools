@@ -16,12 +16,12 @@ Synthesized from: Scrum Guide 2020, Scrum.org anti-patterns library, Age of Prod
 ## Sprint Planning
 
 ### Normative duration formula (2020 Guide)
-`2 hours per sprint week` — so a 2-week sprint = 4-hour maximum.
+`2 hours per sprint week`: so a 2-week sprint = 4-hour maximum.
 
 ### Three-topic structure (2020 addition)
-1. **Why** — Sprint Goal: what value does this Sprint deliver? (PO proposes; team negotiates)
-2. **What** — PBI selection: which backlog items move to Sprint Backlog?
-3. **How** — initial plan: how will the Developers accomplish the work?
+1. **Why**: Sprint Goal, what value does this Sprint deliver? (PO proposes; team negotiates)
+2. **What**: PBI selection, which backlog items move to Sprint Backlog?
+3. **How**: initial plan, how will the Developers accomplish the work?
 
 ### Attendance requirements
 - All Scrum Team members (PO, SM, all Developers)
@@ -29,19 +29,19 @@ Synthesized from: Scrum Guide 2020, Scrum.org anti-patterns library, Age of Prod
 - SM is optional attendee (not required by Guide, but typically present as facilitator)
 
 ### Health indicators (green)
-- Sprint Goal is negotiated, measurable, and motivating — not just "complete these 7 stories"
+- Sprint Goal is negotiated, measurable, and motivating, not just "complete these 7 stories"
 - Sprint Backlog is a real plan with identified tasks, not just a copy of the top PBIs
-- Team pulls work to capacity — not pushed by PO
+- Team pulls work to capacity, not pushed by PO
 - Meeting ends on time or early
 
-### Common failure modes (red — anti-patterns)
+### Common failure modes (red, anti-patterns)
 | Anti-pattern | Symptom | Repair |
 |---|---|---|
 | No Sprint Goal | Backlog is just a task list with no coherence | Dedicate first 15 min to crafting the Goal |
 | PO assigns tasks | Developers don't self-organize | SM intervenes; restate that Developers choose how |
 | Estimation session takes over | 4-hour timebox exceeded in estimation debates | Separate refinement from planning (do estimation in refinement) |
 | Stories not ready | Developers waste planning discussing unclear requirements | Enforce Definition of Ready (community practice) as pre-condition |
-| Capacity ignored | Team commits far above historical velocity | Use "yesterday's weather" — commit to average velocity ± 10% |
+| Capacity ignored | Team commits far above historical velocity | Use "yesterday's weather": commit to average velocity ± 10% |
 
 ---
 
@@ -49,12 +49,12 @@ Synthesized from: Scrum Guide 2020, Scrum.org anti-patterns library, Age of Prod
 
 ### Normative requirements (2020 Guide)
 - 15 minutes maximum
-- For Developers only — PO and SM may attend as Developers if working on Sprint Backlog items
+- For Developers only: PO and SM may attend as Developers if working on Sprint Backlog items
 - Held at same time, same place daily
 - Purpose: inspect progress toward Sprint Goal and adapt Sprint Backlog
 
 ### What the Guide does NOT require
-- The three questions ("What did I do?", "What will I do?", "Any blockers?") — removed in 2020
+- The three questions ("What did I do?", "What will I do?", "Any blockers?"): removed in 2020
 - Any specific format
 - Attendance by PO or SM (unless they are doing development work)
 
@@ -70,7 +70,7 @@ Synthesized from: Scrum Guide 2020, Scrum.org anti-patterns library, Age of Prod
 | Status meeting | Developers report to SM/manager one by one, no peer coordination | Reframe: "What do we need to coordinate to reach the Sprint Goal today?" |
 | Too many participants | Non-developers attend, meeting runs long, team self-censors | Invite only working team; observers stand at back if needed |
 | Impediment capture only | Problems named but never resolved | SM must action impediments same-day or escalate |
-| Skipped daily | "We had a busy day" | Protect the 15 min; it's 1.25% of the sprint — never worth skipping |
+| Skipped daily | "We had a busy day" | Protect the 15 min; it's 1.25% of the sprint, never worth skipping |
 | Zombie standup | Rote answers, no eye contact, no collaboration | Introduce Sprint Goal check-in as first question |
 
 ---
@@ -78,7 +78,7 @@ Synthesized from: Scrum Guide 2020, Scrum.org anti-patterns library, Age of Prod
 ## Sprint Review
 
 ### Normative duration formula
-`1 hour per sprint week` — 2-week sprint = 2-hour maximum.
+`1 hour per sprint week`: 2-week sprint = 2-hour maximum.
 
 ### Normative requirements
 - Presents results of the Sprint to key stakeholders
@@ -102,7 +102,7 @@ Synthesized from: Scrum Guide 2020, Scrum.org anti-patterns library, Age of Prod
 |---|---|---|
 | Slide deck review | No working software shown, just screenshots or mockups | Demo only done, shippable increments |
 | No stakeholders | "We demoed to ourselves" | SM/PO must ensure stakeholder presence; if impossible, get async feedback |
-| PO gate review | PO approves/rejects tasks one by one — Sprint Review becomes acceptance testing | Acceptance happens during Sprint, not at Review |
+| PO gate review | PO approves/rejects tasks one by one: Sprint Review becomes acceptance testing | Acceptance happens during Sprint, not at Review |
 | No backlog update | Sprint Review ends without backlog adjustments | PO must update and re-order backlog as direct output |
 | Feature factory syndrome | Team celebrates completing stories but no business outcome discussion | Start Review with: "What business outcome were we targeting this Sprint?" |
 
@@ -111,7 +111,7 @@ Synthesized from: Scrum Guide 2020, Scrum.org anti-patterns library, Age of Prod
 ## Sprint Retrospective
 
 ### Normative duration formula
-`45 minutes per sprint week` — 2-week sprint = 1.5-hour maximum.
+`45 minutes per sprint week`: 2-week sprint = 1.5-hour maximum.
 
 ### Normative requirements
 - Inspect: how did the last Sprint go with regard to individuals, interactions, processes, tools, and DoD?
@@ -119,14 +119,14 @@ Synthesized from: Scrum Guide 2020, Scrum.org anti-patterns library, Age of Prod
 - Create a plan for implementing improvements to the way the Scrum Team does its work
 
 ### What the Guide removed in 2020
-- The requirement that "at least one high priority improvement" be added to the Sprint Backlog — this was softened to give teams more flexibility.
+- The requirement that "at least one high priority improvement" be added to the Sprint Backlog: this was softened to give teams more flexibility.
 
 ### Health indicators (green)
-- All team members speak up — not just vocal members
+- All team members speak up, not just vocal members
 - Retrospective produces 1-3 actionable improvement items with clear owners and target sprint
 - Action items from prior retro are reviewed at start
 - Format is varied to prevent staleness (not the same 3-column table every Sprint)
-- Psychological safety is present — team names real problems, not just safe ones
+- Psychological safety is present: team names real problems, not just safe ones
 
 ### Common failure modes (red)
 | Anti-pattern | Symptom | Repair |
@@ -143,7 +143,7 @@ Synthesized from: Scrum Guide 2020, Scrum.org anti-patterns library, Age of Prod
 ## Backlog Refinement (NOT a Scrum event)
 
 ### Status
-Backlog Refinement is ongoing work — NOT a Scrum event. The Guide mentions it informally.
+Backlog Refinement is ongoing work: NOT a Scrum event. The Guide mentions it informally.
 
 ### Community guidance
 - Up to 10% of team capacity per Sprint (Mike Cohn / Scrum.org community practice)
@@ -155,7 +155,7 @@ Backlog Refinement is ongoing work — NOT a Scrum event. The Guide mentions it 
 |---|---|---|
 | Refinement is Sprint Planning | Team refines and plans in one mega-session | Separate refinement (ongoing) from planning (Sprint boundary) |
 | Only PO refines | Team shows up to Sprint Planning with surprises | Developers must attend and shape PBIs |
-| Refinement theater | Hours spent writing acceptance criteria that nobody reads | Keep it lightweight — just enough for planning |
+| Refinement theater | Hours spent writing acceptance criteria that nobody reads | Keep it lightweight, just enough for planning |
 | Backlog too large | 300+ items in backlog; nobody can prioritize | Cap backlog at 8-12 weeks of work; archive the rest |
 
 ---

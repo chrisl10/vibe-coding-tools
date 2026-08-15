@@ -1,6 +1,6 @@
 # Phase 9: Blog & Content Management
 
-> **Site Template Guide** — PRD Phase 9 of 12
+> **Site Template Guide**: PRD Phase 9 of 12
 
 ---
 
@@ -13,14 +13,14 @@ Implement the blog. Default mode: **Payload Collections + Lexical** editor, cons
 ### Scope
 
 **Payload-default (in scope):**
-- `src/routes/blog/+page.server.ts` — listing page (published posts from Payload REST)
-- `src/routes/blog/[slug]/+page.server.ts` — post detail page
-- `src/routes/blog/[slug]/+page.ts` — `entries()` for static prerendering
+- `src/routes/blog/+page.server.ts`: listing page (published posts from Payload REST)
+- `src/routes/blog/[slug]/+page.server.ts`: post detail page
+- `src/routes/blog/[slug]/+page.ts`: `entries()` for static prerendering
 - Payload `posts` collection configured with Lexical editor, draft/publish, Media relation, author relation
 - Lexical-to-HTML rendering strategy (see R-2 in risks)
 
 **TypeScript-as-CMS fallback (in scope):**
-- `src/lib/content/blog.ts` — typed post data file
+- `src/lib/content/blog.ts`: typed post data file
 - Same SvelteKit routes as Payload mode but reading from the data file
 
 **Both modes (in scope):**
@@ -43,7 +43,7 @@ Implement the blog. Default mode: **Payload Collections + Lexical** editor, cons
 
 ## User Stories
 
-### Story 1 — Content Editor (Payload mode): Publish a Post
+### Story 1: Content Editor (Payload mode): Publish a Post
 
 > As a **Content Editor** using the Payload admin, I want to write a blog post with a rich text editor, save it as a draft, preview it, and publish it when ready, so that the post appears on the public site without a code deploy.
 
@@ -53,7 +53,7 @@ Implement the blog. Default mode: **Payload Collections + Lexical** editor, cons
 - Next SvelteKit build (or ISR equivalent via revalidation) includes the new post slug in `entries()`
 - Article schema.org JSON-LD present on the published post page
 
-### Story 2 — Visitor: Browse Blog Listing
+### Story 2: Visitor: Browse Blog Listing
 
 > As a **Visitor**, I want to browse all published articles on `/blog` sorted newest-first so that I can find the most recent content.
 
@@ -63,7 +63,7 @@ Implement the blog. Default mode: **Payload Collections + Lexical** editor, cons
 - If `posts.length === 0`: empty state rendered
 - Page has full SEO metadata via `generateSEO()`
 
-### Story 3 — Visitor: Read a Post with Full SEO
+### Story 3: Visitor: Read a Post with Full SEO
 
 > As a **Visitor** following a link to a specific article, I want the page to load instantly with accurate title, description, and social sharing metadata.
 
@@ -74,7 +74,7 @@ Implement the blog. Default mode: **Payload Collections + Lexical** editor, cons
 - Author byline with `<address>` semantic HTML element
 - `<time datetime={post.publishedAt}>` for machine-readable date
 
-### Story 4 — Developer: Add a Post (TypeScript-as-CMS fallback)
+### Story 4: Developer: Add a Post (TypeScript-as-CMS fallback)
 
 > As a **Developer** using TypeScript-as-CMS mode, I want to add a new post by appending an object to `blogPosts` in `blog.ts` so that a new static page is generated at the next build.
 
@@ -88,7 +88,7 @@ Implement the blog. Default mode: **Payload Collections + Lexical** editor, cons
 
 ## Payload Mode: SvelteKit Routes
 
-### Blog listing — +page.server.ts
+### Blog listing: +page.server.ts
 
 ```ts
 import { PAYLOAD_API_URL } from '$env/static/private';
@@ -108,7 +108,7 @@ export const load: PageServerLoad = async ({ fetch, setHeaders }) => {
 };
 ```
 
-### Post detail — +page.ts (prerendering)
+### Post detail: +page.ts (prerendering)
 
 ```ts
 export const entries: EntryGenerator = async () => {
@@ -124,8 +124,8 @@ export const prerender = true;
 
 In Payload mode, the author is a relation to `users` collection. In TypeScript-as-CMS mode, author data is embedded in the `BlogPost` interface.
 
-**No dependency on domain-specific staff data files.** The previous implementation referenced `apps/web/lib/content/trainers.ts` to resolve author profiles — this dependency has been removed. Authors are resolved from:
-- Payload mode: `post.author` (Users collection relation) — has `name`, `email`, profile URL
+**No dependency on domain-specific staff data files.** The previous implementation referenced `apps/web/lib/content/trainers.ts` to resolve author profiles. This dependency has been removed. Authors are resolved from:
+- Payload mode: `post.author` (Users collection relation): has `name`, `email`, profile URL
 - TypeScript-as-CMS fallback: `BlogPost.authorName` + `BlogPost.authorSlug` (embedded)
 
 ### Image uploads

@@ -1,6 +1,6 @@
 ---
-name: knowledge-stinger
-description: Authors narrative knowledge documentation for any repository - the human-readable, technically deep domain docs that live in `library/knowledge/private/<domain>/`. Covers system overviews, architecture narratives, data schemas, API patterns, security models, coding standards, and operational runbooks. Works from ADRs and PRDs as source material; produces Mermaid diagrams, SQL DDL, TypeScript samples, and sequence diagrams. Distinct from library-stinger: library-stinger owns PRDs and IRDs; knowledge-stinger owns the knowledge/ domain. Use when the user says "document the hybrid recall pipeline", "write a system overview", "create knowledge docs for this repo", "document how the embeddings daemon works", or "build out the knowledge base".
+name: "knowledge-stinger"
+description: "Authors narrative knowledge documentation for any repository - the human-readable, technically deep domain docs that live in `library/knowledge/private/{domain}/`. Covers system overviews, architecture narratives, data schemas, API patterns, security models, coding standards, and operational runbooks. Works from ADRs and PRDs as source material; produces Mermaid diagrams, SQL DDL, TypeScript samples, and sequence diagrams. Distinct from library-stinger: library-stinger owns PRDs and IRDs; knowledge-stinger owns the knowledge/ domain. Use when the user says \\\\\\\"document the hybrid recall pipeline\\\\\\\", \\\\\\\"write a system overview\\\\\\\", \\\\\\\"create knowledge docs for this repo\\\\\\\", \\\\\\\"document how the embeddings daemon works\\\\\\\", or \\\\\\\"build out the knowledge base\\\\\\\"."
 ---
 
 # knowledge-stinger

@@ -51,8 +51,8 @@ wasted double-fetch. Updated April 22, 2026.
 - This is the **spec citation** for `guides/02-preload-strategy.md`. The
   anonymous CORS mode requirement is the primary reason the `crossorigin`
   attribute is mandatory even for same-origin fonts.
-- The `type="font/woff2"` attribute helps browsers skip unsupported formats —
+- The `type="font/woff2"` attribute helps browsers skip unsupported formats:
   should be included in `templates/preload-link.md`.
 - The "no multiple types" guidance supports the "preload only WOFF2" directive
   in the 2026 performance checklist.
-- Updated April 2026 — reflects current browser behavior.
+- Updated April 2026: reflects current browser behavior.

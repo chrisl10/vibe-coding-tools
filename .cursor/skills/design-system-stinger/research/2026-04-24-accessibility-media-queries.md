@@ -1,4 +1,4 @@
-# Accessibility Media Queries — prefers-reduced-motion, prefers-color-scheme, prefers-contrast
+# Accessibility Media Queries: prefers-reduced-motion, prefers-color-scheme, prefers-contrast
 
 **Sources:**
 - https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
@@ -11,7 +11,7 @@
 ## Summary
 
 Three user-agent-exposed media queries define the accessibility surface
-every design system must handle. Supporting them is not optional — WCAG 2.2
+every design system must handle. Supporting them is not optional: WCAG 2.2
 references them and they ship in every evergreen browser.
 
 ### `prefers-reduced-motion: reduce`
@@ -57,7 +57,7 @@ v1-critical.
 ## Relevance to this stinger
 
 - `guides/00-principles.md` lists these three media queries as the
-  accessibility floor — every system honors `prefers-reduced-motion`; dark
+  accessibility floor: every system honors `prefers-reduced-motion`; dark
   mode is in-scope when the product spec says so; `prefers-contrast` is
   optional v1 but must be reachable via the token layer (i.e., don't bake
   contrast values into component CSS).
@@ -66,5 +66,5 @@ v1-critical.
 - `guides/04-authoring-utility-layer.md` mandates the reduced-motion block
   at the bottom of the utility CSS file.
 - The `SUBAGENT CRITICAL DIRECTIVES` in the Command Brief call out "motion
-  is systemic, not ad-hoc" — reduced-motion enforcement is the operational
+  is systemic, not ad-hoc": reduced-motion enforcement is the operational
   consequence.

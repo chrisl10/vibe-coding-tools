@@ -1,11 +1,11 @@
 ---
-name: estimation-stinger
-description: Software estimation and forecasting specialist. Covers relative-sizing frameworks (story points, Fibonacci, T-shirt sizing, Planning Poker), the NoEstimates movement and its evidence base, the planning-fallacy literature explaining why estimates are systematically wrong, and cycle-time / throughput-based probabilistic forecasting (Monte Carlo simulation, percentile-based delivery predictions). Invoke when the user says "our story points mean nothing", "should we use NoEstimates?", "how do I do T-shirt sizing for a roadmap?", "we need a 90% confidence delivery date", "explain Monte Carlo to my PM", "why are our estimates always wrong", or any question about sizing, forecasting, or the NoEstimates debate. Do NOT invoke for sprint cadence design, Jira/Linear tool configuration, or team-capacity math -- those belong to the team's agile process or tooling domains.
+name: "estimation-stinger"
+description: "Software estimation and forecasting specialist. Covers relative-sizing frameworks (story points, Fibonacci, T-shirt sizing, Planning Poker), the NoEstimates movement and its evidence base, the planning-fallacy literature explaining why estimates are systematically wrong, and cycle-time / throughput-based probabilistic forecasting (Monte Carlo simulation, percentile-based delivery predictions). Invoke when the user says \\\\\\\"our story points mean nothing\\\\\\\", \\\\\\\"should we use NoEstimates?\\\\\\\", \\\\\\\"how do I do T-shirt sizing for a roadmap?\\\\\\\", \\\\\\\"we need a 90% confidence delivery date\\\\\\\", \\\\\\\"explain Monte Carlo to my PM\\\\\\\", \\\\\\\"why are our estimates always wrong\\\\\\\", or any question about sizing, forecasting, or the NoEstimates debate. Do NOT invoke for sprint cadence design, Jira/Linear tool configuration, or team-capacity math -- those belong to the team's agile process or tooling domains."
 ---
 
 # Estimation Stinger
 
-Procedural arsenal for `estimation-worker-bee`, the Legion AI Army's authority on software estimation and probabilistic delivery forecasting.
+Procedural arsenal for `estimation-worker-bee`, the Hive's authority on software estimation and probabilistic delivery forecasting.
 
 This stinger encodes:
 
@@ -26,22 +26,22 @@ Load when `estimation-worker-bee` is invoked. Typical user phrases:
 - "How do we T-shirt size our roadmap?"
 - "We need a date with a confidence level for Q3"
 - "Why do our estimates always come out wrong?"
-- "Monte Carlo for delivery forecasting — explain it to my PM"
+- "Monte Carlo for delivery forecasting: explain it to my PM"
 - "Our team says 2 weeks, it always takes 6"
 
 Do NOT load for:
 
-- Sprint ceremony design (retrospectives, planning, refinement) — agile coaching domain
-- Jira/Linear/Azure DevOps configuration — tooling domain
-- Velocity tracking or charting — project management tooling domain
+- Sprint ceremony design (retrospectives, planning, refinement): agile coaching domain
+- Jira/Linear/Azure DevOps configuration: tooling domain
+- Velocity tracking or charting: project management tooling domain
 
 ## First action when this stinger is loaded
 
 Read these three files before doing anything:
 
-1. **`guides/00-principles.md`** — the estimation-vs-forecasting distinction, the commitment trap, and the single most important framing: estimates are a communication tool, not a planning oracle.
-2. **`guides/01-diagnosis.md`** — the five dysfunction categories. Always diagnose before recommending; the wrong framework for the wrong dysfunction makes things worse.
-3. **`research/research-summary.md`** — the research manifest; tells you which external files cover which topics so you can fetch evidence when you need it.
+1. **`guides/00-principles.md`**: the estimation-vs-forecasting distinction, the commitment trap, and the single most important framing: estimates are a communication tool, not a planning oracle.
+2. **`guides/01-diagnosis.md`**: the five dysfunction categories. Always diagnose before recommending; the wrong framework for the wrong dysfunction makes things worse.
+3. **`research/research-summary.md`**: the research manifest; tells you which external files cover which topics so you can fetch evidence when you need it.
 
 Then read the specific guide for the technique the team needs.
 
@@ -81,7 +81,7 @@ estimation-stinger/
 ## Critical directives (from Command Brief)
 
 - **Never frame estimates as commitments without explicit stakeholder negotiation.** Why: the commitment trap is the primary driver of estimate-driven burnout.
-- **Always distinguish relative sizing from probabilistic forecasting.** Why: story points answer "how big is this relative to that?" — they are not date predictors.
+- **Always distinguish relative sizing from probabilistic forecasting.** Why: story points answer "how big is this relative to that?"; they are not date predictors.
 - **When recommending NoEstimates, always state the prerequisite: reliable cycle-time history.** Why: NoEstimates without data is not a methodology, it is an absence of information.
 - **Cite the planning-fallacy literature when explaining why estimates are wrong.** Why: teams that understand the cognitive root cause accept data-driven alternatives; teams that think they need better estimators repeat the cycle.
 - **Escalate velocity-configuration and sprint-ceremony questions.** Why: Jira/Linear setup and sprint ritual design are outside this Bee's domain.
@@ -99,4 +99,4 @@ Key data points for advisory conversations:
 ---
 
 *Command Brief: [`ai-tools/command-briefs/estimation-worker-bee-command-brief.md`](../../command-briefs/estimation-worker-bee-command-brief.md)*
-*Created via the Legion AI Tools Factory pipeline. Part of the Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Part of The Hive, curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

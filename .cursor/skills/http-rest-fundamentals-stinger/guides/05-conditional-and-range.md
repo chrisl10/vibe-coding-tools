@@ -1,4 +1,4 @@
-# 05 — Conditional and Range Requests
+# 05. Conditional and Range Requests
 
 ETag, If-None-Match, If-Match, Range, Content-Range, and the 304/412/416 status codes.
 

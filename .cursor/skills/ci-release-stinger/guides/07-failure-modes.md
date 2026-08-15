@@ -1,5 +1,7 @@
 # 07 - Common Failure Modes
 
+> **npm package publishing case (legacy, secondary).** These are Hivemind's own bundle/publish/native-dep failure modes. For the SvelteKit-on-Vercel primary case, there is no equivalent single failure-mode catalog yet; diagnose against the specific guide for the surface involved (guides 09-16) and this skill's cross-referenced Stingers (`vercel-stinger`, `neon-drizzle-stinger`, `doppler-stinger`).
+
 The diagnosis guide. When something is broken, match the symptom here first.
 
 ## 1. Version drift across manifests

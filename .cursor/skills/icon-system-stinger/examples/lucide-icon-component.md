@@ -1,4 +1,4 @@
-# Example — Lucide Icon Component with Accessibility Contract
+# Example: Lucide Icon Component with Accessibility Contract
 
 **Demonstrates:** `guides/00-library-selection-matrix.md`, `guides/03-accessibility-contract.md`
 

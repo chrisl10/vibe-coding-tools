@@ -1,4 +1,4 @@
-# Guide 01: Selection Rubric — Which Tool Fits Your Workflow?
+# Guide 01: Selection Rubric: Which Tool Fits Your Workflow?
 
 *Sources: `research/external/2026-05-20-claude-code-aider-cline-comparison.md`, `research/external/2026-05-20-devin-replit-agent.md`, `research/external/2026-05-20-continue-dev-open-source.md`*
 

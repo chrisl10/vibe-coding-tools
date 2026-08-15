@@ -23,12 +23,12 @@ The product is opinionation. There is exactly one answer per slot, and it is wha
 | Shell engine | just-bash (VFS) | The Deep Lake-backed shell |
 | Optional deps | `@huggingface/transformers`, `tree-sitter` + grammars | Guarded loading only |
 
-Substitution requires an ADR (`library/architecture/ADR-<n>-*.md`) with eval evidence and a migration plan.
+Substitution requires an ADR (`library/knowledge/private/architecture/ADR-<n>-*.md`) with eval evidence and a migration plan.
 
 ## Scope
 
 - **Owns:** the `src/` layout and ESM import discipline, Deep Lake SQL-API access patterns, the single-sourced schema and `healMissingColumns`, the MCP server tools, the esbuild bundle model and `sync-versions.mjs`, Vitest discipline, strict-type + zod-boundary enforcement, the jscpd/husky/tsc gate, the `hivemind` CLI and `scripts/*.mjs`, and the npm publish contract.
-- **Does not own:** Deep Lake table/index design from a data-engineering POV (`deeplake-dataset-worker-bee`), security audit including auth/credential lifecycle (`security-worker-bee`), recall ranking and the embeddings strategy (`retrieval-worker-bee` and `embeddings-runtime-worker-bee`), Docker / CI / cloud deploys (`ci-release-worker-bee`), PRD authoring (`library-worker-bee`), post-implementation QA (`quality-worker-bee`).
+- **Does not own:** Deep Lake table/index design from a data-engineering POV (`vector-store-worker-bee`), security audit including auth/credential lifecycle (`security-worker-bee`), recall ranking and the embeddings strategy (`retrieval-worker-bee` and `embeddings-runtime-worker-bee`), Docker / CI / cloud deploys (`ci-release-worker-bee`), PRD authoring (`library-worker-bee`), post-implementation QA (`quality-worker-bee`).
 
 ## Layout
 
@@ -65,7 +65,7 @@ Pick the entry path that matches the task:
 
 | Concern | Owner |
 |---|---|
-| Deep Lake table/index design from a data-engineering POV | `deeplake-dataset-worker-bee` |
+| Deep Lake table/index design from a data-engineering POV | `vector-store-worker-bee` |
 | Security audit (token handling, secret scanning, injection vectors, auth/credential lifecycle) | `security-worker-bee` |
 | Recall ranking, embeddings strategy, evals | `retrieval-worker-bee` and `embeddings-runtime-worker-bee` |
 | Docker, CI runners, release automation, cloud | `ci-release-worker-bee` |
@@ -76,13 +76,13 @@ Pick the entry path that matches the task:
 
 Reports are written into the **host repo's `library/` tree**, never inside this Stinger (there is no `reports/` subfolder in the Stinger):
 
-- **Standalone reviews** -> `library/qa/typescript/<date>-<topic>.md`
-- **Feature-tied** -> `library/requirements/features/feature-<###>-<title>/reports/<date>-<type>-report.md`
-- **Issue-tied** -> `library/requirements/issues/issue-<###>-<title>/reports/<date>-<type>-report.md`
-- **ADRs** -> `library/architecture/ADR-<n>-<topic>.md`
+- **Standalone reviews** -> `library/requirements/reports/typescript/<date>-<topic>.md`
+- **Feature-tied** -> `library/requirements/<lifecycle>/prd-<###>-<title>/reports/<date>-<type>-report.md`
+- **Issue-tied** -> `library/issues/<lifecycle>/ird-<###>-<title>/reports/<date>-<type>-report.md`
+- **ADRs** -> `library/knowledge/private/architecture/ADR-<n>-<topic>.md`
 
-Cursor sees this Stinger at `.cursor/skills/typescript-node-stinger/` once deployed.
+Cursor sees this Stinger at `.claude/skills/typescript-node-stinger/` once deployed.
 
 ---
 
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Part of The Hive, curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

@@ -7,7 +7,7 @@
 
 **[INVESTIGATING] [Component name] - [One-line description of the observed issue]**
 
-We are aware of an issue affecting [component/feature name]. [One sentence describing observed user impact — what users cannot do or are experiencing right now.]
+We are aware of an issue affecting [component/feature name]. [One sentence describing observed user impact: what users cannot do or are experiencing right now.]
 
 Our team is actively investigating. We will provide the next update by **[TIME] UTC** (in approximately [N] minutes).
 

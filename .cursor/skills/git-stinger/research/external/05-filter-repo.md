@@ -148,8 +148,8 @@ When you need to remove a secret value embedded inside a file (API key hard-code
 cat > ../replacements.txt << 'EOF'
 # Format: LITERAL_STRING==>REPLACEMENT
 # Or with ==> prefix only (default replacement is ***REMOVED***)
-sk_live_abc123def456ghi789jkl==>REDACTED_API_KEY
-AKIAIOSFODNN7EXAMPLE==>REDACTED_AWS_KEY
+<STRIPE_LIVE_KEY>==>REDACTED_API_KEY
+<AWS_ACCESS_KEY_ID>==>REDACTED_AWS_KEY
 password123==>REDACTED_PASSWORD
 
 # Regex patterns (prefix with 'regex:')

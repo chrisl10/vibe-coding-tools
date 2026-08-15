@@ -1,4 +1,4 @@
-# State Libraries — Opinionated Decision (Zustand / Jotai / Redux Toolkit)
+# State Libraries: Opinionated Decision (Zustand / Jotai / Redux Toolkit)
 
 **Sources:**
 - https://github.com/pmndrs/zustand
@@ -13,7 +13,7 @@
 
 For client-side global UI state in 2026, **Zustand is the default**. Jotai for fine-grained atomic state in form builders / spreadsheets / derived graphs. Redux Toolkit when the team is very large or the product needs time-travel debugging / Redux DevTools / legacy ecosystem.
 
-Server state goes to TanStack Query — **never** to Zustand/Jotai/Redux. Form state goes to React Hook Form. URL state goes to nuqs (or router params). Component state stays in `useState`/`useReducer`.
+Server state goes to TanStack Query, **never** to Zustand/Jotai/Redux. Form state goes to React Hook Form. URL state goes to nuqs (or router params). Component state stays in `useState`/`useReducer`.
 
 ## The opinionated call
 
@@ -36,10 +36,10 @@ Server state goes to TanStack Query — **never** to Zustand/Jotai/Redux. Form s
 
 ## Why NOT Context for global state
 
-- No selector support — every consumer re-renders on any update.
+- No selector support: every consumer re-renders on any update.
 - `use-context-selector` exists but adds complexity; Zustand's selectors are built-in.
 - Context is fine for *low-velocity* data (theme, locale, auth-user object). For anything that updates often, reach for Zustand.
 
 ## Relevance to this stinger
 
-Spine of `guides/03-state-management.md` decision tree. This is where "Opinionation is the product" shows up hardest — the Bee says "Zustand" and cites this file.
+Spine of `guides/03-state-management.md` decision tree. This is where "Opinionation is the product" shows up hardest: the Bee says "Zustand" and cites this file.

@@ -1,4 +1,4 @@
-# Example 04 — Prompt Cascade Change with Versioning
+# Example 04: Prompt Cascade Change with Versioning
 
 End-to-end: editing the `[COACH_PERSONALITY]` block for `level_2` coach with proper `PromptVersion` audit.
 
@@ -8,22 +8,22 @@ End-to-end: editing the `[COACH_PERSONALITY]` block for `level_2` coach with pro
 
 ## Scenario
 
-Tenant admin reports: "Our Level 2 coach is too generic — members say it could be talking to anyone." The admin wants to make the persona more specific to their community's positioning.
+Tenant admin reports: "Our Level 2 coach is too generic: members say it could be talking to anyone." The admin wants to make the persona more specific to their community's positioning.
 
 mind-worker-bee's job: walk the admin / engineer through the change with proper versioning.
 
 ---
 
-## Step 1 — Identify the layer
+## Step 1: Identify the layer
 
 This is a Layer 3 (`[COACH_PERSONALITY]`) change. Source: `AiCoachConfig.systemPrompt` for `coachType: "level_2"` for the specific tenant.
 
-NOT a platform-level (Layer 1) change — it doesn't apply to all tenants.
-NOT a tenant-wide (Layer 2 brand voice) change — it's coach-specific.
+NOT a platform-level (Layer 1) change: it doesn't apply to all tenants.
+NOT a tenant-wide (Layer 2 brand voice) change: it's coach-specific.
 
 ---
 
-## Step 2 — Read the current value
+## Step 2: Read the current value
 
 ```typescript
 const current = await prisma.aiCoachConfig.findUnique({
@@ -40,11 +40,11 @@ Level 1 and are ready to scale. Focus on refining their positioning, developing 
 referral processes, and deepening community relationships.
 ```
 
-This is the default from `getDefaultGlobalPrompt("level_2")` — no customization yet. Admin's complaint is real.
+This is the default from `getDefaultGlobalPrompt("level_2")`: no customization yet. Admin's complaint is real.
 
 ---
 
-## Step 3 — Check the latest `PromptVersion`
+## Step 3: Check the latest `PromptVersion`
 
 ```typescript
 const latest = await prisma.promptVersion.findFirst({
@@ -53,11 +53,11 @@ const latest = await prisma.promptVersion.findFirst({
 });
 ```
 
-Result: no rows. The default has never been overridden — confirms no prior customization.
+Result: no rows. The default has never been overridden: confirms no prior customization.
 
 ---
 
-## Step 4 — Author the new prompt
+## Step 4: Author the new prompt
 
 The admin works with mind-worker-bee to draft:
 
@@ -77,13 +77,13 @@ diagnose first.
 
 This is more specific (Level 2 = $25K-$200K MRR), more directive (push back on vague language), and uses `{tenantName}` as a placeholder for the tenant brand.
 
-**Tonality check** — `[COACHING_QUALITY]` block already mandates anti-sycophancy; this prompt complements it without overriding. ✓
+**Tonality check**: `[COACHING_QUALITY]` block already mandates anti-sycophancy; this prompt complements it without overriding. ✓
 
-**`[INSTRUCTION_HIERARCHY]` check** — this is a Layer 3 prompt; it doesn't claim authority over Layer 1 (platform) or Layer 0 (system foundation). ✓
+**`[INSTRUCTION_HIERARCHY]` check**: this is a Layer 3 prompt; it doesn't claim authority over Layer 1 (platform) or Layer 0 (system foundation). ✓
 
 ---
 
-## Step 5 — Update the DB row
+## Step 5: Update the DB row
 
 ```typescript
 const updated = await prisma.aiCoachConfig.update({
@@ -94,7 +94,7 @@ const updated = await prisma.aiCoachConfig.update({
 
 ---
 
-## Step 6 — Record the `PromptVersion` (mandatory)
+## Step 6: Record the `PromptVersion` (mandatory)
 
 ```typescript
 await recordPromptVersion({
@@ -111,7 +111,7 @@ await recordPromptVersion({
 
 ---
 
-## Step 7 — Invalidate the Valkey cache
+## Step 7: Invalidate the Valkey cache
 
 ```typescript
 await valkey.del(`coach:persona:${tenantId}:level_2`);
@@ -121,7 +121,7 @@ The cache TTL is 600 seconds, but explicit invalidation is faster and avoids the
 
 ---
 
-## Step 8 — Verify the change took effect
+## Step 8: Verify the change took effect
 
 The next coaching turn for this tenant + Level 2 coach should:
 
@@ -132,23 +132,23 @@ The next coaching turn for this tenant + Level 2 coach should:
 Pull a sample trace and inspect `assistantResponse` for tonality:
 
 > Member: "I want to scale to $500K ARR by end of year."
-> Coach (new): "Before we map the path to $500K, let me push back: $500K of what offer to whom? Generic 'scale to $500K' is the kind of goal that sounds ambitious but doesn't tell you what to do Monday morning. Walk me through your single best client right now — what they bought, why they bought, what they paid."
+> Coach (new): "Before we map the path to $500K, let me push back: $500K of what offer to whom? Generic 'scale to $500K' is the kind of goal that sounds ambitious but doesn't tell you what to do Monday morning. Walk me through your single best client right now: what they bought, why they bought, what they paid."
 
 The new prompt's "push back when you hear 'I want to scale' without 'to whom and how' defined" directive landed.
 
 ---
 
-## Step 9 — Eval baseline + watch window
+## Step 9: Eval baseline + watch window
 
 The change is unilateral (no A/B). Mitigate risk by:
 
-1. **Capture baseline** — before the change, snapshot `AiTrace.agreementScore` and human coaching-rubric scores for `level_2` over last 7 days.
+1. **Capture baseline**: before the change, snapshot `AiTrace.agreementScore` and human coaching-rubric scores for `level_2` over last 7 days.
 2. **Watch 48 hours** post-change. Alert if `agreementScore` rises > 0.1 or rubric mean falls > 0.1.
 3. **Sample 10 traces** at 24h and read manually. Flag any sycophancy regression.
 
 ---
 
-## Step 10 — Document the rationale
+## Step 10: Document the rationale
 
 In a tenant-internal doc (or in the SA's notes):
 

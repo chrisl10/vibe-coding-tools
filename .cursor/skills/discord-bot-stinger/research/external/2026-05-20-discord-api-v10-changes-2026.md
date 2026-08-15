@@ -31,6 +31,6 @@ Practitioner blog post (March 2026) summarizing current Discord API state. API v
 
 ## Annotations for stinger-forge
 
-- **guides/05-scaling-ops.md**: The quarterly checklist is a ready-made ops guide item. v10 is stable and current — no migration pressure.
+- **guides/05-scaling-ops.md**: The quarterly checklist is a ready-made ops guide item. v10 is stable and current: no migration pressure.
 - **guides/00-principles.md**: Intents audit and 429 rate tracking belong in the principles guide as ongoing discipline.
 - Medium authority (practitioner blog, not Discord official) but consistent with official docs. Verify specific claims against Discord Changelog at discord.com/developers/docs/change-log.

@@ -1,4 +1,4 @@
-# Generic Orchestration Frameworks (DEMOTED — the deploying product uses a homegrown orchestrator)
+# Generic Orchestration Frameworks (DEMOTED: the deploying product uses a homegrown orchestrator)
 
 > **Status:** Demoted reference. the deploying product's coaching system uses a homegrown `runOrchestrator()` in `lib/agent-orchestrator.ts`, wired into the 5-layer prompt cascade, three-tier memory, and `traceAICall()` observability.
 >
@@ -8,10 +8,10 @@
 
 ## When the deploying product's homegrown orchestrator is the right call
 
-- **Tight integration with Cohere / Qdrant / Valkey / Postgres pipelines** — the deploying product's `assembleContextPacket()` does parallel I/O across all four; framework abstractions add layers without reducing complexity.
-- **Specific cascade architecture** — the 5-layer prompt cascade with `PromptVersion` audit doesn't map cleanly onto generic prompt-templating systems.
-- **Explicit `AgentContextConfig` thread-scope policy** — the deploying product's per-agent memory-access rules are encoded in a Postgres table, not a framework abstraction.
-- **`AiTrace` observability** — first-class, fire-and-forget, stored in the application's Postgres. Generic OpenTelemetry approaches add complexity without lift.
+- **Tight integration with Cohere / Qdrant / Valkey / Postgres pipelines**: the deploying product's `assembleContextPacket()` does parallel I/O across all four; framework abstractions add layers without reducing complexity.
+- **Specific cascade architecture**: the 5-layer prompt cascade with `PromptVersion` audit doesn't map cleanly onto generic prompt-templating systems.
+- **Explicit `AgentContextConfig` thread-scope policy**: the deploying product's per-agent memory-access rules are encoded in a Postgres table, not a framework abstraction.
+- **`AiTrace` observability**: first-class, fire-and-forget, stored in the application's Postgres. Generic OpenTelemetry approaches add complexity without lift.
 
 A push to adopt a framework would require the substitution policy in `guides/01-stack-enforcement.md §2`.
 
@@ -22,7 +22,7 @@ A push to adopt a framework would require the substitution policy in `guides/01-
 ### Mastra
 
 - **Pitch:** TS-first agent framework. Workflows, evals, RAG tools bundled.
-- **Why we didn't pick:** Our orchestrator is already wired into Cohere + Qdrant + Valkey through application code. Adopting Mastra would mean rewriting the `assembleContextPacket()` parallel-I/O dance and the prompt cascade in Mastra primitives — significant migration cost for a benefit (workflow primitives) we don't currently need.
+- **Why we didn't pick:** Our orchestrator is already wired into Cohere + Qdrant + Valkey through application code. Adopting Mastra would mean rewriting the `assembleContextPacket()` parallel-I/O dance and the prompt cascade in Mastra primitives: significant migration cost for a benefit (workflow primitives) we don't currently need.
 - **When it'd be the right call:** New TS-first agent product without an existing orchestration layer.
 
 ### Vercel AI SDK (`ai`)
@@ -34,7 +34,7 @@ A push to adopt a framework would require the substitution policy in `guides/01-
 ### LangGraph (LangChain)
 
 - **Pitch:** Stateful multi-agent orchestration with explicit state machines.
-- **Why we didn't pick:** the deploying product doesn't yet need multi-agent state machines. The current routing pattern is "classify → assemble → dispatch" — a single-shot decision, not a state machine. The planned full multi-agent dispatcher (per `guides/15-agent-orchestration.md §7`) might benefit from LangGraph IF we adopt it; until then, premature.
+- **Why we didn't pick:** the deploying product doesn't yet need multi-agent state machines. The current routing pattern is "classify → assemble → dispatch": a single-shot decision, not a state machine. The planned full multi-agent dispatcher (per `guides/15-agent-orchestration.md §7`) might benefit from LangGraph IF we adopt it; until then, premature.
 - **When it'd be the right call:** Multi-agent flows with explicit handoff state, retries, parallel execution.
 
 ### Pydantic AI
@@ -78,9 +78,9 @@ A push to adopt a framework would require the substitution policy in `guides/01-
 
 ---
 
-## Source — original ai-platform-stinger research
+## Source: original mind-stinger research
 
-Research notes from the retired ai-platform-stinger:
+Research notes from the retired mind-stinger:
 
 - `2026-04-25-orchestration-frameworks-2026.md` (carried over to `research/`)
 - `2026-04-25-mastra-positioning.md` (carried over)

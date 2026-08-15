@@ -6,11 +6,11 @@ conducted_by: scripture-historian (inline synthesis for slot-mode)
 date: 2026-05-20
 ---
 
-# Research Plan — dark-mode-theming-stinger
+# Research Plan: dark-mode-theming-stinger
 
 ## Depth tier
 
-**Normal** — standard 25-page budget, 6-month time window, five primary queries.
+**Normal**: standard 25-page budget, 6-month time window, five primary queries.
 
 ## Query plan
 

@@ -1,10 +1,10 @@
-# Example 05 — Async Django view bridging to sync ORM
+# Example 05: Async Django view bridging to sync ORM
 
-A dashboard endpoint that fans out to: a sync ORM read (cross-relation), an external HTTP call, and a Redis cache lookup — all in parallel. Demonstrates `sync_to_async`, async ORM, and `asyncio.TaskGroup` (Python 3.11+).
+A dashboard endpoint that fans out to: a sync ORM read (cross-relation), an external HTTP call, and a Redis cache lookup, all in parallel. Demonstrates `sync_to_async`, async ORM, and `asyncio.TaskGroup` (Python 3.11+).
 
 ## Why async here
 
-The endpoint pulls from three independent sources. Sequential awaits would total `(50ms ORM) + (200ms external) + (5ms Redis) = 255ms`. Parallel: `max(50, 200, 5) = 200ms`. That's the only justification for async — measured I/O concurrency.
+The endpoint pulls from three independent sources. Sequential awaits would total `(50ms ORM) + (200ms external) + (5ms Redis) = 255ms`. Parallel: `max(50, 200, 5) = 200ms`. That's the only justification for async: measured I/O concurrency.
 
 If the endpoint had only one source, sync is the right answer.
 
@@ -18,7 +18,7 @@ gunicorn config.asgi:application -k uvicorn.workers.UvicornWorker -w 4 --bind 0.
 uvicorn config.asgi:application --workers 4
 ```
 
-Async views under WSGI run in a one-off event loop — net negative.
+Async views under WSGI run in a one-off event loop: net negative.
 
 ## `apps/dashboard/api.py`
 
@@ -172,11 +172,11 @@ async def test_dashboard_endpoint(async_client, authenticated_user_token, mock_h
 ## What the example demonstrates
 
 - ✅ `async def` view with `asyncio.TaskGroup` (3.11+) for parallel I/O.
-- ✅ `sync_to_async` wrapping sync ORM calls — never call sync ORM directly.
-- ✅ Single `httpx.AsyncClient` instance scoped to the request (or, ideally, app-state-scoped — see `templates/fastapi-service.py` lifespan pattern).
+- ✅ `sync_to_async` wrapping sync ORM calls: never call sync ORM directly.
+- ✅ Single `httpx.AsyncClient` instance scoped to the request (or, ideally, app-state-scoped, see `templates/fastapi-service.py` lifespan pattern).
 - ✅ Explicit `httpx.Timeout` configuration.
 - ✅ Pydantic schema validates the response shape.
-- ✅ ASGI-only deployment — gunicorn + uvicorn workers.
+- ✅ ASGI-only deployment: gunicorn + uvicorn workers.
 
 ## Findings the example helps catch
 

@@ -1,4 +1,4 @@
-# Guide 04 — Vaul Drawer Patterns
+# Guide 04: Vaul Drawer Patterns
 
 Complete implementation guide for Vaul drawers in Next.js App Router with Tailwind CSS.
 
@@ -12,7 +12,7 @@ Complete implementation guide for Vaul drawers in Next.js App Router with Tailwi
 npm install vaul
 ```
 
-Vaul requires `"use client"` — wrap all Vaul components in a client component.
+Vaul requires `"use client"`: wrap all Vaul components in a client component.
 
 ---
 

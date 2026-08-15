@@ -1,4 +1,4 @@
-# 03 — SEO & AEO System
+# 03: SEO & AEO System
 
 Source PRD: `research/source-prds/prd-phase-03-seo-aeo-system.md`
 
@@ -27,10 +27,10 @@ This guide records the website-stinger-specific scope: which routes need SEO, ho
 
 ## Key files to create (SvelteKit track)
 
-- `apps/web/src/lib/seo/generateSEO.ts` — metadata helper (see `seo-aeo-stinger/templates/sveltekit/generateSEO.ts`)
-- `apps/web/src/lib/seo/schema.ts` — JSON-LD builders (see `seo-aeo-stinger/templates/sveltekit/schema.ts`)
-- `apps/web/src/routes/sitemap.xml/+server.ts` — dynamic sitemap (see `seo-aeo-stinger/templates/sveltekit/sitemap-server.ts`)
-- `apps/web/src/routes/robots.txt/+server.ts` — robots (see `seo-aeo-stinger/templates/sveltekit/robots-server.ts`)
+- `apps/web/src/lib/seo/generateSEO.ts`: metadata helper (see `seo-aeo-stinger/templates/sveltekit/generateSEO.ts`)
+- `apps/web/src/lib/seo/schema.ts`: JSON-LD builders (see `seo-aeo-stinger/templates/sveltekit/schema.ts`)
+- `apps/web/src/routes/sitemap.xml/+server.ts`: dynamic sitemap (see `seo-aeo-stinger/templates/sveltekit/sitemap-server.ts`)
+- `apps/web/src/routes/robots.txt/+server.ts`: robots (see `seo-aeo-stinger/templates/sveltekit/robots-server.ts`)
 
 ---
 

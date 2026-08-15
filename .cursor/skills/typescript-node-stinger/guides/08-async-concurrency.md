@@ -1,5 +1,7 @@
 # 08 - Async & Concurrency
 
+**Applies to both contexts.** The async-correctness principles below (batching, no fire-and-forget without intent, bounded concurrency) apply to a SvelteKit `load` function hitting Neon/Drizzle exactly as much as to a Hivemind hook hitting Deep Lake - the Semaphore/Deep Lake specifics are the Hivemind worked example; substitute Drizzle's own connection pooling (`neon-drizzle-stinger`) for the concurrency-bounding mechanism in the SvelteKit case.
+
 Hivemind is I/O-bound: nearly every operation is a Deep Lake round-trip. Getting async and concurrency right is the difference between a snappy hook and one that gets the org rate-limited.
 
 ## The Semaphore is the concurrency model

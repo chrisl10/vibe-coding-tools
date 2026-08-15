@@ -1,6 +1,6 @@
-# Multimodal RAG — Image / Video Transcript Indexing
+# Multimodal RAG: Image / Video Transcript Indexing
 
-**Source:** the deploying product's own `multimodal-media-pipeline.md` doc; multimodal RAG patterns from public industry posts (2024–2026).
+**Source:** the deploying product's own `multimodal-media-pipeline.md` doc; multimodal RAG patterns from public industry posts (2024-2026).
 **Retrieved:** 2026-04-25
 **Status:** **LOAD-BEARING** for the deploying product's design. Cited in `guides/14-multimodal-pipeline.md`.
 **Numbers tag:** implementation-level numbers (chunk sizes, p-limit values) are tuned internally.
@@ -11,8 +11,8 @@
 
 the deploying product's multimodal RAG indexes:
 
-- **Images** (sync) — vision-described, embedded, indexed in `media-{tenantId}` with `content_type: "media_attachment"`.
-- **Videos** (async) — transcript chunks (Deepgram) + frame descriptions (vision model) + recursive summary, all indexed in `media-{tenantId}`.
+- **Images** (sync): vision-described, embedded, indexed in `media-{tenantId}` with `content_type: "media_attachment"`.
+- **Videos** (async): transcript chunks (Deepgram) + frame descriptions (vision model) + recursive summary, all indexed in `media-{tenantId}`.
 
 Coaching context queries `media-{tenantId}` alongside `knowledge-{tenantId}` and `conversations-{tenantId}`. Media context appears as `[RELEVANT MEDIA CONTEXT]` block in the system prompt.
 
@@ -22,12 +22,12 @@ Coaching context queries `media-{tenantId}` alongside `knowledge-{tenantId}` and
 
 the deploying product uses **text embeddings of vision-generated descriptions**, not visual embeddings (CLIP, etc.). Reasoning:
 
-1. **Cohere `embed-english-v3.0` is the canonical embedder** — adopting CLIP would bifurcate the embedding stack.
-2. **Coaching context is text-shaped** — the LLM consumes text in the system prompt, not vision tokens.
+1. **Cohere `embed-english-v3.0` is the canonical embedder**: adopting CLIP would bifurcate the embedding stack.
+2. **Coaching context is text-shaped**: the LLM consumes text in the system prompt, not vision tokens.
 3. **OCR + entity extraction** in the description prompt covers most coaching-relevant signals.
 4. **Frame relevance** is filtered by the vision model's own `relevance` field (`high|medium|low`), so we don't need visual similarity to dedupe similar frames.
 
-A multimodal embedder (e.g., Voyage's multimodal models, or a CLIP-style embedder) would be considered if visual similarity becomes a primary retrieval signal — currently it isn't.
+A multimodal embedder (e.g., Voyage's multimodal models, or a CLIP-style embedder) would be considered if visual similarity becomes a primary retrieval signal; currently it isn't.
 
 ---
 
@@ -35,10 +35,10 @@ A multimodal embedder (e.g., Voyage's multimodal models, or a CLIP-style embedde
 
 Per `guides/09-vector-payload-schema.md §2`:
 
-- `media_attachment` — single image description (from sync image pipeline).
-- `video_transcript_chunk` — 512-token chunks from a video transcript.
-- `video_frame_description` — vision-model description of a video keyframe.
-- `video_summary` — recursive summary of the full video (one point per video).
+- `media_attachment`: single image description (from sync image pipeline).
+- `video_transcript_chunk`: 512-token chunks from a video transcript.
+- `video_frame_description`: vision-model description of a video keyframe.
+- `video_summary`: recursive summary of the full video (one point per video).
 
 Each has a `pts_time` (video only) for timestamp alignment.
 

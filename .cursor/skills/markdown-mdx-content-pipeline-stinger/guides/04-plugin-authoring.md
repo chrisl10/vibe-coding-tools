@@ -184,7 +184,7 @@ See `guides/07-testing.md` for the full testing guide.
 
 ## Common pitfalls
 
-1. **Mutating the tree while visiting it** — use `return [SKIP, index]` after splice operations to prevent double-processing.
-2. **Forgetting the plugin is synchronous by default** — if you need async work inside a plugin, return a `Promise<void>` from the transformer.
-3. **Wrong plugin position** — remark plugins that depend on `remarkMath` or `remarkDirective` nodes must come after those plugins in the chain.
-4. **Accessing `node.data.hProperties` in remark plugins** — this is the bridge to rehype; it works, but be explicit about the hast property names (kebab-case for attributes, camelCase for DOM properties).
+1. **Mutating the tree while visiting it**: use `return [SKIP, index]` after splice operations to prevent double-processing.
+2. **Forgetting the plugin is synchronous by default**: if you need async work inside a plugin, return a `Promise<void>` from the transformer.
+3. **Wrong plugin position**: remark plugins that depend on `remarkMath` or `remarkDirective` nodes must come after those plugins in the chain.
+4. **Accessing `node.data.hProperties` in remark plugins**: this is the bridge to rehype; it works, but be explicit about the hast property names (kebab-case for attributes, camelCase for DOM properties).

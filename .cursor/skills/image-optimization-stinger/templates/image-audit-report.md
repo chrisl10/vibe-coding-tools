@@ -35,11 +35,11 @@
 
 | Format | Count | % of total | Action needed |
 |---|---|---|---|
-| AVIF | {N} | {XX}% | {e.g. None — in use} |
-| WebP | {N} | {XX}% | {e.g. None — used as fallback} |
+| AVIF | {N} | {XX}% | {e.g. None: in use} |
+| WebP | {N} | {XX}% | {e.g. None: used as fallback} |
 | JPEG | {N} | {XX}% | {e.g. Convert {N} to AVIF+WebP} |
 | PNG | {N} | {XX}% | {e.g. Check for transparency; convert if none} |
-| SVG | {N} | {XX}% | {e.g. None — appropriate format} |
+| SVG | {N} | {XX}% | {e.g. None: appropriate format} |
 | GIF | {N} | {XX}% | {e.g. Convert animated GIFs to video or WebP animation} |
 
 ---
@@ -47,7 +47,7 @@
 ## 3. srcset / sizes audit
 
 **Images missing srcset:**
-- {path/to/image.jpg} — currently fixed `src`; no responsive variants exist
+- {path/to/image.jpg}: currently fixed `src`; no responsive variants exist
 
 **Images with incorrect `sizes`:**
 - {`<Image src="..." sizes="100vw" />`} at {path/to/component.tsx}:{line}
@@ -63,8 +63,8 @@
 
 | Page | LCP element | Has priority / fetchpriority | Has `loading="lazy"` (anti-pattern)? |
 |---|---|---|---|
-| `/` | `<Image src="/hero.jpg" ...>` | {Yes / No} | {Yes — REMOVE / No} |
-| `/products` | `<Image src="/banner.jpg" ...>` | {Yes / No} | {Yes — REMOVE / No} |
+| `/` | `<Image src="/hero.jpg" ...>` | {Yes / No} | {Yes: REMOVE / No} |
+| `/products` | `<Image src="/banner.jpg" ...>` | {Yes / No} | {Yes: REMOVE / No} |
 
 ---
 
@@ -81,7 +81,7 @@
 ## 6. width + height audit
 
 **Images missing `width` and `height` (CLS risk):**
-- {path/to/image.jpg} — no width/height; estimated CLS contribution: {high/medium/low}
+- {path/to/image.jpg}: no width/height; estimated CLS contribution: {high/medium/low}
 
 ---
 

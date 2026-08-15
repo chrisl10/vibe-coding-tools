@@ -1,4 +1,4 @@
-# `requests` — preserved alternative
+# `requests`: preserved alternative
 
 > Demoted in favor of **httpx** (see `guides/01-stack-enforcement.md` + httpx-related notes). `requests` is acceptable in legacy code; new outbound HTTP should use httpx.
 
@@ -7,13 +7,13 @@
 - **Sync + async with one API.** `requests` is sync-only; you'd reach for `aiohttp` for async, learning a second client. httpx supports both with the same surface area.
 - **HTTP/2.** `requests` is HTTP/1.1-only. httpx supports HTTP/2 via `http2=True`.
 - **Connection pooling.** httpx's `Client` / `AsyncClient` are explicit pool managers; `requests.Session` is the equivalent but less ergonomic to inject.
-- **Ecosystem health.** `requests` is in maintenance mode — the [maintainer's note](https://github.com/psf/requests) describes it as "feature-complete". httpx is actively developed by the same broader ecosystem (Encode).
+- **Ecosystem health.** `requests` is in maintenance mode: the [maintainer's note](https://github.com/psf/requests) describes it as "feature-complete". httpx is actively developed by the same broader ecosystem (Encode).
 - **Mocking.** `respx` for httpx is comparable to `requests-mock` but works for both sync and async.
 
 ## When `requests` is still acceptable
 
-- **Existing `requests` calls in legacy code** — no rush. Migrate when you touch the file.
-- **One-off scripts** with no async needs and no HTTP/2 concerns — `requests` is fine.
+- **Existing `requests` calls in legacy code**: no rush. Migrate when you touch the file.
+- **One-off scripts** with no async needs and no HTTP/2 concerns: `requests` is fine.
 - **Specific `requests` plugin** doing real work (rare).
 
 ## Legacy-code recognition
@@ -82,7 +82,7 @@ async def fetch_things() -> list[dict]:
     return things
 ```
 
-The async version is the entire point — `requests` makes parallel requests an ordeal; httpx makes them natural.
+The async version is the entire point: `requests` makes parallel requests an ordeal; httpx makes them natural.
 
 ## Findings checklist
 

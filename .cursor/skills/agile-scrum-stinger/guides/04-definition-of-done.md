@@ -1,10 +1,10 @@
-# 04 — Definition of Done
+# 04. Definition of Done
 
 The Definition of Done (DoD) is the formal commitment attached to the Increment. It is the single most important quality gate in Scrum. Without a DoD, "done" means whatever the loudest person says it means.
 
 ---
 
-## DoD vs. Acceptance Criteria — the critical distinction
+## DoD vs. Acceptance Criteria: the critical distinction
 
 These are complementary but not interchangeable.
 
@@ -65,7 +65,7 @@ Additional items:
 - [ ] Security review completed for auth, data handling, and API changes
 - [ ] Feature flag status documented (on/off strategy)
 - [ ] Documentation updated (API docs, runbooks, user docs as applicable)
-- [ ] Deployment pipeline green (not just staging — production deploy verified)
+- [ ] Deployment pipeline green (not just staging, production deploy verified)
 - [ ] Rollback procedure tested or documented
 - [ ] Analytics events verified (if feature requires tracking)
 
@@ -76,24 +76,24 @@ Additional items:
 The research summary raised this question: should DoD templates include CI/deployment gates?
 
 **Answer (resolved):**
-- **Startup tier:** No CI/deployment gates — teams at this stage may not have CI/CD. Manual testing is sufficient.
-- **Standard tier:** Yes — CI green and staging deployment are community consensus for growth-stage teams.
-- **Enterprise tier:** Yes — full deployment verification, including rollback testing.
+- **Startup tier:** No CI/deployment gates: teams at this stage may not have CI/CD. Manual testing is sufficient.
+- **Standard tier:** Yes: CI green and staging deployment are community consensus for growth-stage teams.
+- **Enterprise tier:** Yes: full deployment verification, including rollback testing.
 
-Note: the DoD references that "CI must pass" — `devops-worker-bee` owns the CI pipeline implementation.
+Note: the DoD references that "CI must pass"; `devops-worker-bee` owns the CI pipeline implementation.
 
 ---
 
 ## Writing and auditing a DoD
 
-### How to write a DoD (facilitated exercise — 45 min)
+### How to write a DoD (facilitated exercise, 45 min)
 
-1. **Gather the Scrum Team** — all roles participate
-2. **Start with "what would embarrass us in production?"** — list failure modes
-3. **Turn each failure into a gate** — "SQL injection vulnerability shipped" → "Security review for any input handling"
-4. **Validate sustainability** — each item must be achievable within a Sprint for a normal story
-5. **Write, post, and commit** — the DoD should be visible (physical board or pinned in Confluence/Notion)
-6. **Add "review the DoD" to the Retrospective agenda** — it should strengthen over time
+1. **Gather the Scrum Team**: all roles participate
+2. **Start with "what would embarrass us in production?"**: list failure modes
+3. **Turn each failure into a gate**: "SQL injection vulnerability shipped" → "Security review for any input handling"
+4. **Validate sustainability**: each item must be achievable within a Sprint for a normal story
+5. **Write, post, and commit**: the DoD should be visible (physical board or pinned in Confluence/Notion)
+6. **Add "review the DoD" to the Retrospective agenda**: it should strengthen over time
 
 ### DoD audit checklist
 When auditing a team's DoD:
@@ -114,4 +114,4 @@ When auditing a team's DoD:
 | DoD is aspirational | Items on DoD never met in practice | Remove items the team can't meet; rebuild trust before adding them back |
 | DoD applied to some items only | "That story is too small to go through the full process" | DoD applies to all items; if it's too heavy for small items, simplify the DoD |
 | DoD never changes | Same DoD for 2 years; no new quality gates | Add "review the DoD" to Retrospective template |
-| DoD includes subjective items | "Code is clean" — no pass/fail criteria | Rewrite as measurable: "No functions > 30 lines (or documented exception)" |
+| DoD includes subjective items | "Code is clean": no pass/fail criteria | Rewrite as measurable: "No functions > 30 lines (or documented exception)" |

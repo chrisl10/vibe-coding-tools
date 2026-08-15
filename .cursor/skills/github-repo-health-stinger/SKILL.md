@@ -1,6 +1,6 @@
 ---
-name: github-repo-health-stinger
-description: Repository hygiene auditor for GitHub repos - branching strategy, branch protection rulesets, PR culture, commit history (Conventional Commits), CI workflow density, README/docs presence, .gitignore coverage, CODEOWNERS, issue/PR templates, and repo settings (merge strategy, secret scanning, auto-delete). Use when the user says "audit this repo", "repo health check", "review our branching strategy", "check branch protection", "CODEOWNERS audit", "are our CI checks configured correctly", "check PR templates", or "GitHub repo settings review". Do NOT use for deep CI/CD architecture (ci-release-worker-bee), code correctness (security-worker-bee, typescript-node-worker-bee), or Deep Lake dataset schema (deeplake-dataset-worker-bee).
+name: "github-repo-health-stinger"
+description: "Repository hygiene auditor for GitHub repos - branching strategy, branch protection rulesets, PR culture, commit history (Conventional Commits), CI workflow density, README/docs presence, .gitignore coverage, CODEOWNERS, issue/PR templates, and repo settings (merge strategy, secret scanning, auto-delete). Use when the user says \\\\\\\"audit this repo\\\\\\\", \\\\\\\"repo health check\\\\\\\", \\\\\\\"review our branching strategy\\\\\\\", \\\\\\\"check branch protection\\\\\\\", \\\\\\\"CODEOWNERS audit\\\\\\\", \\\\\\\"are our CI checks configured correctly\\\\\\\", \\\\\\\"check PR templates\\\\\\\", or \\\\\\\"GitHub repo settings review\\\\\\\". Do NOT use for deep CI/CD architecture (ci-release-worker-bee), code correctness (security-worker-bee, typescript-node-worker-bee), or Deep Lake dataset schema (vector-store-worker-bee)."
 license: MIT
 ---
 

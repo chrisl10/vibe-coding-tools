@@ -1,4 +1,4 @@
-# Example 01 — Django Ninja endpoint with Pydantic schema
+# Example 01: Django Ninja endpoint with Pydantic schema
 
 Full request/response cycle: list + create + retrieve + update, with auth, pagination, error envelope.
 

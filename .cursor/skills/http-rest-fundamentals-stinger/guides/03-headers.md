@@ -1,4 +1,4 @@
-# 03 — Headers
+# 03. Headers
 
 Caching, content negotiation, and HTTP-layer security-adjacent headers.
 

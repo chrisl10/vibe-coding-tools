@@ -34,13 +34,13 @@ Source text (.md / .mdx)
 
 - Defined by `@types/mdast` from the `@mdast` npm scope
 - Node examples: `Root`, `Paragraph`, `Heading`, `Code`, `Link`, `Image`, `Math` (remark-math)
-- Operated on by **remark plugins** — always run BEFORE `remarkRehype`
+- Operated on by **remark plugins**: always run BEFORE `remarkRehype`
 
 ### hast (Hypertext Abstract Syntax Tree)
 
 - Defined by `@types/hast` from the `@hast` npm scope
 - Node examples: `Element`, `Text`, `Comment`, `DocType`
-- Operated on by **rehype plugins** — always run AFTER `remarkRehype`
+- Operated on by **rehype plugins**: always run AFTER `remarkRehype`
 
 ### The bridge
 
@@ -53,7 +53,7 @@ Source text (.md / .mdx)
 ### 1. Parse
 
 - Input: raw text
-- Tool: `remark().parse()` — converts Markdown text to mdast
+- Tool: `remark().parse()`: converts Markdown text to mdast
 - Key plugins at this stage: none (parsing is a single step)
 
 ### 2. Transform (remark)

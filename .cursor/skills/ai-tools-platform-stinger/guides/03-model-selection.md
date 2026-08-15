@@ -1,12 +1,12 @@
-# Model Selection — 2026 Frontier Landscape
+# Model Selection: 2026 Frontier Landscape
 
 ## The three-tier rule
 
 Every production system should be designed with three tiers, routing each task to the appropriate tier:
 
-- **Frontier tier** — maximum capability; use only where quality is the dominant factor and cost is secondary.
-- **Mid tier** — production workhorse; strong capability at reasonable cost.
-- **Fast/cheap tier** — classification, summarization, simple generation; sub-cent per 1K tokens.
+- **Frontier tier**: maximum capability; use only where quality is the dominant factor and cost is secondary.
+- **Mid tier**: production workhorse; strong capability at reasonable cost.
+- **Fast/cheap tier**: classification, summarization, simple generation; sub-cent per 1K tokens.
 
 ## 2026 model landscape
 
@@ -70,11 +70,11 @@ Every production system should be designed with three tiers, routing each task t
 | Summarization (high volume) | Gemini 2.0 Flash | Gemini 1.5 Flash |
 | Multimodal (vision) | GPT-4o or Gemini 2.0 Flash | Llama 3.2 11B Vision |
 | Structured output / JSON | Claude 3.5 Sonnet or GPT-4o | GPT-4o-mini |
-| RAG retrieval scoring | Cohere Rerank v3.5 | — |
+| RAG retrieval scoring | Cohere Rerank v3.5 | N/A |
 | Embeddings | text-embedding-3-large | text-embedding-3-small |
 | Local / privacy-first | Llama 3.1 8B (Ollama) | Phi-3.5 Mini |
 
-## Prompt caching — reduces cost significantly
+## Prompt caching: reduces cost significantly
 
 Both Anthropic and OpenAI support prompt caching for repeated system prompts:
 
@@ -82,7 +82,7 @@ Both Anthropic and OpenAI support prompt caching for repeated system prompts:
 - **OpenAI:** Automatic for prompts > 1024 tokens in the same session; 50% discount.
 - **Google:** Context caching for Gemini; charged at 25% of standard input token rate.
 
-For production RAG systems with a large, repeated system prompt — enabling prompt caching is usually a 40-70% cost reduction. See `guides/04-cost-optimization.md` for the full recipe.
+For production RAG systems with a large, repeated system prompt, enabling prompt caching is usually a 40-70% cost reduction. See `guides/04-cost-optimization.md` for the full recipe.
 
 ## Context window guide
 

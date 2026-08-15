@@ -1,7 +1,7 @@
-# Guide 02: Benchmark Data — What the Numbers Actually Mean
+# Guide 02: Benchmark Data: What the Numbers Actually Mean
 
 *Sources: `research/external/2026-05-20-swe-bench-leaderboard.md`, `research/external/2026-05-20-aider-llm-leaderboard.md`*
-*Last verified: 2026-05-20 — **always cite this date and note scores change monthly***
+*Last verified: 2026-05-20: **always cite this date and note scores change monthly***
 
 ---
 
@@ -26,7 +26,7 @@ The benchmark has improved 41x from its October 2023 baseline of 1.96%.
 
 | Model | Score | Note |
 |-------|-------|------|
-| Claude Mythos Preview (Anthropic) | 93.90% | Research preview only — NOT production |
+| Claude Mythos Preview (Anthropic) | 93.90% | Research preview only, NOT production |
 | Claude Opus 4.5 API | 80.90% | Production ceiling |
 | Claude Opus 4.6 API | 80.80% | Production |
 | Gemini 3.1 Pro API | 80.60% | Production |
@@ -56,7 +56,7 @@ Source: `research/external/2026-05-20-swe-bench-leaderboard.md`
 
 ## Aider polyglot leaderboard (May 2026)
 
-Aider's leaderboard tests across multiple programming languages — a critical complement to SWE-bench's Python-only coverage.
+Aider's leaderboard tests across multiple programming languages: a critical complement to SWE-bench's Python-only coverage.
 
 | Model | Pass Rate (2nd attempt) |
 |-------|------------------------|
@@ -90,6 +90,6 @@ Source: `research/external/2026-05-20-claude-code-aider-cline-comparison.md`
 2. **Cross-reference both benchmarks** when the user's codebase is polyglot (not Python-only).
 3. **Flag the Python-only caveat** explicitly for non-Python projects.
 4. **Include the retrieval date** in every cited score. Scores change monthly.
-5. **Distinguish model score from tool score.** The underlying model's SWE-bench score does not equal the tool's performance — the tool's context management, file handling, and workflow UX add or subtract from the raw model capability.
+5. **Distinguish model score from tool score.** The underlying model's SWE-bench score does not equal the tool's performance: the tool's context management, file handling, and workflow UX add or subtract from the raw model capability.
 
-> **TODO: open question** — Devin 2.0's current SWE-bench score was not definitively captured in research. The 14% figure in research notes is from Devin 1.x early benchmarks. Re-fetch from https://www.swebench.com/verified before citing Devin's score in a recommendation.
+> **TODO: open question**: Devin 2.0's current SWE-bench score was not definitively captured in research. The 14% figure in research notes is from Devin 1.x early benchmarks. Re-fetch from https://www.swebench.com/verified before citing Devin's score in a recommendation.

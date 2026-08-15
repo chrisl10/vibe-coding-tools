@@ -10,7 +10,7 @@ topic: stinger-folder-context
 ## Folder scaffold
 
 ```
-ai-tools/skills/preact-stinger/
+.claude/skills/preact-stinger/
 ├── SKILL.md
 ├── README.md
 ├── examples/

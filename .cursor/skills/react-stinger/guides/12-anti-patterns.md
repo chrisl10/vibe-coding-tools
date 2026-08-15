@@ -1,4 +1,4 @@
-# 12 — Anti-Patterns Catalog
+# 12: Anti-Patterns Catalog
 
 Sources: `research/2026-04-24-anti-patterns-useeffect.md`, https://react.dev/learn/you-might-not-need-an-effect.
 
@@ -38,9 +38,9 @@ useEffect(() => setLocalValue(props.value), [props.value]);
 
 ## 3. Barrel files at aggregator levels
 
-**Bad** — `src/components/index.ts` that re-exports every component.
+**Bad**: `src/components/index.ts` that re-exports every component.
 
-**Good** — import directly: `import { Button } from '@/components/ui/button/button'`.
+**Good**: import directly: `import { Button } from '@/components/ui/button/button'`.
 
 Barrel files kill Vite tree-shaking, slow builds, hide circular deps.
 
@@ -48,7 +48,7 @@ Barrel files kill Vite tree-shaking, slow builds, hide circular deps.
 
 ## 4. Deep prop drilling
 
-**Bad** — passing `user` through 5 levels just for the deepest to read it.
+**Bad**: passing `user` through 5 levels just for the deepest to read it.
 
 **Good options:**
 - Compose with `children` / slots (pass the leaf JSX from the top).
@@ -69,21 +69,21 @@ const onClick = useCallback(() => setState(true), []);  // used in one place
 
 ## 6. Storing server data in a client store
 
-**Bad** — Zustand / Redux with `fetchUsers()` and a manual refresh interval.
+**Bad**: Zustand / Redux with `fetchUsers()` and a manual refresh interval.
 
-**Good** — TanStack Query with `staleTime` and background revalidation. See `guides/04-data-layer.md`.
+**Good**: TanStack Query with `staleTime` and background revalidation. See `guides/04-data-layer.md`.
 
 ## 7. `'use client'` at the root
 
-**Bad** — `app/layout.tsx` starts with `'use client'`. Forces the whole app client-side.
+**Bad**: `app/layout.tsx` starts with `'use client'`. Forces the whole app client-side.
 
-**Good** — keep the root RSC. Push `'use client'` to leaf interactive components. See `guides/11-server-components.md §push-use-client-down`.
+**Good**: keep the root RSC. Push `'use client'` to leaf interactive components. See `guides/11-server-components.md §push-use-client-down`.
 
 ## 8. Fetch in a deep leaf
 
-**Bad** — `<Avatar userId={id} />` that `fetch('/users/' + id)` internally.
+**Bad**: `<Avatar userId={id} />` that `fetch('/users/' + id)` internally.
 
-**Good** — lift data to a hook or loader. Parent fetches the list once; passes `user` prop down.
+**Good**: lift data to a hook or loader. Parent fetches the list once; passes `user` prop down.
 
 **Detector:** `fetch(` or `api.get(` inside a component file >3 levels deep, not inside a `use*` hook.
 
@@ -150,15 +150,15 @@ Direct mutation breaks React re-render detection and React Compiler's analysis.
 `scripts/scan-anti-patterns.ts` (stub) scans for the first 8 of these via AST matching. Run via:
 
 ```bash
-pnpm tsx .cursor/skills/react-stinger/scripts/scan-anti-patterns.ts src/
+pnpm tsx .claude/skills/react-stinger/scripts/scan-anti-patterns.ts src/
 ```
 
 Output: a markdown report grouping findings by anti-pattern, with file:line and the canonical fix.
 
 ## Finding template
 
-> **[Must-fix]** `src/features/search/SearchBar.tsx:15` — `useEffect(() => setResults(filter(items, q)), [items, q])` is derived-state anti-pattern. Compute during render. See `guides/12-anti-patterns.md §1`.
+> **[Must-fix]** `src/features/search/SearchBar.tsx:15`: `useEffect(() => setResults(filter(items, q)), [items, q])` is derived-state anti-pattern. Compute during render. See `guides/12-anti-patterns.md §1`.
 
 ## Example in action
 
-See `examples/code-review-example-before-after.md` — multiple anti-patterns flagged on a real diff.
+See `examples/code-review-example-before-after.md`: multiple anti-patterns flagged on a real diff.

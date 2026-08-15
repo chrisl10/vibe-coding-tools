@@ -10,13 +10,13 @@ Acme API experiences an SEV1 incident: their REST API returns 500 errors for 40%
 
 ---
 
-## 14:23 UTC — Alert fires, on-call paged
+## 14:23 UTC: Alert fires, on-call paged
 
 On-call is investigating. The monitoring shows elevated 500 error rate starting at 14:20 UTC.
 
 ---
 
-## 14:28 UTC — Initial post (within 5 minutes of page)
+## 14:28 UTC: Initial post (within 5 minutes of page)
 
 **Status: Investigating**
 **Incident name:** [INVESTIGATING] REST API - Elevated Error Rate
@@ -29,13 +29,13 @@ On-call is investigating. The monitoring shows elevated 500 error rate starting 
 
 ---
 
-## 14:52 UTC — Root cause identified
+## 14:52 UTC: Root cause identified
 
 On-call finds the cause: a bad configuration deploy at 14:18 UTC introduced an unhandled null pointer exception in the request validation layer.
 
 ---
 
-## 14:58 UTC — Update post
+## 14:58 UTC: Update post
 
 **Status: Identified**
 **Update [14:58 UTC]:**
@@ -50,19 +50,19 @@ On-call finds the cause: a bad configuration deploy at 14:18 UTC introduced an u
 
 ---
 
-## 15:07 UTC — Rollback completes, monitoring returns green
+## 15:07 UTC: Rollback completes, monitoring returns green
 
 Error rate drops to 0%. On-call confirms stability for 5 minutes.
 
 ---
 
-## 15:12 UTC — Resolution post
+## 15:12 UTC: Resolution post
 
 **Status: Resolved**
 
 > **Resolved [15:12 UTC]:** REST API error rate has returned to normal. The configuration rollback was completed at 15:07 UTC.
 >
-> **Duration:** 52 minutes (14:20 UTC – 15:12 UTC)
+> **Duration:** 52 minutes (14:20 UTC to 15:12 UTC)
 >
 > **Root cause:** A configuration change deployed at 14:18 UTC introduced a null pointer exception in the request validation layer, causing ~40% of API requests to fail.
 >
@@ -74,7 +74,7 @@ Error rate drops to 0%. On-call confirms stability for 5 minutes.
 
 ---
 
-## 2026-05-21 12:00 UTC — Post-mortem published
+## 2026-05-21 12:00 UTC: Post-mortem published
 
 Full technical post-mortem published at https://acme.com/blog/incident-2026-05-20.
 
@@ -86,7 +86,7 @@ The incident record on the status page is updated with the post-mortem link in t
 
 | Criterion | Result |
 |---|---|
-| 5-minute acknowledge rule honored? | Yes (14:28 — 5 min after page) |
+| 5-minute acknowledge rule honored? | Yes (14:28, 5 min after page) |
 | Next-update time in every message? | Yes (all three posts) |
 | Passive voice / hedge language? | None |
 | Workaround included? | Yes (update post) |

@@ -1,4 +1,4 @@
-# 01 — Stack Enforcement
+# 01: Stack Enforcement
 
 The canonical stack and the substitution policy. This is the load-bearing document for opinionation.
 
@@ -25,12 +25,12 @@ The canonical stack and the substitution policy. This is the load-bearing docume
 
 A push to substitute requires:
 
-1. **An ADR** at `library/architecture/ADR-<n>-<topic>.md` documenting Context / Decision / Consequences / Alternatives Considered.
-2. **Eval evidence** — show the substitute beats the canonical option on a metric the project actually cares about (latency, cost, dev velocity, ecosystem fit).
-3. **A migration plan** — for stateful components (broker, vector DB), phased migration with parallel-running.
+1. **An ADR** at `library/knowledge/private/architecture/ADR-<n>-<topic>.md` documenting Context / Decision / Consequences / Alternatives Considered.
+2. **Eval evidence**: show the substitute beats the canonical option on a metric the project actually cares about (latency, cost, dev velocity, ecosystem fit).
+3. **A migration plan**: for stateful components (broker, vector DB), phased migration with parallel-running.
 4. **A `references/` demotion** of the previous canonical choice.
 
-Without all four, the substitution is a finding. The `references/` folder is not an invitation to substitute — it's awareness of the alternatives.
+Without all four, the substitution is a finding. The `references/` folder is not an invitation to substitute; it's awareness of the alternatives.
 
 ## Why this stack
 

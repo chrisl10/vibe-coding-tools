@@ -1,4 +1,4 @@
-# 12 — Typing and Pydantic
+# 12: Typing and Pydantic
 
 The discipline: pyright basic minimum, strict on new code, Pydantic v2 at every boundary.
 
@@ -6,7 +6,7 @@ The discipline: pyright basic minimum, strict on new code, Pydantic v2 at every 
 
 1. **`pyrightconfig.json` at the repo root** with `typeCheckingMode: "basic"` as the default.
 2. **New files default to `# pyright: strict`** at the top, or live under a `strict_paths` block in config.
-3. **Pydantic v2 at every boundary** — HTTP request/response, Celery task arg, webhook payload, third-party API response, file upload.
+3. **Pydantic v2 at every boundary**: HTTP request/response, Celery task arg, webhook payload, third-party API response, file upload.
 4. **`TYPE_CHECKING`** for import-only-for-types (avoids runtime import cost / circular imports).
 5. **No `Any` at API boundaries.** Internal `Any` for genuine unknowns is acceptable; external boundary `Any` is a finding.
 6. **`from __future__ import annotations`** at the top of every Python file (PEP 563-style postponed evaluation).
@@ -40,7 +40,7 @@ The discipline: pyright basic minimum, strict on new code, Pydantic v2 at every 
 }
 ```
 
-The suppressions (`reportAttributeAccessIssue`, `reportOptionalMemberAccess`, etc.) target Django's dynamic metaclass machinery — Manager.objects access, signal.send(), DRF view method overrides, `null=True` field types. New code in the `strict` array is held to a higher bar.
+The suppressions (`reportAttributeAccessIssue`, `reportOptionalMemberAccess`, etc.) target Django's dynamic metaclass machinery: Manager.objects access, signal.send(), DRF view method overrides, `null=True` field types. New code in the `strict` array is held to a higher bar.
 
 To progressively ratchet new code:
 

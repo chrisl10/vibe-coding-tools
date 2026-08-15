@@ -1,4 +1,4 @@
-# Vaul Drawer — External Source Note
+# Vaul Drawer: External Source Note
 
 **Source:** https://vaul.emilkowal.ski/ + https://github.com/emilkowalski/vaul
 **Source type:** external/primary
@@ -33,7 +33,7 @@ Vaul uses browser APIs (scroll, touch events, ResizeObserver). The `<Drawer.Root
 ```tsx
 <Drawer.Root snapPoints={[0.5, 1]} activeSnapPoint={snap} setActiveSnapPoint={setSnap}>
 ```
-- Array of fractions (0–1) relative to viewport height.
+- Array of fractions (0-1) relative to viewport height.
 - `fadeFromIndex` controls at which snap point the overlay fades in.
 
 ### shouldScaleBackground

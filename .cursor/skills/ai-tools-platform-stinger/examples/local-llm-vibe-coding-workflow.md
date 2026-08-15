@@ -2,14 +2,14 @@
 
 ## Goal
 
-Set up a fully local AI coding workflow that works offline, has zero marginal cost, and handles everyday coding tasks — without sending code to external providers.
+Set up a fully local AI coding workflow that works offline, has zero marginal cost, and handles everyday coding tasks, without sending code to external providers.
 
 ## Hardware requirements
 
 Minimum: Apple Silicon Mac with 16GB RAM (M1/M2/M3/M4).
 Recommended: Mac with 32GB+ RAM or PC with 8GB+ VRAM GPU.
 
-## Step 1 — Install Ollama
+## Step 1: Install Ollama
 
 ```bash
 # macOS (Homebrew)
@@ -21,7 +21,7 @@ ollama serve
 
 Ollama runs at `http://localhost:11434`. Leave it running in the background.
 
-## Step 2 — Pull recommended models
+## Step 2: Pull recommended models
 
 ```bash
 # Primary coding model (best balance of quality and speed on 16GB)
@@ -42,7 +42,7 @@ Verify models are available:
 ollama list
 ```
 
-## Step 3 — Configure Cursor to use Ollama
+## Step 3: Configure Cursor to use Ollama
 
 In Cursor:
 1. Open Settings → Features → Models
@@ -56,7 +56,7 @@ In Cursor:
 
 Now you can select these models in Cursor's model picker.
 
-## Step 4 — Project-level MCP config for offline work
+## Step 4: Project-level MCP config for offline work
 
 Even offline, you can wire MCP tools that don't need internet:
 
@@ -74,7 +74,7 @@ Even offline, you can wire MCP tools that don't need internet:
 
 This gives your local AI agent file read/write access to your project without leaving the machine.
 
-## Step 5 — Model routing for the workflow
+## Step 5: Model routing for the workflow
 
 Use different models for different tasks in Cursor:
 
@@ -95,7 +95,7 @@ Use different models for different tasks in Cursor:
 | llama3.1:8b | ~18 tok/s | ~28 seconds |
 | llama3.2-vision:11b | ~12 tok/s | ~43 seconds |
 
-GPU acceleration via Metal on Apple Silicon is automatic — no configuration needed.
+GPU acceleration via Metal on Apple Silicon is automatic: no configuration needed.
 
 ## When to switch back to cloud
 

@@ -1,4 +1,4 @@
-# Example 07 — DRF → Django Ninja migration (phased plan with parity checklist)
+# Example 07: DRF → Django Ninja migration (phased plan with parity checklist)
 
 Phased migration from a DRF-based API to Django Ninja. New endpoints land on Ninja; old DRF endpoints migrate when touched. Both run side-by-side until the cutover.
 
@@ -6,14 +6,14 @@ Phased migration from a DRF-based API to Django Ninja. New endpoints land on Nin
 
 Before touching anything, capture the current state:
 
-- `pip list | grep -i 'rest\|drf\|spectacular'` — DRF, drf-spectacular, drf-yasg, etc.
+- `pip list | grep -i 'rest\|drf\|spectacular'`: DRF, drf-spectacular, drf-yasg, etc.
 - Endpoint count: `grep -rE "(ViewSet|APIView|generics\.)" apps/ | wc -l`
 - Test coverage on the API layer (need a baseline before migrating)
 - Auth class catalog (which auth classes are in use, in what combinations)
 
 Output: a spreadsheet (or a feature PRD via `library-worker-bee`) listing each endpoint, its HTTP verbs, its auth classes, its serializer, and a target priority (1 = next, 5 = deferred).
 
-## Phase 1 — Stand up Ninja alongside DRF
+## Phase 1: Stand up Ninja alongside DRF
 
 ```bash
 uv add django-ninja
@@ -37,7 +37,7 @@ urlpatterns = [
 
 Both APIs serve under `/api/`; URL patterns don't collide because each owns its own paths. Document the contract: any new endpoint goes to Ninja; DRF endpoints stay until migrated.
 
-## Phase 2 — Migrate one feature end-to-end (the proof-of-concept)
+## Phase 2: Migrate one feature end-to-end (the proof-of-concept)
 
 Pick a small, well-tested feature (e.g., `apps/users/`). Migrate:
 
@@ -108,31 +108,31 @@ def cancel_order(request, order_id: int):
     return order
 ```
 
-## Phase 3 — Parity checklist (must pass before deprecating the DRF endpoint)
+## Phase 3: Parity checklist (must pass before deprecating the DRF endpoint)
 
 For each migrated endpoint:
 
 - [ ] Same URL path (or documented redirect from old to new).
 - [ ] Same HTTP verbs accepted.
-- [ ] Same response shape — run a contract test that hits both endpoints and compares JSON.
+- [ ] Same response shape: run a contract test that hits both endpoints and compares JSON.
 - [ ] Same auth requirements (anonymous / authenticated / specific permission).
-- [ ] Same pagination shape (`{"items": [...], "count": N}` vs DRF's `{"results": [...], "count": N, "next": ..., "previous": ...}` — Ninja's default differs; choose explicitly).
+- [ ] Same pagination shape (`{"items": [...], "count": N}` vs DRF's `{"results": [...], "count": N, "next": ..., "previous": ...}`, Ninja's default differs; choose explicitly).
 - [ ] Same error response shape (or migrated to the new envelope across the whole API at once).
 - [ ] Same OpenAPI documentation (drf-spectacular vs Ninja's built-in OpenAPI).
 - [ ] Test coverage at or above pre-migration baseline.
 - [ ] Performance equivalent (run a benchmark on a hot endpoint).
 
-## Phase 4 — Cut over
+## Phase 4: Cut over
 
 Once an endpoint family is parity-verified:
 
 1. Remove the old DRF route from `apps/api/urls.py`.
 2. Delete the DRF ViewSet / Serializer / urls.
-3. Run the test suite — must stay green.
+3. Run the test suite: must stay green.
 4. Deploy.
 5. Monitor error rates and response time for 24h.
 
-## Phase 5 — Sunset DRF
+## Phase 5: Sunset DRF
 
 When the last DRF endpoint is migrated:
 
@@ -140,7 +140,7 @@ When the last DRF endpoint is migrated:
 2. Remove `'rest_framework'` from `INSTALLED_APPS`.
 3. Remove DRF-specific settings (`REST_FRAMEWORK = {...}`).
 4. Remove drf-spectacular / drf-yasg if they're not used elsewhere.
-5. Run `uv lock && uv sync` — confirm clean dependency tree.
+5. Run `uv lock && uv sync`: confirm clean dependency tree.
 
 ## Common migration pitfalls
 
@@ -157,7 +157,7 @@ When the last DRF endpoint is migrated:
 ## Hand-offs during migration
 
 - **Auth class migration** (DRF JWT, OAuth, custom) → `auth-worker-bee` for the provider choice; the Python wiring stays here.
-- **PRD / formal migration plan** → `library-worker-bee`. This Stinger supplies the architectural rationale; the PRD lives at `library/requirements/features/feature-<###>-drf-to-ninja-migration/prd-feature-<###>-drf-to-ninja-migration.md`.
+- **PRD / formal migration plan** → `library-worker-bee`. This Stinger supplies the architectural rationale; the PRD lives at `library/requirements/<lifecycle>/prd-<###>-drf-to-ninja-migration/prd-feature-<###>-drf-to-ninja-migration.md`.
 - **Post-migration QA** → `quality-worker-bee` runs the parity test suite as audit evidence.
 
 ## Source

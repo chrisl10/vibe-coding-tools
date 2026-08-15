@@ -1,8 +1,10 @@
-# 09 — Vector Payload Schema
+# 09: Vector Payload Schema
+
+> **Alternative stack.** This guide documents Qdrant's payload/index model. For this repo's default (Neon Postgres plus pgvector), the equivalent concern is column and index design on the `chunks` table, owned by `vector-store-stinger`. See `guides/00-selection-and-defaults.md`.
 
 Every payload field on every Qdrant point. Mandatory fields, indexing decisions, and the `strict_mode_config` enforcement.
 
-> **Doc reference:** `library/knowledge-base/ai/vector-payload-schema.md` is canonical.
+> **Doc reference:** `library/knowledge/private/ai/vector-payload-schema.md` is canonical.
 
 ---
 
@@ -25,7 +27,7 @@ Every field exists for one of three reasons:
 ### `tenant_id`
 - **Type:** Keyword (indexed)
 - **Purpose:** Hard security boundary. Always present in every query filter.
-- **Note:** Belt-and-suspenders — collection is already tenant-scoped by name (`knowledge-{tenantId}`), but this payload field ensures cross-tenant protection if collection routing breaks.
+- **Note:** Belt-and-suspenders: collection is already tenant-scoped by name (`knowledge-{tenantId}`), but this payload field ensures cross-tenant protection if collection routing breaks.
 
 ### `user_id`
 - **Type:** Keyword (indexed)
@@ -63,9 +65,9 @@ Every field exists for one of three reasons:
 | `video_summary` | Recursive summary of a full video | `media` |
 
 ### `timestamp`
-- **Type:** Datetime (indexed — Qdrant datetime index)
+- **Type:** Datetime (indexed: Qdrant datetime index)
 - **Purpose:** When this content was created or when the event it describes occurred. Used for temporal decay scoring at query time.
-- **Format:** ISO 8601 — `"2026-03-29T18:00:00Z"`
+- **Format:** ISO 8601: `"2026-03-29T18:00:00Z"`
 
 ### `embedding_model_version`
 - **Type:** Keyword (stored, not indexed)
@@ -92,7 +94,7 @@ Every field exists for one of three reasons:
 
 ### `decay_weight`
 - **Type:** Float (stored, not indexed)
-- **Purpose:** Pre-computed relevance multiplier for debugging. Always recompute from `timestamp` at query time using `applyDecay()` — the stored value may be stale.
+- **Purpose:** Pre-computed relevance multiplier for debugging. Always recompute from `timestamp` at query time using `applyDecay()`; the stored value may be stale.
 
 ---
 
@@ -133,7 +135,7 @@ Every field exists for one of three reasons:
 - **Type:** Keyword (stored, not indexed). Values: `"image"`, `"video"`.
 
 ### `pts_time`
-- **Type:** Float (stored, not indexed). For video keyframe vectors — timestamp within the video (seconds).
+- **Type:** Float (stored, not indexed). For video keyframe vectors: timestamp within the video (seconds).
 
 ### `frame_relevance`
 - **Type:** Keyword (stored, not indexed). Values: `"high"`, `"medium"`, `"low"`. Vision model's assessment.
@@ -168,7 +170,7 @@ Indexes created with `wait: false` (background build).
 
 ## 8. `strict_mode_config: { enabled: true }`
 
-This Qdrant feature **rejects filters on unindexed fields** instead of silently scanning. Without it, a filter on an unindexed field would silently full-scan (50–200ms per query on large collections); with it, you get an explicit error.
+This Qdrant feature **rejects filters on unindexed fields** instead of silently scanning. Without it, a filter on an unindexed field would silently full-scan (50-200ms per query on large collections); with it, you get an explicit error.
 
 **Implication:** adding a filter on a new field REQUIRES adding the index first. Order:
 
@@ -244,7 +246,7 @@ Skipping any step is a **must-fix**.
 
 When adding a new payload field:
 
-1. Add it to `library/knowledge-base/ai/vector-payload-schema.md` first.
+1. Add it to `library/knowledge/private/ai/vector-payload-schema.md` first.
 2. Decide: indexed (high cardinality + used in filters) or stored-only.
 3. If indexed: add `createPayloadIndex()` call to `COMMON_INDEXES`.
 4. Add the field to relevant indexing functions (`knowledge-indexer.ts`, `conversation-indexer.ts`, etc.).

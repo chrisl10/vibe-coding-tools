@@ -8,7 +8,7 @@ topic: sdk-generation
 stinger: api-docs-stinger
 ---
 
-# Speakeasy Go SDK Generator Comparison — Speakeasy Blog
+# Speakeasy Go SDK Generator Comparison: Speakeasy Blog
 
 ## Summary
 
@@ -47,7 +47,7 @@ openapi-generator generate \
 ## Annotations for stinger-forge
 
 - Use this as the **Go-specific source** for `guides/04-sdk-generation.md`.
-- The `oapi-codegen` recommendation for OSS Go is the key takeaway — document it as the preferred free option for Go, not openapi-generator.
-- `oapi-codegen` install: `go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@latest` — no Java needed.
-- Speakeasy's built-in retries and pagination are strong differentiators — note them in the commercial tier comparison.
+- The `oapi-codegen` recommendation for OSS Go is the key takeaway. Document it as the preferred free option for Go, not openapi-generator.
+- `oapi-codegen` install: `go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@latest` (no Java needed).
+- Speakeasy's built-in retries and pagination are strong differentiators. Note them in the commercial tier comparison.
 - The 1500+ deps + Java requirement for openapi-generator Go output is a concrete reason to prefer oapi-codegen for Go teams.

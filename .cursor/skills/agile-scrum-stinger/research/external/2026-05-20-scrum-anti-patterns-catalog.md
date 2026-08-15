@@ -16,36 +16,36 @@ Source: Parabol, published 2023 (still highly relevant, based on Stefan Wolpers'
 
 ## Summary
 
-Comprehensive catalog of 66 Scrum anti-patterns organized by area. Draws from Stefan Wolpers' "Scrum Anti-Patterns Guide" (Pearson, Professional Scrum Series) — the most authoritative anti-patterns book in the Scrum ecosystem. Essential reference for the `guides/05-anti-patterns.md` in the stinger.
+Comprehensive catalog of 66 Scrum anti-patterns organized by area. Draws from Stefan Wolpers' "Scrum Anti-Patterns Guide" (Pearson, Professional Scrum Series): the most authoritative anti-patterns book in the Scrum ecosystem. Essential reference for the `guides/05-anti-patterns.md` in the stinger.
 
 ## Anti-Pattern Organization
 
 ### Daily Scrum Anti-Patterns
-1. **Overcrowded stand-ups** — Too many participants (Guide says teams should be ≤10 for effectiveness)
+1. **Overcrowded stand-ups**: Too many participants (Guide says teams should be ≤10 for effectiveness)
 2. Status meeting (reports to manager instead of team coordination)
 3. Blocked items not actioned same-day
 
 ### Scrum Team Anti-Patterns
-1. **Disconnected PO** — Over-promises to stakeholders, pressurizes team to meet demands
-2. **Ghost PO** — Frequently inaccessible, team loses direction
-3. **Team management** — SM or PO forces task assignments, estimates, or Sprint Goals
+1. **Disconnected PO**: Over-promises to stakeholders, pressurizes team to meet demands
+2. **Ghost PO**: Frequently inaccessible, team loses direction
+3. **Team management**: SM or PO forces task assignments, estimates, or Sprint Goals
 
 ### Development Team Anti-Patterns
-1. **Playing superhero** — One member does too much, creates bottleneck or burnout
-2. Siloed skills — team can't complete work independently
+1. **Playing superhero**: One member does too much, creates bottleneck or burnout
+2. Siloed skills: team can't complete work independently
 
 ### Scrum Metrics Anti-Patterns
-1. **Sprint Velocity worship** — Velocity as sole measure of productivity
-2. **Inflated story points** — Arbitrarily increasing story points to look productive
-3. **Metric manipulation** — Altering agile metrics to present team favorably
-4. **Ignored flow metrics** — Only tracking sprint metrics, ignoring lead time and cycle time
+1. **Sprint Velocity worship**: Velocity as sole measure of productivity
+2. **Inflated story points**: Arbitrarily increasing story points to look productive
+3. **Metric manipulation**: Altering agile metrics to present team favorably
+4. **Ignored flow metrics**: Only tracking sprint metrics, ignoring lead time and cycle time
 
 ### Scrum Practice Anti-Patterns
-1. **Dictatorial leadership** — Top-down decision-making bypasses Scrum roles
-2. **Checklist Scrum** — Ticking rules while ignoring underlying principles
-3. **ScrumBut** — "We do Scrum, but..." exceptions that compromise integrity
-4. **Siloed Scrum** — Teams lack cross-functional skills, create silos
-5. **Static Scrum** — Teams think they know it all, never adapt despite challenges
+1. **Dictatorial leadership**: Top-down decision-making bypasses Scrum roles
+2. **Checklist Scrum**: Ticking rules while ignoring underlying principles
+3. **ScrumBut**: "We do Scrum, but..." exceptions that compromise integrity
+4. **Siloed Scrum**: Teams lack cross-functional skills, create silos
+5. **Static Scrum**: Teams think they know it all, never adapt despite challenges
 
 ## Scrum Anti-Patterns Taxonomy (from Scrum.org)
 
@@ -81,7 +81,7 @@ Product decisions driven by organizational hierarchy rather than empirical evide
 **Repair:** PO must present data alongside any decision. Sprint Reviews must include user evidence.
 
 ### Hardening Sprint
-A dedicated sprint for "testing and bug fixing" after development sprints — evidence that the team's DoD doesn't ensure quality within each sprint.
+A dedicated sprint for "testing and bug fixing" after development sprints: evidence that the team's DoD doesn't ensure quality within each sprint.
 
 **Repair:** Testing is part of every sprint. Harden the DoD; eliminate hardening sprints.
 
@@ -99,7 +99,7 @@ Hundreds of backlog items including ideas, hypotheses, documentation fragments. 
 ### Velocity as KPI
 Management uses velocity to compare teams, measure performance, or set targets. Creates gaming behavior and destroys the planning tool.
 
-**Repair:** "We are not paid to do Scrum. We are paid to deliver value." — Stefan Wolpers
+**Repair:** "We are not paid to do Scrum. We are paid to deliver value." (Stefan Wolpers)
 
 ### Sprint Stuffing
 PO forces more work into Sprint when team finishes early. Violates Developers' right to decide Sprint Backlog composition.
@@ -112,7 +112,7 @@ PO forces more work into Sprint when team finishes early. Violates Developers' r
 
 > "Solving your team's challenges takes experimentation and creativity... Every team and organization is different."
 
-> "We are not paid to do Scrum. We are paid to deliver value." — Stefan Wolpers
+> "We are not paid to do Scrum. We are paid to deliver value." (Stefan Wolpers)
 
 ## Source Book Reference
 

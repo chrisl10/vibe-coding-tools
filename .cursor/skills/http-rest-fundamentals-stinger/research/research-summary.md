@@ -24,7 +24,7 @@ Produced by scripture-historian (Phase 1.5). Date: 2026-05-20.
 
 ## 5 Most Influential Sources
 
-### 1. RFC 9110 — HTTP Semantics (`internal/2026-05-20-rfc9110-http-semantics.md`)
+### 1. RFC 9110: HTTP Semantics (`internal/2026-05-20-rfc9110-http-semantics.md`)
 **Why it matters for stinger-forge:** This is the root citation for every method, status code, and content negotiation ruling in the stinger. Every `guides/` file must have at least one RFC 9110 §-level citation to be credible. Stinger-forge should treat it as the mandatory citation source for all seven ACTION guides. Key facts encoded: safety vs idempotency definitions (§9.2.1, §9.2.2); 422 renamed to "Unprocessable Content" (§15.5.21); conditional request evaluation order (§13.2.2).
 
 ### 2. WHATWG Fetch Spec (`internal/2026-05-20-whatwg-fetch-cors.md`)
@@ -34,18 +34,18 @@ Produced by scripture-historian (Phase 1.5). Date: 2026-05-20.
 **Why it matters for stinger-forge:** The most operationally complete 2026 HTTP/3 guide found. Encodes the four prerequisites (TLS 1.3, UDP/443, Alt-Svc, implementation config), nginx version caveats (1.29.1+ for 0-RTT with OpenSSL), and the curl-based verification workflow. This is the template for `examples/http3-readiness-assessment.md` and the HTTP/3 section of `guides/06-http2-http3.md`.
 
 ### 4. CORS Errors Explained: Preflight, Credentials, Misconfigurations (`external/2026-05-20-cors-preflight-credentials.md`)
-**Why it matters for stinger-forge:** Contains the "auth before CORS" gotcha (preflights arrive uncredentialed — auth middleware must not block OPTIONS), the triple-wildcard prohibition (ACAO + ACAM + ACAH all forbidden with credentials), and the requirement to omit `Access-Control-Allow-Credentials` entirely when the request is not credentialed. These are non-obvious findings that distinguish a deep CORS audit from a surface-level one.
+**Why it matters for stinger-forge:** Contains the "auth before CORS" gotcha (preflights arrive uncredentialed, auth middleware must not block OPTIONS), the triple-wildcard prohibition (ACAO + ACAM + ACAH all forbidden with credentials), and the requirement to omit `Access-Control-Allow-Credentials` entirely when the request is not credentialed. These are non-obvious findings that distinguish a deep CORS audit from a surface-level one.
 
 ### 5. Roy Fielding's REST Dissertation (`internal/2026-05-20-fielding-rest-dissertation.md`)
-**Why it matters for stinger-forge:** The only authoritative source for the six REST constraints. `guides/07-rest-vs-rpc.md` must derive from this source, particularly the stateless constraint (server-side sessions violate REST), the HATEOAS requirement (nearly universally skipped), and the architectural basis for distinguishing REST from RPC-over-HTTP. The stinger should state clearly that most "RESTful" APIs are HTTP+JSON RPC — this framing prevents the worker-bee from over-prescribing HATEOAS where it's not needed.
+**Why it matters for stinger-forge:** The only authoritative source for the six REST constraints. `guides/07-rest-vs-rpc.md` must derive from this source, particularly the stateless constraint (server-side sessions violate REST), the HATEOAS requirement (nearly universally skipped), and the architectural basis for distinguishing REST from RPC-over-HTTP. The stinger should state clearly that most "RESTful" APIs are HTTP+JSON RPC: this framing prevents the worker-bee from over-prescribing HATEOAS where it's not needed.
 
 ---
 
 ## 5 Open Questions for the User
 
-1. **HTTP/3 scope for self-hosted vs CDN-proxied origins:** The research revealed a meaningful split — CDN-proxied traffic gets HTTP/3 automatically; self-hosted origins require explicit configuration (nginx 1.25+, Caddy, etc.). Should the stinger's HTTP/3 guide explicitly scope its "readiness assessment" to CDN users vs origin-server users? Or produce a unified checklist?
+1. **HTTP/3 scope for self-hosted vs CDN-proxied origins:** The research revealed a meaningful split: CDN-proxied traffic gets HTTP/3 automatically; self-hosted origins require explicit configuration (nginx 1.25+, Caddy, etc.). Should the stinger's HTTP/3 guide explicitly scope its "readiness assessment" to CDN users vs origin-server users? Or produce a unified checklist?
 
-2. **RFC 9457 Problem Details adoption guidance:** RFC 9457 (`application/problem+json`) is the standard for HTTP error response bodies as of July 2023, superseding RFC 7807. Should the stinger mandate RFC 9457 compliance as an audit finding, or recommend it as a best practice? The bee's Command Brief says "audit status code honesty" — does error body shape fall within scope?
+2. **RFC 9457 Problem Details adoption guidance:** RFC 9457 (`application/problem+json`) is the standard for HTTP error response bodies as of July 2023, superseding RFC 7807. Should the stinger mandate RFC 9457 compliance as an audit finding, or recommend it as a best practice? The bee's Command Brief says "audit status code honesty": does error body shape fall within scope?
 
 3. **HATEOAS guidance level:** Fielding's dissertation requires HATEOAS for true REST. The stinger's `guides/07-rest-vs-rpc.md` must decide: should it instruct the bee to flag absence of HATEOAS as a finding, or just document the theoretical/practical split? Most production APIs skip HATEOAS and work fine.
 

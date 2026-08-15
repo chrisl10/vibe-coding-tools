@@ -1,4 +1,4 @@
-# 15 — Django + React Decoupled Architecture
+# 15: Django + React Decoupled Architecture
 
 API-first contract. Django emits JSON; React consumes it. CORS configured per-environment. Auth is a deliberate decision.
 
@@ -9,7 +9,7 @@ API-first contract. Django emits JSON; React consumes it. CORS configured per-en
 3. **`CORS_ALLOW_CREDENTIALS = True`** when using cookie-based auth (sessions). Cookies are not sent cross-origin without it.
 4. **`CSRF_TRUSTED_ORIGINS` includes the React origin** for non-same-origin POSTs.
 5. **Auth provider choice is `auth-worker-bee`'s call.** This guide covers the Python wiring of session / JWT / external-token patterns.
-6. **Error envelope is consistent** — `{"error": "...", "code": "...", "details": {...}}`.
+6. **Error envelope is consistent**: `{"error": "...", "code": "...", "details": {...}}`.
 7. **`X-Request-ID` propagates** from the React fetch through Django middleware to logs.
 
 ## CORS configuration
@@ -99,7 +99,7 @@ class JWTBearer(HttpBearer):
 router = Router(auth=JWTBearer())
 ```
 
-Refresh-token flow, MFA, RBAC, OAuth callbacks — all `auth-worker-bee` territory.
+Refresh-token flow, MFA, RBAC, OAuth callbacks: all `auth-worker-bee` territory.
 
 ## Auth pattern: external provider (Clerk / WorkOS / Auth0 / Supabase Auth)
 

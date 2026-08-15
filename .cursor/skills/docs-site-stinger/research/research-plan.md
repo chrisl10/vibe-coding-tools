@@ -5,7 +5,7 @@
 - **Page budget target:** ~100 pages (target 8-12 high-quality external source notes)
 - **Source breadth target:** official docs, practitioner blogs, changelogs, comparison posts, pricing pages
 
-## Initial queries (from the proposal step / Command Brief)
+## Initial queries (from `big-bang-space` / Command Brief)
 
 1. "Mintlify documentation 2026"
 2. "Docusaurus v3 React 2026"

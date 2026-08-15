@@ -22,10 +22,10 @@
 The rejection is about what your store listing claims, not about the app binary.
 
 **Common codes:**
-- **2.3.1** — "Your screenshots do not sufficiently reflect your app in use" (screenshots don't match actual functionality)
-- **2.3.3** — "Your app name contains content that is not appropriate"
-- **2.3.4** — "Your app contains placeholder text"
-- **2.3.7** — "Your binary contains non-public API usage described in metadata" (usually: your description mentions a feature that needs a special entitlement)
+- **2.3.1**: "Your screenshots do not sufficiently reflect your app in use" (screenshots don't match actual functionality)
+- **2.3.3**: "Your app name contains content that is not appropriate"
+- **2.3.4**: "Your app contains placeholder text"
+- **2.3.7**: "Your binary contains non-public API usage described in metadata" (usually: your description mentions a feature that needs a special entitlement)
 
 **Remediation pattern:** Fix the metadata to match the app, or fix the app to match the metadata. Never try to hide functionality.
 
@@ -34,39 +34,39 @@ The rejection is about what your store listing claims, not about the app binary.
 The app's functionality or business model violates a guideline.
 
 **Common codes:**
-- **3.1.1** — "Your app uses features that require customers to make in-app purchases, but your app does not offer in-app purchasing" (you have premium features with no IAP) — or the reverse: "Your app uses a non-approved external payment method"
-- **3.1.2** — Subscription-specific: incorrect subscription terms disclosure, missing restoration flow
-- **4.3** — "This app is a duplicate of apps already in the App Store" — this is the most dangerous rejection; it usually means the app is too simple or too similar to a common utility app
-- **5.1.1** — Privacy policy missing or inadequate
-- **5.1.2** — Permissions not justified with purpose strings, or requesting unnecessary permissions
-- **5.3.4** — Inaccurate age rating relative to content
+- **3.1.1**: "Your app uses features that require customers to make in-app purchases, but your app does not offer in-app purchasing" (you have premium features with no IAP), or the reverse: "Your app uses a non-approved external payment method"
+- **3.1.2**: Subscription-specific: incorrect subscription terms disclosure, missing restoration flow
+- **4.3**: "This app is a duplicate of apps already in the App Store": this is the most dangerous rejection; it usually means the app is too simple or too similar to a common utility app
+- **5.1.1**: Privacy policy missing or inadequate
+- **5.1.2**: Permissions not justified with purpose strings, or requesting unnecessary permissions
+- **5.3.4**: Inaccurate age rating relative to content
 
-**Remediation pattern:** The guideline section number tells you exactly which part of the App Review Guidelines to read. Read that section completely — not just the heading.
+**Remediation pattern:** The guideline section number tells you exactly which part of the App Review Guidelines to read. Read that section completely, not just the heading.
 
 #### Type C: Binary / quality rejection
 
 The app crashed, a feature didn't work during review, or the app is below quality bar.
 
 **Common codes:**
-- **2.1** — "We discovered one or more bugs" — attach screenshots, device info, and reproduction steps in your reply; request a call with the reviewer if needed
-- **2.4.1** — Battery, performance, or power issues
-- **2.4.5** — "Your app is not compatible with the currently supported devices" — often an Xcode build settings issue, not a code issue
+- **2.1**: "We discovered one or more bugs": attach screenshots, device info, and reproduction steps in your reply; request a call with the reviewer if needed
+- **2.4.1**: Battery, performance, or power issues
+- **2.4.5**: "Your app is not compatible with the currently supported devices", often an Xcode build settings issue, not a code issue
 
 **Remediation pattern:** Build the fix, retest on a clean simulator with the specific OS version mentioned in the rejection, upload a new build.
 
 #### Type D: Legal / rights rejection
 
-- **5.2.1** — Intellectual property: using trademarked terms, character likenesses, or brand assets without authorization
-- **5.2.2** — Design / patent concerns (rare but escalating)
-- **5.5** — Developer code of conduct violation
+- **5.2.1**: Intellectual property: using trademarked terms, character likenesses, or brand assets without authorization
+- **5.2.2**: Design / patent concerns (rare but escalating)
+- **5.5**: Developer code of conduct violation
 
 **Remediation pattern:** Remove the offending content. IP rejections often require you to prove ownership or obtain a license. These cannot be workaround-engineered.
 
 #### Type E: 2026-specific rejections
 
-- **AI-generated content disclosure** — Apple is increasingly requiring disclosure when an app uses AI to generate content displayed to users. The rejection note typically references guidelines 1.1.6 or a custom note. Remediation: add an in-app disclosure and update the privacy label to include the AI inference provider.
+- **AI-generated content disclosure**: Apple is increasingly requiring disclosure when an app uses AI to generate content displayed to users. The rejection note typically references guidelines 1.1.6 or a custom note. Remediation: add an in-app disclosure and update the privacy label to include the AI inference provider.
 
-> **TODO: open question** — Apple has not published a specific guideline section for AI-generated content disclosure as of research date. Treat any note mentioning "AI-generated content" as a good-faith compliance requirement and add disclosure language. (See `research/research-summary.md` open question #4.)
+> **TODO: open question**: Apple has not published a specific guideline section for AI-generated content disclosure as of research date. Treat any note mentioning "AI-generated content" as a good-faith compliance requirement and add disclosure language. (See `research/research-summary.md` open question #4.)
 
 ---
 
@@ -110,7 +110,7 @@ Google requires apps to target the current-year API level by August each year. R
 ### iOS appeal
 
 1. After receiving a rejection, open App Store Connect > Resolution Center (or App Review portal)
-2. Click "Reply to Review Team" — do not create a new submission yet
+2. Click "Reply to Review Team"; do not create a new submission yet
 3. Write a professional, concise reply that either:
    a. Explains why the review was incorrect with specific evidence (screenshots, video), or
    b. Describes the specific change you are making to resolve the stated issue
@@ -123,7 +123,7 @@ Google requires apps to target the current-year API level by August each year. R
 - Available via App Review > Contact Us > Request Expedited Review
 - Qualifying criteria: serious bug fix, app is down/broken in production, critical time-sensitive feature
 - Approval is not guaranteed and is being approved less frequently in 2026 (research shows ~30% approval rate vs ~55% in 2023)
-- Treat as scarce — use only when genuinely critical
+- Treat as scarce; use only when genuinely critical
 
 ### Android appeal
 

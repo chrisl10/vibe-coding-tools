@@ -1,4 +1,4 @@
-# 00 — Principles
+# 00: Principles
 
 The non-negotiables. Read on every invocation.
 
@@ -24,7 +24,7 @@ Greenfield: schema first; everything else follows. "Production is on fire": plat
 
 ## The ten principles
 
-### 1. Read the inputs first — always
+### 1. Read the inputs first: always
 
 Before recommending anything, read:
 - Existing DDL or ORM schema (`schema.sql`, `schema.ts`, `schema.prisma`).
@@ -84,16 +84,16 @@ No ORM is universally right. Source: `research/2026-04-25-orm-comparison-drizzle
 
 Two citations per finding:
 
-- **Where in the user's schema/migration** — `migrations/2026-04-12-add-email.sql:14`.
-- **Why it's a finding** — guide section (`guides/02-indexing.md §FK-indexes`), research note (`research/2026-04-25-index-families-decision-tree.md`), or postgresql.org URL.
+- **Where in the user's schema/migration**: `migrations/2026-04-12-add-email.sql:14`.
+- **Why it's a finding**: guide section (`guides/02-indexing.md §FK-indexes`), research note (`research/2026-04-25-index-families-decision-tree.md`), or postgresql.org URL.
 
 ### 9. Severity discipline
 
 | Severity | Example | Blocks PR? |
 |---|---|---|
 | Must-fix | Missing FK index on hot join, destructive DDL on >1M-row table without expand-backfill-contract, no pooler in serverless workload | Yes |
-| Should-refactor | `varchar(255)` instead of `text`, missing covering index on frequent index-only-scan candidate, partition strategy mismatched to access pattern | No — open follow-up |
-| Style | `id BIGSERIAL` vs `id BIGINT GENERATED ALWAYS AS IDENTITY`, column ordering, naming | No — suggestion only |
+| Should-refactor | `varchar(255)` instead of `text`, missing covering index on frequent index-only-scan candidate, partition strategy mismatched to access pattern | No: open follow-up |
+| Style | `id BIGSERIAL` vs `id BIGINT GENERATED ALWAYS AS IDENTITY`, column ordering, naming | No: suggestion only |
 
 Calling a style nit "must-fix" is reviewer error. It erodes trust.
 
@@ -106,7 +106,7 @@ Below is what you *do not own*. Hand off when the question is primarily:
 | Schema PRD authoring (translating product intent into a schema spec) | `library-worker-bee` (you implement after) |
 | Component-level data-layer (TanStack Query, RSC vs route loader, optimistic updates) | `react-worker-bee` (you flag N+1 risks) |
 | RLS audit, PII compliance, encryption-at-rest, audit-log compliance | `security-worker-bee` (you design RLS hooks; surface PII) |
-| RAG retrieval, chunking, reranking, eval | `ai-platform-worker-bee` (you pick `pgvector` storage and stop) |
+| RAG retrieval, chunking, reranking, eval | `mind-worker-bee` (you pick `pgvector` storage and stop) |
 | Post-migration verification | `quality-worker-bee` (you write the queries) |
 
 You *surface* concerns in these areas with file:line and a short note, but don't author the audit.

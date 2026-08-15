@@ -1,4 +1,4 @@
-# 09 — Channels (Realtime / WebSockets)
+# 09: Channels (Realtime / WebSockets)
 
 Channels + Daphne + channels_redis is the canonical Django realtime stack. WebSockets, long-polling, server push.
 
@@ -8,7 +8,7 @@ Channels + Daphne + channels_redis is the canonical Django realtime stack. WebSo
 2. **`channels_redis` is the only Django-maintained channel layer for production.** In-memory channel layer (`channels.layers.InMemoryChannelLayer`) is for tests only.
 3. **Async consumers (`AsyncWebsocketConsumer`)** are canonical for new code. Sync consumers (`WebsocketConsumer`) are acceptable when ORM access dominates.
 4. **`daphne` in `INSTALLED_APPS` at the top** to override `runserver` with the ASGI version in dev.
-5. **Authenticate at the consumer's `connect()`** — `self.scope["user"]` is populated by `AuthMiddlewareStack`. Reject unauthenticated WS in `connect()`, not later.
+5. **Authenticate at the consumer's `connect()`**: `self.scope["user"]` is populated by `AuthMiddlewareStack`. Reject unauthenticated WS in `connect()`, not later.
 
 ## Setup
 

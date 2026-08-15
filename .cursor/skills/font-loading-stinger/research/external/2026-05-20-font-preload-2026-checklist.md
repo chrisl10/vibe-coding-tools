@@ -63,9 +63,9 @@ Published February 2026.
   `guides/06-performance-checklist.md`. Use the 7-item list verbatim as the
   checklist structure.
 - The `fetchpriority="high"` for the single most critical font is the 2026
-  addition to the standard preload pattern — include it in `templates/preload-link.md`.
+  addition to the standard preload pattern: include it in `templates/preload-link.md`.
 - The recommendation for `optional` on LCP-critical hero headings resolves a
-  nuance not covered by other sources — hero font delay contributes to LCP timing.
+  nuance not covered by other sources: hero font delay contributes to LCP timing.
 - The "150-400ms savings from self-hosting" statistic is useful for
   `guides/04-nextjs-font.md` when explaining why `next/font` self-hosting matters.
-- Published February 2026 — highest recency among practitioner sources.
+- Published February 2026, highest recency among practitioner sources.

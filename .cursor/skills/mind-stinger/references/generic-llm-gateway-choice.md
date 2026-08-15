@@ -1,4 +1,4 @@
-# Generic LLM Gateway Choice (DEMOTED — the deploying product uses OpenRouter exclusively)
+# Generic LLM Gateway Choice (DEMOTED: the deploying product uses OpenRouter exclusively)
 
 > **Status:** Demoted reference. the deploying product routes ALL LLM inference through OpenRouter (`https://openrouter.ai/api/v1`) via the OpenAI-compatible SDK.
 
@@ -6,12 +6,12 @@
 
 ## Why OpenRouter is canonical for the deploying product
 
-1. **OpenAI API-compatible** — same SDK, same shape; trivial swap if needed.
-2. **450+ models** — model swaps via the SA AI Configuration screen, no infrastructure change.
-3. **Provider failover built in** — if a provider is down, OpenRouter routes to a fallback if configured.
-4. **Single auth surface** — one API key, one base URL.
-5. **Prepaid credit model** — predictable spend; auto-reload + low-balance webhook.
-6. **Mature for the deploying product's scale** — handles millions of LLM calls/month.
+1. **OpenAI API-compatible**: same SDK, same shape; trivial swap if needed.
+2. **450+ models**: model swaps via the SA AI Configuration screen, no infrastructure change.
+3. **Provider failover built in**: if a provider is down, OpenRouter routes to a fallback if configured.
+4. **Single auth surface**: one API key, one base URL.
+5. **Prepaid credit model**: predictable spend; auto-reload + low-balance webhook.
+6. **Mature for the deploying product's scale**: handles millions of LLM calls/month.
 
 ---
 
@@ -55,17 +55,17 @@
 
 ## Why we don't combine multiple gateways
 
-**Single gateway = single auth, single audit, single billing surface.** the deploying product's `traceAICall()` is the audit; OpenRouter is the gateway; `AiTrace` is the storage. Adding a second gateway would require either dual-routing (every call goes through both — wasteful) or splitting calls across gateways (audit fragmentation).
+**Single gateway = single auth, single audit, single billing surface.** the deploying product's `traceAICall()` is the audit; OpenRouter is the gateway; `AiTrace` is the storage. Adding a second gateway would require either dual-routing (every call goes through both, wasteful) or splitting calls across gateways (audit fragmentation).
 
 Combining `AiTrace` (host-side observability) with OpenRouter (provider routing) gives the same effective coverage as Portkey + LiteLLM combined, without the second vendor relationship.
 
 ---
 
-## Operational requirements (for OpenRouter — must-fix)
+## Operational requirements (for OpenRouter, must-fix)
 
 Per `guides/19-llm-provider-config.md §8`:
 
-1. **Auto-reload** in OpenRouter dashboard — minimum balance + auto-reload amount.
+1. **Auto-reload** in OpenRouter dashboard: minimum balance + auto-reload amount.
 2. **Low-balance webhook** → Slack/PagerDuty alert.
 3. **Monitor `OPENROUTER_BALANCE`** in observability dashboard.
 
@@ -79,6 +79,6 @@ If the deploying product ever needs to swap OpenRouter (e.g., for a self-hosted 
 
 1. Replace `_client = new OpenAI({ baseURL: ..., apiKey: ... })` in `ai-client.ts` with the new gateway's configuration.
 2. Confirm OpenAI-API compatibility (most gateways do this; Portkey/LiteLLM do).
-3. Re-test all paths — coaching, routing, matching, onboarding, summarization, vision.
+3. Re-test all paths: coaching, routing, matching, onboarding, summarization, vision.
 4. Migrate the model slot defaults if names differ.
-5. Update `library/knowledge-base/ai/coach-architecture.md §3` and `library/knowledge-base/ai/README.md`.
+5. Update `library/knowledge/private/ai/coach-architecture.md §3` and `library/knowledge/private/ai/README.md`.

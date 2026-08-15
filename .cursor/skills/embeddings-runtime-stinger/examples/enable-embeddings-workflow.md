@@ -8,7 +8,7 @@ Out of the box, `HIVEMIND_EMBEDDINGS` and `HIVEMIND_SEMANTIC_SEARCH` are unset. 
 
 ## Step 0 - Decide it is worth it
 
-Before enabling, apply `guides/05-embeddings-vs-bm25.md`. Embeddings cost ~600MB plus CPU. Turn them on only if the workload has paraphrase/conceptual queries and you have reason to believe semantic recall will lift results over BM25. If recall is mostly exact-keyword, stop here and stay on lexical.
+Before enabling, apply `guides/local-daemon-05-embeddings-vs-bm25.md`. Embeddings cost ~600MB plus CPU. Turn them on only if the workload has paraphrase/conceptual queries and you have reason to believe semantic recall will lift results over BM25. If recall is mostly exact-keyword, stop here and stay on lexical.
 
 ## Step 1 - Enable the toggles
 

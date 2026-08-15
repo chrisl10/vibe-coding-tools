@@ -78,7 +78,7 @@ If `quality-worker-bee` is invoked first, security fixes can invalidate the QA s
 
 - `library-worker-bee` authors plans. Never rewrite a plan in a QA report. Escalate ambiguity, don't resolve it.
 - `security-worker-bee` owns the security axis. The Bee's Detrimental Patterns axis flags obvious security smells (hardcoded secrets in the diff, missing auth checks called out in the plan) but does not replicate a full security audit.
-- Other specialist Bees own their domains (`deeplake-dataset-worker-bee`, `retrieval-worker-bee`, `mcp-protocol-worker-bee`, etc.). `quality-worker-bee` does not substitute for them. If the plan references a schema, recall, or protocol concern, confirm it is present but defer deep audit of it to the specialist Bee.
+- Other specialist Bees own their domains (`vector-store-worker-bee`, `retrieval-worker-bee`, `mcp-protocol-worker-bee`, etc.). `quality-worker-bee` does not substitute for them. If the plan references a schema, recall, or protocol concern, confirm it is present but defer deep audit of it to the specialist Bee.
 
 ## 8. Repo-specific rules vs. universal rules
 

@@ -1,6 +1,6 @@
 # git-stinger
 
-The procedural arsenal for `git-worker-bee`, the Cursor IDE Army's Git mastery specialist.
+The procedural arsenal for `git-worker-bee`, the Hive's Git mastery specialist.
 
 ## What this stinger covers
 

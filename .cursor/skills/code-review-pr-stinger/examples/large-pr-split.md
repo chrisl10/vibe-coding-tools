@@ -52,7 +52,7 @@ Logical concerns identified: 4
 ### PR B: Add `queryRecentCommits` Deep Lake method
 **Lines:** ~200 (method + tests)
 **Concern:** Dataset-layer addition
-**Rationale:** Dataset-only change; can be reviewed by whoever owns the Deep Lake layer without retrieval context. Ships independently. Route any schema questions to `deeplake-dataset-worker-bee`.
+**Rationale:** Dataset-only change; can be reviewed by whoever owns the Deep Lake layer without retrieval context. Ships independently. Route any schema questions to `vector-store-worker-bee`.
 **Description starter:** "Adds `queryRecentCommits(window)` to the dataset layer, returning commits within a time window with bounded result size. Includes Vitest cases. The pipeline will consume this in #[next-PR]."
 **Depends on:** Can be opened in parallel with PR A.
 

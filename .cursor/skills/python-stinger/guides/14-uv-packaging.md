@@ -1,4 +1,4 @@
-# 14 — uv Packaging
+# 14: uv Packaging
 
 uv is canonical. Replaces pyenv + virtualenv + pip + Poetry + pip-tools with one Rust binary.
 

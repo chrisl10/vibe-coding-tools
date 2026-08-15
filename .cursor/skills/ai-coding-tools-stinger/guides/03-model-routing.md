@@ -1,4 +1,4 @@
-# Guide 03: Model Routing — LLM Defaults, Overrides, and Cost Patterns
+# Guide 03: Model Routing: LLM Defaults, Overrides, and Cost Patterns
 
 *Sources: `research/external/2026-05-20-aider-llm-leaderboard.md`, `research/external/2026-05-20-claude-code-aider-cline-comparison.md`, `research/external/2026-05-20-cursor-agent-mode-2026.md`*
 
@@ -10,9 +10,9 @@ Always state the routing default explicitly in a recommendation. Defaults change
 
 | Tool | Default model | Model lock-in | Override method |
 |------|--------------|--------------|-----------------|
-| Claude Code | Claude (Opus/Sonnet based on plan tier) | HIGH — Claude only | Cannot change; subscription or API keys |
-| Aider | User-configured via `.aider.conf.yml` | NONE — 100+ models via LiteLLM | `aider --model <model-name>` or config file |
-| Cline | User-configured; Claude/GPT-4o/Gemini common | LOW — multiple backends | VS Code settings panel |
+| Claude Code | Claude (Opus/Sonnet based on plan tier) | HIGH: Claude only | Cannot change; subscription or API keys |
+| Aider | User-configured via `.aider.conf.yml` | NONE: 100+ models via LiteLLM | `aider --model <model-name>` or config file |
+| Cline | User-configured; Claude/GPT-4o/Gemini common | LOW: multiple backends | VS Code settings panel |
 | Cursor | Proprietary + external routing (Composer routes to Claude/GPT/Gemini) | MEDIUM | Cursor settings > Model |
 | Windsurf | Cascade (Cognition AI proprietary) + third-party | MEDIUM | Windsurf settings |
 | Continue.dev | User-configured; any OIDC-compatible provider | NONE | `config.json` |
@@ -69,7 +69,7 @@ Cursor routes to multiple external providers (Claude, GPT, Gemini) depending on 
 - **Composer (multi-file chat):** Routes to external models (Claude Opus, GPT-5, Gemini)
 - **Agent Mode:** Routes to the model selected in Cursor settings
 
-> **TODO: open question** — The exact routing logic for when Cursor uses its proprietary model vs routes to external providers was not fully documented in available sources as of 2026-05-20. Consult `cursor-ide-worker-bee` for the authoritative current routing behavior.
+> **TODO: open question**: The exact routing logic for when Cursor uses its proprietary model vs routes to external providers was not fully documented in available sources as of 2026-05-20. Consult `cursor-ide-worker-bee` for the authoritative current routing behavior.
 
 ---
 

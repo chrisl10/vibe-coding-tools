@@ -93,7 +93,7 @@ Cite `templates/session-cookie-config.ts` and `guides/10-session-storage.md`.
 
 ### 3. SCIM provisioning
 
-WorkOS handles SCIM (Directory Sync) — when a customer's IdP provisions a user, WorkOS calls our webhook. Wire it:
+WorkOS handles SCIM (Directory Sync): when a customer's IdP provisions a user, WorkOS calls our webhook. Wire it:
 
 ```ts
 // app/api/webhooks/workos/route.ts
@@ -120,7 +120,7 @@ export async function POST(req: Request) {
 }
 ```
 
-Schema: `users` + `organizations` + `user_organizations(user_id, organization_id, role)` — flagged for `db-worker-bee`.
+Schema: `users` + `organizations` + `user_organizations(user_id, organization_id, role)`, flagged for `db-worker-bee`.
 
 ### 4. RBAC
 

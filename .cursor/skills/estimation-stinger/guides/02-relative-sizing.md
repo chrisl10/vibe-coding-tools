@@ -6,7 +6,7 @@ Relative sizing methods answer "how big is this work relative to other work we'v
 
 ### Why Fibonacci?
 
-The Fibonacci sequence (1, 2, 3, 5, 8, 13, 21) reflects an important cognitive truth: as complexity grows, our uncertainty grows faster. The increasing gaps between Fibonacci numbers force teams to acknowledge that big stories are big in a non-linear way. A story estimated at 13 is not "1.3x bigger than 10" — it is "genuinely uncertain and probably needs splitting."
+The Fibonacci sequence (1, 2, 3, 5, 8, 13, 21) reflects an important cognitive truth: as complexity grows, our uncertainty grows faster. The increasing gaps between Fibonacci numbers force teams to acknowledge that big stories are big in a non-linear way. A story estimated at 13 is not "1.3x bigger than 10"; it is "genuinely uncertain and probably needs splitting."
 
 The "Not in the Scrum Guide" note: story points are not a Scrum artifact. The Scrum Guide (2020) mentions them nowhere. They are a community convention that evolved from Extreme Programming. Teams that treat them as sacred Scrum objects confuse convention with requirement. See `research/external/02-story-points-fibonacci.md`.
 
@@ -21,12 +21,12 @@ The "Not in the Scrum Guide" note: story points are not a Scrum artifact. The Sc
 
 - Team composition or work type has changed so much that calibration has drifted (Category 3 dysfunction)
 - The team has 6+ months of cycle-time data and wants more accurate delivery forecasts
-- Story points are being used to generate delivery dates — that's a forecasting job, not an estimation job
+- Story points are being used to generate delivery dates: that's a forecasting job, not an estimation job
 
 ### Reference story calibration (essential for meaningful points)
 
-1. Select a "1-point reference story" — the smallest piece of work the team regularly does. Write it on a card. Keep it visible.
-2. Select a "5-point reference story" — a typical medium-complexity story the team knows well.
+1. Select a "1-point reference story": the smallest piece of work the team regularly does. Write it on a card. Keep it visible.
+2. Select a "5-point reference story": a typical medium-complexity story the team knows well.
 3. All future estimates are relative to these two anchors.
 4. Re-calibrate when: team changes, technology stack changes, reference stories are forgotten.
 
@@ -82,7 +82,7 @@ Planning Poker is the process by which a team produces story-point estimates. It
 3. Each team member privately selects a Fibonacci card.
 4. All cards are revealed simultaneously (the simultaneous reveal prevents anchoring).
 5. If all estimates agree (or are within one Fibonacci value), record the estimate.
-6. If estimates diverge significantly (e.g., 2 vs. 13), the highest and lowest estimators explain their reasoning. This is the most valuable part of the process — it surfaces hidden assumptions.
+6. If estimates diverge significantly (e.g., 2 vs. 13), the highest and lowest estimators explain their reasoning. This is the most valuable part of the process: it surfaces hidden assumptions.
 7. Vote again until consensus or near-consensus.
 
 ### The value is in the outliers

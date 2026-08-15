@@ -19,7 +19,7 @@ Comprehensive pricing and feature comparison of the major SaaS product tour plat
 - Userflow: $240/month Startup (3 seats, unlimited flows); $680/month Pro.
 - Pendo: Enterprise pricing; AI Resource Center with Leo conversational interface added in Pendomonium 2026.
 - At 10,000 MAUs: Appcues Growth + analytics tool = ~$954/month minimum; Userpilot = $299/month (analytics included).
-- Userflow G2 rating: 4.8/5 — highest among the three.
+- Userflow G2 rating: 4.8/5, highest among the three.
 - Neither Appcues nor Userflow includes comprehensive product analytics; teams must add Mixpanel or Amplitude separately.
 - "41% increase in guide goal completion after walkthrough" (Pendo self-reported stat).
 - "28% increase in free-to-paid conversion with upgrade prompt segment" (Pendo self-reported).
@@ -29,5 +29,5 @@ Comprehensive pricing and feature comparison of the major SaaS product tour plat
 - This is the primary source for `guides/01-platform-selection.md`. The four-way comparison (Userpilot vs Appcues vs Userflow vs Pendo) maps directly to the decision matrix axes: cost, code-depth, DOM-stability, mobile support.
 - Key decision branch: teams with <5,000 MAUs should evaluate Userflow (best price-per-flow) and Userpilot (analytics included). Teams with mobile requirements should evaluate Appcues (most mature native SDKs).
 - Pendo's AI Resource Center (2026) is worth noting as a differentiator for enterprise customers who want guided in-app help beyond standard tours.
-- Contradicts any assumption that Appcues is "full-featured" at base pricing — checklists require the $879 tier.
+- Contradicts any assumption that Appcues is "full-featured" at base pricing: checklists require the $879 tier.
 - Complements `guides/05-checklist-activation.md`: Userflow and Userpilot both include checklists at lower tiers than Appcues.

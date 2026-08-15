@@ -49,5 +49,5 @@ Comprehensive community explainer (widely cited, treated as reference material) 
 ## Annotations for stinger-forge
 
 - **guides/00-principles.md**: The `approximate_member_count` alternative for "user count" is an important escape hatch. Bots that just want to display server member counts do NOT need `GUILD_MEMBERS`.
-- **guides/06-verification-checklist.md**: "You will not be approved for privileged intents for userinfo/serverinfo commands" — this is critical guidance for intent application justification prose.
-- **Common misconception documented**: Many developers enable `MESSAGE_CONTENT` because they want to count messages or respond to @mentions — both work WITHOUT the intent. The intent is only needed to read the actual message body content.
+- **guides/06-verification-checklist.md**: "You will not be approved for privileged intents for userinfo/serverinfo commands": this is critical guidance for intent application justification prose.
+- **Common misconception documented**: Many developers enable `MESSAGE_CONTENT` because they want to count messages or respond to @mentions: both work WITHOUT the intent. The intent is only needed to read the actual message body content.

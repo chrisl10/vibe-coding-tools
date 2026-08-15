@@ -7,7 +7,7 @@
 
 ---
 
-## Initial queries (from Command Brief / the proposal step)
+## Initial queries (from Command Brief / big-bang-space)
 
 1. "Diataxis framework documentation 2026"
 2. "Technical writing principles inverted pyramid 2026"

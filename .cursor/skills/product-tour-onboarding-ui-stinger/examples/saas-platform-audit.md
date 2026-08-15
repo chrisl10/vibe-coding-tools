@@ -30,7 +30,7 @@ They use React + Tailwind + Emotion for styling (CSS-in-JS → `data-tour` ancho
 |---|---|---|---|---|---|
 | Userpilot | $299/month (analytics included) | Yes | Yes | Yes | **Qualified** |
 | Userflow | $240/month Startup | Yes | Yes (visual builder) | Yes | **Qualified** |
-| Appcues Essentials | $249/month | No — requires $879 Growth | Yes | Limited on Essentials | **Not qualified** (checklist locked to $879 tier) |
+| Appcues Essentials | $249/month | No, requires $879 Growth | Yes | Limited on Essentials | **Not qualified** (checklist locked to $879 tier) |
 | Pendo | Enterprise pricing | Yes | Yes | Yes | **Not qualified** (over budget) |
 | Driver.js + Shepherd.js | Free | No (custom build required) | No | Custom code required | **Conditionally qualified** (if team can accept engineering overhead) |
 
@@ -38,7 +38,7 @@ They use React + Tailwind + Emotion for styling (CSS-in-JS → `data-tour` ancho
 
 ## Analysis
 
-**Appcues is eliminated immediately** — the checklist requirement (item 2) is locked to the $879 Growth tier. The Essentials plan at $249 does not include checklists.
+**Appcues is eliminated immediately**: the checklist requirement (item 2) is locked to the $879 Growth tier. The Essentials plan at $249 does not include checklists.
 
 **Pendo** requires enterprise pricing; over the $500 ceiling.
 
@@ -49,14 +49,14 @@ They use React + Tailwind + Emotion for styling (CSS-in-JS → `data-tour` ancho
 | Factor | Userpilot | Userflow |
 |---|---|---|
 | Price at 2K MAU | $299 (all-in with analytics) | $240 (no analytics) |
-| Price at 8K MAU (in 12 months) | Same $299 (flat pricing, not MAU-based per plan) | Same $240 (Startup tier cap TBC at 8K MAU — verify) |
+| Price at 8K MAU (in 12 months) | Same $299 (flat pricing, not MAU-based per plan) | Same $240 (Startup tier cap TBC at 8K MAU, verify) |
 | G2 rating | 4.6/5 | 4.8/5 |
-| Analytics included | Yes — avoids adding Mixpanel/Amplitude separately | No — team needs separate analytics |
+| Analytics included | Yes: avoids adding Mixpanel/Amplitude separately | No: team needs separate analytics |
 | Team seats | Unlimited | 3 on Startup plan |
 | Segment targeting | Yes | Yes |
 | Checklist | Yes | Yes |
 
-**Winner: Userpilot** — at $299 including analytics, it is cheaper than Userflow ($240) + a basic analytics tool ($50+). The team saves on tool sprawl. Userpilot's flat pricing also means the $299 cost holds through 8K MAU growth, while Userflow's Startup tier caps at 3 seats (may require an upgrade at team headcount growth).
+**Winner: Userpilot**: at $299 including analytics, it is cheaper than Userflow ($240) + a basic analytics tool ($50+). The team saves on tool sprawl. Userpilot's flat pricing also means the $299 cost holds through 8K MAU growth, while Userflow's Startup tier caps at 3 seats (may require an upgrade at team headcount growth).
 
 ---
 

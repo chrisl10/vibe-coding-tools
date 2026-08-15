@@ -26,12 +26,12 @@ Tracks "what was current when each guide was authored" so the Stinger can be upd
 
 ## Deprecated / retired patterns
 
-- Class components (except error boundaries) — functional only.
-- `forwardRef` — replaced by ref-as-prop in React 19.
-- `defaultProps` on function components — removed in React 19. Use default parameters.
-- `propTypes` — rely on TypeScript.
-- Moment.js, Enzyme, Recoil, react-scripts (CRA) — all retired.
-- Pages Router in new Next.js projects — App Router default.
+- Class components (except error boundaries): functional only.
+- `forwardRef`: replaced by ref-as-prop in React 19.
+- `defaultProps` on function components: removed in React 19. Use default parameters.
+- `propTypes`: rely on TypeScript.
+- Moment.js, Enzyme, Recoil, react-scripts (CRA): all retired.
+- Pages Router in new Next.js projects: App Router default.
 
 ## How to refresh this log
 

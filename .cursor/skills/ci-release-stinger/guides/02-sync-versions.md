@@ -1,5 +1,7 @@
 # 02 - Sync Versions (single-sourcing the version)
 
+> **npm package publishing case (legacy, secondary).** Applies when the artifact IS a published npm package (the Hivemind case). For the SvelteKit-on-Vercel primary case, see `guides/00-principles.md` and guides 09-16.
+
 The single most-violated invariant in a multi-manifest repo: the version.
 
 ## The problem

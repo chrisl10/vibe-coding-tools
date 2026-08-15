@@ -1,6 +1,6 @@
 ---
-name: retrospective-stinger
-description: Equips retrospective-worker-bee to run retrospectives that actually change behavior — format selection (Start/Stop/Continue, 4Ls, sailboat, mad/sad/glad, DAKI, Starfish, and more), psychological safety pre-check (Edmondson scale), facilitation playbooks, async retro design, and action-item follow-through discipline. Use when the user says "run a retro", "plan our retrospective", "which retro format should we use", "our retros produce no change", "help with action items from the retro", "how do we do an async retro", or "our team needs better retrospectives". Do NOT use for incident postmortems (different cadence and audience), sprint planning, OKR-setting, or daily standup facilitation.
+name: "retrospective-stinger"
+description: "Equips retrospective-worker-bee to run retrospectives that actually change behavior: format selection (Start/Stop/Continue, 4Ls, sailboat, mad/sad/glad, DAKI, Starfish, and more), psychological safety pre-check (Edmondson scale), facilitation playbooks, async retro design, and action-item follow-through discipline. Use when the user says \\\\\\\"run a retro\\\\\\\", \\\\\\\"plan our retrospective\\\\\\\", \\\\\\\"which retro format should we use\\\\\\\", \\\\\\\"our retros produce no change\\\\\\\", \\\\\\\"help with action items from the retro\\\\\\\", \\\\\\\"how do we do an async retro\\\\\\\", or \\\\\\\"our team needs better retrospectives\\\\\\\". Do NOT use for incident postmortems (different cadence and audience), sprint planning, OKR-setting, or daily standup facilitation."
 ---
 
 # retrospective-stinger
@@ -30,9 +30,9 @@ Do NOT load for:
 
 Read in this order:
 
-1. `guides/00-principles.md` — the philosophy: retros are behavior-change instruments, not complaint sessions. The output is what the team does differently; measure follow-through rate, not participation.
-2. `guides/01-formats.md` — the format matrix: nine formats with best-for context, time budget, and selection logic.
-3. `guides/02-psychological-safety.md` — the safety gate: Edmondson 7-item scale, the low-safety mitigation playbook, the anonymity bridge technique.
+1. `guides/00-principles.md`: the philosophy: retros are behavior-change instruments, not complaint sessions. The output is what the team does differently; measure follow-through rate, not participation.
+2. `guides/01-formats.md`: the format matrix: nine formats with best-for context, time budget, and selection logic.
+3. `guides/02-psychological-safety.md`: the safety gate: Edmondson 7-item scale, the low-safety mitigation playbook, the anonymity bridge technique.
 
 Then walk the remaining guides based on the task:
 - Facilitating a session: `guides/03-facilitation.md`
@@ -78,4 +78,4 @@ retrospective-stinger/
 
 ---
 
-*Forged by `stinger-forge` for `retrospective-worker-bee`. Part of the Legion AI Tools Factory.*
+*Forged by `stinger-forge` for `retrospective-worker-bee`. Part of the Hive.*

@@ -1,6 +1,6 @@
 # Research Index: cursor-ide-stinger
 
-Refocused on Hivemind's real Cursor surface (hooks harness, extension, MCP registration, the `.cursor/` Army). Updated 2026-06-16.
+Refocused on Hivemind's real Cursor surface (hooks harness, extension, MCP registration, the `.cursor/` colony). Updated 2026-06-16.
 
 ## Internal Sources (live repo artifacts)
 
@@ -27,5 +27,5 @@ Refocused on Hivemind's real Cursor surface (hooks harness, extension, MCP regis
 | cursor-hooks | guides/04 |
 | rule-file-authoring | guides/01, guides/02 |
 | mcp-integration | guides/03 |
-| army-layout | guides/05 (sourced from this repo's `.cursor/` directly) |
+| colony-layout | guides/05 (sourced from this repo's `.cursor/` directly) |
 | extension | guides/06 (sourced from `harnesses/cursor/extension/` directly) |

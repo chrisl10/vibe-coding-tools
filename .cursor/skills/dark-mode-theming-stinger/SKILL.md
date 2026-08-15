@@ -1,6 +1,6 @@
 ---
-name: dark-mode-theming-stinger
-description: Audits and implements the full dark-mode theming surface for React/Next.js applications — CSS variable token architecture (semantic vs. primitive), next-themes wiring (ThemeProvider, storageKey, enableSystem), FOWT (flash-of-wrong-theme) prevention via blocking inline script, SSR hydration safety (suppressHydrationWarning, typeof window guards, mounted guard pattern), Tailwind v4 dark-mode configuration (@custom-variant, selector strategy), and multi-brand/white-label runtime theme swapping via CSS variable overrides. Use when the user says "set up dark mode", "next-themes keeps flashing", "dark mode on SSR", "multi-brand theming", "CSS variable token layer", "Tailwind v4 dark mode", "prefers-color-scheme in Next.js", "white-label theme runtime swap", or when dark-mode-theming-worker-bee is invoked. Do NOT use for palette creation or source-of-truth token file authorship (design-system-worker-bee), per-component visual deltas (ux-ui-worker-bee), or persisted-preference schema design (db-worker-bee).
+name: "dark-mode-theming-stinger"
+description: "'Audits and implements the full dark-mode theming surface for React/Next.js applications: CSS variable token architecture (semantic vs. primitive), next-themes wiring (ThemeProvider, storageKey, enableSystem), FOWT (flash-of-wrong-theme) prevention via blocking inline script, SSR hydration safety (suppressHydrationWarning, typeof window guards, mounted guard pattern), Tailwind v4 dark-mode configuration (@custom-variant, selector strategy), and multi-brand/white-label runtime theme swapping via CSS variable overrides. Use when the user says \\\\\\\"set up dark mode\\\\\\\", \\\\\\\"next-themes keeps flashing\\\\\\\", \\\\\\\"dark mode on SSR\\\\\\\", \\\\\\\"multi-brand theming\\\\\\\", \\\\\\\"CSS variable token layer\\\\\\\", \\\\\\\"Tailwind v4 dark mode\\\\\\\", \\\\\\\"prefers-color-scheme in Next.js\\\\\\\", \\\\\\\"white-label theme runtime swap\\\\\\\", or when dark-mode-theming-worker-bee is invoked. Do NOT use for palette creation or source-of-truth token file authorship (design-system-worker-bee), per-component visual deltas (ux-ui-svelte-worker-bee), or persisted-preference schema design (db-worker-bee).'"
 license: MIT
 ---
 
@@ -45,14 +45,14 @@ These are the directives from the Command Brief, repeated here as the guardrails
 
 ## Scope boundary
 
-| In scope | Out of scope — route to |
+| In scope | Out of scope: route to |
 |----------|------------------------|
-| CSS variable token layer (`:root`, `.dark`, per-brand blocks) | Palette creation, token source-of-truth file — `design-system-worker-bee` |
-| `next-themes` wiring (ThemeProvider, props, storageKey) | Per-component visual deltas (which token for which role) — `ux-ui-worker-bee` |
-| FOWT prevention (inline script, script placement) | Persisted-preference DB schema (`user_preferences.theme`) — `db-worker-bee` |
-| SSR hydration safety (`suppressHydrationWarning`, guards) | CSS variable injection input validation — `security-worker-bee` |
-| Tailwind v4 dark mode (`@custom-variant`) | Tailwind config beyond `darkMode` — `ux-ui-worker-bee` |
-| Multi-brand CSS variable overrides | Auth-gated per-user theme (server-side preference + RBAC) — `auth-worker-bee` + `db-worker-bee` |
+| CSS variable token layer (`:root`, `.dark`, per-brand blocks) | Palette creation, token source-of-truth file: `design-system-worker-bee` |
+| `next-themes` wiring (ThemeProvider, props, storageKey) | Per-component visual deltas (which token for which role): `ux-ui-svelte-worker-bee` |
+| FOWT prevention (inline script, script placement) | Persisted-preference DB schema (`user_preferences.theme`): `db-worker-bee` |
+| SSR hydration safety (`suppressHydrationWarning`, guards) | CSS variable injection input validation: `security-worker-bee` |
+| Tailwind v4 dark mode (`@custom-variant`) | Tailwind config beyond `darkMode`: `ux-ui-svelte-worker-bee` |
+| Multi-brand CSS variable overrides | Auth-gated per-user theme (server-side preference + RBAC): `auth-worker-bee` + `db-worker-bee` |
 
 ---
 

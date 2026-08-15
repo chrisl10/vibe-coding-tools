@@ -1,4 +1,4 @@
-# 03 — Authoring the Token Layer
+# 03: Authoring the Token Layer
 
 `01-master-tokens.css` is the lowest layer. Every other file references
 it. Get this right and the rest falls into place.
@@ -57,10 +57,10 @@ it. Get this right and the rest falls into place.
 
 ## The `@theme` vs `@theme inline` split
 
-- `@theme { ... }` — tokens that MUST reach through to Tailwind v4 utility
+- `@theme { ... }`: tokens that MUST reach through to Tailwind v4 utility
   generation AND allow runtime tenant overrides. Use the
   `var(--tenant-*, fallback)` pattern.
-- `@theme inline { ... }` — fixed tokens that Tailwind inlines at build
+- `@theme inline { ... }`: fixed tokens that Tailwind inlines at build
   time. No runtime override. Use for everything that doesn't change per
   tenant: semantic state colors, surfaces, text, spacing, radii, shadows,
   motion.
@@ -72,31 +72,31 @@ Rule of thumb: brand colors → `@theme`. Everything else → `@theme inline`.
 ### Surfaces (the stage)
 
 Always define at least:
-- `--color-background` — the page.
-- `--color-card` — the floating surface.
-- `--color-card-secondary` — nested surface (sub-rows, sub-tree).
-- `--color-border` — 1px divider.
-- `--color-border-light` — inner hairline.
-- `--color-top-edge-light` — rim highlight (for glass aesthetics).
+- `--color-background`: the page.
+- `--color-card`: the floating surface.
+- `--color-card-secondary`: nested surface (sub-rows, sub-tree).
+- `--color-border`: 1px divider.
+- `--color-border-light`: inner hairline.
+- `--color-top-edge-light`: rim highlight (for glass aesthetics).
 
 ### Brand (the accents)
 
-- `--color-primary` — brand primary.
-- `--color-primary-deep`, `--color-primary-light` — hover/pressed.
-- `--color-accent` — brand accent.
+- `--color-primary`: brand primary.
+- `--color-primary-deep`, `--color-primary-light`: hover/pressed.
+- `--color-accent`: brand accent.
 - `--color-accent-dark`, `--color-accent-light`.
-- `--color-accent-ink` — a readable-on-cream/white dark variant for
+- `--color-accent-ink`: a readable-on-cream/white dark variant for
   text use. Bright accents almost always fail contrast on light
-  backgrounds for body copy — the "accent-ink" token is the fix.
+  backgrounds for body copy: the "accent-ink" token is the fix.
 
 ### Text hierarchy (5 stops minimum)
 
-- `--color-text-strong` — major numbers, card titles.
-- `--color-text-primary` — body copy.
-- `--color-text-body` — secondary paragraph copy.
-- `--color-text-muted` — metadata, hint text. This is the contrast
-  floor — 4.5:1 on background.
-- `--color-text-quiet` — timestamps, ghosts.
+- `--color-text-strong`: major numbers, card titles.
+- `--color-text-primary`: body copy.
+- `--color-text-body`: secondary paragraph copy.
+- `--color-text-muted`: metadata, hint text. This is the contrast
+  floor: 4.5:1 on background.
+- `--color-text-quiet`: timestamps, ghosts.
 
 ### OKLCH vs hex
 
@@ -164,7 +164,7 @@ utility classes can compose them:
 --shadow-hero:     var(--shadow-edge), /* ... */;
 ```
 
-For a flat aesthetic, shadows are sparser or absent — but every shadow
+For a flat aesthetic, shadows are sparser or absent, but every shadow
 that exists is a token, never an inline value.
 
 ## Motion

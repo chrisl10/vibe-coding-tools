@@ -1,4 +1,4 @@
-# 07 — Kanban vs Scrum: Decision Framework and Migration Path
+# 07. Kanban vs Scrum: Decision Framework and Migration Path
 
 *Sources: `research/external/2026-05-20-kanban-vs-scrum-decision-eitt.md`; `research/external/2026-05-20-kanban-vs-scrum-atlassian.md`*
 
@@ -11,7 +11,7 @@ From `research/external/2026-05-20-kanban-vs-scrum-decision-eitt.md`, State of A
 - 94% of IT teams use some form of Agile
 - Scrum: 70% adoption
 - Kanban: 25% adoption
-- **45% of Scrum teams migrate to a Scrumban hybrid after 2-3 years** — the most significant data point for this decision: most teams eventually blend the two methods
+- **45% of Scrum teams migrate to a Scrumban hybrid after 2-3 years**; the most significant data point for this decision: most teams eventually blend the two methods
 
 This means "Kanban vs Scrum" is often the wrong framing. The real question is: where on the Scrum-Kanban spectrum should this team sit?
 
@@ -75,7 +75,7 @@ From first principles: Shape Up uses 6-week appetite-based cycles with explicit 
 | Planning horizon | Indefinite (pull as ready) | 6-week fixed cycles |
 | Best for | Operations, maintenance, mature product | Product development with high design complexity |
 
-Shape Up is not a formal competitor to Kanban; they are designed for different contexts. A team can use Kanban for operational work and Shape Up for strategic product cycles — the two can coexist.
+Shape Up is not a formal competitor to Kanban; they are designed for different contexts. A team can use Kanban for operational work and Shape Up for strategic product cycles: the two can coexist.
 
 ---
 

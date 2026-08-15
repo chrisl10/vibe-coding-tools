@@ -9,6 +9,6 @@ starter kits, and the interview procedure that extracts the aesthetic
 from the user.
 
 Paired Bee: `design-system-worker-bee`.
-Companion Bee (after handoff): `ux-ui-worker-bee`.
+Companion Bee (after handoff): `ux-ui-svelte-worker-bee`.
 
 Start at [`SKILL.md`](SKILL.md).

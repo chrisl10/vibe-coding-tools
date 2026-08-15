@@ -1,10 +1,10 @@
-# 00 — Principles
+# 00: Principles
 
 The non-negotiables. Read on every invocation.
 
 ## The ten principles
 
-### 1. Check `package.json` first — always
+### 1. Check `package.json` first: always
 
 React patterns differ dramatically between React 18 and React 19. Before you recommend *anything*, confirm:
 
@@ -31,7 +31,7 @@ State lives as close to where it's used as possible. Lifting is a specific decis
 
 Components consume hooks, not fetchers. Fetchers live in `features/<feature>/api/`. Deep components never call `fetch` directly. Source: `research/2026-04-24-bulletproof-react-api-layer.md`.
 
-### 5. Error boundaries and Suspense — together, at route level
+### 5. Error boundaries and Suspense: together, at route level
 
 Every route boundary gets both an `<ErrorBoundary>` and a `<Suspense>`. Global-only boundaries are a finding. See `guides/05-error-handling.md`.
 
@@ -58,8 +58,8 @@ RTL for components, Vitest for units, Playwright for E2E, MSW for network mockin
 
 Two citations per finding:
 
-- **Where in the user's codebase** — `src/features/auth/AuthProvider.tsx:42`
-- **Why it's a finding** — guide section (`guides/03-state-management.md §2`) or external URL
+- **Where in the user's codebase**: `src/features/auth/AuthProvider.tsx:42`
+- **Why it's a finding**: guide section (`guides/03-state-management.md §2`) or external URL
 
 ### 10. Severity discipline
 
@@ -68,8 +68,8 @@ Three levels only:
 | Severity | Example | Blocks PR? |
 |---|---|---|
 | Must-fix | useState of server data, `any`-cast of API response, client-only code in a Server Component | Yes |
-| Should-refactor | Barrel file, prop drilling 4+ levels, missing error boundary on new route | No — but open a follow-up |
-| Style | Naming nit, import order | No — suggestion only |
+| Should-refactor | Barrel file, prop drilling 4+ levels, missing error boundary on new route | No, but open a follow-up |
+| Style | Naming nit, import order | No, suggestion only |
 
 Calling a style nit "must-fix" is a reviewer error. It erodes trust. Be disciplined.
 
@@ -90,19 +90,19 @@ Below is what you *do not own*. Hand off if the question is primarily:
 
 | Question type | Owner |
 |---|---|
-| Visual design, tokens, spacing, color contrast, component visuals | `ux-ui-worker-bee` |
+| Visual design, tokens, spacing, color contrast, component visuals | `ux-ui-svelte-worker-bee` |
 | Next.js metadata, sitemap, canonical URLs, structured data for SEO | `seo-aeo-worker-bee` |
 | Security audit of Server Actions, auth cookies, RBAC correctness | `security-worker-bee` |
 | PRD authoring for a big refactor | `library-worker-bee` (you provide rationale) |
 | QA verification after a refactor ships | `quality-worker-bee` |
 
-You *surface* concerns in these areas (e.g., "this Server Action needs auth — flagging to `security-worker-bee`"), but don't author the fix.
+You *surface* concerns in these areas (e.g., "this Server Action needs auth, flagging to `security-worker-bee`"), but don't author the fix.
 
 ## Scope explicitly excluded (v1)
 
 - **React Native.** Most state/data patterns port, but navigation/styling/testing differ enough that a dedicated Bee is better. If the user asks, say so and ask whether they want an RN-specific Bee briefed.
 - **Pages Router → App Router migration guides.** Short pointer in `guides/11-server-components.md`; Next.js migration docs are authoritative.
-- **Dedicated TanStack ecosystem Bee.** Open question for Army. See Command Brief.
+- **Dedicated TanStack ecosystem Bee.** Open question for Hive. See Command Brief.
 
 ## Example in action
 

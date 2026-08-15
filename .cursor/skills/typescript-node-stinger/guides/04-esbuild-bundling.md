@@ -1,5 +1,7 @@
 # 04 - esbuild Bundling
 
+**Legacy/library case: npm library / CLI publishing.** This guide applies when the deliverable IS a published package with its own bundling pipeline (Hivemind's multi-harness model), not the SvelteKit app - Vite/`adapter-vercel` own the SvelteKit app's build, see `vercel-stinger`.
+
 `build` = `tsc && node esbuild.config.mjs`. tsc emits `dist/`; esbuild reads `dist/**/*.js` and produces the per-harness bundles. This is the equivalent of the build/packaging discipline for this repo.
 
 ## The bundle model

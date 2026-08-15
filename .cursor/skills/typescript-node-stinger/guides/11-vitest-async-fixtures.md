@@ -1,5 +1,7 @@
 # 11 - Vitest Async & Fixtures
 
+**Legacy/library-case worked example** (mocking the Deep Lake client specifically); the general async-test/fixture/mocking discipline applies broadly. For SvelteKit-specific mocking (`$app/*` modules, server `load` in component tests), see `guides/26-vitest-playwright-for-sveltekit.md`.
+
 Most Hivemind code is async I/O against Deep Lake, so most tests are async and most of them mock the client. This guide is the mocking + fixture playbook.
 
 ## Async tests

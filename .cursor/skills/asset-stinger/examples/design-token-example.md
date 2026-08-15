@@ -1,11 +1,11 @@
-# Example — `DesignTokenDefinition` row
+# Example: `DesignTokenDefinition` row
 
 A brand-color token with light/dark values and tenant overridability.
 
 ## Code
 
 ```css
-/* library/knowledge-base/ux-ui/01-master-tokens.css — excerpt */
+/* library/knowledge/private/ux-ui/01-master-tokens.css — excerpt */
 :root {
   --color-primary: #1B2B4B;
 }
@@ -33,7 +33,7 @@ A brand-color token with light/dark values and tenant overridability.
   tenantOverridable: true,
   semanticRole: "Primary brand color used on CTAs, active nav states, and key accents",
   replacementKey: null,
-  uxuiBriefRef: "library/knowledge-base/ux-ui/01-master-tokens.css#colors",
+  uxuiBriefRef: "library/knowledge/private/ux-ui/01-master-tokens.css#colors",
   featureKey: null,
   status: "active",
   environments: ["dev", "staging", "prod"],
@@ -46,7 +46,7 @@ A brand-color token with light/dark values and tenant overridability.
   createdAt: "2026-04-23T15:00:00.000Z",
   updatedAt: "2026-04-23T15:00:00.000Z",
 
-  codePath: "library/knowledge-base/ux-ui/01-master-tokens.css",
+  codePath: "library/knowledge/private/ux-ui/01-master-tokens.css",
   fileHash: "ab12cd34ef56ab12cd34ef56ab12cd34ef56ab12cd34ef56ab12cd34ef56ab12",
   detectedAt: "2026-04-23T15:00:00.000Z",
   lastSeenAt: "2026-04-23T15:00:00.000Z",
@@ -68,15 +68,15 @@ Tenant A's `TenantTheme.tokens` JSON:
 
 The theme-projector resolves `color.primary` → Tenant A's `#7A2B4B` at SSR time. The catalog row defines the key exists, is overridable, and what the fallback value is.
 
-## What ux-ui-worker-bee filled vs what the generator filled
+## What ux-ui-svelte-worker-bee filled vs what the generator filled
 
 | Field | Filled by |
 |---|---|
 | `key`, `cssVarName`, `category` | sync-generator (from CSS) |
 | `defaultValueLight`, `defaultValueDark`, `defaultValueHighContrast` | sync-generator (from CSS) |
-| `tenantOverridable` | ux-ui-worker-bee (defaults to true; opt-out only) |
-| `semanticRole` | **ux-ui-worker-bee** (human meaning — you never write this) |
-| `uxuiBriefRef` | ux-ui-worker-bee |
+| `tenantOverridable` | ux-ui-svelte-worker-bee (defaults to true; opt-out only) |
+| `semanticRole` | **ux-ui-svelte-worker-bee** (human meaning, you never write this) |
+| `uxuiBriefRef` | ux-ui-svelte-worker-bee |
 | `status`, `ownerTeam`, `prdRef`, `description` | human (platform admin or PRD-driven) |
 | `codePath`, `fileHash`, `detectedAt`, `lastSeenAt` | sync-generator |
 
@@ -85,5 +85,5 @@ The theme-projector resolves `color.primary` → Tenant A's `#7A2B4B` at SSR tim
 - [x] CSS var declared in `01-master-tokens.css`
 - [x] `category` matches prefix (`--color-*` → `color`)
 - [x] `defaultValueLight` present
-- [x] `semanticRole` authored by ux-ui-worker-bee
+- [x] `semanticRole` authored by ux-ui-svelte-worker-bee
 - [x] `tenantOverridable: true`

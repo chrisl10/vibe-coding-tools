@@ -24,7 +24,7 @@ Each report should contain:
 4. **Type scale** - current state (px, rem, or clamp), migration needed
 5. **Performance delta** - estimated payload before/after (KB), CLS risk assessment
 6. **Checklist** - items completed vs. outstanding
-7. **Handoff notes** - what `ux-ui-worker-bee` and `devops-worker-bee` need to know
+7. **Handoff notes** - what `ux-ui-svelte-worker-bee` and `devops-worker-bee` need to know
 
 ---
 

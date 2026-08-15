@@ -104,4 +104,4 @@ export async function execute(interaction: ChatInputCommandInteraction) {
 
 ## Common mistake to avoid
 
-**Do not attempt to `.reply()` to the original slash command interaction AFTER showing a modal.** `showModal()` consumes the interaction response — calling `.reply()` or `.deferReply()` afterward throws `InteractionAlreadyReplied`. The modal submission creates a new interaction object (`submitted`) that must be used for the response.
+**Do not attempt to `.reply()` to the original slash command interaction AFTER showing a modal.** `showModal()` consumes the interaction response: calling `.reply()` or `.deferReply()` afterward throws `InteractionAlreadyReplied`. The modal submission creates a new interaction object (`submitted`) that must be used for the response.

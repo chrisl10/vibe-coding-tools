@@ -1,5 +1,7 @@
 # 03 - Deep Lake SQL API
 
+**Legacy/library case.** This guide is specific to Hivemind's Deep Lake persistence layer. For this repo's actual persistence layer (Neon Postgres + Drizzle), see `guides/25-drizzle-type-inference-patterns.md` and hand off schema/query design to `neon-drizzle-stinger`.
+
 All persistence in Hivemind goes through one client: `src/deeplake-api.ts`. This is the ORM-equivalent discipline for this repo. There is no Postgres, no Prisma, no Drizzle - there is Activeloop Deep Lake reached over an HTTP SQL API.
 
 ## The endpoint

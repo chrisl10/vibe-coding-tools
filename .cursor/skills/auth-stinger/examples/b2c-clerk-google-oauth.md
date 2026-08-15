@@ -7,7 +7,7 @@ A worked end-to-end example: Next.js App Router B2C SaaS, Clerk for auth, Google
 - **Stack**: Next.js 15, App Router, React 19, Postgres + Prisma.
 - **Audience**: B2C, public sign-up, expecting 5k MAU year 1.
 - **UX**: prebuilt UI is fine; brand customization within Clerk's theming.
-- **Scopes**: `openid email profile` only — no Google data access.
+- **Scopes**: `openid email profile` only: no Google data access.
 
 ## Provider decision
 
@@ -34,10 +34,10 @@ Per `guides/06-google-oauth.md`:
 
 - Google Cloud project, OAuth consent screen → Branding (app name, logo, support email, privacy policy URL, terms URL, homepage URL).
 - Audience: External + Production.
-- Data Access: scopes `openid email profile` only — no sensitive scopes, no verification needed beyond branding.
+- Data Access: scopes `openid email profile` only: no sensitive scopes, no verification needed beyond branding.
 - OAuth client (Web application):
   - Authorized JS origins: `https://app.example.com`, `https://staging.example.com`.
-  - Authorized redirect URIs: Clerk-provided (`https://clerk.example.com/v1/oauth_callback` or similar — copy from Clerk dashboard exactly).
+  - Authorized redirect URIs: Clerk-provided (`https://clerk.example.com/v1/oauth_callback` or similar, copy from Clerk dashboard exactly).
 - Domain verification via Search Console.
 - **Unused-client deletion defense**: schedule a weekly synthetic call. Production-critical client.
 - Paste `client_id` + `client_secret` into Clerk Dashboard → Social Connections → Google.
@@ -78,7 +78,7 @@ import { SignIn } from '@clerk/nextjs';
 export default function Page() { return <SignIn />; }
 ```
 
-The `<SignIn />` JSX placement and theming is `react-worker-bee`'s territory — auth-worker-bee writes the spec ("centered on a card with logo top, social-buttons-first ordering, brand color from token `--color-primary`") and `react-worker-bee` writes the layout.
+The `<SignIn />` JSX placement and theming is `react-worker-bee`'s territory; auth-worker-bee writes the spec ("centered on a card with logo top, social-buttons-first ordering, brand color from token `--color-primary`") and `react-worker-bee` writes the layout.
 
 ### 4. Database sync via webhook
 
@@ -148,7 +148,7 @@ Filled `templates/audit-report-template.md` with:
 - Provider decision and rationale.
 - Implementation manifest (above).
 - Scope inventory (`openid email profile`, justified, used).
-- Failure-mode check-list — pass for OAuth-specific (Clerk handles `state`, `nonce`, ID-token verification correctly), pass for session attributes.
+- Failure-mode check-list: pass for OAuth-specific (Clerk handles `state`, `nonce`, ID-token verification correctly), pass for session attributes.
 - Items handed to `db-worker-bee` (schema), `react-worker-bee` (UI), `quality-worker-bee` (post-implementation QA).
 - Items flagged for `security-worker-bee`: webhook signature verification config, the unused-client-deletion synthetic-call schedule.
 

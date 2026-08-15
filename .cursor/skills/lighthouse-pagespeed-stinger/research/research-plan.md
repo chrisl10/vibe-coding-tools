@@ -5,7 +5,7 @@
 - **Page budget target:** ~100 pages (executed at ~80 due to high-quality primary sources found quickly)
 - **Source breadth target:** official docs, practitioner blogs, GitHub READMEs, tool-specific docs, community articles
 
-## Initial queries (from the proposal step)
+## Initial queries (from `big-bang-space`)
 
 - "Lighthouse v12 CI integration 2026"
 - "PageSpeed Insights CrUX 2026"

@@ -1,4 +1,4 @@
-# 00 — Principles
+# 00: Principles
 
 The load-bearing rules of design-system bootstrapping. Every guide and
 example in this Stinger rests on these.
@@ -12,7 +12,7 @@ seven-artifact folder described in the Command Brief. It does **not**:
 
 - Modify shipped product code.
 - Maintain or enforce the design system after bootstrap (that is
-  `ux-ui-worker-bee`'s job — see `08-companion-agent-handoff.md`).
+  `ux-ui-svelte-worker-bee`'s job, see `08-companion-agent-handoff.md`).
 - Invent an aesthetic. The aesthetic always comes from the user interview
   or explicit references (see `01-interview-procedure.md`).
 
@@ -40,7 +40,7 @@ that uses colors or radii absent from `01-master-tokens.css` is a bug.
 These sit underneath every product-specific non-negotiable. See
 `../research/2026-04-24-refactoring-ui-principles.md` for the full list.
 
-1. **Visual hierarchy is everything.** Combine size, weight, and color —
+1. **Visual hierarchy is everything.** Combine size, weight, and color:
    never one of those alone.
 2. **De-emphasize to emphasize.** Reduce secondary elements, don't amplify
    primary ones.
@@ -48,7 +48,7 @@ These sit underneath every product-specific non-negotiable. See
    only.
 4. **Establish a type scale and a spacing ladder.** Nine type sizes, nine
    spacing steps, no arbitrary values.
-5. **You need more colors than you think.** 5–10 shades per palette color.
+5. **You need more colors than you think.** 5 to 10 shades per palette color.
 6. **Accessible is the floor, not the ceiling.** 4.5:1 body contrast.
 7. **Use color sparingly.** Color is for emphasis; overuse flattens
    hierarchy.
@@ -112,4 +112,4 @@ should survive being asked "why" three times.
 
 Example: `design-system-worker-bee: cards-and-surfaces: add depth-1 hover lift`.
 
-This convention is inherited by `ux-ui-worker-bee` after handoff.
+This convention is inherited by `ux-ui-svelte-worker-bee` after handoff.

@@ -17,15 +17,15 @@
 
 ### Most-used official MCP servers (2026)
 
-- **@modelcontextprotocol/server-filesystem** — read/write/list/search files; foundation for any agentic file workflow.
-- **@modelcontextprotocol/server-github** — create/read PRs, issues, branches, commits via GitHub API.
-- **@supabase/mcp-server-supabase** — database operations, table queries, schema inspection.
-- **@upstash/context7-mcp** — fetch live documentation for 1000+ libraries by name.
-- **exa-mcp-server** — semantic web search; extract page content; research tasks.
-- **mcp-server-firecrawl** — advanced web scraping; multi-page crawl; structured extraction.
-- **mcp-server-posthog** — analytics queries; feature flag management; error tracking.
-- **@stripe/mcp-server** — payments, subscriptions, customers, webhooks.
-- **mcp-server-sentry** — error tracking, stack traces, issue management.
+- **@modelcontextprotocol/server-filesystem**: read/write/list/search files; foundation for any agentic file workflow.
+- **@modelcontextprotocol/server-github**: create/read PRs, issues, branches, commits via GitHub API.
+- **@supabase/mcp-server-supabase**: database operations, table queries, schema inspection.
+- **@upstash/context7-mcp**: fetch live documentation for 1000+ libraries by name.
+- **exa-mcp-server**: semantic web search; extract page content; research tasks.
+- **mcp-server-firecrawl**: advanced web scraping; multi-page crawl; structured extraction.
+- **mcp-server-posthog**: analytics queries; feature flag management; error tracking.
+- **@stripe/mcp-server**: payments, subscriptions, customers, webhooks.
+- **mcp-server-sentry**: error tracking, stack traces, issue management.
 
 ### Cursor-specific behavior
 
@@ -36,11 +36,11 @@
 
 ### IDE extensions most valued by vibe coders (2026)
 
-- **GitLens** — git history, blame, PR context; reduces context switching to GitHub web UI.
-- **Error Lens** — inline errors without hovering; speeds up bug identification.
-- **Pretty TypeScript Errors** — readable TS error messages; Cursor's built-in TS display is verbose.
-- **Continue** — open-source AI coding assistant; best Ollama integration for VS Code/Cursor.
-- **Tailwind CSS IntelliSense** — class autocomplete and hover docs; essential for Tailwind projects.
+- **GitLens**: git history, blame, PR context; reduces context switching to GitHub web UI.
+- **Error Lens**: inline errors without hovering; speeds up bug identification.
+- **Pretty TypeScript Errors**: readable TS error messages; Cursor's built-in TS display is verbose.
+- **Continue**: open-source AI coding assistant; best Ollama integration for VS Code/Cursor.
+- **Tailwind CSS IntelliSense**: class autocomplete and hover docs; essential for Tailwind projects.
 
 ## Synthesis for stinger
 
@@ -48,4 +48,4 @@
 - Project-level MCP config (`.cursor/mcp.json`) is the right pattern for project-specific servers; avoids global config bloat.
 - Limit active MCP servers to < 15 for performance; activate specialist servers per-project.
 - Continue.dev is the best bridge for teams that want Ollama in Cursor without native model config.
-- The Portkey MCP server (if available) could unify AI tooling management — worth monitoring.
+- The Portkey MCP server (if available) could unify AI tooling management, worth monitoring.

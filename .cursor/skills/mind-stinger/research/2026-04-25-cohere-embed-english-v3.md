@@ -1,9 +1,9 @@
-# Cohere `embed-english-v3.0` — 1024-dim, Two Input Types
+# Cohere `embed-english-v3.0`: 1024-dim, Two Input Types
 
-**Source:** Cohere docs — https://docs.cohere.com/docs/cohere-embed, https://docs.cohere.com/reference/embed
+**Source:** Cohere docs: https://docs.cohere.com/docs/cohere-embed, https://docs.cohere.com/reference/embed
 **Retrieved:** 2026-04-25
 **Status:** **LOAD-BEARING.** Cited in `guides/10-cohere-embedding-and-rerank.md §2`.
-**Numbers tag:** benchmarked on input-type mismatch effect (~5–15% retrieval drop documented across vendors); vendor-directional on absolute quality numbers.
+**Numbers tag:** benchmarked on input-type mismatch effect (~5-15% retrieval drop documented across vendors); vendor-directional on absolute quality numbers.
 
 ---
 
@@ -11,7 +11,7 @@
 
 `embed-english-v3.0` is Cohere's 1024-dim English-tuned embedder. Critical disciplines:
 
-1. **Two input types:** `"search_document"` at index time, `"search_query"` at retrieval time. Mixing degrades retrieval 5–15%.
+1. **Two input types:** `"search_document"` at index time, `"search_query"` at retrieval time. Mixing degrades retrieval 5-15%.
 2. **Cosine distance** is the canonical pairing.
 3. **Batch ≤ 96 texts/request** (hard limit).
 4. **Rate limit: 10K texts/minute** on paid plan.
@@ -72,7 +72,7 @@ the deploying product's coaching corpus is English. Multilingual embedders (BGE-
 
 ## Implications
 
-- Wrong `input_type` → **must-fix** (retrieval quality drops 5–15%).
+- Wrong `input_type` → **must-fix** (retrieval quality drops 5-15%).
 - Batch > 96 → must-fix (request fails).
 - Embedding without `wait: true` on Qdrant upsert when retrieval immediately follows → must-fix.
 - See `guides/10-cohere-embedding-and-rerank.md`.

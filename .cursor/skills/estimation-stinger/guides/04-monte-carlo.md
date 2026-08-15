@@ -4,7 +4,7 @@ Monte Carlo simulation is the most defensible method for producing probabilistic
 
 ## How Monte Carlo simulation works (for delivery forecasting)
 
-1. **Input: historical throughput distribution.** You need the number of items your team completed per sprint or week, for at least 20-30 time periods. This is not a point estimate — it is a distribution. Example: the team completed 4, 7, 6, 5, 4, 8, 6, 5, 7, 4 items over 10 sprints.
+1. **Input: historical throughput distribution.** You need the number of items your team completed per sprint or week, for at least 20-30 time periods. This is not a point estimate. It is a distribution. Example: the team completed 4, 7, 6, 5, 4, 8, 6, 5, 7, 4 items over 10 sprints.
 
 2. **Input: backlog count.** How many items remain? Use a count, not a story-points total. Apply a scope creep multiplier (1.15-1.3x is typical for most teams).
 
@@ -80,7 +80,7 @@ When a team lacks cycle-time data (< 20 items), PERT provides a lightweight alte
 
 **Formula:** Estimate = (Optimistic + 4 × Most Likely + Pessimistic) / 6
 
-**Apply per story or per epic, then sum.** PERT does NOT substitute for Monte Carlo — it requires normally-distributed variation, which software work rarely exhibits. Use it as a temporary tool while building cycle-time history.
+**Apply per story or per epic, then sum.** PERT does NOT substitute for Monte Carlo: it requires normally-distributed variation, which software work rarely exhibits. Use it as a temporary tool while building cycle-time history.
 
 From `research/external/04-planning-fallacy.md`: PERT is the "Cone of Uncertainty" at the task level. It explicitly captures uncertainty range, which is its main advantage over single-point estimates.
 

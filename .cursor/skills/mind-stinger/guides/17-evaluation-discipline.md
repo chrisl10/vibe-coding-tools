@@ -1,14 +1,14 @@
-# 17 — Evaluation Discipline
+# 17: Evaluation Discipline
 
 `evaluateRetrievalPrecision()`, `evaluateRouting()`, `computeAgreementRate()`, the coaching rubric, targets and alert thresholds. Sycophancy is measured.
 
-> **Doc reference:** `library/knowledge-base/ai/observability-evaluation.md §3–§5`. Code: `lib/ai-eval.ts`.
+> **Doc reference:** `library/knowledge/private/ai/observability-evaluation.md §3-§5`. Code: `lib/ai-eval.ts`.
 
 ---
 
 ## 1. The three built-in evals
 
-### `evaluateRetrievalPrecision()` — LLM-as-judge
+### `evaluateRetrievalPrecision()`: LLM-as-judge
 
 ```typescript
 export async function evaluateRetrievalPrecision(
@@ -17,17 +17,17 @@ export async function evaluateRetrievalPrecision(
 ): Promise<number>  // 0.0–1.0
 ```
 
-Uses `fast` model (`Llama 3.1 8B`) as judge. **Asynchronous** — does not block the user response.
+Uses `fast` model (`Llama 3.1 8B`) as judge. **Asynchronous**: does not block the user response.
 
 Prompt asks the judge to return `{ "score": 0.0–1.0, "reasoning": "..." }`. Score written to `AiTrace.retrievalScore`.
 
 | Threshold | Action |
 |---|---|
 | > 0.7 | Healthy (at least 3 of 5 chunks relevant) |
-| 0.4 – 0.7 | Watch list — review weekly |
-| < 0.4 sustained over 100 traces | **Alert** — retrieval configuration needs adjustment |
+| 0.4-0.7 | Watch list: review weekly |
+| < 0.4 sustained over 100 traces | **Alert**: retrieval configuration needs adjustment |
 
-### `evaluateRouting()` — LLM-as-judge
+### `evaluateRouting()`: LLM-as-judge
 
 ```typescript
 export async function evaluateRouting(
@@ -41,7 +41,7 @@ Returns `true` if routing was appropriate. Prompt returns `{ "correct": true|fal
 
 **Target:** > 90% accuracy. Below 90% sustained → flag the router prompt or the coach descriptions.
 
-### `computeAgreementRate()` — pattern-based, no LLM
+### `computeAgreementRate()`: pattern-based, no LLM
 
 ```typescript
 export function computeAgreementRate(
@@ -80,7 +80,7 @@ Challenge patterns:
 | Threshold | Action |
 |---|---|
 | User agreement > 0.7 over 30 days | Flag for coach review |
-| Tenant-wide agreement > 0.6 | **Alert engineering** — prompt cascade may have drifted |
+| Tenant-wide agreement > 0.6 | **Alert engineering**: prompt cascade may have drifted |
 
 ---
 
@@ -90,29 +90,29 @@ Standard LLM metrics (BLEU, ROUGE) are irrelevant for coaching. The product coac
 
 | Dimension | What | Score |
 |---|---|---|
-| Reflective listening | Demonstrates understanding of what was said | 0–1 |
-| Reframing | Offers an alternative perspective | 0–1 |
-| Specificity | Specific to this member's business and goals | 0–1 |
-| Actionability | Leads toward a concrete action / decision | 0–1 |
-| Challenge | Challenges assumptions appropriately | 0–1 |
+| Reflective listening | Demonstrates understanding of what was said | 0-1 |
+| Reframing | Offers an alternative perspective | 0-1 |
+| Specificity | Specific to this member's business and goals | 0-1 |
+| Actionability | Leads toward a concrete action / decision | 0-1 |
+| Challenge | Challenges assumptions appropriately | 0-1 |
 
 **Composite score** = average of the 5 dimensions.
 
 **Target:** > 0.65. Strong responses score 0.8+.
 
-This requires human evaluation. Sample: 50 traces / week, reviewed by a coaching practitioner. Track in `library/qa/ai/<date>-coaching-rubric.md`.
+This requires human evaluation. Sample: 50 traces / week, reviewed by a coaching practitioner. Track in `library/requirements/reports/ai/<date>-coaching-rubric.md`.
 
 ---
 
 ## 3. Calibrating the LLM-as-judge
 
-LLM-as-judge is the workhorse for retrieval / faithfulness — cheap and scales. **It is not free** — judge models hallucinate too. Calibration procedure:
+LLM-as-judge is the workhorse for retrieval / faithfulness: cheap and scales. **It is not free**: judge models hallucinate too. Calibration procedure:
 
-1. **Sample 50–100 cases** from a golden set.
-2. **Have a human label** them (pass/fail or 0–1).
+1. **Sample 50-100 cases** from a golden set.
+2. **Have a human label** them (pass/fail or 0-1).
 3. **Run the judge** on the same set.
 4. **Measure agreement** (Cohen's kappa or simple accuracy).
-5. **If agreement < 0.7**, judge is uncalibrated — refine the judge prompt or switch judge models.
+5. **If agreement < 0.7**, judge is uncalibrated: refine the judge prompt or switch judge models.
 6. **Re-calibrate quarterly** or when the judge model changes.
 
 Without calibration, judge bias becomes finding bias.
@@ -123,9 +123,9 @@ Without calibration, judge bias becomes finding bias.
 
 For any RAG-active feature:
 
-1. **Faithfulness** — does the answer follow from retrieved context, or did the model hallucinate beyond it? (`AiTrace.faithfulnessScore`)
-2. **Answer relevance** — does the answer address the question? (Implicit in coaching rubric.)
-3. **Context relevance** — did retrieval bring back the right chunks? (`AiTrace.retrievalScore`)
+1. **Faithfulness**: does the answer follow from retrieved context, or did the model hallucinate beyond it? (`AiTrace.faithfulnessScore`)
+2. **Answer relevance**: does the answer address the question? (Implicit in coaching rubric.)
+3. **Context relevance**: did retrieval bring back the right chunks? (`AiTrace.retrievalScore`)
 
 Frameworks (RAGAS, DeepEval, Braintrust, Langfuse evaluations) bundle these. the deploying product's homegrown `ai-eval.ts` implements the subset most relevant to coaching.
 
@@ -135,10 +135,10 @@ Frameworks (RAGAS, DeepEval, Braintrust, Langfuse evaluations) bundle these. the
 
 Evals run against a versioned golden dataset. For the deploying product:
 
-- **30–50 hand-labeled cases** for v1.
+- **30-50 hand-labeled cases** for v1.
 - **Stratified** across question types: ideal-client, offer, positioning, level-specific, ambiguous, out-of-scope.
 - **Versioned** in repo (`evals/golden-v1.jsonl`).
-- **Frozen at version** — do not mutate v1 once shipped. Add v2 alongside.
+- **Frozen at version**: do not mutate v1 once shipped. Add v2 alongside.
 
 Without a golden dataset, evals are vibes-based.
 
@@ -160,17 +160,17 @@ Without a golden dataset, evals are vibes-based.
 
 Add as the product matures:
 
-- **Toxicity / bias** — Mastra and Langfuse bundle these (alternatives in `references/`).
-- **PII leak** — does the model echo PII it shouldn't? Coordinate with `security-worker-bee`.
-- **Citation correctness** — for RAG with citations, do cited sources actually contain the claim?
-- **Tool-call correctness** — did the agent call the right tool with the right args? (Onboarding agent in particular.)
-- **Cost per task** — token spend per resolved question.
+- **Toxicity / bias**: Mastra and Langfuse bundle these (alternatives in `references/`).
+- **PII leak**: does the model echo PII it shouldn't? Coordinate with `security-worker-bee`.
+- **Citation correctness**: for RAG with citations, do cited sources actually contain the claim?
+- **Tool-call correctness**: did the agent call the right tool with the right args? (Onboarding agent in particular.)
+- **Cost per task**: token spend per resolved question.
 
 ---
 
 ## 8. Eval anti-patterns
 
-- **Vibes-based evals.** "I tried 5 prompts and this one felt better" — not an eval.
+- **Vibes-based evals.** "I tried 5 prompts and this one felt better": not an eval.
 - **No golden dataset.** Can't run regression checks.
 - **Judge prompt copied from a blog with no calibration.** Judge bias becomes finding bias.
 - **Evals in dev only, not in CI.** Regressions ship.
@@ -182,16 +182,16 @@ Add as the product matures:
 
 When tenant-wide agreement rate > 0.6:
 
-1. **Confirm the alert** — pull `AiTrace.agreementScore` over the last 7 days and 30 days. Trend, not noise.
-2. **Identify the change** — correlate with `PromptVersion.createdAt`. What changed?
-3. **Sample 10 high-agreement traces** — read the actual responses. Are they sycophantic, or are the patterns false-positives?
+1. **Confirm the alert**: pull `AiTrace.agreementScore` over the last 7 days and 30 days. Trend, not noise.
+2. **Identify the change**: correlate with `PromptVersion.createdAt`. What changed?
+3. **Sample 10 high-agreement traces**: read the actual responses. Are they sycophantic, or are the patterns false-positives?
 4. **The lever:**
    - If the `[COACHING_QUALITY]` block was modified → restore.
    - If `[COACH_PERSONALITY]` was edited toward warmth → re-add challenge cues.
    - If `[TENANT_BRAND_VOICE]` says "always agreeable" → push back to admin.
-5. **Re-eval after fix.** If agreement rate doesn't drop within 48h post-fix, the lever was wrong — go back to step 2.
+5. **Re-eval after fix.** If agreement rate doesn't drop within 48h post-fix, the lever was wrong. Go back to step 2.
 
-**Do NOT touch `temperature`.** Temperature is not the lever for sycophancy — it's a randomness knob, not a personality knob.
+**Do NOT touch `temperature`.** Temperature is not the lever for sycophancy: it's a randomness knob, not a personality knob.
 
 ---
 

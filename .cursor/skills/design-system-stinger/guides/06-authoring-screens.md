@@ -1,7 +1,7 @@
-# 06 — Authoring Screen Briefs
+# 06: Authoring Screen Briefs
 
 Screen briefs (`04-screens/<screen>.md`) apply the component library to
-full pages. Target: 5–10 briefs for a real product. 60–200 lines each.
+full pages. Target: 5 to 10 briefs for a real product. 60 to 200 lines each.
 
 > Template: `../templates/screen-spec.md`.
 
@@ -11,7 +11,7 @@ full pages. Target: 5–10 briefs for a real product. 60–200 lines each.
   skeleton, component choice, responsive behavior, edge cases.
 - **Isn't:** a component brief. New visuals belong in `03-components/`.
   A screen brief that introduces a new surface or button variant is a
-  bug — the component brief should be updated first.
+  bug: the component brief should be updated first.
 
 ## The canonical doc shape
 
@@ -76,12 +76,12 @@ Include mobile and desktop separately when they diverge.
 
 Explicit bullet list, each linking to the matching component brief:
 
-- `cards-and-surfaces.md` — hero card, engagement blocks, mission card.
-- `buttons-and-ctas.md` — "Add Sale" primary, DM/Referral pair.
-- `progress-bars.md` — hero-size bar.
-- `nav-top-bottom-left.md` — glass top and bottom nav.
+- `cards-and-surfaces.md`: hero card, engagement blocks, mission card.
+- `buttons-and-ctas.md`: "Add Sale" primary, DM/Referral pair.
+- `progress-bars.md`: hero-size bar.
+- `nav-top-bottom-left.md`: glass top and bottom nav.
 
-If a screen uses a visual NOT in `03-components/`, stop — add the
+If a screen uses a visual NOT in `03-components/`, stop: add the
 component brief first.
 
 ## Responsive behavior
@@ -101,21 +101,21 @@ When the layout genuinely changes, ASCII-art both. Mobile first.
 ## States
 
 At minimum:
-- **Empty / zero-state** — what shows when there's no data.
-- **Loading** — skeleton, spinner, or placeholder cards.
-- **Error** — fallback surface.
-- **Populated** — the happy path (already covered in the skeleton).
+- **Empty / zero-state**: what shows when there's no data.
+- **Loading**: skeleton, spinner, or placeholder cards.
+- **Error**: fallback surface.
+- **Populated**: the happy path (already covered in the skeleton).
 
 Optional: offline, permission-denied, rate-limited, over-quota.
 
 ## Edge cases
 
 The screen brief earns its keep here. Examples:
-- A name that's 80 characters long — how does it wrap?
-- 1000 list items — is virtualization required?
-- A zero-state — is the CTA prominent?
-- A screen at 3200px wide — does the layout cap?
-- A tenant with extreme brand colors (neon pink primary) — does
+- A name that's 80 characters long: how does it wrap?
+- 1000 list items: is virtualization required?
+- A zero-state: is the CTA prominent?
+- A screen at 3200px wide: does the layout cap?
+- A tenant with extreme brand colors (neon pink primary): does
   contrast still hold?
 
 ## Accessibility

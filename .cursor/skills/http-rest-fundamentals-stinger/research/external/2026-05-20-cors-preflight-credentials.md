@@ -13,7 +13,7 @@ stinger: http-rest-fundamentals-stinger
 Published: 2026-04-18. Author: Kuda Zafevere. CodeAva.
 
 ## Summary
-Comprehensive practical CORS guide covering browser enforcement model, preflight mechanics, credential rules, and common misconfiguration patterns. Explicitly states that CORS is a browser mechanism — curl, Postman, and server-to-server calls are never CORS-restricted. Covers the wildcard-with-credentials prohibition in detail and documents that wildcards are also forbidden in `Access-Control-Allow-Methods` and `Access-Control-Allow-Headers` for credentialed requests (not just in `Access-Control-Allow-Origin`).
+Comprehensive practical CORS guide covering browser enforcement model, preflight mechanics, credential rules, and common misconfiguration patterns. Explicitly states that CORS is a browser mechanism: curl, Postman, and server-to-server calls are never CORS-restricted. Covers the wildcard-with-credentials prohibition in detail and documents that wildcards are also forbidden in `Access-Control-Allow-Methods` and `Access-Control-Allow-Headers` for credentialed requests (not just in `Access-Control-Allow-Origin`).
 
 ## Key quotations / statistics
 - "CORS is enforced by browsers for cross-origin script requests. It does not stop curl, Postman, or server-to-server calls."
@@ -26,7 +26,7 @@ Comprehensive practical CORS guide covering browser enforcement model, preflight
 
 ## Annotations for stinger-forge
 - `guides/04-cors.md`: this is the most complete practical CORS guide found. Especially valuable: the "preflights are never credentialed" point (auth middleware must NOT block OPTIONS), and the triple-wildcard prohibition (origin + methods + headers all forbidden with credentials).
-- The "auth before CORS" gotcha must be a named finding in the stinger — it's a non-obvious bug that blocks all preflight requests.
+- The "auth before CORS" gotcha must be a named finding in the stinger: it's a non-obvious bug that blocks all preflight requests.
 - `templates/cors-decision-tree.md`: encode the wildcard rules as branching conditions in the decision tree.
 - `examples/cors-correct-vs-incorrect.md`: use the secure allowlist pattern from this guide as the "correct" example.
 - No contradictions with WHATWG Fetch spec (internal reference).

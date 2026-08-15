@@ -4,4 +4,4 @@ The Cursor skill paired with `dark-mode-theming-worker-bee`. Encodes 2026 consen
 
 **Command Brief:** `ai-tools/command-briefs/dark-mode-theming-worker-bee-command-brief.md`
 **Research summary:** `research/research-summary.md`
-**Bee:** `ai-tools/agents/dark-mode-theming-worker-bee.md`
+**Bee:** `.claude/agents/dark-mode-theming-worker-bee.md`

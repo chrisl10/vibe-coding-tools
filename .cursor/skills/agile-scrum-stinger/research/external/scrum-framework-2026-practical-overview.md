@@ -29,7 +29,7 @@ A 2026 practitioner-authored overview based on the official Scrum Guide 2020, pr
 | Backlog Refinement | Not prescribed | 10% of sprint capacity (community guideline) |
 
 ## Annotations for stinger-forge
-- Good reference article for `guides/02-ceremonies.md` — the time-boxes are commonly forgotten or violated.
+- Good reference article for `guides/02-ceremonies.md`: the time-boxes are commonly forgotten or violated.
 - The 10% rule for Backlog Refinement is a community guideline, NOT from the Scrum Guide. This distinction must be labeled clearly in the stinger.
 - Confirms as of March 2026: Scrum Guide 2020 is still the current official version. No 2025 or 2026 update has been published.
 - Team size cap of "10 or fewer" is from the 2020 Guide. Many large "Scrum teams" violating this should be flagged in audits.

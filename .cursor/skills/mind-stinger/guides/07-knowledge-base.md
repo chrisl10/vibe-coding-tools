@@ -1,8 +1,8 @@
-# 07 — Knowledge Base
+# 07: Knowledge Base
 
 `KnowledgeDocument` types, context injection paths (global vs module vs checklist), text-budget fallback, pinned-doc path, the issue #46 academy retrieval gap, and the `PUT` chunk leak.
 
-> **Doc reference:** `library/knowledge-base/ai/knowledge-base.md` is canonical.
+> **Doc reference:** `library/knowledge/private/ai/knowledge-base.md` is canonical.
 
 ---
 
@@ -98,7 +98,7 @@ const pinnedIds = JSON.parse(knowledgeBaseId);  // ["docId1", "docId2"]
 - Capped at 8,000 chars total.
 - **Qdrant is NOT queried in this path.**
 
-Empty array `[]` is valid — signals "no pinned docs, use text-budget base only."
+Empty array `[]` is valid: signals "no pinned docs, use text-budget base only."
 A non-`[`-prefix value is treated as a legacy `CourseModule.id` and uses the text-budget path.
 
 ### Strategy 2: Vector search (+ optional GraphRAG)
@@ -137,15 +137,15 @@ Truncate last section at boundary with "...(truncated)".
 
 | Path | RAG Active? | Source |
 |---|---|---|
-| Global coach chat (no `moduleType`) | **Yes** — `composeSystemPromptWithMeta()` → `buildKnowledgeContextWithMeta()` → Qdrant | `ai-prompt-builder.ts` |
-| Module coaching (`moduleType` provided) | **No** — `buildCoachingPrompt()` uses `CoachKnowledgeDocument` (Postgres only) | `coaching-llm.ts` |
-| Checklist AI chat (`checklistItemId`) | **Partial** — falls back to `buildGlobalCoachPrompt()` if no per-step prompt | `ai-chat.ts` |
-| Onboarding (onboarding agent) | **No** — hardcoded system prompt, no KB retrieval | `onboarding-ai.ts` |
-| Context reconstruction (session resume) | **Yes** — `reconstructSession()` queries `conversations-{tenantId}` | `session-memory.ts` |
+| Global coach chat (no `moduleType`) | **Yes**: `composeSystemPromptWithMeta()` → `buildKnowledgeContextWithMeta()` → Qdrant | `ai-prompt-builder.ts` |
+| Module coaching (`moduleType` provided) | **No**: `buildCoachingPrompt()` uses `CoachKnowledgeDocument` (Postgres only) | `coaching-llm.ts` |
+| Checklist AI chat (`checklistItemId`) | **Partial**: falls back to `buildGlobalCoachPrompt()` if no per-step prompt | `ai-chat.ts` |
+| Onboarding (onboarding agent) | **No**: hardcoded system prompt, no KB retrieval | `onboarding-ai.ts` |
+| Context reconstruction (session resume) | **Yes**: `reconstructSession()` queries `conversations-{tenantId}` | `session-memory.ts` |
 
 ---
 
-## 5. Vector indexing — `indexKnowledgeDocument()`
+## 5. Vector indexing: `indexKnowledgeDocument()`
 
 ```typescript
 indexKnowledgeDocument({ id, tenantId, title, body, documentType }).catch(console.error);
@@ -157,7 +157,7 @@ Fire-and-forget from admin CRUD routes. Silently skipped if `QDRANT_URL` or `COH
 
 `chunkText()`: 500-character target chunks with 20% overlap (`start += Math.floor(maxChars * 0.8)`).
 
-Each chunk indexed with title prepended: `"${title}\n${chunk}"` — anchors each chunk to its parent doc context.
+Each chunk indexed with title prepended: `"${title}\n${chunk}"`, anchors each chunk to its parent doc context.
 
 500 chars (~125 tokens) is **below** Cohere's optimal 512-token window. Trade-off: smaller Qdrant point counts vs precision. A migration to 512-token chunks with re-indexing would improve precision (tracked as a should-refactor with eval gate).
 
@@ -169,7 +169,7 @@ See `guides/09-vector-payload-schema.md`. Knowledge doc points use `user_id: "__
 
 `client.upsert()` with `wait: true`. Random UUIDs as point IDs (NOT stable doc-chunk IDs).
 
-**Gap:** Re-indexing a document does NOT remove old chunks — it adds new ones. `removeKnowledgeDocument()` (filter-deletes by `source_document_id`) MUST be called before re-indexing. The admin `DELETE` route does this; the `PUT` route currently does NOT (issue tracked, must-fix).
+**Gap:** Re-indexing a document does NOT remove old chunks; it adds new ones. `removeKnowledgeDocument()` (filter-deletes by `source_document_id`) MUST be called before re-indexing. The admin `DELETE` route does this; the `PUT` route currently does NOT (issue tracked, must-fix).
 
 ---
 
@@ -219,7 +219,7 @@ See `guides/14-multimodal-pipeline.md`.
 
 `CourseModule.knowledgeDocIds` is a string array of `KnowledgeDocument` IDs. When `buildKnowledgeContext()` is called with a module ID (legacy string format in `knowledgeBaseId`), the text-budget fallback restricts knowledge to those linked documents.
 
-**Vector search path does NOT filter by module** — it searches all knowledge documents for the tenant. By design (vector search provides better global retrieval).
+**Vector search path does NOT filter by module**: it searches all knowledge documents for the tenant. By design (vector search provides better global retrieval).
 
 ---
 
@@ -238,7 +238,7 @@ Tracked as [the host repo's tracker](host repo issue tracker). mind-worker-bee f
 | Method | Path | Action |
 |---|---|---|
 | `POST` | `/api/admin/knowledge` | Create; triggers async `indexKnowledgeDocument()` |
-| `PUT` | `/api/admin/knowledge/:id` | Update; triggers async `indexKnowledgeDocument()` (BUT does NOT call `removeKnowledgeDocument()` first — leak) |
+| `PUT` | `/api/admin/knowledge/:id` | Update; triggers async `indexKnowledgeDocument()` (BUT does NOT call `removeKnowledgeDocument()` first: leak) |
 | `DELETE` | `/api/admin/knowledge/:id` | Soft-delete; triggers async `removeKnowledgeDocument()` |
 
 All endpoints require `admin` role and are scoped to `request.user.tenantId`.

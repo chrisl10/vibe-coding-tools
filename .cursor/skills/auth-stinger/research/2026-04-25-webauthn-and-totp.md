@@ -10,15 +10,15 @@
 
 ## Summary
 
-In 2026, passkeys (WebAuthn discoverable credentials) are the strongest second factor and increasingly the **first** factor — phishing-resistant, hardware-bound, biometric or PIN unlock. TOTP remains the universal fallback. SMS is recovery-only due to SIM-swap risk.
+In 2026, passkeys (WebAuthn discoverable credentials) are the strongest second factor and increasingly the **first** factor: phishing-resistant, hardware-bound, biometric or PIN unlock. TOTP remains the universal fallback. SMS is recovery-only due to SIM-swap risk.
 
 ## Factor hierarchy
 
-1. **Passkeys / WebAuthn** — phishing-resistant. Best default.
-2. **TOTP (RFC 6238)** — universal fallback when passkeys aren't available.
-3. **Email magic link / one-time code** — identity-verification, not a real second factor.
-4. **Push to authenticator app** — Duo, MS Authenticator. Phishing-vulnerable.
-5. **SMS / voice OTP** — recovery only.
+1. **Passkeys / WebAuthn**: phishing-resistant. Best default.
+2. **TOTP (RFC 6238)**: universal fallback when passkeys aren't available.
+3. **Email magic link / one-time code**: identity-verification, not a real second factor.
+4. **Push to authenticator app**: Duo, MS Authenticator. Phishing-vulnerable.
+5. **SMS / voice OTP**: recovery only.
 
 ## WebAuthn flow
 
@@ -42,14 +42,14 @@ In 2026, passkeys (WebAuthn discoverable credentials) are the strongest second f
 
 ## Magic links
 
-- Single-use, short TTL (5–15 min), bound to email, hashed at rest.
+- Single-use, short TTL (5-15 min), bound to email, hashed at rest.
 - Token in URL is fine; never in fragment (browser-history exposure).
 
-## SMS — recovery only
+## SMS: recovery only
 
 SIM-swap is the dominant attack. Rate-limit aggressively (3/hr per phone, 5/day). Never use SMS as the primary second factor.
 
 ## Relevance
 
-- `guides/08-mfa-and-passkeys.md` — full deep dive.
-- `guides/00-principles.md` Principle 4 — recovery is part of MFA.
+- `guides/08-mfa-and-passkeys.md`: full deep dive.
+- `guides/00-principles.md` Principle 4: recovery is part of MFA.

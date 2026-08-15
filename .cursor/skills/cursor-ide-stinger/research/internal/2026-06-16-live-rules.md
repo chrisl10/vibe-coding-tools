@@ -11,7 +11,7 @@ fetched: 2026-06-16
 
 ## Summary
 
-This repo ships three `.cursor/rules/*.mdc` files. They are the canonical examples for `.mdc` authoring and the Army's guardrails.
+This repo ships three `.cursor/rules/*.mdc` files. They are the canonical examples for `.mdc` authoring and the colony's guardrails.
 
 ## The three rules
 
@@ -21,7 +21,7 @@ This repo ships three `.cursor/rules/*.mdc` files. They are the canonical exampl
 
 ## Key observations
 
-- All three use `alwaysApply: true` because they are hard, Army-wide guardrails. Softer, scoped rules would set `alwaysApply: false` with a glob or a `description`.
+- All three use `alwaysApply: true` because they are hard, colony-wide guardrails. Softer, scoped rules would set `alwaysApply: false` with a glob or a `description`.
 - The plan-construction rule shows the path-reference pattern (point at the matrix file, do not duplicate the table).
 - No `.cursorrules` file exists or should exist here; the repo standardized on `.mdc`.
 

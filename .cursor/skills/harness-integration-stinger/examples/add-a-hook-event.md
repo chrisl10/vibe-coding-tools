@@ -1,6 +1,8 @@
 # Example: Add a Hook Lifecycle Event
 
-**Demonstrates:** `guides/02-hook-lifecycle.md`, `guides/00-architecture-and-wiring.md`
+*Part of the Hivemind six-host case study - see `examples/case-study-hivemind-six-host-installer.md` for the full context. This worked example predates and is not superseded by that file.*
+
+**Demonstrates:** `guides/02-hook-lifecycle.md`, `guides/00-decision-framework.md`
 
 This example adds capture on a new lifecycle event (`SubagentStop`) to the hooks-based hosts and wires the bundle entry it forks.
 

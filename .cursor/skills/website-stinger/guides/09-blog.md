@@ -1,4 +1,4 @@
-# 09 — Blog & Content Management
+# 09: Blog & Content Management
 
 Source PRD: `research/source-prds/prd-phase-09-blog-content-management.md`
 
@@ -21,7 +21,7 @@ Implement the blog using the CMS mode selected in Phase 1. Default is **Payload 
 
 ## Mode A: Payload-default
 
-For full Payload implementation details, read `cms-payload-stinger/guides/03-sveltekit-interop.md`.
+For full Payload implementation details, read `website-stinger/guides/03-sveltekit-interop.md`.
 
 ### Blog listing page
 
@@ -115,7 +115,7 @@ Payload's Lexical editor produces a JSON structure. Use `@payloadcms/richtext-le
 // + an afterChange hook that calls payload's serializeLexicalToHtml
 ```
 
-> Lexical-to-HTML on the SvelteKit side is an open question (see cms-payload-stinger/guides/03-sveltekit-interop.md).
+> Lexical-to-HTML on the SvelteKit side is an open question (see website-stinger/guides/03-sveltekit-interop.md).
 
 ---
 

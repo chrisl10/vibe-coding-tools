@@ -17,8 +17,8 @@ services:
     profiles: ["tools"]
 ```
 
-- `docker compose --profile app up` — runs services with `app` profile.
-- `docker compose --profile app --profile tools up` — combines.
+- `docker compose --profile app up`: runs services with `app` profile.
+- `docker compose --profile app --profile tools up`: combines.
 - A service with **no `profiles:` field** runs in every `up` invocation regardless of profile flags.
 
 This replaces the per-developer `docker-compose.override.yml` mess that always drifts.
@@ -27,9 +27,9 @@ This replaces the per-developer `docker-compose.override.yml` mess that always d
 
 Three condition values:
 
-- `service_started` — wait for container start (the short form's behavior). Mostly useless for stateful deps.
-- `service_healthy` — wait for healthcheck to pass. The correct choice for DBs, caches, message brokers.
-- `service_completed_successfully` — wait for the dependency to finish with exit 0. The correct choice for migration jobs.
+- `service_started`: wait for container start (the short form's behavior). Mostly useless for stateful deps.
+- `service_healthy`: wait for healthcheck to pass. The correct choice for DBs, caches, message brokers.
+- `service_completed_successfully`: wait for the dependency to finish with exit 0. The correct choice for migration jobs.
 
 ```yaml
 services:
@@ -75,7 +75,7 @@ healthcheck:
   start_period: 30s
 ```
 
-`start_period` is the grace window — failures during start_period don't count against `retries`.
+`start_period` is the grace window: failures during start_period don't count against `retries`.
 
 ## Secrets
 
@@ -119,14 +119,14 @@ Run with `docker compose up --watch`.
 
 Three actions:
 
-- `sync` — copy changed files into the container without rebuild.
-- `sync+restart` — copy + restart the container's main process.
-- `rebuild` — rebuild the image and restart.
+- `sync`: copy changed files into the container without rebuild.
+- `sync+restart`: copy + restart the container's main process.
+- `rebuild`: rebuild the image and restart.
 
 This replaces the `volumes: [./:/app]` pattern that ships host `node_modules` into the container (which often has wrong arch / wrong native bindings).
 
 ## Relevance to this Stinger
 
-- `guides/03-compose-for-dev.md` — the full spec.
-- `templates/docker-compose.dev.yml` — canonical reference using all four features.
-- `examples/compose-nextjs-postgres-redis.md` — worked example.
+- `guides/03-compose-for-dev.md`: the full spec.
+- `templates/docker-compose.dev.yml`: canonical reference using all four features.
+- `examples/compose-nextjs-postgres-redis.md`: worked example.

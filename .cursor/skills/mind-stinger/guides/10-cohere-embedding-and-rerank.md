@@ -1,8 +1,10 @@
-# 10 — Cohere Embedding and Rerank
+# 10: Cohere Embedding and Rerank
+
+> **Alternative stack.** Cohere embedding and rerank are documented here as the alternative stack's choice. The two-stage retrieval concept (cheap recall, then a reranker narrows it) applies regardless of vendor; see `guides/00-selection-and-defaults.md` for this repo's default embedding/rerank path.
 
 `embed()` / `embedQuery()` / `rerank()` patterns, batch sizing, input-type discipline, latency targets, the cross-encoder-as-second-stage rule.
 
-> **Doc reference:** `library/knowledge-base/ai/rag-vector-strategy.md §3, §6, §13`. Code: `lib/cohere-client.ts`.
+> **Doc reference:** `library/knowledge/private/ai/rag-vector-strategy.md §3, §6, §13`. Code: `lib/cohere-client.ts`.
 
 ---
 
@@ -15,20 +17,20 @@ embedQuery(text: string): Promise<number[]>   // wraps embed([text], "search_que
 rerank(query: string, candidateTexts: string[], topN: number): Promise<RerankResult[]>
 ```
 
-Single client instance. API key in `COHERE_API_KEY`. Rate limits documented in `library/knowledge-base/ai/rag-vector-strategy.md §13`.
+Single client instance. API key in `COHERE_API_KEY`. Rate limits documented in `library/knowledge/private/ai/rag-vector-strategy.md §13`.
 
 ---
 
-## 2. The two embedding input types — disciplined use
+## 2. The two embedding input types: disciplined use
 
 `embed-english-v3.0` requires different input types for indexing vs retrieval:
 
 | Operation | Input type | When |
 |---|---|---|
-| Indexing — storing content vectors | `"search_document"` | `indexKnowledgeDocument()`, `indexLessonContent()`, conversation indexing |
-| Retrieval — querying | `"search_query"` | `buildVectorContext()`, `reconstructSession()`, any query path |
+| Indexing: storing content vectors | `"search_document"` | `indexKnowledgeDocument()`, `indexLessonContent()`, conversation indexing |
+| Retrieval: querying | `"search_query"` | `buildVectorContext()`, `reconstructSession()`, any query path |
 
-**Mixing input types degrades retrieval quality** measurably (typically 5–15% drop in precision). Wrong input type is a **must-fix**.
+**Mixing input types degrades retrieval quality** measurably (typically 5-15% drop in precision). Wrong input type is a **must-fix**.
 
 The convenience function `embedQuery(text)` is provided so retrieval paths can't accidentally use `search_document`.
 
@@ -44,7 +46,7 @@ embed-english-v3.0 → 1024-dim float vectors
 
 ---
 
-## 4. Two-stage retrieval — the rerank step
+## 4. Two-stage retrieval: the rerank step
 
 The non-optional second stage:
 
@@ -142,7 +144,7 @@ const EPISODIC_CANDIDATES = 10;   // past session summaries retrieved
 const EPISODIC_TOP_N      = 3;    // top 3 after Cohere rerank
 ```
 
-Episodic context is shorter-form (200–300 word summaries) and the corpus per user is smaller (sessions, not documents). 10 → 3 is calibrated for that profile.
+Episodic context is shorter-form (200-300 word summaries) and the corpus per user is smaller (sessions, not documents). 10 → 3 is calibrated for that profile.
 
 ---
 
@@ -164,8 +166,8 @@ See `guides/13-context-continuity.md`.
 
 ## 9. Why Cohere over alternatives (the short answer)
 
-- **`embed-english-v3.0`** — top-tier English retrieval quality, 1024 dims (manageable), reasonable batch size, good latency.
-- **`rerank-v3.5`** — fast cross-encoder, ~200ms typical, calibrated quality scores, pairs with embed-v3.
+- **`embed-english-v3.0`**: top-tier English retrieval quality, 1024 dims (manageable), reasonable batch size, good latency.
+- **`rerank-v3.5`**: fast cross-encoder, ~200ms typical, calibrated quality scores, pairs with embed-v3.
 
 Alternatives (Voyage rerank-2, BGE-reranker-v2-m3) are listed in `references/generic-embedding-model-choice.md` as demoted context. A switch requires the substitution policy in `guides/01-stack-enforcement.md §2`.
 

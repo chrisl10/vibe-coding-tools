@@ -8,7 +8,7 @@
 **Research model:** grok-4.3
 
 ## Domain scope
-The Bee owns the full data-exchange surface: file ingestion → parse → column mapping → validation → error reporting (import side); workbook construction → streaming export (export side). Does NOT own: file drop zone UI (`ux-ui-worker-bee`), bulk-insert DB performance (`db-worker-bee`), upload endpoint security (`security-worker-bee`).
+The Bee owns the full data-exchange surface: file ingestion → parse → column mapping → validation → error reporting (import side); workbook construction → streaming export (export side). Does NOT own: file drop zone UI (`ux-ui-svelte-worker-bee`), bulk-insert DB performance (`db-worker-bee`), upload endpoint security (`security-worker-bee`).
 
 ## Library canon (from brief)
 | Layer | Library |

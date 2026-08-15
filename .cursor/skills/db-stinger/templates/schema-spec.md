@@ -1,4 +1,4 @@
-# Schema Spec — {{project-name}}
+# Schema Spec: {{project-name}}
 
 **Date:** {{YYYY-MM-DD}}
 **Author:** db-worker-bee
@@ -41,8 +41,8 @@
 
 **Constraints:**
 
-- `CHECK ({{...}})` — {{reason}}
-- `EXCLUDE USING gist ({{...}})` — {{reason}} (if applicable)
+- `CHECK ({{...}})`: {{reason}}
+- `EXCLUDE USING gist ({{...}})`: {{reason}} (if applicable)
 
 **FK targets:**
 
@@ -50,7 +50,7 @@
 
 **PII columns:**
 
-- `{{column}}` — {{type of PII; flagged for `security-worker-bee` audit}}
+- `{{column}}`: {{type of PII; flagged for `security-worker-bee` audit}}
 
 ---
 
@@ -67,11 +67,11 @@
 
 ## Partitioning
 
-{{Either "N/A — no table large enough" or per-table partition strategy with key, type (range/list/hash), retention plan.}}
+{{Either "N/A: no table large enough" or per-table partition strategy with key, type (range/list/hash), retention plan.}}
 
 ## Special-purpose
 
-- **`pgvector`:** {{tables that hold embeddings + dimension + index family — `hnsw` or `ivfflat`}}
+- **`pgvector`:** {{tables that hold embeddings + dimension + index family: `hnsw` or `ivfflat`}}
 - **FTS:** {{tables with `tsvector` columns + GIN indexes}}
 - **TimescaleDB / Tiger Data:** {{hypertables + chunk interval + continuous aggregates}}
 
@@ -81,11 +81,11 @@
 
 ## Handoffs
 
-- **`library-worker-bee`** — PRD update if scope changed during design.
-- **`react-worker-bee`** — N+1 risk callouts at the data-layer edge.
-- **`security-worker-bee`** — RLS design, PII columns, encryption-at-rest, audit-log compliance.
-- **`ai-platform-worker-bee`** — embedding storage decisions and dimensions for retrieval.
-- **`quality-worker-bee`** — verification queries after migration runs.
+- **`library-worker-bee`**: PRD update if scope changed during design.
+- **`react-worker-bee`**: N+1 risk callouts at the data-layer edge.
+- **`security-worker-bee`**: RLS design, PII columns, encryption-at-rest, audit-log compliance.
+- **`mind-worker-bee`**: embedding storage decisions and dimensions for retrieval.
+- **`quality-worker-bee`**: verification queries after migration runs.
 
 ## References
 

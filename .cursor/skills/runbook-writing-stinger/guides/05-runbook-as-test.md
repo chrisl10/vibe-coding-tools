@@ -97,7 +97,7 @@ Every runbook must include this header near the top (after the summary, before t
 > ⚠️ TEST STATUS: UNTESTED
 > This runbook has never been exercised. Treat it as a draft.
 > Do not rely on this as a primary response procedure until tested in staging.
-> To schedule a test, see `.cursor/skills/runbook-writing-stinger/guides/05-runbook-as-test.md`.
+> To schedule a test, see `.claude/skills/runbook-writing-stinger/guides/05-runbook-as-test.md`.
 > Add to next game day queue: [link to game day planning doc]
 ```
 

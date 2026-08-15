@@ -2,7 +2,7 @@
 
 **Forged:** 2026-04-25
 
-What was current at the time each guide was authored. Lock behavior, `pgvector` index types, and `pgroll` capabilities differ across major versions — this log gates the assumptions baked into each guide.
+What was current at the time each guide was authored. Lock behavior, `pgvector` index types, and `pgroll` capabilities differ across major versions: this log gates the assumptions baked into each guide.
 
 ## PostgreSQL
 
@@ -40,9 +40,9 @@ What was current at the time each guide was authored. Lock behavior, `pgvector` 
 |---|---|---|
 | Supabase | 15 / 16 | Integrated auth + RLS + Storage + Realtime + Edge Functions; Supavisor pooler |
 | Neon | 16 / 17 | Branching, autoscaling, scale-to-zero; bottomless storage |
-| Turso | libSQL (SQLite fork) | Distributed edge SQLite; not Postgres — different mental model |
+| Turso | libSQL (SQLite fork) | Distributed edge SQLite; not Postgres: different mental model |
 | PlanetScale | MySQL 8 | Branching, online schema changes via Vitess; not Postgres |
 | CockroachDB Serverless | Postgres-wire compatible | Distributed SQL; some PG features missing |
 | Tiger Data | Postgres + TimescaleDB | Time-series specialist |
 
-**Versioning note:** This log is the single source of truth for "what version did the guide assume?" — refresh it when refreshing any guide.
+**Versioning note:** This log is the single source of truth for "what version did the guide assume?": refresh it when refreshing any guide.

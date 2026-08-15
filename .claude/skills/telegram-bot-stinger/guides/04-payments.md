@@ -78,7 +78,7 @@ await bot.send_invoice(
 
 ---
 
-## Handling pre_checkout_query (REQUIRED — 10 second window)
+## Handling pre_checkout_query (REQUIRED: 10 second window)
 
 ```typescript
 // grammY

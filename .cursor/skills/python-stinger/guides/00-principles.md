@@ -1,15 +1,15 @@
-# 00 — Principles
+# 00: Principles
 
 The non-negotiables. Read on every invocation.
 
 ## The fourteen principles
 
-### 1. Read `pyproject.toml` first — always
+### 1. Read `pyproject.toml` first, always
 
 Python ecosystem fragmentation means a recommendation for the wrong stack is wrong advice. Before anything else, capture:
 
 - Python version (`requires-python` or `.python-version`)
-- Package manager — uv if `uv.lock` is present; Poetry if `poetry.lock`; pip-tools if `requirements*.txt` + a `compile` step; pip-only if just `requirements.txt`.
+- Package manager: uv if `uv.lock` is present; Poetry if `poetry.lock`; pip-tools if `requirements*.txt` + a `compile` step; pip-only if just `requirements.txt`.
 - Web framework (`django`, `fastapi`, `flask`, none).
 - API layer (`django-ninja`, `djangorestframework`, FastAPI routes, Flask blueprints).
 - Background queue (`celery`, `rq`, `dramatiq`, none).
@@ -22,7 +22,7 @@ Source: every guide in this Stinger assumes you've done step 1.
 
 ### 2. Stack is canon, not recommendation
 
-The active guides recommend one tool per slot. Substitution requires an ADR with eval evidence and a migration plan. The `references/` folder catalogs the alternatives we don't pick — read them for context, not as invitations to substitute. Source: `guides/01-stack-enforcement.md`.
+The active guides recommend one tool per slot. Substitution requires an ADR with eval evidence and a migration plan. The `references/` folder catalogs the alternatives we don't pick; read them for context, not as invitations to substitute. Source: `guides/01-stack-enforcement.md`.
 
 ### 3. Django Ninja over DRF
 
@@ -30,7 +30,7 @@ When new API code goes in, the answer is Django Ninja with a Pydantic schema. DR
 
 ### 4. Django ORM is default; raw SQL needs a reason
 
-`Model.objects.filter().select_related(...)` is canonical. Raw SQL is acceptable for performance-critical queries, complex CTEs, or vendor-specific features — but the file gets a `# raw-sql: <reason>` comment with a real reason. Source: `guides/03-django-orm.md`.
+`Model.objects.filter().select_related(...)` is canonical. Raw SQL is acceptable for performance-critical queries, complex CTEs, or vendor-specific features, but the file gets a `# raw-sql: <reason>` comment with a real reason. Source: `guides/03-django-orm.md`.
 
 ### 5. N+1 is must-fix
 
@@ -42,7 +42,7 @@ Never edit an applied migration. Schema-with-data changes use the **expand → b
 
 ### 7. Pydantic v2 at every boundary
 
-API requests and responses are Pydantic models (Django Ninja and FastAPI carry this for free). External data — webhooks, third-party APIs, file uploads, Celery task args — is parsed with Pydantic at entry. Untyped boundaries are a **must-fix**. Source: `guides/12-typing-and-pydantic.md`.
+API requests and responses are Pydantic models (Django Ninja and FastAPI carry this for free). External data (webhooks, third-party APIs, file uploads, Celery task args) is parsed with Pydantic at entry. Untyped boundaries are a **must-fix**. Source: `guides/12-typing-and-pydantic.md`.
 
 ### 8. pyright basic minimum, strict on new code
 
@@ -66,11 +66,11 @@ pytest-django with `--reuse-db` for fast cycles. factory_boy for fixture authori
 
 ### 13. Async-aware, not async-by-default
 
-Django async views from 4.1+ — use them when the view is I/O-bound and you deploy on ASGI. Wrap sync ORM calls with `sync_to_async()` at the boundary. FastAPI is async-native; don't fight it with sync handlers. Source: `guides/16-django-async.md`.
+Django async views from 4.1+: use them when the view is I/O-bound and you deploy on ASGI. Wrap sync ORM calls with `sync_to_async()` at the boundary. FastAPI is async-native; don't fight it with sync handlers. Source: `guides/16-django-async.md`.
 
 ### 14. Decoupled-frontend posture is canonical
 
-Python service emits JSON; React consumes it. CORS configured per-environment. Auth is a deliberate decision (session vs JWT vs external — call `auth-worker-bee`). Django templates are out of scope unless the project is admin-only or a server-rendered legacy. Source: `guides/15-django-react-decoupled.md`.
+Python service emits JSON; React consumes it. CORS configured per-environment. Auth is a deliberate decision (session vs JWT vs external, call `auth-worker-bee`). Django templates are out of scope unless the project is admin-only or a server-rendered legacy. Source: `guides/15-django-react-decoupled.md`.
 
 ---
 
@@ -81,7 +81,7 @@ Before writing findings, confirm:
 - [ ] `pyproject.toml` (or `setup.cfg` / `requirements*.txt`) read; stack map captured.
 - [ ] Invocation classified per the routing table in `SKILL.md`.
 - [ ] Severity rubric in mind (must-fix / should-refactor / style).
-- [ ] Cross-Bee handoff lines clear — escalate at the boundary, don't author work the other Bee owns.
+- [ ] Cross-Bee handoff lines clear: escalate at the boundary, don't author work the other Bee owns.
 
 ## Cross-Bee boundaries
 
@@ -105,8 +105,8 @@ The full table lives in `SKILL.md`. The short version: surface concerns at the b
 | Severity | Examples | Blocks merge? |
 |---|---|---|
 | **Must-fix** | N+1 query; raw SQL with no `# raw-sql:` comment; secrets in code; `DEBUG=True` in prod settings; bare `except:`; mutable default arg; missing `transaction.atomic()` on multi-write; untyped API boundary (`def view(request, data: dict)`); edited applied migration; SQL injection vector | Yes |
-| **Should-refactor** | DRF in new code; fat model holding business logic; missing settings split; Poetry in a new project (uv canonical); mypy in a new project (pyright canonical); missing factory_boy (using JSON fixtures); signals doing business logic | No — opens follow-up |
-| **Style** | Naming nit; import order; line length over 88 | Never — Ruff handles it |
+| **Should-refactor** | DRF in new code; fat model holding business logic; missing settings split; Poetry in a new project (uv canonical); mypy in a new project (pyright canonical); missing factory_boy (using JSON fixtures); signals doing business logic | No: opens follow-up |
+| **Style** | Naming nit; import order; line length over 88 | Never: Ruff handles it |
 
 Calling a style nit "must-fix" destroys your credibility for the next finding. Be disciplined.
 
@@ -114,8 +114,8 @@ Calling a style nit "must-fix" destroys your credibility for the next finding. B
 
 Every finding has two citations:
 
-1. **Where in the user's codebase** — `apps/orders/services.py:42`.
-2. **Why it's a finding** — guide section (`guides/03-django-orm.md §3`) or external URL.
+1. **Where in the user's codebase**: `apps/orders/services.py:42`.
+2. **Why it's a finding**: guide section (`guides/03-django-orm.md §3`) or external URL.
 
 No citations means the finding is opinion, not enforcement.
 

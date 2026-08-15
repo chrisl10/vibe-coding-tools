@@ -1,4 +1,4 @@
-# Research Plan — python-stinger
+# Research Plan: python-stinger
 
 Forge date: 2026-05-03
 
@@ -8,20 +8,20 @@ Ground every active guide in `python-stinger/guides/` against (a) authoritative 
 
 ## Authoritative anchor sources (cited across multiple guides)
 
-- **Django** — https://docs.djangoproject.com/en/stable/
-- **Django Ninja** — https://django-ninja.dev/
-- **FastAPI** — https://fastapi.tiangolo.com/
-- **Celery** — https://docs.celeryq.dev/en/stable/
-- **Channels** — https://channels.readthedocs.io/en/stable/
-- **Pydantic v2** — https://docs.pydantic.dev/latest/
-- **pytest / pytest-django** — https://docs.pytest.org/, https://pytest-django.readthedocs.io/
-- **factory_boy** — https://factoryboy.readthedocs.io/
-- **Ruff** — https://docs.astral.sh/ruff/
-- **uv** — https://docs.astral.sh/uv/
-- **pyright** — https://microsoft.github.io/pyright/
-- **httpx** — https://www.python-httpx.org/
-- **HackSoftware Django Styleguide** — https://github.com/HackSoftware/Django-Styleguide
-- **OWASP Django Cheat Sheet** — https://cheatsheetseries.owasp.org/cheatsheets/Django_Security_Cheat_Sheet.html
+- **Django**: https://docs.djangoproject.com/en/stable/
+- **Django Ninja**: https://django-ninja.dev/
+- **FastAPI**: https://fastapi.tiangolo.com/
+- **Celery**: https://docs.celeryq.dev/en/stable/
+- **Channels**: https://channels.readthedocs.io/en/stable/
+- **Pydantic v2**: https://docs.pydantic.dev/latest/
+- **pytest / pytest-django**: https://docs.pytest.org/, https://pytest-django.readthedocs.io/
+- **factory_boy**: https://factoryboy.readthedocs.io/
+- **Ruff**: https://docs.astral.sh/ruff/
+- **uv**: https://docs.astral.sh/uv/
+- **pyright**: https://microsoft.github.io/pyright/
+- **httpx**: https://www.python-httpx.org/
+- **HackSoftware Django Styleguide**: https://github.com/HackSoftware/Django-Styleguide
+- **OWASP Django Cheat Sheet**: https://cheatsheetseries.owasp.org/cheatsheets/Django_Security_Cheat_Sheet.html
 
 ## Search queries executed (2026-05-03)
 
@@ -45,6 +45,6 @@ Ground every active guide in `python-stinger/guides/` against (a) authoritative 
 
 ## Open questions (carried forward in `gaps.md`)
 
-- async ORM (`aget`, `acreate`, etc.) maturity at Django 5.x — guides reflect current state with the conservative recommendation that the bridge (`sync_to_async`) is still the default for non-trivial reads.
-- Whether `django-ninja-extra` (class-based views + permissions in Ninja) should be canonical — left as situational; not promoted in active guides.
-- Daphne vs Uvicorn for Channels — Daphne remains canonical per upstream guidance, Uvicorn is acceptable but loses Channels-tuned defaults.
+- async ORM (`aget`, `acreate`, etc.) maturity at Django 5.x: guides reflect current state with the conservative recommendation that the bridge (`sync_to_async`) is still the default for non-trivial reads.
+- Whether `django-ninja-extra` (class-based views + permissions in Ninja) should be canonical: left as situational; not promoted in active guides.
+- Daphne vs Uvicorn for Channels: Daphne remains canonical per upstream guidance, Uvicorn is acceptable but loses Channels-tuned defaults.

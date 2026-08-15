@@ -36,7 +36,7 @@ The Stinger that equips `website-worker-bee` to build production-grade SvelteKit
 ## Key architectural commitments (details in guides/00-principles.md)
 
 1. **CMS mode is chosen once, at input time.** Payload default for content-heavy sites; TypeScript-as-CMS fallback for one-page lead-gen sites.
-2. **Payload requires a Next.js host.** `apps/cms` is always a separate Vercel project — never embedded in SvelteKit.
+2. **Payload requires a Next.js host.** `apps/cms` is always a separate Vercel project, never embedded in SvelteKit.
 3. **SvelteKit consumes Payload over REST only.** No Local API from SvelteKit.
 4. **Dual Postgres namespace.** Payload owns `payload.*` tables; business data lives in `public.*`. Both share one Supabase project.
 5. **RLS-first for public schema.** Every table in `public` has RLS enabled. The `payload` schema is not exposed to Supabase RLS (Payload uses server-side access control).
@@ -47,7 +47,7 @@ The Stinger that equips `website-worker-bee` to build production-grade SvelteKit
 
 `research/source-prds/` contains the 12-phase source PRDs. Every guide traces claims back to these files.
 
-For Payload-specific deep research, see: `.cursor/skills/cms-payload-stinger/research/`
+For Payload-specific deep research, see: `.claude/skills/website-stinger/research/`
 
 ## Maintenance
 

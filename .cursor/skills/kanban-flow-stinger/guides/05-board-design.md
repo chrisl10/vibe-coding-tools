@@ -1,4 +1,4 @@
-# 05 — Board Design: Columns, Policies, and Replenishment
+# 05. Board Design: Columns, Policies, and Replenishment
 
 *Sources: `research/internal/command-brief-summary.md`; `research/external/2026-05-20-wip-limits-atlassian-official.md`; `research/external/2026-05-20-jira-kanban-setup-guide.md`*
 
@@ -82,7 +82,7 @@ The replenishment meeting is the primary Kanban cadence. It is NOT a sprint plan
   3. Pull the next highest-priority items into active work, up to the WIP limit.
   4. Adjust WIP limits if flow data suggests a change.
 
-The replenishment meeting replaces sprint planning for teams that have transitioned to Kanban. Teams that retain sprint planning alongside a Kanban board are in a Scrumban hybrid — see `guides/07-kanban-vs-scrum.md`.
+The replenishment meeting replaces sprint planning for teams that have transitioned to Kanban. Teams that retain sprint planning alongside a Kanban board are in a Scrumban hybrid: see `guides/07-kanban-vs-scrum.md`.
 
 ---
 

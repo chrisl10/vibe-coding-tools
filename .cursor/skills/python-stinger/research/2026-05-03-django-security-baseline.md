@@ -1,12 +1,12 @@
-# 2026-05-03 — Django security baseline (SECURE_*, HSTS, Argon2)
+# 2026-05-03: Django security baseline (SECURE_*, HSTS, Argon2)
 
 ## Sources
 
-- https://cheatsheetseries.owasp.org/cheatsheets/Django_Security_Cheat_Sheet.html — OWASP cheat sheet (retrieved 2026-05-03)
-- https://docs.djangoproject.com/en/stable/topics/security/ — official Django security docs
-- https://docs.djangoproject.com/en/stable/howto/deployment/checklist/ — official deployment checklist
-- https://digitalocean.com/community/tutorials/how-to-harden-your-production-django-project — production hardening walkthrough
-- https://compilenrun.com/docs/framework/django/django-security/django-security-settings — settings reference
+- https://cheatsheetseries.owasp.org/cheatsheets/Django_Security_Cheat_Sheet.html: OWASP cheat sheet (retrieved 2026-05-03)
+- https://docs.djangoproject.com/en/stable/topics/security/: official Django security docs
+- https://docs.djangoproject.com/en/stable/howto/deployment/checklist/: official deployment checklist
+- https://digitalocean.com/community/tutorials/how-to-harden-your-production-django-project: production hardening walkthrough
+- https://compilenrun.com/docs/framework/django/django-security/django-security-settings: settings reference
 
 ## Summary
 
@@ -48,24 +48,24 @@ PASSWORD_HASHERS = [
 ]
 ```
 
-**`manage.py check --deploy`** runs Django's built-in audit — catches `DEBUG=True` in prod, missing HSTS, weak SECRET_KEY, etc. CI must run it on the prod settings module.
+**`manage.py check --deploy`** runs Django's built-in audit: catches `DEBUG=True` in prod, missing HSTS, weak SECRET_KEY, etc. CI must run it on the prod settings module.
 
 ## Key facts the active guides depend on
 
-- **`SECRET_KEY` from env, never in code.** `os.environ["DJANGO_SECRET_KEY"]` (raises if missing — fail fast).
+- **`SECRET_KEY` from env, never in code.** `os.environ["DJANGO_SECRET_KEY"]` (raises if missing, fail fast).
 - **`DEBUG = False` is non-negotiable in prod.** With `DEBUG=True` + an exception, Django leaks settings, env vars, the SQL trace, etc.
-- **`ALLOWED_HOSTS`** restrictive — `["myapp.com", ".myapp.com"]`, never `["*"]`.
-- **HSTS is one-way** — once a browser has the header, it refuses HTTP for the duration. Only enable when confident HTTPS is fully working. `SECURE_HSTS_PRELOAD = True` adds you to the browser hard-coded list — removal takes weeks.
-- **`SECURE_PROXY_SSL_HEADER`** required when behind a load balancer / reverse proxy that terminates TLS — without it, Django thinks every request is HTTP.
+- **`ALLOWED_HOSTS`** restrictive: `["myapp.com", ".myapp.com"]`, never `["*"]`.
+- **HSTS is one-way**: once a browser has the header, it refuses HTTP for the duration. Only enable when confident HTTPS is fully working. `SECURE_HSTS_PRELOAD = True` adds you to the browser hard-coded list, removal takes weeks.
+- **`SECURE_PROXY_SSL_HEADER`** required when behind a load balancer / reverse proxy that terminates TLS: without it, Django thinks every request is HTTP.
 - **Argon2** requires `pip install argon2-cffi`. It's the OWASP-recommended hasher; PBKDF2 stays in the list as fallback for legacy hashes.
 - **CSRF**: enabled by default via `CsrfViewMiddleware`. Turning it off per-view is a finding unless documented.
-- **ORM injection**: `Model.objects.filter(**user_input_dict)` is unsafe when keys come from user input — restrict to known-safe keys.
+- **ORM injection**: `Model.objects.filter(**user_input_dict)` is unsafe when keys come from user input, restrict to known-safe keys.
 
 ## Relevance to the Stinger
 
-- **`guides/17-django-security-baseline.md`** — the canonical baseline list with rationale per setting.
-- **`templates/settings-prod.py`** — the prod settings file with the baseline pre-wired.
-- **`scripts/audit-settings-secrets.py`** — scan `settings/` for hardcoded secrets.
+- **`guides/17-django-security-baseline.md`**: the canonical baseline list with rationale per setting.
+- **`templates/settings-prod.py`**: the prod settings file with the baseline pre-wired.
+- **`scripts/audit-settings-secrets.py`**: scan `settings/` for hardcoded secrets.
 
 ## Handoff
 
@@ -73,4 +73,4 @@ The security audit (provider choice, OAuth flow review, RBAC analysis, secret-ro
 
 ## Pull quote
 
-> "Django has built-in command `check --deploy` for security checks." — OWASP Django Cheat Sheet, retrieved 2026-05-03.
+> "Django has built-in command `check --deploy` for security checks." (OWASP Django Cheat Sheet, retrieved 2026-05-03)

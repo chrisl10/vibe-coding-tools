@@ -7,7 +7,7 @@ relevance: medium
 topic: syntax_highlighting
 ---
 
-# wooorm/starry-night — GitHub-Fidelity Syntax Highlighting
+# wooorm/starry-night: GitHub-Fidelity Syntax Highlighting
 
 ## Summary
 starry-night is an open-source JavaScript package providing GitHub-exact syntax highlighting. Uses TextMate grammars (same as VS Code, SublimeText, Atom). Produces AST objects (not just HTML) enabling flexible rendering. Latest: v3.9.0 (January 19, 2026). 600+ grammars, WASM-based. Best suited for docs sites requiring GitHub-exact rendering; too heavy for browser-only use cases.
@@ -24,7 +24,7 @@ starry-night is an open-source JavaScript package providing GitHub-exact syntax 
 
 ## Annotations for stinger-forge
 - Informs `guides/03-syntax-highlighting.md`: starry-night section
-- Use case: "when you need GitHub-exact rendering" — narrow use case vs Shiki's broader applicability
+- Use case: "when you need GitHub-exact rendering": narrow use case vs Shiki's broader applicability
 - The WASM + large grammars constraint means it's a server-side-only choice (not for browser bundles)
 - The companion `markdown-tm-language` package is notable for MDX-specific Markdown highlighting
 - Contrast with Shiki: Shiki is more versatile and lighter; starry-night is GitHub-exact but heavier

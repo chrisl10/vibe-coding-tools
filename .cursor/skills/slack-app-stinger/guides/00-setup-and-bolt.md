@@ -34,7 +34,7 @@ Will this app be listed in the Slack Marketplace?
 
 1. Go to https://api.slack.com/apps and click **Create New App**.
 2. Choose **From an app manifest** (recommended) or **From scratch**.
-3. Select your development workspace (create a dedicated test workspace — avoid disrupting real work).
+3. Select your development workspace (create a dedicated test workspace, avoid disrupting real work).
 
 Minimal manifest for a Bolt HTTP app:
 
@@ -149,16 +149,16 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-> Bolt Python uses `AsyncApp` + `asyncio` for non-blocking handler execution — important for respecting the 3-second ACK deadline under load.
+> Bolt Python uses `AsyncApp` + `asyncio` for non-blocking handler execution: important for respecting the 3-second ACK deadline under load.
 > Source: `research/external/2026-05-20-bolt-sdk-setup-patterns.md`
 
 ---
 
 ## Development workflow
 
-1. For Socket Mode: run `npm start` (or `python app.py`) — no public URL needed.
+1. For Socket Mode: run `npm start` (or `python app.py`); no public URL needed.
 2. For HTTP mode during local development: use `ngrok http 3000` to expose a local port, update the request URL in App Settings.
-3. Always use a separate development workspace. Slack events fire immediately — a mistake in production sends messages to real users.
+3. Always use a separate development workspace. Slack events fire immediately: a mistake in production sends messages to real users.
 
 ---
 
@@ -166,7 +166,7 @@ if __name__ == "__main__":
 
 Java Bolt requires `com.slack.api:bolt:*` and a servlet adapter. See `https://slack.dev/java-slack-sdk/guides/bolt-basics` for the full setup. Core concepts (token, signing secret, handler registration) are identical; the Java SDK uses a builder pattern rather than constructor arguments. Java coverage in this stinger is lighter than JS/Python due to lower practitioner documentation availability at research time.
 
-> TODO: open question — Java Bolt guide depth. If your team uses Java, re-run scripture-historian with query "Slack Bolt Java SDK 2026" for deeper coverage.
+> TODO: open question, Java Bolt guide depth. If your team uses Java, re-run scripture-historian with query "Slack Bolt Java SDK 2026" for deeper coverage.
 
 ---
 

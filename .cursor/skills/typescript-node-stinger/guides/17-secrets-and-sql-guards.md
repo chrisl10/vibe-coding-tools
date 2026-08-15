@@ -1,5 +1,7 @@
 # 17 - Secrets & SQL Guards
 
+**Legacy/library case for the SQL-guard specifics (sqlStr/sqlLike/sqlIdent are Hivemind's Deep Lake helpers).** The secrets-handling principle (env-only, never logged, handoff to security-worker-bee) applies generally; for this repo's actual secrets mechanics, see `doppler-stinger`, and for SQL injection guarding against Drizzle/Neon specifically, see `guides/25-drizzle-type-inference-patterns.md` and `neon-drizzle-stinger`.
+
 Two boundaries this Stinger guards on every review: where secrets enter, and where untrusted input gets concatenated into SQL. The deep security audit belongs to `security-worker-bee`; this Bee ensures the baseline is in place and hands off.
 
 ## Secrets: env / config only, never hardcoded, never logged

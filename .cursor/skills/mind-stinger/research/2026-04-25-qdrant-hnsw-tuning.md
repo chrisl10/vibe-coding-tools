@@ -1,15 +1,15 @@
-# Qdrant HNSW Tuning — `m: 16, ef_construct: 200`
+# Qdrant HNSW Tuning: `m: 16, ef_construct: 200`
 
-**Source:** Qdrant docs — https://qdrant.tech/documentation/concepts/indexing/
+**Source:** Qdrant docs: https://qdrant.tech/documentation/concepts/indexing/
 **Retrieved:** 2026-04-25
 **Status:** **LOAD-BEARING.** Cited in `guides/08-rag-strategy.md §4` as the canonical HNSW config.
-**Numbers tag:** mixed — Qdrant's `m=16` recommendation is documented; `ef_construct=200` is a common production default validated by community benchmarks.
+**Numbers tag:** mixed: Qdrant's `m=16` recommendation is documented; `ef_construct=200` is a common production default validated by community benchmarks.
 
 ---
 
 ## TL;DR
 
-For 1024-dim Cohere embeddings on coaching-scale corpora (~10K–100M vectors per collection), HNSW `m: 16, ef_construct: 200` is the canonical default. `on_disk: false` keeps vectors in RAM for minimum latency.
+For 1024-dim Cohere embeddings on coaching-scale corpora (~10K-100M vectors per collection), HNSW `m: 16, ef_construct: 200` is the canonical default. `on_disk: false` keeps vectors in RAM for minimum latency.
 
 ---
 
@@ -17,10 +17,10 @@ For 1024-dim Cohere embeddings on coaching-scale corpora (~10K–100M vectors pe
 
 | Parameter | Value | Effect |
 |---|---|---|
-| `m` | 16 | Edges per node in the HNSW graph. 16 is the standard for 1024-dim vectors; lower (4–8) saves memory at the cost of recall; higher (32+) marginally improves recall at significant memory cost. |
+| `m` | 16 | Edges per node in the HNSW graph. 16 is the standard for 1024-dim vectors; lower (4-8) saves memory at the cost of recall; higher (32+) marginally improves recall at significant memory cost. |
 | `ef_construct` | 200 | Search width during index BUILD. Higher = better-quality index, paid for once. 200 is comfortable; below 100 produces noticeably lower-quality graphs. |
 | `ef` (search-time) | dynamic | Search width at query time. Qdrant defaults sensibly; tune up if recall is low, down if latency matters. |
-| `on_disk` | `false` | RAM-resident vectors. `true` saves RAM but adds disk I/O latency (10–50ms). |
+| `on_disk` | `false` | RAM-resident vectors. `true` saves RAM but adds disk I/O latency (10-50ms). |
 | `default_segment_number` | 4 | Match the Qdrant node CPU count for parallel index segments. |
 
 ---
@@ -47,7 +47,7 @@ For the deploying product's 500-char (~125-token) chunks across ~50K knowledge p
 
 ## Implications
 
-- Drift from `m: 16, ef_construct: 200` is **must-fix** unless accompanied by `library/knowledge-base/ai/rag-vector-strategy.md §4` update + measured eval pass.
+- Drift from `m: 16, ef_construct: 200` is **must-fix** unless accompanied by `library/knowledge/private/ai/rag-vector-strategy.md §4` update + measured eval pass.
 - Sharding trigger (per `guides/08-rag-strategy.md §10`): single collection > ~10GB (~10M vectors × 1024 × 4 bytes).
 
 ---

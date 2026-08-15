@@ -16,14 +16,14 @@ Source: Agile Checksum, published 2026-04-03 (Markus Philipp)
 
 ## Summary
 
-Fresh 2026 practitioner analysis of how Scrum decays in production teams. Emphasizes that anti-patterns enter "because they are usually introduced as sensible adjustments" — making them especially hard to remove. Introduces the concept of "structural dishonesty" where the system produces Scrum-shaped theatre without the outcomes Scrum promises.
+Fresh 2026 practitioner analysis of how Scrum decays in production teams. Emphasizes that anti-patterns enter "because they are usually introduced as sensible adjustments," making them especially hard to remove. Introduces the concept of "structural dishonesty" where the system produces Scrum-shaped theatre without the outcomes Scrum promises.
 
 ## Key Anti-Patterns Covered
 
 ### 1. Daily Scrum as Status Meeting
 "You walk in and hear people report to a manager. Updates are delivered person by person. The board is ignored. Problems are saved for after the meeting because 'we do not have time now'."
 
-**Diagnosis:** Not a Daily Scrum problem — it's a trust and transparency problem that Scrum ceremonies are masking.
+**Diagnosis:** Not a Daily Scrum problem: it's a trust and transparency problem that Scrum ceremonies are masking.
 
 **Repair move:** Reframe from "what did you do?" to "what do we need to coordinate to reach the Sprint Goal today?"
 
@@ -61,7 +61,7 @@ Fresh 2026 practitioner analysis of how Scrum decays in production teams. Emphas
 
 ## Annotations for stinger-forge
 
-- Primary source for `guides/05-anti-patterns.md` — the "structural dishonesty" framing is powerful for the honesty-first audit philosophy
+- Primary source for `guides/05-anti-patterns.md`: the "structural dishonesty" framing is powerful for the honesty-first audit philosophy
 - The three diagnostic questions are ready-to-use audit prompts for the scrum-audit-report template
-- "ScrumBut is dangerous when constraints excuse avoidable dysfunction" is an important nuance — some ScrumBut is legitimate
+- "ScrumBut is dangerous when constraints excuse avoidable dysfunction" is an important nuance; some ScrumBut is legitimate
 - The SM secretary anti-pattern is extremely common; dedicate a named entry in the anti-patterns catalog

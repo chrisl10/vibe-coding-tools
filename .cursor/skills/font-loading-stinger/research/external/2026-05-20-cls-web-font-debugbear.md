@@ -61,7 +61,7 @@ getting exact metric values. Updated November 2025.
 - This source provides the **worked example** for `guides/05-cls-elimination.md`:
   monospaced fallback for monospaced web font using Capsize metrics.
 - The fallback `@font-face` pattern (separate named fallback family + `src: local()`)
-  is the canonical CSS structure — use it in `templates/font-face-block.md`.
+  is the canonical CSS structure: use it in `templates/font-face-block.md`.
 - The Capsize workflow (Ascender, Descender, Em Square values → CSS percentages)
   belongs in the guide as the manual metric calculation path.
 - Contrast with `fontpie` (CLI approach) and `next/font adjustFontFallback`

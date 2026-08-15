@@ -1,86 +1,122 @@
-# Example: Model Selection for a SaaS Product
+# Example: Selecting Models for a SaaS Product
 
-## Context
+This worked example shows how to choose models with requirements, arithmetic, and evaluations. It does not claim one provider is always best.
 
-A B2B SaaS product (team productivity app) is building AI features across three use cases:
-1. **Chat assistant** — users ask questions about their workspace data; complex reasoning required.
-2. **Document summarization** — auto-summarize uploaded PDFs; 50K-200K token documents.
-3. **Intent classification** — route incoming user requests to features; high volume (500K/day); simple.
+Last verified: **2026-08-14**. Prices are list prices from official provider pages and can change. The example excludes caching, batch discounts, premium processing, tool-call fees, and taxes.
 
-## Analysis
+## Product context
 
-### Use case 1: Chat assistant
+A team-productivity SaaS product has three AI workloads:
 
-Requirements:
-- Complex multi-step reasoning
-- Function calling (search, lookup, create)
-- 32K context for conversation history
-- Sub-2 second response time for most queries
+1. A chat assistant that searches workspace data and takes actions.
+2. Asynchronous summaries of long PDF documents.
+3. High-volume intent classification into eight routes.
 
-| Model | Quality fit | Latency | Cost (500 calls/day, 4K tokens) | Notes |
-|---|---|---|---|---|
-| Claude 3.7 Sonnet | Excellent | 1.5-3s | $540/month | Best reasoning; recommended |
-| GPT-4.1 | Excellent | 1-2s | $480/month | Strong coding + function calling |
-| Gemini 2.5 Pro | Very good | 2-4s | $375/month | Best if >100K context needed |
-| Claude Haiku 3.5 | Adequate | 0.5-1s | $48/month | Noticeably weaker on complex queries |
+## Step 1: Turn wishes into measurable requirements
 
-**Recommendation:** Claude 3.7 Sonnet for chat. Fallback to GPT-4.1 via Portkey.
+| Workload | Quality bar | Latency bar | Volume assumption | Typical tokens per call |
+| --- | --- | --- | --- | --- |
+| Chat assistant | At least 90% task completion on 100 real support questions | p95 under 5 seconds before tool time | 500 calls/day | 3,000 input, 1,000 output |
+| Document summary | Human reviewers accept at least 95 of 100 summaries | Complete within 5 minutes | 1,000 documents/day | 100,000 input, 2,000 output |
+| Intent classification | At least 97% macro F1 on a labeled holdout set | p95 under 500 ms | 500,000 calls/day | 200 input, 10 output |
 
-### Use case 2: Document summarization
+These numbers are examples. Replace them with measurements from the actual product.
 
-Requirements:
-- 50K-200K token documents (full book/report ingestion)
-- Quality over speed (async background job, 60s budget)
-- Cost is important at scale
+## Step 2: Pick candidates by work shape
 
-| Model | Context window | Quality at 100K | Cost (1K docs/day, 100K tokens avg) | Notes |
-|---|---|---|---|---|
-| Gemini 2.5 Pro | 1M | Excellent | $3,750/month | Best long-context; expensive |
-| Claude 3.7 Sonnet | 200K | Very good | $4,500/month | Strong; expensive at this volume |
-| Gemini 2.0 Flash | 1M | Good | $300/month | **10x cheaper**; quality difference acceptable for summaries |
-| GPT-4.1 | 1M | Very good | $6,000/month | Most expensive at this volume |
+### Chat assistant candidates
 
-**Recommendation:** Gemini 2.0 Flash for document summarization. The 10x cost advantage over frontier models is decisive for this async, quality-tolerant workload. Validate quality on a sample of 100 documents before committing.
+Start with balanced agentic models and keep a frontier option for failures.
 
-### Use case 3: Intent classification
+| Candidate | Why it belongs in the test | Main concern |
+| --- | --- | --- |
+| `gpt-5.6-terra` | OpenAI positions it as the balance of intelligence and cost, with tool use and long context | Must pass the product's tool-calling eval |
+| `claude-sonnet-5` | Anthropic positions it as the speed-intelligence balance for coding and agents | Introductory pricing ends 2026-08-31 |
+| `gpt-5.6-sol` | Frontier fallback for the hardest conversations | Higher price |
+| `claude-opus-5` | Complex agentic coding and enterprise work | Higher price than Sonnet |
 
-Requirements:
-- Route 500K requests/day to 8 feature categories
-- Response < 500ms
-- Accuracy > 92% (measured)
-- Lowest possible cost
+Do not choose from provider benchmarks alone. Run all candidates against the same 100 questions, tools, system prompt, and data snapshot.
 
-| Model | Accuracy | Latency | Cost (500K calls/day, 200 tokens avg) | Notes |
-|---|---|---|---|---|
-| Claude Haiku 3.5 | 96% | 200-400ms | $2,400/month | High quality; expensive at volume |
-| GPT-4o-mini | 95% | 150-300ms | $450/month | Good quality; much cheaper |
-| Llama 3.1 8B (Groq) | 92% | 50-150ms | $540/month | Meets quality bar; fastest |
-| Gemini 1.5 Flash | 93% | 200-400ms | $225/month | Cheapest; adequate |
+### Document-summary candidates
 
-**Recommendation:** GPT-4o-mini for intent classification. Strong accuracy, fast, and 80% cheaper than Haiku. Consider Groq (Llama 8B) if latency drops below 150ms is needed.
+Long input and asynchronous execution make context capacity and input price more important than interactive speed.
 
-## Final recommendation summary
+| Candidate | Why it belongs in the test | Main concern |
+| --- | --- | --- |
+| `gemini-3.6-flash` | 1M context and provider positioning for agentic and multimodal work | Validate summary faithfulness on the team's PDFs |
+| `gpt-5.6-luna` | 1.05M context with low current list price | A smaller tier may miss subtle document relationships |
+| `claude-sonnet-5` | 1M context and strong general production positioning | More expensive for very large daily input volume |
 
-| Use case | Primary model | Cheap fallback | Monthly cost (at stated volumes) |
-|---|---|---|---|
-| Chat assistant | Claude 3.7 Sonnet | GPT-4.1 | $540 |
-| Document summarization | Gemini 2.0 Flash | Gemini 1.5 Flash | $300 |
-| Intent classification | GPT-4o-mini | Llama 3.1 8B (Groq) | $450 |
-| **Total** | | | **~$1,290/month** |
+### Intent-classification candidates
 
-## Wiring the three models via Portkey
+Classification is narrow and high volume, so start at the cheapest capable tier.
 
-```typescript
-// Three virtual keys: claude-sonnet, gemini-flash, gpt-mini
-export const chatClient = new Portkey({ virtualKey: "claude-sonnet" });
-export const summaryClient = new Portkey({ virtualKey: "gemini-flash" });
-export const classifyClient = new Portkey({ virtualKey: "gpt-mini" });
+| Candidate | Why it belongs in the test | Main concern |
+| --- | --- | --- |
+| `gpt-5.6-luna` | OpenAI's cost-sensitive high-volume tier | Must reach the measured macro-F1 target |
+| `gemini-3.5-flash-lite` | Google's fastest and lowest-cost 3.5 tier | Test JSON-schema and label consistency |
+| Deterministic classifier | Lowest runtime cost when the categories are stable | May struggle with ambiguous or new intents |
+
+## Step 3: Calculate cost with a visible formula
+
+Monthly token cost is:
+
+```text
+(monthly input tokens / 1,000,000 x input price)
++ (monthly output tokens / 1,000,000 x output price)
 ```
 
-## Re-evaluation triggers
+Example for 500 chat calls per day over 30 days:
 
-- If Gemini 2.0 Flash quality is insufficient on your corpus → upgrade to Gemini 2.5 Pro (10x cost increase but same workflow).
-- If monthly AI spend exceeds $2K → add batch API for document summarization (50% discount on Gemini, 24h turnaround for background jobs).
-- Re-evaluate quarterly as new model versions release.
+```text
+15,000 calls x 3,000 input tokens = 45,000,000 input tokens
+15,000 calls x 1,000 output tokens = 15,000,000 output tokens
+```
 
-*Recommendation valid as of 2026-05. Prices based on provider list pricing.*
+At the 2026-07-30 GPT-5.6 Terra price of $2 input and $12 output per million tokens:
+
+```text
+(45 x $2) + (15 x $12) = $270/month
+```
+
+At Claude Sonnet 5's introductory $2 input and $10 output price through 2026-08-31:
+
+```text
+(45 x $2) + (15 x $10) = $240/month
+```
+
+At Sonnet 5's published standard $3 input and $15 output price after the introductory period:
+
+```text
+(45 x $3) + (15 x $15) = $360/month
+```
+
+This is only model-token cost. Tool calls, retrieval, embeddings, storage, retries, caching, observability, and engineering time belong in the real budget.
+
+## Step 4: Make a recommendation with gates
+
+| Workload | Initial candidate | Upgrade path | Ship gate |
+| --- | --- | --- | --- |
+| Chat assistant | Test `gpt-5.6-terra` and `claude-sonnet-5` head to head | `gpt-5.6-sol` or `claude-opus-5` for failed hard cases | At least 90% task completion and no unsafe tool actions |
+| Document summary | Test `gpt-5.6-luna` and `gemini-3.6-flash` | `claude-sonnet-5` for documents that fail faithfulness checks | At least 95% reviewer acceptance with citation accuracy measured separately |
+| Intent classification | Test a deterministic baseline, then `gpt-5.6-luna` and `gemini-3.5-flash-lite` | A balanced model only for ambiguous cases | At least 97% macro F1 and p95 under 500 ms |
+
+The recommendation is a staged router, not one model for everything. Cheap models handle routine traffic, and stronger models receive only the cases that need them.
+
+## Step 5: Re-evaluate when reality changes
+
+Re-run the evaluation when any of these happens:
+
+- A provider changes a model alias, price, context limit, or retirement date.
+- Production quality falls below the acceptance threshold.
+- Median prompt size or output size changes by more than 25%.
+- Tool failures or retries erase the expected savings.
+- A new model reduces completed-task cost by at least 20% on the same evaluation set.
+
+## Sources
+
+- [OpenAI model catalog](https://developers.openai.com/api/docs/models)
+- [OpenAI 2026-07-30 price update](https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/)
+- [Anthropic current model overview](https://platform.claude.com/docs/en/about-claude/models/overview)
+- [Google current Gemini models](https://ai.google.dev/gemini-api/docs/models)
+- [Google latest model guidance](https://ai.google.dev/gemini-api/docs/latest-model)

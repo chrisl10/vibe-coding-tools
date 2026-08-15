@@ -1,6 +1,6 @@
 # Phase 1: Monorepo & Deployment Architecture
 
-> **Site Template Guide** — PRD Phase 1 of 12
+> **Site Template Guide**: PRD Phase 1 of 12
 
 ---
 
@@ -14,8 +14,8 @@ Establish the pnpm workspace monorepo housing `apps/web` (SvelteKit public site)
 
 **In scope:**
 - `pnpm-workspace.yaml` at monorepo root
-- `apps/web/` — SvelteKit 5 skeleton with adapter-vercel
-- `apps/cms/` — Next.js + Payload 3.x skeleton (Payload mode only)
+- `apps/web/`: SvelteKit 5 skeleton with adapter-vercel
+- `apps/cms/`: Next.js + Payload 3.x skeleton (Payload mode only)
 - `supabase/` directory initialized at root
 - Vercel project linking for both apps
 - `packages/payload-types/` shared types package (optional, Payload mode)
@@ -34,7 +34,7 @@ Establish the pnpm workspace monorepo housing `apps/web` (SvelteKit public site)
 
 ## User Stories
 
-### Story 1 — Developer: Scaffold Both Apps
+### Story 1: Developer: Scaffold Both Apps
 
 > As a **Developer**, I want to run a single command from the monorepo root to start both apps in development mode so that I can work on the SvelteKit frontend and the Payload admin simultaneously.
 
@@ -43,7 +43,7 @@ Establish the pnpm workspace monorepo housing `apps/web` (SvelteKit public site)
 - `pnpm dev:cms` starts Payload admin at `http://localhost:3000/admin` (Payload mode only)
 - Both are resolvable concurrently without port conflicts
 
-### Story 2 — Developer: Build Both Apps for Deployment
+### Story 2: Developer: Build Both Apps for Deployment
 
 > As a **Developer**, I want separate `vercel.json` files per app so that Vercel treats `apps/web` and `apps/cms` as independent projects.
 
@@ -81,7 +81,7 @@ packages:
 }
 ```
 
-### apps/web — SvelteKit scaffold
+### apps/web: SvelteKit scaffold
 
 ```bash
 pnpm create svelte@latest apps/web
@@ -103,7 +103,7 @@ pnpm add -D tailwindcss @tailwindcss/vite
 }
 ```
 
-### apps/cms — Payload scaffold (Payload mode only)
+### apps/cms: Payload scaffold (Payload mode only)
 
 ```bash
 pnpm create payload-app@latest apps/cms

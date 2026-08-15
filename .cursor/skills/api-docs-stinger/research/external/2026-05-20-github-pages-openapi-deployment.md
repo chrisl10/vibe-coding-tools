@@ -8,7 +8,7 @@ topic: deployment
 stinger: api-docs-stinger
 ---
 
-# Publishing OAS-Based API Doc on GitHub Pages — DEV Community
+# Publishing OAS-Based API Doc on GitHub Pages: DEV Community
 
 ## Summary
 
@@ -66,4 +66,4 @@ curl -L -X POST \
 - Note the free-tier constraint (public repos only) in `guides/03-deployment.md` under the GitHub Pages section.
 - The `nginx:1.28.2` pinned version is a useful reference for the Dockerfile template.
 - Multi-spec sites work with the same pattern (article notes this explicitly).
-- Compare with the GitHub Actions workflow approach (deploy on push) — this article covers the curl activation path, not the Actions path; both belong in the deployment guide.
+- Compare with the GitHub Actions workflow approach (deploy on push): this article covers the curl activation path, not the Actions path; both belong in the deployment guide.

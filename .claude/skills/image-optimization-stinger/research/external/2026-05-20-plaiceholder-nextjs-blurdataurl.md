@@ -7,7 +7,7 @@ url: https://npm.io/package/@plaiceholder/blurhash
 date_accessed: 2026-05-20
 ---
 
-# plaiceholder — Node.js LQIP Library for Next.js
+# plaiceholder: Node.js LQIP Library for Next.js
 
 ## Key Findings
 
@@ -50,7 +50,7 @@ export default async function BlogPost() {
 
 ## App Router Compatibility
 
-`getPlaiceholder` is an **async server-side function** — it works naturally in React Server Components (App Router). No `getStaticProps` required. The function uses Sharp for image processing, which runs on the server.
+`getPlaiceholder` is an **async server-side function**: it works naturally in React Server Components (App Router). No `getStaticProps` required. The function uses Sharp for image processing, which runs on the server.
 
 **Important**: `plaiceholder` itself (the JS function) is fully compatible with App Router Server Components. The earlier compatibility issues were with older versions and the Pages Router.
 
@@ -68,11 +68,11 @@ Earlier versions of `@plaiceholder/next` only supported local images. The curren
 - `size: 10`: Good balance for blur previews
 - `size: 64`: Maximum detail (larger blurDataURL, impacts performance)
 
-Keep `blurDataURL` strings small — Next.js docs warn "A large blurDataURL may hurt performance."
+Keep `blurDataURL` strings small: Next.js docs warn "A large blurDataURL may hurt performance."
 
 ## Relevance to image-optimization-stinger
 
-Answers the Command Brief open question "Does plaiceholder v3 support App Router server components?" — YES, it works natively as an async function in RSC. Primary tool recommendation for `guides/03-blur-placeholders.md`.
+Answers the Command Brief open question "Does plaiceholder v3 support App Router server components?": YES, it works natively as an async function in RSC. Primary tool recommendation for `guides/03-blur-placeholders.md`.
 
 ## Direct Quotes / Data Points
 

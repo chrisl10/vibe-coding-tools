@@ -1,4 +1,4 @@
-# Definition of Done — Enterprise / Mature Team Template
+# Definition of Done: Enterprise / Mature Team Template
 
 **Team context:** 6-10 person team, established CI/CD, compliance requirements, multiple environments
 **Maturity target:** Level 4 (Evolving / Comprehensive)
@@ -60,7 +60,7 @@ A story, task, or bug fix is **Done** when ALL of the following are true:
 
 ## How to use this template
 
-1. This is a maximum template — remove any item that does not apply to your context
+1. This is a maximum template: remove any item that does not apply to your context
 2. The team owns the DoD; do not let management add items without team discussion
 3. Version-control this file alongside your codebase
 4. Review at each Retrospective and add/strengthen items as quality feedback demands

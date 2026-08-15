@@ -1,20 +1,20 @@
-# Poetry — preserved alternative
+# Poetry: preserved alternative
 
 > Demoted in favor of **uv** (see `guides/14-uv-packaging.md`). Poetry is acceptable in legacy projects; new projects should use uv.
 
 ## Why Poetry was demoted
 
 - **Speed.** uv is 80%+ faster on lock / sync operations (`research/2026-05-03-uv-vs-poetry.md`). Real-world benchmarks across three production services.
-- **Bootstrap.** Poetry is written in Python — needs Python to install. uv is a Rust binary with zero runtime deps.
+- **Bootstrap.** Poetry is written in Python: needs Python to install. uv is a Rust binary with zero runtime deps.
 - **Unification.** uv replaces pyenv + virtualenv + pip + Poetry + pip-tools. Poetry is one tool of several.
 - **Custom dep syntax.** Poetry's `^1.2`, `~=1.2`, table-style `[tool.poetry.dependencies]` are non-standard. uv uses PEP 621 `[project]` + PEP 735 `[dependency-groups]`.
 - **Lockfile resolver.** Poetry's resolver, constrained by Python's GIL, can't match uv's parallel Rust resolver on speed or correctness.
 
 ## When Poetry is still acceptable
 
-- **Existing Poetry project** that's working — don't migrate without a reason. The migration is straightforward (`examples/08-poetry-to-uv-migration.md`); plan it when you're already touching `pyproject.toml`.
-- **Team / org standardization on Poetry** is binding — Poetry is fine; just don't add NEW projects on it.
-- **Specific Poetry plugin** doing load-bearing work that uv doesn't replicate — rare in 2026, but check before migrating.
+- **Existing Poetry project** that's working: don't migrate without a reason. The migration is straightforward (`examples/08-poetry-to-uv-migration.md`); plan it when you're already touching `pyproject.toml`.
+- **Team / org standardization on Poetry** is binding: Poetry is fine; just don't add NEW projects on it.
+- **Specific Poetry plugin** doing load-bearing work that uv doesn't replicate, rare in 2026, but check before migrating.
 
 ## Legacy-code recognition
 
@@ -63,7 +63,7 @@ See `examples/08-poetry-to-uv-migration.md` for the full walkthrough with diffs.
 
 ## What you keep
 
-- **`pyproject.toml`** stays — converted to PEP 621 shape.
+- **`pyproject.toml`** stays: converted to PEP 621 shape.
 - **`uv.lock`** replaces `poetry.lock`.
 - **Build backend** changes from `poetry-core` to `hatchling` (or `uv_build`).
 - **`[tool.ruff]`, `[tool.pytest]`** etc. stay unchanged.

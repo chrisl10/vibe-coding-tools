@@ -1,6 +1,6 @@
 ---
-name: library-stinger
-description: Equips library-worker-bee with the documentation lifecycle - knowledge-base authoring (public vs private audience split), feature PRD authoring (prd-<###>-<slug>/ with index + sub-PRDs + qa/), issue IRD authoring (ird-<###>-<slug>/ with index + qa/), backwards-PRD generation, sync audits / drift detection, and lifecycle moves (backlog/in-work/completed) against this repo's schema v2 library/. Use when initializing a library/, ingesting issues, planning features, writing knowledge docs, running drift audits, or moving a completed PRD/IRD to its completed/ tier. Not for QA report authorship (use quality-stinger) or narrative knowledge docs (use knowledge-stinger).
+name: "library-stinger"
+description: "Equips library-worker-bee with the documentation lifecycle - knowledge-base authoring (public vs private audience split), feature PRD authoring (prd-{###}-{slug}/ with index + sub-PRDs + qa/), issue IRD authoring (ird-{###}-{slug}/ with index + qa/), backwards-PRD generation, sync audits / drift detection, and lifecycle moves (backlog/in-work/completed) against this repo's schema v2 library/. Use when initializing a library/, ingesting issues, planning features, writing knowledge docs, running drift audits, or moving a completed PRD/IRD to its completed/ tier. Not for QA report authorship (use quality-stinger) or narrative knowledge docs (use knowledge-stinger)."
 ---
 
 # library-stinger

@@ -33,4 +33,4 @@ A single mode (pure semantic or pure lexical) forces a bad choice on mixed queri
 - Hybrid needs a real vector. With `queryEmbedding === null`, there is no semantic arm to weight; recall runs pure lexical, not a hybrid call with a missing `$vec`.
 - A wrong-dimension `$vec` is a must-fix.
 
-See `guides/02-hybrid-search.md` for the decision procedure and `recall-quality-eval.md` for measuring whether a weighting change helped.
+See `guides/deeplake-02-hybrid-search.md` for the decision procedure and `recall-quality-eval.md` for measuring whether a weighting change helped.

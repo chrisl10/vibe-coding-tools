@@ -1,7 +1,7 @@
-# UX/UI — Source of Truth
+# UX/UI: Source of Truth
 
 > **Read order for anyone building or reviewing UI in this repo.**
-> Companion agent: [`.cursor/agents/ux-ui-worker-bee.md`](../../../.cursor/agents/ux-ui-worker-bee.md)
+> Companion agent: [`.claude/agents/ux-ui-svelte-worker-bee.md`](../../../.claude/agents/ux-ui-svelte-worker-bee.md)
 
 ## What lives here
 
@@ -12,8 +12,8 @@ decision in the {{product}} app. Created by `design-system-worker-bee` on
 | File / folder | Purpose |
 |---|---|
 | [`00-design-brief.md`](00-design-brief.md) | The comprehensive master brief. Start here. |
-| [`01-master-tokens.css`](01-master-tokens.css) | Token layer — colors, text, spacing, radii, shadows, motion. |
-| [`02-{{utility-layer-name}}.css`](02-{{utility-layer-name}}.css) | Utility layer — surface + depth utilities. |
+| [`01-master-tokens.css`](01-master-tokens.css) | Token layer: colors, text, spacing, radii, shadows, motion. |
+| [`02-{{utility-layer-name}}.css`](02-{{utility-layer-name}}.css) | Utility layer: surface + depth utilities. |
 | [`03-components/`](03-components/) | Per-component briefs. |
 | [`04-screens/`](04-screens/) | Per-screen briefs. |
 | [`05-html-examples/`](05-html-examples/) | Static HTML renders. Open locally to eyeball. |
@@ -42,9 +42,9 @@ decision in the {{product}} app. Created by `design-system-worker-bee` on
 
 ## Change control
 
-The [`ux-ui-worker-bee`](../../../.cursor/agents/ux-ui-worker-bee.md) subagent
+The [`ux-ui-svelte-worker-bee`](../../../.claude/agents/ux-ui-svelte-worker-bee.md) subagent
 owns this folder. A PR that changes UI in a way not already described here
 must either (a) land an update to this folder as part of the same PR, or
 (b) be rejected by `quality-worker-bee` with a pointer back here.
 
-Commit message convention: `ux-ui-worker-bee: <section>: <change>`.
+Commit message convention: `ux-ui-svelte-worker-bee: <section>: <change>`.

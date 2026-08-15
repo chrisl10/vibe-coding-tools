@@ -1,62 +1,39 @@
-# Preact Worker Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `preact-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/preact-worker-bee.md`](../../agents/preact-worker-bee.md)
-**Stinger:** [`.cursor/skills/preact-stinger/`](../../skills/preact-stinger/)
-**Command Brief:** not available (synthesized from agent + stinger files)
-**Trigger policy:** on-demand
-
----
+# preact-worker-bee
 
 ## Domain
+This Bee is the Preact 11 specialist for the Hive: the signals API (`@preact/signals` v2 with `createModel`/`useModel`/`action`), the `preact/compat` layer for migrating a React codebase to Preact, third-party embed widgets built with shadow DOM isolation and IIFE bundling, Astro island integration via `client:*` directives, and the Fresh 2.x framework. It also owns the honest "when NOT to choose Preact" call, surfacing bundle-size and compatibility tradeoffs rather than evangelizing the library.
 
-`preact-worker-bee` owns the full Preact 11 surface for the Legion Army. It covers the signals API (`@preact/signals` v2) including the `createModel`/`useModel`/`action` model pattern, the `preact/compat` compatibility layer for migrating React codebases to Preact, and the third-party embed widget pattern (shadow DOM isolation, IIFE bundle sizing). It also owns Astro island integration via `@astrojs/preact` (including the `client:*` directive matrix and the `>= 5.0.1` `useId` fix) and the Fresh 2.x framework (Deno-native islands, serializable props constraint, cross-island signals state). Critically, it owns the honest "when NOT to choose Preact" decision — surfacing concrete tradeoffs rather than advocating for bundle savings without evidence.
+## Paired Stinger
+[preact-stinger](../../preact-stinger) - scenario table, compat gap table, and worked examples for signals, migration, embeds, Astro, and Fresh.
 
 ## Trigger phrases
-
-Route to `preact-worker-bee` when the user says any of:
-
-- "use Preact" / "migrate to Preact" / "should I use Preact or React"
-- "preact/compat" / "alias React to Preact"
-- "signals" / "signal()" / "computed()" / "createModel" / "useModel"
-- "embed widget" / "third-party script" / "shadow DOM isolation" / "IIFE bundle"
-- "Astro Preact island" / "Fresh framework" / "Fresh 2.x"
-
-Or when the request implicitly involves building a Preact component, evaluating Preact bundle size for a constrained embed, or debugging Preact-specific reactivity behavior.
+- "should we use Preact instead of React here"
+- "migrate this React component to Preact"
+- "build a third-party embed widget with Preact"
+- "wire up Preact islands in Astro"
+- "set up a Fresh 2.x project"
+- "use the Preact signals API for this state"
+- "is preact/compat safe with this React library"
 
 ## Do NOT route when
-
-- The request is about React architecture in general — route to `react-worker-bee` instead.
-- The user is configuring Next.js App Router — route to `react-worker-bee`; also flag that `preact/compat` + App Router is a hard footgun.
-- The request is about Deno infrastructure, Docker, or deployment concerns that go beyond the Fresh framework — route to `devops-worker-bee` instead.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let the broader one act as backup.
+- The task is React architecture questions in general, not a Preact migration or comparison: route to `react-worker-bee`; the two Bees share the JSX surface but own different mental models.
+- The task is Next.js App Router configuration: route to `react-worker-bee`, and flag the `preact/compat` + App Router combination as a footgun rather than attempting it.
+- The task is Deno DevOps beyond the Fresh framework itself (deployment, infra): route to `devops-worker-bee`.
+- The task is design system tokens or visual styling unrelated to component architecture: route to `ux-ui-svelte-worker-bee`.
 
 ## Inputs the Bee needs
+- Whether this is a greenfield Preact build, a React-to-Preact migration, an embed widget, or an Astro/Fresh integration
+- The React version and feature surface in play if migrating (React 19 `use()`, `useTransition`, RSC are compat blockers)
+- The `@types/react` situation in the target project, since it must never coexist with `preact/compat`
+- The bundle-size or embed-constraint driving the Preact choice, so the recommendation names a concrete benefit
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- A recommendation, code artifact, migration plan, or an explicit "React is better here" verdict with rationale
+- Signals-based component code using v2 patterns (`createModel`, `useModel`, `action`, `Show`, `For`)
+- A migration checklist for `preact/compat` moves, including the gap table for known blockers
+- An embed widget scaffold with shadow DOM isolation and a size budget
 
-- The target scenario (new project evaluation, signals authoring, React-to-Preact migration, embed widget, Astro integration, or Fresh framework)
-- The existing framework or bundler in use (Vite, Rollup, Webpack, Astro, Fresh/Deno) — needed to give accurate alias or config steps
-- React version and any React 19 APIs in use (optional — defaults to checking the compat gap table before proceeding; if React 19 `use()`, `useTransition`, or RSC are present the Bee will surface blockers before migrating)
-
-## Outputs the Bee produces
-
-- Recommendation, code artifact, or migration plan scoped to the classified scenario (component code, alias config, bundle config, or island setup)
-- An honest "React is better here" verdict with rationale when no concrete Preact benefit can be named — sourced from `guides/00-when-to-choose-preact.md`
-
-## Multi-Bee sequences this Bee participates in
-
-- Plan execution loop — always closes with `security-worker-bee` then `quality-worker-bee`
-
-## Critical directives the orchestrator should respect
-
-- Never route to `preact-worker-bee` for a Next.js App Router project without first flagging the `preact/compat` footgun — the Bee will stop and redirect, but the orchestrator should surface the warning early.
-- Do not allow `@types/react` to be installed alongside `preact/compat` — type conflicts are pervasive; the Bee enforces Preact's built-in TypeScript types only.
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
+## Commonly sequenced with
+- `react-worker-bee` before: to confirm the source React architecture and blockers before migrating
+- `ux-ui-svelte-worker-bee` after: design token application once component architecture is settled
+- `devops-worker-bee` after: Fresh/Deno deployment once the framework choice is made

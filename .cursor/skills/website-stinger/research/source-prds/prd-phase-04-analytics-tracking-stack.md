@@ -1,6 +1,6 @@
 # Phase 4: Analytics & Tracking Stack
 
-> **Site Template Guide** — PRD Phase 4 of 12
+> **Site Template Guide**: PRD Phase 4 of 12
 
 ---
 
@@ -8,17 +8,17 @@
 
 ### Goals
 
-Compose Vercel Analytics, Speed Insights, GA4, and Web Vitals as sibling providers in `+layout.svelte`. Wire first-touch UTM attribution in `localStorage`. All analytics are client-side only — never leak to SSR.
+Compose Vercel Analytics, Speed Insights, GA4, and Web Vitals as sibling providers in `+layout.svelte`. Wire first-touch UTM attribution in `localStorage`. All analytics are client-side only, never leak to SSR.
 
 ### Scope
 
 **In scope:**
-- `@vercel/analytics/sveltekit` — automatic page-view tracking via SvelteKit lifecycle
-- `@vercel/speed-insights/sveltekit` — performance timing
+- `@vercel/analytics/sveltekit`: automatic page-view tracking via SvelteKit lifecycle
+- `@vercel/speed-insights/sveltekit`: performance timing
 - GA4 via `<svelte:head>` + `afterNavigate` for manual page-view events
 - `web-vitals` npm package for LCP/INP/CLS measurement
-- `/api/web-vitals/+server.ts` — metrics collector endpoint
-- `src/lib/analytics/attribution.ts` — first-touch UTM persistence
+- `/api/web-vitals/+server.ts`: metrics collector endpoint
+- `src/lib/analytics/attribution.ts`: first-touch UTM persistence
 
 **Out of scope:**
 - WhatConverts call tracking (add separately if needed)
@@ -34,7 +34,7 @@ Compose Vercel Analytics, Speed Insights, GA4, and Web Vitals as sibling provide
 
 ## User Stories
 
-### Story 1 — Marketing Team: Page View Tracking
+### Story 1: Marketing Team: Page View Tracking
 
 > As a **Marketing Team Member**, I want page views tracked automatically on every SvelteKit navigation so that I can measure traffic without configuring individual pages.
 
@@ -44,7 +44,7 @@ Compose Vercel Analytics, Speed Insights, GA4, and Web Vitals as sibling provide
 - GA4 `send_page_view: false` to prevent double-counting the initial load
 - GA4 script NOT present in SSR-rendered HTML (browser guard)
 
-### Story 2 — Developer: Core Web Vitals Reporting
+### Story 2: Developer: Core Web Vitals Reporting
 
 > As a **Developer**, I want LCP, INP, and CLS reported to a server endpoint so that I can monitor real-user performance without third-party analytics lock-in.
 
@@ -52,9 +52,9 @@ Compose Vercel Analytics, Speed Insights, GA4, and Web Vitals as sibling provide
 - `WebVitals.svelte` component mounted in root `+layout.svelte`
 - Metrics sent to `/api/web-vitals` via `navigator.sendBeacon` (falls back to `fetch`)
 - Endpoint returns 204 on success
-- `onINP` used — `onFID` is deprecated and must not be present
+- `onINP` used. `onFID` is deprecated and must not be present
 
-### Story 3 — Marketing Team: UTM Attribution
+### Story 3: Marketing Team: UTM Attribution
 
 > As a **Marketing Team Member**, I want UTM parameters from campaign links to be captured on first visit and attached to lead form submissions so that I can measure campaign ROI.
 

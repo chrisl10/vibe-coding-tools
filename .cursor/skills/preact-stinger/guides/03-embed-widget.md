@@ -8,7 +8,7 @@ This guide covers building a Preact-powered widget that is embedded on third-par
 
 ## Why Preact for embed widgets
 
-- Host page's JS budget is not yours to spend — every extra KB affects their LCP.
+- Host page's JS budget is not yours to spend: every extra KB affects their LCP.
 - Bundle size: Preact ~3KB gzipped vs React ~40KB.
 - Parse time: ~12ms (Preact) vs ~120ms (React) on throttled CPU.
 - No version conflicts: embedding a React widget when the host page already loads React can cause duplicate React errors. Preact doesn't conflict.
@@ -49,7 +49,7 @@ import App from "./App";
 register(App, "my-widget", ["config"], { shadow: true });
 ```
 
-Your `App` component receives `config` as a prop (always a string from HTML attributes — parse it):
+Your `App` component receives `config` as a prop (always a string from HTML attributes, parse it):
 
 ```tsx
 function App({ config }: { config: string }) {
@@ -91,7 +91,7 @@ element.dispatchEvent(
 
 ## IIFE bundle configuration (Vite)
 
-Build as a self-contained IIFE — bundle all dependencies, do not externalize:
+Build as a self-contained IIFE; bundle all dependencies, do not externalize:
 
 ```js
 // vite.config.js
@@ -158,4 +158,4 @@ import App from "./App";
 })();
 ```
 
-This is simpler but has no style isolation — use a shadow root or scoped CSS if style conflicts are a concern.
+This is simpler but has no style isolation: use a shadow root or scoped CSS if style conflicts are a concern.

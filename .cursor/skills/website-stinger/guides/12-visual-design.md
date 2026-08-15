@@ -1,11 +1,11 @@
-# 12 — Visually Stunning Design System
+# 12: Visually Stunning Design System
 
 Source PRD: `research/source-prds/prd-phase-12-visually-stunning-design.md`
 
 Svelte animation sources:
-- [sv-animations — Animated Beam + 50+ components](https://sv-animations.vercel.app/magic/docs/components/animated-beam) — Magic UI ported to Svelte; CLI install via `pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/<component>.json`
-- [Aceternity UI Svelte](https://aceternity.sveltekit.io/components) — Svelte ports of Aceternity components (3D Card, Lamp Effect, Tracing Beam, Spotlight, etc.)
-- [animation-svelte](https://animation-svelte.vercel.app/) — Svelte Luxe + Magic UI components with motion-sv
+- [sv-animations: Animated Beam + 50+ components](https://sv-animations.vercel.app/magic/docs/components/animated-beam): Magic UI ported to Svelte; CLI install via `pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/<component>.json`
+- [Aceternity UI Svelte](https://aceternity.sveltekit.io/components): Svelte ports of Aceternity components (3D Card, Lamp Effect, Tracing Beam, Spotlight, etc.)
+- [animation-svelte](https://animation-svelte.vercel.app/): Svelte Luxe + Magic UI components with motion-sv
 
 ---
 
@@ -15,7 +15,7 @@ Establish the CSS token architecture, fluid typography, Svelte transitions/anima
 
 ---
 
-## CSS design tokens — app.css
+## CSS design tokens: app.css
 
 ```css
 /* apps/web/src/app.css */
@@ -88,7 +88,7 @@ Establish the CSS token architecture, fluid typography, Svelte transitions/anima
 
 ---
 
-## Dark mode — mode-watcher
+## Dark mode: mode-watcher
 
 ```bash
 pnpm add mode-watcher
@@ -128,7 +128,7 @@ pnpm dlx shadcn-svelte@latest add button card dialog form input label
 
 ---
 
-## Svelte transitions — entrance animations
+## Svelte transitions: entrance animations
 
 SvelteKit has built-in `svelte/transition` and `svelte/animate`. Use these instead of Framer Motion:
 
@@ -187,17 +187,17 @@ Key components: Animated Beam, Border Beam, Marquee, Orbiting Circles, Meteors, 
 
 ### 2. Aceternity UI Svelte (aceternity.sveltekit.io)
 
-Components are copy-paste from the site (not a CLI package). Key components: 3D Card Effect, Background Beams, Spotlight, Lamp Effect, Tracing Beam, Moving Border, Floating Navbar. All use Framer Motion's Svelte alternative — verify compatibility with Svelte 5 before using.
+Components are copy-paste from the site (not a CLI package). Key components: 3D Card Effect, Background Beams, Spotlight, Lamp Effect, Tracing Beam, Moving Border, Floating Navbar. All use Framer Motion's Svelte alternative. Verify compatibility with Svelte 5 before using.
 
 ### 3. animation-svelte (animation-svelte.vercel.app)
 
 Includes Svelte Luxe (dark-mode components), Svelte Magic UI port, and Indie UI. Install via: `pnpm add motion-sv` plus copy-paste component source.
 
-> **Usage guideline:** Use at most 2–3 animated components per page. Animations must degrade to `opacity: 1` when `prefers-reduced-motion` is set. Performance budget: Lighthouse Performance ≥ 90 after adding any animated component.
+> **Usage guideline:** Use at most 2 to 3 animated components per page. Animations must degrade to `opacity: 1` when `prefers-reduced-motion` is set. Performance budget: Lighthouse Performance ≥ 90 after adding any animated component.
 
 ---
 
-## Fluid typography — clamp()
+## Fluid typography: clamp()
 
 ```css
 /* In app.css @layer base: */
@@ -242,7 +242,7 @@ export const GET = ({ params }) =>
 
 | ID | Criterion |
 |---|---|
-| 12.1 | CSS tokens defined in `app.css` — all colors/spacing/motion as custom properties |
+| 12.1 | CSS tokens defined in `app.css`: all colors/spacing/motion as custom properties |
 | 12.2 | `.dark` token overrides invert without component-level conditionals |
 | 12.3 | Dark mode toggle works via `mode-watcher`; persists across sessions |
 | 12.4 | `prefers-reduced-motion` zeroes out all transition durations |

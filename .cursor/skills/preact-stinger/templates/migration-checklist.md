@@ -10,15 +10,15 @@
 
 ## Phase 1: Blocker audit
 
-- [ ] Searched for `React.use(` — found: ___
-- [ ] Searched for `useTransition(` — found: ___
-- [ ] Searched for `useDeferredValue(` (relied on) — found: ___
-- [ ] Searched for `"use server"` / React Server Components — found: ___
-- [ ] Checked for Next.js App Router usage — found: ___
-- [ ] Checked `@types/react` in `package.json` — found: ___
+- [ ] Searched for `React.use(`, found: ___
+- [ ] Searched for `useTransition(`, found: ___
+- [ ] Searched for `useDeferredValue(` (relied on), found: ___
+- [ ] Searched for `"use server"` / React Server Components, found: ___
+- [ ] Checked for Next.js App Router usage, found: ___
+- [ ] Checked `@types/react` in `package.json`, found: ___
 
 **Blockers requiring refactor before migration:**
-- [ ] None — proceed
+- [ ] None: proceed
 - [ ] List blockers: _______________
 
 ---

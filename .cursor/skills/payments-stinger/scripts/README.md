@@ -1,4 +1,4 @@
-# scripts/ — payments-stinger helpers
+# scripts/, payments-stinger helpers
 
 Two helpers; each is self-documenting in its file header.
 
@@ -19,11 +19,11 @@ Prerequisites:
 - `stripe login` completed (one-time pairing).
 - `stripe listen --forward-to localhost:3000/api/stripe/webhook` running in a separate terminal.
 
-See `guides/06-testing-and-cli.md`.
+See `guides/08-testing-and-local-development.md`.
 
 ## `verify-signature-snippet.ts`
 
-Minimal portable HMAC-SHA256 Stripe-Signature verification — no `stripe` SDK dependency. Use only when:
+Minimal portable HMAC-SHA256 Stripe-Signature verification, no `stripe` SDK dependency. Use only when:
 
 - You can't pull in the SDK (tiny edge runtime, locked dependency surface).
 - You want a reference for what `stripe.webhooks.constructEvent` actually does.
@@ -37,4 +37,4 @@ npx tsx scripts/verify-signature-snippet.ts
 # OK: self-test passed
 ```
 
-See `guides/02-webhook-verification.md`.
+See `guides/06-webhooks-and-provisioning.md`.

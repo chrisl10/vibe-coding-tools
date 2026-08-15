@@ -1,14 +1,14 @@
 ---
-name: status-page-stinger
-description: Public status page specialist for React/Next.js and SaaS products — platform selection (Statuspage/Atlassian, Better Stack, Instatus, Cachet OSS), component tree architecture, incident communication templates (initial/update/resolution), subscriber notification setup (email, SMS, webhook, Slack), GDPR/CAN-SPAM compliance for notification lists, post-incident update discipline, and API-driven automation integration. Use when the user says "set up a status page", "which status page tool should we use", "write an incident communication template", "configure subscriber notifications", "migrate from Statuspage", "audit our incident communication", "post-mortem cross-link", "maintenance window announcement", or when `status-page-worker-bee` is invoked. Do NOT use for configuring monitoring/alerting infrastructure (devops-worker-bee), on-call rotation setup (devops-worker-bee), observability dashboards (devops-worker-bee), or operational runbook authorship (runbook-writing-worker-bee).
+name: "status-page-stinger"
+description: "'Public status page specialist for React/Next.js and SaaS products: platform selection (Statuspage/Atlassian, Better Stack, Instatus, Cachet OSS), component tree architecture, incident communication templates (initial/update/resolution), subscriber notification setup (email, SMS, webhook, Slack), GDPR/CAN-SPAM compliance for notification lists, post-incident update discipline, and API-driven automation integration. Use when the user says \\\\\\\"set up a status page\\\\\\\", \\\\\\\"which status page tool should we use\\\\\\\", \\\\\\\"write an incident communication template\\\\\\\", \\\\\\\"configure subscriber notifications\\\\\\\", \\\\\\\"migrate from Statuspage\\\\\\\", \\\\\\\"audit our incident communication\\\\\\\", \\\\\\\"post-mortem cross-link\\\\\\\", \\\\\\\"maintenance window announcement\\\\\\\", or when `status-page-worker-bee` is invoked. Do NOT use for configuring monitoring/alerting infrastructure (devops-worker-bee), on-call rotation setup (devops-worker-bee), observability dashboards (devops-worker-bee), or operational runbook authorship (runbook-writing-worker-bee).'"
 ---
 
 # Status Page Stinger
 
-Public status page playbook — from platform selection through post-incident discipline. Backed by May 2026 research on pricing, API surfaces, and practitioner communication norms.
+Public status page playbook: from platform selection through post-incident discipline. Backed by May 2026 research on pricing, API surfaces, and practitioner communication norms.
 
 Command Brief: `ai-tools/command-briefs/status-page-worker-bee-command-brief.md`
-Research: `ai-tools/skills/status-page-stinger/research/research-summary.md`
+Research: `.cursor/skills/status-page-stinger/research/research-summary.md`
 
 ---
 
@@ -17,11 +17,11 @@ Research: `ai-tools/skills/status-page-stinger/research/research-summary.md`
 Load this stinger when `status-page-worker-bee` is invoked. Typical triggers:
 
 - "Set up a status page for our SaaS product"
-- "Which status page tool should we use — Statuspage vs Better Stack vs Instatus?"
+- "Which status page tool should we use, Statuspage vs Better Stack vs Instatus?"
 - "We're on Statuspage; should we migrate to Better Stack?"
 - "Write me an incident communication template"
 - "Configure subscriber SMS notifications for our status page"
-- "Our incident updates are confusing — audit them"
+- "Our incident updates are confusing: audit them"
 - "Write a maintenance window announcement"
 - "Connect PagerDuty to our status page"
 - "We're getting complaints about radio silence during incidents"
@@ -36,7 +36,7 @@ Do NOT load for:
 
 ## First action when this stinger is loaded
 
-1. Read `guides/00-platform-selection.md` to understand the 2026 platform landscape — pricing has changed significantly since 2024.
+1. Read `guides/00-platform-selection.md` to understand the 2026 platform landscape: pricing has changed significantly since 2024.
 2. Read `guides/10-failure-modes.md` first on every invocation. Covers the three most common status page anti-patterns that erode user trust.
 3. Read the appropriate domain guide based on what the user needs.
 
@@ -109,8 +109,8 @@ Full decision tree and scoring in `guides/00-platform-selection.md`.
 
 | Role | Artifact |
 |---|---|
-| This stinger | `ai-tools/skills/status-page-stinger/` |
-| Paired Bee | `ai-tools/agents/status-page-worker-bee.md` |
+| This stinger | `.cursor/skills/status-page-stinger/` |
+| Paired Bee | `.cursor/agents/status-page-worker-bee.md` |
 | Command Brief | `ai-tools/command-briefs/status-page-worker-bee-command-brief.md` |
 | Related: monitoring/alerting | `devops-worker-bee` |
 | Related: operational runbooks | `runbook-writing-worker-bee` |
@@ -118,4 +118,4 @@ Full decision tree and scoring in `guides/00-platform-selection.md`.
 
 ---
 
-*Forged by `stinger-forge` from `status-page-worker-bee-command-brief.md` and `research/`. Part of the Legion AI Tools Factory by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Forged by `stinger-forge` from `status-page-worker-bee-command-brief.md` and `research/`. Part of The Hive by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

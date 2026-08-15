@@ -2,9 +2,9 @@
 
 The Beekeeper-Suit routing skill's record of when to invoke `{{bee-name}}`. Use this guide to decide whether a user request belongs to this Bee.
 
-**Bee:** [`army/.cursor/agents/{{bee-name}}.md`](../../agents/{{bee-name}}.md)
-**Stinger:** [`army/.cursor/skills/{{stinger-name}}/`](../../skills/{{stinger-name}}/)
-**Command Brief:** [`army/{{bee-name}}-command-brief.md`](../../../{{bee-name}}-command-brief.md)
+**Bee:** [`colony/.claude/agents/{{bee-name}}.md`](../../agents/{{bee-name}}.md)
+**Stinger:** [`colony/.claude/skills/{{stinger-name}}/`](../../skills/{{stinger-name}}/)
+**Command Brief:** [`colony/{{bee-name}}-command-brief.md`](../../../{{bee-name}}-command-brief.md)
 **Trigger policy:** {{proactive | on-demand}}
 
 ---
@@ -60,4 +60,4 @@ If a required input is missing, do not invoke yet - ask the user to supply it.
 
 ---
 
-*Part of Beekeeper-Suit's roster. See [`army/.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
+*Part of Beekeeper-Suit's roster. See [`colony/.claude/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full colony.*

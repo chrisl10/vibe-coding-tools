@@ -1,6 +1,6 @@
 # Phase 5: Supabase Backend Foundation
 
-> **Site Template Guide** — PRD Phase 5 of 12
+> **Site Template Guide**: PRD Phase 5 of 12
 
 ---
 
@@ -14,9 +14,9 @@ Wire Supabase Postgres as the business data layer. Establish the dual-namespace 
 
 **In scope:**
 - Dual Postgres namespace design and documentation
-- `src/hooks.server.ts` — `createServerClient` with cookie-based session management
-- `src/lib/supabase.ts` — browser client for client-side features
-- `src/app.d.ts` — `App.Locals` type declarations
+- `src/hooks.server.ts`: `createServerClient` with cookie-based session management
+- `src/lib/supabase.ts`: browser client for client-side features
+- `src/app.d.ts`: `App.Locals` type declarations
 - Core `public` schema migrations: `profiles`, `leads`, `app_settings`, `webhook_endpoints`, `webhook_deliveries`
 - RLS policies for all public tables
 - `supabase gen types typescript` → `src/lib/types/database.ts`
@@ -36,17 +36,17 @@ Wire Supabase Postgres as the business data layer. Establish the dual-namespace 
 
 ## User Stories
 
-### Story 1 — Developer: Type-Safe Supabase Client in SvelteKit
+### Story 1: Developer: Type-Safe Supabase Client in SvelteKit
 
 > As a **Developer**, I want an SSR-aware Supabase client available on `event.locals` in every SvelteKit `+page.server.ts` so that I can query Supabase with proper session cookie handling.
 
 **Acceptance criteria:**
 - `hooks.server.ts` creates `event.locals.supabase` per request using `createServerClient` from `@supabase/ssr`
 - Cookies are read from `event.cookies` and set back via `event.cookies.set`
-- `event.locals.safeGetSession()` returns `{ session, user }` — uses `getUser()` not `getSession()` for security
+- `event.locals.safeGetSession()` returns `{ session, user }`: uses `getUser()` not `getSession()` for security
 - `App.Locals` declared in `app.d.ts` with correct types
 
-### Story 2 — Developer: Generated Type Safety
+### Story 2: Developer: Generated Type Safety
 
 > As a **Developer**, I want `database.ts` generated from the Supabase schema so that all Supabase queries are type-checked at compile time.
 
@@ -56,7 +56,7 @@ Wire Supabase Postgres as the business data layer. Establish the dual-namespace 
 - `database.ts` is listed in `.gitignore` comments as "do not hand-edit"
 - Script in `apps/web/package.json`: `"db:types": "supabase gen types typescript ..."`
 
-### Story 3 — Anonymous User: Insert a Lead
+### Story 3: Anonymous User: Insert a Lead
 
 > As an **Anonymous User** submitting a contact form, I want my lead data to be stored in Supabase via the anon key so that I do not need to be authenticated to submit a form.
 
@@ -65,7 +65,7 @@ Wire Supabase Postgres as the business data layer. Establish the dual-namespace 
 - `public.leads` has `SELECT` policy allowing only admin/editor roles
 - `curl -X POST /contact` → 201 lead row in Supabase dashboard
 
-### Story 4 — Developer: Payload Schema Isolation
+### Story 4: Developer: Payload Schema Isolation
 
 > As a **Developer**, I want Payload's tables to live in a separate Postgres schema (`payload`) so that the Supabase anon key cannot access them.
 
@@ -84,7 +84,7 @@ Wire Supabase Postgres as the business data layer. Establish the dual-namespace 
 CREATE TYPE public.app_role AS ENUM ('admin', 'editor', 'member');
 ```
 
-Note: `admin` and `editor` refer to Supabase-managed users in the SvelteKit app (lead management, webhook config, analytics access). Payload CMS editors have their own separate user table managed by Payload — these are distinct auth systems.
+Note: `admin` and `editor` refer to Supabase-managed users in the SvelteKit app (lead management, webhook config, analytics access). Payload CMS editors have their own separate user table managed by Payload. These are distinct auth systems.
 
 ### public.profiles
 
@@ -199,5 +199,5 @@ Policy philosophy:
 ## Risks and Open Questions
 
 - **R-1:** `@payloadcms/db-postgres` requires the Postgres connection string user to have `CREATESCHEMA` rights to create the `payload` namespace. The default Supabase `postgres` role has this. If using a restricted role, grant it explicitly.
-- **R-2:** Supabase's pgbouncer transaction-mode pooler (the default) may conflict with Payload's connection expectations. Test with `?pgbouncer=true&connection_limit=1` in `PAYLOAD_DATABASE_URI`. See `cms-payload-stinger/guides/04-supabase-postgres-adapter.md`.
+- **R-2:** Supabase's pgbouncer transaction-mode pooler (the default) may conflict with Payload's connection expectations. Test with `?pgbouncer=true&connection_limit=1` in `PAYLOAD_DATABASE_URI`. See `website-stinger/guides/04-supabase-postgres-adapter.md`.
 - **Q-1:** Should `profiles.role` be read from `raw_app_meta_data` (set by Edge Function, not user-editable) rather than a separate column? This would make JWT-based role checks faster. Trade-off: requires a service-role call to set; a database column is simpler but requires a table join.

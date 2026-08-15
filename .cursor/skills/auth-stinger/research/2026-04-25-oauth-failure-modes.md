@@ -23,5 +23,5 @@ A consolidated catalog of OAuth, session, RBAC, MFA, configuration, and process 
 
 ## Relevance
 
-- `guides/11-common-failure-modes.md` — full catalog.
+- `guides/11-common-failure-modes.md`: full catalog.
 - `templates/audit-report-template.md` § Failure-mode check-list.

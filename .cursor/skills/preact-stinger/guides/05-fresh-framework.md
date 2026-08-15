@@ -20,7 +20,7 @@ Fresh 2 is a significant rearchitecture:
 | Config file | `fresh.config.ts` | `deno.json` + `vite.config.ts` |
 | Islands directory | `islands/` | `islands/` (same) |
 
-> TODO: open question — check `fresh.deno.dev/docs/1.x/` for the official 1.x → 2.x migration guide before publishing.
+> TODO: open question; check `fresh.deno.dev/docs/1.x/` for the official 1.x → 2.x migration guide before publishing.
 
 ---
 
@@ -54,8 +54,8 @@ Files in `islands/` are automatically islands; files in `components/` are server
 | Array of serializable values | YES |
 | Plain objects | YES |
 | Preact signals | YES (special Fresh support) |
-| Functions | NO — will throw |
-| Class instances | NO — will throw |
+| Functions | NO: will throw |
+| Class instances | NO: will throw |
 | Date objects | Partial (serializes, but deserializes as string) |
 
 ```tsx
@@ -100,7 +100,7 @@ export default function AddToCart() {
 }
 ```
 
-This is Fresh's idiomatic pattern for cross-island reactivity. Signals CAN be passed as island props — Fresh has special serialization support for them.
+This is Fresh's idiomatic pattern for cross-island reactivity. Signals CAN be passed as island props: Fresh has special serialization support for them.
 
 ---
 

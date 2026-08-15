@@ -31,5 +31,5 @@ Apple's canonical DMA compliance developer page, updated June 2025. Covers the A
 ## Annotations for stinger-forge
 - This source partially answers the open question from the Command Brief: "Does Apple's March 2026 EU DMA compliance extension affect IAP requirements for apps distributed in the EU?" Answer: Yes. The CTF-to-CTC transition as of January 1, 2026, plus the ability to use alternative PSPs, means EU apps have materially different IAP configuration options. Stinger-forge should document EU vs non-EU IAP paths clearly.
 - The "no mix & match" constraint (you can't offer Apple IAP AND an alternative PSP on the same storefront) is a critical decision gate that needs to be in `guides/04-iap-setup.md`.
-- The steering entitlement (communicating external offers within the app, EU only) is a legitimate use case that developers may ask about — clarify the geographic scope limitation.
+- The steering entitlement (communicating external offers within the app, EU only) is a legitimate use case that developers may ask about: clarify the geographic scope limitation.
 - Apps outside the EU are unaffected by these Alternative Terms and must still use Apple's IAP exclusively for digital goods.

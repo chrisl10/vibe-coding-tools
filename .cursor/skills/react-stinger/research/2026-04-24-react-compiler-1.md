@@ -9,21 +9,21 @@
 
 ## Summary
 
-React Compiler 1.0 went stable October 2025. It's a build-time tool that automatically memoizes components and hooks — analyzing code to eliminate unnecessary re-renders without manual `useMemo`, `useCallback`, or `memo` wrappers. Meta shipped it to production first and reports up to 12% faster loads, 2.5x faster interactions.
+React Compiler 1.0 went stable October 2025. It's a build-time tool that automatically memoizes components and hooks: analyzing code to eliminate unnecessary re-renders without manual `useMemo`, `useCallback`, or `memo` wrappers. Meta shipped it to production first and reports up to 12% faster loads, 2.5x faster interactions.
 
 ## Key facts
 
-- **Build-time only** — no runtime cost.
+- **Build-time only**: no runtime cost.
 - **Works with React 17+** (not React 19-exclusive). Older apps can adopt it.
 - **Opt-in** initially; default rollout increasing.
-- **Compatible with existing `useMemo` / `useCallback`** — they still work as escape hatches.
+- **Compatible with existing `useMemo` / `useCallback`**: they still work as escape hatches.
 - **Rules-of-React-compliant code required.** Compiler refuses to optimize components that mutate props, break hook rules, etc. The eslint-plugin-react-hooks + react-compiler plugin catches violations.
 
 ## Impact on best practices
 
 1. **Manual memoization loses value** in Compiler-enabled codebases. Premature `useMemo` / `useCallback` is both unnecessary and a code smell.
 2. **But** `useMemo` remains useful for expensive *computation caching* used as *effect dependencies* (stability, not perf).
-3. **Discipline moves up the stack:** state colocation, composition via `children`, code splitting — these still matter; Compiler can't undo architectural problems.
+3. **Discipline moves up the stack:** state colocation, composition via `children`, code splitting: these still matter; Compiler can't undo architectural problems.
 
 ## Adoption checklist
 

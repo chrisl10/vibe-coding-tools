@@ -12,7 +12,7 @@ stinger: docs-site-stinger
 
 ## Summary
 
-The Command Brief defines docs-site-worker-bee as the Legion Army's documentation infrastructure specialist. It owns: platform selection, site architecture, docs-as-code discipline, search, and contributor experience. It explicitly does NOT own: OpenAPI spec enrichment (api-docs-worker-bee), internal library/ knowledge-base authoring (library-worker-bee), marketing pages (website-worker-bee), or Next.js SEO strategy (seo-aeo-worker-bee).
+The Command Brief defines docs-site-worker-bee as the Hive's documentation infrastructure specialist. It owns: platform selection, site architecture, docs-as-code discipline, search, and contributor experience. It explicitly does NOT own: OpenAPI spec enrichment (api-docs-worker-bee), internal library/ knowledge-base authoring (library-worker-bee), marketing pages (website-worker-bee), or Next.js SEO strategy (seo-aeo-worker-bee).
 
 ## Key decisions from the brief
 

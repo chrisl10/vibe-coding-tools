@@ -1,4 +1,4 @@
-# 06 — Authentication & User Management
+# 06: Authentication & User Management
 
 Source PRD: `research/source-prds/prd-phase-06-authentication-user-management.md`
 
@@ -23,7 +23,7 @@ Wire Supabase Auth for end-users and Payload's built-in auth for CMS editors. Ga
 
 ---
 
-## SvelteKit route protection — hooks.server.ts
+## SvelteKit route protection: hooks.server.ts
 
 Extend the Phase 5 `hooks.server.ts` to protect admin-only routes:
 
@@ -97,12 +97,12 @@ export const actions: Actions = {
 
 ---
 
-## RBAC — roles
+## RBAC: roles
 
 The `public.app_role` enum from Phase 5 defines:
-- `admin` — full access to all SvelteKit admin routes and all Supabase data
-- `editor` — content-editing access (create/update leads, read analytics)
-- `member` — registered end-user (read own data only)
+- `admin`: full access to all SvelteKit admin routes and all Supabase data
+- `editor`: content-editing access (create/update leads, read analytics)
+- `member`: registered end-user (read own data only)
 
 Payload CMS roles are separate and defined in `payload.config.ts` → `users` collection `access` object.
 
@@ -157,7 +157,7 @@ Deploy: `supabase functions deploy admin-users`
 
 ## Password reset redirect
 
-Use `PUBLIC_SITE_URL` env var — never hardcode a domain:
+Use `PUBLIC_SITE_URL` env var, never hardcode a domain:
 
 ```ts
 const { error } = await supabase.auth.resetPasswordForEmail(email, {

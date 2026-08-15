@@ -36,6 +36,6 @@ When a Scrum team cannot articulate their Sprint Goal, the audit should flag thi
 3. Team has drifted into Zombie Scrum
 
 ## Annotations for stinger-forge
-- The "No Sprint Goal" anti-pattern is the single most actionable Sprint diagnostic — directly observable in Sprint Planning output.
+- The "No Sprint Goal" anti-pattern is the single most actionable Sprint diagnostic: directly observable in Sprint Planning output.
 - The PO ownership boundary ("before Sprint Backlog = PO; after Sprint Backlog = Developers") is a clean rule for the audit report template.
 - This source feeds into `guides/02-ceremonies.md` (Sprint Planning failure modes section) and `guides/05-anti-patterns.md` (Sprint anti-patterns section).

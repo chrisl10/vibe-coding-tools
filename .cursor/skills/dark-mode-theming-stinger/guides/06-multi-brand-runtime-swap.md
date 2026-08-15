@@ -1,4 +1,4 @@
-# Multi-Brand Runtime Theme Swap — dark-mode-theming-stinger
+# Multi-Brand Runtime Theme Swap: dark-mode-theming-stinger
 
 *Covers: `data-brand` attribute strategy, CSS variable override injection, zero-JS swap, dark mode + brand composition, tenant isolation, security note.*
 
@@ -88,7 +88,7 @@ The tenant brand is resolved in middleware from the subdomain, JWT claim, or coo
 
 ## Combining with `next-themes` (dark mode + brand)
 
-Both attributes are set independently — they compose without conflict:
+Both attributes are set independently; they compose without conflict:
 
 ```tsx
 // app/layout.tsx

@@ -12,8 +12,8 @@
 {{What is the situation that forces a decision?
 Include:
 - Postgres major version, ORM, platform.
-- Workload shape — read/write ratio, expected row counts, latency targets, geographic distribution.
-- Constraints — team SQL fluency, runtime (edge / serverless / long-running), budget, RPO/RTO.
+- Workload shape: read/write ratio, expected row counts, latency targets, geographic distribution.
+- Constraints: team SQL fluency, runtime (edge / serverless / long-running), budget, RPO/RTO.
 - Why the status quo cannot continue.
 }}
 
@@ -34,14 +34,14 @@ Include:
 
 ## Alternatives considered
 
-- **{{Alt 1}}** — {{why rejected}}
-- **{{Alt 2}}** — {{why rejected}}
+- **{{Alt 1}}**: {{why rejected}}
+- **{{Alt 2}}**: {{why rejected}}
 
 ## References
 
 - `guides/XX-...md §section`
 - `research/YYYY-MM-DD-topic.md`
-- {{external URL — postgresql.org docs preferred}}
+- {{external URL: postgresql.org docs preferred}}
 
 ## Verification
 

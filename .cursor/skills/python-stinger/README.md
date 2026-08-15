@@ -1,6 +1,6 @@
 # python-stinger
 
-Cursor skill that equips **python-worker-bee** to be the authority on modern Python — opinionated, modern, grounded in production-proven patterns rather than tutorial tropes. Encodes a canonical stack as enforcement, applies it across Django app architecture, the API layer, async work, realtime, testing, type discipline, packaging, and the Django-React decoupled-architecture surface.
+Cursor skill that equips **python-worker-bee** to be the authority on modern Python: opinionated, modern, grounded in production-proven patterns rather than tutorial tropes. Encodes a canonical stack as enforcement, applies it across Django app architecture, the API layer, async work, realtime, testing, type discipline, packaging, and the Django-React decoupled-architecture surface.
 
 Entry point: `SKILL.md`.
 
@@ -22,7 +22,7 @@ The product is opinionation. The active guides recommend exactly one tool per sl
 | Validation at boundaries | Pydantic v2 | Carried by Ninja and FastAPI for free |
 | HTTP client | httpx | Sync + async + HTTP/2 in one API |
 
-Substitution requires an ADR (`library/architecture/ADR-<n>-*.md`) with eval evidence and a migration plan.
+Substitution requires an ADR (`library/knowledge/private/architecture/ADR-<n>-*.md`) with eval evidence and a migration plan.
 
 ## Scope
 
@@ -79,9 +79,9 @@ Pick the entry path that matches the task:
 
 Reports are written into the **host repo's `library/` tree**, never inside this Stinger (there is no `reports/` subfolder in the Stinger):
 
-- **Standalone reviews** → `library/qa/python/<date>-<topic>.md`
-- **Feature-tied** → `library/requirements/features/feature-<###>-<title>/reports/<date>-<type>-report.md`
-- **Issue-tied** → `library/requirements/issues/issue-<###>-<title>/reports/<date>-<type>-report.md`
-- **ADRs** → `library/architecture/ADR-<n>-<topic>.md`
+- **Standalone reviews** → `library/requirements/reports/python/<date>-<topic>.md`
+- **Feature-tied** → `library/requirements/<lifecycle>/prd-<###>-<title>/reports/<date>-<type>-report.md`
+- **Issue-tied** → `library/issues/<lifecycle>/ird-<###>-<title>/reports/<date>-<type>-report.md`
+- **ADRs** → `library/knowledge/private/architecture/ADR-<n>-<topic>.md`
 
-Cursor sees this Stinger at `.cursor/skills/python-stinger/` once deployed. In this repo it lives at `legion/.cursor/skills/python-stinger/`.
+Cursor sees this Stinger at `.claude/skills/python-stinger/` once deployed. In this repo it lives at `colony/.claude/skills/python-stinger/`.

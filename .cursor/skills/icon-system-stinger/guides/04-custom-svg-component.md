@@ -1,4 +1,4 @@
-# Guide 04 — Custom SVG Component
+# Guide 04: Custom SVG Component
 
 Source: `research/external/icon-accessibility.md`, `research/external/lucide-react.md`
 

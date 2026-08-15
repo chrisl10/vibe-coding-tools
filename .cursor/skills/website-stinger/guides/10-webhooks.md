@@ -1,4 +1,4 @@
-# 10 — Webhook & Outbound Integration System
+# 10: Webhook & Outbound Integration System
 
 Source PRD: `research/source-prds/prd-phase-10-webhook-integration-system.md`
 

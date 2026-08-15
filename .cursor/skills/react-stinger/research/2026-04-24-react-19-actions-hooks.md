@@ -10,7 +10,7 @@
 
 ## Summary
 
-React 19 (stable Dec 2024) introduces Actions — functions (sync or async) that can be passed to `<form action={...}>`, triggered as transitions, and composed with three new hooks.
+React 19 (stable Dec 2024) introduces Actions: functions (sync or async) that can be passed to `<form action={...}>`, triggered as transitions, and composed with three new hooks.
 
 ## The four new APIs
 
@@ -50,4 +50,4 @@ function SubmitButton() {
 
 ## Relevance to this stinger
 
-Spine of `guides/10-react-19-idioms.md` and a major section of `guides/06-forms.md`. Distinguishes React 18 (no Actions) from React 19 (Actions are idiomatic) — which is why `guides/00-principles.md` rule #1 is "check package.json first".
+Spine of `guides/10-react-19-idioms.md` and a major section of `guides/06-forms.md`. Distinguishes React 18 (no Actions) from React 19 (Actions are idiomatic), which is why `guides/00-principles.md` rule #1 is "check package.json first".

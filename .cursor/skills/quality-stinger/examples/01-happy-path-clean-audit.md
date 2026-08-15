@@ -8,7 +8,7 @@ Demonstrates a small, faithful implementation that passes the audit with one Sug
 
 ## Input, Plan document excerpt
 
-Plan file: `library/requirements/features/feature-007-result-mode-label/prd-feature-007-result-mode-label.md`
+Plan file: `library/requirements/<lifecycle>/prd-007-result-mode-label/prd-feature-007-result-mode-label.md`
 
 ```markdown
 # PRD: Result Mode Label
@@ -66,12 +66,12 @@ return ranked;
 
 ## Output, QA Report
 
-Written to `library/requirements/features/feature-007-result-mode-label/reports/2026-04-24-qa-report.md`.
+Written to `library/requirements/<lifecycle>/prd-007-result-mode-label/reports/2026-04-24-qa-report.md`.
 
 ```markdown
 # QA Report: feature-007 Result Mode Label
 
-**Plan document:** `library/requirements/features/feature-007-result-mode-label/prd-feature-007-result-mode-label.md`
+**Plan document:** `library/requirements/<lifecycle>/prd-007-result-mode-label/prd-feature-007-result-mode-label.md`
 **Audit date:** 2026-04-24
 **Base branch:** `main`
 **Head:** `feat/result-mode-label`

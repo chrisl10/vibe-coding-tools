@@ -17,7 +17,7 @@
 **Why it matters:** The Events API is the backbone of nearly every production Slack app. This source documents the three critical correctness invariants from the Command Brief: (a) the 3-second ACK rule, (b) HMAC-SHA256 request signature verification, and (c) `event_id` deduplication. These are the top three failure modes in production Slack apps and must appear prominently in `guides/04-events-api.md` with code examples.
 
 ### 3. `external/2026-05-20-oauth-multi-workspace.md`
-**Why it matters:** Multi-workspace OAuth is the feature that separates a personal bot from a distributable SaaS Slack app. The `InstallationStore` pattern, `state` parameter CSRF protection, and org-wide install (Enterprise Grid) edge case are all documented here. The Command Brief flags `state` parameter validation as a Critical Directive — this source gives stinger-forge exactly what it needs to fulfill that directive.
+**Why it matters:** Multi-workspace OAuth is the feature that separates a personal bot from a distributable SaaS Slack app. The `InstallationStore` pattern, `state` parameter CSRF protection, and org-wide install (Enterprise Grid) edge case are all documented here. The Command Brief flags `state` parameter validation as a Critical Directive: this source gives stinger-forge exactly what it needs to fulfill that directive.
 
 ### 4. `external/2026-05-20-dev-policy-update.md`
 **Why it matters:** This December 2024 changelog is the most recent policy-layer change in the research window and has direct impact on any AI-powered Slack app. The explicit LLM training prohibition ("under any circumstances") and the commercial-distribution mandatory Marketplace review rule are brand-new constraints developers building in 2025-2026 must know. Stinger-forge must surface both rules prominently in `guides/06-app-directory.md`.
@@ -37,13 +37,13 @@
 
 4. **Bolt Java coverage depth:** The Command Brief lists Java as a supported SDK but the research primarily covers JS and Python (where Slack's own documentation is more complete and practitioner content is more abundant). Stinger-forge should decide whether `guides/00-setup-and-bolt.md` covers all three languages in equal depth or notes Java as a lighter secondary reference.
 
-5. **Deno Slack SDK / next-gen platform:** The official docs reference a "Deno Slack SDK" and a "next-generation platform" (Workflow Builder-based apps) alongside the classic Bolt SDK. The Command Brief is scoped to Bolt (JS/Python/Java), so the Deno SDK is out of scope — but stinger-forge should include a one-line scope note to avoid confusion when developers encounter both in the official docs.
+5. **Deno Slack SDK / next-gen platform:** The official docs reference a "Deno Slack SDK" and a "next-generation platform" (Workflow Builder-based apps) alongside the classic Bolt SDK. The Command Brief is scoped to Bolt (JS/Python/Java), so the Deno SDK is out of scope; but stinger-forge should include a one-line scope note to avoid confusion when developers encounter both in the official docs.
 
 ---
 
 ## Sources stinger-forge should re-fetch with deeper context
 
-- `https://docs.slack.dev/reference/block-kit/blocks` — full Block Kit block and element reference; retrieve at forge time to capture the complete component inventory for `guides/02-block-kit.md`.
-- `https://api.slack.com/surfaces/modals` — full Modals surface reference (fetched summary above covers key points; the full page is 445 lines and may contain additional validation error response patterns useful for `guides/03-modals.md`).
-- `https://slack.dev/java-slack-sdk/guides/` — Java Bolt SDK guides; not covered in depth in this research pass; needed if stinger-forge decides to include Java examples.
-- `https://docs.slack.dev/changelog` — scan for any 2025-2026 entries not surfaced in the research window.
+- `https://docs.slack.dev/reference/block-kit/blocks`: full Block Kit block and element reference; retrieve at forge time to capture the complete component inventory for `guides/02-block-kit.md`.
+- `https://api.slack.com/surfaces/modals`: full Modals surface reference (fetched summary above covers key points; the full page is 445 lines and may contain additional validation error response patterns useful for `guides/03-modals.md`).
+- `https://slack.dev/java-slack-sdk/guides/`: Java Bolt SDK guides; not covered in depth in this research pass; needed if stinger-forge decides to include Java examples.
+- `https://docs.slack.dev/changelog`: scan for any 2025-2026 entries not surfaced in the research window.

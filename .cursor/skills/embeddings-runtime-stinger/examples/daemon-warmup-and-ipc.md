@@ -49,7 +49,7 @@ const texts = [
 const vectors = await client.embed(texts); // one NDJSON request line, one response stream
 ```
 
-Each request line and each response line is newline-delimited JSON (see `guides/02-ipc-protocol.md`). The client accumulates bytes until a newline before parsing a response.
+Each request line and each response line is newline-delimited JSON (see `guides/local-daemon-02-ipc-protocol.md`). The client accumulates bytes until a newline before parsing a response.
 
 ## Step 4 - Validate the dimension before writing
 

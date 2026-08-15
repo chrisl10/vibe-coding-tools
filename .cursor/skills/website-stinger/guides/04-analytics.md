@@ -1,4 +1,4 @@
-# 04 — Analytics & Tracking Stack
+# 04: Analytics & Tracking Stack
 
 Source PRD: `research/source-prds/prd-phase-04-analytics-tracking-stack.md`
 
@@ -6,7 +6,7 @@ Source PRD: `research/source-prds/prd-phase-04-analytics-tracking-stack.md`
 
 ## Goal
 
-Compose Vercel Analytics, Speed Insights, GA4, and Web Vitals as sibling providers in `+layout.svelte`. Wire first-touch UTM attribution. All analytics are client-side only — never leak to SSR.
+Compose Vercel Analytics, Speed Insights, GA4, and Web Vitals as sibling providers in `+layout.svelte`. Wire first-touch UTM attribution. All analytics are client-side only, never leak to SSR.
 
 ---
 
@@ -19,7 +19,7 @@ pnpm add @vercel/analytics @vercel/speed-insights web-vitals
 
 ---
 
-## Root layout — +layout.svelte
+## Root layout: +layout.svelte
 
 ```svelte
 <!-- apps/web/src/routes/+layout.svelte -->

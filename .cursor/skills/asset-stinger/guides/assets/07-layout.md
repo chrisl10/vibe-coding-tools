@@ -1,6 +1,6 @@
-# Guide — `Layout` (07)
+# Guide: `Layout` (07)
 
-> **Applies to:** reusable page shells — auth shells, two-column dashboards, admin chrome, mobile shells. The outer frame inside which `Page`-rendered content lives.
+> **Applies to:** reusable page shells: auth shells, two-column dashboards, admin chrome, mobile shells. The outer frame inside which `Page`-rendered content lives.
 
 ## 1. Purpose
 
@@ -53,12 +53,12 @@ Standard. Layout deprecation cascades: every `Page.layoutId` pointing at the dep
 
 ## 7. Hand-offs
 
-- **ux-ui-worker-bee** — owns the shell briefs (`left-sidebar-and-admin-toggle.md`, `dashboard.md`).
+- **ux-ui-svelte-worker-bee**: owns the shell briefs (`left-sidebar-and-admin-toggle.md`, `dashboard.md`).
 
 ## 8. Pitfalls
 
-- Registering layouts per-page instead of per-shell. A layout should be reused — if only one page uses a "layout," it's probably just part of that page.
-- `slots` JSON without constraints — leads to page-builder putting arbitrary things in named slots. Always specify `kind` and allowed keys.
+- Registering layouts per-page instead of per-shell. A layout should be reused; if only one page uses a "layout," it's probably just part of that page.
+- `slots` JSON without constraints: leads to page-builder putting arbitrary things in named slots. Always specify `kind` and allowed keys.
 
 ## 9. Example
 
@@ -75,7 +75,7 @@ await prisma.layout.create({
     },
     responsiveVariants: ["mobile", "desktop"],
     featureKey: "generic-ui",
-    uxuiBriefRef: "library/knowledge-base/ux-ui/04-screens/dashboard.md",
+    uxuiBriefRef: "library/knowledge/private/ux-ui/04-screens/dashboard.md",
     codePath: "app/src/components/layouts/ShellDashboard.tsx",
     exportName: "ShellDashboard",
     fileHash: "34def...",

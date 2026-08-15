@@ -10,11 +10,11 @@ A Mini App (WebApp) is a web application that runs inside the Telegram client in
 
 ---
 
-## CRITICAL: initData validation — do this first, always
+## CRITICAL: initData validation: do this first, always
 
-The Telegram WebApp SDK passes user data to your Mini App via `Telegram.WebApp.initData` — a URL-encoded string. This data includes the authenticated user's ID, name, and other context. **It can be forged if you don't validate it server-side.**
+The Telegram WebApp SDK passes user data to your Mini App via `Telegram.WebApp.initData`: a URL-encoded string. This data includes the authenticated user's ID, name, and other context. **It can be forged if you don't validate it server-side.**
 
-### Validation algorithm (HMAC-SHA256 — standard path)
+### Validation algorithm (HMAC-SHA256: standard path)
 
 From `research/mini-apps/2026-05-20-initdata-validation-official.md`:
 
@@ -84,7 +84,7 @@ def validate_telegram_init_data(init_data: str, bot_token: str) -> bool:
 
 ### New Ed25519 path (Bot API 9.5, March 2026)
 
-Bot API 9.5 added a third-party validation mechanism using Ed25519 signatures. This allows validation using only the bot's **public key** (derived from bot ID) — the bot token secret is not required.
+Bot API 9.5 added a third-party validation mechanism using Ed25519 signatures. This allows validation using only the bot's **public key** (derived from bot ID): the bot token secret is not required.
 
 This is useful for:
 - Third-party analytics/auth providers that process Mini App data without your bot token
@@ -122,7 +122,7 @@ app.get("/api/profile", telegramAuth, (req, res) => {
 
 ---
 
-## WebApp JS SDK — key APIs
+## WebApp JS SDK: key APIs
 
 Load in your Mini App's HTML:
 ```html

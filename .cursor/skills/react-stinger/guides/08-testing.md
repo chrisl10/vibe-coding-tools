@@ -1,4 +1,4 @@
-# 08 — Testing
+# 08: Testing
 
 Sources: `research/2026-04-24-bulletproof-react-testing.md`, `research/2026-04-24-testing-stack.md`.
 
@@ -132,11 +132,11 @@ Run in CI headless; UI mode locally for flake debugging.
 
 ## Common findings
 
-> **[Must-fix]** `src/components/button.test.tsx:1` — tests internal state (`expect(component.state.count).toBe(1)`). Rewrite to test rendered output. See `guides/08-testing.md §rule-1`.
+> **[Must-fix]** `src/components/button.test.tsx:1`: tests internal state (`expect(component.state.count).toBe(1)`). Rewrite to test rendered output. See `guides/08-testing.md §rule-1`.
 
-> **[Should-refactor]** `src/features/auth/login.test.tsx:10` — mocks `fetch` with `vi.fn()`. Replace with MSW handler. See `guides/08-testing.md §rule-2`.
+> **[Should-refactor]** `src/features/auth/login.test.tsx:10`: mocks `fetch` with `vi.fn()`. Replace with MSW handler. See `guides/08-testing.md §rule-2`.
 
-> **[Must-fix]** `vitest.config.ts:3` — no setup file registered; `@testing-library/jest-dom` matchers missing. See `templates/test-setup.ts`.
+> **[Must-fix]** `vitest.config.ts:3`: no setup file registered; `@testing-library/jest-dom` matchers missing. See `templates/test-setup.ts`.
 
 ## Example in action
 

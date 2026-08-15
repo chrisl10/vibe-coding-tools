@@ -14,10 +14,10 @@ Examples:
 
 ## Report types
 
-- **scrum-audit** — Full process audit using `templates/scrum-audit-report.md`
-- **dod-session** — Definition of Done authoring or review session
-- **retro-facilitation** — Retrospective facilitation output
-- **estimation-coaching** — Estimation technique selection and coaching session
+- **scrum-audit**: Full process audit using `templates/scrum-audit-report.md`
+- **dod-session**: Definition of Done authoring or review session
+- **retro-facilitation**: Retrospective facilitation output
+- **estimation-coaching**: Estimation technique selection and coaching session
 
 ## Retention
 

@@ -1,4 +1,4 @@
-# 13 — Build Report Discipline
+# 13: Build Report Discipline
 
 This guide is process-only. No framework-specific content; applies to all website-stinger builds.
 
@@ -100,7 +100,7 @@ Before handing the Build Report to the user:
 
 At the end of the Build Report, recommend:
 
-- `seo-aeo-worker-bee` (SvelteKit track) — post-build SEO audit
-- `security-worker-bee` — CSP header tightening
-- `db-worker-bee` — schema indexing review
-- `quality-worker-bee` — implementation-vs-PRD verification
+- `seo-aeo-worker-bee` (SvelteKit track): post-build SEO audit
+- `security-worker-bee`: CSP header tightening
+- `db-worker-bee`: schema indexing review
+- `quality-worker-bee`: implementation-vs-PRD verification

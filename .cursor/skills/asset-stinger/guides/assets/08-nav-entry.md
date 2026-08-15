@@ -1,6 +1,6 @@
-# Guide — `NavEntry` (08)
+# Guide: `NavEntry` (08)
 
-> **Applies to:** every static (code-registered) menu item in the app — left-sidebar rows, top-nav tabs, bottom-nav icons, admin-menu entries, user-menu items, footer links.
+> **Applies to:** every static (code-registered) menu item in the app: left-sidebar rows, top-nav tabs, bottom-nav icons, admin-menu entries, user-menu items, footer links.
 
 ## 1. Purpose
 
@@ -56,15 +56,15 @@ Standard. Deprecating a nav entry hides it from new tenants but preserves visibi
 
 ## 7. Hand-offs
 
-- **ux-ui-worker-bee** — nav visuals are owned by them (`nav-top-bottom-left.md`, `nav-icon-customizer.md`).
-- **library-worker-bee** — nav-related feature PRDs (e.g., a custom-menu-items feature) cross-link here.
+- **ux-ui-svelte-worker-bee**: nav visuals are owned by them (`nav-top-bottom-left.md`, `nav-icon-customizer.md`).
+- **library-worker-bee**: nav-related feature PRDs (e.g., a custom-menu-items feature) cross-link here.
 
 ## 8. Pitfalls
 
 - A nav entry both has `routeKey` and `externalHref`. Only one. The sync generator flags this.
 - `labelContentKey` pointing at a `ContentEntry` with no translations for supported locales. Drift.
 - `visibilityRule` copying `{"flag": "…"}` but the flag doesn't exist. Drift.
-- Forgetting `placement` — defaults to empty array and the entry never renders anywhere.
+- Forgetting `placement`: defaults to empty array and the entry never renders anywhere.
 - Making everything `customizable: false`. Tenants need *some* freedom. Coordinate with product.
 
 ## 9. Example

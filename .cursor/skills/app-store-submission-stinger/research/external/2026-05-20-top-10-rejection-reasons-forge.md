@@ -23,7 +23,7 @@ Definitive list of the ten App Review Guidelines that generate the highest rejec
 - Guideline 1.2: "Apple requires content reporting, user blocking, and the ability to filter objectionable material" for UGC apps.
 
 ## Annotations for stinger-forge
-- Each entry maps to a specific guideline section number — exactly what `guides/03-rejection-playbook.md` needs for citation-ready remediation tables.
+- Each entry maps to a specific guideline section number: exactly what `guides/03-rejection-playbook.md` needs for citation-ready remediation tables.
 - The 3.1.1 entry dovetails with `guides/04-iap-setup.md`: IAP violations are in the top 10, confirming the stinger needs a strong IAP compliance section.
 - The 4.0 / 4.2 / 4.3 (minimum functionality / duplicate / spam) cluster deserves its own decision tree: "Is my app a WebView wrapper? Does it duplicate existing apps? Does it generate primarily ads?" These are pre-flight checks.
-- Guideline numbers from this source should be cross-referenced with Apple's current published guidelines before stinger-forge cites them — guideline numbering can shift with major reviews.
+- Guideline numbers from this source should be cross-referenced with Apple's current published guidelines before stinger-forge cites them: guideline numbering can shift with major reviews.

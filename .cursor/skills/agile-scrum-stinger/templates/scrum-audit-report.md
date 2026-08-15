@@ -14,8 +14,8 @@
 [2-3 sentences: Is this team doing Scrum? What is the most important finding? What is the primary recommendation?]
 
 **Overall verdict:**
-- [ ] Scrum — with specific improvements listed below
-- [ ] Scrum variant — [describe the variant: ScrumBan, partial Scrum, etc.]
+- [ ] Scrum, with specific improvements listed below
+- [ ] Scrum variant: [describe the variant: ScrumBan, partial Scrum, etc.]
 - [ ] Framework recommendation: migrate to [Kanban / ScrumBan / Shape Up] because [one sentence]
 
 ---
@@ -116,7 +116,7 @@ List any anti-patterns identified from `guides/05-anti-patterns.md`:
 | AC met and verified | ✓/✗ | ✓/✗ |
 
 **DoD maturity level:** Level [1-4] (see `guides/04-definition-of-done.md`)
-**Recommended next level:** Level [N+1] — [top 2 items to add]
+**Recommended next level:** Level [N+1]: [top 2 items to add]
 
 ---
 

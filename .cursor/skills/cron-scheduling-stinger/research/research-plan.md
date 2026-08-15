@@ -5,7 +5,7 @@
 - **Page budget target:** ~100 pages, distilled to 8-12 source files
 - **Source breadth target:** official docs (Vercel, Cloudflare, GitHub Actions, Healthchecks.io, Cronitor), practitioner blogs, GitHub READMEs (pg_cron, BullMQ), community Q&A
 
-## Initial queries (from the proposal step)
+## Initial queries (from `big-bang-space`)
 
 1. "Distributed cron exactly-once execution 2026"
 2. "Vercel Cron Cloudflare Cron Triggers limits 2026"

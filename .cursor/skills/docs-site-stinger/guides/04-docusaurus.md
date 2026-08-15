@@ -1,4 +1,4 @@
-# Docusaurus v3.10 — Setup and v4-Ready Configuration
+# Docusaurus v3.10: Setup and v4-Ready Configuration
 
 Docusaurus v3.10 (April 2026) is the final v3.x release. v4 is incoming and will require React 19. Start all new Docusaurus projects in v4-ready mode.
 
@@ -82,7 +82,7 @@ This creates `versioned_docs/version-1.0.0/`. Only version when you have a relea
 When v4 ships:
 1. Update React to v19 (`npm install react@19 react-dom@19`).
 2. Remove any direct `@docusaurus/core` peer dep hacks.
-3. Rspack is enabled by default — remove any Webpack plugin customizations.
+3. Rspack is enabled by default: remove any Webpack plugin customizations.
 4. Remove `removeLegacyPostcssConfig` from `future` (it's the default in v4).
 
 See Docusaurus v4 migration guide when released at https://docusaurus.io/docs/migration.

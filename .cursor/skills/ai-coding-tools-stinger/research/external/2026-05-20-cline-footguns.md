@@ -54,4 +54,4 @@ A synthesis of documented Cline (formerly Claude Dev) issues from GitHub as of 2
 
 - `guides/05-footguns.md`: All five failure modes belong here. The Claude Code + Cline clash is particularly important because developers frequently try to use both together.
 - The footguns section should include severity ratings: (1) Claude Code clash = HIGH (blocks all use), (2) file editing reliability = HIGH (data loss risk), (3) context corruption = MEDIUM (recoverable with good habits), (4) terminal conflict = LOW (workaround easy)
-- Cross-reference: The Cursor vs Cline conflict (installing Cline in Cursor IDE, which already has its own agentic system) also deserves mention — Cursor's built-in Composer/Agent makes Cline redundant and occasionally conflicting in Cursor environments
+- Cross-reference: The Cursor vs Cline conflict (installing Cline in Cursor IDE, which already has its own agentic system) also deserves mention: Cursor's built-in Composer/Agent makes Cline redundant and occasionally conflicting in Cursor environments

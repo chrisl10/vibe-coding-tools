@@ -48,22 +48,22 @@ const processor = unified()
 
 ## Remark plugin (mdast) ordering rules
 
-1. `remarkParse` always first — it produces the mdast tree.
-2. `remarkFrontmatter` before `remarkGfm` — frontmatter parsing must happen before GFM processes lines.
-3. `remarkGfm` — GitHub Flavored Markdown: tables, strikethrough, autolinks, task lists.
-4. `remarkMath` — must be BEFORE `remarkRehype`; adds `math` and `inlineMath` mdast nodes.
-5. `remarkDirective` — must be BEFORE any custom directive processor plugins.
-6. Custom remark plugins — after the above, before `remarkRehype`.
+1. `remarkParse` always first; it produces the mdast tree.
+2. `remarkFrontmatter` before `remarkGfm`; frontmatter parsing must happen before GFM processes lines.
+3. `remarkGfm`: GitHub Flavored Markdown: tables, strikethrough, autolinks, task lists.
+4. `remarkMath`: must be BEFORE `remarkRehype`; adds `math` and `inlineMath` mdast nodes.
+5. `remarkDirective`: must be BEFORE any custom directive processor plugins.
+6. Custom remark plugins: after the above, before `remarkRehype`.
 
 ## Rehype plugin (hast) ordering rules
 
-1. `rehypeRaw` — parses raw HTML nodes from mdast into the hast tree (only needed if source contains literal HTML).
-2. `rehypeSanitize` — immediately after `rehypeRaw`. This is non-negotiable for user-authored content.
-3. `rehypeKatex` — processes `math` hast nodes; requires `remarkMath` upstream.
-4. `rehypePrettyCode` / `rehypeExpressiveCode` — syntax highlighting; must come before `rehypeStringify`.
-5. `rehypeSlug` — assigns `id` attributes to heading elements.
-6. `rehypeAutolinkHeadings` — injects anchor links; must come after `rehypeSlug`.
-7. `rehypeStringify` — always last; produces the HTML string.
+1. `rehypeRaw`: parses raw HTML nodes from mdast into the hast tree (only needed if source contains literal HTML).
+2. `rehypeSanitize`: immediately after `rehypeRaw`. This is non-negotiable for user-authored content.
+3. `rehypeKatex`: processes `math` hast nodes; requires `remarkMath` upstream.
+4. `rehypePrettyCode` / `rehypeExpressiveCode`: syntax highlighting; must come before `rehypeStringify`.
+5. `rehypeSlug`: assigns `id` attributes to heading elements.
+6. `rehypeAutolinkHeadings`: injects anchor links; must come after `rehypeSlug`.
+7. `rehypeStringify`: always last; produces the HTML string.
 
 ---
 
@@ -125,7 +125,7 @@ const processor = unified()
   // ...
 ```
 
-In Velite, frontmatter is extracted via the schema definition — no extra plugin needed.
+In Velite, frontmatter is extracted via the schema definition: no extra plugin needed.
 
 ---
 
@@ -133,10 +133,10 @@ In Velite, frontmatter is extracted via the schema definition — no extra plugi
 
 `remark-gfm` adds support for:
 
-- **Tables** — `| col | col |` syntax
-- **Strikethrough** — `~~text~~`
-- **Task lists** — `- [ ] item`, `- [x] done`
-- **Autolinks** — bare URLs become links
-- **Footnotes** — `[^1]` syntax
+- **Tables**: `| col | col |` syntax
+- **Strikethrough**: `~~text~~`
+- **Task lists**: `- [ ] item`, `- [x] done`
+- **Autolinks**: bare URLs become links
+- **Footnotes**: `[^1]` syntax
 
 Without `remark-gfm`, tables render as plain text.

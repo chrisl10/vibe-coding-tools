@@ -24,5 +24,5 @@ Comprehensive ASO strategy guide from AppFollow (major ASO analytics platform), 
 ## Annotations for stinger-forge
 - The weekly/monthly audit cadence framework is directly usable as a recurring-cadence template in `guides/01-aso-strategy.md`.
 - "Use review language to decide what your screenshots should say" is a high-signal tactic: mine existing user reviews to find the vocabulary that converts, then embed that vocabulary in screenshot captions.
-- The localization angle (adapt the promise, not just the words) belongs in a localization subsection of the ASO guide — it's a common developer blind spot.
+- The localization angle (adapt the promise, not just the words) belongs in a localization subsection of the ASO guide: it's a common developer blind spot.
 - No contradictions with other sources; aligns with AppDrift and ScreenMagic sources on keyword relevance discipline.

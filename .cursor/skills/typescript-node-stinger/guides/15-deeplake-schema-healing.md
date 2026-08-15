@@ -1,5 +1,7 @@
 # 15 - Deep Lake Schema & Healing
 
+**Legacy/library case.** Hivemind's Deep Lake schema-healing model. For this repo's actual schema/migration story (Drizzle Kit against Neon Postgres), see `neon-drizzle-stinger`.
+
 The Deep Lake table schemas live in exactly one file: `src/deeplake-schema.ts`. This is the migrations-equivalent discipline. There are no migration files, no `migrate` command - there is one schema definition and a healing pass that brings real tables up to it.
 
 ## One source of truth

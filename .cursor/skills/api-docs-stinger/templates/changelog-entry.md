@@ -4,9 +4,9 @@ Copy this into your `CHANGELOG.md`. Fill in all `{{placeholder}}` values.
 
 ---
 
-## [{{VERSION}}] — {{YYYY-MM-DD}}
+## [{{VERSION}}]: {{YYYY-MM-DD}}
 
-### [BREAKING] {{HTTP_METHOD}} {{PATH}} — {{WHAT_CHANGED}}
+### [BREAKING] {{HTTP_METHOD}} {{PATH}}: {{WHAT_CHANGED}}
 
 **Who is affected:** {{Describe which client patterns will break. Be specific.}}
 **Migration:** {{Step-by-step migration instructions. Include code snippets if helpful.}}
@@ -20,7 +20,7 @@ Copy this into your `CHANGELOG.md`. Fill in all `{{placeholder}}` values.
 
 ---
 
-### Changed: {{HTTP_METHOD}} {{PATH}} — {{WHAT_CHANGED}}
+### Changed: {{HTTP_METHOD}} {{PATH}}: {{WHAT_CHANGED}}
 
 {{Non-breaking change description. If it is actually breaking, move to [BREAKING] above.}}
 
@@ -32,7 +32,7 @@ Copy this into your `CHANGELOG.md`. Fill in all `{{placeholder}}` values.
 
 ---
 
-### Fixed: {{HTTP_METHOD}} {{PATH}} — {{WHAT_WAS_BROKEN}}
+### Fixed: {{HTTP_METHOD}} {{PATH}}: {{WHAT_WAS_BROKEN}}
 
 {{Bug fix description. No migration needed.}}
 

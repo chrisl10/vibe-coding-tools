@@ -1,4 +1,4 @@
-# auth-worker-bee Report — {{YYYY-MM-DD}} — {{slug}}
+# auth-worker-bee Report: {{YYYY-MM-DD}}, {{slug}}
 
 **Project:** _____
 **Mode:** provider-selection / implementation / google-oauth / audit-handoff / migration

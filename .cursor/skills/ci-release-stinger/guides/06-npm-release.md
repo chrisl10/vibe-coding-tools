@@ -1,5 +1,7 @@
 # 06 - npm Release Discipline
 
+> **npm package publishing case (legacy, secondary).** Files allowlist, prepack, pack-check secret-scan, provenance: this whole guide applies only when the artifact IS a published npm package. Not applicable to the SvelteKit-on-Vercel primary case, which has no npm tarball to audit. See `guides/00-principles.md` for the app-vs-package classification.
+
 What ships, and what stops the wrong thing from shipping. This is the analogue of "image hygiene + image scanning" - but for an npm tarball.
 
 ## The `files` allowlist is the ship contract

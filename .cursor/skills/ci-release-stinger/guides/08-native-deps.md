@@ -1,5 +1,7 @@
 # 08 - Native Deps (tree-sitter ABI healing)
 
+> **npm package publishing case (legacy, secondary).** Native-dependency healing on `npm install` is a published-package concern. Not applicable to the SvelteKit-on-Vercel primary case, which has no consumer `npm install` step. See `guides/00-principles.md` for the app-vs-package classification.
+
 Hivemind parses code with tree-sitter, which means native bindings, which means ABI and arch headaches. This guide is the analogue of "make the build reproducible across machines" - but for compiled native modules.
 
 ## Why this exists

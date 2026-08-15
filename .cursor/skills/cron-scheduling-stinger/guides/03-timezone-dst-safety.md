@@ -64,7 +64,7 @@ await queue.add("morning-digest", {}, {
 });
 ```
 
-> **Open question:** GitHub Actions `schedule:` + IANA timezone fall-back handling (second 1:30 AM occurrence) is undocumented. Test explicitly against DST transitions — simulate by setting the host clock to 1:59 AM the night of fall-back.
+> **Open question:** GitHub Actions `schedule:` + IANA timezone fall-back handling (second 1:30 AM occurrence) is undocumented. Test explicitly against DST transitions: simulate by setting the host clock to 1:59 AM the night of fall-back.
 
 ### 4. Idempotency key with scheduled_date (prevents double-firing on fall-back)
 

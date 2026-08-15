@@ -65,7 +65,7 @@ Read these before adding a new one; match their shape.
 
 Two equivalent methods in this repo:
 
-1. **Direct file creation:** write `.cursor/rules/<descriptive-name>.mdc` with the Write tool. Cursor picks it up on the next agent invocation. This is how the Army's rules are maintained.
+1. **Direct file creation:** write `.cursor/rules/<descriptive-name>.mdc` with the Write tool. Cursor picks it up on the next agent invocation. This is how the colony's rules are maintained.
 2. **Settings UI:** Cursor Settings > Rules > "+ Add Rule" (creates the same file).
 
 Name files by concern: `no-em-dashes.mdc`, `respect-agent-work-boundaries.mdc`. Avoid `rules.mdc`, `misc.mdc`.

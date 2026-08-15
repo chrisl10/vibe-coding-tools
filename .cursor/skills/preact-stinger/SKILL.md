@@ -1,11 +1,11 @@
 ---
-name: preact-stinger
-description: Preact 11 specialist skill — signals-based reactivity (v2 API with createModel/useModel), preact/compat migration from React, third-party embed widgets (shadow DOM isolation, IIFE bundles), Astro island integration (client:* directives, >= 5.0.1 useId fix), and Fresh 2.x framework (Deno-native, islands + serializable props). Use when building Preact components, evaluating Preact vs React, migrating from React to Preact, embedding a widget on third-party pages, or working with Astro or Fresh projects. Do NOT use for React architecture in general (react-worker-bee), Next.js App Router configuration (react-worker-bee), or Deno infrastructure beyond Fresh (devops-worker-bee).
+name: "preact-stinger"
+description: "Preact 11 specialist skill: signals-based reactivity (v2 API with createModel/useModel), preact/compat migration from React, third-party embed widgets (shadow DOM isolation, IIFE bundles), Astro island integration (client:* directives, 5.0.1 or newer useId fix), and Fresh 2.x framework (Deno-native, islands + serializable props). Use when building Preact components, evaluating Preact vs React, migrating from React to Preact, embedding a widget on third-party pages, or working with Astro or Fresh projects. Do NOT use for React architecture in general (react-worker-bee), Next.js App Router configuration (react-worker-bee), or Deno infrastructure beyond Fresh (devops-worker-bee)."
 ---
 
 # preact-stinger
 
-Procedural arsenal for `preact-worker-bee` — the Legion Army's Preact 11 specialist. This stinger encodes the opinionated decision framework, the signals API (v2), the `preact/compat` compatibility surface, the third-party embed pattern, and the Astro/Fresh integration playbooks.
+Procedural arsenal for `preact-worker-bee`, the Hive's Preact 11 specialist. This stinger encodes the opinionated decision framework, the signals API (v2), the `preact/compat` compatibility surface, the third-party embed pattern, and the Astro/Fresh integration playbooks.
 
 **First-read priority:** Start with `guides/00-when-to-choose-preact.md`. If you have already classified the scenario, jump to the relevant guide. The research summary is at `research/research-summary.md`.
 
@@ -27,7 +27,7 @@ Do NOT load for:
 - Pure React architecture questions → `react-worker-bee`.
 - Next.js App Router configuration → `react-worker-bee` (and warn: `preact/compat` + App Router is a footgun).
 - Deno DevOps beyond Fresh (deploy configs, Docker, etc.) → `devops-worker-bee`.
-- Design system or token decisions → `ux-ui-worker-bee`.
+- Design system or token decisions → `ux-ui-svelte-worker-bee`.
 
 ---
 
@@ -105,4 +105,4 @@ preact-stinger/
 
 ---
 
-*Forged by `stinger-forge` from `preact-worker-bee-command-brief.md` and `research/`. Part of the Legion AI Tools Factory by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Forged by `stinger-forge` from `preact-worker-bee-command-brief.md` and `research/`. Part of The Hive by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

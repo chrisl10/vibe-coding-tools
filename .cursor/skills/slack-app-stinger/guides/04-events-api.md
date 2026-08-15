@@ -10,7 +10,7 @@
 2. When an event occurs in a workspace where the app is installed, Slack sends an HTTP POST to your request URL.
 3. Your app must respond with HTTP 200 within **3 seconds**.
 4. If no 200 is received, Slack retries up to 3 times with exponential backoff.
-5. Slack delivers events at-least-once — your app must deduplicate using `event_id`.
+5. Slack delivers events at-least-once: your app must deduplicate using `event_id`.
 
 ---
 
@@ -102,7 +102,7 @@ app.event('app_mention', async ({ event, client }) => {
 
 Alternative: database unique constraint on `event_id` with error handling on insert.
 
-Also check the `X-Slack-Retry-Num` header — if present and > 0, the event is a retry:
+Also check the `X-Slack-Retry-Num` header; if present and > 0, the event is a retry:
 
 ```typescript
 // Express example

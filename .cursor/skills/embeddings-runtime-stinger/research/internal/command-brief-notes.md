@@ -16,7 +16,7 @@
 - The dim-must-match-schema constraint (`EMBEDDING_DIMS=768`, `FLOAT4[]` columns).
 
 **Explicitly out of scope (handed to other Bees):**
-- Deep Lake dataset schema-heal mechanics for a dim change -> `deeplake-dataset-worker-bee`.
+- Deep Lake dataset schema-heal mechanics for a dim change -> `vector-store-worker-bee`.
 - API key handling / data-egress review for a hosted embedding option -> `security-worker-bee`.
 - Feature PRD authorship -> `library-worker-bee`.
 
@@ -27,7 +27,7 @@
 3. Justify the ~600MB + CPU before turning embeddings on; measure the lift.
 4. Warm the daemon once; never spawn per request; batch bulk writes.
 5. Match the model to Hivemind recall, not to a broad leaderboard.
-6. Never strand a dim change mid-migration; hand schema execution to deeplake-dataset-worker-bee.
+6. Never strand a dim change mid-migration; hand schema execution to vector-store-worker-bee.
 
 ## Refresh cadence
 

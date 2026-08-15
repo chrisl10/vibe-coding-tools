@@ -8,7 +8,7 @@ Core framing principles for `estimation-worker-bee`. Read this guide before any 
 
 **Forecasting** answers: "When will we finish this, with what probability?" It is a probability statement derived from historical data. Monte Carlo simulation and throughput-based delivery dates are forecasting tools.
 
-Conflating the two is the most common dysfunction. Teams that use story points as date predictors (dividing by velocity to get a date) are performing estimation-as-forecasting — and getting forecasting-quality accuracy from an estimation-quality tool. The inevitable result is schedule overruns, stakeholder distrust, and velocity gaming.
+Conflating the two is the most common dysfunction. Teams that use story points as date predictors (dividing by velocity to get a date) are performing estimation-as-forecasting, and getting forecasting-quality accuracy from an estimation-quality tool. The inevitable result is schedule overruns, stakeholder distrust, and velocity gaming.
 
 ## The commitment trap
 
@@ -46,7 +46,7 @@ When a question crosses into these domains, surface a hand-off to the user rathe
 
 Before writing any recommendation, ground it in this sentence:
 
-> "An estimate is a communication tool for managing uncertainty — it is not a contract, a forecast, or a promise."
+> "An estimate is a communication tool for managing uncertainty; it is not a contract, a forecast, or a promise."
 
 Every advisory should either establish this framing or assume the user already has it established.
 

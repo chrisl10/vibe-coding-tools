@@ -7,7 +7,7 @@ date_retrieved: 2026-05-20
 url: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
 ---
 
-# prefers-color-scheme — MDN Reference (2026)
+# prefers-color-scheme: MDN Reference (2026)
 
 ## Spec
 
@@ -37,13 +37,13 @@ window.matchMedia("(prefers-color-scheme: dark)")
 
 ## Relationship to `next-themes`
 
-`next-themes`'s `enableSystem: true` prop reads this media query via `window.matchMedia`. When `defaultTheme="system"`, the library resolves the initial theme from OS preference and only overrides it when the user explicitly picks a manual theme. The key rule: **system preference is the fallback, not the persisted preference** — never overwrite a user's manual selection with the OS value.
+`next-themes`'s `enableSystem: true` prop reads this media query via `window.matchMedia`. When `defaultTheme="system"`, the library resolves the initial theme from OS preference and only overrides it when the user explicitly picks a manual theme. The key rule: **system preference is the fallback, not the persisted preference**: never overwrite a user's manual selection with the OS value.
 
 ## `color-scheme` CSS property vs. the media query
 
 | Concept | What it is |
 |---------|-----------|
-| `prefers-color-scheme` media query | Reads the OS preference — detection only |
+| `prefers-color-scheme` media query | Reads the OS preference: detection only |
 | `color-scheme` CSS property | Informs browser chrome (scrollbars, form inputs) what scheme to render in |
 
 Both should be used together:

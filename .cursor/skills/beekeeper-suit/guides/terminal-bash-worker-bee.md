@@ -1,68 +1,38 @@
-# Terminal Bash Worker-Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `terminal-bash-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/terminal-bash-worker-bee.md`](../../../agents/terminal-bash-worker-bee.md)
-**Stinger:** [`.cursor/skills/terminal-bash-stinger/`](../../terminal-bash-stinger/)
-**Trigger policy:** proactive
-
----
+# terminal-bash-worker-bee
 
 ## Domain
+Owns the full terminal productivity surface for developers: shell runtime configuration (Bash, Zsh, Fish), modern POSIX-aligned CLI tooling (ripgrep, fd, fzf, bat, eza, zoxide), shell scripting best practices, dotfile architecture, terminal multiplexer setup (tmux, Zellij), and task-automation tooling (just, make). It treats the terminal as a layered stack, shell, interactive tooling, multiplexer, task runner, and advises each layer distinctly.
 
-`terminal-bash-worker-bee` is the terminal-productivity specialist. It owns Bash/Zsh/Fish configuration, modern CLI tools (ripgrep, fd, fzf, bat, eza, zoxide), shell-scripting best practices, dotfile architecture, tmux/Zellij setup, and just/make task automation. It writes portable, safe shell (the `set -euo pipefail` trio, quoted expansions, idempotent dotfiles) and explains the trade-offs of any modern CLI replacement before recommending mass adoption.
+## Paired Stinger
+[terminal-bash-stinger](../../terminal-bash-stinger) - shell audit checklist, the modern CLI tool replacement matrix, shell-scripting safety patterns, tmux/Zellij setup, and just-vs-make automation.
 
 ## Trigger phrases
-
-Route to `terminal-bash-worker-bee` when the user says any of:
-
-- "Improve my dotfiles" / "set up my terminal"
-- "Review this shell script" / "bash scripting best practices" / "bash best practices"
-- "Set up tmux"
-- "Modern CLI tools" / "help me with modern CLI tools"
-- "just vs make"
-
-Or when the request implicitly involves shell configuration, shell scripting, or terminal tooling.
+- "improve my dotfiles"
+- "review this shell script"
+- "set up tmux"
+- "help me with modern CLI tools"
+- "what are bash scripting best practices"
+- "just vs make, which one"
+- "set up my terminal from scratch"
 
 ## Do NOT route when
-
-- The user wants CI/CD pipelines running inside containers (different shell versions, missing tools) - that is `ci-release-worker-bee`.
-- The user wants TypeScript/Node build and packaging - that is `typescript-node-worker-bee` (and the build/CI mechanics are `ci-release-worker-bee`).
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let this one act as backup.
+- The shell script runs inside a Docker container or CI runner image: route to devops-worker-bee.
+- The task runner is for a Python project's build/test pipeline specifically: route to python-worker-bee.
+- The ask is security hardening of shell scripts running in production infrastructure: route to security-worker-bee.
+- The scope exceeds a developer workstation (OS-level system administration, kernel configuration, service management): out of scope, respond inline or ask the user to clarify rather than guessing.
 
 ## Inputs the Bee needs
+- The developer's shell and OS (macOS Bash 3.2 needs an immediate `brew install bash` flag).
+- The existing dotfile or shell script to audit, if reviewing rather than scaffolding fresh.
+- The portability tier needed (POSIX sh, Bash 4+, Zsh, or Fish) if the script targets a constrained environment like Alpine.
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- An audited `.bashrc`/`.zshrc`/`config.fish` with anti-patterns flagged and shell-specific init snippets.
+- A hardened shell script with `set -euo pipefail`, quoted variables, and a cleanup trap.
+- A `.tmux.conf` or `config.kdl`, or a `justfile` migrated from an existing Makefile.
+- A findings report classified High/Medium/Low with copy-paste-ready fixes.
 
-- The shell script, dotfile, or terminal-setup goal in scope.
-- The target shell and environment (Bash-only vs POSIX `sh`, container vs workstation).
-- Optional: the tools they already use (drives replacement recommendations).
-
-If the target is unclear, do not invoke yet - ask what they are configuring.
-
-## Outputs the Bee produces
-
-- Reviewed or authored shell scripts (portable, `set -euo pipefail`, quoted expansions).
-- Idempotent dotfile setups and tmux/Zellij/just/make configurations with trade-offs explained.
-
-## Multi-Bee sequences this Bee participates in
-
-- Escalates CI shell steps running in containers to `ci-release-worker-bee`.
-
-## Critical directives the orchestrator should respect
-
-- **Always check portability before writing Bash-specific syntax** - default to POSIX-safe unless clearly Bash-only.
-- **Never add `set -e` alone** - the `-e -u -o pipefail` trio is the minimum safe guard.
-- **Quote every shell variable expansion** unless deliberately word-splitting.
-- **Always explain the trade-offs when recommending a modern CLI replacement.**
-- **Keep dotfile changes idempotent.**
-- **Escalate to `ci-release-worker-bee` for CI shell steps running in containers.**
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
-
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+## Commonly sequenced with
+- devops-worker-bee: when a reviewed script turns out to run inside CI or a container.
+- python-worker-bee: when the task automation wraps a Python project's build/test pipeline.
+- security-worker-bee: for hardening review of scripts touching production infrastructure.

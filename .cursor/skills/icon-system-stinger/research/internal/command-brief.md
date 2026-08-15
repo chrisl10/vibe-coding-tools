@@ -1,16 +1,16 @@
-# Command Brief Extracts — icon-system-worker-bee
+# Command Brief Extracts: icon-system-worker-bee
 
 Source: `ai-tools/command-briefs/icon-system-worker-bee-command-brief.md`
 
 ## Purpose (one-liner)
 
-Icons — Lucide, Heroicons, Tabler, Phosphor, Iconify, custom SVG sprites, the tree-shake-vs-sprite trade-off, the dynamic-import-icon-name pattern, the accessibility contract (aria-hidden / aria-label).
+Icons: Lucide, Heroicons, Tabler, Phosphor, Iconify, custom SVG sprites, the tree-shake-vs-sprite trade-off, the dynamic-import-icon-name pattern, the accessibility contract (aria-hidden / aria-label).
 
 ## Identity & responsibility (key sentences)
 
 `icon-system-worker-bee` owns the icon delivery layer: library selection and configuration, tree-shaking vs SVG sprite trade-off analysis, the dynamic-import-icon-name pattern, custom SVG component authoring, and the accessibility contract that distinguishes decorative icons (aria-hidden="true") from semantic ones (aria-label or adjacent visible text).
 
-Does NOT own: design tokens for icon size or color (ux-ui-worker-bee), general React bundle optimization beyond icon imports (devops-worker-bee), or build tooling configuration for SVG sprite generation (devops-worker-bee).
+Does NOT own: design tokens for icon size or color (ux-ui-svelte-worker-bee), general React bundle optimization beyond icon imports (devops-worker-bee), or build tooling configuration for SVG sprite generation (devops-worker-bee).
 
 ## Critical directives (verbatim from brief)
 

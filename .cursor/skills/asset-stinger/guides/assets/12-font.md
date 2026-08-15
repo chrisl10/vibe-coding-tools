@@ -1,4 +1,4 @@
-# Guide — `Font` (12)
+# Guide: `Font` (12)
 
 > **Applies to:** font families shipped or loaded by the app, with their allowed weights and fallbacks. Used by the deploying product's theme/font-picker feature for live-preview allow-listing.
 
@@ -29,7 +29,7 @@ All human except `codePath`/`fileHash`.
 
 ## 5. Lifecycle
 
-Standard. Sunset window: 180 days (like tokens — removing a font changes visual output across every tenant using it).
+Standard. Sunset window: 180 days (like tokens: removing a font changes visual output across every tenant using it).
 
 ## 6. Relationships
 
@@ -37,13 +37,13 @@ Standard. Sunset window: 180 days (like tokens — removing a font changes visua
 
 ## 7. Hand-offs
 
-- **ux-ui-worker-bee** — owns the curated font set.
-- **security-worker-bee** — third-party font CDN review.
+- **ux-ui-svelte-worker-bee**: owns the curated font set.
+- **security-worker-bee**: third-party font CDN review.
 
 ## 8. Pitfalls
 
-- Loading a font at runtime that isn't catalogued — theme-validator may reject, or worse, silently allow.
-- Missing `fallbacks` — FOUC and layout shifts.
+- Loading a font at runtime that isn't catalogued: theme-validator may reject, or worse, silently allow.
+- Missing `fallbacks`: FOUC and layout shifts.
 - `allowedForTenants: true` without license permitting redistribution.
 
 ## 9. Example

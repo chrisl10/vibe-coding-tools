@@ -1,4 +1,4 @@
-# Guide 00 — Primitive Selection Matrix
+# Guide 00: Primitive Selection Matrix
 
 Use this guide to select the correct overlay primitive before writing any code. The wrong primitive at the start costs a full rewrite; the right one costs nothing.
 
@@ -22,7 +22,7 @@ Use this guide to select the correct overlay primitive before writing any code. 
 ## Edge cases
 
 ### "I need a dialog that slides in from the side"
-Use Vaul with `direction="right"` (v1.1+). Do NOT use a Dialog with CSS transitions for a side panel — it will fight the focus trap.
+Use Vaul with `direction="right"` (v1.1+). Do NOT use a Dialog with CSS transitions for a side panel; it will fight the focus trap.
 
 ### "I need a small popover, not a full modal"
 Use `@radix-ui/react-popover` or `@radix-ui/react-hover-card`. These do NOT trap focus; they are not modals.

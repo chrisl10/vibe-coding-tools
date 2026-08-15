@@ -7,7 +7,7 @@ relevance: medium
 topic: self-hosting
 ---
 
-# Fontsource — Getting Started
+# Fontsource: Getting Started
 
 ## Summary
 
@@ -25,7 +25,7 @@ Fontsource is an npm-based self-hosting strategy for open-source fonts (1500+ fo
 ## Annotations for stinger-forge
 
 - Fontsource is the recommended self-hosting path when using a bundler (React, Next.js, Vite) and you want npm dependency management. For pure Next.js projects, `next/font/google` is preferred because it also handles `adjustFontFallback` automatically.
-- The Fontsource approach does NOT automatically provide metric-override fallbacks — that remains the developer's responsibility. This distinction should be noted in `guides/04-nextjs-font.md`.
+- The Fontsource approach does NOT automatically provide metric-override fallbacks: that remains the developer's responsibility. This distinction should be noted in `guides/04-nextjs-font.md`.
 - The docs are thin at the intro level. The stinger should link to the Fontsource variable fonts docs (not covered in the intro) for more detail on subsetting configuration.
 - Key difference for stinger: Fontsource packages the font file but does NOT inline `@font-face` rules with `unicode-range` splitting. The developer is responsible for the full `@font-face` stack.
 - Contradiction with web.dev note: web.dev found that CDN-hosted fonts sometimes outperform self-hosted fonts in practice (Web Almanac data). Fontsource's self-hosting advantage is most pronounced when combined with a CDN and HTTP/2.

@@ -1,4 +1,4 @@
-# 17 — Django Security Baseline
+# 17: Django Security Baseline
 
 The non-negotiable settings for production Django. The full security audit hands off to `security-worker-bee`; this guide ensures the floor is in place.
 
@@ -51,15 +51,15 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # True for very sensitive apps
 
 ## Why each setting
 
-- **`DEBUG = False`** — `DEBUG=True` + an exception leaks settings, env vars, SQL trace, request body. Single biggest security mistake.
-- **`SECRET_KEY` from env** — never in code, never in repo. `os.environ["DJANGO_SECRET_KEY"]` raises if unset (fail fast).
-- **`ALLOWED_HOSTS` restrictive** — `["*"]` enables Host-header attacks. Always explicit.
-- **`SECURE_SSL_REDIRECT`** — redirects HTTP to HTTPS. If a load balancer already does this, set anyway as defense-in-depth.
-- **`SECURE_PROXY_SSL_HEADER`** — required when behind a TLS-terminating proxy. Without it, Django thinks every request is HTTP and the SSL redirect creates an infinite loop.
-- **`SESSION_COOKIE_SECURE` / `CSRF_COOKIE_SECURE`** — cookies only sent over HTTPS.
-- **HSTS** — browser refuses HTTP for the configured duration. **One-way**: once set, removal takes weeks for browser caches to expire. Only enable when HTTPS is verified working everywhere. `SECURE_HSTS_PRELOAD=True` adds you to the browser hard-coded list — irreversible without manual delisting.
-- **Argon2** — OWASP-recommended hasher (bcrypt is acceptable; PBKDF2 is fallback). Requires `argon2-cffi` package.
-- **`X_FRAME_OPTIONS = "DENY"`** — prevents clickjacking by refusing iframe embedding.
+- **`DEBUG = False`**: `DEBUG=True` + an exception leaks settings, env vars, SQL trace, request body. Single biggest security mistake.
+- **`SECRET_KEY` from env**: never in code, never in repo. `os.environ["DJANGO_SECRET_KEY"]` raises if unset (fail fast).
+- **`ALLOWED_HOSTS` restrictive**: `["*"]` enables Host-header attacks. Always explicit.
+- **`SECURE_SSL_REDIRECT`**: redirects HTTP to HTTPS. If a load balancer already does this, set anyway as defense-in-depth.
+- **`SECURE_PROXY_SSL_HEADER`**: required when behind a TLS-terminating proxy. Without it, Django thinks every request is HTTP and the SSL redirect creates an infinite loop.
+- **`SESSION_COOKIE_SECURE` / `CSRF_COOKIE_SECURE`**: cookies only sent over HTTPS.
+- **HSTS**: browser refuses HTTP for the configured duration. **One-way**: once set, removal takes weeks for browser caches to expire. Only enable when HTTPS is verified working everywhere. `SECURE_HSTS_PRELOAD=True` adds you to the browser hard-coded list, irreversible without manual delisting.
+- **Argon2**: OWASP-recommended hasher (bcrypt is acceptable; PBKDF2 is fallback). Requires `argon2-cffi` package.
+- **`X_FRAME_OPTIONS = "DENY"`**: prevents clickjacking by refusing iframe embedding.
 
 ## CI / deploy check
 
@@ -70,41 +70,41 @@ DJANGO_SETTINGS_MODULE=config.settings.prod python manage.py check --deploy
 
 Expected output: zero warnings. Common warnings to investigate:
 
-- `security.W004` — HSTS not set
-- `security.W008` — `SECURE_SSL_REDIRECT` not True
-- `security.W009` — short / weak `SECRET_KEY`
-- `security.W018` — `DEBUG=True`
-- `security.W019` — `SECURE_HSTS_INCLUDE_SUBDOMAINS` not set
-- `security.W020` — `ALLOWED_HOSTS` set to `["*"]`
+- `security.W004`: HSTS not set
+- `security.W008`: `SECURE_SSL_REDIRECT` not True
+- `security.W009`: short / weak `SECRET_KEY`
+- `security.W018`: `DEBUG=True`
+- `security.W019`: `SECURE_HSTS_INCLUDE_SUBDOMAINS` not set
+- `security.W020`: `ALLOWED_HOSTS` set to `["*"]`
 
 ## Secrets handling
 
 - **`.env` for local dev**, NEVER committed (`.env` in `.gitignore`).
 - **`.env.example`** documents required variables (placeholder values).
-- **Production secrets via the deploy platform's secret manager** — environment variables injected at boot. Hand off to `devops-worker-bee` for the deploy-side wiring.
+- **Production secrets via the deploy platform's secret manager**: environment variables injected at boot. Hand off to `devops-worker-bee` for the deploy-side wiring.
 - **`scripts/audit-settings-secrets.py`** in this Stinger scans `settings/` for hardcoded secrets.
 
 ## CSRF discipline
 
 - CSRF middleware is on by default. Don't turn it off.
-- Per-view exemption (`@csrf_exempt`) is a finding unless documented. Webhooks are the legitimate use case (Stripe, GitHub, etc.) — and even there, validate the signature.
+- Per-view exemption (`@csrf_exempt`) is a finding unless documented. Webhooks are the legitimate use case (Stripe, GitHub, etc.), and even there, validate the signature.
 - For Ninja: CSRF is enforced on session-authed POSTs by default. Disable per-router only with documented reason.
 
 ## ORM injection prevention
 
-The Django ORM is parameterized — `Model.objects.filter(name=user_input)` is safe. The unsafe paths:
+The Django ORM is parameterized: `Model.objects.filter(name=user_input)` is safe. The unsafe paths:
 
-- **`Model.objects.filter(**user_dict)`** when keys come from user input — restrict keys to a whitelist:
+- **`Model.objects.filter(**user_dict)`** when keys come from user input, restrict keys to a whitelist:
   ```python
   ALLOWED_FILTERS = {"name", "status", "created_at__gte"}
   filters = {k: v for k, v in user_dict.items() if k in ALLOWED_FILTERS}
   Model.objects.filter(**filters)
   ```
-- **`Model.objects.raw("SELECT ... WHERE id = " + user_id)`** — string concatenation. Always parameterize:
+- **`Model.objects.raw("SELECT ... WHERE id = " + user_id)`**, string concatenation. Always parameterize:
   ```python
   Model.objects.raw("SELECT ... WHERE id = %s", [user_id])
   ```
-- **`extra(where=[user_input])`** — same risk. Parameterize.
+- **`extra(where=[user_input])`**: same risk. Parameterize.
 
 ## Webhook signature validation
 
@@ -149,8 +149,8 @@ def stripe_webhook(request: HttpRequest):
 
 ## Handoff to security-worker-bee
 
-- OAuth flow review, RBAC correctness, secret-rotation policy, threat modeling, dependency-vulnerability scanning, penetration test prep — all `security-worker-bee`.
-- Ensuring the baseline above is in place + `check --deploy` clean — this Bee.
+- OAuth flow review, RBAC correctness, secret-rotation policy, threat modeling, dependency-vulnerability scanning, penetration test prep: all `security-worker-bee`.
+- Ensuring the baseline above is in place + `check --deploy` clean: this Bee.
 
 ## Sources
 

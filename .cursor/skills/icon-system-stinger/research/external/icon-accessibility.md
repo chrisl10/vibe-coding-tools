@@ -1,4 +1,4 @@
-# Icon Accessibility — Research Note
+# Icon Accessibility: Research Note
 
 **Source type:** normative  
 **Authority:** high  
@@ -14,8 +14,8 @@ Icons that accompany visible text and add no information beyond the text. The te
 ```tsx
 <svg aria-hidden="true" focusable="false" ...>
 ```
-- `aria-hidden="true"` — hides the icon from the accessibility tree
-- `focusable="false"` — prevents the SVG from being keyboard-focusable in IE/legacy Edge
+- `aria-hidden="true"`: hides the icon from the accessibility tree
+- `focusable="false"`: prevents the SVG from being keyboard-focusable in IE/legacy Edge
 
 **Example:**
 ```tsx
@@ -71,7 +71,7 @@ Clickable icons. The accessible name lives on the interactive element, not the S
 </button>
 ```
 
-## Icon in SVG format — full accessible template
+## Icon in SVG format: full accessible template
 
 ```tsx
 interface IconProps extends SVGProps<SVGSVGElement> {
@@ -97,9 +97,9 @@ function ArrowRightIcon({ title, titleId, ...props }: IconProps) {
 
 ## WCAG references
 
-- WCAG 2.1 SC 1.1.1 (Level A): Non-text content — decorative images must be hidden from AT
-- WCAG 2.1 SC 4.1.2 (Level A): Name, Role, Value — interactive elements must have accessible names
-- WAI-ARIA APG — Icon Button pattern: https://www.w3.org/WAI/ARIA/apg/patterns/button/
+- WCAG 2.1 SC 1.1.1 (Level A): Non-text content, decorative images must be hidden from AT
+- WCAG 2.1 SC 4.1.2 (Level A): Name, Role, Value, interactive elements must have accessible names
+- WAI-ARIA APG, Icon Button pattern: https://www.w3.org/WAI/ARIA/apg/patterns/button/
 
 ## Common failures caught by axe-core
 

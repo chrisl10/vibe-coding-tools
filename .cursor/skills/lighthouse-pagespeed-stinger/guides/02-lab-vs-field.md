@@ -19,7 +19,7 @@
 | Cache state | Always cold | Mixed (new and repeat visitors) |
 | Use for | Debugging and regression detection | Prioritization and real-user impact |
 
-> "As a general rule, if you have both field data and lab data for a given page, field data is what you should use to prioritize your efforts." — `research/external/2026-05-20-lab-vs-field-data-differences.md`
+> "As a general rule, if you have both field data and lab data for a given page, field data is what you should use to prioritize your efforts." (`research/external/2026-05-20-lab-vs-field-data-differences.md`)
 
 ---
 
@@ -44,7 +44,7 @@ TBT measures blocking tasks during page load. INP measures the full interaction 
 
 **A page can have excellent TBT (< 200ms) and still fail INP (> 200ms).**
 
-Why: "This delay counts toward a page's INP because it contributes to the real input latency that users experience. But since this delay is not technically a Long Task, it doesn't affect a page's TBT." — web.dev, `research/external/2026-05-20-lab-vs-field-data-differences.md`
+Why: "This delay counts toward a page's INP because it contributes to the real input latency that users experience. But since this delay is not technically a Long Task, it doesn't affect a page's TBT." (web.dev, `research/external/2026-05-20-lab-vs-field-data-differences.md`)
 
 Real-world example from the research: Discord homepage has 3+ seconds TBT but INP of 81ms. The reverse is also true and more common.
 
@@ -56,8 +56,8 @@ Real-world example from the research: Discord homepage has 3+ seconds TBT but IN
 
 The PageSpeed Insights API response contains two top-level blocks:
 
-1. **`lighthouseResult`** — the full Lighthouse lab audit (score, audits, opportunities)
-2. **`loadingExperience`** — CrUX field data for the URL (p75 LCP, INP, CLS, FCP, TTFB, with GOOD/NEEDS_IMPROVEMENT/POOR category per metric)
+1. **`lighthouseResult`**: the full Lighthouse lab audit (score, audits, opportunities)
+2. **`loadingExperience`**: CrUX field data for the URL (p75 LCP, INP, CLS, FCP, TTFB, with GOOD/NEEDS_IMPROVEMENT/POOR category per metric)
 
 The `loadingExperience` block falls back from URL-level to origin-level if insufficient URL-level CrUX data exists. If even origin-level data is unavailable, the block indicates no data.
 
@@ -82,7 +82,7 @@ GET https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https://examp
 
 **Note:** The CrUX Dashboard was deprecated in November 2025. Migrate to CrUX Vis or BigQuery.
 
-> TODO: open question — confirm whether CrUX Vis is now the official Google-maintained replacement for the Dashboard (needs human verification at https://developer.chrome.com/docs/crux/tools/crux-vis).
+> TODO: open question: confirm whether CrUX Vis is now the official Google-maintained replacement for the Dashboard (needs human verification at https://developer.chrome.com/docs/crux/tools/crux-vis).
 
 ---
 
@@ -93,7 +93,7 @@ When a user reports "Lighthouse says 90 but CrUX says I'm failing":
 1. Pull the PSI API response for the exact URL and strategy (mobile vs desktop).
 2. Compare `lighthouseResult.categories.performance.score` vs `loadingExperience.metrics`.
 3. Identify which specific metric is failing in field data (usually INP, sometimes LCP).
-4. Check if Lighthouse lab score is green because TBT is excellent — but field INP is poor.
+4. Check if Lighthouse lab score is green because TBT is excellent, but field INP is poor.
 5. If LCP diverges: check for cold vs warm cache, geographic variation, bfcache.
 6. Use Chrome DevTools Performance panel with CPU throttling matching Lighthouse settings for deeper lab debugging.
 7. Use `examples/lab-field-reconciliation.md` for a worked walkthrough.
@@ -110,4 +110,4 @@ When a user reports "Lighthouse says 90 but CrUX says I'm failing":
 
 Field data passes a metric if the **p75 (75th percentile)** is in the "Good" bucket. 3 of every 4 user sessions must be Good.
 
-As of April 2026: 56.4% of origins pass all three Core Web Vitals. — `research/external/2026-05-20-crux-release-notes-2026.md`
+As of April 2026: 56.4% of origins pass all three Core Web Vitals. (`research/external/2026-05-20-crux-release-notes-2026.md`)

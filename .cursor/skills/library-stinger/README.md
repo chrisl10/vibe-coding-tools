@@ -2,9 +2,9 @@
 
 This directory holds everything the `library-worker-bee` agent needs to do its job. Organized into three layers: **guides** (workflow rules), **examples** (exemplars to imitate), **templates** (files copied on `initialize`).
 
-> **Agent entry point:** [`.cursor/agents/library-worker-bee.md`](../library-worker-bee.md) (repo-local). The agent reads files from this directory by path; it does not auto-load everything into context.
+> **Agent entry point:** [`.claude/agents/library-worker-bee.md`](../library-worker-bee.md) (repo-local). The agent reads files from this directory by path; it does not auto-load everything into context.
 >
-> **QA authorship is out of scope.** A separate sibling agent - [`quality-worker-bee`](../quality-worker-bee.md) - owns the authorship of QA reports. Reports tied to a PRD land in `library/requirements/<lifecycle>/prd-<###>-<slug>/qa/prd-<###>-<slug>-qa.md`; reports tied to an IRD land in `library/issues/<lifecycle>/ird-<###>-<slug>/qa/ird-<###>-<slug>-qa.md`; standalone audits land in `library/qa/<domain>/<date>-qa-report.md`. This agent still owns the folder structure, numbering invariants, and lifecycle moves, but does not write QA content.
+> **QA authorship is out of scope.** A separate sibling agent, [`quality-worker-bee`](../quality-worker-bee.md), owns QA reports. Reports tied to a PRD land inside that PRD's `qa/` folder; reports tied to an IRD land inside that IRD's `qa/` folder; cross-cutting audits land in `library/requirements/reports/quality/`. This agent still owns folder structure, numbering invariants, and lifecycle moves, but does not write QA content.
 
 ## Directory map
 
@@ -96,11 +96,11 @@ When a user invokes you:
 
 This agent consolidates 4 predecessors; archived at `~/.cursor/archive/`:
 
-- `prd-generator` (was `~/.cursor/agents/prd-generator.md`)
-- `documentation-worker-bee` (was `.cursor/skills/documentation-worker-bee/` in a repo)
-- `issue-worker-bee` (was `.cursor/skills/issue-worker-bee/` in a repo)
-- `backwards-prd` (was `.cursor/skills/backwards-prd/` in a repo)
+- `prd-generator` (was `~/.claude/agents/prd-generator.md`)
+- `documentation-worker-bee`, a prior-generation name now covered by `knowledge-worker-bee`
+- `issue-worker-bee`, a prior-generation name now covered by `library-worker-bee`
+- `backwards-prd` (was `.claude/skills/backwards-prd/` in a repo)
 
-The former `implementation-qa` predecessor is NOT folded in here - it was kept as a sibling and renamed `quality-worker-bee`. See `.cursor/agents/quality-worker-bee.md`.
+The former `implementation-qa` predecessor is NOT folded in here - it was kept as a sibling and renamed `quality-worker-bee`. See `.claude/agents/quality-worker-bee.md`.
 
 Do not read archived sources; the guides in this directory are authoritative.

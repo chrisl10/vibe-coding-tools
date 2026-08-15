@@ -1,9 +1,9 @@
-# DevOps Audit / Design Output — {{project-name}}
+# DevOps Audit / Design Output: {{project-name}}
 
 **Date:** {{YYYY-MM-DD}}
 **Reviewer:** devops-worker-bee
 **Scope:** {{branch / PR / new pipeline / depot migration}}
-**Stack:** {{captured from inventory — Node version, package manager, framework, deploy target, existing Depot wiring, scan tooling}}
+**Stack:** {{captured from inventory, Node version, package manager, framework, deploy target, existing Depot wiring, scan tooling}}
 
 ---
 
@@ -45,19 +45,19 @@ Ratings: Solid / Drifting / Needs work
 
 ### Must-fix ({{count}})
 
-1. **`{{file:line}}`** — {{one-line summary}}
-   - Reason: {{citation — guide section + research note or external URL}}
+1. **`{{file:line}}`**: {{one-line summary}}
+   - Reason: {{citation, guide section + research note or external URL}}
    - Fix: {{specific change}}
 
 2. ...
 
 ### Should-refactor ({{count}})
 
-1. **`{{file:line}}`** — ...
+1. **`{{file:line}}`**: ...
 
 ### Style ({{count}})
 
-1. **`{{file:line}}`** — ...
+1. **`{{file:line}}`**: ...
 
 ## Metrics captured (where available)
 
@@ -74,15 +74,15 @@ Ratings: Solid / Drifting / Needs work
 
 ## Cross-Bee handoffs
 
-- [ ] `security-worker-bee` — {{if any secret-leak / CVE / token-scope concern surfaced}}
-- [ ] `db-worker-bee` — {{if migration step needs authoring or schema-level concern flagged}}
-- [ ] `library-worker-bee` — {{if pipeline change is large enough to warrant PRD authoring}}
-- [ ] `quality-worker-bee` — {{post-implementation verification}}
-- [ ] `react-worker-bee` — {{if Node version / workspace decisions affect the React app}}
+- [ ] `security-worker-bee`: {{if any secret-leak / CVE / token-scope concern surfaced}}
+- [ ] `db-worker-bee`: {{if migration step needs authoring or schema-level concern flagged}}
+- [ ] `library-worker-bee`: {{if pipeline change is large enough to warrant PRD authoring}}
+- [ ] `quality-worker-bee`: {{post-implementation verification}}
+- [ ] `react-worker-bee`: {{if Node version / workspace decisions affect the React app}}
 
 ## Recommended next steps
 
-1. {{highest-leverage fix — e.g., "pin all actions to SHA via scripts/pin-actions-to-sha.sh"}}
+1. {{highest-leverage fix, e.g., "pin all actions to SHA via scripts/pin-actions-to-sha.sh"}}
 2. {{next}}
 3. {{next}}
 

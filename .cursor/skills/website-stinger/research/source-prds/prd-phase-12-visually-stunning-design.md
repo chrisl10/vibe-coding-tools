@@ -1,6 +1,6 @@
 # Phase 12: Visually Stunning Business Website Design
 
-> **Site Template Guide** — PRD Phase 12 of 12
+> **Site Template Guide**: PRD Phase 12 of 12
 
 ---
 
@@ -8,17 +8,17 @@
 
 ### Goals
 
-Establish the CSS token architecture, fluid typography, Svelte-native motion (replacing Framer Motion), dark mode via `mode-watcher`, and visual enhancement via the three Svelte animation libraries. All visual decisions are CSS custom properties — single source of truth.
+Establish the CSS token architecture, fluid typography, Svelte-native motion (replacing Framer Motion), dark mode via `mode-watcher`, and visual enhancement via the three Svelte animation libraries. All visual decisions are CSS custom properties: single source of truth.
 
 Svelte animation library references:
-- [sv-animations (Magic UI ported to Svelte)](https://sv-animations.vercel.app/magic/docs/components/animated-beam) — 50+ components, CLI install via shadcn-svelte
-- [Aceternity UI Svelte](https://aceternity.sveltekit.io/components) — Svelte ports of Aceternity components (3D Card, Lamp, Tracing Beam, Spotlight)
-- [animation-svelte](https://animation-svelte.vercel.app/) — Svelte Luxe + Magic UI + Indie UI components using `motion-sv`
+- [sv-animations (Magic UI ported to Svelte)](https://sv-animations.vercel.app/magic/docs/components/animated-beam): 50+ components, CLI install via shadcn-svelte
+- [Aceternity UI Svelte](https://aceternity.sveltekit.io/components): Svelte ports of Aceternity components (3D Card, Lamp, Tracing Beam, Spotlight)
+- [animation-svelte](https://animation-svelte.vercel.app/): Svelte Luxe + Magic UI + Indie UI components using `motion-sv`
 
 ### Scope
 
 **In scope:**
-- `apps/web/src/app.css` — full CSS token architecture with `.dark` inversion
+- `apps/web/src/app.css`: full CSS token architecture with `.dark` inversion
 - `mode-watcher` for dark mode (replaces `next-themes`)
 - `shadcn-svelte` component library initialization
 - `svelte/transition` + `svelte/animate` for entrance and stagger animations
@@ -27,7 +27,7 @@ Svelte animation library references:
 - OG image: static `/og-default.png` at 1200×630px
 
 **Out of scope:**
-- Brand identity decisions (colors, typography — user-provided)
+- Brand identity decisions (colors, typography, user-provided)
 - Custom illustration or photography
 - 3D rendering or WebGL effects
 
@@ -41,7 +41,7 @@ Svelte animation library references:
 
 ## User Stories
 
-### Story 1 — Visitor: Consistent Visual Language
+### Story 1: Visitor: Consistent Visual Language
 
 > As a **Visitor**, I want the website to use a consistent color palette, spacing scale, and typography across all pages so that it feels professionally designed.
 
@@ -51,7 +51,7 @@ Svelte animation library references:
 - All font sizes use fluid `clamp()` expressions from a defined type scale
 - No hardcoded pixel or hex values outside `app.css`
 
-### Story 2 — Visitor: Dark Mode
+### Story 2: Visitor: Dark Mode
 
 > As a **Visitor**, I want the site to respect my system dark mode preference automatically, with the ability to toggle manually, so that I can read comfortably in my preferred environment.
 
@@ -63,7 +63,7 @@ Svelte animation library references:
 - Preference persists across sessions (localStorage via `mode-watcher`)
 - No component-level dark mode conditionals (only token-level)
 
-### Story 3 — Visitor: Accessible Motion
+### Story 3: Visitor: Accessible Motion
 
 > As a **Visitor** with vestibular disorders, I want all animations to be disabled when I have `prefers-reduced-motion: reduce` set so that I can browse without discomfort.
 
@@ -72,7 +72,7 @@ Svelte animation library references:
 - `svelte/transition` animations respect the zeroed-out duration
 - No animation plays when `prefers-reduced-motion: reduce` is set
 
-### Story 4 — Developer: At Least One Svelte Animation Library Component
+### Story 4: Developer: At Least One Svelte Animation Library Component
 
 > As a **Developer**, I want to use a pre-built animated component from one of the three Svelte animation libraries (sv-animations, Aceternity Svelte, animation-svelte) so that the site has a memorable, high-quality visual element without building it from scratch.
 
@@ -138,24 +138,24 @@ Best components for business sites: **Animated Beam** (integrations section), **
 ### Aceternity UI Svelte (copy-paste)
 
 Access component source from [aceternity.sveltekit.io/components](https://aceternity.sveltekit.io/components). Key components:
-- **Background Beams** — hero background
-- **Spotlight** — hero highlight effect
-- **Lamp Effect** — section header
-- **Moving Border** — button highlight
-- **Tracing Beam** — long-form content scroll indicator
+- **Background Beams**: hero background
+- **Spotlight**: hero highlight effect
+- **Lamp Effect**: section header
+- **Moving Border**: button highlight
+- **Tracing Beam**: long-form content scroll indicator
 
 Verify Svelte 5 compatibility before using. Some components may use Svelte 4 reactive syntax.
 
 ### animation-svelte (motion-sv)
 
 Access from [animation-svelte.vercel.app](https://animation-svelte.vercel.app/). Key collections:
-- **Svelte Luxe** — dark-mode card backgrounds, animated borders, shine effects
-- **Svelte Magic UI** — Orbiting Circles, Animated Beam port, Ripple, Meteors
-- **Indie UI** — professional UI components with subtle motion
+- **Svelte Luxe**: dark-mode card backgrounds, animated borders, shine effects
+- **Svelte Magic UI**: Orbiting Circles, Animated Beam port, Ripple, Meteors
+- **Indie UI**: professional UI components with subtle motion
 
 ---
 
-## Dark Mode — mode-watcher
+## Dark Mode: mode-watcher
 
 ```svelte
 <!-- In +layout.svelte -->

@@ -22,13 +22,13 @@ Escalate to MTProto when you need to:
 | High-volume message history extraction | No | Yes |
 
 **Do NOT escalate for:**
-- Regular bot features (commands, keyboards, payments) — Bot API handles these
+- Regular bot features (commands, keyboards, payments): Bot API handles these
 - Adding guest mode responses (Bot API 10.0 supports this via `answerGuestQuery`)
-- Posting messages as a bot — Bot API handles this
+- Posting messages as a bot: Bot API handles this
 
 ---
 
-## Telethon (Python) — recommended MTProto library
+## Telethon (Python): recommended MTProto library
 
 Telethon is the most widely-used Python MTProto library. It provides a high-level async interface for user account and bot-account MTProto access.
 
@@ -70,7 +70,7 @@ client = TelegramClient(
 
 ---
 
-## TDLib (C library with JSON interface) — for production-grade use
+## TDLib (C library with JSON interface): for production-grade use
 
 TDLib is Telegram's official C library that powers all official Telegram clients. It is:
 - More stable than Telethon for high-load production use

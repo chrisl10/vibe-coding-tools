@@ -1,4 +1,4 @@
-# Guide 02 — Toast vs Notification Taxonomy
+# Guide 02: Toast vs Notification Taxonomy
 
 Before selecting a primitive, classify the feedback event. The wrong classification produces UX failures that are invisible in development but damaging in production.
 
@@ -8,7 +8,7 @@ Before selecting a primitive, classify the feedback event. The wrong classificat
 
 ## The four-tier taxonomy
 
-### Tier 1 — Ephemeral feedback (toast)
+### Tier 1: Ephemeral feedback (toast)
 
 **What:** Auto-dismissing, non-blocking feedback for completed actions.
 **Primitive:** Sonner `toast()`, `toast.success()`, `toast.info()`
@@ -16,9 +16,9 @@ Before selecting a primitive, classify the feedback event. The wrong classificat
 **User action required:** No
 **Examples:** "Changes saved", "Link copied", "File uploaded"
 
-Toasts are `role="status"` by default in Sonner — a polite live region that waits for the user to finish their current task before announcing.
+Toasts are `role="status"` by default in Sonner: a polite live region that waits for the user to finish their current task before announcing.
 
-### Tier 2 — Confirmational / destructive (alert dialog)
+### Tier 2: Confirmational / destructive (alert dialog)
 
 **What:** An overlay that requires an explicit user decision before an action proceeds.
 **Primitive:** Radix `AlertDialog`
@@ -26,9 +26,9 @@ Toasts are `role="status"` by default in Sonner — a polite live region that wa
 **User action required:** Yes (confirm or cancel)
 **Examples:** "Delete this item? This cannot be undone.", "Overwrite the existing file?"
 
-AlertDialog is `role="alertdialog"` — an assertive live region that interrupts the screen reader immediately.
+AlertDialog is `role="alertdialog"`: an assertive live region that interrupts the screen reader immediately.
 
-### Tier 3 — Contextual side panel (drawer)
+### Tier 3: Contextual side panel (drawer)
 
 **What:** Supplemental content that appears alongside the main view without blocking it completely.
 **Primitive:** Vaul `Drawer`
@@ -36,10 +36,10 @@ AlertDialog is `role="alertdialog"` — an assertive live region that interrupts
 **User action required:** No (but can stay open indefinitely)
 **Examples:** Filter panel, detail view, shopping cart, navigation drawer
 
-### Tier 4 — Ambient persistent status (notification center)
+### Tier 4: Ambient persistent status (notification center)
 
 **What:** A persistent tray of past events the user can review at their leisure.
-**Primitive:** Custom (popover + list) — out of scope for this stinger's primitives
+**Primitive:** Custom (popover + list), out of scope for this stinger's primitives
 **Duration:** Persists across sessions until cleared
 **User action required:** No
 **Examples:** Activity feed, inbox, system alerts
@@ -122,11 +122,11 @@ toast.error('Upload failed. Check your connection and try again.', {
 
 | Sonner call | role | Screen reader behavior |
 |---|---|---|
-| `toast()` | `status` | Polite — waits for current task |
+| `toast()` | `status` | Polite: waits for current task |
 | `toast.success()` | `status` | Polite |
 | `toast.info()` | `status` | Polite |
 | `toast.warning()` | `status` | Polite |
-| `toast.error()` | `alert` | Assertive — interrupts immediately |
+| `toast.error()` | `alert` | Assertive: interrupts immediately |
 
 ---
 

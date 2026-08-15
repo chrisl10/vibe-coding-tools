@@ -11,23 +11,23 @@ Do not use em dashes (`—`, U+2014) or en dashes (`–`, U+2013) in any prose w
 
 Pick the punctuation that matches the relationship between the clauses:
 
-- **Comma** — brief pause or parenthetical
+- **Comma**: brief pause or parenthetical
   - BAD: `Legion is fast — and signed.`
   - GOOD: `Legion is fast, and signed.`
 
-- **Colon** — elaboration or definition
+- **Colon**: elaboration or definition
   - BAD: `Legion has one job — find leaks.`
   - GOOD: `Legion has one job: find leaks.`
 
-- **Parentheses** — aside
+- **Parentheses**: aside
   - BAD: `Legion — a senior team in a box — signs everything.`
   - GOOD: `Legion (a senior team in a box) signs everything.`
 
-- **Period** — two independent thoughts
+- **Period**: two independent thoughts
   - BAD: `Connect your repo — get a signed report in minutes.`
   - GOOD: `Connect your repo. Get a signed report in minutes.`
 
-- **Semicolon** — two related independent clauses
+- **Semicolon**: two related independent clauses
   - BAD: `Scanners run in isolation — every container self-destructs.`
   - GOOD: `Scanners run in isolation; every container self-destructs.`
 

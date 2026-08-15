@@ -6,7 +6,8 @@
  *   2. WIRE    - lay down the bundle, write the host config.
  *   3. CONVERGE - re-running install must be idempotent.
  *
- * Replace all TODO markers. See guides/01-capability-detection-install.md.
+ * Replace all TODO markers. See guides/04-capability-detection-and-degradation.md and
+ * examples/case-study-hivemind-six-host-installer.md §2 for this pattern worked concretely.
  */
 
 import { existsSync } from "node:fs";

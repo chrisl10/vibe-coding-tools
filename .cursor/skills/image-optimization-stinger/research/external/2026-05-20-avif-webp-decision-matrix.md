@@ -44,7 +44,7 @@ date_accessed: 2026-05-20
 
 ### CDN Approach (Recommended)
 
-Configure Cloudflare Polish, Cloudinary, or Imgix to serve AVIF automatically based on the browser's `Accept` header — no `<picture>` element needed when your CDN handles format negotiation.
+Configure Cloudflare Polish, Cloudinary, or Imgix to serve AVIF automatically based on the browser's `Accept` header: no `<picture>` element needed when your CDN handles format negotiation.
 
 ```
 Accept: image/avif,image/webp,*/*
@@ -56,8 +56,8 @@ Provides the concrete comparison numbers the Command Brief requires ("Cite a spe
 
 ## Direct Quotes / Data Points
 
-- "AVIF: Coverage is around 93–95% of global browsers as of early 2026"
+- "AVIF: Coverage is around 93-95% of global browsers as of early 2026"
 - "WebP: effectively 97%+ of global browsers"
 - "For most production websites today, AVIF is safe to serve as the primary format with a WebP or JPEG fallback."
 - "AVIF encoding is 5-10x slower than WebP, which makes it impractical for real-time user uploads unless you encode asynchronously."
-- Browser support table: "WebP: ~94% | AVIF: ~97%" (note: some sources invert these — the consensus is AVIF 93-95%, WebP 97-98%)
+- Browser support table: "WebP: ~94% | AVIF: ~97%" (note: some sources invert these: the consensus is AVIF 93-95%, WebP 97-98%)

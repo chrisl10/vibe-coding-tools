@@ -1,22 +1,22 @@
-# Research Plan — react-stinger
+# Research Plan: react-stinger
 
 **Bee:** react-worker-bee
 **Forged:** 2026-04-24
 
 ## Open questions from the brief
 
-1. Is React Native in scope? (Defer — out of scope for v1; note in `guides/00-principles.md`.)
-2. Dedicated Pages Router -> App Router migration guide? (Defer — short sidebar in `11-server-components.md` with pointer to Next.js migration docs.)
+1. Is React Native in scope? (Defer: out of scope for v1; note in `guides/00-principles.md`.)
+2. Dedicated Pages Router -> App Router migration guide? (Defer: short sidebar in `11-server-components.md` with pointer to Next.js migration docs.)
 3. Catalog opinionation level? (**Resolved: opinionated per command brief.** "Use X, not Y" with reasoning.)
 4. Future TanStack-dedicated Bee? (Out of scope; note in `13-ecosystem-catalog.md`.)
 
 ## Authoritative sources to consult
 
 ### Primary (must fetch directly)
-- https://github.com/alan2207/bulletproof-react — entire `docs/` folder
-- https://github.com/enaqx/awesome-react — the curated list
-- https://react.dev — React 19 reference
-- https://react.dev/learn — opinionated docs
+- https://github.com/alan2207/bulletproof-react: entire `docs/` folder
+- https://github.com/enaqx/awesome-react: the curated list
+- https://react.dev: React 19 reference
+- https://react.dev/learn: opinionated docs
 
 ### React 19 / Compiler
 - https://react.dev/blog/2024/12/05/react-19 (React 19 release notes)

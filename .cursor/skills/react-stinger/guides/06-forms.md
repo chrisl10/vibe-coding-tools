@@ -1,4 +1,4 @@
-# 06 — Forms
+# 06: Forms
 
 Source: `research/2026-04-24-forms-rhf-zod.md`, `research/2026-04-24-react-19-actions-hooks.md`.
 
@@ -89,7 +89,7 @@ function SubmitButton() {
 
 ## Share schemas
 
-The Zod schema is defined **once** and imported by both the client (React Hook Form resolver) and the server (Server Action validation). This is the canonical "validate at the boundary twice — client for UX, server for security" pattern.
+The Zod schema is defined **once** and imported by both the client (React Hook Form resolver) and the server (Server Action validation). This is the canonical "validate at the boundary twice: client for UX, server for security" pattern.
 
 ## Optimistic UI on lists
 
@@ -130,11 +130,11 @@ See `apps/react-vite/src/components/ui/form/` in bulletproof-react for a referen
 
 ## Common findings
 
-> **[Must-fix]** `src/features/signup/SignupForm.tsx:1` — controlled `useState` per field with manual `onChange`. Replace with React Hook Form. Re-render cost per keystroke is a performance regression under load. See `guides/06-forms.md §canonical-react-18`.
+> **[Must-fix]** `src/features/signup/SignupForm.tsx:1`: controlled `useState` per field with manual `onChange`. Replace with React Hook Form. Re-render cost per keystroke is a performance regression under load. See `guides/06-forms.md §canonical-react-18`.
 
-> **[Must-fix]** `app/login/actions.ts:3` — Server Action accepts `formData` without parsing. Add Zod `safeParse`. See `guides/11-server-components.md §server-actions`.
+> **[Must-fix]** `app/login/actions.ts:3`: Server Action accepts `formData` without parsing. Add Zod `safeParse`. See `guides/11-server-components.md §server-actions`.
 
-> **[Should-refactor]** `src/features/search/SearchForm.tsx:5` — Yup schema where the rest of the app uses Zod. Converge on Zod for consistency.
+> **[Should-refactor]** `src/features/search/SearchForm.tsx:5`: Yup schema where the rest of the app uses Zod. Converge on Zod for consistency.
 
 ## Example in action
 

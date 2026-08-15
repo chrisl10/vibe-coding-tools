@@ -1,6 +1,6 @@
 # retrospective-stinger
 
-The procedural arsenal for `retrospective-worker-bee`, the Legion Army's retrospective facilitator and follow-through enforcer.
+The procedural arsenal for `retrospective-worker-bee`, the Hive's retrospective facilitator and follow-through enforcer.
 
 This stinger exists because most retrospectives produce boards, not behavior change. The research anchor: only 50% of retro action items ever get completed (survey of 419 professionals, 2026). The formats are well-understood; the failure modes are structural (no owner, no deadline, no accountability loop) and psychological (teams that don't feel safe won't be honest). This stinger encodes the fixes.
 

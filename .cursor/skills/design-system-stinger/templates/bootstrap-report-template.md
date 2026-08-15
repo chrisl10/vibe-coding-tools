@@ -1,9 +1,9 @@
-# Bootstrap Report — {{Product Name}}
+# Bootstrap Report: {{Product Name}}
 
 **Date:** {{YYYY-MM-DD}}
 **Starter kit used:** {{glass-on-beige | flat-modern | editorial-serif | other}}
 **Target folder:** `{{path/to/ux-ui-folder/}}`
-**Companion Bee:** `ux-ui-worker-bee`
+**Companion Bee:** `ux-ui-svelte-worker-bee`
 
 ## Interview summary
 
@@ -36,16 +36,16 @@ Total size: ~{{n}} KB across {{n}} files.
 
 ## Migration ledger
 
-{{If greenfield: "N/A — greenfield, no pre-existing CSS to migrate."
+{{If greenfield: "N/A, greenfield, no pre-existing CSS to migrate."
 
 If migration:
 - Files/components to refactor: {{n}}
 - Hex values promoted to tokens: {{n}}
 - Inline `style={{}}` occurrences to eliminate: {{n}}
-- Estimated refactor duration (handled by `ux-ui-worker-bee`): {{weeks}}
+- Estimated refactor duration (handled by `ux-ui-svelte-worker-bee`): {{weeks}}
 }}
 
-## Open questions handed to ux-ui-worker-bee
+## Open questions handed to ux-ui-svelte-worker-bee
 
 - {{any loose ends for the companion Bee}}
 
@@ -63,9 +63,9 @@ Typical list: palette hexes, one or two added tokens, a renamed utility.}}
 
 ## Next steps
 
-- [ ] `ux-ui-worker-bee` ownership confirmed in `README.md`.
+- [ ] `ux-ui-svelte-worker-bee` ownership confirmed in `README.md`.
 - [ ] Companion Bee stub authored (if not already present) at
-      `.cursor/agents/ux-ui-worker-bee.md`.
+      `.claude/agents/ux-ui-svelte-worker-bee.md`.
 - [ ] Migration backlog seeded in the host repo's
-      `library/qa/ux-ui/<date>-migration-backlog.md` (if migration scope).
+      `library/requirements/reports/ux-ui/<date>-migration-backlog.md` (if migration scope).
 - [ ] Status table in `README.md` updated after first code-alignment PR.

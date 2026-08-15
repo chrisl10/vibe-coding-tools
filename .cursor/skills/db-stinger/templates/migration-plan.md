@@ -1,4 +1,4 @@
-# Migration Plan — {{slug}}
+# Migration Plan: {{slug}}
 
 **Date:** {{YYYY-MM-DD}}
 **Author:** db-worker-bee
@@ -15,11 +15,11 @@
 ## Risk classification
 
 - **Largest affected table:** {{N}} rows
-- **Expand-backfill-contract required?** {{yes / no — and why}}
+- **Expand-backfill-contract required?** {{yes / no, and why}}
 - **Estimated worst-case lock duration:** {{seconds}}
 - **Replication impact:** {{e.g., slot lag, downstream consumers, logical replication}}
 
-## Phase 1 — Expand
+## Phase 1: Expand
 
 | DDL | Lock class | Duration estimate | Notes |
 |---|---|---|---|
@@ -33,7 +33,7 @@
 - [ ] `\d {{table}}` shows new column / index.
 - [ ] `pg_stat_user_indexes` shows index built (`indisvalid = true`).
 
-## Phase 2 — Backfill
+## Phase 2: Backfill
 
 ```sql
 -- Batched backfill
@@ -64,7 +64,7 @@ END $$;
 - [ ] Row count of `{{new_col}} IS NOT NULL` matches expected.
 - [ ] Constraint validated.
 
-## Phase 3 — Contract
+## Phase 3: Contract
 
 | DDL | Lock class | Notes |
 |---|---|---|
@@ -99,9 +99,9 @@ EXPLAIN (ANALYZE, BUFFERS) {{representative query}};
 
 ## Handoffs
 
-- **`quality-worker-bee`** — runs verification queries above; confirms green.
-- **`security-worker-bee`** — review any new PII columns or RLS impact.
-- **`react-worker-bee`** — flag any data-layer changes the UI must adopt.
+- **`quality-worker-bee`**: runs verification queries above; confirms green.
+- **`security-worker-bee`**: review any new PII columns or RLS impact.
+- **`react-worker-bee`**: flag any data-layer changes the UI must adopt.
 
 ## References
 

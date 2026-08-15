@@ -1,4 +1,4 @@
-# 07 — Performance
+# 07: Performance
 
 Sources: `research/2026-04-24-bulletproof-react-performance.md`, `research/2026-04-24-react-compiler-1.md`.
 
@@ -52,7 +52,7 @@ Adoption:
 1. Add `eslint-plugin-react-compiler`.
 2. Fix all reported violations (mutations, impure functions, conditional hooks).
 3. Enable Compiler in Babel / SWC / Vite config.
-4. Remove manual `useMemo` / `useCallback` / `memo` that Compiler now handles — but **keep** `useMemo` used for effect-dependency stability.
+4. Remove manual `useMemo` / `useCallback` / `memo` that Compiler now handles, but **keep** `useMemo` used for effect-dependency stability.
 
 ### 5. State initializer for expensive init
 
@@ -67,7 +67,7 @@ const [state, setState] = useState(() => expensiveFn());
 
 Runtime CSS-in-JS (emotion, styled-components) generates styles per-render. Prefer Tailwind / vanilla-extract / CSS Modules (build-time).
 
-### 7. Manual memoization — last resort
+### 7. Manual memoization: last resort
 
 Reach for `useMemo` / `useCallback` / `memo` only after measuring. Cite the Profiler run in the PR. Compiler-enabled codebases rarely need them.
 
@@ -92,7 +92,7 @@ Exceeding a budget is a must-fix or requires an ADR justifying the exception.
 2. Find the commit with the longest total time.
 3. Identify the components rendering. Is rendering necessary?
 4. If unnecessary: check for prop identity issues (inline objects/functions, new references each render).
-5. Apply: children-as-optimization, colocation, or — last resort — `useMemo` / `memo`.
+5. Apply: children-as-optimization, colocation, or (last resort) `useMemo` / `memo`.
 
 ## Web Vitals targets
 
@@ -104,11 +104,11 @@ Sized skeletons in Suspense boundaries prevent CLS. See `guides/05-error-handlin
 
 ## Common findings
 
-> **[Must-fix]** `src/app/App.tsx:1` — `import { ChartLibrary } from 'huge-chart-lib'` at the app root; adds 220KB to every page including the login screen. Split to the specific route where it's used. See `scripts/bundle-budget-check.ts` output.
+> **[Must-fix]** `src/app/App.tsx:1`: `import { ChartLibrary } from 'huge-chart-lib'` at the app root; adds 220KB to every page including the login screen. Split to the specific route where it's used. See `scripts/bundle-budget-check.ts` output.
 
-> **[Should-refactor]** `src/features/feed/Feed.tsx:42` — 50+ `useMemo` / `useCallback` wrappers inserted defensively. Enable React Compiler and remove. See `guides/07-performance.md §react-compiler`.
+> **[Should-refactor]** `src/features/feed/Feed.tsx:42`: 50+ `useMemo` / `useCallback` wrappers inserted defensively. Enable React Compiler and remove. See `guides/07-performance.md §react-compiler`.
 
-> **[Must-fix]** `src/components/Page.tsx:10` — `<Suspense fallback={null}>` produces CLS of 0.3. Size the fallback.
+> **[Must-fix]** `src/components/Page.tsx:10`: `<Suspense fallback={null}>` produces CLS of 0.3. Size the fallback.
 
 ## Example in action
 

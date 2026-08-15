@@ -53,6 +53,6 @@ A March 2026 IdeaPlan comparison between Shape Up (Basecamp/37signals) and Scrum
 
 ## Annotations for stinger-forge
 - Shape Up should appear in `guides/06-framework-selection.md` as the fourth option in the decision matrix (after Scrum, ScrumBan, and Kanban).
-- The appetite-based planning concept ("is this worth 6 weeks?") is the most distinctive Shape Up contribution — directly contrasts with story point theology.
+- The appetite-based planning concept ("is this worth 6 weeks?") is the most distinctive Shape Up contribution: directly contrasts with story point theology.
 - The 2026 note about AI tools changing appetite math is a contemporary insight worth preserving.
-- Reference: Basecamp Shape Up book is free at https://basecamp.com/shapeup — stinger-forge should link it.
+- Reference: Basecamp Shape Up book is free at https://basecamp.com/shapeup; stinger-forge should link it.

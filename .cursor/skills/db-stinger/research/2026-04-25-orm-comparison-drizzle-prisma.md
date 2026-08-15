@@ -1,4 +1,4 @@
-# ORM Comparison — Drizzle vs Prisma vs Raw SQL
+# ORM Comparison: Drizzle vs Prisma vs Raw SQL
 
 **Sources:**
 - https://orm.drizzle.team/docs/overview
@@ -20,30 +20,30 @@ There is no universal "best ORM". The right pick is workload-shaped: how SQL-flu
 
 **Strengths:**
 - TypeScript-native; types flow from schema to query without codegen.
-- SQL-fluent — query builder reads like SQL.
+- SQL-fluent: query builder reads like SQL.
 - Tiny bundle; works in edge runtimes, Cloudflare Workers, Bun, Deno.
-- Migrations via `drizzle-kit` — generates SQL diffs from schema; can also run `pgroll`-style migrations manually.
+- Migrations via `drizzle-kit`: generates SQL diffs from schema; can also run `pgroll`-style migrations manually.
 - Full Postgres feature coverage including `jsonb`, arrays, ranges, custom types.
 
 **Weaknesses:**
 - Smaller community than Prisma; fewer plug-and-play patterns.
-- Migration tooling is younger — diff-based, not declarative-state-based.
-- No generated client — types come from inference.
+- Migration tooling is younger: diff-based, not declarative-state-based.
+- No generated client: types come from inference.
 
 **When it wins:** SQL-fluent team, edge / serverless runtime, full Postgres feature usage, type-safety without codegen friction.
 
 ### Prisma ORM
 
 **Strengths:**
-- Industry-leading DX — generated client is autocomplete-perfect.
-- Strong migration tooling — `prisma migrate dev` / `deploy` with shadow database for diffs.
+- Industry-leading DX: generated client is autocomplete-perfect.
+- Strong migration tooling: `prisma migrate dev` / `deploy` with shadow database for diffs.
 - Visual schema (Prisma Studio); ecosystem of plugins.
 - Good for complex relational reads (`include` / `select`).
 
 **Weaknesses:**
 - Codegen step in build; clients are heavy in serverless runtimes.
 - Postgres-specific features (advanced `jsonb` querying, `EXCLUDE`, full range type support) are weaker; team often falls to `$queryRaw`.
-- Connection pooling is tricky — needs `pgbouncer=true` flag in connection string AND specific PgBouncer mode.
+- Connection pooling is tricky: needs `pgbouncer=true` flag in connection string AND specific PgBouncer mode.
 - Historical N+1 risks resolved in v5+ but still a footgun on large `include` graphs.
 
 **When it wins:** team that wants ergonomics over SQL fluency, large schema with many relations, willing to pay for generated client weight.
@@ -58,7 +58,7 @@ There is no universal "best ORM". The right pick is workload-shaped: how SQL-flu
 
 **Weaknesses:**
 - Manual mapping; team must be SQL-fluent.
-- Migrations are plain SQL files — `pgroll` complements well.
+- Migrations are plain SQL files: `pgroll` complements well.
 - No generated client; types are hand-written or inferred via Kysely.
 
 **When it wins:** SQL-native team, small / focused schema, edge runtime, microservice with one or two tables.
@@ -80,8 +80,8 @@ There is no universal "best ORM". The right pick is workload-shaped: how SQL-flu
 The most common N+1 in any ORM is "`include` looks innocent in the query, but each row fans out to its own SELECT". db-worker-bee's responsibility is to **flag the risk in the schema/query layer** and hand off to `react-worker-bee` for the data-layer remediation (RSC vs route loader vs TanStack Query batching).
 
 Common shapes:
-- `users.findMany({ include: { posts: { include: { comments: true } } } })` — Prisma loads posts in one query but comments per post if not careful.
-- `for (const user of users) { const posts = await db.select(...).where(eq(posts.userId, user.id)); }` — classic in-loop fetch.
+- `users.findMany({ include: { posts: { include: { comments: true } } } })`: Prisma loads posts in one query but comments per post if not careful.
+- `for (const user of users) { const posts = await db.select(...).where(eq(posts.userId, user.id)); }`: classic in-loop fetch.
 
 The fix is always either (a) one bigger SQL with a join, (b) a batched IN-list, or (c) a `dataloader`-style coalesce.
 

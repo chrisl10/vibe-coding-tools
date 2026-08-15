@@ -6,7 +6,7 @@ Use this template to specify a new scheduled job before implementation. Fill in 
 
 ## Job identity
 
-**Job name:** <!-- e.g., `daily-session-cleanup` — lowercase, hyphens, descriptive verb + noun -->
+**Job name:** <!-- e.g., `daily-session-cleanup`: lowercase, hyphens, descriptive verb + noun -->
 **Owner:** <!-- team or person responsible for this job -->
 **Created:** <!-- YYYY-MM-DD -->
 
@@ -26,7 +26,7 @@ Use this template to specify a new scheduled job before implementation. Fill in 
 **Purpose (one sentence):** <!-- What problem does this job solve? -->
 **Expected duration (typical):** <!-- e.g., "< 5 seconds" -->
 **Expected duration (max):** <!-- e.g., "30 seconds" -->
-**Platform execution limit:** <!-- e.g., "Vercel Pro: 60s" — must exceed expected max duration -->
+**Platform execution limit:** <!-- e.g., "Vercel Pro: 60s"; must exceed expected max duration -->
 
 ---
 
@@ -34,7 +34,7 @@ Use this template to specify a new scheduled job before implementation. Fill in 
 
 **Data sources accessed:** <!-- e.g., PostgreSQL sessions table, Stripe API -->
 **Environment variables required:**
-- `VAR_NAME` — purpose
+- `VAR_NAME`: purpose
 
 ---
 
@@ -63,13 +63,13 @@ Use this template to specify a new scheduled job before implementation. Fill in 
 
 **Retry on failure:** <!-- Yes (N attempts, exponential backoff) / No (at-most-once platform) -->
 **Dead-letter / exhausted-retry action:** <!-- e.g., "Write to `job_errors` table + Slack alert" -->
-**Decoupled from work?** <!-- Yes (triggers queue) / No (does work inline) — required if max duration > platform limit -->
+**Decoupled from work?** <!-- Yes (triggers queue) / No (does work inline); required if max duration > platform limit -->
 
 ---
 
 ## Monitoring
 
-**Heartbeat check URL:** <!-- e.g., `https://hc-ping.com/<uuid>` — REQUIRED for business-critical jobs -->
+**Heartbeat check URL:** <!-- e.g., `https://hc-ping.com/<uuid>`: REQUIRED for business-critical jobs -->
 **Monitoring platform:** <!-- Healthchecks.io / Cronitor / Self-hosted table / None (justify) -->
 **Grace time configured:** <!-- e.g., "15 minutes" -->
 **Alert channel:** <!-- e.g., "Slack #oncall, email: ops@example.com" -->

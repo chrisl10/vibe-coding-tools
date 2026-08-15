@@ -1,4 +1,4 @@
-# 05 — Performance & Pooling
+# 05: Performance & Pooling
 
 Autovacuum, bloat, `EXPLAIN (ANALYZE, BUFFERS)`, PgBouncer transaction vs session mode.
 
@@ -6,7 +6,7 @@ Source: `research/2026-04-25-autovacuum-explain-pgbouncer.md`.
 
 ## Reading `EXPLAIN (ANALYZE, BUFFERS)`
 
-Always use `(ANALYZE, BUFFERS)` — never just `EXPLAIN`:
+Always use `(ANALYZE, BUFFERS)`: never just `EXPLAIN`:
 
 ```sql
 EXPLAIN (ANALYZE, BUFFERS, FORMAT TEXT)
@@ -47,7 +47,7 @@ SET auto_explain.log_buffers = on;
 
 Defaults assume a 10k-row table; they're wrong for a 100M-row hot table.
 
-**Default:** autovacuum kicks in at `50 + 0.20 * reltuples` dead tuples. For 100M rows, that's 20M dead tuples — bloat by then is severe.
+**Default:** autovacuum kicks in at `50 + 0.20 * reltuples` dead tuples. For 100M rows, that's 20M dead tuples: bloat by then is severe.
 
 **Per-table fix:**
 ```sql
@@ -66,8 +66,8 @@ For tables with frequent `UPDATE`s on indexed columns, also tune `autovacuum_vac
 Run `scripts/bloat-check.sql` periodically. Thresholds:
 
 - < 20% bloat: healthy.
-- 20–50% bloat: investigate; tune autovacuum.
-- > 50% bloat: fire — consider `pg_repack` or `VACUUM FULL` (warning: `VACUUM FULL` takes `ACCESS EXCLUSIVE`).
+- 20-50% bloat: investigate; tune autovacuum.
+- > 50% bloat: fire: consider `pg_repack` or `VACUUM FULL` (warning: `VACUUM FULL` takes `ACCESS EXCLUSIVE`).
 
 `pg_repack` rewrites a bloated table without exclusive locks (extension required). `REINDEX INDEX CONCURRENTLY` rebuilds indexes online (PG 12+).
 
@@ -76,7 +76,7 @@ Run `scripts/bloat-check.sql` periodically. Thresholds:
 | Mode | When | Pitfalls |
 |---|---|---|
 | **Session** (default) | Long-lived clients; `LISTEN/NOTIFY`; session `SET`; prepared statements (PG < 14) | Pool exhaustion under spike; connection-per-client |
-| **Transaction** | Stateless web/serverless; release after each transaction | No cross-transaction state — no `LISTEN/NOTIFY`, no session `SET`, prepared statements broken on PG < 14 |
+| **Transaction** | Stateless web/serverless; release after each transaction | No cross-transaction state: no `LISTEN/NOTIFY`, no session `SET`, prepared statements broken on PG < 14 |
 | **Statement** | Pure read-only stateless | No multi-statement transactions; rarely the right choice |
 
 **Default for serverless:** transaction mode. See `templates/pgbouncer.ini`.
@@ -86,13 +86,13 @@ Run `scripts/bloat-check.sql` periodically. Thresholds:
 pool_size = (max_connections - reserved) / num_pgbouncer_instances
 ```
 
-For a Postgres with `max_connections=200`, reserve 20 for admin, run 4 PgBouncers, give each `pool_size=45`. Each app instance opens 1–2 PgBouncer connections, not N database connections.
+For a Postgres with `max_connections=200`, reserve 20 for admin, run 4 PgBouncers, give each `pool_size=45`. Each app instance opens 1-2 PgBouncer connections, not N database connections.
 
 **Supabase Supavisor** is PgBouncer-compatible with a shared-connection mode that handles transaction-mode prepared statements correctly on PG ≥ 14. **Neon** ships a built-in pooler plus an HTTP/WebSocket serverless driver.
 
 ## Serverless connection survival
 
-Serverless functions cold-start, each opening a connection. A single Lambda app at 1000 RPS opens thousands of connections; Postgres dies at 500–1000.
+Serverless functions cold-start, each opening a connection. A single Lambda app at 1000 RPS opens thousands of connections; Postgres dies at 500-1000.
 
 Mandatory mitigations:
 
@@ -107,18 +107,18 @@ Mandatory mitigations:
 | Parameter | Default | Common tuning |
 |---|---|---|
 | `shared_buffers` | 128MB | 25% of RAM (typical) |
-| `effective_cache_size` | 4GB | 50–75% of RAM |
-| `work_mem` | 4MB | 16–64MB for analytics; per-connection so be careful |
-| `maintenance_work_mem` | 64MB | 1–2GB for `REINDEX` / large `VACUUM` |
+| `effective_cache_size` | 4GB | 50-75% of RAM |
+| `work_mem` | 4MB | 16-64MB for analytics; per-connection so be careful |
+| `maintenance_work_mem` | 64MB | 1-2GB for `REINDEX` / large `VACUUM` |
 | `random_page_cost` | 4.0 | 1.1 for SSDs (default 4 assumes spinning disk) |
 | `effective_io_concurrency` | 1 | 200+ for SSDs |
-| `max_wal_size` | 1GB | 4–16GB for write-heavy |
+| `max_wal_size` | 1GB | 4-16GB for write-heavy |
 
 These belong in any new Postgres deployment's tuning baseline.
 
 ## Cross-references
 
-- `02-indexing.md` — `EXPLAIN` confirms whether the index you added is actually used.
-- `03-migrations.md` — backfills create bloat; tune autovacuum first.
-- `08-serverless-platforms.md` — each managed platform has different default pooler config.
-- `templates/pgbouncer.ini` — sane defaults.
+- `02-indexing.md`: `EXPLAIN` confirms whether the index you added is actually used.
+- `03-migrations.md`: backfills create bloat; tune autovacuum first.
+- `08-serverless-platforms.md`: each managed platform has different default pooler config.
+- `templates/pgbouncer.ini`: sane defaults.

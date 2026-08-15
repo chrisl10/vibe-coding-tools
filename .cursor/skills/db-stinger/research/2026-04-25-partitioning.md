@@ -1,4 +1,4 @@
-# Partitioning — Range, List, Hash
+# Partitioning: Range, List, Hash
 
 **Sources:**
 - https://www.postgresql.org/docs/current/ddl-partitioning.html
@@ -8,7 +8,7 @@
 
 ## Summary
 
-Declarative partitioning (PG 10+) splits a logical table into physical child tables routed by a partition key. The pivotal benefit is partition pruning — the planner skips entire partitions at plan time when the predicate filters by the key. Performance gains compound on tables > 100M rows or > 100 GB.
+Declarative partitioning (PG 10+) splits a logical table into physical child tables routed by a partition key. The pivotal benefit is partition pruning: the planner skips entire partitions at plan time when the predicate filters by the key. Performance gains compound on tables > 100M rows or > 100 GB.
 
 ## When to reach for it
 
@@ -36,7 +36,7 @@ Declarative partitioning (PG 10+) splits a logical table into physical child tab
 ## Attach / detach lifecycle
 
 - `CREATE TABLE next_partition (LIKE parent INCLUDING ALL); -- populate; ALTER TABLE parent ATTACH PARTITION next_partition FOR VALUES FROM (...) TO (...);`
-- Pre-validate the partition's data with a `CHECK` constraint matching the bounds — `ATTACH` then runs metadata-only.
+- Pre-validate the partition's data with a `CHECK` constraint matching the bounds: `ATTACH` then runs metadata-only.
 - `DETACH PARTITION ... CONCURRENTLY` (PG 14+) avoids the long lock.
 
 ## Sub-partitioning
@@ -45,7 +45,7 @@ Range-then-hash (per-month then 8-way hash) is common for very large multi-tenan
 
 ## Tiger Data / TimescaleDB
 
-Hypertables are partitioning + automation: chunks (range partitions on time), continuous aggregates (materialized rollups), retention policies. For time-series, prefer Tiger Data over rolling your own partitions — see `guides/06-special-purpose.md`.
+Hypertables are partitioning + automation: chunks (range partitions on time), continuous aggregates (materialized rollups), retention policies. For time-series, prefer Tiger Data over rolling your own partitions: see `guides/06-special-purpose.md`.
 
 ## Relevance to this stinger
 

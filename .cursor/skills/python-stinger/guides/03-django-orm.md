@@ -1,4 +1,4 @@
-# 03 — Django ORM
+# 03: Django ORM
 
 The canonical access pattern. ORM is default; raw SQL needs a documented reason.
 
@@ -8,16 +8,16 @@ Anchor: `research/2026-05-03-django-orm-n-plus-one.md` + Django optimization doc
 
 ## Hard rules
 
-1. **Use the ORM by default.** Raw SQL is acceptable for performance-critical queries, complex CTEs, vendor-specific features (Postgres window functions, full-text search) — but the file gets a `# raw-sql: <reason>` comment with a real reason.
+1. **Use the ORM by default.** Raw SQL is acceptable for performance-critical queries, complex CTEs, vendor-specific features (Postgres window functions, full-text search), but the file gets a `# raw-sql: <reason>` comment with a real reason.
 2. **N+1 is must-fix.** Cite file:line and the fix.
 3. **`select_related` for forward FK / OneToOne.** SQL JOIN, single query.
 4. **`prefetch_related` for reverse FK / M2M / GenericForeignKey.** Separate query, joined in Python.
 5. **Wrap multi-write operations in `transaction.atomic()`.** Inside a service, the decorator form is canonical.
-6. **`bulk_create([objs])` / `bulk_update([objs], fields=[...])`** for batch writes — never a loop of `.save()` calls.
+6. **`bulk_create([objs])` / `bulk_update([objs], fields=[...])`** for batch writes: never a loop of `.save()` calls.
 
 ## Canonical queryset patterns
 
-### Forward FK / OneToOne — `select_related`
+### Forward FK / OneToOne: `select_related`
 
 ```python
 # BAD — one query for orders, then one query per order to fetch user
@@ -31,7 +31,7 @@ for order in orders:
     print(order.user.email)  # zero additional queries
 ```
 
-### Reverse FK / M2M — `prefetch_related`
+### Reverse FK / M2M: `prefetch_related`
 
 ```python
 # BAD — one query for users, then one query per user to fetch their orders
@@ -45,7 +45,7 @@ for user in users:
     print(user.orders.count())  # zero additional queries (uses prefetch cache)
 ```
 
-### Filtered prefetch — `Prefetch` object with `to_attr`
+### Filtered prefetch: `Prefetch` object with `to_attr`
 
 Calling `.filter()` on an already-prefetched relationship triggers a new query (ignoring the prefetch cache):
 
@@ -64,7 +64,7 @@ for user in users:
     print(user.pending_orders)  # list, no extra query
 ```
 
-### Nested relations — chain field names
+### Nested relations: chain field names
 
 ```python
 # Two-deep FK — single query with two JOINs
@@ -78,7 +78,7 @@ orders = (
 )
 ```
 
-### Trim columns — `.only()` / `.defer()`
+### Trim columns: `.only()` / `.defer()`
 
 ```python
 # Only the columns you'll use — useful on wide tables
@@ -88,7 +88,7 @@ users = User.objects.only("id", "email", "is_active").filter(is_active=True)
 articles = Article.objects.defer("body").filter(published=True)
 ```
 
-Note: `select_related()` and `.only()` interact carefully — you can't `.defer()` the FK field that connects to a `select_related`-ed model.
+Note: `select_related()` and `.only()` interact carefully: you can't `.defer()` the FK field that connects to a `select_related`-ed model.
 
 ### Atomic transactions
 
@@ -159,10 +159,10 @@ The `# raw-sql:` comment is the audit trail. Without it, raw SQL is a finding.
 
 ## Detection
 
-- **`django-debug-toolbar`** in dev — request panel shows every query with timing. Required in any non-trivial Django dev environment.
-- **`nplusone`** package — emits warnings (or raises) on detected N+1 patterns.
-- **`self.assertNumQueries(N)`** in tests — pin the query count for a request.
-- **`scripts/audit-n-plus-one.py`** in this Stinger — heuristic static scan for likely N+1 sites (loops over querysets without `select_related` / `prefetch_related`).
+- **`django-debug-toolbar`** in dev: request panel shows every query with timing. Required in any non-trivial Django dev environment.
+- **`nplusone`** package: emits warnings (or raises) on detected N+1 patterns.
+- **`self.assertNumQueries(N)`** in tests: pin the query count for a request.
+- **`scripts/audit-n-plus-one.py`** in this Stinger: heuristic static scan for likely N+1 sites (loops over querysets without `select_related` / `prefetch_related`).
 
 ## Common findings
 

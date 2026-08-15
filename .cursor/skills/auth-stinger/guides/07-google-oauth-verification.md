@@ -1,4 +1,4 @@
-# 07 — Google OAuth Verification
+# 07: Google OAuth Verification
 
 The real-world journey. Sensitive vs restricted scopes, demo videos, security assessments, and the timeline you should plan for.
 
@@ -18,24 +18,24 @@ Cite https://developers.google.com/identity/protocols/oauth2/policies for policy
 
 ## What verification asks for
 
-1. **Branding verification** — domain ownership (Search Console), app logo (square, no transparency), homepage URL reachable, privacy policy URL covers Google data, terms URL.
-2. **Demo video** — a YouTube (unlisted is fine) recording showing:
+1. **Branding verification**: domain ownership (Search Console), app logo (square, no transparency), homepage URL reachable, privacy policy URL covers Google data, terms URL.
+2. **Demo video**: a YouTube (unlisted is fine) recording showing:
    - The OAuth consent screen appearing.
    - The user granting consent.
    - Each requested scope being used in-app, end-to-end, with the data on screen.
    - The full URL bar visible (so reviewers see the domain).
    - Audio narration is optional but helps reviewer comprehension.
-3. **Per-scope justification** — why each sensitive / restricted scope is necessary. Use `templates/scope-justification-template.md`. "We need it for X feature" is insufficient; describe minimum-data-needed reasoning.
-4. **Security assessment (restricted scopes only)** — independent CASA (Cloud Application Security Assessment) by a Google-approved third-party assessor. Annual. Costs USD $5k–$75k+ depending on scope.
+3. **Per-scope justification**: why each sensitive / restricted scope is necessary. Use `templates/scope-justification-template.md`. "We need it for X feature" is insufficient; describe minimum-data-needed reasoning.
+4. **Security assessment (restricted scopes only)**: independent CASA (Cloud Application Security Assessment) by a Google-approved third-party assessor. Annual. Costs USD $5k-$75k+ depending on scope.
 
 ## Timeline expectations
 
 | Verification step | Realistic timeline |
 |---|---|
-| Branding review | 1–3 weeks |
-| Sensitive scope review | 2–6 weeks |
-| Restricted scope + CASA | 3–6 months end-to-end |
-| Re-review after scope addition | 2–6 weeks |
+| Branding review | 1-3 weeks |
+| Sensitive scope review | 2-6 weeks |
+| Restricted scope + CASA | 3-6 months end-to-end |
+| Re-review after scope addition | 2-6 weeks |
 
 Plan accordingly. Don't promise launch dates with sensitive scopes in production-mode unless verification is already in flight.
 
@@ -68,11 +68,11 @@ You'll get a Google verification email thread. Reply quickly; idle threads slip 
 - **Use Internal mode** if your app is Workspace-only; no verification.
 - **Avoid restricted scopes** unless the feature absolutely needs them. `gmail.readonly` plus server-side processing often suffices for what teams initially scope as `gmail.modify`.
 - **Bundle scopes** at one verification cycle rather than incrementally.
-- **Use OAuth Brand only without scopes** — for sign-in-only (`openid email profile`), no scope verification is needed; brand verification is light.
+- **Use OAuth Brand only without scopes**: for sign-in-only (`openid email profile`), no scope verification is needed; brand verification is light.
 
 ## Re-verification triggers
 
-Once verified, you stay verified — until you:
+Once verified, you stay verified, until you:
 
 - Add a new sensitive or restricted scope.
 - Change ownership of the project.

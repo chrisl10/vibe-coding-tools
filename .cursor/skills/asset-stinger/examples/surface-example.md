@@ -1,6 +1,6 @@
-# Example — `Surface` row
+# Example: `Surface` row
 
-A well-formed glass-card surface. Demonstrates the `tokensConsumed` derivation and the `uxuiBriefRef` linkage to ux-ui-worker-bee's brief.
+A well-formed glass-card surface. Demonstrates the `tokensConsumed` derivation and the `uxuiBriefRef` linkage to ux-ui-svelte-worker-bee's brief.
 
 ## Code
 
@@ -51,7 +51,7 @@ Stylesheet (for generator's `tokensConsumed` extraction):
     "space.4"
   ],
   featureKey: "generic-ui",
-  uxuiBriefRef: "library/knowledge-base/ux-ui/03-components/cards-and-surfaces.md#glass-card",
+  uxuiBriefRef: "library/knowledge/private/ux-ui/03-components/cards-and-surfaces.md#glass-card",
   status: "active",
   environments: ["dev", "staging", "prod"],
   ownerTeam: "ux",
@@ -90,4 +90,4 @@ Stylesheet (for generator's `tokensConsumed` extraction):
 - [x] `depthLevel: glass` aligns with ux-ui brief §2
 - [x] All `tokensConsumed` resolve to `DesignTokenDefinition` rows
 - [x] `uxuiBriefRef` resolves to a real brief section
-- [x] No hex literals — all colors via tokens
+- [x] No hex literals: all colors via tokens

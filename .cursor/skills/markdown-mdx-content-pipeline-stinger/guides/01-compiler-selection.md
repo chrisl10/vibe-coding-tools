@@ -11,7 +11,7 @@ Choose the right MDX compiler before writing any pipeline code. The choice is ne
 - **Use when:** `.mdx` files are Next.js page routes (rendered as full pages, not content fetched at runtime)
 - **Install:** `npm i @next/mdx @mdx-js/loader @mdx-js/react`
 - **Config:** wraps `next.config.mjs` via `createMDX()`
-- **Required:** `mdx-components.tsx` at project root — mandatory for App Router, will not work without it
+- **Required:** `mdx-components.tsx` at project root; mandatory for App Router, will not work without it
 - **Plugin entry point:** `remarkPlugins` and `rehypePlugins` arrays inside `createMDX({ options: {...} })`
 - **Limitations:** less flexible than Velite for content collections with typed frontmatter schemas
 
@@ -41,7 +41,7 @@ export function useMDXComponents(): MDXComponents {
 
 - **Use when:** blog posts, docs pages, any content that needs typed frontmatter schemas and build-time processing
 - **Status:** actively maintained; recommended 2026 replacement for Contentlayer and next-mdx-remote
-- **Turbopack:** safe — uses a prebuild-step pattern in `next.config.mjs`, avoids VeliteWebpackPlugin (Turbopack-incompatible)
+- **Turbopack:** safe: uses a prebuild-step pattern in `next.config.mjs`, avoids VeliteWebpackPlugin (Turbopack-incompatible)
 - **Output:** inert typed JSON/JS module strings; full RSC support; renders at build time with zero client-side overhead
 
 ```javascript
@@ -100,11 +100,11 @@ Plugin chain in velite: configure via `mdx` option in `defineConfig`, same remar
 
 - **Use when:** maximum control is required; dynamic content from a database or API that is compiled at request time (not build time)
 - **Key APIs:**
-  - `compile(source, options)` — returns a VFile with JavaScript
-  - `evaluate(source, options)` — compiles + evaluates; returns `{ default: MDXContent, ... }`
-  - `run(code, options)` — runs a pre-compiled function body
-  - `outputFormat: 'function-body'` — produces a function body string safe to `eval` in sandboxed contexts
-  - `outputFormat: 'program'` (default) — full ESM module output
+  - `compile(source, options)`: returns a VFile with JavaScript
+  - `evaluate(source, options)`: compiles + evaluates; returns `{ default: MDXContent, ... }`
+  - `run(code, options)`: runs a pre-compiled function body
+  - `outputFormat: 'function-body'`: produces a function body string safe to `eval` in sandboxed contexts
+  - `outputFormat: 'program'` (default): full ESM module output
 
 ```typescript
 import { evaluate } from '@mdx-js/mdx'
@@ -130,4 +130,4 @@ const { default: Content } = await evaluate(source, {
 | "migrating from next-mdx-remote" | **Velite** |
 | "existing next-mdx-remote, cannot migrate" | next-mdx-remote v6 (maintain, plan migration) |
 | "Astro docs site" | Platform's built-in MDX integration |
-| "AI chat renderer — user-authored content" | **@mdx-js/mdx** with `function-body` + sanitize |
+| "AI chat renderer, user-authored content" | **@mdx-js/mdx** with `function-body` + sanitize |

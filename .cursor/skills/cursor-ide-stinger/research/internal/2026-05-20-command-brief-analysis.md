@@ -11,7 +11,7 @@ fetched: 2026-05-20
 
 ## Summary
 
-The Command Brief establishes `cursor-ide-worker-bee` as the Legion Army's resident expert on Cursor IDE itself (not on the code Cursor produces). The Bee owns six surface areas: project rules (`.cursorrules` legacy + `.cursor/rules/*.mdc` modern), custom modes, MCP server registration, agent-panel and background-agent workflows, keybindings and productivity patterns, and the `@cursor/sdk` API. The paired Stinger `cursor-ide-stinger` encodes all six areas as a knowledge repository the Bee reads before acting.
+The Command Brief establishes `cursor-ide-worker-bee` as the Hive's resident expert on Cursor IDE itself (not on the code Cursor produces). The Bee owns six surface areas: project rules (`.cursorrules` legacy + `.cursor/rules/*.mdc` modern), custom modes, MCP server registration, agent-panel and background-agent workflows, keybindings and productivity patterns, and the `@cursor/sdk` API. The paired Stinger `cursor-ide-stinger` encodes all six areas as a knowledge repository the Bee reads before acting.
 
 The brief calls for six guide files:
 1. `guides/01-principles.md` - rule file philosophy, alwaysApply vs glob-scoped, context window cost

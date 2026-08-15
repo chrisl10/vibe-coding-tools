@@ -1,4 +1,4 @@
-# Guide — `ContentEntry` (15)
+# Guide: `ContentEntry` (15)
 
 > **Applies to:** every translatable or platform-admin-editable string/block in the app. Button labels, headings, toasts, onboarding paragraphs, legal copy, alt text, nav labels.
 
@@ -20,7 +20,7 @@ Today, strings live as hardcoded literals or ad-hoc JSONs. This catalog consolid
 | `contextNotes` | `String?` | human | yes for translators | disambiguation, tone, usage |
 | `featureKey` | `String?` | human | yes if feature-owned | |
 | `surfaceKey` | `String?` | human | no | where this string appears |
-| `piiLevel` | `enum(none/low/high)` | human | yes | rarely high — only if the string itself is PII |
+| `piiLevel` | `enum(none/low/high)` | human | yes | rarely high, only if the string itself is PII |
 | `editableByPlatformAdmin` | `Boolean @default(true)` | human | yes | whether platform-admins can edit via admin UI |
 
 ## 3. Code location and detection
@@ -49,16 +49,16 @@ Standard. Deprecated content entries fall back to the `key` string if no transla
 
 ## 7. Hand-offs
 
-- **ux-ui-worker-bee** — owns `maxLength` guidance for UI constraints.
-- **library-worker-bee** — legal documents (`kind: rich` for ToS/Privacy) get cross-linked to versioning PRDs.
-- **security-worker-bee** — `piiLevel` classification review.
+- **ux-ui-svelte-worker-bee**: owns `maxLength` guidance for UI constraints.
+- **library-worker-bee**: legal documents (`kind: rich` for ToS/Privacy) get cross-linked to versioning PRDs.
+- **security-worker-bee**: `piiLevel` classification review.
 
 ## 8. Pitfalls
 
-- Shipping a feature without registering its strings — the drift audit flags every `t(...)` call that doesn't resolve.
-- Using `kind: html` when `rich` (structured JSON) would suffice — HTML is harder to translate safely.
-- Missing `contextNotes` for ambiguous strings (e.g., "Post" — verb or noun? Translators need to know).
-- `maxLength` inherited from UI reality but not declared — leads to truncation bugs in German/French.
+- Shipping a feature without registering its strings: the drift audit flags every `t(...)` call that doesn't resolve.
+- Using `kind: html` when `rich` (structured JSON) would suffice; HTML is harder to translate safely.
+- Missing `contextNotes` for ambiguous strings (e.g., "Post": verb or noun? Translators need to know).
+- `maxLength` inherited from UI reality but not declared: leads to truncation bugs in German/French.
 - Embedding dynamic variables (`"Hello " + name`) in code instead of using `kind: template` with `{firstName}`.
 
 ## 9. Example

@@ -1,10 +1,10 @@
-# DB Audit — {{project-name}}
+# DB Audit: {{project-name}}
 
 **Date:** {{YYYY-MM-DD}}
 **Reviewer:** db-worker-bee
 **Scope:** {{schema review / migration plan / indexing audit / performance audit / platform choice}}
 **Postgres version:** {{16 / 17}}
-**ORM / Platform:** {{Drizzle / Prisma / raw — Supabase / Neon / self-hosted}}
+**ORM / Platform:** {{Drizzle / Prisma / raw: Supabase / Neon / self-hosted}}
 
 ---
 
@@ -31,19 +31,19 @@ Ratings: Solid / Drifting / Needs work
 
 ### Must-fix ({{count}})
 
-1. **`{{file:line}}`** — {{one-line summary}}
-   - Reason: {{citation — guide section, research note, or postgresql.org URL}}
+1. **`{{file:line}}`**: {{one-line summary}}
+   - Reason: {{citation: guide section, research note, or postgresql.org URL}}
    - Fix: {{how, with DDL or migration phase}}
 
 2. ...
 
 ### Should-refactor ({{count}})
 
-1. **`{{file:line}}`** — ...
+1. **`{{file:line}}`**: ...
 
 ### Style ({{count}})
 
-1. **`{{file:line}}`** — ...
+1. **`{{file:line}}`**: ...
 
 ## Metrics captured
 
@@ -59,11 +59,11 @@ Ratings: Solid / Drifting / Needs work
 
 ## Cross-Bee handoffs
 
-- [ ] `library-worker-bee` — {{if any schema-PRD updates needed}}
-- [ ] `react-worker-bee` — {{if any N+1 risks at the data-layer edge}}
-- [ ] `security-worker-bee` — {{if any PII / RLS / encryption-at-rest findings}}
-- [ ] `mind-worker-bee` — {{if any pgvector / embedding-storage decisions}}
-- [ ] `quality-worker-bee` — {{post-migration verification queries}}
+- [ ] `library-worker-bee`: {{if any schema-PRD updates needed}}
+- [ ] `react-worker-bee`: {{if any N+1 risks at the data-layer edge}}
+- [ ] `security-worker-bee`: {{if any PII / RLS / encryption-at-rest findings}}
+- [ ] `mind-worker-bee`: {{if any pgvector / embedding-storage decisions}}
+- [ ] `quality-worker-bee`: {{post-migration verification queries}}
 
 ## Recommended next steps
 

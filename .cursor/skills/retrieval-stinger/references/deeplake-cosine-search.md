@@ -27,4 +27,4 @@ In `src/shell/grep-core.ts`, when `SearchOptions.queryEmbedding` is a 768-length
 
 ## Where it sits
 
-This is the semantic half of hybrid recall. It is blended with the lexical (BM25/ILIKE) arm via `deeplake_hybrid_record` (`hybrid-weighting.md`). The dimension and column DDL are owned by deeplake-dataset-worker-bee; the daemon producing the vectors by embeddings-runtime-worker-bee. retrieval-worker-bee owns the query.
+This is the semantic half of hybrid recall. It is blended with the lexical (BM25/ILIKE) arm via `deeplake_hybrid_record` (`hybrid-weighting.md`). The dimension and column DDL are owned by vector-store-worker-bee; the daemon producing the vectors by embeddings-runtime-worker-bee. retrieval-worker-bee owns the query.

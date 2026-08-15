@@ -1,4 +1,4 @@
-# Testing Stack — Vitest + RTL + MSW + Playwright
+# Testing Stack: Vitest + RTL + MSW + Playwright
 
 **Sources:**
 - https://vitest.dev/
@@ -23,11 +23,11 @@
 
 ## Rules
 
-1. **Test behavior, not implementation.** "User clicks Submit, toast appears" — not "state.isLoading flips to true".
+1. **Test behavior, not implementation.** "User clicks Submit, toast appears", not "state.isLoading flips to true".
 2. **MSW over mocking fetch.** Write handlers once; reuse in local dev, Storybook, tests.
-3. **Test accessibility implicitly.** Use `getByRole`, `getByLabelText` — if they fail, accessibility is broken.
+3. **Test accessibility implicitly.** Use `getByRole`, `getByLabelText`; if they fail, accessibility is broken.
 4. **Playwright runs in headless CI; UI mode locally for flaky test debugging.**
-5. **Coverage target: ≥70% statements.** Don't chase 100% — diminishing returns.
+5. **Coverage target: ≥70% statements.** Don't chase 100%: diminishing returns.
 6. **Snapshot tests are a last resort.** They get stale and rarely fail for the right reason.
 
 ## Setup checklist (Vite + React)

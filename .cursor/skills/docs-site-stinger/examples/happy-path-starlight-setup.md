@@ -2,7 +2,7 @@
 
 **Scenario:** An open-source TypeScript library team wants to launch developer docs from scratch. Budget: $0. Team: JS/TS developers. Content: getting-started guide, API reference, concepts. No versioning yet.
 
-**Platform selected:** Starlight (Astro) — per `guides/00-platform-selection.md` Profile A.
+**Platform selected:** Starlight (Astro), per `guides/00-platform-selection.md` Profile A.
 
 ---
 
@@ -14,7 +14,7 @@ Running the decision tree:
 - Hard filters: MkDocs Material eliminated (maintenance mode). GitBook eliminated ($0 budget).
 - Scoring: Starlight scores highest on cost (free), platform health (5), and customization (5).
 - Result: **Starlight** recommended.
-- Trade-off named: v0.x semver — pin versions.
+- Trade-off named: v0.x semver, pin versions.
 - Fallback: Docusaurus v3.10 if React component integration proves necessary.
 
 ### 2. Content structure (guides/01-content-pyramid.md)
@@ -87,7 +87,7 @@ jobs:
 
 ### 5. Search (guides/03-search.md)
 
-Starlight has pagefind built-in. Search is active by default — no extra configuration needed. Verify:
+Starlight has pagefind built-in. Search is active by default: no extra configuration needed. Verify:
 - [ ] Run `npx astro build` locally and confirm `dist/pagefind/` directory exists.
 - [ ] Open `dist/index.html` locally and test search returns correct results.
 

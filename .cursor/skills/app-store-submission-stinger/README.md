@@ -1,6 +1,6 @@
 # app-store-submission-stinger
 
-Operational playbook for `app-store-submission-worker-bee` — the Legion Army's specialist for getting iOS and Android apps through App Store and Google Play review in 2025-2026.
+Operational playbook for `app-store-submission-worker-bee`, the Hive's specialist for getting iOS and Android apps through App Store and Google Play review in 2025-2026.
 
 This Stinger covers App Store Optimization (keywords, screenshots, preview videos), privacy compliance (Apple nutrition labels, PrivacyInfo.xcprivacy, Google data safety forms), rejection diagnosis and remediation, age rating, In-App Purchase configuration (StoreKit 2 / Google Play Billing Library 7+), and realistic timeline expectations for both platforms.
 

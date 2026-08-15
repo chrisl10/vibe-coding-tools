@@ -43,7 +43,7 @@ Continue is the only tool in the comparison set that is fully open source, self-
 
 - No built-in agentic mode by default (relies on the underlying model's tool-use capabilities)
 - UX polish significantly below Cursor or Windsurf
-- No proprietary context engine — context quality depends entirely on the user's configuration
+- No proprietary context engine: context quality depends entirely on the user's configuration
 - Active development but smaller engineering team than commercial alternatives
 
 ## Annotations for stinger-forge
@@ -51,4 +51,4 @@ Continue is the only tool in the comparison set that is fully open source, self-
 - `guides/00-tool-tiers.md`: Continue belongs in "interactive-pair" tier alongside Cursor but occupies the "privacy-first / self-hosted" sub-category
 - `guides/01-selection-rubric.md`: Add a binary branch: "Is the environment air-gapped or privacy-sensitive? → Continue.dev"
 - `guides/03-model-routing.md`: Continue's model config is entirely user-controlled; document the `config.json` structure and recommended model assignments (autocomplete model vs chat model)
-- The JetBrains support is unique — no other tool in the comparison set has first-class JetBrains support
+- The JetBrains support is unique: no other tool in the comparison set has first-class JetBrains support

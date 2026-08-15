@@ -1,4 +1,6 @@
-# Example: Changelog Entry for a Version Bump
+# Worked example (Hivemind-specific): Changelog Entry for a Version Bump
+
+> This is a worked example for one real product (Hivemind), not the general procedure. Read `guides/05-changelog.md` first for the domain-general changelog discipline (impact-first format, Keep a Changelog conventions, and the Conventional-Commits-driven automation alternative); come back here to see the hand-written path applied to a real release.
 
 A worked changelog entry tied to a real `@deeplake/hivemind` version bump.
 

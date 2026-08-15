@@ -1,4 +1,4 @@
-# scripts/ — python-stinger audit scripts
+# scripts/: python-stinger audit scripts
 
 Heuristic / static scans surfaced as quick first-pass findings. Each script is
 non-destructive and prints findings to stdout; combine with `manage.py check`
@@ -22,9 +22,9 @@ for a full audit pass.
 
 ## Severity output
 
-- `error:` — must-fix (block CI).
-- `warning:` — should-refactor (open follow-up).
-- `info:` — informational (style or context).
+- `error:`, must-fix (block CI).
+- `warning:`, should-refactor (open follow-up).
+- `info:`, informational (style or context).
 
 ## Running everything
 

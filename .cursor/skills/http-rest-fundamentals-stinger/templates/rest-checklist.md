@@ -11,10 +11,10 @@ Use this checklist when evaluating whether an API is genuinely RESTful, REST-lik
 | Client-server | UI logic and business logic are separated; server does not push rendering decisions | |
 | Stateless | Every request contains all information needed; no server-side session state between requests | |
 | Cacheable | Responses include Cache-Control and/or ETag; no uncacheable responses without explicit `no-store` | |
-| Uniform interface — resource identification | Resources identified by URIs; no verb-in-URL (/createUser) | |
-| Uniform interface — manipulation via representations | Clients send representations (JSON body); server sends representations | |
-| Uniform interface — self-descriptive | Content-Type present; method conveys the operation | |
-| Uniform interface — HATEOAS | Responses include `_links` or equivalent with next-state transitions | |
+| Uniform interface: resource identification | Resources identified by URIs; no verb-in-URL (/createUser) | |
+| Uniform interface: manipulation via representations | Clients send representations (JSON body); server sends representations | |
+| Uniform interface: self-descriptive | Content-Type present; method conveys the operation | |
+| Uniform interface: HATEOAS | Responses include `_links` or equivalent with next-state transitions | |
 | Layered system | API works correctly behind a proxy or CDN; no headers that break with intermediaries | |
 
 ---

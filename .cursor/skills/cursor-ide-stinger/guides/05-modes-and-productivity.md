@@ -1,6 +1,6 @@
 # Guide 05: Modes and Productivity
 
-Custom modes, the Agents Window, slash commands, and keybindings — the Cursor productivity layer.
+Custom modes, the Agents Window, slash commands, and keybindings: the Cursor productivity layer.
 
 ## Custom modes
 

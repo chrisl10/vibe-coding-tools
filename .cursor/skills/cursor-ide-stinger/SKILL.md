@@ -1,14 +1,14 @@
 ---
-name: cursor-ide-stinger
-description: Equips cursor-ide-worker-bee to own Hivemind's Cursor surface: the Cursor 1.7+ hooks harness (~/.cursor/hooks.json, 6 lifecycle events) wired by src/cli/install-cursor.ts, the first-party VS Code/Cursor extension at harnesses/cursor/extension/, registering the Hivemind MCP server (src/mcp/server.ts) in Cursor, and the .cursor/ Bee Army platform this repo ships (rules .mdc format, agents, skills/Stingers, the-beekeeper/the-smoker commands, model-comparison-matrix). Use when the task touches Cursor hook wiring, .cursor/rules/*.mdc authoring, MCP registration in Cursor, the cursor extension build, or the Army's .cursor/ structure. Do NOT use for code quality of TS source (typescript-node-worker-bee), the MCP protocol internals of server.ts (mcp-protocol-worker-bee), or harness wiring for Claude/Codex/other agents (harness-integration-worker-bee).
+name: "cursor-ide-stinger"
+description: "Equips cursor-ide-worker-bee to own Hivemind's Cursor surface: the Cursor 1.7+ hooks harness (~/.cursor/hooks.json, 6 lifecycle events) wired by src/cli/install-cursor.ts, the first-party VS Code/Cursor extension at harnesses/cursor/extension/, registering the Hivemind MCP server (src/mcp/server.ts) in Cursor, and the .cursor/ colony this repo ships (rules .mdc format, agents, skills/Stingers, the-beekeeper/the-smoker commands, model-comparison-matrix). Use when the task touches Cursor hook wiring, .cursor/rules/*.mdc authoring, MCP registration in Cursor, the cursor extension build, or the colony's .cursor/ structure. Do NOT use for code quality of TS source (typescript-node-worker-bee), the MCP protocol internals of server.ts (mcp-protocol-worker-bee), or harness wiring for Claude/Codex/other agents (harness-integration-worker-bee)."
 license: MIT
 ---
 
 # cursor-ide Stinger
 
-The knowledge repository for `cursor-ide-worker-bee`. Covers Hivemind's real Cursor surface: the Cursor 1.7+ hooks harness, the first-party Cursor extension, registering the Hivemind MCP server in Cursor, and the `.cursor/` Bee Army platform (rules, agents, skills, commands, model matrix) that this repo ships.
+The knowledge repository for `cursor-ide-worker-bee`. Covers Hivemind's real Cursor surface: the Cursor 1.7+ hooks harness, the first-party Cursor extension, registering the Hivemind MCP server in Cursor, and the `.cursor/` colony (rules, agents, skills, commands, model matrix) that this repo ships.
 
-This is the platform knowledge that keeps the Army working inside Cursor: the rules `.mdc` format, the hooks lifecycle, MCP registration, the agents/skills/commands layout, and the cursor harness install.
+This is the platform knowledge that keeps the colony working inside Cursor: the rules `.mdc` format, the hooks lifecycle, MCP registration, the agents/skills/commands layout, and the cursor harness install.
 
 ## When this stinger applies
 
@@ -18,7 +18,7 @@ Load whenever `cursor-ide-worker-bee` is invoked. Typical triggers (any of these
 - "add a `.cursor/rules/*.mdc`" / "fix this rule" / "rule frontmatter" / "alwaysApply / globs"
 - "register the Hivemind MCP server in Cursor" / "mcp.json in Cursor"
 - "the cursor extension" / "harnesses/cursor/extension" / "the dashboard webview / status bar"
-- "the Bee Army layout" / "where do agents/skills/commands live" / "the-beekeeper / the-smoker"
+- "the colony layout" / "where do agents/skills/commands live" / "the-beekeeper / the-smoker"
 - "model-comparison-matrix"
 
 Do NOT load for:
@@ -36,7 +36,7 @@ Read in order before acting:
    - `02` for `.cursor/rules/*.mdc` authoring.
    - `03` for registering the Hivemind MCP server in Cursor.
    - `04` for the Cursor hooks lifecycle (the 6 events + `install-cursor.ts`).
-   - `05` for the `.cursor/` Bee Army layout.
+   - `05` for the `.cursor/` colony layout.
    - `06` for the cursor extension build.
 
 ## Folder layout
@@ -88,7 +88,7 @@ Stinger-level non-negotiables that `cursor-ide-worker-bee` enforces on every inv
 | Hook bundle | `harnesses/cursor/bundle/` | Built hook scripts (`session-start.js`, `capture.js`, `pre-tool-use.js`, `graph-on-stop.js`, `session-end.js`) |
 | Extension | `harnesses/cursor/extension/` | First-party VS Code/Cursor extension: status bar, onboarding, dashboard webview, codebase graph, skill sync |
 | MCP server | `src/mcp/server.ts` | stdio server exposing `hivemind_search` / `hivemind_read` / `hivemind_index` |
-| Bee Army | `.cursor/` | `rules/*.mdc`, `agents/*.md`, `skills/<base>-stinger/`, `commands/`, `model-comparison-matrix.md` |
+| Colony | `.cursor/` | `rules/*.mdc`, `agents/*.md`, `skills/<base>-stinger/`, `commands/`, `model-comparison-matrix.md` |
 
 ### Cursor 1.7+ hooks (`~/.cursor/hooks.json`)
 
@@ -143,4 +143,4 @@ The Hivemind MCP server (`src/mcp/server.ts`, stdio) exposes `hivemind_search`, 
 
 ---
 
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Part of The Hive, curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

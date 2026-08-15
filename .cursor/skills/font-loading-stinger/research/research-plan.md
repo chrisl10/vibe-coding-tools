@@ -5,7 +5,7 @@
 - **Page budget target:** ~15 source files
 - **Source breadth target:** official docs, practitioner blogs, framework changelogs, MDN references
 
-## Initial queries (from the proposal step / Command Brief)
+## Initial queries (from `big-bang-space` / Command Brief)
 1. "Font loading swap optional fallback 2026"
 2. "Variable font subset pipeline 2026"
 3. "Next.js font optimization production 2026"

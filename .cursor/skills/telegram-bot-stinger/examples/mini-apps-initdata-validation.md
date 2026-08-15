@@ -155,7 +155,7 @@ app.listen(3000);
 2. Manual HMAC-SHA256 validation in 6 steps (authoritative algorithm)
 3. `auth_date` expiry check (1-hour window)
 4. `@tma.js/init-data-node` middleware as a cleaner alternative
-5. `findOrCreate` pattern — auto-provision users on first Mini App open
+5. `findOrCreate` pattern: auto-provision users on first Mini App open
 6. `BOT_TOKEN` is only on the server, never exposed to the frontend
 
 ## Edge cases handled

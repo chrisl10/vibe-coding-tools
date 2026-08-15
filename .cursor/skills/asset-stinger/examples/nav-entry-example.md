@@ -1,11 +1,11 @@
-# Example — `NavEntry` rows
+# Example: `NavEntry` rows
 
 Two `NavEntry` rows demonstrating the parent/child hierarchy and the visibility-rule shapes.
 
 ## Context
 
-- Parent: `nav.left.billing` — appears in the left sidebar, gated on `platform_admin` role.
-- Child: `nav.left.billing.addons` — sub-item under Billing, gated on the `billing.addons.enabled` feature flag being in `enabled` state.
+- Parent: `nav.left.billing`: appears in the left sidebar, gated on `platform_admin` role.
+- Child: `nav.left.billing.addons`: sub-item under Billing, gated on the `billing.addons.enabled` feature flag being in `enabled` state.
 
 ## Code
 
@@ -117,7 +117,7 @@ export const navEntries: NavEntryDefinition[] = [
 
 ## Tenant override relationship
 
-A tenant can hide `nav.left.billing.addons` for their own community via a `CustomMenuItem` row with a "hidden" flag or via a per-user preference — but cannot modify the catalog entry itself. Catalog = platform-owned.
+A tenant can hide `nav.left.billing.addons` for their own community via a `CustomMenuItem` row with a "hidden" flag or via a per-user preference, but cannot modify the catalog entry itself. Catalog = platform-owned.
 
 ## Drift check notes
 
@@ -127,7 +127,7 @@ A tenant can hide `nav.left.billing.addons` for their own community via a `Custo
 - The child's `visibilityRule.flag` (`billing.addons.enabled`) must resolve to a real `FeatureFlag.slug`.
 - If the child's `parentKey` points at a deprecated parent, flag in drift audit.
 
-## Checklist (filled — for the child)
+## Checklist (filled, for the child)
 
 - [x] `key` follows `nav.<section>.<slug>` convention
 - [x] `labelContentKey`, `iconKey`, `routeKey` all resolve

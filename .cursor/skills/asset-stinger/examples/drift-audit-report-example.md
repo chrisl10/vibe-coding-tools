@@ -1,4 +1,4 @@
-# Drift Report — 2026-04-23 (nightly)
+# Drift Report: 2026-04-23 (nightly)
 
 **Commit:** abc123def456789
 **Branch / PR:** main
@@ -18,24 +18,24 @@
 
 ## Critical (blocks deploy)
 
-- [ ] **Unregistered (feature-bearing)** — `app/src/features/billing/rebilling.ts` declares `@feature billing.rebilling` but no `Feature` row with `key: billing.rebilling` exists. Proposed action: human registers the feature via `guides/assets/01-feature.md`. Owner: `@billing-team`. PRD reference missing.
+- [ ] **Unregistered (feature-bearing)**: `app/src/features/billing/rebilling.ts` declares `@feature billing.rebilling` but no `Feature` row with `key: billing.rebilling` exists. Proposed action: human registers the feature via `guides/assets/01-feature.md`. Owner: `@billing-team`. PRD reference missing.
 
-- [ ] **Orphaned (active)** — `Feature[key=legacy.quest-mode]` — registry row active but no code detected at `codePath: app/src/features/quest-mode/`. Last seen: 2026-02-10. Proposed action: confirm feature was intentionally removed → mark `deprecated` with `sunsetAt: 2026-07-22`.
+- [ ] **Orphaned (active)**: `Feature[key=legacy.quest-mode]`: registry row active but no code detected at `codePath: app/src/features/quest-mode/`. Last seen: 2026-02-10. Proposed action: confirm feature was intentionally removed → mark `deprecated` with `sunsetAt: 2026-07-22`.
 
-- [ ] **Unlinked (feature-bearing)** — `Route[key=api.v1.referrals.redeem]` has no `featureKey`. Partner-facing route. Owner needs to assign. Blocks deploy.
+- [ ] **Unlinked (feature-bearing)**: `Route[key=api.v1.referrals.redeem]` has no `featureKey`. Partner-facing route. Owner needs to assign. Blocks deploy.
 
 ## Warnings (fix this week)
 
-- [ ] **Stale** — `Surface[key=pinned-chats-grid]` — file hash mismatch. Generator will re-upsert on next sync run.
-- [ ] **Mismatched** — `Page[key=admin-billing-addons]` — human field `planGate: ["pro"]` disagrees with code's `@planGate` annotation `["pro","enterprise"]`. Proposed action: human reviews and reconciles. Generator will not overwrite.
-- [ ] **Mismatched** — `ContentEntry[key=legal.tos.version]` — `editableByPlatformAdmin: false` but admin UI shows this as editable. Code audit required.
-- [ ] (5 more Stale items — shown in the per-asset breakdown below)
+- [ ] **Stale**: `Surface[key=pinned-chats-grid]`: file hash mismatch. Generator will re-upsert on next sync run.
+- [ ] **Mismatched**: `Page[key=admin-billing-addons]`: human field `planGate: ["pro"]` disagrees with code's `@planGate` annotation `["pro","enterprise"]`. Proposed action: human reviews and reconciles. Generator will not overwrite.
+- [ ] **Mismatched**: `ContentEntry[key=legal.tos.version]`: `editableByPlatformAdmin: false` but admin UI shows this as editable. Code audit required.
+- [ ] (5 more Stale items, shown in the per-asset breakdown below)
 
 ## Informational
 
-- [ ] **Debt** — `FeatureFlag[slug=experimental.old-rollout-2024]` — past `expected_removal_at` (2026-01-15), usage_count=0. Eligible for archive on next human pass.
-- [ ] **Debt** — 3 `DesignTokenDefinition` rows deprecated past sunset (180-day window elapsed) with usage_count=0. Eligible for hard delete.
-- [ ] **Orphaned (deprecated)** — `Control[key=button-gradient-legacy]` — deprecated since 2025-10. Last seen 2026-02-01. Staying `archived`; will be purge-eligible after 180 days.
+- [ ] **Debt**: `FeatureFlag[slug=experimental.old-rollout-2024]`: past `expected_removal_at` (2026-01-15), usage_count=0. Eligible for archive on next human pass.
+- [ ] **Debt**: 3 `DesignTokenDefinition` rows deprecated past sunset (180-day window elapsed) with usage_count=0. Eligible for hard delete.
+- [ ] **Orphaned (deprecated)**: `Control[key=button-gradient-legacy]`: deprecated since 2025-10. Last seen 2026-02-01. Staying `archived`; will be purge-eligible after 180 days.
 
 ## Per-asset breakdown
 
@@ -64,7 +64,7 @@
 ### Controls
 | Key | Class | Details | Resolution |
 |---|---|---|---|
-| `button-gradient-legacy` | Orphaned (deprecated) | Informational | — |
+| `button-gradient-legacy` | Orphaned (deprecated) | Informational | - |
 
 ### DesignTokenDefinitions
 | Key | Class | Details | Resolution |
@@ -104,9 +104,9 @@ A human must approve before executing any patch. No auto-apply.
 
 ## Cross-worker-bee pings
 
-- `@ux-ui-worker-bee` — `DesignTokenDefinition[color.legacy-cream]` is past sunset and unused. Please confirm no upcoming brief changes that would revive it.
-- `@security-worker-bee` — `api.v1.referrals.redeem` is partner-facing and currently unlinked. Please include in next partner-contract review.
-- `@library-worker-bee` — `billing.rebilling` has no `prd_ref`. If a PRD exists, please cross-link; if not, a PRD is needed before `active`.
+- `@ux-ui-svelte-worker-bee`: `DesignTokenDefinition[color.legacy-cream]` is past sunset and unused. Please confirm no upcoming brief changes that would revive it.
+- `@security-worker-bee`: `api.v1.referrals.redeem` is partner-facing and currently unlinked. Please include in next partner-contract review.
+- `@library-worker-bee`: `billing.rebilling` has no `prd_ref`. If a PRD exists, please cross-link; if not, a PRD is needed before `active`.
 
 ## Next report
 

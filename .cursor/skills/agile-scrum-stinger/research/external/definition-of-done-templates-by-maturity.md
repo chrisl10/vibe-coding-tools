@@ -11,7 +11,7 @@ stinger: agile-scrum-stinger
 # Definition of Done Templates by Team Maturity
 
 ## Summary
-A practitioner guide providing DoD templates at three maturity levels (startup, standard, enterprise) with concrete checklists. Includes the DoD maturity ladder (Level 1-4) and the critical DoD vs. Acceptance Criteria distinction. Highly actionable — templates can be used directly in the stinger's template folder.
+A practitioner guide providing DoD templates at three maturity levels (startup, standard, enterprise) with concrete checklists. Includes the DoD maturity ladder (Level 1-4) and the critical DoD vs. Acceptance Criteria distinction. Highly actionable: templates can be used directly in the stinger's template folder.
 
 ## Key quotations / statistics
 - "The Definition of Done (DoD) is a checklist of criteria that a user story, feature, or increment must meet before it's considered complete. It's a quality gate — a contract between the team and stakeholders about what 'done' means."
@@ -92,6 +92,6 @@ A practitioner guide providing DoD templates at three maturity levels (startup, 
 
 ## Annotations for stinger-forge
 - The three templates (startup, standard, enterprise) map directly to `templates/definition-of-done-startup.md` and `templates/definition-of-done-enterprise.md` in the stinger folder.
-- The Sprint Stage evolution table is perfect for `guides/04-definition-of-done.md` — it shows DoDs are dynamic, not static.
+- The Sprint Stage evolution table is perfect for `guides/04-definition-of-done.md`: it shows DoDs are dynamic, not static.
 - The DoD maturity ladder should be the opening framework of the DoD guide (what level is your team at?).
 - gitscrum.com/en/best-practices/creating-effective-definition-of-done provides a detailed enterprise DoD with the same structure, confirming community consensus.

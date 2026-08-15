@@ -23,6 +23,6 @@ Official Google Play policy announcement dated April 15, 2026, introducing three
 
 ## Annotations for stinger-forge
 - This is primary source material for `guides/02-compliance-checklist.md`'s Android section. The October 28, 2026 deadlines for contacts and location are actionable compliance blockers that should appear in a dated compliance calendar.
-- The geofencing change (removed as approved foreground services use case) is a breaking change for location-based apps — stinger-forge should surface this prominently.
+- The geofencing change (removed as approved foreground services use case) is a breaking change for location-based apps: stinger-forge should surface this prominently.
 - The health data policy update for Android 16 is especially important for healthcare and wellness apps; flag in the children's/sensitive-category section.
-- Age-Restricted Content clarification: dating/matchmaking as an incidental feature no longer requires Restrict Minor Access if alternative age-gating is implemented — this resolves an edge case that trips up social apps.
+- Age-Restricted Content clarification: dating/matchmaking as an incidental feature no longer requires Restrict Minor Access if alternative age-gating is implemented: this resolves an edge case that trips up social apps.

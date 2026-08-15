@@ -1,8 +1,8 @@
-# 14 — Multimodal Pipeline
+# 14: Multimodal Pipeline
 
 Image / video processors, Deepgram STT, `media-{tenantId}` collection, `MediaSummarizer` recursive map-reduce. Synchronous image path; asynchronous video path.
 
-> **Doc reference:** `library/knowledge-base/ai/multimodal-media-pipeline.md` is canonical.
+> **Doc reference:** `library/knowledge/private/ai/multimodal-media-pipeline.md` is canonical.
 
 ---
 
@@ -11,7 +11,7 @@ Image / video processors, Deepgram STT, `media-{tenantId}` collection, `MediaSum
 | Media | Processing | Timing | Context injection |
 |---|---|---|---|
 | **Image** | Vision model describes → embed description | Sync (< 3s) | Injected into current session working memory immediately |
-| **Video** | ffmpeg + Deepgram + vision + recursive summary → embed | Async (2–15 min) | Available in next coaching session; placeholder shown immediately |
+| **Video** | ffmpeg + Deepgram + vision + recursive summary → embed | Async (2-15 min) | Available in next coaching session; placeholder shown immediately |
 
 Upload contexts (all flow through the same pipeline):
 
@@ -24,7 +24,7 @@ Upload contexts (all flow through the same pipeline):
 
 ---
 
-## 2. Vision provider — OpenRouter
+## 2. Vision provider: OpenRouter
 
 All image and video frame description uses `modelVision` from `PlatformConfig`, routed through OpenRouter. Same API key + base URL as everything else.
 
@@ -48,7 +48,7 @@ await openai.chat.completions.create({
 
 ---
 
-## 3. Schema — `MediaAttachment`
+## 3. Schema: `MediaAttachment`
 
 ```prisma
 model MediaAttachment {
@@ -170,12 +170,12 @@ A push to streaming STT requires the substitution policy (`guides/01-stack-enfor
 | Key | Type | Purpose |
 |---|---|---|
 | `media:queue` | List | Main job queue (LPUSH add, BRPOP consume) |
-| `media:job:{id}` | String (EX 3600) | In-progress lock — prevents duplicates |
-| `media:dlq` | List | Dead letter queue — failed jobs after 3 retries |
+| `media:job:{id}` | String (EX 3600) | In-progress lock: prevents duplicates |
+| `media:dlq` | List | Dead letter queue: failed jobs after 3 retries |
 
 Worker loop:
 
-1. `BRPOP media:queue 30` — block up to 30s.
+1. `BRPOP media:queue 30`: block up to 30s.
 2. Set `media:job:{id}` with NX to prevent duplicates.
 3. Process video pipeline.
 4. Success → `DEL media:job:{id}`.

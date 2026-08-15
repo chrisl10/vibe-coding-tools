@@ -87,7 +87,7 @@ Time investment: No fixed iterations; setup 1-3 days.
 
 ## Annotations for stinger-forge
 
-- Primary source for `guides/06-framework-selection.md` — includes 2026 statistics and a ready-to-use decision matrix
+- Primary source for `guides/06-framework-selection.md`: includes 2026 statistics and a ready-to-use decision matrix
 - The migration path from Scrum → Scrumban is exactly what the framework selection guide needs
 - "45% of Scrum teams add Kanban elements after 2-3 years" is a powerful data point for normalizing hybrid approaches
 - Directly addresses the ScrumBan emergence question from the Command Brief

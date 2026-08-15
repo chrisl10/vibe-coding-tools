@@ -14,7 +14,7 @@ stinger: retrospective-stinger
 
 Published 2025-07-08. RetroFlow's dedicated async retro guide is the most complete single-source treatment of asynchronous retrospectives found in the sweep. It covers decision criteria, tooling, timeline design, facilitation patterns, and team-size scaling.
 
-**Core thesis:** An async retrospective is a structured team reflection conducted over 24-72 hours without a live meeting. It is not a downgrade from synchronous — it produces richer input from distributed teams, gives introverts more space, and scales to large teams better.
+**Core thesis:** An async retrospective is a structured team reflection conducted over 24-72 hours without a live meeting. It is not a downgrade from synchronous: it produces richer input from distributed teams, gives introverts more space, and scales to large teams better.
 
 **Statistic cited:** Remote teams using structured retrospective formats report 28% higher engagement; async approaches amplify this by giving everyone time to reflect. Retrospectives with anonymous feedback see 42% more participation from introverts.
 
@@ -40,7 +40,7 @@ Published 2025-07-08. RetroFlow's dedicated async retro guide is the most comple
 - Check board regularly, ask clarifying questions via comments
 - Group similar items during collection phase
 - Summarise themes before voting begins
-- Drive to action — don't let insights become forgotten notes
+- Drive to action: don't let insights become forgotten notes
 
 **Hybrid approach (recommended for most teams):** Async collection (24-48h) + short sync discussion call (30-45 min) + async action items after.
 
@@ -51,7 +51,7 @@ Published 2025-07-08. RetroFlow's dedicated async retro guide is the most comple
 
 ## Key quotations / statistics
 
-- "An async retrospective is a structured team reflection conducted over 24–72 hours without a live meeting."
+- "An async retrospective is a structured team reflection conducted over 24-72 hours without a live meeting."
 - "Retrospectives with anonymous feedback see 42% more participation from introverts (State of Agile Report)."
 - "Remote teams that use structured retrospective formats report 28% higher engagement."
 - "Run async retros when your team spans multiple time zones that make live meetings unfair, when the team is experiencing meeting fatigue, or when you want to give introverted team members more time to think before responding."

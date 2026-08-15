@@ -1,6 +1,6 @@
 # Vectara NAACL 2025: Is Semantic Chunking Worth the Computational Cost?
 
-> **Status:** **LOAD-BEARING REFERENCE.** Carried over verbatim from the retired `ai-platform-stinger`. This is the canonical defense against vendor "semantic chunking" claims.
+> **Status:** **LOAD-BEARING REFERENCE.** Carried over verbatim from the retired `mind-stinger`. This is the canonical defense against vendor "semantic chunking" claims.
 >
 > **Source:** https://arxiv.org/abs/2410.13070 (Vectara, accepted at NAACL 2025).
 > **Original retrieval date:** 2026-04-25.
@@ -11,21 +11,21 @@
 
 > "Fixed-size chunking consistently performs as well or better than the more computationally expensive semantic chunking methods on realistic document sets."
 
-This contradicts a swath of vendor blog posts (Weaviate, Pinecone, LangChain, others) claiming 15–40% retrieval lifts from semantic chunking. The Vectara paper benchmarks on realistic corpora and finds the lift is at best small and inconsistent, often negative once compute cost is accounted for.
+This contradicts a swath of vendor blog posts (Weaviate, Pinecone, LangChain, others) claiming 15-40% retrieval lifts from semantic chunking. The Vectara paper benchmarks on realistic corpora and finds the lift is at best small and inconsistent, often negative once compute cost is accounted for.
 
 ---
 
 ## Methods compared
 
-1. **Fixed-size chunking** — recursive character splitting at a target chunk length.
-2. **Semantic chunking (Kamradt 2024)** — split between sentences when embedding similarity drops below a threshold.
-3. **Proposed semantic-cluster method** — a Vectara-proposed method.
+1. **Fixed-size chunking**: recursive character splitting at a target chunk length.
+2. **Semantic chunking (Kamradt 2024)**: split between sentences when embedding similarity drops below a threshold.
+3. **Proposed semantic-cluster method**: a Vectara-proposed method.
 
 ---
 
 ## Datasets
 
-Three realistic retrieval tasks, multiple embedding models. The realistic-corpora detail matters — many vendor benchmarks use synthetic or hand-picked content where semantic boundaries align cleanly. Real enterprise corpora rarely have that property.
+Three realistic retrieval tasks, multiple embedding models. The realistic-corpora detail matters: many vendor benchmarks use synthetic or hand-picked content where semantic boundaries align cleanly. Real enterprise corpora rarely have that property.
 
 ---
 
@@ -37,7 +37,7 @@ Across the three tasks and the multiple embedders tested, fixed-size chunking vi
 
 ## Why this matters for the deploying product
 
-the deploying product's `chunkText()` in `knowledge-indexer.ts` produces 500-character chunks with 20% overlap — **fixed-size recursive character splitting**. This is the canonical default per Vectara NAACL 2025.
+the deploying product's `chunkText()` in `knowledge-indexer.ts` produces 500-character chunks with 20% overlap: **fixed-size recursive character splitting**. This is the canonical default per Vectara NAACL 2025.
 
 When a contributor proposes adopting "semantic chunking" because of a vendor blog:
 
@@ -50,8 +50,8 @@ Severity: usually **should-refactor** ("revert to recursive character unless eva
 ## Caveats / what the paper does NOT say
 
 - It does NOT say semantic chunking *never* helps. On specific corpora (long structured documents, certain academic papers), it can.
-- It does NOT cover **contextual retrieval** (Anthropic) or **late chunking** (Jina) — these are different optimizations that can pay off independently.
-- It does NOT eliminate the need for chunking experimentation on your specific corpus — it shifts the prior.
+- It does NOT cover **contextual retrieval** (Anthropic) or **late chunking** (Jina): these are different optimizations that can pay off independently.
+- It does NOT eliminate the need for chunking experimentation on your specific corpus; it shifts the prior.
 
 ---
 
@@ -74,7 +74,7 @@ A migration from 500 chars to ~2000 chars (~512 tokens) would require:
 
 ## Related research notes
 
-- `research/2026-04-25-vectara-naacl-2025-chunking.md` (mind-stinger's research/ folder — same content, different file path)
+- `research/2026-04-25-vectara-naacl-2025-chunking.md` (mind-stinger's research/ folder, same content, different file path)
 - `research/2026-04-25-anthropic-contextual-retrieval.md` (different optimization, can stack with fixed-size chunking)
 
 ---

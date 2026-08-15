@@ -1,4 +1,4 @@
-# Guide 01 — Registration Workflow
+# Guide 01: Registration Workflow
 
 The generic flow that every "register this asset" command follows. Per-asset guides under `guides/assets/NN-<asset>.md` layer details on top of this flow.
 
@@ -20,7 +20,7 @@ The generic flow that every "register this asset" command follows. Per-asset gui
 
 Read the matching per-asset guide for the specifics of steps 3 and 4.
 
-### Step 1 — Identify the asset
+### Step 1: Identify the asset
 
 - What is it? A page, a route, a surface, a control, a token, an icon, a content string, a nav entry, a feature?
 - Does it already have a registry row? Search the registry by `key`, by `code_path`, and by `name`:
@@ -36,17 +36,17 @@ SELECT * FROM features WHERE key = ?
 - If it exists and is `deprecated` → confirm with the human whether to **revive** (`status: active`) or **create a successor** (new key).
 - If it does not exist → continue to Step 2.
 
-### Step 2 — Locate the code
+### Step 2: Locate the code
 
 Every registry row must cite a real code location. Find:
 
-- **`code_path`** — the primary file where the asset is declared (e.g., `app/src/components/CardGlass.tsx`, `api/src/routes/billing/addons.ts`).
-- **`export_name`** — the identifier the code uses (e.g., `CardGlass`, `addonsRoute`, `--radius-md`).
-- **`file_hash`** — SHA-256 of the file at registration time (for the sync generator's drift check).
+- **`code_path`**: the primary file where the asset is declared (e.g., `app/src/components/CardGlass.tsx`, `api/src/routes/billing/addons.ts`).
+- **`export_name`**: the identifier the code uses (e.g., `CardGlass`, `addonsRoute`, `--radius-md`).
+- **`file_hash`**: SHA-256 of the file at registration time (for the sync generator's drift check).
 
 If you cannot locate the code, **stop**. Ask the user or file an issue. Principle 1 is not negotiable.
 
-### Step 3 — Determine registration fields
+### Step 3: Determine registration fields
 
 Open the per-asset guide. Fill the human fields; leave the generator fields for the sync generator to populate (or accept its proposed values unchanged).
 
@@ -75,7 +75,7 @@ Every asset has the **Shared Metadata Block**:
 
 Additional fields come from the per-asset guide.
 
-### Step 4 — Write / upsert the row
+### Step 4: Write / upsert the row
 
 - **New asset:** `INSERT` with `status: draft`. Record in `created_by: <user>` or `<sync-generator@ci>`. Flip to `active` after a human review (see §Quality gate below).
 - **Existing asset (update):** `UPDATE` only human fields you explicitly want to change. Never overwrite generator fields manually.
@@ -83,7 +83,7 @@ Additional fields come from the per-asset guide.
 
 Always wrap in a transaction. Log the change to the registry-specific audit log (`registry_audit_log`) with the before/after diff.
 
-### Step 5 — Verify linkage
+### Step 5: Verify linkage
 
 After the row is written, verify the downstream consequences:
 
@@ -96,7 +96,7 @@ After the row is written, verify the downstream consequences:
 
 Run the sync generator in `--check` mode (see `guides/03-sync-generator-spec.md`). If it reports no drift for this asset, you're done.
 
-## Quality gate — when to flip `draft` → `active`
+## Quality gate: when to flip `draft` → `active`
 
 A row is `active` only when all of the following are true:
 
@@ -119,7 +119,7 @@ If any of these fail, the row stays `draft` until resolved. A `draft` row is inv
 
 - It is not a feature PRD. For feature PRDs, draft content and hand off to `library-worker-bee`.
 - It is not a QA report. For QA, hand off to `quality-worker-bee`.
-- It is not a UX/UI decision. For visual semantics, defer to `ux-ui-worker-bee`.
+- It is not a UX/UI decision. For visual semantics, defer to `ux-ui-svelte-worker-bee`.
 - It is not a security audit. Registry-shaped feature PRDs still need a `security-worker-bee` pass like any other code change.
 
-Keep this guide open while you work on a per-asset guide — they stack.
+Keep this guide open while you work on a per-asset guide; they stack.

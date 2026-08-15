@@ -1,14 +1,14 @@
-# Example 02 — Celery task with retries and idempotency
+# Example 02: Celery task with retries and idempotency
 
 A task that calls an external payment API, marks an order paid, and notifies the user. Demonstrates the full retry / idempotency / `on_commit` shape.
 
 ## The contract
 
-- **Idempotent** — safe to run twice with the same args. Re-runs detect "already done" and exit early.
-- **Atomic** — DB writes are wrapped in `transaction.atomic()` and use `select_for_update()` to prevent race conditions.
-- **Retried** — transient errors (`ConnectionError`, `TimeoutError`, `httpx.HTTPError`) trigger exponential backoff with jitter.
-- **`acks_late=True`** — the worker only acks the message after the task succeeds. Crash mid-task → message redelivered.
-- **`on_commit`** — dispatched only after the parent transaction commits (so the row exists when the worker reads it).
+- **Idempotent**: safe to run twice with the same args. Re-runs detect "already done" and exit early.
+- **Atomic**: DB writes are wrapped in `transaction.atomic()` and use `select_for_update()` to prevent race conditions.
+- **Retried**: transient errors (`ConnectionError`, `TimeoutError`, `httpx.HTTPError`) trigger exponential backoff with jitter.
+- **`acks_late=True`**: the worker only acks the message after the task succeeds. Crash mid-task → message redelivered.
+- **`on_commit`**: dispatched only after the parent transaction commits (so the row exists when the worker reads it).
 
 ## `apps/orders/tasks.py`
 
@@ -198,6 +198,6 @@ celery -A config worker -Q payments -c 4 -l INFO
 - **`autoretry_for` + `retry_backoff` + `retry_jitter`** for declarative retries.
 - **`acks_late=True`** + idempotent body.
 - **`select_for_update()`** to prevent races between concurrent retries.
-- **Permanent vs transient error distinction** — 4xx returns; 5xx raises to trigger autoretry.
+- **Permanent vs transient error distinction**: 4xx returns; 5xx raises to trigger autoretry.
 - **`transaction.on_commit`** wrapping the email side effect.
 - **Provider-side idempotency key** (`idempotency_key=f"order-{order.id}"`) for the external API.

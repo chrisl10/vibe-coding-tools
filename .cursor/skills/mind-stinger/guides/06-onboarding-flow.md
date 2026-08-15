@@ -1,8 +1,8 @@
-# 06 — Onboarding Flow
+# 06: Onboarding Flow
 
 `streamOnboardingChat()` SSE streaming, profile extraction, welcome post generation, attachment handling, tenant-configurable display name. The onboarding agent is a distinct path from the main coaching orchestrator.
 
-> **Doc reference:** `library/knowledge-base/ai/onboarding-ai.md` is canonical.
+> **Doc reference:** `library/knowledge/private/ai/onboarding-ai.md` is canonical.
 
 ---
 
@@ -10,7 +10,7 @@
 
 A single agent ("Onboarding Strategist") running on Llama 3.3 70B via OpenRouter with OpenAI-compatible tool calls. The conversation is streamed over SSE from `streamOnboardingChat()` in `lib/onboarding-ai.ts`.
 
-**Display name** is tenant-configurable via `Tenant.onboardingAgentName` with default `"AI Agent"`. Historically shipped as `"Sally"` — that string is preserved as the tenant-picked default for legacy tenants but must NEVER be hardcoded anywhere.
+**Display name** is tenant-configurable via `Tenant.onboardingAgentName` with default `"AI Agent"`. Historically shipped as `"Sally"`, that string is preserved as the tenant-picked default for legacy tenants but must NEVER be hardcoded anywhere.
 
 The persona ("Onboarding Strategist") and responsibilities are hardcoded; only the display name is admin-editable.
 
@@ -18,7 +18,7 @@ The persona ("Onboarding Strategist") and responsibilities are hardcoded; only t
 
 ## 2. The endpoint
 
-`POST /api/onboarding/chat` — `Content-Type: text/event-stream`.
+`POST /api/onboarding/chat`: `Content-Type: text/event-stream`.
 
 **Request body:**
 
@@ -68,17 +68,17 @@ function buildSystemPrompt(profileContext, tenantName, coachName) {
 
 **Seven numbered responsibilities:**
 
-1. Micro-validation and echoing — rephrase to confirm.
-2. Thought-provoking inquiry — one question at a time.
-3. Iterative guidance — control pace; summarize periodically.
-4. Zero overthinking — keep questions clear; offer examples.
-5. Structured data collection — gather all required fields before generating a post.
-6. Tool usage — `scrape_url` for URLs, `update_profile` to save data, `generate_welcome_post` once data confirmed, `complete_onboarding` when approved.
-7. Welcome post generation — call `generate_welcome_post` once all fields are confirmed.
+1. Micro-validation and echoing: rephrase to confirm.
+2. Thought-provoking inquiry: one question at a time.
+3. Iterative guidance: control pace; summarize periodically.
+4. Zero overthinking: keep questions clear; offer examples.
+5. Structured data collection: gather all required fields before generating a post.
+6. Tool usage: `scrape_url` for URLs, `update_profile` to save data, `generate_welcome_post` once data confirmed, `complete_onboarding` when approved.
+7. Welcome post generation: call `generate_welcome_post` once all fields are confirmed.
 
 **Tone:** "Calm authority. High-vibe. Minimal words. No fluff. ⚜️ This is a premium room."
 
-The full text is in `onboarding-ai.ts`. Modifying the persona requires updating `library/knowledge-base/ai/onboarding-ai.md` first.
+The full text is in `onboarding-ai.ts`. Modifying the persona requires updating `library/knowledge/private/ai/onboarding-ai.md` first.
 
 ---
 
@@ -217,9 +217,9 @@ Injected into history before the first user message so the agent has context fro
 
 ## 11. Onboarding agent IS NOT RAG-active
 
-Per `library/knowledge-base/ai/README.md` RAG status table:
+Per `library/knowledge/private/ai/README.md` RAG status table:
 
-> Onboarding (onboarding agent) — **No** — hardcoded system prompt, no KB retrieval
+> Onboarding (onboarding agent): **No**, hardcoded system prompt, no KB retrieval
 
 This is intentional. The onboarding agent's job is profile extraction + welcome post generation, not knowledge retrieval. If a feature request asks for RAG in onboarding, push back: it's the wrong tool. Use `scrape_url` for URL-based extraction; document attachments handle document-based extraction.
 
@@ -233,7 +233,7 @@ This is intentional. The onboarding agent's job is profile extraction + welcome 
 { role: "tool",      content: "...", tool_call_id: "..." }
 ```
 
-The system prompt is **not** stored — rebuilt fresh each turn from live profile state and tenant config.
+The system prompt is **not** stored: rebuilt fresh each turn from live profile state and tenant config.
 
 ---
 
@@ -243,7 +243,7 @@ The system prompt is **not** stored — rebuilt fresh each turn from live profil
 |---|---|---|
 | Onboarding system prompt (beyond display name) hardcoded; no admin customization | Medium | Intentional for now; deeper persona customization planned |
 | No rate limiting on the SSE endpoint | Medium | Add per-user rate limiting (handed to `security-worker-bee`) |
-| Server-side URL scraping with no sandboxing — SSRF possible | High | Add allowlist or proxy through safe external service (handed to `security-worker-bee`) |
+| Server-side URL scraping with no sandboxing: SSRF possible | High | Add allowlist or proxy through safe external service (handed to `security-worker-bee`) |
 
 mind-worker-bee flags the SSRF concern and hands the audit to `security-worker-bee`.
 

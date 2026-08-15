@@ -1,4 +1,4 @@
-# 05 — Scaling & Ops
+# 05: Scaling & Ops
 
 Sharding, REST-only mode, rate-limit handling, and container health patterns for production bots.
 
@@ -60,12 +60,12 @@ const rest = new REST().setToken(token);
 // RESTOptions.globalRequestsPerSecond (default 50)
 ```
 
-> **TODO — open question:** Specific `RESTOptions` knobs for fine-grained rate-limit tuning were not retrieved during research. Add field-level detail from `discord.js.org/docs/packages/rest` on next refresh.
+> **TODO: open question:** Specific `RESTOptions` knobs for fine-grained rate-limit tuning were not retrieved during research. Add field-level detail from `discord.js.org/docs/packages/rest` on next refresh.
 
 **Best practices:**
 - Never fire-and-forget: always `await` REST calls.
 - Wrap bulk operations (e.g., mass-deleting messages) in a rate-limit-aware loop, not `Promise.all()`.
-- Log `DiscordAPIError` with the `code` field — it maps to Discord's error code table.
+- Log `DiscordAPIError` with the `code` field: it maps to Discord's error code table.
 
 ---
 
@@ -100,7 +100,7 @@ Bots will eventually disconnect and reconnect. Both SDKs handle RESUME automatic
 
 1. Log reconnect events: `client.on("shardReconnecting", id => ...)`.
 2. Re-register guild-scoped commands on `client.once("ready")` to handle the case where command registration was lost (rare, but possible after long downtime).
-3. Do NOT re-login on disconnect — the SDK handles this. Double-login produces duplicate events.
+3. Do NOT re-login on disconnect. The SDK handles this. Double-login produces duplicate events.
 
 ---
 

@@ -1,9 +1,9 @@
-# Better Auth — 2026 Momentum
+# Better Auth: 2026 Momentum
 
 **Sources:**
 - https://www.better-auth.com/docs
 - https://www.better-auth.com/changelog
-- 2025–2026 community sentiment (GitHub stars, plugin ecosystem, framework integration breadth)
+- 2025-2026 community sentiment (GitHub stars, plugin ecosystem, framework integration breadth)
 
 **Retrieved:** 2026-04-25
 
@@ -34,6 +34,6 @@ Better Auth is the OSS auth library with the strongest 2026 momentum. MIT licens
 
 ## Relevance
 
-- `guides/03-better-auth.md` — full deep dive.
-- `guides/01-provider-choice-tree.md` — decision branch 3.
-- `examples/better-auth-from-scratch.md` — worked example.
+- `guides/03-better-auth.md`: full deep dive.
+- `guides/01-provider-choice-tree.md`: decision branch 3.
+- `examples/better-auth-from-scratch.md`: worked example.

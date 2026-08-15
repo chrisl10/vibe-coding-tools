@@ -1,5 +1,7 @@
 # 19 - tree-sitter & the Codebase Graph
 
+**Legacy/library case.** Hivemind-specific codebase-graph feature; not applicable to this repo's SvelteKit app.
+
 Hivemind builds a codebase graph (`src/graph/`, the `graph-on-stop` / `graph-pull-worker` hooks) using tree-sitter. The grammars are `optionalDependencies`. The key thing to internalize: **the Python grammar (`tree-sitter-python`) is a parser, not application code.** There is no Python in Hivemind's app - only grammars that parse user repos.
 
 ## The grammars are optional native deps

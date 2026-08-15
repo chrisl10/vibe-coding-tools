@@ -9,7 +9,7 @@ The embeddings runtime for Hivemind is a deliberately narrow, well-bounded syste
 
 1. **The runtime is local-first and off by default.** `@huggingface/transformers ^3` is an optional dependency (~600MB) installed under `~/.hivemind/embed-deps/`. With `HIVEMIND_EMBEDDINGS` and `HIVEMIND_SEMANTIC_SEARCH` off, recall falls back to BM25/ILIKE lexical search in `src/shell/grep-core.ts`. There is no quality cliff; off is a legitimate, shipped state.
 
-2. **The dimension locks the schema.** `EMBEDDING_DIMS=768` (in `src/embeddings/columns.ts`) must equal the model's output width and the `summary_embedding` / `message_embedding` `FLOAT4[]` column widths. A dimension change is a schema event handled via the deeplake-dataset schema-heal path, with a re-embedding backfill. Quantization changes do not touch the dimension and are therefore not schema events.
+2. **The dimension locks the schema.** `EMBEDDING_DIMS=768` (in `src/embeddings/columns.ts`) must equal the model's output width and the `summary_embedding` / `message_embedding` `FLOAT4[]` column widths. A dimension change is a schema event handled via the vector-store schema-heal path, with a re-embedding backfill. Quantization changes do not touch the dimension and are therefore not schema events.
 
 3. **nomic-embed-text-v1.5 at q8/768 is the right default.** It pairs strong retrieval quality with a 768-dim output that matches the columns and a footprint that fits a CPU daemon. q8 recall is very close to full precision because cosine recall is robust to small per-weight quantization error.
 

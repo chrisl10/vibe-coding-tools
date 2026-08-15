@@ -1,4 +1,4 @@
-# 04 — SDK Generation
+# 04: SDK Generation
 
 Generating typed client SDKs from an OpenAPI spec. Read `research/external/sdk-generators-comparison-speakeasy-fern-openapi.md`, `research/external/fern-sdk-generator-github.md`, and `research/external/openapi-generator-cli-reference.md` before running this guide.
 

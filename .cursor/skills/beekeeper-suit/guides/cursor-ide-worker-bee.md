@@ -1,70 +1,39 @@
-# Cursor IDE Worker-Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `cursor-ide-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/cursor-ide-worker-bee.md`](../../../agents/cursor-ide-worker-bee.md)
-**Stinger:** [`.cursor/skills/cursor-ide-stinger/`](../../cursor-ide-stinger/)
-**Trigger policy:** proactive
-
----
+# cursor-ide-worker-bee
 
 ## Domain
+This Bee owns the Cursor IDE platform surface: everything about configuring and extending Cursor as a dev tool, not the code Cursor agents produce. That covers project rules (`.cursorrules` migration and `.cursor/rules/*.mdc` authoring), MCP server registration and tool authoring, the `@cursor/sdk` API for programmatic agent automation, custom modes, the Agents Window, Cloud Agents, and productivity patterns like slash commands and keybindings. In this repo, that means anyone touching `.cursor/` config or building Cursor SDK scripts routes here.
 
-`cursor-ide-worker-bee` owns Hivemind's Cursor surface: configuring and extending Cursor as the host for this repo, not the code Cursor's agent generates. Its domain covers the Cursor 1.7+ hooks harness (`~/.cursor/hooks.json` and the wiring in `src/cli/install-cursor.ts`, six lifecycle events), the first-party VS Code/Cursor extension at `harnesses/cursor/extension/`, registering the Hivemind MCP server (`src/mcp/server.ts`) inside Cursor, and the `.cursor/` Bee Army platform this repo ships: project rules (`.cursor/rules/*.mdc`), agents (`.cursor/agents/*.md`), skills/Stingers (`.cursor/skills/<base>-stinger/`), the orchestrator commands (`the-beekeeper.md`, `the-smoker.md`), and `model-comparison-matrix.md`.
+## Paired Stinger
+[cursor-ide-stinger](../../cursor-ide-stinger) - the master index for rule authoring, MCP integration, SDK API reference, modes, and extension development, including the MDC-first imperative and context budget rules.
 
 ## Trigger phrases
-
-Route to `cursor-ide-worker-bee` when the user says any of:
-
-- "Cursor hooks" / "wire the Cursor hooks" / "what does install-cursor do"
-- "hooks.json"
-- ".cursor/rules .mdc" / "add a .cursor/rules .mdc" / "fix this rule"
-- "Register the Hivemind MCP server in Cursor"
-- "The cursor extension" / "harnesses/cursor/extension"
-- "Bee Army layout" / "the .cursor/ layout"
-
-Or when the request implicitly involves the Cursor platform, its hooks, its extension, or the .cursor/ Army layout.
+- "review my rules"
+- "migrate my .cursorrules"
+- "add an MCP tool"
+- "build a Cursor SDK script"
+- "Agent.create"
+- "create a custom mode"
+- "set up cloud agents"
+- "Cursor keybindings"
 
 ## Do NOT route when
-
-- The user wants harness wiring for Claude Code, Codex, Hermes, pi, or OpenClaw - that is `harness-integration-worker-bee`. This Bee owns the Cursor host; harness-integration owns the other five.
-- The user wants the MCP protocol internals of `server.ts` (tool design, transport, error model) - that is `mcp-protocol-worker-bee`. This Bee registers the server in Cursor; the protocol Bee owns its contract.
-- The user wants code quality of the TypeScript source - that is `typescript-node-worker-bee`.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let this one act as backup.
+- The task is about code quality produced by a Cursor agent, not the Cursor config itself: that goes to the relevant language worker-bee.
+- The task is prompt engineering for an external LLM: that's mind-worker-bee.
+- The task is a CI/CD pipeline that happens to run an SDK job: this Bee writes the SDK code, devops-worker-bee owns the pipeline wiring around it.
+- The task is a security review of MCP credential handling: that's security-worker-bee.
+- The task is React components inside a canvas or webview: that's react-worker-bee.
 
 ## Inputs the Bee needs
+- The user's Cursor version (feature availability is version-gated)
+- Whether the project already uses `.cursor/rules/` vs legacy `.cursorrules`
+- The specific surface in play: rule file, MCP config, SDK script, mode, or extension
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- A `.mdc` rule file, `mcp.json` config, or TypeScript SDK script
+- A custom mode definition or extension stub
+- An advisory finding on Cursor platform behavior
 
-- The Cursor concern in scope (hooks.json, the extension, MCP registration, a `.mdc` rule, the Army layout).
-- Access to `src/cli/install-cursor.ts`, `harnesses/cursor/extension/`, and the `.cursor/` tree.
-- Optional: the Cursor version (the hooks schema is 1.7+).
-
-If the concern is unclear, do not invoke yet - ask the user what part of Cursor they are configuring.
-
-## Outputs the Bee produces
-
-- Cursor hooks.json wiring and idempotent, Windows-safe merge logic matched to `install-cursor.ts`.
-- `.cursor/rules/*.mdc` authoring/fixes and MCP registration in Cursor.
-- Cursor extension and Bee Army layout changes.
-
-## Multi-Bee sequences this Bee participates in
-
-- **Cursor host wiring** - sits alongside `harness-integration-worker-bee` (which owns the other five hosts) and defers MCP contract internals to `mcp-protocol-worker-bee`.
-
-## Critical directives the orchestrator should respect
-
-- **Cursor's hooks.json schema differs from Claude/Codex** - event arrays hold command objects directly, no outer `{ hooks: [...] }` wrapper, no top-level `matcher`. Match `install-cursor.ts`.
-- **Keep hook merges idempotent and Windows-safe** - strip prior Hivemind entries on a normalized path; only rewrite when changed (preserves Cursor's trust fingerprint).
-- **`.cursor/rules/*.mdc` is the only rules format here** - never introduce a `.cursorrules` file.
-- **Prefer `alwaysApply: false` with a narrow glob or sharp `description`.**
-- **NO em dashes, ever** - enforced by `.cursor/rules/no-em-dashes.mdc`.
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
-
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+## Commonly sequenced with
+- devops-worker-bee: after SDK code is written, for the CI/CD workflow that runs it
+- security-worker-bee: for MCP server credential and tool-output review
+- react-worker-bee: for canvas or webview components inside a Cursor extension

@@ -12,7 +12,7 @@ stinger: retrospective-stinger
 
 ## Summary
 
-RetroFlow's comprehensive 2025-2026 guide catalogues 30+ retrospective formats organized by category (beginner, visual, experienced) and provides a decision matrix based on team type and sprint outcome. The core argument is that varying format prevents engagement decay and surfaces different signal — a team running only Start/Stop/Continue sees roughly 30% of what's available. The guide defines a format selection matrix by (a) team experience level, (b) sprint outcome/emotional valence, and (c) time available.
+RetroFlow's comprehensive 2025-2026 guide catalogues 30+ retrospective formats organized by category (beginner, visual, experienced) and provides a decision matrix based on team type and sprint outcome. The core argument is that varying format prevents engagement decay and surfaces different signal: a team running only Start/Stop/Continue sees roughly 30% of what's available. The guide defines a format selection matrix by (a) team experience level, (b) sprint outcome/emotional valence, and (c) time available.
 
 Key format matrix (from the source):
 
@@ -51,16 +51,16 @@ Best practices: always set stage with Retrospective Prime Directive, time-box ea
 
 ## Key quotations / statistics
 
-- "Running the same retrospective format every sprint? Your team might be losing engagement—and missing valuable insights."
+- "Running the same retrospective format every sprint? Your team might be losing engagement,and missing valuable insights."
 - "A team that only ever runs Start/Stop/Continue sees 30% of what's there."
 - "Every retrospective needs concrete next steps." (on skipping action items)
-- "Rotate to maintain engagement" — rotate every 3-4 sprints is the explicit recommendation.
-- 91% of agile teams use Scrum (State of Agile Report, Digital.ai) — context for why retros are universal.
+- "Rotate to maintain engagement": rotate every 3-4 sprints is the explicit recommendation.
+- 91% of agile teams use Scrum (State of Agile Report, Digital.ai): context for why retros are universal.
 
 ## Annotations for stinger-forge
 
 - This is the primary source for `guides/01-formats.md`. The format matrix (team type × sprint outcome × time) maps directly to the selection matrix the Bee uses in ACTION 1.
 - The anti-patterns list informs `guides/00-principles.md` (the "retro theater" section) and `guides/03-facilitation.md`.
 - The "30% of signal" quote is a powerful framing device for the format rotation principle in `00-principles.md`.
-- The DAKI and Futurespective formats are more advanced and important for experienced-team guidance — ensure both have entries in `01-formats.md`.
+- The DAKI and Futurespective formats are more advanced and important for experienced-team guidance: ensure both have entries in `01-formats.md`.
 - Contradictions to watch: This source says 3-4 sprint rotation; meetgeek source suggests quarterly rotation pattern. stinger-forge should present both as valid depending on team cadence.

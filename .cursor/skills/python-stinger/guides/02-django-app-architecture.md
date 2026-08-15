@@ -1,4 +1,4 @@
-# 02 — Django App Architecture
+# 02: Django App Architecture
 
 How a Django project should be organized once it's past hello-world. Encodes the HackSoftware Django Styleguide's services + selectors pattern (`research/2026-05-03-hacksoftware-styleguide.md`) and the canonical settings split.
 
@@ -50,11 +50,11 @@ myapp/
 
 `apps/<name>/` (vs. top-level `<name>/`) is a deliberate choice: it keeps domain code in one place, leaves room for top-level non-app modules (`config/`, `cli/`, `migrations/`).
 
-`config/` (vs. `myapp/`) makes the project root readable — you don't have to memorize the project name to know where settings live.
+`config/` (vs. `myapp/`) makes the project root readable: you don't have to memorize the project name to know where settings live.
 
 ## Settings split
 
-`settings/base.py`, `settings/dev.py`, `settings/prod.py` — selected via `DJANGO_SETTINGS_MODULE`. `manage.py` defaults to `config.settings.dev`.
+`settings/base.py`, `settings/dev.py`, `settings/prod.py`: selected via `DJANGO_SETTINGS_MODULE`. `manage.py` defaults to `config.settings.dev`.
 
 ```python
 # config/settings/base.py
@@ -185,7 +185,7 @@ def order_list_for_user(*, user: User) -> QuerySet[Order]:
 
 The view (`api.py` for Ninja) only parses input and calls the service / selector. No business logic in views.
 
-## Signals — when, when-not
+## Signals: when, when-not
 
 **Use signals for:**
 

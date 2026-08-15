@@ -1,8 +1,8 @@
-# 05 — Prompt Versioning
+# 05: Prompt Versioning
 
 Every prompt change is recorded in `PromptVersion`. The `recordPromptVersion()` and `recordPromptBlockChanges()` functions are the audit-on-change discipline.
 
-> **Doc reference:** `library/knowledge-base/ai/prompt-cascade-architecture.md §5`, `library/knowledge-base/ai/observability-evaluation.md §6`.
+> **Doc reference:** `library/knowledge/private/ai/prompt-cascade-architecture.md §5`, `library/knowledge/private/ai/observability-evaluation.md §6`.
 
 ---
 
@@ -60,7 +60,7 @@ export async function recordPromptBlockChanges(params: {
 }): Promise<void>
 ```
 
-This is the function called from the SA AI Configuration screen and the admin tenant settings screen — only blocks that actually changed get a version row.
+This is the function called from the SA AI Configuration screen and the admin tenant settings screen: only blocks that actually changed get a version row.
 
 ---
 
@@ -82,9 +82,9 @@ This is the function called from the SA AI Configuration screen and the admin te
 
 Three use cases:
 
-1. **Rollback** — restore a previous version after a quality regression. The `content` column holds the full text, not a diff, so restoring is a single `UPDATE`.
-2. **Audit** — know exactly what instructions the AI operated under during any session. Correlate with `AiTrace.createdAt` to determine which `PromptVersion` was active.
-3. **Correlation / debugging** — identify when prompt changes caused quality changes (e.g., sycophancy spike after a brand voice edit).
+1. **Rollback**: restore a previous version after a quality regression. The `content` column holds the full text, not a diff, so restoring is a single `UPDATE`.
+2. **Audit**: know exactly what instructions the AI operated under during any session. Correlate with `AiTrace.createdAt` to determine which `PromptVersion` was active.
+3. **Correlation / debugging**: identify when prompt changes caused quality changes (e.g., sycophancy spike after a brand voice edit).
 
 ---
 
@@ -122,7 +122,7 @@ const activeAtTime = await prisma.promptVersion.findFirst({
 
 To understand whether a coaching quality change correlates with a prompt change:
 
-1. Find the relevant `PromptVersion` row(s) — when did the prompt change?
+1. Find the relevant `PromptVersion` row(s): when did the prompt change?
 2. Pull `AiTrace` rows for the same `tenantId` (and `coachType` if relevant) before and after.
 3. Compare aggregates: `retrievalScore`, `agreementScore`, `routingCorrect`, latency.
 4. If a metric shifts at the change boundary → strong signal that the prompt change is the cause.
@@ -137,7 +137,7 @@ When a coach prompt edit causes a quality regression:
 2. Find the `PromptVersion` row immediately before the regression (`createdAt: { lt: badEditTime }`).
 3. Copy `content` from that row.
 4. `UPDATE AiCoachConfig.systemPrompt = '<previous content>'` for the affected coach.
-5. **The rollback itself is a prompt change** — call `recordPromptVersion()` for the rollback. Do NOT skip this; the version log should reflect the actual state of the prompt at every point in time.
+5. **The rollback itself is a prompt change**: call `recordPromptVersion()` for the rollback. Do NOT skip this; the version log should reflect the actual state of the prompt at every point in time.
 6. Invalidate the Valkey cache: `coach:persona:{tenantId}:{coachType}` (TTL 600s, but explicit invalidation is faster).
 
 ---
@@ -147,7 +147,7 @@ When a coach prompt edit causes a quality regression:
 1. `PlatformConfig.systemPromptBlocks.foundation` (Layer 1 `[PLATFORM_FOUNDATION]`).
 2. `PlatformConfig.systemPromptBlocks.guidelines` (Layer 1 `[PLATFORM_GUIDELINES]`).
 3. `PlatformConfig.systemPromptBlocks.safetyRules` (Layer 1 `[PLATFORM_SAFETY_RULES]`).
-4. `Tenant.promptBlocks` (Layer 2 — three sub-blocks: `brandVoice`, `topicRestrictions`, `overrideInstructions`).
+4. `Tenant.promptBlocks` (Layer 2, three sub-blocks: `brandVoice`, `topicRestrictions`, `overrideInstructions`).
 5. `AiCoachConfig.systemPrompt` and `CoachModuleConfig.systemPrompt` (Layer 3 per-coach personality).
 
 ---
@@ -156,10 +156,10 @@ When a coach prompt edit causes a quality regression:
 
 | Not versioned | Why |
 |---|---|
-| `[SYSTEM_FOUNDATION]` (Layer 0) | Hardcoded in `composeSystemPrompt()` — versioned via git. |
-| `[COACHING_QUALITY]` block | Hardcoded — versioned via git. |
-| `[INSTRUCTION_HIERARCHY]` block | Hardcoded — versioned via git. |
-| Onboarding agent system prompt | Hardcoded in `onboarding-ai.ts` — versioned via git. |
+| `[SYSTEM_FOUNDATION]` (Layer 0) | Hardcoded in `composeSystemPrompt()`: versioned via git. |
+| `[COACHING_QUALITY]` block | Hardcoded: versioned via git. |
+| `[INSTRUCTION_HIERARCHY]` block | Hardcoded: versioned via git. |
+| Onboarding agent system prompt | Hardcoded in `onboarding-ai.ts`: versioned via git. |
 
 For these, the version trail lives in the repository's git log, not `PromptVersion`.
 

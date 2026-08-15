@@ -34,7 +34,7 @@ date_accessed: 2026-05-20
 - Better Stack 3-year TCO for 5-person on-call + 50 monitors + 1 status page (status/monitoring/incident only, no full observability): ~$6,858.
 - Instatus equivalent 3-year TCO for same configuration: ~$540 (flat-rate Pro plan).
 - Better Stack pricing model: "volume-based + per responder" vs Instatus "flat rate, no per-member fees."
-- Free tier comparison (from Better Stack's own comparison): Better Stack (10 monitors, 1 status page) vs Instatus (15 monitors, 200 subscribers) — Instatus has a slightly more generous free status page tier.
+- Free tier comparison (from Better Stack's own comparison): Better Stack (10 monitors, 1 status page) vs Instatus (15 monitors, 200 subscribers): Instatus has a slightly more generous free status page tier.
 
 ## Open questions surfaced
 

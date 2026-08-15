@@ -1,6 +1,6 @@
-# 14 — Forms & Validation (extended)
+# 14: Forms & Validation (extended)
 
-Source: `research/2026-04-25-forms-and-validation.md`. Companion to `guides/06-forms.md`, which covers the canonical React Hook Form + Zod stack and React 19 Server Action forms. This guide covers the extended landscape — when to leave the default and what to leave it for.
+Source: `research/2026-04-25-forms-and-validation.md`. Companion to `guides/06-forms.md`, which covers the canonical React Hook Form + Zod stack and React 19 Server Action forms. This guide covers the extended landscape: when to leave the default and what to leave it for.
 
 ## TL;DR pick
 
@@ -20,7 +20,7 @@ The canonical pick remains **React Hook Form + Zod**. Everything below is a *jus
 
 ### React Hook Form (the default)
 - React-only project, you want the largest ecosystem of resolvers / DevTools / examples.
-- Uncontrolled inputs by default — keystroke renders only the touched field.
+- Uncontrolled inputs by default: keystroke renders only the touched field.
 - Pairs with `@hookform/resolvers/zod` (or `/valibot`, `/yup`, `/joi`, `/arktype`).
 
 ### TanStack Form (when "framework-agnostic" matters)
@@ -36,7 +36,7 @@ The canonical pick remains **React Hook Form + Zod**. Everything below is a *jus
 ### Formbricks (don't author, embed)
 - You want an in-app NPS / CSAT / feature-feedback survey, not a CRUD form.
 - Self-hosted OSS alternative to Typeform + Hotjar surveys.
-- Out of scope for the Form Layer — flag it and route to product.
+- Out of scope for the Form Layer: flag it and route to product.
 
 ---
 
@@ -52,9 +52,9 @@ Zod and Valibot have near-identical mental models. The difference is bundle.
 | Ecosystem | Massive (default everywhere) | Growing fast in 2026 |
 | Standard Schema spec | Yes | Yes |
 
-**Pick Zod by default.** Pick Valibot when bundle budget bites — usually edge-runtime endpoints, mobile web, or component libraries that ship a schema.
+**Pick Zod by default.** Pick Valibot when bundle budget bites: usually edge-runtime endpoints, mobile web, or component libraries that ship a schema.
 
-Both implement the [Standard Schema](https://standardschema.dev/) spec, so RHF / TanStack Form / Conform accept either with the right resolver. Migration is mechanical but tedious — don't migrate without a measured bundle win.
+Both implement the [Standard Schema](https://standardschema.dev/) spec, so RHF / TanStack Form / Conform accept either with the right resolver. Migration is mechanical but tedious: don't migrate without a measured bundle win.
 
 ---
 
@@ -114,7 +114,7 @@ export default function ContactPage() {
 }
 ```
 
-The same `ContactSchema` validates on the server (security) and on the client (UX) — the canonical "validate at the boundary twice" pattern from `guides/06-forms.md`.
+The same `ContactSchema` validates on the server (security) and on the client (UX): the canonical "validate at the boundary twice" pattern from `guides/06-forms.md`.
 
 ---
 
@@ -125,22 +125,22 @@ The same `ContactSchema` validates on the server (security) and on the client (U
 3. **Bundle budget is biting?** → RHF + Valibot (or TanStack Form + Valibot).
 4. **Otherwise** → RHF + Zod. (See `guides/06-forms.md`.)
 
-If you're authoring an in-app survey UX (NPS, CSAT, feature feedback), don't author it — embed Formbricks and move on.
+If you're authoring an in-app survey UX (NPS, CSAT, feature feedback), don't author it: embed Formbricks and move on.
 
 ---
 
 ## Common findings
 
-> **[Should-refactor]** `package.json:31` — `yup` listed alongside `zod`. Converge on Zod. See `guides/06-forms.md §share-schemas`.
+> **[Should-refactor]** `package.json:31`: `yup` listed alongside `zod`. Converge on Zod. See `guides/06-forms.md §share-schemas`.
 
-> **[Should-refactor]** `apps/edge-fn/src/validate.ts:1` — Zod schema imported into an edge function bundle. Measure bundle; if Zod is the dominant cost, swap to Valibot. See this guide §schema-library-choice.
+> **[Should-refactor]** `apps/edge-fn/src/validate.ts:1`: Zod schema imported into an edge function bundle. Measure bundle; if Zod is the dominant cost, swap to Valibot. See this guide §schema-library-choice.
 
-> **[Must-fix]** `app/contact/actions.ts:5` — Server Action accepts FormData without parsing. Add `parseWithZod` (Conform) or `safeParse` (raw Zod). See `guides/11-server-components.md §server-actions`.
+> **[Must-fix]** `app/contact/actions.ts:5`: Server Action accepts FormData without parsing. Add `parseWithZod` (Conform) or `safeParse` (raw Zod). See `guides/11-server-components.md §server-actions`.
 
 ---
 
 ## Handoffs
 
-- **Visual / token decisions on form fields** → `ux-ui-worker-bee`.
+- **Visual / token decisions on form fields** → `ux-ui-svelte-worker-bee`.
 - **Server Action security review (auth, RBAC, CSRF posture)** → `security-worker-bee`.
 - **Survey product strategy (Formbricks vs Typeform vs build)** → `library-worker-bee` PRD.

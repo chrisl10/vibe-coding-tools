@@ -1,6 +1,6 @@
-# Starlight (Astro) — v0.38+ Setup
+# Starlight (Astro): v0.38+ Setup
 
-Starlight is the **recommended greenfield choice for 2026**. Built on Astro v6, 8K+ GitHub stars, 200K+ weekly npm downloads, 300+ contributors. The v0.x semver means breaking changes per minor release — pin your versions.
+Starlight is the **recommended greenfield choice for 2026**. Built on Astro v6, 8K+ GitHub stars, 200K+ weekly npm downloads, 300+ contributors. The v0.x semver means breaking changes per minor release: pin your versions.
 
 > Source: `research/external/2026-05-20-starlight-astro-v6-stable.md`
 
@@ -129,7 +129,7 @@ const z = x + y;
 
 ## Version pinning (important)
 
-Starlight uses v0.x semver — minor version bumps CAN contain breaking changes.
+Starlight uses v0.x semver: minor version bumps CAN contain breaking changes.
 
 ```json
 {
@@ -144,4 +144,4 @@ Review the [Starlight changelog](https://github.com/withastro/starlight/blob/mai
 
 ---
 
-> TODO: open question — Starlight configuration reference at https://starlight.astro.build/reference/configuration was flagged for deeper scraping in `research/research-summary.md`. Additional config options (internationalization, custom CSS, plugin API) can be found there.
+> TODO: open question: Starlight configuration reference at https://starlight.astro.build/reference/configuration was flagged for deeper scraping in `research/research-summary.md`. Additional config options (internationalization, custom CSS, plugin API) can be found there.

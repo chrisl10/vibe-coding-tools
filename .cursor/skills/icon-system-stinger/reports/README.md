@@ -1,4 +1,4 @@
-# Reports — icon-system-stinger
+# Reports: icon-system-stinger
 
 This folder collects past icon audit reports produced by `icon-system-worker-bee`. Each file represents one audit run, named by date and branch/PR.
 

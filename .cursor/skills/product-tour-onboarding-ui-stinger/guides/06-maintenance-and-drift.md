@@ -8,7 +8,7 @@ Source: `research/external/2026-05-20-tour-maintenance-unbreakable.md` (primary)
 
 ## Why tours break
 
-The #1 cause of tour breakage: **dynamic CSS class generation**. CSS-in-JS frameworks (Emotion, styled-components, Angular ViewEncapsulation) rebuild class names like `.css-4mrg2x7c` with every deployment. The tour tool's selector points at a class that no longer exists — from the tour's perspective, the element has vanished.
+The #1 cause of tour breakage: **dynamic CSS class generation**. CSS-in-JS frameworks (Emotion, styled-components, Angular ViewEncapsulation) rebuild class names like `.css-4mrg2x7c` with every deployment. The tour tool's selector points at a class that no longer exists. From the tour's perspective, the element has vanished.
 
 Other causes:
 - Component renamed or restructured (DOM hierarchy changed).
@@ -95,8 +95,8 @@ Maintain a JSON file (`templates/data-tour-registry.json`) that catalogs every `
 ```
 
 This registry serves two purposes:
-1. **Audit trail** — when a component is renamed or deleted, engineers can look up which tours depend on it.
-2. **CI verification** — the smoke test reads this file to confirm all registered selectors exist in the live DOM.
+1. **Audit trail**: when a component is renamed or deleted, engineers can look up which tours depend on it.
+2. **CI verification**: the smoke test reads this file to confirm all registered selectors exist in the live DOM.
 
 ---
 
@@ -129,12 +129,12 @@ This test runs on every CI build and fails if an engineer removes a `data-tour` 
 
 When a user reports a broken tour (or analytics show a cliff-shaped drop-off at a step):
 
-1. **Identify the broken step** — check tour analytics for which step has the anomalous drop-off.
+1. **Identify the broken step**: check tour analytics for which step has the anomalous drop-off.
 2. **Open the browser DevTools** on the affected page.
-3. **Run in console:** `document.querySelector('[data-tour="<step-name>"]')` — if it returns `null`, the element is missing from the DOM.
-4. **Check the selector registry** — which component owns this selector?
-5. **Find the component** — was it renamed? Removed? Conditionally rendered?
-6. **Fix** — either restore the `data-tour` attribute in the component, or update the tour step's selector to match the new component.
+3. **Run in console:** `document.querySelector('[data-tour="<step-name>"]')`, if it returns `null`, the element is missing from the DOM.
+4. **Check the selector registry**: which component owns this selector?
+5. **Find the component**: was it renamed? Removed? Conditionally rendered?
+6. **Fix**: either restore the `data-tour` attribute in the component, or update the tour step's selector to match the new component.
 7. **Update the selector registry** with the fix date.
 8. **Re-run the CI smoke test** to confirm.
 
@@ -148,4 +148,4 @@ When making structural changes to a tour (new step, reordered steps, new target 
 2. Update the selector registry's `verified` date.
 3. Update any feature flag that gates the tour (deploy the new version to a subset first).
 
-Do NOT increment the version for minor copy edits — users who have seen the tour should not see it again because a typo was fixed.
+Do NOT increment the version for minor copy edits: users who have seen the tour should not see it again because a typo was fixed.

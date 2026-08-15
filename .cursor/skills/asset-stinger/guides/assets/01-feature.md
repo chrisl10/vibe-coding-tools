@@ -1,6 +1,6 @@
-# Guide — `Feature` (01)
+# Guide: `Feature` (01)
 
-> **Applies to:** the first-class "feature" concept — a coherent unit of product capability that can be flagged, metered, plan-gated, priced, rolled out, deprecated, and owned by a team.
+> **Applies to:** the first-class "feature" concept: a coherent unit of product capability that can be flagged, metered, plan-gated, priced, rolled out, deprecated, and owned by a team.
 
 ## 1. Purpose
 
@@ -8,8 +8,8 @@
 
 A `Feature` is NOT the same as:
 
-- `FeatureFlag` — the rollout toggle. One feature may have zero, one, or many flags (parent + children via `parentSlug`).
-- `CustomFeature` — a billing line-item (an admin-authored "thing we charge for"). A CustomFeature may reference a Feature; it is not itself the feature.
+- `FeatureFlag`: the rollout toggle. One feature may have zero, one, or many flags (parent + children via `parentSlug`).
+- `CustomFeature`: a billing line-item (an admin-authored "thing we charge for"). A CustomFeature may reference a Feature; it is not itself the feature.
 
 ## 2. DB table and key fields
 
@@ -91,7 +91,7 @@ Default sunset window: **90 days** after deprecation.
 ## 6. Relationships
 
 **Feature references:**
-- `FeatureFlag` via `defaultFlagSlug` (soft link — the flag can exist before the feature)
+- `FeatureFlag` via `defaultFlagSlug` (soft link, the flag can exist before the feature)
 
 **Referenced by (Feature is the spine):**
 - `Page.featureKey`
@@ -120,10 +120,10 @@ Default sunset window: **90 days** after deprecation.
 
 ## 7. Hand-offs
 
-- **library-worker-bee** — feature PRDs are numbered + placed at `library/requirements/features/feature-<###>-<title>/` + cross-linked by them.
-- **ux-ui-worker-bee** — every feature that renders UI must reference a surface/control/display catalogued by you, but *visually specified* by ux-ui.
-- **security-worker-bee** — any feature that touches auth, PII, or external integrations must route through a security review before `phase: shipped`.
-- **quality-worker-bee** — verifies the feature's PRD vs implementation; does NOT verify registry linkage (that's your drift audit).
+- **library-worker-bee**: feature PRDs are numbered + placed at `library/requirements/<lifecycle>/prd-<###>-<title>/` + cross-linked by them.
+- **ux-ui-svelte-worker-bee**: every feature that renders UI must reference a surface/control/display catalogued by you, but *visually specified* by ux-ui.
+- **security-worker-bee**: any feature that touches auth, PII, or external integrations must route through a security review before `phase: shipped`.
+- **quality-worker-bee**: verifies the feature's PRD vs implementation; does NOT verify registry linkage (that's your drift audit).
 
 Note: example `prdRef` values throughout this Stinger (e.g., `FEA-XXX`, `BILL-007`) are illustrative placeholders. The deploying product substitutes its own feature PRD IDs.
 

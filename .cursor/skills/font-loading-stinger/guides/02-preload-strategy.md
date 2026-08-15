@@ -35,7 +35,7 @@ Preloading does NOT help when:
 |---|---|---|
 | `as="font"` | Yes | Tells the browser this is a font fetch; sets correct priority and CORS mode |
 | `type="font/woff2"` | Strongly recommended | Prevents fetching the file on browsers that don't support WOFF2 |
-| `crossorigin="anonymous"` | Yes | Font fetches are CORS requests. Without this, the browser fetches the font twice — once for preload (without CORS headers) and once for the actual `@font-face` rule (with CORS headers). The preload is wasted. |
+| `crossorigin="anonymous"` | Yes | Font fetches are CORS requests. Without this, the browser fetches the font twice: once for preload (without CORS headers) and once for the actual `@font-face` rule (with CORS headers). The preload is wasted. |
 
 **The `crossorigin` double-fetch gotcha** is the single most common preload bug. If the Chrome DevTools network panel shows a font loading twice, missing `crossorigin` is almost always the cause.
 
@@ -119,7 +119,7 @@ When using Google Fonts directly (without `next/font`), you must preload the CSS
 
 When auditing an existing project, verify each `<link rel="preload" as="font">` tag:
 
-- [ ] Has `crossorigin="anonymous"` or `crossorigin` (without value is also valid — both mean anonymous)
+- [ ] Has `crossorigin="anonymous"` or `crossorigin` (without value is also valid, both mean anonymous)
 - [ ] Has `type="font/woff2"` (not `type="font/ttf"` or omitted)
 - [ ] Points to the correct WOFF2 file (not a CSS stylesheet)
 - [ ] Is ≤ 3 preload hints total
@@ -130,8 +130,8 @@ When auditing an existing project, verify each `<link rel="preload" as="font">` 
 
 ## References
 
-- `guides/00-principles.md` — why font fetches have CORS requirements
-- `guides/01-font-display-decision-matrix.md` — which fonts are critical-path (worth preloading)
-- `guides/04-nextjs-font.md` — how `next/font` automates preloading
-- `research/external/` — web.dev font best practices, Chrome DevTools font rendering
-- `examples/happy-path-nextjs-inter.md` — shows preload in context (or notes why next/font makes manual preload unnecessary)
+- `guides/00-principles.md`: why font fetches have CORS requirements
+- `guides/01-font-display-decision-matrix.md`: which fonts are critical-path (worth preloading)
+- `guides/04-nextjs-font.md`: how `next/font` automates preloading
+- `research/external/`: web.dev font best practices, Chrome DevTools font rendering
+- `examples/happy-path-nextjs-inter.md`: shows preload in context (or notes why next/font makes manual preload unnecessary)

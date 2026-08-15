@@ -1,4 +1,4 @@
-# Generic Eval Platforms (DEMOTED — the deploying product uses homegrown ai-eval.ts + AiTrace)
+# Generic Eval Platforms (DEMOTED: the deploying product uses homegrown ai-eval.ts + AiTrace)
 
 > **Status:** Demoted reference. the deploying product uses a homegrown eval suite in `lib/ai-eval.ts` (`evaluateRetrievalPrecision`, `evaluateRouting`, `computeAgreementRate`) writing to `AiTrace` Postgres.
 
@@ -6,10 +6,10 @@
 
 ## Why the deploying product's homegrown eval is canonical
 
-1. **First-class integration with `AiTrace`** — eval scores are columns on the same trace row, no join across systems.
-2. **Coaching-specific dimensions** — `agreementScore` is calibrated for sycophancy detection in coaching, not generic faithfulness.
-3. **`fast` model (Llama 3.1 8B) as judge** — already in the stack; no new vendor relationship.
-4. **No additional service to run** — Postgres + the application; same observability discipline as the rest.
+1. **First-class integration with `AiTrace`**: eval scores are columns on the same trace row, no join across systems.
+2. **Coaching-specific dimensions**: `agreementScore` is calibrated for sycophancy detection in coaching, not generic faithfulness.
+3. **`fast` model (Llama 3.1 8B) as judge**: already in the stack; no new vendor relationship.
+4. **No additional service to run**: Postgres + the application; same observability discipline as the rest.
 
 LangFuse is a planned enhancement (a UI layer over `AiTrace`) but **not built**. See `guides/16-observability.md §7`.
 
@@ -33,7 +33,7 @@ LangFuse is a planned enhancement (a UI layer over `AiTrace`) but **not built**.
 
 ### RAGAS
 
-- **Pitch:** Open-source RAG eval framework — faithfulness, answer relevance, context relevance.
+- **Pitch:** Open-source RAG eval framework: faithfulness, answer relevance, context relevance.
 - **Pros vs homegrown:** Pre-built metrics; widely cited in RAG literature.
 - **Cons vs homegrown:** Python-only (the deploying product is TS); metric implementations are configurable but not coaching-specific; would require running a Python service.
 - **When it'd be the right call:** Python-first AI codebase needing fast eval-metric coverage.
@@ -88,8 +88,8 @@ The gap most worth filling: **trace visualization UI**. LangFuse integration (pl
 
 ## What WOULDN'T add value if adopted
 
-- **Generic faithfulness frameworks** — the deploying product's coaching-specific rubric (5 dimensions) does what the LLM-coaching workflow needs; generic faithfulness is too narrow.
-- **Generic agreement-rate detectors** — sycophancy in coaching is a domain-specific pattern; the regex-based `computeAgreementRate()` is calibrated for the deploying product's voice.
+- **Generic faithfulness frameworks**: the deploying product's coaching-specific rubric (5 dimensions) does what the LLM-coaching workflow needs; generic faithfulness is too narrow.
+- **Generic agreement-rate detectors**: sycophancy in coaching is a domain-specific pattern; the regex-based `computeAgreementRate()` is calibrated for the deploying product's voice.
 
 ---
 
@@ -99,7 +99,7 @@ For LangFuse specifically (the most likely path because it's planned):
 
 1. `pnpm add langfuse` in `api/`.
 2. Wrap `traceAICall()` to also emit a LangFuse trace.
-3. Configure sampling — 10% for automated eval, 2% for human eval.
+3. Configure sampling: 10% for automated eval, 2% for human eval.
 4. Continue writing to `AiTrace` (no replacement).
 5. Add LangFuse dashboard URLs to the observability runbook.
 

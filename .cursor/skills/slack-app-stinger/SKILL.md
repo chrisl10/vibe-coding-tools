@@ -1,11 +1,11 @@
 ---
-name: slack-app-stinger
-description: Slack app development specialist for Bolt SDK (JS/Python/Java), slash commands, Block Kit UI composition, modals, Events API, OAuth multi-workspace install, and App Directory submission. Use when the user says "build a Slack app", "add a slash command", "create a Slack modal", "set up Slack Events API", "OAuth multi-workspace", "submit to Slack Marketplace", or when slack-app-worker-bee is invoked. Do NOT use for CI/CD pipeline topology (devops-worker-bee), secrets vault configuration (security-worker-bee), Django/FastAPI backend patterns beyond Bolt integration (python-worker-bee), or Slack Connect / Enterprise Grid administration.
+name: "slack-app-stinger"
+description: "Slack app development specialist for Bolt SDK (JS/Python/Java), slash commands, Block Kit UI composition, modals, Events API, OAuth multi-workspace install, and App Directory submission. Use when the user says \\\\\\\"build a Slack app\\\\\\\", \\\\\\\"add a slash command\\\\\\\", \\\\\\\"create a Slack modal\\\\\\\", \\\\\\\"set up Slack Events API\\\\\\\", \\\\\\\"OAuth multi-workspace\\\\\\\", \\\\\\\"submit to Slack Marketplace\\\\\\\", or when slack-app-worker-bee is invoked. Do NOT use for CI/CD pipeline topology (devops-worker-bee), secrets vault configuration (security-worker-bee), Django/FastAPI backend patterns beyond Bolt integration (python-worker-bee), or Slack Connect / Enterprise Grid administration."
 ---
 
 # slack-app-stinger
 
-The Slack developer playbook for `slack-app-worker-bee`. Encodes opinionated, research-backed patterns for every major Slack app surface — from first Bolt app scaffold to Marketplace submission.
+The Slack developer playbook for `slack-app-worker-bee`. Encodes opinionated, research-backed patterns for every major Slack app surface: from first Bolt app scaffold to Marketplace submission.
 
 ## Quick navigation
 
@@ -50,4 +50,4 @@ This stinger covers the **Bolt SDK (JS, Python, Java)** and the classic Slack Pl
 
 ---
 
-*Forged by `stinger-forge` from `ai-tools/command-briefs/slack-app-worker-bee-command-brief.md` and `research/`. Part of the Legion AI Tools Factory.*
+*Forged by `stinger-forge` from `ai-tools/command-briefs/slack-app-worker-bee-command-brief.md` and `research/`. Part of the Hive.*

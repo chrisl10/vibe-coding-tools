@@ -1,6 +1,6 @@
 ---
-name: csv-xlsx-import-export-stinger
-description: The "upload your spreadsheet" implementation arsenal for React/Next.js products. Covers library selection (papaparse, SheetJS, exceljs), streaming-parse for 100MB+ files, the column-mapping UX wizard, managed importers (OneSchema, Flatfile, dromo) vs self-hosted (react-spreadsheet-import), Zod row validation, CSV injection prevention, encoding edge cases, and styled XLSX export. Use when the user says "build a CSV import", "add XLSX upload", "spreadsheet import feature", "column-mapping wizard", "export to Excel", "streaming parse large file", "CSV injection safety", or when csv-xlsx-import-export-worker-bee is invoked. Do NOT use for file drop-zone UI (ux-ui-worker-bee), database bulk-insert tuning (db-worker-bee), or upload endpoint security audit (security-worker-bee).
+name: "csv-xlsx-import-export-stinger"
+description: "The \\\\\\\"upload your spreadsheet\\\\\\\" implementation arsenal for React/Next.js products. Covers library selection (papaparse, SheetJS, exceljs), streaming-parse for 100MB+ files, the column-mapping UX wizard, managed importers (OneSchema, Flatfile, dromo) vs self-hosted (react-spreadsheet-import), Zod row validation, CSV injection prevention, encoding edge cases, and styled XLSX export. Use when the user says \\\\\\\"build a CSV import\\\\\\\", \\\\\\\"add XLSX upload\\\\\\\", \\\\\\\"spreadsheet import feature\\\\\\\", \\\\\\\"column-mapping wizard\\\\\\\", \\\\\\\"export to Excel\\\\\\\", \\\\\\\"streaming parse large file\\\\\\\", \\\\\\\"CSV injection safety\\\\\\\", or when csv-xlsx-import-export-worker-bee is invoked. Do NOT use for file drop-zone UI (ux-ui-svelte-worker-bee), database bulk-insert tuning (db-worker-bee), or upload endpoint security audit (security-worker-bee)."
 ---
 
 # csv-xlsx-import-export Stinger
@@ -24,7 +24,7 @@ Load when the Bee is invoked on any of:
 
 Do NOT load for:
 
-- Generic file upload drop-zone UX (ux-ui-worker-bee owns the react-dropzone + progress indicator surface).
+- Generic file upload drop-zone UX (ux-ui-svelte-worker-bee owns the react-dropzone + progress indicator surface).
 - Database upsert performance after import (db-worker-bee).
 - Server-side upload endpoint hardening (security-worker-bee must audit the endpoint before production).
 
@@ -94,4 +94,4 @@ These are not in the official docs but emerged from the 2026 literature sweep:
 
 ---
 
-*Forged by `stinger-forge` from `command-briefs/csv-xlsx-import-export-worker-bee-command-brief.md` and research gathered by `scripture-historian`. Part of the Legion AI Tools Factory by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+*Forged by `stinger-forge` from `command-briefs/csv-xlsx-import-export-worker-bee-command-brief.md` and research gathered by `scripture-historian`. Part of The Hive by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

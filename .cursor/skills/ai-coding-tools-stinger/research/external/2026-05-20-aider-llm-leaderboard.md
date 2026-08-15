@@ -12,11 +12,11 @@ stinger: ai-coding-tools-stinger
 
 ## Summary
 
-Aider maintains its own polyglot coding leaderboard — a complement to SWE-bench Verified that tests across multiple programming languages, not just Python. It also documents recommended model pairings and cost-optimization strategies for the architect/editor two-model pattern. As of May 2026, GPT-5 and Gemini 2.5 Pro top the leaderboard.
+Aider maintains its own polyglot coding leaderboard: a complement to SWE-bench Verified that tests across multiple programming languages, not just Python. It also documents recommended model pairings and cost-optimization strategies for the architect/editor two-model pattern. As of May 2026, GPT-5 and Gemini 2.5 Pro top the leaderboard.
 
 ## Key quotations / statistics
 
-- "GPT-5 (high reasoning effort): 88.0% pass rate (second attempt)" — top of Aider's polyglot leaderboard
+- "GPT-5 (high reasoning effort): 88.0% pass rate (second attempt)" (top of Aider's polyglot leaderboard)
 - "Gemini 2.5 Pro: 83.1% pass rate"
 - "o3-pro (high): 84.9% pass rate"
 - "For cost optimization, Aider uses a two-model architecture with phase-aware routing"
@@ -44,8 +44,8 @@ Aider maintains its own polyglot coding leaderboard — a complement to SWE-benc
 
 Aider supports a `--architect` flag that separates planning from editing:
 
-- **Architect phase** (planning, reasoning): Strong reasoning model — GPT-5.2, Claude Opus, DeepSeek R1
-- **Editor phase** (applying diffs to files): Fast, cheap model — DeepSeek V3, Sonnet 4.6, Haiku
+- **Architect phase** (planning, reasoning): Strong reasoning model: GPT-5.2, Claude Opus, DeepSeek R1
+- **Editor phase** (applying diffs to files): Fast, cheap model: DeepSeek V3, Sonnet 4.6, Haiku
 
 Cost impact: 3-5x reduction vs single-model usage. With phase detection for test generation and documentation, 70-90% cost reduction is achievable vs all-Opus workflows.
 
@@ -53,15 +53,15 @@ Cost impact: 3-5x reduction vs single-model usage. With phase detection for test
 
 Aider behavior is configured via `.aider.conf.yml` in the project root or `~/.aider.conf.yml` for global settings. Key configuration options:
 
-- `model:` — primary model (architect in two-model mode)
-- `editor-model:` — editor model for applying changes
-- `auto-commits:` — automatic git commits per change (default: true)
-- `git:` — enable/disable git integration
-- `read:` — additional files to load into context
+- `model:`: primary model (architect in two-model mode)
+- `editor-model:`: editor model for applying changes
+- `auto-commits:`: automatic git commits per change (default: true)
+- `git:`: enable/disable git integration
+- `read:`: additional files to load into context
 
 ## Annotations for stinger-forge
 
 - `guides/03-model-routing.md`: Aider section should document the architect/editor pattern prominently. The cost reduction numbers (3-5x) are the single best argument for Aider over Claude Code for token-budget-conscious developers.
 - `guides/04-prompt-and-context-discipline.md`: `.aider.conf.yml` structure and recommended settings deserve a dedicated callout block
-- `guides/02-benchmark-data.md`: Aider's leaderboard covers polyglot languages vs SWE-bench's Python-only focus — document both as complementary sources with different coverage
-- The auto-commit behavior is both a strength (clean git history) and a footgun (commits before the user reviews) — mention in `guides/05-footguns.md`
+- `guides/02-benchmark-data.md`: Aider's leaderboard covers polyglot languages vs SWE-bench's Python-only focus: document both as complementary sources with different coverage
+- The auto-commit behavior is both a strength (clean git history) and a footgun (commits before the user reviews): mention in `guides/05-footguns.md`

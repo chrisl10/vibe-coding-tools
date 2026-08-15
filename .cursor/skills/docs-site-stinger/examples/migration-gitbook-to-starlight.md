@@ -12,7 +12,7 @@
 
 - Hard filters: budget constraint removes Mintlify Pro.
 - Profile A (open-source) doesn't apply; Profile C (deep customization) does.
-- **Selected: Starlight** — same search quality, full customization, $0 hosting on Vercel.
+- **Selected: Starlight**, same search quality, full customization, $0 hosting on Vercel.
 - Trade-off: team must manage deployment; GitBook's non-technical editor UX is lost.
 - Fallback: Docusaurus v3.10 if the team prefers React over Astro.
 
@@ -93,7 +93,7 @@ Create a `vercel.json` redirect map for old GitBook URLs:
 
 ### 7. Docs-as-code CI (guides/02-docs-as-code.md)
 
-Add the full CI pipeline from `guides/02-docs-as-code.md`. GitBook had no CI gate — this migration is an opportunity to add one.
+Add the full CI pipeline from `guides/02-docs-as-code.md`. GitBook had no CI gate; this migration is an opportunity to add one.
 
 ---
 

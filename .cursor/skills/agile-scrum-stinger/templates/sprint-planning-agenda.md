@@ -16,7 +16,7 @@
 
 ---
 
-## Part 1: Why — Sprint Goal (20% of time-box)
+## Part 1: Why, Sprint Goal (20% of time-box)
 
 **Facilitator:** Product Owner opens with the Product Goal and proposes a Sprint Goal
 
@@ -29,10 +29,10 @@
 
 ---
 
-## Part 2: What — Story Selection (50% of time-box)
+## Part 2: What, Story Selection (50% of time-box)
 
 4. PO presents top Backlog items for consideration (already refined)
-5. Developers select items that support the Sprint Goal — they own this selection
+5. Developers select items that support the Sprint Goal: they own this selection
 6. Developers ask clarifying questions; PO answers
 7. If estimation is needed: run Planning Poker per `guides/03-estimation.md` (time-box estimation to this section, not the whole meeting)
 
@@ -47,7 +47,7 @@
 
 ---
 
-## Part 3: How — Sprint Plan (30% of time-box)
+## Part 3: How, Sprint Plan (30% of time-box)
 
 8. For each selected story, Developers identify: initial tasks, dependencies, and risks
 9. Sprint Backlog is created (stories + tasks, not just stories)

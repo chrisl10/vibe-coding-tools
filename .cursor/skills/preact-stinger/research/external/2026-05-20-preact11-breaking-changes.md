@@ -10,7 +10,7 @@ url: https://preactjs.com/guide/v11/upgrade-guide
 
 **Status at research time:** beta (11.0.0-beta.0, Aug 2025). Tracking PR merged Jun 2025.
 
-> TODO: open question — check https://github.com/preactjs/preact/releases for stable release status before publishing the stinger.
+> TODO: open question; check https://github.com/preactjs/preact/releases for stable release status before publishing the stinger.
 
 ## Breaking changes affecting preact/compat users
 

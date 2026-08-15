@@ -1,4 +1,4 @@
-# Source PRDs — website-stinger
+# Source PRDs: website-stinger
 
 This folder contains the canonical 12-phase site template guide as individual PRD files. These are the primary load-bearing source for every claim in `guides/`. Do not edit these files without also updating the corresponding guide.
 
@@ -33,5 +33,5 @@ These files are mirrored from `site-template-guide/` at the repository root. Kee
 
 ## Retired PRDs (deleted)
 
-- `prd-phase-02-nextjs-performance-security.md` — replaced by `prd-phase-02-sveltekit-performance-security.md`
-- `prd-phase-07-admin-spa-architecture.md` — replaced by `prd-phase-07-payload-admin.md` (Vite SPA retired; Payload admin panel used instead)
+- `prd-phase-02-nextjs-performance-security.md`: replaced by `prd-phase-02-sveltekit-performance-security.md`
+- `prd-phase-07-admin-spa-architecture.md`: replaced by `prd-phase-07-payload-admin.md` (Vite SPA retired; Payload admin panel used instead)

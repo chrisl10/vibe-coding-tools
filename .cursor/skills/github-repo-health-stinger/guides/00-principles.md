@@ -40,7 +40,7 @@ Do not order findings by dimension number. A "no CODEOWNERS" finding (effort: 1,
 | CI workflow architecture (reusable workflows, release pipeline) | Out of scope | `ci-release-worker-bee` |
 | Secret scanning result details | Check if enabled | `security-worker-bee` |
 | Code logic / security vulnerabilities | Out of scope | `security-worker-bee` |
-| Deep Lake dataset schema | Out of scope | `deeplake-dataset-worker-bee` |
+| Deep Lake dataset schema | Out of scope | `vector-store-worker-bee` |
 | PRD / doc authoring | Out of scope | `library-worker-bee` |
 | Post-audit verification | Out of scope | `quality-worker-bee` |
 

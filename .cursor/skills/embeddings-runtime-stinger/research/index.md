@@ -12,6 +12,6 @@
 
 ## Coverage gaps
 
-- Deep Lake dataset schema-heal mechanics (deliberately out of scope; owned by deeplake-dataset-worker-bee; this stinger only triggers the handoff).
+- Deep Lake dataset schema-heal mechanics (deliberately out of scope; owned by vector-store-worker-bee; this stinger only triggers the handoff).
 - Broad embedding-model leaderboard surveys (deliberately out of scope; the rubric is Hivemind recall, not general benchmarks).
 - API key storage / data-egress review for hosted options (out of scope; handed to security-worker-bee).

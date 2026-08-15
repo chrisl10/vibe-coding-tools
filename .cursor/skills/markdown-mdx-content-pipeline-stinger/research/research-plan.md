@@ -5,7 +5,7 @@
 - **Page budget target:** 60-80 source files
 - **Source breadth target:** official docs, practitioner blogs, GitHub READMEs, npm changelogs, community discussions
 
-## Initial queries (from the proposal step / Command Brief)
+## Initial queries (from `big-bang-space` / Command Brief)
 1. "MDX 3 production patterns 2026"
 2. "shiki expressive-code starry-night 2026"
 3. "rehype remark plugin authoring 2026"

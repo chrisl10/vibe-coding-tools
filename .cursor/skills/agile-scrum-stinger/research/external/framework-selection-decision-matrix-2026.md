@@ -11,7 +11,7 @@ stinger: agile-scrum-stinger
 # Kanban vs Scrum vs ScrumBan - Comprehensive Decision Framework (2025)
 
 ## Summary
-An October 2025 comprehensive comparison covering structural differences, planning approaches, and a scored decision matrix for framework selection. Highly practical source for `guides/06-framework-selection.md` — includes a structured scoring system that can be adapted into a team assessment tool.
+An October 2025 comprehensive comparison covering structural differences, planning approaches, and a scored decision matrix for framework selection. Highly practical source for `guides/06-framework-selection.md`: includes a structured scoring system that can be adapted into a team assessment tool.
 
 ## Key quotations / statistics
 - "Choosing between Kanban, Scrum, and Scrumban is not about finding the universally 'best' framework - it's about matching your team's context, maturity, and work characteristics with the right approach."

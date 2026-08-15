@@ -1,11 +1,11 @@
-# 16 — Django Async
+# 16: Django Async
 
 Async-aware, not async-by-default. Django supports async views from 4.1+; the wins are real but only when the I/O profile justifies them and you deploy on ASGI.
 
 ## Hard rules
 
 1. **Async only wins under ASGI.** Async views under WSGI run in a one-off event loop with a measurable per-request penalty. If you can't deploy ASGI, don't write async views.
-2. **`sync_to_async()` at the ORM boundary.** Wrap sync helpers with `@sync_to_async` or use `await sync_to_async(fn)(args)` inline. The `aget`, `acreate` ORM variants exist (Django 4.1+) but the underlying DB driver is still sync — they're convenience wrappers.
+2. **`sync_to_async()` at the ORM boundary.** Wrap sync helpers with `@sync_to_async` or use `await sync_to_async(fn)(args)` inline. The `aget`, `acreate` ORM variants exist (Django 4.1+) but the underlying DB driver is still sync; they're convenience wrappers.
 3. **Mixing sync middleware with async views incurs a context-switch cost.** Run async views with async middleware, or accept the per-request penalty.
 4. **`asyncio.gather()` / `asyncio.TaskGroup()`** for parallel I/O. Sequential awaits gain nothing.
 5. **No blocking calls in async def.** No `time.sleep`, no `requests.get`, no synchronous file I/O on hot paths.
@@ -86,9 +86,9 @@ async def order_count_for_user_async(*, user_id: int) -> int:
     return await Order.objects.filter(user_id=user_id, status="paid").acount()
 ```
 
-For non-trivial reads (lots of joined relations), `sync_to_async` wrapping a sync helper is still the most idiomatic — the async ORM is a convenience layer, not a true async DB.
+For non-trivial reads (lots of joined relations), `sync_to_async` wrapping a sync helper is still the most idiomatic: the async ORM is a convenience layer, not a true async DB.
 
-`thread_sensitive=True` is the default — keeps all `sync_to_async` calls in the same thread for safety with the ORM connection pool. Use `thread_sensitive=False` only when you're sure the call doesn't share state.
+`thread_sensitive=True` is the default: keeps all `sync_to_async` calls in the same thread for safety with the ORM connection pool. Use `thread_sensitive=False` only when you're sure the call doesn't share state.
 
 ## ASGI deployment
 
@@ -103,7 +103,7 @@ gunicorn config.asgi:application \
 uvicorn config.asgi:application --host 0.0.0.0 --port 8000 --workers 4
 ```
 
-For Channels (WebSockets co-existing), use `daphne` — see `guides/18-deployment-runtimes.md`.
+For Channels (WebSockets co-existing), use `daphne`: see `guides/18-deployment-runtimes.md`.
 
 ## Common pitfalls
 
@@ -115,9 +115,9 @@ For Channels (WebSockets co-existing), use `daphne` — see `guides/18-deploymen
   ```
   Django will raise `SynchronousOnlyOperation`. Use `await sync_to_async(list)(qs)` or the async ORM (`async for order in qs:`).
 
-- **Calling `requests.get(...)`** in an async view — blocks the event loop. Use `httpx.AsyncClient`.
+- **Calling `requests.get(...)`** in an async view: blocks the event loop. Use `httpx.AsyncClient`.
 
-- **`time.sleep()`** in an async view — same. Use `await asyncio.sleep(...)`.
+- **`time.sleep()`** in an async view: same. Use `await asyncio.sleep(...)`.
 
 - **Sequential awaits** when the operations are independent:
   ```python

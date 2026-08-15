@@ -1,4 +1,4 @@
-# 03 — Deployment
+# 03: Deployment
 
 Hosting patterns for API documentation. Read `research/external/github-pages-openapi-deployment.md` before running this guide.
 

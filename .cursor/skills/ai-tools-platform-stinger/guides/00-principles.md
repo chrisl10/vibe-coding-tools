@@ -1,10 +1,10 @@
-# Principles — ai-tools-platform-stinger
+# Principles: ai-tools-platform-stinger
 
 These non-negotiables govern every output this stinger produces. Read this guide on every invocation before consulting any specialized guide.
 
 ## 1. Always cite current pricing
 
-AI provider pricing changes every 60-90 days. A recommendation built on stale prices can be badly wrong — Gemini Flash is sometimes 10x cheaper than the equivalent Claude model, or vice versa after a repricing. Every cost recommendation must:
+AI provider pricing changes every 60-90 days. A recommendation built on stale prices can be badly wrong. Gemini Flash is sometimes 10x cheaper than the equivalent Claude model, or vice versa after a repricing. Every cost recommendation must:
 
 - Name the pricing tier referenced (e.g., "Claude Haiku 3.5 at $0.80 / 1M input tokens as of 2026-Q2").
 - Flag if the stinger's research notes may be stale for this specific provider.
@@ -21,15 +21,15 @@ These are three fundamentally different deployment profiles. Never conflate them
 | GPU cloud (Runpod/Modal) | Your VPC; no provider data exposure | 100-500ms | Pay-per-GPU-hour or per-second | Your ops responsibility |
 | Local LLM (Ollama) | Fully local; zero data egress | 200ms-10s (hardware-dependent) | Hardware amortized; zero marginal | Your hardware |
 
-When a user's context involves PII, financial data, or regulated industries — default-recommend GPU cloud or local before cloud APIs, and flag the DPA question explicitly.
+When a user's context involves PII, financial data, or regulated industries, default-recommend GPU cloud or local before cloud APIs, and flag the DPA question explicitly.
 
 ## 3. Name the cheap fallback for every frontier model
 
 Every production recommendation must include a cost tier:
 
-- **Frontier tier:** Claude 3.7 Sonnet/Opus, GPT-4.1, Gemini 2.5 Pro — use for complex reasoning, long-context, agentic tasks.
-- **Mid tier:** Claude 3.5 Sonnet, GPT-4o, Gemini 1.5 Pro — general-purpose production workloads.
-- **Fast/cheap tier:** Claude Haiku 3.5, GPT-4o-mini, Gemini 2.0 Flash, Llama 3.1 8B via Groq — classification, summarization, simple generation, high-volume tasks.
+- **Frontier tier:** Claude 3.7 Sonnet/Opus, GPT-4.1, Gemini 2.5 Pro: use for complex reasoning, long-context, agentic tasks.
+- **Mid tier:** Claude 3.5 Sonnet, GPT-4o, Gemini 1.5 Pro: general-purpose production workloads.
+- **Fast/cheap tier:** Claude Haiku 3.5, GPT-4o-mini, Gemini 2.0 Flash, Llama 3.1 8B via Groq: classification, summarization, simple generation, high-volume tasks.
 
 Never recommend only a frontier model without naming the fast/cheap equivalent the user should route to for high-volume, low-complexity sub-tasks.
 
@@ -49,7 +49,7 @@ Switching AI providers mid-project is expensive and risky. Before recommending a
 - Name the migration path explicitly (e.g., "OpenAI-compatible endpoint means you only change the base URL and model string").
 - Estimate the switching cost: configuration changes, prompt compatibility, evaluation lift needed.
 - State the break-even point: at what scale does the cost saving justify the migration effort?
-- If the current setup is not broken, "should-refactor" is the right severity — not "must-fix."
+- If the current setup is not broken, "should-refactor" is the right severity, not "must-fix."
 
 ## 6. Defer key security to security-worker-bee
 

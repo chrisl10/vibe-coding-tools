@@ -65,7 +65,7 @@ they're used in.
 - This is the **primary source** for `guides/04-nextjs-font.md` App Router
   section.
 - The App Router pattern places font config on `<html>` className vs Pages
-  Router which uses `<main>` or `<body>` — this difference must be explicit
+  Router which uses `<main>` or `<body>`: this difference must be explicit
   in the guide.
 - The multi-weight `src` array pattern is the standard approach for self-hosted
   fonts with multiple weights.

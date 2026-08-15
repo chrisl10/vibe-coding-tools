@@ -18,15 +18,15 @@ A Lighthouse plugin adds a new custom category to the Lighthouse report. Plugins
 | Access existing page artifacts (ScriptElements, ImageElements, etc.) | Yes | Yes |
 | Gather NEW custom data from the page (custom Gatherers) | **No** | Yes |
 
-**Critical boundary:** Plugins CANNOT access custom Gatherers. If you need to run custom JavaScript in the page context or read non-standard page data, you need a full custom Lighthouse config — not a plugin.
+**Critical boundary:** Plugins CANNOT access custom Gatherers. If you need to run custom JavaScript in the page context or read non-standard page data, you need a full custom Lighthouse config, not a plugin.
 
-> "Plugins can only access a limited set of existing artifacts — they CANNOT use custom Gatherers. To collect custom page data, a full custom Lighthouse configuration (not a plugin) is required." — `research/external/2026-05-20-lighthouse-plugin-api.md`
+> "Plugins can only access a limited set of existing artifacts — they CANNOT use custom Gatherers. To collect custom page data, a full custom Lighthouse configuration (not a plugin) is required." (`research/external/2026-05-20-lighthouse-plugin-api.md`)
 
 Common audits achievable via plugin (using existing artifacts):
-- **CSP header presence** — uses `devtoolsLogs` to inspect response headers
-- **Third-party script allowlist** — uses `ScriptElements` to check `src` against an allowlist
-- **Missing alt text patterns** — uses `ImageElements` beyond what Lighthouse's built-in a11y audits cover
-- **Custom meta tag presence** — uses `MetaElements`
+- **CSP header presence**: uses `devtoolsLogs` to inspect response headers
+- **Third-party script allowlist**: uses `ScriptElements` to check `src` against an allowlist
+- **Missing alt text patterns**: uses `ImageElements` beyond what Lighthouse's built-in a11y audits cover
+- **Custom meta tag presence**: uses `MetaElements`
 
 ---
 

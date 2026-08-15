@@ -1,5 +1,7 @@
 # 10 - Vitest Discipline
 
+**Legacy/library-case worked example; the underlying Vitest discipline (`vitest run` not watch, coverage-v8, no order dependence, no real network) applies broadly.** For SvelteKit-specific component testing and the Vitest/Playwright split, see `guides/26-vitest-playwright-for-sveltekit.md`.
+
 Tests are Vitest ^4. `npm test` runs `vitest run` (not watch). Coverage is `@vitest/coverage-v8`. There are 229 `*.test.ts` under `tests/` and they mirror the harness layout.
 
 ## The layout mirrors harnesses

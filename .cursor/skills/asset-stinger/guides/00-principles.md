@@ -1,4 +1,4 @@
-# Guide 00 — Principles (The Nine Non-Negotiables)
+# Guide 00: Principles (The Nine Non-Negotiables)
 
 These are the hard rules of the Universal Asset Registry. Every other guide inherits from these; every exception must be justified in writing and linked from the exception site.
 
@@ -8,7 +8,7 @@ Read this before every operation. When a principle appears to conflict with a gu
 
 ## 1. Code is the source of truth. The database is the registry.
 
-A registry row exists because a real construct exists in the codebase — an exported React component, a Fastify route handler, a CSS variable, an i18n key, a Prisma model. The DB describes *what is*, not *what should be*.
+A registry row exists because a real construct exists in the codebase: an exported React component, a Fastify route handler, a CSS variable, an i18n key, a Prisma model. The DB describes *what is*, not *what should be*.
 
 **Corollary:** if code is deleted, the registry row is deprecated (not deleted). If code is added and not registered, the sync generator files drift. If a registry row has no backing code, the sync generator marks it `orphaned` and you investigate.
 
@@ -24,14 +24,14 @@ Lifecycle:
 draft → active → deprecated → archived → (eligible for delete only after sunset_at + usage_count = 0)
 ```
 
-**Why:** orphan FK references, silent feature removals, flag debt, untraceable behavior changes — all are prevented by keeping the row around as history.
+**Why:** orphan FK references, silent feature removals, flag debt, untraceable behavior changes; all are prevented by keeping the row around as history.
 
 ## 3. Keys are stable and human-readable. IDs are for FKs.
 
 Every catalog row has:
 
-- `id: String @id @default(cuid())` — FK target; opaque; never shown to humans.
-- `key: String @unique` — kebab-case, ≤64 chars, stable for the life of the asset. **Never renamed.**
+- `id: String @id @default(cuid())`: FK target; opaque; never shown to humans.
+- `key: String @unique`: kebab-case, ≤64 chars, stable for the life of the asset. **Never renamed.**
 
 If an asset's "name" changes (marketing rename, scope pivot), the `key` stays, and `display_name` or `title` moves. If the key *must* change (a migration error, a namespace collision), introduce a `key_alias` row pointing the old key at the new row; never overwrite.
 
@@ -41,11 +41,11 @@ Registry tables (`Feature`, `Page`, `Route`, `Surface`, `Control`, `Display`, `L
 
 Tenant customization flows through the **existing** override tables:
 
-- `TenantFeatureFlag` — overrides `FeatureFlag`
-- `TenantTheme` — overrides `DesignTokenDefinition` values (via JSON)
-- `CustomMenuItem` — adds tenant-authored `NavEntry`-shaped rows
-- `MenuItemLabelBinding` — binds labels to nav entries (polymorphic)
-- `ContentTranslation` (locale-scoped) — overrides `ContentEntry.default_value`
+- `TenantFeatureFlag`: overrides `FeatureFlag`
+- `TenantTheme`: overrides `DesignTokenDefinition` values (via JSON)
+- `CustomMenuItem`: adds tenant-authored `NavEntry`-shaped rows
+- `MenuItemLabelBinding`: binds labels to nav entries (polymorphic)
+- `ContentTranslation` (locale-scoped): overrides `ContentEntry.default_value`
 
 A tenant never writes to `Feature`, `Page`, `Route`, `DesignTokenDefinition`, etc.
 
@@ -53,15 +53,15 @@ A tenant never writes to `Feature`, `Page`, `Route`, `DesignTokenDefinition`, et
 
 Every asset that participates in **billing, flagging, metering, or rollout** must link to a `Feature` via `featureKey`. Without that link, the asset is invisible to the feature-flag console, the plan matrix, the meter catalog, and the entitlement engine.
 
-Pure design primitives (`DesignTokenDefinition`, `Icon`, `MediaAsset`, `Font`, `Motion`, `Breakpoint`) MAY omit `featureKey` — they are shared across features. Everything else must have one.
+Pure design primitives (`DesignTokenDefinition`, `Icon`, `MediaAsset`, `Font`, `Motion`, `Breakpoint`) MAY omit `featureKey`: they are shared across features. Everything else must have one.
 
-When registering any feature-bearing asset: if you cannot name the owning feature, stop and ask the user — do not guess.
+When registering any feature-bearing asset: if you cannot name the owning feature, stop and ask the user: do not guess.
 
 ## 6. No string-keyed references where a FK exists.
 
-Today, `MenuItemLabelBinding.targetKey: String` points at a "static code-registry id" — a string that the code hopes matches something. This is how the registry drifts.
+Today, `MenuItemLabelBinding.targetKey: String` points at a "static code-registry id": a string that the code hopes matches something. This is how the registry drifts.
 
-**Rule going forward:** any new cross-table reference uses a real FK. When you encounter a legacy string-keyed reference, propose a migration to add a proper FK alongside (component-to-registry bindings — file as a follow-up feature PRD in the deploying product).
+**Rule going forward:** any new cross-table reference uses a real FK. When you encounter a legacy string-keyed reference, propose a migration to add a proper FK alongside (component-to-registry bindings, file as a follow-up feature PRD in the deploying product).
 
 ## 7. Derived fields are generator-owned. Human fields are generator-exempt.
 
@@ -80,8 +80,8 @@ No anonymous rows. Every row has:
 
 - `created_by` (user ID or `sync-generator@ci`)
 - `created_at`
-- `pr_url` (the PR that introduced the row — nullable only for generator-created rows, where it's auto-filled)
-- `prd_ref` (the feature PRD key that authorized the asset — nullable only for pre-registry assets during backfill)
+- `pr_url` (the PR that introduced the row, nullable only for generator-created rows, where it's auto-filled)
+- `prd_ref` (the feature PRD key that authorized the asset, nullable only for pre-registry assets during backfill)
 
 When the generator sees a new asset in code with no feature PRD reference annotation, it creates a row in `status: draft` and files a drift item. A human must resolve.
 

@@ -15,7 +15,7 @@ Technical deep-dive (November 2025) explaining the CORS mechanism behind
 font preloading, covering the `crossorigin` attribute variants, priority
 inversion risks, unused preloads, and an HTTP/2 Push conflict edge case.
 Particularly valuable for its explanation that font CORS applies even to
-same-origin fonts — a common developer misconception.
+same-origin fonts: a common developer misconception.
 
 ## Key quotations / statistics
 
@@ -50,7 +50,7 @@ same-origin fonts — a common developer misconception.
 
 - Production checklist from the article:
   - Preload 1-2 fonts maximum (primary body + optional headline)
-  - Always include `crossorigin` — even for same-origin fonts
+  - Always include `crossorigin`, even for same-origin fonts
   - Include `type="font/woff2"` to help older browsers skip unsupported formats
   - Pair with `font-display: optional` when possible
   - Self-host fonts for full preload control
@@ -62,7 +62,7 @@ same-origin fonts — a common developer misconception.
 - The "300-800ms earlier fetch" vs "highest priority competition" quantification
   belongs in `guides/02-preload-strategy.md` as the risk/reward framing.
 - The three equivalent `crossorigin` forms (bare attribute, `=""`, `="anonymous"`)
-  resolve the common developer confusion — include in the guide.
+  resolve the common developer confusion: include in the guide.
 - The `crossorigin="use-credentials"` anti-pattern is a gotcha that belongs in a
   "Common Mistakes" callout.
 - The HTTP/2 Push conflict (don't use preload + HTTP/2 Push together) is a

@@ -48,11 +48,11 @@ The Cone of Uncertainty (Barry Boehm, widely used) visualizes that estimate vari
 - After prototyping: further
 - At completion: zero uncertainty (known)
 
-Practical implication: early roadmap estimates should always be presented as ranges (T-shirt sizes or confidence intervals), never as point commitments. The cone is the honest answer to "why can't you tell me how long it will take?" — you can tell them a range, and you can narrow it over time as uncertainty resolves.
+Practical implication: early roadmap estimates should always be presented as ranges (T-shirt sizes or confidence intervals), never as point commitments. The cone is the honest answer to "why can't you tell me how long it will take?": you can tell them a range, and you can narrow it over time as uncertainty resolves.
 
 ## Reference class forecasting: Flyvbjerg's remedy
 
-Bent Flyvbjerg (megaprojects researcher): the systematic remedy for the planning fallacy is "reference class forecasting" — base predictions on the outcomes of a reference class of similar projects or tasks, not on the internal narrative of the current project.
+Bent Flyvbjerg (megaprojects researcher): the systematic remedy for the planning fallacy is "reference class forecasting": base predictions on the outcomes of a reference class of similar projects or tasks, not on the internal narrative of the current project.
 
 For software teams:
 1. Define the reference class: "stories estimated at 3 points, completed in the last 6 months."

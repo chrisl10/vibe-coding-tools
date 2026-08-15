@@ -12,7 +12,7 @@ Modals are focused overlay dialogs that capture user attention to collect input 
 
 ## Opening a modal
 
-Requires a `trigger_id` from a slash command, button click, or shortcut payload. `trigger_id` expires in **3 seconds** — call `views.open` before or immediately after `ack()`.
+Requires a `trigger_id` from a slash command, button click, or shortcut payload. `trigger_id` expires in **3 seconds**: call `views.open` before or immediately after `ack()`.
 
 ```typescript
 await client.views.open({
@@ -113,11 +113,11 @@ app.view('my_modal', async ({ ack, body, view, client }) => {
 ```
 
 `response_action` options:
-- `ack()` (no argument) — close the modal and show success.
-- `{ response_action: 'errors', errors: { block_id: 'Error message' } }` — show validation errors in-place without closing the modal.
-- `{ response_action: 'update', view: updatedView }` — replace the modal with a new view.
-- `{ response_action: 'push', view: newView }` — push a new view onto the stack.
-- `{ response_action: 'clear' }` — clear the entire view stack.
+- `ack()` (no argument): close the modal and show success.
+- `{ response_action: 'errors', errors: { block_id: 'Error message' } }`: show validation errors in-place without closing the modal.
+- `{ response_action: 'update', view: updatedView }`: replace the modal with a new view.
+- `{ response_action: 'push', view: newView }`: push a new view onto the stack.
+- `{ response_action: 'clear' }`: clear the entire view stack.
 
 ---
 
@@ -171,7 +171,7 @@ app.view('step2_modal', async ({ ack, body, client }) => {
 ## Common gotchas
 
 1. **No `response_url` inside modals.** Actions triggered inside modals cannot use `respond()`. Use `client.views.update()` or `client.chat.postMessage()` instead.
-2. **`input` blocks only, not `actions` blocks, feed `view_submission`.** Buttons inside modals fire `app.action()` handlers and are not included in the submit payload — only `input` block elements appear in `view.state.values`.
+2. **`input` blocks only, not `actions` blocks, feed `view_submission`.** Buttons inside modals fire `app.action()` handlers and are not included in the submit payload: only `input` block elements appear in `view.state.values`.
 3. **`private_metadata` 3000-char limit.** Serialize only IDs and minimal state. Store larger payloads in a cache keyed by a short ID.
 4. **`trigger_id` for `views.push` comes from the action payload, not the original command.** Each button click or interactive component that triggers a push receives a new `trigger_id`.
 5. **View stack max is 3.** Attempting a fourth `views.push` will return an API error. Design modal flows with a maximum of 3 steps.

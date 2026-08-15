@@ -49,7 +49,7 @@ From the 2026 prompting guide:
 
 ## Annotations for stinger-forge
 
-- `guides/00-tool-tiers.md`: Bolt belongs firmly in "rapid-scaffold" tier. Its WebContainer constraint is the primary selector against it — any project needing native binaries should route to Replit Agent instead.
+- `guides/00-tool-tiers.md`: Bolt belongs firmly in "rapid-scaffold" tier. Its WebContainer constraint is the primary selector against it: any project needing native binaries should route to Replit Agent instead.
 - `guides/05-footguns.md`: The native binary limitation is the most common Bolt footgun. Developers hit it when pulling npm packages with native compilation steps (bcrypt, sharp, canvas). Add a "check for native deps first" callout.
 - The "app-level brief" prompting pattern is worth surfacing in `guides/04-prompt-and-context-discipline.md` as a Bolt-specific tip
 - Cross-link to the Replit Agent section: "If your Bolt app needs a real server, migrate to Replit Agent rather than fighting WebContainer limits"

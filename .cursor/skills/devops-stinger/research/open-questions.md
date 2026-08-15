@@ -1,4 +1,4 @@
-# Open questions — devops-stinger
+# Open questions: devops-stinger
 
 Items that needed user judgment or could not be definitively resolved at forge time (2026-04-25).
 
@@ -7,8 +7,8 @@ Items that needed user judgment or could not be definitively resolved at forge t
 - **Kubernetes manifests / Helm charts in scope?** Resolved: out of scope. devops-worker-bee stops at "image built and pushed". Cloud-platform Bees (DOKS, Fly, etc.) and `db-worker-bee` own runtime topology.
 - **Hadolint deep config?** Resolved: recommend with default ruleset; don't author custom Hadolint config.
 - **Pre-Buildx / Docker < 24 support?** Resolved: out of scope. Assume Buildx-enabled Docker 24+ as modern default since 2023.
-- **Self-hosted runner provisioning?** Resolved: recommend Depot's managed runners; don't author EC2/Terraform for self-hosted runner farms. Self-hosted runners have a real security model (anyone with workflow access can run code on your hardware) — out of scope for this Stinger.
-- **Catalog opinionation level?** Resolved: opinionated. "Use BuildKit cache mounts, not COPY-the-cache hacks" — first-person, sourced.
+- **Self-hosted runner provisioning?** Resolved: recommend Depot's managed runners; don't author EC2/Terraform for self-hosted runner farms. Self-hosted runners have a real security model (anyone with workflow access can run code on your hardware): out of scope for this Stinger.
+- **Catalog opinionation level?** Resolved: opinionated. "Use BuildKit cache mounts, not COPY-the-cache hacks": first-person, sourced.
 
 ## Open / deferred
 
@@ -25,7 +25,7 @@ Items that needed user judgment or could not be definitively resolved at forge t
 
 ## When to refresh this Stinger
 
-- Depot ships a new product (e.g., new caching layer, new runner SKU) — update `07-depot-integration.md` and the Depot research note.
+- Depot ships a new product (e.g., new caching layer, new runner SKU): update `07-depot-integration.md` and the Depot research note.
 - A major Action gets compromised → update the supply-chain narrative in `06-actions-security.md`.
 - Docker / BuildKit ships a new caching directive or syntax → update `08-caching-strategies.md`.
 - Compose ships a new top-level construct (like `develop` in 2.22) → update `03-compose-for-dev.md`.

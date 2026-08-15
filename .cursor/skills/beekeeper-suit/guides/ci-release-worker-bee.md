@@ -1,74 +1,40 @@
-# CI / Release Worker-Bee - Beekeeper-Suit's Guide
-
-The Beekeeper-Suit routing skill's record of when to invoke `ci-release-worker-bee`. Use this guide to decide whether a user request belongs to this Bee.
-
-**Bee:** [`.cursor/agents/ci-release-worker-bee.md`](../../../agents/ci-release-worker-bee.md)
-**Stinger:** [`.cursor/skills/ci-release-stinger/`](../../ci-release-stinger/)
-**Trigger policy:** proactive
-
----
+# ci-release-worker-bee
 
 ## Domain
+Build, CI, and npm-release specialist for this repo's TypeScript/Node ESM package pipeline: the esbuild multi-harness bundle (`tsc && node esbuild.config.mjs`), version single-sourcing via `scripts/sync-versions.mjs`, the quality gate (`npm run ci` = typecheck + jscpd duplication + vitest, husky pre-commit lint-staged tsc), the GitHub Actions workflow architecture (ci.yaml, codeql.yaml, pr-checks.yaml, publish-smoke-test.yaml, release.yaml), the Node version matrix, npm publish discipline (the `files` allowlist, prepack, `pack-check.mjs` secret-scan), and native-dependency healing on install. Pure npm/ESM, no containers, no cloud deploy.
 
-`ci-release-worker-bee` is the Army's build, CI, and npm-release engineer for `@deeplake/hivemind` (TS ^6 / Node >=22 / ESM). It owns how Hivemind builds (the esbuild multi-harness bundle, `tsc && node esbuild.config.mjs` producing `harnesses/{claude-code,codex,cursor,hermes,pi}/bundle`, `harnesses/openclaw/dist`, `mcp/bundle`, `bundle/cli.js`, `embeddings/`), how the version is single-sourced (`scripts/sync-versions.mjs` plus esbuild `define`), how it gates (`npm run ci` = typecheck + jscpd dup + vitest, husky pre-commit lint-staged tsc), how it runs in CI (the GitHub Actions architecture: ci.yaml, codeql.yaml, pr-checks.yaml, publish-smoke-test.yaml, release.yaml, plus the Node matrix and cross-node-install smoke), and how it ships to npm (the `files` allowlist, prepack, pack-check secret-scan, audit-openclaw, and native-dep healing via ensure-tree-sitter postinstall). This is a pure-npm, pure-ESM project: no container, no web framework, no cloud deploy.
+## Paired Stinger
+[ci-release-stinger](../../ci-release-stinger) - the build/bundle guide, version single-sourcing, the quality-gate spec, workflow architecture, the release flow, npm publish discipline, and native-dep healing.
 
 ## Trigger phrases
-
-Route to `ci-release-worker-bee` when the user says any of:
-
-- "The build is slow" / "review our build" / "the bundle is wrong"
-- "Design our CI" / "audit our workflows" / "add a CI job"
-- "npm release" / "cut a release"
-- "Files allowlist" / "the npm pack ships junk"
-- "pack-check" / "we leaked a secret on publish"
-- "cross-node-install" / "tree-sitter broke on install"
-- "sync-versions" / "the version is out of sync"
-
-Or when build, workflow, bundle, or npm-publish concerns are in scope in a PR.
+- "review our build, is it doing the right thing"
+- "the bundle output looks wrong"
+- "design our CI pipeline / audit our workflows"
+- "the version is out of sync across manifests"
+- "add a new CI job"
+- "we leaked a secret on publish"
+- "the npm pack ships junk we didn't mean to include"
+- "tree-sitter broke on install, fix native-dep healing"
 
 ## Do NOT route when
-
-- The user wants runtime TS/Node code design - that is `typescript-node-worker-bee`.
-- The user wants Deep Lake dataset or retrieval logic - those are the dataset and retrieval Bees.
-- The user wants a security CVE deep audit or secret-leak tracing - surface and hand off to `security-worker-bee`.
-- The user wants changelog or release-notes prose - that is `changelog-release-notes-worker-bee`.
-- The user wants dependency CVE triage, Renovate setup, or SBOM - that is `dependency-audit-worker-bee`.
-
-If a request straddles two Bees' domains, prefer the narrower-scoped Bee and let this one act as backup.
+- The request is runtime TypeScript/Node source design or module-resolution decisions; that is typescript-node-worker-bee, though this Bee still enforces build principles like version inlining.
+- The request is Deeplake dataset, retrieval, or embeddings logic; hand to the relevant domain Bee.
+- The request is a CVE deep audit or secret-leak forensics; this Bee wires the gate and surfaces file:line, but security-worker-bee owns the audit.
+- The request is release-notes prose or an announcement; that is changelog-release-notes-worker-bee. This Bee owns the release mechanics only.
+- The request is dependency CVE or lockfile triage verdicts; that is dependency-audit-worker-bee, though this Bee wires the audit step.
 
 ## Inputs the Bee needs
+- The repo's `package.json`, `esbuild.config.mjs`, `tsconfig*.json`, workflow files, and version-sync scripts, inventoried before any recommendation.
+- Which invocation type applies: build-author, bundle-audit, pipeline-design/audit, release-cut, quality-gate, or native-dep-heal.
+- Whether the change is must-fix (secret reachable, allowlist ships junk, unpinned action) vs should-refactor severity.
 
-Before invoking, ensure the user has provided (or you can infer):
+## Outputs
+- An esbuild/script diff or a new/modified GitHub Actions workflow job with local-parity notes.
+- A bundle or workflow audit report citing exact file:line and the governing guide section.
+- A release plan and checklist for cutting an `@deeplake/hivemind` release.
 
-- The build, CI, or release concern in scope (bundle, workflow, version sync, publish, native-dep heal).
-- Access to `esbuild.config.mjs`, `scripts/sync-versions.mjs`, `scripts/pack-check.mjs`, `.github/workflows/`, and `package.json#files`.
-- Optional: the failing job log or the symptom (slow build, drifted version, junk in the tarball).
-
-If the concern or the symptom is unclear, do not invoke yet - ask the user what is failing.
-
-## Outputs the Bee produces
-
-- Build and bundle fixes (the two-step `tsc && esbuild` model, per-harness outputs).
-- CI workflow designs and audits (pinned actions, Node matrix, cross-node-install smoke).
-- npm-release discipline findings (files allowlist, prepack, pack-check, audit-openclaw, native-dep heal).
-
-## Multi-Bee sequences this Bee participates in
-
-- **Ship a release** - after the implementation Bees pass the Plan execution loop, `changelog-release-notes-worker-bee` writes the CHANGELOG and confirms the semver bump; `ci-release-worker-bee` then drives the build, the GitHub Actions workflows, and the npm publish.
-
-## Critical directives the orchestrator should respect
-
-- **The version is single-sourced** via `sync-versions.mjs` plus esbuild `define`; never hand-edit a per-harness manifest version.
-- **The build is `tsc && node esbuild.config.mjs` - both run.**
-- **`npm run ci` is the gate, and local equals CI.**
-- **What ships is the `files` allowlist** - auditing a release is auditing the allowlist plus pack-check output.
-- **Secrets never reach the tarball or the logs** (pack-check, audit-openclaw); the scoped release-only `GITHUB_TOKEN` is legitimate.
-- **Pin actions, pin Node**, and **native deps self-heal on install** via ensure-tree-sitter. The gate is tsc + husky, not ESLint/Prettier.
-
-(Full list lives in the Bee file's `## Critical directives` section.)
-
----
-
-*Part of Beekeeper-Suit's roster. See [`.cursor/skills/beekeeper-suit/SKILL.md`](../SKILL.md) for the full Army.*
-
-*Part of the Cursor IDE Army curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
+## Commonly sequenced with
+- security-worker-bee: audits the publish surface and secret-scan output on every pipeline change, first in the close-out chain.
+- quality-worker-bee: verifies gate parity, second in the close-out chain.
+- changelog-release-notes-worker-bee: writes the announcement prose for a release this Bee mechanically cuts.
+- dependency-audit-worker-bee: triages the CVE verdict for a dependency-audit step this Bee wires into CI.
