@@ -1,111 +1,175 @@
 # Vibe Coding Tools
 
-**Give your AI coding assistant a senior team, a repeatable playbook, and safety rails in one repository.**
+<div align="center">
 
-## Why use it?
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/legioncodeinc/brands/main/legion-code-inc/logos/legion-logo-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/legioncodeinc/brands/main/legion-code-inc/logos/legion-logo-light.svg">
+  <img alt="Legion Code Inc." src="https://raw.githubusercontent.com/legioncodeinc/brands/main/legion-code-inc/logos/legion-logo-light.svg" width="280">
+</picture>
 
-Most coding assistants start every task like a smart new hire on day one. They can write code, but they do not automatically know your preferred workflow, which specialist should handle a job, where project knowledge belongs, or what must be checked before shipping.
+### Get the Git life.
 
-Vibe Coding Tools fixes that. It gives you:
+**AI coding agents, skills, commands, hooks, and rules for Codex, Claude Code, and Cursor.**
 
-- 75 focused specialist agents for Git, security, testing, databases, product work, documentation, and more.
-- 78 reusable skills with detailed procedures, examples, templates, and research.
-- A setup skill that creates a clean documentation library in another repository.
-- Delivery commands that route work and run planning, implementation, security, and quality in order.
-- Rules and hooks that turn important standards into automatic checks.
-- Native packages and project adapters for Claude Code, Codex, and Cursor.
+Give your coding assistant a whole Hive of specialists instead of one blank prompt.
 
-The payoff is simple: less time explaining the same process, fewer missed steps, and work that is easier to review.
+</div>
 
-## Use it in a repository
+<div align="center">
 
-The quickest first win is to create a documentation library for the project you are working on.
+<a href="https://www.ospry.ai">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/legioncodeinc/brands/main/ospry/logos/png/core-assets/transparent/horizontal-white-1024.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/legioncodeinc/brands/main/ospry/logos/png/core-assets/transparent/horizontal-ink-1024.png">
+    <img alt="OSPRY" src="https://raw.githubusercontent.com/legioncodeinc/brands/main/ospry/logos/png/core-assets/transparent/horizontal-ink-1024.png" width="260">
+  </picture>
+</a>
 
-1. Clone Vibe Coding Tools or add its package for your AI tool.
-2. Open the target repository with Claude Code, Codex, or Cursor.
-3. Ask your assistant:
+<sub>Want to know what will actually drive more revenue? <strong><a href="https://www.ospry.ai">OSPRY</a></strong> is the insight engine built for exactly that.</sub>
+
+</div>
+
+---
+
+## Why bring the Hive into your repo?
+
+Most AI coding assistants are brilliant new hires with no memory of how your team works. Every new task starts with the same tax: explain the architecture, repeat the standards, name the right tools, remind the agent to check security, and hope nothing important gets skipped.
+
+Vibe Coding Tools stops that cycle.
+
+- **75 Bees** give you focused specialists for Git, security, databases, testing, product work, documentation, design, and more.
+- **78 Stingers** give those specialists repeatable playbooks, examples, templates, and research.
+- **2 Hive commands** route work and drive PRDs to verified completion.
+- **4 rules and 2 hooks** turn standards into active guardrails.
+- **One Library system** gives humans and agents a durable place for requirements, decisions, issues, and knowledge.
+- **Three native harnesses** let the same operating system work in Codex, Claude Code, and Cursor.
+
+The win is not more AI output. The win is less guessing, less repeated prompting, fewer skipped checks, and work that can be reviewed against a written definition of done.
+
+## Start here
+
+The fastest first win is to give an existing repository a durable knowledge and requirements library.
+
+1. Clone Vibe Coding Tools or install the package for your harness.
+2. Open the repository you want to improve.
+3. Give your assistant this request:
 
    ```text
    Use get-started-stinger to set up this repository with the Library Schema v2 structure. Inspect what already exists, preserve it, create only what is missing, and give me the final setup report.
    ```
 
-4. Review the report. It separates files created, files left unchanged, assumptions, and decisions that still need a human.
-5. Put durable project facts in `library/knowledge/`, planned work in `library/requirements/`, reactive work in `library/issues/`, and temporary human notes in `library/notes/`.
+4. Review the report before accepting human-decision items.
+5. Put durable facts in `library/knowledge/`, planned work in `library/requirements/`, reactive work in `library/issues/`, and temporary notes in `library/notes/`.
 
-The folder at [`learn/examples/library/`](learn/examples/library/) is only a teaching example. The setup skill creates the live `library/` inside your target repository.
+The folder at [`learn/examples/library/`](learn/examples/library/) is a teaching example. `get-started-stinger` creates the live `library/` in your target repository.
 
-Read [Getting Started](learn/guides/GETTING-STARTED.md) for a slower walkthrough.
+[Read the full getting-started guide](learn/guides/GETTING-STARTED.md).
 
-## Pick your tool
+## Meet the Hive
+
+This is not a loose pile of prompts. It is a chain of command built by [Legion Code Inc.](https://www.legioncodeinc.com).
+
+| Hive piece | What it means | What it does |
+|---|---|---|
+| **Bee** | A specialist agent | Owns one domain and makes focused decisions |
+| **Stinger** | The Bee's skill | Supplies the workflow, references, templates, and guardrails |
+| **Beekeeper** | The router | Finds the right Bee and arms it with the matching Stinger |
+| **Smoker** | The delivery orchestrator | Drives PRDs and every acceptance criterion through implementation, Security, Quality, and shipping |
+| **Rule** | Always-on direction | Keeps every worker inside the same operating boundaries |
+| **Hook** | Automatic enforcement | Checks important actions before or after tools run |
+
+Every domain Bee has one paired Stinger. The generated [Asset Catalog](learn/ASSET-CATALOG.md) shows all 75 pairs and the three system-level skills that manage the Hive.
+
+## Choose your harness
+
+### Codex
+
+A cloned repository works without installing the plugin:
+
+- [`.agents/skills/`](.agents/skills/) contains all 80 repository-scoped skills: 78 Stingers plus the Beekeeper and Smoker workflows.
+- [`.codex/agents/`](.codex/agents/) contains 75 native TOML agents.
+- [`.codex/hooks.json`](.codex/hooks.json) and [`.codex/config.toml`](.codex/config.toml) provide project enforcement and routing.
+
+Invoke the two command workflows as explicit Codex skills:
+
+```text
+$the-beekeeper route this task to the right specialists
+$the-smoker execute these PRDs through verified completion
+```
+
+The installable plugin at [`.codex/plugins/vibe-coding-tools/`](.codex/plugins/vibe-coding-tools/) carries the same 80 skills and hooks for Codex CLI and the ChatGPT desktop app. The project adapter remains separate because plugin installation does not install repository agent TOMLs.
 
 ### Claude Code
 
-The [`.claude/`](.claude/) directory is both a project configuration and a Claude Code plugin. It contains 75 agents, 78 skills, two commands, four Claude rules, and two hooks.
-
-Test it directly from this checkout:
+The [`.claude/`](.claude/) tree contains 75 agents, 78 skills, 2 slash commands, 4 rules, 2 hooks, and the Claude Code plugin manifest.
 
 ```powershell
 claude --plugin-dir .claude
 ```
 
-The plugin manifest is at [`.claude/.claude-plugin/plugin.json`](.claude/.claude-plugin/plugin.json).
-
-### Codex
-
-Codex uses two layers because its plugin and project-agent formats solve different jobs:
-
-- The installable plugin at [`.codex/plugins/vibe-coding-tools/`](.codex/plugins/vibe-coding-tools/) provides 80 skills and the safety hooks.
-- The project adapter at [`.codex/`](.codex/) provides 75 native TOML agents, project hooks, and configuration. This layer also works in the Codex IDE extension.
-
-Add [`.codex/marketplace.json`](.codex/marketplace.json) as a local marketplace source, install `vibe-coding-tools`, and start a new Codex session. When working directly in this checkout, Codex also discovers the project adapter automatically after you trust the repository and review its hooks with `/hooks`.
+Use `/the-beekeeper` to route work or `/the-smoker` to run the full delivery line.
 
 ### Cursor
 
-Open this repository in Cursor. The [`.cursor/`](.cursor/) directory contains the native agents, skills, commands, rules, model matrix, and Cursor hook manifest. It also includes a package manifest at [`.cursor/.cursor-plugin/plugin.json`](.cursor/.cursor-plugin/plugin.json).
+The [`.cursor/`](.cursor/) tree contains 75 agents, 78 skills, 2 commands, 4 MDC rules, hooks, and a Cursor plugin manifest. Open the repository in Cursor and the project configuration is available in place.
 
-## How the pieces fit
+## The Legion way
 
-| Piece | Plain-language job | In this project |
-|---|---|---|
-| Bee | A specialist teammate with one clear area of ownership | 75 agents |
-| Stinger | The specialist's playbook, examples, and tools | 78 core skills |
-| Command | A named workflow that coordinates several steps | 2 commands |
-| Rule | Guidance that should stay active during work | 4 policies |
-| Hook | A script that runs automatically around tool actions | 2 checks |
+Code tells you what the machine does today. Documents tell you why it does it, what it should do next, and what must be true before you call the work finished.
 
-Every domain Bee has one matching Stinger. Three extra skills run the overall system: `beekeeper-suit`, `get-started-stinger`, and `queen-bee-stinger`.
+That is why this system treats documentation as operational memory:
 
-The full generated inventory and compatibility ledger are in [Asset Catalog](learn/ASSET-CATALOG.md) and [Harness Compatibility](learn/guides/HARNESS-COMPATIBILITY.md).
+- Knowledge files preserve the domain truth that would otherwise disappear into a Slack thread or one person's head.
+- ADRs preserve the reasoning behind expensive architecture decisions.
+- PRDs turn ideas into goals, non-goals, user stories, and acceptance criteria an agent can actually execute.
+- IRDs give bugs and incidents a traceable problem, cause, fix plan, and verification record.
+- Security runs before independent Quality because a security fix can change what Quality needs to verify.
 
-Ready-to-share archives and SHA-256 checksums are in [`learn/packages/`](learn/packages/).
+An agent with no context guesses. An agent armed with your project knowledge and a written definition of done can work like a teammate.
 
-## Learn without the jargon
+## Learn the system
 
-- [Agents](learn/guides/AGENTS.md)
-- [Skills](learn/guides/SKILLS.md)
+- [Agents and Bees](learn/guides/AGENTS.md)
+- [Skills and Stingers](learn/guides/SKILLS.md)
 - [Commands](learn/guides/COMMANDS.md)
+- [Product Requirements Documents](learn/guides/PRODUCT-REQUIREMENTS-DOCUMENT.md)
+- [Library Structure](learn/guides/LIBRARY-STRUCTURE.md)
 - [Hooks](learn/guides/HOOKS.md)
 - [Rules](learn/guides/RULES.md)
-- [Product Requirements Documents](learn/guides/PRODUCT-REQUIREMENTS-DOCUMENT.md)
-- [PRD Execution Prompt](learn/guides/PRD-EXECUTION-PROMPT.md)
-- [Library Structure](learn/guides/LIBRARY-STRUCTURE.md)
 - [Model Selection](learn/guides/MODEL-SELECTION.md)
 - [Security and Secrets](learn/guides/SECURITY-AND-SECRETS.md)
+- [Harness Compatibility](learn/guides/HARNESS-COMPATIBILITY.md)
 - [Troubleshooting](learn/guides/TROUBLESHOOTING.md)
-- [Glossary](learn/guides/GLOSSARY.md)
 
-## Source of truth
+Ready-to-share archives and SHA-256 checksums live in [`learn/packages/`](learn/packages/).
 
-The `.claude/` tree is the editable source. Run the generator after changing agents, skills, commands, or hooks:
+## Build from the source of truth
 
-The root keeps only three human-facing Markdown documents: `README.md`, `CLAUDE.md`, and `LICENSE.md`. The `.gitignore`, hidden harness directories, and `learn/` remain at root because Git and the three AI tools discover them there. Human guides and the example library live under `learn/`.
+The `.claude/` tree is the editable source. Regenerate the Cursor mirror, Codex agents, repository skills, plugin skills, and catalog after changing an agent, skill, command, or hook:
 
 ```powershell
 python learn/scripts/generate-harnesses.py
 ```
 
-It normalizes Claude agent metadata, refreshes the Cursor mirror, generates Codex TOML agents, and updates the Codex plugin skills. Review the generated diff and run the validation gates before committing.
+Human guides and examples live under `learn/`. The hidden `.claude`, `.codex`, `.cursor`, and `.agents` directories stay at the repository root because the harnesses discover them there.
 
-## License
+## License and attribution
 
-[MIT](LICENSE.md). Built by [Legion Code Inc.](https://www.legioncodeinc.com).
+Vibe Coding Tools is source-available software created by **Mario Aldayuz and [Legion Code Inc.](https://www.legioncodeinc.com)**.
+
+You may use the Work personally, educationally, internally, commercially, and as a tool in paid services. You may not sell the Work itself, remove the attribution, or pass it off as your own. Read [LICENSE.md](LICENSE.md) for the complete terms.
+
+---
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/legioncodeinc/brands/main/legion-code-inc/logos/legion-symbol-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/legioncodeinc/brands/main/legion-code-inc/logos/legion-symbol-light.svg">
+  <img alt="Legion symbol" src="https://raw.githubusercontent.com/legioncodeinc/brands/main/legion-code-inc/logos/legion-symbol-light.svg" width="36">
+</picture>
+
+<sub><strong>We are Legion. Vibe with Legion.</strong></sub>
+
+</div>

@@ -8,7 +8,7 @@ description: "'Public status page specialist for React/Next.js and SaaS products
 Public status page playbook: from platform selection through post-incident discipline. Backed by May 2026 research on pricing, API surfaces, and practitioner communication norms.
 
 Command Brief: `ai-tools/command-briefs/status-page-worker-bee-command-brief.md`
-Research: `.claude/skills/status-page-stinger/research/research-summary.md`
+Research: `../status-page-stinger/research/research-summary.md`
 
 ---
 
@@ -109,7 +109,7 @@ Full decision tree and scoring in `guides/00-platform-selection.md`.
 
 | Role | Artifact |
 |---|---|
-| This stinger | `.claude/skills/status-page-stinger/` |
+| This stinger | `../status-page-stinger/` |
 | Paired Bee | `.claude/agents/status-page-worker-bee.md` |
 | Command Brief | `ai-tools/command-briefs/status-page-worker-bee-command-brief.md` |
 | Related: monitoring/alerting | `devops-worker-bee` |
