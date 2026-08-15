@@ -1,18 +1,14 @@
-# Vibe Coding Tools
-
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/legioncodeinc/brands/main/legion-code-inc/logos/legion-logo-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/legioncodeinc/brands/main/legion-code-inc/logos/legion-logo-light.svg">
-  <img alt="Legion Code Inc." src="https://raw.githubusercontent.com/legioncodeinc/brands/main/legion-code-inc/logos/legion-logo-light.svg" width="280">
-</picture>
+<img alt="The Hive" src=".github/assets/the-hive-hero.png" width="100%">
+
+# Vibe Coding Tools
 
 ### Get the Git life.
 
-**AI coding agents, skills, commands, hooks, and rules for Codex, Claude Code, and Cursor.**
+**75 specialist agents, 78 skills, commands, hooks, and rules for Claude Code, Cursor, Codex, and Cowork.**
 
-Give your coding assistant a whole Hive of specialists instead of one blank prompt.
+I call it The Hive. Your coding assistant stops being one guy guessing and starts being a whole crew that already knows the job.
 
 </div>
 
@@ -32,101 +28,89 @@ Give your coding assistant a whole Hive of specialists instead of one blank prom
 
 ---
 
-## Why bring the Hive into your repo?
+## The problem this fixes
 
-Most AI coding assistants are brilliant new hires with no memory of how your team works. Every new task starts with the same tax: explain the architecture, repeat the standards, name the right tools, remind the agent to check security, and hope nothing important gets skipped.
+Your AI assistant is smart and has no memory. Every task starts the same way. You explain the stack. You repeat your standards. You name the tools you like. You remind it to check security, and then you hope it did. Ten prompts later you are still typing the same context you typed yesterday.
 
-Vibe Coding Tools stops that cycle.
+That tax never goes away on its own. You either pay it forever or you build the context once and make it permanent. The Hive is that context, built once and wired into four different coding tools so it follows you around.
 
-- **75 Bees** give you focused specialists for Git, security, databases, testing, product work, documentation, design, and more.
-- **78 Stingers** give those specialists repeatable playbooks, examples, templates, and research.
-- **2 Hive commands** route work and drive PRDs to verified completion.
-- **4 rules and 2 hooks** turn standards into active guardrails.
-- **One Library system** gives humans and agents a durable place for requirements, decisions, issues, and knowledge.
-- **Three native harnesses** let the same operating system work in Codex, Claude Code, and Cursor.
+Here is what you actually get. 75 Bees, which are specialist agents that each own one job. 78 Stingers, which are the skills those specialists read before they touch anything. Two commands that route work and drive it to done. Four rules and two hooks that turn your standards into things the machine checks instead of things you nag about. And a Library system that gives your project a real memory.
 
-The win is not more AI output. The win is less guessing, less repeated prompting, fewer skipped checks, and work that can be reviewed against a written definition of done.
+The point is not more AI output. Anybody can generate more code. The point is fewer wrong turns, fewer skipped checks, and work you can actually grade against something you wrote down.
 
 ## Start here
 
-The fastest first win is to give an existing repository a durable knowledge and requirements library.
+The fastest first win takes about two minutes. Open the repo you want to fix and give your assistant this:
 
-1. Clone Vibe Coding Tools or install the package for your harness.
-2. Open the repository you want to improve.
-3. Give your assistant this request:
+```text
+Use get-started-stinger to set up this repository with the Library Schema v2 structure.
+Inspect what already exists, preserve it, create only what is missing,
+and give me the final setup report.
+```
 
-   ```text
-   Use get-started-stinger to set up this repository with the Library Schema v2 structure. Inspect what already exists, preserve it, create only what is missing, and give me the final setup report.
-   ```
+It reads what you already have, leaves your work alone, and builds only the missing pieces. You get a report at the end listing what it made and what still needs a human to decide. Read that report before you accept anything.
 
-4. Review the report before accepting human-decision items.
-5. Put durable facts in `library/knowledge/`, planned work in `library/requirements/`, reactive work in `library/issues/`, and temporary notes in `library/notes/`.
+After that, four folders do the heavy lifting. Durable facts go in `library/knowledge/`. Planned work goes in `library/requirements/`. Bugs and incidents go in `library/issues/`. Scratch notes go in `library/notes/`. Your agent reads those folders the same way a new teammate would read a wiki, except it actually does.
 
-The folder at [`learn/examples/library/`](learn/examples/library/) is a teaching example. `get-started-stinger` creates the live `library/` in your target repository.
+[Read the full getting started guide](learn/guides/GETTING-STARTED.md).
 
-[Read the full getting-started guide](learn/guides/GETTING-STARTED.md).
+## How The Hive works
 
-## Meet the Hive
+Every piece has one job. That is the whole design.
 
-This is not a loose pile of prompts. It is a chain of command built by [Legion Code Inc.](https://www.legioncodeinc.com).
-
-| Hive piece | What it means | What it does |
+| Piece | Plain English | What it does |
 |---|---|---|
-| **Bee** | A specialist agent | Owns one domain and makes focused decisions |
-| **Stinger** | The Bee's skill | Supplies the workflow, references, templates, and guardrails |
-| **Beekeeper** | The router | Finds the right Bee and arms it with the matching Stinger |
-| **Smoker** | The delivery orchestrator | Drives PRDs and every acceptance criterion through implementation, Security, Quality, and shipping |
-| **Rule** | Always-on direction | Keeps every worker inside the same operating boundaries |
-| **Hook** | Automatic enforcement | Checks important actions before or after tools run |
+| **Bee** | A specialist agent | Owns one domain and makes the calls in it |
+| **Stinger** | The Bee's skill | The playbook, examples, templates, and research it reads first |
+| **Beekeeper** | The router | Picks the right Bee and hands it the matching Stinger |
+| **Smoker** | The closer | Drives a PRD through build, security, quality, and shipping |
+| **Rule** | Always on | Boundaries every worker stays inside |
+| **Hook** | The enforcer | Checks real actions before or after a tool runs |
 
-Every domain Bee has one paired Stinger. The generated [Asset Catalog](learn/ASSET-CATALOG.md) shows all 75 pairs and the three system-level skills that manage the Hive.
+Every Bee is paired with exactly one Stinger. That pairing is the rule that makes this work. A Bee without its Stinger is a smart agent with amnesia, so a Bee that gets dispatched without loading its skill is a failed dispatch and it starts over.
 
-## Choose your harness
+Three skills break that rule on purpose because they run the show instead of doing the work: `beekeeper-suit` routes, `queen-bee-stinger` builds new components, and `get-started-stinger` sets up repos. The full roster of all 75 pairs lives in the [Asset Catalog](learn/ASSET-CATALOG.md).
 
-### Codex
+## Nothing ships without passing the gate
 
-A cloned repository works without installing the plugin:
+This is my favorite part and it is the part most AI setups skip.
 
-- [`.agents/skills/`](.agents/skills/) contains all 80 repository-scoped skills: 78 Stingers plus the Beekeeper and Smoker workflows.
-- [`.codex/agents/`](.codex/agents/) contains 75 native TOML agents.
-- [`.codex/hooks.json`](.codex/hooks.json) and [`.codex/config.toml`](.codex/config.toml) provide project enforcement and routing.
+Before any code gets committed, it runs `security-stinger` first, then `quality-stinger`, then `github-repo-health-stinger`. Each pass writes a real report into `library/`. Anything rated medium or worse gets fixed, and then the whole thing gets re-checked, not spot-checked. You review the reports and you approve the commit. Not the agent. You.
 
-Invoke the two command workflows as explicit Codex skills:
+Security runs before quality for a reason that took me a while to appreciate. A security fix changes the code, and changed code invalidates whatever quality just signed off on. Run them backwards and your QA report is a lie.
+
+## Pick your tool
+
+**Claude Code.** Everything lives in [`.claude/`](.claude/). Point it at the folder and go:
+
+```powershell
+claude --plugin-dir .claude
+```
+
+Then use `/the-beekeeper` to route a task or `/the-smoker` to run the whole delivery line.
+
+**Cursor.** Open the repo. That is it. The [`.cursor/`](.cursor/) tree has 75 agents, 78 skills, 2 commands, 4 MDC rules, and hooks already in place.
+
+**Codex.** A plain clone works with no install. [`.agents/skills/`](.agents/skills/) has all 80 repo skills, [`.codex/agents/`](.codex/agents/) has 75 native TOML agents, and the config and hooks are wired. Call the workflows directly:
 
 ```text
 $the-beekeeper route this task to the right specialists
 $the-smoker execute these PRDs through verified completion
 ```
 
-The installable plugin at [`.codex/plugins/vibe-coding-tools/`](.codex/plugins/vibe-coding-tools/) carries the same 80 skills and hooks for Codex CLI and the ChatGPT desktop app. The project adapter remains separate because plugin installation does not install repository agent TOMLs.
+There is also an installable plugin at [`.codex/plugins/vibe-coding-tools/`](.codex/plugins/vibe-coding-tools/) for Codex CLI and the ChatGPT desktop app. The project adapter stays separate because installing a plugin does not install repo agent TOMLs.
 
-### Claude Code
+**Claude Cowork.** Open Customize in the sidebar, go to Plugins, upload `learn/packages/vibe-coding-tools-claude-code-1.0.0.zip`. Same package format as Claude Code.
 
-The [`.claude/`](.claude/) tree contains 75 agents, 78 skills, 2 slash commands, 4 rules, 2 hooks, and the Claude Code plugin manifest.
+Prebuilt archives and SHA-256 checksums for all four are in [`learn/packages/`](learn/packages/).
 
-```powershell
-claude --plugin-dir .claude
-```
+## Why documents, not just code
 
-Use `/the-beekeeper` to route work or `/the-smoker` to run the full delivery line.
+Code tells you what the machine does right now. It does not tell you why anybody chose that, what it should do next, or what has to be true before you call it finished. That stuff lives in someone's head until they leave, and then it does not live anywhere.
 
-### Cursor
+So this system treats docs as working memory instead of homework. Knowledge files hold the domain truth that would otherwise die in a Slack thread. ADRs hold the reasoning behind expensive decisions so nobody relitigates them in six months. PRDs turn a vague idea into goals, non-goals, and acceptance criteria an agent can actually execute against. IRDs give a bug a traceable problem, cause, fix, and proof.
 
-The [`.cursor/`](.cursor/) tree contains 75 agents, 78 skills, 2 commands, 4 MDC rules, hooks, and a Cursor plugin manifest. Open the repository in Cursor and the project configuration is available in place.
-
-## The Legion way
-
-Code tells you what the machine does today. Documents tell you why it does it, what it should do next, and what must be true before you call the work finished.
-
-That is why this system treats documentation as operational memory:
-
-- Knowledge files preserve the domain truth that would otherwise disappear into a Slack thread or one person's head.
-- ADRs preserve the reasoning behind expensive architecture decisions.
-- PRDs turn ideas into goals, non-goals, user stories, and acceptance criteria an agent can actually execute.
-- IRDs give bugs and incidents a traceable problem, cause, fix plan, and verification record.
-- Security runs before independent Quality because a security fix can change what Quality needs to verify.
-
-An agent with no context guesses. An agent armed with your project knowledge and a written definition of done can work like a teammate.
+An agent with no context guesses well and confidently. An agent with your project knowledge and a written definition of done works like somebody who already had the meeting.
 
 ## Learn the system
 
@@ -142,23 +126,25 @@ An agent with no context guesses. An agent armed with your project knowledge and
 - [Harness Compatibility](learn/guides/HARNESS-COMPATIBILITY.md)
 - [Troubleshooting](learn/guides/TROUBLESHOOTING.md)
 
-Ready-to-share archives and SHA-256 checksums live in [`learn/packages/`](learn/packages/).
+## Building on it
 
-## Build from the source of truth
-
-The `.claude/` tree is the editable source. Regenerate the Cursor mirror, Codex agents, repository skills, plugin skills, and catalog after changing an agent, skill, command, or hook:
+The `.claude/` tree is the source of truth. Everything else is generated from it. Change an agent, skill, command, or hook, then run:
 
 ```powershell
 python learn/scripts/generate-harnesses.py
 ```
 
-Human guides and examples live under `learn/`. The hidden `.claude`, `.codex`, `.cursor`, and `.agents` directories stay at the repository root because the harnesses discover them there.
+That rebuilds the Cursor mirror, the Codex agents, the repo skills, the plugin skills, and the catalog. Do not hand-edit the generated trees. You will lose the change on the next build and spend an hour wondering why.
+
+Want to add your own Bee and Stinger? `queen-bee-stinger` runs the seven stage forge: Topic, Research, Distillation, References, Guides, Skill File, Register. It does real research and archives the sources, so the skill you get is grounded instead of guessed. That is the same pipeline every skill in here went through.
 
 ## License and attribution
 
-Vibe Coding Tools is source-available software created by **Mario Aldayuz and [Legion Code Inc.](https://www.legioncodeinc.com)**.
+Vibe Coding Tools is source-available software created by **Mario Aldayuz and [Legion Code Inc.](https://www.legioncodeinc.com)**
 
-You may use the Work personally, educationally, internally, commercially, and as a tool in paid services. You may not sell the Work itself, remove the attribution, or pass it off as your own. Read [LICENSE.md](LICENSE.md) for the complete terms.
+Use it personally, at work, in your business, and as a tool inside paid services. Do not sell the Work itself, do not strip the attribution, do not pass it off as yours. Full terms in [LICENSE.md](LICENSE.md).
+
+Built for vibe coders. Go ship something.
 
 ---
 
