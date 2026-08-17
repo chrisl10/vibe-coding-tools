@@ -2,7 +2,7 @@
 
 An agent is an AI teammate with a narrow job, a clear identity, and boundaries. Think of a school project: one person researches, one draws the poster, one checks facts, and one presents. A focused role helps each person know what to do and what to leave alone.
 
-Vibe Coding Tools calls its agents **Bees**. There are 75. Each domain Bee has exactly one matching skill, called a **Stinger**. The Bee supplies judgment and responsibility. The Stinger supplies the detailed procedure, examples, and reference material.
+Vibe Coding Tools calls its agents **Bees**. There are 77. Each domain Bee has exactly one matching skill, called a **Stinger**. The Bee supplies judgment and responsibility. The Stinger supplies the detailed procedure, examples, and reference material.
 
 ## Why use focused agents?
 

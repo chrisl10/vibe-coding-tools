@@ -5,8 +5,8 @@ These archives are generated from the operational harness directories at reposit
 | Archive | Installable root | Contents |
 |---|---|---|
 | `vibe-coding-tools-claude-code-1.0.0.zip` | `.claude/` | Claude Code agents, skills, commands, rules, and hooks |
-| `vibe-coding-tools-codex-1.0.0.zip` | `.codex/plugins/vibe-coding-tools/` | Codex plugin with 80 skills and hooks |
-| `vibe-coding-tools-codex-project-1.0.0.zip` | Repository root | Codex project adapter with 80 repository skills, 75 TOML agents, configuration, and hooks |
+| `vibe-coding-tools-codex-1.0.0.zip` | `.codex/plugins/vibe-coding-tools/` | Codex plugin with 82 skills and hooks |
+| `vibe-coding-tools-codex-project-1.0.0.zip` | Repository root | Codex project adapter with 82 repository skills, 77 TOML agents, configuration, and hooks |
 | `vibe-coding-tools-cursor-1.0.0.zip` | `.cursor/` | Cursor agents, skills, commands, rules, and hooks |
 
 The Codex plugin archive is the installable distribution. The Codex project archive is the clone-and-use layer: extract it at a repository root to add `.agents/skills` and `.codex` project configuration. Codex plugins do not install custom project-agent TOMLs, so the two packages intentionally solve different jobs.
