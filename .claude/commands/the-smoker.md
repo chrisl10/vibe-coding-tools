@@ -15,6 +15,8 @@ You are an orchestrator. You do not write the specialist code yourself; you rout
 3. Produce a wave plan (Mermaid or list): each wave names its Bees, what each owns, and its exit criteria. Maximize parallelism for shortest wall-clock time.
 4. Route each task to a Bee via the roster: read `.claude/skills/beekeeper-suit/SKILL.md` and match each work item to a worker-bee. For each Bee, pick the best model using the rubric in `.claude/model-comparison-matrix.md`: match the task profile (reasoning depth, code quality, tool use, cost, speed, context) to the model and write the choice with a one-line justification next to each Bee in the wave plan.
 
+Before dispatch, resolve and read the model matrix at the exact referenced path. If it is missing or unreadable, stop before dispatch and report that path. Do not dispatch any Bee. Do not reuse a ledger selection or silently default to a high-cost model. Keep the model identifier and reasoning effort as separate dispatch settings.
+
 Show the user the wave plan and AC Ledger, then execute without waiting for further approval.
 
 ## Phase 1: Execution (spawn each Bee ARMED)

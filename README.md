@@ -131,7 +131,7 @@ $the-smoker execute these PRDs through verified completion
 
 There is also an installable plugin at [`.codex/plugins/vibe-coding-tools/`](.codex/plugins/vibe-coding-tools/) for Codex CLI and the ChatGPT desktop app. The project adapter stays separate because installing a plugin does not install repo agent TOMLs.
 
-**Claude Cowork.** Open Customize in the sidebar, go to Plugins, upload `learn/packages/vibe-coding-tools-claude-code-1.0.0.zip`. Same package format as Claude Code.
+**Claude Cowork.** Open Customize in the sidebar, go to Plugins, upload `learn/packages/vibe-coding-tools-claude-code-1.0.1.zip`. Same package format as Claude Code.
 
 Prebuilt archives and SHA-256 checksums for all four are in [`learn/packages/`](learn/packages/).
 
