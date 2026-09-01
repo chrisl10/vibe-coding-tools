@@ -1,7 +1,7 @@
 {
   "name": "vibe-coding-tools",
   "displayName": "Vibe Coding Tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Specialist agents, reusable skills, commands, rules, and safety hooks for AI-assisted software work.",
   "author": {
     "name": "Legion Code Inc"

@@ -19,6 +19,8 @@ CURSOR = ROOT / ".cursor"
 CODEX = ROOT / ".codex"
 AGENTS = ROOT / ".agents"
 CODEX_PLUGIN = CODEX / "plugins" / "vibe-coding-tools"
+MODEL_MATRIX = CLAUDE / "model-comparison-matrix.md"
+LOCAL_MODEL_MATRIX_REFERENCE = "references/model-comparison-matrix.md"
 
 
 def read_agent(path: Path) -> tuple[dict[str, str], str]:
@@ -62,6 +64,12 @@ def normalized_agent_text(path: Path, harness: str) -> str:
 def copy_tree(source: Path, target: Path) -> None:
     target.mkdir(parents=True, exist_ok=True)
     shutil.copytree(source, target, dirs_exist_ok=True)
+
+
+def bundle_model_matrix(skill_dir: Path) -> None:
+    matrix_target = skill_dir / LOCAL_MODEL_MATRIX_REFERENCE
+    matrix_target.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(MODEL_MATRIX, matrix_target)
 
 
 def normalize_skill_frontmatter(path: Path) -> None:
@@ -178,9 +186,11 @@ def generate_codex_skill_tree(target: Path) -> None:
     for path in target.glob("*/SKILL.md"):
         text = path.read_text(encoding="utf-8")
         text = text.replace(".claude/skills/", "../")
-        text = text.replace(
-            ".claude/model-comparison-matrix.md", "../../model-comparison-matrix.md"
-        )
+        if ".claude/model-comparison-matrix.md" in text:
+            text = text.replace(
+                ".claude/model-comparison-matrix.md", LOCAL_MODEL_MATRIX_REFERENCE
+            )
+            bundle_model_matrix(path.parent)
         path.write_text(text, encoding="utf-8")
 
     command_skills = {
@@ -194,7 +204,11 @@ def generate_codex_skill_tree(target: Path) -> None:
         match = re.match(r"^---\r?\n.*?\r?\n---\r?\n(.*)$", command_text, re.S)
         body = (match.group(1) if match else command_text).lstrip()
         body = body.replace(".claude/skills/", "../")
-        body = body.replace(".claude/model-comparison-matrix.md", "../../model-comparison-matrix.md")
+        if ".claude/model-comparison-matrix.md" in body:
+            body = body.replace(
+                ".claude/model-comparison-matrix.md", LOCAL_MODEL_MATRIX_REFERENCE
+            )
+            bundle_model_matrix(command_target)
         body = body.replace("Cursor-specific", "harness-specific")
         description = (
             "Route a request to the right specialist Bee and its paired Stinger."
