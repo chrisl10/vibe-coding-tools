@@ -1,9 +1,9 @@
 # GitHub Repository Health Audit
 
-**Repository:** `chrisl10/vibe-coding-tools`  
-**Audit date:** 2026-09-01  
-**Data collection mode:** Local clone + `gh` CLI + GitHub REST API (`repo`, `workflow`, `read:org`)  
-**Coverage gaps:** Dependabot alert inventory was not enumerated; repository-level enablement was available. CODEOWNERS coverage is not applicable because no CODEOWNERS file exists.  
+**Repository:** `chrisl10/vibe-coding-tools`
+**Audit date:** 2026-09-01
+**Data collection mode:** Local clone + `gh` CLI + GitHub REST API (`repo`, `workflow`, `read:org`)
+**Coverage gaps:** Dependabot alert inventory was not enumerated; repository-level enablement was available. CODEOWNERS coverage is not applicable because no CODEOWNERS file exists.
 **Audited by:** orchestrator using `github-repo-health-stinger`
 
 ## Overall Score: 15/100
@@ -22,8 +22,8 @@
 
 ## Branching strategy
 
-**Observed strategy:** Ad hoc GitHub Flow. `main` exists with three remote feature/restoration branches, mixed prefixes, no open pull requests, and no documented contribution workflow.  
-**Branch inventory:** Four branches. None is older than 30 days; the oldest observed branch commit is dated 2026-08-15.  
+**Observed strategy:** Ad hoc GitHub Flow. `main` exists with three remote feature/restoration branches, mixed prefixes, no open pull requests, and no documented contribution workflow.
+**Branch inventory:** Four branches. None is older than 30 days; the oldest observed branch commit is dated 2026-08-15.
 **Assessment:** The branch count is small, but merge and naming policy are not enforced or documented.
 
 ## Branch protection / rulesets (2/10)
