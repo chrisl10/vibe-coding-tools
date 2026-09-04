@@ -55,10 +55,10 @@ Produce a Rust implementation handoff from `templates/implementation-handoff.md`
 
 ## Examples
 
-- `examples/01-happy-path-bounded-service-slice.md` — Cargo/Axum/SQLx acceptance slice with deterministic evidence.
-- `examples/02-edge-visible-output-cancellation.md` — cancellation after visible output, where replay must remain disabled.
-- `examples/03-edge-concurrent-budget-reservation.md` — concurrent SQLite reservation and crash boundary.
-- `examples/04-release-evidence-with-closed-gates.md` — package evidence generation with signing/publication held closed.
+- `examples/01-happy-path-bounded-service-slice.md` - Cargo/Axum/SQLx acceptance slice with deterministic evidence.
+- `examples/02-edge-visible-output-cancellation.md` - cancellation after visible output, where replay must remain disabled.
+- `examples/03-edge-concurrent-budget-reservation.md` - concurrent SQLite reservation and crash boundary.
+- `examples/04-release-evidence-with-closed-gates.md` - package evidence generation with signing/publication held closed.
 
 ## Research and refresh points
 

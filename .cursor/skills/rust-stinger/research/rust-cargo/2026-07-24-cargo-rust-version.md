@@ -23,4 +23,3 @@ Stable Cargo documentation retrieved against the Rust 1.97 release line; resolve
 ## Annotations for stinger-forge
 - Grounds MSRV declaration and verification rules.
 - Supports testing all public feature combinations claimed to work at MSRV.
-

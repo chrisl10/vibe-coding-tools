@@ -23,4 +23,3 @@ Serde's container attributes allow unknown-field rejection, fallible conversion 
 ## Annotations for stinger-forge
 - Grounds strict config/control-plane parsing and validated newtypes.
 - Use separate input DTOs when forward-compatible wire payloads must retain unknown fields.
-

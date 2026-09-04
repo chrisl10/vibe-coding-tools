@@ -4,12 +4,12 @@ Rust Stinger equips `rust-worker-bee` to implement and review production Cargo w
 
 ## Layout
 
-- `SKILL.md` — trigger, procedure, directives, outputs, and decision boundaries.
-- `guides/` — numbered procedures matching every Command Brief action.
-- `examples/` — worked happy-path and failure-boundary handoffs.
-- `templates/` — reusable implementation, decision, and release-evidence stubs.
-- `reports/` — report-shape template and future run archive.
-- `research/` — immutable scripture-historian evidence packet.
+- `SKILL.md` - trigger, procedure, directives, outputs, and decision boundaries.
+- `guides/` - numbered procedures matching every Command Brief action.
+- `examples/` - worked happy-path and failure-boundary handoffs.
+- `templates/` - reusable implementation, decision, and release-evidence stubs.
+- `reports/` - report-shape template and future run archive.
+- `research/` - immutable scripture-historian evidence packet.
 
 ## Maintenance
 

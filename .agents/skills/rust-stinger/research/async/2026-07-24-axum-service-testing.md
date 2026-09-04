@@ -23,4 +23,3 @@ Source docs for Axum latest; test helpers and body collection APIs vary across a
 ## Annotations for stinger-forge
 - Supports in-process HTTP contract tests without network flakiness.
 - Loopback bind and shutdown still require a smaller dedicated integration test.
-

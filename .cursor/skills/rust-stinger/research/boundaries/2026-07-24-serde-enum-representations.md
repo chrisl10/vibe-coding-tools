@@ -23,4 +23,3 @@ Serde project documentation; specific derive behavior still depends on the pinne
 ## Annotations for stinger-forge
 - Supports explicit tagged enums for state/event boundaries where ambiguity is unacceptable.
 - Protocol wire encoding remains the protocol peer's contract.
-

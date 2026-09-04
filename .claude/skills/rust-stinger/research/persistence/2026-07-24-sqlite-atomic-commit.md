@@ -23,4 +23,3 @@ This page primarily describes rollback-journal mode; WAL atomicity uses a differ
 ## Annotations for stinger-forge
 - Strong evidence for crash/restart and filesystem-fault tests around local state.
 - Preserve database, WAL, SHM, and journal files together during recovery/support operations.
-

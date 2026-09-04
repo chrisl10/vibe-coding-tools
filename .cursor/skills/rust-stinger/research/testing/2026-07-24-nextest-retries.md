@@ -23,4 +23,3 @@ Behavior described includes versioned JUnit changes; confirm the pinned nextest 
 ## Annotations for stinger-forge
 - Require `flaky-result = "fail"` for release evidence unless a peer-approved quarantine exists.
 - Never use retries to mask model, migration, or cancellation races.
-

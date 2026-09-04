@@ -23,4 +23,3 @@ Clap 4.6.2 at retrieval; exact human rendering is not a stable machine protocol.
 ## Annotations for stinger-forge
 - Supports separating parse errors from domain/transport exit codes.
 - Require JSON/stdout contracts to avoid scraping colored human help/error output.
-

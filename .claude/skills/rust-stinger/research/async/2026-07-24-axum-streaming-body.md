@@ -23,4 +23,3 @@ Axum 0.8.9, http-body 1.1.0 at retrieval. Frame/trailer behavior must match the 
 ## Annotations for stinger-forge
 - Core source for streaming body construction and disconnect/cancellation tests.
 - Do not collect unbounded streams into memory; test that dropping the body stops producer work and releases permits.
-

@@ -23,4 +23,3 @@ Source documentation for Tokio latest (1.53.1 at retrieval); treat internal impl
 ## Annotations for stinger-forge
 - Supports reserve-before-expensive-work and cancellation-focused queue tests.
 - Shutdown code must account for outstanding permits, not only sender handles.
-

@@ -23,4 +23,3 @@ Criterion docs reported crate 0.8.2 elsewhere in the corpus. The project warns v
 ## Annotations for stinger-forge
 - Use for controlled local/release-host microbenchmarks and saved evidence.
 - Eight-hour soak evidence is a distinct workload with invariants/resource telemetry, not a Criterion benchmark.
-

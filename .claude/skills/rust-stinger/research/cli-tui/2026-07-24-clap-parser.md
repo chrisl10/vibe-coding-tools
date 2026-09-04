@@ -23,4 +23,3 @@ Clap 4.6.2 at retrieval; help text and formatting can change across minor releas
 ## Annotations for stinger-forge
 - Supports typed subcommands and deterministic parser contract tests.
 - Machine-readable command output is an application schema layered above Clap.
-

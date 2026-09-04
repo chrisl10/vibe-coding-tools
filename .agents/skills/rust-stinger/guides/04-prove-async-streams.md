@@ -1,4 +1,4 @@
-# 04 — Prove async and stream correctness
+# 04 - Prove async and stream correctness
 
 ## Purpose
 

@@ -23,4 +23,3 @@ Only Tokio's clock is paused; `std::time` and external systems do not automatica
 ## Annotations for stinger-forge
 - Critical source for fake-clock tests and avoiding wall-clock sleeps.
 - Explicitly yield/advance and assert temporal ordering, not elapsed host time.
-

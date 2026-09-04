@@ -23,4 +23,3 @@ Ratatui 0.30.2; workspace decomposition may evolve.
 ## Annotations for stinger-forge
 - Supports avoiding premature internal TUI crate fragmentation.
 - Feature-gate the entire TUI and keep domain/control logic outside it.
-

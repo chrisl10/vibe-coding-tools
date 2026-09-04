@@ -23,4 +23,3 @@ Current docs include settings introduced through dist 0.31-era behavior; pin the
 ## Annotations for stinger-forge
 - Grounds release manifest, artifact naming, installer matrix, and checksum evidence.
 - Release topology/publication/signing authorization remains with the release peer.
-

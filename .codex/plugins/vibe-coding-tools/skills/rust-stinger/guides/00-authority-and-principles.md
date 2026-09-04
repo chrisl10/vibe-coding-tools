@@ -1,4 +1,4 @@
-# 00 — Authority and principles
+# 00 - Authority and principles
 
 ## Purpose
 

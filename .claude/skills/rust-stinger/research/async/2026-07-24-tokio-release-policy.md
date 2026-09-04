@@ -23,4 +23,3 @@ Patch versions and LTS designations can change; this is a retrieval-time snapsho
 ## Annotations for stinger-forge
 - Use to frame current versus LTS version policy without choosing on the release peer's behalf.
 - Record the transitive-dependency MSRV caveat stated by Tokio.
-

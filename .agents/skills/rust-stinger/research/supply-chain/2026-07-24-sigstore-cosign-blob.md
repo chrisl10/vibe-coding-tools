@@ -23,4 +23,3 @@ Sigstore public infrastructure, identity claims, and command flags can change; c
 ## Annotations for stinger-forge
 - Supports signing/verification transcript requirements, not automatic invocation.
 - Signing identity and publication remain peer/user-authorized boundaries.
-

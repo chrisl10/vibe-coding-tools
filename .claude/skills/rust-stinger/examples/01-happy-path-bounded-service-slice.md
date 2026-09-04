@@ -1,4 +1,4 @@
-# Example 01 — Happy path: bounded service slice
+# Example 01 - Happy path: bounded service slice
 
 Demonstrates [authority](../guides/00-authority-and-principles.md), [workspace inspection](../guides/01-inspect-workspace.md), [bounded implementation](../guides/03-implement-bounded-slices.md), [async proof](../guides/04-prove-async-streams.md), [adapter boundaries](../guides/06-implement-adapters.md), and [verification](../guides/08-verify-and-package-evidence.md).
 

@@ -1,4 +1,4 @@
-# 09 — Close the loop
+# 09 - Close the loop
 
 ## Purpose
 

@@ -1,7 +1,6 @@
 # Rust Stinger Evidence Synthesis
 
 This is an evidence map for Stinger Forge, not a replacement for the product ADR, protocol contract, Security review, dependency/license decision, release authorization, or Quality report. The 56 indexed source notes are authoritative inputs; this file connects them to the Command Brief's research questions and records the remaining decisions honestly.
-Snapshot: 2026-07-24. Version-sensitive values are evidence snapshots, not timeless defaults; revalidate at the point of use.
 
 Snapshot: 2026-07-24. Version-sensitive values are evidence snapshots, not timeless defaults; revalidate at the point of use.
 
@@ -175,4 +174,3 @@ Primary notes: [dist config](supply-chain/2026-07-24-cargo-dist-config.md), [dis
 ## Tool provenance limitation
 
 The research packet uses the configured Context7 service plus current direct official/upstream documentation retrieval. No raw web-crawl JSON exists; this limitation is explicit so Forge does not mistake the corpus for a web-crawl corpus.
-

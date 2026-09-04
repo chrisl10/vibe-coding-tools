@@ -23,4 +23,3 @@ Ratatui 0.30.2 recommends `run` for ownership of terminal setup/cleanup, or fall
 ## Annotations for stinger-forge
 - Grounds terminal cleanup on success, error, panic, and cancellation.
 - Favor the headless CLI/control client; keep the TUI a thin optional surface.
-

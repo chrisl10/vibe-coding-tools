@@ -1,4 +1,4 @@
-# 01 — Inspect the Rust workspace
+# 01 - Inspect the Rust workspace
 
 ## Purpose
 

@@ -23,4 +23,3 @@ The current Book uses the Rust 2024 edition. Low-level memory-model details must
 ## Annotations for stinger-forge
 - Grounds unsafe inventory, documented invariants, and targeted tests.
 - Note that the old Unsafe Code Guidelines reference describes itself as largely abandoned.
-

@@ -23,4 +23,3 @@ Feature-gated Tower APIs; selected crate features and layer order must be record
 ## Annotations for stinger-forge
 - Supports explicit capacity/timeout/load-shed policy and layer-order tests.
 - Protocol error mapping remains a peer decision; this source only establishes middleware behavior.
-

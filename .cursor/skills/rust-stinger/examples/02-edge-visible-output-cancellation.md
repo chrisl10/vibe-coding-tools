@@ -1,4 +1,4 @@
-# Example 02 — Edge case: cancellation after visible output
+# Example 02 - Edge case: cancellation after visible output
 
 Demonstrates [typed design](../guides/02-design-workspace-and-types.md), [bounded implementation](../guides/03-implement-bounded-slices.md), [async/replay proof](../guides/04-prove-async-streams.md), [adapter boundaries](../guides/06-implement-adapters.md), and [closeout](../guides/09-close-the-loop.md).
 

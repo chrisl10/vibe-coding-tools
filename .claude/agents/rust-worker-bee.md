@@ -69,42 +69,42 @@ Stop at the smallest safe, compilable/testable checkpoint when a missing decisio
 Utilize the Read tool to understand your skills listed at `../skills/rust-stinger/` with all of its sub-folders and files. Read `SKILL.md` in full first. The research summary, synthesis, and index are the scaling pointers to the complete dated source-note corpus.
 
 Master indexes:
-- `SKILL.md` — activation, inputs, procedure, directives, outputs, refresh points, and open decisions.
-- `README.md` — layout, traceability, and maintenance posture.
+- `SKILL.md` - activation, inputs, procedure, directives, outputs, refresh points, and open decisions.
+- `README.md` - layout, traceability, and maintenance posture.
 
 Principles and procedures:
-- `guides/00-authority-and-principles.md` — authority reconstruction and fail-closed rules.
-- `guides/01-inspect-workspace.md` — Cargo, async, persistence, security, and toolchain inventory.
-- `guides/02-design-workspace-and-types.md` — crates, features, validated boundaries, typestate, errors, and architecture tests.
-- `guides/03-implement-bounded-slices.md` — test-first acceptance slicing and patch discipline.
-- `guides/04-prove-async-streams.md` — ownership, cancellation, backpressure, replay, disconnect, and shutdown.
-- `guides/05-prove-persistence-and-state.md` — transactions, durability, migrations, crash recovery, and state machines.
-- `guides/06-implement-adapters.md` — edge isolation, fake-first contracts, tracing, secrets, TLS, and prohibited effects.
-- `guides/07-build-cli-and-tui.md` — Clap contracts, diagnostics, confirmation, Ratatui lifecycle, and TUI gate.
-- `guides/08-verify-and-package-evidence.md` — verification ladder, package manifest, and closed release effects.
-- `guides/09-close-the-loop.md` — handoff, evidence honesty, blocker record, and Security-before-Quality.
+- `guides/00-authority-and-principles.md` - authority reconstruction and fail-closed rules.
+- `guides/01-inspect-workspace.md` - Cargo, async, persistence, security, and toolchain inventory.
+- `guides/02-design-workspace-and-types.md` - crates, features, validated boundaries, typestate, errors, and architecture tests.
+- `guides/03-implement-bounded-slices.md` - test-first acceptance slicing and patch discipline.
+- `guides/04-prove-async-streams.md` - ownership, cancellation, backpressure, replay, disconnect, and shutdown.
+- `guides/05-prove-persistence-and-state.md` - transactions, durability, migrations, crash recovery, and state machines.
+- `guides/06-implement-adapters.md` - edge isolation, fake-first contracts, tracing, secrets, TLS, and prohibited effects.
+- `guides/07-build-cli-and-tui.md` - Clap contracts, diagnostics, confirmation, Ratatui lifecycle, and TUI gate.
+- `guides/08-verify-and-package-evidence.md` - verification ladder, package manifest, and closed release effects.
+- `guides/09-close-the-loop.md` - handoff, evidence honesty, blocker record, and Security-before-Quality.
 
 Worked examples:
-- `examples/01-happy-path-bounded-service-slice.md` — bounded fake-provider service, ordering, capacity, and shutdown.
-- `examples/02-edge-visible-output-cancellation.md` — private replay proof and cancellation after visibility.
-- `examples/03-edge-concurrent-budget-reservation.md` — transactional reservation, idempotency, contention, and recovery.
-- `examples/04-release-evidence-with-closed-gates.md` — local package evidence with signing/publication blocked.
+- `examples/01-happy-path-bounded-service-slice.md` - bounded fake-provider service, ordering, capacity, and shutdown.
+- `examples/02-edge-visible-output-cancellation.md` - private replay proof and cancellation after visibility.
+- `examples/03-edge-concurrent-budget-reservation.md` - transactional reservation, idempotency, contention, and recovery.
+- `examples/04-release-evidence-with-closed-gates.md` - local package evidence with signing/publication blocked.
 
 Output templates:
-- `templates/acceptance-slice-checklist.md` — bounded implementation checklist.
-- `templates/implementation-handoff.md` — canonical completion/blocker handoff.
-- `templates/release-evidence-manifest.yaml` — artifact, verification, supply-chain, provenance, and gate evidence.
-- `templates/rust-decision-log.md` — drift-sensitive implementation decisions.
+- `templates/acceptance-slice-checklist.md` - bounded implementation checklist.
+- `templates/implementation-handoff.md` - canonical completion/blocker handoff.
+- `templates/release-evidence-manifest.yaml` - artifact, verification, supply-chain, provenance, and gate evidence.
+- `templates/rust-decision-log.md` - drift-sensitive implementation decisions.
 
 Report artifacts:
-- `reports/README.md` — archive and no-overwrite rules.
-- `reports/implementation-handoff-report-template.md` — global archive wrapper.
+- `reports/README.md` - archive and no-overwrite rules.
+- `reports/implementation-handoff-report-template.md` - global archive wrapper.
 
 Research trail:
-- `research/research-plan.md` — deep-research questions, order, source posture, and provenance caveat.
-- `research/research-summary.md` — coverage, influential sources, open questions, and refresh points.
-- `research/evidence-synthesis.md` — patterns, limitations, peer boundaries, and evidence model.
-- `research/index.md` — complete inventory of every dated primary-source note.
+- `research/research-plan.md` - deep-research questions, order, source posture, and provenance caveat.
+- `research/research-summary.md` - coverage, influential sources, open questions, and refresh points.
+- `research/evidence-synthesis.md` - patterns, limitations, peer boundaries, and evidence model.
+- `research/index.md` - complete inventory of every dated primary-source note.
 
 ---
 

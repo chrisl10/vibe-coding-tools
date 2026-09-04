@@ -23,4 +23,3 @@ License-list versions and cargo-deny detection behavior evolve; legal review can
 ## Annotations for stinger-forge
 - Prevent overclaiming `cargo deny` as legal clearance.
 - Route exceptions and notices to dependency/legal/release peers with exact evidence.
-

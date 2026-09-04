@@ -23,4 +23,3 @@ Retrieved against Tokio 1.53.1; method-level cancellation guarantees may change 
 ## Annotations for stinger-forge
 - Core source for cancellation audits around streams, writes, queues, and database work.
 - Supports focused tests for the exact boundary where visible output makes replay forbidden.
-

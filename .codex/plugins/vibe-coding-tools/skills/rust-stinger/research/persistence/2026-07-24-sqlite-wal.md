@@ -23,4 +23,3 @@ Official SQLite page updated in the research window; durability claims depend on
 ## Annotations for stinger-forge
 - Grounds explicit journal, synchronous, checkpoint, and reader-lifetime choices.
 - Contradicts any blanket claim that WAL plus NORMAL implies full power-loss durability.
-

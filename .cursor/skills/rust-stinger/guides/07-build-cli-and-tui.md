@@ -1,4 +1,4 @@
-# 07 — Build CLI and TUI surfaces
+# 07 - Build CLI and TUI surfaces
 
 ## Purpose
 
@@ -23,7 +23,7 @@ Build operable, scriptable, redacted operator clients without creating a second 
 
 ## Open decision checkpoint
 
-> TODO: human decision before implementation — whether the TUI is in the first executable milestone remains unresolved.
+> TODO: human decision before implementation - whether the TUI is in the first executable milestone remains unresolved.
 
 ## Worked examples
 

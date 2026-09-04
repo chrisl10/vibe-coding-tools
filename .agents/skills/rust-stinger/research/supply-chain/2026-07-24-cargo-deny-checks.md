@@ -23,4 +23,3 @@ Policy/schema changes across cargo-deny versions; pin both tool and configuratio
 ## Annotations for stinger-forge
 - Supports Rust-side evidence generation for dependency peer review.
 - The Bee may run/report it but must not own final license/advisory exceptions.
-

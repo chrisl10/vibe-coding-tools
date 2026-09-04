@@ -23,4 +23,3 @@ This API appears in SQLx 0.9.0; SQLx 0.8-era projects need a version-specific al
 ## Annotations for stinger-forge
 - Resolves the primary SQLx mechanism for write-intent acquisition before budget reads.
 - Pair with bounded busy handling, conditional updates, and concurrency/crash tests.
-

@@ -23,4 +23,3 @@ SQLx latest docs at retrieval; offline metadata commands and migration macro reb
 ## Annotations for stinger-forge
 - Supports compile-checked repository queries and migration packaging tests.
 - Database schema review remains a peer boundary; this source covers Rust integration mechanics.
-

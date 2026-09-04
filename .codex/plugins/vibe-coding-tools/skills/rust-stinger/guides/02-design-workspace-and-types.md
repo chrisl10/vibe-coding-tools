@@ -1,4 +1,4 @@
-# 02 — Design workspace and types
+# 02 - Design workspace and types
 
 ## Purpose
 

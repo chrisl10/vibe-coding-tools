@@ -23,4 +23,3 @@ Conceptual Tokio topic page; exact APIs may live in `tokio-util` and must match 
 ## Annotations for stinger-forge
 - Core source for task ownership and shutdown checklists.
 - Supports a root cancellation token plus explicit join/timeout/escalation evidence.
-

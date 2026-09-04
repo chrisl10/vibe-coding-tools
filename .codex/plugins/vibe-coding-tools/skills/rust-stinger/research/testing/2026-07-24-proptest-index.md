@@ -23,4 +23,3 @@ The guide reflects upstream main documentation; exact APIs must be checked again
 ## Annotations for stinger-forge
 - Supports corpus persistence and reproducible seeds as evidence artifacts.
 - Define invariants and input strategies in domain/test-support crates, not production adapters.
-

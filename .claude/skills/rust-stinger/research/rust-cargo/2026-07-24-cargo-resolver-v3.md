@@ -23,4 +23,3 @@ Stable Cargo docs as of retrieval. Resolver v3 sets selection behavior but does 
 ## Annotations for stinger-forge
 - Inform the workspace manifest checklist and feature/MSRV audit.
 - Warn that a virtual workspace must explicitly declare `resolver = "3"`.
-

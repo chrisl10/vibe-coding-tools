@@ -1,4 +1,4 @@
-# Example 04 — Release evidence with signing and publication closed
+# Example 04 - Release evidence with signing and publication closed
 
 Demonstrates [authority](../guides/00-authority-and-principles.md), [workspace inspection](../guides/01-inspect-workspace.md), [CLI/TUI boundary](../guides/07-build-cli-and-tui.md), [verification/release evidence](../guides/08-verify-and-package-evidence.md), and [closeout](../guides/09-close-the-loop.md).
 
@@ -31,11 +31,11 @@ Do not invoke Cosign or a public release workflow: blob signing can create OIDC 
 Unsigned macOS ARM64 staging artifacts, hashes, SBOM, scans, and isolated install/uninstall transcript were generated locally.
 
 ## Verification
-- `cargo nextest run --profile release` — PASS
-- `cargo test --workspace --doc` — PASS
-- local staging install/uninstall — PASS
-- signing — BLOCKED (no identity/authorization)
-- publication — BLOCKED (no authorization)
+- `cargo nextest run --profile release` - PASS
+- `cargo test --workspace --doc` - PASS
+- local staging install/uninstall - PASS
+- signing - BLOCKED (no identity/authorization)
+- publication - BLOCKED (no authorization)
 
 ## Peer handoffs and remaining gates
 - Dependency/license: review SBOM and scan dispositions.

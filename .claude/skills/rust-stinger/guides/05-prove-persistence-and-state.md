@@ -1,4 +1,4 @@
-# 05 — Prove persistence and state machines
+# 05 - Prove persistence and state machines
 
 ## Purpose
 
@@ -32,7 +32,7 @@ Make SQLx/SQLite transactions, locking, migrations, crash recovery, and state tr
 
 ## Open decision checkpoints
 
-> TODO: human decision before the relevant product slice — power-loss durability, busy timeout/UX, and final durable replay/promotion schema remain product/architecture decisions.
+> TODO: human decision before the relevant product slice - power-loss durability, busy timeout/UX, and final durable replay/promotion schema remain product/architecture decisions.
 
 ## Worked examples
 

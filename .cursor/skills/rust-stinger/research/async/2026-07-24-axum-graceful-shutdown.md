@@ -23,4 +23,3 @@ Axum latest docs at retrieval; exact connection-drain semantics depend on the ma
 ## Annotations for stinger-forge
 - Use for the loopback listener shutdown path.
 - Pair with Tokio task tracking; server shutdown alone does not prove all background work stopped.
-

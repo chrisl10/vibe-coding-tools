@@ -23,4 +23,3 @@ The stable docs reported rustls 0.23.42; rustls.dev also exposed 0.24.0-dev.0, s
 ## Annotations for stinger-forge
 - Strong upstream example for typestate and TLS-safe defaults.
 - Custom certificate verification requires explicit Security review.
-

@@ -23,4 +23,3 @@ SQLite official page published within the six-month research window. Exact busy 
 ## Annotations for stinger-forge
 - Critical for reservation/reconciliation write serialization and busy-retry design.
 - Supports acquiring write intent before reading budget state when the operation must be atomic.
-

@@ -1,4 +1,4 @@
-# 03 — Implement bounded acceptance slices
+# 03 - Implement bounded acceptance slices
 
 ## Purpose
 

@@ -23,4 +23,3 @@ Target tiers and OS baselines can change between Rust releases; re-check during 
 ## Annotations for stinger-forge
 - Use to separate compiler support from product support evidence.
 - Supports explicit macOS/Linux/Windows target triples and host-tool requirements.
-

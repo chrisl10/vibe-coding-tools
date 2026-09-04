@@ -23,4 +23,3 @@ Unstable Cargo feature tracked by issue/RFC; schema and availability may change 
 ## Annotations for stinger-forge
 - Record as optional deeper artifact evidence.
 - Prefer stable cargo-cyclonedx/cargo-auditable paths for baseline release guidance.
-

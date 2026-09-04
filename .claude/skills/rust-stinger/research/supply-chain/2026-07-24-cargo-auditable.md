@@ -23,4 +23,3 @@ The upstream README mentions nightly `-Z sbom`; nightly Cargo features are not a
 ## Annotations for stinger-forge
 - Supports artifact-to-lockfile traceability and post-build `cargo audit bin` checks.
 - Treat it as complementary to external SBOMs and attestations.
-

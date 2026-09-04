@@ -23,4 +23,3 @@ README currently requires Rust 1.74 or later; pin cargo-audit independently from
 ## Annotations for stinger-forge
 - Supports lockfile and shipped-binary audit evidence.
 - Never run automatic fix as part of an evidence-only release gate without review.
-

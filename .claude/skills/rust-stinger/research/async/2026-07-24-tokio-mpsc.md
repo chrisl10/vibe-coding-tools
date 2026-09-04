@@ -23,4 +23,3 @@ Retrieved against Tokio 1.53.1. Allocation details are explicitly implementation
 ## Annotations for stinger-forge
 - Grounds bounded queue requirements and shutdown draining tests.
 - Supports rejecting unbounded queues on stream/provider hot paths without a proven upper bound.
-

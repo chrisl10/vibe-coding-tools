@@ -23,4 +23,3 @@ State-machine support lives in the separate `proptest-state-machine` crate and m
 ## Annotations for stinger-forge
 - Primary evidence for quota, reservation, reconciliation, breaker, pin, and promotion model tests.
 - Pair with deterministic persistence fixtures and independent concurrency evidence.
-

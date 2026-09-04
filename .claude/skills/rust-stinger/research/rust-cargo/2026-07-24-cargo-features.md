@@ -23,4 +23,3 @@ Stable Cargo documentation; individual dependency feature sets can change withou
 ## Annotations for stinger-forge
 - Supports feature hygiene, `cargo tree -e features`, and targeted feature-matrix checks.
 - Relevant to keeping TUI/provider/TLS capabilities out of core crates by default.
-

@@ -1,4 +1,4 @@
-# 06 — Implement adapters behind approved contracts
+# 06 - Implement adapters behind approved contracts
 
 ## Purpose
 

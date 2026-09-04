@@ -23,4 +23,3 @@ Tower latest docs at retrieval; middleware can alter readiness semantics by laye
 ## Annotations for stinger-forge
 - Core evidence for backpressure-aware Tower services and adapters.
 - Supports tests that cancel between readiness and call and assert permit/resource release.
-

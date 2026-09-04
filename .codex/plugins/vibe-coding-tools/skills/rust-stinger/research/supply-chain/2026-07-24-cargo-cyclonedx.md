@@ -23,4 +23,3 @@ Version 0.5.9 is the current release reported at retrieval; coverage/format supp
 ## Annotations for stinger-forge
 - Strong 2026 source for reproducible target-specific CycloneDX generation.
 - Final SBOM completeness/policy judgment belongs to dependency/release peers.
-

@@ -23,4 +23,3 @@ Source view from rustls.dev may track development rather than the pinned 0.23 re
 ## Annotations for stinger-forge
 - Key evidence for private constructors and capability tokens representing completed checks.
 - Do not couple the router's state machine to rustls internal marker types.
-

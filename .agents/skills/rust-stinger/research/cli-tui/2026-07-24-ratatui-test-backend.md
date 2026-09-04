@@ -23,4 +23,3 @@ Ratatui 0.30.2 at retrieval; snapshot glyph/width behavior can vary with termina
 ## Annotations for stinger-forge
 - Supports deterministic TUI rendering tests without a real terminal.
 - Add narrow real-terminal smoke tests only where lifecycle/platform integration matters.
-

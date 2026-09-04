@@ -23,4 +23,3 @@ SQLx latest docs at retrieval (the docs index reported 0.9.0). Verify APIs again
 ## Annotations for stinger-forge
 - Grounds a single audited connection-options builder and startup verification of effective PRAGMAs.
 - Prevent per-connection configuration drift in pools.
-

@@ -35,11 +35,11 @@
 
 ## Five most influential sources
 
-1. [`async/2026-07-24-tokio-select-cancellation.md`](async/2026-07-24-tokio-select-cancellation.md) — establishes that cancellation safety is an operation-level property and identifies the central replay/data-loss review boundary.
-2. [`async/2026-07-24-tower-service-readiness.md`](async/2026-07-24-tower-service-readiness.md) — makes backpressure a resource-reservation contract and exposes the readiness-to-call cancellation edge.
-3. [`persistence/2026-07-24-sqlite-transactions.md`](persistence/2026-07-24-sqlite-transactions.md) plus [`persistence/2026-07-24-sqlx-custom-transactions.md`](persistence/2026-07-24-sqlx-custom-transactions.md) — together establish the one-writer rule and the SQLx 0.9 mechanism for tracked `BEGIN IMMEDIATE` transactions.
-4. [`security/2026-07-24-rustls-verification-markers.md`](security/2026-07-24-rustls-verification-markers.md) — supplies upstream precedent for private proof tokens preventing skipped safety checks.
-5. [`testing/2026-07-24-proptest-state-machines.md`](testing/2026-07-24-proptest-state-machines.md) — supplies the reference-model, invariant, shrinking, and regression-seed pattern for quota/breaker/promotion state.
+1. [`async/2026-07-24-tokio-select-cancellation.md`](async/2026-07-24-tokio-select-cancellation.md) - establishes that cancellation safety is an operation-level property and identifies the central replay/data-loss review boundary.
+2. [`async/2026-07-24-tower-service-readiness.md`](async/2026-07-24-tower-service-readiness.md) - makes backpressure a resource-reservation contract and exposes the readiness-to-call cancellation edge.
+3. [`persistence/2026-07-24-sqlite-transactions.md`](persistence/2026-07-24-sqlite-transactions.md) plus [`persistence/2026-07-24-sqlx-custom-transactions.md`](persistence/2026-07-24-sqlx-custom-transactions.md) - together establish the one-writer rule and the SQLx 0.9 mechanism for tracked `BEGIN IMMEDIATE` transactions.
+4. [`security/2026-07-24-rustls-verification-markers.md`](security/2026-07-24-rustls-verification-markers.md) - supplies upstream precedent for private proof tokens preventing skipped safety checks.
+5. [`testing/2026-07-24-proptest-state-machines.md`](testing/2026-07-24-proptest-state-machines.md) - supplies the reference-model, invariant, shrinking, and regression-seed pattern for quota/breaker/promotion state.
 
 ## Open questions that survived research
 
@@ -65,4 +65,3 @@
 - No subject area is blocked.
 - Raw web-crawl JSON and ranked discovery records were not produced. Context7 plus direct official/upstream retrieval was used; the limitation is recorded in the plan and synthesis.
 - No source establishes a universal off-the-shelf eight-hour Rust soak harness. The synthesis therefore records a composable evidence model and leaves numeric thresholds to the product/release owners.
-

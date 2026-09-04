@@ -23,4 +23,3 @@ Tracing 0.1.44 documentation; subscriber features and ecosystem layers vary inde
 ## Annotations for stinger-forge
 - Grounds observability dependency direction and binary-owned initialization.
 - Security/redaction review remains a peer gate even when field ownership is correct.
-

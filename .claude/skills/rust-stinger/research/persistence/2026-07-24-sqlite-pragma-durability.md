@@ -23,4 +23,3 @@ Official reference retrieved 2026-07-24; platform VFS behavior can still weaken 
 ## Annotations for stinger-forge
 - Use to require explicit, tested connection PRAGMAs rather than driver defaults.
 - Final durability policy is an architecture/product decision and should be recorded.
-

@@ -23,4 +23,3 @@ Stable Cargo 1.97-era docs; binary release archives produced by dist have separa
 ## Annotations for stinger-forge
 - Supports package-content and clean-build checks for publishable crates.
 - Do not confuse crate packaging proof with signed binary artifact provenance.
-

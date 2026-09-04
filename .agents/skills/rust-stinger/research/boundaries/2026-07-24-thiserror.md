@@ -23,4 +23,3 @@ Version 2.0.19 was published six days before retrieval; pin and test formatting 
 ## Annotations for stinger-forge
 - Supports domain error enums at crate boundaries and opaque public errors.
 - Do not place secrets/prompts in source error values or formatted context.
-

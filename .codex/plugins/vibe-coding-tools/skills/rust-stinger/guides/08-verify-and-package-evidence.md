@@ -1,4 +1,4 @@
-# 08 — Verify and package evidence
+# 08 - Verify and package evidence
 
 ## Purpose
 
@@ -31,7 +31,7 @@ Add declared minimal/default/all-feature builds, MSRV checks, target builds, mig
 - Benchmark: Criterion on a controlled host; statistics do not remove noisy-host risk ([research](../research/testing/2026-07-24-criterion-analysis.md)).
 - Soak: purpose-built fake-provider run with periodic RSS, task, queue, DB/WAL, handle, throughput, and error telemetry.
 
-> TODO: human decision before release qualification — define quantitative soak thresholds; no universal off-the-shelf eight-hour harness or product threshold exists in the research packet.
+> TODO: human decision before release qualification - define quantitative soak thresholds; no universal off-the-shelf eight-hour harness or product threshold exists in the research packet.
 
 ## Release evidence packet
 
@@ -47,7 +47,7 @@ Populate `templates/release-evidence-manifest.yaml` with target artifacts, hashe
 
 ## Open decision checkpoints
 
-> TODO: human decisions before release — supported targets/baselines, MSRV, installer formats, signing/attestation identity, and publication authorization.
+> TODO: human decisions before release - supported targets/baselines, MSRV, installer formats, signing/attestation identity, and publication authorization.
 
 ## Worked examples
 

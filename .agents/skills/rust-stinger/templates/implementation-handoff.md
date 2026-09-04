@@ -14,15 +14,15 @@
 
 ## Acceptance evidence
 
-- {{AC_ID}}: {{command_test_or_artifact}} — {{PASS_FAIL_BLOCKED}}
+- {{AC_ID}}: {{command_test_or_artifact}} - {{PASS_FAIL_BLOCKED}}
 
 ## Changed paths
 
-- `{{path}}` — {{reason}}
+- `{{path}}` - {{reason}}
 
 ## Verification
 
-- `{{exact_command}}` — {{PASS_FAIL_BLOCKED}}
+- `{{exact_command}}` - {{PASS_FAIL_BLOCKED}}
 
 ## Safety and operations
 

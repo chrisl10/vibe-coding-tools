@@ -23,4 +23,3 @@ The guide names third-party tools as examples, not as Rust project guarantees.
 ## Annotations for stinger-forge
 - Grounds separate pinned-toolchain, MSRV, latest-dependency, and target/feature checks.
 - Peer boundary: CI topology remains the release/DevOps specialist's decision.
-

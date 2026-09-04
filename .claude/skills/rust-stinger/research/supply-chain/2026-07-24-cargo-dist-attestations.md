@@ -23,4 +23,3 @@ The page labels GitHub Artifact Attestations public beta and records eligibility
 ## Annotations for stinger-forge
 - Supports provenance as an explicit opt-in release gate, not an assumed dist feature.
 - Signing identity/workflow permissions remain release/security peer concerns.
-

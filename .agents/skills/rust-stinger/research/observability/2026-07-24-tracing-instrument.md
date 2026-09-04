@@ -23,4 +23,3 @@ Retrieved against tracing 0.1.44; macro capture policy is current at access time
 ## Annotations for stinger-forge
 - Critical source for a `skip_all`-first rule on provider, prompt, credential, and SQL boundaries.
 - Add explicit allowlisted correlation/state fields rather than relying on Debug.
-
