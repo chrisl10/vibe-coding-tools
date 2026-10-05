@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/hooks/register-codex-agents.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
