@@ -32,7 +32,7 @@ Core has three orchestrator skills without paired Drones. Skill-only capabilitie
 
 ## Roster
 
-119 Drones registered across core and the optional HighLevel and Webapp Capture packs, sorted into domain groups. The Domain column is a one-line summary of the Drone's own frontmatter description. Trigger keywords are pulled from that same description, not invented.
+123 Drones registered across core and the optional HighLevel and Webapp Capture packs, sorted into domain groups. The Domain column is a one-line summary of the Drone's own frontmatter description. Trigger keywords are pulled from that same description, not invented.
 
 ### Stack and frameworks
 
@@ -204,6 +204,7 @@ The `gohighlevel`, `highlevel-ai-studio`, and `ghl-to-mermaid` pairs above live 
 | `readme-writing-wasp-drone` | Authors and audits README files as a conversion surface: canonical section order, badge discipline, OSS vs internal register | "write a README", "audit my README", "README-driven development" | `readme-writing-stinger` |
 | `runbook-writing-wasp-drone` | Operational runbook authorship: canonical templates, no-implied-context audit, exact-command discipline, escalation paths, rollback standards | "write a runbook", "audit this runbook", "we need a runbook for this alert" | `runbook-writing-stinger` |
 | `technical-writing-craft-wasp-drone` | Documentation writing quality: Diataxis framework, inverted-pyramid prose, code-example discipline, voice and tone consistency | "review this document", "is this doc well-written", "apply Diataxis" | `technical-writing-craft-stinger` |
+| `unslop-wasp-drone` | Cuts AI tells from human-facing prose and adds human voice via a 31-pattern catalog: scan, rewrite, add soul, self-audit | "unslop this", "make this sound human", "remove AI tells", "this reads like AI" | `unslop-stinger` |
 | `wiki-wasp-drone` | Extracts code entities and architectural concepts into atomic, backlinked wiki pages; infers ADRs from commit messages | "extract entities from a file or directory", "document this module's exports", "add this to the knowledge graph" | `wiki-stinger` |
 | `knowledge-base-help-center-wasp-drone` | Customer-facing knowledge base specialist — platform selection (Intercom Articles, Help Scout Docs, ReadMe.com, Document360, HelpJuice, Zendesk Guide), search-first architecture, AI deflection (chat-with-your-docs,... | "pick a KB platform", "set up a help center", "migrate Zendesk Guide", "add AI deflection to our docs" | `knowledge-base-help-center-stinger` |
 
@@ -214,7 +215,10 @@ The `gohighlevel`, `highlevel-ai-studio`, and `ghl-to-mermaid` pairs above live 
 |---|---|---|---|
 | `agile-scrum-wasp-drone` | Scrum methodology: audits whether teams actually practice Scrum, coaches ceremonies, writes Definition of Done, diagnoses anti-patterns | "audit our Scrum process", "is this Scrum", "write our DoD", "our retros don't produce anything" | `agile-scrum-stinger` |
 | `branching-strategy-wasp-drone` | Branching strategy advisor: model selection, release/hotfix patterns, merge-vs-rebase, feature-flag vs feature-branch decision | "which branching model should we use", "GitFlow or trunk-based", "merge or rebase" | `branching-strategy-stinger` |
+| `before-after-wasp-drone` | PR-ready before and after screenshot comparisons via the @vercel/before-and-after CLI: capture, upload, PR append, deployment-protection handling | "take before and after", "visual diff", "PR screenshots", "compare old and new" | `before-after-stinger` |
 | `code-review-pr-wasp-drone` | Code review culture and PR lifecycle: PR description audits, review checklists, PR-size evaluation, rubber-stamp diagnosis | "audit our PR culture", "write a PR description", "create a review checklist" | `code-review-pr-stinger` |
+| `code-structure-wasp-drone` | Two-layer architecture discipline: actions orchestrate domain rules while shared services centralize operational mechanics; extraction rulings and incremental migration | "what belongs in actions vs services", "extract a shared service", "refactor repeated operational blocks" | `code-structure-stinger` |
+| `evidence-testing-wasp-drone` | Records verifiable proof a change works: annotated live-session recordings, headless screenshot and probe sequences, measured before and after numbers, posted to PR and tracker | "prove this works", "record evidence of this fix", "measured before and after" | `evidence-testing-stinger` |
 | `estimation-wasp-drone` | Software estimation and forecasting: relative-sizing frameworks, the NoEstimates movement, planning-fallacy literature, probabilistic forecasting | "our story points mean nothing", "should we use NoEstimates", "we need a 90% confidence delivery date" | `estimation-stinger` |
 | `kanban-flow-wasp-drone` | Kanban method: WIP limit design, flow-metric calculation, Little's Law diagnostics, visual-board design, class-of-service policies | "set up WIP limits", "calculate cycle time", "apply Little's Law" | `kanban-flow-stinger` |
 | `quality-wasp-drone` | Quality-assurance reviewer that audits a completed implementation against its source plan document and produces findings | "QA this", "audit the implementation", "check the plan against the code" | `quality-stinger` |
@@ -354,7 +358,7 @@ Don't hand-roll a new Drone. Walk [`../queen-wasp-stinger/guides/pest-controller
 
 ---
 
-**119 Drones registered: 115 core, 3 in `highlevel`, and 1 in `webapp-capture`.** Installed Drones have a paired Stinger. See [`PAIRING-AUDIT.md`](./PAIRING-AUDIT.md) for the last full pairing audit; the source validator checks the current routed roster against the filesystem.
+**123 Drones registered: 119 core, 3 in `highlevel`, and 1 in `webapp-capture`.** Installed Drones have a paired Stinger. See [`PAIRING-AUDIT.md`](./PAIRING-AUDIT.md) for the last full pairing audit; the source validator checks the current routed roster against the filesystem.
 
 ---
 
