@@ -50,6 +50,27 @@ line why. Chris audits after the fact instead of approving up front.
 - On long tasks, re-anchor on the original task text at each new phase.
   Plans do not silently grow.
 
+## Worktrees and parallel work
+
+1. One session, one checkout. When two or more sessions, workers, or
+   background agents can touch the same repository, each works in its own
+   git worktree on its own branch. Nobody edits a checkout another session
+   is using, and nobody commits to main from a shared checkout.
+2. Claim before you create. Run `git worktree list` first, then take a path
+   and branch no sibling session has claimed. Name both after the task with
+   a unique suffix, for example branch `feature/<slug>-<shortid>` and path
+   `../<slug>-<shortid>`. The shortid comes from the task, sitting number,
+   or a fresh 4-character value.
+3. Never modify, delete, or clean up another session's worktree, branch, or
+   scratch files. Stray-looking files are active work: leave them alone and
+   mention them in the report.
+4. If the harness already placed this session in a managed worktree (a T3
+   Code thread handoff, a spawned worker's checkout), use it as-is and
+   create no second worktree.
+5. Retire what you created. When the task ends, merge or explicitly abandon,
+   then `git worktree remove` and delete unmerged branches you created. A
+   clean exit leaves `git worktree list` with no orphans from this session.
+
 ## Hard stops (ask Chris, always)
 
 1. Deleting, overwriting, rewriting, or force-pushing anything you did not
