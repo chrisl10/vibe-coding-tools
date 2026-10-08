@@ -32,7 +32,7 @@ Core has three orchestrator skills without paired Drones. Skill-only capabilitie
 
 ## Roster
 
-123 Drones registered across core and the optional HighLevel and Webapp Capture packs, sorted into domain groups. The Domain column is a one-line summary of the Drone's own frontmatter description. Trigger keywords are pulled from that same description, not invented.
+124 Drones registered across core and the optional HighLevel and Webapp Capture packs, sorted into domain groups. The Domain column is a one-line summary of the Drone's own frontmatter description. Trigger keywords are pulled from that same description, not invented.
 
 ### Stack and frameworks
 
@@ -45,6 +45,7 @@ Core has three orchestrator skills without paired Drones. Skill-only capabilitie
 | `preact-wasp-drone` | Preact 11: signals API, preact/compat migration from React, embed widgets, Astro islands, Fresh 2.x | "Preact vs React", "migrate a React codebase to Preact", "embed a widget on third-party pages", "Astro island" | `preact-stinger` |
 | `react-wasp-drone` | React 18/19 architecture: bulletproof-react patterns, Server Components, Suspense, Actions, Compiler, state layering | "review React architecture", "state management decision", "Server Components boundary", "React 19 patterns" | `react-stinger` |
 | `typescript-node-wasp-drone` | TypeScript/Node code review and conventions: strict config, module resolution, test suites, boundary validation (body still cites a legacy package's specifics; see PAIRING-AUDIT.md) | "review this TypeScript code", "audit this Node code", "write a Vitest suite", "tighten the tsconfig" | `typescript-node-stinger` |
+| `effect-wasp-drone` | Effect-TS v4 implementation and migration: Effect.gen composition, Context.Service DI, Layer construction, Schema validation, typed errors, the v3-to-v4 migration | "implement this in Effect", "migrate this Effect project to v4", "review this Effect codebase" | `effect-stinger` |
 | `python-wasp-drone` | Python architecture: Django + Django Ninja + FastAPI + Celery + Channels + pytest + uv, ORM discipline, migrations, typed adoption | "review this Django code", "audit ORM patterns", "migrate DRF to Django Ninja", "set up Celery" | `python-stinger` |
 | `rust-wasp-drone` | Rust implementation and code review for production Cargo workspaces, Tokio/Axum/Tower services, SQLx/SQLite state, Clap/Ratatui clients, Rust tests, and local packaging evidence | "implement this in Rust", "review this Cargo workspace", "fix this Tokio or SQLx service", "audit this SQLx transaction", "build the approved Rust PRD slice" | `rust-stinger` |
 | `tauri-wasp-drone` | Tauri 2 application boundary: update reviews, v1 migration, typed IPC, capabilities, plugins, sidecars, updater behavior, and desktop/mobile AI integration | "build a Tauri 2 desktop app", "what changed in Tauri 2", "migrate Tauri v1 to v2", "bundle a local model sidecar" | `tauri-stinger` |
@@ -292,7 +293,7 @@ Real sequences for this stack. Every sequence below closes with the Ship Gate; i
 
 ### Plan execution loop
 
-1. `pest-controller-suit` selects the narrowest implementation Drone for the approved plan. Use `rust-wasp-drone` for Rust and Cargo work, `tauri-wasp-drone` for the Tauri application boundary, `impeccable-wasp-drone` for frontend design implementation, or the matching domain Drone for other work.
+1. `pest-controller-suit` selects the narrowest implementation Drone for the approved plan. Use `rust-wasp-drone` for Rust and Cargo work, `tauri-wasp-drone` for the Tauri application boundary, `effect-wasp-drone` for Effect-TS work, `impeccable-wasp-drone` for frontend design implementation, or the matching domain Drone for other work.
 2. The implementation Drone completes the bounded scope and records fresh verification evidence.
 3. `security-wasp-drone` audits the completed change first and every medium-or-higher finding is resolved.
 4. The implementation owner reruns every affected check after security fixes.
@@ -358,7 +359,7 @@ Don't hand-roll a new Drone. Walk [`../queen-wasp-stinger/guides/pest-controller
 
 ---
 
-**123 Drones registered: 119 core, 3 in `highlevel`, and 1 in `webapp-capture`.** Installed Drones have a paired Stinger. See [`PAIRING-AUDIT.md`](./PAIRING-AUDIT.md) for the last full pairing audit; the source validator checks the current routed roster against the filesystem.
+**124 Drones registered: 120 core, 3 in `highlevel`, and 1 in `webapp-capture`.** Installed Drones have a paired Stinger. See [`PAIRING-AUDIT.md`](./PAIRING-AUDIT.md) for the last full pairing audit; the source validator checks the current routed roster against the filesystem.
 
 ---
 

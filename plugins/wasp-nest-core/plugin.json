@@ -44,6 +44,7 @@
     "./skills/discovery-research-stinger",
     "./skills/docs-site-stinger",
     "./skills/doppler-stinger",
+    "./skills/effect-stinger",
     "./skills/electron-app-stinger",
     "./skills/elevenlabs-api-stinger",
     "./skills/embeddings-runtime-stinger",
