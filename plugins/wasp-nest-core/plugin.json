@@ -89,6 +89,8 @@
     "./skills/preact-stinger",
     "./skills/product-feedback-roadmap-stinger",
     "./skills/product-tour-onboarding-ui-stinger",
+    "./skills/production-release-build-stinger",
+    "./skills/production-release-stinger",
     "./skills/python-stinger",
     "./skills/quality-stinger",
     "./skills/queen-wasp-stinger",

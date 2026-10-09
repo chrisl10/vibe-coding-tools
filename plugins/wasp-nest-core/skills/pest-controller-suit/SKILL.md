@@ -32,7 +32,7 @@ Core has three orchestrator skills without paired Drones. Skill-only capabilitie
 
 ## Roster
 
-124 Drones registered across core and the optional HighLevel and Webapp Capture packs, sorted into domain groups. The Domain column is a one-line summary of the Drone's own frontmatter description. Trigger keywords are pulled from that same description, not invented.
+126 Drones registered across core and the optional HighLevel and Webapp Capture packs, sorted into domain groups. The Domain column is a one-line summary of the Drone's own frontmatter description. Trigger keywords are pulled from that same description, not invented.
 
 ### Stack and frameworks
 
@@ -149,6 +149,8 @@ The `gohighlevel`, `highlevel-ai-studio`, and `ghl-to-mermaid` pairs above live 
 | `github-repo-health-wasp-drone` | Repository hygiene audit: branching strategy, branch protection, PR culture, commit quality, CI density, CODEOWNERS, repo settings | "audit this repo", "repo health check", "check branch protection", "CODEOWNERS audit" | `github-repo-health-stinger` |
 | `ci-release-wasp-drone` | CI pipeline, build, and package-release discipline: workflow architecture, version sync, quality gates, publish-time secret hygiene (body still describes a legacy build target; see PAIRING-AUDIT.md) | "review our build", "design our CI", "audit our workflows", "cut a release" | `ci-release-stinger` |
 | `changelog-release-notes-wasp-drone` | Public changelogs and release notes: tool selection, impact-first copy, honest scope, multi-channel distribution | "write my changelog entry", "set up a changelog tool", "we just shipped X" | `changelog-release-notes-stinger` |
+| `production-release-build-wasp-drone` | Audits a project's CI-to-deploy posture and builds the right tier of release flow, from simple git-push deploys up to the staging/freeze/dispatch/verified-smoke model; installs tier-appropriate workflows and recommends upgrades as the project grows | "set up production releases", "build a release pipeline", "we need CI to production", "install a release flow" | `production-release-build-stinger` |
+| `production-release-wasp-drone` | Executes the complete production release for any project at its tier: staging/main tree sync, freeze (branch locks plus release variables), dispatch parameters from live state, wait-for-required-green, workflow dispatch, deploy watch through post-deploy verification, and thaw | "production-release", "ship to production", "deploy to live", "promote and release" | `production-release-stinger` |
 | `app-store-submission-wasp-drone` | App store publication for iOS and Android: ASO, privacy compliance, rejection diagnosis, age ratings, IAP configuration | "submit my app", "App Store rejection", "ASO strategy", "set up IAP" | `app-store-submission-stinger` |
 
 ### Platform and harness
@@ -359,7 +361,7 @@ Don't hand-roll a new Drone. Walk [`../queen-wasp-stinger/guides/pest-controller
 
 ---
 
-**124 Drones registered: 120 core, 3 in `highlevel`, and 1 in `webapp-capture`.** Installed Drones have a paired Stinger. See [`PAIRING-AUDIT.md`](./PAIRING-AUDIT.md) for the last full pairing audit; the source validator checks the current routed roster against the filesystem.
+**126 Drones registered: 122 core, 3 in `highlevel`, and 1 in `webapp-capture`.** Installed Drones have a paired Stinger. See [`PAIRING-AUDIT.md`](./PAIRING-AUDIT.md) for the last full pairing audit; the source validator checks the current routed roster against the filesystem.
 
 ---
 
