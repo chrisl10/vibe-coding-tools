@@ -6,13 +6,20 @@ description: Run the Ship Gate on demand against the current diff, security-stin
 
 Nothing ships around the Ship Gate. This command runs it standalone, against whatever is sitting in the working tree right now, no PRD or Drone dispatch required to trigger it.
 
+## Invocation and source scope
+
+This canonical Core procedure is src/commands/ship-gate.md. In Claude plugin mode call /wasp-nest-core:ship-gate; Codex uses Core's generated source-command-ship-gate skill, not a deprecated prompt file. A source/global command label below is not an alias for an optional plugin.
+
+Read plugin-catalog.json to resolve every specialist's owner and prerequisites. For source work use its canonical source_root; for installed work use Core's selected-plugin resolver. Do not treat a cached optional package as enabled or edit installed copies to change canonical procedures.
+
+
 ## Mandatory process
 
 1. Load `../skills/pest-controller-suit/SKILL.md` (the roster) and consult it before any routing decision. This is the first step, always, no exceptions.
 2. Establish scope. Run `git status` and `git diff` (add `--staged` too if anything is staged) and state plainly, in your first line back to the user, exactly what you audited: which files changed, roughly how much, and whether the diff sits on a clean `main` or on top of other unmerged work. An empty diff means there is nothing to gate; say so and stop.
 3. Dispatch `security-wasp-drone`, armed with `security-stinger` per the arming contract in `pest-controller-suit/SKILL.md`, scoped to exactly the diff from step 2. Write its findings to `library/requirements/reports/<YYYY-MM-DD>-security-audit.md`, or the matching PRD or issue `qa/` subfolder if the diff maps to one already in progress.
 4. Resolve every medium-or-above finding from step 3, then re-run `security-wasp-drone` in full against the updated diff. Do not move on to quality while a medium-or-above finding is still open.
-5. Dispatch `quality-wasp-drone`, armed with `quality-stinger`, only after step 4 comes back clean. Write its findings to `library/requirements/reports/<domain>/<YYYY-MM-DD>-qa-report.md`, or the matching PRD or issue `reports/` path. Never run this before security; if quality already ran out of order this cycle, flag the ordering violation instead of trusting the result.
+5. Dispatch `quality-wasp-drone`, armed with `quality-stinger`, only after step 4 comes back clean. Write its findings to `library/requirements/reports/<domain>/<YYYY-MM-DD>-qa-report.md` for a standalone audit, or the matching v2 PRD/IRD folder's `qa/` path. Preserve the receiving repository's documented legacy destination for an existing plan. Never run this before security; if quality already ran out of order this cycle, flag the ordering violation instead of trusting the result.
 6. Resolve every medium-or-above finding from step 5, then re-run `quality-wasp-drone` in full.
 7. Tell the orchestrating agent directly, in plain words, to load `github-repo-health-stinger` itself now, before anything is committed or pushed. This command does not run that gate on the orchestrator's behalf; the check only counts if the orchestrator does it.
 8. Report to the user: what was audited, both report file paths, every medium-or-above finding and how it was closed, and that the diff is now waiting on their review and explicit approval before anything is committed or pushed.

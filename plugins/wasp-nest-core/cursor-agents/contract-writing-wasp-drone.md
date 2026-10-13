@@ -34,10 +34,10 @@ Respect agent work boundaries. Parallel PRD authors and later provider and consu
 
 ## Related drones and stingers
 
-- [library-wasp-drone](library-wasp-drone.md) and [library-stinger](../skills/library-stinger/SKILL.md) own PRD authoring and lifecycle.
-- [adr-writing-wasp-drone](adr-writing-wasp-drone.md) owns closed architecture decisions.
-- [api-docs-wasp-drone](api-docs-wasp-drone.md) owns API reference publication.
-- [legal-docs-wasp-drone](legal-docs-wasp-drone.md) owns commercial and legal contracts.
+- [library-wasp-drone](../agents/library-wasp-drone.md) and [library-stinger](../skills/library-stinger/SKILL.md) own PRD authoring and lifecycle.
+- [adr-writing-wasp-drone](../agents/adr-writing-wasp-drone.md) owns closed architecture decisions.
+- [api-docs-wasp-drone](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/documentation-tools/agents/api-docs-wasp-drone.md) owns API reference publication.
+- [legal-docs-wasp-drone](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/business-and-product-tools/agents/legal-docs-wasp-drone.md) owns commercial and legal contracts.
 
 ## Reporting expectations
 
