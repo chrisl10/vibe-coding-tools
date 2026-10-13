@@ -1,0 +1,8 @@
+# Shape the application
+1. Read the assigned product outcome, existing Vue version, package scripts, feature tree, backend contracts and the design brief. If Vue vs Nuxt rendering or API ownership is undecided, ask before dependent implementation. Never upgrade as part of this skill.
+2. Record owned application paths and other active workers. Keep route SFCs thin, feature UI and form drafts local, stateful reuse in composables, boundary decoding in service modules, and genuinely shared state in the accepted store.
+3. Use refs for independent state and pure computed values for derived state. Do not replace a tracked reactive object or destructure its primitive fields expecting live tracking. Return refs from composables.
+4. Retain existing shared-state architecture. Recommend Pinia only when a real shared-state need exists; approval is required to add a dependency. Keep caches scoped to the accepted app/session boundary, never a request-shared SSR singleton.
+5. Record the minimum vertical slice: route entry, loading, empty, success, failure, submit interaction and its application checks. Use [architecture record](../references/templates/architecture-record.md).
+
+Grounding: [reactivity](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/vue-stinger/references/research/raw/reactivity.txt), [composables](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/vue-stinger/references/research/raw/composables.txt), [state](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/vue-stinger/references/research/raw/state.txt). Folder boundaries are a project recommendation, not a mandatory Vue convention.
