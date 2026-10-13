@@ -1,0 +1,152 @@
+{
+  "scenarios": [
+    {
+      "name": "normal",
+      "currency": "USD",
+      "period": "month",
+      "unit": "attempted account-month with 10 successful feature answers",
+      "observed_at": "2026-10-07",
+      "evidence": "Fictional period allocation, 1000 accounts and USD 1 price; no selected commercial price",
+      "units": "1000",
+      "price_per_unit": "1",
+      "failed_payment_rate": "0",
+      "refund_rate": "0",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.1",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "cost_of_revenue",
+      "costs": [
+        {
+          "name": "period-meter-allocation",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "0.039"
+        },
+        {
+          "name": "storage-and-embedding-maintenance",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "6"
+        },
+        {
+          "name": "gateway-and-paid-operations",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "70"
+        }
+      ]
+    },
+    {
+      "name": "retry",
+      "currency": "USD",
+      "period": "month",
+      "unit": "attempted account-month with 10 successful feature answers",
+      "observed_at": "2026-10-07",
+      "evidence": "Fictional period allocation, 1000 accounts and USD 1 price; no selected commercial price",
+      "units": "1000",
+      "price_per_unit": "1",
+      "failed_payment_rate": "0",
+      "refund_rate": "0",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.1",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "cost_of_revenue",
+      "costs": [
+        {
+          "name": "period-meter-allocation",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "0.0468"
+        },
+        {
+          "name": "storage-and-embedding-maintenance",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "6"
+        },
+        {
+          "name": "gateway-and-paid-operations",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "70"
+        }
+      ]
+    },
+    {
+      "name": "cache-miss",
+      "currency": "USD",
+      "period": "month",
+      "unit": "attempted account-month with 10 successful feature answers",
+      "observed_at": "2026-10-07",
+      "evidence": "Fictional period allocation, 1000 accounts and USD 1 price; no selected commercial price",
+      "units": "1000",
+      "price_per_unit": "1",
+      "failed_payment_rate": "0",
+      "refund_rate": "0",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.1",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "cost_of_revenue",
+      "costs": [
+        {
+          "name": "period-meter-allocation",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "0.043"
+        },
+        {
+          "name": "storage-and-embedding-maintenance",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "6"
+        },
+        {
+          "name": "gateway-and-paid-operations",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "70"
+        }
+      ]
+    },
+    {
+      "name": "downside",
+      "currency": "USD",
+      "period": "month",
+      "unit": "attempted account-month with 10 successful feature answers",
+      "observed_at": "2026-10-07",
+      "evidence": "Fictional period allocation, 1000 accounts and USD 1 price; no selected commercial price",
+      "units": "1000",
+      "price_per_unit": "1",
+      "failed_payment_rate": "0.1",
+      "refund_rate": "0.1",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.1",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "cost_of_revenue",
+      "costs": [
+        {
+          "name": "period-meter-allocation",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "0.194"
+        },
+        {
+          "name": "storage-and-embedding-maintenance",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "6"
+        },
+        {
+          "name": "gateway-and-paid-operations",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "70"
+        }
+      ]
+    }
+  ]
+}
