@@ -1,0 +1,37 @@
+# Prepare the store readiness evidence
+
+Observed 2026-10-07. Start with [research findings](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/app-store-submission-stinger/references/research/store-readiness-20261007/digest.md). Refresh the affected official rule before an actual submission. This guide takes precedence over stale May examples where they conflict; historical scenarios are not policy authority.
+
+## 1. Identify the release
+
+Complete [the worksheet](../templates/store-evidence-worksheet.md). Ask platform, audience/category, distribution channel, store country list, monetization/product type, stage and exact rejection text. Record framework and version, native project/toolchain versions, supported OS/target SDK, release commit, artifact filename and SHA-256, bundle/package ID, marketing version and build/versionCode. Unknown values stay unknown.
+
+For iOS bind the archive/export method, signing team identifier, bundle ID and provisioning capability names to the existing app record. Read [upload requirements](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/app-store-submission-stinger/references/research/store-readiness-20261007/raw/apple-upload.html) and [upcoming requirements](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/app-store-submission-stinger/references/research/store-readiness-20261007/raw/apple-upcoming.html) for the planned submission date. Record validation output supplied by the build owner. Do not infer a native build from a JavaScript web build or a framework's theoretical mobile support.
+
+For Android distinguish the signed upload artifact, upload certificate fingerprint and Play distribution app-signing fingerprint. Compare package identity and versionCode to the previous release. Record the Console signing configuration evidence without key material. [Signing reference](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/app-store-submission-stinger/references/research/store-readiness-20261007/raw/play-signing.html).
+
+Missing artifacts, changed identity, missing signing evidence or unproven native toolchain produce NOT READY for that category. The native implementation/build owner must resolve these; this operator prepares evidence and does not silently become a Swift/Kotlin implementer.
+
+## 2. Trace behavior into privacy answers
+
+For each app feature, SDK and controlled webview, record the data type, off-device destination, downstream processors, purpose, identity linkage, retention/deletion, optionality and regional variation. Pair source/config inventory with supplied runtime evidence from the exact release and representative consent states. A permission list or SDK marketing page alone is insufficient.
+
+Map each row separately to Apple's collection/linkage/tracking/purpose definitions and Play's collection/sharing/required/optional/ephemeral definitions. Explain exceptions with the exact definition and evidence. Do not copy one platform's answers verbatim into the other. Do not infer no collection from a missing sample request. SDK manifests and privacy labels answer different questions; check both. [Apple privacy](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/app-store-submission-stinger/references/research/store-readiness-20261007/raw/apple-privacy.html), [Play definitions](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/app-store-submission-stinger/references/research/store-readiness-20261007/raw/play-data-safety.html).
+
+Apple Guideline 5.1.1 privacy policy and account-deletion requirements need actual implementation evidence. Children or regulated use remain an explicit review dependency. An age rating alone does not identify the intended audience or establish legal compliance. [Apple 1.3 and 5.1.1](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/app-store-submission-stinger/references/research/store-readiness-20261007/raw/apple-review.html).
+
+## 3. Qualify products and storefronts
+
+Use one row per platform, storefront, product and release version. Record digital/physical/service category, existing-access versus in-app purchase path, IAP product ID, subscription group or base-plan/offer identity, term, displayed store-localized price, cancellation/restore UX, policy section and observed date. Apple 3.1.1, 3.1.1(a), 3.1.2, 3.1.3 require category and region interpretation, not a universal external-checkout answer. [Current Apple text](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/app-store-submission-stinger/references/research/store-readiness-20261007/raw/apple-review.html).
+
+Check the bundled Play Billing version against the [deprecation table](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/app-store-submission-stinger/references/research/store-readiness-20261007/raw/play-billing-deprecation.html): version 7 is not generally eligible for new submissions on this observed date. A claimed extension needs app-specific proof. Google alternative billing eligibility/program terms are not established by this archive; mark that path UNRESOLVED and research the selected program before recommending it.
+
+## 4. Hand off entitlement verification
+
+Give the backend/native owners a matrix for verified purchase, pending purchase, renewal, cancellation without immediate expiry, grace/hold, expiry, restore on another device, account switching, duplicate notification, refund/revocation and unavailable verification service. For each, name the authoritative source, account binding, deduplication identifier, expected access transition and supplied test result. Purchase-button success is not proof of server entitlement correctness. [Google security](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/app-store-submission-stinger/references/research/store-readiness-20261007/raw/play-billing-security.html), [lifecycle](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/app-store-submission-stinger/references/research/store-readiness-20261007/raw/play-subscriptions.html).
+
+Record Apple StoreKit verification/server-notification requirements as an implementation handoff requiring the selected Apple API's current primary docs and native/server evidence. This archive does not certify an unimplemented Apple handler. Never issue a refund or revoke a real user as a synthetic readiness exercise.
+
+## 5. Produce the category decision
+
+Use READY FOR OWNER REVIEW, NOT READY or UNRESOLVED per build identity, privacy, payment-policy applicability, entitlement behavior and metadata. Cite artifact evidence and the exact rule, name missing proof and owner. Overall release remains NOT READY if a required category fails. Supply a dated planning range with stated confidence only when current queue evidence exists; otherwise review timing is unknown. Read [synthetic cases](../examples/store-evidence-readiness-cases.md). No form submission, upload or publication follows merely from a readiness report.
