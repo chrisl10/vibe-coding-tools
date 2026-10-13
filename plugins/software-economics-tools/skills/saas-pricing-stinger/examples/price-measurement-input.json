@@ -1,0 +1,54 @@
+{
+  "scenarios": [
+    {
+      "name": "Fictional A",
+      "currency": "USD",
+      "period": "identical fictional account-month window",
+      "unit": "attempted account-month",
+      "observed_at": "2026-10-07",
+      "evidence": "Invented paid-unit arithmetic only; zero-spend/trial/support costs unknown, no actual experiment.",
+      "units": "40",
+      "price_per_unit": "20",
+      "failed_payment_rate": "0.1",
+      "refund_rate": "0",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.30",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "operating",
+      "costs": [
+        {
+          "name": "Variable delivery",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "5"
+        }
+      ]
+    },
+    {
+      "name": "Fictional B",
+      "currency": "USD",
+      "period": "identical fictional account-month window",
+      "unit": "attempted account-month",
+      "observed_at": "2026-10-07",
+      "evidence": "Invented paid-unit arithmetic only; zero-spend/trial/support costs unknown, no actual experiment.",
+      "units": "32",
+      "price_per_unit": "30",
+      "failed_payment_rate": "0",
+      "refund_rate": "0.25",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.30",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "operating",
+      "costs": [
+        {
+          "name": "Variable delivery",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "5"
+        }
+      ]
+    }
+  ]
+}

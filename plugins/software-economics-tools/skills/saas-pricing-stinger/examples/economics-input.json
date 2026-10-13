@@ -1,0 +1,97 @@
+{
+  "scenarios": [
+    {
+      "name": "Fictional SaaS baseline",
+      "currency": "USD",
+      "period": "month",
+      "unit": "attempted account-month",
+      "observed_at": "2026-10-07",
+      "evidence": "Fictional math exercise. Rates are invented assumptions, not current provider prices.",
+      "units": "20",
+      "price_per_unit": "30",
+      "failed_payment_rate": "0",
+      "refund_rate": "0",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.30",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "operating",
+      "costs": [
+        {
+          "name": "Fixed overhead",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "300"
+        },
+        {
+          "name": "Variable delivery including support",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "5"
+        }
+      ]
+    },
+    {
+      "name": "Fictional AI high usage",
+      "currency": "USD",
+      "period": "month",
+      "unit": "attempted account-month",
+      "observed_at": "2026-10-07",
+      "evidence": "Fictional math exercise. Rates are invented assumptions, not current provider prices.",
+      "units": "20",
+      "price_per_unit": "30",
+      "failed_payment_rate": "0",
+      "refund_rate": "0",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.30",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "operating",
+      "costs": [
+        {
+          "name": "Fixed overhead",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "300"
+        },
+        {
+          "name": "Variable delivery including support",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "32"
+        }
+      ]
+    },
+    {
+      "name": "Fictional B2B ten-seat account",
+      "currency": "USD",
+      "period": "month",
+      "unit": "attempted account-month",
+      "observed_at": "2026-10-07",
+      "evidence": "Fictional math exercise. Rates are invented assumptions, not current provider prices.",
+      "units": "10",
+      "price_per_unit": "120",
+      "failed_payment_rate": "0",
+      "refund_rate": "0",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.30",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "operating",
+      "costs": [
+        {
+          "name": "Fixed overhead",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "300"
+        },
+        {
+          "name": "Variable delivery including support",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "50"
+        }
+      ]
+    }
+  ]
+}
