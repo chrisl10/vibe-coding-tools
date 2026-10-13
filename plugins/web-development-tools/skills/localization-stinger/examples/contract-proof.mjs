@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {resolveLocale,direction,validateResource,itemMessage,moneyParts,instantParts} from './mechanics.mjs';
+let checks=0;
+const check=(name,fn)=>{ fn();checks++;console.log(`PASS ${name}`); };
+const resource={save:'Save',itemCount:{one:'{count} item',other:'{count} items'}};
+check('canonical exact allowlist',()=>{assert.equal(resolveLocale('EN-us'),'en-US');assert.equal(resolveLocale('ar'),'ar');});
+check('unsupported and path input fallback',()=>{for(const x of ['fr','../../secret','ar-EG',''])assert.equal(resolveLocale(x),'en-US');});
+check('direction table',()=>{assert.equal(direction('ar'),'rtl');assert.equal(direction('en-US'),'ltr');assert.throws(()=>direction('fr'));});
+check('resource valid',()=>assert.equal(validateResource(resource),resource));
+check('plural message selection',()=>{assert.equal(itemMessage(resource,'en-US',1),'1 item');assert.equal(itemMessage(resource,'en-US',2),'2 items');assert.equal(itemMessage(resource,'en-US',0),'0 items');assert.equal(itemMessage(resource,'en-US',1.5),'1.5 items');});
+check('Arabic categories independently expected',()=>{const p=new Intl.PluralRules('ar');for(const [n,c] of [[0,'zero'],[1,'one'],[2,'two'],[3,'few'],[11,'many'],[100,'other'],[1.5,'other']])assert.equal(p.select(n),c);});
+check('missing resource and branch reject',()=>{assert.throws(()=>validateResource({save:'Save'}));assert.throws(()=>validateResource({save:'Save',itemCount:{one:'{count} item'}}));});
+check('markup, dangerous key and placeholder reject',()=>{assert.throws(()=>validateResource({...resource,save:'<img src=x>'}));assert.throws(()=>validateResource(JSON.parse('{"save":"Save","itemCount":{"other":"{count}"},"__proto__":{}}')));assert.throws(()=>validateResource({...resource,itemCount:{other:'{name} items'}}));});
+check('currency remains explicit across locales',()=>{for(const locale of ['en-US','ar']){const p=moneyParts(12.5,'USD',locale);assert.ok(p.some(x=>x.type==='currency'));assert.ok(p.some(x=>x.type==='integer'));}assert.throws(()=>moneyParts(12.5,undefined,'ar'));assert.throws(()=>moneyParts(Infinity,'USD','ar'));});
+check('timezone rollover contract',()=>{const date=new Date('2026-01-01T00:30:00Z');const utc=Object.fromEntries(instantParts(date,'UTC','en-US').map(x=>[x.type,x.value]));const ny=Object.fromEntries(instantParts(date,'America/New_York','en-US').map(x=>[x.type,x.value]));assert.equal(utc.day,'01');assert.equal(ny.day,'31');assert.equal(ny.year,'2025');});
+check('invalid instant and omitted timezone reject',()=>{assert.throws(()=>instantParts(new Date('invalid'),'UTC','en-US'));assert.throws(()=>instantParts(new Date(),undefined,'en-US'));});
+check('invalid count reject',()=>{assert.throws(()=>itemMessage(resource,'en-US',NaN));assert.throws(()=>itemMessage(resource,'en-US',-1));});
+console.log(JSON.stringify({status:'PASS',checks,node:process.version,icu:process.versions.icu,cldr:process.versions.cldr,scope:'synthetic exact locale/resource/Intl contract only',notRun:['ICU message parser','framework routing/hydration','browser layout','keyboard/assistive accessibility','human translation review','native runtime','installed harness']}));
