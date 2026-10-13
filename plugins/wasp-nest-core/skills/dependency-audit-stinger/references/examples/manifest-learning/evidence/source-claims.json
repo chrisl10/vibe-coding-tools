@@ -1,0 +1,106 @@
+[
+  {
+    "claim_id": "F1",
+    "source": "references/examples/manifest-learning/fixtures/README.md",
+    "sha256": "69b79ae9c93b87f7cf4a2285ba4a8efc822e4cc47ae490ed965333b8737d46e4",
+    "passages": [
+      {
+        "line": 3,
+        "quote": "These fictional lesson-* packages are teaching records, not claims about registry packages or usable artifacts. The manifest and lockfile are supplied source fixtures. No node_modules, CLI version execution, package retrieval, integrity verification or script execution is supplied. scripts/check.mjs is intentionally absent. Do not install this fixture."
+      }
+    ],
+    "claim": "Fixture does not establish installation/runtime/security.",
+    "source_locator_root": "loaded dependency-audit-stinger skill root"
+  },
+  {
+    "claim_id": "F2",
+    "source": "references/examples/manifest-learning/fixtures/package.json",
+    "sha256": "46d184f33da54855d7bf08b0606abcda28fe5f1d957ca305b195e3bdd29ce196",
+    "passages": [
+      {
+        "line": 13,
+        "quote": "    \"lesson-widget\": \"^1.2.0\""
+      }
+    ],
+    "claim": "Manifest requests lesson-widget range.",
+    "source_locator_root": "loaded dependency-audit-stinger skill root"
+  },
+  {
+    "claim_id": "F2",
+    "source": "references/examples/manifest-learning/fixtures/package-lock.json",
+    "sha256": "4a0c019b68ed4dcbfe78aea2c97c5dfa699127a2c2cd4926dbee17978f766b64",
+    "passages": [
+      {
+        "line": 17,
+        "quote": "      \"version\": \"1.2.3\","
+      }
+    ],
+    "claim": "Lock records concrete lesson-widget version.",
+    "source_locator_root": "loaded dependency-audit-stinger skill root"
+  },
+  {
+    "claim_id": "F2",
+    "source": "references/examples/manifest-learning/fixtures/package-lock.json",
+    "sha256": "4a0c019b68ed4dcbfe78aea2c97c5dfa699127a2c2cd4926dbee17978f766b64",
+    "passages": [
+      {
+        "line": 19,
+        "quote": "        \"lesson-color\": \"0.4.0\""
+      }
+    ],
+    "claim": "Lock graph records lesson-widget requiring lesson-color.",
+    "source_locator_root": "loaded dependency-audit-stinger skill root"
+  },
+  {
+    "claim_id": "F3",
+    "source": "references/examples/manifest-learning/fixtures/package.json",
+    "sha256": "46d184f33da54855d7bf08b0606abcda28fe5f1d957ca305b195e3bdd29ce196",
+    "passages": [
+      {
+        "line": 15,
+        "quote": "  \"devDependencies\": {"
+      }
+    ],
+    "claim": "Manifest has a separate development category.",
+    "source_locator_root": "loaded dependency-audit-stinger skill root"
+  },
+  {
+    "claim_id": "F3",
+    "source": "references/examples/manifest-learning/fixtures/package-lock.json",
+    "sha256": "4a0c019b68ed4dcbfe78aea2c97c5dfa699127a2c2cd4926dbee17978f766b64",
+    "passages": [
+      {
+        "line": 27,
+        "quote": "      \"dev\": true"
+      }
+    ],
+    "claim": "Checker lock entry is marked development.",
+    "source_locator_root": "loaded dependency-audit-stinger skill root"
+  },
+  {
+    "claim_id": "F4",
+    "source": "references/examples/manifest-learning/fixtures/package.json",
+    "sha256": "46d184f33da54855d7bf08b0606abcda28fe5f1d957ca305b195e3bdd29ce196",
+    "passages": [
+      {
+        "line": 5,
+        "quote": "  \"packageManager\": \"npm@11.21.0\","
+      }
+    ],
+    "claim": "Version is a declaration, not observed CLI.",
+    "source_locator_root": "loaded dependency-audit-stinger skill root"
+  },
+  {
+    "claim_id": "F4",
+    "source": "references/examples/manifest-learning/fixtures/README.md",
+    "sha256": "69b79ae9c93b87f7cf4a2285ba4a8efc822e4cc47ae490ed965333b8737d46e4",
+    "passages": [
+      {
+        "line": 3,
+        "quote": "These fictional lesson-* packages are teaching records, not claims about registry packages or usable artifacts. The manifest and lockfile are supplied source fixtures. No node_modules, CLI version execution, package retrieval, integrity verification or script execution is supplied. scripts/check.mjs is intentionally absent. Do not install this fixture."
+      }
+    ],
+    "claim": "Named script implementation is absent.",
+    "source_locator_root": "loaded dependency-audit-stinger skill root"
+  }
+]

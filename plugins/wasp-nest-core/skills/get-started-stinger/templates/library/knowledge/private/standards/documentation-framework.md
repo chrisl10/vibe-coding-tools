@@ -141,6 +141,8 @@ Content documents may add fields such as status, version, owner, and updated dat
 | Capture temporary personal thoughts | Human note under `notes/` |
 | Record independent proof for one plan | That PRD or IRD's `qa/` folder |
 | Record a repository-wide audit | `requirements/reports/` |
+| Save a PRD map, wave plan or handoff packet | `requirements/plans/` |
+| Record a project-wide standard such as the Definition of Done | `knowledge/private/standards/` |
 
 ## Lifecycle gate
 

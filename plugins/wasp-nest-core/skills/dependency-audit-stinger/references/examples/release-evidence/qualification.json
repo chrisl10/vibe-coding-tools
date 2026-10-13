@@ -1,0 +1,92 @@
+{
+  "outcomes": [
+    "O274",
+    "O111"
+  ],
+  "date": "2026-10-07",
+  "scope": "synthetic artifact/source exercises",
+  "checks": [
+    {
+      "name": "matching artifact digest",
+      "passed": true,
+      "limit": "Byte association only; unsigned synthetic statement."
+    },
+    {
+      "name": "same name changed bytes refused",
+      "passed": true,
+      "limit": "Filename identity alone fails."
+    },
+    {
+      "name": "inventory digest is not release digest",
+      "passed": true,
+      "limit": "Inventory-file attestation cannot bind release bytes by itself."
+    },
+    {
+      "name": "nonzero parsed inventory retains unknown coverage",
+      "passed": true,
+      "limit": "Parse/count does not prove coverage or schema."
+    },
+    {
+      "name": "schema/signature remain pending",
+      "passed": true,
+      "limit": "No signer or schema validator used."
+    },
+    {
+      "name": "upgrade case matrix preserves unproved contracts",
+      "passed": true,
+      "limit": "Reviewed decision exercises; no real package upgrade/application tests."
+    },
+    {
+      "name": "retained template subjects packed artifact",
+      "passed": true,
+      "limit": "Text inspection; CI/action behavior unexecuted."
+    },
+    {
+      "name": "retained template single tarball selection",
+      "passed": true,
+      "limit": "Text inspection; npm pack not run."
+    }
+  ],
+  "upgrade_cases": [
+    {
+      "case": "default retries change",
+      "install": "passes",
+      "types": "passes",
+      "consumer": "uncharacterized",
+      "expected": "needs migration work"
+    },
+    {
+      "case": "persistent-format rollback",
+      "old_artifact": "present",
+      "old_reader": "cannot read new format",
+      "expected": "stop"
+    },
+    {
+      "case": "native target missing",
+      "linux": "passes",
+      "arm": "pending",
+      "expected": "arm pending"
+    },
+    {
+      "case": "svelte consumer unknown",
+      "guide": "official archive",
+      "consumer": "pending",
+      "expected": "needs migration work"
+    }
+  ],
+  "artifact_sha256": {
+    "a": "4f7879295d790e00e859c781d5a53390257b1ff182fab70726049076957d6259",
+    "b": "c101e9c3ffd38ee1cbcdbc1c166fe131b0ba22f41258be21f887c42696c2b2ba",
+    "inventory": "b19ff2a8129877551269cf4dc104a50f64afe73723bced016f99a43afbf76a66"
+  },
+  "not_proved": [
+    "SBOM schema conformance",
+    "component completeness",
+    "signature validity",
+    "expected signer policy",
+    "actual release upload match",
+    "real dependency upgrade",
+    "native runtime",
+    "canary or rollback rehearsal"
+  ]
+}
