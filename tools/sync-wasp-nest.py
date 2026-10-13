@@ -1,0 +1,221 @@
+#!/usr/bin/env python3
+"""v3 local installer and surface sync for this Wasp Nest checkout.
+
+Writes the explicit installed-plugin registry (~/.wasp-nest/installed-plugins.json)
+with actual checkout roots, deploys the flat home projection (stingers to
+~/.agents/skills and ~/.claude/skills), deploys Drone agents to ~/.claude/agents
+where that pattern is enabled, and registers Codex role TOMLs through Core's
+own hook. --check reports drift only.
+
+Marketplace plugin caches (~/.zcode, ~/.claude plugins) are managed by each
+harness installer; this script never writes into them.
+
+Usage:
+  python3 tools/sync-wasp-nest.py [--plugins core,chrisl-forged,...]
+  python3 tools/sync-wasp-nest.py --check
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+PLUGINS_DIR = REPO_ROOT / "plugins"
+HOME = Path.home()
+REGISTRY = HOME / ".wasp-nest/installed-plugins.json"
+AGENTS_SKILLS = HOME / ".agents/skills"
+CLAUDE_SKILLS = HOME / ".claude/skills"
+CLAUDE_AGENTS = HOME / ".claude/agents"
+CODEX_HOME = Path(os.environ.get("CODEX_HOME", HOME / ".codex"))
+
+DEFAULT_PLUGINS = [
+    "wasp-nest-core",
+    "chrisl-forged",
+    "data-and-ai-tools",
+    "product-studio",
+    "code-audit-tools",
+    "documentation-tools",
+    "content-intelligence",
+    "highlevel",
+    "webapp-capture",
+    "website-auditor",
+]
+
+
+def sha256(path: Path) -> str | None:
+    if not path.is_file():
+        return None
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(65536), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def tree_files(root: Path) -> dict[str, str]:
+    out: dict[str, str] = {}
+    if not root.is_dir():
+        return out
+    for path in sorted(root.rglob("*")):
+        if path.is_file() and not path.is_symlink():
+            out[str(path.relative_to(root))] = sha256(path)
+    return out
+
+
+def compare(source: Path, target: Path, label: str, check: bool) -> int:
+    want = tree_files(source)
+    have = tree_files(target)
+    missing = 0
+    for rel, digest in want.items():
+        if have.get(rel) == digest:
+            continue
+        missing += 1
+        if not check:
+            dst = target / rel
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source / rel, dst)
+            print(f"  synced {label}/{rel}")
+    if missing == 0:
+        print(f"  {label}: clean ({len(want)} files)")
+    elif check:
+        print(f"  {label}: DRIFT ({missing} files differ or missing)")
+    return missing
+
+
+def selected_plugins(names: list[str]) -> dict[str, Path]:
+    roots: dict[str, Path] = {}
+    for name in names:
+        root = PLUGINS_DIR / name
+        if not (root / "plugin.json").is_file():
+            raise SystemExit(f"unknown plugin in this checkout: {name}")
+        roots[name] = root
+    if "wasp-nest-core" not in roots:
+        raise SystemExit("wasp-nest-core must stay in the selection")
+    return roots
+
+
+def write_registry(roots: dict[str, Path], check: bool) -> int:
+    want = {"plugins": {name: str(root) for name, root in sorted(roots.items())}}
+    have = json.loads(REGISTRY.read_text()) if REGISTRY.is_file() else None
+    if have == want:
+        print(f"  registry: clean ({len(want['plugins'])} roots)")
+        return 0
+    if check:
+        print("  registry: DRIFT")
+        return 1
+    REGISTRY.parent.mkdir(parents=True, exist_ok=True)
+    if REGISTRY.is_file():
+        bak = REGISTRY.with_suffix(".json.bak-" + subprocess.run(
+            ["date", "+%Y%m%d-%H%M%S"], capture_output=True, text=True
+        ).stdout.strip())
+        shutil.copy2(REGISTRY, bak)
+        print(f"  registry: previous copy kept at {bak.name}")
+    REGISTRY.write_text(json.dumps(want, indent=2) + "\n")
+    print(f"  registry: wrote {len(want['plugins'])} roots")
+    return 0
+
+
+def deploy_stingers(roots: dict[str, Path], check: bool) -> int:
+    drift = 0
+    for name, root in sorted(roots.items()):
+        skills = root / "skills"
+        if not skills.is_dir():
+            continue
+        for skill in sorted(skills.iterdir()):
+            if not (skill.is_dir() and (skill / "SKILL.md").is_file()):
+                continue
+            drift += compare(skill, AGENTS_SKILLS / skill.name, f".agents/skills/{skill.name}", check)
+            if CLAUDE_SKILLS.is_dir() or not check:
+                drift += compare(skill, CLAUDE_SKILLS / skill.name, f".claude/skills/{skill.name}", check)
+    return drift
+
+
+def deploy_drone_agents(roots: dict[str, Path], check: bool) -> int:
+    if not CLAUDE_AGENTS.is_dir():
+        return 0  # this device keeps ~/.claude/agents drone-free by choice
+    drift = 0
+    for name, root in sorted(roots.items()):
+        agents = root / "agents"
+        if not agents.is_dir():
+            continue
+        for agent in sorted(agents.glob("*-wasp-drone.md")):
+            dst = CLAUDE_AGENTS / agent.name
+            if sha256(dst) == sha256(agent):
+                continue
+            drift += 1
+            if not check:
+                shutil.copy2(agent, dst)
+                print(f"  synced .claude/agents/{agent.name}")
+    print(f"  .claude/agents: {'clean' if drift == 0 else f'{drift} drifted'}")
+    return drift
+
+
+def run_register_hook(check: bool) -> int:
+    hook = PLUGINS_DIR / "wasp-nest-core/hooks/register-codex-agents.py"
+    env = dict(os.environ, PLUGIN_ROOT=str(PLUGINS_DIR / "wasp-nest-core"))
+    result = subprocess.run(
+        [sys.executable, str(hook), "--report"],
+        env=env, capture_output=True, text=True, check=False,
+    )
+    report = result.stdout.strip() or '{"installed": 0}'
+    tomls = len(list((CODEX_HOME / "agents").glob("*.toml"))) if (CODEX_HOME / "agents").is_dir() else 0
+    print(f"  codex register hook: {report} (agents dir now {tomls} TOMLs)")
+    if result.returncode != 0:
+        print(f"  codex register hook FAILED: {result.stderr.strip()[:400]}")
+        return 1
+    if check:
+        installed = json.loads(report).get("installed", 0)
+        return 1 if installed else 0
+    return 0
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--check", action="store_true", help="report drift only")
+    parser.add_argument("--plugins", default=",".join(DEFAULT_PLUGINS),
+                        help="comma-separated plugin selection (core required)")
+    args = parser.parse_args()
+    mode = "CHECK" if args.check else "DEPLOY"
+
+    dirty = subprocess.run(
+        ["git", "-C", str(REPO_ROOT), "status", "--porcelain"],
+        capture_output=True, text=True, check=False,
+    ).stdout.strip()
+    branch = subprocess.run(
+        ["git", "-C", str(REPO_ROOT), "rev-parse", "--abbrev-ref", "HEAD"],
+        capture_output=True, text=True, check=False,
+    ).stdout.strip()
+
+    roots = selected_plugins([p.strip() for p in args.plugins.split(",") if p.strip()])
+    print(f"wasp-nest v3 sync [{mode}] branch={branch} plugins={len(roots)}")
+    if dirty and not args.check:
+        print("WARNING: working tree has uncommitted changes; deploying dirty state:")
+        for line in dirty.splitlines()[:10]:
+            print(f"  {line}")
+
+    drift = write_registry(roots, args.check)
+    drift += deploy_stingers(roots, args.check)
+    drift += deploy_drone_agents(roots, args.check)
+    drift += run_register_hook(args.check)
+
+    catalog = json.loads((PLUGINS_DIR / "wasp-nest-core/plugin-catalog.json").read_text())
+    roster = PLUGINS_DIR / "wasp-nest-core/skills/pest-controller-suit/SKILL.md"
+    line = next((l for l in roster.read_text().splitlines() if "Drones" in l and "routed" in l), "")
+    print(f"  catalog version: {catalog.get('version')} | {line.strip('* ')}")
+
+    if drift:
+        print(f"RESULT: {'DRIFT' if args.check else 'DEPLOYED'} ({drift} item(s))")
+        return 1 if args.check else 0
+    print("RESULT: clean, all surfaces match this checkout")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -3,3 +3,10 @@ node_modules/
 dist/
 .env
 .env.*
+
+# queen-wasp per-type validation projections (build artifacts)
+/.agents/
+/.codex/
+/.cursor/
+/.zcode/
+/CLAUDE.md
