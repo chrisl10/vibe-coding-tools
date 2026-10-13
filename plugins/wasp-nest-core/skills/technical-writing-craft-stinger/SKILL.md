@@ -54,6 +54,10 @@ When asked to write rather than review:
 
 ---
 
+## Audience document packets
+
+Use [library-packets-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/documentation-tools/skills/library-packets-stinger/SKILL.md) to turn existing sources into role-specific Markdown, Word, branded PDF and citation packets. Source authoring remains with this skill.
+
 ## Critical directives
 
 - **Classify Diataxis mode before offering any prose feedback.** Mode-mixing is the root cause of most documentation confusion. Fixing prose before fixing structure wastes both parties' time. Source: `research/external/01-diataxis-framework-overview.md`.
@@ -100,6 +104,8 @@ When asked to write rather than review:
 ---
 
 ## Peer Drones (scope boundaries)
+
+For explaining a supplied technical source with bounded analogies and teach-back, consult [Technical Explainer routing](../pest-controller-suit/guides/technical-explainer-wasp-drone.md). Craft retains writing review and general documentation procedure ownership; resolve the selected optional owner before dispatch.
 
 | Concern | Drone |
 |---|---|

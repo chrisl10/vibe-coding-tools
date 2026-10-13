@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "claim_id": "C01",
+      "kind": "fact",
+      "status": "documented",
+      "references": [
+        {
+          "source_id": "S01",
+          "title": "DigitalGov plain-language guide",
+          "path": "digitalgov-plain-language.md",
+          "sha256": "c7bbcfb4d0658cfd3807cd9d655d08837a8854d005e07b650608f35b23351658",
+          "quote": "content that is clear and easy to understand",
+          "location": {
+            "type": "lines",
+            "start": 34,
+            "end": 34
+          }
+        }
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "kind": "fact",
+      "status": "documented",
+      "references": [
+        {
+          "source_id": "S01",
+          "title": "DigitalGov plain-language guide",
+          "path": "digitalgov-plain-language.md",
+          "sha256": "c7bbcfb4d0658cfd3807cd9d655d08837a8854d005e07b650608f35b23351658",
+          "quote": "content for the public is written for its specific audience",
+          "location": {
+            "type": "lines",
+            "start": 36,
+            "end": 36
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "model": "monthly-operating-cost-v1",
+  "currency": "USD",
+  "period": "month",
+  "observed_at": "2026-10-07",
+  "evidence": "Synthetic assumptions; no observed usage, vendor pricing, invoice or actual profit",
+  "scenarios": [
+    {
+      "name": "low",
+      "providers": [
+        {
+          "name": "fictional-meter-service",
+          "region": "fictional-region",
+          "plan": "fictional-linear-plan",
+          "observed_at": "2026-10-07",
+          "source": "Explicit hypothetical rates for arithmetic only; no vendor price claim",
+          "meters": [
+            {
+              "name": "uncached",
+              "unit": "million tokens",
+              "quantity": "0.6",
+              "allowance": "0",
+              "rate": "2",
+              "billable_quantity": "0.6",
+              "cost": "1.2"
+            },
+            {
+              "name": "cache-read",
+              "unit": "million tokens",
+              "quantity": "0.3",
+              "allowance": "0",
+              "rate": "0.5",
+              "billable_quantity": "0.3",
+              "cost": "0.15"
+            },
+            {
+              "name": "cache-write",
+              "unit": "million tokens",
+              "quantity": "0.1",
+              "allowance": "0",
+              "rate": "2.5",
+              "billable_quantity": "0.1",
+              "cost": "0.25"
+            },
+            {
+              "name": "output",
+              "unit": "million tokens",
+              "quantity": "0.2",
+              "allowance": "0",
+              "rate": "6",
+              "billable_quantity": "0.2",
+              "cost": "1.2"
+            },
+            {
+              "name": "retrieval",
+              "unit": "query",
+              "quantity": "2000",
+              "allowance": "0",
+              "rate": "0.0002",
+              "billable_quantity": "2000",
+              "cost": "0.4"
+            },
+            {
+              "name": "tool",
+              "unit": "operation",
+              "quantity": "1000",
+              "allowance": "0",
+              "rate": "0.0003",
+              "billable_quantity": "1000",
+              "cost": "0.3"
+            },
+            {
+              "name": "storage",
+              "unit": "GB-month",
+              "quantity": "50",
+              "allowance": "0",
+              "rate": "0.1",
+              "billable_quantity": "50",
+              "cost": "5"
+            },
+            {
+              "name": "network",
+              "unit": "GB",
+              "quantity": "2",
+              "allowance": "0",
+              "rate": "0.1",
+              "billable_quantity": "2",
+              "cost": "0.2"
+            },
+            {
+              "name": "embedding",
+              "unit": "million tokens",
+              "quantity": "1",
+              "allowance": "0",
+              "rate": "1",
+              "billable_quantity": "1",
+              "cost": "1"
+            },
+            {
+              "name": "rerank",
+              "unit": "operation",
+              "quantity": "1000",
+              "allowance": "0",
+              "rate": "0.0002",
+              "billable_quantity": "1000",
+              "cost": "0.2"
+            }
+          ],
+          "gross_usage": "9.9",
+          "usage_credit": "0",
+          "fee_mode": "additive",
+          "fee_amount": "20",
+          "before_total_credit": "29.9",
+          "total_credit": "0",
+          "cash_cost": "29.9"
+        }
+      ],
+      "credit_pools": [],
+      "provider_cash": "29.9",
+      "paid_operator_labor": "50",
+      "monthly_cash_estimate": "79.9",
+      "unpaid_time_valuation": "0",
+      "monthly_cost_with_time_valuation": "79.9"
+    },
+    {
+      "name": "base",
+      "providers": [
+        {
+          "name": "fictional-meter-service",
+          "region": "fictional-region",
+          "plan": "fictional-linear-plan",
+          "observed_at": "2026-10-07",
+          "source": "Explicit hypothetical rates for arithmetic only; no vendor price claim",
+          "meters": [
+            {
+              "name": "uncached",
+              "unit": "million tokens",
+              "quantity": "6",
+              "allowance": "0",
+              "rate": "2",
+              "billable_quantity": "6",
+              "cost": "12"
+            },
+            {
+              "name": "cache-read",
+              "unit": "million tokens",
+              "quantity": "3",
+              "allowance": "0",
+              "rate": "0.5",
+              "billable_quantity": "3",
+              "cost": "1.5"
+            },
+            {
+              "name": "cache-write",
+              "unit": "million tokens",
+              "quantity": "1",
+              "allowance": "0",
+              "rate": "2.5",
+              "billable_quantity": "1",
+              "cost": "2.5"
+            },
+            {
+              "name": "output",
+              "unit": "million tokens",
+              "quantity": "2",
+              "allowance": "0",
+              "rate": "6",
+              "billable_quantity": "2",
+              "cost": "12"
+            },
+            {
+              "name": "retrieval",
+              "unit": "query",
+              "quantity": "20000",
+              "allowance": "0",
+              "rate": "0.0002",
+              "billable_quantity": "20000",
+              "cost": "4"
+            },
+            {
+              "name": "tool",
+              "unit": "operation",
+              "quantity": "10000",
+              "allowance": "0",
+              "rate": "0.0003",
+              "billable_quantity": "10000",
+              "cost": "3"
+            },
+            {
+              "name": "storage",
+              "unit": "GB-month",
+              "quantity": "50",
+              "allowance": "0",
+              "rate": "0.1",
+              "billable_quantity": "50",
+              "cost": "5"
+            },
+            {
+              "name": "network",
+              "unit": "GB",
+              "quantity": "20",
+              "allowance": "0",
+              "rate": "0.1",
+              "billable_quantity": "20",
+              "cost": "2"
+            },
+            {
+              "name": "embedding",
+              "unit": "million tokens",
+              "quantity": "1",
+              "allowance": "0",
+              "rate": "1",
+              "billable_quantity": "1",
+              "cost": "1"
+            },
+            {
+              "name": "rerank",
+              "unit": "operation",
+              "quantity": "10000",
+              "allowance": "0",
+              "rate": "0.0002",
+              "billable_quantity": "10000",
+              "cost": "2"
+            }
+          ],
+          "gross_usage": "45",
+          "usage_credit": "0",
+          "fee_mode": "additive",
+          "fee_amount": "20",
+          "before_total_credit": "65",
+          "total_credit": "0",
+          "cash_cost": "65"
+        }
+      ],
+      "credit_pools": [],
+      "provider_cash": "65",
+      "paid_operator_labor": "50",
+      "monthly_cash_estimate": "115",
+      "unpaid_time_valuation": "0",
+      "monthly_cost_with_time_valuation": "115"
+    },
+    {
+      "name": "high",
+      "providers": [
+        {
+          "name": "fictional-meter-service",
+          "region": "fictional-region",
+          "plan": "fictional-linear-plan",
+          "observed_at": "2026-10-07",
+          "source": "Explicit hypothetical rates for arithmetic only; no vendor price claim",
+          "meters": [
+            {
+              "name": "uncached",
+              "unit": "million tokens",
+              "quantity": "18",
+              "allowance": "0",
+              "rate": "2",
+              "billable_quantity": "18",
+              "cost": "36"
+            },
+            {
+              "name": "cache-read",
+              "unit": "million tokens",
+              "quantity": "9",
+              "allowance": "0",
+              "rate": "0.5",
+              "billable_quantity": "9",
+              "cost": "4.5"
+            },
+            {
+              "name": "cache-write",
+              "unit": "million tokens",
+              "quantity": "3",
+              "allowance": "0",
+              "rate": "2.5",
+              "billable_quantity": "3",
+              "cost": "7.5"
+            },
+            {
+              "name": "output",
+              "unit": "million tokens",
+              "quantity": "6",
+              "allowance": "0",
+              "rate": "6",
+              "billable_quantity": "6",
+              "cost": "36"
+            },
+            {
+              "name": "retrieval",
+              "unit": "query",
+              "quantity": "60000",
+              "allowance": "0",
+              "rate": "0.0002",
+              "billable_quantity": "60000",
+              "cost": "12"
+            },
+            {
+              "name": "tool",
+              "unit": "operation",
+              "quantity": "30000",
+              "allowance": "0",
+              "rate": "0.0003",
+              "billable_quantity": "30000",
+              "cost": "9"
+            },
+            {
+              "name": "storage",
+              "unit": "GB-month",
+              "quantity": "50",
+              "allowance": "0",
+              "rate": "0.1",
+              "billable_quantity": "50",
+              "cost": "5"
+            },
+            {
+              "name": "network",
+              "unit": "GB",
+              "quantity": "60",
+              "allowance": "0",
+              "rate": "0.1",
+              "billable_quantity": "60",
+              "cost": "6"
+            },
+            {
+              "name": "embedding",
+              "unit": "million tokens",
+              "quantity": "1",
+              "allowance": "0",
+              "rate": "1",
+              "billable_quantity": "1",
+              "cost": "1"
+            },
+            {
+              "name": "rerank",
+              "unit": "operation",
+              "quantity": "30000",
+              "allowance": "0",
+              "rate": "0.0002",
+              "billable_quantity": "30000",
+              "cost": "6"
+            }
+          ],
+          "gross_usage": "123",
+          "usage_credit": "0",
+          "fee_mode": "additive",
+          "fee_amount": "20",
+          "before_total_credit": "143",
+          "total_credit": "0",
+          "cash_cost": "143"
+        }
+      ],
+      "credit_pools": [],
+      "provider_cash": "143",
+      "paid_operator_labor": "50",
+      "monthly_cash_estimate": "193",
+      "unpaid_time_valuation": "0",
+      "monthly_cost_with_time_valuation": "193"
+    }
+  ]
+}

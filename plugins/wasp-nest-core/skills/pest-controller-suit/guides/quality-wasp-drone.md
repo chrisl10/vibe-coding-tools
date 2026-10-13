@@ -1,7 +1,10 @@
 # quality-wasp-drone
 
+**Plugin owner:** `wasp-nest-core`. **Required selection:** Core itself. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
-This Drone is the final checkpoint in the plan-implement-security-QA loop. It audits a completed implementation against its source plan document (a feature PRD or an issue IRD in `library/requirements/`), cross-references every requirement and acceptance criterion against the actual code, and produces a structured findings report classified Critical / Warning / Suggestion. It does not write implementations, choose the right plan, or substitute its own judgment for what the plan specified. Its job is catching gaps between plan and code before work is marked done, and it always runs after `security-wasp-drone`, never before.
+This Drone is the final checkpoint in the plan-implement-security-QA loop. It audits implementation against the selected PRD in `library/requirements/` or IRD in `library/issues/`, checks requirements and acceptance criteria against code, and reports Critical / Warning / Suggestion findings. It does not implement fixes or replace the plan's decisions. Security always precedes Quality on the candidate.
 
 ## Paired Stinger
 [quality-stinger](../../quality-stinger) - the five-axis evaluation model, severity decision tree, and report-writing templates.
@@ -27,8 +30,12 @@ This Drone is the final checkpoint in the plan-implement-security-QA loop. It au
 - Confirmation that `security-wasp-drone` has already run for this cycle
 - Access to the plan's User Stories and Acceptance Criteria to seed the traceability table
 
+## Verification artifacts (O293)
+
+Route exact-candidate evidence packets through the existing Quality pair after matching Security review. Its [verification guide](../../quality-stinger/guides/08-verification-artifacts.md) binds plan/content manifests, actual check receipts, generated outputs and producer limits. Preserve NOT_RUN, skip, cancellation and stale results. Draft authorship does not create independent approval; source checks do not establish native/provider behavior.
+
 ## Outputs
-- A findings report at `library/requirements/{features|issues}/<folder>/reports/<date>-qa-report.md`, or `library/requirements/reports/<domain>/` for standalone audits
+- A report in the selected v2 PRD/IRD folder's `qa/<date>-qa-report.md`, or `library/requirements/reports/<domain>/` for a standalone audit. Preserve a receiving repository's documented legacy report destination when auditing its existing plans.
 - A traceability table mapping every plan item to code (or marking it a gap)
 - Findings classified Critical / Warning / Suggestion, each with file:line + snippet
 

@@ -1,0 +1,66 @@
+{
+  "dimension": "bloat",
+  "verdict": "moderate",
+  "summary": "Not bloated overall: duplication is 4.1% and dead code about 2%, but three files over 1,000 lines hold a quarter of the code and the two report pages are near copies.",
+  "measures": [
+    {
+      "key": "dup_std_50",
+      "label": "Duplication, jscpd standard metric, 50 tokens",
+      "value": 4.1,
+      "unit": "%",
+      "band": "healthy",
+      "threshold": "<5% healthy, >10% bloated",
+      "source": "jscpd 4.3.0"
+    },
+    {
+      "key": "dup_both_50",
+      "label": "Duplication, both copies counted, 50 tokens",
+      "value": 8.3,
+      "unit": "%",
+      "band": "moderate",
+      "threshold": "<5% healthy, >10% bloated",
+      "source": "jscpd 4.3.0"
+    },
+    {
+      "key": "dead_code",
+      "label": "Truly dead code (knip, after spot-check)",
+      "value": 2.2,
+      "unit": "%",
+      "band": "healthy",
+      "threshold": "<3% healthy, >8% bloated",
+      "source": "knip 5.88.1"
+    },
+    {
+      "key": "big_files",
+      "label": "Code in files over 1,000 lines",
+      "value": 24.6,
+      "unit": "%",
+      "band": "at-risk",
+      "threshold": "<15% healthy, >30% bloated",
+      "source": "cloc 2.06"
+    },
+    {
+      "key": "largest_fn",
+      "label": "Largest single function (buildReport)",
+      "value": 1420,
+      "unit": "lines",
+      "band": "at-risk",
+      "threshold": "<200 lines",
+      "source": "cloc 2.06"
+    }
+  ],
+  "coverage": {
+    "files_scanned": 612,
+    "lines_scanned": 88214,
+    "skipped": [
+      "vendor/",
+      "dist/",
+      "**/*.d.ts",
+      "apps/web/public/"
+    ],
+    "caps": [
+      "jscpd skips files over 1,000 lines by default; rerun with --max-lines 100000 so the three large files were included.",
+      "knip's Playwright plugin was turned off outside the repo because e2e/playwright.config.ts needs secrets to load; only e2e entry points are affected."
+    ]
+  }
+}

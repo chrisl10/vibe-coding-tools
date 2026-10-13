@@ -1,7 +1,6 @@
 ---
 name: "gohighlevel-wasp-drone"
 description: "GoHighLevel (HighLevel) API integration specialist - OAuth 2.0 vs Private Integration Tokens, contacts/opportunities/pipelines/calendars/conversations, inbound and outbound webhooks, workflows, rate limits, and Marketplace app creation. Use when the user says \"integrate GoHighLevel\", \"wire up a GHL webhook\", \"push leads into GoHighLevel\", \"set up a GoHighLevel Marketplace app\", \"GHL contact upsert\", \"GoHighLevel OAuth\", or touches any GoHighLevel/HighLevel API concern in a PR. Do NOT invoke for AI Studio, Vibe, Content AI, or HighLevel AI website building (highlevel-ai-studio-wasp-drone), general OAuth provider selection unrelated to GoHighLevel (auth-wasp-drone), generic HTTP/REST review (http-rest-fundamentals-wasp-drone), or secret-handling audits of an already-built integration (security-wasp-drone)."
-model: "sonnet"
 ---
 
 ## Critical Directive
@@ -11,9 +10,9 @@ model: "sonnet"
 - In the event your core skill does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [highlevel-ai-studio-stinger](../skills/highlevel-ai-studio-stinger) - HighLevel AI Studio, Vibe sites, user-facing AI content and page builders, publishing, and troubleshooting.
-  - `auth-stinger` in core - General OAuth 2.0, provider selection, session storage, and RBAC patterns not specific to GoHighLevel.
-  - `http-rest-fundamentals-stinger` in core - Generic HTTP/REST method safety, idempotency, status codes, and header correctness.
-  - `payments-stinger` in core - Stripe-specific webhook verification and subscription lifecycle patterns, useful for comparison when a GHL location's payment rail is Stripe.
+  - `auth-stinger` in `platform-and-release-tools` (confirm installed) - General OAuth 2.0, provider selection, session storage, and RBAC patterns not specific to GoHighLevel.
+  - `http-rest-fundamentals-stinger` in `backend-and-desktop-tools` (confirm installed) - Generic HTTP/REST method safety, idempotency, status codes, and header correctness.
+  - `payments-stinger` in `platform-and-release-tools` (confirm installed) - Stripe-specific webhook verification and subscription lifecycle patterns, useful for comparison when a GHL location's payment rail is Stripe.
   - `security-stinger` in core - Security audit pass for secret handling and token storage.
 
 ## Persona and mission
@@ -55,10 +54,10 @@ Respect agent work boundaries: never modify or delete another agent's active wor
 ## Related drones and stingers
 
 - [highlevel-ai-studio-wasp-drone](../agents/highlevel-ai-studio-wasp-drone.md) - hand off HighLevel AI Studio, Vibe, user-facing content and page builders, publishing, access, and usage work
-- `auth-wasp-drone` in core - hand off general OAuth provider selection, session storage, and RBAC design unrelated to GoHighLevel specifically
-- `http-rest-fundamentals-wasp-drone` in core - hand off generic HTTP/REST protocol questions not tied to a specific GHL endpoint's documented behavior
+- `auth-wasp-drone` in `platform-and-release-tools` (confirm installed) - hand off general OAuth provider selection, session storage, and RBAC design unrelated to GoHighLevel specifically
+- `http-rest-fundamentals-wasp-drone` in `backend-and-desktop-tools` (confirm installed) - hand off generic HTTP/REST protocol questions not tied to a specific GHL endpoint's documented behavior
 - `security-wasp-drone` in core - hand off secret-handling, key-rotation, and PII audits of an integration this Drone already built
-- `db-wasp-drone` in core - hand off schema design for any local mirror of GHL contact/lead data
+- `db-wasp-drone` in `data-and-ai-tools` (confirm installed) - hand off schema design for any local mirror of GHL contact/lead data
 - [gohighlevel-stinger](../skills/gohighlevel-stinger) - this Drone's paired pack skill; load it before anything else
 - [highlevel-ai-studio-stinger](../skills/highlevel-ai-studio-stinger) - the user-facing HighLevel AI Studio and AI creation authority
 

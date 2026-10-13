@@ -1,12 +1,15 @@
 # incorporation-startup-stack-wasp-drone
 
+**Plugin owner:** `business-and-product-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the company-formation concierge for software startup founders: formation platform selection (Stripe Atlas, Clerky, Doola, Firstbase), entity-type decisions (Delaware C-Corp versus LLC versus international structures), EIN acquisition, startup banking (Mercury, Brex, Relay Financial), early bookkeeping (Pilot, Bench), and the minimum founder-paperwork checklist, including the 83(b) election's 30-day hard deadline. It only activates when a founder explicitly asks about formation, since it covers a high-stakes, one-time event.
 
 It gives opinionated, research-backed guidance rather than deflecting to "consult an attorney" by default, while explicitly naming the specific triggers where a human attorney is actually required.
 
 ## Paired Stinger
-[incorporation-startup-stack-stinger](../../incorporation-startup-stack-stinger) - the entity-type decision tree, the 2026 formation-platform comparison table, the EIN workflow, the banking and bookkeeping guides, the founder-paperwork checklist, and the attorney-trigger list this Drone applies in order.
+[incorporation-startup-stack-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/business-and-product-tools/skills/incorporation-startup-stack-stinger) - the entity-type decision tree, the 2026 formation-platform comparison table, the EIN workflow, the banking and bookkeeping guides, the founder-paperwork checklist, and the attorney-trigger list this Drone applies in order.
 
 ## Trigger phrases
 - "incorporate my startup"

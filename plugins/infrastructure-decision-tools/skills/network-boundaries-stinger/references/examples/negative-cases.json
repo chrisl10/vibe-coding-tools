@@ -1,0 +1,14 @@
+[
+ {"id":"N01","input":"No topology supplied","expected":"PROVISIONAL; actual ports/listeners UNKNOWN; no executable rules","status":"NOT_RUN"},
+ {"id":"N02","input":"Public origin bypasses edge","expected":"Record uncovered path; do not claim edge controls protect origin","status":"NOT_RUN"},
+ {"id":"N03","input":"Caller forges X-Forwarded-For through alternate path","expected":"Identity UNKNOWN until exact trusted chain is proven","status":"NOT_RUN"},
+ {"id":"N04","input":"Request names another tenant in a header","expected":"Require server authentication/authorization; never adopt header as authority","status":"NOT_RUN"},
+ {"id":"N05","input":"Many legitimate users share NAT","expected":"Assess blast radius before an IP bucket; do not guess threshold","status":"NOT_RUN"},
+ {"id":"N06","input":"Cloudflare rule appears below threshold but paid tasks overshoot","expected":"Counter lag retained; application admission and downstream cost owner needed","status":"NOT_RUN"},
+ {"id":"N07","input":"Limit storage fails during paid mutation","expected":"Ask owner-specific failure/recovery decision; no blanket fail-open","status":"NOT_RUN"},
+ {"id":"N08","input":"Tailscale installed with default policy","expected":"Inspect actual broad/default rules and non-tailnet access; no isolation claim","status":"NOT_RUN"},
+ {"id":"N09","input":"NACL ingress allows a flow but response blocked","expected":"Assess stateless return path and ordered rules; no guessed ports","status":"NOT_RUN"},
+ {"id":"N10","input":"HTTP WAF offered for a raw TCP database listener","expected":"State protocol coverage gap and selected network owner handoff","status":"NOT_RUN"},
+ {"id":"N11","input":"Vercel source owner exists but is not selected","expected":"Availability gap; no automatic installation or activation","status":"NOT_RUN"},
+ {"id":"N12","input":"IPv6 or health-check path differs from diagram","expected":"Record actual alternate flow and require target-specific proof","status":"NOT_RUN"}
+]

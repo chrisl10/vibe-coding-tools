@@ -1,0 +1,43 @@
+{
+  "name": "business-and-product-tools",
+  "version": "3.0.0",
+  "description": "Form and run a company, discover product needs, hire teams and improve delivery.",
+  "author": {
+    "name": "Legion Code Inc.",
+    "url": "https://www.legioncodeinc.com"
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./agents/agile-scrum-wasp-drone.md",
+    "./agents/build-buy-analysis-wasp-drone.md",
+    "./agents/capacity-planning-wasp-drone.md",
+    "./agents/discovery-research-wasp-drone.md",
+    "./agents/estimation-wasp-drone.md",
+    "./agents/hiring-ats-wasp-drone.md",
+    "./agents/hr-payroll-wasp-drone.md",
+    "./agents/incorporation-startup-stack-wasp-drone.md",
+    "./agents/investor-cap-table-wasp-drone.md",
+    "./agents/kanban-flow-wasp-drone.md",
+    "./agents/legal-docs-wasp-drone.md",
+    "./agents/okr-goal-setting-wasp-drone.md",
+    "./agents/product-feedback-roadmap-wasp-drone.md",
+    "./agents/retrospective-wasp-drone.md",
+    "./agents/software-licensing-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/assess-product-risk.md",
+    "./commands/compare-build-buy.md",
+    "./commands/estimate-build.md",
+    "./commands/review-software-license.md",
+    "./commands/scope-first-version.md",
+    "./commands/validate-idea.md",
+    "./commands/work-like-a-team.md"
+  ],
+  "dependencies": [
+    "wasp-nest-core"
+  ]
+}

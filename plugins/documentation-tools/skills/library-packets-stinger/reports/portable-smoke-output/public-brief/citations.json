@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "claim_id": "C01",
+      "kind": "fact",
+      "status": "documented",
+      "references": [
+        {
+          "alias": "DigitalGov plain-language guide",
+          "url": "https://www.digital.gov/guides/plain-language"
+        }
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "kind": "fact",
+      "status": "documented",
+      "references": [
+        {
+          "alias": "DigitalGov plain-language guide",
+          "url": "https://www.digital.gov/guides/plain-language"
+        }
+      ]
+    }
+  ]
+}

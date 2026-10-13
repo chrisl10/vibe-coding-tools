@@ -1,12 +1,15 @@
 # heygen-api-wasp-drone
 
+**Plugin owner:** `media-and-creative-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 
 This Drone owns HeyGen API integration as an observable asynchronous video workflow: request submission, provider job mapping, status or webhook completion, output access control, asset integration, and provider-specific failure recovery. It flags consent and likeness authorization as required human-owned inputs.
 
 ## Paired Stinger
 
-[heygen-api-stinger](../../heygen-api-stinger) - primary-source-backed request, job lifecycle, webhook, limits, and delivery guidance.
+[heygen-api-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/media-and-creative-tools/skills/heygen-api-stinger) - primary-source-backed request, job lifecycle, webhook, limits, and delivery guidance.
 
 ## Trigger phrases
 

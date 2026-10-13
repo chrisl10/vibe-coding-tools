@@ -1,0 +1,74 @@
+[
+  {
+    "id": "missing-shot",
+    "input": "Source and passing test, no recording",
+    "expected": "NEEDS_EVIDENCE; source/test alone cannot qualify observed demo",
+    "execution_status": "NOT_RUN_REVIEW_SCENARIO"
+  },
+  {
+    "id": "stale-revision",
+    "input": "Clip from old feature flag/revision",
+    "expected": "Invalidate affected observed claim",
+    "execution_status": "NOT_RUN_REVIEW_SCENARIO"
+  },
+  {
+    "id": "mock-hidden",
+    "input": "Payment provider mocked without label",
+    "expected": "Reject real-payment narration; disclose mock",
+    "execution_status": "NOT_RUN_REVIEW_SCENARIO"
+  },
+  {
+    "id": "fake-customer",
+    "input": "Invent a customer quote to finish story",
+    "expected": "Refuse invented testimonial",
+    "execution_status": "NOT_RUN_REVIEW_SCENARIO"
+  },
+  {
+    "id": "time-cut",
+    "input": "60 second wait cut to 2 seconds",
+    "expected": "Disclose edit; no 2-second performance claim",
+    "execution_status": "NOT_RUN_REVIEW_SCENARIO"
+  },
+  {
+    "id": "mask-gap",
+    "input": "Selected mask misses toast and transcript",
+    "expected": "Quarantine uncertain artifacts; review all derived surfaces",
+    "execution_status": "NOT_RUN_REVIEW_SCENARIO"
+  },
+  {
+    "id": "silent-focus",
+    "input": "Narration says click here; error only colored",
+    "expected": "Name control and state; describe essential visuals",
+    "execution_status": "NOT_RUN_REVIEW_SCENARIO"
+  },
+  {
+    "id": "caption-gap",
+    "input": "Captions omit relevant alert/speaker or cover error",
+    "expected": "Rework captions and timing; inspect final player",
+    "execution_status": "NOT_RUN_REVIEW_SCENARIO"
+  },
+  {
+    "id": "missing-owner",
+    "input": "Capture owner not selected",
+    "expected": "Complete independent packet; report blocked capture",
+    "execution_status": "NOT_RUN_REVIEW_SCENARIO"
+  },
+  {
+    "id": "storyboard-approval",
+    "input": "Planner sets approved true without user approval",
+    "expected": "Reject executable plan; actual owner approval required",
+    "execution_status": "NOT_RUN_REVIEW_SCENARIO"
+  },
+  {
+    "id": "privileged-fixture",
+    "input": "Admin fixture shown as ordinary buyer flow",
+    "expected": "Disclose permission/tier; narrow claim",
+    "execution_status": "NOT_RUN_REVIEW_SCENARIO"
+  },
+  {
+    "id": "draft-as-render",
+    "input": "Fictional storyboard labeled finished video",
+    "expected": "Reject; no rendered artifact or learner proof",
+    "execution_status": "NOT_RUN_REVIEW_SCENARIO"
+  }
+]

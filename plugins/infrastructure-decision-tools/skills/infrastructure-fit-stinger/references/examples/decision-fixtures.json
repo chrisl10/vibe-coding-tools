@@ -1,0 +1,60 @@
+[
+  {
+    "id": "static",
+    "recommendations": [
+      "Cloudflare Pages static delivery"
+    ],
+    "operator": "product owner",
+    "eligible": true,
+    "source_evidence": [
+      "cloudflare-pages"
+    ],
+    "cost_status": "unpriced",
+    "monthly_total": null,
+    "expected": "PASS"
+  },
+  {
+    "id": "paid-web",
+    "recommendations": [
+      "Vercel request hosting + Neon SQL"
+    ],
+    "operator": "app and DB owners",
+    "eligible": true,
+    "source_evidence": [
+      "vercel-functions",
+      "neon-intro"
+    ],
+    "cost_status": "unpriced",
+    "monthly_total": null,
+    "expected": "PASS"
+  },
+  {
+    "id": "invented-cheapest",
+    "recommendations": [
+      "Vultr always cheapest"
+    ],
+    "operator": "unknown",
+    "eligible": true,
+    "source_evidence": [],
+    "cost_status": "unpriced",
+    "monthly_total": 0,
+    "expected": "REVISE"
+  },
+  {
+    "id": "option-survey",
+    "recommendations": [
+      "AWS",
+      "GCP",
+      "VPS"
+    ],
+    "operator": "team",
+    "eligible": true,
+    "source_evidence": [
+      "aws-fargate",
+      "gcp-cloud-run"
+    ],
+    "cost_status": "unpriced",
+    "monthly_total": null,
+    "expected": "REVISE"
+  }
+]

@@ -1,5 +1,8 @@
 # ghl-to-mermaid-wasp-drone
 
+**Plugin owner:** `highlevel`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 
 Turns a supplied HighLevel location export into per-workflow JSON, Mermaid diagrams, and a browsable viewer without calling the live HighLevel API.

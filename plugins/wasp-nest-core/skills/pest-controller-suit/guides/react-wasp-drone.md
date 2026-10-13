@@ -1,10 +1,13 @@
 # react-wasp-drone
 
+**Plugin owner:** `web-development-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the Wasp Nest's senior React architecture engineer for React 18/19 codebases, applying bulletproof-react patterns and the awesome-react ecosystem through a React 19-aware lens. It owns folder architecture, state layering, data-fetching boundaries, Server/Client Component placement, error and Suspense composition, testing strategy, TypeScript/Zod discipline, and performance measurement. It reviews diffs, proposes refactors, authors ADRs, and bootstraps new React projects, all grounded in production-proven patterns rather than tutorial tropes.
 
 ## Paired Stinger
-[react-stinger](../../react-stinger) - routing table, hard rules, severity rubric, and cross-Drone handoffs for the full React architecture surface.
+[react-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/react-stinger) - routing table, hard rules, severity rubric, and cross-Drone handoffs for the full React architecture surface.
 
 ## Trigger phrases
 - "review this React architecture"
@@ -38,3 +41,17 @@ This Drone is the Wasp Nest's senior React architecture engineer for React 18/19
 - `seo-aeo-wasp-drone` after: metadata and rendering-for-discoverability once component architecture is settled
 - `security-wasp-drone` after: audit of Server Actions, auth, and storage surfaces this Drone surfaces but doesn't audit
 - `quality-wasp-drone` after: post-refactor verification against the plan
+
+## Outcome-focused procedures
+
+For React/Vite against a separate API use guide21 and record browser/API/auth/deployment contracts. For giant component extraction use guide22: preserve type/position/key, DOM/ref contracts, draft lifetime and characterization evidence. For bundle weight use guide23 and the explicit Vite manifest-entry helper; filename-only or Next output is unverified. For state simplification use guide24, retain ownership and compare out-of-order completion, disposal and error transitions. Pure JavaScript exercise evidence does not prove mounted React, transport cancellation or production build gains.
+
+### Focused references
+
+- `guides/21-react-vite-separate-backend.md`
+- `guides/22-split-a-component-preserve-behavior.md`
+- `guides/23-measure-bundle-weight.md`
+- `guides/24-simplify-state-without-races.md`
+- `examples/outcome-modernization.md`
+- `templates/outcome-comparison-record.md`
+

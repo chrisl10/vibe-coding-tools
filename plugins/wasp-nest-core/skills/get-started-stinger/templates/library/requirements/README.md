@@ -2,7 +2,8 @@
 ai_description: |
   This folder contains all planned product and feature work (PRDs).
   Sub-folders: backlog/ (queued, not started), in-work/ (actively
-  being implemented), completed/ (shipped), reports/ (routine code scans).
+  being implemented), completed/ (shipped), reports/ (routine code scans),
+  plans/ (PRD map, wave plan, handoff packet).
   Lifecycle = location: move entire PRD folders between states.
   PRD folder naming: prd-<###>-<kebab-slug>/
   PRD numbers are repo-local sequential. Take max+1 from all prd-* folders
@@ -15,6 +16,7 @@ human_description: |
   - in-work/: currently being implemented
   - completed/: shipped work (move entire folder here when done)
   - reports/: routine code-scan and QA reports not tied to a specific PRD
+  - plans/: whole-project build plans (PRD map, wave plan, handoff packet)
   To start a new PRD: create prd-<###>-<slug>/ in backlog/ with an index.md.
   To move lifecycle: move the entire prd-<###>-<slug>/ folder.
 ---
@@ -31,6 +33,7 @@ Product and feature work, organized by lifecycle state.
 | `in-work/` | Active | PRDs currently being implemented |
 | `completed/` | Shipped | Entire PRD folder moves here when work ships |
 | `reports/` | Evergreen | Routine code-scan and QA reports not tied to a PRD |
+| `plans/` | Approved by revision | PRD map, wave plan and handoff packet for the whole project |
 
 ## PRD folder structure
 

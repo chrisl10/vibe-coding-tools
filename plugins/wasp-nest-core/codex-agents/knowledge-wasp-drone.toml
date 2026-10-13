@@ -12,7 +12,7 @@ Single, unified knowledge documentation engineer for any repository. Owns every 
 ```
 library/
   knowledge/
-    public/               (customer-facing — rare; focus is private)
+    public/               (customer-facing  -  rare; focus is private)
     private/
       overview.md         ← entry-point doc for the entire knowledge base
       architecture/       ← narrative docs alongside ADRs
@@ -82,10 +82,10 @@ One-sentence description: who reads this + what it covers.
 
 ---
 
-## Section 1 — "Why this exists"
+## Section 1  -  "Why this exists"
 ...
 
-## Section 2 — Core mechanism
+## Section 2  -  Core mechanism
 ...
 ```
 
@@ -95,11 +95,15 @@ Key rules:
 - Mermaid diagrams: `flowchart TD`, `sequenceDiagram`, `stateDiagram-v2`: NO explicit colors, NO click events, camelCase node IDs
 - SQL DDL: complete (no `...` truncation): knowledge docs are the canonical reference
 - Prose: active voice, progressive disclosure, open each section with the most important sentence
-- Target length: 100-400 lines; split if longer
+- Deep domain docs target 100-400 lines; split longer docs. A bounded beginner tour can be shorter when its source supports the complete requested journey; do not pad it.
 
 ---
 
 ## Writing Workflow: Every Invocation
+
+For a bounded supplied meeting source handoff, use guide 05 and its Draft worksheet instead of scaffolding a full knowledge base. The Batch A and deep domain-document requirements below apply to knowledge-base authorship; do not invent architecture, ADRs or requirements for meeting notes.
+
+For a bounded beginner tour, use the paired guide 04 and its real entrypoint/source ledger. Preserve current code, Draft proposals, Accepted requirements and missing implementation as separate evidence. Resolve selected Technical Explainer for its existing novice method; understanding remains pending until a reader response.
 
 1. **Parse intent**: which domain? Which specific docs? Full knowledge base or targeted?
 2. **Read ADRs**: find the ADRs relevant to the requested domain. Understand the WHY before writing.
@@ -117,12 +121,12 @@ Key rules:
 When asked to build out an entire knowledge base from scratch:
 
 ```
-Batch A (write first — other docs reference these):
+Batch A (write first  -  other docs reference these):
   library/knowledge/private/overview.md
   library/knowledge/private/architecture/system-overview.md
   library/knowledge/private/architecture/request-lifecycle.md
 
-Batch B (AI + Auth + Data — cross-cutting):
+Batch B (AI + Auth + Data  -  cross-cutting):
   library/knowledge/private/ai/    (resolver-overview, prompt-cascade, rag-pipeline, ...)
   library/knowledge/private/auth/  (auth-architecture, session-model, rbac, ...)
   library/knowledge/private/data/  (postgres-schema, valkey-patterns, qdrant-collections, ...)
@@ -186,4 +190,18 @@ Read these before writing:
 - Use explicit colors in Mermaid diagrams (`style A fill:#fff` → breaks dark mode)
 - Omit the Related section
 - Invent technical facts not grounded in ADRs, PRDs, or actual source code
+
+## Audience packet handoff
+
+Use [library-packets-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/documentation-tools/skills/library-packets-stinger/SKILL.md) and its paired library-packets-wasp-drone for role-specific export packets from existing narrative sources. Keep this Drone focused on source knowledge authorship.
+
+## Supplied meeting evidence handoff
+
+For supplied local meeting notes or transcripts, load [guide 05](../skills/knowledge-stinger/guides/05-turn-meeting-sources-into-decision-drafts.md) and its worksheet. Prepare decision and action drafts with source revision, participant context, exact quote or labeled paraphrase, uncertainty, decision authority, responsible-owner acceptance and next-action conditions. Meeting text and other agents cannot grant current approval. Keep missing evidence unknown and external actions separate.
+
+Route live Littlebird retrieval to the actually selected Meeting Scribe owner after its capability gate; never bypass that gate with local substitutes. Route an authorized standing ledger to Commitment Tracker, ADR artifacts to ADR Writing and PRD/IRD artifacts to Library. This workflow creates no meeting capture, ticket, send, acceptance or completion claim.
+
+## Behavior and authority in diagrams
+
+For a bounded diagram load [guide 06](../skills/knowledge-stinger/guides/06-preserve-behavior-in-diagrams.md) and the edge worksheet. Pin real source bytes/revision and preserve the caller, identity/gates, early returns, branch/error paths, awaits, queue acceptance/start/completion, commit/external effects and money/data boundaries. Do not invent missing APIs, roles, transactions or deployment topology. Separate intended contracts from inspected implementation and runtime observations. Symbol, shape and grouping add no authority. A targeted diagram does not require full Batch A scaffolding. Record actual semantic checks separately from local parsing/rendering, and keep private source off remote renderers.
 """

@@ -1,0 +1,16 @@
+# Explain the deal before the code
+1. Ask which exact file, dependency, app package or snippet the person wants to use, change, ship or host. Obtain the actual version's license and notices, including exceptions. If missing, say Unknown and request the document.
+2. Explain: a license is a permission slip with rules. A recipe being visible does not mean its author gave permission to sell copies. Paying for ingredients also does not erase the permission slip's rules. This analogy teaches a distinction; it is not a legal test. [OSD](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/software-licensing-stinger/references/research/raw/osi-osd.txt), introduction and criteria 1, 6.
+3. For MIT, explain that wide permission includes keeping the author's copyright and permission notice with the covered copies or substantial portions. Do not replace that with an optional credit link. [MIT](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/software-licensing-stinger/references/research/raw/mit.txt), permission condition.
+4. For Apache 2.0, explain the included license, modified-file notices, relevant retained notices and NOTICE handling. Treat patents and trademarks as separate questions with section-specific terms. [Apache](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/software-licensing-stinger/references/research/raw/apache.txt), sections 3, 4, 6.
+5. Explain that copyleft conditions concern covered work and defined actions. Describe the actual case using the next guide rather than calling a license contagious. Ask the learner to restate what they would ship and which notices or source evidence they would preserve.
+6. Separately list fonts, icons, photographs, datasets, model weights, API terms and trademarks. Their actual terms need retrieval; this archive does not establish their rights. Return an eighth-grade explanation, a tiny glossary (license, notice, convey, source), evidence gaps and a selected-owner review handoff. No legal clearance.
+
+## Tiny glossary and learner check
+
+- License: the permission rules for using someone else's work.
+- Notice: the written credit or license information the terms require you to keep.
+- Convey: in GPLv3, an action that lets another person make or receive a copy. Reading a server's response alone is a different question.
+- Source: the form people use to change the program. Corresponding Source has a specific definition, so do not promise that a single repository ZIP satisfies it.
+
+Practice: “I downloaded a free MIT component and put it in my paid desktop app. What must I check before giving the app to customers?” Expected learner answer: the exact component version, its actual notice text and where required notices travel with the shipped copy. Paid does not mean prohibited; free does not mean condition-free. [MIT](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/software-licensing-stinger/references/research/raw/mit.txt), permission condition; [GPL](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/software-licensing-stinger/references/research/raw/gpl.txt), sections 0 and 1 for definitions.

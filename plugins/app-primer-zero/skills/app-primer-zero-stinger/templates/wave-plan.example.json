@@ -1,0 +1,142 @@
+{
+  "project": "Beacon Research (fictional generic example)",
+  "example": true,
+  "base_sha": "0123456789abcdef0123456789abcdef01234567",
+  "capacity": {
+    "mode": "parallel",
+    "limit": 3,
+    "coordinator_slots": 1,
+    "reviewer_slots": 1,
+    "verified": false
+  },
+  "contracts": [
+    {
+      "id": "CTR-001-intake",
+      "revision": 1,
+      "status": "Draft",
+      "approved_by": null,
+      "approval_evidence": null
+    },
+    {
+      "id": "CTR-002-evidence",
+      "revision": 1,
+      "status": "Draft",
+      "approved_by": null,
+      "approval_evidence": null
+    }
+  ],
+  "shards": [
+    {
+      "id": "S0",
+      "role": "coordinator",
+      "owned_paths": []
+    },
+    {
+      "id": "S1",
+      "role": "implementation",
+      "owned_paths": [
+        "app/data"
+      ]
+    },
+    {
+      "id": "S2",
+      "role": "implementation",
+      "owned_paths": [
+        "app/interface"
+      ]
+    },
+    {
+      "id": "S3",
+      "role": "security",
+      "owned_paths": []
+    },
+    {
+      "id": "S4",
+      "role": "quality",
+      "owned_paths": []
+    }
+  ],
+  "waves": [
+    {
+      "id": "W0",
+      "depends_on": [],
+      "active_shards": [
+        "S0"
+      ],
+      "contract_pins": [],
+      "implementation": false,
+      "ready": false
+    },
+    {
+      "id": "W1",
+      "depends_on": [
+        "W0"
+      ],
+      "active_shards": [
+        "S0",
+        "S1",
+        "S2"
+      ],
+      "contract_pins": [
+        {
+          "id": "CTR-001-intake",
+          "revision": 1
+        },
+        {
+          "id": "CTR-002-evidence",
+          "revision": 1
+        }
+      ],
+      "implementation": true,
+      "ready": false
+    },
+    {
+      "id": "W2",
+      "depends_on": [
+        "W1"
+      ],
+      "active_shards": [
+        "S0",
+        "S1"
+      ],
+      "contract_pins": [
+        {
+          "id": "CTR-001-intake",
+          "revision": 1
+        },
+        {
+          "id": "CTR-002-evidence",
+          "revision": 1
+        }
+      ],
+      "implementation": true,
+      "ready": false
+    },
+    {
+      "id": "W3",
+      "depends_on": [
+        "W2"
+      ],
+      "active_shards": [
+        "S0",
+        "S3"
+      ],
+      "contract_pins": [],
+      "implementation": false,
+      "ready": false
+    },
+    {
+      "id": "W4",
+      "depends_on": [
+        "W3"
+      ],
+      "active_shards": [
+        "S0",
+        "S4"
+      ],
+      "contract_pins": [],
+      "implementation": false,
+      "ready": false
+    }
+  ]
+}

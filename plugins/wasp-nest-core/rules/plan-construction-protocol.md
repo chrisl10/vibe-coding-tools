@@ -1,52 +1,25 @@
 # Plan Construction Protocol
 
-Every plan you produce MUST follow this structure. No exceptions.
+Apply this procedure to implementation plans within the user's assigned scope. A planning request alone does not authorize execution, repository changes, external effects or a new work allowance.
 
-## Step 1 (always first): branch off main
+## Establish the task and base
 
-The first step is always to pick a worktree of `main` and create a new feature branch (e.g. `git worktree add ../<feature> -b feature/<slug> main`). All subsequent work happens on that branch, never on `main`.
+Read the current branch, worktree, project instructions and the requested integration base. Keep the user's named base and branch policy. For isolated new work, use the project's approved worktree procedure and a `legion/` branch when no other prefix is specified. Do not assume `main`, replace a dirty checkout or touch another task's owned files.
 
-## Model routing (every step after step 1)
+## Model and host routing
 
-For each task and sub-agent in the plan, name the best-fit model based on the rubric and routing heuristic in `.claude/model-comparison-matrix.md`. Match the task profile (reasoning depth, code quality, tool use, cost, speed, context, multimodal) to the model. State the chosen model inline with each step and a one-line justification tied to the matrix.
+Inherit the active harness model and reasoning settings unless the user explicitly selects a model or an applicable approved task instruction requires one. If a selection is required, verify the exact identifier in the current host's exposed capability list. Read an available project model matrix as guidance; it cannot invent model availability or override the user's selection. Do not copy model IDs from a dated example into a live dispatch.
 
-Always use the most recent relevant version exposed by the target harness. Start with these current choices:
+## Bounded execution
 
-- Hard, ambiguous Codex work: `gpt-5.6-sol`
-- Balanced everyday Codex work: `gpt-5.6-terra`
-- Narrow, high-volume Codex work: `gpt-5.6-luna`
-- Maximum generally available Claude capability: `claude-fable-5`
-- Complex agentic coding in Claude: `claude-opus-5`
-- Balanced everyday Claude work: `claude-sonnet-5`
-- Fast Claude classification and subagent work: `claude-haiku-4-5`
-- Cursor-native agentic coding: `composer-2.5` or Cursor Auto
-- Google high-throughput agentic work: `gemini-3.6-flash`
-- Google low-cost automation: `gemini-3.5-flash-lite`
+Sequence dependent work and parallelize only explicitly delegated, independent scopes. Give each worker its exact files, accepted contract revision, checks and the parent's deadline. Use the current time-block and retry protocol; replacement workers do not reset the allowance.
 
-Confirm that the target harness exposes the selected identifier. For Codex multi-agent dispatch, use only the exact identifiers listed in `.claude/model-comparison-matrix.md` and pass reasoning effort separately.
+Use the host's actual execution tools. `/loop` is not a universal carrier. Track progress yourself unless a verified scheduler or watchdog is configured for this task. Review actual worker output at the required cadence and stop or re-brief a stalled worker within the retry limits. Do not respawn indefinitely or claim that an unconfigured timer enforces these rules.
 
-## Execution on /loop
+## Close-out gates
 
-All plans operate execution on `/loop`. Drive each step in the loop until it completes before advancing.
+For development changes, run Security first, remediate the required findings, then run Quality against the repaired candidate. The orchestrator loads repository-health last. Keep checks tied to the actual final candidate; a passing worker or earlier tree does not establish integrated completion.
 
-## Watchdog timers
+## Ship within explicit approval
 
-Spawn watchdog timers to monitor agent progress. If an agent is stalled for a reasonable amount of time, terminate it and respawn with the work distributed across agents (distributed task load). Keep doing this until the current step completes.
-
-## Second-to-last step (always): security
-
-Run `/security-wasp-drone`, then remediate every flagged issue of medium severity or higher. Do not advance until all medium+ findings are fixed.
-
-## Last step (always): quality gate
-
-Run `/quality-wasp-drone` in a loop, fixing any outstanding issues of medium importance or higher, until the QA report passes cleanly to that standard. Only when it passes cleanly may you declare the branch shippable.
-
-## Ship: commit, push, PR, notify
-
-Once shippable:
-
-1. Commit and push all changes to the feature branch.
-2. Open a pull request.
-3. Notify the user by returning a message containing:
-   - A link to the pull request.
-   - A summary of work completed, including the security and QA remediation steps taken.
+Prepare a reviewable diff and the observed gate results. Honor the user's specific approvals already given for this task without asking again. Commit, push, PR creation, merge, publication and configuration changes each require authorization covering that action; passing gates alone do not grant it. Stop at the applicable deadline with saved work, evidence, unresolved items and the required report.

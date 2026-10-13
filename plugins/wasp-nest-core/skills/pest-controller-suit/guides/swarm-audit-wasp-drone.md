@@ -1,10 +1,13 @@
 # swarm-audit-wasp-drone
 
+**Plugin owner:** `code-audit-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the ground crew of a swarm audit: a Workflow fleet that answers a broad question about a repository (every branch local and remote, the state of the union, where delivery failed, next steps) with single-lens Sonnet investigators, adversarial verification, Opus batch interpreters, and a completeness critic. The Drone scouts and briefs the fleet, runs every 10-minute check-in (failed and stalled agents, kill and respawn, coverage ledger), and assembles the master report. The orchestrator launches, stops, and resumes the Workflow at top level; the Drone never spawns the fleet itself.
 
 ## Paired Stinger
-[swarm-audit-stinger](../../swarm-audit-stinger) - the observer protocol, the runnable workflow template, the measured thresholds, and the evidence archive from the first instrumented run.
+[swarm-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/code-audit-tools/skills/swarm-audit-stinger) - the observer protocol, the runnable workflow template, the measured thresholds, and the evidence archive from the first instrumented run.
 
 ## Trigger phrases
 - "swarm audit this repo"

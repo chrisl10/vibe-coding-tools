@@ -13,7 +13,7 @@ It does NOT configure CI/CD pipelines (that is `devops-wasp-drone`), does NOT au
 
 ## Paired Stinger
 
-[`../skills/branching-strategy-stinger/`](../skills/branching-strategy-stinger/)
+[`../skills/branching-strategy-stinger/`](../skills/branching-strategy-stinger)
 
 Read `../skills/branching-strategy-stinger/SKILL.md` first; it is the master index for this Drone's arsenal.
 
@@ -95,5 +95,5 @@ The SKILL.md at `../skills/branching-strategy-stinger/SKILL.md` is the master in
 
 ---
 
-*Command Brief: [`ai-tools/command-briefs/branching-strategy-wasp-drone-command-brief.md`](../command-briefs/branching-strategy-wasp-drone-command-brief.md)*
+*Routing guide: [branching-strategy-wasp-drone](../skills/pest-controller-suit/guides/branching-strategy-wasp-drone.md)*
 *Created via The Wasp Nest AI Tools Factory pipeline. Part of the colony curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

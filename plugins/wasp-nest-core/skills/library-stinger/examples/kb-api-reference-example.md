@@ -1,5 +1,7 @@
 # POST /api/users/me/export
 
+> Example context: Project-relative links in this worked document describe the illustrated target repository. They are not bundled Core resources or proof that those project files exist in this packaging checkout.
+
 > Category: API | Version: 1.0 | Date: May 2026 | Status: Active
 
 Enqueues a background job that gathers all of the authenticated user's profile data and emails them a signed download URL. One export per user per 24 hours.

@@ -1,7 +1,7 @@
 ---
 name: "git-stinger"
 license: AGPL-3.0-or-later
-description: "Handle advanced Git mechanics. Use for rebase, conflict resolution, reflog recovery, history rewrites, worktrees, or hooks. Read README.md for the guide map."
+description: "Teach safe Git basics in disposable practice repositories, or handle rebase, conflicts, recovery, history, worktrees, and hooks. Read README.md for guides."
 ---
 
 # git Stinger
@@ -15,6 +15,7 @@ The procedural arsenal for `git-wasp-drone`. This stinger encodes the opinionate
 ## Scope and non-scope
 
 **In scope:**
+- Beginner status/diff/stage/commit/branch/restore/reflog exercises in a task-created disposable repository
 - Branching strategy advisory (trunk-based, Git Flow, GitHub Flow)
 - Interactive rebase: squash, fixup, reword, drop, reorder, exec, autosquash
 - Conflict resolution: merge conflicts, rebase conflicts, rerere, mergetool config
@@ -36,12 +37,13 @@ The procedural arsenal for `git-wasp-drone`. This stinger encodes the opinionate
 
 ---
 
-## Eight-action playbook
+## Action playbook
 
-The Drone performs eight distinct actions. Each maps to a guide:
+The Drone selects the matching action, including beginner practice. Each maps to a guide:
 
 | Action | Guide |
 |---|---|
+| Beginner disposable Git practice | `guides/09-beginner-disposable-practice.md` |
 | Interactive rebase (squash, fixup, autosquash) | `guides/01-interactive-rebase.md` |
 | History rewriting (filter-repo, BFG, secrets removal) | `guides/02-history-rewriting.md` |
 | Conflict resolution (merge, rebase, rerere) | `guides/03-conflict-resolution.md` |
@@ -57,7 +59,7 @@ The Drone performs eight distinct actions. Each maps to a guide:
 
 These are non-negotiables. Full justifications in `guides/00-principles.md`.
 
-1. **Always offer the escape hatch before a destructive operation.** Before `git reset --hard`, show `git reflog`. Before `filter-repo`, show `git bundle create backup.bundle --all`. Before any force-push, show the rollback command. The escape hatch must precede the operation.
+1. **Always offer the escape hatch before a destructive operation.** For a real repository, first establish exact action/path/ref authorization, active ownership, dirty/ignored/untracked state, and approved byte/history backup coverage. Reflog is not an unlimited backup; a bundle does not include all dirty or ignored file bytes. Beginner practice uses only a newly created synthetic repository and does not authorize real-project commits. Before `git reset --hard`, show `git reflog`. Before `filter-repo`, show `git bundle create backup.bundle --all`. Before any force-push, show the rollback command. The escape hatch must precede the operation.
 
 2. **Prefer `--force-with-lease` over `--force`.** `--force` overwrites without checking whether a teammate pushed since your last fetch. `--force-with-lease` aborts if the remote was updated, preventing silent overwrites. Use `--force-with-lease=<refname>` for the strictest variant.
 
@@ -70,6 +72,10 @@ These are non-negotiables. Full justifications in `guides/00-principles.md`.
 6. **Escalate to ci-release-wasp-drone for server-side hooks and CI Git configuration.** Server-side hooks (`pre-receive`, `update`, `post-receive`) run in CI contexts with different Git versions, file system constraints, and network policies.
 
 ---
+
+## Beginner practice entry
+
+Read `guides/09-beginner-disposable-practice.md`, `templates/beginner-git-worksheet.md`, and `references/research/beginner-practice/distillation.md`. Run `python <checked-skill-root>/scripts/practice-git.py --run` only for the requested synthetic exercise. It accepts no repository path, creates its own temporary repository, isolates inherited Git routing/global configuration/hooks, supplies identity per command for fixtures, records actual state transitions, and cleans only its created directory. No install, credential configuration, remote operation, hard reset, history rewrite, or real-project commit is part of this lesson. If the tools are unavailable, mark the exercise unexecuted. `scripts/test-practice-git.py` verifies runtime ownership boundaries. Successful fixture results do not prove learner comprehension or real-recovery correctness.
 
 ## Git version requirements matrix
 

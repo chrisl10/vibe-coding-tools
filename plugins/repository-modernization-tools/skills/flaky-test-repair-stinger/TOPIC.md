@@ -1,0 +1,5 @@
+# Flaky test repair topic
+
+O109: fix flaky tests using observed failures. Locked by parent assignment at 2026-10-08 05:07:33 UTC before research. New specialist pair flaky-test-repair-stinger / flaky-test-repair-wasp-drone under repository-modernization-tools. Own the exact failure/evidence ledger, bounded hypothesis-driven reproduction, narrow test/fixture repair and assertion-preserving proof. Quality independently audits after Security; browser and language owners retain their implementation/framework domains. This is not broad test-suite rewrite, CI redesign or passing through blind retries/quarantine/deletion/weaker assertions.
+
+Four harnesses, development-focused Critical Directive and Ship Gate. Fresh official reference window 2026-04-08 through 2026-10-08; living-doc baseline observations, no current package graph assertion. No consumer repository or observed flaky failure supplied here. Constructed exercises are NOT_RUN. No installs, native/CI/provider effects, credentials, settings, commits or pushes. Parent owns catalog/roster/commands/index/generated registration and independent gates. Target 05:17 UTC; parent hard limit 05:38:07 UTC.

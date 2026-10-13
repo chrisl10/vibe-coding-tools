@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-10-07T17:13:54.810010+00:00",
+  "scope": "Parent pre-promotion source fidelity review only",
+  "capture_hashes": 6,
+  "claim_records": 8,
+  "exact_passages": 8,
+  "dependency_graph": "PASS synthetic fixture",
+  "semantic_review": "Bounded analogy preserves requested range, concrete recorded resolution, transitive edge, declared-versus-observed CLI, missing script, pending understanding; no install or security certification",
+  "status": "STAGED_OPEN",
+  "remaining": [
+    "canonical promotion with relocated links/claim locators",
+    "independent Security then Quality",
+    "generated owner projections"
+  ]
+}

@@ -25,7 +25,7 @@ Branch protection, CODEOWNERS as enforced, and repository settings require API a
 
 - Score each of the eight dimensions on a 0-10 scale using the rubric in the dimension's guide.
 - Compute the weighted overall score: sum(score × weight). Report as a percentage.
-- Build the remediation list ordered by `impact × effort`:
+- Build the remediation list ordered by `impact ÷ effort`:
   - **Impact:** how much does fixing this improve repo health? (1-5)
   - **Effort:** how many minutes/hours does the fix take? (1=minutes, 5=weeks)
   - **Priority score:** impact ÷ effort (higher = act first)
@@ -44,7 +44,7 @@ Do not order findings by dimension number. A "no CODEOWNERS" finding (effort: 1,
 | PRD / doc authoring | Out of scope | `library-wasp-drone` |
 | Post-audit verification | Out of scope | `quality-wasp-drone` |
 
-## §5 Impact × effort priority scoring table
+## §5 Impact divided by effort priority scoring table
 
 For reference when building the remediation list:
 
@@ -65,3 +65,5 @@ For reference when building the remediation list:
 | CI has no test stage | 4 | 2 | 2.0 |
 
 This table is a starting-point heuristic. Adjust for repo-specific context (e.g., a team that does not use Conventional Commits has lower CC-adherence improvement i
+
+For a full audit, unavailable dimensions are N/A with coverage gaps. Do not manufacture zero or perfect scores from missing API/settings evidence. Use the coverage-aware formula in [guide 10](10-review-automation-permissions.md); the supplemental automation review creates no ninth dimension.

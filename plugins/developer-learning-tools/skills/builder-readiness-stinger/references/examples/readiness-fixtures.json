@@ -1,0 +1,39 @@
+[
+  {
+    "id": "web",
+    "recommendations": [
+      "prepare one meeting-page slice proposal"
+    ],
+    "material_unknowns": [],
+    "status": "advisory",
+    "understanding": "pending",
+    "implemented": false,
+    "expected": "PASS"
+  },
+  {
+    "id": "missing-inputs",
+    "recommendations": [],
+    "material_unknowns": [
+      "user",
+      "job",
+      "milestone"
+    ],
+    "status": "blocked",
+    "understanding": "pending",
+    "implemented": false,
+    "expected": "PASS"
+  },
+  {
+    "id": "fabricated-readiness",
+    "recommendations": [
+      "buy all services"
+    ],
+    "material_unknowns": [
+      "user"
+    ],
+    "status": "ready",
+    "understanding": "verified",
+    "implemented": true,
+    "expected": "REVISE"
+  }
+]

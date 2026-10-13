@@ -1,12 +1,15 @@
 # archivist-wasp-drone
 
+**Plugin owner:** `documentation-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 
 This Drone prepares an acquired repository for archival as a research object. It records provenance and third-party carve-outs, removes authorized seller attribution and personal identifiers while preserving third-party notices, consolidates legacy documentation into `library/knowledge/`, coordinates knowledge extraction, and produces an archival report. It does not perform ordinary security audits, PRD work, or history rewriting on active multi-contributor repositories.
 
 ## Paired Stinger
 
-[archivist-stinger](../../archivist-stinger) - intake, attribution and PII handling, third-party notice preservation, documentation consolidation, knowledge-brief coordination, verification, and archival reporting.
+[archivist-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/documentation-tools/skills/archivist-stinger) - intake, attribution and PII handling, third-party notice preservation, documentation consolidation, knowledge-brief coordination, verification, and archival reporting.
 
 ## Trigger phrases
 

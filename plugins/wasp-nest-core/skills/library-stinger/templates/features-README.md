@@ -1,99 +1,51 @@
-# library/requirements/features/
+---
+ai_description: |
+  This folder contains all planned product and feature work (PRDs).
+  Sub-folders: backlog/ (queued, not started), in-work/ (actively
+  being implemented), completed/ (shipped), reports/ (routine code scans).
+  Lifecycle = location: move entire PRD folders between states.
+  PRD folder naming: prd-<###>-<kebab-slug>/
+  PRD numbers are repo-local sequential. Take max+1 from all prd-* folders
+  across backlog/, in-work/, and completed/.
+  Never write PRD content outside of a prd-<###>-<slug>/ folder.
+  Do NOT put IRDs here: those go in issues/ (peer of requirements/).
+human_description: |
+  Product and feature work (PRDs) organized by lifecycle stage.
+  - backlog/: planned work not yet started
+  - in-work/: currently being implemented
+  - completed/: shipped work (move entire folder here when done)
+  - reports/: routine code-scan and QA reports not tied to a specific PRD
+  To start a new PRD: create prd-<###>-<slug>/ in backlog/ with an index.md.
+  To move lifecycle: move the entire prd-<###>-<slug>/ folder.
+---
 
-Forward-looking feature PRDs - planned work that does not require a GitHub issue. Use this for product roadmap items, architectural initiatives, and backwards-PRDs for already-shipped features.
+# Requirements
 
-## Folder + filename
+Product and feature work, organized by lifecycle state.
+
+## Sub-folders
+
+| Folder | State | Description |
+|---|---|---|
+| `backlog/` | Queued | PRDs planned but not yet started |
+| `in-work/` | Active | PRDs currently being implemented |
+| `completed/` | Shipped | Entire PRD folder moves here when work ships |
+| `reports/` | Evergreen | Routine code-scan and QA reports not tied to a PRD |
+
+## PRD folder structure
 
 ```
-feature-<###>-<kebab-title>/
-├── prd-feature-<###>-<kebab-title>.md           # main PRD
-└── reports/                                 # QA reports + adjacent artifacts
-    └── <date>-qa-report.md                  # written by quality-wasp-drone
+prd-007-user-export/
+  prd-007-user-export-index.md         module overview + feature list
+  prd-007a-user-export-backend.md      sub-feature a
+  prd-007b-user-export-ui.md           sub-feature b
+  qa/
+    prd-007-user-export-qa.md          QA audit (written by your QA reviewer)
 ```
 
-When the feature is sourced from a ClickUp task, the main filename gains a `-ck-<clickupId>` suffix:
+## Naming
 
-```
-feature-<###>-<kebab-title>/
-└── prd-feature-<###>-<kebab-title>-ck-<clickupId>.md
-```
-
-The folder name never includes the ClickUp suffix; only the main file does.
-
-> **Note on the `prd-` prefix.** The folder is `feature-<###>-<title>/`; the document inside gains a `prd-` prefix (`prd-feature-<###>-<title>.md`) so the document type is unambiguous in indexes, drift reports, and grep output. This mirrors the `ird-` prefix on issue documents.
-
-- `<###>` = **repo-local sequential number**, zero-padded to 3 digits (4+ digit natural width).
-- `<kebab-title>` = lowercase, hyphen-separated, ≤60 chars, derived from the feature name.
-
-## Numbering
-
-Feature numbers have **no relationship** to GitHub issue numbers. Each repo maintains its own sequence.
-
-To find the next number:
-
-```bash
-{ ls -d library/requirements/features/feature-* 2>/dev/null; \
-  ls -d library/requirements/features/completed/feature-* 2>/dev/null; } | \
-  sed -E 's|.*/feature-([0-9]+)-.*|\1|' | sort -n | tail -1
-```
-
-Take `max + 1`. Zero-pad.
-
-## Folder lifecycle
-
-- **`features/feature-<###>-<title>/`** = work in progress (not yet shipped).
-- **`features/completed/feature-<###>-<title>/`** = shipped. Move the entire folder (PRD + `reports/` + any adjacent artifacts) when work lands.
-
-When the feature ships, `git mv` the folder; never split the PRD from its `reports/` history.
-
-## Scope guidance
-
-Each PRD should be implementable in roughly one focused session:
-
-- ~1-3 hours of AI development time
-- ~500 lines of change, give or take
-- ≤ 8-10 files touched
-
-If your feature is larger, **decompose into sequenced PRDs** (e.g., backend → frontend → admin surface → observability). Each PRD references its dependencies.
-
-## Sections (required)
-
-1. Phase Overview (Goals, Scope, Out of scope, Dependencies)
-2. User Stories (with acceptance criteria)
-3. Data Model Changes
-4. API / Endpoint Specs
-5. UI/UX Description
-6. Technical Considerations
-7. Files Touched
-8. Test Plan
-9. Risks and Open Questions
-10. Related
-
-Write "N/A" if a section truly does not apply; do not skip.
-
-## Example
-
-See the bundled example at `.claude/skills/library-stinger/examples/feature-007-example.md`.
-
-## Backwards-PRDs
-
-When documenting already-shipped code, use this folder shape with a header noting "(Retroactive)":
-
-```markdown
-# Feature #<###>: <Title> (Retroactive)
-
-> **Status:** Shipped (documented retroactively <YYYY-MM-DD>)
-```
-
-See `.claude/skills/library-stinger/guides/05-backwards-prd.md`.
-
-## Workflow
-
-The agent handles:
-
-1. **Plan** - "write a PRD for <feature>" creates the folder, the main PRD, and the empty `reports/` subfolder.
-2. **Decompose** - "break down <capability> into PRDs" creates sequenced feature folders.
-3. **Ship** - move the entire folder to `features/completed/` when implementation ships.
-4. **Audit** - `quality-wasp-drone` writes audit reports into the feature's `reports/` subfolder as `<date>-qa-report.md`.
-
-See `.claude/skills/library-stinger/guides/03-feature-prd.md` for full workflow.
+- Folder: `prd-<###>-<kebab-slug>/` (3-digit zero-padded)
+- Index: `prd-<###>-<kebab-slug>-index.md`
+- Sub-PRDs: `prd-<###><letter>-<kebab-slug>-<feature>.md`
+- PRD numbers are **repo-local sequential**, not GitHub issue numbers.

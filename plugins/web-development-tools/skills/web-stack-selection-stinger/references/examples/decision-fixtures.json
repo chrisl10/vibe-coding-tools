@@ -1,0 +1,58 @@
+[
+  {
+    "id": "static",
+    "recommendations": [
+      "SvelteKit prerender"
+    ],
+    "sources": [
+      "sveltekit-options"
+    ],
+    "missing_implementation_owner": false,
+    "implementation_status": "not-started",
+    "runtime_verified": false,
+    "expected": "PASS"
+  },
+  {
+    "id": "next-gap-honest",
+    "recommendations": [
+      "React/Next.js"
+    ],
+    "sources": [
+      "next-components",
+      "next-deploy"
+    ],
+    "missing_implementation_owner": true,
+    "implementation_status": "blocked",
+    "runtime_verified": false,
+    "expected": "PASS"
+  },
+  {
+    "id": "next-gap-invented",
+    "recommendations": [
+      "React/Next.js"
+    ],
+    "sources": [
+      "next-components"
+    ],
+    "missing_implementation_owner": true,
+    "implementation_status": "ready",
+    "runtime_verified": true,
+    "expected": "REVISE"
+  },
+  {
+    "id": "framework-survey",
+    "recommendations": [
+      "React",
+      "Svelte",
+      "Vue"
+    ],
+    "sources": [
+      "react-framework",
+      "vue-intro"
+    ],
+    "missing_implementation_owner": false,
+    "implementation_status": "not-started",
+    "runtime_verified": false,
+    "expected": "REVISE"
+  }
+]

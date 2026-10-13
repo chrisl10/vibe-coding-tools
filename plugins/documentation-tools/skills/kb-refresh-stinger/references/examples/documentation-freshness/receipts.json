@@ -1,0 +1,165 @@
+{
+  "fictional": true,
+  "purpose": "Evidence bookkeeping examples, not runtime proof or a production validator",
+  "rows": [
+    {
+      "id": "F1",
+      "claim": "Owner role is allowed in revision A.",
+      "claim_type": "source",
+      "source_locator_root": "skill root",
+      "source": "references/examples/documentation-freshness/fixtures/rev-a/route.py",
+      "revision_kind": "synthetic content-addressed fixture; not a Git commit",
+      "source_sha256": "b14a4ad69e02118eeac2a36606ff51eead70ea69e40546fe93bcf4f9d58e9deb",
+      "lines": [
+        2,
+        3
+      ],
+      "quote": "def allowed(role):\n    return role == \"owner\"",
+      "observed_at": "2026-10-07T19:30:00Z",
+      "expected_status": "supported",
+      "action": "keep after review; older age alone does not trigger rewrite",
+      "limitation": null
+    },
+    {
+      "id": "F2",
+      "claim": "Only owners are allowed in revision B.",
+      "claim_type": "source",
+      "source_locator_root": "skill root",
+      "source": "references/examples/documentation-freshness/fixtures/rev-b/route.py",
+      "revision_kind": "synthetic content-addressed fixture; not a Git commit",
+      "source_sha256": "5f56198b8839d058da9acd09b1d05bb0826b9855b404f1a48e84fc528c275e70",
+      "lines": [
+        2,
+        3
+      ],
+      "quote": "def allowed(role):\n    return role in (\"owner\", \"editor\")",
+      "observed_at": "2026-10-07T19:30:00Z",
+      "expected_status": "contradicted",
+      "action": "update sentence after inspecting call context; fixture establishes definition only",
+      "limitation": null
+    },
+    {
+      "id": "F3",
+      "claim": "Owner definition now lives in access.py.",
+      "claim_type": "source",
+      "source_locator_root": "skill root",
+      "source": "references/examples/documentation-freshness/fixtures/rev-c/access.py",
+      "revision_kind": "synthetic content-addressed fixture; not a Git commit",
+      "source_sha256": "a4181a4b159f00c4aac79c45ca0634d69f6ee2fa36a0bb6fdf0410d77f873ea4",
+      "lines": [
+        2,
+        3
+      ],
+      "quote": "def allowed(role):\n    return role == \"owner\"",
+      "observed_at": "2026-10-07T19:30:00Z",
+      "expected_status": "moved",
+      "action": "update locator and check named consumers; no semantic change",
+      "limitation": null
+    },
+    {
+      "id": "F4",
+      "claim": "Production successfully enforced owner access.",
+      "claim_type": "runtime",
+      "source_locator_root": "skill root",
+      "source": "references/examples/documentation-freshness/fixtures/rev-a/route.py",
+      "revision_kind": "synthetic content-addressed fixture; not a Git commit",
+      "source_sha256": "b14a4ad69e02118eeac2a36606ff51eead70ea69e40546fe93bcf4f9d58e9deb",
+      "lines": [
+        2,
+        3
+      ],
+      "quote": "def allowed(role):\n    return role == \"owner\"",
+      "observed_at": "2026-10-07T19:30:00Z",
+      "expected_status": "wrong-proof-type",
+      "action": "runtime claim remains (unverified)",
+      "limitation": "No execution receipt or environment exists"
+    },
+    {
+      "id": "F5",
+      "claim": "Editor access has shipped.",
+      "claim_type": "proposal",
+      "source_locator_root": "skill root",
+      "source": "references/examples/documentation-freshness/fixtures/records/proposal.md",
+      "revision_kind": "synthetic content-addressed fixture; not a Git commit",
+      "source_sha256": "dc3bd0f0ff9aa2594ce5323f1c1a3ab9c11daadf9bae1a8f4d164149db05f2dd",
+      "lines": [
+        3,
+        4
+      ],
+      "quote": "Status: Proposed\nA future release should add editor access. This is not a deployment receipt.",
+      "observed_at": "2026-10-07T19:30:00Z",
+      "expected_status": "wrong-status",
+      "action": "state proposed; deployment remains (unverified)",
+      "limitation": null
+    },
+    {
+      "id": "F6",
+      "claim": "Receipt proves live deployment.",
+      "claim_type": "runtime",
+      "source_locator_root": "skill root",
+      "source": null,
+      "revision_kind": "synthetic content-addressed fixture; not a Git commit",
+      "source_sha256": null,
+      "lines": null,
+      "quote": null,
+      "observed_at": "2026-10-07T19:30:00Z",
+      "expected_status": "missing",
+      "action": "mark (unverified), request named authorized execution receipt",
+      "limitation": null
+    },
+    {
+      "id": "F7",
+      "claim": "JSON is the current native configuration format.",
+      "claim_type": "source",
+      "source_locator_root": "skill root",
+      "source": "references/examples/documentation-freshness/fixtures/records/native-format.md",
+      "revision_kind": "synthetic content-addressed fixture; not a Git commit",
+      "source_sha256": "4d7d064f6f2b738fcdc991ca2508812c60039cfee6c13e28eaed230965964c63",
+      "lines": [
+        2,
+        5
+      ],
+      "quote": "Date: 2025-01-01\nStatus: historical example only\nA prior host consumed JSON configuration in this teaching scenario.\nThis does not document any current host or user installation.",
+      "observed_at": "2026-10-07T19:30:00Z",
+      "expected_status": "historical-only",
+      "action": "retain dated fiction; current format remains (unverified)",
+      "limitation": null
+    },
+    {
+      "id": "F8",
+      "claim": "Accepted intended policy and implemented definition agree.",
+      "claim_type": "source",
+      "source_locator_root": "skill root",
+      "source": "references/examples/documentation-freshness/fixtures/rev-b/route.py",
+      "revision_kind": "synthetic content-addressed fixture; not a Git commit",
+      "source_sha256": "5f56198b8839d058da9acd09b1d05bb0826b9855b404f1a48e84fc528c275e70",
+      "lines": [
+        2,
+        3
+      ],
+      "quote": "def allowed(role):\n    return role in (\"owner\", \"editor\")",
+      "observed_at": "2026-10-07T19:30:00Z",
+      "expected_status": "unresolved-contradiction",
+      "action": "show intended owner-only policy and editor-capable definition, report drift; do not edit decision",
+      "limitation": "references/examples/documentation-freshness/fixtures/records/decision.md:3-4"
+    },
+    {
+      "id": "F9",
+      "claim": "All consumers were checked.",
+      "claim_type": "source",
+      "source_locator_root": "skill root",
+      "source": "references/examples/documentation-freshness/fixtures/records/consumer.md",
+      "revision_kind": "synthetic content-addressed fixture; not a Git commit",
+      "source_sha256": "6b2d44457e039c0f6a4d9ccdc7917bb9bbc44e898207650555dab02b56d3f6c0",
+      "lines": [
+        2,
+        2
+      ],
+      "quote": "The guide should reference the owner access definition.",
+      "observed_at": "2026-10-07T19:30:00Z",
+      "expected_status": "unchecked",
+      "action": "record one named consumer pending review; do not claim full coverage",
+      "limitation": null
+    }
+  ]
+}

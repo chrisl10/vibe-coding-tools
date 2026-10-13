@@ -1,0 +1,3 @@
+Synthetic teaching intention. Status: Draft. No owner acceptance or implementation claim.
+Desired change: invoice reads require an owner role in addition to matching tenant.
+No real application, contract acceptance, account, deployment or authorization is represented.

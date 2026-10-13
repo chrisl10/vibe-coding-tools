@@ -1,0 +1,3 @@
+# Topic locked: O027
+
+Compare build, buy and partner approaches for one bounded functional slice. Specialist advisory pair, owned by business-and-product-tools, four target harnesses. Outputs: requirements/evidence matrix, lifecycle cost worksheet, exit and operating responsibility questions, one conditional next decision. No application edits, contracts, purchases or provider actions. Discovery owns whether the need is validated; Competitive Research owns market discovery; Capacity Planning owns staffing; economic/legal/security/license/runtime owners retain their checks. Construction registration and distribution are parent responsibilities.

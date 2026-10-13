@@ -42,6 +42,10 @@ git diff main...HEAD                # everything on the branch
 
 Merge these into one inventory list. Flag in the report that the audit was done against a dirty working tree, this is a note for the invoker, not a blocker.
 
+## Bind the inventory to the reviewed content
+
+Record resolved full base/head IDs and the reviewed dirty contents, including untracked inputs. Branch labels and HEAD alone cannot identify them. Reuse the receiving repository's manifest tooling and declare scope, excluded inputs and freeze policy. See [verification artifacts](08-verification-artifacts.md). Keep generated output identity separate from source identity.
+
 ## Building the Files Changed list
 
 From the `--name-status` output, build a deterministic list. Sort alphabetically within each status group. Example:

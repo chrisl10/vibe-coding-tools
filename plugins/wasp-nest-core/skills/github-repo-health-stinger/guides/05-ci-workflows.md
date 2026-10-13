@@ -44,7 +44,7 @@ Score each active workflow out of 10, then average across all workflows:
 
 Deductions:
 - No `timeout-minutes` on any job: -1
-- Workflow not referenced in required_status_checks: -1 per workflow
+- Verification workflow demonstrably required by the agreed policy but not referenced in observed required_status_checks: -1 per workflow. Settings unavailable means unknown, not a deduction; publication/utility workflows need not be required PR checks.
 - Workflow triggers only `push` to main (no PR trigger): -1
 
 ## Report section template
@@ -69,3 +69,5 @@ Deductions:
 
 When findings include release-pipeline issues, workflow architecture improvements (reusable workflows, OIDC, cross-node matrix), or cache/runner optimization - explicitly name `ci-release-wasp-drone` in the finding and do not prescribe the solution. Example:
 > "Workflow architecture issue: `ci.yaml` reinstalls the full toolchain on ever
+
+For observable automation trust boundaries, job grants and exact candidate proof, use [guide 10](10-review-automation-permissions.md). That scoped hygiene pass hands vulnerability analysis to Security and architecture to CI Release; it does not execute or repair workflows.

@@ -11,6 +11,9 @@ only the main file does. The folder also contains a sibling `reports/` subfolder
 where `quality-wasp-drone` writes audit reports as `<date>-qa-report.md`.
 -->
 
+> Example context: Project-relative links in this worked document describe the illustrated target repository. They are not bundled Core resources or proof that those project files exist in this packaging checkout.
+
+
 # Feature #7: User profile export (self-service)
 
 > **ExampleApp** - Feature PRD #007 of N

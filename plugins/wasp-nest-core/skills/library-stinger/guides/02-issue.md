@@ -11,6 +11,8 @@ Covers creating and managing IRDs (Issue Resolution Documents) for reactive bug 
 
 ## Template
 
+When deriving reusable formats from existing work, also read [Guide 08](08-reuse-workflow-templates.md). The existing template carries source identity, evidence status and adaptation fields; copy no execution or approval claim without its actual evidence.
+
 Start from the blank fill-in template at `templates/ird-template.md`. Copy it to the correct v2 path and replace every placeholder.
 
 See `examples/ird-042-example.md` for a fully worked example.

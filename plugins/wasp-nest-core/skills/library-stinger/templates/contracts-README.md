@@ -1,16 +1,19 @@
 ---
 ai_description: |
-  Stable shared interface agreements live here as CTR-<###>-<kebab-slug>.md.
-  The contract-writing-wasp-drone owns their content and revision history.
-  library-wasp-drone links accepted revisions from affected PRDs.
-  Draft records do not clear shared implementation work for parallel execution.
+  Shared interface agreements live here as CTR-<###>-<slug>.md.
+  The contract author records the user's acceptance of an exact revision.
+  The requirements author pins accepted revisions in affected PRDs.
+  Draft or disputed terms do not clear dependent implementation.
 human_description: |
-  Accepted engineering and product interface agreements shared by PRDs.
-  Each record names the provider, consumers, exact behavior, approval, and checks.
+  Stable agreements shared by feature plans. Each CTR names its provider,
+  consumers, behavior, approval, and checks. These are interface contracts,
+  not legal agreements.
 ---
 
 # Contracts
 
-One contract record describes one observable boundary shared by independent work. Use `CTR-<###>-<slug>.md` and the next unused number. Accepted terms stay immutable; changed terms get a new CTR number with bidirectional supersession links. Records remain here when PRDs move between lifecycle folders. PRDs pin an accepted revision under `## Contract dependencies`.
+One CTR records one shared, observable boundary. The contract author drafts the terms and records the user's acceptance of the exact revision. The requirements author pins accepted revisions in each affected PRD under `## Contract dependencies` and keeps those links current as PRD folders move.
 
-The contract-writing Drone authors and revises records. The Library Drone owns PRD links and lifecycle moves. Legal agreements belong elsewhere.
+Use `CTR-<###>-<slug>.md` with the next unused number. Accepted terms stay immutable. Changed terms receive a new CTR number with links between the old and new records. Keep records here when PRDs move between lifecycle folders.
+
+Draft text is not an accepted agreement. App Primer Zero can prepare Draft records or pin existing Accepted revisions; its output does not supply approval. Legal agreements belong elsewhere.

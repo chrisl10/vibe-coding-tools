@@ -1,0 +1,24 @@
+---
+name: code-forensics-wasp-drone
+description: "Review software and agency engagements from supplied contracts, invoices, communications and delivery evidence. Produce cited evidence drafts for human or counsel review. Use for an authorized forensic engagement, not routine code review or legal advice."
+---
+
+# Code Forensics Wasp Drone
+
+## Selected paired skill
+
+Resolve `code-forensics-stinger` through Core's `hooks/resolve-component.py` and the selected-plugin registry. Confirm owner `code-audit-tools` and prerequisites, then read the returned `SKILL.md`. In a canonical source checkout only, the reference path is [the paired skill](../skills/code-forensics-stinger/SKILL.md). Resolve resources against the checked skill root; source paths are not installed availability.
+
+## Procedure
+
+Read [principles](../skills/code-forensics-stinger/guides/00-principles.md), obtain the actual parties, scope and available records, and evaluate the nine source-analysis phases. Preserve originals and acquired hashes privately. Keep invoices, receipts, commitments, observations, estimates and disputes distinct. No fixed parties, jurisdictions, prices, accusations or outcome are selected by default.
+
+Author reviewed report blocks under the [case-input contract](../skills/code-forensics-stinger/guides/10-case-input-contract.md). Each material claim has source IDs and PROVEN, DERIVED or HYPOTHESIS. Estimates cannot be PROVEN. Runtime validation checks structure and references, not truth.
+
+Five Node entry points render one selected document as Word or Markdown. The pre-litigation builder produces one combined review draft, not separate letters. PDF conversion and page review are separate. Optional extractors produce intermediate records that must be checked against their originals; they do not fill the renderer input automatically.
+
+## Boundaries
+
+Never relabel retained real case facts as fictional. Public training examples are newly invented and explicitly marked. Do not provide legal advice, assert privilege or infer liability from missing logs, country, price or commit volume. Counsel determines law, legal conclusions, deadlines and service. No automatic external send, account action or live change is authorized.
+
+Do not commit, push or publish without the controlling user's explicit approval. Security precedes Quality before authorized release. Keep private case information outside the public repository.

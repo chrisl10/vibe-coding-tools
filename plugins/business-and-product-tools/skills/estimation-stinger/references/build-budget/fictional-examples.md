@@ -1,0 +1,16 @@
+# Constructed fictional budget scenarios
+All amounts below are invented USD teaching inputs dated 2026-10-07, never provider rates. No real project is estimated. Quotes, quotas and token counts must be replaced before actual use. Tests under the run's stage directory exercise these arithmetic relationships against existing helpers.
+
+## One accepted scope, two effort assumptions
+Reuse guide 06's supplied lower case: engineering 24 + learning 6 + verification 8 + rework 4 = 42 effective hours. At usable fraction 0.8, scheduled owner time is 52.5 hours. Three daily hours on weekdays requires 18 working days. Its upper case totals 76 effective hours, 95 scheduled hours and 32 working days. These are assumptions, not probabilities. In schedule-only mode the calculator cash inputs explicitly exclude the separate ledger; its zero cash result is not a $0 project budget.
+
+## Fictional line-item monthly mechanics
+A fictional AI subscription is an additive $20 fee with 1,500 fictional quota units included, 2,000 units used and $0.01 per excess unit: $25. A separate fictional API meter is 3 units of one million uncached input tokens at $2/unit and 1 unit of one million output tokens at $8/unit: $14. No cache usage is assumed in this example; actual cached tokens must not also be counted as uncached input. A fictional service's $30 minimum includes $12 eligible usage: $30, not $42. A finite $10 eligible total-charge credit allocated once reduces the provider cash subtotal from $69 to $59. A paid reviewer at 2 hours x $40 adds $80: monthly cash $139. Owner time 52.5 x supplied valuation $25 = $1,312.50, shown separately. Owner time does not turn $139 into an invoice.
+
+## Two build periods and first operation
+In an illustrative fictional invoice schedule, build-period provider charges before credits are $69 in period A and $89 in period B. A single finite $10 credit is allocated $4 to A and $6 to B: build provider cash $148. Two paid review engagements of $80 each and one $100 purchased asset produce build cash $408. A separate nonoverlapping first operating period costs $60 after the exhausted pool: funding $468 before an explicitly supplied reserve. Do not subtract another $10 credit in operating period. These intervals are constructed invoice periods, not the helper's started-30-day convention and not vendor predictions.
+
+An already-paid annual tool costing $240 cash does not create another $240 purchase every build month. If a deliberately constructed allocation is $20/month for two build months, allocated expense $40 stays separate from the original $240 cash payment. A new required annual purchase instead appears as $240 funding at its actual payment date. Allocation and payment are never summed.
+
+## Incomplete and delayed cases
+If an API output quantity, tax jurisdiction, currency or app-store enrollment fee is unknown, report only the known subtotal and the unresolved field. Do not force zero into a calculator to manufacture completeness. If an independent release gate lengthens active service holding from one to two fictional invoice periods, collect that additional period's rates, quota resets, credit balances and service floor. No assumption about automatic refunds, cancellation, carryover or budget enforcement follows from this arithmetic.

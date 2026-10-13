@@ -1,12 +1,15 @@
 # elevenlabs-api-wasp-drone
 
+**Plugin owner:** `media-and-creative-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 
 This Drone owns ElevenLabs API integration for speech and media generation, streaming, voice and model lookup integration, usage metadata, and provider-specific request diagnosis. It keeps API credentials behind a trusted server boundary and reports media handling evidence without treating a provider response as a policy decision.
 
 ## Paired Stinger
 
-[elevenlabs-api-stinger](../../elevenlabs-api-stinger) - primary-source-backed integration boundary, cost and request metadata, and verification guidance.
+[elevenlabs-api-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/media-and-creative-tools/skills/elevenlabs-api-stinger) - primary-source-backed integration boundary, cost and request metadata, and verification guidance.
 
 ## Trigger phrases
 

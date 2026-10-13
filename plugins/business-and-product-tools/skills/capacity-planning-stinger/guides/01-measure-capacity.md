@@ -1,0 +1,9 @@
+# Establish demand and usable capacity
+
+Read the [digest](../references/research/distillation.md), [model](../references/model.md) and [worksheet](../references/templates/worksheet.md). Ask one compact batch only for missing decision inputs: required outcome/date, recurring horizon, team skill/availability, review/support constraints and any dated service/hiring quotes. Preserve user-provided uncertainty.
+
+1. Write acceptance IDs and priority, separate finite work from continuing ownership. Record the skill or reviewer whose absence prevents completion.
+2. Obtain comparable finished-work history with explicit boundaries. Resolve Kanban Flow for metric/process interpretation and Estimation for forecast techniques. Do not turn hours into story points or individual performance rankings.
+3. Use role-level availability and supplied calendars. Deduct support, meetings, existing review and coordination once. Reserve is the owner's explicit scenario, not a universal utilization target. Account for actual human review of AI-produced work. [Scrum capacity](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/capacity-planning-stinger/references/research/raw/scrum-capacity.json), [Azure capacity](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/capacity-planning-stinger/references/research/raw/azure-capacity.json)
+4. Identify review, acceptance, specialist, security and integration limits. Keep negative capacity visible and explain that a larger aggregate does not remove a missing skill or unavailable reviewer.
+5. Save the baseline worksheet with evidence dates and unknowns. A hypothetical scenario may proceed clearly labeled; a dependent real recommendation waits for the missing input.

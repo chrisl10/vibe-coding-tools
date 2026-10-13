@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="code-audit-brief-stinger render_brief.py, contract 1.0">
+<title>acme-dashboard Code Audit</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJMZWdpb24iPgogIDx0aXRsZT5MZWdpb24gZmF2aWNvbjwvdGl0bGU+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTIiIGZpbGw9IiMwQTBCMEQiLz4KICA8cGF0aCBkPSJNMTYgMTIgTDI2IDEyIEwyNiA0NCBMNDggNDQgTDQ4IDU0IEwxNiA1NCBaIiBmaWxsPSIjRjVGNkY3Ii8+CiAgPHJlY3QgeD0iMTYiIHk9IjEyIiB3aWR0aD0iMTAiIGhlaWdodD0iOCIgZmlsbD0iIzNEREM5NyIvPgo8L3N2Zz4K">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&amp;family=JetBrains+Mono:wght@400..700&amp;display=swap">
+<style>
+:root { --paper: #FFFFFF; --surface: #FFFFFF; --panel: #F4F5F7; --box: #FAFAFB; --ink: #0A0B0D; --muted: #4A5160; --faint: #6B7280; --rule: #D8DCE2; --rule-strong: #B5BAC2; --brand-green: #18A968; --brand-green-ink: #0E6D43; --brand-mint: #EBF6F0; --brand-amber: #C77A00; --brand-amber-ink: #8F5800; --brand-amber-soft: #FAF2E8; --brand-red: #DC2839; --brand-blue: #1273D6; --bar: #4A5160; --band-dark: #121212; --sev-critical-fg: #8A0F2E; --sev-critical-bg: #FBE3E8; --sev-high-fg: #A83600; --sev-high-bg: #FDE8DC; --sev-medium-fg: #7A5600; --sev-medium-bg: #F8EECB; --sev-low-fg: #2D5B8C; --sev-low-bg: #E2ECF6; --sev-info-fg: #4A5160; --sev-info-bg: #EEF0F3; --band-healthy-fg: #0B6640; --band-healthy-bg: #DFF2E8; --band-moderate-fg: #7A5600; --band-moderate-bg: #F8EECB; --band-at-risk-fg: #A83600; --band-at-risk-bg: #FDE8DC; --band-critical-fg: #8A0F2E; --band-critical-bg: #FBE3E8; --band-not-run-fg: #4A5160; --band-not-run-bg: #EEF0F3; --font-sans: 'Inter', 'Inter Display', system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper: #0E1013; --surface: #15181D; --panel: #1A1E24; --box: #171A1F; --ink: #F5F6F7; --muted: #B3B9C4; --faint: #8E95A1; --rule: #2A2F37; --rule-strong: #3D434D; --brand-green: #3DDC97; --brand-green-ink: #5FE3A8; --brand-mint: #11291E; --brand-amber: #E39A2D; --brand-amber-ink: #F0B457; --brand-amber-soft: #2A1F0E; --brand-red: #F0646F; --brand-blue: #5AA2F0; --bar: #9AA1AD; --band-dark: #050607; --sev-critical-fg: #FF9DB1; --sev-critical-bg: #3A1220; --sev-high-fg: #FFA878; --sev-high-bg: #3A1E0E; --sev-medium-fg: #E8C766; --sev-medium-bg: #33290C; --sev-low-fg: #93BCEA; --sev-low-bg: #14263A; --sev-info-fg: #B3B9C4; --sev-info-bg: #20242B; --band-healthy-fg: #6FE0AA; --band-healthy-bg: #10291D; --band-moderate-fg: #E8C766; --band-moderate-bg: #33290C; --band-at-risk-fg: #FFA878; --band-at-risk-bg: #3A1E0E; --band-critical-fg: #FF9DB1; --band-critical-bg: #3A1220; --band-not-run-fg: #B3B9C4; --band-not-run-bg: #20242B; color-scheme: dark; } }
+:root[data-theme="dark"] { --paper: #0E1013; --surface: #15181D; --panel: #1A1E24; --box: #171A1F; --ink: #F5F6F7; --muted: #B3B9C4; --faint: #8E95A1; --rule: #2A2F37; --rule-strong: #3D434D; --brand-green: #3DDC97; --brand-green-ink: #5FE3A8; --brand-mint: #11291E; --brand-amber: #E39A2D; --brand-amber-ink: #F0B457; --brand-amber-soft: #2A1F0E; --brand-red: #F0646F; --brand-blue: #5AA2F0; --bar: #9AA1AD; --band-dark: #050607; --sev-critical-fg: #FF9DB1; --sev-critical-bg: #3A1220; --sev-high-fg: #FFA878; --sev-high-bg: #3A1E0E; --sev-medium-fg: #E8C766; --sev-medium-bg: #33290C; --sev-low-fg: #93BCEA; --sev-low-bg: #14263A; --sev-info-fg: #B3B9C4; --sev-info-bg: #20242B; --band-healthy-fg: #6FE0AA; --band-healthy-bg: #10291D; --band-moderate-fg: #E8C766; --band-moderate-bg: #33290C; --band-at-risk-fg: #FFA878; --band-at-risk-bg: #3A1E0E; --band-critical-fg: #FF9DB1; --band-critical-bg: #3A1220; --band-not-run-fg: #B3B9C4; --band-not-run-bg: #20242B; color-scheme: dark; }
+@media print { :root, :root[data-theme="dark"], :root:not([data-theme="light"]) { --paper: #FFFFFF; --surface: #FFFFFF; --panel: #F4F5F7; --box: #FAFAFB; --ink: #0A0B0D; --muted: #4A5160; --faint: #6B7280; --rule: #D8DCE2; --rule-strong: #B5BAC2; --brand-green: #18A968; --brand-green-ink: #0E6D43; --brand-mint: #EBF6F0; --brand-amber: #C77A00; --brand-amber-ink: #8F5800; --brand-amber-soft: #FAF2E8; --brand-red: #DC2839; --brand-blue: #1273D6; --bar: #4A5160; --band-dark: #121212; --sev-critical-fg: #8A0F2E; --sev-critical-bg: #FBE3E8; --sev-high-fg: #A83600; --sev-high-bg: #FDE8DC; --sev-medium-fg: #7A5600; --sev-medium-bg: #F8EECB; --sev-low-fg: #2D5B8C; --sev-low-bg: #E2ECF6; --sev-info-fg: #4A5160; --sev-info-bg: #EEF0F3; --band-healthy-fg: #0B6640; --band-healthy-bg: #DFF2E8; --band-moderate-fg: #7A5600; --band-moderate-bg: #F8EECB; --band-at-risk-fg: #A83600; --band-at-risk-bg: #FDE8DC; --band-critical-fg: #8A0F2E; --band-critical-bg: #FBE3E8; --band-not-run-fg: #4A5160; --band-not-run-bg: #EEF0F3; color-scheme: light; } }
+
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.6 var(--font-sans);
+  padding: 32px 16px 0; font-feature-settings: "cv11" 1; overflow-wrap: break-word; }
+li, p, dd, td, .lbl { overflow-wrap: anywhere; }
+main { max-width: 64rem; margin: 0 auto; display: grid; gap: 64px; }
+h1, h2, h3, h4, h5, h6 { margin: 0; line-height: 1.15; text-wrap: balance; }
+h2 { font-size: clamp(1.75rem, 4.2vw, 2.4rem); font-weight: 800; letter-spacing: -0.035em; }
+h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; margin-top: 8px; }
+h4, h5, h6 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; }
+p { margin: 0; max-width: 72ch; }
+code, .mono, pre { font-family: var(--font-mono); }
+code { font-size: 0.86em; background: var(--box); border: 1px solid var(--rule); padding: 0.05em 0.35em;
+  border-radius: 3px; overflow-wrap: anywhere; }
+pre.code, pre.evidence { margin: 0; font-size: 0.8rem; line-height: 1.5; background: var(--box);
+  border: 1px solid var(--rule); padding: 12px 14px; overflow-x: auto; white-space: pre; max-width: 100%; }
+.url { font-family: var(--font-mono); font-size: 0.8em; color: var(--faint); overflow-wrap: anywhere; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.eyebrow { font: 500 0.75rem/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--faint); }
+.lead { color: var(--muted); font-size: 1.1rem; }
+.muted { color: var(--muted); }
+.stack { display: grid; gap: 14px; }
+section { display: grid; gap: 22px; min-width: 0; }
+main, section, .stack, .part-head, .cover, .verdict { grid-template-columns: minmax(0, 1fr); }
+a { color: var(--ink); text-decoration-color: var(--rule-strong); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--ink); }
+td.dim { min-width: 14rem; }
+.cards { grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 1fr)); }
+
+/* Cover */
+.cover { background: var(--panel); border: 1px solid var(--rule); padding: clamp(24px, 6vw, 72px);
+  display: grid; gap: 28px; min-width: 0; }
+.cover-eyebrow { display: flex; align-items: center; gap: 14px; font: 500 0.8rem/1 var(--font-mono);
+  text-transform: uppercase; letter-spacing: 0.16em; color: var(--faint); }
+.cover-eyebrow .idx { color: var(--brand-green); }
+.cover-eyebrow .line { flex: 1; height: 1px; background: var(--rule-strong); min-width: 24px; }
+.cover-bar { width: 96px; height: 8px; background: var(--brand-amber); margin-top: clamp(24px, 8vw, 120px); }
+.cover h1 { font-size: clamp(2.6rem, 10vw, 6.4rem); font-weight: 850; letter-spacing: -0.055em;
+  line-height: 0.95; overflow-wrap: anywhere; }
+.cover .subtitle { font-size: clamp(1.15rem, 2.6vw, 1.6rem); font-weight: 500; color: var(--muted);
+  letter-spacing: -0.015em; line-height: 1.3; max-width: 40ch; }
+.framing { color: var(--ink); font-size: 1.02rem; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 22px; color: var(--muted); font-size: 0.88rem; }
+.meta span { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink); overflow-wrap: anywhere; }
+.strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); background: var(--surface);
+  border: 1px solid var(--rule); margin-top: clamp(16px, 5vw, 64px); }
+.strip > div { padding: 16px 20px; border-left: 1px solid var(--rule); min-width: 0; }
+.strip > div:first-child { border-left: 0; }
+.strip .eyebrow { display: block; margin-bottom: 6px; }
+.strip strong { font-size: 1.05rem; overflow-wrap: anywhere; }
+.cover-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
+.cover-foot .mono { font-size: 0.82rem; color: var(--faint); overflow-wrap: anywhere; }
+.logo { height: 34px; width: auto; display: block; }
+.logo-dark { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo-light { display: none; }
+  :root:not([data-theme="light"]) .logo-dark { display: block; } }
+:root[data-theme="dark"] .logo-light { display: none; }
+:root[data-theme="dark"] .logo-dark { display: block; }
+
+/* Body pages */
+.part { border-top: 6px solid var(--ink); padding-top: 18px; }
+.part.fair { border-top-color: var(--faint); }
+.part.end { border-top-color: var(--brand-green); }
+.part-head { display: grid; gap: 12px; }
+.contents { border-top: 1px solid var(--rule-strong); }
+.contents a { display: grid; grid-template-columns: 7rem 1fr auto; gap: 16px; padding: 16px 0;
+  border-bottom: 1px solid var(--rule); color: inherit; text-decoration: none; align-items: baseline; }
+.contents a:hover strong { text-decoration: underline; }
+.contents .mono { font-size: 0.85rem; color: var(--faint); }
+.legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr)); border: 1px solid var(--rule); }
+.legend div { padding: 14px 18px; border-left: 1px solid var(--rule); display: flex; gap: 12px; align-items: flex-start; font-size: 0.95rem; }
+.legend div:first-child { border-left: 0; }
+.sw { width: 14px; height: 14px; flex: none; margin-top: 5px; }
+
+/* Verdict */
+.verdict { display: grid; gap: 22px; }
+.verdict-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 22px; }
+.verdict-word { font: 850 clamp(2.6rem, 9vw, 4.6rem)/0.95 var(--font-sans); letter-spacing: -0.05em; }
+.verdict-word.v-healthy { color: var(--band-healthy-fg); }
+.verdict-word.v-moderate { color: var(--band-moderate-fg); }
+.verdict-word.v-at-risk { color: var(--band-at-risk-fg); }
+.verdict-word.v-critical { color: var(--band-critical-fg); }
+.verdict-word.v-not-run { color: var(--band-not-run-fg); }
+.one-para p + p { margin-top: 14px; }
+.sentences { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule-strong); }
+.sentences li { display: grid; grid-template-columns: 3rem 1fr; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.sentences .n { font-family: var(--font-mono); color: var(--faint); }
+
+/* Pills */
+.pill { display: inline-block; font: 600 0.7rem/1 var(--font-mono); text-transform: uppercase;
+  letter-spacing: 0.08em; padding: 5px 8px; border-radius: 2px; white-space: nowrap;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.pill.unknown { color: var(--ink); background: var(--box); border: 1px dashed var(--faint); }
+.sev-critical { color: var(--sev-critical-fg); background: var(--sev-critical-bg); }
+.sev-high { color: var(--sev-high-fg); background: var(--sev-high-bg); }
+.sev-medium { color: var(--sev-medium-fg); background: var(--sev-medium-bg); }
+.sev-low { color: var(--sev-low-fg); background: var(--sev-low-bg); }
+.sev-info { color: var(--sev-info-fg); background: var(--sev-info-bg); }
+.band-healthy { color: var(--band-healthy-fg); background: var(--band-healthy-bg); }
+.band-moderate { color: var(--band-moderate-fg); background: var(--band-moderate-bg); }
+.band-at-risk { color: var(--band-at-risk-fg); background: var(--band-at-risk-bg); }
+.band-critical { color: var(--band-critical-fg); background: var(--band-critical-bg); }
+.band-not-run { color: var(--band-not-run-fg); background: var(--band-not-run-bg); }
+.effort { font: 600 0.8rem/1 var(--font-mono); }
+
+/* Tables: Field Guide style, mono heads, hairline rows, scroll inside the frame */
+.frame { overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; }
+.frame:focus-visible { outline: 2px solid var(--brand-blue); outline-offset: 2px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+caption { text-align: left; }
+th, td { text-align: left; padding: 12px 14px 12px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+thead th { font: 500 0.7rem/1.3 var(--font-mono); text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--faint); border-bottom: 1px solid var(--rule-strong); white-space: nowrap; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.lead-col { font-weight: 700; overflow-wrap: normal; min-width: 8.5rem; }
+td.dim { color: var(--muted); }
+td.path, .path { font-family: var(--font-mono); font-size: 0.8rem; overflow-wrap: anywhere; }
+td.path { min-width: 13rem; }
+td.nowrap { white-space: nowrap; }
+.findings td.title-col { min-width: 16rem; }
+.findings td.fix-col { min-width: 16rem; color: var(--muted); }
+.findings .conf { display: block; font: 500 0.7rem/1.4 var(--font-mono); color: var(--faint);
+  text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+/* Cards */
+.cards { display: grid; gap: 0;
+  border: 1px solid var(--rule); background: var(--surface); }
+.card { padding: 18px 20px; border-left: 1px solid var(--rule); display: grid; gap: 8px; align-content: start; min-width: 0; }
+.card:first-child { border-left: 0; }
+.card .big { font: 800 1.9rem/1 var(--font-sans); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.card p { font-size: 0.9rem; color: var(--muted); }
+
+/* Callouts */
+.remember { display: grid; grid-template-columns: 10rem 1fr; gap: 16px; align-items: center;
+  border: 1px solid var(--brand-green); background: var(--brand-mint); padding: 20px 24px;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.remember-label { font: 600 0.8rem/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--brand-green-ink); }
+.remember p { font-weight: 700; font-size: 1.08rem; max-width: none; }
+.gotcha { border: 2px solid var(--brand-amber); background: var(--brand-amber-soft); padding: 18px 22px;
+  display: grid; gap: 6px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.gotcha strong.h { font-size: 1.12rem; font-weight: 800; letter-spacing: -0.02em; }
+.gotcha p { max-width: none; }
+.notbox { background: var(--box); border: 1px solid var(--rule); padding: 18px 22px; display: grid; gap: 8px; }
+.notrun { border: 1px dashed var(--faint); background: var(--box); padding: 18px 22px; display: grid; gap: 8px; }
+
+/* To-scale bar chart */
+.chart { background: var(--box); border: 1px solid var(--rule); padding: 20px 22px 14px; display: grid; gap: 10px;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.chart-legend { display: flex; flex-wrap: wrap; gap: 4px 18px; font: 0.75rem/1.4 var(--font-mono); color: var(--faint); }
+.chart-row, .chart-axis { display: grid; grid-template-columns: minmax(6.5rem, 14rem) minmax(0, 1fr) 5.5rem; gap: 12px; align-items: center; }
+.chart-row .lbl { font-size: 0.85rem; overflow-wrap: anywhere; }
+.chart-row .val { text-align: right; font: 0.8rem var(--font-mono); font-variant-numeric: tabular-nums; }
+.track { position: relative; height: 14px; background: var(--surface); border: 1px solid var(--rule); }
+.fill { position: absolute; top: 0; bottom: 0; left: 0; background: var(--bar); border-radius: 0 4px 4px 0; }
+.fill.f-critical { background: var(--sev-critical-fg); } .fill.f-high { background: var(--sev-high-fg); }
+.fill.f-medium { background: var(--sev-medium-fg); } .fill.f-low { background: var(--sev-low-fg); }
+.fill.f-info { background: var(--sev-info-fg); }
+.fill.b-healthy { background: var(--band-healthy-fg); } .fill.b-moderate { background: var(--band-moderate-fg); }
+.fill.b-at-risk { background: var(--band-at-risk-fg); } .fill.b-critical { background: var(--band-critical-fg); }
+.fill.b-not-run { background: var(--band-not-run-fg); }
+.tick { position: absolute; top: -4px; bottom: -4px; width: 0; border-left: 1px dashed var(--ink); opacity: 0.55; }
+.chart-axis .scale { position: relative; height: 1.3em; font: 0.7rem var(--font-mono); color: var(--faint); }
+.chart-axis .scale span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+.chart-axis .scale span:first-child { transform: none; }
+.chart-axis .scale span:last-child { transform: translateX(-100%); }
+
+/* Lease-style timeline (mario tier) */
+.lease { background: var(--box); border: 1px solid var(--rule); padding: 22px; display: grid; gap: 16px;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.lease-track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.lease-node { position: relative; padding-top: 34px; padding-right: 16px; min-width: 0; }
+.lease-node::before { content: ""; position: absolute; top: 4px; left: 0; width: 18px; height: 18px;
+  border: 4px solid var(--brand-green); background: var(--box); box-sizing: border-box; z-index: 1; }
+.lease-node.filled::before { background: var(--brand-green); }
+.lease-node::after { content: ""; position: absolute; top: 11px; left: 18px; right: 0; height: 4px; background: var(--brand-green); }
+.lease-node:last-child::after { display: none; }
+.lease-node.empty::before { border-color: var(--faint); border-style: dashed; }
+.lease-node.empty::after { background: repeating-linear-gradient(90deg, var(--faint) 0 10px, transparent 10px 16px); }
+.lease-node .n { font: 700 0.95rem/1.2 var(--font-mono); letter-spacing: 0.04em; text-transform: uppercase; }
+.lease-node .cap { color: var(--muted); font-size: 0.9rem; margin: 6px 0 8px; }
+.lease-node ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.lease-node li { font: 0.8rem/1.4 var(--font-mono); color: var(--brand-amber-ink); overflow-wrap: anywhere; }
+
+/* Lists */
+ol.savings, ol.top { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule-strong); counter-reset: n; }
+ol.savings > li, ol.top > li { counter-increment: n; display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 4px 12px;
+  padding: 16px 0; border-bottom: 1px solid var(--rule); }
+ol.savings > li::before, ol.top > li::before { content: counter(n); font-family: var(--font-mono); color: var(--faint); }
+ol.top .line1 { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: baseline; }
+ol.top .fix { color: var(--muted); grid-column: 2; }
+ul, ol { margin: 0; padding-left: 1.3rem; display: grid; gap: 6px; max-width: 76ch; }
+
+/* Finding details */
+.detail { border-top: 1px solid var(--rule); padding: 14px 0; }
+.detail summary { cursor: pointer; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: baseline; list-style-position: outside; }
+.detail summary .fid { font: 600 0.82rem var(--font-mono); }
+.detail .body { display: grid; gap: 10px; margin-top: 12px; }
+.detail dl { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 6px 16px; margin: 0; font-size: 0.92rem; }
+.detail dt { font: 500 0.7rem/1.9 var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); }
+.detail dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.md-h { margin-top: 10px; }
+.notes { display: grid; gap: 12px; }
+
+/* Running footer */
+.running { max-width: 64rem; margin: 72px auto 0; border-top: 1px solid var(--rule); padding: 18px 0 28px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
+  font: 0.78rem/1.5 var(--font-mono); color: var(--faint); }
+.running span { overflow-wrap: anywhere; }
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .strip { grid-template-columns: 1fr; }
+  .strip > div { border-left: 0; border-top: 1px solid var(--rule); }
+  .strip > div:first-child { border-top: 0; }
+  .remember { grid-template-columns: 1fr; gap: 8px; }
+  .contents a { grid-template-columns: 4.5rem 1fr; }
+  .contents a .pill { grid-column: 2; justify-self: start; }
+  .chart-row, .chart-axis { grid-template-columns: 6rem minmax(0, 1fr) 4.2rem; gap: 8px; }
+  .lease-track { grid-template-columns: 1fr; gap: 18px; }
+  .lease-node::after { display: none; }
+  .detail dl { grid-template-columns: 1fr; }
+  .card { border-left: 0; border-top: 1px solid var(--rule); }
+  .card:first-child { border-top: 0; }
+  .sentences li, ol.savings > li, ol.top > li { grid-template-columns: 2rem minmax(0, 1fr); }
+}
+
+@page { size: letter; margin: 14mm 14mm 22mm; }
+@media print {
+  body { padding: 0; font-size: 10.5pt; background: #FFFFFF; }
+  main { max-width: none; gap: 28px; }
+  .cover { height: 236mm; break-after: page; align-content: space-between; }
+  .part { break-before: page; }
+  h2, h3, h4, .part-head { break-after: avoid; }
+  .remember, .gotcha, .card, .chart, .lease, .notrun, .notbox, tr, .detail, .strip, .verdict-head { break-inside: avoid; }
+  .frame { overflow: visible; }
+  table { font-size: 8.5pt; }
+  .findings td.title-col, .findings td.fix-col, td.path { min-width: 0; }
+  td.num { white-space: normal; }
+  th, td { padding: 6px 8px 6px 0; overflow-wrap: anywhere; }
+  thead th, td.nowrap { white-space: nowrap; overflow-wrap: normal; }
+  td.path, .path, pre.code, pre.evidence { font-size: 7.5pt; }
+  td.dim { min-width: 0; }
+  pre.code, pre.evidence { white-space: pre-wrap; overflow-wrap: anywhere; }
+  details > summary { list-style: none; break-inside: avoid; break-after: avoid; }
+  details > summary::-webkit-details-marker { display: none; }
+  a { color: inherit; text-decoration: none; }
+  .running { margin-top: 24px; }
+}
+
+@page { @bottom-left { content: "Legion Code Inc. \0000b7  Jordan Example \000028 fictional\000029  \0000b7  acme-dashboard \0000b7  September 30, 2026"; font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 7.5pt; color: #6B7280; vertical-align: top; padding-top: 4mm; } @bottom-right { content: "acme-dashboard Code Audit"; font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 7.5pt; color: #6B7280; vertical-align: top; padding-top: 4mm; text-align: right; } }
+
+</style>
+</head>
+<body>
+<main>
+<header class="cover" id="top">
+  <div class="cover-eyebrow"><span class="idx">01</span><span>A Legion Code Inc. code audit</span><span class="line"></span></div>
+  <div class="stack">
+    <div class="cover-bar" aria-hidden="true"></div>
+    <h1>acme-dashboard<br>Code Audit</h1>
+    <p class="subtitle">Foundation audit: foundation</p>
+    <p class="framing">A read-only foundation audit of acme-dashboard, covering foundation. Prepared for Jordan Example (fictional). Every number and finding below comes from the run workspace; nothing was added by the renderer.</p>
+    <div class="meta">
+      <div>Run <span>2026-09-30 09:15 -0500</span></div>
+      <div>Tools <span>jscpd 4.3.0 · knip 5.88.1 · cloc 2.06</span></div>
+      <div>Stack <span>nextjs 15.5.2, node-server 22</span></div>
+      <div>Repo changes <span>none</span></div>
+    </div>
+  </div>
+  <div class="stack">
+    <div class="strip">
+      <div><span class="eyebrow">By</span><strong>Legion Code Inc. for Jordan Example (fictional)</strong></div>
+      <div><span class="eyebrow">Tier</span><strong>Foundation audit</strong></div>
+      <div><span class="eyebrow">Repo</span><strong class="path">acme-dashboard @ main 0f3c9a7d21be</strong></div>
+    </div>
+    <div class="cover-foot"><svg class="logo logo-light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" role="img" aria-label="Legion"> <title>Legion logo, for light backgrounds</title> <desc>Legion primary lockup. Symbol left, wordmark right. Optimized for placement on light surfaces and printed reports.</desc> <g> <path d="M12 8 L24 8 L24 44 L48 44 L48 56 L12 56 Z" fill="#0A0B0D"/> <rect x="12" y="8" width="12" height="8" fill="#18A968"/> </g> <text x="72" y="46" font-family="'Inter', 'Inter Display', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="40" letter-spacing="-1.2" fill="#0A0B0D">LEGION</text> </svg><svg class="logo logo-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" role="img" aria-label="Legion"> <title>Legion logo, for dark backgrounds</title> <desc>Legion primary lockup. Symbol left, wordmark right. Optimized for placement on dark surfaces (bg.canvas #0A0B0D).</desc> <g> <path d="M12 8 L24 8 L24 44 L48 44 L48 56 L12 56 Z" fill="#F5F6F7"/> <rect x="12" y="8" width="12" height="8" fill="#3DDC97"/> </g> <text x="72" y="46" font-family="'Inter', 'Inter Display', 'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="40" letter-spacing="-1.2" fill="#F5F6F7">LEGION</text> </svg>
+      <span class="mono">September 30, 2026 · read time about 2 minutes</span></div>
+  </div>
+</header>
+
+<section aria-labelledby="contents-h">
+  <div class="cover-eyebrow"><span class="idx">00</span><span>Contents</span><span class="line"></span></div>
+  <h2 id="contents-h">What is in here</h2>
+  <p class="lead">Plain language throughout. Every finding says what is wrong, why it matters here, and the exact fix.</p>
+  <nav class="contents" aria-label="Contents"><a href="#start"><span class="mono">Start</span><strong>The whole audit in one paragraph</strong></a><a href="#verdict"><span class="mono">Verdict</span><strong>Scorecard across dimensions</strong><span class="pill band-moderate">Moderate</span></a><a href="#foundation"><span class="mono">Part 1</span><strong>Foundation</strong><span class="pill band-moderate">Moderate</span></a><a href="#first"><span class="mono">Fix</span><strong>Fix these first</strong></a><a href="#coverage"><span class="mono">Limits</span><strong>Coverage and caps</strong></a><a href="#method"><span class="mono">End</span><strong>Method and evidence index</strong></a></nav>
+  <div class="legend" aria-label="Color key">
+    <div><span class="sw" style="background:var(--band-critical-fg)"></span><span>Red and orange pills are critical or high: fix first. Every pill also says its word.</span></div>
+    <div><span class="sw" style="background:var(--brand-green)"></span><span>Green boxes marked Remember hold the one thing to keep from a section.</span></div>
+    <div><span class="sw" style="background:var(--brand-amber)"></span><span>Amber boxes are tool limits the run hit or lifted, so nothing is silently cut.</span></div>
+  </div>
+</section>
+
+<section class="part" aria-labelledby="start">
+  <div class="part-head"><span class="eyebrow">Start here</span><h2 id="start">The whole audit in one paragraph</h2></div>
+  <div class="one-para"><p>Foundation: The repo has CI and a lockfile, but no library/ docs, no CODEOWNERS, and the agent rules file is missing, so agents start every task blind.</p></div>
+  <ol class="sentences"><li><span class="n">1</span><span><strong>Foundation.</strong> The repo has CI and a lockfile, but no library/ docs, no CODEOWNERS, and the agent rules file is missing, so agents start every task blind.</span></li></ol>
+</section>
+
+<section class="part verdict" aria-labelledby="verdict">
+  <div class="verdict-head"><span class="eyebrow" id="verdict">Verdict</span>
+    <span class="verdict-word v-moderate">Moderate</span></div>
+  <p><strong>The overall verdict is the worst dimension verdict.</strong> One dimension at risk makes the whole run at risk, because a single weak area is enough to hurt the app.</p>
+  <div class="frame" role="region" tabindex="0" aria-label="Scorecard table"><table class=""><caption class="sr-only">Verdict by dimension</caption><thead><tr><th scope="col" class="lead-col">Dimension</th><th scope="col" class="nowrap">Verdict</th><th scope="col" class="num">Critical</th><th scope="col" class="num">High</th><th scope="col" class="num">Medium</th><th scope="col" class="num">Low or info</th><th scope="col" class="dim">Summary</th></tr></thead><tbody><tr><td class="lead-col"><a href="#foundation">Foundation</a></td><td class="nowrap"><span class="pill band-moderate">Moderate</span></td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">3</td><td class="dim">The repo has CI and a lockfile, but no library/ docs, no CODEOWNERS, and the agent rules file is missing, so agents start every task blind.</td></tr></tbody></table></div>
+  <figure class="chart" role="group" aria-label="All findings by severity" style="margin:0"><div class="chart-legend"><span>Bar length to scale, 0 to 2 findings</span><span>Each bar is labeled with its count</span></div><div class="chart-row" title="Critical: 0"><span class="lbl">Critical</span><div class="track"><div class="fill f-critical" style="width:0.00%"></div></div><span class="val">0</span></div><div class="chart-row" title="High: 0"><span class="lbl">High</span><div class="track"><div class="fill f-high" style="width:0.00%"></div></div><span class="val">0</span></div><div class="chart-row" title="Medium: 2"><span class="lbl">Medium</span><div class="track"><div class="fill f-medium" style="width:100.00%"></div></div><span class="val">2</span></div><div class="chart-row" title="Low: 2"><span class="lbl">Low</span><div class="track"><div class="fill f-low" style="width:100.00%"></div></div><span class="val">2</span></div><div class="chart-row" title="Info: 1"><span class="lbl">Info</span><div class="track"><div class="fill f-info" style="width:50.00%"></div></div><span class="val">1</span></div><div class="chart-axis" aria-hidden="true"><span></span><div class="scale"><span style="left:0.00%">0</span><span style="left:25.00%">0.5</span><span style="left:50.00%">1</span><span style="left:75.00%">1.5</span><span style="left:100.00%">2</span></div><span></span></div></figure>
+</section>
+
+<section class="part" aria-labelledby="foundation"><div class="part-head"><span class="eyebrow">1 · get-started-stinger</span><h2 id="foundation">Foundation</h2><p class="lead">Is the repository set up so people and agents can work in it safely?</p></div><div class="verdict-head"><span class="eyebrow">Dimension verdict</span><span class="pill band-moderate">Moderate</span></div><p class="muted">Scope: 41 files and 3,907 lines. Excluded: node_modules/, .next/.</p><aside class="remember"><span class="remember-label">Remember</span><p>The repo has CI and a lockfile, but no library/ docs, no CODEOWNERS, and the agent rules file is missing, so agents start every task blind.</p></aside><div class="cards"><div class="card"><span class="eyebrow">CI workflow present</span><span class="big">1 workflows</span><p><span class="pill band-healthy">Healthy</span> at least 1</p></div><div class="card"><span class="eyebrow">library/ documentation tree</span><span class="big">0 docs</span><p><span class="pill band-at-risk">At risk</span> PRDs or knowledge docs present</p></div><div class="card"><span class="eyebrow">Findings</span><span class="big">5</span><p>0 critical or high, 2 medium, 3 low or info.</p></div></div><h3>Measures</h3><div class="frame" role="region" tabindex="0" aria-label="Foundation measures table"><table class=""><caption class="sr-only">Foundation measures</caption><thead><tr><th scope="col" class="lead-col">Measure</th><th scope="col" class="num">Result</th><th scope="col" class="nowrap">Band</th><th scope="col" class="dim">Threshold</th><th scope="col" class="">Source</th></tr></thead><tbody><tr><td class="lead-col">CI workflow present</td><td class="num">1 workflows</td><td class="nowrap"><span class="pill band-healthy">Healthy</span></td><td class="dim">at least 1</td><td class=""><span class="muted">get-started-stinger assess</span></td></tr><tr><td class="lead-col">library/ documentation tree</td><td class="num">0 docs</td><td class="nowrap"><span class="pill band-at-risk">At risk</span></td><td class="dim">PRDs or knowledge docs present</td><td class=""><span class="muted">get-started-stinger assess</span></td></tr><tr><td class="lead-col">Agent rules files (AGENTS.md, CLAUDE.md)</td><td class="num">0 files</td><td class="nowrap"><span class="pill band-moderate">Moderate</span></td><td class="dim">at least 1</td><td class=""><span class="muted">get-started-stinger assess</span></td></tr><tr><td class="lead-col">README length</td><td class="num">212 words</td><td class="nowrap"><span class="pill band-moderate">Moderate</span></td><td class="dim">300 or more words with setup steps</td><td class=""><span class="muted">get-started-stinger assess</span></td></tr></tbody></table></div><h3>Findings by severity</h3><figure class="chart" role="group" aria-label="Foundation findings by severity" style="margin:0"><div class="chart-legend"><span>Bar length to scale, 0 to 2 findings</span><span>Each bar is labeled with its count</span></div><div class="chart-row" title="Critical: 0"><span class="lbl">Critical</span><div class="track"><div class="fill f-critical" style="width:0.00%"></div></div><span class="val">0</span></div><div class="chart-row" title="High: 0"><span class="lbl">High</span><div class="track"><div class="fill f-high" style="width:0.00%"></div></div><span class="val">0</span></div><div class="chart-row" title="Medium: 2"><span class="lbl">Medium</span><div class="track"><div class="fill f-medium" style="width:100.00%"></div></div><span class="val">2</span></div><div class="chart-row" title="Low: 2"><span class="lbl">Low</span><div class="track"><div class="fill f-low" style="width:100.00%"></div></div><span class="val">2</span></div><div class="chart-row" title="Info: 1"><span class="lbl">Info</span><div class="track"><div class="fill f-info" style="width:50.00%"></div></div><span class="val">1</span></div><div class="chart-axis" aria-hidden="true"><span></span><div class="scale"><span style="left:0.00%">0</span><span style="left:25.00%">0.5</span><span style="left:50.00%">1</span><span style="left:75.00%">1.5</span><span style="left:100.00%">2</span></div><span></span></div></figure><h3>Findings</h3><div class="frame" role="region" tabindex="0" aria-label="Foundation findings table"><table class="findings"><caption class="sr-only">Foundation findings, most severe first</caption><thead><tr><th scope="col" class="nowrap">ID</th><th scope="col" class="nowrap">Severity</th><th scope="col" class="path">Location</th><th scope="col" class="title-col">Finding</th><th scope="col" class="fix-col">Fix</th><th scope="col" class="nowrap">Effort</th></tr></thead><tbody><tr><td class="nowrap"><a class="path" href="#f-fnd-ci-003">FND-CI-003</a></td><td class="nowrap"><span class="pill sev-medium">medium</span></td><td class="path"><span class="path">.github/workflows/ci.yml:18-31</span></td><td class="title-col">CI runs lint but never runs the test suite.<span class="conf">confirmed</span></td><td class="fix-col">Uncomment the pnpm test step in .github/workflows/ci.yml line 30 and make it a required status check on main.</td><td class="nowrap"><span class="effort" title="1 to 3 hours">S</span></td></tr><tr><td class="nowrap"><a class="path" href="#f-fnd-docs-001">FND-DOCS-001</a></td><td class="nowrap"><span class="pill sev-medium">medium</span></td><td class="path"><span class="muted">repo-wide</span></td><td class="title-col">There is no library/ folder, so no written requirements or architecture notes exist for agents to follow.<span class="conf">confirmed</span></td><td class="fix-col">Run get-started-stinger in init mode to scaffold library/, then add one knowledge doc for the auth flow in apps/web.</td><td class="nowrap"><span class="effort" title="3 to 8 hours">M</span></td></tr><tr><td class="nowrap"><a class="path" href="#f-fnd-own-004">FND-OWN-004</a></td><td class="nowrap"><span class="pill sev-low">low</span></td><td class="path"><span class="muted">repo-wide</span></td><td class="title-col">No CODEOWNERS file, so nobody is asked to review changes to payment code.<span class="conf">confirmed</span></td><td class="fix-col">Add .github/CODEOWNERS with apps/api/billing/ owned by the billing lead.</td><td class="nowrap"><span class="effort" title="1 to 3 hours">S</span></td></tr><tr><td class="nowrap"><a class="path" href="#f-fnd-rules-002">FND-RULES-002</a></td><td class="nowrap"><span class="pill sev-low">low</span></td><td class="path"><span class="muted">repo-wide</span></td><td class="title-col">No AGENTS.md or CLAUDE.md tells coding agents the project&#x27;s rules.<span class="conf">confirmed</span></td><td class="fix-col">Add AGENTS.md at the repo root with the test command (pnpm test), the lint command, and the rule that apps/web/app/**/actions.ts must call requireUser().</td><td class="nowrap"><span class="effort" title="1 to 3 hours">S</span></td></tr><tr><td class="nowrap"><a class="path" href="#f-fnd-stack-005">FND-STACK-005</a></td><td class="nowrap"><span class="pill sev-info">info</span></td><td class="path"><span class="path">apps/web/package.json:12</span></td><td class="title-col">Next.js 15.5.2 and Node 22 are current supported releases.<span class="conf">confirmed</span></td><td class="fix-col">None.</td><td class="nowrap"><span class="effort" title="1 to 3 hours">S</span></td></tr></tbody></table></div><h3>Spot checks</h3><div class="frame" role="region" tabindex="0" aria-label="Foundation spot-check table"><table class=""><caption class="sr-only">How each foundation finding was checked</caption><thead><tr><th scope="col" class="nowrap">Finding</th><th scope="col" class="nowrap">Confidence</th><th scope="col" class="dim">How false positives were ruled out</th></tr></thead><tbody><tr><td class="nowrap">FND-CI-003</td><td class="nowrap">confirmed</td><td class="dim">Read the workflow file end to end.</td></tr><tr><td class="nowrap">FND-DOCS-001</td><td class="nowrap">confirmed</td><td class="dim">Listed the repository root and searched for any docs/ or library/ folder.</td></tr><tr><td class="nowrap">FND-OWN-004</td><td class="nowrap">confirmed</td><td class="dim">Searched the three paths GitHub reads CODEOWNERS from.</td></tr><tr><td class="nowrap">FND-RULES-002</td><td class="nowrap">confirmed</td><td class="dim">Checked all three conventional locations.</td></tr><tr><td class="nowrap">FND-STACK-005</td><td class="nowrap">confirmed</td><td class="dim">Read package.json and .nvmrc.</td></tr></tbody></table></div><h3>Where the real savings are</h3><ol class="savings"><li><div><strong>CI runs lint but never runs the test suite.</strong> <span class="muted">Uncomment the pnpm test step in .github/workflows/ci.yml line 30 and make it a required status check on main.</span></div></li><li><div><strong>There is no library/ folder, so no written requirements or architecture notes exist for agents to follow.</strong> <span class="muted">Run get-started-stinger in init mode to scaffold library/, then add one knowledge doc for the auth flow in apps/web.</span></div></li><li><div><strong>No CODEOWNERS file, so nobody is asked to review changes to payment code.</strong> <span class="muted">Add .github/CODEOWNERS with apps/api/billing/ owned by the billing lead.</span></div></li><li><div><strong>No AGENTS.md or CLAUDE.md tells coding agents the project&#x27;s rules.</strong> <span class="muted">Add AGENTS.md at the repo root with the test command (pnpm test), the lint command, and the rule that apps/web/app/**/actions.ts must call requireUser().</span></div></li></ol><h3>Finding details</h3><details class="detail" id="f-fnd-ci-003" open><summary><span class="fid">FND-CI-003</span><span class="pill sev-medium">medium</span><span>CI runs lint but never runs the test suite.</span></summary><div class="body"><dl><dt>Why it matters</dt><dd>Broken behavior can merge to main because nothing checks it before merge.</dd><dt>Fix</dt><dd>Uncomment the pnpm test step in .github/workflows/ci.yml line 30 and make it a required status check on main.</dd><dt>Effort</dt><dd>S 1 to 3 hours</dd><dt>Locations</dt><dd class="path">.github/workflows/ci.yml:18-31</dd><dt>Confidence</dt><dd>confirmed: Read the workflow file end to end.</dd><dt>Standards</dt><dd>none listed</dd><dt>Reported by</dt><dd>code-foundation-wasp-drone</dd></dl><pre class="evidence">      - run: pnpm lint
+      # - run: pnpm test   (commented out)</pre></div></details><details class="detail" id="f-fnd-docs-001" open><summary><span class="fid">FND-DOCS-001</span><span class="pill sev-medium">medium</span><span>There is no library/ folder, so no written requirements or architecture notes exist for agents to follow.</span></summary><div class="body"><dl><dt>Why it matters</dt><dd>Without written requirements, every agent session re-guesses how the app is meant to work, which is how features drift.</dd><dt>Fix</dt><dd>Run get-started-stinger in init mode to scaffold library/, then add one knowledge doc for the auth flow in apps/web.</dd><dt>Effort</dt><dd>M 3 to 8 hours</dd><dt>Locations</dt><dd class="path">repo-wide</dd><dt>Confidence</dt><dd>confirmed: Listed the repository root and searched for any docs/ or library/ folder.</dd><dt>Standards</dt><dd>guides/00-assess.md</dd><dt>Reported by</dt><dd>code-foundation-wasp-drone</dd></dl><pre class="evidence">$ ls library
+ls: library: No such file or directory</pre></div></details><details class="detail" id="f-fnd-own-004"><summary><span class="fid">FND-OWN-004</span><span class="pill sev-low">low</span><span>No CODEOWNERS file, so nobody is asked to review changes to payment code.</span></summary><div class="body"><dl><dt>Why it matters</dt><dd>Changes to billing can merge with only the author&#x27;s review.</dd><dt>Fix</dt><dd>Add .github/CODEOWNERS with apps/api/billing/ owned by the billing lead.</dd><dt>Effort</dt><dd>S 1 to 3 hours</dd><dt>Locations</dt><dd class="path">repo-wide</dd><dt>Confidence</dt><dd>confirmed: Searched the three paths GitHub reads CODEOWNERS from.</dd><dt>Standards</dt><dd>none listed</dd><dt>Reported by</dt><dd>code-foundation-wasp-drone</dd></dl><pre class="evidence">$ ls .github/CODEOWNERS
+ls: .github/CODEOWNERS: No such file or directory</pre></div></details><details class="detail" id="f-fnd-rules-002"><summary><span class="fid">FND-RULES-002</span><span class="pill sev-low">low</span><span>No AGENTS.md or CLAUDE.md tells coding agents the project&#x27;s rules.</span></summary><div class="body"><dl><dt>Why it matters</dt><dd>Agents will not know to run the tests or to keep server code out of client components.</dd><dt>Fix</dt><dd>Add AGENTS.md at the repo root with the test command (pnpm test), the lint command, and the rule that apps/web/app/**/actions.ts must call requireUser().</dd><dt>Effort</dt><dd>S 1 to 3 hours</dd><dt>Locations</dt><dd class="path">repo-wide</dd><dt>Confidence</dt><dd>confirmed: Checked all three conventional locations.</dd><dt>Standards</dt><dd>none listed</dd><dt>Reported by</dt><dd>code-foundation-wasp-drone</dd></dl><pre class="evidence">$ ls AGENTS.md CLAUDE.md .cursor/rules
+ls: AGENTS.md: No such file or directory</pre></div></details><details class="detail" id="f-fnd-stack-005"><summary><span class="fid">FND-STACK-005</span><span class="pill sev-info">info</span><span>Next.js 15.5.2 and Node 22 are current supported releases.</span></summary><div class="body"><dl><dt>Why it matters</dt><dd>No action needed; recorded so later dimensions know the versions.</dd><dt>Fix</dt><dd>None.</dd><dt>Effort</dt><dd>S 1 to 3 hours</dd><dt>Locations</dt><dd class="path">apps/web/package.json:12</dd><dt>Confidence</dt><dd>confirmed: Read package.json and .nvmrc.</dd><dt>Standards</dt><dd>none listed</dd><dt>Reported by</dt><dd>code-foundation-wasp-drone</dd></dl><pre class="evidence">&quot;next&quot;: &quot;15.5.2&quot;</pre></div></details><details class="detail"><summary><span class="fid">Drone notes</span><span class="muted">notes.md, rendered as written</span></summary><div class="body notes"><h4 class="md-h">Foundation notes</h4>
+<p>Assessed with get-started-stinger in assess mode; nothing was written to the repo.</p></div></details></section>
+
+<section class="part" aria-labelledby="first">
+  <div class="part-head"><span class="eyebrow">Next steps</span><h2 id="first">Fix these first</h2>
+  <p class="lead">The ten most urgent findings across every dimension: most severe first, then the most certain, then the quickest.</p></div>
+  <ol class="top"><li><div class="line1"><span class="pill sev-medium">medium</span><a class="path" href="#f-fnd-ci-003">FND-CI-003</a><strong>CI runs lint but never runs the test suite.</strong><span class="effort" title="1 to 3 hours">S</span></div><div class="fix">Uncomment the pnpm test step in .github/workflows/ci.yml line 30 and make it a required status check on main. <span class="path">.github/workflows/ci.yml:18-31</span></div></li><li><div class="line1"><span class="pill sev-medium">medium</span><a class="path" href="#f-fnd-docs-001">FND-DOCS-001</a><strong>There is no library/ folder, so no written requirements or architecture notes exist for agents to follow.</strong><span class="effort" title="3 to 8 hours">M</span></div><div class="fix">Run get-started-stinger in init mode to scaffold library/, then add one knowledge doc for the auth flow in apps/web. <span class="muted">repo-wide</span></div></li><li><div class="line1"><span class="pill sev-low">low</span><a class="path" href="#f-fnd-own-004">FND-OWN-004</a><strong>No CODEOWNERS file, so nobody is asked to review changes to payment code.</strong><span class="effort" title="1 to 3 hours">S</span></div><div class="fix">Add .github/CODEOWNERS with apps/api/billing/ owned by the billing lead. <span class="muted">repo-wide</span></div></li><li><div class="line1"><span class="pill sev-low">low</span><a class="path" href="#f-fnd-rules-002">FND-RULES-002</a><strong>No AGENTS.md or CLAUDE.md tells coding agents the project&#x27;s rules.</strong><span class="effort" title="1 to 3 hours">S</span></div><div class="fix">Add AGENTS.md at the repo root with the test command (pnpm test), the lint command, and the rule that apps/web/app/**/actions.ts must call requireUser(). <span class="muted">repo-wide</span></div></li></ol>
+</section>
+
+<section class="part fair" aria-labelledby="coverage">
+  <div class="part-head"><span class="eyebrow">Limits, said out loud</span><h2 id="coverage">Coverage and caps</h2>
+  <p class="lead">What each dimension scanned, what it skipped, and every tool limit it hit or lifted.</p></div>
+  <div class="frame" role="region" tabindex="0" aria-label="Coverage and caps table"><table class=""><caption class="sr-only">Coverage and caps by dimension</caption><thead><tr><th scope="col" class="lead-col">Dimension</th><th scope="col" class="num">Files</th><th scope="col" class="num">Lines</th><th scope="col" class="path">Skipped</th><th scope="col" class="">Limits and caps</th></tr></thead><tbody><tr><td class="lead-col">Foundation</td><td class="num">41</td><td class="num">3,907</td><td class="path"><span class="path">node_modules/, .next/</span></td><td class=""><span class="muted">No limit applied (an empty caps list is the Drone's claim)</span></td></tr></tbody></table></div>
+  <h3>Data checks</h3>
+  <p class="muted">Every workspace file the brief reads parsed cleanly against contract 1.0.</p>
+  <h3>Merged duplicates</h3>
+  <p class="muted">Findings from different Drones that share a file, an overlapping line range, and a CWE are shown once; the higher severity is kept.</p>
+  <p class="muted">No duplicate findings were merged.</p>
+</section>
+
+<section class="part end" aria-labelledby="method">
+  <div class="part-head"><span class="eyebrow">The end</span><h2 id="method">Method and evidence index</h2></div>
+  <ul>
+    <li>Each dimension was run by its own Drone, which wrote findings, measures, and notes to the run workspace under contract 1.0.</li>
+    
+    <li>This brief was rendered from the workspace by code-audit-brief-wasp-drone. It sorts, merges duplicates, and formats; it never adds or edits a finding.</li>
+    <li>Repo changes: none.</li>
+    <li>Repository code run: none; the requester declined, so checks that would run the repository&#x27;s code are reported as not run.</li>
+    <li>This page loads its typefaces from Google Fonts when opened, which shares the reader's IP address with Google; no audit content is sent, and system fonts are used offline.</li>
+  </ul>
+  <div class="notes"><h4 class="md-h">Evidence index</h4>
+<p>No raw tool output: the foundation dimension reads the repository tree only.</p></div>
+</section>
+</main>
+<footer class="running"><span>Legion Code Inc. · Jordan Example (fictional) · acme-dashboard · September 30, 2026</span><span>acme-dashboard Code Audit</span></footer>
+</body>
+</html>

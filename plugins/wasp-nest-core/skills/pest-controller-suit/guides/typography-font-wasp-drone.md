@@ -1,10 +1,13 @@
 # typography-font-wasp-drone
 
+**Plugin owner:** `web-development-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 Owns the technical typographic surface of web products: font-loading strategy (Google Fonts, `next/font`, Fontsource, self-hosted, system fallbacks), variable font subsetting and `font-display` rules, fluid type scales built with `clamp()`, vertical rhythm via `line-height` and spacing tokens, and the font-token layer consumed by the design system. It owns `font-display` and preload strategy where typography overlaps LCP performance, but hands the Core Web Vitals measurement loop off.
 
 ## Paired Stinger
-[typography-font-stinger](../../typography-font-stinger) - hosting-strategy decision tree, variable font configuration, fluid type scale math, vertical rhythm, the three-tier token architecture, and the performance checklist.
+[typography-font-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/typography-font-stinger) - hosting-strategy decision tree, variable font configuration, fluid type scale math, vertical rhythm, the three-tier token architecture, and the performance checklist.
 
 ## Trigger phrases
 - "set up fonts for this project"

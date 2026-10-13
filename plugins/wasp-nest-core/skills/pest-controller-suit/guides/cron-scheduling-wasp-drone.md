@@ -1,10 +1,13 @@
 # cron-scheduling-wasp-drone
 
+**Plugin owner:** `platform-and-release-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 Owns scheduled-job work end to end: cron expression authoring and auditing with a plain-English explanation always attached, platform-specific limit compliance (Vercel Cron, Cloudflare Cron Triggers, GitHub Actions `schedule:`, pg_cron, BullMQ), distributed-cron correctness (split-brain prevention, exactly-once execution via leader election and idempotency keys), timezone/DST safety with UTC as the default, retry-on-failure patterns, and the "did the cron run?" observability loop via heartbeat monitoring.
 
 ## Paired Stinger
-[cron-scheduling-stinger](../../cron-scheduling-stinger) - cron syntax across platforms, platform limit tables, distributed-cron locking patterns, DST failure modes, retry/backoff design, and heartbeat monitoring setup.
+[cron-scheduling-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/cron-scheduling-stinger) - cron syntax across platforms, platform limit tables, distributed-cron locking patterns, DST failure modes, retry/backoff design, and heartbeat monitoring setup.
 
 ## Trigger phrases
 - "write a cron expression for this schedule"

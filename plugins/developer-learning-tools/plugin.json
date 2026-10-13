@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "developer-learning-tools",
+  "version": "3.0.0",
+  "description": "Explain technical sources with source-grounded analogies and learner checks.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
+  "license": "AGPL-3.0-or-later",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Developer Learning Tools",
+        "shortDescription": "Explain technical sources with source-grounded analogies and learner checks.",
+        "developerName": "Legion Code Inc.",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ]
+      }
+    }
+  }
+}

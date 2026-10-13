@@ -6,6 +6,15 @@ If you only remember one thing from this file: a plugin is a directory with comp
 
 ---
 
+## Current Wasp Nest v3 projection
+
+The current [catalog](../../../../../../plugin-catalog.json) and [layout guide](../../../../../../docs/PLUGIN-LAYOUT.md) define this repository's source and output locations. Core stays in src; optional components belong to one `packs/<plugin-id>` owner. The builder emits each selected owner's Claude/Cowork and Cursor manifests plus root portable plugin.json with extensions.com.openai. It emits no .codex-plugin overlay.
+
+Codex command adapters are source-command-<name> skills in the command's owner. TOML role projections are registered through trusted Core against the explicit selected-plugin registry. Cached siblings are not implicit selections. Source work uses the catalog's source_root; installed work resolves the owner, version and required workflow before arming a capability.
+
+The host tables and older compatibility examples below retain their research scope. They are not instructions to recreate a retired Wasp Nest output, edit an installed cache as source, assume UI selection writes the registry or broaden a host's documented capability.
+
+
 ## Claude Code
 
 ### `.claude-plugin/plugin.json` manifest

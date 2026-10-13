@@ -15,7 +15,7 @@ cd {project_name}
 {install_command}
 ```
 
-See the [README](./README.md#development) for the full local dev setup.
+See the [README](README.md#development) for the full local dev setup.
 
 ## Branching and commits
 
@@ -38,7 +38,7 @@ All three must pass. The pull request template will ask you to confirm this.
 
 ## Pull requests
 
-- Fill out every section of the [pull request template](./.github/PULL_REQUEST_TEMPLATE.md).
+- Fill out every section of the [pull request template](.github/PULL_REQUEST_TEMPLATE.md).
 - Keep pull requests small and single-purpose. A PR that does three unrelated things is three PRs.
 - Link the issue it closes, if any.
 - Expect review comments to land in the blocker / suggestion / nit taxonomy; only blockers must be resolved before merge.
@@ -50,7 +50,7 @@ All three must pass. The pull request template will ask you to confirm this.
 
 ## Reporting bugs and requesting features
 
-Use the [issue templates](./.github/ISSUE_TEMPLATE/). Do not report security vulnerabilities as public issues: see [SECURITY.md](./SECURITY.md).
+Use the [issue templates](.github/ISSUE_TEMPLATE). Do not report security vulnerabilities as public issues: see [SECURITY.md](SECURITY.md).
 
 ## Release process
 

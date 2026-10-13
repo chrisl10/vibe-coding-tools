@@ -1,0 +1,17 @@
+# Draft contracts, critical seams and the schema baseline
+
+Ask Library to author the foundation PRD. Use `prd-000-contracts-seams-schema` only when the owner requested/reserved 000 or the repository convention permits it. Otherwise allocate the repository's normal next number. If 000 exists, inspect its current status and update through its lifecycle with authorization; do not overwrite an Accepted/Completed record by copying this scaffold.
+
+Split large foundation work into platform execution, database schema, shared contracts/seams, reuse adaptation and verification sub-PRDs. The [foundation scaffold](../templates/foundation-prd.md) is an outline; the installed Library method owns exact naming and mandatory sections. Do not create a second competing source of normative interface terms.
+
+Use Contract Writing for each shared API, event, state/data/permission agreement. Name producer, consumers, DTO/native schema, scope, validation, idempotency, retries/unknown outcomes, compatibility, public/private projection and provider-plus-consumer tests. Keep every new contract Draft until the controlling user accepts that exact revision. Accepted provider selection does not approve token lifetimes, spend budgets, payload rules or business triggers. Retain accepted terms while proposing revisions.
+
+Map critical seams explicitly: untrusted input to principal; principal to scoped transaction; commit to durable execution; replay to provider effect; acquisition to evidence; generated output to source membership; current version to artifact/readiness; ready record to delivery; optional payment/accounting to business truth. Include only seams actually in the app. Separate signature/payment/admission timing when such features exist; deferred features cannot silently enter launch scope.
+
+Build the complete data baseline from every entity/field in current source and preserved specs. Use the repository's actual storage model. If no datastore exists or is planned, record that decision and its file/config formats rather than inventing tables. Ledger every field as retained, changed, replaced or deliberately deferred, with reason and owner decision. Include types/nullability/defaults, enums, keys, scoped membership, indexes, JSON validation, triggers, deletion/retention, immutable history, version/signoff identity and migration order. Any unresolved field remains explicit; an illustrative mini-schema is never the target app's full schema.
+
+Ask the relevant data/stack specialist to review the actual schema dialect and migration tooling. Check generated SQL against the reference. When PostgreSQL is chosen, CHECK, unique and foreign-key rules are distinct controls; a prose field table cannot establish them. Native target engine/version/extensions/roles must be qualified before applying migrations. If test SQL substitutes vector arrays or removes an extension/index, disclose it as reduced proof. Do not claim the unchanged DDL ran.
+
+Deliver exact CTR revision pins, field coverage totals, schema reference identity, native validation scope, refusal fixtures and open decisions. Dependent implementation remains blocked where terms are Draft. Independent drafting may continue.
+
+Grounding: core workflow (source archive, summarized in the distillation) and PostgreSQL constraints (source archive, summarized in the distillation); installed Contract Writing governs exact acceptance metadata.

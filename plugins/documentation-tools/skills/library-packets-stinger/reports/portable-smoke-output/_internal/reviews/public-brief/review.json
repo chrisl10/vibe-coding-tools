@@ -1,0 +1,29 @@
+{
+  "pdf_sha256": "a1078f37bd0adab066909a63d0fefd82067f3a32ae93f3f2cf8cbcb9e96e507c",
+  "docx_sha256": "45bca976c6af81efdaecaef9fa5cd886db0b53d12ee1e464615bc92c29ac78f1",
+  "pages": [
+    {
+      "page": 1,
+      "png": "page-001.png",
+      "png_sha256": "177fadf1d62ab6ad2391e51e00eefe677b4ca5611e951c38889fa613f0e59589",
+      "out_of_page_glyphs": 0,
+      "out_of_page_images": 0,
+      "footer_text_present": true,
+      "footer_logo_detected": true,
+      "footer_region_extra_text": "",
+      "missing_glyphs": false,
+      "heuristic_only": true
+    }
+  ],
+  "page_count": 1,
+  "word_page_review_basis": "These pages render the DOCX in LibreOffice; other Word applications may paginate differently.",
+  "complete": false,
+  "id": "public-brief",
+  "audience": "public",
+  "markdown_sha256": "ce13032ae63c0393ae958b945b76f8a5555fdcccd218ea29cb72aa3391dc878b",
+  "citations_sha256": "363bf2f2d1717946495342cbdd1ff41de6beebfc97afb3e661085cfcfaf0c69e",
+  "citations_md_sha256": "062bc9a3029779dbb90b0f384da2d77f411cf13413466cbff8d984d00124d6e6",
+  "canonical_content_sha256": "ce13032ae63c0393ae958b945b76f8a5555fdcccd218ea29cb72aa3391dc878b",
+  "estimated_grade": 7.4,
+  "logo_sha256": "306e945de16ab670eb8eaeb668a60537c992024d13c478f83545489d67c035fd"
+}

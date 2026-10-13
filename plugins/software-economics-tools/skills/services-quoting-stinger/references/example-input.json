@@ -1,0 +1,18 @@
+{
+  "scenarios": [
+    {
+      "name": "website",
+      "basis": "Hypothetical supplied USD costs, 2026-10-07",
+      "currency": "USD",
+      "period": "project",
+      "pricing_mode": "markup",
+      "owner_hours": "40",
+      "owner_cost_per_hour": "50",
+      "subcontractor_cost": "0",
+      "fixed_cost": "200",
+      "contingency_fraction": ".1",
+      "pricing_fraction": ".25",
+      "pass_through_cost": "0"
+    }
+  ]
+}

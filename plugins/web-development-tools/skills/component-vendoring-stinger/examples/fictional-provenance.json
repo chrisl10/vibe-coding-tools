@@ -1,0 +1,17 @@
+{
+  "schema": "synthetic-provenance-test-v1",
+  "fictional": true,
+  "files": [
+    {
+      "path": "fixture/component.txt",
+      "sha256": "5309940658c910b6b593d7b7c1276290ac65fbed68f3b6d8ddc0a0709f834c53"
+    }
+  ],
+  "protected_notices": [
+    {
+      "path": "fixture/LICENSE.txt",
+      "sha256": "3e822c22b8c15b548b091b50aba876619287998c79a4ac4e2f000613f351188f"
+    }
+  ],
+  "license_path": "fixture/LICENSE.txt"
+}

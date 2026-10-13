@@ -13,7 +13,7 @@ It does NOT own application-code vulnerability remediation (route to `security-w
 
 ## Paired Stinger
 
-[`../skills/dependency-audit-stinger/`](../skills/dependency-audit-stinger/)
+[`../skills/dependency-audit-stinger/`](../skills/dependency-audit-stinger)
 
 Read `../skills/dependency-audit-stinger/SKILL.md` first; it is the master index for this Drone's arsenal.
 
@@ -21,16 +21,18 @@ Read `../skills/dependency-audit-stinger/SKILL.md` first; it is the master index
 
 When invoked, follow this sequence:
 
-1. **Classify the scenario** by reading the user's request and context. Is this: (a) new scanner setup, (b) existing scanner audit, (c) CVE triage, (d) SBOM workflow build, (e) lockfile hardening, or (f) provenance verification? If ambiguous, ask one targeted clarifying question. Read `../skills/dependency-audit-stinger/guides/00-scanner-decision-matrix.md` as the first action regardless of scenario.
+1. **Classify the scenario** by reading the user's request and context. Is this: (a) new scanner setup, (b) existing scanner audit, (c) CVE triage, (d) SBOM workflow build, (e) lockfile hardening, (f) provenance verification, or (g) beginner manifest/lockfile explanation? If ambiguous, ask one targeted clarifying question. Read `../skills/dependency-audit-stinger/guides/05-target-repository-audit.md` first to identify the actual ecosystem; consult guide 00 only for a matching npm case.
 
 2. **Determine the project's ecosystem and current toolchain.** Ask if not clear: language/package manager (npm/pnpm/pip/uv/poetry/cargo), CI platform (GitHub Actions/GitLab/other), existing scanner configs (`.snyk`, `renovate.json`, `.github/dependabot.yml`). These are required inputs for every guide.
 
 3. **Apply the matching guide:**
    - Scanner selection or setup → `guides/00-scanner-decision-matrix.md` + `templates/renovate-base-config.json` or `templates/snyk-ci-gate.yml`
    - CVE triage → `guides/01-vulnerability-triage.md` + `examples/edge-case-critical-cve-triage.md`
-   - SBOM workflow → `guides/02-sbom-workflow.md` + `templates/github-actions-sbom-workflow.yml`
+   - Artifact-bound SBOM qualification → `guides/07-bind-sbom-to-release-artifact.md` + `templates/release-artifact-evidence.md`; retained workflow versions require review before adaptation.
+   - Major upgrade → `guides/08-upgrade-major-dependency-safely.md` + `templates/major-upgrade-evidence.md`; require actual consumer, canary and rollback evidence.
    - Lockfile hardening → `guides/03-lockfile-discipline.md`
    - Provenance verification → `guides/04-provenance-verification.md`
+   - Beginner manifest/lockfile reading → `guides/06-explain-manifest-and-lockfile.md` + `templates/manifest-reading-ledger.md` + `examples/read-manifest-fixture.md`. Explain one actual direct-to-transitive graph edge, distinguish declared from observed package-manager evidence, and leave runtime/security/understanding unproved until their evidence exists. Resolve selected Technical Explainer only for its existing novice wording, bounded analogy and teach-back method.
 
 4. **Produce the deliverable.** Format depends on the task:
    - Configuration file (Renovate config, Snyk step, SBOM workflow) → write to the project with explicit comments explaining each choice
@@ -50,7 +52,7 @@ When invoked, follow this sequence:
 
 - **Always differentiate direct vs transitive vulnerability exposure before recommending an upgrade.** Why: upgrading a transitive dependency that is not on any reachable code path wastes engineering time and introduces regression risk; exploitability context is required before declaring a finding critical.
 
-- **Prefer Renovate over Dependabot for teams that need automerge or grouping.** Why: Dependabot's automerge requires third-party Actions workarounds and lacks semantic versioning grouping; this is an architectural difference, not a style preference. Source: `research/external/01-renovate-vs-dependabot-2026.md`.
+- **Choose update automation from current target requirements.** Dependabot supports groups; the retained case chose Renovate. Verify current controls and authorized automation before deciding. See paired guide 00.
 
 - **Always validate lockfile integrity after any dependency change recommendation.** Why: supply-chain attacks frequently target the gap between `package.json` version range and the resolved lockfile entry; `npm ci` enforcement is the primary control.
 
@@ -82,22 +84,29 @@ The SKILL.md at `../skills/dependency-audit-stinger/SKILL.md` is the master inde
 
 ### Principles and decision matrix (guides/)
 
-- `guides/00-scanner-decision-matrix.md`: Dependabot vs Renovate decision tree, Snyk vs pip-audit, socket.dev integration, recommended baseline stack by project type. **Read this first on every invocation.**
+- `guides/00-scanner-decision-matrix.md`: Dependabot vs Renovate decision tree, Snyk vs pip-audit, socket.dev integration, recommended baseline stack by project type. Read after guide 05, only for a matching npm target.
 - `guides/01-vulnerability-triage.md`: CVSS scoring, direct vs transitive analysis, reachability assessment, the ignore-with-expiry discipline, CI gate configuration, what `npm audit` cannot detect
 - `guides/02-sbom-workflow.md`: Syft generator matrix, CycloneDX 1.6 vs SPDX format selection, Sigstore attestation, CRA storage requirements, trigger timing
 - `guides/03-lockfile-discipline.md`: `npm ci` enforcement, `minimumReleaseAge` pattern, Renovate `lockFileMaintenance`, pinning vs range strategy, pnpm v11 specifics
 - `guides/04-provenance-verification.md`: npm `--provenance` flow, `npm audit signatures --include-attestations`, PyPI PEP 740 state (good adoption, no consumer enforcement yet), Cargo provenance roadmap
+
+- `guides/05-target-repository-audit.md`: First read for actual ecosystem, source and authorization boundaries.
+- `guides/06-explain-manifest-and-lockfile.md`: Beginner source-faithful dependency records, pinned npm v11 Legacy references, no installation.
 
 ### Worked examples (examples/)
 
 - `examples/happy-path-node-scanner-setup.md`: end-to-end Renovate + socket.dev + Snyk setup for a new Node.js monorepo; step-by-step with verification checklist
 - `examples/edge-case-critical-cve-triage.md`: triaging a critical CVE in a transitive dependency; the five-question workflow applied to a real lodash Prototype Pollution finding
 
+- `examples/read-manifest-fixture.md`: Requested range, recorded concrete version, transitive graph edge and pending teach-back.
+
 ### Output templates (templates/)
 
 - `templates/renovate-base-config.json`: ready-to-use Renovate config with `minimumReleaseAge`, `lockFileMaintenance`, grouping, and automerge for devDependencies
 - `templates/github-actions-sbom-workflow.yml`: 5-step SBOM generation + Sigstore attestation on tag push; Syft + `actions/attest-sbom@v2` + cold storage step
 - `templates/snyk-ci-gate.yml`: GitHub Actions Snyk scan step with `--severity-threshold=high --fail-on=upgradable`
+
+- `templates/manifest-reading-ledger.md`: Source/hash/locator preservation and declared versus observed evidence.
 
 ### Reports (reports/)
 
@@ -115,6 +124,6 @@ The SKILL.md at `../skills/dependency-audit-stinger/SKILL.md` is the master inde
 
 ---
 
-*Command Brief: [`ai-tools/command-briefs/dependency-audit-wasp-drone-command-brief.md`](../command-briefs/dependency-audit-wasp-drone-command-brief.md)*
+*Routing guide: [dependency-audit-wasp-drone](../skills/pest-controller-suit/guides/dependency-audit-wasp-drone.md)*
 *Created via The Wasp Nest AI Tools Factory pipeline. Part of the colony curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
 """

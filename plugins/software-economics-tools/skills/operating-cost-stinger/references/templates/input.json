@@ -1,0 +1,167 @@
+{
+  "currency": "USD",
+  "period": "month",
+  "observed_at": "2026-10-07",
+  "evidence": "Fictional math exercise. No vendor rates or architecture recommendation.",
+  "scenarios": [
+    {
+      "name": "low",
+      "providers": [
+        {
+          "name": "fictional-host",
+          "region": "fictional-region",
+          "plan": "fictional usage-floor plan",
+          "observed_at": "2026-10-07",
+          "source": "Fictional arithmetic assumptions; not live provider rates.",
+          "fee_mode": "minimum",
+          "fee_amount": "10",
+          "meters": [
+            {
+              "name": "compute",
+              "unit": "compute-hour/month",
+              "quantity": "5",
+              "allowance": "10",
+              "rate": "2"
+            }
+          ],
+          "credit_allocations": [
+            {
+              "pool": "shared-usage",
+              "amount": "0"
+            }
+          ]
+        }
+      ],
+      "credit_pools": [
+        {
+          "name": "shared-usage",
+          "amount": "10",
+          "scope": "usage",
+          "eligible_providers": [
+            "fictional-host"
+          ]
+        }
+      ],
+      "labor": [
+        {
+          "name": "operator cash",
+          "hours": "2",
+          "hourly_rate": "20",
+          "kind": "paid"
+        },
+        {
+          "name": "founder time",
+          "hours": "4",
+          "hourly_rate": "25",
+          "kind": "unpaid"
+        }
+      ]
+    },
+    {
+      "name": "base",
+      "providers": [
+        {
+          "name": "fictional-host",
+          "region": "fictional-region",
+          "plan": "fictional usage-floor plan",
+          "observed_at": "2026-10-07",
+          "source": "Fictional arithmetic assumptions; not live provider rates.",
+          "fee_mode": "minimum",
+          "fee_amount": "10",
+          "meters": [
+            {
+              "name": "compute",
+              "unit": "compute-hour/month",
+              "quantity": "30",
+              "allowance": "10",
+              "rate": "2"
+            }
+          ],
+          "credit_allocations": [
+            {
+              "pool": "shared-usage",
+              "amount": "10"
+            }
+          ]
+        }
+      ],
+      "credit_pools": [
+        {
+          "name": "shared-usage",
+          "amount": "10",
+          "scope": "usage",
+          "eligible_providers": [
+            "fictional-host"
+          ]
+        }
+      ],
+      "labor": [
+        {
+          "name": "operator cash",
+          "hours": "2",
+          "hourly_rate": "20",
+          "kind": "paid"
+        },
+        {
+          "name": "founder time",
+          "hours": "4",
+          "hourly_rate": "25",
+          "kind": "unpaid"
+        }
+      ]
+    },
+    {
+      "name": "high",
+      "providers": [
+        {
+          "name": "fictional-host",
+          "region": "fictional-region",
+          "plan": "fictional usage-floor plan",
+          "observed_at": "2026-10-07",
+          "source": "Fictional arithmetic assumptions; not live provider rates.",
+          "fee_mode": "minimum",
+          "fee_amount": "10",
+          "meters": [
+            {
+              "name": "compute",
+              "unit": "compute-hour/month",
+              "quantity": "60",
+              "allowance": "10",
+              "rate": "2"
+            }
+          ],
+          "credit_allocations": [
+            {
+              "pool": "shared-usage",
+              "amount": "10"
+            }
+          ]
+        }
+      ],
+      "credit_pools": [
+        {
+          "name": "shared-usage",
+          "amount": "10",
+          "scope": "usage",
+          "eligible_providers": [
+            "fictional-host"
+          ]
+        }
+      ],
+      "labor": [
+        {
+          "name": "operator cash",
+          "hours": "2",
+          "hourly_rate": "20",
+          "kind": "paid"
+        },
+        {
+          "name": "founder time",
+          "hours": "4",
+          "hourly_rate": "25",
+          "kind": "unpaid"
+        }
+      ]
+    }
+  ]
+}

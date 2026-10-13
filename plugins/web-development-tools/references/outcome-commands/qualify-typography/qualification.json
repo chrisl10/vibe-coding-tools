@@ -1,0 +1,32 @@
+{
+  "command": "qualify-typography",
+  "path": "packs/web-development-tools/commands/qualify-typography.md",
+  "command_sha256": "f496766bed36b3acb5667f17c7214f1339d22783a63fde14e08240a60a2a8fd0",
+  "scenarios": 5,
+  "source_hashes": 10,
+  "source_links": "PASS",
+  "host_gate": "PASS",
+  "ordered_gates": "PASS",
+  "queen": {
+    "exit_code": 0,
+    "findings": [],
+    "path": "/Users/marioaldayuz/Dev/legioncodeinc/the-wasp-nest-source/packs/web-development-tools/commands/qualify-typography.md",
+    "summary": {
+      "errors": 0,
+      "infos": 0,
+      "warnings": 0
+    }
+  },
+  "craft_review": {
+    "mode": "how-to",
+    "inverted_pyramid": "PASS",
+    "code_examples": "Not applicable; no executable code examples",
+    "voice_and_house_style": "PASS; imperative workflow, no em dashes",
+    "reader_lens": "PASS; actual owner/tool/prerequisite preflight",
+    "structural_completeness": "PASS; inputs, scoped owners, proof, gates, report",
+    "open_suggestions": [
+      "Native host and real product execution remain unproven; source qualification is bounded."
+    ]
+  },
+  "forge_status": "Stages 1-6 complete. Stage 7 catalog/projections integration is parent-owned."
+}

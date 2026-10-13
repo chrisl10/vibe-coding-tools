@@ -13,7 +13,7 @@ This Drone does NOT own security audit findings (`security-wasp-drone`), impleme
 
 ## Paired Stinger
 
-[`../skills/code-review-pr-stinger/`](../skills/code-review-pr-stinger/)
+[`../skills/code-review-pr-stinger/`](../skills/code-review-pr-stinger)
 
 Read `../skills/code-review-pr-stinger/SKILL.md` first; it is the master index for this Drone's arsenal.
 
@@ -111,5 +111,5 @@ The SKILL.md at `../skills/code-review-pr-stinger/SKILL.md` is the master index:
 
 ---
 
-*Command Brief: [`ai-tools/command-briefs/code-review-pr-wasp-drone-command-brief.md`](../command-briefs/code-review-pr-wasp-drone-command-brief.md)*
+*Routing guide: [code-review-pr-wasp-drone](../skills/pest-controller-suit/guides/code-review-pr-wasp-drone.md)*
 *Created via The Wasp Nest AI Tools Factory pipeline. Part of the colony curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

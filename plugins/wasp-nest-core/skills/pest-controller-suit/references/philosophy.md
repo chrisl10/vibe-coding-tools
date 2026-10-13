@@ -21,7 +21,7 @@ The colony is built on the second bet. Every Drone has a single, narrow domain; 
 
 ## The ritual
 
-When [`queen-wasp-stinger`](../../queen-wasp-stinger/) forges a new Drone and Stinger pair, registration with Pest-Controller-Suit is the final step. Unregistered Drones are invisible. The pipeline is:
+When [`queen-wasp-stinger`](../../queen-wasp-stinger) forges a new Drone and Stinger pair, registration with Pest-Controller-Suit is the final step. Unregistered Drones are invisible. The pipeline is:
 
 1. Topic.
 2. Research.

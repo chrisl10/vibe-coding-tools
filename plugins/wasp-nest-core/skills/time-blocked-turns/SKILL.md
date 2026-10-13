@@ -26,6 +26,8 @@ Track the active work unit's start, deadline, latest substantive progress, attem
 
 Apply the same discipline to a one-step lookup and a long implementation. Scale the work and report to the task. A lookup needs its relevant lookup check; it does not need a plan, test suite, worker, or full audit merely to satisfy the format.
 
+For a resumed compacted context, use [the recovery worksheet](references/recover-after-compaction.md) to restore evidence, ownership and the original allowance before dependent work. This adds no rules or timer; the canonical operating instructions remain authoritative.
+
 ## Portable use
 
 For an AI without skills, give it the complete [Agent operating instructions](references/agent-instructions.md) as user or project instructions before assigning the task. Replace the controlling user's name only if needed. The protocol needs no product-specific API.

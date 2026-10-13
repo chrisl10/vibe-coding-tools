@@ -1,0 +1,138 @@
+{
+  "model": "monthly-operating-cost-v1",
+  "currency": "USD",
+  "period": "month",
+  "observed_at": "2026-10-07",
+  "evidence": "Fictional math exercise. No vendor rates or architecture recommendation.",
+  "scenarios": [
+    {
+      "name": "low",
+      "providers": [
+        {
+          "name": "fictional-host",
+          "region": "fictional-region",
+          "plan": "fictional usage-floor plan",
+          "observed_at": "2026-10-07",
+          "source": "Fictional arithmetic assumptions; not live provider rates.",
+          "meters": [
+            {
+              "name": "compute",
+              "unit": "compute-hour/month",
+              "quantity": "5",
+              "allowance": "10",
+              "rate": "2",
+              "billable_quantity": "0",
+              "cost": "0"
+            }
+          ],
+          "gross_usage": "0",
+          "usage_credit": "0",
+          "fee_mode": "minimum",
+          "fee_amount": "10",
+          "before_total_credit": "10",
+          "total_credit": "0",
+          "cash_cost": "10"
+        }
+      ],
+      "credit_pools": [
+        {
+          "name": "shared-usage",
+          "available": "10",
+          "allocated": "0",
+          "unused": "10"
+        }
+      ],
+      "provider_cash": "10",
+      "paid_operator_labor": "40",
+      "monthly_cash_estimate": "50",
+      "unpaid_time_valuation": "100",
+      "monthly_cost_with_time_valuation": "150"
+    },
+    {
+      "name": "base",
+      "providers": [
+        {
+          "name": "fictional-host",
+          "region": "fictional-region",
+          "plan": "fictional usage-floor plan",
+          "observed_at": "2026-10-07",
+          "source": "Fictional arithmetic assumptions; not live provider rates.",
+          "meters": [
+            {
+              "name": "compute",
+              "unit": "compute-hour/month",
+              "quantity": "30",
+              "allowance": "10",
+              "rate": "2",
+              "billable_quantity": "20",
+              "cost": "40"
+            }
+          ],
+          "gross_usage": "40",
+          "usage_credit": "10",
+          "fee_mode": "minimum",
+          "fee_amount": "10",
+          "before_total_credit": "30",
+          "total_credit": "0",
+          "cash_cost": "30"
+        }
+      ],
+      "credit_pools": [
+        {
+          "name": "shared-usage",
+          "available": "10",
+          "allocated": "10",
+          "unused": "0"
+        }
+      ],
+      "provider_cash": "30",
+      "paid_operator_labor": "40",
+      "monthly_cash_estimate": "70",
+      "unpaid_time_valuation": "100",
+      "monthly_cost_with_time_valuation": "170"
+    },
+    {
+      "name": "high",
+      "providers": [
+        {
+          "name": "fictional-host",
+          "region": "fictional-region",
+          "plan": "fictional usage-floor plan",
+          "observed_at": "2026-10-07",
+          "source": "Fictional arithmetic assumptions; not live provider rates.",
+          "meters": [
+            {
+              "name": "compute",
+              "unit": "compute-hour/month",
+              "quantity": "60",
+              "allowance": "10",
+              "rate": "2",
+              "billable_quantity": "50",
+              "cost": "100"
+            }
+          ],
+          "gross_usage": "100",
+          "usage_credit": "10",
+          "fee_mode": "minimum",
+          "fee_amount": "10",
+          "before_total_credit": "90",
+          "total_credit": "0",
+          "cash_cost": "90"
+        }
+      ],
+      "credit_pools": [
+        {
+          "name": "shared-usage",
+          "available": "10",
+          "allocated": "10",
+          "unused": "0"
+        }
+      ],
+      "provider_cash": "90",
+      "paid_operator_labor": "40",
+      "monthly_cash_estimate": "130",
+      "unpaid_time_valuation": "100",
+      "monthly_cost_with_time_valuation": "230"
+    }
+  ]
+}

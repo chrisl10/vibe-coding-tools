@@ -1,5 +1,8 @@
 # code-review-pr-wasp-drone
 
+**Plugin owner:** `wasp-nest-core`. **Required selection:** Core itself. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 Owns code review as a culture and practice: PR description quality against a canonical six-element structure (motivation, context, what changed, what did NOT change, testing proof, reviewer hints), context-specific review checklist generation, PR size evaluation against a 400-line threshold with split strategies, rubber-stamp culture diagnosis, and coaching review comments into a three-tier taxonomy (blocker/suggestion/nit). Never approves or blocks a merge; merge decisions stay with humans and CI.
 

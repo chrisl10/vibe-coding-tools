@@ -1,12 +1,15 @@
 # electron-app-wasp-drone
 
+**Plugin owner:** `backend-and-desktop-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 
 This Drone owns Electron application engineering: main, preload, renderer, typed IPC, sandboxing, navigation and permission policy, packaging integration, and native desktop verification. It does not claim reverse-engineering ownership for third-party Electron binaries.
 
 ## Paired Stinger
 
-[electron-app-stinger](../../electron-app-stinger) - current primary-source security and IPC patterns plus native evidence guidance.
+[electron-app-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/electron-app-stinger) - current primary-source security and IPC patterns plus native evidence guidance.
 
 ## Trigger phrases
 

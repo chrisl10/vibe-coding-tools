@@ -1,5 +1,7 @@
 # Provenance Verification + Publish-Time Guards
 
+> Preserved Hivemind npm case. Read [target repository audit](05-target-repository-audit.md) first; use the package-specific paths, guards and commands below only when the inspected target has them. Recheck vendor/version claims against current primary documentation before recommending or changing tools.
+
 > **Research source:** `research/external/04-npm-provenance-sigstore-2026.md` (HIGH)
 
 Two things protect the integrity of what `@deeplake/hivemind` ships: npm provenance (proof of where the package was built) and the repo's own publish-time guards (proof that nothing unexpected got into the tarball). This guide covers both.
@@ -22,7 +24,7 @@ Requirements:
 - Generates a Sigstore attestation automatically - no signing keys to manage
 - The attestation is stored in the npm registry and visible at `npmjs.com/package/@deeplake/hivemind/v/<version>`
 
-`publishConfig.access` is already `public` in `package.json`, so adding `--provenance` to the release publish step is the only change needed. Wire it into the existing `release.yaml` publish step.
+Treat those paths as retained case facts. Verify actual runner/provider, repository metadata, package visibility, publish method and authorization. Current npm trusted publishing can generate provenance automatically without the flag; see the [fresh release digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/dependency-audit-stinger/references/research/release-evidence/digest.md). Do not change release configuration or publish from this guide alone.
 
 ### Verifying provenance as a consumer
 
@@ -34,7 +36,7 @@ npm audit signatures
 npm audit signatures --json --include-attestations
 ```
 
-`npm audit signatures` checks registry ECDSA signatures and SLSA provenance attestations against the Sigstore trust root. The `--include-attestations` flag (merged March 2026) emits the full bundle as JSON for automated verification. Source: `research/external/04-npm-provenance-sigstore-2026.md`.
+The current npm audit manual documents signature checks and include-attestations output. Verify the installed CLI supports those flags and preserve actual output; the [fresh audit capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/dependency-audit-stinger/references/research/release-evidence/raw/npm-audit.txt) is documentation, not an executed consumer verification.
 
 ### What provenance does and does not tell you
 
@@ -45,11 +47,11 @@ npm audit signatures --json --include-attestations
 
 ## The publish-time guards (this repo's own controls)
 
-Provenance proves the build pipeline; these guards prove the *contents* of the tarball. They are already wired into `package.json` and must not be weakened.
+Provenance proves the build pipeline; these guards inspect bounded aspects of the tarball contents. They are already wired into `package.json` and must not be weakened.
 
 ### Guard 1: the `files` allowlist
 
-`package.json` `files` is an allowlist, not a denylist. Only the listed paths ship: `bundle`, the harness bundles (`codex`, `cursor`, `hermes`, `pi`, `openclaw`), `mcp/bundle`, `.claude-plugin`, `scripts`, `README.md`, `LICENSE`. Anything not listed - source, tests, secrets, scratch files - never reaches the registry. Adding a broad entry (or a `.npmignore` that fights the allowlist) is a supply-chain regression: review any change here.
+`package.json` `files` is an allowlist, not a denylist. The retained case lists: `bundle`, the harness bundles (`codex`, `cursor`, `hermes`, `pi`, `openclaw`), `mcp/bundle`, `.claude-plugin`, `scripts`, `README.md`, `LICENSE`. Inspect the actual tarball to establish inclusion; npm also has automatically included files and packing rules. A files list alone cannot prove that secrets or unexpected content are absent. Adding a broad entry (or a `.npmignore` that fights the allowlist) is a supply-chain regression: review any change here.
 
 ### Guard 2: `pack-check.mjs`
 

@@ -1,0 +1,3 @@
+# Manifest-learning evidence provenance
+
+`source-claims.json` resolves every `source` against the loaded dependency-audit-stinger skill root. Exact fixture bytes and quoted lines are preserved. The adjacent qualification, parent-review and semantic-review files retain the original staging review as historical evidence; their staged status and zero canonical-edits statement describe that earlier snapshot. They are not final Security or Quality clearance. Current promotion checks are recorded in the source repository report at `docs/reports/2026-10-07-outcome-forge/unit3/manifest-learning-evidence/proof.json`; independent ordered gates belong to the parent.

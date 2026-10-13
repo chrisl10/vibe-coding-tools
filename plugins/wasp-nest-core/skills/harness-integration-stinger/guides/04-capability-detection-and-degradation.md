@@ -4,6 +4,10 @@
 
 ---
 
+## Current selected availability and fallback
+
+For current Wasp Nest dispatch, use [selected-availability proof](08-prove-selected-availability.md), [direct skill fallback](09-use-skill-fallback.md) and [installed-host qualification](10-qualify-installed-host-release.md). These procedures supersede the historical static capability and unattended-remediation readings below. A filesystem probe proves presence only; native tools, network access, permission and capacity require current session evidence.
+
 ## Detect first, wire second
 
 Before wiring a capability into a harness, decide whether that harness is even present and what it supports. Two working patterns, in order of preference:
@@ -30,17 +34,11 @@ A detection step that mutates state runs on every check and corrupts idempotency
 
 ---
 
-## Concrete evidence that per-harness capability differs even on basics
+## Historical static profiles are not current capability evidence
 
-A working capability-detection tool's static profile table (`research/external/2026-08-14-skills-compat-capability-detection.md`) shows real variance across three of the four Wasp Nest harnesses plus a peer tool:
+The August 2026 third-party scanner snapshot in `research/external/2026-08-14-skills-compat-capability-detection.md` is retained as historical research. Its static table and statement that Codex has no built-in web search must not control current dispatch. Inspect the actual session's exposed tools, permissions, version and selected resources. [Fresh official/source evidence](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/harness-integration-stinger/references/research/availability-proof/distilled-availability.md) supports separate skill, subagent and permission surfaces; it does not certify this session's network access or native role activation.
 
-| Platform | Declared capabilities |
-|---|---|
-| Claude Code | `bash` `file_read` `file_write` `web_search` `web_fetch` `python_runtime` `lsp` `notebook` `subagent` `monitor` |
-| Cursor | `bash` `file_read` `file_write` `web_search` (partial confidence) |
-| Codex CLI | `bash` `file_read` `file_write` `python_runtime` - **no `web_search`** |
-
-"Codex CLI has network blocked by default in all sandbox modes - there is no built-in web_search." This independently corroborates the network-sandbox research already established for Codex (`workspace-write` mode has network off by default) from a capability-detection angle: **never assume outbound network access is available to a Codex-targeted capability just because it works in Claude Code or Cursor.** Detect it, or degrade explicitly when it's missing.
+A home/config directory proves presence, not selection or successful discovery. MCP handshake fields describe a negotiated connection and declared capabilities, not every host-local skill, role, account permission or free worker slot.
 
 ---
 
@@ -74,16 +72,9 @@ Use build-time classification when you're authoring or reviewing an integration 
 
 ---
 
-## Deciding whether a fix can run unattended
+## Remediation classification does not authorize effects
 
-From the same capability scanner's fix-classification matrix, tag every remediation path on two independent axes:
-
-| Axis | Values | Meaning |
-|---|---|---|
-| Safety | `SAFE` / `MANUAL` | Is it safe to run this fix unattended? |
-| Actor | `agent_or_user` / `user_only` | Who is allowed to run it? |
-
-A missing optional dependency with a package-manager install fix is `SAFE · agent_or_user` - an agent may run it. A fix that requires editing the capability's own logic to swap approaches is `MANUAL · user_only` - surface the recommendation, never execute it. Apply the same two-axis judgment whenever a harness-integration finding recommends a fix: say plainly whether it's something the agent can just do, or something that needs a human decision, and never let "graceful degradation" quietly become "the agent silently changed its own approved capability surface."
+A scanner's SAFE/MANUAL or agent_or_user/user_only label is advisory evidence, not task authority. Preserve the requested approach and scope. Installation, activation, configuration changes, sends, account access and spend require their own applicable user authorization and host permissions. Do not install a package merely because a scanner says SAFE. A permitted local draft or read-only check may proceed within existing authorization. Use [the personal-action sheet](../templates/personal-work-action-sheet.md) for exact target, payload, tool access and action-specific authority.
 
 ---
 

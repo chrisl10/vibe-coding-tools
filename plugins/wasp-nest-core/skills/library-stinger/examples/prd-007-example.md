@@ -18,6 +18,9 @@ Lifecycle moves:
   backlog/ -> in-work/ -> completed/   (entire prd-007-user-data-export/ folder moves)
 -->
 
+> Example context: Project-relative links in this worked document describe the illustrated target repository. They are not bundled Core resources or proof that those project files exist in this packaging checkout.
+
+
 # PRD-007: User data export
 
 > **Status:** Backlog

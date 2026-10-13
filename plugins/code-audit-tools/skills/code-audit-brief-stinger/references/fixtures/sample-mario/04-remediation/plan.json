@@ -1,0 +1,112 @@
+{
+  "contract": "1.0",
+  "refined": true,
+  "generated_by": "remediation-planning-wasp-drone",
+  "generated_at": "2026-09-30T14:00:00+00:00",
+  "inputs": {
+    "workspace": "/work/acme-dashboard-code-audit/2026-09-30-mario",
+    "finding_count": 18,
+    "merged_duplicates": 1
+  },
+  "library": {
+    "present": false,
+    "consent_state": "not-asked",
+    "approved_files": []
+  },
+  "waves": {
+    "now": [
+      "WP-001",
+      "WP-002"
+    ],
+    "next": [
+      "WP-003",
+      "WP-004"
+    ],
+    "later": [
+      "WP-005"
+    ]
+  },
+  "items": [
+    {
+      "id": "WP-001",
+      "title": "Authorize the team server actions",
+      "finding_ids": [
+        "SEC-NEXT-001"
+      ],
+      "merged_duplicate_ids": [
+        "SEC-GEN-003"
+      ],
+      "max_severity": "critical",
+      "impact": "Stops any visitor from deleting another team's data.",
+      "effort": "S",
+      "risk": "low",
+      "wave": "now",
+      "owner_drone": "nextjs-security-wasp-drone",
+      "depends_on": []
+    },
+    {
+      "id": "WP-002",
+      "title": "Verify Stripe webhook signatures",
+      "finding_ids": [
+        "SEC-NODE-004"
+      ],
+      "max_severity": "high",
+      "impact": "Fake payment events stop unlocking paid plans.",
+      "effort": "S",
+      "risk": "low",
+      "wave": "now",
+      "owner_drone": "polyglot-security-wasp-drone",
+      "depends_on": []
+    },
+    {
+      "id": "WP-003",
+      "title": "Lock down the image proxy",
+      "finding_ids": [
+        "SEC-NEXT-002"
+      ],
+      "max_severity": "high",
+      "impact": "The server can no longer be used to read internal services.",
+      "effort": "M",
+      "risk": "medium",
+      "wave": "next",
+      "owner_drone": "nextjs-security-wasp-drone",
+      "depends_on": []
+    },
+    {
+      "id": "WP-004",
+      "title": "Run tests in CI and cover billing",
+      "finding_ids": [
+        "FND-CI-003",
+        "QA-TEST-001"
+      ],
+      "max_severity": "high",
+      "impact": "Billing changes are tested before they merge.",
+      "effort": "L",
+      "risk": "low",
+      "wave": "next",
+      "owner_drone": "ci-release-wasp-drone",
+      "depends_on": [
+        "WP-002"
+      ]
+    },
+    {
+      "id": "WP-005",
+      "title": "Merge the report pages and split buildReport",
+      "finding_ids": [
+        "BLOAT-DUP-001",
+        "BLOAT-SIZE-002"
+      ],
+      "max_severity": "medium",
+      "impact": "Report fixes land once.",
+      "effort": "L",
+      "risk": "medium",
+      "wave": "later",
+      "owner_drone": "typescript-node-wasp-drone",
+      "depends_on": [
+        "WP-004"
+      ]
+    }
+  ],
+  "candidate_contracts": [],
+  "uncovered_finding_ids": []
+}

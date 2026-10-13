@@ -1,0 +1,44 @@
+{
+  "dimension": "security",
+  "verdict": "critical",
+  "summary": "One critical issue: a server action deletes any team's records without checking who is signed in. Fix that today; the rest is ordinary hardening.",
+  "measures": [
+    {
+      "key": "server_actions_unauth",
+      "label": "Server actions without an auth check",
+      "value": 3,
+      "unit": "of 14",
+      "band": "critical",
+      "threshold": "0",
+      "source": "nextjs-security-wasp-drone"
+    },
+    {
+      "key": "deps_known_vuln",
+      "label": "Dependencies with a known advisory",
+      "value": 2,
+      "unit": "packages",
+      "band": "moderate",
+      "threshold": "0 high or critical",
+      "source": "npm audit"
+    },
+    {
+      "key": "security_headers",
+      "label": "Security headers set (of 6 checked)",
+      "value": 4,
+      "unit": "of 6",
+      "band": "moderate",
+      "threshold": "6 of 6",
+      "source": "security-wasp-drone"
+    }
+  ],
+  "coverage": {
+    "files_scanned": 488,
+    "lines_scanned": 71230,
+    "skipped": [
+      "e2e/"
+    ],
+    "caps": [
+      "Semgrep rules ran with a 30-second per-file timeout; 2 files timed out and were read by hand."
+    ]
+  }
+}

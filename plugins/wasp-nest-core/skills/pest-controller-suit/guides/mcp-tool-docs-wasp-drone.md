@@ -1,12 +1,15 @@
 # mcp-tool-docs-wasp-drone
 
+**Plugin owner:** `documentation-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns the tool, API, and CLI documentation surface for any project: turning real source into a usable, honest reference. It covers schema-selected tool documentation (name, purpose, input schema, output shape, side effects, annotations where the protocol defines them, examples - MCP tools first and foremost), the TypeScript public API rendered via TypeDoc (and API Extractor where a reviewable public-API contract is needed), a CLI's command reference, doc-to-code drift detection, and changelog discipline tied to a released artifact's version. This is a documentation authority, not a protocol-correctness authority: it transcribes real behavior, it does not judge whether that behavior is right.
 
 Hivemind's MCP tools, TypeScript public API, and `hivemind` CLI remain fully documented as a worked example (`examples/*.md` in the paired stinger) - the Drone's domain is general, Hivemind is its best-documented instance, not its boundary.
 
 ## Paired Stinger
-[mcp-tool-docs-stinger](../../mcp-tool-docs-stinger) - general tool-doc, TypeScript API-reference, CLI-doc, doc-sync, and changelog guides, worked Hivemind examples, templates, and a 10-point done checklist.
+[mcp-tool-docs-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/documentation-tools/skills/mcp-tool-docs-stinger) - general tool-doc, TypeScript API-reference, CLI-doc, doc-sync, and changelog guides, worked Hivemind examples, templates, and a 10-point done checklist.
 
 ## Trigger phrases
 - "document the MCP tools"

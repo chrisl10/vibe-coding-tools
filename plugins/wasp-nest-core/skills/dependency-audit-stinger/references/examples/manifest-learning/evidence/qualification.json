@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-10-07T17:12:30.864359+00:00",
+  "status": "OPEN staged; parent independent promotion/review required",
+  "checks": {
+    "capture_hashes": 6,
+    "source_claim_records": 8,
+    "fixture_graph_edge": "PASS",
+    "local_links": 17,
+    "semantic_source_review": "PASS"
+  },
+  "unproven": [
+    "actual npm/Node runtime",
+    "installation",
+    "script execution",
+    "dependency security",
+    "learner comprehension"
+  ],
+  "canonical_edits": 0
+}

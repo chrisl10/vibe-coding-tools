@@ -1,10 +1,13 @@
 # image-optimization-wasp-drone
 
+**Plugin owner:** `web-development-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns how images are encoded, sized, delivered, and perceived in React/Next.js and plain HTML contexts: format selection (AVIF first, WebP fallback, never JPEG as primary), responsive srcset/sizes correctness, blur placeholders (LQIP, BlurHash-as-CSS-gradient, ThumbHash), next/image configuration including the Next.js 16 priority-to-preload shift, and CLI tooling (Sharp for pipelines, Squoosh for one-offs).
 
 ## Paired Stinger
-[image-optimization-stinger](../../image-optimization-stinger) - the format-selection decision tree, srcset/sizes calculation guide, placeholder tradeoff matrix, next/image API reference, and Sharp/Squoosh tooling notes.
+[image-optimization-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/image-optimization-stinger) - the format-selection decision tree, srcset/sizes calculation guide, placeholder tradeoff matrix, next/image API reference, and Sharp/Squoosh tooling notes.
 
 ## Trigger phrases
 - "optimize my images"

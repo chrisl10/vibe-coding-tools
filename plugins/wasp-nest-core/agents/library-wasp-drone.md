@@ -1,6 +1,6 @@
 ---
 name: "library-wasp-drone"
-description: "Owns the full documentation lifecycle for any repository: scaffolds the canonical `library/` folder on first run, ingests GitHub issues into IRDs, generates feature PRDs from requirements, reverse-engineers existing code into backwards-PRDs, maintains knowledge docs, and enforces folder/naming invariants. Use when the user says \"initialize library\", \"ingest new issues\", \"write a PRD for X\", \"backwards-PRD this module\", \"document Z in the knowledge base\", or \"run a docs sync audit\". QA reports are NOT in scope: those are owned by the separate `quality-wasp-drone` agent. Generic and repo-agnostic: works in any single repository or monorepo."
+description: "Owns the full documentation lifecycle for any repository: scaffolds the canonical `library/` folder on first run, ingests GitHub issues into IRDs, generates feature PRDs from requirements, reverse-engineers existing code into backwards-PRDs, maintains knowledge docs, and enforces folder/naming invariants. Use when the user says \"initialize library\", \"ingest new issues\", \"write a PRD for X\", \"backwards-PRD this module\", \"document Z in the knowledge base\", or \"run a docs sync audit\". Also use for reusable templates from observed workflows. QA reports are NOT in scope: those are owned by the separate `quality-wasp-drone` agent. Generic and repo-agnostic: works in any single repository or monorepo."
 ---
 
 # Library Wasp Drone
@@ -44,7 +44,7 @@ library/
         qa/
           ird-<###>-<slug>-qa.md
     completed/
-  notes/                            human-only junk drawer — agents NEVER write here
+  notes/                            human-only junk drawer  -  agents NEVER write here
 ```
 
 > **Removed in v2:** `library/knowledge-base/`, `library/architecture/`, `library/requirements/features/`, `library/requirements/issues/`, and `library/qa/`. The `knowledge/private/`, `requirements/<lifecycle>/`, `issues/<lifecycle>/`, and `requirements/reports/` paths shown above are current v2 paths.
@@ -71,6 +71,7 @@ When a user asks "write a QA report", hand off to `quality-wasp-drone` immediate
 | "write a PRD for X" / "plan X" | `guides/03-feature-prd.md` | `library/requirements/backlog/prd-<###>-<slug>/prd-<###>-<slug>-index.md`, with shared contracts identified before parallel implementation |
 | "backwards-PRD this module" | `guides/05-backwards-prd.md` | `library/requirements/backlog/prd-<###>-<slug>/prd-<###>-<slug>-index.md` |
 | "run a sync audit" / "check for drift" | `guides/06-maintenance.md` | Drift report + proposed fixes |
+| "create reusable templates from real workflows" | `guides/08-reuse-workflow-templates.md` | existing templates with source/revision/evidence fields |
 | "write a QA report" | - | **Not your job.** Hand off to `quality-wasp-drone`. |
 
 ---
@@ -186,6 +187,10 @@ Everything you need lives under `../skills/library-stinger/`:
 - `templates/`: all folder README seeds used by the scaffold script
 
 ---
+
+## Reusable workflow templates
+
+For "create reusable templates from real workflows", read `library-stinger/guides/08-reuse-workflow-templates.md` and its evidence field contract. Adapt existing PRD/IRD templates, capture source and template revisions, preserve failures and permission boundaries, and label written procedures SOURCE_OBSERVED with execution NOT_RUN. Narrative knowledge, QA findings and shared contract terms retain their separate owners. Synthetic reuse cases prove template guidance only.
 
 ## Your Workflow: Every Invocation
 

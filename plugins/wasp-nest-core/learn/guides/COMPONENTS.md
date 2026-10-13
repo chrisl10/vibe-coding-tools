@@ -22,4 +22,4 @@ Read the dedicated guides for [Drones](DRONES.md), [Stingers](STINGERS.md), [com
 
 Claude Code exposes plugin commands such as `/pest-controller` and `/smoke-it`. Codex and other harnesses may expose those flows as Stinger skills instead. [Harness Capabilities](../reference/HARNESS-CAPABILITIES.md) has the exact placement and limitations.
 
-To propose a new Drone, Stinger, command, hook, or pack, [open an issue](https://github.com/legioncodeinc/vibe-coding-tools/issues). This public tree is generated from private source, so a direct edit here would be replaced by a future release.
+To propose a new Drone, Stinger, command, hook, or pack, [open an issue](https://github.com/legioncodeinc/vibe-coding-tools/issues). This public tree is generated from the canonical source repository, so a direct edit here would be replaced by a future release.

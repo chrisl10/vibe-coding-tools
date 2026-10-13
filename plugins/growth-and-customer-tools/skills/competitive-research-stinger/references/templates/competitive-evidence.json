@@ -1,0 +1,64 @@
+{
+  "as_of": "2026-10-07",
+  "sources": [
+    {
+      "id": "vendor-a",
+      "url": "https://vendor.example/product",
+      "retrieved": "2026-10-01",
+      "kind": "vendor",
+      "archive": "vendor.txt",
+      "sha256": "f16d05ec6b29248d2c61adb1e9263f78e4f7bace1b955014a2d17872cfe4064d",
+      "freshness_days": 30
+    }
+  ],
+  "claims": [
+    {
+      "id": "feature-a",
+      "classification": "vendor_claim",
+      "statement": "Hypothetical vendor states feature A",
+      "source_ids": [
+        "vendor-a"
+      ],
+      "scope": "Vendor statement only; no execution proof"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "hypothetical-a",
+      "currency": "USD",
+      "horizon_months": 12,
+      "inputs": {
+        "eligible_accounts": {
+          "value": "1000",
+          "basis": "assumed",
+          "source_ids": [],
+          "rationale": "Hypothetical test value, not market evidence"
+        },
+        "reachable_fraction": {
+          "value": "0.2",
+          "basis": "assumed",
+          "source_ids": [],
+          "rationale": "Hypothetical test value, not market evidence"
+        },
+        "conversion_fraction": {
+          "value": "0.1",
+          "basis": "assumed",
+          "source_ids": [],
+          "rationale": "Hypothetical test value, not market evidence"
+        },
+        "capacity_accounts": {
+          "value": "12",
+          "basis": "assumed",
+          "source_ids": [],
+          "rationale": "Hypothetical test value, not market evidence"
+        },
+        "annual_price_per_account": {
+          "value": "1200",
+          "basis": "assumed",
+          "source_ids": [],
+          "rationale": "Hypothetical test value, not market evidence"
+        }
+      }
+    }
+  ]
+}

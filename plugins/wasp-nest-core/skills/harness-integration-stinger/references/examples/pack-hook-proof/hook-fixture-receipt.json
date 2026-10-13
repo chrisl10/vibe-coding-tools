@@ -1,0 +1,17 @@
+{
+  "top_level_payload": {
+    "result": {},
+    "validator_calls": 0,
+    "verdict": "unrecognized; no pass claim"
+  },
+  "nested_payload": {
+    "result": {},
+    "validator_calls": 1,
+    "verdict": "synthetic successful validator invocation"
+  },
+  "cursor_shaped_failure": {
+    "additional_context": "Wasp Nest component validation advisory:\nERROR src/commands/demo.md: validator reported 1 error(s). Inspect them through explicit approved validation; component is unverified.\nResolve failures or unavailable checks before registration."
+  },
+  "native_host_version": "UNKNOWN",
+  "native_event": "UNEXECUTED"
+}

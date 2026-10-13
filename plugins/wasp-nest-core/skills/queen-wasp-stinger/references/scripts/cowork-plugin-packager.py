@@ -60,6 +60,38 @@ COWORK_PLUGIN_MAX_FILES = 5000
 COWORK_WARN_RATIO = 0.8
 
 
+
+def checked_path(path):
+    path = Path(path)
+    if ".." in path.parts:
+        raise ValueError("archive path contains parent traversal")
+    if any("\\" in part or ":" in part or any(ord(c) < 32 or ord(c) == 127 for c in part) for part in path.parts if part != path.anchor):
+        raise ValueError("path contains a non-portable member name")
+    path = path.absolute()
+    aliases = {'/tmp': '/private/tmp', '/var': '/private/var', '/etc': '/private/etc'}
+    for entry in [*reversed(path.parents), path]:
+        if entry.is_symlink():
+            if sys.platform == 'darwin' and str(entry) in aliases and entry.resolve() == Path(aliases[str(entry)]):
+                continue
+            raise ValueError("archive path contains a symlink: %s" % entry)
+    return path.resolve()
+
+
+def checked_files(folder):
+    folder = checked_path(folder)
+    if not folder.is_dir():
+        raise ValueError("archive source must be a directory")
+    if folder.name in {"", ".", ".."} or any(c in folder.name for c in ("/", "\\", "\x00")):
+        raise ValueError("archive source name is not a single path component")
+    files = []
+    for path in sorted(folder.rglob("*")):
+        checked_path(path)
+        if path.is_file():
+            files.append(path)
+        elif not path.is_dir():
+            raise ValueError("archive source is not a regular file or directory")
+    return folder, files
+
 # ---------------------------------------------------------------------------
 # Frontmatter parsing (self-contained; not imported from other scripts)
 # ---------------------------------------------------------------------------
@@ -209,6 +241,7 @@ def check_skill_folder(folder):
 
 def validate_plugin_folder(root):
     findings = []
+    root, _ = checked_files(root)
 
     manifest_dir = root / ".claude-plugin"
     manifest = manifest_dir / "plugin.json"
@@ -283,11 +316,14 @@ def error_count(findings):
 # ---------------------------------------------------------------------------
 
 def package_plugin(folder, output_path):
+    folder, files = checked_files(folder)
+    output_path = checked_path(output_path)
+    if output_path == folder or folder in output_path.parents:
+        raise ValueError("archive output must be outside its source")
+    payload = [("%s/%s" % (folder.name, p.relative_to(folder).as_posix()), p.read_bytes()) for p in files]
     with zipfile.ZipFile(output_path, "w", zipfile.ZIP_DEFLATED) as zf:
-        for path in sorted(folder.rglob("*")):
-            if path.is_file():
-                arcname = "%s/%s" % (folder.name, path.relative_to(folder).as_posix())
-                zf.write(path, arcname)
+        for name, content in payload:
+            zf.writestr(name, content)
 
 
 def main(argv=None):
@@ -302,7 +338,11 @@ def main(argv=None):
         sys.stderr.write("error: not a directory: %s\n" % args.plugin_folder)
         return 2
 
-    findings = validate_plugin_folder(folder)
+    try:
+        findings = validate_plugin_folder(folder)
+    except ValueError as exc:
+        sys.stderr.write("error: %s\n" % exc)
+        return 2
 
     for sev, msg in findings:
         print("%s %s" % (sev, msg))
@@ -319,7 +359,7 @@ def main(argv=None):
 
     try:
         package_plugin(folder, output_path)
-    except OSError as exc:
+    except (OSError, ValueError) as exc:
         sys.stderr.write("error: could not write archive: %s\n" % exc)
         return 2
 

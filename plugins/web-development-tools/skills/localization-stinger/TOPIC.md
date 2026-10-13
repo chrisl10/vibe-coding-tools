@@ -1,0 +1,4 @@
+# O073 topic lock
+Implement localization and internationalization, including RTL, in an already selected web framework. Own locale routes and message resources, ICU message usage, plural selection, explicit Intl formatting, document language/direction, logical CSS and bidi isolation. Produce changed target code and a scoped evidence report when invoked on an authorized target.
+This forge is staging only. Actual framework integration, browser/accessibility, native surfaces and human linguistic review are NOT_RUN. No provider writes, resource installation, private translation content, app implementation, commits or publication are authorized in this forge.
+Owner: web-development-tools. Classification: specialist. Pair: localization-stinger / localization-wasp-drone. Core prerequisite remains wasp-nest-core. Browser testing requires the selected browser owner when requested; it is not a blanket prerequisite for writing a resource file.

@@ -1,0 +1,22 @@
+{
+  "name": "media-and-creative-tools",
+  "version": "3.0.0",
+  "description": "Create consented photography and integrate voice and video production.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./cursor-agents/elevenlabs-api-wasp-drone.md",
+    "./cursor-agents/heygen-api-wasp-drone.md",
+    "./cursor-agents/natural-photography-wasp-drone.md",
+    "./cursor-agents/product-demo-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/create-product-media.md"
+  ]
+}

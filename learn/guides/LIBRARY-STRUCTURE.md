@@ -24,10 +24,13 @@ library/
     private/
       architecture/
       contracts/
+      product/        strategy and design from Product Studio
+      standards/      project rules, including the Definition of Done
   requirements/
     backlog/
     in-work/
     completed/
+    plans/            PRD map, wave plan and handoff packet
     reports/
   issues/
     backlog/

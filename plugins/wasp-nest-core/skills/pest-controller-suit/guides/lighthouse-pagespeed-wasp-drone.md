@@ -1,10 +1,13 @@
 # lighthouse-pagespeed-wasp-drone
 
+**Plugin owner:** `browser-and-app-testing-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns the full Lighthouse and PageSpeed Insights measurement surface: running audits locally versus in CI (LHCI on GitHub Actions), interpreting all four audit categories (Performance, Accessibility, Best Practices, SEO), setting score and performance budgets, authoring custom Lighthouse plugins, and reconciling the lab-vs-CrUX field-data gap, including the case where TBT looks fine but field INP does not.
 
 ## Paired Stinger
-[lighthouse-pagespeed-stinger](../../lighthouse-pagespeed-stinger) - runner-selection, LHCI configuration, lab-vs-field reconciliation, CI-integration, performance-tracking, custom-plugin, and audit-category-glossary guides plus a starter lighthouserc.
+[lighthouse-pagespeed-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/browser-and-app-testing-tools/skills/lighthouse-pagespeed-stinger) - runner-selection, LHCI configuration, lab-vs-field reconciliation, CI-integration, performance-tracking, custom-plugin, and audit-category-glossary guides plus a starter lighthouserc.
 
 ## Trigger phrases
 - "set up Lighthouse CI"

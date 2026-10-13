@@ -10,6 +10,8 @@ Covers creating and managing PRDs (Product Requirement Documents) for planned pr
 
 ## Template
 
+When deriving reusable formats from existing work, also read [Guide 08](08-reuse-workflow-templates.md). The existing template carries source identity, evidence status and adaptation fields; copy no execution or approval claim without its actual evidence.
+
 Start from the blank fill-in template at `templates/prd-template.md`. Copy it to the correct v2 path and replace every placeholder.
 
 See `examples/prd-007-example.md` for a fully worked example.
@@ -69,7 +71,14 @@ library/requirements/backlog/prd-<###>-<kebab-slug>/
 
 ## Acceptance Criteria
 
-- [ ] Top-level acceptance criteria for the module as a whole.
+| ID | Given | When | Then |
+|---|---|---|---|
+| AC-1 | <starting state> | <action> | <observable, testable result> |
+
+## Definition of Done checklist
+
+- Inherits [Definition of Done revision <n>](../../../knowledge/private/standards/definition-of-done.md) when the project has one.
+- <Any PRD-specific done items>
 
 ## Contract dependencies
 

@@ -1,0 +1,1823 @@
+{
+ "schema": "nextjs-advisories/1",
+ "source": "GitHub Security Advisories for vercel/next.js, fetched 2026-09-30 via the repository advisories API",
+ "raw": "research/raw/advisory--ghsa-index-vercel-next-js.md",
+ "range_semantics": "introduced is inclusive, fixed is exclusive. fix_status 'unknown' means the advisory did not state a patched version at fetch time. 'no-fix-in-line' means the advisory lists no patch for that major line; upgrading to a supported line is the fix.",
+ "known_latest": {
+  "16": "16.3.8",
+  "15": "15.5.27",
+  "14": "14.2.35",
+  "13": "13.5.11",
+  "as_of": "2026-09-30",
+  "raw": "research/raw/next--npm-dist-tags-2026-09-30.md"
+ },
+ "support": {
+  "active_lts": "16",
+  "maintenance_lts": "15",
+  "unsupported_below": "15",
+  "raw": "research/raw/next--support-policy.md"
+ },
+ "precondition_help": {
+  "app_router": "app/ directory exists",
+  "pages_router": "pages/ directory exists",
+  "middleware": "middleware.* or proxy.* file exists",
+  "server_actions": "any 'use server' directive found",
+  "image_optimizer": "next/image used and images.unoptimized is not true",
+  "image_remote_patterns": "images.remotePatterns or images.domains configured",
+  "avif_input": "app optimizes AVIF source images (manual check)",
+  "windows_host": "server runs on Windows (manual check)",
+  "self_hosted": "not deployed on Vercel (vercel.json absent is only a hint; manual check)",
+  "cache_components": "cacheComponents true or experimental.useCache or 'use cache' found",
+  "draft_mode": "draftMode() used",
+  "next_og": "ImageResponse imported from next/og",
+  "dev_only": "affects next dev only; production not affected",
+  "rewrites": "rewrites() in next.config",
+  "rewrites_dynamic_host": "rewrites/redirects destination with a :param in the hostname",
+  "edge_runtime": "runtime = 'edge' found",
+  "custom_server_or_unpinned_host": "custom server (server.js using next()) or host header not pinned (manual check)",
+  "i18n": "i18n configured in next.config",
+  "i18n_single_locale": "i18n.locales has exactly one entry",
+  "turbopack_build": "production build uses Turbopack (default in 16 unless --webpack)",
+  "webpack_build": "build uses --webpack",
+  "metadata_image_routes": "opengraph-image or twitter-image route files exist",
+  "csp_nonce": "nonce-based CSP in middleware/proxy",
+  "before_interactive": "next/script with strategy beforeInteractive",
+  "dynamic_routes": "bracket [param] folders exist",
+  "root_catch_all": "root-level catch-all page ([...slug] at app/ or pages/ root)"
+ },
+ "advisories": [
+  {
+   "ghsa": "GHSA-h694-7cp9-m8p3",
+   "cve": null,
+   "severity": "medium",
+   "published": "2026-09-30",
+   "title": "Cache leak across root param values in nested 'use cache' functions",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "16.3.0",
+     "fixed": null,
+     "fix_status": "unknown"
+    }
+   ],
+   "preconditions": [
+    "cache_components"
+   ],
+   "note": "Advisory lists patched version as 16.3.? at fetch time.",
+   "raw": "advisory--2026-cache-poisoning-and-cache-leaks.md"
+  },
+  {
+   "ghsa": "GHSA-vcvr-r3jv-pc5j",
+   "cve": "CVE-2026-94545",
+   "severity": "critical",
+   "published": "2026-09-22",
+   "title": "Remote Code Execution in next/og ImageResponse (Node.js runtime) with attacker-controlled SVG values",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "16.2.0",
+     "fixed": "16.3.6",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "next_og"
+   ],
+   "note": "",
+   "raw": "advisory--2026-rewrites-ssrf-and-other.md"
+  },
+  {
+   "ghsa": "GHSA-3w37-wq28-93x7",
+   "cve": "CVE-2026-94544",
+   "severity": "medium",
+   "published": "2026-09-30",
+   "title": "Pending 'use cache' fill can leak Draft Mode content into regular responses",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "16.3.0",
+     "fixed": null,
+     "fix_status": "unknown"
+    }
+   ],
+   "preconditions": [
+    "cache_components",
+    "draft_mode"
+   ],
+   "note": "Advisory lists patched version as 16.3.? at fetch time.",
+   "raw": "advisory--2026-cache-poisoning-and-cache-leaks.md"
+  },
+  {
+   "ghsa": "GHSA-cjq9-62q9-8jv4",
+   "cve": "CVE-2026-94483",
+   "severity": "high",
+   "published": "2026-09-30",
+   "title": "Server-Side Request Forgery in Image Optimization through allow-listed remote hosts",
+   "cwe": [
+    "CWE-918"
+   ],
+   "owasp": "A01:2025",
+   "ranges": [
+    {
+     "introduced": "16.0.0",
+     "fixed": null,
+     "fix_status": "unknown"
+    }
+   ],
+   "preconditions": [
+    "image_remote_patterns"
+   ],
+   "note": "Advisory lists patched version as 16.3.? at fetch time. CWE taken from advisory title (SSRF); advisory record had no CWE field.",
+   "raw": "advisory--2026-image-optimizer.md"
+  },
+  {
+   "ghsa": "GHSA-39w2-rjm5-chcv",
+   "cve": "CVE-2026-94486",
+   "severity": "low",
+   "published": "2026-09-30",
+   "title": "Information disclosure in the development server's MCP endpoint (next dev only)",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "16.0.0",
+     "fixed": null,
+     "fix_status": "unknown"
+    }
+   ],
+   "preconditions": [
+    "dev_only"
+   ],
+   "note": "Production deployments not affected.",
+   "raw": "advisory--2026-rewrites-ssrf-and-other.md"
+  },
+  {
+   "ghsa": "GHSA-4jqv-mc3x-m676",
+   "cve": "CVE-2026-94543",
+   "severity": "medium",
+   "published": "2026-09-30",
+   "title": "Cache poisoning of SSG and ISR pages in self-hosted Pages Router apps",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "15.0.0",
+     "fixed": null,
+     "fix_status": "unknown"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": null,
+     "fix_status": "unknown"
+    }
+   ],
+   "preconditions": [
+    "pages_router",
+    "self_hosted"
+   ],
+   "note": "Patched versions listed as 15.5.? and 16.3.? at fetch time.",
+   "raw": "advisory--2026-cache-poisoning-and-cache-leaks.md"
+  },
+  {
+   "ghsa": "GHSA-mcj8-r9mp-w47p",
+   "cve": "CVE-2026-94484",
+   "severity": "medium",
+   "published": "2026-09-30",
+   "title": "Cache poisoning in SSG/ISR rendering with a root-level catch-all page",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "15.0.0",
+     "fixed": null,
+     "fix_status": "unknown"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": null,
+     "fix_status": "unknown"
+    }
+   ],
+   "preconditions": [
+    "root_catch_all"
+   ],
+   "note": "Patched versions listed as 15.5.? and 16.3.? at fetch time.",
+   "raw": "advisory--2026-cache-poisoning-and-cache-leaks.md"
+  },
+  {
+   "ghsa": "GHSA-f87g-xv8r-7p7x",
+   "cve": "CVE-2026-94485",
+   "severity": "medium",
+   "published": "2026-09-30",
+   "title": "Metadata image routes ignore dynamicParams (webpack builds)",
+   "cwe": [],
+   "owasp": "A01:2025",
+   "ranges": [
+    {
+     "introduced": "16.0.0",
+     "fixed": null,
+     "fix_status": "unknown"
+    }
+   ],
+   "preconditions": [
+    "app_router",
+    "webpack_build",
+    "metadata_image_routes"
+   ],
+   "note": "Patched version listed as 16.3.? at fetch time.",
+   "raw": "advisory--2026-rewrites-ssrf-and-other.md"
+  },
+  {
+   "ghsa": "GHSA-2xp9-vwfh-vxw4",
+   "cve": null,
+   "severity": "critical",
+   "published": "2026-08-25",
+   "title": "Unauthenticated Remote Code Execution in Image Optimization API when AVIF files are optimized",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "10.0.0",
+     "fixed": "15.5.24",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.3.3",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "image_optimizer",
+    "avif_input"
+   ],
+   "note": "Second range is written '< 16.3.3' in the advisory; read here as the 16.x line.",
+   "raw": "advisory--2026-image-optimizer.md"
+  },
+  {
+   "ghsa": "GHSA-p293-qw3h-jr36",
+   "cve": "CVE-2026-75604",
+   "severity": "critical",
+   "published": "2026-08-25",
+   "title": "Unauthenticated Remote Code Execution on Windows-hosted servers",
+   "cwe": [
+    "CWE-22"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.4.0",
+     "fixed": "15.5.24",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.3.3",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "windows_host"
+   ],
+   "note": "",
+   "raw": "advisory--2026-rewrites-ssrf-and-other.md"
+  },
+  {
+   "ghsa": "GHSA-p9j2-gv94-2wf4",
+   "cve": "CVE-2026-64645",
+   "severity": "high",
+   "published": "2026-07-21",
+   "title": "SSRF in rewrites (and open redirect in redirects) via attacker-controlled destination hostname",
+   "cwe": [
+    "CWE-918"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "12.0.0",
+     "fixed": "15.5.21",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.11",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "rewrites_dynamic_host"
+   ],
+   "note": "",
+   "raw": "advisory--2026-rewrites-ssrf-and-other.md"
+  },
+  {
+   "ghsa": "GHSA-4c39-4ccg-62r3",
+   "cve": "CVE-2026-64646",
+   "severity": "medium",
+   "published": "2026-07-21",
+   "title": "Unbounded Server Action payload in Edge runtime",
+   "cwe": [
+    "CWE-770"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.0.0",
+     "fixed": "15.5.21",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.11",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "server_actions",
+    "edge_runtime"
+   ],
+   "note": "",
+   "raw": "advisory--2026-server-actions.md"
+  },
+  {
+   "ghsa": "GHSA-89xv-2m56-2m9x",
+   "cve": "CVE-2026-64649",
+   "severity": "high",
+   "published": "2026-07-21",
+   "title": "SSRF in Server Actions on custom servers when the Host header is not pinned",
+   "cwe": [
+    "CWE-918"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "14.1.1",
+     "fixed": "15.5.21",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.11",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "server_actions",
+    "custom_server_or_unpinned_host"
+   ],
+   "note": "",
+   "raw": "advisory--2026-server-actions.md"
+  },
+  {
+   "ghsa": "GHSA-68g3-v927-f742",
+   "cve": "CVE-2026-64648",
+   "severity": "medium",
+   "published": "2026-07-21",
+   "title": "Cache confusion of response bodies for requests with bodies",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.0.0",
+     "fixed": "15.5.21",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.11",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [],
+   "note": "",
+   "raw": "advisory--2026-cache-poisoning-and-cache-leaks.md"
+  },
+  {
+   "ghsa": "GHSA-6gpp-xcg3-4w24",
+   "cve": "CVE-2026-64642",
+   "severity": "high",
+   "published": "2026-07-21",
+   "title": "Middleware / Proxy bypass in App Router apps built with Turbopack and a single i18n locale",
+   "cwe": [
+    "CWE-285"
+   ],
+   "owasp": "A01:2025",
+   "ranges": [
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.11",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router",
+    "middleware",
+    "i18n_single_locale",
+    "turbopack_build"
+   ],
+   "note": "",
+   "raw": "advisory--2026-middleware-proxy-bypasses.md"
+  },
+  {
+   "ghsa": "GHSA-m99w-x7hq-7vfj",
+   "cve": "CVE-2026-64641",
+   "severity": "high",
+   "published": "2026-07-21",
+   "title": "Denial of Service in App Router using Server Actions",
+   "cwe": [
+    "CWE-834"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.0.0",
+     "fixed": "15.5.21",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.11",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router",
+    "server_actions"
+   ],
+   "note": "",
+   "raw": "advisory--2026-server-actions.md"
+  },
+  {
+   "ghsa": "GHSA-4633-3j49-mh5q",
+   "cve": "CVE-2026-64647",
+   "severity": "medium",
+   "published": "2026-07-21",
+   "title": "Cache confusion of response bodies for requests with invalid UTF-8 bodies",
+   "cwe": [
+    "CWE-116"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.0.0",
+     "fixed": "15.5.21",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.11",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [],
+   "note": "",
+   "raw": "advisory--2026-cache-poisoning-and-cache-leaks.md"
+  },
+  {
+   "ghsa": "GHSA-q8wf-6r8g-63ch",
+   "cve": "CVE-2026-64644",
+   "severity": "medium",
+   "published": "2026-07-21",
+   "title": "Denial of Service in the Image Optimization API using SVGs",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "15.5.0",
+     "fixed": "15.5.21",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.11",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "image_optimizer"
+   ],
+   "note": "",
+   "raw": "advisory--2026-image-optimizer.md"
+  },
+  {
+   "ghsa": "GHSA-955p-x3mx-jcvp",
+   "cve": "CVE-2026-64643",
+   "severity": "medium",
+   "published": "2026-07-21",
+   "title": "Unauthenticated disclosure of internal Server Function endpoints",
+   "cwe": [
+    "CWE-201"
+   ],
+   "owasp": "A01:2025",
+   "ranges": [
+    {
+     "introduced": "13.0.0",
+     "fixed": "15.5.21",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.11",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router",
+    "server_actions"
+   ],
+   "note": "",
+   "raw": "advisory--2026-server-actions.md"
+  },
+  {
+   "ghsa": "GHSA-26hh-7cqf-hhc6",
+   "cve": "CVE-2026-45109",
+   "severity": "high",
+   "published": "2026-05-07",
+   "title": "Middleware / Proxy bypass via segment-prefetch routes (incomplete fix follow-up)",
+   "cwe": [
+    "CWE-288"
+   ],
+   "owasp": "A01:2025",
+   "ranges": [
+    {
+     "introduced": "15.2.0",
+     "fixed": "15.5.18",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.6",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router",
+    "middleware"
+   ],
+   "note": "",
+   "raw": "advisory--2026-middleware-proxy-bypasses.md"
+  },
+  {
+   "ghsa": "GHSA-267c-6grr-h53f",
+   "cve": "CVE-2026-44575",
+   "severity": "high",
+   "published": "2026-05-06",
+   "title": "Middleware / Proxy bypass in App Router applications via segment-prefetch routes",
+   "cwe": [
+    "CWE-288"
+   ],
+   "owasp": "A01:2025",
+   "ranges": [
+    {
+     "introduced": "15.2.0",
+     "fixed": "15.5.16",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router",
+    "middleware"
+   ],
+   "note": "",
+   "raw": "advisory--2026-middleware-proxy-bypasses.md"
+  },
+  {
+   "ghsa": "GHSA-ffhc-5mcf-pf4q",
+   "cve": "CVE-2026-44581",
+   "severity": "medium",
+   "published": "2026-05-06",
+   "title": "Cross-site scripting in App Router applications using CSP nonces behind shared caches",
+   "cwe": [
+    "CWE-79"
+   ],
+   "owasp": "A05:2025",
+   "ranges": [
+    {
+     "introduced": "13.4.0",
+     "fixed": "15.5.16",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router",
+    "csp_nonce"
+   ],
+   "note": "CWE taken from advisory title (XSS); advisory record had no CWE field.",
+   "raw": "advisory--2026-rewrites-ssrf-and-other.md"
+  },
+  {
+   "ghsa": "GHSA-vfv6-92ff-j949",
+   "cve": "CVE-2026-44582",
+   "severity": "low",
+   "published": "2026-05-06",
+   "title": "Cache poisoning via collisions in React Server Component cache-busting",
+   "cwe": [
+    "CWE-328"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.4.6",
+     "fixed": "15.5.16",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router"
+   ],
+   "note": "",
+   "raw": "advisory--2026-cache-poisoning-and-cache-leaks.md"
+  },
+  {
+   "ghsa": "GHSA-gx5p-jg67-6x7h",
+   "cve": "CVE-2026-44580",
+   "severity": "medium",
+   "published": "2026-05-06",
+   "title": "Cross-site scripting in beforeInteractive scripts with untrusted input",
+   "cwe": [
+    "CWE-79"
+   ],
+   "owasp": "A05:2025",
+   "ranges": [
+    {
+     "introduced": "13.0.0",
+     "fixed": "15.5.16",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "before_interactive"
+   ],
+   "note": "CWE taken from advisory title (XSS); advisory record had no CWE field.",
+   "raw": "advisory--2026-rewrites-ssrf-and-other.md"
+  },
+  {
+   "ghsa": "GHSA-mg66-mrh9-m8jx",
+   "cve": "CVE-2026-44579",
+   "severity": "high",
+   "published": "2026-05-06",
+   "title": "Denial of Service via connection exhaustion in applications using Cache Components",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "15.0.0",
+     "fixed": "15.5.16",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "cache_components"
+   ],
+   "note": "",
+   "raw": "advisory--2026-cache-poisoning-and-cache-leaks.md"
+  },
+  {
+   "ghsa": "GHSA-492v-c6pp-mqqv",
+   "cve": "CVE-2026-44574",
+   "severity": "high",
+   "published": "2026-05-06",
+   "title": "Middleware / Proxy bypass through dynamic route parameter injection",
+   "cwe": [
+    "CWE-288"
+   ],
+   "owasp": "A01:2025",
+   "ranges": [
+    {
+     "introduced": "15.4.0",
+     "fixed": "15.5.16",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "middleware",
+    "dynamic_routes"
+   ],
+   "note": "",
+   "raw": "advisory--2026-middleware-proxy-bypasses.md"
+  },
+  {
+   "ghsa": "GHSA-h64f-5h5j-jqjh",
+   "cve": "CVE-2026-44577",
+   "severity": "medium",
+   "published": "2026-05-06",
+   "title": "Denial of Service in the Image Optimization API",
+   "cwe": [
+    "CWE-770"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "10.0.0",
+     "fixed": "15.5.16",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "image_optimizer"
+   ],
+   "note": "",
+   "raw": "advisory--2026-image-optimizer.md"
+  },
+  {
+   "ghsa": "GHSA-c4j6-fc7j-m34r",
+   "cve": "CVE-2026-44578",
+   "severity": "high",
+   "published": "2026-05-06",
+   "title": "SSRF via WebSocket upgrade requests on self-hosted built-in Node server",
+   "cwe": [
+    "CWE-918"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.4.13",
+     "fixed": "15.5.16",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "self_hosted"
+   ],
+   "note": "CWE taken from advisory title (SSRF); advisory record had no CWE field. Vercel-hosted not affected.",
+   "raw": "advisory--2026-rewrites-ssrf-and-other.md"
+  },
+  {
+   "ghsa": "GHSA-wfc6-r584-vfw7",
+   "cve": "CVE-2026-44576",
+   "severity": "medium",
+   "published": "2026-05-06",
+   "title": "Cache poisoning in React Server Component responses",
+   "cwe": [
+    "CWE-436"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "14.2.0",
+     "fixed": "15.5.16",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router"
+   ],
+   "note": "",
+   "raw": "advisory--2026-cache-poisoning-and-cache-leaks.md"
+  },
+  {
+   "ghsa": "GHSA-36qx-fr4f-26g5",
+   "cve": "CVE-2026-44573",
+   "severity": "high",
+   "published": "2026-05-06",
+   "title": "Middleware / Proxy bypass in Pages Router applications using i18n (locale-less _next/data requests)",
+   "cwe": [
+    "CWE-285"
+   ],
+   "owasp": "A01:2025",
+   "ranges": [
+    {
+     "introduced": "12.2.0",
+     "fixed": "15.5.16",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "pages_router",
+    "i18n",
+    "middleware"
+   ],
+   "note": "CWE inferred from advisory class (authorization bypass); advisory record had no CWE field.",
+   "raw": "advisory--2026-middleware-proxy-bypasses.md"
+  },
+  {
+   "ghsa": "GHSA-8h8q-6873-q5fj",
+   "cve": "CVE-2026-23870",
+   "severity": "high",
+   "published": "2026-05-06",
+   "title": "Denial of Service with Server Components",
+   "cwe": [
+    "CWE-770"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.0.0",
+     "fixed": "15.5.16",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router"
+   ],
+   "note": "",
+   "raw": "advisory--dec-2025-to-2026-rsc-followups.md"
+  },
+  {
+   "ghsa": "GHSA-3g8h-86w9-wvmq",
+   "cve": "CVE-2026-44572",
+   "severity": "low",
+   "published": "2026-05-06",
+   "title": "Middleware / Proxy redirects can be cache-poisoned",
+   "cwe": [
+    "CWE-349"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "12.2.0",
+     "fixed": "15.5.16",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "middleware"
+   ],
+   "note": "",
+   "raw": "advisory--2026-middleware-proxy-bypasses.md"
+  },
+  {
+   "ghsa": "GHSA-q4gf-8mx6-v5v3",
+   "cve": "CVE-2026-23869",
+   "severity": "high",
+   "published": "2026-04-08",
+   "title": "Denial of Service with Server Components",
+   "cwe": [
+    "CWE-770"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.0.0",
+     "fixed": "15.5.15",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.2.3",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router"
+   ],
+   "note": "",
+   "raw": "advisory--dec-2025-to-2026-rsc-followups.md"
+  },
+  {
+   "ghsa": "GHSA-3x4c-7xq6-9pq8",
+   "cve": "CVE-2026-27980",
+   "severity": "medium",
+   "published": "2026-03-16",
+   "title": "Unbounded next/image disk cache growth can exhaust storage",
+   "cwe": [
+    "CWE-400"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "10.0.0",
+     "fixed": "15.5.14",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.1.7",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "image_optimizer",
+    "self_hosted"
+   ],
+   "note": "",
+   "raw": "advisory--2026-image-optimizer.md"
+  },
+  {
+   "ghsa": "GHSA-mq59-m269-xvcx",
+   "cve": "CVE-2026-27978",
+   "severity": "medium",
+   "published": "2026-03-16",
+   "title": "Origin null can bypass Server Actions CSRF checks",
+   "cwe": [
+    "CWE-352"
+   ],
+   "owasp": "A01:2025",
+   "ranges": [
+    {
+     "introduced": "16.0.1",
+     "fixed": "16.1.7",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "server_actions"
+   ],
+   "note": "",
+   "raw": "advisory--2026-server-actions.md"
+  },
+  {
+   "ghsa": "GHSA-jcc7-9wpm-mj36",
+   "cve": "CVE-2026-27977",
+   "severity": "medium",
+   "published": "2026-03-16",
+   "title": "Origin null can bypass allowedDevOrigins for internal dev endpoints (next dev only)",
+   "cwe": [
+    "CWE-1385"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "16.0.1",
+     "fixed": "16.1.7",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "dev_only"
+   ],
+   "note": "",
+   "raw": "advisory--2026-rewrites-ssrf-and-other.md"
+  },
+  {
+   "ghsa": "GHSA-h27x-g6w4-24gq",
+   "cve": "CVE-2026-27979",
+   "severity": "medium",
+   "published": "2026-03-16",
+   "title": "Unbounded postponed resume buffering can lead to DoS",
+   "cwe": [
+    "CWE-770"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "16.1.0",
+     "fixed": "16.1.7",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "cache_components"
+   ],
+   "note": "Precondition inferred (postponed resume belongs to partial prerendering); verify in advisory.",
+   "raw": "advisory--2026-rewrites-ssrf-and-other.md"
+  },
+  {
+   "ghsa": "GHSA-ggv3-7p47-pfv8",
+   "cve": "CVE-2026-29057",
+   "severity": "medium",
+   "published": "2026-03-16",
+   "title": "HTTP request smuggling in rewrites",
+   "cwe": [
+    "CWE-444"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "9.5.0",
+     "fixed": "15.5.13",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.1.7",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "rewrites"
+   ],
+   "note": "",
+   "raw": "advisory--2026-rewrites-ssrf-and-other.md"
+  },
+  {
+   "ghsa": "GHSA-9g9p-9gw9-jx7f",
+   "cve": "CVE-2025-59471",
+   "severity": "medium",
+   "published": "2026-01-26",
+   "title": "Denial of Service in Image Optimizer",
+   "cwe": [
+    "CWE-770"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "10.0.0",
+     "fixed": "15.0.0",
+     "fix_status": "no-fix-in-line"
+    },
+    {
+     "introduced": "15.0.0",
+     "fixed": "15.5.10",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.1.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "image_optimizer"
+   ],
+   "note": "",
+   "raw": "advisory--2026-image-optimizer.md"
+  },
+  {
+   "ghsa": "GHSA-5f7q-jpqc-wp7h",
+   "cve": "CVE-2025-59472",
+   "severity": "medium",
+   "published": "2026-01-26",
+   "title": "Denial of Service in Partial Pre Rendering",
+   "cwe": [
+    "CWE-770"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "16.1.0",
+     "fixed": "16.1.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "cache_components"
+   ],
+   "note": "Also affects 15.x canary builds used for PPR; canary lines are not modeled here.",
+   "raw": "advisory--2026-rewrites-ssrf-and-other.md"
+  },
+  {
+   "ghsa": "GHSA-h25m-26qc-wcjf",
+   "cve": "CVE-2026-23864",
+   "severity": "high",
+   "published": "2026-01-26",
+   "title": "Denial of Service with Server Components",
+   "cwe": [
+    "CWE-770"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.0.0",
+     "fixed": "15.0.0",
+     "fix_status": "no-fix-in-line"
+    },
+    {
+     "introduced": "15.0.0",
+     "fixed": "15.0.8",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.1.0",
+     "fixed": "15.1.12",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.2.0",
+     "fixed": "15.2.9",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.3.0",
+     "fixed": "15.3.9",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.4.0",
+     "fixed": "15.4.11",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.5.0",
+     "fixed": "15.5.10",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.0.11",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.1.0",
+     "fixed": "16.1.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router"
+   ],
+   "note": "",
+   "raw": "advisory--dec-2025-to-2026-rsc-followups.md"
+  },
+  {
+   "ghsa": "GHSA-5j59-xgg2-r9c4",
+   "cve": "CVE-2025-67779",
+   "severity": "high",
+   "published": "2025-12-11",
+   "title": "Denial of Service with Server Components (incomplete fix follow-up)",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.3.0",
+     "fixed": "14.0.0",
+     "fix_status": "no-fix-in-line"
+    },
+    {
+     "introduced": "14.0.0",
+     "fixed": "14.2.35",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.0.0",
+     "fixed": "15.0.7",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.1.0",
+     "fixed": "15.1.11",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.2.0",
+     "fixed": "15.2.8",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.3.0",
+     "fixed": "15.3.8",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.4.0",
+     "fixed": "15.4.10",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.5.0",
+     "fixed": "15.5.9",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.0.10",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router"
+   ],
+   "note": "",
+   "raw": "advisory--dec-2025-to-2026-rsc-followups.md"
+  },
+  {
+   "ghsa": "GHSA-w37m-7fhw-fmv9",
+   "cve": "CVE-2025-55183",
+   "severity": "medium",
+   "published": "2025-12-11",
+   "title": "Server Actions source code exposure",
+   "cwe": [
+    "CWE-200"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "15.0.0",
+     "fixed": "15.0.6",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.1.0",
+     "fixed": "15.1.10",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.2.0",
+     "fixed": "15.2.7",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.3.0",
+     "fixed": "15.3.7",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.4.0",
+     "fixed": "15.4.9",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.5.0",
+     "fixed": "15.5.8",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.0.9",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router",
+    "server_actions"
+   ],
+   "note": "CWE inferred (information exposure); advisory record had no CWE field.",
+   "raw": "advisory--dec-2025-to-2026-rsc-followups.md"
+  },
+  {
+   "ghsa": "GHSA-mwv6-3258-q52c",
+   "cve": "CVE-2025-55184",
+   "severity": "high",
+   "published": "2025-12-11",
+   "title": "Denial of Service with Server Components",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.3.0",
+     "fixed": "14.0.0",
+     "fix_status": "no-fix-in-line"
+    },
+    {
+     "introduced": "14.0.0",
+     "fixed": "14.2.34",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.0.0",
+     "fixed": "15.0.6",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.1.0",
+     "fixed": "15.1.10",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.2.0",
+     "fixed": "15.2.7",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.3.0",
+     "fixed": "15.3.7",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.4.0",
+     "fixed": "15.4.9",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.5.0",
+     "fixed": "15.5.8",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.0.9",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router"
+   ],
+   "note": "",
+   "raw": "advisory--dec-2025-to-2026-rsc-followups.md"
+  },
+  {
+   "ghsa": "GHSA-9qr9-h5gf-34mp",
+   "cve": "CVE-2025-55182",
+   "severity": "critical",
+   "published": "2025-12-03",
+   "title": "Remote code execution in React Server Components (React2Shell); Next.js alias CVE-2025-66478 (rejected as duplicate)",
+   "cwe": [
+    "CWE-502"
+   ],
+   "owasp": "A08:2025",
+   "ranges": [
+    {
+     "introduced": "15.0.0",
+     "fixed": "15.0.5",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.1.0",
+     "fixed": "15.1.9",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.2.0",
+     "fixed": "15.2.6",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.3.0",
+     "fixed": "15.3.6",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.4.0",
+     "fixed": "15.4.8",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.5.0",
+     "fixed": "15.5.7",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "16.0.0",
+     "fixed": "16.0.7",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router"
+   ],
+   "note": "Also affects 14.3.0-canary.77 and later 14.3 canaries; fix is to downgrade to stable 14.x.",
+   "raw": "advisory--cve-2025-55182-react2shell-rsc-rce.md"
+  },
+  {
+   "ghsa": "GHSA-4342-x723-ch2f",
+   "cve": "CVE-2025-57822",
+   "severity": "medium",
+   "published": "2025-08-29",
+   "title": "Improper middleware redirect handling leads to SSRF",
+   "cwe": [
+    "CWE-918"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "0.0.0",
+     "fixed": "14.2.32",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.0.0",
+     "fixed": "15.4.7",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "middleware"
+   ],
+   "note": "",
+   "raw": "advisory--2026-rewrites-ssrf-and-other.md"
+  },
+  {
+   "ghsa": "GHSA-xv57-4mr9-wg8v",
+   "cve": "CVE-2025-55173",
+   "severity": "medium",
+   "published": "2025-08-29",
+   "title": "Content injection for Image Optimization",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "0.0.0",
+     "fixed": "14.2.31",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.0.0",
+     "fixed": "15.4.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "image_optimizer"
+   ],
+   "note": "",
+   "raw": "advisory--2026-image-optimizer.md"
+  },
+  {
+   "ghsa": "GHSA-g5qg-72qw-gw5v",
+   "cve": "CVE-2025-57752",
+   "severity": "medium",
+   "published": "2025-08-29",
+   "title": "Cache key confusion for Image Optimization API routes",
+   "cwe": [
+    "CWE-524"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "0.0.0",
+     "fixed": "14.2.31",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.0.0",
+     "fixed": "15.4.5",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "image_optimizer"
+   ],
+   "note": "",
+   "raw": "advisory--2026-image-optimizer.md"
+  },
+  {
+   "ghsa": "GHSA-r2fc-ccr8-96c4",
+   "cve": "CVE-2025-49005",
+   "severity": "low",
+   "published": "2025-07-03",
+   "title": "Cache poisoning due to omission of Vary header",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "15.3.0",
+     "fixed": "15.3.3",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "app_router"
+   ],
+   "note": "",
+   "raw": "advisory--2026-cache-poisoning-and-cache-leaks.md"
+  },
+  {
+   "ghsa": "GHSA-67rr-84xm-4c7r",
+   "cve": "CVE-2025-49826",
+   "severity": "high",
+   "published": "2025-07-03",
+   "title": "DoS via cache poisoning",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "15.0.5",
+     "fixed": "15.2.0",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [],
+   "note": "",
+   "raw": "advisory--2026-cache-poisoning-and-cache-leaks.md"
+  },
+  {
+   "ghsa": "GHSA-qpjv-v59x-3qc4",
+   "cve": "CVE-2025-32421",
+   "severity": "low",
+   "published": "2025-05-14",
+   "title": "Race condition to cache poisoning",
+   "cwe": [
+    "CWE-362"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "0.0.0",
+     "fixed": "14.2.24",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.0.1",
+     "fixed": "15.1.6",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [],
+   "note": "",
+   "raw": "advisory--2026-cache-poisoning-and-cache-leaks.md"
+  },
+  {
+   "ghsa": "GHSA-223j-4rm8-mrmf",
+   "cve": "CVE-2025-30218",
+   "severity": "low",
+   "published": "2025-04-02",
+   "title": "x-middleware-subrequest-id may be leaked to external hosts",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "12.0.0",
+     "fixed": "12.3.6",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "13.0.0",
+     "fixed": "13.5.10",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "14.0.0",
+     "fixed": "14.2.26",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.0.0",
+     "fixed": "15.2.4",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "middleware"
+   ],
+   "note": "",
+   "raw": "advisory--cve-2025-29927-middleware-subrequest-bypass.md"
+  },
+  {
+   "ghsa": "GHSA-f82v-jwr5-mffw",
+   "cve": "CVE-2025-29927",
+   "severity": "critical",
+   "published": "2025-03-21",
+   "title": "Authorization bypass in Next.js Middleware via the x-middleware-subrequest header",
+   "cwe": [
+    "CWE-285"
+   ],
+   "owasp": "A01:2025",
+   "ranges": [
+    {
+     "introduced": "11.1.4",
+     "fixed": "12.3.5",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "13.0.0",
+     "fixed": "13.5.9",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "14.0.0",
+     "fixed": "14.2.25",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.0.0",
+     "fixed": "15.2.3",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "middleware"
+   ],
+   "note": "Older than 12 months; canonical example. Vercel-hosted deployments were automatically protected.",
+   "raw": "advisory--cve-2025-29927-middleware-subrequest-bypass.md"
+  },
+  {
+   "ghsa": "GHSA-3h52-269p-cp9r",
+   "cve": "CVE-2025-48068",
+   "severity": "low",
+   "published": "2025-05-28",
+   "title": "Information exposure in dev server due to lack of origin verification (next dev only)",
+   "cwe": [
+    "CWE-1385"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.0.0",
+     "fixed": "14.2.30",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.0.0",
+     "fixed": "15.2.2",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "dev_only"
+   ],
+   "note": "",
+   "raw": "advisory--2026-rewrites-ssrf-and-other.md"
+  },
+  {
+   "ghsa": "GHSA-7m27-7ghc-44w9",
+   "cve": "CVE-2024-56332",
+   "severity": "medium",
+   "published": "2025-01-03",
+   "title": "Denial of Service with Server Actions",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.0.0",
+     "fixed": "13.5.8",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "14.0.0",
+     "fixed": "14.2.21",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "15.0.0",
+     "fixed": "15.1.1",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "server_actions"
+   ],
+   "note": "Advisory range says < 15.1.1 but lists 15.1.2 as patched; range text used here.",
+   "raw": "advisory--2026-server-actions.md"
+  },
+  {
+   "ghsa": "GHSA-7gfc-8cq8-jh5f",
+   "cve": "CVE-2024-51479",
+   "severity": "high",
+   "published": "2024-12-17",
+   "title": "Authorization bypass in Next.js",
+   "cwe": [
+    "CWE-285"
+   ],
+   "owasp": "A01:2025",
+   "ranges": [
+    {
+     "introduced": "9.5.5",
+     "fixed": "14.2.15",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "middleware"
+   ],
+   "note": "",
+   "raw": "advisory--ghsa-index-vercel-next-js.md"
+  },
+  {
+   "ghsa": "GHSA-g77x-44xx-532m",
+   "cve": "CVE-2024-47831",
+   "severity": "medium",
+   "published": "2024-10-14",
+   "title": "Denial of Service in image optimization",
+   "cwe": [
+    "CWE-674"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "10.0.0",
+     "fixed": "14.2.7",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "image_optimizer"
+   ],
+   "note": "",
+   "raw": "advisory--2026-image-optimizer.md"
+  },
+  {
+   "ghsa": "GHSA-gp8f-8m3g-qvj9",
+   "cve": "CVE-2024-46982",
+   "severity": "high",
+   "published": "2024-09-17",
+   "title": "Cache poisoning",
+   "cwe": [],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.5.1",
+     "fixed": "13.5.7",
+     "fix_status": "fixed"
+    },
+    {
+     "introduced": "14.0.0",
+     "fixed": "14.2.10",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [],
+   "note": "",
+   "raw": "advisory--2026-cache-poisoning-and-cache-leaks.md"
+  },
+  {
+   "ghsa": "GHSA-fq54-2j52-jc42",
+   "cve": "CVE-2024-39693",
+   "severity": "high",
+   "published": "2024-07-10",
+   "title": "Denial of Service condition",
+   "cwe": [
+    "CWE-400"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.3.1",
+     "fixed": "13.5.0",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [],
+   "note": "",
+   "raw": "advisory--ghsa-index-vercel-next-js.md"
+  },
+  {
+   "ghsa": "GHSA-77r5-gw3j-2mpf",
+   "cve": "CVE-2024-34350",
+   "severity": "high",
+   "published": "2024-05-09",
+   "title": "HTTP request smuggling",
+   "cwe": [
+    "CWE-444"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.4.0",
+     "fixed": "13.5.1",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "rewrites"
+   ],
+   "note": "",
+   "raw": "advisory--ghsa-index-vercel-next-js.md"
+  },
+  {
+   "ghsa": "GHSA-fr5h-rqp8-mj6g",
+   "cve": "CVE-2024-34351",
+   "severity": "high",
+   "published": "2024-05-09",
+   "title": "SSRF in Server Actions",
+   "cwe": [
+    "CWE-918"
+   ],
+   "owasp": "A03:2025",
+   "ranges": [
+    {
+     "introduced": "13.4.0",
+     "fixed": "14.1.1",
+     "fix_status": "fixed"
+    }
+   ],
+   "preconditions": [
+    "server_actions"
+   ],
+   "note": "",
+   "raw": "advisory--2026-server-actions.md"
+  }
+ ]
+}

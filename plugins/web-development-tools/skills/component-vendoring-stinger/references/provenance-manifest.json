@@ -1,0 +1,15 @@
+{
+  "schema": "component-copy-evidence-v1",
+  "status": "TEMPLATE_NOT_EXECUTED",
+  "selection": {"product": null, "surface": null, "framework_version": null, "existing_primitive_review": null, "recommendation": null, "design_contract": null, "token_owner": null},
+  "upstream": {"repository_url": null, "revision": null, "package_version": null, "artifact_url": null, "artifact_sha256": null, "fetched_at": null},
+  "files": [{"upstream_path": null, "upstream_sha256": null, "local_path": null, "local_sha256": null, "license_evidence": [], "notices": [], "modifications": []}],
+  "notices": [{"source_path": null, "sha256": null, "required_destination": null, "retained_sha256": null, "scope_review": "UNKNOWN"}],
+  "prerequisites": {"runtime_dependencies": [], "registry_dependencies": [], "peer_versions": [], "assets": [], "actual_lockfile_review": "NOT_RUN", "bundle_review": "NOT_RUN"},
+  "rights_review": {"owner": null, "status": "UNKNOWN", "exceptions": [], "distribution_boundary": null},
+  "patch_history": [{"date": null, "reason": null, "upstream_base": null, "patch_path": null, "patch_sha256": null, "reviewer": null}],
+  "update_comparison": {"previous_revision": null, "candidate_revision": null, "original_to_candidate_diff": null, "original_to_local_diff": null, "notice_changes": null, "dependency_changes": null, "decision": "PENDING", "rollback_snapshot": null},
+  "authorization": {"copy_paths": [], "source": null, "dependency_install": "NOT_AUTHORIZED", "external_effects": "NOT_AUTHORIZED"},
+  "maintenance": {"owner": null, "review_due": null, "event_triggers": ["security advisory", "upstream breaking change", "notice or license change", "target framework change"]},
+  "proof": {"source_hashes": "NOT_RUN", "protected_notices": "NOT_RUN", "target_build": "NOT_RUN", "browser_interaction": "NOT_RUN", "accessibility": "NOT_RUN", "license_compatibility": "NOT_RUN", "native_host": "NOT_RUN"}
+}

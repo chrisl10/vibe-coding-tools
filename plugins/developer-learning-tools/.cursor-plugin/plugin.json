@@ -1,0 +1,25 @@
+{
+  "name": "developer-learning-tools",
+  "version": "3.0.0",
+  "description": "Explain technical sources with source-grounded analogies and learner checks.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
+  "license": "AGPL-3.0-or-later",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./cursor-agents/builder-readiness-wasp-drone.md",
+    "./cursor-agents/project-learning-wasp-drone.md",
+    "./cursor-agents/technical-explainer-wasp-drone.md",
+    "./cursor-agents/testing-coach-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/explain-this.md",
+    "./commands/learn-through-project.md",
+    "./commands/practice-tests.md",
+    "./commands/prepare-learning-exercise.md",
+    "./commands/prepare-to-build.md"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "documentation-tools",
+  "version": "3.0.0",
+  "description": "Refresh, extract, publish and package documentation from real sources.",
+  "author": {
+    "name": "Legion Code Inc.",
+    "url": "https://www.legioncodeinc.com"
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./agents/api-docs-wasp-drone.md",
+    "./agents/archivist-wasp-drone.md",
+    "./agents/docs-site-wasp-drone.md",
+    "./agents/kb-refresh-wasp-drone.md",
+    "./agents/library-packets-wasp-drone.md",
+    "./agents/markdown-mdx-content-pipeline-wasp-drone.md",
+    "./agents/mcp-tool-docs-wasp-drone.md",
+    "./agents/wiki-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/explain-repository.md",
+    "./commands/kb-refresh.md",
+    "./commands/library-packets.md"
+  ],
+  "dependencies": [
+    "wasp-nest-core"
+  ]
+}

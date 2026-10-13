@@ -1,0 +1,17 @@
+# Qualify reuse and prepare bounded waves
+
+Inspect only authorized source repositories, read-only. A useful donor is a specific committed module, not a product name or assumed reuse percentage. Record full commit/blob identity, license/notices, runtime, dependencies, source product authority, target contracts, adaptation owner, and adapter-plus-consumer checks in the [reuse ledger](../templates/reuse-ledger.md). Dirty donor content requires a distinct hash and explicit selection. Never copy credentials, customer fixtures, production accounts, prompt personas or sender defaults.
+
+List what must change when adopting a module: framework/ORM, identity hierarchy, provider routing, failure shape, runtime/toolchain and product prompts. A PDF stub or generic document exporter does not qualify a branded HTML renderer. Another app's passed tests do not prove this app's consumer. Native provider and runtime qualification stays in the later build gate.
+
+Prepare the [wave handoff](../templates/wave-handoff.md). Wave 0 freezes exact contracts and owner decisions. Wave 1 makes a runnable foundation. Wave 2 proves a small end-to-end spine before full feature fanout. Later waves follow data and business dependencies, then integrated Security, Quality and repository-health review. If an admission trigger requires a producer in another feature, move that producer ahead of the consumer's live exit rather than following numeric wave labels blindly.
+
+Use a dependency graph with one logical coordinator/integrator. [Capacity and review](../references/capacity-and-review.md) defines parallel and serial preparation modes. Count actual compatible waves together, including the parallel coordinator overhead; idle reviewer ceilings do not consume active workers. A single review slot is valid when Security precedes Quality. Neither review overlaps candidate changes, and changes between the reviews require a fresh Security pass. Nested workers must be explicit active shards, not hidden reservations. Reforecast from observed cycle time and repairs rather than a model benchmark or presumed parallel speedup.
+
+Lease exact disjoint paths; reserve package/lock/config/DTO/shared UI to one owner and schema/migrations to another. Subtree delegation must exclude that subtree from its parent's lease. Tests follow their owner, shared utilities remain single-owned. The bundled validator uses canonical disjoint prefixes and does not support wildcard/exclusion leases, so expand a complex lease to exact non-overlapping prefixes before validating.
+
+Use isolated Git worktrees when authorized. They permit separate checked-out branches while sharing repository history; they do not prevent semantic collisions or authorize destructive cleanup. Workers return candidates and evidence; the coordinator integrates in dependency order, with exact final SHAs. Never grade the combined app from one green shard.
+
+Hand off the [worker brief](../templates/worker-brief.md), inherited deadline and precise authority. A model/harness setting belongs to the user-approved environment. Missing native threading falls back to authorized serial preparation; do not silently configure a different harness/model.
+
+Grounding: Git worktree (source archive, summarized in the distillation) and source workflow (source archive, summarized in the distillation). The JSON fixture is first-party example policy, not a published ZCode scheduling API.

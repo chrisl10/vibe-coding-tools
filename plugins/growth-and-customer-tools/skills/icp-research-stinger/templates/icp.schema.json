@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ICP research output",
+  "description": "Machine-readable ideal customer profile produced by icp-research-stinger. Account- and role-level only; contains no personal data.",
+  "type": "object",
+  "required": ["company", "domain", "generated", "depth", "confidence", "primary_icp", "segments", "buying_committee", "disqualifiers", "positioning_gap", "coverage"],
+  "additionalProperties": false,
+  "properties": {
+    "company": { "type": "string" },
+    "domain": { "type": "string" },
+    "generated": { "type": "string", "format": "date" },
+    "purpose": { "type": "string", "description": "The purpose sentence from the research brief" },
+    "depth": { "enum": ["quick", "standard", "deep"] },
+    "tools": { "type": "array", "items": { "enum": ["exa", "firecrawl", "websearch", "webfetch", "manual"] } },
+    "degraded_mode": { "type": "boolean" },
+    "confidence": { "enum": ["high", "medium", "low"] },
+    "confidence_reason": { "type": "string", "description": "One sentence tied to grades and coverage (guide 06, step 9)" },
+    "summary": { "type": "string" },
+    "primary_icp": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "industries": { "$ref": "#/$defs/gradedList" },
+        "employee_bands": { "$ref": "#/$defs/gradedList" },
+        "geographies": { "$ref": "#/$defs/gradedList" },
+        "business_models": { "$ref": "#/$defs/gradedList" },
+        "company_stages": { "$ref": "#/$defs/gradedList" },
+        "technographics": { "$ref": "#/$defs/gradedList" }
+      }
+    },
+    "segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["tier", "name", "grade"],
+        "additionalProperties": false,
+        "properties": {
+          "tier": { "enum": [1, 2, 3] },
+          "name": { "type": "string" },
+          "rationale": { "type": "string" },
+          "grade": { "$ref": "#/$defs/grade" }
+        }
+      }
+    },
+    "buying_committee": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role", "title_pattern", "grade"],
+        "additionalProperties": false,
+        "properties": {
+          "role": { "enum": ["economic_buyer", "champion", "technical_buyer", "end_user", "procurement", "executive_sponsor"] },
+          "title_pattern": { "type": "string", "description": "Function and seniority, never a person's name" },
+          "cares_about": { "type": "array", "items": { "type": "string" } },
+          "grade": { "$ref": "#/$defs/grade" }
+        }
+      }
+    },
+    "pains": { "$ref": "#/$defs/gradedList" },
+    "triggers": { "$ref": "#/$defs/gradedList" },
+    "disqualifiers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["condition", "source_url"],
+        "additionalProperties": false,
+        "properties": {
+          "condition": { "type": "string" },
+          "source_url": { "type": "string", "format": "uri" }
+        }
+      }
+    },
+    "positioning_gap": {
+      "type": "array",
+      "description": "Stated claims without revealed support, and revealed segments the copy never mentions; an empty array means the comparison was made and found no gap",
+      "items": {
+        "type": "object",
+        "required": ["stated", "revealed"],
+        "additionalProperties": false,
+        "properties": {
+          "stated": { "type": "string" },
+          "revealed": { "type": "string" },
+          "implication": { "type": "string" }
+        }
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "description": "Weak or contested claims, never presented as findings",
+      "items": {
+        "type": "object",
+        "required": ["claim", "grade"],
+        "additionalProperties": false,
+        "properties": {
+          "claim": { "type": "string" },
+          "grade": { "enum": ["weak", "contested"] },
+          "why": { "type": "string" },
+          "would_confirm": { "type": "string" }
+        }
+      }
+    },
+    "next_steps": { "type": "array", "items": { "type": "string" } },
+    "coverage": {
+      "type": "object",
+      "required": ["lanes_covered", "lanes_missing", "items", "independent_domains"],
+      "additionalProperties": false,
+      "properties": {
+        "lanes_covered": { "type": "array", "items": { "$ref": "#/$defs/lane" } },
+        "lanes_missing": { "type": "array", "items": { "$ref": "#/$defs/lane" }, "description": "Lanes in the depth mode's lane set that produced no usable evidence; a Quick run does not list lanes outside its set" },
+        "limits": { "type": "array", "items": { "type": "string" }, "description": "Conflicts noted and what public research cannot see" },
+        "items": { "type": "integer", "minimum": 0 },
+        "independent_domains": { "type": "integer", "minimum": 0 },
+        "spend": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "grade": { "enum": ["strong", "moderate", "weak", "contested"] },
+    "lane": { "enum": ["onsite", "customers", "market", "hiring", "voice", "news", "technographic"] },
+    "gradedList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["value", "grade"],
+        "additionalProperties": false,
+        "properties": {
+          "value": { "type": "string" },
+          "grade": { "$ref": "#/$defs/grade" },
+          "independent_domains": { "type": "integer", "minimum": 0 },
+          "revealed": { "type": "integer", "minimum": 0 }
+        }
+      }
+    }
+  }
+}

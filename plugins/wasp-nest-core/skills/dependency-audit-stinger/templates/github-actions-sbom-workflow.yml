@@ -1,6 +1,9 @@
 # SBOM Generation + Sigstore Attestation for @deeplake/hivemind
 # Trigger: on tag push (release artifacts only, not every commit)
-# Source: guides/02-sbom-workflow.md, research/external/03-sbom-cyclonedx-spdx-2026.md
+# Source: guides/07-bind-sbom-to-release-artifact.md and references/research/release-evidence/digest.md
+# Retained illustrative versions: review action SHAs, current actions/attest migration,
+# schema/coverage policy and target release authorization before adapting.
+# This template is not installed CI and does not publish a package.
 
 name: SBOM
 
@@ -34,15 +37,27 @@ jobs:
       # `files` allowlist actually ships. Generate the SBOM from THIS, not the
       # source tree - otherwise it lists devDependencies that never publish.
       - name: Install, build, pack
+        id: pack
         run: |
           npm ci
           npm run build
-          npm pack            # produces deeplake-hivemind-<version>.tgz
-          mkdir -p sbom-src
-          tar -xzf deeplake-hivemind-*.tgz -C sbom-src   # expands to sbom-src/package
+          mkdir -p release sbom-src
+          npm pack --pack-destination release --json > pack-result.json
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const rows = JSON.parse(fs.readFileSync('pack-result.json', 'utf8'));
+          if (rows.length !== 1 || typeof rows[0].filename !== 'string' ||
+              !/^[A-Za-z0-9._-]+\.tgz$/.test(rows[0].filename)) {
+            throw new Error('Expected exactly one local release tarball');
+          }
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,
+            `artifact=release/${rows[0].filename}\n`);
+          NODE
+          tar -xzf "release/$(node -p "JSON.parse(require('fs').readFileSync('pack-result.json','utf8'))[0].filename")" -C sbom-src
         shell: bash
 
-      # Step 2: Generate CycloneDX 1.6 JSON SBOM from the packed contents
+      # Step 2: Generate CycloneDX JSON; record actual emitted schema/version.
+      # Metadata discovery may miss bundled/minified code; reconcile coverage.
       - name: Generate SBOM (Syft)
         uses: anchore/sbom-action@v0.24.0
         with:
@@ -51,7 +66,8 @@ jobs:
           output-file: deeplake-hivemind-sbom.cdx.json
           artifact-name: sbom-${{ github.ref_name }}.cdx.json
 
-      # Step 3: Sanity-check the SBOM component count
+      # Step 3: Parse/count sanity only. Schema and coverage gates must be supplied
+      # from the target's existing tools before treating this as release-qualified.
       - name: Verify SBOM
         run: |
           COMPONENT_COUNT=$(node -e "console.log((require('./deeplake-hivemind-sbom.cdx.json').components || []).length)")
@@ -66,8 +82,7 @@ jobs:
       - name: Attest SBOM
         uses: actions/attest-sbom@v2
         with:
-          subject-name: ${{ github.repository }}
-          subject-digest: sha256:${{ hashFiles('deeplake-hivemind-sbom.cdx.json') }}
+          subject-path: ${{ steps.pack.outputs.artifact }}
           sbom-path: deeplake-hivemind-sbom.cdx.json
 
       # Step 5: Keep the SBOM as a release artifact (extend retention for compliance)
@@ -75,5 +90,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: sbom-${{ github.ref_name }}
-          path: deeplake-hivemind-sbom.cdx.json
-          retention-days: 90    # Increase (max 400) if a compliance horizon requires it
+          path: |
+            deeplake-hivemind-sbom.cdx.json
+            ${{ steps.pack.outputs.artifact }}
+            pack-result.json
+          retention-days: 90    # Example only; verify target policy and repository limits

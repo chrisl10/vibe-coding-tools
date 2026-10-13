@@ -16,7 +16,11 @@ This stinger's job is answering those three questions correctly, not building an
 
 ---
 
-## The four harnesses, one paragraph each
+## Historical August 2026 harness overview
+
+The following event counts and carrier statements are dated research. For current task pack selection, hook contracts and command coverage, use guides 12 through 14 and actual host/version/carrier receipts. No static event count establishes the current shared floor.
+
+### The four harnesses, one paragraph each
 
 - **Claude Code**: the richest component model of the four - full subagents, the most hook events (26), skills as the modern primary extension mechanism, a mature plugin/marketplace system. Treat it as the reference implementation when a feature exists nowhere else to compare against.
 - **Cursor**: rules (`.mdc` + `AGENTS.md`), subagents, skills, and plugins all landed within the same few months (2.4-2.5, Jan-Feb 2026) and explicitly fall back to reading Claude Code's and Codex's native directories (`.claude/agents/`, `.codex/agents/`, `.claude/skills/`, `.codex/skills/`) for cross-compat - the friendliest harness for a capability that already exists elsewhere.

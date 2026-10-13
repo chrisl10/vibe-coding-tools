@@ -1,0 +1,19 @@
+{
+  "name": "app-primer-zero",
+  "version": "3.0.0",
+  "description": "Prepare an app library, contracts, schema baseline and a wave handoff before building.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "skills": [
+    "./skills/"
+  ],
+  "commands": [
+    "./commands/app-primer-zero.md"
+  ],
+  "dependencies": [
+    "wasp-nest-core"
+  ]
+}

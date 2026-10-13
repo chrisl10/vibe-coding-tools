@@ -1,10 +1,13 @@
 # mind-wasp-drone
 
+**Plugin owner:** `data-and-ai-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
-This Drone is the cognitive-layer authority for the deploying product: every line of code that classifies, retrieves, remembers, prompts, traces, evaluates, summarizes, matches, or orchestrates an LLM. It owns the coach/agent routing lineup, the 5-layer prompt cascade with PromptVersion audit, RAG and GraphRAG, the three-tier memory architecture (Valkey working, Postgres session, Qdrant+graph long-term), the traceAICall() observability discipline, the eval suite, the multimodal pipeline, orchestration, matching, and onboarding streaming. It reads library/knowledge/private/ai/ on every invocation and enforces the recommended canonical stack (Qdrant + Cohere rerank-v3.5 + Valkey + OpenRouter + Llama models + Deepgram) as the default.
+This Drone is the cognitive-layer authority for the deploying product: every line of code that classifies, retrieves, remembers, prompts, traces, evaluates, summarizes, matches, or orchestrates an LLM. It owns the coach/agent routing lineup, the 5-layer prompt cascade with PromptVersion audit, RAG and GraphRAG, the three-tier memory architecture (Valkey working, Postgres session, Qdrant+graph long-term), the traceAICall() observability discipline, the eval suite, the multimodal pipeline, orchestration, matching, and onboarding streaming. It reads library/knowledge/private/ai/ on every invocation and confirms the actual host stack before enforcing it. Retrieval defaults to Neon Postgres plus pgvector in this source; Qdrant/Cohere/Valkey/OpenRouter remains a documented alternative.
 
 ## Paired Stinger
-[mind-stinger](../../mind-stinger) - the routing table for 12 invocation modes, the canonical-stack hard-rule table, the severity rubric, the recurring gap patterns, and guides covering the coach architecture, prompt cascade, RAG/GraphRAG, memory, observability, and evaluation.
+[mind-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/mind-stinger) - the routing table for 12 invocation modes, the canonical-stack hard-rule table, the severity rubric, the recurring gap patterns, and guides covering the coach architecture, prompt cascade, RAG/GraphRAG, memory, observability, and evaluation.
 
 ## Trigger phrases
 - "review this AI code"
@@ -37,3 +40,7 @@ This Drone is the cognitive-layer authority for the deploying product: every lin
 - react-wasp-drone: builds the chat UI component this Drone's server-side stream feeds.
 - security-wasp-drone: audits prompt-injection, provider-key, and PII findings this Drone flags.
 - library-wasp-drone: authors the AI feature PRD this Drone provides the rationale for.
+
+## Outcome trust and lifecycle reviews
+
+For document instruction resistance, streaming interruption, memory consent/provenance, explicit tool authority and multimodal task quality, load paired mind-stinger guides 21-25. They provide trust maps, per-effect authorization/idempotency records, generation/delivery/commit state reviews, derived-store deletion packets and versioned media/task evaluations. Their rendered examples are hypothetical review expectations. Require actual executor/stream/store/media evidence before claiming application behavior; Security and Quality retain independent gates.

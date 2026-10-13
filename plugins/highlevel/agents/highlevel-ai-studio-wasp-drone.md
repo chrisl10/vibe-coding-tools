@@ -10,9 +10,9 @@ description: "HighLevel AI Studio and AI creation specialist for Vibe sites, Con
 - In the event your core skill does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [gohighlevel-stinger](../skills/gohighlevel-stinger) - HighLevel REST API, OAuth, token scope, resources, webhooks, rate limits, and Marketplace apps.
-  - `website-stinger` in core - Website implementation outside HighLevel's hosted AI builders.
-  - `ai-coding-tools-stinger` in core - General AI coding tool selection and setup.
-  - `mind-stinger` in core - General AI architecture, RAG, memory, routing, and evaluation.
+  - `website-stinger` in `web-development-tools` (confirm installed) - Website implementation outside HighLevel's hosted AI builders.
+  - `ai-coding-tools-stinger` in `data-and-ai-tools` (confirm installed) - General AI coding tool selection and setup.
+  - `mind-stinger` in `data-and-ai-tools` (confirm installed) - General AI architecture, RAG, memory, routing, and evaluation.
   - `security-stinger` in core - Security review of generated code, secrets, PII, forms, third-party scripts, and publishing posture.
 
 ## Persona and mission
@@ -59,10 +59,10 @@ Respect agent work boundaries: never modify or delete another agent's active wor
 
 ## Related drones and stingers
 
-- [gohighlevel-wasp-drone](../agents/gohighlevel-wasp-drone.md) - HighLevel API and integration implementation
-- `website-wasp-drone` in core - Website construction outside HighLevel
-- `ai-coding-tools-wasp-drone` in core - AI coding tool selection and configuration
-- `mind-wasp-drone` in core - General AI cognitive-layer architecture
+- [gohighlevel-wasp-drone](gohighlevel-wasp-drone.md) - HighLevel API and integration implementation
+- `website-wasp-drone` in `web-development-tools` (confirm installed) - Website construction outside HighLevel
+- `ai-coding-tools-wasp-drone` in `data-and-ai-tools` (confirm installed) - AI coding tool selection and configuration
+- `mind-wasp-drone` in `data-and-ai-tools` (confirm installed) - General AI cognitive-layer architecture
 - `security-wasp-drone` in core - Security review and remediation
 - [highlevel-ai-studio-stinger](../skills/highlevel-ai-studio-stinger) - this Drone's paired pack skill
 

@@ -1,0 +1,9 @@
+# Define backend and component boundaries
+
+1. Keep web framework selection separate from backend language/runtime. Retain accepted Go/Python/Rust/API boundaries when they fit the actual integrations, jobs, ownership and hosting constraints.
+2. Define where identity/tenant checks, database work, mutations, payments and secrets live. SSR/Server Components are not independent evidence of authorization or isolation.
+3. Resolve actual selected server/data/auth/payment/security owners. React UI ownership does not equal all Next App Router server ownership. If a named implementation specialist is absent/unselected, state that exact gap; do not substitute a security auditor or claim a native role exists.
+4. Hand visual/component/Tailwind/shadcn/vendoring/license decisions to their actual owners with product direction and exact framework. Do not choose a component repository, install dependencies or modify vendor trees in this advisory workflow.
+5. Record API/event/data/error and deployment contracts needed before build. Cross-pack resolver evidence establishes availability; cached skills or a catalogue name alone do not prove runtime registration.
+
+Grounding: [Next boundaries](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/web-stack-selection-stinger/references/research/raw/next-components.html), [Go docs](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/web-stack-selection-stinger/references/research/raw/go-docs.html), [Python asyncio](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/web-stack-selection-stinger/references/research/raw/python-asyncio.html), [Rust](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/web-stack-selection-stinger/references/research/raw/rust-intro.html). Owner/permission/vendoring rules are the topic contract.

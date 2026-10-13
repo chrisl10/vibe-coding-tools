@@ -1,3 +1,4 @@
+<!-- Fill from this repository's verified source and ownership records. Remove unused sections and unknown service examples; do not invent owners, credentials, environments, or capabilities. -->
 # {tool-name}
 
 {2-3 sentences: what problem this solves, why it exists here (not a pitch, assume the reader knows the domain).}
@@ -68,6 +69,16 @@ cp .env.example .env
 {1-3 paragraphs explaining non-obvious design choices. Why this approach vs alternatives. What to know before making changes.}
 
 ---
+
+## Documentation
+
+{Link to the existing setup guide, architecture knowledge, runbook, requirements, and other team documents. Label restricted sources. Do not invent a library layout if this repository uses another one.}
+
+| Task | Starting document | Audience |
+| --- | --- | --- |
+| {task} | {verified_document_link} | {internal_or_public} |
+
+{If this tool prepares or generates documents, show the actual invocation and required inputs, where outputs are saved, their formats, and how to review them. Explain which files are maintained sources and which are generated. Keep private citations, source paths, and review records out of public deliverables. Remove when not applicable.}
 
 ## Contributing
 

@@ -12,6 +12,15 @@ Working templates for each type live under `../references/templates/<type>/`. Th
 
 # Rules
 
+## Current Wasp Nest v3 projection
+
+The current [catalog](../../../../plugin-catalog.json) and [layout guide](../../../../docs/PLUGIN-LAYOUT.md) define this repository's source and output locations. Core stays in src; optional components belong to one `packs/<plugin-id>` owner. The builder emits each selected owner's Claude/Cowork and Cursor manifests plus root portable plugin.json with extensions.com.openai. It emits no .codex-plugin overlay.
+
+Codex command adapters are source-command-<name> skills in the command's owner. TOML role projections are registered through trusted Core against the explicit selected-plugin registry. Cached siblings are not implicit selections. Source work uses the catalog's source_root; installed work resolves the owner, version and required workflow before arming a capability.
+
+The host tables and older compatibility examples below retain their research scope. They are not instructions to recreate a retired Wasp Nest output, edit an installed cache as source, assume UI selection writes the registry or broaden a host's documented capability.
+
+
 ## Claude Code
 
 **Where it goes.** `~/.claude/CLAUDE.md` (user, all projects), `./CLAUDE.md` or `./.claude/CLAUDE.md` (project, committed), `./CLAUDE.local.md` (local, gitignore it), managed policy CLAUDE.md at OS-specific system paths, and `.claude/rules/*.md` for topic files (discovered recursively).
@@ -506,37 +515,37 @@ Report findings by severity: Critical / High / Medium.
 
 ## Codex
 
-**Where it goes.** No filesystem subagent-definition format is documented in the research. Configuration lives in `config.toml` under `agents.<role>.description` and `agents.<role>.config_file` (relative paths resolve from the declaring config file).
+**Current native custom-agent surface.** The official [Codex subagents documentation](https://learn.chatgpt.com/docs/agent-configuration/subagents#custom-agents), retrieved on 6 October 2026, documents standalone TOML files under `~/.codex/agents/` for personal agents and `.codex/agents/` for project agents. Required fields are `name`, `description` and `developer_instructions`. Confirm the running client's version and discovery behavior before relying on this surface in a specific installation.
 
-**Field table.**
+The distribution sweep retained the source URL, retrieval time, response hash and narrow excerpt in the source repository's `docs/reports/2026-10-06-wide-sweep-distribution-coverage.json` primary evidence record. Response SHA256: `c5ef4eda3d9f876c8f35c697e720a3e7c760b5cf8c4943c97e82d1d8fe1b0054`. Earlier research that described the agent-file format as undocumented is historical and no longer describes this current documented carrier. Preserve those raw captures as evidence of their research date.
 
-| Key | Notes |
-|---|---|
-| `agents.enabled` | Turns the subsystem on |
-| `agents.max_concurrent_threads_per_session` | Legacy alias `agents.max_threads` |
-| `agents.default_subagent_model` | Default model for delegated roles |
-| `agents.default_subagent_reasoning_effort` | Default effort level |
-| `agents.interrupt_message` | Message shown when interrupting a subagent |
-| `agents.<role>.description` | Per-role description |
-| `agents.<role>.config_file` | Points at a role-specific config file, whose internal shape is not documented in the research |
+**Field table for this carrier.**
 
-[raw/codex--rules--config-reference.md]
+| Field | Required | Purpose |
+|---|---|---|
+| `name` | Yes | Exact role identity |
+| `description` | Yes | When Codex should select the role |
+| `developer_instructions` | Yes | Role prompt and operating constraints |
 
-**Minimal working example.** Constructed from the documented key names, since the research does not include a full worked `config.toml` agent-role example:
+**Minimal documented-shape example.** Save this as a selected personal or project agent TOML file:
 
 ```toml
-[agents.reviewer]
-description = "Reviews diffs for security issues before merge"
-config_file = "agents/reviewer.toml"
+name = "security-reviewer"
+description = "Reviews the assigned candidate for security defects"
+developer_instructions = """
+Read the selected Security skill before work. Review only the assigned paths,
+report source evidence and observe the parent's deadline and approval scope.
+"""
 ```
-This is inferred from documented key names, not a quoted example. The internal shape of `reviewer.toml` (what fields it accepts, whether it mirrors a system prompt file) is a documented gap in the research.
-[raw/codex--rules--config-reference.md]
+
+**Wasp Nest v3 projection.** `scripts/build.py` converts the canonical Markdown Drone into these fields for home `agents/*.toml` and packaged `codex-agents/*.toml`. Core's trusted `hooks/register-codex-agents.py` reads the selected-plugin registry, validates declared identity/version/prerequisites and registers the corresponding personal agent files. This source implementation does not prove that a particular running native client discovered or executed the roles; record that qualification separately. Registration changes local configuration and needs the user's applicable installation authorization.
 
 **Gotchas.**
-- This is the weakest-documented corner of the whole matrix. Three delegation mechanisms exist (`codex exec` for non-interactive scripting, in-session subagents, `codex cloud`), but none of them ship a file-based per-agent definition format comparable to Claude Code's or Cursor's markdown-plus-frontmatter subagent files.
-- MCP-backed skill dependencies for a subagent's tooling are declared in `agents/openai.yaml`, not in the agent's own config, per the customization overview.
-- `codex exec` defaults to a read-only sandbox. Automation should set explicit least privilege (`--sandbox workspace-write`) rather than relying on `--full-auto`, which is deprecated.
-[raw/codex--multiple--customization-overview.md, raw/codex--agents--noninteractive-exec.md]
+
+- Home and project custom-agent discovery, plugin-carried projections and older `config.toml` role declarations are distinct carriers. Do not copy historical role keys or infer the contents of a config file when current primary documentation specifies a standalone agent shape.
+- Resolve a Drone's paired skill from its selected owner and prerequisites. A copied TOML role cannot silently enable an optional plugin.
+- `agents/openai.yaml` may describe a skill's host metadata; it is not a replacement for this standalone agent's required fields.
+- Inspect current sandbox, model and delegation settings rather than treating an old CLI default or deprecated flag as proof for the native client. Inherit current settings unless the user requested a supported override.
 
 ## Cowork
 

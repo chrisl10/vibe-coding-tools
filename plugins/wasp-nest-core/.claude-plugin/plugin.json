@@ -1,9 +1,40 @@
 {
   "name": "wasp-nest-core",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "The Wasp Nest core: shared Drones and Stingers, orchestration commands, rules, and hooks. Install this first; specialist packs are add-ons.",
   "author": {
-    "name": "Mario Aldayuz"
+    "name": "Legion Code Inc."
   },
-  "license": "AGPL-3.0-or-later"
+  "license": "AGPL-3.0-or-later",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./agents/adr-writing-wasp-drone.md",
+    "./agents/branching-strategy-wasp-drone.md",
+    "./agents/code-review-pr-wasp-drone.md",
+    "./agents/contract-writing-wasp-drone.md",
+    "./agents/dependency-audit-wasp-drone.md",
+    "./agents/git-wasp-drone.md",
+    "./agents/github-repo-health-wasp-drone.md",
+    "./agents/harness-integration-wasp-drone.md",
+    "./agents/knowledge-wasp-drone.md",
+    "./agents/library-wasp-drone.md",
+    "./agents/quality-wasp-drone.md",
+    "./agents/readme-writing-wasp-drone.md",
+    "./agents/security-wasp-drone.md",
+    "./agents/technical-writing-craft-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/choose-outcome.md",
+    "./commands/drift-audit.md",
+    "./commands/forge.md",
+    "./commands/pest-controller.md",
+    "./commands/qualify-wiring.md",
+    "./commands/re-research.md",
+    "./commands/register.md",
+    "./commands/ship-gate.md",
+    "./commands/smoke-it.md"
+  ],
+  "hooks": "./hooks/claude-hooks.json"
 }

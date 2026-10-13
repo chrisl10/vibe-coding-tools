@@ -1,0 +1,27 @@
+{
+  "time": "2026-10-07T16:30:12.537688+00:00",
+  "status": "Staged Queen references/guides/examples/root proposal complete; integration not performed",
+  "checks": [
+    "All 15 captured-source hashes passed",
+    "42 staged Markdown local links passed",
+    "All 3 rendered explanations preserve pending human understanding"
+  ],
+  "source_claim_records": 15,
+  "rendered_explanations": 3,
+  "craft": {
+    "mode": "Explanation for reader examples; how-to for guides; Reference for evidence",
+    "opening": "Pass",
+    "voice": "Pass; no em dashes",
+    "reader_lens": "Pass; source terms and bounded analogy, human response pending",
+    "code": "No runnable instruction examples; synthetic source fixtures not executed",
+    "fidelity": "Pass via recorded source/explanation semantic review"
+  },
+  "unproven": [
+    "Human comprehension",
+    "Native owner dispatch",
+    "Word/PDF production and page inspection",
+    "Application/provider behavior",
+    "Promoted source/projection gates"
+  ],
+  "source_locator_root": "loaded skill root"
+}

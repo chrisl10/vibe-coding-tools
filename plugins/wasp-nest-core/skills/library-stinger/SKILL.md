@@ -1,7 +1,7 @@
 ---
 name: "library-stinger"
 license: AGPL-3.0-or-later
-description: "Maintain Library Schema v2 docs. Use for PRDs, IRDs, knowledge docs, lifecycle moves, issue ingest, or drift audits. Read README.md for the guide map."
+description: "Maintain Library Schema v2 docs and reusable workflow templates. Use for PRDs, IRDs, knowledge docs, lifecycle moves, issue ingest or drift audits. Read README.md for the guide map."
 ---
 
 # library-stinger
@@ -27,6 +27,8 @@ Cursor-skill wrapper for the `library-wasp-drone` Drone's companion resource bun
 | PRD in-work | `library/requirements/in-work/prd-<###>-<slug>/` (same structure) |
 | Completed PRD | `library/requirements/completed/prd-<###>-<slug>/` |
 | Routine scan report | `library/requirements/reports/<YYYY-MM-DD>-<type>-report.md` |
+| Build plans (PRD map, wave plan, handoff packet) | `library/requirements/plans/` |
+| Project standards (Definition of Done) | `library/knowledge/private/standards/<slug>.md` |
 | IRD folder (backlog) | `library/issues/backlog/ird-<###>-<slug>/` |
 | IRD index | `library/issues/backlog/ird-<###>-<slug>/ird-<###>-<slug>-index.md` |
 | IRD QA report | `library/issues/backlog/ird-<###>-<slug>/qa/ird-<###>-<slug>-qa.md` |
@@ -52,3 +54,11 @@ Cursor-skill wrapper for the `library-wasp-drone` Drone's companion resource bun
 | `library/qa/` | `library/requirements/reports/` |
 
 See `guides/07-wiki-sync.md` for wiki synchronization rules.
+
+## Audience document packets
+
+Use [library-packets-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/documentation-tools/skills/library-packets-stinger/SKILL.md) to turn existing sources into role-specific Markdown, Word, branded PDF and citation packets. Source authoring remains with this skill.
+
+## Reusable templates from real workflows
+
+Read [Guide 08](guides/08-reuse-workflow-templates.md) and the [evidence fields](references/template-reuse-fields.md) before adapting an existing template. Preserve source revisions, observed/proposed/unrun distinctions and authority boundaries. The [research digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/library-stinger/references/research/template-reuse/distillation.md) records source and qualification limits.

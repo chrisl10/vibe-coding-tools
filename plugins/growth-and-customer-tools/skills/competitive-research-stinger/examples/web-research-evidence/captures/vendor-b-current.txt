@@ -1,0 +1,4 @@
+Fictional supplied fixture, not fetched from a real company.
+Birch Example, Basic plan, USD 18 per account per month.
+Basic excludes SAML SSO; Enterprise includes it.
+Effective date: 2026-10-05.

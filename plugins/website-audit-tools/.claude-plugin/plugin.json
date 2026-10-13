@@ -1,0 +1,43 @@
+{
+  "name": "website-audit-tools",
+  "version": "3.0.0",
+  "description": "Audit a public website with crawl, SEO, accessibility, conversion and evidence-backed reports.",
+  "author": {
+    "name": "Legion Code Inc.",
+    "url": "https://www.legioncodeinc.com"
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./agents/accessibility-audit-wasp-drone.md",
+    "./agents/aeo-audit-wasp-drone.md",
+    "./agents/analytics-stack-wasp-drone.md",
+    "./agents/audit-intake-wasp-drone.md",
+    "./agents/audit-reporting-wasp-drone.md",
+    "./agents/audit-scoring-wasp-drone.md",
+    "./agents/blog-content-wasp-drone.md",
+    "./agents/content-semantics-wasp-drone.md",
+    "./agents/ecommerce-catalog-wasp-drone.md",
+    "./agents/icp-positioning-wasp-drone.md",
+    "./agents/internal-linking-wasp-drone.md",
+    "./agents/keyword-intelligence-wasp-drone.md",
+    "./agents/performance-cwv-wasp-drone.md",
+    "./agents/site-crawler-wasp-drone.md",
+    "./agents/social-presence-wasp-drone.md",
+    "./agents/stack-fingerprint-wasp-drone.md",
+    "./agents/technical-seo-wasp-drone.md",
+    "./agents/vendor-inventory-wasp-drone.md",
+    "./agents/visual-funnel-wasp-drone.md",
+    "./agents/web-security-posture-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/perform-website-audit.md"
+  ],
+  "dependencies": [
+    "wasp-nest-core",
+    "browser-and-app-testing-tools"
+  ]
+}

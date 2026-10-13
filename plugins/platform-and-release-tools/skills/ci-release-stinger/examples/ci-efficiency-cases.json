@@ -1,0 +1,31 @@
+{
+  "kind": "hypothetical source-review fixtures",
+  "native_execution": false,
+  "cases": [
+    {
+      "id": "duplicate-build",
+      "input": "same candidate label, environment equivalence unknown, two deployment producers",
+      "expected": "identify redundant producer; retain distinct build contract; savings Unknown"
+    },
+    {
+      "id": "unsafe-docs-skip",
+      "input": "docs/api-spec.md drives generated client contract",
+      "expected": "reject docs-only skip; require contract/consumer obligations"
+    },
+    {
+      "id": "cancelled-preview",
+      "input": "A cancelled; branch URL serves B; partial artifacts only",
+      "expected": "A unproven; require candidate-bound preview and complete results"
+    },
+    {
+      "id": "partial-rerun",
+      "input": "A same inputs/baseline; shard 2 replacement; other accepted obligations retained",
+      "expected": "conditional A union only; reject any changed combined candidate C"
+    },
+    {
+      "id": "cache-unknown",
+      "input": "no observed timing, units, volume or rates",
+      "expected": "cost/time saving Unknown; fresh browser install default"
+    }
+  ]
+}

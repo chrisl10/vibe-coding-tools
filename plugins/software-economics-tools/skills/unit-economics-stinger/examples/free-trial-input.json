@@ -1,0 +1,497 @@
+{
+  "scenarios": [
+    {
+      "name": "Fictional cohort baseline",
+      "currency": "USD",
+      "period": "month",
+      "unit": "attempted account-month",
+      "observed_at": "2026-10-07",
+      "evidence": "Fictional O041 adapter. Nonpaid cohorts held constant. No vendor prices or production attribution.",
+      "units": "100",
+      "price_per_unit": "20",
+      "failed_payment_rate": "0.1",
+      "refund_rate": "0.1",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.30",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "operating",
+      "costs": [
+        {
+          "name": "Held legitimate free service",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "100"
+        },
+        {
+          "name": "Held trial service",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "40"
+        },
+        {
+          "name": "Held failed signup processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "20"
+        },
+        {
+          "name": "Held blocked request processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "10"
+        },
+        {
+          "name": "Period acquisition spend",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "60"
+        },
+        {
+          "name": "Shared floor net of zero credit",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "100"
+        },
+        {
+          "name": "Fixed overhead",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "100"
+        },
+        {
+          "name": "Paid attempted service",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "2"
+        }
+      ]
+    },
+    {
+      "name": "Fictional abuse served spike",
+      "currency": "USD",
+      "period": "month",
+      "unit": "attempted account-month",
+      "observed_at": "2026-10-07",
+      "evidence": "Fictional O041 adapter. Nonpaid cohorts held constant. No vendor prices or production attribution.",
+      "units": "100",
+      "price_per_unit": "20",
+      "failed_payment_rate": "0.1",
+      "refund_rate": "0.1",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.30",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "operating",
+      "costs": [
+        {
+          "name": "Held legitimate free service",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "100"
+        },
+        {
+          "name": "Held trial service",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "40"
+        },
+        {
+          "name": "Held failed signup processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "20"
+        },
+        {
+          "name": "Held blocked request processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "10"
+        },
+        {
+          "name": "Period acquisition spend",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "60"
+        },
+        {
+          "name": "Shared floor net of zero credit",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "100"
+        },
+        {
+          "name": "Fixed overhead",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "100"
+        },
+        {
+          "name": "Paid attempted service",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "2"
+        },
+        {
+          "name": "Held suspected abuse served",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "250"
+        }
+      ]
+    },
+    {
+      "name": "Fictional eligible credit applied once",
+      "currency": "USD",
+      "period": "month",
+      "unit": "attempted account-month",
+      "observed_at": "2026-10-07",
+      "evidence": "Fictional O041 adapter. Nonpaid cohorts held constant. No vendor prices or production attribution.",
+      "units": "100",
+      "price_per_unit": "20",
+      "failed_payment_rate": "0.1",
+      "refund_rate": "0.1",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.30",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "operating",
+      "costs": [
+        {
+          "name": "Held legitimate free service",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "100"
+        },
+        {
+          "name": "Held trial service",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "40"
+        },
+        {
+          "name": "Held failed signup processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "20"
+        },
+        {
+          "name": "Held blocked request processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "10"
+        },
+        {
+          "name": "Period acquisition spend",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "60"
+        },
+        {
+          "name": "Shared floor net of eligible credit 40",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "60"
+        },
+        {
+          "name": "Fixed overhead",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "100"
+        },
+        {
+          "name": "Paid attempted service",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "2"
+        }
+      ]
+    },
+    {
+      "name": "Fictional no paid customers",
+      "currency": "USD",
+      "period": "month",
+      "unit": "attempted account-month",
+      "observed_at": "2026-10-07",
+      "evidence": "Fictional O041 adapter. Nonpaid cohorts held constant. No vendor prices or production attribution.",
+      "units": "0",
+      "price_per_unit": "20",
+      "failed_payment_rate": "0.1",
+      "refund_rate": "0.1",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.30",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "operating",
+      "costs": [
+        {
+          "name": "Held legitimate free service",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "100"
+        },
+        {
+          "name": "Held trial service",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "40"
+        },
+        {
+          "name": "Held failed signup processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "20"
+        },
+        {
+          "name": "Held blocked request processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "10"
+        },
+        {
+          "name": "Period acquisition spend",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "60"
+        },
+        {
+          "name": "Shared floor net of zero credit",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "100"
+        },
+        {
+          "name": "Fixed overhead",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "100"
+        },
+        {
+          "name": "Paid attempted service",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "2"
+        }
+      ]
+    },
+    {
+      "name": "Fictional high paid usage",
+      "currency": "USD",
+      "period": "month",
+      "unit": "attempted account-month",
+      "observed_at": "2026-10-07",
+      "evidence": "Fictional O041 adapter. Nonpaid cohorts held constant. No vendor prices or production attribution.",
+      "units": "100",
+      "price_per_unit": "20",
+      "failed_payment_rate": "0.1",
+      "refund_rate": "0.1",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.30",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "operating",
+      "costs": [
+        {
+          "name": "Held legitimate free service",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "100"
+        },
+        {
+          "name": "Held trial service",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "40"
+        },
+        {
+          "name": "Held failed signup processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "20"
+        },
+        {
+          "name": "Held blocked request processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "10"
+        },
+        {
+          "name": "Period acquisition spend",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "60"
+        },
+        {
+          "name": "Shared floor net of zero credit",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "100"
+        },
+        {
+          "name": "Fixed overhead",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "100"
+        },
+        {
+          "name": "Paid attempted service",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "8"
+        }
+      ]
+    },
+    {
+      "name": "Fictional legitimate free growth",
+      "currency": "USD",
+      "period": "month",
+      "unit": "attempted account-month",
+      "observed_at": "2026-10-07",
+      "evidence": "Fictional O041 adapter. Nonpaid cohorts held constant. No vendor prices or production attribution.",
+      "units": "100",
+      "price_per_unit": "20",
+      "failed_payment_rate": "0.1",
+      "refund_rate": "0.1",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.30",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "operating",
+      "costs": [
+        {
+          "name": "Held legitimate free service",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "300"
+        },
+        {
+          "name": "Held trial service",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "40"
+        },
+        {
+          "name": "Held failed signup processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "20"
+        },
+        {
+          "name": "Held blocked request processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "10"
+        },
+        {
+          "name": "Period acquisition spend",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "60"
+        },
+        {
+          "name": "Shared floor net of zero credit",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "100"
+        },
+        {
+          "name": "Fixed overhead",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "100"
+        },
+        {
+          "name": "Paid attempted service",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "2"
+        }
+      ]
+    },
+    {
+      "name": "Fictional mitigation including incorrect blocking",
+      "currency": "USD",
+      "period": "month",
+      "unit": "attempted account-month",
+      "observed_at": "2026-10-07",
+      "evidence": "Fictional O041 adapter. Nonpaid cohorts held constant. No vendor prices or production attribution.",
+      "units": "95",
+      "price_per_unit": "20",
+      "failed_payment_rate": "0.1",
+      "refund_rate": "0.1",
+      "payment_fee_rate": "0.03",
+      "payment_fee_fixed": "0.30",
+      "payment_fee_return_rate": "0",
+      "refund_fee_fixed": "0",
+      "payment_fee_classification": "operating",
+      "costs": [
+        {
+          "name": "Held legitimate free service",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "100"
+        },
+        {
+          "name": "Held trial service",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "40"
+        },
+        {
+          "name": "Held failed signup processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "20"
+        },
+        {
+          "name": "Held blocked request processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "10"
+        },
+        {
+          "name": "Period acquisition spend",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "60"
+        },
+        {
+          "name": "Shared floor net of zero credit",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "100"
+        },
+        {
+          "name": "Fixed overhead",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "100"
+        },
+        {
+          "name": "Paid attempted service",
+          "behavior": "variable",
+          "classification": "cost_of_revenue",
+          "amount": "2"
+        },
+        {
+          "name": "Held suspected abuse still served",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "50"
+        },
+        {
+          "name": "Mitigation period overhead",
+          "behavior": "fixed",
+          "classification": "operating",
+          "amount": "30"
+        },
+        {
+          "name": "Additional blocked processing",
+          "behavior": "fixed",
+          "classification": "cost_of_revenue",
+          "amount": "10"
+        }
+      ]
+    }
+  ]
+}

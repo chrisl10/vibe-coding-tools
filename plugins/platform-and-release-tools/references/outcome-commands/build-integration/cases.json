@@ -1,0 +1,59 @@
+[
+  {
+    "id": "build-integration-1",
+    "request": "A Python SaaS needs HubSpot two-way contacts sync with approved scopes.",
+    "expected": "Resolve Auth, CRM, Contract, HTTP and Python scopes, pin field and sync policy before implementation.",
+    "required_instructions": [
+      "crm-integration-wasp-drone",
+      "python-wasp-drone",
+      "accepted contract revision"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "build-integration-2",
+    "request": "An unsupported provider offers an unfamiliar webhook protocol.",
+    "expected": "Stop provider-specific stage and name the missing specialization; do not invent CRM coverage.",
+    "required_instructions": [
+      "if absent, stop the provider-specific stage",
+      "missing specialization"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "build-integration-3",
+    "request": "The provider commits a mutation, then the response is lost.",
+    "expected": "Reconcile uncertain outcome or use accepted idempotency; avoid blind replay.",
+    "required_instructions": [
+      "uncertain outcome",
+      "reconcile first"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "build-integration-4",
+    "request": "A company-default connector is expected to access a human delegated mailbox.",
+    "expected": "Preserve credential authority distinction, do not borrow credentials or infer scopes.",
+    "required_instructions": [
+      "company-default",
+      "delegated access"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "build-integration-5",
+    "request": "Duplicate records have conflicting opt-outs and the webhook token is revoked.",
+    "expected": "Preserve do-not-contact consent and test revoked-token/duplicate/reconnect branches.",
+    "required_instructions": [
+      "do-not-contact",
+      "revoked tokens",
+      "duplicate/out-of-order"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  }
+]

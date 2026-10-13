@@ -1,0 +1,60 @@
+[
+  {
+    "id": "qualify-typography-1",
+    "request": "A Svelte site has approved variable fonts and source token drift.",
+    "expected": "Separate typography tokens from loading mechanics and use actual frontend owner for fixes.",
+    "required_instructions": [
+      "typography-font-wasp-drone",
+      "font-loading-wasp-drone",
+      "actual frontend/component owner"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "qualify-typography-2",
+    "request": "Browser tooling is unavailable but CSS passes inspection.",
+    "expected": "Return bounded source review and explicitly unproven runtime; do not claim completed qualification.",
+    "required_instructions": [
+      "runtime checks explicitly unproven",
+      "never call that qualification complete"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "qualify-typography-3",
+    "request": "Latin subsetting removes required Arabic glyphs.",
+    "expected": "Preserve scripts and ask before dropping required language coverage.",
+    "required_instructions": [
+      "languages/scripts",
+      "dropping language coverage",
+      "required glyphs"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "qualify-typography-4",
+    "request": "Cold-cache and blocked-font text clips at 200 percent zoom.",
+    "expected": "Capture browser/viewport/network state and report concrete type/loading failures against baseline.",
+    "required_instructions": [
+      "200 percent",
+      "blocked-font states",
+      "clipping"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "qualify-typography-5",
+    "request": "A paid font or new font tool is required for a proposed repair.",
+    "expected": "Do not purchase, download paid assets or install implicitly; record gap.",
+    "required_instructions": [
+      "Do not install font tools",
+      "paid font assets"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  }
+]

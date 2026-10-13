@@ -1,6 +1,6 @@
 # Get started with The Wasp Nest
 
-This guide installs The Wasp Nest from the public marketplace. You do not need access to the private source repository or its `install.sh` script. Installation adds plugin components; home instruction files and a project Library are separate, consent-based steps. For native Codex Drone roles, have Python 3 available and be ready to review the plugin hooks.
+This guide installs The Wasp Nest from the public marketplace. The marketplace route uses the generated public packages. The source repository and its `install.sh` provide a separate local home installation route. Installation adds plugin components; home instruction files and a project Library are separate, consent-based steps. For native Codex Drone roles, have Python 3.11+ available and review Core's hook plus the explicit selected-plugin registry.
 
 ## Install core
 
@@ -18,9 +18,9 @@ codex plugin marketplace add legioncodeinc/vibe-coding-tools
 codex plugin add wasp-nest-core@wasp-nest
 ```
 
-The [public README](../../README.md#what-ships) lists optional packs. Install the `highlevel` pack only when you need HighLevel API, AI Studio, or workflow-export work, for example. A pack contains its own Stingers and, where applicable, Drones.
+Purge the previous Wasp Nest installation before adopting v3; no legacy aliases or command bridge are provided. Keep Core enabled. The [public README](../../README.md#what-ships) lists the current optional packs and their command homes. Install the `highlevel` pack only when you need HighLevel API, AI Studio, or workflow-export work, for example. A pack contains its own Stingers and, where applicable, Drones.
 
-In Codex, open `/hooks`, review and trust the installed plugin hooks, then start a new local session. That first trusted session registers the pack's native Drone roles under `$CODEX_HOME/agents` (normally `~/.codex/agents`). If a same-name definition has changed, it is backed up before replacement. Without hook trust, the Stingers still install but the native roles do not. [Harness Capabilities](../reference/HARNESS-CAPABILITIES.md) explains why a Claude command appears as a wrapper skill in Codex.
+For native Codex roles, first review `~/.wasp-nest/installed-plugins.json` with actual roots for Core and the enabled optional plugins. The local installer writes it; a marketplace/UI install alone is not proven to do so. Then open `/hooks`, trust Core's registration hook and start a new local session. It registers declared roles from that explicit selection under `$CODEX_HOME/agents` (normally `~/.codex/agents`). If a same-name definition has changed, it is backed up before replacement. Role registration requires both the explicit selection and hook trust. Installed Stingers remain their own entry points. [Harness Capabilities](../reference/HARNESS-CAPABILITIES.md) explains why a Claude command appears as a wrapper skill in Codex.
 
 ## Decide whether to set up your home
 

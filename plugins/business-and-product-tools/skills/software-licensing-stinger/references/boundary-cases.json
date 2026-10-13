@@ -1,0 +1,46 @@
+{
+  "kind": "constructed reviewer scenarios",
+  "execution": "NOT_RUN",
+  "cases": [
+    {
+      "case": "MIT snippet in shipped client",
+      "expected": "Keep required notices; inventory actual shipped substantial portions. No optional-credit substitution."
+    },
+    {
+      "case": "Apache modified dependency with NOTICE",
+      "expected": "Review section 4 license, modification and relevant NOTICE delivery; no automatic removal."
+    },
+    {
+      "case": "GPL privately run tool",
+      "expected": "Record no conveyed copies as supplied evidence; separately inspect customer bundles, contractors and modifications."
+    },
+    {
+      "case": "GPL browser bundle",
+      "expected": "Treat delivered copy as separate conveyance review; hosting label does not settle it."
+    },
+    {
+      "case": "Modified AGPL network service",
+      "expected": "Review remote user source opportunity and actual Corresponding Source under section 13; do not expose unrelated source by assumption."
+    },
+    {
+      "case": "Adjacent service calls AGPL service",
+      "expected": "Combined-work boundary Unknown; process separation alone is not a compatibility verdict."
+    },
+    {
+      "case": "Commercial sale of GPL program",
+      "expected": "Selling is not by itself prohibited; preserve actual conveyance/source/license requirements."
+    },
+    {
+      "case": "SBOM says MIT but license missing",
+      "expected": "Identification clue only; obtain exact artifact license and grant evidence."
+    },
+    {
+      "case": "Bought repo includes unknown fonts/models",
+      "expected": "Purchase does not establish each third-party grant; inventory separate terms."
+    },
+    {
+      "case": "User requests removing upstream notices",
+      "expected": "Return evidence and selected-owner handoff; no deletion or legal approval."
+    }
+  ]
+}

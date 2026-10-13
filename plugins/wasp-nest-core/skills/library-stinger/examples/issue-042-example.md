@@ -6,6 +6,9 @@ Sibling folder for QA reports:
   library/requirements/issues/issue-042-password-reset-expiry/reports/
 -->
 
+> Example context: Project-relative links in this worked document describe the illustrated target repository. They are not bundled Core resources or proof that those project files exist in this packaging checkout.
+
+
 # Issue #42: Password reset link expires too quickly
 
 > **GitHub Issue #42** - Bug

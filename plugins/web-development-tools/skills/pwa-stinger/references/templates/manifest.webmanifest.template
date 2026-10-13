@@ -1,0 +1,9 @@
+{
+  "id": "/public/",
+  "name": "Public reference application",
+  "short_name": "Reference",
+  "start_url": "/public/",
+  "scope": "/public/",
+  "display": "standalone",
+  "icons": []
+}
