@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "backend-and-desktop-tools",
+  "version": "3.0.0",
+  "description": "Implement TypeScript, Python, Go, Rust, native apps, APIs and terminal workflows.",
+  "author": {
+    "name": "Legion Code Inc.",
+    "url": "https://www.legioncodeinc.com"
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Backend and Desktop Tools",
+        "shortDescription": "Implement TypeScript, Python, Go, Rust, native apps, APIs and terminal workflows.",
+        "developerName": "Legion Code Inc.",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ]
+      }
+    }
+  }
+}
