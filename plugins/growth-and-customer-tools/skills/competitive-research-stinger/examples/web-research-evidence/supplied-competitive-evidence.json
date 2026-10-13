@@ -1,0 +1,77 @@
+{
+  "as_of": "2026-10-07",
+  "sources": [
+    {
+      "id": "vendor-a",
+      "url": "https://atlas.example/pricing",
+      "retrieved": "2026-10-07",
+      "kind": "vendor",
+      "archive": "captures/vendor-a.txt",
+      "sha256": "f4f2edb3c2bb1e6bd78288812e579c34ba4b655411b0865e2926cee5f6b9a2f1",
+      "freshness_days": 30
+    },
+    {
+      "id": "vendor-b-old",
+      "url": "https://birch.example/pricing",
+      "retrieved": "2026-10-07",
+      "kind": "vendor",
+      "archive": "captures/vendor-b-old.txt",
+      "sha256": "ecc79b9248ea9d9b1a2533ffbd0f74c02047325169d506330c2791a7fbdfae0f",
+      "freshness_days": 30
+    },
+    {
+      "id": "vendor-b-current",
+      "url": "https://birch.example/pricing",
+      "retrieved": "2026-10-07",
+      "kind": "vendor",
+      "archive": "captures/vendor-b-current.txt",
+      "sha256": "a46f5546c640d27352de7178211fe844a5520bfd262dd11eed9784581b7fc4f9",
+      "freshness_days": 30
+    },
+    {
+      "id": "vendor-c-partial",
+      "url": "https://cedar.example/pricing",
+      "retrieved": "2026-10-07",
+      "kind": "vendor",
+      "archive": "captures/vendor-c-partial.txt",
+      "sha256": "36b1264dd981cb3330890fa02ad0ec9ea7008f4abda9f0843c59a8486ffabae5",
+      "freshness_days": 30
+    }
+  ],
+  "claims": [
+    {
+      "id": "a-sso",
+      "classification": "vendor_claim",
+      "statement": "Fictional Atlas Starter states SAML SSO is included",
+      "source_ids": [
+        "vendor-a"
+      ],
+      "scope": "Supplied synthetic fixture, captures/vendor-a.txt line 3, account/month; no observed execution"
+    },
+    {
+      "id": "b-current",
+      "classification": "vendor_claim",
+      "statement": "Fictional Birch Basic currently states SAML SSO is excluded",
+      "source_ids": [
+        "vendor-b-current"
+      ],
+      "scope": "Synthetic supplied current fixture line 3; current means only fixture effective 2026-10-05, not live vendor state"
+    },
+    {
+      "id": "b-old",
+      "classification": "vendor_claim",
+      "statement": "Fictional Birch Basic formerly stated SAML SSO was included",
+      "source_ids": [
+        "vendor-b-old"
+      ],
+      "scope": "Synthetic supplied old fixture line 3, effective 2026-08-01; conflicts with current fixture"
+    },
+    {
+      "id": "c-unknown",
+      "classification": "unknown",
+      "statement": "Cedar SAML SSO and pricing unknown",
+      "source_ids": [],
+      "scope": "Supplied partial fixture ends before relevant content; no absence inferred"
+    }
+  ]
+}
