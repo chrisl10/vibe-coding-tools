@@ -114,19 +114,12 @@ threads archived and scratch project deleted through the same API. The
 claude thread also fired the Wasp Nest v3 SessionStart hook (Library
 offer), proving the v3 plugin install is live inside T3 sessions.
 
-## Open items for the t3ctl build
+## Resolved items for the t3ctl build (2026-10-13)
 
-1. Environment addressing: how the desk app routes commands to a connected
-   environment (macdev). EnvironmentRpc spans exist; /api/t3-connect/
-   mint-credential is how the desk authenticates to remote servers. Either
-   dispatch accepts an environment selector, or t3ctl must talk to each
-   environment's server directly (desk 127.0.0.1:3773, macdev via tunnel
-   127.0.0.1:38373 with a macdev-side token minted through its GUI or the
-   connect credential flow).
-2. modelSelection values: instanceId strings confirmed (codex_belay); model
-   enum per instance comes from settings customModels plus "auto".
-3. runtimeMode enum: "full-access" observed; others (read-only?) to enumerate.
-4. WS event stream: needed only for sub-10s latency; the 10-minute tick can
-   poll snapshots instead.
-5. Response envelope of dispatch (command ack shape) to capture on first
-   live call.
+- Environment addressing: the macdev token path is to mint a pairing link in
+  the macdev T3 web UI once, then exchange it with `t3ctl auth-redeem`.
+- modelSelection values: instanceId strings confirmed (codex_belay); model
+  enum per instance comes from settings customModels plus "auto".
+- runtimeMode enum: only "full-access" observed so far.
+- WS event stream: not needed for the tick design; tick-time reads suffice.
+- Dispatch response envelope: `{"sequence":N}`.
