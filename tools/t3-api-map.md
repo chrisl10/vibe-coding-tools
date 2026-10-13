@@ -96,6 +96,24 @@ on codex_belay exists (2026-10-06), so T3-through-belay is production-proven.
 | CronCreate tick | external timer posting thread.turn.start TICK prompts |
 | archive_session | thread.archive |
 
+## Exact server schemas (PROVEN by live dispatch, t3 0.0.45)
+
+The authoritative schema source is the server bundle inside the desktop
+app: extract app.asar, read apps/server/dist/bin.mjs (search for the
+command name). Two fields the SPA bundle does not reveal:
+
+- thread.create REQUIRES branch and worktreePath as explicit JSON null
+  when unused (omitting them is a 400 with an empty body), and
+  modelSelection is required (no default). interactionMode defaults.
+- thread.turn.start REQUIRES message.attachments as an array (empty is
+  fine) and interactionMode ("default").
+
+Live proof 2026-10-13: t3ctl created threads and ran turns on codex_belay
+and claude_belay (glm-5.3-flash via fabric), assistant replies received;
+threads archived and scratch project deleted through the same API. The
+claude thread also fired the Wasp Nest v3 SessionStart hook (Library
+offer), proving the v3 plugin install is live inside T3 sessions.
+
 ## Open items for the t3ctl build
 
 1. Environment addressing: how the desk app routes commands to a connected
