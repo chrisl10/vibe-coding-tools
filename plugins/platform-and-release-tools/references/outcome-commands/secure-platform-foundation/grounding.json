@@ -1,0 +1,10 @@
+{
+  "command": "packs/platform-and-release-tools/commands/secure-platform-foundation.md",
+  "queen_exit": 0,
+  "source_captures": 10,
+  "archive_hashes_verified": 10,
+  "role_declarations": "all cited agent names resolve in current catalog",
+  "distillation_citations": "all cited relative files exist",
+  "findings": [],
+  "qualification": "Static source/grounding review only; examples are hypothetical; no installed host or application runtime proof"
+}
