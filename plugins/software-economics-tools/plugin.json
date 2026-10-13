@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "software-economics-tools",
+  "version": "3.0.0",
+  "description": "Model supplied software economics and costs with explicit scenarios and evidence.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
+  "license": "AGPL-3.0-or-later",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Software Economics Tools",
+        "shortDescription": "Model supplied software economics and costs with explicit scenarios and evidence.",
+        "developerName": "Legion Code Inc.",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ]
+      }
+    }
+  }
+}
