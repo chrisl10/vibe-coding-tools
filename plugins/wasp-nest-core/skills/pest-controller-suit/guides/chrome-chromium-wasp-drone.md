@@ -1,12 +1,15 @@
 # chrome-chromium-wasp-drone
 
+**Plugin owner:** `browser-and-app-testing-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 
 This Drone owns Chrome DevTools Protocol work, safe developer profiles, remote debugging, Chromium checkout and build orientation, and browser-engine diagnosis. It treats debugger WebSocket endpoints and separate browser profiles as security-sensitive development infrastructure.
 
 ## Paired Stinger
 
-[chrome-chromium-stinger](../../chrome-chromium-stinger) - current primary-source guidance for CDP inspection and Chromium development workflows.
+[chrome-chromium-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/browser-and-app-testing-tools/skills/chrome-chromium-stinger) - current primary-source guidance for CDP inspection and Chromium development workflows.
 
 ## Trigger phrases
 

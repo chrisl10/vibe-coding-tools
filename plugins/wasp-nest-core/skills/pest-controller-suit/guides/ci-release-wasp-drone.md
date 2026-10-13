@@ -1,12 +1,17 @@
 # ci-release-wasp-drone
 
+**Plugin owner:** `platform-and-release-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
-Build, CI, and npm-release specialist for this repo's TypeScript/Node ESM package pipeline: the esbuild multi-harness bundle (`tsc && node esbuild.config.mjs`), version single-sourcing via `scripts/sync-versions.mjs`, the quality gate (`npm run ci` = typecheck + jscpd duplication + vitest, husky pre-commit lint-staged tsc), the GitHub Actions workflow architecture (ci.yaml, codeql.yaml, pr-checks.yaml, publish-smoke-test.yaml, release.yaml), the Node version matrix, npm publish discipline (the `files` allowlist, prepack, `pack-check.mjs` secret-scan), and native-dependency healing on install. Pure npm/ESM, no containers, no cloud deploy.
+CI and release engineering after target classification: SvelteKit-on-Vercel app checks and deployment interaction, published npm-package build/release contracts, or explicit handoff for another platform. Improve CI without redundant jobs through a baseline/proposed work and proof matrix, dependency-aware triggers, candidate/artifact identity, safe cancellation/rerun rules and measured cost/time inputs. This source tree is an asset distributor; do not assume it has either example pipeline.
 
 ## Paired Stinger
-[ci-release-stinger](../../ci-release-stinger) - the build/bundle guide, version single-sourcing, the quality-gate spec, workflow architecture, the release flow, npm publish discipline, and native-dep healing.
+[ci-release-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/ci-release-stinger) - the build/bundle guide, version single-sourcing, the quality-gate spec, workflow architecture, the release flow, npm publish discipline, and native-dep healing.
 
 ## Trigger phrases
+- "improve CI without redundant jobs / CI is too slow or expensive"
+- "is this partial rerun sufficient for the current candidate"
 - "review our build, is it doing the right thing"
 - "the bundle output looks wrong"
 - "design our CI pipeline / audit our workflows"
@@ -24,11 +29,12 @@ Build, CI, and npm-release specialist for this repo's TypeScript/Node ESM packag
 - The request is dependency CVE or lockfile triage verdicts; that is dependency-audit-wasp-drone, though this Drone wires the audit step.
 
 ## Inputs the Drone needs
-- The repo's `package.json`, `esbuild.config.mjs`, `tsconfig*.json`, workflow files, and version-sync scripts, inventoried before any recommendation.
+- Actual target workflow files, invoked scripts, platform/deployment ownership, required checks, event/candidate/toolchain/config and artifact inputs, inventoried before recommendation. Load esbuild/version-sync only for a matching npm-package case.
 - Which invocation type applies: build-author, bundle-audit, pipeline-design/audit, release-cut, quality-gate, or native-dep-heal.
 - Whether the change is must-fix (secret reachable, allowlist ships junk, unpinned action) vs should-refactor severity.
 
 ## Outputs
+- A baseline/proposed CI obligation packet using paired guide 17, with preserved isolation/permissions and explicit Unknown measurements; hypothetical source review does not prove native CI savings.
 - An esbuild/script diff or a new/modified GitHub Actions workflow job with local-parity notes.
 - A bundle or workflow audit report citing exact file:line and the governing guide section.
 - A release plan and checklist for cutting an `@deeplake/hivemind` release.

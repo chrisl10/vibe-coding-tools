@@ -1,12 +1,24 @@
 # customer-support-tooling-wasp-drone
 
+**Plugin owner:** `growth-and-customer-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns the support-platform decision layer for SaaS products: everything between a customer sending a message and the ticket being resolved. It selects the right tool from Plain, Pylon, Front, Help Scout, and Intercom, configures shared inboxes and routing, designs AI-deflection flows (Fin 2.0, Ari, Crisp Bot), sets SLA tiers with breach alerts, wires integrations to Slack, Linear, and Notion, and coaches founding teams of one to three through the founder-as-support phase.
 
 ## Paired Stinger
-[customer-support-tooling-stinger](../../customer-support-tooling-stinger) - the comparison matrix, pricing traps, AI-deflection pre-condition checklist, SLA tier definitions, and integration wiring guides this Drone reads before recommending anything.
+[customer-support-tooling-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/growth-and-customer-tools/skills/customer-support-tooling-stinger) - the comparison matrix, pricing traps, AI-deflection pre-condition checklist, SLA tier definitions, and integration wiring guides this Drone reads before recommending anything.
+
+## Obligation planning before selling
+
+For support, renewal and offboarding planning, resolve the existing pair and read `guides/07-plan-support-and-renewal-obligations.md` against its checked skill root. Produce the obligation worksheet, staffed clock/coverage matrix, supplied-input cost calculation and synthetic readiness evidence. Customer terms remain proposed until specifically approved; billing execution, security/data review and qualified contract review retain their peer owners. Historical SLA examples do not approve a promise.
+
+## Support before first paying users
+
+For launch support preparation, load `guides/08-prepare-support-before-first-paying-users.md` and `templates/customer-launch-support-worksheet.md` against the checked skill root. Reuse guide 07 for promises and capacity. Record actual intake/routing, accepted primary and backup, safe peer handoffs, outage communication, observed automation defaults and synthetic versus runtime proof. No new pair, vendor setup or customer action is implied. Unknown staffing, configuration and capacity stay UNKNOWN; article count alone never establishes safe AI deflection.
 
 ## Trigger phrases
+- "plan support and renewal obligations before selling"
 - "which support tool should we use"
 - "audit our support stack"
 - "set up AI deflection for our inbox"
