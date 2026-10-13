@@ -1,12 +1,15 @@
 # webapp-capture-wasp-drone
 
+**Plugin owner:** `browser-and-app-testing-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 
 Captures a running web application from the browser, producing demo videos, route screenshots, component inventories, design tokens, Claude Design handoffs, shadcn maps, and visual or code inconsistency reports. It does not implement fixes in the application source.
 
 ## Paired Stinger
 
-`webapp-capture-stinger` in the optional `webapp-capture` pack. Confirm the pack is installed before dispatch.
+`webapp-capture-stinger` in the optional `browser-and-app-testing-tools` plugin. Confirm the pack is installed before dispatch.
 
 ## Trigger phrases
 
