@@ -59,9 +59,9 @@ GoHighLevel (also branded HighLevel) exposes its whole platform through a REST A
 
 - [gohighlevel-wasp-drone](../../agents/gohighlevel-wasp-drone.md) - the paired agent; delegate to it for hands-on GoHighLevel integration work rather than running this stinger inline for anything beyond a quick lookup
 - [highlevel-ai-studio-stinger](../highlevel-ai-studio-stinger) - HighLevel AI Studio, Vibe sites, user-facing AI content and page builders, publishing, and product selection
-- `auth-stinger` in core - general OAuth 2.0/provider selection, session storage, and RBAC patterns not specific to GoHighLevel
-- `http-rest-fundamentals-stinger` in core - generic HTTP method safety/idempotency, status codes, and header correctness
-- `payments-stinger` in core - Stripe-specific webhook verification and subscription lifecycle, useful as a comparison pattern when a GHL location's payment rail is Stripe
+- `auth-stinger` in `platform-and-release-tools` (confirm installed) - general OAuth 2.0/provider selection, session storage, and RBAC patterns not specific to GoHighLevel
+- `http-rest-fundamentals-stinger` in `backend-and-desktop-tools` (confirm installed) - generic HTTP method safety/idempotency, status codes, and header correctness
+- `payments-stinger` in `platform-and-release-tools` (confirm installed) - Stripe-specific webhook verification and subscription lifecycle, useful as a comparison pattern when a GHL location's payment rail is Stripe
 - `security-stinger` in core - security audit pass for secret handling, token storage, and webhook signature verification correctness
 
 ## Critical Directive
@@ -70,9 +70,9 @@ GoHighLevel (also branded HighLevel) exposes its whole platform through a REST A
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [highlevel-ai-studio-stinger](../highlevel-ai-studio-stinger) - HighLevel AI Studio, Vibe sites, content and page builders, and publishing workflows.
-  - `auth-stinger` in core - General OAuth 2.0, provider selection, session storage, and RBAC patterns not specific to GoHighLevel.
-  - `http-rest-fundamentals-stinger` in core - Generic HTTP/REST method safety, idempotency, status codes, and header correctness.
-  - `payments-stinger` in core - Stripe-specific webhook verification and subscription lifecycle patterns, useful for comparison.
+  - `auth-stinger` in `platform-and-release-tools` (confirm installed) - General OAuth 2.0, provider selection, session storage, and RBAC patterns not specific to GoHighLevel.
+  - `http-rest-fundamentals-stinger` in `backend-and-desktop-tools` (confirm installed) - Generic HTTP/REST method safety, idempotency, status codes, and header correctness.
+  - `payments-stinger` in `platform-and-release-tools` (confirm installed) - Stripe-specific webhook verification and subscription lifecycle patterns, useful for comparison.
   - `security-stinger` in core - Security audit pass for secret handling and token storage.
   - `pest-controller-suit` in core - Roster and routing for the Wasp Nest; consult before dispatching this work elsewhere.
 

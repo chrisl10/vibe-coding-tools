@@ -84,9 +84,9 @@ HighLevel changes quickly. The included research is a primary-source snapshot fe
 
 - `highlevel-ai-studio-wasp-drone` - the paired Drone for hands-on HighLevel AI creation, publishing, and troubleshooting
 - [gohighlevel-stinger](../gohighlevel-stinger) - HighLevel API, OAuth, token scope, CRM resources, webhooks, rate limits, and Marketplace apps
-- `website-stinger` in core - production website implementation outside HighLevel's hosted AI builders
-- `ai-coding-tools-stinger` in core - general AI coding tool selection and configuration
-- `mind-stinger` in core - general AI architecture, RAG, memory, routing, and evaluation
+- `website-stinger` in `web-development-tools` (confirm installed) - production website implementation outside HighLevel's hosted AI builders
+- `ai-coding-tools-stinger` in `data-and-ai-tools` (confirm installed) - general AI coding tool selection and configuration
+- `mind-stinger` in `data-and-ai-tools` (confirm installed) - general AI architecture, RAG, memory, routing, and evaluation
 - `security-stinger` in core - security audit of generated code, secrets, PII, forms, third-party scripts, and publishing posture
 
 ## Critical Directive
@@ -95,9 +95,9 @@ HighLevel changes quickly. The included research is a primary-source snapshot fe
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [gohighlevel-stinger](../gohighlevel-stinger) - HighLevel API and integration authority.
-  - `website-stinger` in core - Website implementation outside HighLevel.
-  - `ai-coding-tools-stinger` in core - General AI coding tool selection and setup.
-  - `mind-stinger` in core - General AI cognitive-layer architecture.
+  - `website-stinger` in `web-development-tools` (confirm installed) - Website implementation outside HighLevel.
+  - `ai-coding-tools-stinger` in `data-and-ai-tools` (confirm installed) - General AI coding tool selection and setup.
+  - `mind-stinger` in `data-and-ai-tools` (confirm installed) - General AI cognitive-layer architecture.
   - `security-stinger` in core - Security audit and remediation.
   - `pest-controller-suit` in core - Wasp Nest routing and registration.
 

@@ -1,0 +1,31 @@
+{
+  "name": "infrastructure-decision-tools",
+  "version": "3.0.0",
+  "description": "Prepare platform assets and account dependencies without implicit setup actions.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
+  "license": "AGPL-3.0-or-later",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./agents/digitalocean-platform-wasp-drone.md",
+    "./agents/infrastructure-fit-wasp-drone.md",
+    "./agents/launch-assets-wasp-drone.md",
+    "./agents/network-boundaries-wasp-drone.md",
+    "./agents/railway-platform-wasp-drone.md",
+    "./agents/vultr-platform-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/assess-digitalocean.md",
+    "./commands/assess-railway.md",
+    "./commands/assess-vultr.md",
+    "./commands/choose-infrastructure.md",
+    "./commands/plan-network-boundaries.md",
+    "./commands/prepare-assets.md"
+  ],
+  "dependencies": [
+    "wasp-nest-core"
+  ]
+}
