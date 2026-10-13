@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "chrisl-forged",
+  "version": "3.0.0",
+  "description": "Locally forged specialist Drone+Stinger pairs: before and after captures, code structure, evidence testing, unslopping, Effect-TS v4, and production release execution and pipeline building.",
+  "author": {
+    "name": "Chris Lyle"
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/chrisl10/vibe-coding-tools",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "ChrisL Forged",
+        "shortDescription": "Locally forged specialist Drone+Stinger pairs: before and after captures, code structure, evidence testing, unslopping, Effect-TS v4, and production release execution and pipeline building.",
+        "developerName": "Chris Lyle",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "chrisl-forged",
+  "version": "3.0.0",
+  "description": "Locally forged specialist Drone+Stinger pairs: before and after captures, code structure, evidence testing, unslopping, Effect-TS v4, and production release execution and pipeline building.",
+  "author": {
+    "name": "Chris Lyle"
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/chrisl10/vibe-coding-tools",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./cursor-agents/before-after-wasp-drone.md",
+    "./cursor-agents/code-structure-wasp-drone.md",
+    "./cursor-agents/effect-wasp-drone.md",
+    "./cursor-agents/evidence-testing-wasp-drone.md",
+    "./cursor-agents/production-release-build-wasp-drone.md",
+    "./cursor-agents/production-release-wasp-drone.md",
+    "./cursor-agents/unslop-wasp-drone.md"
+  ],
+  "commands": []
+}

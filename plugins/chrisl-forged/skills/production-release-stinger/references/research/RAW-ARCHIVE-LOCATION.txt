@@ -1,0 +1,6 @@
+The raw research archive (15 files: 8 Reachlynk corpus, 7 official web
+sources, fetched 2026-09-29) lives in this directory under raw/. In the
+2.x tree both the production-release and production-release-build
+components shared a single archive at the production-release command;
+the v3 port carries the full archive inside each Stinger so each pair is
+self-contained.

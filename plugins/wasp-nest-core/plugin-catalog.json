@@ -3586,6 +3586,114 @@
           "source": "packs/product-studio/commands/plan-product.md"
         }
       ]
+    },
+    {
+      "name": "chrisl-forged",
+      "display_name": "ChrisL Forged",
+      "description": "Locally forged specialist Drone+Stinger pairs (desk additions).",
+      "why": "Desk-forged specialists keep their own owner so the upstream packs and their distribution contract stay unchanged.",
+      "skills": [
+        "before-after-stinger",
+        "code-structure-stinger",
+        "effect-stinger",
+        "evidence-testing-stinger",
+        "production-release-build-stinger",
+        "production-release-stinger",
+        "unslop-stinger"
+      ],
+      "agents": [
+        "before-after-wasp-drone",
+        "code-structure-wasp-drone",
+        "effect-wasp-drone",
+        "evidence-testing-wasp-drone",
+        "production-release-build-wasp-drone",
+        "production-release-wasp-drone",
+        "unslop-wasp-drone"
+      ],
+      "commands": [],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {},
+      "mandatory": false,
+      "counts": {
+        "skill": 7,
+        "agent": 7,
+        "command": 0
+      },
+      "source_root": "packs/chrisl-forged",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "before-after-stinger",
+          "source": "packs/chrisl-forged/skills/before-after-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "code-structure-stinger",
+          "source": "packs/chrisl-forged/skills/code-structure-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "effect-stinger",
+          "source": "packs/chrisl-forged/skills/effect-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "evidence-testing-stinger",
+          "source": "packs/chrisl-forged/skills/evidence-testing-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "production-release-build-stinger",
+          "source": "packs/chrisl-forged/skills/production-release-build-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "production-release-stinger",
+          "source": "packs/chrisl-forged/skills/production-release-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "unslop-stinger",
+          "source": "packs/chrisl-forged/skills/unslop-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "before-after-wasp-drone",
+          "source": "packs/chrisl-forged/agents/before-after-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "code-structure-wasp-drone",
+          "source": "packs/chrisl-forged/agents/code-structure-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "effect-wasp-drone",
+          "source": "packs/chrisl-forged/agents/effect-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "evidence-testing-wasp-drone",
+          "source": "packs/chrisl-forged/agents/evidence-testing-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "production-release-build-wasp-drone",
+          "source": "packs/chrisl-forged/agents/production-release-build-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "production-release-wasp-drone",
+          "source": "packs/chrisl-forged/agents/production-release-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "unslop-wasp-drone",
+          "source": "packs/chrisl-forged/agents/unslop-wasp-drone.md"
+        }
+      ]
     }
   ],
   "profiles": [

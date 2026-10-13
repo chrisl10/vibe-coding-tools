@@ -40,7 +40,7 @@ For local installed plugins, run Core's `hooks/resolve-component.py` with the pa
 
 For a user asking which capability fits a desired result, use [outcome discovery](guides/outcome-discovery.md). Its packaged shortlist keeps proposed gaps distinct from existing scope and verified installed availability.
 
-164 Drones routed across Core and optional plugins, sorted into domain groups. Website Audit dispatches its separate twenty-Drone engagement. The Domain column is a one-line summary of the Drone's own frontmatter description. Trigger keywords are pulled from that same description, not invented.
+171 Drones routed across Core and optional plugins, sorted into domain groups. Website Audit dispatches its separate twenty-Drone engagement. The Domain column is a one-line summary of the Drone's own frontmatter description. Trigger keywords are pulled from that same description, not invented.
 
 ### Stack and frameworks
 
@@ -283,6 +283,20 @@ These three Drones run in order under `/product-studio:plan-product`: strategy, 
 | Drone | Domain | Trigger keywords | Paired Stinger |
 | --- | --- | --- | --- |
 | `natural-photography-wasp-drone` | Photographic generation and retouching specialist for consented model work | "generate a photo of <model>", "retouch this frame", "make this look like a real phone photo", "ingest a new model" | `natural-photography-stinger` |
+
+### Locally forged (chrisl-forged plugin)
+
+| Drone | Domain | Trigger keywords | Paired Stinger |
+| --- | --- | --- | --- |
+| `before-after-wasp-drone` | PR-ready before and after screenshot pairs of web pages or elements via the @vercel/before-and-after CLI, uploaded and appended to the pull request | "take before and after", "screenshot comparison", "visual diff", "PR screenshots" | `before-after-stinger` |
+| `code-structure-wasp-drone` | Two-layer architecture discipline: actions orchestrate domain rules while a shared service layer centralizes reusable operational mechanics | "actions vs services", "duplicate operational logic", "refactor repeated blocks", "feature shares mechanics" | `code-structure-stinger` |
+| `evidence-testing-wasp-drone` | Verifiable proof a change works: an annotated recording of the agent driving the live app, a headless screenshot-and-probe sequence, or measured before and after numbers, packaged and posted | "evidence instead of a prose claim", "bug-fix verification", "UI behavior proof", "measured deltas" | `evidence-testing-stinger` |
+| `unslop-wasp-drone` | Cuts AI tells from human-read prose and adds human voice against a 31-pattern catalog | "unslop this", "make this sound human", "remove AI tells", "this reads like AI" | `unslop-stinger` |
+| `effect-wasp-drone` | Effect-TS v4 implementation, v3-to-v4 migration, and conformance review for production code using the Effect library | "implement with effect", "migrate v3 to v4", "review Effect code" | `effect-stinger` |
+| `production-release-wasp-drone` | Executes the complete production release at the project's sophistication tier, from authorization to verified-shipped | "production-release", "ship to production", "deploy to live" | `production-release-stinger` |
+| `production-release-build-wasp-drone` | Audits CI-to-deploy posture, classifies it on the tier ladder, recommends upgrades, and installs release flows into owner-approved repos | "release-pipeline audit", "tier classification", "install a deploy flow" | `production-release-build-stinger` |
+
+These Drones live in the optional `chrisl-forged` plugin. Confirm the pack is installed before dispatch; a core-only install cannot arm their Stingers. Their dispatch guides ship inside the plugin under `references/pest-controller-guides/`.
 
 ## Outcome decisions and preparation
 

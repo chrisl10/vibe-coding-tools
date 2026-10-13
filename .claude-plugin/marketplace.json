@@ -112,6 +112,11 @@
       "name": "product-studio",
       "source": "./plugins/product-studio",
       "description": "Turn an idea into a buildable plan: product strategy, Claude-Design-grade UX, a PRD map, a wave plan and a Definition of Done."
+    },
+    {
+      "name": "chrisl-forged",
+      "source": "./plugins/chrisl-forged",
+      "description": "Locally forged specialist Drone+Stinger pairs (desk additions)."
     }
   ]
 }

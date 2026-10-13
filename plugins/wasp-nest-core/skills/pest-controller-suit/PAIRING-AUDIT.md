@@ -22,3 +22,7 @@ A roster entry identifies a capability; it does not prove that the owning option
 Each specialist Drone names its paired Stinger. Its owner contains both canonical files. A direct-use or orchestrator skill declares its exception tier instead of claiming a nonexistent Drone.
 Read the catalog to find the owner and prerequisite closure, then resolve the actual installed capability before dispatch. Core is mandatory for every selected workflow.
 Source changes require a fresh run of scripts/validate.py; this note does not claim a new runtime or native-host audit merely because its counts are current.
+
+## Change log
+
+- 2026-10-12: seven locally forged pairs from the `chrisl-forged` plugin joined the roster under "Locally forged (chrisl-forged plugin)". The six forged base names include production-release, which carries two complete pairs. Audited with the same pairing checks: before-after-wasp-drone with before-after-stinger, code-structure-wasp-drone with code-structure-stinger, evidence-testing-wasp-drone with evidence-testing-stinger, unslop-wasp-drone with unslop-stinger, effect-wasp-drone with effect-stinger, production-release-wasp-drone with production-release-stinger, and production-release-build-wasp-drone with production-release-build-stinger. Every Drone has exactly one paired Stinger inside the same plugin, no Stinger is unpaired, and no pair is shared. Their dispatch guides ship inside the plugin under `references/pest-controller-guides/`.
