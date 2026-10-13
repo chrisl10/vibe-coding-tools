@@ -1,0 +1,29 @@
+{
+  "name": "code-audit-tools",
+  "version": "3.0.0",
+  "description": "Audit repositories and app security, measure bloat, inspect branches and plan remediation.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./cursor-agents/code-audit-brief-wasp-drone.md",
+    "./cursor-agents/code-bloat-wasp-drone.md",
+    "./cursor-agents/code-forensics-wasp-drone.md",
+    "./cursor-agents/code-foundation-wasp-drone.md",
+    "./cursor-agents/lovable-audit-wasp-drone.md",
+    "./cursor-agents/nextjs-security-wasp-drone.md",
+    "./cursor-agents/polyglot-security-wasp-drone.md",
+    "./cursor-agents/react-security-wasp-drone.md",
+    "./cursor-agents/remediation-planning-wasp-drone.md",
+    "./cursor-agents/sveltekit-security-wasp-drone.md",
+    "./cursor-agents/swarm-audit-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/audit-my-code.md"
+  ]
+}
