@@ -2,11 +2,16 @@
 
 This directory holds everything the `library-wasp-drone` agent needs to do its job. Organized into three layers: **guides** (workflow rules), **examples** (exemplars to imitate), **templates** (files copied on `initialize`).
 
-> **Agent entry point:** [`.claude/agents/library-wasp-drone.md`](../library-wasp-drone.md) (repo-local). The agent reads files from this directory by path; it does not auto-load everything into context.
+> **Agent entry point:** [`src/agents/library-wasp-drone.md`](../../agents/library-wasp-drone.md) (repo-local). The agent reads files from this directory by path; it does not auto-load everything into context.
 >
-> **QA authorship is out of scope.** A separate sibling agent, [`quality-wasp-drone`](../quality-wasp-drone.md), owns QA reports. Reports tied to a PRD land inside that PRD's `qa/` folder; reports tied to an IRD land inside that IRD's `qa/` folder; cross-cutting audits land in `library/requirements/reports/quality/`. This agent still owns folder structure, numbering invariants, and lifecycle moves, but does not write QA content.
+> **QA authorship is out of scope.** A separate sibling agent, [`quality-wasp-drone`](../../agents/quality-wasp-drone.md), owns QA reports. Reports tied to a PRD land inside that PRD's `qa/` folder; reports tied to an IRD land inside that IRD's `qa/` folder; cross-cutting audits land in `library/requirements/reports/quality/`. This agent still owns folder structure, numbering invariants, and lifecycle moves, but does not write QA content.
 
 > **Shared contract authorship is out of scope.** [`contract-writing-wasp-drone`](../../agents/contract-writing-wasp-drone.md) owns `library/knowledge/private/contracts/CTR-*.md`. Library checks shared boundaries before dividing PRD work, then links the accepted revision in each affected PRD.
+
+## Current plugin owner
+
+This capability stays in required Wasp Nest Core. Its canonical source is src/skills, with canonical ownership recorded in the root [plugin catalog](../../../plugin-catalog.json). Its SKILL.md metadata declares any standalone/orchestrator exception; specialist agents keep their actual paired Stinger. Host home/plugin files are generated carriers. Use [the layout and selection guide](../../../docs/PLUGIN-LAYOUT.md) when a workflow calls an optional specialist; source references alone do not enable an installed plugin.
+
 
 ## Directory map
 
@@ -30,11 +35,14 @@ library-stinger/
     ├── documentation-framework.md
     ├── library-README.md
     ├── notes-README.md
-    ├── knowledge-base-README.md
+    ├── knowledge-README.md
+    ├── knowledge-public-README.md
+    ├── knowledge-private-README.md
+    ├── contracts-README.md
     ├── requirements-README.md
     ├── issues-README.md
-    ├── features-README.md
-    └── qa-README.md
+    ├── requirements-backlog-README.md
+    └── requirements-reports-README.md
 ```
 
 > **Note on numbering:** `guides/04-qa.md` and `examples/qa-003-example.md` used to live here when this agent also authored QA reports. Both were removed when QA authorship moved to `quality-wasp-drone`. The `04` slot is intentionally left empty - do not renumber the remaining guides.
@@ -50,8 +58,9 @@ The agent dispatches based on user intent. Read the matching guide **before** ac
 | "ingest new issues" / "triage" | [`guides/02-issue.md`](guides/02-issue.md) |
 | "write a PRD for <feature>" / "plan <feature>" | [`guides/03-feature-prd.md`](guides/03-feature-prd.md), including the shared contract check |
 | "backwards-PRD" / "document existing code" | [`guides/05-backwards-prd.md`](guides/05-backwards-prd.md) |
+| "create reusable templates from real workflows" | [`guides/08-reuse-workflow-templates.md`](guides/08-reuse-workflow-templates.md), with [evidence fields](references/template-reuse-fields.md) |
 | "run a sync audit" / "check for drift" | [`guides/06-maintenance.md`](guides/06-maintenance.md) |
-| "write a QA report" / "audit this" | **Hand off to [`quality-wasp-drone`](../quality-wasp-drone.md).** Not in this agent's scope. |
+| "write a QA report" / "audit this" | **Hand off to [`quality-wasp-drone`](../../agents/quality-wasp-drone.md).** Not in this agent's scope. |
 
 ## Examples - which one to mirror
 
@@ -79,9 +88,11 @@ After `initialize`:
 
 1. Edit `library/knowledge/private/standards/documentation-framework.md` - replace placeholders like "(fill in on init)".
 2. Customize `library/README.md` with the repo's name + any repo-specific notes.
-3. Commit.
+3. Verify the seeded files and links. Commit only when the user authorized that action.
 
-The seeded `library/requirements/qa/README.md` (`templates/qa-README.md`) intentionally points downstream readers at the `quality-wasp-drone` agent for report authorship - this agent only maintains the folder, not its contents.
+The seeded `library/requirements/reports/README.md` points downstream readers at `quality-wasp-drone` for report authorship. Library maintains the folder, not its report contents. The retained `knowledge-base-README.md`, `features-README.md` and `qa-README.md` filenames are compatibility seeds for the current v2 destinations, not instructions to recreate retired folders.
+
+For a full source-based refresh, use Documentation Tools' `kb-refresh-stinger`. For audience briefs from existing sources, use `library-packets-stinger`; each selected packet includes Markdown, Word, PDF and citations. App Primer Zero prepares the repository's current state, contracts, schema coverage and handoff before implementation. Missing optional packs or tools remain explicit gaps.
 
 ## For the agent (self-operation notes)
 
@@ -105,6 +116,10 @@ This agent consolidates 4 predecessors; archived at `~/.cursor/archive/`:
 - `issue-wasp-drone`, a prior-generation name now covered by `library-wasp-drone`
 - `backwards-prd` (was `.claude/skills/backwards-prd/` in a repo)
 
-The former `implementation-qa` predecessor is NOT folded in here - it was kept as a sibling and renamed `quality-wasp-drone`. See `.claude/agents/quality-wasp-drone.md`.
+The former `implementation-qa` predecessor is NOT folded in here - it was kept as a sibling and renamed `quality-wasp-drone`. See [the current Core Quality Drone](../../agents/quality-wasp-drone.md).
 
 Do not read archived sources; the guides in this directory are authoritative.
+
+## Workflow template grounding
+
+The [template reuse research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/library-stinger/references/research/template-reuse/distillation.md) includes fresh primary source captures and exact current repository procedure snapshots. Guide 08 enhances the existing PRD/IRD formats; it does not create a second template collection or claim customer workflow execution.

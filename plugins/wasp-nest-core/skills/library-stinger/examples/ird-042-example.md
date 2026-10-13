@@ -9,6 +9,9 @@ QA report lives in the qa/ subfolder:
 Move entire ird-042-password-reset-expiry/ folder to in-work/ then completed/ as lifecycle changes.
 -->
 
+> Example context: Project-relative links in this worked document describe the illustrated target repository. They are not bundled Core resources or proof that those project files exist in this packaging checkout.
+
+
 # IRD-042: Password reset link expires too quickly
 
 > **GitHub Issue:** [#42](https://github.com/<org>/<repo>/issues/42) - Bug
