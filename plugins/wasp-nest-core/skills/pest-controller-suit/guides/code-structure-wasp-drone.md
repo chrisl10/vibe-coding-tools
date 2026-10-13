@@ -1,10 +1,12 @@
 # code-structure-wasp-drone
 
+**Plugin owner:** `chrisl-forged`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
 ## Domain
 Enforces the two-layer architecture discipline: actions orchestrate domain rules (the why and when) while a shared service layer centralizes reusable operational mechanics (the how). Rules on extraction (two or more callers required), designs composable capability-block services with explicit inputs and structured outputs, and migrates callers one at a time with verification between steps.
 
 ## Paired Stinger
-[code-structure-stinger](../../skills/code-structure-stinger) - layer table, capability-block design rules, migration checklist, anti-pattern catalog, worked example.
+[code-structure-stinger](https://github.com/chrisl10/vibe-coding-tools/blob/feat/v3-forged/plugins/chrisl-forged/skills/code-structure-stinger) - layer table, capability-block design rules, migration checklist, anti-pattern catalog, worked example.
 
 ## Trigger phrases
 - "multiple workflows duplicate the same logic"

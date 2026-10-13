@@ -1,10 +1,12 @@
 # evidence-testing-wasp-drone
 
+**Plugin owner:** `chrisl-forged`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
 ## Domain
 Records verifiable proof that a change works: drives the live app itself under an annotated recording, runs headless screenshot-and-probe sequences on machines without a GUI, or captures measured before and after numbers for non-UI changes. Packages evidence.mp4 (or screenshot set), report.md, and manifest.json, stamped with the revision, and posts them to the PR and tracker issue. Marks unrunnable tests untested with reasons instead of skipping them silently.
 
 ## Paired Stinger
-[evidence-testing-stinger](../../skills/evidence-testing-stinger) - artifact contract, annotation protocol (setup, test_start, assertion), path selection, revision stamping, posting etiquette.
+[evidence-testing-stinger](https://github.com/chrisl10/vibe-coding-tools/blob/feat/v3-forged/plugins/chrisl-forged/skills/evidence-testing-stinger) - artifact contract, annotation protocol (setup, test_start, assertion), path selection, revision stamping, posting etiquette.
 
 ## Trigger phrases
 - "prove this works"

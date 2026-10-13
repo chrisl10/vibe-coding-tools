@@ -1,12 +1,14 @@
 # effect-wasp-drone
 
+**Plugin owner:** `chrisl-forged`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
 ## Domain
 This Drone is the colony's Effect-TS specialist: it implements features against the Effect library at v4 (GA October 2026), migrates Effect v3 codebases to the v4 API, and reviews Effect code for version conformance and idiom quality. Its defining discipline is refusing to write v3 reflexes into v4 code: `Context.Tag`, `catchAll`, `Either`, `ParseResult`, Cause tree matching, and raw yields of `Option`/`Ref`/`Fiber` all changed in v4, and every replacement is tabled in its Stinger's cited research archive.
 
 It works from the official v4 docs and the effect repository's migration guides, consults the live docs when a topic falls in an archive gap (streams, schedules, workflows), and never improvises an API shape.
 
 ## Paired Stinger
-[effect-stinger](../../skills/effect-stinger) - the v4 quick-reference rename tables, the canonical service/layer/program worked example, three verb guides (implement, migrate, review), and the 20-source cited research archive. This Drone reads the Stinger's SKILL.md before planning any task.
+[effect-stinger](https://github.com/chrisl10/vibe-coding-tools/blob/feat/v3-forged/plugins/chrisl-forged/skills/effect-stinger) - the v4 quick-reference rename tables, the canonical service/layer/program worked example, three verb guides (implement, migrate, review), and the 20-source cited research archive. This Drone reads the Stinger's SKILL.md before planning any task.
 
 ## Trigger phrases
 - "implement this in Effect"

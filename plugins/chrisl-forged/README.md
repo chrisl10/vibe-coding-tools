@@ -42,7 +42,7 @@ Expected result: specialist output from the paired Stinger's procedure, with its
 
 ## Dispatch guides
 
-Pest Controller dispatch guides for these Drones live in [references/pest-controller-guides/](references/pest-controller-guides/). The roster in Core's `pest-controller-suit` routes to them; confirm this pack is installed before dispatch.
+Pest Controller dispatch guides for these Drones live in Core's `pest-controller-suit/guides/` alongside every other Drone, each marked with `chrisl-forged` as the plugin owner. The roster in Core's `pest-controller-suit` routes to them; confirm this pack is installed before dispatch.
 
 ## Prerequisites and boundaries
 

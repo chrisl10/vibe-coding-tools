@@ -33,6 +33,7 @@ REGISTRY = HOME / ".wasp-nest/installed-plugins.json"
 AGENTS_SKILLS = HOME / ".agents/skills"
 CLAUDE_SKILLS = HOME / ".claude/skills"
 CLAUDE_AGENTS = HOME / ".claude/agents"
+ZCODE_AGENTS = HOME / ".zcode/agents"
 CODEX_HOME = Path(os.environ.get("CODEX_HOME", HOME / ".codex"))
 
 DEFAULT_PLUGINS = [
@@ -156,6 +157,25 @@ def deploy_drone_agents(roots: dict[str, Path], check: bool) -> int:
     print(f"  .claude/agents: {'clean' if drift == 0 else f'{drift} drifted'}")
     return drift
 
+def deploy_zcode_agents(roots: dict[str, Path], check: bool) -> int:
+    if not ZCODE_AGENTS.is_dir():
+        return 0  # zcode flat agents dir not used on this device
+    drift = 0
+    for name, root in sorted(roots.items()):
+        agents = root / "agents"
+        if not agents.is_dir():
+            continue
+        for agent in sorted(agents.glob("*-wasp-drone.md")):
+            dst = ZCODE_AGENTS / agent.name
+            if sha256(dst) == sha256(agent):
+                continue
+            drift += 1
+            if not check:
+                shutil.copy2(agent, dst)
+                print(f"  synced .zcode/agents/{agent.name}")
+    print(f"  .zcode/agents: {'clean' if drift == 0 else f'{drift} drifted'}")
+    return drift
+
 
 def run_register_hook(check: bool) -> int:
     hook = PLUGINS_DIR / "wasp-nest-core/hooks/register-codex-agents.py"
@@ -203,6 +223,7 @@ def main() -> int:
     drift = write_registry(roots, args.check)
     drift += deploy_stingers(roots, args.check)
     drift += deploy_drone_agents(roots, args.check)
+    drift += deploy_zcode_agents(roots, args.check)
     drift += run_register_hook(args.check)
 
     catalog = json.loads((PLUGINS_DIR / "wasp-nest-core/plugin-catalog.json").read_text())

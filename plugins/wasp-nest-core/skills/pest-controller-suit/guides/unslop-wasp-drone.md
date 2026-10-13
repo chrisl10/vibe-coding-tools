@@ -1,10 +1,12 @@
 # unslop-wasp-drone
 
+**Plugin owner:** `chrisl-forged`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
 ## Domain
 Cuts AI tells from text written for a human reader and adds human voice: commit messages, PR titles and bodies, docs, code comments, replies. Runs the scan, rewrite, add soul, self-audit loop against a 31-pattern catalog covering content, language, style, communication artifacts, filler, jargon, and plain speech. Edits only the text the task touched and shows the changed lines.
 
 ## Paired Stinger
-[unslop-stinger](../../skills/unslop-stinger) - the 31-pattern catalog with fixes, the four-step loop, the adding-soul checklist.
+[unslop-stinger](https://github.com/chrisl10/vibe-coding-tools/blob/feat/v3-forged/plugins/chrisl-forged/skills/unslop-stinger) - the 31-pattern catalog with fixes, the four-step loop, the adding-soul checklist.
 
 ## Trigger phrases
 - "unslop this"

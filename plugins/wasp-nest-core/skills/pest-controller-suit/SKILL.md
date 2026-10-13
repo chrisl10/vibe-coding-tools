@@ -296,7 +296,7 @@ These three Drones run in order under `/product-studio:plan-product`: strategy, 
 | `production-release-wasp-drone` | Executes the complete production release at the project's sophistication tier, from authorization to verified-shipped | "production-release", "ship to production", "deploy to live" | `production-release-stinger` |
 | `production-release-build-wasp-drone` | Audits CI-to-deploy posture, classifies it on the tier ladder, recommends upgrades, and installs release flows into owner-approved repos | "release-pipeline audit", "tier classification", "install a deploy flow" | `production-release-build-stinger` |
 
-These Drones live in the optional `chrisl-forged` plugin. Confirm the pack is installed before dispatch; a core-only install cannot arm their Stingers. Their dispatch guides ship inside the plugin under `references/pest-controller-guides/`.
+These Drones live in the optional `chrisl-forged` plugin. Confirm the pack is installed before dispatch; a core-only install cannot arm their Stingers. Their dispatch guides follow the standard placement in this directory, with `chrisl-forged` as the resolved owner.
 
 ## Outcome decisions and preparation
 

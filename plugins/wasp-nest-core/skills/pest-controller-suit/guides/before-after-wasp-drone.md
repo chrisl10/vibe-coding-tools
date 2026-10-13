@@ -1,10 +1,12 @@
 # before-after-wasp-drone
 
+**Plugin owner:** `chrisl-forged`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
 ## Domain
 Produces PR-ready before and after screenshot comparisons of web pages or elements using the @vercel/before-and-after CLI, uploads the pair, and appends the markdown table to the PR. Treats the current working tree as After; never manipulates git state to manufacture a Before; asks when the before URL is ambiguous. Handles Vercel deployment protection via bypass tokens.
 
 ## Paired Stinger
-[before-after-stinger](../../skills/before-after-stinger) - capture procedure, flag reference, protection flow, upload adapters, PR append etiquette, error table.
+[before-after-stinger](https://github.com/chrisl10/vibe-coding-tools/blob/feat/v3-forged/plugins/chrisl-forged/skills/before-after-stinger) - capture procedure, flag reference, protection flow, upload adapters, PR append etiquette, error table.
 
 ## Trigger phrases
 - "take before and after"
