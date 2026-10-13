@@ -1,0 +1,10 @@
+{
+  "command": "packs/business-and-product-tools/commands/scope-first-version.md",
+  "queen_exit": 0,
+  "source_captures": 8,
+  "archive_hashes_verified": 8,
+  "role_declarations": "all cited agent names resolve in current catalog",
+  "distillation_citations": "all cited relative files exist",
+  "findings": [],
+  "qualification": "Static source/grounding review only; examples are hypothetical; no installed host or application runtime proof"
+}
