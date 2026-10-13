@@ -199,7 +199,7 @@ def cmd_append(args) -> None:
     out = dispatch(args, {
         "type": "thread.message.user.append",
         "threadId": args.threadId,
-        "message": {"messageId": str(uuid.uuid4()), "text": args.text},
+        "message": {"messageId": str(uuid.uuid4()), "text": args.text, "attachments": []},
     })
     print(json.dumps(out, indent=2))
 
