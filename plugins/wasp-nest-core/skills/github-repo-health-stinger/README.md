@@ -8,3 +8,12 @@ Paired with: `github-repo-health-wasp-drone` (the Drone that wields this Stinger
 
 
 **Research summary:** `research/research-summary.md` - 12 primary sources synthesized, normal depth tier, May 2026 window.
+
+## Current plugin owner
+
+This capability stays in required Wasp Nest Core. Its canonical source is src/skills, with canonical ownership recorded in the root [plugin catalog](../../../plugin-catalog.json). Its SKILL.md metadata declares any standalone/orchestrator exception; specialist agents keep their actual paired Stinger. Host home/plugin files are generated carriers. Use [the layout and selection guide](../../../docs/PLUGIN-LAYOUT.md) when a workflow calls an optional specialist; source references alone do not enable an installed plugin.
+
+
+## Automation permission review
+
+[Guide 10](guides/10-review-automation-permissions.md) traces events, executable inputs, authority and candidate proof. Use the [worksheet](templates/automation-permission-review.md), [synthetic cases](examples/automation-permission-cases.md) and [2026-10-07 primary digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/github-repo-health-stinger/references/research/automation-permission/digest.md). This source enhancement does not repair a live repository.

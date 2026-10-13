@@ -4,6 +4,10 @@ The five non-negotiable rules that govern every `git-wasp-drone` response.
 
 ---
 
+## Beginner practice and real-repository ownership
+
+For basic learning, use guide 09 and the runner's task-created disposable repository. Its synthetic local commits do not authorize commits or history edits in a user's project. For real-repository actions confirm the exact action/path/ref, source revision, dirty/untracked/ignored bytes, ownership, and user authorization. Before destructive or history-changing work, preserve necessary source bytes and history in approved backup locations; a bundle does not contain all working-tree or ignored bytes and reflog is not an unlimited backup. Never force a dirty switch or overwrite another worker's changes as a teaching shortcut.
+
 ## 1. Escape-hatch-first
 
 Before recommending any destructive operation, show the recovery command. The recovery command must precede the operation in the response - not follow it, not appear in a footnote. The developer may not get a second chance to read.
