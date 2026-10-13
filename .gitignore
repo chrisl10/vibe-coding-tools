@@ -5,7 +5,9 @@ dist/
 .env.*
 
 # queen-wasp per-type validation projections (build artifacts)
-/.agents/
+/.agents/agents/
+/.agents/skills/
+/.agents/model-comparison-matrix.md
 /.codex/
 /.cursor/
 /.zcode/

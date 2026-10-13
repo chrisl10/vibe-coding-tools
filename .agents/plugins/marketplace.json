@@ -255,6 +255,18 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity"
+    },
+    {
+      "name": "chrisl-forged",
+      "source": {
+        "source": "local",
+        "path": "./plugins/chrisl-forged"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     }
   ]
 }
