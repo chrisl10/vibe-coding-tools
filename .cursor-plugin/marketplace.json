@@ -1,0 +1,92 @@
+{
+  "name": "wasp-nest",
+  "owner": {
+    "name": "Legion Code Inc."
+  },
+  "plugins": [
+    {
+      "name": "wasp-nest-core",
+      "source": "./plugins/wasp-nest-core"
+    },
+    {
+      "name": "app-primer-zero",
+      "source": "./plugins/app-primer-zero"
+    },
+    {
+      "name": "backend-and-desktop-tools",
+      "source": "./plugins/backend-and-desktop-tools"
+    },
+    {
+      "name": "browser-and-app-testing-tools",
+      "source": "./plugins/browser-and-app-testing-tools"
+    },
+    {
+      "name": "business-and-product-tools",
+      "source": "./plugins/business-and-product-tools"
+    },
+    {
+      "name": "code-audit-tools",
+      "source": "./plugins/code-audit-tools"
+    },
+    {
+      "name": "content-intelligence",
+      "source": "./plugins/content-intelligence"
+    },
+    {
+      "name": "data-and-ai-tools",
+      "source": "./plugins/data-and-ai-tools"
+    },
+    {
+      "name": "developer-learning-tools",
+      "source": "./plugins/developer-learning-tools"
+    },
+    {
+      "name": "documentation-tools",
+      "source": "./plugins/documentation-tools"
+    },
+    {
+      "name": "growth-and-customer-tools",
+      "source": "./plugins/growth-and-customer-tools"
+    },
+    {
+      "name": "highlevel",
+      "source": "./plugins/highlevel"
+    },
+    {
+      "name": "infrastructure-decision-tools",
+      "source": "./plugins/infrastructure-decision-tools"
+    },
+    {
+      "name": "littlebird-toolkit",
+      "source": "./plugins/littlebird-toolkit"
+    },
+    {
+      "name": "media-and-creative-tools",
+      "source": "./plugins/media-and-creative-tools"
+    },
+    {
+      "name": "platform-and-release-tools",
+      "source": "./plugins/platform-and-release-tools"
+    },
+    {
+      "name": "product-studio",
+      "source": "./plugins/product-studio"
+    },
+    {
+      "name": "repository-modernization-tools",
+      "source": "./plugins/repository-modernization-tools"
+    },
+    {
+      "name": "software-economics-tools",
+      "source": "./plugins/software-economics-tools"
+    },
+    {
+      "name": "web-development-tools",
+      "source": "./plugins/web-development-tools"
+    },
+    {
+      "name": "website-audit-tools",
+      "source": "./plugins/website-audit-tools"
+    }
+  ]
+}
