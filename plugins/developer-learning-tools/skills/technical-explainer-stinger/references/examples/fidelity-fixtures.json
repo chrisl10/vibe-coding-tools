@@ -1,0 +1,58 @@
+[
+  {
+    "id": "A",
+    "source": {
+      "actor": "server",
+      "condition": "invoice workspace membership",
+      "before": "read invoice",
+      "cache_status": "proposed"
+    },
+    "candidate": {
+      "actor": "server",
+      "condition": "invoice workspace membership",
+      "before": "read invoice",
+      "cache_status": "proposed"
+    },
+    "expected": "PASS"
+  },
+  {
+    "id": "B",
+    "source": {
+      "actor": "server",
+      "condition": "invoice workspace membership",
+      "before": "read invoice",
+      "cache_status": "proposed"
+    },
+    "candidate": {
+      "actor": "app",
+      "condition": "signed in",
+      "before": "future visit",
+      "cache_status": "implemented"
+    },
+    "expected": "REVISE"
+  },
+  {
+    "id": "D-qualified",
+    "source": {
+      "order": "check then read",
+      "enforcement": "unknown"
+    },
+    "candidate": {
+      "order": "check then read",
+      "enforcement": "unknown"
+    },
+    "expected": "PASS"
+  },
+  {
+    "id": "D-overclaim",
+    "source": {
+      "order": "check then read",
+      "enforcement": "unknown"
+    },
+    "candidate": {
+      "order": "check then read",
+      "enforcement": "verified"
+    },
+    "expected": "REVISE"
+  }
+]
