@@ -52,8 +52,18 @@ The skill walks the forge workflow: intent, support matrix, per-type guide, temp
 
 Research window 2026-02-14 to 2026-08-14. 289 sources reviewed, 59 raw documents archived under `references/research/raw/`, every distilled claim cited back to its source file. Known conflicts between sources are flagged in the guides rather than silently resolved.
 
+## Wasp Nest v3 source and placement
+
+Required Core owns Queen. Canonical components live in src or the selected `packs/<plugin-id>` source root; the root plugin-catalog.json records each owner and prerequisites. Generated home trees, caches and plugin projections are consumption outputs. Registration includes updating that source catalog and validating the selected owner; it does not imply installation, registry writes, publication or push.
+
+For the current projection, see [the layout guide](../../../docs/PLUGIN-LAYOUT.md). The dated research provenance above remains the original archive, not a claim that every host-format field is freshly verified.
+
 ## Wasp Nest placement
 
 Orchestrator level. No paired Drone. The other core skills at this level are `pest-controller-suit` and `get-started-stinger`. Specialist Drones and Stingers pair; direct-use skills must declare `metadata.hive-tier: standalone` so the validator can distinguish intent from a missing agent.
 
 Part of The Wasp Nest, curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).
+
+## Distribution upgrades and capability overlap
+
+Use [the lifecycle and overlap guide](guides/plugin-lifecycle-and-overlap.md) to stage exact artifact upgrades and compare competing triggers before creating another pair. Its [dated primary-source digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/queen-wasp-stinger/references/research/plugin-lifecycle/distillation.md), upgrade record, overlap worksheet and eight explicitly unexecuted cases preserve source, generated and installed evidence boundaries. Existing validators and Harness Integration supply the checks.

@@ -80,9 +80,9 @@ Vibe Coding Tools is the canonical home of every component. Each harness consume
 | Commands | `.claude/commands/` or skills | skills (commands legacy) | skills (prompts deprecated) | plugin `commands/` + skills |
 | Drones | `.claude/agents/` | `.claude/agents/`, also reads `.claude/agents/` | `agents.<role>` in config.toml | plugin `agents/` |
 | Stingers | `.claude/skills/` | `.claude/skills/`, also reads `.claude/skills/` | `.agents/skills/` | claude.ai account sync + plugins |
-| Distribution | `.claude-plugin` plugins + marketplaces | Cursor plugins + Agent Plugins standard | `.codex-plugin` plugins, reads `.claude-plugin` marketplaces | same `.claude-plugin` format as Claude Code |
+| Wasp Nest v3 distribution | `.claude-plugin` plugins + marketplace | `.cursor-plugin` projection + marketplace | Root portable `plugin.json` with `extensions.com.openai`, `.agents/plugins/marketplace.json` | same Claude-family package carrier |
 
-Authoring strategy that falls out of this: keep `.claude/skills/` and `.claude/agents/` as the single source of truth (Cursor reads them natively as fallback paths), bridge rules through `AGENTS.md` plus thin per-harness wrappers, and package for Codex and Cowork through the plugin layer. The full detail lives in [harness-support-matrix.md](harness-support-matrix.md) and [per-type-per-harness-specific-guide.md](per-type-per-harness-specific-guide.md).
+Wasp Nest source authoring uses the owner's `src` or `packs/<plugin-id>` root recorded in plugin-catalog.json. The builder emits the home/plugin carriers above; those host locations are consumption paths, not editable canonical sources. Core is required, every optional component has one owner, and installed availability comes from the explicit selection registry and preflight. Rule bridges keep their existing separately authorized scope. The full detail lives in [harness-support-matrix.md](harness-support-matrix.md) and [per-type-per-harness-specific-guide.md](per-type-per-harness-specific-guide.md).
 
 ## Design principles
 

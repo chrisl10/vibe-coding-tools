@@ -30,6 +30,12 @@ Every harness-specific fact in this skill traces to downloaded primary sources i
 
 Do not use this skill for routing work to existing Drones. That is `pest-controller-suit`. If the component already exists and the task is to use it, route; if the component needs to exist or needs to change, forge.
 
+## Canonical source and selected installation
+
+Read the root [plugin catalog](../../../plugin-catalog.json) before authoring. Required Core lives in src; optional owners declared in the catalog live in `packs/<plugin-id>`. Choose the correct owner, preserve its prerequisites and pair classification, and update the source catalog with a new component. Core's six immutable foundation skills stay in Core.
+
+The source builder projects those files into host home trees and native plugins. Installed caches are outputs, not the forge's source. For installed dispatch, Core's resolver requires the explicit selected-plugin registry; a marketplace/UI install alone is not claimed to register optional global Codex roles.
+
 ## The five component types
 
 | Wasp Nest name | Generic name | What it is |
@@ -50,7 +56,7 @@ Seven stages, in order, no skipping. This is the same pipeline that built queen-
 4. **References.** Build the component's reference layer from the distillation: field tables, worked examples, reusable templates, deterministic scripts. This is the material the component loads on demand at runtime, so it earns its tokens or it goes.
 5. **Guides.** Write the procedural guides, one focused file per major verb the component performs, each grounded in the distillation and citing the raw files it derives from. Consult [guides/harness-support-matrix.md](guides/harness-support-matrix.md) and [guides/per-type-per-harness-specific-guide.md](guides/per-type-per-harness-specific-guide.md) for the format rules of every target harness; never author a harness surface from memory.
 6. **Skill file.** Author the root file LAST, once the knowledge exists to point at. Start from `references/templates/<type>/`, keep it lean with progressive-disclosure pointers into the guides and references, spec-six frontmatter for anything crossing harnesses, Critical Directive at the end, Ship Gate for development-focused components. Then validate: `references/scripts/per-type-validation.py` for every target harness, plus the Cowork packagers where applicable, plus an independent grounding QA pass that samples claims against the raw archive.
-7. **Register.** For a specialist, pair the Stinger with its Drone and register that pair into pest-controller-suit per [guides/pest-controller-registration.md](guides/pest-controller-registration.md). For a direct-use skill, declare `metadata.hive-tier: standalone` instead of inventing a Drone; for a router, declare `orchestrator`. Deploy the component to the target harnesses, validate its classification, and sync repo references per [guides/vibe-coding-tools-reference-update.md](guides/vibe-coding-tools-reference-update.md). A specialist pair absent from the roster is not dispatchable.
+7. **Register.** For a specialist, pair the Stinger with its Drone and register that pair into pest-controller-suit per [guides/pest-controller-registration.md](guides/pest-controller-registration.md). For a direct-use skill, declare `metadata.hive-tier: standalone` instead of inventing a Drone; for a router, declare `orchestrator`. Build the owner-specific target projections, validate its classification, and sync repo references per [guides/vibe-coding-tools-reference-update.md](guides/vibe-coding-tools-reference-update.md). A specialist pair absent from the roster is not dispatchable.
 
 ## Hard portability rules
 
@@ -60,7 +66,7 @@ These come from the research and they are not negotiable:
 - Never use backtick-bang dynamic injection in a skill body. Cowork replaces those lines with a dead placeholder. Instruct the model to run the command through its tools instead.
 - Cursor requires a skill's `name` to exactly match its folder name, and rules files in `.cursor/rules/` must use the `.mdc` extension. Plain `.md` there is silently ignored.
 - Codex MCP configuration is TOML under `[mcp_servers.<name>]` in config.toml. Pasting JSON silently fails.
-- Plugin manifests live inside `.claude-plugin/` (or the harness equivalent). Every other component directory lives at the plugin root, never inside the manifest folder.
+- Wasp Nest v3 emits root `plugin.json` for portable/OpenAI settings, `.claude-plugin/plugin.json` for Claude/Cowork and `.cursor-plugin/plugin.json` for Cursor. Component directories stay at the plugin root, never inside a hidden manifest folder. The builder does not emit a competing Codex overlay.
 - Plugins targeting Cowork should ship `commands/` flat files alongside `skills/` until the slash-invocation gap is confirmed fixed.
 
 ## File map
@@ -84,6 +90,10 @@ Load these on demand; do not read everything up front.
 A forged component is done when: it walked all seven stages of the forge pipeline in order, its own domain research archive exists on disk (raw sources plus a cited distillation), it validates clean for every target harness, its Wasp Nest convention blocks are present and verbatim, its factual claims trace to research (domain claims to its own archive, harness-format claims to this skill's `references/research/`), its registration and repo references are updated, and, for development-focused components, its Ship Gate ran to completion with user approval before any commit.
 
 Where the research flags an unresolved conflict (AGENTS.md concatenation vs closest-wins, size caps, Cowork description limits), the guides state both readings and the preferred official one. Carry that honesty into what you build. Never smooth over a known unknown.
+
+## Distribution and overlap decisions
+
+For a staged plugin upgrade or a possible duplicate capability, use [the lifecycle guide](guides/plugin-lifecycle-and-overlap.md). Pin previous and candidate source/package hashes, compare actual trigger/output/authority boundaries, and retain separate installed-session proof. Reuse or enhance the existing owner when it fits. The guide adds no installer, activation or automatic replacement authority.
 
 ## Critical Directive
 
