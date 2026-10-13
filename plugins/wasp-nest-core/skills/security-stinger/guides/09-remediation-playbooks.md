@@ -41,7 +41,7 @@ Allowlist any dynamic identifier BEFORE it reaches `sql.identifier()`; parameter
 
 **Before:** a webhook route that parses and acts on the payload before (or without) verifying its signature.
 
-**After:** apply the Stripe or GoHighLevel snippet in [references/secure-by-default-snippets.md](../references/secure-by-default-snippets.md) - raw body captured before any parsing, signature verified before any side effect, idempotency check before any side effect, fast 2xx ack with async processing. If the handler was already live and unverified, treat this as Critical and check for evidence of exploitation (forged events in logs/DB) as part of remediation, not just the code fix.
+**After:** apply the Stripe or GoHighLevel snippet in [references/secure-by-default-snippets.md](../references/secure-by-default-snippets.md) - raw body captured before any parsing, signature verified before any side effect, durable recoverable acceptance before success acknowledgment, concurrency-safe dedupe/effect state and authorized reconciliation through the same writer per [guide 13](13-webhook-forgery-replay-and-recovery.md). An in-memory callback is insufficient. If the handler was already live and unverified, treat this as Critical and check for evidence of exploitation (forged events in logs/DB) as part of remediation, not just the code fix.
 
 ## `{@html}` without sanitization
 

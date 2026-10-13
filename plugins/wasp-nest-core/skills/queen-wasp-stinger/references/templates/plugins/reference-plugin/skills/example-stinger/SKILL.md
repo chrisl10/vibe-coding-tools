@@ -19,4 +19,4 @@ Do not build a real stinger from this file directly. The real starting point is 
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [related-stinger-name](../related-stinger-folder-path) - {Description of skill and common use cases.}
+  - [related-stinger-name](../{related-stinger-folder-path}) - {Description of skill and common use cases.}
