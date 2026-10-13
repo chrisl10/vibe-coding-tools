@@ -1,10 +1,25 @@
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "content-intelligence",
-  "version": "0.1.0",
-  "description": "Research current GitHub repository trends and news, verify one story, and prepare evidence-backed social post drafts. Requires the user's own voice skill and ledger.",
+  "version": "3.0.0",
+  "description": "Find and verify current repository/news topics and prepare voice-matched drafts.",
+  "author": {
+    "name": "Mario Aldayuz"
+  },
   "license": "AGPL-3.0-or-later",
-  "skills": [
-    "./skills/repo-radar-stinger",
-    "./skills/viral-news-stinger"
-  ]
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Content Intelligence",
+        "shortDescription": "Find and verify current repository/news topics and prepare voice-matched drafts.",
+        "developerName": "Mario Aldayuz",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ]
+      }
+    }
+  }
 }
