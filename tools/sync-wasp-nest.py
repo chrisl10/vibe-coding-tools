@@ -39,15 +39,26 @@ CODEX_HOME = Path(os.environ.get("CODEX_HOME", HOME / ".codex"))
 DEFAULT_PLUGINS = [
     "wasp-nest-core",
     "chrisl-forged",
+    "content-intelligence",
+    "highlevel",
+    "browser-and-app-testing-tools",
+    "website-audit-tools",
     "data-and-ai-tools",
     "product-studio",
     "code-audit-tools",
     "documentation-tools",
-    "content-intelligence",
-    "highlevel",
-    "webapp-capture",
-    "website-auditor",
-]
+    "backend-and-desktop-tools",
+    "web-development-tools",
+    "platform-and-release-tools",
+    "growth-and-customer-tools",
+    "business-and-product-tools",
+    "media-and-creative-tools",
+    "app-primer-zero",
+    "developer-learning-tools",
+    "software-economics-tools",
+    "infrastructure-decision-tools",
+    "repository-modernization-tools",
+]  # full catalog minus littlebird-toolkit (owner-excluded 2026-10-13)
 
 
 def sha256(path: Path) -> str | None:
