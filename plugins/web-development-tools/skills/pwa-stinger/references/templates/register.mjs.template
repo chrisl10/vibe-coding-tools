@@ -1,0 +1,8 @@
+// Browser integration template, NOT_RUN. Serve matching module worker/policy URLs.
+export async function registerPublicWorker() {
+  if (!globalThis.isSecureContext || !('serviceWorker' in navigator)) return null;
+  return navigator.serviceWorker.register('/public/sw.js', {
+    scope: '/public/', type: 'module',
+  });
+}
+// No forced takeover. App owner and Impeccable define update UX and unsaved-work handling.
