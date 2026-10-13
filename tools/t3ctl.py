@@ -239,6 +239,15 @@ def cmd_pr_link(args) -> None:
     }), indent=2))
 
 
+def cmd_status(args) -> None:
+    snap = get_snapshot(args)
+    for t in snap.get("threads", []):
+        if t["id"] == args.threadId or t["id"].startswith(args.threadId):
+            print((t.get("session") or {}).get("status", "unknown"))
+            return
+    print("gone")
+
+
 def cmd_raw(args) -> None:
     print(json.dumps(dispatch(args, json.loads(args.envelope)), indent=2))
 
@@ -274,6 +283,8 @@ def main() -> int:
     p = sub.add_parser("interrupt"); p.add_argument("threadId"); p.add_argument("--turn"); p.set_defaults(fn=cmd_interrupt)
 
     p = sub.add_parser("stop"); p.add_argument("threadId"); p.set_defaults(fn=cmd_stop)
+
+    p = sub.add_parser("status"); p.add_argument("threadId"); p.set_defaults(fn=cmd_status)
 
     p = sub.add_parser("archive"); p.add_argument("threadId"); p.add_argument("--yes", action="store_true"); p.set_defaults(fn=cmd_archive)
 
