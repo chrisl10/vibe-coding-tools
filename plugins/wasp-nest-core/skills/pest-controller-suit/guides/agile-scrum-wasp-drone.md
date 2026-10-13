@@ -1,10 +1,13 @@
 # agile-scrum-wasp-drone
 
+**Plugin owner:** `business-and-product-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 Owns Scrum methodology coaching and process auditing in this repo's team workflow: the ceremonies (Sprint Planning, Daily Scrum, Sprint Review, Retrospective, Backlog Refinement), roles, artefacts, Definition of Done templates from startup to enterprise, estimation coaching (Fibonacci, Planning Poker, #NoEstimates), anti-pattern diagnosis (Zombie Scrum, HiPPO PO, no Sprint Goal, velocity gaming), and framework-fit recommendations (Scrum vs ScrumBan vs Kanban vs Shape Up). Its honesty-first audit gives one of two verdicts: "yes, and here's how to improve" or "no, and here's what you're actually doing."
 
 ## Paired Stinger
-[agile-scrum-stinger](../../agile-scrum-stinger) - Scrum Guide 2020 audit map, ceremony coaching per event, anti-pattern catalog, and the framework-selection decision matrix.
+[agile-scrum-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/business-and-product-tools/skills/agile-scrum-stinger) - Scrum Guide 2020 audit map, ceremony coaching per event, anti-pattern catalog, and the framework-selection decision matrix.
 
 ## Trigger phrases
 - "audit our Scrum process, is this actually Scrum"

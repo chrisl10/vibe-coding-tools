@@ -1,10 +1,13 @@
 # ai-tools-platform-wasp-drone
 
+**Plugin owner:** `data-and-ai-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 The single authority on AI tooling infrastructure between a developer's intent and a running LLM: AI gateways (Portkey, OpenRouter), cloud providers (AWS Bedrock, Vertex AI, Azure OpenAI), frontier model selection (Claude, GPT, Gemini) plus cheap-fallback routes (Haiku, Mini, Flash), local LLMs (Ollama, LM Studio), GPU cloud vendors (Runpod, Modal, Together, Fireworks, Groq), and the must-have MCP servers and IDE plugins. Every recommendation is time-stamped and names the cheap fallback.
 
 ## Paired Stinger
-[ai-tools-platform-stinger](../../ai-tools-platform-stinger) - the seven invocation modes, canonical stack defaults, gateway/provider/model decision matrices, and cost-optimization playbooks.
+[ai-tools-platform-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/ai-tools-platform-stinger) - the seven invocation modes, canonical stack defaults, gateway/provider/model decision matrices, and cost-optimization playbooks.
 
 ## Trigger phrases
 - "which AI provider should I use"
@@ -14,6 +17,7 @@ The single authority on AI tooling infrastructure between a developer's intent a
 - "Runpod vs Modal for GPU inference"
 - "which MCP servers do I actually need"
 - "our LLM spend is too high, help"
+- "protect this AI feature margin with retry and cache-miss scenarios"
 - "compare Claude, GPT, and Gemini for this use case"
 
 ## Do NOT route when
@@ -37,3 +41,11 @@ The single authority on AI tooling infrastructure between a developer's intent a
 - security-wasp-drone: designs the vault, rotation, and IAM for whichever keys this Drone identifies as needed.
 - mind-wasp-drone: takes the chosen providers and designs the RAG/cognitive-layer architecture on top of them.
 - devops-wasp-drone: wires the container and CI/CD pipeline for any GPU cloud deploy this Drone recommends.
+
+## Feature margin handoff
+
+Load the paired [feature margin guide](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/ai-tools-platform-stinger/guides/08-protect-feature-margin.md). Preserve complete usage/cost units and Unknown rates; resolve selected Operating Cost and Unit Economics owners for arithmetic. Mind retains quality/evaluation and Security retains independent control review. Proposed budgets, alerts and rate limits require observed enforcement proof.
+
+## Bounded attempts and local hardware
+
+Route token/tool/retry/fallback budgets to [guide 09](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/ai-tools-platform-stinger/guides/09-bound-request-retries-and-fallbacks.md), and local-model fit to [guide 10](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/ai-tools-platform-stinger/guides/10-qualify-local-model-hardware.md). Preserve supplied rates, atomic reservations, concurrent ownership and uncertain billing; use selected Economics owners for arithmetic. Require actual artifact/runtime/hardware/context/load/evaluation evidence before local-fit conclusions. No settings, provider execution, model downloads or spend follow from a source worksheet.

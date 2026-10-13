@@ -1,5 +1,8 @@
 # adr-writing-wasp-drone
 
+**Plugin owner:** `wasp-nest-core`. **Required selection:** Core itself. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 Owns the Architecture Decision Record corpus: drafting new ADRs in Nygard format by default (Context, Decision, Consequences, Alternatives Considered), switching to MADR or Y-statements when the team's conventions call for it, assigning sequential numbers, and superseding stale decisions with bidirectional links. Enforces the "decisions, not docs" test so the ADR log stays a scannable, trustworthy onboarding artifact instead of a dumping ground for design proposals.
 

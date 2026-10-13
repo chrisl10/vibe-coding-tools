@@ -1,10 +1,13 @@
 # auth-wasp-drone
 
+**Plugin owner:** `platform-and-release-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 Owns the implementation half of authentication for this repo's stack: provider selection among Clerk, Better Auth, Auth.js, Supabase Auth, WorkOS, Stack Auth, Kinde, and Stytch; OAuth flow wiring with deep Google Auth Platform expertise (including the October 2025 unused-client-deletion policy and the GIS migration); session-cookie hardening; MFA/passkey enrollment; RBAC enforcement across two layers (middleware and data layer); and provider migrations. It is opinionated about least-privilege scopes and secure-by-default cookies, and it writes the auth spec, not the sign-in JSX.
 
 ## Paired Stinger
-[auth-stinger](../../auth-stinger) - the provider decision tree, Google OAuth and verification guides, session-storage hardening, MFA/passkey strategy, and the RBAC two-layer enforcement model.
+[auth-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/auth-stinger) - the provider decision tree, Google OAuth and verification guides, session-storage hardening, MFA/passkey strategy, and the RBAC two-layer enforcement model.
 
 ## Trigger phrases
 - "set up auth for this app"
@@ -12,6 +15,8 @@ Owns the implementation half of authentication for this repo's stack: provider s
 - "wire up Google sign-in"
 - "our Google OAuth client is about to get deleted"
 - "set up MFA and passkeys"
+- "recover a lost factor without an account takeover"
+- "design password reset or support recovery"
 - "design RBAC for a multi-tenant app"
 - "migrate from NextAuth to Better Auth"
 - "review our session cookie config"
@@ -32,6 +37,7 @@ Owns the implementation half of authentication for this repo's stack: provider s
 ## Outputs
 - A provider recommendation ("use X because Y" with one named alternative) via the decision tree.
 - Hardened session-cookie config, an RBAC policy table with two-layer enforcement, and an MFA/passkey strategy spec.
+- A recovery evidence worksheet via `guides/12-account-recovery.md`, with pinned provider/version, accepted support policy and native differential tests; synthetic source cases are not account proof.
 - A handoff package: schema needs to db-wasp-drone, an audit-report template to security-wasp-drone, UI needs to react-wasp-drone.
 
 ## Commonly sequenced with
