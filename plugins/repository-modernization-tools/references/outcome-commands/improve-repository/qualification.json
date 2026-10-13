@@ -1,0 +1,33 @@
+{
+  "command": "packs/repository-modernization-tools/commands/improve-repository.md",
+  "command_sha256": "10756d395191f8017c4ec616c27a4d2bded30e47156a985df489f30ce6993301",
+  "checked_at": "2026-10-07T16:23:56.014965+00:00",
+  "scope": "static semantic qualification and archive integrity, not live harness or application proof",
+  "checks": {
+    "first_instruction_pest": true,
+    "explicit_selected_registry": true,
+    "source_checkout_path": true,
+    "self_contained_no_pack_ref_dependency": true,
+    "host_limits": true,
+    "no_external_auth_inference": true,
+    "report": true,
+    "gate_order": true,
+    "read_only_boundary": true,
+    "inaccessible_settings": true,
+    "implementation_gate": true,
+    "rollback": true,
+    "archive_body_hash_foundation": true,
+    "distillation_citation_foundation": true,
+    "archive_body_hash_health": true,
+    "distillation_citation_health": true,
+    "archive_body_hash_dependencies": true,
+    "distillation_citation_dependencies": true,
+    "archive_body_hash_remediation": true,
+    "distillation_citation_remediation": true,
+    "archive_body_hash_audit-remediation": true,
+    "distillation_citation_audit-remediation": true,
+    "queen_stage_artifacts": true,
+    "no_em_dash_authored": true
+  },
+  "passed": true
+}
