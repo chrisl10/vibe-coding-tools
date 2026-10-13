@@ -1,0 +1,22 @@
+{
+  "name": "browser-and-app-testing-tools",
+  "version": "3.0.0",
+  "description": "Automate browsers, capture live apps and measure Lighthouse/PageSpeed behavior.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./cursor-agents/browser-automation-wasp-drone.md",
+    "./cursor-agents/chrome-chromium-wasp-drone.md",
+    "./cursor-agents/lighthouse-pagespeed-wasp-drone.md",
+    "./cursor-agents/webapp-capture-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/webapp-capture.md"
+  ]
+}
