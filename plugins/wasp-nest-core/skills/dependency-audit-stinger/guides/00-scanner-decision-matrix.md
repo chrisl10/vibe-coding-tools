@@ -1,5 +1,7 @@
 # Scanner Decision Matrix (for @deeplake/hivemind)
 
+> Preserved Hivemind npm case. Read [target repository audit](05-target-repository-audit.md) first; use the package-specific paths, guards and commands below only when the inspected target has them. Recheck vendor/version claims against current primary documentation before recommending or changing tools.
+
 > **Research sources:** `research/external/01-renovate-vs-dependabot-2026.md` (CRITICAL), `research/external/02-socket-dev-supply-chain-2026.md` (CRITICAL)
 > **Example:** `examples/happy-path-node-scanner-setup.md`
 
@@ -17,13 +19,13 @@ Both watch `package.json` / `package-lock.json` and open PRs when new versions p
 |---|---|---|
 | Cost | Free | Free (self-hosted) or Mend hosted |
 | Automerge | Requires third-party Actions workaround | Built-in, configurable by semver range |
-| PR grouping | No | Yes - reduces PR volume 3-5x |
-| `minimumReleaseAge` | No | Yes - delays PRs for new releases by N days (XZ-style attack protection) |
+| PR grouping | Configurable groups | Configurable groups; evaluate the target's actual update volume |
+| Update delay | Current Dependabot supports `cooldown`; verify ecosystem and security-update semantics | `minimumReleaseAge`; verify actual configured policy |
 | Config | YAML, minimal | JSON5, more options |
 
 **Decision for this repo: Renovate.** Hivemind has a large dependency tree (7 runtime deps, 10+ optional native grammars, ~11 devDependencies). Grouping keeps the PR stream readable and `minimumReleaseAge` buys the security community time to flag a malicious release before it auto-merges - the single most valuable control for the tree-sitter / `@huggingface/transformers` install-time surface.
 
-Use Dependabot only as a zero-ops fallback if Renovate cannot be installed. It is GitHub-native and free, but it opens one PR per update with no grouping and no release-age delay.
+The retained case selected Renovate. A current comparison must account for [Dependabot groups and cooldown](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference); do not reject Dependabot on the old claim that grouping or update delay is absent. Match the target's required semantics and authorized automation policy.
 
 > **Key finding (2026-02-20):** Renovate grouping cut PR volume 3-5x in measured deployments, and `minimumReleaseAge: "7 days"` directly counters the "rush the merge window" attack pattern. Source: `research/external/01-renovate-vs-dependabot-2026.md`.
 
