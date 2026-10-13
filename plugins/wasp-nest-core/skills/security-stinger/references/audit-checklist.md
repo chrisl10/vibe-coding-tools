@@ -21,7 +21,7 @@ See [guides/02-sveltekit-attack-surface.md](../guides/02-sveltekit-attack-surfac
 - [ ] Every multi-tenant table has RLS enabled AND forced (`ENABLE ROW LEVEL SECURITY` + `FORCE ROW LEVEL SECURITY`), or an equivalent reviewed justification for why it doesn't need tenant scoping.
 - [ ] Tenant-scoping GUC (`app.tenant_id` or equivalent) is set via `set_config(..., true)` inside a transaction wrapper that the rest of the app cannot bypass (the raw `db`/pool client is not exported from that module).
 - [ ] Connection pooling mode (if PgBouncer or similar) is transaction-mode, not session-mode, if RLS session variables are in play.
-- [ ] A negative test exists: unset tenant context returns zero rows; a write tagged as another tenant is rejected.
+- [ ] Negative proof distinguishes missing, empty and invalid tenant context without foreign data or effects; a cross-tenant write is rejected. Record actual safe denial/error behavior, per [current response-boundary guide](../guides/12-response-and-tenant-boundaries.md).
 - [ ] No `sql.raw()` or `sql.identifier()` call takes an argument derived from request input without an allowlist check first.
 - [ ] No raw string SQL bypasses the `` sql`` `` template.
 

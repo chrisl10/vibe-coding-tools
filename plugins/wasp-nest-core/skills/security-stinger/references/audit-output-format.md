@@ -2,7 +2,7 @@
 
 ## Where the completed write-up goes
 
-Per Library Schema v2 ([library/requirements/reports/README.md](../../../../library/requirements/reports/README.md)):
+Follow [the Core Library structure guide](../../library-stinger/guides/00-initialize.md). The target repository creates its own library/requirements/reports/README.md; this plugin does not bundle that project-specific file.
 
 - Standalone audit (not tied to a specific PRD/IRD): `library/requirements/reports/<YYYY-MM-DD>-security-audit.md`
 - Audit tied to a feature PRD: `library/requirements/{backlog,in-work,completed}/prd-<###>-<slug>/qa/<YYYY-MM-DD>-security-audit.md`
