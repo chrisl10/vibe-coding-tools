@@ -14,7 +14,7 @@
 
 # IRD-<###>: <Issue Title>
 
-> **GitHub Issue:** [#<###>](<link-to-issue>) - Bug | Enhancement | Regression | Security
+> **GitHub Issue:** [#<###>]({issue-url}) - Bug | Enhancement | Regression | Security
 >
 > **Status:** Backlog
 > **Priority:** P0 | P1 | P2 | P3
@@ -58,6 +58,28 @@
 
 ---
 
+## Source workflow and evidence
+
+<!-- Record the real workflow trigger, inputs, observed steps, output, failures and
+     authority boundary. A procedure read from source is SOURCE_OBSERVED; do not
+     claim it was executed. Record current behavior separately from proposed work. -->
+
+**Reader and outcome:** <who needs which action or decision>
+**Template origin:** <template path and revision or SHA256>
+**Source identity:** <repository/path and full commit; dirty bytes add SHA256; external URL and retrieval date>
+**Adaptations and assumptions:** <project-specific values changed or remaining unknown>
+**Maintenance owner and review triggers:** <owner; source, contract or behavior changes>
+
+| Claim or criterion | Status | Source or result locator | Subject revision | Observed date | Verification owner |
+|---|---|---|---|---|---|
+| <claim> | SOURCE_OBSERVED / EXECUTION_OBSERVED / PROPOSED / UNKNOWN / NOT_RUN | <exact location or missing evidence> | <revision or hash> | <date or NOT_RUN> | <owner> |
+
+<!-- A template, checkbox or example result is not execution proof. Never copy
+     credentials, customer records, permissions, production identifiers or approval
+     claims into a reusable template. Unknowns remain explicit. -->
+
+---
+
 ## Acceptance criteria
 
 | ID | Criterion |
@@ -87,4 +109,4 @@
 
 <!-- Link to related IRDs, PRDs, or knowledge docs. Use relative paths. -->
 
-- 
+-

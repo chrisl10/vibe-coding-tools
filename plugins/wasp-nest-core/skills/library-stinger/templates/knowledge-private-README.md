@@ -1,41 +1,34 @@
 ---
 ai_description: |
-  This folder contains internal engineering and business documentation.
-  ADRs MUST live in architecture/ADR-<n>-<kebab-slug>.md.
-  Engineering standards MUST live in standards/documentation-framework.md.
-  Other domain folders (<domain>/) are repo-specific and may be created as
-  needed. In this repo: ai/, architecture/, auth/, collaboration/, data/,
-  frontend/, infrastructure/, integrations/, multi-tenant/, operations/,
-  plugins/, security/, standards/.
-  Do NOT file customer-facing content here (that goes in knowledge/public/).
-  Write path: library/knowledge/private/<domain>/<kebab-slug>.md.
+  Internal engineering and business documentation. ADRs live in
+  architecture/ADR-<n>-<kebab-slug>.md; shared CTRs live in
+  contracts/CTR-<###>-<slug>.md; documentation standards live in
+  standards/documentation-framework.md. Add only source-backed domains.
+  Internal evidence and unresolved findings must not become public by default.
 human_description: |
-  Internal engineering and business documentation.
-  - architecture/: Architecture Decision Records (ADRs)
-  - standards/: Documentation framework and coding standards
-  - <domain>/: Any repo-specific knowledge domain (ai/, auth/, data/, etc.)
-  Default landing zone for any doc that does not need to be customer-facing.
-  When creating a new domain folder, add a README.md explaining what belongs.
+  Knowledge for engineering, founders, sales, service, account teams, and
+  other internal readers. Includes architecture, business insights, decisions,
+  operations, and approved internal explanatory manuscripts.
 ---
 
-# Knowledge - Private
+# Knowledge: Private
 
-Internal documentation for engineers, product, and AI agents.
+This area explains the system and business to the team. It also holds the evidence and decisions that support audience documents.
 
-## Required sub-folders (always present)
+## Shared folders
 
 | Folder | Contents |
-|---|---|
-| `architecture/` | ADRs: `ADR-<n>-<kebab-slug>.md`. Locked decisions with context, alternatives, consequences. |
-| `contracts/` | Stable `CTR-<###>-<slug>.md` shared boundary agreements, authored by contract-writing-wasp-drone. |
-| `standards/` | `documentation-framework.md` and any repo-specific writing rules. |
+| --- | --- |
+| `architecture/` | Architecture narratives and `ADR-<n>-<kebab-slug>.md` decision records |
+| [`contracts/`](contracts/README.md) | `CTR-<###>-<slug>.md` shared API, event, data, permission, or state agreements |
+| `standards/` | `documentation-framework.md` and repository writing or engineering rules |
 
-## Optional domain folders
+## Add domains as needed
 
-Create any of these as needed (the set this repo uses): `ai/`, `auth/`, `collaboration/`, `data/`, `frontend/`, `infrastructure/`, `integrations/`, `multi-tenant/`, `operations/`, `plugins/`, `security/`. Add a `README.md` to any new domain folder explaining what belongs.
+Use domains such as `auth/`, `data/`, `security/`, `operations/`, `strategy/`, `personas/`, or `reporting/` when the sources support them. Add a README that explains the domain. Do not seed unrelated domains or assume a technology stack.
 
-## What does NOT belong here
+App Primer Zero, when available, builds the private current-state and foundation material before implementation. Library Packets uses supported sources to write documents for specific readers. Keep their draft decisions, source gaps, evidence, and review records private until the owner approves a public statement.
 
-- Customer-facing content (put in `knowledge/public/`)
-- PRDs or IRDs (put in `requirements/` or `issues/`)
-- Binary asset
+## Store the right material
+
+Keep PRDs in `requirements/` and IRDs in `issues/`. Keep curated explanatory Markdown here when it is internal. Put approved external Markdown in `knowledge/public/`. Keep brand assets and generated Word/PDF files at an agreed location outside `library/`.

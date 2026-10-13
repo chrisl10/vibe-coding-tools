@@ -1,39 +1,34 @@
 ---
 ai_description: |
-  This folder contains customer-facing / end-user documentation.
-  Approved sub-folders: overview/, guides/, faqs/, and any domain
-  folder explicitly designated public by the team.
-  Do NOT file internal engineering docs, ADRs, pricing strategy, or
-  security-sensitive material here.
-  Write path: library/knowledge/public/<domain>/<kebab-slug>.md.
-  All files here may eventually be surfaced in the public help center
-  (Phase 2). Mark each doc with the standard knowledge-base header:
-  Category / Version / Date / Status.
+  Knowledge approved for external readers: product overviews, public briefs,
+  guides, and FAQs. Use only facts cleared for this audience. Keep private
+  architecture, source paths, credentials, strategy, and review notes out.
+  Folder placement is not permission to publish. Use the standard knowledge
+  header: Category / Version / Date / Status.
 human_description: |
-  Customer-facing documentation. Content here may be published externally.
-  - overview/: what this product is, glossary, elevator pitch
-  - guides/: how-to guides written for users, not developers
-  - faqs/: frequently asked questions
-  Only add content here that you are comfortable sharing publicly.
-  Internal notes, pricing strategy, and architecture docs belong in
-  knowledge/private/ instead.
+  Documents that explain the product to approved external audiences.
+  These include public briefs and overviews as well as help guides.
+  Check the owner's disclosure rules before adding or sharing content.
 ---
 
-# Knowledge - Public
+# Knowledge: Public
 
-Customer-facing documentation. Anything in this folder may eventually be published.
+This area holds product explanations approved for external readers. It can contain a public brief, a feature overview, a user guide, or a FAQ.
 
-## Approved sub-folders
+## Common domains
 
 | Folder | Contents |
-|---|---|
-| `overview/` | What this product is, glossary, elevator pitch, high-level FAQs |
-| `guides/` | Step-by-step user guides (written for customers, not developers) |
-| `faqs/` | Frequently asked questions from customers |
+| --- | --- |
+| `overview/` | Product purpose, glossary, feature explanations, and public briefs |
+| `guides/` | Steps that help users complete a task |
+| `faqs/` | Answers to common customer questions |
 
-## What does NOT belong here
+Add another domain only when the team has approved its public scope.
 
-- Internal architecture docs or ADRs
-- Pricing strategy or competitive analysis
-- Engineering standards
-- Anything you would not want a customer to read
+## Write for the reader
+
+Explain supported benefits and behavior in plain language. General explanations target grade 8. Avoid unnecessary implementation detail, buzzwords, and claims without evidence. Keep internal architecture, pricing strategy, competitive research notes, security details, and private source paths in `knowledge/private/`.
+
+Library Packets, when available, turns approved sources into reader Markdown, Word, PDF, and citations. Its public citation list contains public URLs or approved safe source labels. Its full source map, quotes, hashes, gaps, and page review stay in the packet's private `_internal` area. Keep generated binaries outside `library/` and exclude private evidence from public archives.
+
+Writing a public document does not authorize publishing or sending it.
