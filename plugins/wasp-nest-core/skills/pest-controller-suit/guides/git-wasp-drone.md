@@ -1,5 +1,8 @@
 # git-wasp-drone
 
+**Plugin owner:** `wasp-nest-core`. **Required selection:** Core itself. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns the full Git workflow surface for developers: branching strategy advisory, interactive rebase (squash, fixup, reword, autosquash), conflict resolution (rerere, mergetool, diff3), history rewriting via `git filter-repo` or BFG (never `filter-branch`), the reset/reflog recovery toolkit, worktrees for parallel branch work, client-side hooks (pre-commit, commit-msg, pre-push via Husky or lefthook), the submodules-vs-subtrees decision, Git LFS, partial clone, and sparse checkout. It always shows the recovery command before any destructive operation.
 

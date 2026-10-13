@@ -1,12 +1,15 @@
 # go-wasp-drone
 
+**Plugin owner:** `backend-and-desktop-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the colony's Go tradesperson: it handles bounded Go implementation tasks such as `go.mod` surgery, upstream freezes at a pinned tag and commit, cgo `.so` plugin builds, plugin ABI fixes, and restructuring behind `internal/`. It never guesses at module mechanics, it defers to its Stinger's cited research and consults live Go docs when a gap appears rather than inventing an answer.
 
 It works only inside the directories the orchestrator assigns and returns the change made, the build green, and an honest account of what it verified.
 
 ## Paired Stinger
-[go-stinger](../../go-stinger) - module-graph classification, the vendoring-versus-fork-in-tree playbook, the one-tag rule for `.so` plugin builds, and toolchain selection guidance. This Drone reads the Stinger's SKILL.md before planning any task.
+[go-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/go-stinger) - module-graph classification, the vendoring-versus-fork-in-tree playbook, the one-tag rule for `.so` plugin builds, and toolchain selection guidance. This Drone reads the Stinger's SKILL.md before planning any task.
 
 ## Trigger phrases
 - "go.mod surgery"
