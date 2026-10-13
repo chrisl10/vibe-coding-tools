@@ -5,7 +5,7 @@ Code, Cursor, Codex, and Cowork all read this file, directly or through a thin i
 
 ## What this repo is
 
-A Claude plugin marketplace of skills built on the Littlebird MCP. Littlebird captures
+The optional `littlebird-toolkit` plugin in the Wasp Nest marketplace, built on the Littlebird MCP. Littlebird captures
 screen activity and transcribes meetings, so the record of the user's work already
 exists. Every skill here turns some part of that record into something actionable.
 
@@ -25,10 +25,7 @@ Thirty skills live under `skills/`, in six groups:
 - **Voice.** combined-voice-creator, littlebird-voice-creator, facebook-voice-creator.
   These predate the current structure and do not carry a research archive.
 
-The repo root is simultaneously the plugin (`.claude-plugin/plugin.json`, skills
-auto-discovered from `skills/`) and the marketplace (`.claude-plugin/marketplace.json`
-listing the plugin with source `./`). Keep both manifests in sync when anything is added
-or renamed.
+The source pack is `packs/littlebird-toolkit/`. Its manifests identify `littlebird-toolkit`; the root [catalog](../../plugin-catalog.json) owns marketplace membership and the [layout guide](../../docs/PLUGIN-LAYOUT.md) describes installed prerequisites. Core remains required. Do not create a separate pack marketplace or edit shared catalog/build/install files without coordination.
 
 **One plugin, deliberately.** Installed plugins are copied to a cache directory and
 cannot reference files outside themselves, so splitting into several plugins would break

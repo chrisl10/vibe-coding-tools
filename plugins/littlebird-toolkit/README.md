@@ -27,14 +27,15 @@ says so instead of producing a confident number.
 
 ## Install
 
-This repo is a Claude plugin marketplace. In Claude Cowork or Claude Code:
+This pack belongs to the Wasp Nest marketplace. After the version 3 marketplace is published, use these Claude Code commands:
 
 ```text
-/plugin marketplace add legioncodeinc/littlebird-skills
-/plugin install littlebird-toolkit@littlebird-skills
+/plugin marketplace add legioncodeinc/vibe-coding-tools
+/plugin install wasp-nest-core@wasp-nest
+/plugin install littlebird-toolkit@wasp-nest
 ```
 
-Each folder under [`skills/`](skills/) is also a complete standalone skill. Zip one with
+Each folder under [`skills/`](skills) is also a complete standalone skill. Zip one with
 a `.skill` extension, folder at the zip root, and upload it to Claude.
 The Wasp Nest marks all 30 as standalone in frontmatter. They run directly in the current assistant or a Routine and do not claim companion Drones.
 
@@ -256,3 +257,52 @@ The Wasp Nest build bundles this pack as a plugin under its own marketplace. It 
 Created by **Mario Aldayuz and Legion Code Inc.** First-party material is licensed under [AGPL-3.0-or-later](LICENSE.md).
 
 Built for people who want the record to actually do something. Go check what you are paying for.
+
+<!-- wasp-pack-guide:start -->
+## Choose a capability
+
+This pack contains 30 skills, 0 agents and 1 source command. The table explains each source skill; open its linked instructions for exact inputs, outputs and limits.
+
+The skill descriptions and run modes above cover all thirty source skills. Follow each linked skill's own inputs and approval steps.
+
+## Start one task
+
+Required packs: `wasp-nest-core`
+
+Install the selected pack and its prerequisites through the marketplace. For the version 3 layout, purge the previous installation first. Select the skill shown by your client, or paste this request with real paths and scope:
+
+After adding the Wasp Nest marketplace, Claude Code uses these installation instructions:
+
+```text
+/plugin install wasp-nest-core@wasp-nest
+/plugin install littlebird-toolkit@wasp-nest
+```
+
+Other clients use their plugin selection UI or discovered skill selector. Installing a package and invoking a task are separate steps.
+
+```text
+Use meeting-scribe with [meeting and date]. Check the available Littlebird evidence and draft the recap, decisions and follow-ups for review.
+```
+
+Expected result: Dated, source-backed reports or drafts from accessible records. Missing Littlebird or voice inputs remain explicit gaps.
+
+
+
+Claude Code plugin command names:
+
+| Command | What it does |
+| --- | --- |
+| `/littlebird-toolkit:review-my-work` ([procedure](commands/review-my-work.md)) | Build a private evidence-based review of a defined work period using available Littlebird reports and stated limits. |
+
+## Agent responsibilities
+
+This pack declares no paired agents; its standalone skills run in the current assistant.
+
+Codex can use the named skill or its generated `source-command-<name>` wrapper where a source command exists. Home installations may expose flat commands. Use the actual selector offered by the host. A pack with no paired agents runs its standalone skills directly; a skill name does not prove that a native agent was launched.
+
+## Prerequisites and boundaries
+
+No extra workflow-specific pack prerequisite is declared. Tool and account requirements remain in each skill.
+
+Core supplies shared routing and review methods. Native Codex role registration requires the explicit installed-plugin registry and trusted Core hook; a marketplace selection alone is not proof of registration. Read the linked skill before work. Missing source, browser, connector, renderer or account access is a reported gap. Installation does not authorize sending, publishing, paid work or live settings changes.
+<!-- wasp-pack-guide:end -->
