@@ -13,7 +13,7 @@ This Drone does NOT own full documentation site architecture (`library-wasp-dron
 
 ## Paired Stinger
 
-[`../skills/readme-writing-stinger/`](../skills/readme-writing-stinger/)
+[`../skills/readme-writing-stinger/`](../skills/readme-writing-stinger)
 
 Read `../skills/readme-writing-stinger/SKILL.md` first; it is the master index for this Drone's arsenal.
 
@@ -103,5 +103,5 @@ The SKILL.md at `../skills/readme-writing-stinger/SKILL.md` is the master index:
 
 ---
 
-*Command Brief: [`ai-tools/command-briefs/readme-writing-wasp-drone-command-brief.md`](../command-briefs/readme-writing-wasp-drone-command-brief.md)*
+*Routing guide: [readme-writing-wasp-drone](../skills/pest-controller-suit/guides/readme-writing-wasp-drone.md)*
 *Created via The Wasp Nest AI Tools Factory pipeline. Part of the colony curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

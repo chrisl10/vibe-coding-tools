@@ -11,11 +11,17 @@ description: "Cross-harness capability integration specialist for The Wasp Nest'
 
 ## Paired Stinger
 
-[`../skills/harness-integration-stinger/`](../skills/harness-integration-stinger/)
+[`../skills/harness-integration-stinger/`](../skills/harness-integration-stinger)
 
 Read `../skills/harness-integration-stinger/SKILL.md` first - it is the master index for this Drone's arsenal.
 
 ## Procedure
+
+For task pack selection, host-version hook payload proof or selected-pack command coverage, load paired guides 12 through 14. Use actual kind/owner/version and active branch closure; separate source, registry, adapter, native discovery and invocation. Record event/parser/trust/permission/output/error/deadline evidence without installing or activating during detection.
+
+For source-versus-installed availability, direct skill fallback, installed-host release claims or personal productivity wiring, load guides 08 through 11 from the paired skill. Resolve selected owner/version/workflow separately from native discovery and execution; record account permission separately from action authorization. Direct skill reading retains a serial procedure but creates no independent worker or reviewer. Prepare personal artifacts without hidden sends or guessed recipients.
+
+For parallel worker coordination, first load `guides/07-coordinate-parallel-workers.md`. Resolve the selected AppPrimer Zero prerequisite and reuse its handoff validator and templates. Record actual capacity, exclusive paths, inherited settings, contract readiness, supervision and stop acknowledgment; distinguish preparation from native execution and integrated candidate proof.
 
 Typical invocation:
 
@@ -35,11 +41,13 @@ Typical invocation:
 
 ## Critical directives
 
+Apply portable constraints to the inspected capability. Hivemind-specific tool names, scanner rules and bundle paths below remain case-study mechanics. For present-host availability, source/selection/native/access proof and explicit fallback, guides 08 through 11 and the paired SKILL.md govern. Do not infer current capabilities from a historical event count.
+
 - **Keep the tool and command contract identical across every host.** `hivemind_search`/`hivemind_read`/`hivemind_index` (plus `hivemind_goal_add`/`hivemind_kpi_add` on OpenClaw) must have the same name, args, and return shape on all six adapters. Flag any one-host-only contract change as a Critical cross-harness recall break.
 
-- **Hooks must be fast and fail-open.** Capture hooks run on the agent's critical path. Honor the per-event timeout, dispatch heavy work `async: true`, and never let a hook crash block the host. Flag any synchronous heavy work in a hook entry as a Critical latency finding.
+- **Preserve hook purpose and timing.** Observational hooks handle failures as advisories; intentional authorization/integrity gates retain their refusal semantics. Verify actual host/version event, async support and deadline. An offline fixture or source binding does not prove an active hook.
 
-- **Capability detection must be cheap and side-effect free.** Detection probes for each host's home dir / binary on every `hivemind install`. Flag any detection path that writes files or spawns work as a Critical finding.
+- **Capability detection must be cheap and side-effect free.** A directory or cache proves presence only. Use trusted selected Core resolver checks for owner/version/workflow and record native discovery, execution and account permission separately. Detection does not install, register roles or change settings. The Hivemind probe is a historical example.
 
 - **Never hardcode bundle paths - resolve them per host.** Use the host's own root variable (`${CLAUDE_PLUGIN_ROOT}` for Claude Code, `~/.<host>/hivemind/bundle/` for Cursor/Hermes). Flag any absolute bundle path as a Critical portability break.
 
@@ -51,9 +59,9 @@ Typical invocation:
 
 - **Codex MCP config is TOML with an underscored `mcp_servers` key, not JSON `mcpServers`.** Flag any MCP registration written against Codex using the JSON `mcpServers` shape as a silent-failure risk - it parses as a no-op, not an error.
 
-- **Cowork connectors must be reachable from the public internet, not localhost.** Flag any capability that assumes a local/stdio MCP server will work identically in a Cowork session as a Critical connectivity break.
+- **Qualify the connector execution environment.** A cloud connector requires reachability from its actual runtime; a local desktop plugin may expose a separate local surface. Never infer localhost or public-endpoint support solely from the product name. Record actual transport and scoped permission; absent proof remains unknown.
 
-- **Know the real shared hook-event floor before designing a hook-driven capability.** The verified shared floor across Claude Code and Codex is `SessionStart`, `UserPromptSubmit`, `PreToolUse` (Bash-only), `PostToolUse` (Bash-only native, Edit/Write approximated), `Stop`. Flag a hook-driven capability designed only against Claude Code's richer 26-event surface, with no fallback plan for narrower harnesses, as a Critical scoping gap.
+- **Compute the current supported hook intersection.** Inspect actual host/version/carrier registration and observed events. Historical event lists are not current runtime proof. Document preserve/translate/degrade/drop and loss for unsupported events; configuration alone does not establish execution.
 
 ## Escalation
 
