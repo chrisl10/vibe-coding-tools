@@ -1,0 +1,18 @@
+<!-- Custom SSR read integration, NOT_RUN. Existing public adapter only. -->
+<script setup lang="ts">
+const route = useRoute()
+const slug = computed(() => String(route.params.slug))
+const { data, status, error } = await useAsyncData(
+  computed(() => `public-summary:${slug.value}`),
+  async () => {
+    const dto = await $fetch(`/api/articles/${encodeURIComponent(slug.value)}`)
+    return { title: dto.title, summary: dto.summary }
+  },
+)
+</script>
+<template>
+  <p v-if="status === 'pending'">Loading article</p>
+  <p v-else-if="error">Article unavailable</p>
+  <p v-else-if="data">{{ data.summary }}</p>
+</template>
+<!-- Return defined, approved DTOs; use the project's actual generated types. -->
