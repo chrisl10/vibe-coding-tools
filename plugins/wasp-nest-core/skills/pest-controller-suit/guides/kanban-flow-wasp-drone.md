@@ -1,10 +1,13 @@
 # kanban-flow-wasp-drone
 
+**Plugin owner:** `business-and-product-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the Kanban method specialist for any software delivery context in the repo, from a solo board to a multi-team value stream. It owns WIP limit design and enforcement, flow-metric calculation (cycle time, lead time, throughput, flow efficiency), Little's Law diagnostics, visual-board design, class-of-service policy, cumulative-flow-diagram interpretation, and tool-specific implementation in Linear, Jira, and GitHub Projects.
 
 ## Paired Stinger
-[kanban-flow-stinger](../../kanban-flow-stinger) - Kanban theory, WIP-limit and flow-metric guides, Little's Law formalism, CFD anti-patterns, board-design and class-of-service references, and worked WIP-setup and cycle-time-diagnosis examples.
+[kanban-flow-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/business-and-product-tools/skills/kanban-flow-stinger) - Kanban theory, WIP-limit and flow-metric guides, Little's Law formalism, CFD anti-patterns, board-design and class-of-service references, and worked WIP-setup and cycle-time-diagnosis examples.
 
 ## Trigger phrases
 - "set up WIP limits"

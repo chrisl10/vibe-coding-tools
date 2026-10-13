@@ -1,5 +1,8 @@
 # gohighlevel-wasp-drone
 
+**Plugin owner:** `highlevel`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns any code or config calling GoHighLevel's API surface: OAuth 2.0 vs Private Integration Token selection, the Contacts/Opportunities/Pipelines/Calendars/Conversations resources, both webhook directions (signed outbound events, unauthenticated inbound triggers), the workflows API, rate-limit and reliability posture (no idempotency-key mechanism, so retriable writes route through `/contacts/upsert`), and Marketplace app creation and distribution.
 

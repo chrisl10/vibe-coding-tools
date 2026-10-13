@@ -1,10 +1,13 @@
 # legal-docs-wasp-drone
 
+**Plugin owner:** `business-and-product-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the SaaS legal documentation specialist covering the five core documents: Terms of Service, Privacy Policy, Data Processing Agreement, Master Service Agreement, and Cookie Notice. It works the template-plus-lawyer-review path through Termly, Iubenda, Osano, and Contractbook generators, and understands GDPR, CCPA/CPRA, Quebec Law 25, and LGPD compliance postures side by side. It runs the customer-DPA redline triage using a Red Flag / Fallback Matrix and never asserts regulatory compliance on a company's behalf. Every output closes with the attorney-review invariant.
 
 ## Paired Stinger
-[legal-docs-stinger](../../legal-docs-stinger) - the generator-selection matrix, per-document section checklists, the compliance-posture matrix across four regimes, and the customer-DPA response workflow.
+[legal-docs-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/business-and-product-tools/skills/legal-docs-stinger) - the generator-selection matrix, per-document section checklists, the compliance-posture matrix across four regimes, and the customer-DPA response workflow.
 
 ## Trigger phrases
 - "generate a privacy policy"
@@ -29,6 +32,8 @@ This Drone is the SaaS legal documentation specialist covering the five core doc
 - A completed data inventory before generating or auditing a Privacy Policy
 - Whether the product collects special-category data (health, biometric, genetic, political opinion), which requires attorney-authored content instead of generator output
 - The current sub-processor list, since a DPA without a maintained sub-processor list is incomplete under GDPR Article 28(2)
+
+For international currency, tax and refund language in Terms/MSA, load `guides/08-international-pricing-review-handoff.md` from the selected Legal Docs root. This produces a fact packet and professional handoff only. Tax advice, registration/nexus and liability remain with accountant/counsel; resolve selected Software Economics for supplied scenario arithmetic.
 
 ## Outputs
 - A generator recommendation (Termly, Iubenda, Osano, or Contractbook) tied to jurisdiction and document type

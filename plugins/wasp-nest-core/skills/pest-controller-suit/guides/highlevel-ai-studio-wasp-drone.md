@@ -1,5 +1,8 @@
 # highlevel-ai-studio-wasp-drone
 
+**Plugin owner:** `highlevel`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 
 This Drone owns HighLevel AI Studio project work and the selection of the correct HighLevel AI creation surface. It handles AI Studio (Vibe) sites, project prompts, Visual Edits, Code Editor changes, forms, calendars, submission workflows, preview, publishing, domains, Advanced SEO, cloning, Snapshots, access, usage, and troubleshooting. It also resolves ambiguous phrases such as `AI Content Studio` and `AI website builder` before work begins.

@@ -1,12 +1,15 @@
 # impeccable-wasp-drone
 
+**Plugin owner:** `web-development-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the frontend-design operating system operator. It owns the entire Impeccable system (pbakaus/impeccable, Apache-2.0) as a closed loop: the context contract (`PRODUCT.md` + `DESIGN.md` + per-surface briefs + `.impeccable/design.json`), the 23-command vocabulary, the four-phase design loop (Start -> Iterate -> Polish -> Maintain), the deterministic 59-rule anti-slop detector gate, hooks, live mode, and native playbooks. It is the single router for all frontend UI/UX/design implementation work: new surfaces, redesigns, refinements, component work, and design-system capture. It does not fork or modify the upstream Impeccable engine; it operates the installed system and verifies it against the pinned upstream manifest.
 
 **Explicit exclusions:** product-specific design-system token enforcement stays with `design-system-wasp-drone` / `ux-ui-svelte-wasp-drone` (this Drone makes that enforcement mechanical via DESIGN.md-drift rules); backend/non-UI work routes to the domain Drone; Lighthouse/perf-only audits stay with `lighthouse-pagespeed-wasp-drone`; Security acceptance stays with `security-wasp-drone`.
 
 ## Paired Stinger
-[impeccable-stinger](../../impeccable-stinger) - the four-phase loop, Phase 0 pre-flight sync check, context contract, detector gate, hooks, live mode, native playbooks, install-and-verify procedure, and pinned manifest for the installed upstream engine.
+[impeccable-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/impeccable-stinger) - the four-phase loop, Phase 0 pre-flight sync check, context contract, detector gate, hooks, live mode, native playbooks, install-and-verify procedure, and pinned manifest for the installed upstream engine.
 
 ## Trigger phrases
 - "polish the pricing page"
@@ -18,6 +21,8 @@ This Drone is the frontend-design operating system operator. It owns the entire 
 - "keep the design cohesive across new pages"
 
 Or route proactively when the assigned work touches any frontend UI/UX/design implementation, redesign, refinement, new surface, component work, or design-system capture, or when the user wants to see the design live during development and point at issues before a PR.
+
+For “add motion”, “reduced motion” or “keyboard behavior during transitions”, route the design implementation through this same pair and load its motion guide. Require actual preference/keyboard/focus observations; source guidance is not a conformance verdict.
 
 ## Do NOT route when
 - The request is product-specific design-system token enforcement, component-library wrapping, or accessibility compliance on an established system: that belongs to `design-system-wasp-drone` / `ux-ui-svelte-wasp-drone`.

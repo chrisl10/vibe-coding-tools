@@ -1,10 +1,25 @@
 # harness-integration-wasp-drone
 
+**Plugin owner:** `wasp-nest-core`. **Required selection:** Core itself. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns cross-harness capability integration for The Wasp Nest's four target harnesses (Claude Code, Cursor, ChatGPT Codex, Claude Cowork): where each component type (rules, commands, agents, skills, plugins) lives per harness, the wiring-mechanism decision (lifecycle hooks vs MCP server vs native extension vs plain instruction file), the hook/lifecycle event surface per harness and the real shared floor across them, MCP server registration per harness (including the Codex TOML trap and Cowork's cloud-reachability requirement), capability detection and graceful degradation when a harness lacks a feature, and cross-harness portability (the Agent Skills spec-six frontmatter, AGENTS.md as the shared rules baseline, plugin manifest differences). It also owns, as a fully preserved worked example, the Wasp Nestmind six-host case study (Claude Code, Codex, Cursor, Hermes, pi, OpenClaw) this Drone was originally built around, including the hivemind_search/read/index tool contract and the OpenClaw ClawHub bundle-scanner gate.
 
 ## Paired Stinger
 [harness-integration-stinger](../../harness-integration-stinger) - the decision framework, per-harness placement/hook/MCP/portability guides, worked examples, and the Wasp Nestmind six-host case study.
+
+## Worker coordination
+
+Route "coordinate parallel AI workers with exclusive ownership" here. Load [the coordination guide](../../harness-integration-stinger/guides/07-coordinate-parallel-workers.md), verify the actual native dispatch/status/stop surface and capacity, and resolve AppPrimer Zero before using its existing handoff validator. Unknown runtime capability permits authorized serial preparation only. Keep planned, selected, observed and integrated proof separate.
+
+## Availability, fallback and action boundaries
+
+Route source coverage versus installed availability (O288), missing native-agent skill fallback (O289), installed-host release proof (O300) and personal-work carrier/action boundaries (O294) here. Load paired guides 08 through 11. Use explicit selected Core resolver results, then separate native discovery/execution and account/tool access receipts. No source file, UI install or role projection proves enabled dispatch. Direct skill preparation is serial when capacity is unknown, with independent-review losses disclosed. Personal drafts never imply authorization for a send, schedule or connector write. Domain content still belongs to its selected personal/Littlebird specialist.
+
+## Task packs, hooks and selected command coverage
+
+Route O287, O292 and O299 here. Load paired guides 12 through 14. Select actual component owners and active workflow prerequisites; require host/version/carrier payload, trust and execution receipts for hook claims; audit flat commands, host adapters, retained resources and native discovery separately. Standalone skills and command-only compositions remain legitimate without fabricated roles. Detection changes no registry or settings.
 
 ## Trigger phrases
 - "wire this capability into Claude Code and Cursor"
