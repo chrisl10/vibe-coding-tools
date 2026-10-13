@@ -7,11 +7,18 @@ argument-hint: [stinger-name]
 
 Research goes stale even when the skill built on it keeps working fine. This command does not touch what the Stinger tells a Drone to do; it only checks whether the evidence underneath is still true, and says so out loud when it no longer is.
 
+## Invocation and source scope
+
+This canonical Core procedure is src/commands/re-research.md. In Claude plugin mode call /wasp-nest-core:re-research; Codex uses Core's generated source-command-re-research skill, not a deprecated prompt file. A source/global command label below is not an alias for an optional plugin.
+
+Read plugin-catalog.json to resolve every specialist's owner and prerequisites. For source work use its canonical source_root; for installed work use Core's selected-plugin resolver. Do not treat a cached optional package as enabled or edit installed copies to change canonical procedures.
+
+
 ## Mandatory process
 
 1. Load `../skills/pest-controller-suit/SKILL.md` (the roster) and consult it before any routing decision. This is the first step, always, no exceptions. Confirm `$1`/`$ARGUMENTS` names a real, registered Stinger; if it does not, stop and ask which one the user means.
 2. Load `../skills/queen-wasp-stinger/SKILL.md` in full. This command re-runs two of its seven stages against an existing component; it does not invent a separate procedure for refreshes.
-3. Confirm the target Stinger already has a research archive on disk at `../skills/<stinger-name>/references/research/`. A Stinger with nothing there has never been through stage 1 and 2; send the user to `/forge` instead. This command refreshes research, it does not originate it.
+3. Resolve the target's catalog owner and canonical skill root. Inspect its actual archive layout: skills may retain `references/research/` or `research/` with `external/` and `internal/` sources. Missing one conventional folder does not prove the skill was never researched. If no research evidence exists, report that gap and use the forge's research intake. Installed caches remain read-only distribution outputs; refresh the canonical source, not an arbitrary cached copy.
 4. **Re-run Research (stage 2).** Sweep current primary sources for the Stinger's domain, scoped to the 6 months before today, official docs outranking vendor blogs outranking community posts. Archive every new source as its own file under `references/research/raw/`, headed with URL, fetch date, and source type, matching the header format the existing archive already uses. Leave prior raw files in place; this pass adds and marks outdated sources, it does not delete anything. Artifact: the updated raw archive.
 5. **Re-run Distillation (stage 3).** Re-ingest the full raw archive fresh, including everything just added, and rewrite the distilled article in `references/research/`: dense, cited to raw files, conflicts stated as conflicts, thin coverage stated as thin coverage. Where a new source replaces an old one, say so and cite both. Artifact: the rewritten distillation.
 6. **Check the guides against the refreshed distillation.** Read every file under the Stinger's `guides/` folder and every factual claim in its root `SKILL.md`, and compare each against the new distillation. Flag any claim the refreshed research contradicts outright, and any claim the refreshed research simply no longer supports because the citation it once rested on is gone or superseded.
