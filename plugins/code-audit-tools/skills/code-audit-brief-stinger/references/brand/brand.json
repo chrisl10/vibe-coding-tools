@@ -1,0 +1,99 @@
+{
+  "brand_version": "1.0.0",
+  "source": "Legion Code Inc. Field Guide, palette sampled from the page renders; see references/research/raw/design--legion-field-guide-pdf.md",
+  "company": "Legion Code Inc.",
+  "eyebrow": "A Legion Code Inc. code audit",
+  "title_suffix": "Code Audit",
+  "footer": {
+    "left": "{company} · {requested_by} · {repo} · {date}",
+    "right": "{title}"
+  },
+  "fonts": {
+    "stylesheet": "https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&family=JetBrains+Mono:wght@400..700&display=swap",
+    "preconnect": ["https://fonts.googleapis.com", "https://fonts.gstatic.com"],
+    "sans": "'Inter', 'Inter Display', system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif",
+    "mono": "'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+  },
+  "logos": {
+    "light": "legion-logo-light.svg",
+    "dark": "legion-logo-dark.svg",
+    "symbol": "legion-symbol.svg",
+    "favicon": "legion-favicon.svg"
+  },
+  "palette": {
+    "light": {
+      "paper": "#FFFFFF",
+      "surface": "#FFFFFF",
+      "panel": "#F4F5F7",
+      "box": "#FAFAFB",
+      "ink": "#0A0B0D",
+      "muted": "#4A5160",
+      "faint": "#6B7280",
+      "rule": "#D8DCE2",
+      "rule-strong": "#B5BAC2",
+      "brand-green": "#18A968",
+      "brand-green-ink": "#0E6D43",
+      "brand-mint": "#EBF6F0",
+      "brand-amber": "#C77A00",
+      "brand-amber-ink": "#8F5800",
+      "brand-amber-soft": "#FAF2E8",
+      "brand-red": "#DC2839",
+      "brand-blue": "#1273D6",
+      "bar": "#4A5160",
+      "band-dark": "#121212"
+    },
+    "dark": {
+      "paper": "#0E1013",
+      "surface": "#15181D",
+      "panel": "#1A1E24",
+      "box": "#171A1F",
+      "ink": "#F5F6F7",
+      "muted": "#B3B9C4",
+      "faint": "#8E95A1",
+      "rule": "#2A2F37",
+      "rule-strong": "#3D434D",
+      "brand-green": "#3DDC97",
+      "brand-green-ink": "#5FE3A8",
+      "brand-mint": "#11291E",
+      "brand-amber": "#E39A2D",
+      "brand-amber-ink": "#F0B457",
+      "brand-amber-soft": "#2A1F0E",
+      "brand-red": "#F0646F",
+      "brand-blue": "#5AA2F0",
+      "bar": "#9AA1AD",
+      "band-dark": "#050607"
+    }
+  },
+  "severity": {
+    "light": {
+      "critical-fg": "#8A0F2E", "critical-bg": "#FBE3E8",
+      "high-fg": "#A83600", "high-bg": "#FDE8DC",
+      "medium-fg": "#7A5600", "medium-bg": "#F8EECB",
+      "low-fg": "#2D5B8C", "low-bg": "#E2ECF6",
+      "info-fg": "#4A5160", "info-bg": "#EEF0F3"
+    },
+    "dark": {
+      "critical-fg": "#FF9DB1", "critical-bg": "#3A1220",
+      "high-fg": "#FFA878", "high-bg": "#3A1E0E",
+      "medium-fg": "#E8C766", "medium-bg": "#33290C",
+      "low-fg": "#93BCEA", "low-bg": "#14263A",
+      "info-fg": "#B3B9C4", "info-bg": "#20242B"
+    }
+  },
+  "bands": {
+    "light": {
+      "healthy-fg": "#0B6640", "healthy-bg": "#DFF2E8",
+      "moderate-fg": "#7A5600", "moderate-bg": "#F8EECB",
+      "at-risk-fg": "#A83600", "at-risk-bg": "#FDE8DC",
+      "critical-fg": "#8A0F2E", "critical-bg": "#FBE3E8",
+      "not-run-fg": "#4A5160", "not-run-bg": "#EEF0F3"
+    },
+    "dark": {
+      "healthy-fg": "#6FE0AA", "healthy-bg": "#10291D",
+      "moderate-fg": "#E8C766", "moderate-bg": "#33290C",
+      "at-risk-fg": "#FFA878", "at-risk-bg": "#3A1E0E",
+      "critical-fg": "#FF9DB1", "critical-bg": "#3A1220",
+      "not-run-fg": "#B3B9C4", "not-run-bg": "#20242B"
+    }
+  }
+}
