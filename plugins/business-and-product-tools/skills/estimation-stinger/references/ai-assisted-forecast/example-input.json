@@ -1,0 +1,36 @@
+{
+  "start_date": "2026-10-12",
+  "hours_per_day": "3",
+  "usable_fraction": "0.8",
+  "weekdays": [0, 1, 2, 3, 4],
+  "currency": "USD",
+  "cost_basis": "Hypothetical supplied rates dated 2026-10-07; no live vendor prices.",
+  "scenarios": [
+    {
+      "name": "lower",
+      "basis": "Hypothetical familiar stack and ready assets; calibrate with one accepted slice.",
+      "engineering_hours": "24",
+      "learning_hours": "6",
+      "verification_hours": "8",
+      "rework_hours": "4",
+      "one_time_cash": "20",
+      "monthly_cash": "30",
+      "cash_per_owner_hour": "0.5",
+      "owner_hourly_value": "25",
+      "dependencies": [{"name": "account approval", "ready_after_calendar_days": 14}]
+    },
+    {
+      "name": "upper",
+      "basis": "Hypothetical unfamiliar integration and additional debugging/review.",
+      "engineering_hours": "40",
+      "learning_hours": "12",
+      "verification_hours": "14",
+      "rework_hours": "10",
+      "one_time_cash": "20",
+      "monthly_cash": "30",
+      "cash_per_owner_hour": "0.5",
+      "owner_hourly_value": "25",
+      "dependencies": [{"name": "account approval", "ready_after_calendar_days": 14}]
+    }
+  ]
+}
