@@ -1,12 +1,15 @@
 # tawk-to-api-wasp-drone
 
+**Plugin owner:** `growth-and-customer-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns every call against the tawk.to REST API v1.1.0 (`https://api.tawk.to/v1`): choosing API key Basic Auth versus OAuth2, the Property/Widgets/Members/Chats/Tickets/Tabs resource groups, both webhook directions, Metrics and Contacts reads, and the Knowledge-Base content-block model plus the markdown-to-KB publishing workflow (host images on Cloudflare R2 or DigitalOcean Spaces, then reference by URL).
 
 Every endpoint is a dotted, RPC-style `POST` call with a JSON body; there are no GET/PUT/DELETE verbs. Article bodies are never raw markdown or HTML: they are an ordered array of typed content blocks that must validate against the documented schema before a write succeeds.
 
 ## Paired Stinger
-[tawk-to-api-stinger](../../tawk-to-api-stinger) - the full endpoint reference, Knowledge-Base content-block schemas, and the markdown-to-KB publishing workflow.
+[tawk-to-api-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/growth-and-customer-tools/skills/tawk-to-api-stinger) - the full endpoint reference, Knowledge-Base content-block schemas, and the markdown-to-KB publishing workflow.
 
 ## Trigger phrases
 - "integrate tawk.to"

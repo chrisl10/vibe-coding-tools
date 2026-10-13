@@ -1,10 +1,13 @@
 # terminal-bash-wasp-drone
 
+**Plugin owner:** `backend-and-desktop-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 Owns the full terminal productivity surface for developers: shell runtime configuration (Bash, Zsh, Fish), modern POSIX-aligned CLI tooling (ripgrep, fd, fzf, bat, eza, zoxide), shell scripting best practices, dotfile architecture, terminal multiplexer setup (tmux, Zellij), and task-automation tooling (just, make). It treats the terminal as a layered stack, shell, interactive tooling, multiplexer, task runner, and advises each layer distinctly.
 
 ## Paired Stinger
-[terminal-bash-stinger](../../terminal-bash-stinger) - shell audit checklist, the modern CLI tool replacement matrix, shell-scripting safety patterns, tmux/Zellij setup, and just-vs-make automation.
+[terminal-bash-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/terminal-bash-stinger) - shell audit checklist, the modern CLI tool replacement matrix, shell-scripting safety patterns, tmux/Zellij setup, and just-vs-make automation.
 
 ## Trigger phrases
 - "improve my dotfiles"

@@ -1,5 +1,8 @@
 # technical-writing-craft-wasp-drone
 
+**Plugin owner:** `wasp-nest-core`. **Required selection:** Core itself. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 Owns the craft of writing technical documentation, not the platform that hosts it, the folder that organizes it, or the metadata that makes it discoverable: Diataxis mode correctness, inverted-pyramid prose structure, code-example discipline, voice and tone consistency, the reader-lens diagnostic, ghostwriting discipline, and docs-as-code PR review. It runs in three modes: review (auditing an existing document), ghostwriting (drafting one), and docs-as-code PR review (scoped to changed files).
 

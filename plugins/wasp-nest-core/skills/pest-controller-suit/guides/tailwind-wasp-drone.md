@@ -1,12 +1,16 @@
 # tailwind-wasp-drone
 
+**Plugin owner:** `web-development-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 Owns Tailwind CSS v4 the framework itself, for any codebase: CSS-first configuration, `@theme` mechanics and namespace-to-utility generation, the full directive/function set (`@utility`, `@variant`, `@custom-variant`, `@apply`, `@reference`, `@source`), the `@tailwindcss/vite` plugin, v3-to-v4 migration, dark mode variants, container queries, arbitrary values, class ordering, and Oxide-engine performance. It explains how `@theme` works as a mechanism; it does not decide what any specific product's tokens should be.
 
 ## Paired Stinger
-[tailwind-stinger](../../tailwind-stinger) - theme/token guide, the upgrade-tool-first migration procedure, Vite/SvelteKit setup, dark mode, container queries, class ordering, and anti-patterns/performance.
+[tailwind-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/tailwind-stinger) - theme/token guide, the upgrade-tool-first migration procedure, Vite/SvelteKit setup, dark mode, container queries, class ordering, and anti-patterns/performance.
 
 ## Trigger phrases
+- "should this app use Tailwind and shadcn"
 - "migrate to Tailwind v4"
 - "set up @theme"
 - "wire up the Tailwind Vite plugin"
@@ -38,3 +42,6 @@ Owns Tailwind CSS v4 the framework itself, for any codebase: CSS-first configura
 - shadcn-svelte-wasp-drone: when the theming question touches shadcn-svelte's token vocabulary.
 - ux-ui-svelte-wasp-drone: whenever the question turns out to be about OSPRY's actual token values or app-specific enforcement.
 - quality-wasp-drone: for post-migration or post-refactor verification.
+
+## Component fit intake
+Use the paired skill's guide 08 and fit worksheet for O071. Match Svelte/React component variants, record scan and theme contracts, and route actual UI implementation through Impeccable. Verify selected owners; flag missing Vue/Next-specific coverage. Source qualification does not establish a running app or accessibility pass.

@@ -1,10 +1,13 @@
 # tauri-wasp-drone
 
+**Plugin owner:** `backend-and-desktop-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns the Tauri 2 application boundary for desktop and mobile products. It reviews current 2.x changes against a dated source ledger, aligns Rust and JavaScript Tauri packages, migrates v1 applications, designs typed Rust-to-webview IPC and state, constrains capabilities/permissions/scopes, integrates plugins and desktop sidecars, implements hosted-provider, desktop-sidecar, native-runtime, and mobile-plugin or native-mobile-bridge AI boundaries, wires app-local persistence, and prepares test, build, bundle, updater, signing, and distribution-readiness evidence. It owns Tauri-specific integration and configuration, not every Rust, frontend, AI, database, security, dependency, or release concern inside the product.
 
 ## Paired Stinger
-[tauri-stinger](../../tauri-stinger) - current Tauri 2 update review, v1 migration, IPC and state, capabilities and secrets, hosted-provider, desktop-sidecar, native-runtime, and mobile-plugin AI patterns, persistence, desktop/mobile testing, build/sign/update/distribution, and dated refresh procedures with worked examples and reference tables.
+[tauri-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/tauri-stinger) - current Tauri 2 update review, v1 migration, IPC and state, capabilities and secrets, hosted-provider, desktop-sidecar, native-runtime, and mobile-plugin AI patterns, persistence, desktop/mobile testing, build/sign/update/distribution, and dated refresh procedures with worked examples and reference tables.
 
 ## Trigger phrases
 - "build a Tauri 2 desktop or mobile app"
@@ -19,6 +22,7 @@ This Drone owns the Tauri 2 application boundary for desktop and mobile products
 - "embed a native Rust AI runtime in this Tauri app"
 - "wrap a native AI SDK in a Tauri plugin or mobile bridge"
 - "persist AI state in this Tauri app"
+- "qualify safe Tauri file import, export or app-data uninstall"
 - "test or package this Tauri desktop/mobile app"
 - "prepare Tauri updater and signing artifacts"
 
@@ -44,6 +48,18 @@ If a request straddles domains, use `tauri-wasp-drone` for the Tauri-specific bo
 - The required verification targets plus explicit authority for any credentials, signing, upload, store, publication, paid traffic, or live updater effect.
 
 If an input controlling safety, public compatibility, money, credentials, destructive migration, signing, publication, or platform support is missing, route only to establish a fail-closed plan or smallest safe checkpoint. Do not ask the Drone to guess or perform the external effect.
+
+## Native release qualification
+
+Use the paired Stinger guides 10 through 12 for macOS signing/notarization, Windows code-signing expectations and Linux distribution fit. Keep updater and OS signatures separate, EV reputation unpromised, Linux support named by target, and data-compatible recovery proven. Source-qualified procedures and synthetic candidate exercises never imply signed/native release acceptance.
+
+## Desktop capability qualification
+
+Use the paired Stinger [sidecar credential broker guide](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/tauri-stinger/guides/13-qualify-sidecars-and-credential-brokers.md), [local migration recovery guide](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/tauri-stinger/guides/14-qualify-local-data-migrations.md), [updater trust guide](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/tauri-stinger/guides/15-qualify-updater-trust-and-recovery.md), [tray/shortcut/notification guide](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/tauri-stinger/guides/16-qualify-tray-shortcuts-and-notifications.md) and [native acceptance guide](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/tauri-stinger/guides/17-qualify-native-tests-beyond-the-browser.md). Preserve real target/driver/package evidence and distinguish temporary SQLite mechanics or expected case decisions from actual native behavior. Secret broker, key transition, feed freshness, child cleanup and data-compatible recovery need consumer implementation and independent gates.
+
+## Local file safety qualification
+
+Use the paired Stinger guides 18 through 20 for bounded local import, safe export and app-data uninstall. User-selected paths do not authorize arbitrary reads, overwrites or deletion. Require exact operation approval, native path/handle identity and TOCTOU review, bounded untrusted parsing, qualified atomic/no-overwrite publication, explicit durability limits and trusted app-owned cleanup provenance. Preserve user documents and exports; never infer ownership from path patterns, mtime or installer defaults. The worksheet and fictional cases carry NOT_RUN status until an authorized consumer supplies native and packaged-uninstall evidence. Rust/OS primitive implementation, provider/runtime policy and formal Security/Quality retain their existing owners. This procedure grants no real file mutation or uninstall authority.
 
 ## Outputs
 - A dated Tauri 2 update-impact review and aligned core, CLI, API, plugin, and resolved runtime plan, including source conflicts and support gaps.

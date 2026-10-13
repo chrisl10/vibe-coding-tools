@@ -1,10 +1,13 @@
 # tailscale-wasp-drone
 
+**Plugin owner:** `platform-and-release-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 Owns Tailscale specifically: tailnet setup and MagicDNS, the tailnet policy file (ACLs, grants, tags, `tagOwners`, `nodeAttrs`, policy tests), Tailscale SSH, subnet routers and exit nodes, the developer-machine-to-private-database connectivity pattern (including the fact that Neon has no native Tailscale integration), Funnel and Serve, OAuth clients and auth keys for automation, ephemeral CI nodes, and the key-expiry/security model. It writes the policy; it does not judge in depth whether a written ACL is actually least-privilege.
 
 ## Paired Stinger
-[tailscale-stinger](../../tailscale-stinger) - ACL/tag guides, the subnet-router/exit-node/database-bastion pattern, SSH, Funnel/Serve, and the OAuth-client/ephemeral-CI security model.
+[tailscale-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/tailscale-stinger) - ACL/tag guides, the subnet-router/exit-node/database-bastion pattern, SSH, Funnel/Serve, and the OAuth-client/ephemeral-CI security model.
 
 ## Trigger phrases
 - "set up Tailscale"
