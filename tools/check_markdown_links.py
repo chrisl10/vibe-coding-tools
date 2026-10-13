@@ -11,6 +11,14 @@ from urllib.parse import unquote
 
 LINK = re.compile(r"(?<!!)\[[^\]]*\]\(([^)]+)\)")
 EXTERNAL = ("http://", "https://", "mailto:", "tel:", "data:", "#")
+FENCE = re.compile(r"^( {0,3})(`{3,}|~{3,}).*?^\1\2[ \t]*$", re.M | re.S)
+CODE_SPAN = re.compile(r"(`+)(?!`).+?(?<!`)\1(?!`)", re.S)
+
+
+def without_code(content: str) -> str:
+    """Blank out fenced blocks and inline code spans, keeping newlines so line numbers hold."""
+    blank = lambda m: re.sub(r"[^\n]", " ", m.group(0))
+    return CODE_SPAN.sub(blank, FENCE.sub(blank, content))
 
 
 def markdown_files(inputs: list[Path]) -> list[Path]:
@@ -26,9 +34,9 @@ def markdown_files(inputs: list[Path]) -> list[Path]:
 def broken_links(paths: list[Path]) -> list[str]:
     failures: list[str] = []
     for path in markdown_files(paths):
-        if {"research", "raw"}.issubset(path.parts):
+        if {"research", "raw"}.issubset(path.parts) or "fixtures" in path.parts:
             continue
-        content = path.read_text(encoding="utf-8")
+        content = without_code(path.read_text(encoding="utf-8"))
         for match in LINK.finditer(content):
             raw = match.group(1).strip().strip("<>")
             target = raw.split("#", 1)[0].strip().split(' "', 1)[0]
