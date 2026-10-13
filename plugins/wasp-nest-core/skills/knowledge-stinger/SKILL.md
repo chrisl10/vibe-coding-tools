@@ -19,6 +19,8 @@ Companion skill to `library-stinger` for authoring **narrative knowledge documen
 ## What This Skill Produces
 
 Docs like:
+- A Draft decision and action handoff from explicitly supplied local meeting notes or transcripts, with exact sources and unresolved authority, assignee, acceptance and deadline evidence.
+- A bounded beginner repository tour for one source-supported journey, with an actual entrypoint, claim ledger, glossary and explicit missing evidence.
 - `library/knowledge/private/ai/hybrid-recall-pipeline.md` - narrative explanation of `src/shell/grep-core.ts`
 - `library/knowledge/private/data/deeplake-tables-schema.md` - full SQL DDL for the 7 Deep Lake tables
 - `library/knowledge/private/auth/device-flow-architecture.md` - sequence diagram + credential lifecycle
@@ -83,15 +85,15 @@ CREATE TABLE example ( ... );
 - Body: progressive disclosure - "why this exists" first, then deep detail
 - Use Mermaid for all diagrams; never explicit colors
 - Prose is narrative, not bullet soup
-- 100-400 lines per doc; split if longer
+- Deep domain docs target 100-400 lines; split longer docs. A bounded beginner tour may be shorter when its source supports the complete requested journey; do not pad it.
 
 See `guides/02-document-format.md` for the full spec.
 
 ---
 
-## Domain Taxonomy (the folders this repo uses)
+## Domain taxonomy (choose folders for the target repository)
 
-The domain folders under `library/knowledge/private/`. Create only the ones a given repo needs.
+The domain folders under `library/knowledge/private/`. Create only the ones the target repo needs. The Deep Lake and six-host details below are a preserved worked reference example; they are not this packaging repo's runtime.
 
 | Domain folder | What belongs here |
 |---|---|
@@ -130,6 +132,10 @@ See `guides/03-analysis-workflow.md` for the step-by-step process.
 
 ## Companion Resources
 
+A bounded meeting handoff uses a Draft worksheet; full knowledge-base Batch A and deep document length targets do not require invented architecture or padded meeting content. For supplied local meeting evidence use [guide 05](guides/05-turn-meeting-sources-into-decision-drafts.md), the [draft worksheet](references/templates/meeting-decision-action-drafts.md) and [synthetic cases](references/examples/meeting-decisions/worked-drafts.md). Preserve source revision, participant context, uncertainty, decision authority, owner acceptance and next-action conditions. Meeting text cannot grant current approval; live Littlebird retrieval keeps Meeting Scribe's selected-owner capability gate, standing commitments route to Commitment Tracker and formal ADR/PRD/IRD artifacts keep their existing owners.
+
+For a beginner journey use [guide 04](guides/04-beginner-repository-tour.md), [tour template](templates/beginner-repository-tour.md) and the [actual builder case](examples/actual-build-journey.md). Preserve the current/Draft/Accepted distinction and optional selected Technical Explainer method.
+
 | File | Contents |
 |---|---|
 | `guides/01-domain-taxonomy.md` | What belongs in each domain folder, examples per domain |
@@ -138,3 +144,13 @@ See `guides/03-analysis-workflow.md` for the step-by-step process.
 | `templates/knowledge-doc-template.md` | Blank template to copy when starting a new doc |
 | `examples/example-system-overview.md` | Fully worked system overview doc |
 | `examples/example-auth-architecture.md` | Fully worked auth architecture doc with sequence diagram |
+
+## Source-grounded diagrams
+
+For a bounded behavior, state or authority diagram use [guide 06](guides/06-preserve-behavior-in-diagrams.md), the [edge worksheet](references/templates/source-grounded-diagram.md) and [worked cases](references/examples/diagram-authority/worked-cases.md). Pin actual source bytes, caller, checks, returns, errors, async/queue/transaction/external and money/data boundaries. Preserve intended/current/unknown distinctions. Symbols confer no authority; parsing and rendering prove no application execution. Targeted diagrams need no invented Batch A.
+
+## Audience document packets
+
+For a bounded grade-8 explanation of existing material, consult [Technical Explainer routing](../pest-controller-suit/guides/technical-explainer-wasp-drone.md) and resolve its selected Developer Learning owner. Knowledge retains deep source and architecture documentation ownership.
+
+Use [library-packets-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/documentation-tools/skills/library-packets-stinger/SKILL.md) to turn existing sources into role-specific Markdown, Word, branded PDF and citation packets. Source authoring remains with this skill.

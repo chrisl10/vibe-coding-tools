@@ -1,0 +1,491 @@
+{
+  "source_only": true,
+  "catalog_sha256": "a2de1e2c7434c70cba2d418ccdc14a40f8855496d2d9d975ba469a14a56b6ac5",
+  "owners": 20,
+  "flat_command_files_checked": 58,
+  "source_closure": [
+    "wasp-nest-core",
+    "repository-modernization-tools"
+  ],
+  "synthetic_registry_acceptance": {
+    "plugin": "repository-modernization-tools",
+    "kind": "command",
+    "name": "remove-unused-dependencies",
+    "path": "OWNED_TEMP/commands/remove-unused-dependencies.md",
+    "checked_plugins": [
+      "repository-modernization-tools",
+      "wasp-nest-core"
+    ]
+  },
+  "synthetic_active_branch_refusal": "required plugin is not installed: code-audit-tools",
+  "commands": [
+    {
+      "owner": "wasp-nest-core",
+      "command": "choose-outcome",
+      "source": "src/commands/choose-outcome.md",
+      "sha256": "1f03ee4714dda4c4c66450de343bb7ace94372bb7ef8e9f9a34dc713c2bab16a",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "wasp-nest-core",
+      "command": "drift-audit",
+      "source": "src/commands/drift-audit.md",
+      "sha256": "dbe0e53fd941fcecb7442bca16923066eff1ab306974b78c0595fb3c2c1911d3",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "wasp-nest-core",
+      "command": "forge",
+      "source": "src/commands/forge.md",
+      "sha256": "8ab4ee26f3e06091a94d94e9891ea49793170243e40a3c8390530198aa05cccd",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "wasp-nest-core",
+      "command": "pest-controller",
+      "source": "src/commands/pest-controller.md",
+      "sha256": "28820353d99e4cfde48d88d39f96129c4a8cda0e40dc6488a9d7802433ed7c36",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "wasp-nest-core",
+      "command": "qualify-wiring",
+      "source": "src/commands/qualify-wiring.md",
+      "sha256": "88fc9afde9a5011f8fb06d3fe1c46d23863490a48ae2a6ce4aa34545f8ab1873",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "wasp-nest-core",
+      "command": "re-research",
+      "source": "src/commands/re-research.md",
+      "sha256": "d6d2a28d64d288099a992c397f0634537cf36189ae06317e81ab666019b53396",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "wasp-nest-core",
+      "command": "register",
+      "source": "src/commands/register.md",
+      "sha256": "d3d1373ecf4aabe7c34271f0fa611a0f9a04620969429d1f67564786b465147a",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "wasp-nest-core",
+      "command": "ship-gate",
+      "source": "src/commands/ship-gate.md",
+      "sha256": "b4f2605ec4df9b64eb2092a56e7245cc458103789f28e355fe2ae16ea9b7dcb2",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "wasp-nest-core",
+      "command": "smoke-it",
+      "source": "src/commands/smoke-it.md",
+      "sha256": "8337f110e4d3128fa2035c4478c7065493c2710bf81586ba95b2555632e82b73",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "website-audit-tools",
+      "command": "perform-website-audit",
+      "source": "packs/website-audit-tools/commands/perform-website-audit.md",
+      "sha256": "a4403119877581666f83c16f6b16b6d784dad6da1c9010fd2d8fa948b5b9506f",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "code-audit-tools",
+      "command": "audit-my-code",
+      "source": "packs/code-audit-tools/commands/audit-my-code.md",
+      "sha256": "19a1afa69a50e1410707deaeff8671144b836787bfbe43a1e86eb7f4f4e73956",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "documentation-tools",
+      "command": "explain-repository",
+      "source": "packs/documentation-tools/commands/explain-repository.md",
+      "sha256": "a6f9dfdd28311cd884e93f1e383e3f49f0e602691e9177075da2624eb2b40c2f",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "documentation-tools",
+      "command": "kb-refresh",
+      "source": "packs/documentation-tools/commands/kb-refresh.md",
+      "sha256": "c057ca1ba2fa96792bdfff056173a6ef7f62e2be839f6e59ce8fd8e1a84b9493",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "documentation-tools",
+      "command": "library-packets",
+      "source": "packs/documentation-tools/commands/library-packets.md",
+      "sha256": "45e83533d7e9bfef42ed4ee2dab60ac67a87ac430ce94067c187ec8d6d6f7c52",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "web-development-tools",
+      "command": "build-app-search",
+      "source": "packs/web-development-tools/commands/build-app-search.md",
+      "sha256": "0e0ea4c7cbf3a389be969a301e62fba89582bee758a97958d1a4255d473bb91e",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "web-development-tools",
+      "command": "build-quick-website",
+      "source": "packs/web-development-tools/commands/build-quick-website.md",
+      "sha256": "c90634068f532af24e66bc46009cafafc138492eb12089596e3250d6abc34d7a",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "web-development-tools",
+      "command": "build-saas-foundation",
+      "source": "packs/web-development-tools/commands/build-saas-foundation.md",
+      "sha256": "0033625d20da5f50122e6545f1c77ac74b4339a4fabb4d50d4938f44e89950db",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "web-development-tools",
+      "command": "build-web-app",
+      "source": "packs/web-development-tools/commands/build-web-app.md",
+      "sha256": "6b60cb69d5fbe2d0b3e31ecc183c11f1632ccf4195154683005529d219656f6d",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "web-development-tools",
+      "command": "choose-web-stack",
+      "source": "packs/web-development-tools/commands/choose-web-stack.md",
+      "sha256": "e6877150840a3cefc5cfafea7c0eb1512a0536cf88621f80339994d94362897e",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "web-development-tools",
+      "command": "qualify-typography",
+      "source": "packs/web-development-tools/commands/qualify-typography.md",
+      "sha256": "f496766bed36b3acb5667f17c7214f1339d22783a63fde14e08240a60a2a8fd0",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "backend-and-desktop-tools",
+      "command": "build-desktop-app",
+      "source": "packs/backend-and-desktop-tools/commands/build-desktop-app.md",
+      "sha256": "b4f1e2ce134599a6c926c3959e46dba2e8bee431a5d9bd5887545af8e7d146a1",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "backend-and-desktop-tools",
+      "command": "build-mobile-backend",
+      "source": "packs/backend-and-desktop-tools/commands/build-mobile-backend.md",
+      "sha256": "553439be28f8d46e4d151d68d7bca3f542d499f5fe08bd04535a1e2abb619bb3",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "backend-and-desktop-tools",
+      "command": "choose-backend",
+      "source": "packs/backend-and-desktop-tools/commands/choose-backend.md",
+      "sha256": "d20b1f79c874ff57b01ebce205f389acb7ff04c820f8438bafbe3402921ff8e6",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "backend-and-desktop-tools",
+      "command": "choose-desktop-stack",
+      "source": "packs/backend-and-desktop-tools/commands/choose-desktop-stack.md",
+      "sha256": "45e2ca824a5e9dcbf8ae0e00ac1c3bf39db5a4f069aebbdf2f55b2b1fed9d7ae",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "data-and-ai-tools",
+      "command": "build-rag-feature",
+      "source": "packs/data-and-ai-tools/commands/build-rag-feature.md",
+      "sha256": "8a9fdc8df9576c1f65211bffa23e5862b99bd129b56a3dd6ec68873d643a8b28",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "data-and-ai-tools",
+      "command": "design-data",
+      "source": "packs/data-and-ai-tools/commands/design-data.md",
+      "sha256": "fc2a6962cc4efcee55a55a4cf4f9f052b24855c473e54c52516b422b3803549b",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "data-and-ai-tools",
+      "command": "tars",
+      "source": "packs/data-and-ai-tools/commands/tars.md",
+      "sha256": "7859e8160f0d79b027c388c928bca10d54ace436797680420475bab85a6a71d7",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "platform-and-release-tools",
+      "command": "build-integration",
+      "source": "packs/platform-and-release-tools/commands/build-integration.md",
+      "sha256": "ea2ea88b12cbc0c1ad118f63bb359cfcab505bedd5de4ca41e8e0f67167328a9",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "platform-and-release-tools",
+      "command": "design-release-pipeline",
+      "source": "packs/platform-and-release-tools/commands/design-release-pipeline.md",
+      "sha256": "55c85869be6baff1cc65b3d25f4f4896abf8b2d72989c416f74bd830139a1cd9",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "platform-and-release-tools",
+      "command": "prepare-native-release",
+      "source": "packs/platform-and-release-tools/commands/prepare-native-release.md",
+      "sha256": "381a9ac53d1a1ae516b62f56c3ed72503aaa48d6a623f318fbc3409d70f5a775",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "platform-and-release-tools",
+      "command": "prepare-privacy-implementation",
+      "source": "packs/platform-and-release-tools/commands/prepare-privacy-implementation.md",
+      "sha256": "9869689044ba3f741513ae99f57fc26889fba9e92816a9a2d060e88ce8b2cd7c",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "platform-and-release-tools",
+      "command": "prepare-release",
+      "source": "packs/platform-and-release-tools/commands/prepare-release.md",
+      "sha256": "047a7e0b1437ec219c530fd3d6297a5c0eeb24d655919b55b8f679aca6d6c896",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "platform-and-release-tools",
+      "command": "secure-platform-foundation",
+      "source": "packs/platform-and-release-tools/commands/secure-platform-foundation.md",
+      "sha256": "4009a7ccb292e90ab0892be418041f01f00d7017897cd84d678d8017c2a2c24f",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "growth-and-customer-tools",
+      "command": "launch-product",
+      "source": "packs/growth-and-customer-tools/commands/launch-product.md",
+      "sha256": "2409d1b09a6e4dfcbc78f571a3e607308c527541e8142c578601d862731745cf",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "business-and-product-tools",
+      "command": "assess-product-risk",
+      "source": "packs/business-and-product-tools/commands/assess-product-risk.md",
+      "sha256": "3748c763684b3963fc829f397d2621989b7edfffbe4e2b82154782dde9684fac",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "business-and-product-tools",
+      "command": "estimate-build",
+      "source": "packs/business-and-product-tools/commands/estimate-build.md",
+      "sha256": "f8f2aaf2f6c5ffd98872b078ca36feb4b2f8e5e6f9c82f01d5793c1858c81749",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "business-and-product-tools",
+      "command": "scope-first-version",
+      "source": "packs/business-and-product-tools/commands/scope-first-version.md",
+      "sha256": "d2611b2536df869f190ea6033207d40b1f7c4a624d6e76bfbdc32ca16737187d",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "business-and-product-tools",
+      "command": "validate-idea",
+      "source": "packs/business-and-product-tools/commands/validate-idea.md",
+      "sha256": "29159445ba7025779afeaedfa549e8a293456b7250679fca53de729f4c018964",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "business-and-product-tools",
+      "command": "work-like-a-team",
+      "source": "packs/business-and-product-tools/commands/work-like-a-team.md",
+      "sha256": "613ceb211f3608809fcf52ef63887bd21e6efa01521ba13dc921cdc20c3e6ccc",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "media-and-creative-tools",
+      "command": "create-product-media",
+      "source": "packs/media-and-creative-tools/commands/create-product-media.md",
+      "sha256": "5f6f70eab8b90a3b0c4c04b515451afd963df0e6f1c135fd2899e683cab62fd4",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "browser-and-app-testing-tools",
+      "command": "webapp-capture",
+      "source": "packs/browser-and-app-testing-tools/commands/webapp-capture.md",
+      "sha256": "db3cbae656c496bb3217737fb25234aaa91ab0372f7194174a5214d6b43ebd70",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "highlevel",
+      "command": "map-highlevel",
+      "source": "packs/highlevel/commands/map-highlevel.md",
+      "sha256": "ff1239828cae3ec0e6813b03228468eb012d024270cbfd75c85b55172bcb901d",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "littlebird-toolkit",
+      "command": "review-my-work",
+      "source": "packs/littlebird-toolkit/commands/review-my-work.md",
+      "sha256": "a9e3fdc7580659df16c279b3b32bad49a0343fef7d3b60af0695484850fbee8f",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "content-intelligence",
+      "command": "research-content-opportunity",
+      "source": "packs/content-intelligence/commands/research-content-opportunity.md",
+      "sha256": "9cc294663fb8e984f4c52a600e4f8bd5e3c8d78244044f34a44a20de17c7cc0c",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "app-primer-zero",
+      "command": "app-primer-zero",
+      "source": "packs/app-primer-zero/commands/app-primer-zero.md",
+      "sha256": "ec750cf0887bba7679fae3056b11583f143b0b08d467a06f062a3a8c6a291ff9",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "developer-learning-tools",
+      "command": "explain-this",
+      "source": "packs/developer-learning-tools/commands/explain-this.md",
+      "sha256": "5791972b279ff5bfe2aab25746e805b255183f46cdbd39f81bf80725229e9a21",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "developer-learning-tools",
+      "command": "prepare-to-build",
+      "source": "packs/developer-learning-tools/commands/prepare-to-build.md",
+      "sha256": "c7a936f9e0815b24ea5f17fff0a5cd3d3e186de6eb84d7a4f072af54c3a646e9",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "software-economics-tools",
+      "command": "estimate-operating-cost",
+      "source": "packs/software-economics-tools/commands/estimate-operating-cost.md",
+      "sha256": "56ae8239252cdcde459138123515a6cbad9862a498bb02d3e95c7d6a002fe6ff",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "software-economics-tools",
+      "command": "model-unit-economics",
+      "source": "packs/software-economics-tools/commands/model-unit-economics.md",
+      "sha256": "3a847e4e47bbbd65205e476e558dbd7dcca19bf3b42d07ecb4b4c58858043b03",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "software-economics-tools",
+      "command": "price-my-product",
+      "source": "packs/software-economics-tools/commands/price-my-product.md",
+      "sha256": "b897977781da576bf2b645cb42304a71beff33409ec496c211193b84cf706476",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "software-economics-tools",
+      "command": "quote-project",
+      "source": "packs/software-economics-tools/commands/quote-project.md",
+      "sha256": "5c7d33ca322dc8b8c1faecfc66f9b02cdedf4028f3f1e62371098a23e0fc1e09",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "infrastructure-decision-tools",
+      "command": "choose-infrastructure",
+      "source": "packs/infrastructure-decision-tools/commands/choose-infrastructure.md",
+      "sha256": "a6d4d52f50b52e2ae4ffda3e7e2429f0862a1ffa342ee257e29d1c5c14da6a11",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "infrastructure-decision-tools",
+      "command": "prepare-assets",
+      "source": "packs/infrastructure-decision-tools/commands/prepare-assets.md",
+      "sha256": "ba98e6b940a4918cb2f02412580a5bcf98fa1e324df92202b10fee9bb56cc883",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "repository-modernization-tools",
+      "command": "improve-repository",
+      "source": "packs/repository-modernization-tools/commands/improve-repository.md",
+      "sha256": "10756d395191f8017c4ec616c27a4d2bded30e47156a985df489f30ce6993301",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "repository-modernization-tools",
+      "command": "onboard-contributor",
+      "source": "packs/repository-modernization-tools/commands/onboard-contributor.md",
+      "sha256": "a8025460993fd3a28f3182407e4d48f86473f5c003ddfcbfa651f2cbf54e3c05",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "repository-modernization-tools",
+      "command": "refactor-safely",
+      "source": "packs/repository-modernization-tools/commands/refactor-safely.md",
+      "sha256": "74435c399a4b3edc7d81a6517c8f76a4662621f26c2d3d1e1b16d0b92584743c",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "repository-modernization-tools",
+      "command": "remove-unused-dependencies",
+      "source": "packs/repository-modernization-tools/commands/remove-unused-dependencies.md",
+      "sha256": "16de95c4dc115803f6652c8ab65ae38568e9094e2fd61319da9b641a5683aff1",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    },
+    {
+      "owner": "repository-modernization-tools",
+      "command": "verify-refactor",
+      "source": "packs/repository-modernization-tools/commands/verify-refactor.md",
+      "sha256": "27225d58feee65e4cf503ed58343d1975ccd2abcc9b158255cf14d20fa5c50de",
+      "native_discovery": "UNKNOWN",
+      "native_execution": "UNEXECUTED"
+    }
+  ],
+  "native_version": "UNKNOWN",
+  "native_invocation": "UNEXECUTED",
+  "observed_at_utc": "2026-10-07 22:47 UTC",
+  "inventory_scope": "catalog-declared source commands at receipt time; not live selected installation"
+}
