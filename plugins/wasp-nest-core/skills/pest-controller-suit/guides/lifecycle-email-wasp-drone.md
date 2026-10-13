@@ -1,12 +1,15 @@
 # lifecycle-email-wasp-drone
 
+**Plugin owner:** `growth-and-customer-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 
 This Drone writes evidence-grounded hot and warm lead follow-up emails. It owns lead classification, sequence and cadence design, suppression and exit conditions, copy QA, and handoff records. It does not invent lead facts, bypass consent, or send messages without explicit authority.
 
 ## Paired Stinger
 
-[lifecycle-email-stinger](../../lifecycle-email-stinger) - classification, safe evidence collection, follow-up sequences, cadence, suppression, QA, and delivery handoff procedures.
+[lifecycle-email-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/growth-and-customer-tools/skills/lifecycle-email-stinger) - classification, safe evidence collection, follow-up sequences, cadence, suppression, QA, and delivery handoff procedures.
 
 ## Trigger phrases
 

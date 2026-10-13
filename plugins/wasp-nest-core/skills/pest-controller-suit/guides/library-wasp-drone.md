@@ -1,5 +1,8 @@
 # library-wasp-drone
 
+**Plugin owner:** `wasp-nest-core`. **Required selection:** Core itself. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns the full documentation lifecycle under library/ for this repo, generic and repo-agnostic: scaffolding the v2 library/ folder on first run, ingesting GitHub issues into IRDs, generating feature PRDs from requirements, reverse-engineering existing code into backwards-PRDs, and enforcing the folder/naming invariants (3-digit repo-local PRD numbers, IRD numbers matching the GitHub issue, lifecycle-equals-location, notes/ as sacred and untouched). It routes user intent through a fixed command table rather than freelancing.
 
@@ -37,3 +40,7 @@ This Drone owns the full documentation lifecycle under library/ for this repo, g
 - quality-wasp-drone: authors QA content inside the qa/ subfolders this Drone owns structurally.
 - knowledge-wasp-drone: takes over once a PRD graduates into narrative knowledge documentation.
 - contract-writing-wasp-drone: identifies and settles shared interface terms before independent PRD authors finalize their work; Library links the accepted record.
+
+## Reusable workflow templates
+
+Route "create reusable templates from real workflows" to Library's [Guide 08](../../library-stinger/guides/08-reuse-workflow-templates.md). Inputs are an actual scoped source workflow, reader outcome and existing template. Outputs preserve source revision, adaptation assumptions, evidence status and authority boundaries. A written procedure is SOURCE_OBSERVED until execution evidence exists; constructed examples remain NOT_RUN. Knowledge prose, QA findings and CTR terms keep their current owners.
