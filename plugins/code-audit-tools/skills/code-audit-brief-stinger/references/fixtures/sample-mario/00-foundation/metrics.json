@@ -1,0 +1,52 @@
+{
+  "dimension": "foundation",
+  "verdict": "moderate",
+  "summary": "The repo has CI and a lockfile, but no library/ docs, no CODEOWNERS, and the agent rules file is missing, so agents start every task blind.",
+  "measures": [
+    {
+      "key": "ci_present",
+      "label": "CI workflow present",
+      "value": 1,
+      "unit": "workflows",
+      "band": "healthy",
+      "threshold": "at least 1",
+      "source": "get-started-stinger assess"
+    },
+    {
+      "key": "library_present",
+      "label": "library/ documentation tree",
+      "value": 0,
+      "unit": "docs",
+      "band": "at-risk",
+      "threshold": "PRDs or knowledge docs present",
+      "source": "get-started-stinger assess"
+    },
+    {
+      "key": "agent_rules",
+      "label": "Agent rules files (AGENTS.md, CLAUDE.md)",
+      "value": 0,
+      "unit": "files",
+      "band": "moderate",
+      "threshold": "at least 1",
+      "source": "get-started-stinger assess"
+    },
+    {
+      "key": "readme_words",
+      "label": "README length",
+      "value": 212,
+      "unit": "words",
+      "band": "moderate",
+      "threshold": "300 or more words with setup steps",
+      "source": "get-started-stinger assess"
+    }
+  ],
+  "coverage": {
+    "files_scanned": 41,
+    "lines_scanned": 3907,
+    "skipped": [
+      "node_modules/",
+      ".next/"
+    ],
+    "caps": []
+  }
+}

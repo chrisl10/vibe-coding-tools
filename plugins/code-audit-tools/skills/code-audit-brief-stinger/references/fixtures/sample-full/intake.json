@@ -1,0 +1,55 @@
+{
+  "contract": "1.0",
+  "tier": "full",
+  "repo": {
+    "name": "acme-dashboard",
+    "path": "/work/acme-dashboard",
+    "remote": "git@example.invalid:acme/acme-dashboard.git",
+    "branch": "main",
+    "sha": "0f3c9a7d21be"
+  },
+  "requested_by": "Jordan Example (fictional)",
+  "started_at": "2026-09-30T09:15:00-05:00",
+  "stacks": [
+    {
+      "id": "nextjs",
+      "version": "15.5.2",
+      "paths": [
+        "apps/web"
+      ]
+    },
+    {
+      "id": "node-server",
+      "version": "22",
+      "paths": [
+        "apps/api"
+      ]
+    }
+  ],
+  "languages": [
+    "TypeScript",
+    "JavaScript"
+  ],
+  "scope": {
+    "include": [
+      "apps",
+      "packages"
+    ],
+    "exclude": [
+      "vendor",
+      "dist",
+      "**/*.d.ts"
+    ]
+  },
+  "tools": {
+    "jscpd": "4.3.0",
+    "knip": "5.88.1",
+    "cloc": "2.06"
+  },
+  "workspace": "/work/acme-dashboard-code-audit/sample-full",
+  "execution": {
+    "allowed": true,
+    "mode": "container",
+    "asked_at": "2026-09-30T09:15:00-05:00"
+  }
+}
