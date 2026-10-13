@@ -24,6 +24,8 @@ Do not mark a criterion complete because a stub, mock in a production path, or a
 
 ## Form execution waves
 
+If the project has an approved wave plan at `library/requirements/plans/wave-plan.md` (usually written by Product Studio's planning stage), Smoke It uses that order instead of inventing one, and proposes a new revision rather than silently reordering it. A criterion counts as DONE only when it also meets the approved Definition of Done at `library/knowledge/private/standards/definition-of-done.md`, when one exists.
+
 Give independent work separate file ownership and the same accepted CTR revision. Run dependent work only after its prerequisite is verified. The Pest Controller selects each Drone from its roster and arms it with the paired Stinger. For CTR-bound work, the provider and consumer checks named by the record must both run against the pinned revision before the relevant criterion is verified.
 
 ```mermaid
