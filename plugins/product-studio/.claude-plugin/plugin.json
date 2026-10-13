@@ -1,0 +1,23 @@
+{
+  "name": "product-studio",
+  "version": "3.0.0",
+  "description": "Turn an idea into a buildable plan: product strategy, Claude-Design-grade UX, a PRD map, a wave plan and a Definition of Done.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
+  "license": "AGPL-3.0-or-later",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./agents/product-design-wasp-drone.md",
+    "./agents/product-planning-wasp-drone.md",
+    "./agents/product-strategy-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/plan-product.md"
+  ],
+  "dependencies": [
+    "wasp-nest-core"
+  ]
+}

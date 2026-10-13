@@ -1,0 +1,15 @@
+<!-- Integration template, NOT_RUN. Assumes an accepted public /api/articles/:slug DTO. -->
+<script setup lang="ts">
+const route = useRoute()
+const slug = computed(() => String(route.params.slug))
+const { data, status, error } = await useFetch(() => `/api/articles/${encodeURIComponent(slug.value)}`, {
+  key: computed(() => `public-article:${slug.value}`),
+})
+</script>
+<template>
+  <p v-if="status === 'pending'">Loading article</p>
+  <p v-else-if="error">Article unavailable</p>
+  <article v-else-if="data"><h1>{{ data.title }}</h1><p>{{ data.summary }}</p></article>
+  <p v-else>Article not found</p>
+</template>
+<!-- No unsanitized HTML, CMS install, or implied schema. Check actual endpoint type and hydration. -->

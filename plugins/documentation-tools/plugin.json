@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "documentation-tools",
+  "version": "3.0.0",
+  "description": "Refresh, extract, publish and package documentation from real sources.",
+  "author": {
+    "name": "Legion Code Inc.",
+    "url": "https://www.legioncodeinc.com"
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Documentation Tools",
+        "shortDescription": "Refresh, extract, publish and package documentation from real sources.",
+        "developerName": "Legion Code Inc.",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ]
+      }
+    }
+  }
+}

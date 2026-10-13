@@ -1,0 +1,70 @@
+{
+  "reviewer": "Codex root",
+  "inspected_at": "2026-10-06T15:30:09.934801+00:00",
+  "documents": [
+    {
+      "id": "public-brief",
+      "pdf_sha256": "a1078f37bd0adab066909a63d0fefd82067f3a32ae93f3f2cf8cbcb9e96e507c",
+      "docx_sha256": "45bca976c6af81efdaecaef9fa5cd886db0b53d12ee1e464615bc92c29ac78f1",
+      "markdown_sha256": "ce13032ae63c0393ae958b945b76f8a5555fdcccd218ea29cb72aa3391dc878b",
+      "pages": [
+        {
+          "page": 1,
+          "png_sha256": "177fadf1d62ab6ad2391e51e00eefe677b4ca5611e951c38889fa613f0e59589",
+          "visual_pass": true,
+          "checks": {
+            "whitespace": true,
+            "cutoffs": true,
+            "fonts": true,
+            "tables": true,
+            "figures": true,
+            "footer": true,
+            "logo": true,
+            "citations": true,
+            "word_layout": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "engineering-brief",
+      "pdf_sha256": "0f1857d9797e84bb39e371ab25293d25b06b464bb3346c54e8112d57440df22a",
+      "docx_sha256": "16161ffb7763fa7719f67e401c7611be2e2f2ad9cdcb61282afd4b775a5a5433",
+      "markdown_sha256": "35268117e74cd958b4494b3a1bfc00ef440702a8b863feeb1375c3c2423bd056",
+      "pages": [
+        {
+          "page": 1,
+          "png_sha256": "906c51ca8ac63146b179472dea230881070f47766b34926b0a846b8dc96da36c",
+          "visual_pass": true,
+          "checks": {
+            "whitespace": true,
+            "cutoffs": true,
+            "fonts": true,
+            "tables": true,
+            "figures": true,
+            "footer": true,
+            "logo": true,
+            "citations": true,
+            "word_layout": true
+          }
+        },
+        {
+          "page": 2,
+          "png_sha256": "7c97365862908797bc8c79d5785cc418336b2e1ea2b26465b84a1ecd7605c6a8",
+          "visual_pass": true,
+          "checks": {
+            "whitespace": true,
+            "cutoffs": true,
+            "fonts": true,
+            "tables": true,
+            "figures": true,
+            "footer": true,
+            "logo": true,
+            "citations": true,
+            "word_layout": true
+          }
+        }
+      ]
+    }
+  ]
+}

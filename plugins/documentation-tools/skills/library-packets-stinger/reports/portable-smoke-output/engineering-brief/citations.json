@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "claim_id": "C03",
+      "kind": "fact",
+      "status": "documented",
+      "references": [
+        {
+          "source_id": "S02",
+          "title": "LibreOffice command options",
+          "path": "libreoffice-start-parameters.md",
+          "sha256": "9acd215b52853ef3ff6c6ed51bb2eed8c1f0b70f7c0bb6d4c49739c94cf280a9",
+          "quote": "Starts in \"headless mode\" which allows using the application without user interface.",
+          "location": {
+            "type": "lines",
+            "start": 76,
+            "end": 76
+          }
+        }
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "kind": "fact",
+      "status": "documented",
+      "references": [
+        {
+          "source_id": "S02",
+          "title": "LibreOffice command options",
+          "path": "libreoffice-start-parameters.md",
+          "sha256": "9acd215b52853ef3ff6c6ed51bb2eed8c1f0b70f7c0bb6d4c49739c94cf280a9",
+          "quote": "--convert-to pdf",
+          "location": {
+            "type": "lines",
+            "start": 132,
+            "end": 132
+          }
+        }
+      ]
+    }
+  ]
+}

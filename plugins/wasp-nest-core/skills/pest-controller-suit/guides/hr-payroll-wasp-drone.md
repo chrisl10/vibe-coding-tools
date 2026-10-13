@@ -1,10 +1,13 @@
 # hr-payroll-wasp-drone
 
+**Plugin owner:** `business-and-product-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the HR infrastructure and payroll decision specialist for early-stage to growth-stage software companies: domestic payroll platform selection (Gusto, Rippling, Justworks, Paychex Flex), international contractor management and employer-of-record selection (Deel, Remote.com, Oyster, Rippling Global), the W-2/1099/EOR/PEO classification matrix, equity administration timing and the Carta handoff, and startup benefits brokerage selection. It gives concrete, sized recommendations rather than "it depends" surveys.
 
 ## Paired Stinger
-[hr-payroll-stinger](../../hr-payroll-stinger) - the platform-selection decision tree, the classification matrix with the IRS three-category test and California AB5, the EOR-versus-entity threshold, the benefits-by-stage guide, the Carta handoff steps, and the compliance-hotspot and migration-playbook guides.
+[hr-payroll-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/business-and-product-tools/skills/hr-payroll-stinger) - the platform-selection decision tree, the classification matrix with the IRS three-category test and California AB5, the EOR-versus-entity threshold, the benefits-by-stage guide, the Carta handoff steps, and the compliance-hotspot and migration-playbook guides.
 
 ## Trigger phrases
 - "Gusto vs Rippling"

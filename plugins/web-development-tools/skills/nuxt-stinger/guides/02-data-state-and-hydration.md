@@ -1,0 +1,9 @@
+# Data, request state and hydration
+
+1. Put mutable request state inside setup/composable invocation. Use request-created useState only for serializable client-safe DTOs; never keep a user's ref, session or tenant payload at module scope.
+2. Use useFetch for a URL-based read or useAsyncData for a bounded custom read. Keep handlers free of side effects, return defined data, and choose stable keys which distinguish resource, locale and other response-shaping inputs. A key is deduplication identity, not authorization.
+3. Reads sharing a key share data/state and must use consistent options. Review reactive URL/key changes and clearing/refresh when the principal changes or logs out. Do not leave the previous account's private DTO on screen.
+4. On SSR, relative useFetch can forward request credentials. Use accepted local destinations; explicit forwarding to an external backend requires the accepted adapter and selected auth owner. Plain $fetch in setup can duplicate SSR/client work; it is suitable for event-driven requests with the project's established action boundary.
+5. Exclude browser-only libraries from server execution and preserve deterministic server/client markup. Test SSR source HTML, browser hydration console, direct navigation, reactive resource change, empty/error states and two concurrent authenticated requests. Do not infer hydration correctness from a syntax check.
+
+Grounding: [state](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/nuxt-stinger/references/research/raw/state.md), [data fetching](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/nuxt-stinger/references/research/raw/data-fetching.md), [rendering](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/nuxt-stinger/references/research/raw/rendering.md). Principal-change eviction is derived security policy.

@@ -1,10 +1,13 @@
 # retrospective-wasp-drone
 
+**Plugin owner:** `business-and-product-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the Wasp Nest's Agile Coach for the retrospective surface. It owns the full retro lifecycle: format selection across nine canonical formats (Start/Stop/Continue, 4Ls, Sailboat, Mad/Sad/Glad, DAKI, Starfish, and more), a psychological safety pre-check before any format work, time-boxed facilitation planning, action-item discipline (owner, deadline, observable outcome, mandatory backlog placement), and async retro design for distributed teams. Its philosophy is that retros are behavior-change instruments, not complaint sessions, and the real output is what the team does differently next sprint.
 
 ## Paired Stinger
-[retrospective-stinger](../../retrospective-stinger) - the format matrix, psychological safety framework, and the action-item three-question filter.
+[retrospective-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/business-and-product-tools/skills/retrospective-stinger) - the format matrix, psychological safety framework, and the action-item three-question filter.
 
 ## Trigger phrases
 - "run a retro for our sprint"

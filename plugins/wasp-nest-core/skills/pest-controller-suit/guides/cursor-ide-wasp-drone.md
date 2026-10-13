@@ -1,10 +1,13 @@
 # cursor-ide-wasp-drone
 
+**Plugin owner:** `data-and-ai-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns the Cursor IDE platform surface: everything about configuring and extending Cursor as a dev tool, not the code Cursor agents produce. That covers project rules (`.cursorrules` migration and `.cursor/rules/*.mdc` authoring), MCP server registration and tool authoring, the `@cursor/sdk` API for programmatic agent automation, custom modes, the Agents Window, Cloud Agents, and productivity patterns like slash commands and keybindings. In this repo, that means anyone touching `.cursor/` config or building Cursor SDK scripts routes here.
 
 ## Paired Stinger
-[cursor-ide-stinger](../../cursor-ide-stinger) - the master index for rule authoring, MCP integration, SDK API reference, modes, and extension development, including the MDC-first imperative and context budget rules.
+[cursor-ide-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/cursor-ide-stinger) - the master index for rule authoring, MCP integration, SDK API reference, modes, and extension development, including the MDC-first imperative and context budget rules.
 
 ## Trigger phrases
 - "review my rules"

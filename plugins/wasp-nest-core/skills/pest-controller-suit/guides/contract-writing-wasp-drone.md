@@ -1,5 +1,8 @@
 # contract-writing-wasp-drone
 
+**Plugin owner:** `wasp-nest-core`. **Required selection:** Core itself. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 
 Owns the identification, documentation, acceptance, revision, and drift review of engineering and product interface agreements shared by independent PRDs. It records one accepted `CTR` revision under `library/knowledge/private/contracts/` and hands its path, parties, and checks to Library before parallel PRD authors are assigned.

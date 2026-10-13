@@ -1,0 +1,63 @@
+{
+  "name": "web-development-tools",
+  "version": "3.0.0",
+  "description": "Build web interfaces and sites with React, Svelte, design systems and accessible components.",
+  "author": {
+    "name": "Legion Code Inc.",
+    "url": "https://www.legioncodeinc.com"
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./agents/asset-wasp-drone.md",
+    "./agents/component-vendoring-wasp-drone.md",
+    "./agents/csv-xlsx-import-export-wasp-drone.md",
+    "./agents/dark-mode-theming-wasp-drone.md",
+    "./agents/design-system-wasp-drone.md",
+    "./agents/font-loading-wasp-drone.md",
+    "./agents/icon-system-wasp-drone.md",
+    "./agents/image-optimization-wasp-drone.md",
+    "./agents/impeccable-wasp-drone.md",
+    "./agents/localization-wasp-drone.md",
+    "./agents/modal-toast-dialog-wasp-drone.md",
+    "./agents/nextjs-wasp-drone.md",
+    "./agents/nuxt-wasp-drone.md",
+    "./agents/preact-wasp-drone.md",
+    "./agents/product-tour-onboarding-ui-wasp-drone.md",
+    "./agents/pwa-wasp-drone.md",
+    "./agents/react-to-svelte-wasp-drone.md",
+    "./agents/react-wasp-drone.md",
+    "./agents/seo-aeo-wasp-drone.md",
+    "./agents/shadcn-svelte-wasp-drone.md",
+    "./agents/svelte-wasp-drone.md",
+    "./agents/tailwind-wasp-drone.md",
+    "./agents/tanstack-wasp-drone.md",
+    "./agents/typography-font-wasp-drone.md",
+    "./agents/ux-ui-svelte-wasp-drone.md",
+    "./agents/ux-ui-wasp-drone.md",
+    "./agents/vue-wasp-drone.md",
+    "./agents/web-stack-selection-wasp-drone.md",
+    "./agents/website-wasp-drone.md",
+    "./agents/xyflow-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/build-app-search.md",
+    "./commands/build-localization.md",
+    "./commands/build-nextjs-app.md",
+    "./commands/build-nuxt-app.md",
+    "./commands/build-pwa-app.md",
+    "./commands/build-quick-website.md",
+    "./commands/build-saas-foundation.md",
+    "./commands/build-vue-app.md",
+    "./commands/build-web-app.md",
+    "./commands/choose-web-stack.md",
+    "./commands/qualify-typography.md",
+    "./commands/vendor-component.md"
+  ],
+  "dependencies": [
+    "wasp-nest-core"
+  ]
+}

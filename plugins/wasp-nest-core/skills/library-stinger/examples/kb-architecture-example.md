@@ -1,5 +1,7 @@
 # Shared Core and the Six Harnesses
 
+> Example context: Project-relative links in this worked document describe the illustrated target repository. They are not bundled Core resources or proof that those project files exist in this packaging checkout.
+
 > Category: Architecture | Version: 1.0 | Date: June 2026 | Status: Active
 
 How Hivemind writes its memory logic once in `src/` and wraps it per agent across six coding assistants, all backed by a single Deep Lake substrate. Read this first if you are debugging a capture or recall path, or onboarding onto the core.

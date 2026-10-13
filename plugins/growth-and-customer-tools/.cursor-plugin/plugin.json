@@ -1,0 +1,34 @@
+{
+  "name": "growth-and-customer-tools",
+  "version": "3.0.0",
+  "description": "Research buyers, acquire leads, follow up, support customers and grow accounts.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./cursor-agents/affiliate-referral-program-wasp-drone.md",
+    "./cursor-agents/alt-ads-platforms-wasp-drone.md",
+    "./cursor-agents/blogging-content-strategy-wasp-drone.md",
+    "./cursor-agents/cold-outreach-wasp-drone.md",
+    "./cursor-agents/competitive-research-wasp-drone.md",
+    "./cursor-agents/customer-support-tooling-wasp-drone.md",
+    "./cursor-agents/go-to-market-wasp-drone.md",
+    "./cursor-agents/icp-research-wasp-drone.md",
+    "./cursor-agents/knowledge-base-help-center-wasp-drone.md",
+    "./cursor-agents/lifecycle-email-wasp-drone.md",
+    "./cursor-agents/live-chat-support-wasp-drone.md",
+    "./cursor-agents/newsletter-platform-wasp-drone.md",
+    "./cursor-agents/review-funnels-wasp-drone.md",
+    "./cursor-agents/social-media-marketing-organic-wasp-drone.md",
+    "./cursor-agents/tawk-to-api-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/choose-acquisition-channel.md",
+    "./commands/launch-product.md"
+  ]
+}

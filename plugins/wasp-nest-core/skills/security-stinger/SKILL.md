@@ -25,6 +25,7 @@ Every factual claim in this skill traces to a downloaded primary source in `refe
 - Reviewing a new Stripe or GoHighLevel webhook handler for signature verification and idempotency
 - Checking Doppler/Vercel environment variable routing, or scanning for secrets that leaked into the client bundle or git history
 - Reviewing Sentry/PostHog configuration for PII scrubbing and masking coverage
+- Preparing a threat model before features, response/data boundaries, webhook trust/recovery, browser/log/context exposure scope or risk-based verification from supplied target facts
 
 ## Progressive disclosure map
 
@@ -32,6 +33,14 @@ Load on demand; do not read everything up front.
 
 | Path | Load when |
 | --- | --- |
+| `guides/11-threat-model-before-features.md` | Preparing assets, actors, flows, threats and control/evidence ownership before implementation |
+| `guides/12-response-and-tenant-boundaries.md` | Tracing authorized data through queries, serialization, caches, search, exports and jobs |
+| `guides/13-webhook-forgery-replay-and-recovery.md` | Qualifying signatures, replay, durable acceptance, duplicate effects and recovery |
+| `guides/14-browser-log-and-context-secrets.md` | Bounding actual build/artifact, log/telemetry and agent-context exposure |
+| `guides/15-verify-actual-risk.md` | Mapping actual threats to candidate-specific proof and unproven gaps |
+| `templates/security-design/` | Filling five target-specific worksheets; NOT RUN until actual evidence exists |
+| `examples/security-design/source-cases.md` | Worked synthetic cases, never application/runtime clearance |
+| `references/research/security-design/distillation.md` | Current captured facts, derived policy and update scope |
 | `references/research/distilled-security.md` | Verifying any security claim fast, or resolving where a fact came from |
 | `references/research/raw/` | Tracing a claim to its primary source |
 | `guides/01-audit-procedure.md` | Running a full pass end to end, and understanding the Ship Gate ordering contract |
@@ -50,6 +59,10 @@ Load on demand; do not read everything up front.
 | `references/secure-by-default-snippets.md` | Copy-paste starting points for the common fixes |
 | `references/audit-output-format.md` | The report skeleton and its `library/` destination paths |
 
+## Security design mode
+
+Guides 11 through 15 prepare threat/control/verification packets from supplied target facts. They do not own the full architecture, introduce a new scanner, execute unauthorized provider changes or issue an application verdict from synthetic cases. Resolve selected DB/Auth/Payments/Harness owners before implementation handoff; missing selection stays an explicit gap. Formal audit/Ship Gate ordering and reduced coverage outside the researched stack remain unchanged. Current updates do not refresh historical catalog statistics or certify a target.
+
 ## Quality bar
 
 A security-stinger pass is done when: the relevant guides were read in order (not skipped), every factual claim used traces to `references/research/raw/`, every finding has a `path/to/file.ts:LINE` citation and an assigned severity, Critical and High findings were remediated in-session with minimal-blast-radius diffs, the report was written to the correct `library/` destination per `guides/10-report-format.md`, and - for any Medium-or-above finding that required a fix - a full re-evaluation pass ran against the updated code before declaring the pass complete.
@@ -59,11 +72,11 @@ A security-stinger pass is done when: the relevant guides were read in order (no
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [swarm-audit-stinger](../swarm-audit-stinger) - Workflow-fleet audit of a whole repository: every branch, state of the union, delivery failures, next steps; observes, heals, and never leaves a product unreviewed.
+  - [swarm-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/code-audit-tools/skills/swarm-audit-stinger) - Workflow-fleet audit of a whole repository: every branch, state of the union, delivery failures, next steps; observes, heals, and never leaves a product unreviewed.
   - [quality-stinger](../quality-stinger) - Quality assurance pass, second gate of the Ship Gate, always after security.
   - [github-repo-health-stinger](../github-repo-health-stinger) - Repository hygiene audit, final orchestrator-level gate before commit and push.
-  - [workos-stinger](../workos-stinger) - WorkOS AuthKit depth: sealed sessions, JWKS verification, RBAC, SSO. Consult when a WorkOS finding needs implementation-level detail beyond this skill's session-security coverage.
-  - [db-stinger](../db-stinger) - PostgreSQL schema, indexing, and migrations. Consult for the tenant-scoped tables this skill's RLS guidance applies to.
+  - [workos-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/workos-stinger) - WorkOS AuthKit depth: sealed sessions, JWKS verification, RBAC, SSO. Consult when a WorkOS finding needs implementation-level detail beyond this skill's session-security coverage.
+  - [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/db-stinger) - PostgreSQL schema, indexing, and migrations. Consult for the tenant-scoped tables this skill's RLS guidance applies to.
   - [dependency-audit-stinger](../dependency-audit-stinger) - Deeper dependency-audit workflows. Consult when a supply-chain finding needs a full audit beyond this skill's lockfile-injection and `npm ci` checks.
 
 ## Ship Gate

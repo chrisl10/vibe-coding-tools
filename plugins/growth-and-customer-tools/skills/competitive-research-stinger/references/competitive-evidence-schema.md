@@ -1,0 +1,11 @@
+# Competitive extension schema v1
+
+Separate from ICP JSONL. Top-level fields: `as_of` YYYY-MM-DD, `sources` array, `claims` array and optional `scenarios` array. The helper accepts at most 256 KiB input, 100 sources/500 claims/20 scenarios, rejects duplicate JSON keys and unknown structural fields, and does no network or output-file writes.
+
+Sources: unique `id`, absolute HTTP(S) `url`, `retrieved`, `kind` vendor/observation/dataset/other, `archive` relative to input file directory, 64-character lowercase hex `sha256`, and integer `freshness_days` from 0 to 3660. Hash checks are optional under `--verify-archives`; captures must remain within the input directory after symlink resolution, regular files up to 4 MiB. A matching hash proves integrity, not truth.
+
+Claims: unique `id`, `classification` vendor_claim/observed/inference/unknown, nonempty `statement`, `source_ids`, and nonempty `scope`. Observed claims require an observation-kind source and a method/artifact described in scope. Unknown requires no sources; all other classifications require at least one known source. The helper enforces these labels mechanically, never verifies the observation was performed. Human review must check each capture, data unit, claimed test and counterevidence.
+
+Scenarios: `id`, `currency` three uppercase letters, `horizon_months` integer 1-120, `inputs` containing exactly eligible_accounts, reachable_fraction, conversion_fraction, capacity_accounts and annual_price_per_account. Each input contains `value` decimal string or null, `basis` measured/assumed/unknown, `source_ids` and `rationale`. Unknown iff value is null. Measured requires a source; assumed requires rationale. All source references must exist. Values are finite, nonnegative, <=1e12, max 30 characters and exponent magnitude <=18; fractions <=1. Computed outputs are Decimal strings. No exchange rates, guessed rates, confidence levels, TAM or profitability.
+
+Freshness is computed against explicit `as_of`, not host current time. Future sources error; expired sources warn and must be addressed before a decision depending on them. Unknown scenario inputs yield status incomplete and no numbers. Policy expiry and observation labels are user/analyst inputs, not trusted validation results.

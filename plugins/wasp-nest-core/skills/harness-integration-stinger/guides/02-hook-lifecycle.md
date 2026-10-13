@@ -4,7 +4,11 @@
 
 ---
 
-## The event surface, per harness
+## Current hook proof
+
+Use [the host-version hook procedure](13-prove-hook-contract.md) and its receipt before wiring or claiming a hook. The event table and compiler comparison below are historical August 2026 snapshots; compute the current intersection from actual host/version/carrier evidence. Event counts and static tables do not establish a present shared floor.
+
+## Historical event surface, per harness
 
 | Harness | Hook surface | Event count / notable subset | Handler types |
 |---|---|---|---|
@@ -27,7 +31,7 @@ An independent, code-verified cross-harness hook compiler (`research/external/20
 | `PostToolUse` | Native | Native (Bash only) - Edit/Write approximated |
 | `Stop` | Native | Native |
 
-**Design any hook-driven capability around this five-event intersection first.** Treat everything past it (Cursor's rich `before*`/`after*` set, Claude Code's task/worktree/compaction events, Cowork's undocumented Cowork-only surface) as a harness-specific enhancement layered on top, not a baseline every harness must carry.
+**This five-event intersection is a historical compiler finding, not a current design requirement.** Treat everything past it (Cursor's rich `before*`/`after*` set, Claude Code's task/worktree/compaction events, Cowork's undocumented Cowork-only surface) as a harness-specific enhancement layered on top, not a baseline every harness must carry.
 
 Reusable severity vocabulary for documenting a gap, rather than a blanket "not supported":
 
@@ -63,9 +67,9 @@ Every hook system has a per-event timeout and a notion of "this can run async." 
 }
 ```
 
-### 2. Fail open
+### 2. Preserve the intended failure semantics
 
-A hook must never crash the host or leave it hanging. Wrap the handler body so any failure (network down, dependency unreachable, bad payload) exits cleanly without a status the host treats as a block:
+An observational advisory should handle failures without unexpectedly blocking the host. An intentional authorization or integrity gate must retain its refusal contract. The example below is for an advisory only:
 
 ```typescript
 try {

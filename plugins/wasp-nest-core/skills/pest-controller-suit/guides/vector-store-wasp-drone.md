@@ -1,10 +1,13 @@
 # vector-store-wasp-drone
 
+**Plugin owner:** `data-and-ai-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns vector and embedding storage generally: schema and column design, index selection (HNSW vs IVFFlat, distance operators), hybrid lexical+vector search at the storage layer, migrations, and dataset versioning. Neon Postgres plus pgvector plus Drizzle is the primary option for this repo's stack; Deep Lake (the columnar, versioned dataset engine a prior product on this codebase's history was built on) stays fully documented as a supported alternative, and Qdrant / managed services round out the selection matrix.
 
 ## Paired Stinger
-[vector-store-stinger](../../vector-store-stinger) - the selection matrix, the pgvector schema/indexing/hybrid-search/migration guides, the original Deep Lake guides (unchanged), and the Qdrant/managed-service alternative guides.
+[vector-store-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/vector-store-stinger) - the selection matrix, the pgvector schema/indexing/hybrid-search/migration guides, the original Deep Lake guides (unchanged), and the Qdrant/managed-service alternative guides.
 
 ## Trigger phrases
 - "design this vector table"
@@ -38,3 +41,8 @@ This Drone owns vector and embedding storage generally: schema and column design
 - retrieval-wasp-drone: hands off recall tuning and fusion weighting once the search operator and column shape are set
 - neon-drizzle-wasp-drone: owns Neon connection/branching and the Drizzle migration runner itself, beyond the vector column
 - typescript-node-wasp-drone: consumes the query patterns this Drone designs
+
+
+## Evidence-led storage decisions
+
+Load paired guides 01-02 for accepted corpus/model/filter/query evaluation and projection consistency. Postgres/Qdrant choice requires representative recall/latency/write/deletion evidence; a universal corpus cutoff or isolated QPS benchmark does not prove migration necessity.

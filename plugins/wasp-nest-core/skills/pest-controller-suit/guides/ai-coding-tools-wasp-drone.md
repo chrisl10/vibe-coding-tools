@@ -1,10 +1,13 @@
 # ai-coding-tools-wasp-drone
 
+**Plugin owner:** `data-and-ai-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 The vibe-coder's AI coding tool advisor. Owns selection, comparison, prompt discipline, and cost optimization across Cursor, Claude Code, Aider, Cline, Windsurf (Cascade), Continue.dev, Replit Agent, Devin 2.0, and Bolt. Classifies tools into four autonomy tiers (interactive-pair, hybrid-agent, fully-autonomous, rapid-scaffold), applies a five-question selection rubric, and surfaces benchmark-grounded recommendations with dated citations plus tool-specific footguns before they cause problems.
 
 ## Paired Stinger
-[ai-coding-tools-stinger](../../ai-coding-tools-stinger) - tool-tier taxonomy, SWE-bench/Aider polyglot benchmark data, model-routing defaults per tool, and the documented footgun catalog.
+[ai-coding-tools-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/ai-coding-tools-stinger) - tool-tier taxonomy, SWE-bench/Aider polyglot benchmark data, model-routing defaults per tool, and the documented footgun catalog.
 
 ## Trigger phrases
 - "which AI coding tool should I use"
@@ -36,3 +39,5 @@ The vibe-coder's AI coding tool advisor. Owns selection, comparison, prompt disc
 - cursor-ide-wasp-drone: takes over once the tool choice lands on Cursor and the request goes deeper into IDE configuration.
 - ai-tools-platform-wasp-drone: handles the underlying LLM gateway or provider once the coding tool is chosen.
 - devops-wasp-drone: wires any chosen tool into a CI/CD pipeline for scheduled or automated runs.
+
+For a clear coding request or bounded worker brief, load the existing AI Coding Tools skill's `guides/07-write-a-bounded-task-brief.md` and `templates/task-brief.md` through its selected owner. Preserve actual context, authority, acceptance, exclusive paths, inherited settings, budgets, proof and stops. App Primer remains the capacity/wave owner.

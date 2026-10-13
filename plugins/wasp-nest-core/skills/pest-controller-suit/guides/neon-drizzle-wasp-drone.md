@@ -1,10 +1,13 @@
 # neon-drizzle-wasp-drone
 
+**Plugin owner:** `data-and-ai-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns Neon Postgres plus Drizzle ORM on SvelteKit/Vercel, the actual database stack for this repo since it left Supabase. That combination has sharp edges: which connection driver is correct on Vercel changed with Fluid compute, `drizzle-kit push --force` will silently eat data, migrations need a direct connection while the app runs pooled, and RLS is only mandatory once the app adopts Neon's Data API. This Drone knows those edges and keeps the team from relearning them in production. It also owns the Supabase-to-Neon migration path (data, auth touchpoints, RLS policies) and calls out explicitly what that migration does not cover, like Storage and Realtime.
 
 ## Paired Stinger
-[neon-drizzle-stinger](../../neon-drizzle-stinger) - Neon connection patterns, Drizzle Kit migration mechanics, pgvector index tuning, and the Supabase-to-Neon migration playbook.
+[neon-drizzle-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/neon-drizzle-stinger) - Neon connection patterns, Drizzle Kit migration mechanics, pgvector index tuning, and the Supabase-to-Neon migration playbook.
 
 ## Trigger phrases
 - "set up Neon for this project"

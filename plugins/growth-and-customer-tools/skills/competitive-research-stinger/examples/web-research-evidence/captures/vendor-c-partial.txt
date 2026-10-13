@@ -1,0 +1,3 @@
+Fictional supplied partial fixture.
+Cedar Example title and navigation only.
+Extraction ended before pricing and feature content.

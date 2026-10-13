@@ -141,6 +141,8 @@ Content documents may add fields such as status, version, owner, and updated dat
 | Capture temporary personal thoughts | Human note under `notes/` |
 | Record independent proof for one plan | That PRD or IRD's `qa/` folder |
 | Record a repository-wide audit | `requirements/reports/` |
+| Save a PRD map, wave plan or handoff packet | `requirements/plans/` |
+| Record a project-wide standard such as the Definition of Done | `knowledge/private/standards/` |
 
 ## Lifecycle gate
 
@@ -161,3 +163,7 @@ After copying this example into a real repository:
 3. Confirm who reviews security and quality evidence.
 4. Link the target repository's contribution and security policies.
 5. Create the first PRD or IRD only when real work exists. Do not fill the library with fake sample plans.
+
+## Reusable templates and evidence
+
+Adapt the existing repository template to the reader's outcome. Identify the real workflow, template origin and source revision before generalizing. Keep current behavior, proposed requirements and unrun checks distinct. A commit URL identifies committed content; dirty working-copy sources also need their byte hash. Preserve project assumptions, failure ordering, accepted contract pins and approval boundaries. Assign a maintenance owner and review when the source changes. A copied checklist is not proof that the workflow ran. Keep customer records and secrets out of reusable templates.

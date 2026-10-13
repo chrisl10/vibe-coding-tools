@@ -2,9 +2,9 @@
 ai_description: |
   Contains routine code-scan, QA, and security reports NOT tied to any
   specific PRD or IRD. Naming: <YYYY-MM-DD>-<type>-report.md.
-  Authored by quality-wasp-drone or security-wasp-drone.
-  Do NOT put per-PRD QA reports here - those go in prd-<###>-<slug>/qa/.
-  Do NOT put IRD QA reports here - those go in ird-<###>-<slug>/qa/.
+  Authored by your QA reviewer or your security reviewer.
+  Do NOT put per-PRD QA reports here: those go in prd-<###>-<slug>/qa/.
+  Do NOT put IRD QA reports here: those go in ird-<###>-<slug>/qa/.
 human_description: |
   Routine scan and audit reports not tied to a specific PRD or IRD.
   Examples: weekly security scans, periodic QA sweeps, dependency audits.
@@ -12,7 +12,7 @@ human_description: |
   Per-PRD QA reports live inside the PRD folder's qa/ subfolder instead.
 ---
 
-# Requirements - Reports
+# Requirements: Reports
 
 Routine code-scan and audit reports not tied to any specific PRD.
 
@@ -27,5 +27,7 @@ Examples:
 
 ## What does NOT belong here
 
-- QA reports for a specific PRD → `requirements/backlog/prd-<###>-<slug>/qa/`
-- QA reports for a specific IRD → `issues/backlog/ird-<###>-<slug>/qa/`
+- QA reports for a specific PRD → `requirements/<lifecycle>/prd-<###>-<slug>/qa/`
+- QA reports for a specific IRD → `issues/<lifecycle>/ird-<###>-<slug>/qa/`
+
+`<lifecycle>` is the plan's current `backlog`, `in-work`, or `completed` folder. Keep the plan and its QA history together.

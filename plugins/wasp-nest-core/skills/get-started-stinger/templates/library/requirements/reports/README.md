@@ -27,5 +27,7 @@ Examples:
 
 ## What does NOT belong here
 
-- QA reports for a specific PRD → `requirements/backlog/prd-<###>-<slug>/qa/`
-- QA reports for a specific IRD → `issues/backlog/ird-<###>-<slug>/qa/`
+- QA reports for a specific PRD → `requirements/<lifecycle>/prd-<###>-<slug>/qa/`
+- QA reports for a specific IRD → `issues/<lifecycle>/ird-<###>-<slug>/qa/`
+
+`<lifecycle>` is the plan's current `backlog`, `in-work`, or `completed` folder. Keep the plan and its QA history together.

@@ -19,8 +19,18 @@ The integration playbook for `harness-integration-wasp-drone`. Encodes how to wi
 
 ## Quick navigation
 
+For current availability, fallback, release claims and personal action boundaries, load the focused procedures below before relying on dated host tables. Native loading, account access and independent review require separate observed receipts.
+
 | Task | Guide |
 |---|---|
+| Select task-required packs and active prerequisite branches | `guides/12-select-task-packs.md` |
+| Prove event/payload/trust/deadline behavior on actual host version | `guides/13-prove-hook-contract.md` |
+| Audit selected owner command carriers and retained resources | `guides/14-audit-selected-command-coverage.md` |
+| Separate source coverage, explicit selection and native availability | `guides/08-prove-selected-availability.md` |
+| Retain skill procedure without a native agent, with explicit review/isolation losses | `guides/09-use-skill-fallback.md` |
+| Bind release claims to installed-host discovery and execution receipts | `guides/10-qualify-installed-host-release.md` |
+| Prepare personal work with scoped sources and no hidden sends | `guides/11-prepare-personal-work.md` |
+| Coordinate parallel AI workers with exclusive ownership, actual capacity and stop/handoff proof | `guides/07-coordinate-parallel-workers.md` |
 | Start here: what integration means, the four harnesses, the wiring-mechanism decision matrix | `guides/00-decision-framework.md` |
 | Where does each component type (rules, commands, agents, skills, plugins) live, per harness | `guides/01-component-placement.md` |
 | Wire hooks/lifecycle events, per harness, and know the real shared-event floor | `guides/02-hook-lifecycle.md` |
@@ -32,29 +42,29 @@ The integration playbook for `harness-integration-wasp-drone`. Encodes how to wi
 
 ## Critical directives
 
-These are the non-negotiables. Violating any of them is the most common cause of a broken harness adapter. See the relevant guide for code patterns.
+Apply portable constraints to the capability being built, and case-specific mechanics only when its inspected source matches that case. Read the target host's actual capability list, selected-plugin registry and carrier before designing integration. A path, API or hook event from a dated example is not present-host proof.
 
-1. **Keep the tool and command contract identical across every host.** `hivemind_search`/`hivemind_read`/`hivemind_index` (plus `hivemind_goal_add`/`hivemind_kpi_add` on OpenClaw) must have the same name, args, and return shape everywhere. A drift in one host silently breaks cross-harness recall. Source: `research/external/2026-06-16-tool-contract.md`.
-
-2. **Hooks must be fast and fail-open.** Capture hooks run on the agent's critical path. Honor the per-event timeout (SessionStart 10s, PreToolUse 60s, capture 10-30s), dispatch heavy work `async: true`, and never let a hook crash block the host. Source: `research/external/2026-06-16-hook-lifecycle.md`.
-
-3. **Capability detection must be cheap and side-effect free.** `hivemind install` auto-detects each assistant by probing for its home dir / binary (`~/.claude/projects`, `~/.codex`, `~/.cursor`, `~/.hermes`, `~/.pi`, OpenClaw). Detection runs on every install; it must not write files or spawn work. Source: `research/external/2026-06-16-capability-detection.md`.
-
-4. **Never hardcode bundle paths - resolve them per host.** Claude Code forks `node "${CLAUDE_PLUGIN_ROOT}/bundle/<entry>.js"`; Cursor/Hermes use `~/.<host>/hivemind/bundle/`. Use the host's own root variable so the marketplace plugin and local installs both resolve correctly. Source: `research/external/2026-06-16-architecture-build.md`.
-
-5. **The OpenClaw bundle must pass the ClawHub static scanner.** ClawHub forbids bare `spawn`/`execFileSync`. Route subprocess access through `createRequire`-based indirection (see `src/skillify/gate-runner.ts` comments and `scripts/audit-openclaw-bundle.mjs`) or the bundle is rejected. Source: `research/external/2026-06-16-openclaw-clawhub.md`.
-
-6. **Register the MCP server only where the host supports it.** Hermes wires the MCP server (`src/mcp/server.ts`) under `mcp_servers.hivemind` in `~/.hermes/config.yaml`. Do not assume every host has an MCP transport - Claude Code and Cursor use hooks; pi/OpenClaw use native extensions. Source: `research/external/2026-06-16-mcp-registration.md`.
-
-7. **pi ships raw TypeScript; do not pre-compile it.** `harnesses/pi/extension-source/hivemind.ts` is delivered as `.ts` and pi compiles it at load. Bundling or transpiling it in the installer breaks the load path. Source: `research/external/2026-06-16-pi-extension.md`.
+1. **Preserve the capability's actual contract across supported hosts.** Record its real names, inputs, outputs and effects. Hivemind's named tools in the case study illustrate this practice; they are not mandatory tools for a different integration.
+2. **Give hooks explicit failure and timing semantics.** Observational hooks may fail open; authorization or integrity gates must retain their intended refusal behavior. Confirm supported events, asynchronous execution and timeouts in the current host before wiring them. Never claim a hook or watchdog is active without observed configuration and execution.
+3. **Keep capability detection cheap and side-effect free.** A directory or cache proves files exist, not that a plugin is selected. For Wasp Nest installed work, use the explicit selected-plugin registry and Core resolver, then verify prerequisites. Source-checkout paths cannot stand in for enabled installed components.
+4. **Resolve resources against the actual carrier root.** Native plugins, home copies and cloud uploads have different available surfaces. Use the host's verified root/resolver and load resource paths from the returned component root rather than importing a previous product's bundle layout.
+5. **Qualify the target distribution.** Validate the actual carrier, retained resources, notices and supported commands/hooks. Hivemind's ClawHub scan and pi raw-TypeScript rules remain case-specific examples; do not apply them to Wasp Nest or another project without that target surface.
+6. **Register MCP only through a supported host transport.** Claude Code and Cursor can support MCP as well as hooks; one does not replace the other. Follow [MCP registration](guides/03-mcp-registration.md) and verify the current local/cloud execution surface before deciding connectivity. Do not infer public reachability or localhost support merely from a product name.
+7. **Degrade explicitly when a surface is absent.** Keep the contract and report the missing capability. Do not invent a command, infer enabled availability from a cache, or silently change the requested architecture.
 
 8. **Author portable skills against the six-field Agent Skills spec only.** Outside Claude Code proper, only `name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools` are legal `SKILL.md` frontmatter. Any Claude-Code-only field (`context: fork`, `disable-model-invocation`, `paths`, `hooks`, etc.) throws a hard packaging error on claude.ai uploads, the Skills API, and Cowork's "Save skill" pipeline. Source: `research/external/2026-08-14-agentskills-spec-six-fields.md`; queen-wasp-stinger distilled-research-articles.md, Claude Code §SUPPLEMENT.
 
-9. **Codex MCP config is TOML with an underscored `mcp_servers` key, not JSON `mcpServers`.** A config block copy-pasted from Claude Code or Cursor silently fails on Codex - no parse error, the server just never registers. Always write the Codex TOML form as its own case. Source: `research/external/2026-08-14-mcp-capability-negotiation.md`; queen-wasp-stinger distilled-research-articles.md, ChatGPT Codex §Plugins.
+9. **Use the current host's MCP config format.** Local Codex configuration uses TOML `mcp_servers`; Claude Code and Cursor use their supported JSON forms. Read [MCP registration](guides/03-mcp-registration.md) and validate the intended configuration through the actual host. Do not assume a pasted incompatible shape will be silently ignored or successfully registered.
 
-10. **Cowork connectors must be reachable from the public internet, not localhost.** Cowork's MCP connectors run through Anthropic's cloud, not the local network. A capability that only stands up a local/stdio MCP server will silently fail to connect from a Cowork session. Source: queen-wasp-stinger distilled-research-articles.md, Claude Cowork §Plugins.
+10. **Distinguish local plugin runtimes from cloud connectors.** A cloud connector needs an endpoint reachable from its actual execution environment. A local desktop plugin may have a separate local MCP surface. Verify both carrier and runtime; do not assert that every Cowork connection runs through the cloud or can reach localhost.
 
-11. **Know the real shared hook-event floor before designing a hook-driven capability.** Claude Code exposes 26 hook events; Codex exposes 5. The verified shared floor across Claude Code and Codex is `SessionStart`, `UserPromptSubmit`, `PreToolUse` (Bash-only), `PostToolUse` (Bash-only native, Edit/Write approximated), `Stop`. Design for that floor first; treat richer per-harness events as an enhancement, not a baseline. Source: `research/external/2026-08-14-hookbridge-loss-report-pattern.md`.
+11. **Compute the supported hook-event intersection before design.** Use currently verified host capabilities and the target carrier's registration surface. Record unsupported events and any approximated behavior. The dated case study's event counts and timeouts are historical evidence, not a guaranteed floor for a new native installation.
+
+12. **Qualify worker coordination before fanout.** Read [worker coordination](guides/07-coordinate-parallel-workers.md); reuse selected AppPrimer Zero handoff resources, count actual slots including the coordinator, and preserve exclusive ownership and ordered candidate review. A prepared plan or worker status is not final integration proof.
+
+13. **Keep proof layers separate.** Source coverage, selected registry, native discovery, actual execution and account permissions each need their own receipt. A direct skill read does not create an independent worker or reviewer. Personal-work preparation remains draft-only unless the specific external action is authorized. Use guides 08 through 11 and preserve unknowns.
+
+14. **Select and qualify actual task coverage.** Use guides 12 through 14 for O287, O292 and O299. Close each active branch and preserve missing selected owners, resources and native event/invocation evidence as distinct gaps. Never invent a command or agent to fill a carrier gap.
 
 ## Scope note
 

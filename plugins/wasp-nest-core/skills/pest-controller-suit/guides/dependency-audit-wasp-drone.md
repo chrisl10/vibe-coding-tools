@@ -1,5 +1,8 @@
 # dependency-audit-wasp-drone
 
+**Plugin owner:** `wasp-nest-core`. **Required selection:** Core itself. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns the open-source dependency supply-chain surface: scanner selection and configuration (Dependabot, Renovate, Snyk, socket.dev, OWASP Dependency-Check), vulnerability triage with CVSS scoring and exploitability context, SBOM generation (Syft, CycloneDX, SPDX plus Sigstore attestation), lockfile discipline (`npm ci` enforcement, `minimumReleaseAge`, `lockFileMaintenance`), and provenance verification (npm `--provenance`, PyPI PEP 740). It treats `npm audit` as a CVE compliance tool, not a supply-chain security tool, and pushes teams toward behavioral scanning for the account-hijack class of attack.
 
@@ -15,6 +18,8 @@ This Drone owns the open-source dependency supply-chain surface: scanner selecti
 - "lockfile hygiene"
 - "npm provenance"
 - "Snyk CI gate"
+- "Explain package.json and lockfiles to me"
+- "Which dependencies are direct or indirect?"
 
 ## Do NOT route when
 - The CVE requires patching application code, not just bumping a package version: that's security-wasp-drone.
@@ -28,6 +33,8 @@ This Drone owns the open-source dependency supply-chain surface: scanner selecti
 - Existing scanner configs (`.snyk`, `renovate.json`, `.github/dependabot.yml`)
 - Whether the scenario is new setup, existing-scanner audit, CVE triage, SBOM build, or provenance check
 
+For a beginner reading, use the paired [guide 06](../../dependency-audit-stinger/guides/06-explain-manifest-and-lockfile.md), [preservation ledger](../../dependency-audit-stinger/templates/manifest-reading-ledger.md) and [worked fixture](../../dependency-audit-stinger/examples/read-manifest-fixture.md). Identify the actual ecosystem first. Preserve declared versus recorded versus observed evidence; do not install or change dependencies as an explanation step.
+
 ## Outputs
 - A Renovate or Snyk CI gate config with inline rationale comments
 - A CVE triage table with CVSS context, exploitability, and recommended resolution
@@ -37,3 +44,5 @@ This Drone owns the open-source dependency supply-chain surface: scanner selecti
 - security-wasp-drone: takes over once a CVE needs an application-code fix rather than a dependency bump
 - devops-wasp-drone: owns the Docker scanning pipeline and broader CI/CD architecture this Drone's scanning step slots into
 - github-repo-health-wasp-drone: overlaps on repo hygiene checks but this Drone owns the dependency-specific depth
+
+For O274, use [guide 07](../../dependency-audit-stinger/guides/07-bind-sbom-to-release-artifact.md) and preserve manifest/lock/install/final-artifact scope, exact hashes, schema/coverage checks and expected attestation identity separately. For O111, use [guide 08](../../dependency-audit-stinger/guides/08-upgrade-major-dependency-safely.md): exact old/new versions, consumed API/vendor contracts, bounded canary and data-compatible rollback. No scanner installation, publish or real upgrade is implicit in preparation.

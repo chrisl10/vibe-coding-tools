@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "reviewer": "Codex root",
+  "inspected_at": "2026-10-06T15:30:09.934801+00:00",
+  "state_sha256": "5e74e861326a9d862f5d9106984009b1712f7e6162c38ad7a5bf0742717b45ef",
+  "attestation_sha256": "238803babcaac332b1730afb0337eaf3a49563786a2166522174bb2db26b2498",
+  "documents": [
+    {
+      "pdf_sha256": "a1078f37bd0adab066909a63d0fefd82067f3a32ae93f3f2cf8cbcb9e96e507c",
+      "docx_sha256": "45bca976c6af81efdaecaef9fa5cd886db0b53d12ee1e464615bc92c29ac78f1",
+      "pages": [
+        {
+          "page": 1,
+          "png": "page-001.png",
+          "png_sha256": "177fadf1d62ab6ad2391e51e00eefe677b4ca5611e951c38889fa613f0e59589",
+          "out_of_page_glyphs": 0,
+          "out_of_page_images": 0,
+          "footer_text_present": true,
+          "footer_logo_detected": true,
+          "footer_region_extra_text": "",
+          "missing_glyphs": false,
+          "heuristic_only": true
+        }
+      ],
+      "page_count": 1,
+      "word_page_review_basis": "These pages render the DOCX in LibreOffice; other Word applications may paginate differently.",
+      "complete": false,
+      "id": "public-brief",
+      "audience": "public",
+      "markdown_sha256": "ce13032ae63c0393ae958b945b76f8a5555fdcccd218ea29cb72aa3391dc878b",
+      "citations_sha256": "363bf2f2d1717946495342cbdd1ff41de6beebfc97afb3e661085cfcfaf0c69e",
+      "citations_md_sha256": "062bc9a3029779dbb90b0f384da2d77f411cf13413466cbff8d984d00124d6e6",
+      "canonical_content_sha256": "ce13032ae63c0393ae958b945b76f8a5555fdcccd218ea29cb72aa3391dc878b",
+      "estimated_grade": 7.4,
+      "logo_sha256": "306e945de16ab670eb8eaeb668a60537c992024d13c478f83545489d67c035fd"
+    },
+    {
+      "pdf_sha256": "0f1857d9797e84bb39e371ab25293d25b06b464bb3346c54e8112d57440df22a",
+      "docx_sha256": "16161ffb7763fa7719f67e401c7611be2e2f2ad9cdcb61282afd4b775a5a5433",
+      "pages": [
+        {
+          "page": 1,
+          "png": "page-001.png",
+          "png_sha256": "906c51ca8ac63146b179472dea230881070f47766b34926b0a846b8dc96da36c",
+          "out_of_page_glyphs": 0,
+          "out_of_page_images": 0,
+          "footer_text_present": true,
+          "footer_logo_detected": true,
+          "footer_region_extra_text": "",
+          "missing_glyphs": false,
+          "heuristic_only": true
+        },
+        {
+          "page": 2,
+          "png": "page-002.png",
+          "png_sha256": "7c97365862908797bc8c79d5785cc418336b2e1ea2b26465b84a1ecd7605c6a8",
+          "out_of_page_glyphs": 0,
+          "out_of_page_images": 0,
+          "footer_text_present": true,
+          "footer_logo_detected": true,
+          "footer_region_extra_text": "",
+          "missing_glyphs": false,
+          "heuristic_only": true
+        }
+      ],
+      "page_count": 2,
+      "word_page_review_basis": "These pages render the DOCX in LibreOffice; other Word applications may paginate differently.",
+      "complete": false,
+      "id": "engineering-brief",
+      "audience": "engineering",
+      "markdown_sha256": "35268117e74cd958b4494b3a1bfc00ef440702a8b863feeb1375c3c2423bd056",
+      "citations_sha256": "58b75ce1c9b187113ae8149d29365ba3b7796cde767f18a4c081f1d3fcd19d1f",
+      "citations_md_sha256": "11cfbbbc042861979ec34c157c05036b17357f506d8ae8be1208c945130ff932",
+      "canonical_content_sha256": "35268117e74cd958b4494b3a1bfc00ef440702a8b863feeb1375c3c2423bd056",
+      "estimated_grade": 8.7,
+      "logo_sha256": "306e945de16ab670eb8eaeb668a60537c992024d13c478f83545489d67c035fd"
+    }
+  ],
+  "limit": "Supplied attestations record review, not an automatic semantic or visual guarantee."
+}

@@ -1,0 +1,24 @@
+{
+  "name": "software-economics-tools",
+  "version": "3.0.0",
+  "description": "Model supplied software economics and costs with explicit scenarios and evidence.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
+  "license": "AGPL-3.0-or-later",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./cursor-agents/operating-cost-wasp-drone.md",
+    "./cursor-agents/saas-pricing-wasp-drone.md",
+    "./cursor-agents/services-quoting-wasp-drone.md",
+    "./cursor-agents/unit-economics-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/estimate-operating-cost.md",
+    "./commands/model-unit-economics.md",
+    "./commands/price-my-product.md",
+    "./commands/quote-project.md"
+  ]
+}

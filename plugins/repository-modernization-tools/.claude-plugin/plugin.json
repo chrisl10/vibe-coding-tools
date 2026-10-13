@@ -1,0 +1,26 @@
+{
+  "name": "repository-modernization-tools",
+  "version": "3.0.0",
+  "description": "Compose repository baseline, safe refactoring and contributor onboarding through selected specialist owners.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
+  "license": "AGPL-3.0-or-later",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./agents/flaky-test-repair-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/improve-repository.md",
+    "./commands/onboard-contributor.md",
+    "./commands/refactor-safely.md",
+    "./commands/remove-unused-dependencies.md",
+    "./commands/repair-flaky-tests.md",
+    "./commands/verify-refactor.md"
+  ],
+  "dependencies": [
+    "wasp-nest-core"
+  ]
+}

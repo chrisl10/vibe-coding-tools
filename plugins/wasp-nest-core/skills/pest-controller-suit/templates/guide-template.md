@@ -2,16 +2,19 @@
 
 The Pest-Controller-Suit routing skill's record of when to invoke `{{drone-name}}`. Use this guide to decide whether a user request belongs to this Drone.
 
-**Drone:** [`colony/.claude/agents/{{drone-name}}.md`](../../agents/{{drone-name}}.md)
-**Stinger:** [`colony/.claude/skills/{{stinger-name}}/`](../../skills/{{stinger-name}}/)
-**Command Brief:** [`colony/{{drone-name}}-command-brief.md`](../../../{{drone-name}}-command-brief.md)
+**Plugin owner:** `{{catalog-plugin-id}}`
+**Source Drone:** `{{source_root}}/agents/{{drone-name}}.md`
+**Source Stinger:** `{{source_root}}/skills/{{stinger-name}}/SKILL.md`
+**Required plugins/workflow:** `{{catalog prerequisites}}`
+
+Resolve the installed paired skill through Core's explicit selection registry before dispatch. Fill source links from the real catalog owner, relative to this guide; do not fabricate a command-brief path.
 **Trigger policy:** {{proactive | on-demand}}
 
 ---
 
 ## Domain
 
-{{One paragraph: what single domain does this Drone own? Lift from the Command Brief's IDENTITY & RESPONSIBILITY, tightened to 3-5 sentences.}}
+{{One paragraph: what single domain does this Drone own? Use the canonical Drone's identity and paired Stinger scope, tightened to 3-5 sentences.}}
 
 ## Trigger phrases
 
@@ -60,4 +63,4 @@ If a required input is missing, do not invoke yet - ask the user to supply it.
 
 ---
 
-*Part of Pest-Controller-Suit's roster. See [`colony/.claude/skills/pest-controller-suit/SKILL.md`](../SKILL.md) for the full colony.*
+*Part of Pest-Controller-Suit's roster. See [the Core roster](../SKILL.md) for the full colony.*

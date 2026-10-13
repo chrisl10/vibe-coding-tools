@@ -1,0 +1,105 @@
+{
+  "project": "Worker coordination illustrative source wave",
+  "example": true,
+  "base_sha": "1c7ba34992950fa1de3f282f1c5eb281be5d2dbb",
+  "capacity": {
+    "mode": "parallel",
+    "limit": 4,
+    "coordinator_slots": 1,
+    "reviewer_slots": 1,
+    "verified": false
+  },
+  "contracts": [
+    {
+      "id": "CTR-example",
+      "revision": 1,
+      "status": "Draft",
+      "approved_by": null,
+      "approval_evidence": null
+    }
+  ],
+  "shards": [
+    {
+      "id": "parent",
+      "role": "coordinator",
+      "owned_paths": []
+    },
+    {
+      "id": "A",
+      "role": "implementation",
+      "owned_paths": [
+        "src/skills/harness-integration-stinger"
+      ]
+    },
+    {
+      "id": "B",
+      "role": "implementation",
+      "owned_paths": [
+        "packs/example-manifest"
+      ]
+    },
+    {
+      "id": "C",
+      "role": "implementation",
+      "owned_paths": [
+        "packs/example-margin"
+      ]
+    },
+    {
+      "id": "security",
+      "role": "security",
+      "owned_paths": []
+    },
+    {
+      "id": "quality",
+      "role": "quality",
+      "owned_paths": []
+    }
+  ],
+  "waves": [
+    {
+      "id": "source",
+      "depends_on": [],
+      "active_shards": [
+        "parent",
+        "A",
+        "B",
+        "C"
+      ],
+      "contract_pins": [
+        {
+          "id": "CTR-example",
+          "revision": 1
+        }
+      ],
+      "implementation": true,
+      "ready": false
+    },
+    {
+      "id": "security",
+      "depends_on": [
+        "source"
+      ],
+      "active_shards": [
+        "parent",
+        "security"
+      ],
+      "contract_pins": [],
+      "implementation": false,
+      "ready": false
+    },
+    {
+      "id": "quality",
+      "depends_on": [
+        "security"
+      ],
+      "active_shards": [
+        "parent",
+        "quality"
+      ],
+      "contract_pins": [],
+      "implementation": false,
+      "ready": false
+    }
+  ]
+}

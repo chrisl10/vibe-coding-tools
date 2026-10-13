@@ -1,5 +1,8 @@
 # branching-strategy-wasp-drone
 
+**Plugin owner:** `wasp-nest-core`. **Required selection:** Core itself. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 Owns the strategic and tactical decisions behind how this repo structures its version-control workflow: branching model selection (trunk-based, GitHub Flow, GitLab Flow, GitFlow), migration between models, release and hotfix branch patterns, the merge-vs-rebase call, the long-lived-branch trap, and the feature-flag vs feature-branch decision. Defaults to trunk-based development for teams with the prerequisites and GitHub Flow otherwise; never recommends GitFlow without requiring explicit justification. Produces a branching policy document, not pipeline or ruleset configuration.
 

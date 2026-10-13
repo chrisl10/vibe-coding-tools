@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "matter": {
+    "id": "fictional-workshop",
+    "title": "Fictional workshop review",
+    "client": "Meadow Workshop (fictional)",
+    "prepared_by": "Training reviewer (fictional)",
+    "report_date": "2026-10-06"
+  },
+  "fictional": true,
+  "evidence": [
+    {
+      "id": "E-01",
+      "title": "Fictional service checklist",
+      "uri": "fixture:invented-checklist-row-1"
+    },
+    {
+      "id": "E-02",
+      "title": "Fictional invoice",
+      "uri": "fixture:invented-invoice-1"
+    }
+  ],
+  "documents": {
+    "master": {
+      "title": "Fictional master draft",
+      "sections": [
+        {
+          "title": "Reviewed fixture content",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The invented checklist lists two agreed outputs. This sentence describes fictional training data only.",
+              "tier": "PROVEN",
+              "source_ids": [
+                "E-01"
+              ]
+            },
+            {
+              "type": "bullets",
+              "items": [
+                "The invented invoice lists a training fee of 120 units.",
+                "A payment receipt was not included in the fictional fixture."
+              ],
+              "tier": "PROVEN",
+              "source_ids": [
+                "E-02"
+              ]
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Model",
+                "Estimated units"
+              ],
+              "rows": [
+                [
+                  "Training calculation only",
+                  "60"
+                ]
+              ],
+              "tier": "DERIVED",
+              "source_ids": [
+                "E-01",
+                "E-02"
+              ],
+              "estimate": true
+            },
+            {
+              "type": "paragraph",
+              "text": "Whether an additional output was agreed is unknown in this invented exercise.",
+              "tier": "HYPOTHESIS",
+              "source_ids": []
+            }
+          ]
+        }
+      ]
+    },
+    "agency": {
+      "title": "Fictional agency draft",
+      "sections": [
+        {
+          "title": "Reviewed fixture content",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The invented checklist lists two agreed outputs. This sentence describes fictional training data only.",
+              "tier": "PROVEN",
+              "source_ids": [
+                "E-01"
+              ]
+            },
+            {
+              "type": "bullets",
+              "items": [
+                "The invented invoice lists a training fee of 120 units.",
+                "A payment receipt was not included in the fictional fixture."
+              ],
+              "tier": "PROVEN",
+              "source_ids": [
+                "E-02"
+              ]
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Model",
+                "Estimated units"
+              ],
+              "rows": [
+                [
+                  "Training calculation only",
+                  "60"
+                ]
+              ],
+              "tier": "DERIVED",
+              "source_ids": [
+                "E-01",
+                "E-02"
+              ],
+              "estimate": true
+            },
+            {
+              "type": "paragraph",
+              "text": "Whether an additional output was agreed is unknown in this invented exercise.",
+              "tier": "HYPOTHESIS",
+              "source_ids": []
+            }
+          ]
+        }
+      ]
+    },
+    "attorney": {
+      "title": "Fictional attorney draft",
+      "sections": [
+        {
+          "title": "Reviewed fixture content",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The invented checklist lists two agreed outputs. This sentence describes fictional training data only.",
+              "tier": "PROVEN",
+              "source_ids": [
+                "E-01"
+              ]
+            },
+            {
+              "type": "bullets",
+              "items": [
+                "The invented invoice lists a training fee of 120 units.",
+                "A payment receipt was not included in the fictional fixture."
+              ],
+              "tier": "PROVEN",
+              "source_ids": [
+                "E-02"
+              ]
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Model",
+                "Estimated units"
+              ],
+              "rows": [
+                [
+                  "Training calculation only",
+                  "60"
+                ]
+              ],
+              "tier": "DERIVED",
+              "source_ids": [
+                "E-01",
+                "E-02"
+              ],
+              "estimate": true
+            },
+            {
+              "type": "paragraph",
+              "text": "Whether an additional output was agreed is unknown in this invented exercise.",
+              "tier": "HYPOTHESIS",
+              "source_ids": []
+            }
+          ]
+        }
+      ]
+    },
+    "plain_language": {
+      "title": "Fictional plain language draft",
+      "sections": [
+        {
+          "title": "Reviewed fixture content",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The invented checklist lists two agreed outputs. This sentence describes fictional training data only.",
+              "tier": "PROVEN",
+              "source_ids": [
+                "E-01"
+              ]
+            },
+            {
+              "type": "bullets",
+              "items": [
+                "The invented invoice lists a training fee of 120 units.",
+                "A payment receipt was not included in the fictional fixture."
+              ],
+              "tier": "PROVEN",
+              "source_ids": [
+                "E-02"
+              ]
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Model",
+                "Estimated units"
+              ],
+              "rows": [
+                [
+                  "Training calculation only",
+                  "60"
+                ]
+              ],
+              "tier": "DERIVED",
+              "source_ids": [
+                "E-01",
+                "E-02"
+              ],
+              "estimate": true
+            },
+            {
+              "type": "paragraph",
+              "text": "Whether an additional output was agreed is unknown in this invented exercise.",
+              "tier": "HYPOTHESIS",
+              "source_ids": []
+            }
+          ]
+        }
+      ]
+    },
+    "pre_litigation": {
+      "title": "Fictional pre litigation draft",
+      "sections": [
+        {
+          "title": "Reviewed fixture content",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The invented checklist lists two agreed outputs. This sentence describes fictional training data only.",
+              "tier": "PROVEN",
+              "source_ids": [
+                "E-01"
+              ]
+            },
+            {
+              "type": "bullets",
+              "items": [
+                "The invented invoice lists a training fee of 120 units.",
+                "A payment receipt was not included in the fictional fixture."
+              ],
+              "tier": "PROVEN",
+              "source_ids": [
+                "E-02"
+              ]
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Model",
+                "Estimated units"
+              ],
+              "rows": [
+                [
+                  "Training calculation only",
+                  "60"
+                ]
+              ],
+              "tier": "DERIVED",
+              "source_ids": [
+                "E-01",
+                "E-02"
+              ],
+              "estimate": true
+            },
+            {
+              "type": "paragraph",
+              "text": "Whether an additional output was agreed is unknown in this invented exercise.",
+              "tier": "HYPOTHESIS",
+              "source_ids": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

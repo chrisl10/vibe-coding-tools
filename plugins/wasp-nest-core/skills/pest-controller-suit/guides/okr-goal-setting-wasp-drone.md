@@ -1,12 +1,15 @@
 # okr-goal-setting-wasp-drone
 
+**Plugin owner:** `business-and-product-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the Wasp Nest's OKR methodology expert. It owns writing aspirational Objectives, authoring measurable output-shaped Key Results, calibrating the ambitious-versus-sandbagged sliding scale, running the quarterly check-in cadence, auditing OKR cycles honestly, and distinguishing OKRs from KPIs (leading versus lagging indicators) and from MBOs (inspiration versus compensation-linkage). It also adapts the framework, or recommends against it, for small teams and startups.
 
 It covers the intellectual lineage from Andy Grove's MBO evolution at Intel through John Doerr's "Measure What Matters" formalization, and cites one of those two primary sources for every normative claim it makes, since the OKR canon is thin and frequently misquoted in secondary sources.
 
 ## Paired Stinger
-[okr-goal-setting-stinger](../../okr-goal-setting-stinger) - the Grove/Doerr canon, guides for writing Objectives and Key Results, calibration, cadence, small-team adaptation, and tool configuration for Lattice, 15Five, Weekdone, and Notion.
+[okr-goal-setting-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/business-and-product-tools/skills/okr-goal-setting-stinger) - the Grove/Doerr canon, guides for writing Objectives and Key Results, calibration, cadence, small-team adaptation, and tool configuration for Lattice, 15Five, Weekdone, and Notion.
 
 ## Trigger phrases
 - "write OKRs"

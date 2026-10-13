@@ -7,7 +7,7 @@
 
 ### Get the Git life.
 
-**139 specialist Drones, 183 Stingers, commands, hooks, and rules across 6 installable plugins.**
+**184 specialist Drones, 223 Stingers, commands, hooks, and rules across 21 installable plugins.**
 
 Give your coding assistant the people, playbooks, and project memory it needs to build.
 
@@ -47,7 +47,9 @@ codex plugin marketplace add legioncodeinc/vibe-coding-tools
 codex plugin add wasp-nest-core@wasp-nest
 ```
 
-You should then see **The Wasp Nest** and its individually installable packs. Choose only the packs your work needs. Claude plugin skills use the plugin name as their namespace, such as `/wasp-nest-core:get-started-stinger`; Codex presents installed skills and all seven command-wrapper skills through its plugin surface. For native Codex Drone roles, review and trust the plugin's hooks with `/hooks`, then start a new local session. [The compatibility guide](learn/reference/HARNESS-CAPABILITIES.md) explains the trust step and the other harnesses.
+The v3 layout has a required Core and the optional plugins declared in its current catalog. Purge the previous Wasp Nest installation before installing it. Keep Core enabled and select each workflow's prerequisites.
+
+Choose the packs your work needs. Claude skills use their plugin namespace, such as `/wasp-nest-core:get-started-stinger`; Codex shows skills and command wrappers. Native Codex Drone roles require Core's trusted hook and an explicit registry of enabled package roots. The local installer writes that registry; a marketplace install alone is not proven to do so. Review the selection before trusting `/hooks` and starting a new session. See [harness capabilities](learn/reference/HARNESS-CAPABILITIES.md).
 
 Open the repository you want to work on and ask:
 
@@ -55,17 +57,17 @@ Open the repository you want to work on and ask:
 Use the Get Started Stinger to inspect this repository. Explain the home instruction setup and the project Library setup, ask before changing either, and show me the resulting diff and setup report.
 ```
 
-On supported local sessions, the first-session hook checks `~/.legioncodeinc.lock` and then the repository's `wasp-nest.lock`. Each missing setup is an offer, not permission to change files. An existing codebase also gets a Knowledge pass before its Library setup is marked complete. [Read the public getting-started guide](learn/guides/GETTING-STARTED.md) before accepting either offer.
+The first-session hook checks home and project setup locks on supported local hosts. Missing setup prompts an offer. Existing code gets a Knowledge pass before Library setup completes. [Read Getting Started](learn/guides/GETTING-STARTED.md) before accepting either offer.
 
 ## The problem this fixes
 
-Your assistant can write code, but it does not arrive knowing your product, past decisions, or definition of done. You repeat the stack, the standards, and the reason a feature exists, then hope none of that context is lost on the next task.
+Your assistant can write code. It still needs your product facts, past decisions and definition of done.
 
-The Wasp Nest puts those agreements where the work happens. Drones own bounded specialties. Their Stingers carry methods, examples, and cited research. The Library keeps project knowledge, planned features, issue fixes, and shared contracts available to the next agent. The goal is fewer confident wrong turns and work you can verify against decisions already written down.
+Drones own bounded specialties. Stingers carry methods, examples and cited research. The Library keeps knowledge, plans, issue fixes and shared contracts for the next agent. You can check the work against written decisions.
 
 ## The Library is the workbench
 
-The Library belongs to the repository you are building, not to this marketplace. It separates facts about today's system from promises about tomorrow's system. Get Started offers to create it after consent; if code already exists, Knowledge documents that code first. Human-only `library/notes/` is not agent input.
+The Library holds current facts and future plans in your project. Get Started offers setup after consent; Knowledge documents existing code first. Human-only `library/notes/` is not agent input.
 
 | Record | Write it when | Who helps |
 | --- | --- | --- |
@@ -74,13 +76,15 @@ The Library belongs to the repository you are building, not to this marketplace.
 | IRD | A tracked bug needs a bounded fix and proof, using its issue number. | Library Stinger. |
 | `CTR-###` | Two or more plans depend on the same API, event, data shape, permission, or state transition. | Contract Writing drafts; you accept the exact revision; Library pins it in each affected PRD. |
 
-Read [why the Library exists](learn/concepts/WHY-THE-LIBRARY.md) or the practical guides to [write a PRD](learn/guides/WRITE-A-PRD.md), [write an IRD](learn/guides/WRITE-AN-IRD.md), and [agree on a CTR](learn/guides/WRITE-A-CTR.md). A Draft CTR does not make dependent PRDs ready. Independent work can continue while that decision is open.
+Learn [why the Library exists](learn/concepts/WHY-THE-LIBRARY.md), [write a PRD](learn/guides/WRITE-A-PRD.md) or [IRD](learn/guides/WRITE-AN-IRD.md), and [agree on a CTR](learn/guides/WRITE-A-CTR.md). Draft contracts block dependent work.
 
 ## From request to reviewed code
 
 ```mermaid
 flowchart TD
     A["New request"] --> B{"What kind of work?"}
+    B -- New product --> PS["/plan-product: strategy, design, wave plan, Definition of Done"]
+    PS --> P
     B -- New behavior --> P["Library writes a PRD with acceptance criteria"]
     B -- Tracked bug --> I["Library writes an IRD"]
     B -- Scoped task --> R["Call /pest-controller"]
@@ -92,7 +96,7 @@ flowchart TD
     PIN --> S["Call /smoke-it"]
     C -- No --> S
     I --> R
-    S --> L["Acceptance ledger and dependency waves"]
+    S --> L["Acceptance ledger and the approved wave plan"]
     L --> CODE["Drones read Stingers, code, and test"]
     R --> CODE
     CODE --> V["Verify against the PRD, IRD, or task"]
@@ -122,15 +126,28 @@ A Draft or disputed contract blocks the dependent boundary. [The learning path](
 
 ## What to call
 
+Short Core commands use `/wasp-nest-core:` in native Claude. Optional commands show their owning prefix below. Use your client's exact selector; local home installations also expose flat commands.
+
+
 | Situation | Ask for | What happens |
 | --- | --- | --- |
 | New or existing repository has no Library | `get-started-stinger` | Offers home and project setup separately, preserves existing work, and reports its changes. |
+| Plan a new product before building it | [`/product-studio:plan-product`](plugins/product-studio/commands/plan-product.md) | Interviews you for the strategy, designs the UX with prototypes and a Claude Design round trip, then writes the PRD map, wave plan and Definition of Done, with your approval at each stage. |
 | Planned feature | `library-stinger`, then `/smoke-it` once the PRD is ready | Defines criteria before code, then tracks implementation and verification. |
 | Shared provider and consumer behavior | `contract-writing-stinger` before dependent PRDs finish | Records a CTR, requests acceptance, and hands the revision to Library for PRD pins. |
 | Tracked defect or bounded task | `library-stinger` for an IRD if tracked, then `/pest-controller` | Routes a scoped fix to an armed Drone. |
 | Standalone pre-ship check | `/ship-gate` | Reviews the diff in order: security, quality, repository health, then your decision. |
+| Founder, investor, sales, service or public documents | [`/documentation-tools:library-packets`](learn/guides/DOCUMENT-WORKFLOWS.md#library-packets-share-what-the-sources-support) | Reads a library and produces supported Markdown, Word, branded PDF and citations. |
+| Prepare a new or partial app for a build | [`/app-primer-zero:app-primer-zero`](learn/guides/DOCUMENT-WORKFLOWS.md#app-primer-zero-prepare-the-build) | Establishes current state, drafts contracts and schema, then hands off a bounded build plan. |
+| Refresh stale repository knowledge across many files | [`/documentation-tools:kb-refresh`](learn/guides/DOCUMENT-WORKFLOWS.md#kb-refresh-bring-repository-knowledge-current) | Rechecks code citations, updates owned docs, and reports drift and suspected code issues. Full discovery also needs Code Audit. |
+| Assess a public website | [`/website-audit-tools:perform-website-audit`](plugins/website-audit-tools/commands/perform-website-audit.md) | Runs intake, site evidence, findings, scores and branded reports. |
+| Assess a codebase | [`/code-audit-tools:audit-my-code`](plugins/code-audit-tools/commands/audit-my-code.md) | Selects an audit tier and produces evidence, a brief and any approved remediation plan. |
+| Capture a running app | [`/browser-and-app-testing-tools:webapp-capture`](plugins/browser-and-app-testing-tools/commands/webapp-capture.md) | Creates scoped screenshots, demos or a visual inventory after intake and a dry run. |
+| Manage several implementation sessions | [`/data-and-ai-tools:tars`](plugins/data-and-ai-tools/commands/tars.md) | TARS manages the work, CASE challenges and resolves scoped decisions, and KIPP runs the Feature Desk. All three require Claude Code Desktop. |
 
-Commands above are Claude Code entry points. Where a harness has no native command surface, use its corresponding Stinger or ask for the workflow by name. None of these names authorize publishing, deployment, or a push by themselves.
+These are Claude entry points. Other clients use supported Stingers or command wrappers. TARS, CASE and KIPP have no Codex, Cursor or Cowork fallback; they require Claude Code Desktop. Invocation does not authorize external actions.
+
+Keep Core installed alongside each owning plugin. [Choose a document workflow](learn/guides/DOCUMENT-WORKFLOWS.md) for prerequisites, sample requests and the difference between preparing an app, refreshing its knowledge and explaining it to readers. Use `/wasp-nest-core:forge` for a new reusable component; public correction requests belong in the issue tracker below.
 
 ## The parts, in plain English
 
@@ -139,7 +156,8 @@ Commands above are Claude Code entry points. Where a harness has no native comma
 | **Drone** | A specialist agent with a bounded responsibility. |
 | **Stinger** | The procedure and reference material a Drone reads before working. Some Stingers are standalone orchestrators. |
 | **Pest Controller** | The router that chooses and arms the right Drone. |
-| **Smoke It** | The execution workflow that drives PRD criteria to verified completion. |
+| **Product Studio** | The planning plugin: strategy, UX design, and the build plan (PRD map, wave plan, Definition of Done) before any PRD is written. |
+| **Smoke It** | The execution workflow that drives PRD criteria to verified completion, in the approved wave order. |
 | **Rule** | A persistent operating boundary for supported harnesses. |
 | **Hook** | A lifecycle check, including the consent-based first-session setup offer. |
 
@@ -147,29 +165,46 @@ The Drone and Stinger pairing is enforced by the source validator. A missing pai
 
 ## What ships
 
-Marketplace release **v2.0.1**. The core and add-on packs have independent manifest versions; counts and descriptions below are read from the built plugins, not maintained by hand.
+Marketplace release **v3.0.0**. The core and add-on packs have independent manifest versions; counts and descriptions below are read from the built plugins, not maintained by hand.
 
 | Plugin | Version | Stingers | Drones | What it does |
 | --- | --- | ---: | ---: | --- |
-| [wasp-nest-core](plugins/wasp-nest-core/README.md) | 2.0.1 | 126 | 115 | The Wasp Nest core: shared Drones and Stingers, orchestration commands, rules, and hooks. |
-| [content-intelligence](plugins/content-intelligence/README.md) | 0.1.0 | 2 | 0 | Research current GitHub repository trends and news, verify one story, and prepare evidence-backed social post drafts. |
-| [highlevel](plugins/highlevel/README.md) | 0.1.1 | 3 | 3 | HighLevel integration, AI Studio creation, and offline workflow-export visualization, with a dedicated Drone and Stinger for each domain. |
-| [littlebird-toolkit](plugins/littlebird-toolkit/README.md) | 2.0.0 | 30 | 0 | Thirty skills that turn your Littlebird memory into work you can act on. |
-| [webapp-capture](plugins/webapp-capture/README.md) | 1.1.1 | 1 | 1 | Capture any live web app the way users see it: demo videos with screenshots, captions, and scripts; a full UI component library with measured styles and DTCG design tokens; a Claude Design handoff zip; a shadcn/ui migration map; and visual and code inconsistency audits. |
-| [website-auditor](plugins/website-auditor/README.md) | 0.1.1 | 21 | 20 | Repeatable, harness-portable website audit tool: AEO/SEO, security, UX/funnel, accessibility, and analytics assessment for any site, with a branded XLSX scorecard and customer/auditor reports. |
+| [wasp-nest-core](plugins/wasp-nest-core/README.md) | 3.0.0 | 18 | 14 | The Wasp Nest core: shared Drones and Stingers, orchestration commands, rules, and hooks. |
+| [app-primer-zero](plugins/app-primer-zero/README.md) | 3.0.0 | 1 | 0 | Prepare an app library, contracts, schema baseline and a wave handoff before building. |
+| [backend-and-desktop-tools](plugins/backend-and-desktop-tools/README.md) | 3.0.0 | 10 | 10 | Implement TypeScript, Python, Go, Rust, native apps, APIs and terminal workflows. |
+| [browser-and-app-testing-tools](plugins/browser-and-app-testing-tools/README.md) | 3.0.0 | 4 | 4 | Automate browsers, capture live apps and measure Lighthouse/PageSpeed behavior. |
+| [business-and-product-tools](plugins/business-and-product-tools/README.md) | 3.0.0 | 15 | 15 | Form and run a company, discover product needs, hire teams and improve delivery. |
+| [code-audit-tools](plugins/code-audit-tools/README.md) | 3.0.0 | 12 | 11 | Audit repositories and app security, measure bloat, inspect branches and plan remediation. |
+| [content-intelligence](plugins/content-intelligence/README.md) | 3.0.0 | 2 | 0 | Find and verify current repository/news topics and prepare voice-matched drafts. |
+| [data-and-ai-tools](plugins/data-and-ai-tools/README.md) | 3.0.0 | 12 | 12 | Design data, retrieval, AI runtime, model tooling and agent operations. |
+| [developer-learning-tools](plugins/developer-learning-tools/README.md) | 3.0.0 | 4 | 4 | Explain technical sources with source-grounded analogies and learner checks. |
+| [documentation-tools](plugins/documentation-tools/README.md) | 3.0.0 | 8 | 8 | Refresh, extract, publish and package documentation from real sources. |
+| [growth-and-customer-tools](plugins/growth-and-customer-tools/README.md) | 3.0.0 | 15 | 15 | Research buyers, acquire leads, follow up, support customers and grow accounts. |
+| [highlevel](plugins/highlevel/README.md) | 3.0.0 | 3 | 3 | Integrate HighLevel, build with AI Studio and map exported workflows. |
+| [infrastructure-decision-tools](plugins/infrastructure-decision-tools/README.md) | 3.0.0 | 6 | 6 | Prepare platform assets and account dependencies without implicit setup actions. |
+| [littlebird-toolkit](plugins/littlebird-toolkit/README.md) | 3.0.0 | 30 | 0 | Turn Littlebird memory into evidence-backed operating work. |
+| [media-and-creative-tools](plugins/media-and-creative-tools/README.md) | 3.0.0 | 4 | 4 | Create consented photography and integrate voice and video production. |
+| [platform-and-release-tools](plugins/platform-and-release-tools/README.md) | 3.0.0 | 20 | 20 | Integrate authentication, payments, analytics, messaging and production delivery. |
+| [product-studio](plugins/product-studio/README.md) | 3.0.0 | 3 | 3 | Turn an idea into a buildable plan: product strategy, Claude-Design-grade UX, a PRD map, a wave plan and a Definition of Done. |
+| [repository-modernization-tools](plugins/repository-modernization-tools/README.md) | 3.0.0 | 1 | 1 | Compose repository baseline, safe refactoring and contributor onboarding through selected specialist owners. |
+| [software-economics-tools](plugins/software-economics-tools/README.md) | 3.0.0 | 4 | 4 | Model supplied software economics and costs with explicit scenarios and evidence. |
+| [web-development-tools](plugins/web-development-tools/README.md) | 3.0.0 | 30 | 30 | Build web interfaces and sites with React, Svelte, design systems and accessible components. |
+| [website-audit-tools](plugins/website-audit-tools/README.md) | 3.0.0 | 21 | 20 | Audit a public website with crawl, SEO, accessibility, conversion and evidence-backed reports. |
 
 The [Claude catalog](.claude-plugin/marketplace.json) and [Codex catalog](.agents/plugins/marketplace.json) expose these packs individually. Runtime guides and research distillations ship with them. Raw research archives, `node_modules/`, and ingested photography models do not. The photography pack retains only its blank model template.
 
-The [complete plugin catalog](learn/reference/PLUGIN-CATALOG.md) lists every shipped Drone and Stinger by pack, with direct links to its instructions.
+The [complete plugin catalog](learn/reference/PLUGIN-CATALOG.md) lists every shipped Stinger, Drone and command by pack with purposes and direct instructions. The [hook catalog](learn/reference/HOOK-CATALOG.md) covers shared hooks and their host limits.
 
 ## Learn and build on it
 
+- [How We Build](learn/guides/HOW-WE-BUILD.md) ([branded PDF](learn/pdf/How-We-Build-The-Wasp-Nest.pdf)): the whole workflow from idea to shipped, in plain language.
 - [Getting Started](learn/guides/GETTING-STARTED.md): install, consent, and first project setup.
 - [Components](learn/guides/COMPONENTS.md): Drones, Stingers, commands, rules, and hooks.
 - [Write a PRD](learn/guides/WRITE-A-PRD.md), [IRD](learn/guides/WRITE-AN-IRD.md), or [CTR](learn/guides/WRITE-A-CTR.md), then [execute the plan](learn/guides/PRD-EXECUTION.md) with evidence.
+- [Document workflows](learn/guides/DOCUMENT-WORKFLOWS.md): Library Packets, App Primer Zero and KB Refresh with example requests.
 - [Model Selection](learn/guides/MODEL-SELECTION.md), [Security and Secrets](learn/guides/SECURITY-AND-SECRETS.md), and [Troubleshooting](learn/guides/TROUBLESHOOTING.md).
 
-This public repository is generated from the private Wasp Nest source. Please [open an issue](https://github.com/legioncodeinc/vibe-coding-tools/issues) for a correction or a new Drone, Stinger, command, hook, or pack request rather than editing generated files directly. Maintainers use the Queen Wasp forge and source CI to add and validate components before the next release.
+This repository is generated from canonical source. [Open an issue](https://github.com/legioncodeinc/vibe-coding-tools/issues) for corrections or component requests. Maintainers change the source with Queen Wasp and validate it before release.
 
 ## License and attribution
 

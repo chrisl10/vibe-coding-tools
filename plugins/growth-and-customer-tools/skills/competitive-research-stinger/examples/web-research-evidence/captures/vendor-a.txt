@@ -1,0 +1,4 @@
+Fictional supplied fixture, not fetched from a real company.
+Atlas Example, Starter plan, USD 20 per account per month.
+Starter includes SAML SSO.
+Effective date: 2026-10-01.

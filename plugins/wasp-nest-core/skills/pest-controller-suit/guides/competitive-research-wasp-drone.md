@@ -1,12 +1,15 @@
 # competitive-research-wasp-drone
 
+**Plugin owner:** `growth-and-customer-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 
 This Drone creates source-grounded competitor-landscape workbooks and brand-matched competitive reports. It owns the research sweep, category taxonomy, feature-gap analysis, computed market-pattern insights, and sales battlecards. It does not implement the roadmap items it identifies.
 
 ## Paired Stinger
 
-[competitive-research-stinger](../../competitive-research-stinger) - source capture, comparison taxonomy, workbook and report construction, quality checks, and battlecard procedures.
+[competitive-research-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/growth-and-customer-tools/skills/competitive-research-stinger) - source capture, comparison taxonomy, workbook and report construction, quality checks, and battlecard procedures.
 
 ## Trigger phrases
 
@@ -42,3 +45,12 @@ This Drone creates source-grounded competitor-landscape workbooks and brand-matc
 ---
 
 *Part of Pest-Controller-Suit's roster. See [`.claude/skills/pest-controller-suit/SKILL.md`](../SKILL.md) for the full colony.*
+
+
+## Current alternatives and dated evidence
+
+Trigger also for buyer alternatives/status quo, bottom-up reachable-account scenarios, defensible wedge counterevidence, competitive refresh and vendor claim versus observed proof. Resolve the existing paired skill guides 07-09. Supplied scenario arithmetic is not valuation or a calibrated revenue forecast; source/capture bookkeeping never authenticates market claims. Named contacts and implementation remain separate owners.
+
+## Web evidence packet
+
+Route bounded competitive/category web research to this pair when the requested outcome is a dated source/claim ledger with query receipts, passage support, contradictions and freshness limits. Resolve paired guide 10. A Markdown-only evidence packet is supported; it does not require XLSX/PDF. Actual capability and authorized acquisition are prerequisites, never inferred from provider documentation.

@@ -6,6 +6,8 @@ Walk every requirement, acceptance criterion, and task item in the plan. For eac
 
 ## Extract plan items
 
+For a v2 PRD, read the index and the sub-PRDs required by the audit scope. Record each source path in traceability; index summaries do not replace sub-PRD acceptance criteria. The helper processes one supplied file at a time. Merge its output carefully and preserve source IDs and paths.
+
 A plan's items typically appear as:
 
 - Numbered requirements (`1. The system must...`).
@@ -17,7 +19,7 @@ A plan's items typically appear as:
 You can extract manually or use the bundled helper:
 
 ```bash
-python3 scripts/extract-plan-items.py library/requirements/<lifecycle>/prd-007-search/prd-feature-007-search.md > /tmp/traceability-skeleton.md
+python3 scripts/extract-plan-items.py library/requirements/in-work/prd-007-search/prd-007-search-index.md > /tmp/traceability-skeleton.md
 ```
 
 The helper emits a markdown table skeleton with `ID | Plan Requirement | Status | Implementation Location | Notes` rows and blanks for Status / Implementation Location. See the script header for flags.

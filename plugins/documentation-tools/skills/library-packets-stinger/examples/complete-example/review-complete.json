@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "complete": true,
+  "reviewer": "Codex product_evidence",
+  "inspected_at": "2026-10-06T15:17:00.568645+00:00",
+  "state_sha256": "e0edea893eaa59c0549dabd4aecf84b7c063d3ae59b3b110b408b1bb5abe2132",
+  "attestation_sha256": "4f59aa1e255bbe3ec634e3583bc97d81c2e17a9d8ee8836e712d5782b8323b62",
+  "documents": [
+    {
+      "pdf_sha256": "a1ad0443c905971e1494ff7d0ab3a18467850c3be5f3f350730a5415ec563575",
+      "docx_sha256": "bc6e8840036db94b33278f7e192c674c15771f4c423b7a8889970734ac8d5ed6",
+      "pages": [
+        {
+          "page": 1,
+          "png": "page-001.png",
+          "png_sha256": "ca8707b9cf2fc5b288c939a11d895fda17be8b92629258ec2d4e0c98b33e69df",
+          "out_of_page_glyphs": 0,
+          "out_of_page_images": 0,
+          "footer_text_present": true,
+          "footer_logo_detected": true,
+          "footer_region_extra_text": "",
+          "missing_glyphs": false,
+          "heuristic_only": true
+        }
+      ],
+      "page_count": 1,
+      "word_page_review_basis": "These pages render the DOCX in LibreOffice; other Word applications may paginate differently.",
+      "complete": false,
+      "id": "plain-language",
+      "audience": "general",
+      "markdown_sha256": "fa40e5cfcf9b0e1b048c505d35a28c8873fb989dc3bf2c770dd4baae5a281409",
+      "citations_sha256": "0d138be038b0e3ca34bd4e53942aa9439f349c6818fc0b02c3aa324a57f67fb4",
+      "citations_md_sha256": "d16327bcb2b763026731a714c00bb80310fac588a1ddf6b423dc57036dd8c0a2",
+      "canonical_content_sha256": "fa40e5cfcf9b0e1b048c505d35a28c8873fb989dc3bf2c770dd4baae5a281409",
+      "estimated_grade": 7.4,
+      "logo_sha256": "306e945de16ab670eb8eaeb668a60537c992024d13c478f83545489d67c035fd"
+    }
+  ],
+  "limit": "Supplied attestations record review, not an automatic semantic or visual guarantee."
+}

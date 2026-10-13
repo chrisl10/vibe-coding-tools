@@ -1,19 +1,21 @@
 {
   "name": "highlevel",
-  "version": "0.1.1",
-  "description": "HighLevel integration, AI Studio creation, and offline workflow-export visualization, with a dedicated Drone and Stinger for each domain.",
+  "version": "3.0.0",
+  "description": "Integrate HighLevel, build with AI Studio and map exported workflows.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
   "license": "AGPL-3.0-or-later",
-  "author": "Legion Code Inc.",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
   "skills": [
-    "./skills/ghl-to-mermaid-stinger",
-    "./skills/gohighlevel-stinger",
-    "./skills/highlevel-ai-studio-stinger"
+    "./skills/"
   ],
   "agents": [
     "./cursor-agents/ghl-to-mermaid-wasp-drone.md",
     "./cursor-agents/gohighlevel-wasp-drone.md",
     "./cursor-agents/highlevel-ai-studio-wasp-drone.md"
   ],
-  "commands": [],
-  "rules": []
+  "commands": [
+    "./commands/map-highlevel.md"
+  ]
 }

@@ -1,10 +1,13 @@
 # db-wasp-drone
 
+**Plugin owner:** `data-and-ai-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the generic PostgreSQL architecture engineer for any stack in this repo that is not the Neon+Drizzle SvelteKit setup. It owns relational schema design, index selection, zero-downtime migrations (expand-backfill-contract, `pgroll`), partitioning, performance and pooling, ORM choice (Drizzle vs Prisma vs raw SQL) as a general question, and serverless DB platform choice (Supabase, Neon, Turso, PlanetScale, CockroachDB, Tiger Data) as a comparative decision rather than an implementation.
 
 ## Paired Stinger
-[db-stinger](../../db-stinger) - schema design, indexing decision tree, migration lock-class tables, performance and pooling guides, plus ORM and platform comparison matrices.
+[db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/db-stinger) - schema design, indexing decision tree, migration lock-class tables, performance and pooling guides, plus ORM and platform comparison matrices.
 
 ## Trigger phrases
 - "design this schema"
@@ -38,3 +41,8 @@ This Drone is the generic PostgreSQL architecture engineer for any stack in this
 - neon-drizzle-wasp-drone: the sibling Drone for this repo's actual Neon+Drizzle stack; hands off when the work turns Neon- or Drizzle-specific
 - security-wasp-drone: audits RLS, PII, and encryption after this Drone designs the hooks
 - quality-wasp-drone: runs the post-migration verification queries this Drone writes
+
+
+## Workload and provider fit
+
+For Supabase/Neon/managed Postgres choice, load paired guides 09-10 and current source captures. Normalize workload, ancillary identity/storage/realtime needs, connection modes, operations/recovery/exit and observed rate assumptions. Do not reuse categorical dated service-gap claims or guess a backfill.

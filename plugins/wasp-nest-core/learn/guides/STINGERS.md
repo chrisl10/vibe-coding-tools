@@ -30,4 +30,4 @@ Use obviously illustrative values in examples. A placeholder such as `<SERVICE_T
 
 ## Find and improve one
 
-The [complete catalog](../reference/PLUGIN-CATALOG.md) links every installed Stinger by pack. Start with the pack README and its `SKILL.md`; follow only the guides it routes to. To request a correction, [open an issue](https://github.com/legioncodeinc/vibe-coding-tools/issues) with the trigger phrase, the behavior you saw, and the expected result. Maintainers edit the private source and publish a reviewed release, not a generated public copy.
+The [complete catalog](../reference/PLUGIN-CATALOG.md) links every installed Stinger by pack. Start with the pack README and its `SKILL.md`; follow only the guides it routes to. To request a correction, [open an issue](https://github.com/legioncodeinc/vibe-coding-tools/issues) with the trigger phrase, the behavior you saw, and the expected result. Maintainers edit the canonical source repository and publish a reviewed release, not a generated public copy.

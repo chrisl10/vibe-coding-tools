@@ -1,0 +1,172 @@
+{
+  "repository_revision": "1c7ba34992950fa1de3f282f1c5eb281be5d2dbb",
+  "state": "Dirty concurrent working tree; exact snapshots bound by SHA-256, not claimed pristine commit contents",
+  "claims": [
+    {
+      "claim_id": "B1",
+      "source": "references/research/novice-explanation/raw/actual-build.py",
+      "source_sha256": "64c96bcff8cdc3c94de5d132deaf6fca12686488733eb7875842daa7020dc1b9",
+      "supporting_passages": [
+        {
+          "line": 993,
+          "quote": "def main() -> None:"
+        },
+        {
+          "line": 995,
+          "quote": "    ap.add_argument(\"--out\", default=str(ROOT / \"dist\"))"
+        },
+        {
+          "line": 996,
+          "quote": "    ap.add_argument(\"--zip\", action=\"store_true\")"
+        },
+        {
+          "line": 997,
+          "quote": "    ap.add_argument(\"--packs\", default=\"all\", help=\"all | none | comma-separated pack names\")"
+        },
+        {
+          "line": 998,
+          "quote": "    ap.add_argument(\"--profile\", help=\"named installation profile from plugin-catalog.json\")"
+        },
+        {
+          "line": 1001,
+          "quote": "    build(Path(a.out), packs, a.zip, a.profile)"
+        },
+        {
+          "line": 1004,
+          "quote": "if __name__ == \"__main__\":"
+        }
+      ],
+      "reader_claim": "Real builder entrypoint and parsed arguments feed build.",
+      "kind": "Inspected actual repository source",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    },
+    {
+      "claim_id": "B2",
+      "source": "references/research/novice-explanation/raw/actual-build.py",
+      "source_sha256": "64c96bcff8cdc3c94de5d132deaf6fca12686488733eb7875842daa7020dc1b9",
+      "supporting_passages": [
+        {
+          "line": 717,
+          "quote": "    out = assert_safe_out(out)"
+        },
+        {
+          "line": 722,
+          "quote": "        selected = resolve_plugins(packs, profile)"
+        },
+        {
+          "line": 83,
+          "quote": "        raise SystemExit('refusing output path with parent traversal')"
+        },
+        {
+          "line": 93,
+          "quote": "        raise SystemExit('refusing symlink output path: ' + str(entry))"
+        },
+        {
+          "line": 97,
+          "quote": "        raise SystemExit(f'refusing to build into canonical source: {out}')"
+        },
+        {
+          "line": 100,
+          "quote": "        raise SystemExit(f\"refusing to build into {out}: choose a dedicated output directory\")"
+        },
+        {
+          "line": 104,
+          "quote": "        raise SystemExit(f\"refusing to build into {out}: not a directory\")"
+        },
+        {
+          "line": 109,
+          "quote": "        raise SystemExit('refusing a symlink build marker: ' + str(marker))"
+        },
+        {
+          "line": 117,
+          "quote": "    raise SystemExit(f\"refusing to erase {out}: nonempty output is not marked as a Wasp Nest build; choose an empty path or a previous build\")"
+        },
+        {
+          "line": 724,
+          "quote": "        raise SystemExit(str(error))"
+        },
+        {
+          "line": 728,
+          "quote": "        assert_no_source_symlinks(source)"
+        },
+        {
+          "line": 732,
+          "quote": "    rmtree(out)"
+        }
+      ],
+      "reader_claim": "Output/selection/source-link inspection precede removing output; tour executes none of it.",
+      "kind": "Inspected actual repository source",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    },
+    {
+      "claim_id": "B3",
+      "source": "references/research/novice-explanation/raw/actual-plugin-topology.py",
+      "source_sha256": "2703fd3a6c4010de801bf21c51b6c4d27e2bbc97943e65cb250c6e1e7ad28bf9",
+      "supporting_passages": [
+        {
+          "line": 10,
+          "quote": "    path = root / 'plugin-catalog.json'"
+        },
+        {
+          "line": 32,
+          "quote": "            raise ValueError('unknown plugin: ' + name)"
+        },
+        {
+          "line": 34,
+          "quote": "            raise ValueError('plugin dependency cycle: ' + name)"
+        },
+        {
+          "line": 43,
+          "quote": "    visit('wasp-nest-core')"
+        },
+        {
+          "line": 38,
+          "quote": "        for dependency in plugins[name]['requires']:"
+        }
+      ],
+      "reader_claim": "Catalog-backed selection recursively adds prerequisites, starts Core and handles unknown/cyclic dependencies.",
+      "kind": "Inspected actual repository source",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    },
+    {
+      "claim_id": "B4",
+      "source": "references/research/novice-explanation/raw/actual-build.py",
+      "source_sha256": "64c96bcff8cdc3c94de5d132deaf6fca12686488733eb7875842daa7020dc1b9",
+      "supporting_passages": [
+        {
+          "line": 626,
+          "quote": "def put_command_wrappers(skills: Path, commands: Path | None = None) -> None:"
+        },
+        {
+          "line": 630,
+          "quote": "        name = f\"source-command-{command.stem}\""
+        },
+        {
+          "line": 641,
+          "quote": "def tri_manifests(plugin_root: Path, name: str, description: str, extra: dict | None = None, preserve_version: bool = False) -> None:"
+        },
+        {
+          "line": 660,
+          "quote": "    write(plugin_root / '.claude-plugin/plugin.json', json.dumps(claude, indent=2) + '\\n')"
+        },
+        {
+          "line": 669,
+          "quote": "    write(plugin_root / '.cursor-plugin/plugin.json', json.dumps(cursor, indent=2) + '\\n')"
+        },
+        {
+          "line": 674,
+          "quote": "    write(plugin_root / 'plugin.json', json.dumps(portable, indent=2) + '\\n')"
+        }
+      ],
+      "reader_claim": "Source has command wrapper and manifest writers; native execution remains unproven.",
+      "kind": "Inspected actual repository source",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    }
+  ],
+  "runtime": "Unproven",
+  "source_locator_root": "loaded skill root"
+}

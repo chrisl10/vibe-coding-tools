@@ -1,34 +1,30 @@
 ---
 ai_description: |
-  This folder contains all reference documentation for this repository,
-  split by intended audience: public/ for end-users, private/ for internal
-  team and AI agents. When filing a new doc, default to private/. Promote
-  to public/ only when the content is intentionally customer-facing.
-  Allowed writes: knowledge/public/<domain>/<slug>.md and
-  knowledge/private/<domain>/<slug>.md. ADRs always go in
-  knowledge/private/architecture/ADR-<n>-<slug>.md.
-  Never write to knowledge/ itself (write to the sub-folders).
+  Reference and explanatory documentation, split by audience. Default new
+  documents to private/. Use public/ only for content approved for external
+  readers. Write into the relevant domain folder, not this root.
+  ADRs live in private/architecture/; shared CTRs live in private/contracts/.
 human_description: |
-  Reference documentation split by audience.
-  - public/: docs that will eventually be surfaced to customers or published
-  - private/: internal engineering, architecture, business, and strategy docs
-  When adding a new doc, pick the right subdomain folder inside public/ or
-  private/. If the domain doesn't exist yet, create it.
+  Public knowledge explains the product to external readers. Private knowledge
+  explains the system, decisions, business, and operations to the team.
+  This area includes explanatory briefs as well as reference and help guides.
 ---
 
 # Knowledge
 
-Reference documentation for this repository, organized by audience.
+Knowledge documents explain how the product works, why its decisions matter, and what a reader needs to understand.
 
-## Sub-folders
+| Folder | Readers | Typical content |
+| --- | --- | --- |
+| [`public/`](public/README.md) | Approved external audiences | Product overviews, public briefs, user guides, and FAQs |
+| [`private/`](private/README.md) | Internal team and agents | Architecture, ADRs, shared contracts, business insights, standards, and operations |
 
-| Folder | Audience | Typical content |
-|---|---|---|
-| `public/` | End-users, customers, external | Overviews, user guides, FAQs |
-| `private/` | Internal team + AI agents | ADRs, standards, architecture, domain engineering docs |
+## Choose the audience first
 
-## Decision rule: public vs private
+Use `public/` for facts and explanations approved for external readers. Use `private/` for internal engineering, business, source evidence, or unresolved findings. When unsure, start in `private/` and ask the owner what may be shared. Investor and customer documents can still be private; the reader's role does not decide disclosure.
 
-> "Would I publish this on a help center or product docs site?"
+Create only domains supported by real source material. A PRD describes what to build; a knowledge document explains the system and its decisions. Distinguish planned behavior from current behavior when that difference affects the reader.
 
-Yes → `public/`. No → `private/`. When in doubt, `private/`.
+## Produce an audience packet
+
+Library Packets, when available, uses this library and other authorized sources to create audience documents with Markdown, Word, PDF, and citations. Keep public citations free of private paths and internal review details. Keep generated binaries outside the library, with private evidence separate from reader files.

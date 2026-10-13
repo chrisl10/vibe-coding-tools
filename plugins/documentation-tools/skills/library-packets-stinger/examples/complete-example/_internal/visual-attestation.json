@@ -1,0 +1,31 @@
+{
+  "reviewer": "Codex product_evidence",
+  "inspected_at": "2026-10-06T15:17:00.568645+00:00",
+  "documents": [
+    {
+      "id": "plain-language",
+      "pdf_sha256": "a1ad0443c905971e1494ff7d0ab3a18467850c3be5f3f350730a5415ec563575",
+      "docx_sha256": "bc6e8840036db94b33278f7e192c674c15771f4c423b7a8889970734ac8d5ed6",
+      "markdown_sha256": "fa40e5cfcf9b0e1b048c505d35a28c8873fb989dc3bf2c770dd4baae5a281409",
+      "pages": [
+        {
+          "page": 1,
+          "png_sha256": "ca8707b9cf2fc5b288c939a11d895fda17be8b92629258ec2d4e0c98b33e69df",
+          "visual_pass": true,
+          "checks": {
+            "whitespace": true,
+            "cutoffs": true,
+            "fonts": true,
+            "tables": true,
+            "figures": true,
+            "footer": true,
+            "logo": true,
+            "citations": true,
+            "word_layout": true
+          },
+          "notes": "Actually inspected the final PNG. Title/heading fonts black; table rows and source labels legible; no cutoff; real Legion icon/wordmark footer and page1 complete. This is the DOCX layout rendered by LibreOffice."
+        }
+      ]
+    }
+  ]
+}

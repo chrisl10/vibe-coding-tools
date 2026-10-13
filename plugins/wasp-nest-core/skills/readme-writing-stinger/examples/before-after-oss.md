@@ -1,5 +1,7 @@
 # Before/After: OSS Library README
 
+> Example context: Project-relative links in this worked document describe the illustrated target repository. They are not bundled Core resources or proof that those project files exist in this packaging checkout.
+
 > Demonstrates: `guides/01-structure-checklist.md`, `guides/02-badges.md`, `guides/00-principles.md`
 
 A worked before/after example showing how `readme-writing-wasp-drone` audits and rewrites an OSS library README using the structure checklist and badge discipline.

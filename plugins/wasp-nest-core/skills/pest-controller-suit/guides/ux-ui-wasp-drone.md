@@ -1,12 +1,15 @@
 # ux-ui-wasp-drone
 
+**Plugin owner:** `web-development-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the steady-state design-system owner and enforcer for the deploying product. It opens the product's source-of-truth design-system folder (tokens, utilities, components, screens) on every UI question, cites the governing section, and specifies pixel-perfect deltas in token-named terms. It governs integration with four reference libraries: shadcn/ui, Mantine, Lucide-react, and Framer Motion, always through wrapper components rather than direct consumption.
 
 If the design-system folder does not yet cover a question, this Drone updates the folder first, then answers, so the system stays the source of truth rather than drifting from what actually gets enforced.
 
 ## Paired Stinger
-[ux-ui-stinger](../../ux-ui-stinger) - the enforcement procedure, token and utility rules, motion rules, and per-library integration guides for shadcn/ui, Mantine, Lucide-react, and Framer Motion.
+[ux-ui-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/ux-ui-stinger) - the enforcement procedure, token and utility rules, motion rules, and per-library integration guides for shadcn/ui, Mantine, Lucide-react, and Framer Motion.
 
 ## Trigger phrases
 - "review this UI"
@@ -43,3 +46,8 @@ If the design-system folder does not yet cover a question, this Drone updates th
 - `react-to-svelte-wasp-drone`: consulted when a ported surface needs to move from matching legacy styling to the current design-system tokens
 
 Ambiguous invocations (unclear product, folder, or library) get one clarifying question rather than a silent guess.
+
+
+## Product-system React primitives and mobile flow contracts
+
+O219 uses paired guide14 and O222 uses guide15. Intake requires actual product-system/context/token/user-task/layout sources; missing inputs stay unknown. Source family/provenance, ref/event/semantic behavior and state acceptance precede a primitive recommendation. Mobile acceptance includes task priority, navigation, density, touch, keyboard, safe areas, reflow and focus/state continuity with actual device/manual/automation proof. These contracts route actual UI design/build/refinement through Impeccable and relevant framework/native owners. A worksheet or screenshot is not proof of task completion or accessibility.

@@ -70,6 +70,9 @@ Show a clear export status without exposing another member's download URL.
 ## Contract dependencies
 - CTR-004 revision 1: export status response, accepted before backend and interface PRDs are finalized.
 
+## Definition of Done checklist
+- Inherits the project's Definition of Done revision 1 (library/knowledge/private/standards/definition-of-done.md).
+
 ## Validation
 - Provider tests for every status and access rule.
 - Interface tests for queued, ready, failed, and unauthorized responses.

@@ -1,3 +1,7 @@
+<!-- For Library Schema v2, save inside the source plan's qa/ folder.
+Standalone audits use library/requirements/reports/<domain>/.
+Honor receiving-repository legacy conventions; do not overwrite prior evidence. -->
+
 # QA Report: {{plan_name}}
 
 **Plan document:** `{{plan_path}}`
@@ -5,6 +9,15 @@
 **Base branch:** `{{base_branch}}`
 **Head:** `{{head_branch_or_sha}}`
 **Auditor:** quality-wasp-drone
+**Candidate scope and manifest:** `{{reviewed scope, manifest path and SHA-256; resolved HEAD alone does not pin dirty contents}}`
+**Plan digest:** `{{SHA-256}}`
+**Security evidence:** `{{report path, digest, completion time and matching candidate pin}}`
+**Verification packet:** `{{companion packet path and digest; use templates/verification-artifacts.md}}`
+**Claim boundary:** {{source/static/local/native/provider/manual; missing proof and imported/self-authored evidence limits}}
+
+<!-- Bind actual checks and generated artifacts to this candidate. Preserve NOT_RUN,
+skips, expected failures, cancellation, unknown and stale results. An author draft
+is not independent QA approval. See guides/08-verification-artifacts.md. -->
 
 ## Summary
 

@@ -1,10 +1,13 @@
 # shadcn-svelte-wasp-drone
 
+**Plugin owner:** `web-development-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the generic shadcn-svelte library specialist for any Svelte 5 project: the CLI (`init`/`add`/`apply`/`registry build`), the copy-in-your-repo model, component anatomy (`tv()` variants, `cn()`, `$props()`, `data-slot`), the registry system, generic CSS-variable theming mechanics and the `@theme inline` bridge, dark mode via `mode-watcher`, Superforms + Formsnap forms, the commit-diff-reapply customization workflow that survives upstream re-syncs, and the accessibility contract Bits UI provides underneath every primitive. It answers "how does the library work," never "what should this specific product's brand look like."
 
 ## Paired Stinger
-[shadcn-svelte-stinger](../../shadcn-svelte-stinger) - the boundary statement, routing table, and the commit-diff-reapply upgrade workflow.
+[shadcn-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/shadcn-svelte-stinger) - the boundary statement, routing table, and the commit-diff-reapply upgrade workflow.
 
 ## Trigger phrases
 - "install shadcn-svelte in this project"

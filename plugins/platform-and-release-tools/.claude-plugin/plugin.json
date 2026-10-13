@@ -1,0 +1,48 @@
+{
+  "name": "platform-and-release-tools",
+  "version": "3.0.0",
+  "description": "Integrate authentication, payments, analytics, messaging and production delivery.",
+  "author": {
+    "name": "Legion Code Inc.",
+    "url": "https://www.legioncodeinc.com"
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./agents/auth-wasp-drone.md",
+    "./agents/changelog-release-notes-wasp-drone.md",
+    "./agents/ci-release-wasp-drone.md",
+    "./agents/crm-integration-wasp-drone.md",
+    "./agents/cron-scheduling-wasp-drone.md",
+    "./agents/devops-wasp-drone.md",
+    "./agents/discord-bot-wasp-drone.md",
+    "./agents/doppler-wasp-drone.md",
+    "./agents/mcp-protocol-wasp-drone.md",
+    "./agents/payments-wasp-drone.md",
+    "./agents/posthog-wasp-drone.md",
+    "./agents/runbook-writing-wasp-drone.md",
+    "./agents/sentry-wasp-drone.md",
+    "./agents/slack-app-wasp-drone.md",
+    "./agents/status-page-wasp-drone.md",
+    "./agents/tailscale-wasp-drone.md",
+    "./agents/telegram-bot-wasp-drone.md",
+    "./agents/traffic-capacity-wasp-drone.md",
+    "./agents/vercel-wasp-drone.md",
+    "./agents/workos-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/build-integration.md",
+    "./commands/design-release-pipeline.md",
+    "./commands/plan-traffic-capacity.md",
+    "./commands/prepare-native-release.md",
+    "./commands/prepare-privacy-implementation.md",
+    "./commands/prepare-release.md",
+    "./commands/secure-platform-foundation.md"
+  ],
+  "dependencies": [
+    "wasp-nest-core"
+  ]
+}

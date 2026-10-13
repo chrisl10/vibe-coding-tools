@@ -1,7 +1,6 @@
 ---
 name: ghl-to-mermaid-wasp-drone
 description: Turns HighLevel account exports into per-workflow JSON and readable Mermaid charts. Use for GHL automation maps, email and tag ties, or oversized workflow diagrams.
-model: sonnet
 ---
 
 ## Critical Directive
@@ -65,8 +64,8 @@ These are measured findings from the paired Stinger's research archive, not pref
 
 ## Related drones and stingers
 
-- [gohighlevel-wasp-drone](gohighlevel-wasp-drone.md) in this pack - hand off anything needing a live HighLevel API call, OAuth, webhooks, or a Marketplace app.
-- [highlevel-ai-studio-wasp-drone](highlevel-ai-studio-wasp-drone.md) in this pack - hand off HighLevel AI Studio, Vibe, Content AI, and site or funnel building.
+- [gohighlevel-wasp-drone](../agents/gohighlevel-wasp-drone.md) in this pack - hand off anything needing a live HighLevel API call, OAuth, webhooks, or a Marketplace app.
+- [highlevel-ai-studio-wasp-drone](../agents/highlevel-ai-studio-wasp-drone.md) in this pack - hand off HighLevel AI Studio, Vibe, Content AI, and site or funnel building.
 - `security-wasp-drone` in Wasp Nest core - hand off the security audit of any code this Drone writes, and invoke first at the Ship Gate.
 - [ghl-to-mermaid-stinger](../skills/ghl-to-mermaid-stinger) - This Drone's core skill. Load it before any planning or execution.
 

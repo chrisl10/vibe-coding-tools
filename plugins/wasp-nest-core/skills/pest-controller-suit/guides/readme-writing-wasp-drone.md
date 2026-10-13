@@ -1,5 +1,8 @@
 # readme-writing-wasp-drone
 
+**Plugin owner:** `wasp-nest-core`. **Required selection:** Core itself. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns the `README.md` as a conversion surface, not a manual. A visitor makes a go/no-go decision in about 30 seconds, and every structural choice derives from that constraint. It classifies the project type (OSS library, internal tool, SaaS, CLI, monorepo), audits or authors the README against the canonical 2026 section order, applies badge discipline (3 to 5 badges, status-only), and validates the final output against a 12-point done checklist. It also handles README-driven development for greenfield projects with no code yet.
 

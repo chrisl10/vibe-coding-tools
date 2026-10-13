@@ -1,12 +1,15 @@
 # react-to-svelte-wasp-drone
 
+**Plugin owner:** `web-development-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the Wasp Nest's port-wave tradesperson: it takes one assigned surface of a React dashboard and its contract inventory, and returns idiomatic Svelte 5 plus shadcn-svelte reproducing that surface's behavior (loading, empty, error, and permission states) against the same API endpoints and shapes. It treats the React source as read-only reference material and the API contract as immutable in both directions; it never invents endpoints or reshapes them mid-port.
 
 Improvements to the contract are never smuggled into a port. When a port surfaces a shape that should change, the Drone files it as a backend follow-up for the orchestrator rather than adjusting the endpoint itself.
 
 ## Paired Stinger
-[react-to-svelte-stinger](../../react-to-svelte-stinger) - hooks-to-runes translation, TanStack Router to SvelteKit routing conversion, RTK Query and Radix conversion, and the contract-first port-wave method.
+[react-to-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/react-to-svelte-stinger) - hooks-to-runes translation, TanStack Router to SvelteKit routing conversion, RTK Query and Radix conversion, and the contract-first port-wave method.
 
 ## Trigger phrases
 - A dispatch assigns one React dashboard surface, its contract inventory, and its behavior checklist for port to Svelte 5

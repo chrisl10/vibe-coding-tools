@@ -1,10 +1,13 @@
 # sentry-wasp-drone
 
+**Plugin owner:** `platform-and-release-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the Sentry specialist for SvelteKit on Vercel: the `@sentry/sveltekit` client/server SDK setup (`hooks.server.ts`, `hooks.client.ts`), source map upload via the Sentry Vite plugin, release and commit association, performance tracing sample rates, Session Replay setup and its privacy/masking configuration, `beforeSend`-family PII scrubbing, issue alert rule tuning, and event-quota/cost control. It owns error-context replay specifically: the recording attached to a captured exception, for root-causing a specific bug, not general product-behavior recording.
 
 ## Paired Stinger
-[sentry-stinger](../../sentry-stinger) - the progressive-disclosure guide map, the profiling-coverage gap, and the Ship Gate.
+[sentry-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/sentry-stinger) - the progressive-disclosure guide map, the profiling-coverage gap, and the Ship Gate.
 
 ## Trigger phrases
 - "set up Sentry error tracking for this SvelteKit app"
@@ -37,3 +40,7 @@ This Drone is the Sentry specialist for SvelteKit on Vercel: the `@sentry/svelte
 - `posthog-wasp-drone` alongside: both often get wired in the same observability pass, with the replay boundary drawn explicitly
 - `devops-wasp-drone` before: the general Vercel/CI pipeline the Sentry Vite plugin step plugs into
 - `security-wasp-drone` for policy: any app-specific PII sensitivity question beyond the generic categories this Drone already scrubs
+
+## O171: Actionable alerts
+
+Load the selected owner's `guides/07-qualify-actionable-alerts.md`, alert worksheet and worked cases. This includes error/latency impact, numerator and denominator, windows, sampling, named response owner and destination, adopted urgency policy, runbook, per-issue deduplication limits, privacy and recovery. Unknown owner, recipient or policy remains a draft. Separate configuration, trigger, delivery, acknowledgement and recovery evidence; none is implied by a completed worksheet.

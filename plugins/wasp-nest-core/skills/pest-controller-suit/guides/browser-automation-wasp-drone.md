@@ -1,12 +1,15 @@
 # browser-automation-wasp-drone
 
+**Plugin owner:** `browser-and-app-testing-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 
 This Drone owns Playwright and Puppeteer automation, browser provisioning, test isolation, traces and screenshots, and browser-specific CI reliability. It reports the exact browser and environment that produced an outcome.
 
 ## Paired Stinger
 
-[browser-automation-stinger](../../browser-automation-stinger) - selection, setup, evidence, and failure-diagnosis guidance for Playwright and Puppeteer.
+[browser-automation-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/browser-and-app-testing-tools/skills/browser-automation-stinger) - selection, setup, evidence, and failure-diagnosis guidance for Playwright and Puppeteer.
 
 ## Trigger phrases
 

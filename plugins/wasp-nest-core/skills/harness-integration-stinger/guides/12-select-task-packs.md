@@ -1,0 +1,12 @@
+# Select the packs required by this task
+
+Use for O287. Read [the digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/harness-integration-stinger/references/research/pack-hook-proof/distilled-pack-hook-proof.md) and complete [the selection receipt](../templates/task-pack-selection-receipt.md).
+
+1. Record the user outcome, target host/carrier, constraints and requested deliverable. Name actual components needed for each step. Classify each as specialist pair, standalone skill, orchestrator or command composition using the live catalog. A command-only pack need not acquire a fake agent.
+2. In source preparation, find exactly one catalog owner for every component. Reuse scripts/plugin_topology.py component_owner and resolve_plugins through the existing build tooling. Close unconditional requires recursively, include Core, and retain the selected branch's exact optional_workflow_requirements keys. The source resolver does not automatically close optional workflow dependencies. Add only the branches this task actually calls; record unchosen branches as inactive.
+3. In installed dispatch, use the trusted selected Core resolver with explicit registry and core root, actual kind/name and each active workflow key. Resolve paired skills independently of agents. Require owner/version/path and all checked prerequisites; do not substitute a cached sibling. A workflow key names one owner requirement, not a universal assurance that every command step is present.
+4. Read the actual command and resources from the returned carrier root. Resolve its called components too. Distinguish the owner's unconditional closure from branch-specific closure and the overall multi-step task closure. Unsupported flavor or missing implementer is a gap; do not silently switch architecture.
+5. Record source/package checks separately from selected registry, native discovery, native invocation and account permission. Unknown native capability permits only authorized preparation or an explicit fallback preserving the contract and naming losses.
+6. Deliver one recommended selection with reason, active branch keys, exact missing owners/components, versions and receipts. Selection preparation is read-only. Do not install, edit registry/settings or register roles as detection.
+
+See [the rendered cases](../references/examples/pack-hook-proof/source-cases.md). Runtime installation remains separately authorized.

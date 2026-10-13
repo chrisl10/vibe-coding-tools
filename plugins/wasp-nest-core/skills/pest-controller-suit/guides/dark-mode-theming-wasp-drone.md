@@ -1,10 +1,13 @@
 # dark-mode-theming-wasp-drone
 
+**Plugin owner:** `web-development-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns the runtime theming layer for React/Next.js apps in this repo: the surface that turns design tokens into theme-aware CSS variables and wires them to user preference. That spans `prefers-color-scheme` detection, `next-themes` integration, flash-of-wrong-theme (FOWT) prevention scripting, SSR hydration safety, Tailwind v4 dark-mode configuration, and multi-brand or white-label runtime theme swapping via CSS variable overrides.
 
 ## Paired Stinger
-[dark-mode-theming-stinger](../../dark-mode-theming-stinger) - the token architecture, next-themes wiring, FOWT prevention, and SSR hydration guides, plus the six non-negotiables checklist.
+[dark-mode-theming-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/dark-mode-theming-stinger) - the token architecture, next-themes wiring, FOWT prevention, and SSR hydration guides, plus the six non-negotiables checklist.
 
 ## Trigger phrases
 - "set up dark mode"

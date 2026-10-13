@@ -1,7 +1,9 @@
+<!-- Project template context: Relative links target files in the receiving repository after this template is filled. They are not required files beside this source template. -->
 <!--
 README template. Canonical section order per
 raw/get-started--readme--how-to-write-a-github-readme-repoclip.md.
-Fill every {placeholder}. Delete sections that genuinely do not apply, but
+Fill placeholders from verified sources. Flag unresolved facts instead of inventing them.
+Delete sections that genuinely do not apply, but
 keep the ones you keep in this order: reordering makes readers hunt for
 the answer they came for. Delete this comment block when done.
 -->
@@ -63,6 +65,16 @@ coverage). A wall of badges is noise; drop any badge that's always green. -->
 
 {For anything beyond a single-purpose utility: a short description of how the pieces fit together, and/or a Mermaid diagram. GitHub renders ```mermaid fenced blocks natively: no external image files, no stale PNGs.}
 
+## Documentation
+
+{Where each reader should start: user guides, product explanations, engineering knowledge, requirements, and runbooks. Link only to documents that exist in this repository. State whether each entry is public or internal.}
+
+| Reader or task | Document | Audience |
+| --- | --- | --- |
+| {reader_or_task} | {verified_document_link} | {public_or_internal} |
+
+{If the repository uses a library, name its actual source folders. If it uses document generation, state the invocation, required sources, output location, formats, citation rules, and review needed before sharing. Keep source Markdown separate from rendered Word/PDF outputs and private evidence separate from public files. Remove this paragraph when no such workflow exists.}
+
 ## Development
 
 {How to get a local dev environment running: clone, install, env setup, run the dev server. Link to CONTRIBUTING.md for the full workflow rather than duplicating it here.}
@@ -85,7 +97,7 @@ coverage). A wall of badges is noise; drop any badge that's always green. -->
 
 ## Contributing
 
-{A short paragraph plus a link. See [CONTRIBUTING.md](./CONTRIBUTING.md) for the full guide: branching, commit conventions, and how to run tests before opening a PR.}
+{A short paragraph plus a link. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide: branching, commit conventions, and how to run tests before opening a PR.}
 
 ## License
 

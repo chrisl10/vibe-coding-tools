@@ -1,10 +1,13 @@
 # tanstack-wasp-drone
 
+**Plugin owner:** `web-development-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 Owns which TanStack libraries actually work in a Svelte 5 SvelteKit app and how to use them correctly: TanStack Query (`@tanstack/svelte-query` - SSR-safe setup, prefetching in load functions, mutations, invalidation), TanStack Table (`@tanstack/svelte-table` v9 - runes-native state, opt-in feature registration), TanStack Form (`@tanstack/svelte-form` - snippet-based validation), and TanStack Virtual. It equally owns the negative space: TanStack Router and TanStack Start have no official Svelte support, and it states that plainly rather than reaching for the unofficial, self-described-experimental third-party adapter.
 
 ## Paired Stinger
-[tanstack-stinger](../../tanstack-stinger) - the Svelte 5 support matrix, Query SSR/caching/mutation guides, Table feature registration, Form validation, virtualization, and the bundle-budget checklist.
+[tanstack-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/tanstack-stinger) - the Svelte 5 support matrix, Query SSR/caching/mutation guides, Table feature registration, Form validation, virtualization, and the bundle-budget checklist.
 
 ## Trigger phrases
 - "add TanStack Query"

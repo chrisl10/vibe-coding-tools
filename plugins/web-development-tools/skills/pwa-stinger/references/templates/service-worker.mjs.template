@@ -1,0 +1,52 @@
+// Browser integration template, NOT_RUN. Copy reviewed policy as /public/cache-policy.mjs.
+import { PUBLIC_ASSETS, classifyRequest } from './cache-policy.mjs';
+const CACHE_PREFIX = 'approved-public-reference-';
+const CACHE_NAME = `${CACHE_PREFIX}v1`;
+// Populate only from actual reviewed public build bytes. Empty map intentionally fails installation.
+const APPROVED = new Map(); // path -> { sha256: 64 lowercase hex chars, mime: 'text/css' }
+
+self.addEventListener('install', event => {
+  event.waitUntil((async () => {
+    const validated = [];
+    for (const path of PUBLIC_ASSETS) {
+      const metadata = APPROVED.get(path);
+      if (!metadata || !/^[a-f0-9]{64}$/.test(metadata.sha256)) throw new Error('Unapproved public asset');
+      const response = await fetch(path, { credentials: 'omit', redirect: 'error', cache: 'no-store' });
+      const mime = (response.headers.get('content-type') || '').split(';')[0].trim();
+      if (!response.ok || response.type !== 'basic' || mime !== metadata.mime ||
+          /private|no-store/i.test(response.headers.get('cache-control') || '')) throw new Error('Unsafe public asset response');
+      const bytes = await response.clone().arrayBuffer();
+      const digest = await crypto.subtle.digest('SHA-256', bytes);
+      const hex = Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('');
+      if (hex !== metadata.sha256) throw new Error('Public asset digest mismatch');
+      validated.push([path, response]);
+    }
+    const cache = await caches.open(CACHE_NAME);
+    for (const [path, response] of validated) await cache.put(path, response);
+  })());
+});
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    for (const name of await caches.keys()) {
+      if (name.startsWith(CACHE_PREFIX) && name !== CACHE_NAME) await caches.delete(name);
+    }
+  })());
+});
+self.addEventListener('fetch', event => {
+  const classification = classifyRequest(event.request, self.location.origin);
+  if (classification === 'bypass') return; // no respondWith, cache write or mutation queue
+  if (classification === 'public-asset') {
+    event.respondWith((async () => {
+      const cache = await caches.open(CACHE_NAME);
+      return (await cache.match(event.request)) || fetch(event.request); // never persist network result
+    })());
+  } else {
+    event.respondWith(fetch(event.request).catch(async () => {
+      const cache = await caches.open(CACHE_NAME);
+      return (await cache.match('/public/offline.html')) || new Response('Connection unavailable', {
+        status: 503, headers: { 'Content-Type': 'text/plain', 'Cache-Control': 'no-store' },
+      });
+    }));
+  }
+});
+// No skipWaiting, clients.claim, private responses or successful navigation cache writes.

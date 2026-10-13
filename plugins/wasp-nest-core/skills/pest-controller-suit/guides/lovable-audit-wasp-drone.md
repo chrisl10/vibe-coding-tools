@@ -1,12 +1,15 @@
 # lovable-audit-wasp-drone
 
+**Plugin owner:** `code-audit-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the empirical security auditor for Lovable-built, Supabase-backed applications. It runs row-level-security denial verification, role-differential visibility probes, Edge Function gating checks, an auth-posture readout, and client-bundle forensics for leaked anon keys, endpoints, and JWT occurrences. Every claim it writes into a report traces to an archived primary source, and it discriminates denials by their embedded error codes rather than HTTP status alone. It produces findings ledgers and grounded reports only; it never modifies application code, RLS policies, or platform configuration.
 
 It treats a success-shaped response as an assertion, not proof of effect, until the state change is independently observed, and it marks a claim it cannot ground as an unknown rather than guess at it.
 
 ## Paired Stinger
-[lovable-audit-stinger](../../lovable-audit-stinger) - the six-verb audit procedure (bundle forensics, auth posture, differential visibility, write-denial discrimination, RPC and function enumeration, reporting), the probe tables, and the operator risk taxonomy.
+[lovable-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/code-audit-tools/skills/lovable-audit-stinger) - the six-verb audit procedure (bundle forensics, auth posture, differential visibility, write-denial discrimination, RPC and function enumeration, reporting), the probe tables, and the operator risk taxonomy.
 
 This is a research-only pairing: the stinger produces reports and transcripts, never committable code, so it carries no Ship Gate step.
 

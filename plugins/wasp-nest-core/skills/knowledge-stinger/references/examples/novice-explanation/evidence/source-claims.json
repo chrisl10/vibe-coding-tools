@@ -1,0 +1,211 @@
+{
+  "exercise": "Synthetic source exercise; actual files read and reader manuscripts rendered",
+  "claims": [
+    {
+      "claim_id": "K1",
+      "source": "references/examples/novice-explanation/fixtures/repo/src/routes/invoices.ts",
+      "source_sha256": "3ed1412bcaf6116cf04633ed74fca43418aee3fd77b71664de19fa48c70165fb",
+      "supporting_passages": [
+        {
+          "line": 4,
+          "quote": "export async function readInvoice(request: { userId?: string; workspaceId: string; invoiceId: string }) {"
+        }
+      ],
+      "reader_claim": "The visible request handler receives user/workspace/invoice IDs.",
+      "kind": "Observed source",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    },
+    {
+      "claim_id": "K2",
+      "source": "references/examples/novice-explanation/fixtures/repo/src/routes/invoices.ts",
+      "source_sha256": "3ed1412bcaf6116cf04633ed74fca43418aee3fd77b71664de19fa48c70165fb",
+      "supporting_passages": [
+        {
+          "line": 5,
+          "quote": "  if (!request.userId) return { status: 401 };"
+        },
+        {
+          "line": 6,
+          "quote": "  const permitted = await mayReadInvoice(request.userId, request.workspaceId, request.invoiceId);"
+        },
+        {
+          "line": 7,
+          "quote": "  if (!permitted) return { status: 403 };"
+        }
+      ],
+      "reader_claim": "Identity check precedes delegated permission decision and data request; visible missing-ID and denied branches return 401/403.",
+      "kind": "Observed source; not execution",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    },
+    {
+      "claim_id": "K3",
+      "source": "references/examples/novice-explanation/fixtures/repo/src/routes/invoices.ts",
+      "source_sha256": "3ed1412bcaf6116cf04633ed74fca43418aee3fd77b71664de19fa48c70165fb",
+      "supporting_passages": [
+        {
+          "line": 8,
+          "quote": "  const invoice = await findInvoice(request.workspaceId, request.invoiceId);"
+        },
+        {
+          "line": 9,
+          "quote": "  if (!invoice) return { status: 404 };"
+        },
+        {
+          "line": 10,
+          "quote": "  return { status: 200, invoice };"
+        }
+      ],
+      "reader_claim": "Handler contains data-return branches.",
+      "kind": "Observed source",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    },
+    {
+      "claim_id": "K3",
+      "source": "references/examples/novice-explanation/fixtures/repo/src/data/invoices.ts",
+      "source_sha256": "652469951400091d703668c0fd61fcb99f0ce0dd4db1a10f7505176dc15ab5e4",
+      "supporting_passages": [
+        {
+          "line": 2,
+          "quote": "  throw new Error(\"Fixture has no database implementation or runtime proof\");"
+        }
+      ],
+      "reader_claim": "Data fixture always throws; database reading and successful runtime behavior are unproven.",
+      "kind": "Observed fixture limitation",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    },
+    {
+      "claim_id": "K4",
+      "source": "references/examples/novice-explanation/fixtures/repo/contracts/invoice-read.md",
+      "source_sha256": "0b480dae38a980e2cd6b95d335146dc9290ce980b863ef9ff2dc7a9f71631e9d",
+      "supporting_passages": [
+        {
+          "line": 2,
+          "quote": "Status: Accepted"
+        },
+        {
+          "line": 4,
+          "quote": "Authenticated workspace members may read invoices only within their permitted workspace."
+        },
+        {
+          "line": 7,
+          "quote": "No source execution or deployment is established by this contract."
+        }
+      ],
+      "reader_claim": "Contract requires scoped workspace access but supplies no implementation or execution proof.",
+      "kind": "Accepted requirement",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    },
+    {
+      "claim_id": "K5",
+      "source": "references/examples/novice-explanation/fixtures/repo/README.md",
+      "source_sha256": "6b777c1e8fb97d09ae58fefb91a49133a1a5756849c1b7b707b8faf400f2e346",
+      "supporting_passages": [
+        {
+          "line": 5,
+          "quote": "The permissions implementation is intentionally absent. Do not infer its policy from the call name."
+        }
+      ],
+      "reader_claim": "Permission-clerk analogy cannot establish the absent function's policy.",
+      "kind": "Illustration constrained by source gap",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    },
+    {
+      "claim_id": "P1",
+      "source": "references/examples/novice-explanation/fixtures/prd/PRD-001-invoice-notes.md",
+      "source_sha256": "9717c58d2c2e74c77d71e8a33ea8aa544de1c222a3252b200aceefcdd1dca744",
+      "supporting_passages": [
+        {
+          "line": 2,
+          "quote": "Status: Draft"
+        },
+        {
+          "line": 11,
+          "quote": "No implementation, deployment, delivery or market-demand evidence is supplied."
+        }
+      ],
+      "reader_claim": "The source is a Draft and does not prove features are implemented or delivered.",
+      "kind": "Draft proposal",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    },
+    {
+      "claim_id": "P2",
+      "source": "references/examples/novice-explanation/fixtures/prd/PRD-001-invoice-notes.md",
+      "source_sha256": "9717c58d2c2e74c77d71e8a33ea8aa544de1c222a3252b200aceefcdd1dca744",
+      "supporting_passages": [
+        {
+          "line": 5,
+          "quote": "Only workspace owners may approve an invoice note for an invoice in their own workspace."
+        },
+        {
+          "line": 6,
+          "quote": "An owner must first review the draft note, then approve it, then explicitly request sending it."
+        },
+        {
+          "line": 7,
+          "quote": "Approval alone never sends the note. Sending requires a separate action."
+        }
+      ],
+      "reader_claim": "Only owners within their own workspace review, approve, and separately request sending; approval alone does not send.",
+      "kind": "Draft requirement",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    },
+    {
+      "claim_id": "P3",
+      "source": "references/examples/novice-explanation/fixtures/prd/PRD-001-invoice-notes.md",
+      "source_sha256": "9717c58d2c2e74c77d71e8a33ea8aa544de1c222a3252b200aceefcdd1dca744",
+      "supporting_passages": [
+        {
+          "line": 8,
+          "quote": "Members may read notes within their permitted workspace but may not approve or send them."
+        }
+      ],
+      "reader_claim": "Members may read within permitted workspace but cannot approve/send.",
+      "kind": "Draft requirement",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    },
+    {
+      "claim_id": "P4",
+      "source": "references/examples/novice-explanation/fixtures/prd/PRD-001-invoice-notes.md",
+      "source_sha256": "9717c58d2c2e74c77d71e8a33ea8aa544de1c222a3252b200aceefcdd1dca744",
+      "supporting_passages": [
+        {
+          "line": 9,
+          "quote": "Automated reminders are a future proposal and require another accepted decision before implementation."
+        },
+        {
+          "line": 10,
+          "quote": "Retention duration is undecided. Do not choose a duration from this document."
+        }
+      ],
+      "reader_claim": "Reminders require another accepted decision; retention duration remains open.",
+      "kind": "Future proposal and unresolved decision",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    },
+    {
+      "claim_id": "P5",
+      "source": "references/examples/novice-explanation/fixtures/prd/PRD-001-invoice-notes.md",
+      "source_sha256": "9717c58d2c2e74c77d71e8a33ea8aa544de1c222a3252b200aceefcdd1dca744",
+      "supporting_passages": [
+        {
+          "line": 7,
+          "quote": "Approval alone never sends the note. Sending requires a separate action."
+        }
+      ],
+      "reader_claim": "Supervisor/letter analogy preserves separate approval and sending; delivery is not established.",
+      "kind": "Illustration",
+      "semantic_review": "Pass after reading source and rendered paragraph; traceability check separately executed",
+      "understanding": "Pending"
+    }
+  ],
+  "source_locator_root": "loaded skill root"
+}

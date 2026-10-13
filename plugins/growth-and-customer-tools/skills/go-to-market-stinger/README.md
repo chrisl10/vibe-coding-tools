@@ -1,0 +1,8 @@
+# Go to Market: buyer-specific channel selection
+One bounded recommendation before channel execution. This pair compares acquisition families against dated buyer evidence, cash, time, readiness and permission constraints, then drafts a falsifiable experiment.
+
+Read [evidence intake](guides/01-evidence-intake.md), [choose one channel](guides/02-choose-one-channel.md), then [experiment review](guides/03-design-and-review-experiment.md). Use the [worksheet](references/decision-worksheet.md), [negative cases](references/negative-cases.md), [constructed example](references/constructed-example.md) and [cited digest](references/research/distillation.md).
+
+It does not own all GTM strategy despite its short identifier. It owns acquisition-channel selection only. Platform implementation, named-person lead research, outreach copy, positioning, pricing, legal approval and campaigns stay with their qualified owners. No customer evidence was supplied for this forge; no real-world channel recommendation or market success is claimed.
+
+Claude/Cowork canonical Drone uses a read-only tool allowlist. Cursor has a separate readonly projection. Codex roles and owner selection come from the existing builder/Core registry; source files alone do not prove installation. With no usable native agent, an orchestrator can read the selected skill directly and return the same bounded packet. If live read-only web research is unavailable within the role, the orchestrator supplies dated primary-source captures or reports that current mechanics remain unverified. Do not silently add Bash or browser control to bypass tool limits.

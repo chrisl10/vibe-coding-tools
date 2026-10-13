@@ -1,5 +1,8 @@
 # security-wasp-drone
 
+**Plugin owner:** `wasp-nest-core`. **Required selection:** Core itself. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the senior application security engineer for this repo's stack: SvelteKit (Svelte 5), Neon Postgres with Drizzle, WorkOS auth, Stripe payments, Vercel hosting, Doppler secrets, and GoHighLevel integration. It runs the scan-triage-fix-report workflow, classifies every finding by severity, and remediates all Critical and High issues in-session with minimal-blast-radius diffs. Its primary focus is authorization and tenant isolation (this repo left Supabase, so RLS is not automatic), webhook signature verification, secrets hygiene, and the specific failure patterns statistically most likely in AI-generated code. It is the mandatory first step of the Ship Gate, before `quality-wasp-drone`.
 
@@ -18,7 +21,7 @@ This Drone is the senior application security engineer for this repo's stack: Sv
 ## Do NOT route when
 - The task is general code quality, testing coverage, or linting review with no security angle: that is `quality-wasp-drone`'s domain, verifying implementation matches plan, not scanning for vulnerabilities. The sharp line: security asks "can this be exploited," quality asks "does this match what was specified."
 - `quality-wasp-drone` has already produced a report for this branch: do not invoke this Drone after the fact; alert the developer that the QA report predates any security fixes and must be re-run once security completes, rather than running security out of order.
-- The task is drafting new architecture from scratch: route to `library-wasp-drone`; this Drone audits and remediates, it does not design.
+- The task is owning full architecture from scratch: route to `library-wasp-drone`. This Drone can prepare threat/control/verification packets using guides 11 through 15 while Library and selected implementation owners retain architecture and implementation.
 - A WorkOS finding needs implementation-level depth (SSO/SCIM setup, RBAC precedence, migration mechanics): route to `workos-wasp-drone` beyond this Drone's session-security coverage.
 - A tenant-scoped schema or migration needs design work, not just an RLS audit: route to `db-wasp-drone`.
 
@@ -38,3 +41,7 @@ This Drone is the senior application security engineer for this repo's stack: Sv
 - `quality-wasp-drone` always after, never before: security fixes can invalidate a QA snapshot taken too early
 - `github-repo-health-stinger` after both: the final orchestrator-level gate before commit and push
 - `db-wasp-drone` or `workos-wasp-drone` alongside: when a finding needs schema-design or auth-implementation depth beyond this Drone's audit scope
+
+## Security design entry points
+
+Route pre-feature threat modeling, response/tenant boundary review, webhook forgery/replay/recovery, browser/log/context secret exposure scope and verification from actual risk to paired guides 11 through 15. Load `templates/security-design/` and the fresh source-only cases. No app/runtime verdict follows from a worksheet or synthetic example. Resolve optional DB/Auth/Payments/Harness owners through selected-plugin registration before handoff; do not invent an absent engine.

@@ -19,7 +19,7 @@ Reach for MCP when the capability needs to call out to an external service or ex
 
 ## The single highest-impact gotcha
 
-**Codex uses TOML with an underscored root key (`mcp_servers`), not the JSON `mcpServers` shape every other harness uses.** A config block copy-pasted from a Claude Code or Cursor project silently fails on Codex rather than erroring loudly - there is no parse error, the server simply never registers. Any cross-harness MCP-registration template or worked example must show the Codex TOML form as its own case, not a JSON-to-TOML mechanical translation left as an exercise for the reader.
+**Local Codex configuration uses TOML with the root key `mcp_servers`.** Keep a host-specific configuration example and validate it with the current host before changing settings. An incompatible copied shape may fail parsing or fail registration; do not promise silent behavior. Treat the placement matrix as a research-backed starting point, then verify the actual native plugin or home-install carrier.
 
 ```toml
 [mcp_servers.example]
@@ -46,7 +46,7 @@ versus the JSON shape every other harness expects:
 
 ## Cowork's reachability constraint is a real architectural difference, not a config detail
 
-Every other harness's MCP client runs on the user's machine (or a CI runner under the user's control) and can reach `localhost` and the private network. Cowork's connectors run through Anthropic's cloud infrastructure: "a custom connector must be reachable over the public internet from Anthropic's IP ranges." A capability that assumes it can register a `localhost`-bound MCP server and have every harness reach it will work on Claude Code, Cursor, and Codex CLI/IDE - and silently fail to connect from a Cowork session. If a capability needs to work in Cowork, its MCP server needs a publicly reachable endpoint, not just a stdio/local-HTTP process.
+Determine where the current MCP client executes. A local desktop/plugin client may reach localhost; a cloud connector cannot assume access to the user's private network and needs an endpoint reachable from its own execution environment. Cowork's cloud connectors and its local plugin runtime are separate surfaces. Verify the chosen carrier and transport before promising connectivity; making an endpoint public remains a separately authorized configuration change.
 
 ## Capability negotiation is the protocol mechanism underneath registration
 

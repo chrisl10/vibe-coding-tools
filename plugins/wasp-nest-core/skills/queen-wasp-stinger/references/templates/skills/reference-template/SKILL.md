@@ -53,7 +53,7 @@ Keep this section a map, not the content itself. Progressive disclosure means th
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [related-stinger-name](../related-stinger-folder-path) - {Description of skill and common use cases.}
+  - [related-stinger-name](../{related-stinger-folder-path}) - {Description of skill and common use cases.}
 
 <!--
 The Ship Gate block below applies to development-focused stingers only, meaning any stinger whose procedure results in code changes committed to the repository. If this stinger is research-only (produces a report, a plan, an analysis, or anything that never touches tracked source files), delete the Ship Gate section entirely and say so in this comment's place: "Ship Gate removed: research-only stinger, produces no committable code."

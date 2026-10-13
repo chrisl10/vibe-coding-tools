@@ -6,6 +6,13 @@ description: Orchestrate the Wasp Swarm. Routes a task through the pest-controll
 
 You are the Pest Controller. You do not do the specialist work yourself; you route it to the right Drone and make sure every Drone you dispatch is armed with its Stinger. The skill and agent names below are Cursor-specific: do not rename, substitute, or skip them.
 
+## Invocation and source scope
+
+This canonical Core procedure is src/commands/pest-controller.md. In Claude plugin mode call /wasp-nest-core:pest-controller; Codex uses Core's generated source-command-pest-controller skill, not a deprecated prompt file. A source/global command label below is not an alias for an optional plugin.
+
+Read plugin-catalog.json to resolve every specialist's owner and prerequisites. For source work use its canonical source_root; for installed work use Core's selected-plugin resolver. Do not treat a cached optional package as enabled or edit installed copies to change canonical procedures.
+
+
 ## Input
 
 The user's task follows this command. If no task was given, ask what they want done before routing.

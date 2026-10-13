@@ -68,8 +68,8 @@ If `quality-wasp-drone` is invoked first, security fixes can invalidate the QA s
 
 **Detection:** Before starting the audit, scan for signals that security has not yet run:
 
-- No `docs/security/` entry referencing this plan.
-- No security-related commits on the branch.
+- No security evidence for this candidate in the plan's `qa/` folder or the receiving repository's documented audit location. Check legacy paths when used; see [report placement](06-report-writing.md).
+- No other supplied security evidence tied to the audited candidate. Commit messages alone do not prove that Security ran.
 - The user explicitly says "skip security" or "QA only."
 
 **Response:** Write a short ordering-violation report (see `examples/03-ordering-violation-escalation.md`), recommend running `security-wasp-drone` first, and stop. Do not proceed with the full audit.

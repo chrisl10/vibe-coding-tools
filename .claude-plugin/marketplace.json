@@ -1,11 +1,11 @@
 {
   "name": "wasp-nest",
   "owner": {
-    "name": "Mario Aldayuz"
+    "name": "Legion Code Inc."
   },
   "metadata": {
     "description": "The Wasp Nest: core plus add-on packs.",
-    "version": "2.0.1"
+    "version": "3.0.0"
   },
   "plugins": [
     {
@@ -14,29 +14,104 @@
       "description": "The Wasp Nest core. Install first."
     },
     {
-      "name": "content-intelligence",
-      "source": "./plugins/content-intelligence",
-      "description": "Research current GitHub repository trends and news, verify one story, and prepare evidence-backed social post drafts. Requires the user's own voice skill and ledger."
+      "name": "browser-and-app-testing-tools",
+      "source": "./plugins/browser-and-app-testing-tools",
+      "description": "Automate browsers, capture live apps and measure Lighthouse/PageSpeed behavior."
+    },
+    {
+      "name": "website-audit-tools",
+      "source": "./plugins/website-audit-tools",
+      "description": "Audit a public website with crawl, SEO, accessibility, conversion and evidence-backed reports."
+    },
+    {
+      "name": "code-audit-tools",
+      "source": "./plugins/code-audit-tools",
+      "description": "Audit repositories and app security, measure bloat, inspect branches and plan remediation."
+    },
+    {
+      "name": "documentation-tools",
+      "source": "./plugins/documentation-tools",
+      "description": "Refresh, extract, publish and package documentation from real sources."
+    },
+    {
+      "name": "web-development-tools",
+      "source": "./plugins/web-development-tools",
+      "description": "Build web interfaces and sites with React, Svelte, design systems and accessible components."
+    },
+    {
+      "name": "backend-and-desktop-tools",
+      "source": "./plugins/backend-and-desktop-tools",
+      "description": "Implement TypeScript, Python, Go, Rust, native apps, APIs and terminal workflows."
+    },
+    {
+      "name": "data-and-ai-tools",
+      "source": "./plugins/data-and-ai-tools",
+      "description": "Design data, retrieval, AI runtime, model tooling and agent operations."
+    },
+    {
+      "name": "platform-and-release-tools",
+      "source": "./plugins/platform-and-release-tools",
+      "description": "Integrate authentication, payments, analytics, messaging and production delivery."
+    },
+    {
+      "name": "growth-and-customer-tools",
+      "source": "./plugins/growth-and-customer-tools",
+      "description": "Research buyers, acquire leads, follow up, support customers and grow accounts."
+    },
+    {
+      "name": "business-and-product-tools",
+      "source": "./plugins/business-and-product-tools",
+      "description": "Form and run a company, discover product needs, hire teams and improve delivery."
+    },
+    {
+      "name": "media-and-creative-tools",
+      "source": "./plugins/media-and-creative-tools",
+      "description": "Create consented photography and integrate voice and video production."
     },
     {
       "name": "highlevel",
       "source": "./plugins/highlevel",
-      "description": "HighLevel integration, AI Studio creation, and offline workflow-export visualization, with a dedicated Drone and Stinger for each domain."
+      "description": "Integrate HighLevel, build with AI Studio and map exported workflows."
     },
     {
       "name": "littlebird-toolkit",
       "source": "./plugins/littlebird-toolkit",
-      "description": "Thirty skills that turn your Littlebird memory into work you can act on. Find the subscriptions you pay for and never open, rebuild the pipeline living in your head, write the SOP for the thing you did last Thursday because Littlebird watched you do it, harvest every commitment from your meetings and check whether it got done, mine your calls for the content you already said well, and clone your writing voice from your own real corpus. Every finding carries a timestamped receipt, and every skill refuses to produce numbers it cannot honestly measure. Requires the Littlebird MCP on a Power or Pro plan."
+      "description": "Turn Littlebird memory into evidence-backed operating work."
     },
     {
-      "name": "webapp-capture",
-      "source": "./plugins/webapp-capture",
-      "description": "Capture any live web app the way users see it: demo videos with screenshots, captions, and scripts; a full UI component library with measured styles and DTCG design tokens; a Claude Design handoff zip; a shadcn/ui migration map; and visual and code inconsistency audits. Designed and built by Legion Code Inc."
+      "name": "content-intelligence",
+      "source": "./plugins/content-intelligence",
+      "description": "Find and verify current repository/news topics and prepare voice-matched drafts."
     },
     {
-      "name": "website-auditor",
-      "source": "./plugins/website-auditor",
-      "description": "Repeatable, harness-portable website audit tool: AEO/SEO, security, UX/funnel, accessibility, and analytics assessment for any site, with a branded XLSX scorecard and customer/auditor reports."
+      "name": "app-primer-zero",
+      "source": "./plugins/app-primer-zero",
+      "description": "Prepare an app library, contracts, schema baseline and a wave handoff before building."
+    },
+    {
+      "name": "developer-learning-tools",
+      "source": "./plugins/developer-learning-tools",
+      "description": "Explain technical sources with source-grounded analogies and learner checks."
+    },
+    {
+      "name": "software-economics-tools",
+      "source": "./plugins/software-economics-tools",
+      "description": "Model supplied software economics and costs with explicit scenarios and evidence."
+    },
+    {
+      "name": "infrastructure-decision-tools",
+      "source": "./plugins/infrastructure-decision-tools",
+      "description": "Prepare platform assets and account dependencies without implicit setup actions."
+    },
+    {
+      "name": "repository-modernization-tools",
+      "source": "./plugins/repository-modernization-tools",
+      "description": "Compose repository baseline, safe refactoring and contributor onboarding through selected specialist owners."
+    },
+    {
+      "name": "product-studio",
+      "source": "./plugins/product-studio",
+      "description": "Turn an idea into a buildable plan: product strategy, Claude-Design-grade UX, a PRD map, a wave plan and a Definition of Done."
     }
   ]
 }

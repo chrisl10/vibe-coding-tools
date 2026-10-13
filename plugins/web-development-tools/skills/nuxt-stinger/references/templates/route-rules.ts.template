@@ -1,0 +1,15 @@
+// Nuxt 4 / Nitro v2 integration example. NOT_RUN, merge only into authorized target config.
+export default defineNuxtConfig({
+  runtimeConfig: { backendSecret: '', public: { apiBase: '/api' } },
+  routeRules: {
+    '/articles': { prerender: true },
+    '/articles/**': { prerender: true },
+    '/account': { cache: false, headers: { 'cache-control': 'private, no-store' } },
+    '/account/**': { cache: false, headers: { 'cache-control': 'private, no-store' } },
+    '/api/account': { cache: false, headers: { 'cache-control': 'private, no-store' } },
+    '/api/account/**': { cache: false, headers: { 'cache-control': 'private, no-store' } },
+  },
+})
+// Audit inherited/global rules, cached functions, prerender crawl, payload extraction and CDN.
+// Public prerender requires an actual route list and public content at build time.
+// backendSecret uses NUXT_BACKEND_SECRET at runtime. Never copy its value into public or DTOs.

@@ -1,10 +1,13 @@
 # estimation-wasp-drone
 
+**Plugin owner:** `business-and-product-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the authority on software estimation and probabilistic delivery forecasting: relative-sizing frameworks (Fibonacci story points, T-shirt sizing, Planning Poker), the NoEstimates movement and its evidence base, the planning-fallacy literature explaining why estimates run systematically optimistic, and cycle-time or throughput-based forecasting including Monte Carlo simulation with percentile-based delivery dates. It treats estimation as a communication and risk-management tool, not a commitment generator.
 
 ## Paired Stinger
-[estimation-stinger](../../estimation-stinger) - the dysfunction-diagnosis decision tree, relative-sizing frameworks, NoEstimates evidence, Monte Carlo setup, and planning-fallacy citations.
+[estimation-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/business-and-product-tools/skills/estimation-stinger) - the dysfunction-diagnosis decision tree, relative-sizing frameworks, NoEstimates evidence, Monte Carlo setup, and planning-fallacy citations.
 
 ## Trigger phrases
 - "our story points mean nothing"
@@ -35,3 +38,7 @@ This Drone is the authority on software estimation and probabilistic delivery fo
 ## Commonly sequenced with
 - library-wasp-drone: authors the roadmap or retrospective PRD once this Drone's estimation approach is set
 - product-management sprint-planning workflows: consumes this Drone's sizing output to build sprint scope
+
+## Total build-budget trigger
+
+Use for "What will my build cost including AI tools?" and O037. Load the paired Estimation skill first, then its guides/07-total-build-budget.md and references/build-budget/worksheet.md. Reuse the established forecast; require dated quantities/rates/currency and reconcile build holding periods, subscription quotas, API tokens/tools, paid contractor/assets and a nonoverlapping first operating period. Unknown amounts remain gaps and owner-time value stays separate. Resolve Operating Cost for monthly invoice mechanics, Services Quoting for commercial quotes and Unit Economics for supplied-price feasibility through trusted Core's selected-owner resolver. No provider configuration, account access, purchasing, price-setting, native availability proof or AI-productivity multiplier is implied.

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "test_id": "",
+  "status": "planned",
+  "outcome": "",
+  "assumption": "",
+  "contradicting_observation": "",
+  "population": "",
+  "channel": "",
+  "participant_source": "",
+  "consent_procedure": "",
+  "exposure_definition": "",
+  "stimulus": "",
+  "metric": {
+    "name": "",
+    "unit": "",
+    "numerator_definition": "",
+    "denominator_definition": "",
+    "time_window": ""
+  },
+  "proxy_limit": "",
+  "criterion": {
+    "version": 1,
+    "declared_at": "",
+    "operator": ">=",
+    "threshold": null,
+    "minimum_exposures": null,
+    "stop_rule": ""
+  },
+  "planned_start": "",
+  "planned_end": "",
+  "owner": "",
+  "budget_limit": null,
+  "feasibility_constraints": [],
+  "observations": [],
+  "changes": [],
+  "source_paths": [],
+  "decision": null
+}

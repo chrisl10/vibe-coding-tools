@@ -1,10 +1,13 @@
 # devops-wasp-drone
 
+**Plugin owner:** `platform-and-release-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns container build and CI/CD pipeline architecture for Node/Next.js/TypeScript stacks: Dockerfile hygiene (multi-stage, BuildKit secret and cache mounts, non-root, HEALTHCHECK, `.dockerignore`), Docker Compose for dev (profiles, healthchecked `depends_on`, secrets, watch), GitHub Actions architecture (reusable workflows, composite actions, concurrency, OIDC, least-privilege `GITHUB_TOKEN`, SHA pinning), Depot build acceleration, image scanning (Trivy, Scout), and local-CI parity via Docker Bake.
 
 ## Paired Stinger
-[devops-stinger](../../devops-stinger) - Dockerfile patterns, Actions security, Depot integration, caching strategy, pipeline shapes, and local-CI parity guides, plus deterministic audit scripts.
+[devops-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/devops-stinger) - Dockerfile patterns, Actions security, Depot integration, caching strategy, pipeline shapes, and local-CI parity guides, plus deterministic audit scripts.
 
 ## Trigger phrases
 - "review my Dockerfile"

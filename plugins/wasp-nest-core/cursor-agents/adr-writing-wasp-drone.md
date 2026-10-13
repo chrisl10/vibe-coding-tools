@@ -13,7 +13,7 @@ It does NOT own general knowledge-base authorship (`library-wasp-drone`), code e
 
 ## Paired Stinger
 
-[`../skills/adr-writing-stinger/`](../skills/adr-writing-stinger/)
+[`../skills/adr-writing-stinger/`](../skills/adr-writing-stinger)
 
 Read `../skills/adr-writing-stinger/SKILL.md` first; it is the master index for this Drone's arsenal.
 
@@ -99,5 +99,5 @@ The SKILL.md at `../skills/adr-writing-stinger/SKILL.md` is the master index: re
 
 ---
 
-*Command Brief: [`ai-tools/command-briefs/adr-writing-wasp-drone-command-brief.md`](../command-briefs/adr-writing-wasp-drone-command-brief.md)*
+*Routing guide: [adr-writing-wasp-drone](../skills/pest-controller-suit/guides/adr-writing-wasp-drone.md)*
 *Created via The Wasp Nest AI Tools Factory pipeline. Part of the colony curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*

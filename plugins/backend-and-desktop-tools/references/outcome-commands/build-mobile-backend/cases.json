@@ -1,0 +1,61 @@
+[
+  {
+    "id": "build-mobile-backend-1",
+    "request": "A Python service supports old and current mobile clients on unreliable networks.",
+    "expected": "Pin compatibility and implement server slice only, run fake-client failure evidence.",
+    "required_instructions": [
+      "python-wasp-drone",
+      "version support",
+      "fake-client server proof"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "build-mobile-backend-2",
+    "request": "A mutation commits before the mobile connection fails and reconnect repeats it.",
+    "expected": "Test transactional dedup and uncertain outcome; HTTP semantics alone do not prove replay safety.",
+    "required_instructions": [
+      "network fails after commit",
+      "transactional mutation/deduplication",
+      "HTTP method idempotency"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "build-mobile-backend-3",
+    "request": "User expects native secure credential storage and offline UI from this command.",
+    "expected": "Report unresolved native owners rather than pretending server coverage implements device behavior.",
+    "required_instructions": [
+      "on-device persistence",
+      "native secure credential storage",
+      "separately resolved owners"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "build-mobile-backend-4",
+    "request": "Wrong-tenant client sends a valid token and old schema.",
+    "expected": "Verify server object authorization and old-client negative tests, never trust client authorization.",
+    "required_instructions": [
+      "every object operation",
+      "wrong tenant",
+      "old client schema"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "build-mobile-backend-5",
+    "request": "Only TypeScript owner exists but service is an unsupported runtime.",
+    "expected": "Resolve a supported existing owner; missing runtime blocks implementation and preserves contract work.",
+    "required_instructions": [
+      "another runtime",
+      "absence blocks implementation"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  }
+]

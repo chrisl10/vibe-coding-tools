@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "library_root": "../../references/research/raw",
+  "manuscript_root": ".",
+  "asset_root": "../../assets",
+  "logo": "legion-footer.png",
+  "sources": [
+    {
+      "id": "S01",
+      "path": "digitalgov-plain-language.md",
+      "title": "DigitalGov plain-language guide",
+      "sha256": "c7bbcfb4d0658cfd3807cd9d655d08837a8854d005e07b650608f35b23351658",
+      "kind": "fact",
+      "evidence_status": "documented",
+      "public": {
+        "approved": true,
+        "alias": "DigitalGov plain-language guide",
+        "url": "https://www.digital.gov/guides/plain-language"
+      }
+    },
+    {
+      "id": "S02",
+      "path": "libreoffice-start-parameters.md",
+      "title": "LibreOffice command options",
+      "sha256": "9acd215b52853ef3ff6c6ed51bb2eed8c1f0b70f7c0bb6d4c49739c94cf280a9",
+      "kind": "fact",
+      "evidence_status": "documented",
+      "public": {
+        "approved": false,
+        "alias": "LibreOffice command options",
+        "url": "https://help.libreoffice.org/latest/en-US/text/shared/guide/start_parameters.html"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "kind": "fact",
+      "status": "documented",
+      "statement": "DigitalGov describes plain language as clear and easy to understand.",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "quote": "content that is clear and easy to understand",
+          "location": {
+            "type": "lines",
+            "start": 34,
+            "end": 34
+          }
+        }
+      ],
+      "semantic_review": {
+        "reviewed_by": "Codex root",
+        "at": "2026-10-06T15:22:00Z",
+        "notes": "Read the actual archived DigitalGov passage; supports clear content and audience-first public writing, without a grade or measured benefit claim."
+      }
+    },
+    {
+      "id": "C02",
+      "kind": "fact",
+      "status": "documented",
+      "statement": "DigitalGov says public content is written for its specific audience.",
+      "evidence": [
+        {
+          "source_id": "S01",
+          "quote": "content for the public is written for its specific audience",
+          "location": {
+            "type": "lines",
+            "start": 36,
+            "end": 36
+          }
+        }
+      ],
+      "semantic_review": {
+        "reviewed_by": "Codex root",
+        "at": "2026-10-06T15:22:00Z",
+        "notes": "Read the actual archived DigitalGov passage; supports clear content and audience-first public writing, without a grade or measured benefit claim."
+      }
+    },
+    {
+      "id": "C03",
+      "kind": "fact",
+      "status": "documented",
+      "statement": "LibreOffice headless mode runs without its user interface.",
+      "evidence": [
+        {
+          "source_id": "S02",
+          "quote": "Starts in \"headless mode\" which allows using the application without user interface.",
+          "location": {
+            "type": "lines",
+            "start": 76,
+            "end": 76
+          }
+        }
+      ],
+      "semantic_review": {
+        "reviewed_by": "Codex root",
+        "at": "2026-10-06T15:22:00Z",
+        "notes": "Read official LibreOffice CLI table; claim limited to its documented options."
+      }
+    },
+    {
+      "id": "C04",
+      "kind": "fact",
+      "status": "documented",
+      "statement": "LibreOffice accepts PDF as an output format and lets the operator choose the output folder.",
+      "evidence": [
+        {
+          "source_id": "S02",
+          "quote": "--convert-to pdf",
+          "location": {
+            "type": "lines",
+            "start": 132,
+            "end": 132
+          }
+        }
+      ],
+      "semantic_review": {
+        "reviewed_by": "Codex root",
+        "at": "2026-10-06T15:22:00Z",
+        "notes": "Read official LibreOffice CLI table; claim limited to its documented options."
+      }
+    }
+  ],
+  "documents": [
+    {
+      "id": "public-brief",
+      "title": "Clear Company Documents",
+      "audience": "public",
+      "markdown": "public-brief.md",
+      "public_approval": {
+        "approved": true,
+        "by": "Mario Aldayuz",
+        "at": "2026-10-06",
+        "basis": "Requested a reusable public packet with no technical or revealing details; this smoke uses only an official public plain-language guide."
+      }
+    },
+    {
+      "id": "engineering-brief",
+      "title": "Word Export Behavior",
+      "audience": "engineering",
+      "markdown": "engineering-brief.md"
+    }
+  ],
+  "public_exclusions": [
+    "Project Cedar"
+  ]
+}

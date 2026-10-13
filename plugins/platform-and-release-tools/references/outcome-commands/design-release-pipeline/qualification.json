@@ -1,0 +1,33 @@
+{
+  "command": "packs/platform-and-release-tools/commands/design-release-pipeline.md",
+  "command_sha256": "55c85869be6baff1cc65b3d25f4f4896abf8b2d72989c416f74bd830139a1cd9",
+  "checked_at": "2026-10-07T16:23:56.019573+00:00",
+  "scope": "static semantic qualification and archive integrity, not live harness or application proof",
+  "checks": {
+    "first_instruction_pest": true,
+    "explicit_selected_registry": true,
+    "source_checkout_path": true,
+    "self_contained_no_pack_ref_dependency": true,
+    "host_limits": true,
+    "no_external_auth_inference": true,
+    "report": true,
+    "gate_order": true,
+    "qualified_pipeline": true,
+    "no_historical_scripts": true,
+    "exact_revision": true,
+    "rollback_limits": true,
+    "archive_body_hash_ci": true,
+    "distillation_citation_ci": true,
+    "archive_body_hash_devops": true,
+    "distillation_citation_devops": true,
+    "archive_body_hash_runbook": true,
+    "distillation_citation_runbook": true,
+    "archive_body_hash_health": true,
+    "distillation_citation_health": true,
+    "archive_body_hash_github-actions": true,
+    "distillation_citation_github-actions": true,
+    "queen_stage_artifacts": true,
+    "no_em_dash_authored": true
+  },
+  "passed": true
+}

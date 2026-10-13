@@ -1,10 +1,13 @@
 # ux-ui-svelte-wasp-drone
 
+**Plugin owner:** `web-development-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 Owns the steady-state enforcement of the OSPRY SvelteKit UI standard (ADR-007) across `apps/portal`, `apps/web`, and `apps/wl`: shadcn-svelte 1.x on Bits UI v2 + Melt UI, Tailwind v4, the `@theme` token bridge into PRD-071 design tokens, the white-label brand contract (`--brand-accent` → `--interactive` → `--primary`), and the dark-first inversion. This is where Svelte-specific UX/UI design decisions for those three apps live: which primitive to use, how a token bridges, whether a surface is on-brief.
 
 ## Paired Stinger
-[ux-ui-svelte-stinger](../../ux-ui-svelte-stinger) - the token bridge (load-bearing), component anatomy, dark-mode inversion, white-label preservation, surface migration procedure, and the violations/guardrails catalog.
+[ux-ui-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/ux-ui-svelte-stinger) - the token bridge (load-bearing), component anatomy, dark-mode inversion, white-label preservation, surface migration procedure, and the violations/guardrails catalog.
 
 ## Trigger phrases
 - "add a Button to apps/portal"

@@ -1,0 +1,36 @@
+{
+  "name": "data-and-ai-tools",
+  "version": "3.0.0",
+  "description": "Design data, retrieval, AI runtime, model tooling and agent operations.",
+  "author": {
+    "name": "Legion Code Inc.",
+    "url": "https://www.legioncodeinc.com"
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./agents/ai-coding-tools-wasp-drone.md",
+    "./agents/ai-tools-platform-wasp-drone.md",
+    "./agents/bifrost-wasp-drone.md",
+    "./agents/cursor-ide-wasp-drone.md",
+    "./agents/db-wasp-drone.md",
+    "./agents/deeplake-dataset-wasp-drone.md",
+    "./agents/embeddings-runtime-wasp-drone.md",
+    "./agents/mind-wasp-drone.md",
+    "./agents/neon-drizzle-wasp-drone.md",
+    "./agents/retrieval-wasp-drone.md",
+    "./agents/tars-wasp-drone.md",
+    "./agents/vector-store-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/build-rag-feature.md",
+    "./commands/design-data.md",
+    "./commands/tars.md"
+  ],
+  "dependencies": [
+    "wasp-nest-core"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "status": "NOT_RUN",
+  "cases": [
+    {
+      "id": "B1",
+      "input": "Baseline error differs from intended happy path",
+      "expected": "Preserve observed error; intended requirement separate; do not repair silently"
+    },
+    {
+      "id": "B2",
+      "input": "Snapshot strips ordering or money-relevant timestamps",
+      "expected": "Reject unjustified normalization"
+    },
+    {
+      "id": "B3",
+      "input": "Consumer mock passes without provider run",
+      "expected": "Provider compatibility unproven"
+    },
+    {
+      "id": "B4",
+      "input": "Received snapshot auto-promoted after rewrite",
+      "expected": "No characterization approval; classify difference"
+    },
+    {
+      "id": "A1",
+      "input": "Old dist file without producer manifest",
+      "expected": "PRESERVE_UNKNOWN"
+    },
+    {
+      "id": "A2",
+      "input": "Generated banner but handwritten edits or vendor notices",
+      "expected": "PRESERVE"
+    },
+    {
+      "id": "A3",
+      "input": "Unreferenced static search but runtime dynamic consumer unknown",
+      "expected": "PRESERVE_UNKNOWN"
+    },
+    {
+      "id": "A4",
+      "input": "Backup path exists without restore receipt",
+      "expected": "Recovery unproven; preserve"
+    },
+    {
+      "id": "A5",
+      "input": "Approved candidate hash changed before deletion",
+      "expected": "Stop; proposal identity stale"
+    },
+    {
+      "id": "A6",
+      "input": "Local artifact proposal used to delete remote workflow run",
+      "expected": "Reject expanded effect; separate exact approval required"
+    }
+  ]
+}

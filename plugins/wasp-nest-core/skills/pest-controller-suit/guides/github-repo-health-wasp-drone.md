@@ -1,5 +1,8 @@
 # github-repo-health-wasp-drone
 
+**Plugin owner:** `wasp-nest-core`. **Required selection:** Core itself. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is a read-only repository hygiene auditor for GitHub repos. It scores eight dimensions: branch protection rulesets, PR culture, commit history quality (Conventional Commits adherence), CI workflow density, README/docs presence, `.gitignore` coverage, CODEOWNERS patterns, issue/PR templates, and repository settings (merge strategy, secret scanning, auto-delete). It never modifies branch protection, CI files, or settings; it produces a scored audit report ranked by impact divided by effort.
 
@@ -38,3 +41,8 @@ This Drone is a read-only repository hygiene auditor for GitHub repos. It scores
 - devops-wasp-drone: receives CI architecture depth findings this Drone's density check surfaces but doesn't resolve
 - security-wasp-drone: receives secret-scanning-enabled findings for the leak-implication audit
 - readme-writing-wasp-drone: receives README structural improvement findings
+
+
+## Automation permission hygiene
+
+Route scoped automation/permission-risk review here using the paired [guide 10](../../github-repo-health-stinger/guides/10-review-automation-permissions.md). Output observations with exact source paths/revisions, authority boundaries and missing candidate proof. Unknown live settings stay unknown. No workflow execution or repair. Security owns vulnerability implications; CI Release owns release/workflow architecture. This does not authorize repository or provider changes.

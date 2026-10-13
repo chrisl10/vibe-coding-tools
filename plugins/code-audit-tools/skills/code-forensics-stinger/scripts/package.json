@@ -1,0 +1,11 @@
+{
+  "name": "case-evidence-document-builders",
+  "version": "1.0.0",
+  "description": "Validated case-input document renderers for human review",
+  "dependencies": {
+    "docx": "^9.0.0"
+  },
+  "scripts": {
+    "test": "node test-case-builders.js"
+  }
+}

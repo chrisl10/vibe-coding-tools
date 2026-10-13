@@ -1,3 +1,4 @@
+<!-- Project template context: Relative links target files in the receiving repository after this template is filled. They are not required files beside this source template. -->
 # {project-name}
 
 > {One sentence: what problem it solves, for whom, without jargon.}
@@ -29,7 +30,7 @@
 - {Feature 4}
 - {Feature 5}
 
-<!-- 5-8 bullets. Each should be a capability, not a technical implementation detail. -->
+<!-- Keep only supported features. Each should explain a user capability. There is no minimum count. -->
 
 ## Install
 
@@ -80,6 +81,12 @@
 ```{language}
 {example}
 ```
+
+## Documentation
+
+{Link to the existing user guide, examples, API reference, and approved public product explanations. State who should read each one. Do not link private architecture, planning, evidence, or business material from a public README. Remove when no additional documentation exists.}
+
+{For document-generating libraries, show the actual source inputs, invocation, output formats, output location, citations, and review requirements. Do not imply that a README can replace source material. Keep private evidence separate from public outputs. Remove when not applicable.}
 
 ## Contributing
 

@@ -183,3 +183,11 @@ hivemind whoami        # show current user / org / workspace
 | Schema doc (full DDL) | 200-500 lines |
 | Domain narrative | 100-300 lines |
 | Standards doc | 100-20
+
+## Bounded beginner-tour exception
+
+The domain-document length targets above remain for deep references. A one-journey beginner tour may be shorter when its source supports the complete requested scope. Do not pad missing facts. Use guide 04 and its ledger, preserve actor/permission/order/source-status limits and report missing implementation/runtime evidence.
+
+## Source-grounded diagram qualification
+
+Use [guide 06](06-preserve-behavior-in-diagrams.md) before drawing calls, state or trust boundaries. Keep a hashed source ledger, denied/error paths and intended-versus-implemented distinctions. Shapes, arrow styles and boxes add no permission, delivery or atomicity guarantees. Parsing/display and behavioral/source checks are separate evidence.

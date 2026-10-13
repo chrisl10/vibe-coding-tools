@@ -55,7 +55,7 @@ These are absolute. See `guides/00-principles.md` for the rationale behind each.
 ---
 
 ## Cross-Drone relationships
-- **swarm-audit-wasp-drone** runs whole-repository fleet audits (every branch, state of the union, delivery failures, next steps) and borrows this Stinger's evidence-over-opinion rule for its critic; hand single-change QA back here. See [swarm-audit-stinger](../swarm-audit-stinger).
+- **swarm-audit-wasp-drone** runs whole-repository fleet audits (every branch, state of the union, delivery failures, next steps) and borrows this Stinger's evidence-over-opinion rule for its critic; hand single-change QA back here. See [swarm-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/code-audit-tools/skills/swarm-audit-stinger).
 
 - **`library-wasp-drone`** authors the plan. `quality-wasp-drone` audits against it. Never rewrite the plan; defer ambiguity back to `library-wasp-drone` via the Notes column of the traceability table.
 - **`security-wasp-drone`** runs immediately before `quality-wasp-drone`. If the diff shows active security findings not yet resolved, flag the ordering violation and recommend re-running after fixes land.
@@ -64,13 +64,15 @@ These are absolute. See `guides/00-principles.md` for the rationale behind each.
 
 ## Expected output
 
-A markdown report at one of:
+For Library Schema v2, a Markdown report at one of:
 
-- `library/requirements/<lifecycle>/prd-<###>-<title>/reports/<date>-qa-report.md` (feature audits)
-- `library/issues/<lifecycle>/ird-<###>-<title>/reports/<date>-qa-report.md` (issue audits)
+- `library/requirements/<lifecycle>/prd-<###>-<title>/qa/<date>-qa-report.md` (feature audits)
+- `library/issues/<lifecycle>/ird-<###>-<title>/qa/<date>-qa-report.md` (issue audits)
 - `library/requirements/reports/<domain>/<date>-qa-report.md` (standalone audits with no source plan)
 
-with these sections, in order:
+Use the receiving repository's documented legacy location when applicable; do not move its plans or evidence. See [report placement](guides/06-report-writing.md).
+
+With these sections, in order:
 
 1. **Summary**, 2 to 3 sentences on verdict.
 2. **Scorecard**, five-axis status table.
@@ -107,9 +109,13 @@ Read these before producing your first report. They show the voice, depth, and s
 
 ---
 
+## Verification artifacts for the actual candidate (O293)
+
+Read [guides/08-verification-artifacts.md](guides/08-verification-artifacts.md) before claiming checks establish completion. It extends the existing report with exact candidate/plan identity, matching Security evidence, actual check receipts, generated output provenance and explicit limits. Use [templates/verification-artifacts.md](templates/verification-artifacts.md) as the companion, and retain skipped, unrun, cancelled and stale results separately from passing assertions. See [cases](examples/04-verification-artifact-cases.md) and [dated research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/quality-stinger/references/research/verification-artifacts/distillation.md).
+
 ## Report archive
 
-Per-stinger `reports/` has been retired. The teaching set (happy-path, blocker-heavy, ordering-violation) lives in [`examples/`](examples/). Real audit reports are written to the source plan's `reports/` subfolder under `library/requirements/`, or to `library/requirements/reports/<domain>/` for standalone audits.
+Per-stinger `reports/` has been retired. The teaching set (happy-path, blocker-heavy, ordering-violation) lives in [`examples/`](examples). Real audit reports are written to the source plan's `qa/` subfolder under `library/requirements/`, or to `library/requirements/reports/<domain>/` for standalone audits.
 
 ---
 

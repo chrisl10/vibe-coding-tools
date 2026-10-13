@@ -4,6 +4,19 @@
 
 ---
 
+## Current proof boundary
+
+Use [installed-host release qualification](10-qualify-installed-host-release.md) before claiming current native support. The tables below include dated format research. They establish authoring background, not installation, discovery, execution or account permission for this candidate. The canonical catalog and builder govern this source tree; do not recreate a retired `.codex-plugin` overlay from a historical table.
+
+## Current Wasp Nest v3 projection
+
+The current [catalog](../../../../plugin-catalog.json) and [layout guide](../../../../docs/PLUGIN-LAYOUT.md) define this repository's source and output locations. Core stays in src; optional components belong to one `packs/<plugin-id>` owner. The builder emits each selected owner's Claude/Cowork and Cursor manifests plus root portable plugin.json with extensions.com.openai. It emits no .codex-plugin overlay.
+
+Codex command adapters are source-command-<name> skills in the command's owner. TOML role projections are registered through trusted Core against the explicit selected-plugin registry. Cached siblings are not implicit selections. Source work uses the catalog's source_root; installed work resolves the owner, version and required workflow before arming a capability.
+
+The host tables and older compatibility examples below retain their research scope. They are not instructions to recreate a retired Wasp Nest output, edit an installed cache as source, assume UI selection writes the registry or broaden a host's documented capability.
+
+
 ## Agent Skills spec-six frontmatter is the portable skill format
 
 Only six frontmatter fields are legal outside Claude Code's own extended dialect: **`name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools`.** Any other field - `context: fork`, `disable-model-invocation`, `argument-hint`, `paths`, `hooks`, `arguments`, and the rest of Claude Code's richer extensions - is a Claude-Code-only superset.

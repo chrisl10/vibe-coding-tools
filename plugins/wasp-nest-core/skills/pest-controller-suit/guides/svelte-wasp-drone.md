@@ -1,10 +1,13 @@
 # svelte-wasp-drone
 
+**Plugin owner:** `web-development-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 Owns the Svelte 5 language and SvelteKit 2 runtime layer for any Svelte codebase: runes (`$state`, `$derived`, `$effect`, `$props`, `$bindable`, `$host`, `$inspect`), snippets and event attributes, component lifecycle, universal reactivity in `.svelte.js`/`.svelte.ts`, Svelte 4-to-5 migration, and SvelteKit 2 mechanics (load functions, form actions, remote functions, error boundaries). It is the language specialist, not a UI-application specialist: it rules on whether the code rendering a button is idiomatic Svelte 5, not on what that button looks like or which design system it belongs to.
 
 ## Paired Stinger
-[svelte-stinger](../../svelte-stinger) - runes fundamentals, migration cheatsheet, snippets/events, lifecycle, universal reactivity, and SvelteKit 2 integration patterns.
+[svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/svelte-stinger) - runes fundamentals, migration cheatsheet, snippets/events, lifecycle, universal reactivity, and SvelteKit 2 integration patterns.
 
 ## Trigger phrases
 - "migrate this component to Svelte 5 runes"
@@ -37,3 +40,5 @@ Owns the Svelte 5 language and SvelteKit 2 runtime layer for any Svelte codebase
 - shadcn-svelte-wasp-drone: when a component under review is a copy-in shadcn-svelte primitive.
 - ux-ui-svelte-wasp-drone: when the surface is apps/portal, apps/web, or apps/wl and OSPRY enforcement applies on top of the runes review.
 - quality-wasp-drone: for post-migration verification.
+
+For accessible forms and robust validation, load the paired Svelte skill's [guide 08](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/svelte-stinger/guides/08-accessible-forms-and-validation.md) and contract worksheet. Preserve installed-version checks, server authorization, pending/error state and explicit compiler/browser/manual accessibility proof gaps.

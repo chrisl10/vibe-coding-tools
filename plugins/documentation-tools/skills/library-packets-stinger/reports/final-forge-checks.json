@@ -1,0 +1,49 @@
+{
+  "component": "library-packets",
+  "date": "2026-10-06",
+  "stage_sequence": [
+    "topic",
+    "nine primary archives",
+    "28-fact distillation",
+    "references/helpers",
+    "seven guides",
+    "validated roots and independent QA",
+    "source registration and isolated harness packages"
+  ],
+  "format_validation": {
+    "skill_errors": 0,
+    "agent_errors": 0,
+    "command_errors": 0,
+    "plugin_errors": 0,
+    "cowork_plugin_errors": 0,
+    "cowork_skill_errors": 0
+  },
+  "helper_tests": 48,
+  "tests_passed": true,
+  "smoke_documents": 2,
+  "smoke_pages_inspected": 3,
+  "general_estimated_grade": 7.4,
+  "engineering_estimated_grade": 8.7,
+  "geometry_failures": 0,
+  "public_file_projection_verified": true,
+  "source_links_broken": 0,
+  "source_registration_entry_present": true,
+  "live_harness_installation_exercised": false,
+  "package_scope": "Only Library Packets; requires installed Wasp Nest core for command routing; direct Stinger/ChatGPT starter available",
+  "unrelated_full_source_law": "full AGPLv3 license text missing: packs/website-auditor/LICENSE",
+  "concurrent_source_updates_preserved": true,
+  "archives": [
+    {
+      "file": "legion-library-packets.zip",
+      "bytes": 100979,
+      "sha256": "e0c9fd4c7fdbb091662eea9c367a8a0df482ae825f61cd6184c947a7dcccf0d0"
+    },
+    {
+      "file": "library-packets-stinger.skill",
+      "bytes": 73744,
+      "sha256": "494bee78e19ea4ad27dbc97fab49a80346724d3306a4c87f6ae5fd844ff24529"
+    }
+  ],
+  "primary_body_archive": "Nine full captures retained in canonical source only; portable packages contain URL/date/hash reference records and a short attributed runnable excerpt",
+  "end_time_utc": "2026-10-06T15:38:00Z"
+}

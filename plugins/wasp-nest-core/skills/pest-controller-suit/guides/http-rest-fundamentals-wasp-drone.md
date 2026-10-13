@@ -1,10 +1,13 @@
 # http-rest-fundamentals-wasp-drone
 
+**Plugin owner:** `backend-and-desktop-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the HTTP protocol and REST architectural-style authority for any stack in the repo. It audits method safety and idempotency contracts, status-code honesty (including the "200 with error body" anti-pattern), header correctness (Cache-Control, ETag, Vary, CORS), conditional and range requests, HTTP/2 and HTTP/3 readiness, and REST compliance against Fielding's constraints. Every ruling is grounded in an RFC citation, not framework convention.
 
 ## Paired Stinger
-[http-rest-fundamentals-stinger](../../http-rest-fundamentals-stinger) - RFC-first guides on methods, status codes, headers, CORS, conditional/range requests, HTTP/2-3, and REST vs RPC, plus a findings-report template.
+[http-rest-fundamentals-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/http-rest-fundamentals-stinger) - RFC-first guides on methods, status codes, headers, CORS, conditional/range requests, HTTP/2-3, and REST vs RPC, plus a findings-report template.
 
 ## Trigger phrases
 - "is this status code correct?"

@@ -4,11 +4,11 @@ Pest-Controller-Suit routes work to the right specialist Drone, arms that Drone 
 
 ## Start here
 
-- [`SKILL.md`](./SKILL.md) contains the live roster, trigger phrases, routing boundaries, orchestration sequences, and dispatch contract.
-- [`PAIRING-AUDIT.md`](./PAIRING-AUDIT.md) records the verified Drone, Stinger, and routing-guide totals.
-- [`guides/`](./guides/) contains one detailed routing guide for every registered Drone.
+- [`SKILL.md`](SKILL.md) contains the live roster, trigger phrases, routing boundaries, orchestration sequences, and dispatch contract.
+- [`PAIRING-AUDIT.md`](PAIRING-AUDIT.md) records the verified Drone, Stinger, and routing-guide totals.
+- [`guides/`](guides) contains one detailed routing guide for every registered Drone.
 
-The roster stays in `SKILL.md` so this README cannot drift when the colony grows.
+The live roster directly routes 131 of the 151 Drones. Fourteen pairs stay in Core; the rest belong to the catalog's optional owners, with twenty Website leaves dispatched by that engagement's own orchestrator. Read the root plugin-catalog.json for ownership and use Core's resolver for selected installed availability. The roster identifies a capability without enabling it.
 
 ## Add or update a Drone
 
@@ -23,7 +23,7 @@ Do not hand-edit generated `.agents`, `.cursor`, or `.codex` copies.
 
 ## Philosophy
 
-See [`references/philosophy.md`](./references/philosophy.md) for the rationale behind routing over generalization.
+See [`references/philosophy.md`](references/philosophy.md) for the rationale behind routing over generalization.
 
 ---
 

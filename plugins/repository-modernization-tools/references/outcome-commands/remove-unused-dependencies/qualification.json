@@ -1,0 +1,15 @@
+{
+  "outcome": "O123",
+  "level": "source-only",
+  "command_validation": {
+    "exit_code": 0,
+    "errors": 0,
+    "warnings": 0,
+    "harness": "all",
+    "target": "plugin"
+  },
+  "source_checks": 24,
+  "source_checks_passed": true,
+  "runtime_application_proof": false,
+  "independent_final_review": "parent pending"
+}

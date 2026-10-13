@@ -1,0 +1,12 @@
+# Filled contract: constructed article CMS
+
+Owner/scope: hypothetical content team wants an independent CMS feeding an existing SvelteKit site. No copied business schema. Installed versions/lockfile: pending actual repo inspection; latest docs are not installed-version proof.
+Collections: articles with required unique slug/title, excerpt and Lexical content; media with alt text/type/size rules; CMS users with accepted admin/editor roles. No lead/account/subscription collections. Globals: public site label only if accepted.
+Access: anonymous article read constrained to `_status=published`; editor/admin read article drafts and write accepted content; delete admin-only. Users CRUD admin-only in this illustrative policy; first admin bootstrap separately authorized. Role field create/update admin-only. User emails are private; public article response excludes author relationships.
+API: /api/articles, public select fields title/slug/excerpt and only accepted media metadata; depth 0; page/limit bounded at actual chosen value; URLSearchParams encodes slug. Public user documents never serialized by the site. HTTP errors and malformed response shape fail visibly.
+Runtime: Next.js/Payload CMS; Svelte consumes reviewed REST from server-only load. DB host and adapter pending owner/data review, schema ownership/migration plan pending. Secret environment names only: PAYLOAD_SECRET and DATABASE_URL. No values, hardcoded fallback, guessed DB privileges or auto-applied migration.
+Media: durable adapter and retention/cleanup still pending owner choice. Local filesystem is development-only proof. Accepted upload MIME/size and private-read policy must be filled before upload readiness.
+Renderer: supported installed Lexical converter/custom node and HTML safety evidence pending; no hypothetical serializer claim.
+Cache: public SSR freshness target pending owner; preview authenticated/no-store. Publish/unpublish invalidation must be observed; there is no assumed automatic prerender refresh.
+Readiness: anonymous published 200 contract, anonymous direct draft denied, anonymous write denied, editor content allowed, editor Users/role escalation denied, private relation fields absent, page 2 reachable, missing content 404, preview/public cache isolation and media persistence all pending execution in an authorized local disposable fixture.
+Production/storage/provider actions: prepared only, none authorized or performed by this source update.

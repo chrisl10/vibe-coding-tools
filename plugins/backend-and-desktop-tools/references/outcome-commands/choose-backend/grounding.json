@@ -1,0 +1,10 @@
+{
+  "command": "packs/backend-and-desktop-tools/commands/choose-backend.md",
+  "queen_exit": 0,
+  "source_captures": 11,
+  "archive_hashes_verified": 11,
+  "role_declarations": "all cited agent names resolve in current catalog",
+  "distillation_citations": "all cited relative files exist",
+  "findings": [],
+  "qualification": "Static source/grounding review only; examples are hypothetical; no installed host or application runtime proof"
+}

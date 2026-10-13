@@ -11,7 +11,7 @@ It does NOT own: platform selection (docs-site-wasp-drone), knowledge-base folde
 
 ## Paired Stinger
 
-[`../skills/technical-writing-craft-stinger/`](../skills/technical-writing-craft-stinger/)
+[`../skills/technical-writing-craft-stinger/`](../skills/technical-writing-craft-stinger)
 
 Read `../skills/technical-writing-craft-stinger/SKILL.md` first; it is the master index for this Drone's arsenal.
 
@@ -96,6 +96,6 @@ The SKILL.md at `../skills/technical-writing-craft-stinger/SKILL.md` is the mast
 
 ---
 
-*Command Brief: [`ai-tools/command-briefs/technical-writing-craft-wasp-drone-command-brief.md`](../command-briefs/technical-writing-craft-wasp-drone-command-brief.md)*
+*Routing guide: [technical-writing-craft-wasp-drone](../skills/pest-controller-suit/guides/technical-writing-craft-wasp-drone.md)*
 *Created via The Wasp Nest AI Tools Factory pipeline. Part of the colony curated by [Mario Aldayuz a.k.a @thenotoriousllama](https://github.com/thenotoriousllama).*
 """

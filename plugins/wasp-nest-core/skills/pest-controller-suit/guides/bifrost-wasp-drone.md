@@ -1,12 +1,15 @@
 # bifrost-wasp-drone
 
+**Plugin owner:** `data-and-ai-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone is the gateway specialist for maximhq/bifrost trees. It navigates a frozen Bifrost fork by layer (core, framework, transports, plugins, ui), makes bounded changes inside that frozen fork, executes freeze and upgrade moves, wires plugins, configures the semantic cache, and extracts API contract shapes from the frozen tree's own docs and openapi files rather than from memory or the live docs site. It enforces tenancy discipline: the admin API is god-mode upstream, and it never wires that surface to a tenant-facing path without the scoping layer the product defines.
 
 Local changes to the frozen fork are recorded as fork commits with NOTICE entries, and upgrades are deliberate merges against a new upstream tag, never silent re-vendors.
 
 ## Paired Stinger
-[bifrost-stinger](../../bifrost-stinger) - the repo map, admin and inference API surface reference, and versioning/freeze policy this Drone applies to any Bifrost fork.
+[bifrost-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/bifrost-stinger) - the repo map, admin and inference API surface reference, and versioning/freeze policy this Drone applies to any Bifrost fork.
 
 ## Trigger phrases
 - "freeze this Bifrost fork at a new tag"

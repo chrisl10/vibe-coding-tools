@@ -53,9 +53,11 @@ CREATE POLICY tenant_isolation_write ON invoices FOR ALL
   USING (tenant_id = current_setting('app.tenant_id', true)::uuid)
   WITH CHECK (tenant_id = current_setting('app.tenant_id', true)::uuid);
 ```
-Rationale: `set_config(..., true)` scopes the GUC to the transaction so pooled connections never leak tenant context; `current_setting(..., true)` fails closed to zero rows if the GUC was never set. [research/distilled-security.md §3]
+Rationale: `set_config(..., true)` scopes the GUC to the transaction so pooled connections never leak tenant context; a missing setting returns NULL, while empty or invalid UUID text can error. Test the actual missing/invalid context result, roles and pooled reuse; see [response guide 12](../guides/12-response-and-tenant-boundaries.md). [research/distilled-security.md §3]
 
 ## Stripe webhook route
+
+Incomplete illustrative interface, not a deployable implementation. `persistVerifiedStripeWork` must atomically preserve recoverable acceptance, dedupe and completion state. No read-then-write or unique-insert-only completion claim. [Current trust/recovery procedure](../guides/13-webhook-forgery-replay-and-recovery.md).
 
 ```ts
 // src/routes/webhooks/stripe/+server.ts
@@ -76,20 +78,16 @@ export const POST: RequestHandler = async ({ request }) => {
     return new Response('invalid signature', { status: 400 });
   }
 
-  try {
-    await db.execute(/* INSERT INTO processed_webhooks (event_id, ...) unique on event_id */);
-  } catch (err) {
-    if (isUniqueViolation(err)) return new Response(null, { status: 200 }); // already processed
-    throw err;
-  }
-
-  queueMicrotask(() => processStripeEvent(event)); // ack fast, work async
+  // Illustrative interface only: must durably commit recoverable verified work.
+  await persistVerifiedStripeWork(event); // target DB/queue implementation required
   return new Response(null, { status: 200 });
 };
 ```
-Rationale: raw body reaches the verifier before any parsing; idempotency insert happens before any side effect; 2xx returned fast. [research/distilled-security.md §6]
+Rationale: raw body reaches the verifier before any parsing; successful acknowledgment follows durable verified acceptance. The declared persistence interface is unimplemented here and needs target proof. [Current webhook procedure](../guides/13-webhook-forgery-replay-and-recovery.md).
 
 ## GoHighLevel webhook route
+
+Incomplete illustrative interface: the target must implement durable acceptance and concurrency-safe recovery, using the current selected provider contract. No provider timestamp/retry semantics are inferred from Stripe.
 
 ```ts
 // src/routes/webhooks/gohighlevel/+server.ts
@@ -116,15 +114,11 @@ export const POST: RequestHandler = async ({ request }) => {
   }
 
   const payload = JSON.parse(rawBody);
-  if (await alreadyProcessed(payload.webhookId)) {
-    return new Response(null, { status: 200 }); // duplicate, ack anyway per GHL contract
-  }
-
-  queueMicrotask(() => processGhlWebhook(payload).catch(reportFailureInternally));
-  return new Response(null, { status: 200 }); // GHL wants 2xx even on internal failure
+  await persistVerifiedGhlWork(payload); // durable target implementation required
+  return new Response(null, { status: 200 }); // valid durable duplicate acceptance only
 };
 ```
-Rationale: prefer `X-GHL-Signature` (Ed25519); verify raw bytes; always 2xx to GHL while still tracking/alerting on internal failures. [research/distilled-security.md §8]
+Rationale: prefer `X-GHL-Signature` (Ed25519); verify raw bytes; apply the selected provider contract to valid durable acceptance; never acknowledge unavailable persistence as completed work. [research/distilled-security.md §8]
 
 ## `{@html}` with sanitization
 

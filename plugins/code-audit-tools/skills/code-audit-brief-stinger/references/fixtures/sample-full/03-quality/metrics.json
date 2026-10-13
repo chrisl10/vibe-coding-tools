@@ -1,0 +1,40 @@
+{
+  "dimension": "quality",
+  "verdict": "at-risk",
+  "summary": "Tests cover 38% of lines and none of billing; two features in the README do not exist in the code.",
+  "measures": [
+    {
+      "key": "line_coverage",
+      "label": "Line coverage",
+      "value": 38.0,
+      "unit": "%",
+      "band": "at-risk",
+      "threshold": ">70% healthy, <40% at risk",
+      "source": "vitest 3.2"
+    },
+    {
+      "key": "billing_coverage",
+      "label": "Billing module coverage",
+      "value": 0.0,
+      "unit": "%",
+      "band": "critical",
+      "threshold": ">70% healthy, <40% at risk",
+      "source": "vitest 3.2"
+    },
+    {
+      "key": "type_errors",
+      "label": "TypeScript errors with strict on",
+      "value": 57,
+      "unit": "errors",
+      "band": "moderate",
+      "threshold": "0",
+      "source": "tsc 5.9"
+    }
+  ],
+  "coverage": {
+    "files_scanned": 488,
+    "lines_scanned": 71230,
+    "skipped": [],
+    "caps": []
+  }
+}

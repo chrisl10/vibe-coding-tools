@@ -1,0 +1,3721 @@
+{
+  "version": "3.0.0",
+  "immutable_core": [
+    "get-started-stinger",
+    "library-stinger",
+    "knowledge-stinger",
+    "quality-stinger",
+    "security-stinger",
+    "github-repo-health-stinger"
+  ],
+  "plugins": [
+    {
+      "name": "wasp-nest-core",
+      "display_name": "Wasp Nest Core",
+      "description": "Start, route, document, review and govern every project.",
+      "why": "The permanent foundation: setup, source knowledge, security, quality and repository gates stay available to every workflow.",
+      "skills": [
+        "adr-writing-stinger",
+        "branching-strategy-stinger",
+        "code-review-pr-stinger",
+        "contract-writing-stinger",
+        "dependency-audit-stinger",
+        "get-started-stinger",
+        "git-stinger",
+        "github-repo-health-stinger",
+        "harness-integration-stinger",
+        "knowledge-stinger",
+        "library-stinger",
+        "pest-controller-suit",
+        "quality-stinger",
+        "queen-wasp-stinger",
+        "readme-writing-stinger",
+        "security-stinger",
+        "technical-writing-craft-stinger",
+        "time-blocked-turns"
+      ],
+      "agents": [
+        "adr-writing-wasp-drone",
+        "branching-strategy-wasp-drone",
+        "code-review-pr-wasp-drone",
+        "contract-writing-wasp-drone",
+        "dependency-audit-wasp-drone",
+        "git-wasp-drone",
+        "github-repo-health-wasp-drone",
+        "harness-integration-wasp-drone",
+        "knowledge-wasp-drone",
+        "library-wasp-drone",
+        "quality-wasp-drone",
+        "readme-writing-wasp-drone",
+        "security-wasp-drone",
+        "technical-writing-craft-wasp-drone"
+      ],
+      "commands": [
+        "choose-outcome",
+        "drift-audit",
+        "forge",
+        "pest-controller",
+        "qualify-wiring",
+        "re-research",
+        "register",
+        "ship-gate",
+        "smoke-it"
+      ],
+      "requires": [],
+      "optional_workflow_requirements": {
+        "worker-coordination": [
+          "app-primer-zero"
+        ]
+      },
+      "mandatory": true,
+      "counts": {
+        "skill": 18,
+        "agent": 14,
+        "command": 9
+      },
+      "source_root": "src",
+      "components": [
+        {
+          "kind": "agent",
+          "name": "adr-writing-wasp-drone",
+          "source": "src/agents/adr-writing-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "branching-strategy-wasp-drone",
+          "source": "src/agents/branching-strategy-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "code-review-pr-wasp-drone",
+          "source": "src/agents/code-review-pr-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "contract-writing-wasp-drone",
+          "source": "src/agents/contract-writing-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "dependency-audit-wasp-drone",
+          "source": "src/agents/dependency-audit-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "git-wasp-drone",
+          "source": "src/agents/git-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "github-repo-health-wasp-drone",
+          "source": "src/agents/github-repo-health-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "harness-integration-wasp-drone",
+          "source": "src/agents/harness-integration-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "knowledge-wasp-drone",
+          "source": "src/agents/knowledge-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "library-wasp-drone",
+          "source": "src/agents/library-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "quality-wasp-drone",
+          "source": "src/agents/quality-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "readme-writing-wasp-drone",
+          "source": "src/agents/readme-writing-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "security-wasp-drone",
+          "source": "src/agents/security-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "technical-writing-craft-wasp-drone",
+          "source": "src/agents/technical-writing-craft-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "choose-outcome",
+          "source": "src/commands/choose-outcome.md"
+        },
+        {
+          "kind": "command",
+          "name": "drift-audit",
+          "source": "src/commands/drift-audit.md"
+        },
+        {
+          "kind": "command",
+          "name": "forge",
+          "source": "src/commands/forge.md"
+        },
+        {
+          "kind": "command",
+          "name": "pest-controller",
+          "source": "src/commands/pest-controller.md"
+        },
+        {
+          "kind": "command",
+          "name": "qualify-wiring",
+          "source": "src/commands/qualify-wiring.md"
+        },
+        {
+          "kind": "command",
+          "name": "re-research",
+          "source": "src/commands/re-research.md"
+        },
+        {
+          "kind": "command",
+          "name": "register",
+          "source": "src/commands/register.md"
+        },
+        {
+          "kind": "command",
+          "name": "ship-gate",
+          "source": "src/commands/ship-gate.md"
+        },
+        {
+          "kind": "command",
+          "name": "smoke-it",
+          "source": "src/commands/smoke-it.md"
+        },
+        {
+          "kind": "skill",
+          "name": "adr-writing-stinger",
+          "source": "src/skills/adr-writing-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "branching-strategy-stinger",
+          "source": "src/skills/branching-strategy-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "code-review-pr-stinger",
+          "source": "src/skills/code-review-pr-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "contract-writing-stinger",
+          "source": "src/skills/contract-writing-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "dependency-audit-stinger",
+          "source": "src/skills/dependency-audit-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "get-started-stinger",
+          "source": "src/skills/get-started-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "git-stinger",
+          "source": "src/skills/git-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "github-repo-health-stinger",
+          "source": "src/skills/github-repo-health-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "harness-integration-stinger",
+          "source": "src/skills/harness-integration-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "knowledge-stinger",
+          "source": "src/skills/knowledge-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "library-stinger",
+          "source": "src/skills/library-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "pest-controller-suit",
+          "source": "src/skills/pest-controller-suit/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "quality-stinger",
+          "source": "src/skills/quality-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "queen-wasp-stinger",
+          "source": "src/skills/queen-wasp-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "readme-writing-stinger",
+          "source": "src/skills/readme-writing-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "security-stinger",
+          "source": "src/skills/security-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "technical-writing-craft-stinger",
+          "source": "src/skills/technical-writing-craft-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "time-blocked-turns",
+          "source": "src/skills/time-blocked-turns/SKILL.md"
+        }
+      ]
+    },
+    {
+      "name": "website-audit-tools",
+      "display_name": "Website Audit Tools",
+      "description": "Audit a public website with crawl, SEO, accessibility, conversion and evidence-backed reports.",
+      "why": "A public-site engagement has its own intake, saved crawl, scoring, passive security and reporting contract.",
+      "skills": [
+        "accessibility-audit-stinger",
+        "aeo-audit-stinger",
+        "analytics-stack-stinger",
+        "audit-intake-stinger",
+        "audit-reporting-stinger",
+        "audit-scoring-stinger",
+        "blog-content-stinger",
+        "content-semantics-stinger",
+        "ecommerce-catalog-stinger",
+        "icp-positioning-stinger",
+        "internal-linking-stinger",
+        "keyword-intelligence-stinger",
+        "master-website-auditor",
+        "performance-cwv-stinger",
+        "site-crawler-stinger",
+        "social-presence-stinger",
+        "stack-fingerprint-stinger",
+        "technical-seo-stinger",
+        "vendor-inventory-stinger",
+        "visual-funnel-stinger",
+        "web-security-posture-stinger"
+      ],
+      "agents": [
+        "accessibility-audit-wasp-drone",
+        "aeo-audit-wasp-drone",
+        "analytics-stack-wasp-drone",
+        "audit-intake-wasp-drone",
+        "audit-reporting-wasp-drone",
+        "audit-scoring-wasp-drone",
+        "blog-content-wasp-drone",
+        "content-semantics-wasp-drone",
+        "ecommerce-catalog-wasp-drone",
+        "icp-positioning-wasp-drone",
+        "internal-linking-wasp-drone",
+        "keyword-intelligence-wasp-drone",
+        "performance-cwv-wasp-drone",
+        "site-crawler-wasp-drone",
+        "social-presence-wasp-drone",
+        "stack-fingerprint-wasp-drone",
+        "technical-seo-wasp-drone",
+        "vendor-inventory-wasp-drone",
+        "visual-funnel-wasp-drone",
+        "web-security-posture-wasp-drone"
+      ],
+      "commands": [
+        "perform-website-audit"
+      ],
+      "requires": [
+        "wasp-nest-core",
+        "browser-and-app-testing-tools"
+      ],
+      "optional_workflow_requirements": {},
+      "mandatory": false,
+      "counts": {
+        "skill": 21,
+        "agent": 20,
+        "command": 1
+      },
+      "source_root": "packs/website-audit-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "accessibility-audit-stinger",
+          "source": "packs/website-audit-tools/skills/accessibility-audit-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "aeo-audit-stinger",
+          "source": "packs/website-audit-tools/skills/aeo-audit-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "analytics-stack-stinger",
+          "source": "packs/website-audit-tools/skills/analytics-stack-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "audit-intake-stinger",
+          "source": "packs/website-audit-tools/skills/audit-intake-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "audit-reporting-stinger",
+          "source": "packs/website-audit-tools/skills/audit-reporting-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "audit-scoring-stinger",
+          "source": "packs/website-audit-tools/skills/audit-scoring-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "blog-content-stinger",
+          "source": "packs/website-audit-tools/skills/blog-content-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "content-semantics-stinger",
+          "source": "packs/website-audit-tools/skills/content-semantics-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "ecommerce-catalog-stinger",
+          "source": "packs/website-audit-tools/skills/ecommerce-catalog-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "icp-positioning-stinger",
+          "source": "packs/website-audit-tools/skills/icp-positioning-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "internal-linking-stinger",
+          "source": "packs/website-audit-tools/skills/internal-linking-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "keyword-intelligence-stinger",
+          "source": "packs/website-audit-tools/skills/keyword-intelligence-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "master-website-auditor",
+          "source": "packs/website-audit-tools/skills/master-website-auditor/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "performance-cwv-stinger",
+          "source": "packs/website-audit-tools/skills/performance-cwv-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "site-crawler-stinger",
+          "source": "packs/website-audit-tools/skills/site-crawler-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "social-presence-stinger",
+          "source": "packs/website-audit-tools/skills/social-presence-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "stack-fingerprint-stinger",
+          "source": "packs/website-audit-tools/skills/stack-fingerprint-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "technical-seo-stinger",
+          "source": "packs/website-audit-tools/skills/technical-seo-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "vendor-inventory-stinger",
+          "source": "packs/website-audit-tools/skills/vendor-inventory-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "visual-funnel-stinger",
+          "source": "packs/website-audit-tools/skills/visual-funnel-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "web-security-posture-stinger",
+          "source": "packs/website-audit-tools/skills/web-security-posture-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "accessibility-audit-wasp-drone",
+          "source": "packs/website-audit-tools/agents/accessibility-audit-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "aeo-audit-wasp-drone",
+          "source": "packs/website-audit-tools/agents/aeo-audit-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "analytics-stack-wasp-drone",
+          "source": "packs/website-audit-tools/agents/analytics-stack-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "audit-intake-wasp-drone",
+          "source": "packs/website-audit-tools/agents/audit-intake-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "audit-reporting-wasp-drone",
+          "source": "packs/website-audit-tools/agents/audit-reporting-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "audit-scoring-wasp-drone",
+          "source": "packs/website-audit-tools/agents/audit-scoring-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "blog-content-wasp-drone",
+          "source": "packs/website-audit-tools/agents/blog-content-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "content-semantics-wasp-drone",
+          "source": "packs/website-audit-tools/agents/content-semantics-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "ecommerce-catalog-wasp-drone",
+          "source": "packs/website-audit-tools/agents/ecommerce-catalog-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "icp-positioning-wasp-drone",
+          "source": "packs/website-audit-tools/agents/icp-positioning-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "internal-linking-wasp-drone",
+          "source": "packs/website-audit-tools/agents/internal-linking-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "keyword-intelligence-wasp-drone",
+          "source": "packs/website-audit-tools/agents/keyword-intelligence-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "performance-cwv-wasp-drone",
+          "source": "packs/website-audit-tools/agents/performance-cwv-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "site-crawler-wasp-drone",
+          "source": "packs/website-audit-tools/agents/site-crawler-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "social-presence-wasp-drone",
+          "source": "packs/website-audit-tools/agents/social-presence-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "stack-fingerprint-wasp-drone",
+          "source": "packs/website-audit-tools/agents/stack-fingerprint-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "technical-seo-wasp-drone",
+          "source": "packs/website-audit-tools/agents/technical-seo-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "vendor-inventory-wasp-drone",
+          "source": "packs/website-audit-tools/agents/vendor-inventory-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "visual-funnel-wasp-drone",
+          "source": "packs/website-audit-tools/agents/visual-funnel-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "web-security-posture-wasp-drone",
+          "source": "packs/website-audit-tools/agents/web-security-posture-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "perform-website-audit",
+          "source": "packs/website-audit-tools/commands/perform-website-audit.md"
+        }
+      ]
+    },
+    {
+      "name": "code-audit-tools",
+      "display_name": "Code Audit Tools",
+      "description": "Audit repositories and app security, measure bloat, inspect branches and plan remediation.",
+      "why": "Code and owned-app investigation use source/effect evidence and stack-specific security. They must not inherit passive website permissions.",
+      "skills": [
+        "audit-my-code-stinger",
+        "code-audit-brief-stinger",
+        "code-bloat-stinger",
+        "code-forensics-stinger",
+        "code-foundation-stinger",
+        "lovable-audit-stinger",
+        "nextjs-security-stinger",
+        "polyglot-security-stinger",
+        "react-security-stinger",
+        "remediation-planning-stinger",
+        "sveltekit-security-stinger",
+        "swarm-audit-stinger"
+      ],
+      "agents": [
+        "code-audit-brief-wasp-drone",
+        "code-bloat-wasp-drone",
+        "code-forensics-wasp-drone",
+        "code-foundation-wasp-drone",
+        "lovable-audit-wasp-drone",
+        "nextjs-security-wasp-drone",
+        "polyglot-security-wasp-drone",
+        "react-security-wasp-drone",
+        "remediation-planning-wasp-drone",
+        "sveltekit-security-wasp-drone",
+        "swarm-audit-wasp-drone"
+      ],
+      "commands": [
+        "audit-my-code"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {},
+      "mandatory": false,
+      "counts": {
+        "skill": 12,
+        "agent": 11,
+        "command": 1
+      },
+      "source_root": "packs/code-audit-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "audit-my-code-stinger",
+          "source": "packs/code-audit-tools/skills/audit-my-code-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "code-audit-brief-stinger",
+          "source": "packs/code-audit-tools/skills/code-audit-brief-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "code-bloat-stinger",
+          "source": "packs/code-audit-tools/skills/code-bloat-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "code-forensics-stinger",
+          "source": "packs/code-audit-tools/skills/code-forensics-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "code-foundation-stinger",
+          "source": "packs/code-audit-tools/skills/code-foundation-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "lovable-audit-stinger",
+          "source": "packs/code-audit-tools/skills/lovable-audit-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "nextjs-security-stinger",
+          "source": "packs/code-audit-tools/skills/nextjs-security-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "polyglot-security-stinger",
+          "source": "packs/code-audit-tools/skills/polyglot-security-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "react-security-stinger",
+          "source": "packs/code-audit-tools/skills/react-security-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "remediation-planning-stinger",
+          "source": "packs/code-audit-tools/skills/remediation-planning-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "sveltekit-security-stinger",
+          "source": "packs/code-audit-tools/skills/sveltekit-security-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "swarm-audit-stinger",
+          "source": "packs/code-audit-tools/skills/swarm-audit-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "code-audit-brief-wasp-drone",
+          "source": "packs/code-audit-tools/agents/code-audit-brief-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "code-bloat-wasp-drone",
+          "source": "packs/code-audit-tools/agents/code-bloat-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "code-forensics-wasp-drone",
+          "source": "packs/code-audit-tools/agents/code-forensics-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "code-foundation-wasp-drone",
+          "source": "packs/code-audit-tools/agents/code-foundation-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "lovable-audit-wasp-drone",
+          "source": "packs/code-audit-tools/agents/lovable-audit-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "nextjs-security-wasp-drone",
+          "source": "packs/code-audit-tools/agents/nextjs-security-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "polyglot-security-wasp-drone",
+          "source": "packs/code-audit-tools/agents/polyglot-security-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "react-security-wasp-drone",
+          "source": "packs/code-audit-tools/agents/react-security-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "remediation-planning-wasp-drone",
+          "source": "packs/code-audit-tools/agents/remediation-planning-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "sveltekit-security-wasp-drone",
+          "source": "packs/code-audit-tools/agents/sveltekit-security-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "swarm-audit-wasp-drone",
+          "source": "packs/code-audit-tools/agents/swarm-audit-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "audit-my-code",
+          "source": "packs/code-audit-tools/commands/audit-my-code.md"
+        }
+      ]
+    },
+    {
+      "name": "documentation-tools",
+      "display_name": "Documentation Tools",
+      "description": "Refresh, extract, publish and package documentation from real sources.",
+      "why": "Advanced documentation production is optional. Basic Library and Knowledge authorship remains in core.",
+      "skills": [
+        "api-docs-stinger",
+        "archivist-stinger",
+        "docs-site-stinger",
+        "kb-refresh-stinger",
+        "library-packets-stinger",
+        "markdown-mdx-content-pipeline-stinger",
+        "mcp-tool-docs-stinger",
+        "wiki-stinger"
+      ],
+      "agents": [
+        "api-docs-wasp-drone",
+        "archivist-wasp-drone",
+        "docs-site-wasp-drone",
+        "kb-refresh-wasp-drone",
+        "library-packets-wasp-drone",
+        "markdown-mdx-content-pipeline-wasp-drone",
+        "mcp-tool-docs-wasp-drone",
+        "wiki-wasp-drone"
+      ],
+      "commands": [
+        "explain-repository",
+        "kb-refresh",
+        "library-packets"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {
+        "kb-refresh full repository discovery": [
+          "code-audit-tools"
+        ]
+      },
+      "mandatory": false,
+      "counts": {
+        "skill": 8,
+        "agent": 8,
+        "command": 3
+      },
+      "source_root": "packs/documentation-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "api-docs-stinger",
+          "source": "packs/documentation-tools/skills/api-docs-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "archivist-stinger",
+          "source": "packs/documentation-tools/skills/archivist-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "docs-site-stinger",
+          "source": "packs/documentation-tools/skills/docs-site-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "kb-refresh-stinger",
+          "source": "packs/documentation-tools/skills/kb-refresh-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "library-packets-stinger",
+          "source": "packs/documentation-tools/skills/library-packets-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "markdown-mdx-content-pipeline-stinger",
+          "source": "packs/documentation-tools/skills/markdown-mdx-content-pipeline-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "mcp-tool-docs-stinger",
+          "source": "packs/documentation-tools/skills/mcp-tool-docs-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "wiki-stinger",
+          "source": "packs/documentation-tools/skills/wiki-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "api-docs-wasp-drone",
+          "source": "packs/documentation-tools/agents/api-docs-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "archivist-wasp-drone",
+          "source": "packs/documentation-tools/agents/archivist-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "docs-site-wasp-drone",
+          "source": "packs/documentation-tools/agents/docs-site-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "kb-refresh-wasp-drone",
+          "source": "packs/documentation-tools/agents/kb-refresh-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "library-packets-wasp-drone",
+          "source": "packs/documentation-tools/agents/library-packets-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "markdown-mdx-content-pipeline-wasp-drone",
+          "source": "packs/documentation-tools/agents/markdown-mdx-content-pipeline-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "mcp-tool-docs-wasp-drone",
+          "source": "packs/documentation-tools/agents/mcp-tool-docs-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "wiki-wasp-drone",
+          "source": "packs/documentation-tools/agents/wiki-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "explain-repository",
+          "source": "packs/documentation-tools/commands/explain-repository.md"
+        },
+        {
+          "kind": "command",
+          "name": "kb-refresh",
+          "source": "packs/documentation-tools/commands/kb-refresh.md"
+        },
+        {
+          "kind": "command",
+          "name": "library-packets",
+          "source": "packs/documentation-tools/commands/library-packets.md"
+        }
+      ]
+    },
+    {
+      "name": "web-development-tools",
+      "display_name": "Web Development Tools",
+      "description": "Build web interfaces and sites with React, Svelte, design systems and accessible components.",
+      "why": "Keep the interface workflow together, with stack routing inside the pack. A developer chooses one coherent web pack instead of many tiny UI packages.",
+      "skills": [
+        "asset-stinger",
+        "component-vendoring-stinger",
+        "csv-xlsx-import-export-stinger",
+        "dark-mode-theming-stinger",
+        "design-system-stinger",
+        "font-loading-stinger",
+        "icon-system-stinger",
+        "image-optimization-stinger",
+        "impeccable-stinger",
+        "localization-stinger",
+        "modal-toast-dialog-stinger",
+        "nextjs-stinger",
+        "nuxt-stinger",
+        "preact-stinger",
+        "product-tour-onboarding-ui-stinger",
+        "pwa-stinger",
+        "react-stinger",
+        "react-to-svelte-stinger",
+        "seo-aeo-stinger",
+        "shadcn-svelte-stinger",
+        "svelte-stinger",
+        "tailwind-stinger",
+        "tanstack-stinger",
+        "typography-font-stinger",
+        "ux-ui-stinger",
+        "ux-ui-svelte-stinger",
+        "vue-stinger",
+        "web-stack-selection-stinger",
+        "website-stinger",
+        "xyflow-stinger"
+      ],
+      "agents": [
+        "asset-wasp-drone",
+        "component-vendoring-wasp-drone",
+        "csv-xlsx-import-export-wasp-drone",
+        "dark-mode-theming-wasp-drone",
+        "design-system-wasp-drone",
+        "font-loading-wasp-drone",
+        "icon-system-wasp-drone",
+        "image-optimization-wasp-drone",
+        "impeccable-wasp-drone",
+        "localization-wasp-drone",
+        "modal-toast-dialog-wasp-drone",
+        "nextjs-wasp-drone",
+        "nuxt-wasp-drone",
+        "preact-wasp-drone",
+        "product-tour-onboarding-ui-wasp-drone",
+        "pwa-wasp-drone",
+        "react-to-svelte-wasp-drone",
+        "react-wasp-drone",
+        "seo-aeo-wasp-drone",
+        "shadcn-svelte-wasp-drone",
+        "svelte-wasp-drone",
+        "tailwind-wasp-drone",
+        "tanstack-wasp-drone",
+        "typography-font-wasp-drone",
+        "ux-ui-svelte-wasp-drone",
+        "ux-ui-wasp-drone",
+        "vue-wasp-drone",
+        "web-stack-selection-wasp-drone",
+        "website-wasp-drone",
+        "xyflow-wasp-drone"
+      ],
+      "commands": [
+        "build-app-search",
+        "build-localization",
+        "build-nextjs-app",
+        "build-nuxt-app",
+        "build-pwa-app",
+        "build-quick-website",
+        "build-saas-foundation",
+        "build-vue-app",
+        "build-web-app",
+        "choose-web-stack",
+        "qualify-typography",
+        "vendor-component"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {
+        "full website with data/auth/payments": [
+          "data-and-ai-tools",
+          "platform-and-release-tools"
+        ],
+        "build-quick-website-browser": [
+          "browser-and-app-testing-tools"
+        ],
+        "build-web-app-data": [
+          "data-and-ai-tools"
+        ],
+        "build-web-app-platform": [
+          "platform-and-release-tools"
+        ],
+        "build-saas-foundation-data": [
+          "data-and-ai-tools"
+        ],
+        "build-saas-foundation-platform": [
+          "platform-and-release-tools"
+        ],
+        "build-saas-foundation-backend": [
+          "backend-and-desktop-tools"
+        ],
+        "build-app-search-data": [
+          "data-and-ai-tools"
+        ],
+        "build-app-search-api": [
+          "backend-and-desktop-tools"
+        ]
+      },
+      "mandatory": false,
+      "counts": {
+        "skill": 30,
+        "agent": 30,
+        "command": 12
+      },
+      "source_root": "packs/web-development-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "asset-stinger",
+          "source": "packs/web-development-tools/skills/asset-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "csv-xlsx-import-export-stinger",
+          "source": "packs/web-development-tools/skills/csv-xlsx-import-export-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "dark-mode-theming-stinger",
+          "source": "packs/web-development-tools/skills/dark-mode-theming-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "design-system-stinger",
+          "source": "packs/web-development-tools/skills/design-system-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "font-loading-stinger",
+          "source": "packs/web-development-tools/skills/font-loading-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "icon-system-stinger",
+          "source": "packs/web-development-tools/skills/icon-system-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "image-optimization-stinger",
+          "source": "packs/web-development-tools/skills/image-optimization-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "impeccable-stinger",
+          "source": "packs/web-development-tools/skills/impeccable-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "modal-toast-dialog-stinger",
+          "source": "packs/web-development-tools/skills/modal-toast-dialog-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "preact-stinger",
+          "source": "packs/web-development-tools/skills/preact-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "product-tour-onboarding-ui-stinger",
+          "source": "packs/web-development-tools/skills/product-tour-onboarding-ui-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "react-stinger",
+          "source": "packs/web-development-tools/skills/react-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "react-to-svelte-stinger",
+          "source": "packs/web-development-tools/skills/react-to-svelte-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "seo-aeo-stinger",
+          "source": "packs/web-development-tools/skills/seo-aeo-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "shadcn-svelte-stinger",
+          "source": "packs/web-development-tools/skills/shadcn-svelte-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "svelte-stinger",
+          "source": "packs/web-development-tools/skills/svelte-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "tailwind-stinger",
+          "source": "packs/web-development-tools/skills/tailwind-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "tanstack-stinger",
+          "source": "packs/web-development-tools/skills/tanstack-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "typography-font-stinger",
+          "source": "packs/web-development-tools/skills/typography-font-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "ux-ui-stinger",
+          "source": "packs/web-development-tools/skills/ux-ui-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "ux-ui-svelte-stinger",
+          "source": "packs/web-development-tools/skills/ux-ui-svelte-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "web-stack-selection-stinger",
+          "source": "packs/web-development-tools/skills/web-stack-selection-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "website-stinger",
+          "source": "packs/web-development-tools/skills/website-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "asset-wasp-drone",
+          "source": "packs/web-development-tools/agents/asset-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "csv-xlsx-import-export-wasp-drone",
+          "source": "packs/web-development-tools/agents/csv-xlsx-import-export-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "dark-mode-theming-wasp-drone",
+          "source": "packs/web-development-tools/agents/dark-mode-theming-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "design-system-wasp-drone",
+          "source": "packs/web-development-tools/agents/design-system-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "font-loading-wasp-drone",
+          "source": "packs/web-development-tools/agents/font-loading-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "icon-system-wasp-drone",
+          "source": "packs/web-development-tools/agents/icon-system-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "image-optimization-wasp-drone",
+          "source": "packs/web-development-tools/agents/image-optimization-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "impeccable-wasp-drone",
+          "source": "packs/web-development-tools/agents/impeccable-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "modal-toast-dialog-wasp-drone",
+          "source": "packs/web-development-tools/agents/modal-toast-dialog-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "preact-wasp-drone",
+          "source": "packs/web-development-tools/agents/preact-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "product-tour-onboarding-ui-wasp-drone",
+          "source": "packs/web-development-tools/agents/product-tour-onboarding-ui-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "react-to-svelte-wasp-drone",
+          "source": "packs/web-development-tools/agents/react-to-svelte-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "react-wasp-drone",
+          "source": "packs/web-development-tools/agents/react-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "seo-aeo-wasp-drone",
+          "source": "packs/web-development-tools/agents/seo-aeo-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "shadcn-svelte-wasp-drone",
+          "source": "packs/web-development-tools/agents/shadcn-svelte-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "svelte-wasp-drone",
+          "source": "packs/web-development-tools/agents/svelte-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "tailwind-wasp-drone",
+          "source": "packs/web-development-tools/agents/tailwind-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "tanstack-wasp-drone",
+          "source": "packs/web-development-tools/agents/tanstack-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "typography-font-wasp-drone",
+          "source": "packs/web-development-tools/agents/typography-font-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "ux-ui-svelte-wasp-drone",
+          "source": "packs/web-development-tools/agents/ux-ui-svelte-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "ux-ui-wasp-drone",
+          "source": "packs/web-development-tools/agents/ux-ui-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "web-stack-selection-wasp-drone",
+          "source": "packs/web-development-tools/agents/web-stack-selection-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "website-wasp-drone",
+          "source": "packs/web-development-tools/agents/website-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "build-app-search",
+          "source": "packs/web-development-tools/commands/build-app-search.md"
+        },
+        {
+          "kind": "command",
+          "name": "build-quick-website",
+          "source": "packs/web-development-tools/commands/build-quick-website.md"
+        },
+        {
+          "kind": "command",
+          "name": "build-saas-foundation",
+          "source": "packs/web-development-tools/commands/build-saas-foundation.md"
+        },
+        {
+          "kind": "command",
+          "name": "build-web-app",
+          "source": "packs/web-development-tools/commands/build-web-app.md"
+        },
+        {
+          "kind": "command",
+          "name": "choose-web-stack",
+          "source": "packs/web-development-tools/commands/choose-web-stack.md"
+        },
+        {
+          "kind": "command",
+          "name": "qualify-typography",
+          "source": "packs/web-development-tools/commands/qualify-typography.md"
+        },
+        {
+          "kind": "skill",
+          "name": "nextjs-stinger",
+          "source": "packs/web-development-tools/skills/nextjs-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "nextjs-wasp-drone",
+          "source": "packs/web-development-tools/agents/nextjs-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "build-nextjs-app",
+          "source": "packs/web-development-tools/commands/build-nextjs-app.md"
+        },
+        {
+          "kind": "skill",
+          "name": "vue-stinger",
+          "source": "packs/web-development-tools/skills/vue-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "vue-wasp-drone",
+          "source": "packs/web-development-tools/agents/vue-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "build-vue-app",
+          "source": "packs/web-development-tools/commands/build-vue-app.md"
+        },
+        {
+          "kind": "skill",
+          "name": "nuxt-stinger",
+          "source": "packs/web-development-tools/skills/nuxt-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "nuxt-wasp-drone",
+          "source": "packs/web-development-tools/agents/nuxt-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "build-nuxt-app",
+          "source": "packs/web-development-tools/commands/build-nuxt-app.md"
+        },
+        {
+          "kind": "skill",
+          "name": "pwa-stinger",
+          "source": "packs/web-development-tools/skills/pwa-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "pwa-wasp-drone",
+          "source": "packs/web-development-tools/agents/pwa-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "build-pwa-app",
+          "source": "packs/web-development-tools/commands/build-pwa-app.md"
+        },
+        {
+          "kind": "skill",
+          "name": "localization-stinger",
+          "source": "packs/web-development-tools/skills/localization-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "localization-wasp-drone",
+          "source": "packs/web-development-tools/agents/localization-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "build-localization",
+          "source": "packs/web-development-tools/commands/build-localization.md"
+        },
+        {
+          "kind": "skill",
+          "name": "component-vendoring-stinger",
+          "source": "packs/web-development-tools/skills/component-vendoring-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "xyflow-stinger",
+          "source": "packs/web-development-tools/skills/xyflow-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "component-vendoring-wasp-drone",
+          "source": "packs/web-development-tools/agents/component-vendoring-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "xyflow-wasp-drone",
+          "source": "packs/web-development-tools/agents/xyflow-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "vendor-component",
+          "source": "packs/web-development-tools/commands/vendor-component.md"
+        }
+      ]
+    },
+    {
+      "name": "backend-and-desktop-tools",
+      "display_name": "Backend and Desktop Tools",
+      "description": "Implement TypeScript, Python, Go, Rust, native apps, APIs and terminal workflows.",
+      "why": "Implementation languages and native delivery share code ownership and build boundaries; mobile store publication stays beside app delivery.",
+      "skills": [
+        "app-store-submission-stinger",
+        "electron-app-stinger",
+        "go-desktop-stinger",
+        "go-stinger",
+        "http-rest-fundamentals-stinger",
+        "python-stinger",
+        "rust-stinger",
+        "tauri-stinger",
+        "terminal-bash-stinger",
+        "typescript-node-stinger"
+      ],
+      "agents": [
+        "app-store-submission-wasp-drone",
+        "electron-app-wasp-drone",
+        "go-desktop-wasp-drone",
+        "go-wasp-drone",
+        "http-rest-fundamentals-wasp-drone",
+        "python-wasp-drone",
+        "rust-wasp-drone",
+        "tauri-wasp-drone",
+        "terminal-bash-wasp-drone",
+        "typescript-node-wasp-drone"
+      ],
+      "commands": [
+        "build-desktop-app",
+        "build-mobile-backend",
+        "choose-backend",
+        "choose-desktop-stack"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {
+        "web frontend in a desktop app": [
+          "web-development-tools"
+        ],
+        "build-desktop-app-ui": [
+          "web-development-tools"
+        ],
+        "build-mobile-backend-data": [
+          "data-and-ai-tools"
+        ],
+        "build-mobile-backend-identity": [
+          "platform-and-release-tools"
+        ]
+      },
+      "mandatory": false,
+      "counts": {
+        "skill": 10,
+        "agent": 10,
+        "command": 4
+      },
+      "source_root": "packs/backend-and-desktop-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "app-store-submission-stinger",
+          "source": "packs/backend-and-desktop-tools/skills/app-store-submission-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "electron-app-stinger",
+          "source": "packs/backend-and-desktop-tools/skills/electron-app-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "go-desktop-stinger",
+          "source": "packs/backend-and-desktop-tools/skills/go-desktop-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "go-stinger",
+          "source": "packs/backend-and-desktop-tools/skills/go-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "http-rest-fundamentals-stinger",
+          "source": "packs/backend-and-desktop-tools/skills/http-rest-fundamentals-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "python-stinger",
+          "source": "packs/backend-and-desktop-tools/skills/python-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "rust-stinger",
+          "source": "packs/backend-and-desktop-tools/skills/rust-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "tauri-stinger",
+          "source": "packs/backend-and-desktop-tools/skills/tauri-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "terminal-bash-stinger",
+          "source": "packs/backend-and-desktop-tools/skills/terminal-bash-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "typescript-node-stinger",
+          "source": "packs/backend-and-desktop-tools/skills/typescript-node-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "app-store-submission-wasp-drone",
+          "source": "packs/backend-and-desktop-tools/agents/app-store-submission-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "electron-app-wasp-drone",
+          "source": "packs/backend-and-desktop-tools/agents/electron-app-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "go-desktop-wasp-drone",
+          "source": "packs/backend-and-desktop-tools/agents/go-desktop-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "go-wasp-drone",
+          "source": "packs/backend-and-desktop-tools/agents/go-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "http-rest-fundamentals-wasp-drone",
+          "source": "packs/backend-and-desktop-tools/agents/http-rest-fundamentals-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "python-wasp-drone",
+          "source": "packs/backend-and-desktop-tools/agents/python-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "rust-wasp-drone",
+          "source": "packs/backend-and-desktop-tools/agents/rust-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "tauri-wasp-drone",
+          "source": "packs/backend-and-desktop-tools/agents/tauri-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "terminal-bash-wasp-drone",
+          "source": "packs/backend-and-desktop-tools/agents/terminal-bash-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "typescript-node-wasp-drone",
+          "source": "packs/backend-and-desktop-tools/agents/typescript-node-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "build-desktop-app",
+          "source": "packs/backend-and-desktop-tools/commands/build-desktop-app.md"
+        },
+        {
+          "kind": "command",
+          "name": "build-mobile-backend",
+          "source": "packs/backend-and-desktop-tools/commands/build-mobile-backend.md"
+        },
+        {
+          "kind": "command",
+          "name": "choose-backend",
+          "source": "packs/backend-and-desktop-tools/commands/choose-backend.md"
+        },
+        {
+          "kind": "command",
+          "name": "choose-desktop-stack",
+          "source": "packs/backend-and-desktop-tools/commands/choose-desktop-stack.md"
+        }
+      ]
+    },
+    {
+      "name": "data-and-ai-tools",
+      "display_name": "Data and AI Tools",
+      "description": "Design data, retrieval, AI runtime, model tooling and agent operations.",
+      "why": "Storage, retrieval and AI orchestration form one technical journey. IDE/session tools remain opt-in; TARS retains its Claude-desktop-only prerequisite.",
+      "skills": [
+        "ai-coding-tools-stinger",
+        "ai-tools-platform-stinger",
+        "bifrost-stinger",
+        "cursor-ide-stinger",
+        "db-stinger",
+        "deeplake-dataset-stinger",
+        "embeddings-runtime-stinger",
+        "mind-stinger",
+        "neon-drizzle-stinger",
+        "retrieval-stinger",
+        "tars-stinger",
+        "vector-store-stinger"
+      ],
+      "agents": [
+        "ai-coding-tools-wasp-drone",
+        "ai-tools-platform-wasp-drone",
+        "bifrost-wasp-drone",
+        "cursor-ide-wasp-drone",
+        "db-wasp-drone",
+        "deeplake-dataset-wasp-drone",
+        "embeddings-runtime-wasp-drone",
+        "mind-wasp-drone",
+        "neon-drizzle-wasp-drone",
+        "retrieval-wasp-drone",
+        "tars-wasp-drone",
+        "vector-store-wasp-drone"
+      ],
+      "commands": [
+        "build-rag-feature",
+        "design-data",
+        "tars"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {
+        "implement provider/backend adapters": [
+          "backend-and-desktop-tools"
+        ],
+        "feature-margin-economics": [
+          "software-economics-tools"
+        ]
+      },
+      "mandatory": false,
+      "counts": {
+        "skill": 12,
+        "agent": 12,
+        "command": 3
+      },
+      "source_root": "packs/data-and-ai-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "ai-coding-tools-stinger",
+          "source": "packs/data-and-ai-tools/skills/ai-coding-tools-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "ai-tools-platform-stinger",
+          "source": "packs/data-and-ai-tools/skills/ai-tools-platform-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "bifrost-stinger",
+          "source": "packs/data-and-ai-tools/skills/bifrost-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "cursor-ide-stinger",
+          "source": "packs/data-and-ai-tools/skills/cursor-ide-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "db-stinger",
+          "source": "packs/data-and-ai-tools/skills/db-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "deeplake-dataset-stinger",
+          "source": "packs/data-and-ai-tools/skills/deeplake-dataset-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "embeddings-runtime-stinger",
+          "source": "packs/data-and-ai-tools/skills/embeddings-runtime-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "mind-stinger",
+          "source": "packs/data-and-ai-tools/skills/mind-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "neon-drizzle-stinger",
+          "source": "packs/data-and-ai-tools/skills/neon-drizzle-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "retrieval-stinger",
+          "source": "packs/data-and-ai-tools/skills/retrieval-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "tars-stinger",
+          "source": "packs/data-and-ai-tools/skills/tars-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "vector-store-stinger",
+          "source": "packs/data-and-ai-tools/skills/vector-store-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "ai-coding-tools-wasp-drone",
+          "source": "packs/data-and-ai-tools/agents/ai-coding-tools-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "ai-tools-platform-wasp-drone",
+          "source": "packs/data-and-ai-tools/agents/ai-tools-platform-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "bifrost-wasp-drone",
+          "source": "packs/data-and-ai-tools/agents/bifrost-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "cursor-ide-wasp-drone",
+          "source": "packs/data-and-ai-tools/agents/cursor-ide-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "db-wasp-drone",
+          "source": "packs/data-and-ai-tools/agents/db-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "deeplake-dataset-wasp-drone",
+          "source": "packs/data-and-ai-tools/agents/deeplake-dataset-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "embeddings-runtime-wasp-drone",
+          "source": "packs/data-and-ai-tools/agents/embeddings-runtime-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "mind-wasp-drone",
+          "source": "packs/data-and-ai-tools/agents/mind-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "neon-drizzle-wasp-drone",
+          "source": "packs/data-and-ai-tools/agents/neon-drizzle-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "retrieval-wasp-drone",
+          "source": "packs/data-and-ai-tools/agents/retrieval-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "tars-wasp-drone",
+          "source": "packs/data-and-ai-tools/agents/tars-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "vector-store-wasp-drone",
+          "source": "packs/data-and-ai-tools/agents/vector-store-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "build-rag-feature",
+          "source": "packs/data-and-ai-tools/commands/build-rag-feature.md"
+        },
+        {
+          "kind": "command",
+          "name": "design-data",
+          "source": "packs/data-and-ai-tools/commands/design-data.md"
+        },
+        {
+          "kind": "command",
+          "name": "tars",
+          "source": "packs/data-and-ai-tools/commands/tars.md"
+        }
+      ]
+    },
+    {
+      "name": "platform-and-release-tools",
+      "display_name": "Platform and Release Tools",
+      "description": "Integrate authentication, payments, analytics, messaging and production delivery.",
+      "why": "The ship-and-operate journey joins provider integration and deployment, while keeping each existing actor/approval boundary.",
+      "skills": [
+        "auth-stinger",
+        "changelog-release-notes-stinger",
+        "ci-release-stinger",
+        "crm-integration-stinger",
+        "cron-scheduling-stinger",
+        "devops-stinger",
+        "discord-bot-stinger",
+        "doppler-stinger",
+        "mcp-protocol-stinger",
+        "payments-stinger",
+        "posthog-stinger",
+        "runbook-writing-stinger",
+        "sentry-stinger",
+        "slack-app-stinger",
+        "status-page-stinger",
+        "tailscale-stinger",
+        "telegram-bot-stinger",
+        "traffic-capacity-stinger",
+        "vercel-stinger",
+        "workos-stinger"
+      ],
+      "agents": [
+        "auth-wasp-drone",
+        "changelog-release-notes-wasp-drone",
+        "ci-release-wasp-drone",
+        "crm-integration-wasp-drone",
+        "cron-scheduling-wasp-drone",
+        "devops-wasp-drone",
+        "discord-bot-wasp-drone",
+        "doppler-wasp-drone",
+        "mcp-protocol-wasp-drone",
+        "payments-wasp-drone",
+        "posthog-wasp-drone",
+        "runbook-writing-wasp-drone",
+        "sentry-wasp-drone",
+        "slack-app-wasp-drone",
+        "status-page-wasp-drone",
+        "tailscale-wasp-drone",
+        "telegram-bot-wasp-drone",
+        "traffic-capacity-wasp-drone",
+        "vercel-wasp-drone",
+        "workos-wasp-drone"
+      ],
+      "commands": [
+        "build-integration",
+        "design-release-pipeline",
+        "plan-traffic-capacity",
+        "prepare-native-release",
+        "prepare-privacy-implementation",
+        "prepare-release",
+        "secure-platform-foundation"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {
+        "application implementation": [
+          "web-development-tools",
+          "backend-and-desktop-tools"
+        ],
+        "prepare-release-native": [
+          "backend-and-desktop-tools"
+        ],
+        "secure-platform-foundation-data": [
+          "data-and-ai-tools"
+        ],
+        "secure-platform-foundation-web": [
+          "web-development-tools"
+        ],
+        "secure-platform-foundation-backend": [
+          "backend-and-desktop-tools"
+        ],
+        "prepare-privacy-implementation-data": [
+          "data-and-ai-tools"
+        ],
+        "build-integration-api": [
+          "backend-and-desktop-tools"
+        ],
+        "build-integration-data": [
+          "data-and-ai-tools"
+        ],
+        "prepare-native-release-platform": [
+          "backend-and-desktop-tools"
+        ]
+      },
+      "mandatory": false,
+      "counts": {
+        "skill": 20,
+        "agent": 20,
+        "command": 7
+      },
+      "source_root": "packs/platform-and-release-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "auth-stinger",
+          "source": "packs/platform-and-release-tools/skills/auth-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "changelog-release-notes-stinger",
+          "source": "packs/platform-and-release-tools/skills/changelog-release-notes-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "ci-release-stinger",
+          "source": "packs/platform-and-release-tools/skills/ci-release-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "crm-integration-stinger",
+          "source": "packs/platform-and-release-tools/skills/crm-integration-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "cron-scheduling-stinger",
+          "source": "packs/platform-and-release-tools/skills/cron-scheduling-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "devops-stinger",
+          "source": "packs/platform-and-release-tools/skills/devops-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "discord-bot-stinger",
+          "source": "packs/platform-and-release-tools/skills/discord-bot-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "doppler-stinger",
+          "source": "packs/platform-and-release-tools/skills/doppler-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "mcp-protocol-stinger",
+          "source": "packs/platform-and-release-tools/skills/mcp-protocol-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "payments-stinger",
+          "source": "packs/platform-and-release-tools/skills/payments-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "posthog-stinger",
+          "source": "packs/platform-and-release-tools/skills/posthog-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "runbook-writing-stinger",
+          "source": "packs/platform-and-release-tools/skills/runbook-writing-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "sentry-stinger",
+          "source": "packs/platform-and-release-tools/skills/sentry-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "slack-app-stinger",
+          "source": "packs/platform-and-release-tools/skills/slack-app-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "status-page-stinger",
+          "source": "packs/platform-and-release-tools/skills/status-page-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "tailscale-stinger",
+          "source": "packs/platform-and-release-tools/skills/tailscale-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "telegram-bot-stinger",
+          "source": "packs/platform-and-release-tools/skills/telegram-bot-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "traffic-capacity-stinger",
+          "source": "packs/platform-and-release-tools/skills/traffic-capacity-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "vercel-stinger",
+          "source": "packs/platform-and-release-tools/skills/vercel-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "workos-stinger",
+          "source": "packs/platform-and-release-tools/skills/workos-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "auth-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/auth-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "changelog-release-notes-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/changelog-release-notes-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "ci-release-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/ci-release-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "crm-integration-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/crm-integration-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "cron-scheduling-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/cron-scheduling-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "devops-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/devops-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "discord-bot-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/discord-bot-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "doppler-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/doppler-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "mcp-protocol-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/mcp-protocol-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "payments-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/payments-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "posthog-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/posthog-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "runbook-writing-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/runbook-writing-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "sentry-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/sentry-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "slack-app-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/slack-app-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "status-page-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/status-page-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "tailscale-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/tailscale-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "telegram-bot-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/telegram-bot-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "traffic-capacity-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/traffic-capacity-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "vercel-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/vercel-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "workos-wasp-drone",
+          "source": "packs/platform-and-release-tools/agents/workos-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "build-integration",
+          "source": "packs/platform-and-release-tools/commands/build-integration.md"
+        },
+        {
+          "kind": "command",
+          "name": "design-release-pipeline",
+          "source": "packs/platform-and-release-tools/commands/design-release-pipeline.md"
+        },
+        {
+          "kind": "command",
+          "name": "plan-traffic-capacity",
+          "source": "packs/platform-and-release-tools/commands/plan-traffic-capacity.md"
+        },
+        {
+          "kind": "command",
+          "name": "prepare-native-release",
+          "source": "packs/platform-and-release-tools/commands/prepare-native-release.md"
+        },
+        {
+          "kind": "command",
+          "name": "prepare-privacy-implementation",
+          "source": "packs/platform-and-release-tools/commands/prepare-privacy-implementation.md"
+        },
+        {
+          "kind": "command",
+          "name": "prepare-release",
+          "source": "packs/platform-and-release-tools/commands/prepare-release.md"
+        },
+        {
+          "kind": "command",
+          "name": "secure-platform-foundation",
+          "source": "packs/platform-and-release-tools/commands/secure-platform-foundation.md"
+        }
+      ]
+    },
+    {
+      "name": "growth-and-customer-tools",
+      "display_name": "Growth and Customer Tools",
+      "description": "Research buyers, acquire leads, follow up, support customers and grow accounts.",
+      "why": "Acquire, serve and retain is a coherent business journey. These generic methods must not acquire mandatory Littlebird or HighLevel dependencies.",
+      "skills": [
+        "affiliate-referral-program-stinger",
+        "alt-ads-platforms-stinger",
+        "blogging-content-strategy-stinger",
+        "cold-outreach-stinger",
+        "competitive-research-stinger",
+        "customer-support-tooling-stinger",
+        "go-to-market-stinger",
+        "icp-research-stinger",
+        "knowledge-base-help-center-stinger",
+        "lifecycle-email-stinger",
+        "live-chat-support-stinger",
+        "newsletter-platform-stinger",
+        "review-funnels-stinger",
+        "social-media-marketing-organic-stinger",
+        "tawk-to-api-stinger"
+      ],
+      "agents": [
+        "affiliate-referral-program-wasp-drone",
+        "alt-ads-platforms-wasp-drone",
+        "blogging-content-strategy-wasp-drone",
+        "cold-outreach-wasp-drone",
+        "competitive-research-wasp-drone",
+        "customer-support-tooling-wasp-drone",
+        "go-to-market-wasp-drone",
+        "icp-research-wasp-drone",
+        "knowledge-base-help-center-wasp-drone",
+        "lifecycle-email-wasp-drone",
+        "live-chat-support-wasp-drone",
+        "newsletter-platform-wasp-drone",
+        "review-funnels-wasp-drone",
+        "social-media-marketing-organic-wasp-drone",
+        "tawk-to-api-wasp-drone"
+      ],
+      "commands": [
+        "choose-acquisition-channel",
+        "launch-product"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {
+        "CRM/account sync implementation": [
+          "platform-and-release-tools"
+        ],
+        "branded report packets": [
+          "documentation-tools"
+        ]
+      },
+      "mandatory": false,
+      "counts": {
+        "skill": 15,
+        "agent": 15,
+        "command": 2
+      },
+      "source_root": "packs/growth-and-customer-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "affiliate-referral-program-stinger",
+          "source": "packs/growth-and-customer-tools/skills/affiliate-referral-program-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "alt-ads-platforms-stinger",
+          "source": "packs/growth-and-customer-tools/skills/alt-ads-platforms-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "blogging-content-strategy-stinger",
+          "source": "packs/growth-and-customer-tools/skills/blogging-content-strategy-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "cold-outreach-stinger",
+          "source": "packs/growth-and-customer-tools/skills/cold-outreach-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "competitive-research-stinger",
+          "source": "packs/growth-and-customer-tools/skills/competitive-research-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "customer-support-tooling-stinger",
+          "source": "packs/growth-and-customer-tools/skills/customer-support-tooling-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "icp-research-stinger",
+          "source": "packs/growth-and-customer-tools/skills/icp-research-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "knowledge-base-help-center-stinger",
+          "source": "packs/growth-and-customer-tools/skills/knowledge-base-help-center-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "lifecycle-email-stinger",
+          "source": "packs/growth-and-customer-tools/skills/lifecycle-email-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "live-chat-support-stinger",
+          "source": "packs/growth-and-customer-tools/skills/live-chat-support-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "newsletter-platform-stinger",
+          "source": "packs/growth-and-customer-tools/skills/newsletter-platform-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "review-funnels-stinger",
+          "source": "packs/growth-and-customer-tools/skills/review-funnels-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "social-media-marketing-organic-stinger",
+          "source": "packs/growth-and-customer-tools/skills/social-media-marketing-organic-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "tawk-to-api-stinger",
+          "source": "packs/growth-and-customer-tools/skills/tawk-to-api-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "affiliate-referral-program-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/affiliate-referral-program-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "alt-ads-platforms-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/alt-ads-platforms-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "blogging-content-strategy-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/blogging-content-strategy-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "cold-outreach-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/cold-outreach-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "competitive-research-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/competitive-research-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "customer-support-tooling-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/customer-support-tooling-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "icp-research-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/icp-research-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "knowledge-base-help-center-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/knowledge-base-help-center-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "lifecycle-email-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/lifecycle-email-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "live-chat-support-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/live-chat-support-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "newsletter-platform-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/newsletter-platform-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "review-funnels-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/review-funnels-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "social-media-marketing-organic-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/social-media-marketing-organic-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "tawk-to-api-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/tawk-to-api-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "launch-product",
+          "source": "packs/growth-and-customer-tools/commands/launch-product.md"
+        },
+        {
+          "kind": "skill",
+          "name": "go-to-market-stinger",
+          "source": "packs/growth-and-customer-tools/skills/go-to-market-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "go-to-market-wasp-drone",
+          "source": "packs/growth-and-customer-tools/agents/go-to-market-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "choose-acquisition-channel",
+          "source": "packs/growth-and-customer-tools/commands/choose-acquisition-channel.md"
+        }
+      ]
+    },
+    {
+      "name": "business-and-product-tools",
+      "display_name": "Business and Product Tools",
+      "description": "Form and run a company, discover product needs, hire teams and improve delivery.",
+      "why": "Company and product decisions belong together, while legal/finance actions retain their existing explicit-request scope.",
+      "skills": [
+        "agile-scrum-stinger",
+        "build-buy-analysis-stinger",
+        "capacity-planning-stinger",
+        "discovery-research-stinger",
+        "estimation-stinger",
+        "hiring-ats-stinger",
+        "hr-payroll-stinger",
+        "incorporation-startup-stack-stinger",
+        "investor-cap-table-stinger",
+        "kanban-flow-stinger",
+        "legal-docs-stinger",
+        "okr-goal-setting-stinger",
+        "product-feedback-roadmap-stinger",
+        "retrospective-stinger",
+        "software-licensing-stinger"
+      ],
+      "agents": [
+        "agile-scrum-wasp-drone",
+        "build-buy-analysis-wasp-drone",
+        "capacity-planning-wasp-drone",
+        "discovery-research-wasp-drone",
+        "estimation-wasp-drone",
+        "hiring-ats-wasp-drone",
+        "hr-payroll-wasp-drone",
+        "incorporation-startup-stack-wasp-drone",
+        "investor-cap-table-wasp-drone",
+        "kanban-flow-wasp-drone",
+        "legal-docs-wasp-drone",
+        "okr-goal-setting-wasp-drone",
+        "product-feedback-roadmap-wasp-drone",
+        "retrospective-wasp-drone",
+        "software-licensing-wasp-drone"
+      ],
+      "commands": [
+        "assess-product-risk",
+        "compare-build-buy",
+        "estimate-build",
+        "review-software-license",
+        "scope-first-version",
+        "validate-idea",
+        "work-like-a-team"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {
+        "validate-idea-market": [
+          "growth-and-customer-tools"
+        ]
+      },
+      "mandatory": false,
+      "counts": {
+        "skill": 15,
+        "agent": 15,
+        "command": 7
+      },
+      "source_root": "packs/business-and-product-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "agile-scrum-stinger",
+          "source": "packs/business-and-product-tools/skills/agile-scrum-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "discovery-research-stinger",
+          "source": "packs/business-and-product-tools/skills/discovery-research-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "estimation-stinger",
+          "source": "packs/business-and-product-tools/skills/estimation-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "hiring-ats-stinger",
+          "source": "packs/business-and-product-tools/skills/hiring-ats-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "hr-payroll-stinger",
+          "source": "packs/business-and-product-tools/skills/hr-payroll-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "incorporation-startup-stack-stinger",
+          "source": "packs/business-and-product-tools/skills/incorporation-startup-stack-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "investor-cap-table-stinger",
+          "source": "packs/business-and-product-tools/skills/investor-cap-table-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "kanban-flow-stinger",
+          "source": "packs/business-and-product-tools/skills/kanban-flow-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "legal-docs-stinger",
+          "source": "packs/business-and-product-tools/skills/legal-docs-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "okr-goal-setting-stinger",
+          "source": "packs/business-and-product-tools/skills/okr-goal-setting-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "product-feedback-roadmap-stinger",
+          "source": "packs/business-and-product-tools/skills/product-feedback-roadmap-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "retrospective-stinger",
+          "source": "packs/business-and-product-tools/skills/retrospective-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "agile-scrum-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/agile-scrum-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "discovery-research-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/discovery-research-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "estimation-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/estimation-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "hiring-ats-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/hiring-ats-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "hr-payroll-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/hr-payroll-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "incorporation-startup-stack-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/incorporation-startup-stack-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "investor-cap-table-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/investor-cap-table-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "kanban-flow-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/kanban-flow-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "legal-docs-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/legal-docs-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "okr-goal-setting-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/okr-goal-setting-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "product-feedback-roadmap-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/product-feedback-roadmap-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "retrospective-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/retrospective-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "assess-product-risk",
+          "source": "packs/business-and-product-tools/commands/assess-product-risk.md"
+        },
+        {
+          "kind": "command",
+          "name": "estimate-build",
+          "source": "packs/business-and-product-tools/commands/estimate-build.md"
+        },
+        {
+          "kind": "command",
+          "name": "scope-first-version",
+          "source": "packs/business-and-product-tools/commands/scope-first-version.md"
+        },
+        {
+          "kind": "command",
+          "name": "validate-idea",
+          "source": "packs/business-and-product-tools/commands/validate-idea.md"
+        },
+        {
+          "kind": "command",
+          "name": "work-like-a-team",
+          "source": "packs/business-and-product-tools/commands/work-like-a-team.md"
+        },
+        {
+          "kind": "skill",
+          "name": "capacity-planning-stinger",
+          "source": "packs/business-and-product-tools/skills/capacity-planning-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "capacity-planning-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/capacity-planning-wasp-drone.md"
+        },
+        {
+          "kind": "skill",
+          "name": "build-buy-analysis-stinger",
+          "source": "packs/business-and-product-tools/skills/build-buy-analysis-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "build-buy-analysis-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/build-buy-analysis-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "compare-build-buy",
+          "source": "packs/business-and-product-tools/commands/compare-build-buy.md"
+        },
+        {
+          "kind": "skill",
+          "name": "software-licensing-stinger",
+          "source": "packs/business-and-product-tools/skills/software-licensing-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "software-licensing-wasp-drone",
+          "source": "packs/business-and-product-tools/agents/software-licensing-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "review-software-license",
+          "source": "packs/business-and-product-tools/commands/review-software-license.md"
+        }
+      ]
+    },
+    {
+      "name": "media-and-creative-tools",
+      "display_name": "Media and Creative Tools",
+      "description": "Create consented photography and integrate voice and video production.",
+      "why": "Media has asset consent, provider job and metadata rules that should not inflate core. Ship blank model templates, never ingested people.",
+      "skills": [
+        "elevenlabs-api-stinger",
+        "heygen-api-stinger",
+        "natural-photography-stinger",
+        "product-demo-stinger"
+      ],
+      "agents": [
+        "elevenlabs-api-wasp-drone",
+        "heygen-api-wasp-drone",
+        "natural-photography-wasp-drone",
+        "product-demo-wasp-drone"
+      ],
+      "commands": [
+        "create-product-media"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {},
+      "mandatory": false,
+      "counts": {
+        "skill": 4,
+        "agent": 4,
+        "command": 1
+      },
+      "source_root": "packs/media-and-creative-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "elevenlabs-api-stinger",
+          "source": "packs/media-and-creative-tools/skills/elevenlabs-api-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "heygen-api-stinger",
+          "source": "packs/media-and-creative-tools/skills/heygen-api-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "natural-photography-stinger",
+          "source": "packs/media-and-creative-tools/skills/natural-photography-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "elevenlabs-api-wasp-drone",
+          "source": "packs/media-and-creative-tools/agents/elevenlabs-api-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "heygen-api-wasp-drone",
+          "source": "packs/media-and-creative-tools/agents/heygen-api-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "natural-photography-wasp-drone",
+          "source": "packs/media-and-creative-tools/agents/natural-photography-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "create-product-media",
+          "source": "packs/media-and-creative-tools/commands/create-product-media.md"
+        },
+        {
+          "kind": "skill",
+          "name": "product-demo-stinger",
+          "source": "packs/media-and-creative-tools/skills/product-demo-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "product-demo-wasp-drone",
+          "source": "packs/media-and-creative-tools/agents/product-demo-wasp-drone.md"
+        }
+      ]
+    },
+    {
+      "name": "browser-and-app-testing-tools",
+      "display_name": "Browser and App Testing Tools",
+      "description": "Automate browsers, capture live apps and measure Lighthouse/PageSpeed behavior.",
+      "why": "Browser/CDP expertise and authenticated capture are reused by audit and engineering workflows without duplicating their implementations.",
+      "skills": [
+        "browser-automation-stinger",
+        "chrome-chromium-stinger",
+        "lighthouse-pagespeed-stinger",
+        "webapp-capture-stinger"
+      ],
+      "agents": [
+        "browser-automation-wasp-drone",
+        "chrome-chromium-wasp-drone",
+        "lighthouse-pagespeed-wasp-drone",
+        "webapp-capture-wasp-drone"
+      ],
+      "commands": [
+        "webapp-capture"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {},
+      "mandatory": false,
+      "counts": {
+        "skill": 4,
+        "agent": 4,
+        "command": 1
+      },
+      "source_root": "packs/browser-and-app-testing-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "browser-automation-stinger",
+          "source": "packs/browser-and-app-testing-tools/skills/browser-automation-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "chrome-chromium-stinger",
+          "source": "packs/browser-and-app-testing-tools/skills/chrome-chromium-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "lighthouse-pagespeed-stinger",
+          "source": "packs/browser-and-app-testing-tools/skills/lighthouse-pagespeed-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "webapp-capture-stinger",
+          "source": "packs/browser-and-app-testing-tools/skills/webapp-capture-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "browser-automation-wasp-drone",
+          "source": "packs/browser-and-app-testing-tools/agents/browser-automation-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "chrome-chromium-wasp-drone",
+          "source": "packs/browser-and-app-testing-tools/agents/chrome-chromium-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "lighthouse-pagespeed-wasp-drone",
+          "source": "packs/browser-and-app-testing-tools/agents/lighthouse-pagespeed-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "webapp-capture-wasp-drone",
+          "source": "packs/browser-and-app-testing-tools/agents/webapp-capture-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "webapp-capture",
+          "source": "packs/browser-and-app-testing-tools/commands/webapp-capture.md"
+        }
+      ]
+    },
+    {
+      "name": "highlevel",
+      "display_name": "HighLevel",
+      "description": "Integrate HighLevel, build with AI Studio and map exported workflows.",
+      "why": "Keep the vendor-specific connection and creation workflow together; its provider/account requirements do not belong in generic growth tools.",
+      "skills": [
+        "ghl-to-mermaid-stinger",
+        "gohighlevel-stinger",
+        "highlevel-ai-studio-stinger"
+      ],
+      "agents": [
+        "ghl-to-mermaid-wasp-drone",
+        "gohighlevel-wasp-drone",
+        "highlevel-ai-studio-wasp-drone"
+      ],
+      "commands": [
+        "map-highlevel"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {},
+      "mandatory": false,
+      "counts": {
+        "skill": 3,
+        "agent": 3,
+        "command": 1
+      },
+      "source_root": "packs/highlevel",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "ghl-to-mermaid-stinger",
+          "source": "packs/highlevel/skills/ghl-to-mermaid-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "gohighlevel-stinger",
+          "source": "packs/highlevel/skills/gohighlevel-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "highlevel-ai-studio-stinger",
+          "source": "packs/highlevel/skills/highlevel-ai-studio-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "ghl-to-mermaid-wasp-drone",
+          "source": "packs/highlevel/agents/ghl-to-mermaid-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "gohighlevel-wasp-drone",
+          "source": "packs/highlevel/agents/gohighlevel-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "highlevel-ai-studio-wasp-drone",
+          "source": "packs/highlevel/agents/highlevel-ai-studio-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "map-highlevel",
+          "source": "packs/highlevel/commands/map-highlevel.md"
+        }
+      ]
+    },
+    {
+      "name": "littlebird-toolkit",
+      "display_name": "Littlebird Toolkit",
+      "description": "Turn Littlebird memory into evidence-backed operating work.",
+      "why": "Preserve all thirty methods in their connector-specific pack. Littlebird access and subscription prerequisites are not generic core dependencies.",
+      "skills": [
+        "brand-voice-guardian",
+        "client-health-radar",
+        "combined-voice-creator",
+        "comment-to-crm-piper",
+        "commitment-tracker",
+        "competitor-watch",
+        "content-repurposer",
+        "daily-brief",
+        "day-reconstructor",
+        "deal-pipeline-reconstructor",
+        "facebook-voice-creator",
+        "focus-forensics",
+        "invoice-chaser",
+        "knowledge-base-builder",
+        "lead-harvester",
+        "learning-capturer",
+        "littlebird-voice-creator",
+        "meeting-scribe",
+        "money-leak-auditor",
+        "osint-investigator",
+        "pre-call-prep",
+        "renewal-sentinel",
+        "research-synthesizer",
+        "routine-architect",
+        "said-it-already",
+        "skill-suggester",
+        "sop-forge",
+        "testimonial-miner",
+        "weekly-review",
+        "who-am-i-ghosting"
+      ],
+      "agents": [],
+      "commands": [
+        "review-my-work"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {},
+      "mandatory": false,
+      "counts": {
+        "skill": 30,
+        "agent": 0,
+        "command": 1
+      },
+      "source_root": "packs/littlebird-toolkit",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "brand-voice-guardian",
+          "source": "packs/littlebird-toolkit/skills/brand-voice-guardian/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "client-health-radar",
+          "source": "packs/littlebird-toolkit/skills/client-health-radar/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "combined-voice-creator",
+          "source": "packs/littlebird-toolkit/skills/combined-voice-creator/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "comment-to-crm-piper",
+          "source": "packs/littlebird-toolkit/skills/comment-to-crm-piper/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "commitment-tracker",
+          "source": "packs/littlebird-toolkit/skills/commitment-tracker/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "competitor-watch",
+          "source": "packs/littlebird-toolkit/skills/competitor-watch/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "content-repurposer",
+          "source": "packs/littlebird-toolkit/skills/content-repurposer/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "daily-brief",
+          "source": "packs/littlebird-toolkit/skills/daily-brief/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "day-reconstructor",
+          "source": "packs/littlebird-toolkit/skills/day-reconstructor/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "deal-pipeline-reconstructor",
+          "source": "packs/littlebird-toolkit/skills/deal-pipeline-reconstructor/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "facebook-voice-creator",
+          "source": "packs/littlebird-toolkit/skills/facebook-voice-creator/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "focus-forensics",
+          "source": "packs/littlebird-toolkit/skills/focus-forensics/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "invoice-chaser",
+          "source": "packs/littlebird-toolkit/skills/invoice-chaser/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "knowledge-base-builder",
+          "source": "packs/littlebird-toolkit/skills/knowledge-base-builder/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "lead-harvester",
+          "source": "packs/littlebird-toolkit/skills/lead-harvester/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "learning-capturer",
+          "source": "packs/littlebird-toolkit/skills/learning-capturer/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "littlebird-voice-creator",
+          "source": "packs/littlebird-toolkit/skills/littlebird-voice-creator/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "meeting-scribe",
+          "source": "packs/littlebird-toolkit/skills/meeting-scribe/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "money-leak-auditor",
+          "source": "packs/littlebird-toolkit/skills/money-leak-auditor/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "osint-investigator",
+          "source": "packs/littlebird-toolkit/skills/osint-investigator/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "pre-call-prep",
+          "source": "packs/littlebird-toolkit/skills/pre-call-prep/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "renewal-sentinel",
+          "source": "packs/littlebird-toolkit/skills/renewal-sentinel/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "research-synthesizer",
+          "source": "packs/littlebird-toolkit/skills/research-synthesizer/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "routine-architect",
+          "source": "packs/littlebird-toolkit/skills/routine-architect/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "said-it-already",
+          "source": "packs/littlebird-toolkit/skills/said-it-already/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "skill-suggester",
+          "source": "packs/littlebird-toolkit/skills/skill-suggester/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "sop-forge",
+          "source": "packs/littlebird-toolkit/skills/sop-forge/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "testimonial-miner",
+          "source": "packs/littlebird-toolkit/skills/testimonial-miner/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "weekly-review",
+          "source": "packs/littlebird-toolkit/skills/weekly-review/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "who-am-i-ghosting",
+          "source": "packs/littlebird-toolkit/skills/who-am-i-ghosting/SKILL.md"
+        },
+        {
+          "kind": "command",
+          "name": "review-my-work",
+          "source": "packs/littlebird-toolkit/commands/review-my-work.md"
+        }
+      ]
+    },
+    {
+      "name": "content-intelligence",
+      "display_name": "Content Intelligence",
+      "description": "Find and verify current repository/news topics and prepare voice-matched drafts.",
+      "why": "Keep this small research entry point separate. Its external voice skill and topic ledger must be explicit; do not invent a generic voice asset.",
+      "skills": [
+        "repo-radar-stinger",
+        "viral-news-stinger"
+      ],
+      "agents": [],
+      "commands": [
+        "research-content-opportunity"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {},
+      "mandatory": false,
+      "counts": {
+        "skill": 2,
+        "agent": 0,
+        "command": 1
+      },
+      "source_root": "packs/content-intelligence",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "repo-radar-stinger",
+          "source": "packs/content-intelligence/skills/repo-radar-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "viral-news-stinger",
+          "source": "packs/content-intelligence/skills/viral-news-stinger/SKILL.md"
+        },
+        {
+          "kind": "command",
+          "name": "research-content-opportunity",
+          "source": "packs/content-intelligence/commands/research-content-opportunity.md"
+        }
+      ]
+    },
+    {
+      "name": "app-primer-zero",
+      "display_name": "App Primer Zero",
+      "description": "Prepare an app library, contracts, schema baseline and a wave handoff before building.",
+      "why": "Retain the named new-app journey as a standalone entry point. It reuses core Library/Knowledge/contracts rather than duplicating their agents.",
+      "skills": [
+        "app-primer-zero-stinger"
+      ],
+      "agents": [],
+      "commands": [
+        "app-primer-zero"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {},
+      "mandatory": false,
+      "counts": {
+        "skill": 1,
+        "agent": 0,
+        "command": 1
+      },
+      "source_root": "packs/app-primer-zero",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "app-primer-zero-stinger",
+          "source": "packs/app-primer-zero/skills/app-primer-zero-stinger/SKILL.md"
+        },
+        {
+          "kind": "command",
+          "name": "app-primer-zero",
+          "source": "packs/app-primer-zero/commands/app-primer-zero.md"
+        }
+      ]
+    },
+    {
+      "name": "developer-learning-tools",
+      "display_name": "Developer Learning Tools",
+      "description": "Explain technical sources, prepare beginner builds and teach web fundamentals through bounded projects.",
+      "why": "Explain technical sources, prepare beginner builds and teach web fundamentals through bounded projects.",
+      "skills": [
+        "builder-readiness-stinger",
+        "project-learning-stinger",
+        "technical-explainer-stinger",
+        "testing-coach-stinger"
+      ],
+      "agents": [
+        "builder-readiness-wasp-drone",
+        "project-learning-wasp-drone",
+        "technical-explainer-wasp-drone",
+        "testing-coach-wasp-drone"
+      ],
+      "commands": [
+        "explain-this",
+        "learn-through-project",
+        "practice-tests",
+        "prepare-learning-exercise",
+        "prepare-to-build"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {
+        "library-packets": [
+          "documentation-tools"
+        ]
+      },
+      "mandatory": false,
+      "counts": {
+        "skill": 4,
+        "agent": 4,
+        "command": 5
+      },
+      "source_root": "packs/developer-learning-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "builder-readiness-stinger",
+          "source": "packs/developer-learning-tools/skills/builder-readiness-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "technical-explainer-stinger",
+          "source": "packs/developer-learning-tools/skills/technical-explainer-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "builder-readiness-wasp-drone",
+          "source": "packs/developer-learning-tools/agents/builder-readiness-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "technical-explainer-wasp-drone",
+          "source": "packs/developer-learning-tools/agents/technical-explainer-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "explain-this",
+          "source": "packs/developer-learning-tools/commands/explain-this.md"
+        },
+        {
+          "kind": "command",
+          "name": "prepare-to-build",
+          "source": "packs/developer-learning-tools/commands/prepare-to-build.md"
+        },
+        {
+          "kind": "skill",
+          "name": "project-learning-stinger",
+          "source": "packs/developer-learning-tools/skills/project-learning-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "project-learning-wasp-drone",
+          "source": "packs/developer-learning-tools/agents/project-learning-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "learn-through-project",
+          "source": "packs/developer-learning-tools/commands/learn-through-project.md"
+        },
+        {
+          "kind": "skill",
+          "name": "testing-coach-stinger",
+          "source": "packs/developer-learning-tools/skills/testing-coach-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "testing-coach-wasp-drone",
+          "source": "packs/developer-learning-tools/agents/testing-coach-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "practice-tests",
+          "source": "packs/developer-learning-tools/commands/practice-tests.md"
+        },
+        {
+          "kind": "command",
+          "name": "prepare-learning-exercise",
+          "source": "packs/developer-learning-tools/commands/prepare-learning-exercise.md"
+        }
+      ]
+    },
+    {
+      "name": "software-economics-tools",
+      "display_name": "Software Economics Tools",
+      "description": "Model supplied software economics and costs with explicit scenarios and evidence.",
+      "why": "Model supplied software economics and costs with explicit scenarios and evidence.",
+      "skills": [
+        "operating-cost-stinger",
+        "saas-pricing-stinger",
+        "services-quoting-stinger",
+        "unit-economics-stinger"
+      ],
+      "agents": [
+        "operating-cost-wasp-drone",
+        "saas-pricing-wasp-drone",
+        "services-quoting-wasp-drone",
+        "unit-economics-wasp-drone"
+      ],
+      "commands": [
+        "estimate-operating-cost",
+        "model-unit-economics",
+        "price-my-product",
+        "quote-project"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {},
+      "mandatory": false,
+      "counts": {
+        "skill": 4,
+        "agent": 4,
+        "command": 4
+      },
+      "source_root": "packs/software-economics-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "operating-cost-stinger",
+          "source": "packs/software-economics-tools/skills/operating-cost-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "saas-pricing-stinger",
+          "source": "packs/software-economics-tools/skills/saas-pricing-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "services-quoting-stinger",
+          "source": "packs/software-economics-tools/skills/services-quoting-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "unit-economics-stinger",
+          "source": "packs/software-economics-tools/skills/unit-economics-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "operating-cost-wasp-drone",
+          "source": "packs/software-economics-tools/agents/operating-cost-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "saas-pricing-wasp-drone",
+          "source": "packs/software-economics-tools/agents/saas-pricing-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "services-quoting-wasp-drone",
+          "source": "packs/software-economics-tools/agents/services-quoting-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "unit-economics-wasp-drone",
+          "source": "packs/software-economics-tools/agents/unit-economics-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "estimate-operating-cost",
+          "source": "packs/software-economics-tools/commands/estimate-operating-cost.md"
+        },
+        {
+          "kind": "command",
+          "name": "model-unit-economics",
+          "source": "packs/software-economics-tools/commands/model-unit-economics.md"
+        },
+        {
+          "kind": "command",
+          "name": "price-my-product",
+          "source": "packs/software-economics-tools/commands/price-my-product.md"
+        },
+        {
+          "kind": "command",
+          "name": "quote-project",
+          "source": "packs/software-economics-tools/commands/quote-project.md"
+        }
+      ]
+    },
+    {
+      "name": "infrastructure-decision-tools",
+      "display_name": "Infrastructure Decision Tools",
+      "description": "Prepare platform assets and account dependencies without implicit setup actions.",
+      "why": "Prepare platform assets and account dependencies without implicit setup actions.",
+      "skills": [
+        "digitalocean-platform-stinger",
+        "infrastructure-fit-stinger",
+        "launch-assets-stinger",
+        "network-boundaries-stinger",
+        "railway-platform-stinger",
+        "vultr-platform-stinger"
+      ],
+      "agents": [
+        "digitalocean-platform-wasp-drone",
+        "infrastructure-fit-wasp-drone",
+        "launch-assets-wasp-drone",
+        "network-boundaries-wasp-drone",
+        "railway-platform-wasp-drone",
+        "vultr-platform-wasp-drone"
+      ],
+      "commands": [
+        "assess-digitalocean",
+        "assess-railway",
+        "assess-vultr",
+        "choose-infrastructure",
+        "plan-network-boundaries",
+        "prepare-assets"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {
+        "prepare-assets-native": [
+          "backend-and-desktop-tools"
+        ],
+        "prepare-assets-identity": [
+          "platform-and-release-tools"
+        ]
+      },
+      "mandatory": false,
+      "counts": {
+        "skill": 6,
+        "agent": 6,
+        "command": 6
+      },
+      "source_root": "packs/infrastructure-decision-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "infrastructure-fit-stinger",
+          "source": "packs/infrastructure-decision-tools/skills/infrastructure-fit-stinger/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "name": "launch-assets-stinger",
+          "source": "packs/infrastructure-decision-tools/skills/launch-assets-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "infrastructure-fit-wasp-drone",
+          "source": "packs/infrastructure-decision-tools/agents/infrastructure-fit-wasp-drone.md"
+        },
+        {
+          "kind": "agent",
+          "name": "launch-assets-wasp-drone",
+          "source": "packs/infrastructure-decision-tools/agents/launch-assets-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "choose-infrastructure",
+          "source": "packs/infrastructure-decision-tools/commands/choose-infrastructure.md"
+        },
+        {
+          "kind": "command",
+          "name": "prepare-assets",
+          "source": "packs/infrastructure-decision-tools/commands/prepare-assets.md"
+        },
+        {
+          "kind": "skill",
+          "name": "network-boundaries-stinger",
+          "source": "packs/infrastructure-decision-tools/skills/network-boundaries-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "network-boundaries-wasp-drone",
+          "source": "packs/infrastructure-decision-tools/agents/network-boundaries-wasp-drone.md"
+        },
+        {
+          "kind": "skill",
+          "name": "digitalocean-platform-stinger",
+          "source": "packs/infrastructure-decision-tools/skills/digitalocean-platform-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "digitalocean-platform-wasp-drone",
+          "source": "packs/infrastructure-decision-tools/agents/digitalocean-platform-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "plan-network-boundaries",
+          "source": "packs/infrastructure-decision-tools/commands/plan-network-boundaries.md"
+        },
+        {
+          "kind": "command",
+          "name": "assess-digitalocean",
+          "source": "packs/infrastructure-decision-tools/commands/assess-digitalocean.md"
+        },
+        {
+          "kind": "skill",
+          "name": "railway-platform-stinger",
+          "source": "packs/infrastructure-decision-tools/skills/railway-platform-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "railway-platform-wasp-drone",
+          "source": "packs/infrastructure-decision-tools/agents/railway-platform-wasp-drone.md"
+        },
+        {
+          "kind": "skill",
+          "name": "vultr-platform-stinger",
+          "source": "packs/infrastructure-decision-tools/skills/vultr-platform-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "vultr-platform-wasp-drone",
+          "source": "packs/infrastructure-decision-tools/agents/vultr-platform-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "assess-railway",
+          "source": "packs/infrastructure-decision-tools/commands/assess-railway.md"
+        },
+        {
+          "kind": "command",
+          "name": "assess-vultr",
+          "source": "packs/infrastructure-decision-tools/commands/assess-vultr.md"
+        }
+      ]
+    },
+    {
+      "name": "repository-modernization-tools",
+      "display_name": "Repository Modernization Tools",
+      "description": "Compose repository baseline, safe refactoring and contributor onboarding through selected specialist owners.",
+      "why": "Compose repository baseline, safe refactoring and contributor onboarding through selected specialist owners.",
+      "skills": [
+        "flaky-test-repair-stinger"
+      ],
+      "agents": [
+        "flaky-test-repair-wasp-drone"
+      ],
+      "commands": [
+        "improve-repository",
+        "onboard-contributor",
+        "refactor-safely",
+        "remove-unused-dependencies",
+        "repair-flaky-tests",
+        "verify-refactor"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {
+        "improve-repository-audit": [
+          "code-audit-tools"
+        ],
+        "refactor-language": [
+          "backend-and-desktop-tools"
+        ],
+        "refactor-browser": [
+          "browser-and-app-testing-tools"
+        ],
+        "onboard-docs-site": [
+          "documentation-tools"
+        ],
+        "remove-dependencies-audit": [
+          "code-audit-tools"
+        ],
+        "remove-dependencies-backend": [
+          "backend-and-desktop-tools"
+        ],
+        "remove-dependencies-web": [
+          "web-development-tools"
+        ],
+        "repair-flaky-tests-browser": [
+          "browser-and-app-testing-tools"
+        ],
+        "repair-flaky-tests-web": [
+          "web-development-tools"
+        ],
+        "repair-flaky-tests-backend": [
+          "backend-and-desktop-tools"
+        ]
+      },
+      "mandatory": false,
+      "counts": {
+        "skill": 1,
+        "agent": 1,
+        "command": 6
+      },
+      "source_root": "packs/repository-modernization-tools",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "flaky-test-repair-stinger",
+          "source": "packs/repository-modernization-tools/skills/flaky-test-repair-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "flaky-test-repair-wasp-drone",
+          "source": "packs/repository-modernization-tools/agents/flaky-test-repair-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "improve-repository",
+          "source": "packs/repository-modernization-tools/commands/improve-repository.md"
+        },
+        {
+          "kind": "command",
+          "name": "onboard-contributor",
+          "source": "packs/repository-modernization-tools/commands/onboard-contributor.md"
+        },
+        {
+          "kind": "command",
+          "name": "refactor-safely",
+          "source": "packs/repository-modernization-tools/commands/refactor-safely.md"
+        },
+        {
+          "kind": "command",
+          "name": "remove-unused-dependencies",
+          "source": "packs/repository-modernization-tools/commands/remove-unused-dependencies.md"
+        },
+        {
+          "kind": "command",
+          "name": "repair-flaky-tests",
+          "source": "packs/repository-modernization-tools/commands/repair-flaky-tests.md"
+        },
+        {
+          "kind": "command",
+          "name": "verify-refactor",
+          "source": "packs/repository-modernization-tools/commands/verify-refactor.md"
+        }
+      ]
+    },
+    {
+      "name": "product-studio",
+      "display_name": "Product Studio",
+      "description": "Turn an idea into a buildable plan: product strategy, Claude-Design-grade UX, a PRD map, a wave plan and a Definition of Done.",
+      "why": "Plan before building: owner-approved strategy, UX and build order give Library, contracts and Smoke It one agreed plan.",
+      "skills": [
+        "product-design-stinger",
+        "product-planning-stinger",
+        "product-strategy-stinger"
+      ],
+      "agents": [
+        "product-design-wasp-drone",
+        "product-planning-wasp-drone",
+        "product-strategy-wasp-drone"
+      ],
+      "commands": [
+        "plan-product"
+      ],
+      "requires": [
+        "wasp-nest-core"
+      ],
+      "optional_workflow_requirements": {
+        "deeper-customer-and-market-research": [
+          "growth-and-customer-tools",
+          "business-and-product-tools"
+        ],
+        "design-system-and-polish": [
+          "web-development-tools"
+        ],
+        "live-app-capture-for-claude-design": [
+          "browser-and-app-testing-tools"
+        ],
+        "pricing": [
+          "software-economics-tools"
+        ]
+      },
+      "mandatory": false,
+      "counts": {
+        "skill": 3,
+        "agent": 3,
+        "command": 1
+      },
+      "source_root": "packs/product-studio",
+      "components": [
+        {
+          "kind": "skill",
+          "name": "product-strategy-stinger",
+          "source": "packs/product-studio/skills/product-strategy-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "product-strategy-wasp-drone",
+          "source": "packs/product-studio/agents/product-strategy-wasp-drone.md"
+        },
+        {
+          "kind": "skill",
+          "name": "product-design-stinger",
+          "source": "packs/product-studio/skills/product-design-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "product-design-wasp-drone",
+          "source": "packs/product-studio/agents/product-design-wasp-drone.md"
+        },
+        {
+          "kind": "skill",
+          "name": "product-planning-stinger",
+          "source": "packs/product-studio/skills/product-planning-stinger/SKILL.md"
+        },
+        {
+          "kind": "agent",
+          "name": "product-planning-wasp-drone",
+          "source": "packs/product-studio/agents/product-planning-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "plan-product",
+          "source": "packs/product-studio/commands/plan-product.md"
+        }
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "name": "core-only",
+      "plugins": [
+        "wasp-nest-core"
+      ],
+      "resolved_plugins": [
+        "wasp-nest-core"
+      ]
+    },
+    {
+      "name": "audit-a-website",
+      "plugins": [
+        "website-audit-tools"
+      ],
+      "resolved_plugins": [
+        "wasp-nest-core",
+        "browser-and-app-testing-tools",
+        "website-audit-tools"
+      ]
+    },
+    {
+      "name": "audit-code",
+      "plugins": [
+        "code-audit-tools"
+      ],
+      "resolved_plugins": [
+        "wasp-nest-core",
+        "code-audit-tools"
+      ]
+    },
+    {
+      "name": "package-documents",
+      "plugins": [
+        "documentation-tools"
+      ],
+      "resolved_plugins": [
+        "wasp-nest-core",
+        "documentation-tools"
+      ]
+    },
+    {
+      "name": "refresh-repository-knowledge",
+      "plugins": [
+        "documentation-tools",
+        "code-audit-tools"
+      ],
+      "resolved_plugins": [
+        "wasp-nest-core",
+        "documentation-tools",
+        "code-audit-tools"
+      ]
+    },
+    {
+      "name": "build-a-web-app",
+      "plugins": [
+        "app-primer-zero",
+        "web-development-tools",
+        "backend-and-desktop-tools",
+        "data-and-ai-tools",
+        "platform-and-release-tools"
+      ],
+      "resolved_plugins": [
+        "wasp-nest-core",
+        "app-primer-zero",
+        "web-development-tools",
+        "backend-and-desktop-tools",
+        "data-and-ai-tools",
+        "platform-and-release-tools"
+      ]
+    },
+    {
+      "name": "run-a-business-team",
+      "plugins": [
+        "business-and-product-tools",
+        "growth-and-customer-tools",
+        "documentation-tools"
+      ],
+      "resolved_plugins": [
+        "wasp-nest-core",
+        "business-and-product-tools",
+        "growth-and-customer-tools",
+        "documentation-tools"
+      ]
+    },
+    {
+      "name": "create-media",
+      "plugins": [
+        "media-and-creative-tools"
+      ],
+      "resolved_plugins": [
+        "wasp-nest-core",
+        "media-and-creative-tools"
+      ]
+    },
+    {
+      "name": "highlevel-agency",
+      "plugins": [
+        "highlevel",
+        "growth-and-customer-tools"
+      ],
+      "resolved_plugins": [
+        "wasp-nest-core",
+        "highlevel",
+        "growth-and-customer-tools"
+      ]
+    },
+    {
+      "name": "littlebird-operations",
+      "plugins": [
+        "littlebird-toolkit"
+      ],
+      "resolved_plugins": [
+        "wasp-nest-core",
+        "littlebird-toolkit"
+      ]
+    },
+    {
+      "name": "plan-a-product",
+      "plugins": [
+        "product-studio"
+      ],
+      "resolved_plugins": [
+        "wasp-nest-core",
+        "product-studio"
+      ]
+    }
+  ],
+  "compatibility_aliases": {},
+  "migration": "Fresh installation after purge. No legacy command bridge."
+}

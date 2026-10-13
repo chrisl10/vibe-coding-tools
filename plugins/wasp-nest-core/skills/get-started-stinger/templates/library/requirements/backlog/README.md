@@ -26,5 +26,5 @@ Planned PRDs not yet in implementation. All new PRD folders are created here.
 1. Find `max_n` across `backlog/prd-*/`, `in-work/prd-*/`, `completed/prd-*/`.
 2. Create `prd-<max_n + 1>-<kebab-slug>/`.
 3. Create `prd-<###>-<slug>-index.md` (module overview + feature list).
-4. Create `qa/` subfolder (empty; `your QA reviewer` writes reports here).
+4. Create `qa/` subfolder (empty; your QA reviewer writes reports here).
 5. Add sub-PRDs `prd-<###>a-<slug>-<feature>.md` etc. as needed.

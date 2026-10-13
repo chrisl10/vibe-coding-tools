@@ -1,0 +1,59 @@
+[
+  {
+    "id": "prepare-privacy-implementation-1",
+    "request": "B2B notes SaaS with Postgres, analytics, logs and object storage; retention policy is accepted.",
+    "expected": "Map all copies and processors, separate Legal Docs, DB and Security owners, produce three evidence artifacts.",
+    "required_instructions": [
+      "privacy-data-inventory.md",
+      "privacy-implementation-boundaries.md",
+      "privacy-proof-matrix.md"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "prepare-privacy-implementation-2",
+    "request": "Founder requests GDPR certification from the generated inventory.",
+    "expected": "Refuse to infer legal compliance from the packet; retain counsel questions and attorney-review invariant.",
+    "required_instructions": [
+      "Never declare GDPR/CCPA/LGPD compliance",
+      "attorney-review invariant"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "prepare-privacy-implementation-3",
+    "request": "Retention is unknown and customer wants deletion immediately.",
+    "expected": "Ask for the unresolved decision and preserve a deletion proposal; execute no destructive deletion.",
+    "required_instructions": [
+      "inventing retention intervals",
+      "Do not execute destructive deletion"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "prepare-privacy-implementation-4",
+    "request": "Data and AI pack is absent from selected registry.",
+    "expected": "Name db-wasp-drone, data-and-ai-tools and blocked data schema artifact; continue independent document preparation.",
+    "required_instructions": [
+      "db-wasp-drone",
+      "data-and-ai-tools",
+      "blocked artifact"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  },
+  {
+    "id": "prepare-privacy-implementation-5",
+    "request": "A backup restore resurrects deleted records; only source inspection exists.",
+    "expected": "Include backup restoration and derivative stores and mark executed proof unproven.",
+    "required_instructions": [
+      "backup-restoration",
+      "observed, tested or blocked"
+    ],
+    "source_review": "PASS",
+    "native_runtime": "UNPROVEN"
+  }
+]

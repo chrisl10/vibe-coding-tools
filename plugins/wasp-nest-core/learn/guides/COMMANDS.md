@@ -4,7 +4,7 @@ A command gives a repeatable job a short name. It answers **what whole workflow 
 
 ## Choose the right command
 
-The core plugin contains seven named commands. These are the current entry points, not the former Beekeeper and Smoker names:
+The catalog defines fourteen source commands: seven in Core and seven in optional plugins. The Core commands below are shown by short name; native Claude uses the `wasp-nest-core:` prefix. Local home installations also expose flat commands.
 
 | Command | Use it when | Expected result |
 | --- | --- | --- |
@@ -15,6 +15,25 @@ The core plugin contains seven named commands. These are the current entry point
 | [`/register`](../../commands/register.md) | A new Drone/Stinger pair exists but is not discoverable. | Pairing, roster guide, cross-links, and validation. |
 | [`/drift-audit`](../../commands/drift-audit.md) | The roster may disagree with shipped files. | A findings report; it does not silently fix drift. |
 | [`/re-research`](../../commands/re-research.md) | A Stinger's external facts need a dated refresh. | Updated evidence and distillation for that one Stinger. |
+
+## Optional command owners
+
+Install the owning plugin and its prerequisites before choosing an optional workflow. The native Claude selectors are:
+
+| Owner | Command | Workflow |
+| --- | --- | --- |
+| `website-audit-tools` | `/website-audit-tools:perform-website-audit` | Public-site intake, crawl, findings, scores and reports. |
+| `code-audit-tools` | `/code-audit-tools:audit-my-code` | Source and app audits, evidence and remediation planning. |
+| `documentation-tools` | `/documentation-tools:library-packets` | Source-grounded audience documents and exports. |
+| `documentation-tools` | `/documentation-tools:kb-refresh` | Repository knowledge refresh; full discovery also needs Code Audit. |
+| `data-and-ai-tools` | `/data-and-ai-tools:tars` | TARS manages sessions with CASE as advocate/tie-breaker and KIPP as Feature Desk. Claude Code Desktop only. |
+| `browser-and-app-testing-tools` | `/browser-and-app-testing-tools:webapp-capture` | Scoped live-app capture and visual inventory. |
+| `app-primer-zero` | `/app-primer-zero:app-primer-zero` | App preparation and dependency-ordered handoff before implementation. |
+| `product-studio` | `/product-studio:plan-product` | Strategy, UX design and the build plan (PRD map, wave plan, Definition of Done), approved stage by stage before PRDs are written. |
+
+Codex exposes each owner's generated `source-command-<name>` skill. Use the exact installed selector shown by the client. A wrapper reads the existing command procedure; it does not duplicate that procedure or expand its authority.
+
+[Document workflows](DOCUMENT-WORKFLOWS.md) gives the prerequisites, inputs, outputs and sample requests for Library Packets, App Primer Zero and KB Refresh. KB Refresh updates repository knowledge from code; Library Packets creates documents for readers; App Primer prepares a future build.
 
 Do not run `/smoke-it` for a one-line answer or a typo. Do not run `/forge` because an existing Drone's description could be improved. Use the smallest workflow that produces the outcome.
 
@@ -34,8 +53,18 @@ Use Smoke It for PRD-014. Build an acceptance ledger, check every shared CTR rev
 
 The second request does not accept a Draft CTR or authorize an external action. The [PRD execution guide](PRD-EXECUTION.md) explains the ledger and the [CTR guide](WRITE-A-CTR.md) explains the shared-boundary preflight.
 
+For a documentation refresh, start with a scope request before writers run:
+
+```text
+Use KB Refresh for this repository. Pin the base commit, inventory stale or missing knowledge docs, and show me the write scope, frozen files, proposed units and cost before launching the writer fleet. Log suspected code issues without fixing them. Keep commits, pushes and PRs pending my approval.
+```
+
+Install Core and Documentation Tools. Full repository discovery also needs Code Audit Tools. The source installer's `refresh-repository-knowledge` profile selects those three packages; a marketplace user must select each required plugin. One page needing a correction belongs to Knowledge Stinger instead.
+
 ## What a good command contains
 
 A useful command names its trigger, desired outcome, inputs, sequence, owner of each step, safety boundary, evidence, and stop conditions. "Make the feature good and ship it" has none of those. "Read the PRD, check accepted CTR pins, track every criterion, run named tests, then report the proof and ask before pushing" can be audited.
 
 Claude Code exposes the plugin's native slash commands. Codex uses generated `source-command-*` Stinger wrappers for the same workflows; other harnesses have their own support. [Harness capabilities](../reference/HARNESS-CAPABILITIES.md) is the place to check the real surface. When no command UI exists, ask for the workflow by name and point at its Stinger or readable command file.
+
+TARS, CASE and KIPP require Claude Code Desktop. An installed TARS skill or command wrapper in another client does not provide those session tools.

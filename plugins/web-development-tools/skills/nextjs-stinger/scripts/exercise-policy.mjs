@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { parseId, parseTitle, toNoteDTO } from '../templates/starter/lib/policy.mjs';
+assert.equal(parseId('note_12'), 'note_12');
+for (const value of [null, 3, {}, '../foreign', '', 'a'.repeat(65)]) assert.equal(parseId(value), null);
+assert.equal(parseTitle('  A title  '), 'A title');
+for (const value of [null, {}, '', '  ', 'a'.repeat(121)]) assert.equal(parseTitle(value), null);
+const row = { id: 'note_12', title: 'A title', tenantId: 'other', secret: 'fixture' };
+assert.deepEqual(toNoteDTO(row), { id: 'note_12', title: 'A title' });
+assert.equal(row.tenantId, 'other');
+console.log('PASS: bounded ID/title validation and DTO allowlist; Next runtime/auth/cache/build NOT_RUN');

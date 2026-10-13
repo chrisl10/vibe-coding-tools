@@ -7,6 +7,13 @@ argument-hint: [component idea]
 
 A component that skips stage one is a guess wearing a skill's clothes. You are running queen-wasp-stinger's forge, start to finish, and you do not touch real work until the topic is locked.
 
+## Invocation and source scope
+
+This canonical Core procedure is src/commands/forge.md. In Claude plugin mode call /wasp-nest-core:forge; Codex uses Core's generated source-command-forge skill, not a deprecated prompt file. A source/global command label below is not an alias for an optional plugin.
+
+Read plugin-catalog.json to resolve every specialist's owner and prerequisites. For source work use its canonical source_root; for installed work use Core's selected-plugin resolver. Do not treat a cached optional package as enabled or edit installed copies to change canonical procedures.
+
+
 ## Mandatory process
 
 1. Load `../skills/pest-controller-suit/SKILL.md` (the roster) and consult it before any routing decision. This is the first step, always, no exceptions. Check whether the need already has a Drone; forging a duplicate is a bug, not a component.
@@ -23,7 +30,7 @@ A component that skips stage one is a guess wearing a skill's clothes. You are r
 6. **References (stage 4).** Build field tables, worked examples, templates, and any deterministic scripts the component needs at runtime, all pulled from the distillation. This is the material the component loads on demand, so it earns its tokens or it does not belong. Artifact: the `references/` folder.
 7. **Guides (stage 5).** Write one focused guide per major verb the component performs, each grounded in the distillation and citing its raw files. For anything crossing harnesses, consult `guides/harness-support-matrix.md` and `guides/per-type-per-harness-specific-guide.md`; never author a harness surface from memory. Artifact: the `guides/*.md` files.
 8. **Skill file (stage 6).** Author the root file last, starting from `references/templates/<type>/`. Keep it lean with pointers into the guides and references, spec-six frontmatter if it crosses harnesses, the Critical Directive at the end, and the Ship Gate block if stage 1 called this component development-focused. Then validate: `python references/scripts/per-type-validation.py <path> --type <type> --harness all`, the Cowork packager if it targets Cowork, and an independent pass that samples claims against the raw archive. Fix every error before moving on. Artifact: the root file, validated clean.
-9. **Register (stage 7).** If the component is a Stinger or a Drone, pair it with its counterpart and run the `/register` checklist against the pair. Every component type also gets its repo references synced per `guides/vibe-coding-tools-reference-update.md`. Artifact: the roster row, the guide, the cross-links, and the harness deployment.
+9. **Register (stage 7).** If the component is a Stinger or a Drone, pair it with its counterpart and run the `/register` checklist against the pair. Every component type also gets its repo references synced per `guides/vibe-coding-tools-reference-update.md`. Artifact: catalog ownership, the roster row when directly routed, the guide, the cross-links and validated host projections. Live installation/publication require their own authorization.
 10. Report back what landed at each stage: the locked topic, the raw source count, where the distillation lives, what references and guides were written, the validation result, and the registration outcome. Anything you could not ground in a real source, say so plainly instead of filling the gap.
 
 ## Arguments

@@ -11,6 +11,66 @@
         "path": "./plugins/wasp-nest-core"
       },
       "policy": {
+        "installation": "INSTALLED_BY_DEFAULT",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "app-primer-zero",
+      "source": {
+        "source": "local",
+        "path": "./plugins/app-primer-zero"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "backend-and-desktop-tools",
+      "source": {
+        "source": "local",
+        "path": "./plugins/backend-and-desktop-tools"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "browser-and-app-testing-tools",
+      "source": {
+        "source": "local",
+        "path": "./plugins/browser-and-app-testing-tools"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "business-and-product-tools",
+      "source": {
+        "source": "local",
+        "path": "./plugins/business-and-product-tools"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "code-audit-tools",
+      "source": {
+        "source": "local",
+        "path": "./plugins/code-audit-tools"
+      },
+      "policy": {
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
@@ -21,6 +81,54 @@
       "source": {
         "source": "local",
         "path": "./plugins/content-intelligence"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "data-and-ai-tools",
+      "source": {
+        "source": "local",
+        "path": "./plugins/data-and-ai-tools"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "developer-learning-tools",
+      "source": {
+        "source": "local",
+        "path": "./plugins/developer-learning-tools"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "documentation-tools",
+      "source": {
+        "source": "local",
+        "path": "./plugins/documentation-tools"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "growth-and-customer-tools",
+      "source": {
+        "source": "local",
+        "path": "./plugins/growth-and-customer-tools"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -41,6 +149,18 @@
       "category": "Productivity"
     },
     {
+      "name": "infrastructure-decision-tools",
+      "source": {
+        "source": "local",
+        "path": "./plugins/infrastructure-decision-tools"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "littlebird-toolkit",
       "source": {
         "source": "local",
@@ -53,10 +173,10 @@
       "category": "Productivity"
     },
     {
-      "name": "webapp-capture",
+      "name": "media-and-creative-tools",
       "source": {
         "source": "local",
-        "path": "./plugins/webapp-capture"
+        "path": "./plugins/media-and-creative-tools"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -65,10 +185,70 @@
       "category": "Productivity"
     },
     {
-      "name": "website-auditor",
+      "name": "platform-and-release-tools",
       "source": {
         "source": "local",
-        "path": "./plugins/website-auditor"
+        "path": "./plugins/platform-and-release-tools"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "product-studio",
+      "source": {
+        "source": "local",
+        "path": "./plugins/product-studio"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "repository-modernization-tools",
+      "source": {
+        "source": "local",
+        "path": "./plugins/repository-modernization-tools"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "software-economics-tools",
+      "source": {
+        "source": "local",
+        "path": "./plugins/software-economics-tools"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "web-development-tools",
+      "source": {
+        "source": "local",
+        "path": "./plugins/web-development-tools"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "website-audit-tools",
+      "source": {
+        "source": "local",
+        "path": "./plugins/website-audit-tools"
       },
       "policy": {
         "installation": "AVAILABLE",

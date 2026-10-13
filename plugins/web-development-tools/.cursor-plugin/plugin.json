@@ -1,0 +1,59 @@
+{
+  "name": "web-development-tools",
+  "version": "3.0.0",
+  "description": "Build web interfaces and sites with React, Svelte, design systems and accessible components.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./cursor-agents/asset-wasp-drone.md",
+    "./cursor-agents/component-vendoring-wasp-drone.md",
+    "./cursor-agents/csv-xlsx-import-export-wasp-drone.md",
+    "./cursor-agents/dark-mode-theming-wasp-drone.md",
+    "./cursor-agents/design-system-wasp-drone.md",
+    "./cursor-agents/font-loading-wasp-drone.md",
+    "./cursor-agents/icon-system-wasp-drone.md",
+    "./cursor-agents/image-optimization-wasp-drone.md",
+    "./cursor-agents/impeccable-wasp-drone.md",
+    "./cursor-agents/localization-wasp-drone.md",
+    "./cursor-agents/modal-toast-dialog-wasp-drone.md",
+    "./cursor-agents/nextjs-wasp-drone.md",
+    "./cursor-agents/nuxt-wasp-drone.md",
+    "./cursor-agents/preact-wasp-drone.md",
+    "./cursor-agents/product-tour-onboarding-ui-wasp-drone.md",
+    "./cursor-agents/pwa-wasp-drone.md",
+    "./cursor-agents/react-to-svelte-wasp-drone.md",
+    "./cursor-agents/react-wasp-drone.md",
+    "./cursor-agents/seo-aeo-wasp-drone.md",
+    "./cursor-agents/shadcn-svelte-wasp-drone.md",
+    "./cursor-agents/svelte-wasp-drone.md",
+    "./cursor-agents/tailwind-wasp-drone.md",
+    "./cursor-agents/tanstack-wasp-drone.md",
+    "./cursor-agents/typography-font-wasp-drone.md",
+    "./cursor-agents/ux-ui-svelte-wasp-drone.md",
+    "./cursor-agents/ux-ui-wasp-drone.md",
+    "./cursor-agents/vue-wasp-drone.md",
+    "./cursor-agents/web-stack-selection-wasp-drone.md",
+    "./cursor-agents/website-wasp-drone.md",
+    "./cursor-agents/xyflow-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/build-app-search.md",
+    "./commands/build-localization.md",
+    "./commands/build-nextjs-app.md",
+    "./commands/build-nuxt-app.md",
+    "./commands/build-pwa-app.md",
+    "./commands/build-quick-website.md",
+    "./commands/build-saas-foundation.md",
+    "./commands/build-vue-app.md",
+    "./commands/build-web-app.md",
+    "./commands/choose-web-stack.md",
+    "./commands/qualify-typography.md",
+    "./commands/vendor-component.md"
+  ]
+}

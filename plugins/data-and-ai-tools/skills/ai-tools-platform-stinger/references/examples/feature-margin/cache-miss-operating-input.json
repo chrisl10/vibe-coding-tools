@@ -1,0 +1,296 @@
+{
+  "currency": "USD",
+  "period": "month",
+  "observed_at": "2026-10-07",
+  "evidence": "Synthetic assumptions; no observed usage, vendor pricing, invoice or actual profit",
+  "scenarios": [
+    {
+      "name": "low",
+      "providers": [
+        {
+          "name": "fictional-meter-service",
+          "region": "fictional-region",
+          "plan": "fictional-linear-plan",
+          "observed_at": "2026-10-07",
+          "source": "Explicit hypothetical rates for arithmetic only; no vendor price claim",
+          "fee_mode": "additive",
+          "fee_amount": "20",
+          "meters": [
+            {
+              "name": "uncached",
+              "unit": "million tokens",
+              "quantity": "1.0",
+              "allowance": "0",
+              "rate": "2"
+            },
+            {
+              "name": "cache-read",
+              "unit": "million tokens",
+              "quantity": "0.0",
+              "allowance": "0",
+              "rate": "0.5"
+            },
+            {
+              "name": "cache-write",
+              "unit": "million tokens",
+              "quantity": "0.0",
+              "allowance": "0",
+              "rate": "2.5"
+            },
+            {
+              "name": "output",
+              "unit": "million tokens",
+              "quantity": "0.2",
+              "allowance": "0",
+              "rate": "6"
+            },
+            {
+              "name": "retrieval",
+              "unit": "query",
+              "quantity": "2000.0",
+              "allowance": "0",
+              "rate": "0.0002"
+            },
+            {
+              "name": "tool",
+              "unit": "operation",
+              "quantity": "1000.0",
+              "allowance": "0",
+              "rate": "0.0003"
+            },
+            {
+              "name": "storage",
+              "unit": "GB-month",
+              "quantity": "50",
+              "allowance": "0",
+              "rate": "0.1"
+            },
+            {
+              "name": "network",
+              "unit": "GB",
+              "quantity": "2.0",
+              "allowance": "0",
+              "rate": "0.1"
+            },
+            {
+              "name": "embedding",
+              "unit": "million tokens",
+              "quantity": "1",
+              "allowance": "0",
+              "rate": "1"
+            },
+            {
+              "name": "rerank",
+              "unit": "operation",
+              "quantity": "1000.0",
+              "allowance": "0",
+              "rate": "0.0002"
+            }
+          ],
+          "credit_allocations": []
+        }
+      ],
+      "credit_pools": [],
+      "labor": [
+        {
+          "name": "paid-operations",
+          "hours": "2",
+          "hourly_rate": "25",
+          "kind": "paid"
+        }
+      ]
+    },
+    {
+      "name": "base",
+      "providers": [
+        {
+          "name": "fictional-meter-service",
+          "region": "fictional-region",
+          "plan": "fictional-linear-plan",
+          "observed_at": "2026-10-07",
+          "source": "Explicit hypothetical rates for arithmetic only; no vendor price claim",
+          "fee_mode": "additive",
+          "fee_amount": "20",
+          "meters": [
+            {
+              "name": "uncached",
+              "unit": "million tokens",
+              "quantity": "10",
+              "allowance": "0",
+              "rate": "2"
+            },
+            {
+              "name": "cache-read",
+              "unit": "million tokens",
+              "quantity": "0",
+              "allowance": "0",
+              "rate": "0.5"
+            },
+            {
+              "name": "cache-write",
+              "unit": "million tokens",
+              "quantity": "0",
+              "allowance": "0",
+              "rate": "2.5"
+            },
+            {
+              "name": "output",
+              "unit": "million tokens",
+              "quantity": "2",
+              "allowance": "0",
+              "rate": "6"
+            },
+            {
+              "name": "retrieval",
+              "unit": "query",
+              "quantity": "20000",
+              "allowance": "0",
+              "rate": "0.0002"
+            },
+            {
+              "name": "tool",
+              "unit": "operation",
+              "quantity": "10000",
+              "allowance": "0",
+              "rate": "0.0003"
+            },
+            {
+              "name": "storage",
+              "unit": "GB-month",
+              "quantity": "50",
+              "allowance": "0",
+              "rate": "0.1"
+            },
+            {
+              "name": "network",
+              "unit": "GB",
+              "quantity": "20",
+              "allowance": "0",
+              "rate": "0.1"
+            },
+            {
+              "name": "embedding",
+              "unit": "million tokens",
+              "quantity": "1",
+              "allowance": "0",
+              "rate": "1"
+            },
+            {
+              "name": "rerank",
+              "unit": "operation",
+              "quantity": "10000",
+              "allowance": "0",
+              "rate": "0.0002"
+            }
+          ],
+          "credit_allocations": []
+        }
+      ],
+      "credit_pools": [],
+      "labor": [
+        {
+          "name": "paid-operations",
+          "hours": "2",
+          "hourly_rate": "25",
+          "kind": "paid"
+        }
+      ]
+    },
+    {
+      "name": "high",
+      "providers": [
+        {
+          "name": "fictional-meter-service",
+          "region": "fictional-region",
+          "plan": "fictional-linear-plan",
+          "observed_at": "2026-10-07",
+          "source": "Explicit hypothetical rates for arithmetic only; no vendor price claim",
+          "fee_mode": "additive",
+          "fee_amount": "20",
+          "meters": [
+            {
+              "name": "uncached",
+              "unit": "million tokens",
+              "quantity": "30",
+              "allowance": "0",
+              "rate": "2"
+            },
+            {
+              "name": "cache-read",
+              "unit": "million tokens",
+              "quantity": "0",
+              "allowance": "0",
+              "rate": "0.5"
+            },
+            {
+              "name": "cache-write",
+              "unit": "million tokens",
+              "quantity": "0",
+              "allowance": "0",
+              "rate": "2.5"
+            },
+            {
+              "name": "output",
+              "unit": "million tokens",
+              "quantity": "6",
+              "allowance": "0",
+              "rate": "6"
+            },
+            {
+              "name": "retrieval",
+              "unit": "query",
+              "quantity": "60000",
+              "allowance": "0",
+              "rate": "0.0002"
+            },
+            {
+              "name": "tool",
+              "unit": "operation",
+              "quantity": "30000",
+              "allowance": "0",
+              "rate": "0.0003"
+            },
+            {
+              "name": "storage",
+              "unit": "GB-month",
+              "quantity": "50",
+              "allowance": "0",
+              "rate": "0.1"
+            },
+            {
+              "name": "network",
+              "unit": "GB",
+              "quantity": "60",
+              "allowance": "0",
+              "rate": "0.1"
+            },
+            {
+              "name": "embedding",
+              "unit": "million tokens",
+              "quantity": "1",
+              "allowance": "0",
+              "rate": "1"
+            },
+            {
+              "name": "rerank",
+              "unit": "operation",
+              "quantity": "30000",
+              "allowance": "0",
+              "rate": "0.0002"
+            }
+          ],
+          "credit_allocations": []
+        }
+      ],
+      "credit_pools": [],
+      "labor": [
+        {
+          "name": "paid-operations",
+          "hours": "2",
+          "hourly_rate": "25",
+          "kind": "paid"
+        }
+      ]
+    }
+  ]
+}

@@ -1,16 +1,16 @@
 ---
 name: "dependency-audit-stinger"
-description: "npm supply-chain hygiene specialist: dependency updates, lockfile discipline, audit triage, SBOM, and provenance. Use when auditing dependencies, fixing lockfile noise, or checking publish safety."
+description: "Audit dependencies for the target repository's ecosystem: lockfiles, vulnerability triage, SBOM and provenance. Use for supply-chain or publish safety; Hivemind is a worked npm example."
 license: AGPL-3.0-or-later
 ---
 
 # dependency-audit Stinger
 
-Procedural arsenal for `dependency-audit-wasp-drone`, the npm supply-chain hygiene specialist for the `@deeplake/hivemind` package. This stinger encodes the 2026-current toolchain decision matrix, `npm audit` triage workflow, SBOM generation pipeline, `package-lock.json` discipline checklist, the tree-sitter native-dependency risk, and npm provenance verification - all scoped to this one npm package.
+Procedural arsenal for `dependency-audit-wasp-drone`. Start with the target repository's real ecosystem, package manager, lockfiles, dependency graph and publish boundary. The retained `@deeplake/hivemind` material is a worked npm case; its tree-sitter scripts, npm lockfile and OpenClaw publish guards are not requirements for other repositories.
 
-**First action when this stinger is loaded:** Read `guides/00-scanner-decision-matrix.md` to orient to the toolchain landscape before doing anything else. Every other guide assumes you have read that decision matrix.
+**First action when this stinger is loaded:** Read [Target repository audit](guides/05-target-repository-audit.md). Inventory current source and authorized scope before selecting ecosystem-specific methods. Then consult the retained guides only where their case facts match the target and verify any vendor/version claim against current primary documentation.
 
-## Repo ground truth (read before acting)
+## Preserved Hivemind case facts (not target ground truth)
 
 `@deeplake/hivemind` is an ESM, TypeScript ^6, Node `>=22` npm package. The supply-chain facts that matter:
 
@@ -37,6 +37,10 @@ Load this stinger when `dependency-audit-wasp-drone` is invoked. Typical trigger
 - "Should we publish with --provenance?"
 - "Is our npm publish safe? / what guards the published bundle?"
 - "package-lock.json keeps changing unexpectedly"
+- "Explain package.json and lockfiles to me"
+- "Which dependencies are direct or indirect?"
+- "Tie our SBOM to the exact release artifact"
+- "Upgrade this major dependency without hiding breaking changes"
 
 Do NOT load it for:
 
@@ -53,22 +57,22 @@ These are the non-negotiables. The full rationale lives in each guide.
 
 - **Never recommend ignoring a CVE without requiring an expiry date and a tracking issue link.** See `guides/01-vulnerability-triage.md`.
 - **Always differentiate direct vs transitive exposure before recommending an upgrade.** Most `npm audit` findings on this package are transitive and unreachable. See `guides/01-vulnerability-triage.md`.
-- **Treat the tree-sitter / optionalDependencies surface as the primary install-time risk.** Any change there must keep `scripts/ensure-tree-sitter.mjs` working and must not loosen the `overrides` pins without justification. See `guides/01-vulnerability-triage.md` and `guides/03-lockfile-discipline.md`.
-- **Prefer Renovate over Dependabot for this repo** because of grouping and `minimumReleaseAge`. See `guides/00-scanner-decision-matrix.md`.
-- **Always validate `package-lock.json` integrity after any dependency change.** `npm ci` is the enforcement control. See `guides/03-lockfile-discipline.md`.
+- **Identify the target's actual install-time execution risks.** In the Hivemind case, tree-sitter/optionalDependencies and `scripts/ensure-tree-sitter.mjs` were relevant; preserve those controls only if the inspected target actually has them. See `guides/01-vulnerability-triage.md` and `guides/03-lockfile-discipline.md`.
+- **Choose an update tool from the target's requirements.** The retained Hivemind case preferred Renovate; grouping alone does not rule out Dependabot, which also supports grouped updates. See `guides/00-scanner-decision-matrix.md`.
+- **Validate the target's actual lockfile and frozen-install procedure after a dependency change.** Use `package-lock.json`/`npm ci` only for an npm target; do not replace pnpm, Yarn, uv, Cargo or Go tooling with this example. See `guides/03-lockfile-discipline.md`.
 - **Do not gate CI on `low`/`moderate` `npm audit` findings.** Gate only on `high` and `critical`. See `guides/01-vulnerability-triage.md`.
-- **Never weaken the publish guards.** The `files` allowlist, `pack-check.mjs`, and `audit:openclaw` are the publish-time defense. See `guides/04-provenance-verification.md`.
+- **Preserve and check the target's existing publish guards.** The `files` allowlist, `pack-check.mjs`, and `audit:openclaw` belong to the retained Hivemind case; do not invent those scripts in another target. See `guides/04-provenance-verification.md`.
 - **Defer to `security-wasp-drone` for any CVE that requires patching application code, not just upgrading a package.**
 
 ---
 
-## Toolchain overview (2026 state)
+## Retained npm case toolchain (recheck current vendor behavior)
 
 | Tool | Role for this package | Limit |
 |---|---|---|
 | **npm audit** | CVE compliance baseline, zero-config, built into the `npm ci` toolchain | Does not catch supply-chain attacks without a CVE (axios-style account hijack, tree-sitter build tampering) |
 | **Renovate** | Grouped update PRs + `minimumReleaseAge` delay; right fit for this single-package npm repo | More config than Dependabot; needs a `renovate.json` |
-| **Dependabot** | Free GitHub-native auto-PRs; the zero-ops fallback | No grouping, no `minimumReleaseAge`, one PR per update |
+| **Dependabot** | GitHub-native update PRs with configurable groups | Compare the target's ecosystem, update-delay and grouping requirements against current documentation |
 | **socket.dev** | Behavioral threat intel for npm: typosquatting, malicious install scripts, account takeover - the control for the tree-sitter postinstall risk | Not a CVE scanner; complements npm audit, does not replace it |
 | **Snyk (optional)** | Richer CVE DB + reachability + IDE integration for npm | Paid tiers for some features; npm audit + socket.dev cover the baseline |
 | **Syft + CycloneDX** | SBOM for the published npm package in CycloneDX 1.6 JSON; CI-ready with Sigstore attestation | Does not scan vulnerabilities; pairs with Grype for that |
@@ -84,9 +88,13 @@ Read the guide matching your task:
 
 | Task | Guide |
 |---|---|
-| Pick the right tooling for this npm package | `guides/00-scanner-decision-matrix.md` |
+| Identify target ecosystem, lockfiles, checks and permission boundaries | `guides/05-target-repository-audit.md` |
+| Explain actual manifests and lockfiles to a beginner | `guides/06-explain-manifest-and-lockfile.md` |
+| Pick tooling for a target that matches the retained npm case | `guides/00-scanner-decision-matrix.md` |
 | Triage an `npm audit` finding (noise vs real, native-dep risk) | `guides/01-vulnerability-triage.md` |
-| Generate and attest an SBOM for the published package | `guides/02-sbom-workflow.md` |
+| Qualify exact release artifact inventory and SBOM binding | `guides/07-bind-sbom-to-release-artifact.md` |
+| Prepare a bounded major upgrade with baseline/candidate contracts | `guides/08-upgrade-major-dependency-safely.md` |
+| Retained published-package SBOM case | `guides/02-sbom-workflow.md` |
 | Harden `package-lock.json` + tree-sitter discipline | `guides/03-lockfile-discipline.md` |
 | Verify npm provenance + the publish-time guards | `guides/04-provenance-verification.md` |
 
@@ -98,6 +106,9 @@ Read the guide matching your task:
 |---|---|
 | `templates/renovate-base-config.json` | Drop-in Renovate config for this npm repo: grouping, `minimumReleaseAge`, automerge for devDependencies, and a guarded rule for the pinned tree-sitter grammars |
 | `templates/github-actions-sbom-workflow.yml` | SBOM generation + Sigstore attestation for the published `@deeplake/hivemind` tarball on tag push |
+| `templates/release-artifact-evidence.md` | Artifact/graph coverage, schema, subject, signature and identity evidence |
+| `templates/major-upgrade-evidence.md` | Exact versions, consumer contracts, canary and rollback proof |
+| `templates/manifest-reading-ledger.md` | Preserve declarations, recorded graph edges and unproved runtime/security facts; see [worked fixture](examples/read-manifest-fixture.md) |
 | `templates/dependency-triage-report.md` | Markdown template for recording an `npm audit` triage pass on this package |
 
 ---

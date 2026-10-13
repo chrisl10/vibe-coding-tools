@@ -1,0 +1,100 @@
+{
+  "schema": "component-copy-evidence-v1",
+  "status": "FICTIONAL_COMPLETED_PLAN_NOT_EXECUTED",
+  "selection": {
+    "product": "Synthetic Atlas",
+    "surface": "fixture button",
+    "framework_version": "none; text-only fixture",
+    "existing_primitive_review": "fixture has no existing implementation",
+    "recommendation": "review synthetic minimal source-copy plan",
+    "design_contract": "synthetic, no UI styling",
+    "token_owner": "fictional Atlas maintainer"
+  },
+  "upstream": {
+    "repository_url": "fictional://atlas-fixture",
+    "revision": "fixture-v1",
+    "package_version": null,
+    "artifact_url": "fixture/component.txt",
+    "artifact_sha256": "5309940658c910b6b593d7b7c1276290ac65fbed68f3b6d8ddc0a0709f834c53",
+    "fetched_at": "2026-10-08; authored locally, not fetched"
+  },
+  "files": [
+    {
+      "upstream_path": "fixture/component.txt",
+      "upstream_sha256": "5309940658c910b6b593d7b7c1276290ac65fbed68f3b6d8ddc0a0709f834c53",
+      "local_path": "proposed/atlas-component.txt",
+      "local_sha256": null,
+      "license_evidence": [
+        "fixture/LICENSE.txt, synthetic terms only"
+      ],
+      "notices": [
+        "fixture/LICENSE.txt"
+      ],
+      "modifications": [
+        "none proposed"
+      ]
+    }
+  ],
+  "notices": [
+    {
+      "source_path": "fixture/LICENSE.txt",
+      "sha256": "3e822c22b8c15b548b091b50aba876619287998c79a4ac4e2f000613f351188f",
+      "required_destination": "proposed/THIRD_PARTY_NOTICES/fixture/LICENSE.txt",
+      "retained_sha256": null,
+      "scope_review": "synthetic plan, destination not created"
+    }
+  ],
+  "prerequisites": {
+    "runtime_dependencies": [],
+    "registry_dependencies": [],
+    "peer_versions": [],
+    "assets": [],
+    "actual_lockfile_review": "N/A text fixture",
+    "bundle_review": "N/A text fixture"
+  },
+  "rights_review": {
+    "owner": "fictional reviewer",
+    "status": "REVIEW_REQUIRED; no legal determination",
+    "exceptions": [
+      "synthetic terms do not qualify an MIT artifact"
+    ],
+    "distribution_boundary": "none; no application distribution"
+  },
+  "patch_history": [],
+  "update_comparison": {
+    "previous_revision": "fixture-v1",
+    "candidate_revision": "fixture-v1",
+    "original_to_candidate_diff": "no change in synthetic fixture",
+    "original_to_local_diff": "NOT_RUN; no local copy",
+    "notice_changes": "none proposed",
+    "dependency_changes": "none",
+    "decision": "PLAN_ONLY",
+    "rollback_snapshot": "fixture-v1 retained"
+  },
+  "authorization": {
+    "copy_paths": [
+      "proposed/atlas-component.txt",
+      "proposed/THIRD_PARTY_NOTICES/fixture/LICENSE.txt"
+    ],
+    "source": "fictional proposed scope only, no real authorization",
+    "dependency_install": "NOT_AUTHORIZED",
+    "external_effects": "NOT_AUTHORIZED"
+  },
+  "maintenance": {
+    "owner": "fictional Atlas maintainer",
+    "review_due": "2026-11-08, fictional unscheduled review",
+    "event_triggers": [
+      "fixture source change",
+      "notice change"
+    ]
+  },
+  "proof": {
+    "source_hashes": "NOT_RUN",
+    "protected_notices": "NOT_RUN",
+    "target_build": "NOT_RUN",
+    "browser_interaction": "NOT_RUN",
+    "accessibility": "NOT_RUN",
+    "license_compatibility": "NOT_RUN",
+    "native_host": "NOT_RUN"
+  }
+}

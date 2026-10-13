@@ -6,7 +6,13 @@ Check the current [pack catalog](https://github.com/legioncodeinc/vibe-coding-to
 
 ## A command is missing
 
-Claude Code exposes plugin commands. Codex receives corresponding Stinger wrappers rather than a Claude-style commands directory. Invoke the wrapper skill or ask for the workflow by name. The [core command files](../../commands/) are the readable reference, and [Harness Capabilities](../reference/HARNESS-CAPABILITIES.md) lists the limits for each host.
+Claude Code exposes plugin commands. Codex receives corresponding Stinger wrappers rather than a Claude-style commands directory. Invoke the wrapper skill or ask for the workflow by name. The [command guide](COMMANDS.md) identifies the owner; Core and each optional command owner carry their own readable procedure, and [Harness Capabilities](../reference/HARNESS-CAPABILITIES.md) lists the limits for each host.
+
+## An optional Codex role is missing
+
+Check the explicit `~/.wasp-nest/installed-plugins.json` selection and the actual package roots, required Core, matching versions and workflow prerequisites. Then check Core's trusted registration hook. A cached marketplace folder is not an enabled selection, and marketplace/UI installation alone is not proven to write the registry. The local installer records it automatically.
+
+Use the matching installed Stinger when a native role is unavailable and report that limit. Do not copy a different plugin's role into place or invent a native selector.
 
 ## Onboarding did not prompt
 

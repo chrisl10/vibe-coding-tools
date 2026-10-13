@@ -1,0 +1,11 @@
+// server/api/account.get.ts integration template. NOT_RUN.
+// Use the actual accepted server-only adapters; these imports are integration placeholders.
+import { requirePrincipal, readAuthorizedAccount } from '~~/server/utils/accepted-account-adapter'
+export default defineEventHandler(async (event) => {
+  setHeader(event, 'Cache-Control', 'private, no-store')
+  const principal = await requirePrincipal(event) // throws on missing/expired session
+  // Adapter must enforce actual tenant/resource permission before any query.
+  const account = await readAuthorizedAccount(principal)
+  return { displayName: account.displayName } // approved minimal browser DTO
+})
+// No cached wrapper. Validate status/denial and DTO with real adapters; do not stub successful auth.

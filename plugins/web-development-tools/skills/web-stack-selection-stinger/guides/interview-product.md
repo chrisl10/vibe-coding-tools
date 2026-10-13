@@ -1,0 +1,9 @@
+# Interview the product and team
+
+1. Read supplied product decisions and use the intake worksheet. Identify the chosen milestone: content site, signed-in app, existing product extension or native-related web surface.
+2. Ask unresolved content freshness/search, interaction, rendering, existing backend, team, native reuse and hosting questions in one compact batch. Recommend a question answer only when supported by the known product, not by a favored framework.
+3. Separate search goals from rendering requirements and actual indexing proof. Distinguish browser-only APIs from server code and stable build-time content from per-user requests.
+4. Record accepted features: forms/auth/tenancy/payments and background work. Do not assume every web product needs them. Preserve existing contracts and architecture.
+5. Return the minimum decision inputs and blockers. If missing facts materially change the recommendation, do independent source research while awaiting the answer rather than silently choosing a stack.
+
+Grounding: [React choices](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/web-stack-selection-stinger/references/research/raw/react-framework.html), [SvelteKit rendering](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/web-stack-selection-stinger/references/research/raw/sveltekit-options.html), [Vue](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/web-stack-selection-stinger/references/research/raw/vue-intro.html), [Nuxt](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/web-stack-selection-stinger/references/research/raw/nuxt-rendering.html). Intake scope is the topic contract.

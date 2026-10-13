@@ -1,0 +1,31 @@
+{
+  "name": "backend-and-desktop-tools",
+  "version": "3.0.0",
+  "description": "Implement TypeScript, Python, Go, Rust, native apps, APIs and terminal workflows.",
+  "author": {
+    "name": "Legion Code Inc."
+  },
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "skills": [
+    "./skills/"
+  ],
+  "agents": [
+    "./cursor-agents/app-store-submission-wasp-drone.md",
+    "./cursor-agents/electron-app-wasp-drone.md",
+    "./cursor-agents/go-desktop-wasp-drone.md",
+    "./cursor-agents/go-wasp-drone.md",
+    "./cursor-agents/http-rest-fundamentals-wasp-drone.md",
+    "./cursor-agents/python-wasp-drone.md",
+    "./cursor-agents/rust-wasp-drone.md",
+    "./cursor-agents/tauri-wasp-drone.md",
+    "./cursor-agents/terminal-bash-wasp-drone.md",
+    "./cursor-agents/typescript-node-wasp-drone.md"
+  ],
+  "commands": [
+    "./commands/build-desktop-app.md",
+    "./commands/build-mobile-backend.md",
+    "./commands/choose-backend.md",
+    "./commands/choose-desktop-stack.md"
+  ]
+}
