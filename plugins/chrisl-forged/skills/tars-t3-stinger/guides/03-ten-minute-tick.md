@@ -49,3 +49,13 @@ under two minutes of manager time, then end the turn and go idle.
 6. **Report to the owner only if something changed** that they would act
    on, one line per item, recommended answer first. Otherwise stay silent
    and end the turn.
+
+## Verification rule (pilot lesson 2026-10-13)
+
+Never verify a chip's completion claim against only the branch name
+recorded in the ledger: the chip may have delivered on its own
+worktree-contract branch with a different suffix. Verify delivery with
+`gh pr list -R <owner>/<repo> --state open --json number,title,headRefName`
+and match by title and branch prefix; the ledger's branch is a hint, not
+the contract. A "false completion claim" ruling requires the PR list to
+be empty, not just the expected branch to be unchanged.

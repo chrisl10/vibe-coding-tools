@@ -231,11 +231,23 @@ def cmd_respond(args) -> None:
 
 
 def cmd_pr_link(args) -> None:
+    # https://github.com/<owner>/<repo>/pull/<n> -> host/repository/number key
+    parts = args.url.rstrip("/").split("/")
+    if len(parts) < 2 or not parts[-1].isdigit():
+        sys.exit("expected a PR url like https://github.com/<owner>/<repo>/pull/<n>")
+    number = int(parts[-1])
+    repository = "/".join(parts[-4:-2]) if len(parts) >= 4 else None
+    host = parts[-5] if len(parts) >= 5 else None
+    if not repository or "/" not in repository or not host:
+        sys.exit("could not parse host/repository from url: " + args.url)
     print(json.dumps(dispatch(args, {
         "type": "thread.pull-request.link",
         "threadId": args.threadId,
+        "host": host,
+        "repository": repository,
+        "number": number,
         "url": args.url,
-        "source": "t3ctl",
+        "source": "agent",
     }), indent=2))
 
 
