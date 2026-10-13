@@ -1,5 +1,7 @@
 # Example: System Overview (Abbreviated)
 
+> Example context: Project-relative links in this worked document describe the illustrated target repository. They are not bundled Core resources or proof that those project files exist in this packaging checkout.
+
 This is an abbreviated example of a `library/knowledge/private/architecture/system-overview.md`. It shows the exact format, section structure, and Mermaid diagram style. The full version lives at `library/knowledge/private/architecture/system-overview.md`.
 
 ---

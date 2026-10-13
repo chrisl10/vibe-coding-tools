@@ -1,6 +1,6 @@
 # Domain Taxonomy - What Belongs Where
 
-Full detail on each knowledge domain this repo uses. For each domain: what to include, what NOT to include, and how many docs to expect. Create only the domains a given repo actually needs - skip the rest rather than leaving empty folders.
+Full detail on choosing knowledge domains for the repository being documented. The six-host Deep Lake content is a worked example, not the current Wasp Nest packaging implementation. For each domain: what to include, what NOT to include, and how many docs to expect. Create only the domains a given repo actually needs - skip the rest rather than leaving empty folders.
 
 ---
 
@@ -170,8 +170,8 @@ Coding conventions, API design, process rules.
 A single `overview.md` at the root of `library/knowledge/private/`. The human-curated entry point - the README for the entire knowledge base.
 
 **Required sections:**
-1. What this repo is (1-2 paragraphs, plain English: a memory plugin that wraps six coding assistants over a Deep Lake substrate)
-2. Top-level architecture summary (shared core, per-harness shims, the 7 tables)
+1. What the target repo is (1-2 paragraphs in plain English). The reference memory system wraps six coding assistants over Deep Lake; describe that only when it is the actual target.
+2. Top-level architecture summary from actual components, boundaries and data objects; use shared core, host shims and seven tables only for the reference memory system
 3. Key modules / components
 4. Where to start reading (role-based reading guide)
 5. Library coverage stats (total docs, ADR count, last updated)

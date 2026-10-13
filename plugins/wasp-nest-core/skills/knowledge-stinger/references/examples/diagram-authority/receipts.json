@@ -1,0 +1,207 @@
+{
+  "source_locator_root": "references/examples/diagram-authority",
+  "fixture_sha256": "ba39615741cd5c15b0caa92f80c811bdb6ae570537b52ac4b1835898d79c30b6",
+  "claims": [
+    {
+      "id": "denial",
+      "source": "fixtures/flows.py",
+      "source_locator_root": "references/examples/diagram-authority",
+      "sha256": "ba39615741cd5c15b0caa92f80c811bdb6ae570537b52ac4b1835898d79c30b6",
+      "lines": [
+        3,
+        6
+      ],
+      "quote": "    trace.append(\"permission-check\")\n    if actor[\"tenant\"] != invoice[\"tenant\"]:\n        trace.append(\"return-forbidden\")\n        return {\"status\": 403}",
+      "layer": "synthetic-inspected-and-executed"
+    },
+    {
+      "id": "allowed-read",
+      "source": "fixtures/flows.py",
+      "source_locator_root": "references/examples/diagram-authority",
+      "sha256": "ba39615741cd5c15b0caa92f80c811bdb6ae570537b52ac4b1835898d79c30b6",
+      "lines": [
+        7,
+        8
+      ],
+      "quote": "    trace.append(\"read-invoice\")\n    return {\"status\": 200, \"id\": invoice[\"id\"]}",
+      "layer": "synthetic-inspected-and-executed"
+    },
+    {
+      "id": "enqueue",
+      "source": "fixtures/flows.py",
+      "source_locator_root": "references/examples/diagram-authority",
+      "sha256": "ba39615741cd5c15b0caa92f80c811bdb6ae570537b52ac4b1835898d79c30b6",
+      "lines": [
+        12,
+        18
+      ],
+      "quote": "    trace.append(\"role-check\")\n    if actor[\"role\"] != \"owner\":\n        trace.append(\"return-forbidden\")\n        return {\"status\": 403}\n    queue.append({\"kind\": \"export\", \"tenant\": actor[\"tenant\"]})\n    trace.append(\"queue-accepted\")\n    return {\"status\": 202, \"state\": \"queued\"}",
+      "layer": "synthetic-inspected-and-executed"
+    },
+    {
+      "id": "consume",
+      "source": "fixtures/flows.py",
+      "source_locator_root": "references/examples/diagram-authority",
+      "sha256": "ba39615741cd5c15b0caa92f80c811bdb6ae570537b52ac4b1835898d79c30b6",
+      "lines": [
+        22,
+        25
+      ],
+      "quote": "    job = queue.pop(0)\n    trace.append(\"worker-start\")\n    trace.append(\"export-complete\")\n    return {\"tenant\": job[\"tenant\"], \"state\": \"complete\"}",
+      "layer": "synthetic-inspected-and-executed"
+    },
+    {
+      "id": "persist-before-notify",
+      "source": "fixtures/flows.py",
+      "source_locator_root": "references/examples/diagram-authority",
+      "sha256": "ba39615741cd5c15b0caa92f80c811bdb6ae570537b52ac4b1835898d79c30b6",
+      "lines": [
+        29,
+        35
+      ],
+      "quote": "    rows.append({\"state\": \"saved\"})\n    trace.append(\"local-commit\")\n    try:\n        notify()\n    except RuntimeError:\n        trace.append(\"notify-failed\")\n        return {\"state\": \"saved\", \"notification\": \"failed\"}",
+      "layer": "synthetic-inspected-and-executed"
+    },
+    {
+      "id": "notify-success",
+      "source": "fixtures/flows.py",
+      "source_locator_root": "references/examples/diagram-authority",
+      "sha256": "ba39615741cd5c15b0caa92f80c811bdb6ae570537b52ac4b1835898d79c30b6",
+      "lines": [
+        36,
+        37
+      ],
+      "quote": "    trace.append(\"notify-succeeded\")\n    return {\"state\": \"saved\", \"notification\": \"sent\"}",
+      "layer": "synthetic-inspected-and-executed"
+    },
+    {
+      "id": "draft-owner-role-intention",
+      "source": "fixtures/draft-teaching-intention.txt",
+      "source_locator_root": "references/examples/diagram-authority",
+      "sha256": "8e054c275581331af94c7dd0075cb66bb9f439213c3fda32d8faa7fb98913d4e",
+      "lines": [
+        1,
+        3
+      ],
+      "quote": "Synthetic teaching intention. Status: Draft. No owner acceptance or implementation claim.\nDesired change: invoice reads require an owner role in addition to matching tenant.\nNo real application, contract acceptance, account, deployment or authorization is represented.",
+      "layer": "synthetic-draft-intention-only"
+    }
+  ],
+  "cases": [
+    {
+      "case": "cross-tenant-denial",
+      "result": {
+        "status": 403
+      },
+      "trace": [
+        "permission-check",
+        "return-forbidden"
+      ]
+    },
+    {
+      "case": "permitted-read",
+      "result": {
+        "status": 200,
+        "id": "i"
+      },
+      "trace": [
+        "permission-check",
+        "read-invoice"
+      ]
+    },
+    {
+      "case": "member-denied-enqueue",
+      "result": {
+        "status": 403
+      },
+      "trace": [
+        "role-check",
+        "return-forbidden"
+      ],
+      "queue": []
+    },
+    {
+      "case": "accepted-without-consumer",
+      "result": {
+        "status": 202,
+        "state": "queued"
+      },
+      "trace": [
+        "role-check",
+        "queue-accepted"
+      ],
+      "queue": [
+        {
+          "kind": "export",
+          "tenant": "a"
+        }
+      ]
+    },
+    {
+      "case": "separate-consumer",
+      "result": {
+        "tenant": "a",
+        "state": "complete"
+      },
+      "trace": [
+        "role-check",
+        "queue-accepted",
+        "worker-start",
+        "export-complete"
+      ],
+      "queue": []
+    },
+    {
+      "case": "notify-failure-preserves-local-row",
+      "result": {
+        "state": "saved",
+        "notification": "failed"
+      },
+      "trace": [
+        "local-commit",
+        "notify-failed"
+      ],
+      "rows": [
+        {
+          "state": "saved"
+        }
+      ]
+    },
+    {
+      "case": "notify-success",
+      "result": {
+        "state": "saved",
+        "notification": "sent"
+      },
+      "trace": [
+        "local-commit",
+        "notify-succeeded"
+      ],
+      "rows": [
+        {
+          "state": "saved"
+        }
+      ]
+    },
+    {
+      "case": "draft-owner-role-requirement-unimplemented",
+      "result": {
+        "status": 200,
+        "id": "i"
+      },
+      "trace": [
+        "permission-check",
+        "read-invoice"
+      ],
+      "implication": "Synthetic current read checks tenant equality only. Draft owner-role check is not implemented."
+    }
+  ],
+  "checks": {
+    "behavior_cases": 8,
+    "result": "PASS",
+    "renderer": "unavailable: mmdc is not installed",
+    "product_runtime": "not tested",
+    "human_understanding": "pending"
+  },
+  "limits": "Only a local teaching fixture. List append labeled local-commit does not test a real database transaction, provider call, durable queue or deployed authorization."
+}
