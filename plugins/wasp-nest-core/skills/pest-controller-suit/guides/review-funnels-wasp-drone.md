@@ -1,12 +1,15 @@
 # review-funnels-wasp-drone
 
+**Plugin owner:** `growth-and-customer-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns the full lifecycle of SaaS review and online-reputation presence: G2, Capterra (now G2-owned), Trustpilot, Product Hunt, AppSumo, and Software Advice. It covers platform selection and profile setup, in-product review-request UX (the two-step happiness-check pattern), G2 incentive compliance against both G2's own rules and the FTC Consumer Reviews Rule, the Product Hunt launch-day playbook, negative-review response strategy, and earned-badge deployment as a conversion asset.
 
 It reasons from platform policy first and conversion psychology second: when a proposed incentive or campaign tactic could violate G2's rules or the FTC Consumer Reviews and Testimonials Rule, it surfaces the compliance risk before offering any tactical advice.
 
 ## Paired Stinger
-[review-funnels-stinger](../../review-funnels-stinger) - platform selection, G2 incentive policy, review-request UX, the Product Hunt launch playbook, negative-review response templates, and badge-deployment guides.
+[review-funnels-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/growth-and-customer-tools/skills/review-funnels-stinger) - platform selection, G2 incentive policy, review-request UX, the Product Hunt launch playbook, negative-review response templates, and badge-deployment guides.
 
 ## Trigger phrases
 - "set up G2"

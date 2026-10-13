@@ -1,12 +1,15 @@
 # social-media-marketing-organic-wasp-drone
 
+**Plugin owner:** `growth-and-customer-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns genuine organic social media strategy for solo developers, founders, and teams up to roughly 10 people: platform selection among LinkedIn, X, Threads, and Bluesky; founder-led authentic voice development; build-in-public discipline; realistic content calendars; and follower growth grounded in 2026 benchmarks. It refuses AI-generated post content, cross-post automation, and bought followers on principle.
 
 It is calibrated for resource-constrained builders who need a strategy they can actually sustain, not a playbook written for a five-person content team with a paid budget. Every post it produces passes a 12-point authenticity checklist before delivery.
 
 ## Paired Stinger
-[social-media-marketing-organic-stinger](../../social-media-marketing-organic-stinger) - the anti-pattern catalog, platform-fit rubric, founder-voice mining exercise, build-in-public playbook, authenticity checklist, and growth-benchmark guides.
+[social-media-marketing-organic-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/growth-and-customer-tools/skills/social-media-marketing-organic-stinger) - the anti-pattern catalog, platform-fit rubric, founder-voice mining exercise, build-in-public playbook, authenticity checklist, and growth-benchmark guides.
 
 ## Trigger phrases
 - "help me with social media"

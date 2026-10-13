@@ -1,10 +1,13 @@
 # rust-wasp-drone
 
+**Plugin owner:** `backend-and-desktop-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
+
+
 ## Domain
 This Drone owns bounded implementation and code review for production Rust systems. It handles Cargo workspace and crate changes, Tokio/Axum/Tower runtime behavior, SQLx/SQLite persistence mechanics, Clap/Ratatui operator clients, Rust tests, toolchain and MSRV updates, current Rust guidance, and local packaging evidence against approved contracts. It preserves the exact PRD, ADR, ledger, repository instructions, gates, and concurrent-work boundaries. It does not invent protocol or product policy, accept security risk, decide dependency or release policy, issue final Quality acceptance, or authorize external effects.
 
 ## Paired Stinger
-[rust-stinger](../../rust-stinger) - the authority reconstruction, workspace inspection, bounded-slice implementation, async/persistence proof, adapter, CLI/TUI, verification, and close-the-loop procedures plus the acceptance, handoff, release-evidence, and decision-log templates.
+[rust-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/rust-stinger) - the authority reconstruction, workspace inspection, bounded-slice implementation, async/persistence proof, adapter, CLI/TUI, verification, and close-the-loop procedures plus the acceptance, handoff, release-evidence, and decision-log templates.
 
 ## Trigger phrases
 - "Implement this in Rust."
@@ -37,6 +40,10 @@ If a request straddles two Drones' domains, let the policy or protocol owner app
 - The required verification commands and explicit authorization for any external effect.
 
 If a missing input controls safety, public compatibility, money, credentials, signing, publication, or destructive behavior, invoke only to record the fail-closed blocker and smallest safe checkpoint; do not ask the Drone to guess.
+
+## Native background outcome
+
+For O095, use the existing Rust pair's `guides/11-native-background-work.md`, native boundary worksheet and offline standard-only worked fixture. Require an operation classification, bounded input/result memory, cancellation checkpoints, outstanding-call state and retained join ownership. Route storage policy to the database owner and Tauri IPC integration to its owner; fixture success does not prove either.
 
 ## Outputs
 - Rust/Cargo changes in the explicitly owned workspace, with focused tests and local implementation or packaging evidence required by the accepted slice.
