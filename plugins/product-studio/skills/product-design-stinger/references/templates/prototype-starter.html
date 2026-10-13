@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S-billing-01 Invoices | {Product} prototype</title>
+<!--
+  product-design-stinger prototype starter.
+  One file, no network requests, opens by double-click.
+  Replace the {placeholders}, keep the token names, keep all four states.
+  Grounding: references/research/distilled-product-design.md sections 3, 5, 6, 9.
+  Tokens here are PROTOTYPE tokens. A durable system comes from design-system-stinger.
+-->
+<style>
+  :root {
+    color-scheme: light dark;
+
+    /* Color: neutrals carry the interface, accent carries meaning only. */
+    --surface: light-dark(oklch(0.985 0.003 250), oklch(0.19 0.008 250));
+    --surface-raised: light-dark(oklch(1 0 0), oklch(0.23 0.009 250));
+    --surface-sunken: light-dark(oklch(0.955 0.004 250), oklch(0.16 0.007 250));
+    --text: light-dark(oklch(0.24 0.01 250), oklch(0.94 0.005 250));
+    --text-muted: light-dark(oklch(0.45 0.012 250), oklch(0.74 0.01 250));
+    --border: light-dark(oklch(0.88 0.006 250), oklch(0.32 0.01 250));
+    --border-strong: light-dark(oklch(0.58 0.01 250), oklch(0.6 0.01 250));
+    --accent: light-dark(oklch(0.47 0.11 165), oklch(0.78 0.12 165));
+    --on-accent: light-dark(oklch(0.99 0 0), oklch(0.18 0.02 165));
+    --accent-soft: light-dark(oklch(0.94 0.04 165), oklch(0.3 0.05 165));
+    --danger: light-dark(oklch(0.5 0.17 25), oklch(0.75 0.13 25));
+    --danger-soft: light-dark(oklch(0.95 0.03 25), oklch(0.29 0.06 25));
+    --warning: light-dark(oklch(0.5 0.1 75), oklch(0.82 0.11 80));
+    --warning-soft: light-dark(oklch(0.95 0.04 85), oklch(0.3 0.05 80));
+    --focus-ring: light-dark(oklch(0.5 0.15 255), oklch(0.78 0.12 255));
+
+    /* Type: three sizes plus small. Weight does the work, not color. */
+    --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --text-sm: 0.8125rem;
+    --text-md: 0.9375rem;
+    --text-lg: 1.375rem;
+    --leading-tight: 1.25;
+    --leading-body: 1.5;
+
+    /* Space: 4px base. Related items sit closer than unrelated ones. */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --target-min: 2.75rem; /* 44px: above the 24px floor of WCAG 2.5.8 */
+    --header-h: 3.5rem;
+
+    /* Motion: short, explanatory, opacity first. */
+    --dur-fast: 120ms;
+    --dur-base: 200ms;
+    --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  }
+  :root[data-theme="light"] { color-scheme: light; }
+  :root[data-theme="dark"] { color-scheme: dark; }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-padding-top: calc(var(--header-h) + var(--space-4)); } /* WCAG 2.4.11 */
+  body {
+    margin: 0;
+    font: var(--text-md)/var(--leading-body) var(--font-sans);
+    color: var(--text);
+    background: var(--surface);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; border-radius: var(--radius-sm); }
+
+  .skip { position: absolute; left: var(--space-4); top: -100px; padding: var(--space-2) var(--space-4); background: var(--surface-raised); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); z-index: 10; }
+  .skip:focus { top: var(--space-2); }
+
+  .proto-bar {
+    display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-6);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm); color: var(--text-muted);
+    background: var(--surface-sunken); border-bottom: 1px solid var(--border);
+  }
+  .proto-bar fieldset { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: 0; padding: 0; border: 0; }
+  .proto-bar legend { float: left; margin-right: var(--space-2); padding-top: var(--space-1); }
+  .proto-bar label { display: inline-flex; align-items: center; gap: var(--space-1); min-height: 2rem; padding: 0 var(--space-2); border-radius: var(--radius-sm); cursor: pointer; }
+  .proto-bar input:checked + span { color: var(--text); font-weight: 600; }
+
+  .app { display: grid; grid-template-columns: 15rem 1fr; grid-template-rows: auto 1fr; min-height: calc(100vh - 2.75rem); }
+  .topbar {
+    grid-column: 1 / -1; position: sticky; top: 0; z-index: 5;
+    display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+    height: var(--header-h); padding: 0 var(--space-4);
+    background: var(--surface-raised); border-bottom: 1px solid var(--border);
+  }
+  .brand { font-weight: 650; letter-spacing: -0.01em; }
+  .sidenav { padding: var(--space-4) var(--space-3); border-right: 1px solid var(--border); }
+  .sidenav ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-1); }
+  .sidenav a {
+    display: flex; align-items: center; min-height: var(--target-min); padding: 0 var(--space-3);
+    border-radius: var(--radius-sm); text-decoration: none; color: var(--text-muted);
+  }
+  .sidenav a:hover { background: var(--surface-sunken); color: var(--text); }
+  .sidenav a[aria-current="page"] { background: var(--accent-soft); color: var(--text); font-weight: 600; }
+
+  main { padding: var(--space-8) var(--space-8) var(--space-12); max-width: 72rem; width: 100%; }
+  .page-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-6); }
+  h1 { margin: 0; font-size: var(--text-lg); line-height: var(--leading-tight); font-weight: 650; letter-spacing: -0.015em; }
+  .page-head p { margin: var(--space-1) 0 0; color: var(--text-muted); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+    min-height: var(--target-min); padding: 0 var(--space-4);
+    font: inherit; font-weight: 600; border-radius: var(--radius-sm); cursor: pointer;
+    border: 1px solid var(--border-strong); background: var(--surface-raised); color: var(--text);
+    text-decoration: none;
+    transition: background-color var(--dur-fast) var(--ease-out);
+  }
+  .btn:hover { background: var(--surface-sunken); }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .btn-primary:hover { background: color-mix(in oklch, var(--accent) 88%, var(--text)); }
+
+  .toolbar { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-4); }
+  .field { display: grid; gap: var(--space-1); }
+  .field label { font-size: var(--text-sm); font-weight: 600; }
+  .field input, .field select {
+    min-height: var(--target-min); min-width: 16rem; padding: 0 var(--space-3);
+    font: inherit; color: var(--text); background: var(--surface-raised);
+    border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
+  }
+
+  .panel { background: var(--surface-raised); border: 1px solid var(--border); border-radius: var(--radius-md); }
+  table { width: 100%; border-collapse: collapse; }
+  caption { text-align: left; padding: var(--space-4) var(--space-4) 0; color: var(--text-muted); font-size: var(--text-sm); }
+  th, td { padding: var(--space-3) var(--space-4); text-align: left; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  th { font-size: var(--text-sm); font-weight: 600; color: var(--text-muted); }
+  tr:last-child td { border-bottom: 0; }
+  td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; }
+  th.num { text-align: right; }
+  td a { display: inline-flex; align-items: center; min-height: 1.5rem; font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+  .status { display: inline-flex; align-items: center; gap: var(--space-1); padding: 0.125rem var(--space-2); border-radius: 999px; font-size: var(--text-sm); font-weight: 600; }
+  .status::before { content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: currentColor; }
+  .status-paid { background: var(--accent-soft); color: var(--accent); }
+  .status-due { background: var(--warning-soft); color: var(--warning); }
+  .status-overdue { background: var(--danger-soft); color: var(--danger); }
+
+  .state-msg { display: grid; justify-items: start; gap: var(--space-3); padding: var(--space-8); max-width: 34rem; }
+  .state-msg h2 { margin: 0; font-size: var(--text-md); font-weight: 650; }
+  .state-msg p { margin: 0; color: var(--text-muted); }
+  .alert { display: grid; gap: var(--space-2); margin: var(--space-4); padding: var(--space-4); border-radius: var(--radius-sm); background: var(--danger-soft); border: 1px solid var(--danger); }
+  .alert strong { color: var(--danger); }
+
+  .skeleton { height: 0.875rem; border-radius: 4px; background: var(--surface-sunken); animation: fade 1.2s var(--ease-out) infinite alternate; }
+  @keyframes fade { from { opacity: 1; } to { opacity: 0.45; } }
+
+  [data-state-view] { display: none; }
+  [data-state="success"] [data-state-view="success"],
+  [data-state="empty"] [data-state-view="empty"],
+  [data-state="loading"] [data-state-view="loading"],
+  [data-state="error"] [data-state-view="error"] { display: block; }
+
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  @media (max-width: 48rem) {
+    .app { grid-template-columns: 1fr; grid-template-rows: auto auto 1fr; }
+    .sidenav { border-right: 0; border-bottom: 1px solid var(--border); padding: var(--space-2) var(--space-3); }
+    .sidenav ul { grid-auto-flow: column; grid-auto-columns: max-content; overflow-x: auto; }
+    main { padding: var(--space-6) var(--space-4) var(--space-12); }
+    .field input, .field select { min-width: 0; width: 100%; }
+    .toolbar .field { flex: 1 1 12rem; }
+    .hide-sm { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="proto-bar" role="region" aria-label="Prototype controls (not part of the design)">
+  <span><strong>Prototype, not production.</strong> S-billing-01</span>
+  <fieldset>
+    <legend>State</legend>
+    <label><input type="radio" name="state" value="success" checked><span>Success</span></label>
+    <label><input type="radio" name="state" value="empty"><span>Empty</span></label>
+    <label><input type="radio" name="state" value="loading"><span>Loading</span></label>
+    <label><input type="radio" name="state" value="error"><span>Error</span></label>
+  </fieldset>
+  <fieldset>
+    <legend>Theme</legend>
+    <label><input type="radio" name="theme" value="system" checked><span>System</span></label>
+    <label><input type="radio" name="theme" value="light"><span>Light</span></label>
+    <label><input type="radio" name="theme" value="dark"><span>Dark</span></label>
+  </fieldset>
+  <a href="index.html">All screens</a>
+</div>
+
+<div class="app">
+  <header class="topbar">
+    <span class="brand">{Product}</span>
+    <a class="btn" href="#help">Help</a>
+  </header>
+
+  <nav class="sidenav" aria-label="Main">
+    <ul>
+      <li><a href="S-home-01.html">Home</a></li>
+      <li><a href="S-billing-01.html" aria-current="page">Invoices</a></li>
+      <li><a href="#customers">Customers</a></li>
+      <li><a href="#settings">Settings</a></li>
+    </ul>
+  </nav>
+
+  <main id="main" tabindex="-1">
+    <div class="page-head">
+      <div>
+        <h1>Invoices</h1>
+        <p>Send invoices and see what has been paid.</p>
+      </div>
+      <a class="btn btn-primary" href="S-billing-03.html">Create invoice</a>
+    </div>
+
+    <form class="toolbar" role="search" onsubmit="return false">
+      <div class="field">
+        <label for="q">Search invoices</label>
+        <input id="q" name="q" type="search" autocomplete="off" placeholder="Customer or invoice number">
+      </div>
+      <div class="field">
+        <label for="filter">Status</label>
+        <select id="filter" name="filter">
+          <option>All</option><option>Due</option><option>Overdue</option><option>Paid</option>
+        </select>
+      </div>
+    </form>
+
+    <section id="region" class="panel" data-state="success" aria-labelledby="region-title">
+      <h2 id="region-title" class="sr-only">Invoice list</h2>
+
+      <div data-state-view="success">
+        <table>
+          <caption>3 invoices, newest first</caption>
+          <thead>
+            <tr><th scope="col">Invoice</th><th scope="col">Customer</th><th scope="col" class="hide-sm">Due</th><th scope="col">Status</th><th scope="col" class="num">Amount</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><a href="S-billing-02.html">INV-1042</a></td><td>{Customer A}</td><td class="hide-sm">Oct 30</td><td><span class="status status-due">Due</span></td><td class="num">$1,200.00</td></tr>
+            <tr><td><a href="S-billing-02.html">INV-1041</a></td><td>{Customer B}</td><td class="hide-sm">Oct 2</td><td><span class="status status-overdue">Overdue</span></td><td class="num">$480.00</td></tr>
+            <tr><td><a href="S-billing-02.html">INV-1040</a></td><td>{Customer C}</td><td class="hide-sm">Sep 18</td><td><span class="status status-paid">Paid</span></td><td class="num">$3,150.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div data-state-view="empty">
+        <div class="state-msg">
+          <h2>No invoices yet</h2>
+          <p>Invoices you send appear here, with their status and amount. Start with one customer and one line item.</p>
+          <a class="btn btn-primary" href="S-billing-03.html">Create invoice</a>
+        </div>
+      </div>
+
+      <div data-state-view="loading" aria-hidden="true">
+        <table>
+          <tbody>
+            <tr><td><div class="skeleton" style="width:5rem"></div></td><td><div class="skeleton" style="width:9rem"></div></td><td class="hide-sm"><div class="skeleton" style="width:4rem"></div></td><td><div class="skeleton" style="width:4rem"></div></td><td><div class="skeleton" style="width:5rem;margin-left:auto"></div></td></tr>
+            <tr><td><div class="skeleton" style="width:5rem"></div></td><td><div class="skeleton" style="width:7rem"></div></td><td class="hide-sm"><div class="skeleton" style="width:4rem"></div></td><td><div class="skeleton" style="width:4rem"></div></td><td><div class="skeleton" style="width:4rem;margin-left:auto"></div></td></tr>
+            <tr><td><div class="skeleton" style="width:5rem"></div></td><td><div class="skeleton" style="width:8rem"></div></td><td class="hide-sm"><div class="skeleton" style="width:4rem"></div></td><td><div class="skeleton" style="width:4rem"></div></td><td><div class="skeleton" style="width:5rem;margin-left:auto"></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div data-state-view="error">
+        <div class="alert" role="alert">
+          <strong>We could not load your invoices.</strong>
+          <span>Your search and filters are kept. Check your connection, then try again.</span>
+          <div><button class="btn" type="button" data-retry>Try again</button></div>
+        </div>
+      </div>
+    </section>
+
+    <p id="live" class="sr-only" role="status" aria-live="polite"></p>
+  </main>
+</div>
+
+<script>
+  (function () {
+    var region = document.getElementById('region');
+    var live = document.getElementById('live');
+    var messages = {
+      success: '3 invoices loaded.',
+      empty: 'No invoices yet.',
+      loading: 'Loading invoices.',
+      error: 'Could not load invoices. Try again.'
+    };
+    function setState(state) {
+      region.setAttribute('data-state', state);
+      region.setAttribute('aria-busy', state === 'loading' ? 'true' : 'false');
+      live.textContent = messages[state] || '';
+    }
+    document.querySelectorAll('input[name="state"]').forEach(function (el) {
+      el.addEventListener('change', function () { setState(el.value); });
+    });
+    document.querySelectorAll('input[name="theme"]').forEach(function (el) {
+      el.addEventListener('change', function () {
+        if (el.value === 'system') document.documentElement.removeAttribute('data-theme');
+        else document.documentElement.setAttribute('data-theme', el.value);
+      });
+    });
+    var retry = document.querySelector('[data-retry]');
+    if (retry) retry.addEventListener('click', function () {
+      setState('loading');
+      document.querySelector('input[name="state"][value="loading"]').checked = true;
+      setTimeout(function () {
+        setState('success');
+        document.querySelector('input[name="state"][value="success"]').checked = true;
+      }, 900);
+    });
+  })();
+</script>
+</body>
+</html>
