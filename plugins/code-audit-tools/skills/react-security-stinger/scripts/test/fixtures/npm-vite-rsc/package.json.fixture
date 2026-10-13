@@ -1,0 +1,1 @@
+{"name":"npm-vite-rsc","private":true,"dependencies":{"react":"19.2.0","react-dom":"19.2.0","react-server-dom-webpack":"19.2.0"},"devDependencies":{"@vitejs/plugin-rsc":"0.5.2","vite":"7.1.0"}}
