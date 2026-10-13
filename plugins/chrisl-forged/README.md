@@ -19,6 +19,8 @@ Seven locally forged pairs. Each Stinger is the paired Drone's operating manual;
 | [production-release-wasp-drone](agents/production-release-wasp-drone.md) | [production-release-stinger](skills/production-release-stinger/SKILL.md) | Executes the complete production release at the project's tier, from authorization to verified-shipped. |
 | [production-release-build-wasp-drone](agents/production-release-build-wasp-drone.md) | [production-release-build-stinger](skills/production-release-build-stinger/SKILL.md) | Audits CI-to-deploy posture, classifies it on the tier ladder, and installs or upgrades the right release flow. |
 
+Beyond the pairs, one orchestrator skill: [tars-t3-stinger](skills/tars-t3-stinger/SKILL.md) with the [/tars-t3](commands/tars-t3.md) command, the TARS manager for T3 Code threads through t3ctl (spawns chips, runs the ten-minute tick, watches CI, routes decisions through the Jev lane; does no work itself).
+
 ## Start one task
 
 Required packs: `wasp-nest-core`

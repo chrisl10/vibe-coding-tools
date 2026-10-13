@@ -3599,6 +3599,7 @@
         "evidence-testing-stinger",
         "production-release-build-stinger",
         "production-release-stinger",
+        "tars-t3-stinger",
         "unslop-stinger"
       ],
       "agents": [
@@ -3610,16 +3611,18 @@
         "production-release-wasp-drone",
         "unslop-wasp-drone"
       ],
-      "commands": [],
+      "commands": [
+        "tars-t3"
+      ],
       "requires": [
         "wasp-nest-core"
       ],
       "optional_workflow_requirements": {},
       "mandatory": false,
       "counts": {
-        "skill": 7,
+        "skill": 8,
         "agent": 7,
-        "command": 0
+        "command": 1
       },
       "source_root": "packs/chrisl-forged",
       "components": [
@@ -3659,6 +3662,11 @@
           "source": "packs/chrisl-forged/skills/unslop-stinger/SKILL.md"
         },
         {
+          "kind": "skill",
+          "name": "tars-t3-stinger",
+          "source": "packs/chrisl-forged/skills/tars-t3-stinger/SKILL.md"
+        },
+        {
           "kind": "agent",
           "name": "before-after-wasp-drone",
           "source": "packs/chrisl-forged/agents/before-after-wasp-drone.md"
@@ -3692,6 +3700,11 @@
           "kind": "agent",
           "name": "unslop-wasp-drone",
           "source": "packs/chrisl-forged/agents/unslop-wasp-drone.md"
+        },
+        {
+          "kind": "command",
+          "name": "tars-t3",
+          "source": "packs/chrisl-forged/commands/tars-t3.md"
         }
       ]
     }
