@@ -2,7 +2,7 @@
 
 Vesting determines when an employee or founder earns their equity. Getting this wrong is expensive: improperly vested founders can create cap table problems that derail future fundraising, and employees who leave before their cliff get nothing (by design).
 
-Source: [`research/external/2026-05-20-vesting-schedules-double-trigger.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/external/2026-05-20-vesting-schedules-double-trigger.md)
+Source: `research/external/2026-05-20-vesting-schedules-double-trigger.md` (source-repository research, not shipped)
 
 ---
 

@@ -4,7 +4,7 @@ Use this guide after AI Studio has been selected as the correct product.
 
 ## 1. Confirm access before planning a build
 
-Confirm the target sub-account, Labs enablement, and `View & Manage AI Studio` permission. If AI Studio is hidden or unavailable, resolve access with Guide 07 before writing a prompt. [../references/research/raw/ai-studio-overview.md], [../references/research/raw/labs-overview.md]
+Confirm the target sub-account, Labs enablement, and `View & Manage AI Studio` permission. If AI Studio is hidden or unavailable, resolve access with Guide 07 before writing a prompt. [../references/research/raw/ai-studio-overview.md], [../references/research/raw/labs-overview.md (source-repository research, not shipped)]
 
 ## 2. Complete the project brief
 
@@ -18,7 +18,7 @@ Use [../references/ai-studio-project-brief.md]. At minimum, capture:
 - Domain, SEO, social preview, and approval owner
 - Explicit exclusions and sensitive data that must not be collected
 
-AI Studio can ask guided questions about color, typography, layout, and conversion goal, but a deliberate brief prevents hidden assumptions and unnecessary generations. [../references/research/raw/ai-studio-overview.md]
+AI Studio can ask guided questions about color, typography, layout, and conversion goal, but a deliberate brief prevents hidden assumptions and unnecessary generations. [../references/research/raw/ai-studio-overview.md (source-repository research, not shipped)]
 
 ## 3. Choose a starting method
 
@@ -30,13 +30,13 @@ Start with one of the documented inputs:
 - A screenshot or uploaded image
 - Other supporting files or brand assets
 
-Documented template families include landing pages, dashboards, ecommerce storefronts, and portfolios. URL and image references are inspiration, not a cloning guarantee. [../references/research/raw/ai-studio-overview.md]
+Documented template families include landing pages, dashboards, ecommerce storefronts, and portfolios. URL and image references are inspiration, not a cloning guarantee. [../references/research/raw/ai-studio-overview.md (source-repository research, not shipped)]
 
 ## 4. Write a bounded first prompt
 
 Use the build pattern in [../references/prompt-patterns.md]. Name the pages, goal, required behavior, brand direction, approved assets, form and calendar intent, and exclusions. Ask AI Studio to request only missing details that materially change the result.
 
-Do not promise undocumented source export, external hosting, arbitrary server-side code, database provisioning, authentication, or secret storage. Search for newer official documentation if one of those capabilities is essential. [../references/research/raw/ai-studio-code-editor.md], [../references/research/raw/ai-studio-overview.md]
+Do not promise undocumented source export, external hosting, arbitrary server-side code, database provisioning, authentication, or secret storage. Search for newer official documentation if one of those capabilities is essential. [../references/research/raw/ai-studio-code-editor.md], [../references/research/raw/ai-studio-overview.md (source-repository research, not shipped)]
 
 ## 5. Build in reviewable increments
 
@@ -49,7 +49,7 @@ For a complex project:
 5. Connect HighLevel forms and calendars only after their front ends are accepted.
 6. Configure publishing and SEO after content and routes stabilize.
 
-AI Studio can build multi-page projects, forms, booking experiences, CMS-style collections, and interactive front ends. The pricing examples also show that generated media and repeated refinements can materially affect usage, so incremental prompts improve reviewability and cost awareness. [../references/research/raw/ai-studio-pricing.md]
+AI Studio can build multi-page projects, forms, booking experiences, CMS-style collections, and interactive front ends. The pricing examples also show that generated media and repeated refinements can materially affect usage, so incremental prompts improve reviewability and cost awareness. [../references/research/raw/ai-studio-pricing.md (source-repository research, not shipped)]
 
 ## 6. Preserve source and approval boundaries
 
@@ -59,7 +59,7 @@ AI Studio can build multi-page projects, forms, booking experiences, CMS-style c
 - Mark placeholders visibly.
 - Require human review of factual, legal, compliance, and accessibility-sensitive content.
 
-Current HighLevel guidance explicitly requires licensed assets and link and compliance review for AI-generated email work. AI Studio documentation does not claim generated output is automatically production-safe. [../references/research/raw/email-ai.md], [../references/research/raw/ai-studio-overview.md]
+Current HighLevel guidance explicitly requires licensed assets and link and compliance review for AI-generated email work. AI Studio documentation does not claim generated output is automatically production-safe. [../references/research/raw/email-ai.md], [../references/research/raw/ai-studio-overview.md (source-repository research, not shipped)]
 
 ## 7. Define proof before editing
 

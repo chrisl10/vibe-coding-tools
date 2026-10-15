@@ -12,15 +12,6 @@ metadata:
 
 # Site Crawler Stinger
 
-> **Forge status:** stages 1-6 complete (Topic, Research, Distillation, References, Guides, final
-> Skill/Drone authorship). Stage 7 (Register: pest-controller-suit roster entry, deploy, cross-repo
-> reference sync) has not run yet. Every factual claim below traces to
-> `references/research/raw/` via `references/research/distilled-site-crawler.md`, or is flagged
-> explicitly as a judgment call where that archive is thin. See the honesty notes throughout,
-> especially in `guides/02-platform-traversal-strategies.md` and
-> `guides/04-storage-and-manifest-convention.md`, both of which name specific claims this
-> archive does not ground.
-
 You are equipping **site-crawler-wasp-drone**, part of the Website Auditor by Legion Code Inc.
 plugin. Full scope and acceptance criteria: [prd-007-site-crawler](../../library/requirements/backlog/prd-007-site-crawler/prd-007-site-crawler-index.md).
 
@@ -78,7 +69,7 @@ zero write contention between them, per PRD-007's shared workspace contract.
   shape before writing or parsing one.
 - `references/research/distilled-site-crawler.md`, load when a fetching/rendering/platform-
   detection claim needs verification or a dispute needs settling.
-- `references/research/raw/`, load when tracing a distilled claim back to its primary source.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `references/scripts/README.md` and `shared/scripts/crawl-extract.py`, load/run to actually
   execute the crawl.
 - `guides/01-crawl-procedure.md` through `guides/05-politeness-and-scope-limits.md`, load per-verb

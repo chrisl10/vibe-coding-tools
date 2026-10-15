@@ -2,7 +2,7 @@
 
 *Covers: `data-brand` attribute strategy, CSS variable override injection, zero-JS swap, dark mode + brand composition, tenant isolation, security note.*
 
-*Sources: `research/external/2026-05-20-multi-brand-css-runtime-swap.md`, `research/external/2026-05-20-css-variables-dark-mode.md`*
+*Sources: `research/external/2026-05-20-multi-brand-css-runtime-swap.md`, `research/external/2026-05-20-css-variables-dark-mode.md` (source-repository research, not shipped)*
 
 ---
 

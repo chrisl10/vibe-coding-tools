@@ -127,7 +127,7 @@ Numbered/prefixed so the layering is obvious: stack-neutral principles first, th
 
 ## References, reports
 
-- **References** (`references/`) - retrieval ground-truth notes, flat files for the Deep Lake implementation (`<#>` cosine search, hybrid weighting, the nomic-embed model, BM25/lexical recall, recall-quality evaluation, codebase-graph extraction, skillify-gate rationale - see `references/README.md`), plus `references/research/` for the Postgres-native broadening: `references/research/raw/` (archived primary sources with citation headers) and `references/research/distilled-retrieval.md` (the synthesis with inline citations).
+- **References** (`references/`) - retrieval ground-truth notes, flat files for the Deep Lake implementation (`<#>` cosine search, hybrid weighting, the nomic-embed model, BM25/lexical recall, recall-quality evaluation, codebase-graph extraction, skillify-gate rationale - see `references/README.md`), plus `references/research/` for the Postgres-native broadening: `references/research/raw/` (source-repository research, not shipped with the plugin) (archived primary sources with citation headers) and `references/research/distilled-retrieval.md` (the synthesis with inline citations).
 - **Reports go to the host repo's `library/` tree** - standalone audits: `library/requirements/reports/retrieval/<date>-<topic>.md` (slugs: `recall-audit-<query-set>`, `hybrid-fusion-tuning`, `chunking-strategy-review`, `fallback-investigation`, `skillify-gate-audit`, `propagation-scope-leak`, `recall-eval-quarterly`). Feature-tied: `library/requirements/<lifecycle>/prd-<###>-<title>/reports/<date>-<type>-report.md`. Use `reports/audit-template.md` as the skeleton.
 
 ---

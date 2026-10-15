@@ -10,7 +10,7 @@ The procedural arsenal for `review-funnels-wasp-drone`. This Stinger encodes the
 
 **Paired Angel:** `ai-tools/agents/review-funnels-wasp-drone.md`
 **Command Brief:** `ai-tools/command-briefs/review-funnels-wasp-drone-command-brief.md`
-**Research:** `packs/growth-and-customer-tools/skills/review-funnels-stinger/research/` (populated 2026-05-20 by scripture-historian)
+**Research:** `packs/growth-and-customer-tools/skills/review-funnels-stinger/research/` (source-repository research, not shipped with the plugin) (populated 2026-05-20 by scripture-historian)
 
 ---
 
@@ -18,11 +18,11 @@ The procedural arsenal for `review-funnels-wasp-drone`. This Stinger encodes the
 
 Before reading any guide, internalize these four structural changes that invalidate older advice:
 
-1. **G2 acquired Capterra (February 5, 2026).** G2 now owns Capterra, Software Advice, and GetApp. "Diversify across G2 and Capterra" is obsolete -- they are the same company. Strategy must be built around one G2-family account. See `research/external/2026-05-20-g2-capterra-acquisition-consolidation.md`.
+1. **G2 acquired Capterra (February 5, 2026).** G2 now owns Capterra, Software Advice, and GetApp. "Diversify across G2 and Capterra" is obsolete -- they are the same company. Strategy must be built around one G2-family account. See `research/external/2026-05-20-g2-capterra-acquisition-consolidation.md` (source-repository research, not shipped with the plugin).
 
-2. **G2 badge policy changed (Summer 2025).** Category Leader and High Performer badges now require a paid G2 Marketing Solutions subscription (~$2,999+/year). Free profiles can only display the "Users Love Us" badge (20 reviews, 4.0+ rating minimum). See `research/external/2026-05-20-g2-badges-social-proof-conversion.md`.
+2. **G2 badge policy changed (Summer 2025).** Category Leader and High Performer badges now require a paid G2 Marketing Solutions subscription (~$2,999+/year). Free profiles can only display the "Users Love Us" badge (20 reviews, 4.0+ rating minimum). See `research/external/2026-05-20-g2-badges-social-proof-conversion.md` (source-repository research, not shipped with the plugin).
 
-3. **FTC Consumer Reviews and Testimonials Rule took effect October 21, 2024.** Conditioning an incentive on positive sentiment is a civil-penalty violation. Disclosure is required for all incentivized reviews. See `research/external/2026-05-20-ftc-endorsement-guidelines-reviews.md`.
+3. **FTC Consumer Reviews and Testimonials Rule took effect October 21, 2024.** Conditioning an incentive on positive sentiment is a civil-penalty violation. Disclosure is required for all incentivized reviews. See `research/external/2026-05-20-ftc-endorsement-guidelines-reviews.md` (source-repository research, not shipped with the plugin).
 
 4. **AI citation gate.** Review platform presence (G2 rating, Trustpilot score) is now a prerequisite for AI assistant citations (ChatGPT, Gemini, Perplexity product queries). Platform prioritization should factor in AI citation surface area.
 

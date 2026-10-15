@@ -32,7 +32,7 @@ Before recommending anything, read:
 - `package.json` for ORM and pooler versions.
 - Postgres major version (`SELECT version();` or platform metadata).
 
-A recommendation against the wrong Postgres major is wrong advice. Source: `research/postgres-version-log.md`.
+A recommendation against the wrong Postgres major is wrong advice. Source: `research/postgres-version-log.md` (source-repository research, not shipped).
 
 ### 2. Postgres-first by default
 
@@ -44,13 +44,13 @@ Use the database's native tools before reinventing them in app code:
 - Range types + `EXCLUDE` constraints for non-overlap (bookings, employment periods).
 - Custom `DOMAIN`s for centralized constraint shape.
 
-Source: `research/2026-04-25-schema-types-jsonb-arrays-enums.md`.
+Source: `research/2026-04-25-schema-types-jsonb-arrays-enums.md` (source-repository research, not shipped).
 
 ### 3. Every FK gets an index
 
 Postgres does **not** auto-create FK indexes. Every FK that participates in a join, an `ON DELETE`, or an `ON UPDATE` cascade needs a B-tree index. Missing FK indexes are a must-fix.
 
-Source: `research/2026-04-25-index-families-decision-tree.md`. Tooling: `scripts/audit-missing-indexes.sql`.
+Source: `research/2026-04-25-index-families-decision-tree.md` (source-repository research, not shipped). Tooling: `scripts/audit-missing-indexes.sql`.
 
 ### 4. No destructive single-step DDL on tables > 1M rows
 
@@ -62,13 +62,13 @@ The DDL lock-class table lives in `guides/03-migrations.md`.
 
 Performance findings cite query plans. Row estimates vs. actuals; buffer hits vs. reads; loop counts on nested loops; sort method. "This query is slow" is not a finding.
 
-Source: `research/2026-04-25-autovacuum-explain-pgbouncer.md`. Tooling: `scripts/analyze-query-plan.sh`.
+Source: `research/2026-04-25-autovacuum-explain-pgbouncer.md` (source-repository research, not shipped). Tooling: `scripts/analyze-query-plan.sh`.
 
 ### 6. Connection pooling is mandatory for serverless
 
 PgBouncer transaction mode by default; session mode only when `LISTEN/NOTIFY` or session `SET` requires it. Supabase Supavisor or Neon's built-in pooler are equivalent.
 
-Without a pooler in front of Lambda / Vercel / Cloudflare Workers, Postgres dies at ~500 connections. Source: `research/2026-04-25-autovacuum-explain-pgbouncer.md`.
+Without a pooler in front of Lambda / Vercel / Cloudflare Workers, Postgres dies at ~500 connections. Source: `research/2026-04-25-autovacuum-explain-pgbouncer.md` (source-repository research, not shipped).
 
 ### 7. ORM choice is workload-shaped
 
@@ -78,14 +78,14 @@ Without a pooler in front of Lambda / Vercel / Cloudflare Workers, Postgres dies
 | Generated client, ergonomic relations, large team | Prisma |
 | SQL-native team, tiny schema, microservice | Raw SQL (+ Kysely for compile-time types) |
 
-No ORM is universally right. Source: `research/2026-04-25-orm-comparison-drizzle-prisma.md`.
+No ORM is universally right. Source: `research/2026-04-25-orm-comparison-drizzle-prisma.md` (source-repository research, not shipped).
 
 ### 8. Cite every finding
 
 Two citations per finding:
 
 - **Where in the user's schema/migration**: `migrations/2026-04-12-add-email.sql:14`.
-- **Why it's a finding**: guide section (`guides/02-indexing.md §FK-indexes`), research note (`research/2026-04-25-index-families-decision-tree.md`), or postgresql.org URL.
+- **Why it's a finding**: guide section (`guides/02-indexing.md §FK-indexes`), research note (`research/2026-04-25-index-families-decision-tree.md` [source-repository research, not shipped]), or postgresql.org URL.
 
 ### 9. Severity discipline
 

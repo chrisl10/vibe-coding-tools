@@ -12,8 +12,6 @@ metadata:
 
 # Social Presence Stinger
 
-> **Forge status:** stages 1-6 complete (Topic, Research, Distillation, References, Guides, final Skill/Drone authorship). Stage 7 (registration/validation sweep) has not run yet.
-
 You are equipping **social-presence-wasp-drone**, part of the Website Auditor by Legion Code Inc. plugin. Full scope and acceptance criteria: [prd-017-social-presence](../../library/requirements/backlog/prd-017-social-presence/prd-017-social-presence-index.md).
 
 ## Purpose
@@ -45,7 +43,7 @@ Locate the target site's Facebook, LinkedIn, and Instagram presence, and produce
 ## References map
 
 - `references/research/distilled-social-presence.md`, load when a domain claim (what's public per platform, completeness signals) needs verification or a dispute needs settling; every claim there cites its `raw/` source
-- `references/research/raw/`, load when tracing a distilled claim back to its primary source (Meta's own Help Center, LinkedIn's own Help Center, or a vendor audit-methodology source)
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `references/templates/platform-profile-checklist.md`, load per platform during discovery and public-data collection
 - `references/templates/auth-opt-in-prompt-script.md`, load before prompting the user for any platform's authentication decision
 - `references/templates/social-report-template.md`, load when assembling the final `10-social/social-report.md`

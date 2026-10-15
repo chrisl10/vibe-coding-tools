@@ -2,13 +2,13 @@
 
 Core philosophy that governs how `discovery-research-wasp-drone` operates. Read this before any domain guide.
 
-**Research source:** `research/external/2026-05-20-torres-2026-roadmap-ai-discovery.md`, `research/external/2026-05-20-continuous-discovery-habits-operationalized-2026.md`
+**Research source:** `research/external/2026-05-20-torres-2026-roadmap-ai-discovery.md`, `research/external/2026-05-20-continuous-discovery-habits-operationalized-2026.md` (source-repository research, not shipped)
 
 ---
 
 ## The three tenets
 
-1. **Weekly customer touchpoints.** Talk to at least one customer every week, in a structured 20-30 min interview. Not "when you have time." Weekly. Fewer than 1 in 5 product trios hit this benchmark in practice; the teams that do make consistently better build decisions. (Source: `research/external/2026-05-20-continuous-discovery-habits-operationalized-2026.md`)
+1. **Weekly customer touchpoints.** Talk to at least one customer every week, in a structured 20-30 min interview. Not "when you have time." Weekly. Fewer than 1 in 5 product trios hit this benchmark in practice; the teams that do make consistently better build decisions. (Source: `research/external/2026-05-20-continuous-discovery-habits-operationalized-2026.md` [source-repository research, not shipped])
 
 2. **Opportunity Solution Tree as the working map.** All customer insights live in a structured OST anchored to a single desired outcome. The OST is a living document, updated every week after interviews, not a quarterly deliverable.
 
@@ -20,7 +20,7 @@ Core philosophy that governs how `discovery-research-wasp-drone` operates. Read 
 
 The default mode for most teams is: gather some requirements, build a feature, ship it, measure adoption. Continuous discovery inverts this: gather evidence from customers weekly, build the smallest possible experiment to validate the riskiest assumption, then build the feature only when the evidence clears a confidence threshold.
 
-**Why it matters in 2026:** Torres' 2026 AI-assisted OST guidance (via the Vistaly partnership) notes a critical risk — AI tools can generate plausible-looking OSTs from market descriptions and competitive analysis alone. Those trees look coherent but are not grounded in actual customer conversations. The "build less, learn more" loop's value is exactly that it forces real interview data into the process before assumptions calcify into requirements. (Source: `research/external/2026-05-20-torres-ai-ost-vistaly-synthesis.md`)
+**Why it matters in 2026:** Torres' 2026 AI-assisted OST guidance (via the Vistaly partnership) notes a critical risk — AI tools can generate plausible-looking OSTs from market descriptions and competitive analysis alone. Those trees look coherent but are not grounded in actual customer conversations. The "build less, learn more" loop's value is exactly that it forces real interview data into the process before assumptions calcify into requirements. (Source: `research/external/2026-05-20-torres-ai-ost-vistaly-synthesis.md` [source-repository research, not shipped])
 
 ---
 
@@ -42,10 +42,10 @@ A common anti-pattern is treating sprint planning as discovery. Sprint planning 
 
 ## Critical directives (with rationale)
 
-- **Anchor to a desired outcome first.** Without a stated outcome, the OST has no root and every customer problem looks equally important. (Source: `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md`)
-- **Keep opportunities and solutions in separate OST layers.** Mixing them is the most common OST failure mode and makes the tree unnavigable within weeks. (Source: `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md`)
-- **Never generate an OST from market analysis alone.** AI tools make this tempting; resist it. A market-description OST looks plausible and is almost always wrong in the leaf nodes where the actual build decisions live. (Source: `research/external/2026-05-20-torres-ai-ost-vistaly-synthesis.md`)
-- **Test the highest-risk assumption, not the easiest.** Teams systematically avoid testing assumptions that would kill their idea. The discipline is to explicitly score assumptions by importance × uncertainty and test the top-right quadrant. (Source: `research/external/2026-05-20-assumption-mapping-dvf-2x2-2026.md`)
+- **Anchor to a desired outcome first.** Without a stated outcome, the OST has no root and every customer problem looks equally important. (Source: `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md` [source-repository research, not shipped])
+- **Keep opportunities and solutions in separate OST layers.** Mixing them is the most common OST failure mode and makes the tree unnavigable within weeks. (Source: `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md` [source-repository research, not shipped])
+- **Never generate an OST from market analysis alone.** AI tools make this tempting; resist it. A market-description OST looks plausible and is almost always wrong in the leaf nodes where the actual build decisions live. (Source: `research/external/2026-05-20-torres-ai-ost-vistaly-synthesis.md` [source-repository research, not shipped])
+- **Test the highest-risk assumption, not the easiest.** Teams systematically avoid testing assumptions that would kill their idea. The discipline is to explicitly score assumptions by importance × uncertainty and test the top-right quadrant. (Source: `research/external/2026-05-20-assumption-mapping-dvf-2x2-2026.md` [source-repository research, not shipped])
 - **Do not write a PRD until the winning opportunity and solution are validated.** The handoff to `library-wasp-drone` happens at validated-solution, not at "the team has a hypothesis."
 
 ---

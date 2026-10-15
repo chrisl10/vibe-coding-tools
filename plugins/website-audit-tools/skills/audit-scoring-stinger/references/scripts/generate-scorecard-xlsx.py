@@ -24,10 +24,13 @@ full writeup):
     invented here.
 
   - The masked, N/A-aware SUMPRODUCT formula shape (dual numerator/denominator mask,
-    /SUM(weights) self-correcting divisor, zero-denominator IF guard) is SOURCED from
+    masked-weight-sum self-correcting divisor, zero-denominator IF guard) is SOURCED from
     skills/audit-scoring-stinger/references/research/distilled-audit-scoring.md sections 1-2
     (datacamp.com, exceljet.net, autorubric.org, in turn sourced from
-    references/research/raw/).
+    references/research/raw/). The same mask is applied at the category and final levels
+    (an "N/A" child is excluded from both sides), so the workbook and
+    shared/scripts/score-rollup.py compute identical numbers. See leaf_rollup_formula()
+    and masked_rollup_formula() below.
 
   - The leaf -> sub-audit -> category -> final NESTING STRUCTURE itself (how many
     sub-audits per category where the build plan gives no number, how many example leaf
@@ -208,6 +211,32 @@ GRADE_THRESHOLDS = [
 ]
 
 SECURITY_OVERRIDE_CAP = 0.7699  # just under the C+ threshold (0.77): a capped score can resolve to C or C-/D/F, never C+ or above.
+
+
+def leaf_rollup_formula(scores_ref, weights_ref):
+    """Leaf -> sub-audit rollup: N/A-aware weighted average on the 0-6 scale.
+
+    A leaf counts only when its score cell is a number above 0. The same mask sits in the
+    numerator and both denominators, so a 0 (N/A), a blank, or a stray text cell is excluded
+    from both sides. Excel's ("N/A">0) is TRUE, so ISNUMBER is what keeps text out.
+    """
+    mask = f"ISNUMBER({scores_ref})*({scores_ref}>0)"
+    den = f"SUMPRODUCT({mask},{weights_ref})"
+    return f'=IF({den}=0,"N/A",SUMPRODUCT({mask},{scores_ref},{weights_ref})/(6*{den}))'
+
+
+def masked_rollup_formula(values_ref, weights_ref):
+    """Sub-audit -> category and category -> final rollup: N/A-aware weighted average.
+
+    A child rollup that is "N/A" (text) is masked out of BOTH the numerator and the
+    denominator, so its weight never drags the parent down. Only SUMPRODUCT with separate
+    array arguments and a --ISNUMBER mask is used (no IF inside SUMPRODUCT), so the formula
+    needs no array entry in Excel or LibreOffice. All children N/A -> "N/A", never #DIV/0!.
+    This is the same arithmetic as shared/scripts/score-rollup.py's _weighted().
+    """
+    mask = f"--ISNUMBER({values_ref})"
+    den = f"SUMPRODUCT({mask},{weights_ref})"
+    return f'=IF({den}=0,"N/A",SUMPRODUCT({mask},{values_ref},{weights_ref})/{den})'
 
 
 def sanitize_name(*parts):
@@ -502,11 +531,7 @@ def build_workbook():
                 r += 1
             leaf_end = r - 1
 
-            rollup_formula = (
-                f'=IF(SUMPRODUCT(--(E{leaf_start}:E{leaf_end}>0),H{leaf_start}:H{leaf_end})=0,"N/A",'
-                f'SUMPRODUCT(--(E{leaf_start}:E{leaf_end}>0),E{leaf_start}:E{leaf_end},H{leaf_start}:H{leaf_end})'
-                f'/(6*SUMPRODUCT(--(E{leaf_start}:E{leaf_end}>0),H{leaf_start}:H{leaf_end})))'
-            )
+            rollup_formula = leaf_rollup_formula(f"E{leaf_start}:E{leaf_end}", f"H{leaf_start}:H{leaf_end}")
             sc.cell(row=r, column=2, value=f"  -> {sub_name} rollup").font = FONT_SUBTITLE
             rcell = sc.cell(row=r, column=12, value=rollup_formula)
             rcell.font = FONT_BOLD
@@ -525,10 +550,7 @@ def build_workbook():
             r += 1
         mirror_end = r - 1
 
-        cat_rollup_formula = (
-            f"=IF(SUM({cat['_subwt_name']})=0,\"N/A\","
-            f"SUMPRODUCT(L{mirror_start}:L{mirror_end},{cat['_subwt_name']})/SUM({cat['_subwt_name']}))"
-        )
+        cat_rollup_formula = masked_rollup_formula(f"L{mirror_start}:L{mirror_end}", cat["_subwt_name"])
         sc.cell(row=r, column=1, value=f"{cat['name']} - CATEGORY ROLLUP").font = FONT_BOLD
         crcell = sc.cell(row=r, column=12, value=cat_rollup_formula)
         crcell.font = FONT_BOLD
@@ -635,7 +657,7 @@ def build_workbook():
         wcell = ex.cell(row=r, column=2, value=f"={sanitize_name('Wt', cat['key'])}")
         rcell = ex.cell(row=r, column=3, value=f"=Scorecard!L{category_rollup_row[cat['key']]}")
         rcell.number_format = "0.0%"
-        ccell = ex.cell(row=r, column=4, value=f"=B{r}*C{r}")
+        ccell = ex.cell(row=r, column=4, value=f'=IF(ISNUMBER(C{r}),B{r}*C{r},"N/A")')
         ccell.number_format = "0.00"
         for col in range(1, 5):
             ex.cell(row=r, column=col).border = BORDER_ALL
@@ -646,7 +668,7 @@ def build_workbook():
     ex.cell(row=final_row, column=1, value="FINAL SCORE (raw, before override)").font = FONT_BOLD
     final_cell = ex.cell(
         row=final_row, column=3,
-        value=f"=SUMPRODUCT(C{summary_first_row}:C{summary_last_row},CategoryWeights)/SUM(CategoryWeights)",
+        value=masked_rollup_formula(f"C{summary_first_row}:C{summary_last_row}", "CategoryWeights"),
     )
     final_cell.number_format = "0.0%"
     final_cell.font = FONT_BOLD
@@ -682,14 +704,17 @@ def build_workbook():
     ex.cell(row=effective_row, column=1, value="Effective % (capped if override active)").font = FONT_BOLD
     effective_cell = ex.cell(
         row=effective_row, column=3,
-        value=f"=IF(C{override_row},MIN(C{final_row},SecurityOverrideCapPct),C{final_row})",
+        value=(
+            f'=IF(ISNUMBER(C{final_row}),'
+            f'IF(C{override_row},MIN(C{final_row},SecurityOverrideCapPct),C{final_row}),"N/A")'
+        ),
     )
     effective_cell.number_format = "0.0%"
     effective_cell.font = FONT_BOLD
 
     grade_row = effective_row + 2
     ex.cell(row=grade_row, column=1, value="FINAL LETTER GRADE").font = FONT_SECTION
-    grade_cell = ex.cell(row=grade_row, column=3, value=f"=VLOOKUP(C{effective_row},GradeTable,2,TRUE)")
+    grade_cell = ex.cell(row=grade_row, column=3, value=f'=IF(ISNUMBER(C{effective_row}),VLOOKUP(C{effective_row},GradeTable,2,TRUE),"N/A")')
     grade_cell.font = FONT_BIG_GRADE
     ex.row_dimensions[grade_row].height = 42
 

@@ -118,4 +118,4 @@ POST /emails/send            # acceptable: "send" has no obvious resource equiva
 
 ---
 
-*Sources: Fielding dissertation (2000), `research/internal/2026-05-20-fielding-dissertation.md`, `research/external/2026-05-20-rest-status-codes-2026.md`*
+*Sources: Fielding dissertation (2000), `research/internal/2026-05-20-fielding-dissertation.md`, `research/external/2026-05-20-rest-status-codes-2026.md` (source-repository research, not shipped)*

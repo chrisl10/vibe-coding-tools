@@ -12,7 +12,7 @@ metadata:
 
 # seo-aeo-stinger
 
-You carry the SEO and Answer Engine Optimization playbook for this repo's default stack: SvelteKit (Svelte 5, runes) as the frontend, Payload CMS as the content source over REST, deployed on Vercel. Every factual claim in this skill traces to `references/research/raw/`; the cited synthesis is `references/research/distilled-seo-aeo.md`. Do not answer from memory when a guide or reference file already has the grounded answer.
+You carry the SEO and Answer Engine Optimization playbook for this repo's default stack: SvelteKit (Svelte 5, runes) as the frontend, Payload CMS as the content source over REST, deployed on Vercel. Every factual claim in this skill traces to the source research archive (not shipped; the shipped distillation summarizes it); the cited synthesis is `references/research/distilled-seo-aeo.md`. Do not answer from memory when a guide or reference file already has the grounded answer.
 
 This skill treats two goals as one job: ranking fast on Google and getting cited by AI answer engines (Google AI Overviews, ChatGPT, Perplexity, Claude). Neither goal excuses skipping the other -- schema, structure, and freshness that earn AI citation also happen to be the same signals that hold up through Google's E-E-A-T evaluation.
 
@@ -60,7 +60,7 @@ This skill treats two goals as one job: ranking fast on Google and getting cited
 - `references/core-web-vitals-budget.md` -- LCP/INP/CLS/TTFB budgets, rendering-strategy decision table
 - `references/aeo-content-structure-checklist.md` -- the AI-citation structure checklist, cited line by line
 - `references/research/distilled-seo-aeo.md` -- dense, cited synthesis of the full research archive; read this before trusting any specific number in a guide
-- `references/research/raw/` -- primary sources; trace any distilled claim back here
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 
 ## Critical Directive
 
@@ -68,10 +68,10 @@ This skill treats two goals as one job: ranking fast on Google and getting cited
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [website-stinger](../website-stinger) - Builds the SvelteKit + Payload + Vercel monorepo this skill's SEO/AEO work lives inside; Phase 3 of its build delegates here.
-  - [lighthouse-pagespeed-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/browser-and-app-testing-tools/skills/lighthouse-pagespeed-stinger) - Runs Lighthouse/PageSpeed audits and CI budgets; use it to actually capture the Core Web Vitals numbers this skill's guides require.
+  - [lighthouse-pagespeed-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/browser-and-app-testing-tools/skills/lighthouse-pagespeed-stinger) - Runs Lighthouse/PageSpeed audits and CI budgets; use it to actually capture the Core Web Vitals numbers this skill's guides require.
   - [image-optimization-stinger](../image-optimization-stinger) - Deeper AVIF/WebP, responsive srcset, and blur-placeholder guidance beyond this skill's Core Web Vitals image summary.
   - [ux-ui-svelte-stinger](../ux-ui-svelte-stinger) - Svelte 5 + SvelteKit component and styling conventions for this stack; consult when an SEO fix touches shared UI.
-  - [markdown-mdx-content-pipeline-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/documentation-tools/skills/markdown-mdx-content-pipeline-stinger) - Content-processing pipeline for blog/article rendering; relevant when structuring content for the AEO extractability patterns in guides/06.
+  - [markdown-mdx-content-pipeline-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/documentation-tools/skills/markdown-mdx-content-pipeline-stinger) - Content-processing pipeline for blog/article rendering; relevant when structuring content for the AEO extractability patterns in guides/06.
 
 ## Ship Gate
 

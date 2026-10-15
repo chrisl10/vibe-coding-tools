@@ -14,7 +14,7 @@
 
 **Pricing:** Tiered. Metrics API is **Enterprise-only** (requires sales call).
 
-Source: `research/external/2026-05-20-readme-com-2026-features.md`
+Source: `research/external/2026-05-20-readme-com-2026-features.md` (source-repository research, not shipped)
 
 ---
 
@@ -73,4 +73,4 @@ ReadMe's Metrics API tracks per-API-key usage, search queries, and article reads
 
 ---
 
-*Sources: `research/external/2026-05-20-readme-com-2026-features.md`, `research/research-summary.md`.*
+*Sources: `research/external/2026-05-20-readme-com-2026-features.md` (source-repository research, not shipped), `research/research-summary.md`.*

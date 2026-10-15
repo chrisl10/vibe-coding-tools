@@ -73,7 +73,7 @@ safe, both of which were measured rather than assumed.
   limits, escaping, or layout
 - `references/research/distilled-research-article.md`, load when a claim needs verifying or a
   conflict needs settling; every line cites its raw source
-- `references/research/raw/`, source-repository archive for tracing a distilled claim; omitted from the installed plugin
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `guides/01-parse-the-export.md`, load when reading an export
 - `guides/02-generate-charts.md`, load when emitting Mermaid
 - `guides/03-size-and-validate.md`, load when a chart is oversized or will not render

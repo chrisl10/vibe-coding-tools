@@ -36,11 +36,11 @@ Read these in order before doing anything else:
 2. **`guides/01-tool-selection.md`**: the full tool comparison matrix and decision tree. Read this before recommending any renderer.
 3. **`research/research-summary.md`**: the intelligence gathered by `scripture-historian` covering Scalar, Redoc, Mintlify, SDK generators, and changelog tooling.
 
-Then walk the remaining guides in task order. Each guide is short; the substantive intelligence comes from the research notes under `research/external/`.
+Then walk the remaining guides in task order. Each guide is short; the substantive intelligence comes from the research notes under `research/external/` (source-repository research, not shipped with the plugin).
 
 ## Reusable SDK first action
 
-For SDK requests, first read [guide 07](guides/07-qualify-reusable-sdk.md), fill the [contract qualification packet](templates/sdk-contract-qualification.md), and read the [worked cases](examples/sdk-consumer-contracts.md). Preserve existing acceptance and distinguish spec, generator, SDK package and observed server versions. Missing support or evidence stays unverified. Historical comparison tables and installation examples below do not authorize installs, credentials or publication and do not prove current pricing or runtime behavior. Fresh SDK domain grounding is in the [source digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/skills/api-docs-stinger/references/research/sdk-contracts/digest.md).
+For SDK requests, first read [guide 07](guides/07-qualify-reusable-sdk.md), fill the [contract qualification packet](templates/sdk-contract-qualification.md), and read the [worked cases](examples/sdk-consumer-contracts.md). Preserve existing acceptance and distinguish spec, generator, SDK package and observed server versions. Missing support or evidence stays unverified. Historical comparison tables and installation examples below do not authorize installs, credentials or publication and do not prove current pricing or runtime behavior. Fresh SDK domain grounding is in the source digest.
 
 ## Folder layout
 
@@ -122,7 +122,7 @@ These are non-negotiables. Full justification in `guides/00-principles.md`.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [mcp-tool-docs-stinger](../mcp-tool-docs-stinger) - Exported TypeScript reference and tool documentation.
-  - [library-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/library-stinger) - Narrative documentation and contract context.
+  - [library-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/library-stinger) - Narrative documentation and contract context.
 
 ## Ship Gate
 

@@ -15,11 +15,11 @@ A SvelteKit project's own `tsconfig.json` extends the config SvelteKit generates
 1. **Generated from your project's own configuration** (`paths` for `$lib`, `rootDirs`, `include`/`exclude` covering `src/`, `tests/`, `vite.config`) - regenerated automatically, don't hand-edit these, edit the source of truth (`svelte.config.js`, your file layout) instead.
 2. **Required for SvelteKit to work at all** - `verbatimModuleSyntax: true`, `isolatedModules: true`, `noEmit: true`, `moduleResolution: "bundler"`, `module: "esnext"`, `target: "esnext"`, `lib: ["esnext", "DOM", "DOM.Iterable"]`. Overriding any of these without understanding why it's set is a finding.
 
-Source: `references/research/raw/sveltekit--types--generated-tsconfig-pagedata-actiondata.md`.
+Source: `references/research/raw/sveltekit--types--generated-tsconfig-pagedata-actiondata.md` (source-repository research, not shipped).
 
 ## Why `moduleResolution: "bundler"`, not `Node16`/`NodeNext`
 
-This is the single most common tsconfig question in a SvelteKit review, and the answer is not "SvelteKit is behind" - it's a deliberate, documented choice. TypeScript 4.7 added `Node16`/`NodeNext` resolution to unlock `package.json` `exports`/`imports` field resolution that plain `"node"` resolution can't see. SvelteKit's own maintainers evaluated switching to it and rejected it for the generated config, on the record: switching would force `.js` extensions on every relative import (including TS files, which reads oddly) and would break packages whose types aren't cleanly resolvable under strict Node resolution. `bundler` resolution (TypeScript 5.0+) was adopted instead because it matches what's actually happening: **Vite, a bundler, resolves imports for a SvelteKit app** - not Node's own runtime ESM loader, the way it would for a published npm package's consumers. Source: `references/research/raw/sveltekit--types--generated-tsconfig-pagedata-actiondata.md` (quotes the SvelteKit maintainer discussion directly).
+This is the single most common tsconfig question in a SvelteKit review, and the answer is not "SvelteKit is behind" - it's a deliberate, documented choice. TypeScript 4.7 added `Node16`/`NodeNext` resolution to unlock `package.json` `exports`/`imports` field resolution that plain `"node"` resolution can't see. SvelteKit's own maintainers evaluated switching to it and rejected it for the generated config, on the record: switching would force `.js` extensions on every relative import (including TS files, which reads oddly) and would break packages whose types aren't cleanly resolvable under strict Node resolution. `bundler` resolution (TypeScript 5.0+) was adopted instead because it matches what's actually happening: **Vite, a bundler, resolves imports for a SvelteKit app** - not Node's own runtime ESM loader, the way it would for a published npm package's consumers. Source: `references/research/raw/sveltekit--types--generated-tsconfig-pagedata-actiondata.md` (source-repository research, not shipped) (quotes the SvelteKit maintainer discussion directly).
 
 **The rule for this repo**: SvelteKit app code (`apps/web` or equivalent) uses `bundler` resolution via the generated config. If this monorepo ever publishes a standalone npm package (a shared internal library, a CLI), that package's own tsconfig should use `Node16`/`NodeNext` instead, per `guides/01-stack-enforcement.md` - two different deliverable shapes get two different correct answers, not one universal rule.
 
@@ -50,5 +50,5 @@ Nothing about the SvelteKit-specific options above touches `strict`. `strict: tr
 
 ## Sources
 
-- `references/research/raw/sveltekit--types--generated-tsconfig-pagedata-actiondata.md`
+- `references/research/raw/sveltekit--types--generated-tsconfig-pagedata-actiondata.md` (source-repository research, not shipped)
 - `references/research/distilled-typescript-node.md` section 1

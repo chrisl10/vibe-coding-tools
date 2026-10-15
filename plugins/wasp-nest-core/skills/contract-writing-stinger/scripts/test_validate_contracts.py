@@ -14,7 +14,7 @@ ACCEPTED = """# CTR-004: Export status
 
 > **Status:** Accepted
 > **Revision:** 1
-> **Accepted by:** Mario, 2026-09-22 task decision
+> **Accepted by:** Owner, 2026-09-22 task decision
 > **Last reviewed:** 2026-09-22
 > **Supersedes:** None
 > **Superseded by:** None
@@ -89,7 +89,7 @@ class ContractValidationTests(unittest.TestCase):
             root = Path(temporary)
             contract = root / "library/knowledge/private/contracts/CTR-004-export-status.md"
             contract.parent.mkdir(parents=True)
-            contract.write_text(ACCEPTED.replace("Mario, 2026-09-22 task decision", "Pending"), encoding="utf-8")
+            contract.write_text(ACCEPTED.replace("Owner, 2026-09-22 task decision", "Pending"), encoding="utf-8")
             self.assertTrue(any("operator acceptance evidence" in item for item in check_contract(contract, root)))
 
     def test_supersession_requires_reverse_link(self) -> None:

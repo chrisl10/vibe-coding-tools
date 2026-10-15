@@ -2,7 +2,7 @@
 
 October 2026 qualification: [guide 17](17-reduce-ci-work-with-proof.md) governs current efficiency work, unknown-input accounting, candidate proof, secret boundaries and verified action SHA pins. Dated example versions/topologies are illustrative and require target-specific confirmation. No source example authorizes workflow activation or provider effects.
 
-Primary case: a target confirmed to use Vercel Git integration. Git integration and Actions may operate independently; do not assume a start order. Inventory both producers and their proof contracts using [guide 17](17-reduce-ci-work-with-proof.md) before declaring a build redundant. The October [Git integration capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/ci-release-stinger/references/research/ci-efficiency-2026-10-07/raw/vercel-github.html) documents its deployment behavior.
+Primary case: a target confirmed to use Vercel Git integration. Git integration and Actions may operate independently; do not assume a start order. Inventory both producers and their proof contracts using [guide 17](17-reduce-ci-work-with-proof.md) before declaring a build redundant. The October Git integration capture documents its deployment behavior.
 
 ## What Vercel does with zero YAML
 

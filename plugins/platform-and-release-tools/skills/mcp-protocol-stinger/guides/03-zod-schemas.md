@@ -74,4 +74,4 @@ If you're auditing a server that pins a specific zod import path at the SDK boun
 
 ---
 
-*Sources: `research/distilled-mcp-protocol.md`, `research/2026-06-16-mcp-sdk-typescript.md`, `research/2026-06-16-zod-v3-mcp-pin.md`, `research/external/zod-v4-sdk-breaking-changes-issue-925.md`, `research/external/zod-v4-4-registertool-issue-1987.md`*
+*Sources: `research/distilled-mcp-protocol.md`, `research/2026-06-16-mcp-sdk-typescript.md`, `research/2026-06-16-zod-v3-mcp-pin.md`, `research/external/zod-v4-sdk-breaking-changes-issue-925.md`, `research/external/zod-v4-4-registertool-issue-1987.md` (source-repository research, not shipped)*

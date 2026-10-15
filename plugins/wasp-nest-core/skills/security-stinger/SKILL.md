@@ -14,7 +14,7 @@ metadata:
 
 You are equipping **security-wasp-drone**, the Wasp Nest's application security specialist, and you are the FIRST gate of the Ship Gate. This skill covers this repo's current stack end to end: SvelteKit (Svelte 5) as the framework, Neon Postgres with Drizzle as the datastore, WorkOS for auth, Stripe for payments, Vercel for hosting, Doppler for secrets, and GoHighLevel as the third-party webhook integration. It replaces an earlier version of this skill that was scoped to a different codebase (Hivemind: TypeScript/Deep Lake) - none of that catalog applies here and it has been removed.
 
-Every factual claim in this skill traces to a downloaded primary source in `references/research/raw/`. Do not author a security fact from training data - if it is not in the archive, it is not a fact yet.
+Every factual claim in this skill traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it). Do not author a security fact from training data - if it is not in the archive, it is not a fact yet.
 
 ## When to use this skill
 
@@ -40,9 +40,9 @@ Load on demand; do not read everything up front.
 | `guides/15-verify-actual-risk.md` | Mapping actual threats to candidate-specific proof and unproven gaps |
 | `templates/security-design/` | Filling five target-specific worksheets; NOT RUN until actual evidence exists |
 | `examples/security-design/source-cases.md` | Worked synthetic cases, never application/runtime clearance |
-| `references/research/security-design/distillation.md` | Current captured facts, derived policy and update scope |
+| `references/research/security-design/distillation.md` (source repository only, not shipped with the plugin) | Source-repository record of captured facts, derived policy and update scope; do not require it. The guides above carry the conclusions, and `references/research/distilled-security.md` is the shipped distillation |
 | `references/research/distilled-security.md` | Verifying any security claim fast, or resolving where a fact came from |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `guides/01-audit-procedure.md` | Running a full pass end to end, and understanding the Ship Gate ordering contract |
 | `guides/02-sveltekit-attack-surface.md` | CSRF, endpoint authz, load-function leakage, env vars, `hooks.server.ts`, `{@html}` XSS, cookies |
 | `guides/03-authorization-and-tenancy.md` | RLS on Neon/Drizzle, the "forgot the WHERE clause" class, what leaving Supabase costs |
@@ -65,18 +65,18 @@ Guides 11 through 15 prepare threat/control/verification packets from supplied t
 
 ## Quality bar
 
-A security-stinger pass is done when: the relevant guides were read in order (not skipped), every factual claim used traces to `references/research/raw/`, every finding has a `path/to/file.ts:LINE` citation and an assigned severity, Critical and High findings were remediated in-session with minimal-blast-radius diffs, the report was written to the correct `library/` destination per `guides/10-report-format.md`, and - for any Medium-or-above finding that required a fix - a full re-evaluation pass ran against the updated code before declaring the pass complete.
+A security-stinger pass is done when: the relevant guides were read in order (not skipped), every factual claim used traces to the source research archive (not shipped; the shipped distillation summarizes it), every finding has a `path/to/file.ts:LINE` citation and an assigned severity, Critical and High findings were remediated in-session with minimal-blast-radius diffs, the report was written to the correct `library/` destination per `guides/10-report-format.md`, and - for any Medium-or-above finding that required a fix - a full re-evaluation pass ran against the updated code before declaring the pass complete.
 
 ## Critical Directive
 
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [swarm-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/code-audit-tools/skills/swarm-audit-stinger) - Workflow-fleet audit of a whole repository: every branch, state of the union, delivery failures, next steps; observes, heals, and never leaves a product unreviewed.
+  - [swarm-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/code-audit-tools/skills/swarm-audit-stinger) - Workflow-fleet audit of a whole repository: every branch, state of the union, delivery failures, next steps; observes, heals, and never leaves a product unreviewed.
   - [quality-stinger](../quality-stinger) - Quality assurance pass, second gate of the Ship Gate, always after security.
   - [github-repo-health-stinger](../github-repo-health-stinger) - Repository hygiene audit, final orchestrator-level gate before commit and push.
-  - [workos-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/workos-stinger) - WorkOS AuthKit depth: sealed sessions, JWKS verification, RBAC, SSO. Consult when a WorkOS finding needs implementation-level detail beyond this skill's session-security coverage.
-  - [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/db-stinger) - PostgreSQL schema, indexing, and migrations. Consult for the tenant-scoped tables this skill's RLS guidance applies to.
+  - [workos-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/workos-stinger) - WorkOS AuthKit depth: sealed sessions, JWKS verification, RBAC, SSO. Consult when a WorkOS finding needs implementation-level detail beyond this skill's session-security coverage.
+  - [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/data-and-ai-tools/skills/db-stinger) - PostgreSQL schema, indexing, and migrations. Consult for the tenant-scoped tables this skill's RLS guidance applies to.
   - [dependency-audit-stinger](../dependency-audit-stinger) - Deeper dependency-audit workflows. Consult when a supply-chain finding needs a full audit beyond this skill's lockfile-injection and `npm ci` checks.
 
 ## Ship Gate

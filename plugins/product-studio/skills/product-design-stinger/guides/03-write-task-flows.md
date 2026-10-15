@@ -2,7 +2,7 @@
 
 Goal: for each key task, the ideal path plus the failure branches, in Mermaid, so screen specs inherit their error and empty states from real decisions.
 
-Grounding: [journeys vs flows](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-journeys-vs-flows.md), [Mermaid flowchart](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/diagram--mermaid-flowchart.md), [Mermaid accessibility](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/diagram--mermaid-accessibility.md), [WCAG 2.2 new criteria](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/a11y--w3c-wai-new-in-22.md).
+Grounding: journeys vs flows, Mermaid flowchart, Mermaid accessibility, WCAG 2.2 new criteria.
 
 ## Procedure
 

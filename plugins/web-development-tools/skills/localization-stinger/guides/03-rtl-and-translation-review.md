@@ -1,5 +1,5 @@
 # Implement RTL and review translated interfaces
-Grounding: [W3C direction](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/localization-stinger/references/research/raw/w3c-direction.html), [W3C language](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/localization-stinger/references/research/raw/w3c-language.html), [MDN logical CSS](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/localization-stinger/references/research/raw/mdn-logical.html).
+Grounding: W3C direction, W3C language, MDN logical CSS.
 
 1. Preserve PRODUCT.md, DESIGN.md and the surface brief under the existing Impeccable workflow. Ask for missing approved languages or content reviewer. Hand actual framework bindings to the selected UI/framework owner. Technical font coverage and loading belong to Typography/Font Loading; do not choose new fonts or install subsets here.
 2. Set document lang and dir from the approved locale metadata. Preserve characters in logical order. Isolate mixed-direction dynamic text with bdi or tightly scoped dir=auto as appropriate; isolate fixed-direction identifiers intentionally. Do not blanket-strip text, reverse strings or use CSS direction as the only semantic marker.

@@ -1,7 +1,7 @@
 ---
 name: infrastructure-fit-wasp-drone
 description: "Recommend one workload-matched infrastructure topology. Use for managed-versus-VPS/provider fit, operator duties, recovery/exit and selected cost-owner handoff; no provisioning."
-tools: Read, Grep, Glob, WebFetch, WebSearch
+tools: Read, Grep, Glob, WebFetch, WebSearch, Skill
 model: inherit
 ---
 

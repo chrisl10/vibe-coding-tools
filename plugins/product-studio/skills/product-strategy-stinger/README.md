@@ -31,7 +31,7 @@ Turns a raw product idea, or the product inside an existing repo, into a one-pag
 | [handoffs.md](references/handoffs.md) | Which owner to call for ICP, competitors, discovery, pricing; who reads this next |
 | [examples/worked-example.md](references/examples/worked-example.md) | A made-up, filled strategy that passes the checker |
 | [research/distilled-product-strategy.md](references/research/distilled-product-strategy.md) | Cited research behind every rule here |
-| [research/source-ledger.json](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-strategy-stinger/references/research/source-ledger.json) | URL, fetch date, hash and date window for each raw source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | [scripts/check-strategy.py](scripts/check-strategy.py) | Structural check of a finished strategy |
 
 ## Related owners and host support

@@ -12,7 +12,7 @@ Something one PRD provides and another PRD relies on:
 - a permission rule (who may do what),
 - a state change (for example, a booking moving from "held" to "confirmed").
 
-If only one PRD uses it, it is not shared. If the swap point between a quick first version and a later real version is an interface, that interface is shared. [Skeleton on crutches](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-planning-stinger/references/research/raw/skeleton-on-crutches-adzic.md)
+If only one PRD uses it, it is not shared. If the swap point between a quick first version and a later real version is an interface, that interface is shared. Skeleton on crutches
 
 ## Steps
 

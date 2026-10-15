@@ -1,9 +1,11 @@
 # Output template (viral-news-stinger)
 
-The run's final deliverable is ONE message in exactly this shape. Every post option must already be finished, voice-checked against mario-voice-skill, and copy-paste ready. No placeholders, no "you could say something like".
+The run's final deliverable is ONE message in exactly this shape. Every post option must already be finished, voice-checked against the user's configured voice skill (or written in the neutral voice when none is configured), and copy-paste ready. No placeholders, no "you could say something like".
 
 ````markdown
 ## Today's post: {topic in seven words or fewer}
+
+**Voice:** {name of the voice skill used, or "none configured: neutral voice"}
 
 **Why now:** {one sentence: what broke, when (with timestamp), and why it will travel}
 
@@ -36,13 +38,13 @@ The run's final deliverable is ONE message in exactly this shape. Every post opt
 ## Rules bound to this template
 
 - The three posts are three independent options on the SAME topic, not a thread. Each must stand alone.
-- Micro: 9 words or less, per the voice skill's micro register. Count the words.
+- Micro: 9 words or less, per the voice skill's micro register (or the default band in `references/editorial-preferences.md`). Count the words.
 - Medium: the voice skill's short-form band, 10-60 words.
 - Long form: the voice skill's long-form band, 200+ words.
 - Every factual claim inside any post must be traceable to a numbered receipt below it.
 - Receipts show published timestamps so the 24-hour gate is auditable at a glance.
 - Hashtags come from what is actually trending on the topic right now (trend mirror or live X search), not from imagination. Two minimum, four maximum.
-- No em dashes anywhere, per the voice skill's hard rules. Spaced hyphen only.
+- Punctuation follows the voice skill's hard rules when one is configured. In the neutral voice, avoid em dashes and use a comma, colon, or spaced hyphen instead.
 
 ## No-post output
 

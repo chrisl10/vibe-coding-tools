@@ -1,6 +1,6 @@
 # Fraud Detection: Thresholds, Platform Controls, and Supplemental Layers
 
-*Grounded in: `research/external/2026-05-20-affiliate-fraud-prevention-saas-guide.md`, `research/external/2026-05-20-rewardful-affiliate-fraud-tactics-2026.md`, `research/external/2026-05-20-fraud-detection-software-vendor-guide-2026.md`*
+*Grounded in: `research/external/2026-05-20-affiliate-fraud-prevention-saas-guide.md`, `research/external/2026-05-20-rewardful-affiliate-fraud-tactics-2026.md`, `research/external/2026-05-20-fraud-detection-software-vendor-guide-2026.md` (source-repository research, not shipped)*
 
 ## The minimum viable fraud stack (launch requirement)
 

@@ -2,7 +2,7 @@
 
 Step 2: Choose the formation platform after the entity type is confirmed.
 
-*Derived from: `research/external/stripe-atlas-official-docs-2026.md`, `research/external/stripe-atlas-vs-clerky-comparison-2026.md`, `research/external/doola-firstbase-comparison-2026.md`, `research/external/best-delaware-c-corp-services-cross-border-2026.md`*
+*Derived from: `research/external/stripe-atlas-official-docs-2026.md`, `research/external/stripe-atlas-vs-clerky-comparison-2026.md`, `research/external/doola-firstbase-comparison-2026.md`, `research/external/best-delaware-c-corp-services-cross-border-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -43,7 +43,7 @@ Step 2: Choose the formation platform after the entity type is confirmed.
 - High SAFE activity or complex equity structures (Clerky is better)
 - Founders who don't use or plan to use Stripe payments
 
-Source: `research/external/stripe-atlas-official-docs-2026.md`
+Source: `research/external/stripe-atlas-official-docs-2026.md` (source-repository research, not shipped)
 
 ---
 
@@ -70,7 +70,7 @@ Source: `research/external/stripe-atlas-official-docs-2026.md`
 - International founders needing an LLC
 - Founders who don't anticipate SAFE-based fundraising
 
-Source: `research/external/stripe-atlas-vs-clerky-comparison-2026.md`
+Source: `research/external/stripe-atlas-vs-clerky-comparison-2026.md` (source-repository research, not shipped)
 
 ---
 
@@ -96,7 +96,7 @@ Source: `research/external/stripe-atlas-vs-clerky-comparison-2026.md`
 - US founders who need speed (Atlas is faster)
 - YC-track founders who need SAFE tooling (Clerky is better)
 
-Source: `research/external/doola-firstbase-comparison-2026.md`
+Source: `research/external/doola-firstbase-comparison-2026.md` (source-repository research, not shipped)
 
 ---
 
@@ -120,7 +120,7 @@ Source: `research/external/doola-firstbase-comparison-2026.md`
 - US founders (Atlas or Clerky are better-established options)
 - SAFE-heavy equity structures (Clerky is better)
 
-Source: `research/external/doola-firstbase-comparison-2026.md`
+Source: `research/external/doola-firstbase-comparison-2026.md` (source-repository research, not shipped)
 
 ---
 

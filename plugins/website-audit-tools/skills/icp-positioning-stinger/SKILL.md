@@ -12,11 +12,9 @@ metadata:
 
 # Icp Positioning Stinger
 
-> **Forge status:** stages 1-6 complete (Topic, Research, Distillation, References, Guides, final Drone/Stinger authorship). Stage 7 (Register: pairing into `pest-controller-suit`, deploy, reference sync) has not run yet.
-
 You are equipping **icp-positioning-wasp-drone**, wave W2 of the Website Auditor by Legion Code Inc. engagement (sync, HARD GATE). Full scope and acceptance criteria: [prd-005-icp-positioning](../../library/requirements/backlog/prd-005-icp-positioning/prd-005-icp-positioning-index.md).
 
-Every factual claim this skill makes traces to a downloaded primary source in `references/research/raw/`, or is explicitly flagged as an engineering judgment call where the archive is silent - most notably the two-stage buyer-readiness model (see [guides/03-buyer-readiness-model.md](guides/03-buyer-readiness-model.md)) and the hard-stop gate's exact firing threshold (see [guides/04-hard-stop-gate.md](guides/04-hard-stop-gate.md)), neither of which is independently sourced in this archive.
+Every factual claim this skill makes traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it), or is explicitly flagged as an engineering judgment call where the archive is silent - most notably the two-stage buyer-readiness model (see [guides/03-buyer-readiness-model.md](guides/03-buyer-readiness-model.md)) and the hard-stop gate's exact firing threshold (see [guides/04-hard-stop-gate.md](guides/04-hard-stop-gate.md)), neither of which is independently sourced in this archive.
 
 ## Purpose
 
@@ -56,17 +54,17 @@ Determine the audited site's niche, ideal customer profile, primary business goa
 | `references/templates/conversion-action-taxonomy-worksheet.md` | The `02-positioning/conversion-taxonomy.md` working worksheet |
 | `references/templates/buyer-readiness-scoring-worksheet.md` | The `02-positioning/buyer-readiness.md` working worksheet, with the collapse rule spelled out |
 | `references/research/distilled-icp-positioning.md` | Verifying any claim in this skill fast, or tracing where it came from |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 
 ## Related drones and stingers
 
 - [icp-positioning-wasp-drone](../../agents/icp-positioning-wasp-drone.md) - this Stinger's paired Drone.
-- [icp-research-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/growth-and-customer-tools/skills/icp-research-stinger) - a core Stinger, paired with `icp-research-wasp-drone`, for standalone, domain-seeded ICP research outside an audit engagement; use it when an ICP is needed without the audit workspace and hard gate.
+- [icp-research-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/growth-and-customer-tools/skills/icp-research-stinger) - a core Stinger, paired with `icp-research-wasp-drone`, for standalone, domain-seeded ICP research outside an audit engagement; use it when an ICP is needed without the audit workspace and hard gate.
 - [audit-intake-stinger](../audit-intake-stinger) - upstream, wave W0; scaffolds the workspace this Stinger writes `02-positioning/` into.
 - [stack-fingerprint-stinger](../stack-fingerprint-stinger) - upstream, wave W1a; this Stinger reads its `01-recon/stack-fingerprint.md` output.
 - [vendor-inventory-stinger](../vendor-inventory-stinger) - upstream, wave W1b; this Stinger reads its `01-recon/vendor-inventory.md` output.
 - [keyword-intelligence-stinger](../keyword-intelligence-stinger) - downstream, wave W3; reads this Stinger's `02-positioning/` output and must not re-derive niche or ICP itself (PRD-005 AC-3).
-- [seo-aeo-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/seo-aeo-stinger) - a related, non-paired Stinger from the existing Wasp Nest roster; consult where a keyword-relevance or content-targeting question overlaps with this pair's ICP output, per the build plan's note that new pairs cite existing Stingers as related skills rather than duplicating their catalogs.
+- [seo-aeo-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/seo-aeo-stinger) - a related, non-paired Stinger from the existing Wasp Nest roster; consult where a keyword-relevance or content-targeting question overlaps with this pair's ICP output, per the build plan's note that new pairs cite existing Stingers as related skills rather than duplicating their catalogs.
 
 ## Critical Directive
 

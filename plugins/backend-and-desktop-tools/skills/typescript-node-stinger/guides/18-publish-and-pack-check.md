@@ -52,4 +52,4 @@ A publish that skips `pack:check` is how a missing `files` entry ships a broken 
 ## Sources
 
 - `package.json` (lifecycle scripts), `scripts/pack-check.mjs`, `scripts/sync-versions.mjs`, `scripts/ensure-tree-sitter.mjs`, `scripts/audit-openclaw-bundle.mjs`.
-- `research/2026-06-16-npm-publish-files-allowlist.md`.
+- `research/2026-06-16-npm-publish-files-allowlist.md` (source-repository research, not shipped).

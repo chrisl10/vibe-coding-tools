@@ -1,6 +1,6 @@
 # Coordinate parallel workers with exclusive ownership
 
-Use this guide when an authorized task needs several independent workers. Harness Integration owns capability selection and the coordination procedure. AppPrimer Zero owns the reusable wave schema, validator and assignment templates. Read the [research digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/harness-integration-stinger/references/research/worker-coordination/distilled-worker-coordination.md) and [worked cases](../references/examples/worker-coordination/README.md).
+Use this guide when an authorized task needs several independent workers. Harness Integration owns capability selection and the coordination procedure. AppPrimer Zero owns the reusable wave schema, validator and assignment templates. Read the research digest and [worked cases](../references/examples/worker-coordination/README.md).
 
 ## 1. Prove the dispatch surface
 
@@ -34,4 +34,4 @@ At a deadline or owner stop, request worker stop, inspect final status and any o
 
 Integrate under applicable authority and pin the exact final combined SHA or source manifest. Run consumer/integration checks on that candidate, then independent Security, Quality and repository-health review in order. Changed source after Security invalidates its candidate binding; changes after Quality require renewed applicable gates. A worker's green shard, structural PASS or idle flag does not prove the combined application. Keep [the coordination record](../templates/worker-coordination-record.md) with preparation, selected capabilities, observed execution and final integration proof clearly separated.
 
-Grounding: [official/source digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/harness-integration-stinger/references/research/worker-coordination/distilled-worker-coordination.md). The review intervals, authority and stop rules are first-party operating policy; native API and runtime results must come from the inspected session.
+Grounding: official/source digest. The review intervals, authority and stop rules are first-party operating policy; native API and runtime results must come from the inspected session.

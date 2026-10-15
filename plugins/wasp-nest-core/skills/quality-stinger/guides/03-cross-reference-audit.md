@@ -96,4 +96,4 @@ The completed table is a deliverable, it goes in the report as a full section. E
 - Template for the table: `templates/traceability-table.md`.
 - Example of a filled-in table: `examples/02-blocker-heavy-audit.md`.
 - The helper script: `scripts/extract-plan-items.py`.
-- Research: `research/2026-04-24-traceability-matrix.md`.
+- Research: `research/2026-04-24-traceability-matrix.md` (source-repository research, not shipped).

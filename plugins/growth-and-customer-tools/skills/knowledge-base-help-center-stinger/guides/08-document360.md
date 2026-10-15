@@ -14,7 +14,7 @@
 
 **Pricing:** Quote-based since August 2024. No self-serve pricing. Request a quote before building on Document360.
 
-Sources: `research/external/2026-05-20-document360-2026-features.md`, `research/external/2026-05-20-document360-mcp-release-notes.md`
+Sources: `research/external/2026-05-20-document360-2026-features.md`, `research/external/2026-05-20-document360-mcp-release-notes.md` (source-repository research, not shipped)
 
 ---
 
@@ -67,4 +67,4 @@ Document360 moved to fully quote-based pricing in August 2024. No public price p
 
 ---
 
-*Sources: `research/external/2026-05-20-document360-2026-features.md`, `research/external/2026-05-20-document360-mcp-release-notes.md`.*
+*Sources: `research/external/2026-05-20-document360-2026-features.md`, `research/external/2026-05-20-document360-mcp-release-notes.md` (source-repository research, not shipped).*

@@ -1,6 +1,6 @@
 # 05 - CI Workflow Density Audit
 
-*Research basis: `research/external/01-github-rulesets-docs.md` (required status checks), `research/external/05-repo-security-settings.md` (dependency review)*
+*Research basis: `research/external/01-github-rulesets-docs.md` (required status checks), `research/external/05-repo-security-settings.md` (source-repository research, not shipped) (dependency review)*
 
 > **Scope boundary:** This guide audits workflow *presence and density* - are the right stages configured, and are they triggered correctly? It does NOT audit workflow architecture (reusable workflow design, release pipeline, OIDC, cache backends, cross-node matrix). Hand those to `ci-release-wasp-drone`.
 

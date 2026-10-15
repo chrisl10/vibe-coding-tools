@@ -4,8 +4,8 @@
 > hatches and bespoke styles re-accumulate. This guide is the violation
 > catalog (what to flag in review) and the guardrails (what to enforce).
 
-**Research:** `../research/tailwind-v4-upgrade-guide.md` (renamed utilities,
-the arbitrary-value syntax), `../research/shadcn-svelte-theming.md` (tokens
+**Research:** `../research/tailwind-v4-upgrade-guide.md` (source-repository research, not shipped) (renamed utilities,
+the arbitrary-value syntax), `../research/shadcn-svelte-theming.md` (source-repository research, not shipped) (tokens
 are the source of truth).
 
 ## The six violation classes
@@ -148,7 +148,7 @@ None of these should ever reappear in `apps/portal`.
 
 ## The renamed-utilities gotcha (Tailwind v4)
 
-From `../research/tailwind-v4-upgrade-guide.md`, several v3 utilities were
+From `../research/tailwind-v4-upgrade-guide.md` (source-repository research, not shipped), several v3 utilities were
 renamed. OSPRY adopts v4 natively, so use the v4 names from day one. Flag the
 v3 names in review (they may appear in copy-pasted code from older tutorials):
 

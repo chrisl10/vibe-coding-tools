@@ -10,7 +10,7 @@ Think of the manifest as a shopping plan and the lockfile as a receipt listing s
 
 The manifest declares npm `11.21.0` and a Node runtime range. The exercise supplies no running CLI evidence. Its check script names `scripts/check.mjs`, but that file is not supplied; a script name alone is not a passing test. [F4]
 
-For matching npm v11 behavior, npm ci checks consistency against the lockfile instead of fixing a mismatch and then installs the project. It can remove node_modules, so reading these records is separate from running installation. Nothing was installed in this exercise. [official npm ci source](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/dependency-audit-stinger/references/research/manifest-learning/raw/npm-ci.html).
+For matching npm v11 behavior, npm ci checks consistency against the lockfile instead of fixing a mismatch and then installs the project. It can remove node_modules, so reading these records is separate from running installation. Nothing was installed in this exercise. official npm ci source.
 
 Check your understanding: Which file gives the requested lesson-widget range, which gives the recorded concrete version, and what additional evidence would prove a check actually passed?
 

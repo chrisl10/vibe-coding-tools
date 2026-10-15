@@ -4,7 +4,7 @@ Each file in `03-components/<group>.md` is one component group's contract.
 Target: 8 to 15 briefs for a real product. 80 to 300 lines each.
 
 > Template: `../templates/component-spec.md`.
-> Research backing: `../research/2026-04-24-shadcn-radix-patterns.md`.
+> Research backing: `../research/2026-04-24-shadcn-radix-patterns.md` (source-repository research, not shipped).
 
 ## Group components thoughtfully
 

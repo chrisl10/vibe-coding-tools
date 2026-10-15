@@ -1,7 +1,7 @@
 ---
 name: component-vendoring-wasp-drone
 description: "Select reusable UI components, prepare exact notice-preserving copy plans, and maintain authorized local forks with artifact provenance. Use for MIT subset vendoring or component updates."
-tools: Read, Grep, Glob, Edit, Write, Bash, WebFetch, WebSearch
+tools: Read, Grep, Glob, Edit, Write, Bash, WebFetch, WebSearch, Skill
 model: inherit
 isolation: worktree
 ---

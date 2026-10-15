@@ -92,13 +92,13 @@ estimation-stinger/
 
 ## The evidence that matters (from research)
 
-Key data points for advisory conversations:
+Key data points for advisory conversations (source-repository research, not shipped with the plugin):
 
-- Replacing all story point values with "1" changes the forecast by only 8% (Maria Chec, 2025 Vasco Duarte interview). See `research/external/01-noestimates.md`.
-- Only ~30% of software projects complete on time and on budget (Standish CHAOS). See `research/external/04-planning-fallacy.md`.
-- IT projects average 27% cost overrun; 1 in 6 exceed 200% overrun (Flyvbjerg). See `research/external/04-planning-fallacy.md`.
-- Initial software estimates are typically off by 2x-4x (McConnell). See `research/external/04-planning-fallacy.md`.
-- Monte Carlo accuracy is 85-95% when based on quality historical data (montecarloestimation.com). See `research/external/03-monte-carlo-forecasting.md`.
+- Replacing all story point values with "1" changes the forecast by only 8% (Maria Chec, 2025 Vasco Duarte interview). See `research/external/01-noestimates.md` (source-repository research, not shipped with the plugin).
+- Only ~30% of software projects complete on time and on budget (Standish CHAOS). See `research/external/04-planning-fallacy.md` (source-repository research, not shipped with the plugin).
+- IT projects average 27% cost overrun; 1 in 6 exceed 200% overrun (Flyvbjerg). See `research/external/04-planning-fallacy.md` (source-repository research, not shipped with the plugin).
+- Initial software estimates are typically off by 2x-4x (McConnell). See `research/external/04-planning-fallacy.md` (source-repository research, not shipped with the plugin).
+- Monte Carlo accuracy is 85-95% when based on quality historical data (montecarloestimation.com). See `research/external/03-monte-carlo-forecasting.md` (source-repository research, not shipped with the plugin).
 
 ---
 

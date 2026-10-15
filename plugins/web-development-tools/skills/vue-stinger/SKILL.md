@@ -7,7 +7,6 @@ metadata:
   hive-tier: specialist
   hive-drone: vue-wasp-drone
   domain: vue-application
-allowed-tools: "Read Grep Glob Edit Write Bash"
 ---
 
 # Vue Stinger
@@ -29,7 +28,7 @@ Framework choice goes to Web Stack Selection; React implementation stays with Re
 5. Report exact changed files and PASS/FAIL/NOT_RUN results. Resolve medium-or-higher findings in ordered Ship Gate reviews before requesting separately required commit/push authorization.
 
 ## References map
-[Templates](references/templates/README.md), [component spec](references/templates/RecordForm.spec.ts), [digest](references/research/distilled-vue.md), [ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/vue-stinger/references/research/source-ledger.json), [paired Drone](../../agents/vue-wasp-drone.md), [envelope checker](scripts/check-envelope.py).
+[Templates](references/templates/README.md), [component spec](references/templates/RecordForm.spec.ts), [digest](references/research/distilled-vue.md), ledger, [paired Drone](../../agents/vue-wasp-drone.md), [envelope checker](scripts/check-envelope.py).
 
 ## Critical Directive
 

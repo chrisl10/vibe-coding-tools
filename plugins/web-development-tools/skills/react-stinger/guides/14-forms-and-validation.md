@@ -1,6 +1,6 @@
 # 14: Forms & Validation (extended)
 
-Source: `research/2026-04-25-forms-and-validation.md`. Companion to `guides/06-forms.md`, which covers the canonical React Hook Form + Zod stack and React 19 Server Action forms. This guide covers the extended landscape: when to leave the default and what to leave it for.
+Source: `research/2026-04-25-forms-and-validation.md` (source-repository research, not shipped). Companion to `guides/06-forms.md`, which covers the canonical React Hook Form + Zod stack and React 19 Server Action forms. This guide covers the extended landscape: when to leave the default and what to leave it for.
 
 ## TL;DR pick
 

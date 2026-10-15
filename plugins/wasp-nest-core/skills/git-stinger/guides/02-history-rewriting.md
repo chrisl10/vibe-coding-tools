@@ -156,4 +156,4 @@ git filter-repo --subdirectory-filter packages/my-lib
 # with paths rewritten to be relative to that directory.
 ```
 
-Sources: research/external/05-filter-repo.md
+Sources: research/external/05-filter-repo.md (source-repository research, not shipped)

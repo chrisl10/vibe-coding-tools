@@ -89,5 +89,5 @@ Before running the audit, confirm:
 
 ---
 
-*Sources: `research/external/2026-05-20-hubspot-api-rate-limits-webhooks.md`, `research/external/2026-05-20-attio-api-v2-rate-limits-stability.md`, `research/external/2026-05-20-bidirectional-sync-architecture.md`*
+*Sources: `research/external/2026-05-20-hubspot-api-rate-limits-webhooks.md`, `research/external/2026-05-20-attio-api-v2-rate-limits-stability.md`, `research/external/2026-05-20-bidirectional-sync-architecture.md` (source-repository research, not shipped)*
 *Template: `templates/code-audit-checklist.md`*

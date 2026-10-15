@@ -1,6 +1,6 @@
 # 08: Caching strategies
 
-Cache is king. Source: `research/2026-04-25-cache-is-king-gha.md`, `research/2026-04-25-buildkit-cache-mounts.md`.
+Cache is king. Source: `research/2026-04-25-cache-is-king-gha.md`, `research/2026-04-25-buildkit-cache-mounts.md` (source-repository research, not shipped).
 
 ---
 
@@ -40,7 +40,7 @@ The cache survives across builds (when the cache backend persists). Result: `pnp
 - `sharing=locked`: exclusive lock, slower but safer for caches that don't tolerate concurrent writes (npm's cache).
 - `sharing=private`: per-build, never shared.
 
-Source: `research/2026-04-25-buildkit-cache-mounts.md`.
+Source: `research/2026-04-25-buildkit-cache-mounts.md` (source-repository research, not shipped).
 
 ## 3. Docker layer cache backends (Layer 2)
 

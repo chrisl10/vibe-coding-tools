@@ -195,4 +195,4 @@ git push --force-with-lease origin <branch>
 git push --force  # overwrites without checking remote state
 ```
 
-Sources: research/external/01-interactive-rebase.md
+Sources: research/external/01-interactive-rebase.md (source-repository research, not shipped)

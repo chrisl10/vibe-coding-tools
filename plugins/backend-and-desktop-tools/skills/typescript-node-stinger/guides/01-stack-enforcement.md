@@ -60,5 +60,5 @@ Without all four, the substitution is a finding.
 ## Sources
 
 - `package.json`, `tsconfig.json`, `esbuild.config.mjs` in the repo.
-- `research/2026-06-16-esm-node16-resolution.md`.
-- `research/2026-06-16-hivemind-stack-survey.md`.
+- `research/2026-06-16-esm-node16-resolution.md` (source-repository research, not shipped).
+- `research/2026-06-16-hivemind-stack-survey.md` (source-repository research, not shipped).

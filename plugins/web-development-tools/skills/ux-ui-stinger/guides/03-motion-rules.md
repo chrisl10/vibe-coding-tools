@@ -31,7 +31,7 @@ Every animation honors `prefers-reduced-motion: reduce`:
 - **CSS:** wrap keyframe / transition declarations in `@media (prefers-reduced-motion: no-preference)` or use `@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }`.
 - **Framer Motion:** at the app root, `<MotionConfig reducedMotion="user">` disables transform/layout animations automatically, preserving opacity/color. For bespoke components, call `useReducedMotion()` and gate transform-heavy paths.
 
-See `guides/07-framer-motion.md` and `research/2026-04-24-framer-motion-reduced-motion.md`.
+See `guides/07-framer-motion.md` and `research/2026-04-24-framer-motion-reduced-motion.md` (source-repository research, not shipped).
 
 ## Rule 3 — Adding a new bucket requires a brief update
 
@@ -67,4 +67,4 @@ Every interactive element uses `--dur-fast` / `--ease-out-subtle` for hover/focu
 
 *Worked example:* `examples/review-output-example.md` includes a bespoke-duration violation callout.
 
-*Sources:* `research/2026-04-24-framer-motion-reduced-motion.md`; W3C `prefers-reduced-motion` spec at https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-motion.
+*Sources:* `research/2026-04-24-framer-motion-reduced-motion.md` (source-repository research, not shipped); W3C `prefers-reduced-motion` spec at https://www.w3.org/TR/mediaqueries-5/#prefers-reduced-motion.

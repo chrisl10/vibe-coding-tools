@@ -42,7 +42,7 @@ python-stinger/
   scripts/                6 audit scripts + README
   examples/               9 worked examples (Ninja endpoint, Celery task, pytest suite, decoupled CORS+auth, async view, Channels WS, DRF→Ninja, Poetry→uv)
   references/             5 demoted-alternatives files + README
-  research/               Research plan + 15 dated 2026-05-03 notes
+  research/ (source-repository research, not shipped with the plugin)               Research plan + 15 dated 2026-05-03 notes
 ```
 
 ## Reading order

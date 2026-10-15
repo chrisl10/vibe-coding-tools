@@ -1,6 +1,6 @@
 # React-to-Svelte 5 translation table
 
-React-side claims cite [raw/01](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/react-to-svelte-stinger/references/research/raw/01-react-hooks.md); the source-codebase column cites [raw/04](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/react-to-svelte-stinger/references/research/raw/04-bifrost-ui-stack.md). Svelte-side idioms are governed by the [[svelte-stinger]] archive (runes reference and migration cheatsheet); verify there before asserting fine semantics.
+React-side claims cite raw/01; the source-codebase column cites raw/04. Svelte-side idioms are governed by the [[svelte-stinger]] archive (runes reference and migration cheatsheet); verify there before asserting fine semantics.
 
 ## Hooks
 

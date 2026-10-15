@@ -6,7 +6,7 @@ Use this guide before writing any hot or warm lead email.
 
 Open `../references/intake-schema.md` and capture the sender identity, recipient, permission basis, verified trigger, stage, prior contact, stated goal, stated timing, approved offer details, CTA, suppression state, and overlapping outreach.
 
-Treat absent information as `UNKNOWN`. Do not infer consent from presence in a CRM, infer a problem from an industry label, or infer human interest from an open or click. HighLevel exposes those tracking events, while current community evidence shows why they can be noisy. [../references/research/raw/2026-06-30-highlevel-email-tracking.md] [../references/research/raw/2026-06-29-reddit-highlevel-bot-engagement.md]
+Treat absent information as `UNKNOWN`. Do not infer consent from presence in a CRM, infer a problem from an industry label, or infer human interest from an open or click. HighLevel exposes those tracking events, while current community evidence shows why they can be noisy. [../references/research/raw/2026-06-30-highlevel-email-tracking.md] [../references/research/raw/2026-06-29-reddit-highlevel-bot-engagement.md (source-repository research, not shipped)]
 
 ## 2. Return readiness before temperature
 
@@ -28,7 +28,7 @@ Open `../references/classification-rubric.md` and return exactly one state: `HOT
 - A live reply or rep takeover moves to `HUMAN_ACTIVE` and stops automation.
 - A no, opt-out, complaint, hard bounce, win, or disqualification moves to `CLOSED`.
 
-Current SparrowCRM guidance supports stage-specific segmentation and warns against treating every behavioral signal the same. [../references/research/raw/2026-07-24-sparrowcrm-lead-nurture.md]
+Current SparrowCRM guidance supports stage-specific segmentation and warns against treating every behavioral signal the same. [../references/research/raw/2026-07-24-sparrowcrm-lead-nurture.md (source-repository research, not shipped)]
 
 ## 4. Select timing
 
@@ -38,7 +38,7 @@ Open `../references/cadence-and-stop-rules.md`.
 2. Otherwise use a verified event, such as an actual proposal or trial end.
 3. Only then use the hot or warm default as a test hypothesis.
 
-A current warm-lead discussion shows the value of honoring the lead's own review window, and a post-demo discussion emphasizes capturing a concrete next step. Both are community evidence and do not set universal timing. [../references/research/raw/2026-08-05-reddit-warm-lead-timing.md] [../references/research/raw/2026-09-02-reddit-sales-follow-ups.md]
+A current warm-lead discussion shows the value of honoring the lead's own review window, and a post-demo discussion emphasizes capturing a concrete next step. Both are community evidence and do not set universal timing. [../references/research/raw/2026-08-05-reddit-warm-lead-timing.md] [../references/research/raw/2026-09-02-reddit-sales-follow-ups.md (source-repository research, not shipped)]
 
 ## 5. Produce the plan card
 

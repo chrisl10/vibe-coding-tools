@@ -1,6 +1,6 @@
 # Advisory table: svelte, @sveltejs/kit, devalue, adapters
 
-Generated 2026-09-30 from `scripts/advisories.json`, which `scripts/sveltekit_audit_scan.py` reads. Sources: [raw/advisory--github-advisory-db-svelte-ecosystem.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/advisory--github-advisory-db-svelte-ecosystem.md), [raw/advisory--kit-repo-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/advisory--kit-repo-advisories.md), [raw/advisory--svelte-repo-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/advisory--svelte-repo-advisories.md), [raw/advisory--devalue-repo-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/advisory--devalue-repo-advisories.md).
+Generated 2026-09-30 from `scripts/advisories.json`, which `scripts/sveltekit_audit_scan.py` reads. Sources: raw/advisory--github-advisory-db-svelte-ecosystem.md, raw/advisory--kit-repo-advisories.md, raw/advisory--svelte-repo-advisories.md, raw/advisory--devalue-repo-advisories.md.
 
 Rules for using this table:
 
@@ -91,7 +91,7 @@ Rules for using this table:
 
 | Package | Version | Change | Source |
 | --- | --- | --- | --- |
-| @sveltejs/kit | 2.70.0 | CSRF and remote-function origin checks no longer compiled out of builds with a non-production NODE_ENV (PR 16313). Below 2.70.0, a staging-style build has no origin checks. | [raw/kit-source--csrf-implementation-and-prs.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-source--csrf-implementation-and-prs.md) |
-| @sveltejs/kit | 2.58.0 | `requested()` requires a `limit` (refresh-list DoS). | [raw/kit-source--csrf-implementation-and-prs.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-source--csrf-implementation-and-prs.md) |
-| @sveltejs/kit | 2.36.0 / 2.36.2 | `csrf.trustedOrigins` added; `csrf.checkOrigin` deprecated. | [raw/kit-source--csrf-implementation-and-prs.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-source--csrf-implementation-and-prs.md) |
-| @sveltejs/kit | 2.0.0 | `dangerZone.trackServerFetches` removed; cookie `path` required. | [raw/kit-docs--cookies-api-reference.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--cookies-api-reference.md) |
+| @sveltejs/kit | 2.70.0 | CSRF and remote-function origin checks no longer compiled out of builds with a non-production NODE_ENV (PR 16313). Below 2.70.0, a staging-style build has no origin checks. | raw/kit-source--csrf-implementation-and-prs.md |
+| @sveltejs/kit | 2.58.0 | `requested()` requires a `limit` (refresh-list DoS). | raw/kit-source--csrf-implementation-and-prs.md |
+| @sveltejs/kit | 2.36.0 / 2.36.2 | `csrf.trustedOrigins` added; `csrf.checkOrigin` deprecated. | raw/kit-source--csrf-implementation-and-prs.md |
+| @sveltejs/kit | 2.0.0 | `dangerZone.trackServerFetches` removed; cookie `path` required. | raw/kit-docs--cookies-api-reference.md |

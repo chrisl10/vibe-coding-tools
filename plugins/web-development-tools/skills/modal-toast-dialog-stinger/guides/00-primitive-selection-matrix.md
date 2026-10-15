@@ -2,7 +2,7 @@
 
 Use this guide to select the correct overlay primitive before writing any code. The wrong primitive at the start costs a full rewrite; the right one costs nothing.
 
-*Derives from: `research/external/radix-dialog.md`, `research/external/vaul-drawer.md`, `research/external/sonner-toast.md`, `research/external/cmdk-command.md`.*
+*Derives from: `research/external/radix-dialog.md`, `research/external/vaul-drawer.md`, `research/external/sonner-toast.md`, `research/external/cmdk-command.md` (source-repository research, not shipped).*
 
 ---
 

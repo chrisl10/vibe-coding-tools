@@ -1,7 +1,7 @@
 ---
 name: web-stack-selection-wasp-drone
 description: "Recommend one web framework using product, rendering, team, backend and hosting constraints. Use for React/Vite, SvelteKit, Next.js or Vue/Nuxt decisions with honest owner gaps; no implementation."
-tools: Read, Grep, Glob, WebFetch, WebSearch
+tools: Read, Grep, Glob, WebFetch, WebSearch, Skill
 model: inherit
 ---
 

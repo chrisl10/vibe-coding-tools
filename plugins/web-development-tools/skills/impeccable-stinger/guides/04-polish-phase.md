@@ -1,6 +1,6 @@
 # 04 — Polish Phase (pre-ship gauntlet)
 
-Derived from `research/03-command-vocabulary.md`, `research/06-detector-rules.md`.
+Derived from `research/03-command-vocabulary.md`, `research/06-detector-rules.md` (source-repository research, not shipped).
 
 ## The three commands before anything ships
 

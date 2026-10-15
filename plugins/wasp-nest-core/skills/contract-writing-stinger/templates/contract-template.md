@@ -2,7 +2,7 @@
 
 > **Status:** Draft | Accepted | Superseded
 > **Revision:** 1
-> **Accepted by:** Pending | Mario, <date and session or decision reference>
+> **Accepted by:** Pending | <owner name>, <date and session or decision reference>
 > **Last reviewed:** <YYYY-MM-DD>
 > **Supersedes:** None | CTR-<###> revision <n>
 > **Superseded by:** None | CTR-<###> revision <n>

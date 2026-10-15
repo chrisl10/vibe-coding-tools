@@ -506,7 +506,7 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/evidence-standards.md` | Always, first. |
 | `references/littlebird-mcp-reference.md` | Always, first. |
 | `references/research/distilled-documentation-architecture.md` | When you need the citation behind a rule, or want to check whether a claim is evidenced at all. |
-| `references/research/README.md` | Source inventory, the one source conflict, and the archive's named gaps. |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 
 Six of this skill's design decisions are **not** evidenced by the research archive and are
 labelled as design decisions rather than researched practice: choosing the decision record

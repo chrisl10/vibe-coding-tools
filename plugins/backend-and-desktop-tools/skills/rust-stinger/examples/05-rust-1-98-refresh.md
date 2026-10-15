@@ -10,7 +10,7 @@ The workspace pins Rust 1.97.1. A maintainer asks whether it should move to the 
 
 - Allowed: edit the toolchain pin, adjust code required by compiler/Cargo compatibility changes, and update version-specific docs.
 - Not allowed: change the declared MSRV, migrate editions, refresh all dependencies, sign artifacts, or publish a release.
-- Current source check: official Rust release sources fetched on 2026-09-03 identify 1.98.1 as stable and 1.98.0 as affected by a vtable miscompilation. See [`CURRENT-RUST.md`](../references/CURRENT-RUST.md) and the [1.98.1 source note](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/references/research/raw/rust--releases--rust-1-98-1.md).
+- Current source check: official Rust release sources fetched on 2026-09-03 identify 1.98.1 as stable and 1.98.0 as affected by a vtable miscompilation. See [`CURRENT-RUST.md`](../references/CURRENT-RUST.md) and the 1.98.1 source note.
 
 ## Baseline capture
 
@@ -28,11 +28,11 @@ Record the `Cargo.lock` hash and run the repository's existing checks before edi
 
 | Surface | Finding | Required proof |
 |---|---|---|
-| Compiler patch | 1.98.1 fixes a miscompilation introduced in 1.98.0. [source](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/references/research/raw/rust--releases--rust-1-98-1.md) | Confirm no artifacts remain attributed only to 1.98.0; rebuild distributed binaries if any exist. |
-| FFI/runtime symbols | 1.98 adds lints around runtime symbol definitions and `c_void` returns. [source](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/references/research/raw/rust--releases--rust-1-98-0.md) | Run full check and Clippy; review any custom symbols or FFI crates directly. |
-| Layout | 1.98 tightens some `repr(transparent)` and transmute checks. [source](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/references/research/raw/rust--releases--stable-release-notes.md) | Run compile tests and any ABI/layout assertions. |
-| Diagnostics/tooling | Recent releases changed symbol mangling and escaped display in some outputs. [source](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/references/research/raw/rust--releases--stable-release-notes.md) | Verify debugger/profiler symbol handling and intentional golden snapshots. |
-| Numeric code | New algebraic floating-point methods permit reassociation. [source](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/references/research/raw/rust--releases--rust-1-98-0.md) | Do not adopt them inside this upgrade unless a separate numeric-accuracy contract authorizes it. |
+| Compiler patch | 1.98.1 fixes a miscompilation introduced in 1.98.0. source | Confirm no artifacts remain attributed only to 1.98.0; rebuild distributed binaries if any exist. |
+| FFI/runtime symbols | 1.98 adds lints around runtime symbol definitions and `c_void` returns. source | Run full check and Clippy; review any custom symbols or FFI crates directly. |
+| Layout | 1.98 tightens some `repr(transparent)` and transmute checks. source | Run compile tests and any ABI/layout assertions. |
+| Diagnostics/tooling | Recent releases changed symbol mangling and escaped display in some outputs. source | Verify debugger/profiler symbol handling and intentional golden snapshots. |
+| Numeric code | New algebraic floating-point methods permit reassociation. source | Do not adopt them inside this upgrade unless a separate numeric-accuracy contract authorizes it. |
 
 ## Small patch
 

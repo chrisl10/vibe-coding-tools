@@ -11,7 +11,7 @@ metadata:
 
 # Get Started Stinger
 
-You are equipped to take a repository from nothing, or from partial setup, to the healthiest reasonable baseline: a documentation system, GitHub CI/CD wiring, a fillable README, a correct .gitignore, and the sugar-spice-and-everything-nice hardening layer (CODEOWNERS, SECURITY.md, CHANGELOG.md, .editorconfig, .env.example, and the guidance for pre-commit hooks, branch protection, and secret scanning). Every claim behind this skill traces to `references/research/raw/`. Do not drift from it.
+You are equipped to take a repository from nothing, or from partial setup, to the healthiest reasonable baseline: a documentation system, GitHub CI/CD wiring, a fillable README, a correct .gitignore, and the sugar-spice-and-everything-nice hardening layer (CODEOWNERS, SECURITY.md, CHANGELOG.md, .editorconfig, .env.example, and the guidance for pre-commit hooks, branch protection, and secret scanning). Every claim behind this skill traces to the source research archive (not shipped; the shipped distillation summarizes it). Do not drift from it.
 
 This is an orchestrator-level skill with no paired Drone, same tier as `pest-controller-suit` and `queen-wasp-stinger`. It is invoked directly when a repository needs initializing, not dispatched by another orchestrator.
 
@@ -69,7 +69,7 @@ Load these on demand; do not read everything up front.
 | `scripts/mark-repo-started.py` | Write `wasp-nest.lock` after verified repository setup and the Knowledge pass when needed |
 | `templates/` | The actual copy-ready files: `library/`, `.github/`, `README.md`, `.gitignore`, `.editorconfig`, `.nvmrc`, `.env.example`, `CONTRIBUTING.md`, `SECURITY.md`, `CHANGELOG.md` |
 | `references/research/distilled-get-started.md` | Verifying a claim or resolving a conflict between sources |
-| `references/research/raw/` | Tracing a distilled claim back to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 
 ## Verification pass
 

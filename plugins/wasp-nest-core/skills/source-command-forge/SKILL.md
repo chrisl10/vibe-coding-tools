@@ -2,6 +2,7 @@
 name: "source-command-forge"
 description: "Run queen-wasp-stinger's seven-stage forge pipeline end to end for a brand-new Wasp Nest component, starting with mandatory topic elicitation before any work begins. Trigger with \"forge a new stinger\", \"build a new drone\", \"we need a new command for X\", \"create a skill for Y\", \"make a new rule for Z\"."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-forge

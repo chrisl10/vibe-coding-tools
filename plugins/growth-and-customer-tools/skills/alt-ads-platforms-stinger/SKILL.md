@@ -65,7 +65,7 @@ See `guides/00-principles.md` for the six non-negotiables.
 | Spotify Ad Studio | 0.3-0.8% audio CTR; 95%+ completion | B2C mass market, engaged listeners | $1,000/month ($250 min) | No (promo codes + vanity URL) |
 | X/Twitter Ads | Variable  -  platform volatile | Brand/thought leadership; NOT conversion-focused | $500/month test budget only | Yes (X Pixel) |
 
-*Sources: `research/external/`  -  LinkedIn benchmarks from `2026-05-20-linkedin-ads-benchmarks-2026-by-industry.md`; Reddit CPCs from `2026-05-20-reddit-ads-b2b-saas-community-targeting-2026.md`; Pinterest ROAS from `2026-05-20-pinterest-roas-benchmarks-2026.md`; Spotify benchmarks from `2026-05-20-spotify-ads-benchmarks-2026.md`.*
+*Sources: `research/external/` (source-repository research, not shipped with the plugin)  -  LinkedIn benchmarks from `2026-05-20-linkedin-ads-benchmarks-2026-by-industry.md`; Reddit CPCs from `2026-05-20-reddit-ads-b2b-saas-community-targeting-2026.md`; Pinterest ROAS from `2026-05-20-pinterest-roas-benchmarks-2026.md`; Spotify benchmarks from `2026-05-20-spotify-ads-benchmarks-2026.md`.*
 
 ---
 

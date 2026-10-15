@@ -2,7 +2,7 @@
 
 How to generate a review checklist scoped to the file types and concerns in a specific diff. Covers the canonical review phases, the priority ordering, and the difference between a logic checklist and a performance checklist.
 
-Sources: `research/external/2026-05-20-pandev-checklist-11-rules.md`, `research/external/2026-05-20-pillaiinfotech-comment-taxonomy.md`, `research/external/2026-05-20-stackfyi-best-practices-guide.md`, `research/external/2026-05-20-ardura-implementation-guide.md`.
+Sources: `research/external/2026-05-20-pandev-checklist-11-rules.md`, `research/external/2026-05-20-pillaiinfotech-comment-taxonomy.md`, `research/external/2026-05-20-stackfyi-best-practices-guide.md`, `research/external/2026-05-20-ardura-implementation-guide.md` (source-repository research, not shipped).
 
 Template: `templates/review-checklist.md`
 Example: `examples/happy-path-pr-review.md`
@@ -90,10 +90,10 @@ When a reviewer has limited time, the canonical priority order (from Google Engi
 5. **Comments / docs** -- Is the "why" documented?
 6. **Style** -- Does it match surrounding code?
 
-Source: `research/external/2026-05-20-google-eng-practices-standard.md`. Never let style block correctness feedback -- prioritize accordingly.
+Source: `research/external/2026-05-20-google-eng-practices-standard.md` (source-repository research, not shipped). Never let style block correctness feedback -- prioritize accordingly.
 
 ---
 
 ## The "author merges, not reviewer" rule
 
-The reviewer's job is to advise, not to merge. Once all `blocker:` comments are addressed, the author merges. If the reviewer merges for the author, it removes the author's accountability for the final state of the PR. Source: `research/external/2026-05-20-pandev-checklist-11-rules.md`.
+The reviewer's job is to advise, not to merge. Once all `blocker:` comments are addressed, the author merges. If the reviewer merges for the author, it removes the author's accountability for the final state of the PR. Source: `research/external/2026-05-20-pandev-checklist-11-rules.md` (source-repository research, not shipped).

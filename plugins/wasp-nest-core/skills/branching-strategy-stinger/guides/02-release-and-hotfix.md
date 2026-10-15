@@ -1,6 +1,6 @@
 # Release and Hotfix Patterns
 
-**Research sources:** `research/external/2026-03-29-branching-strategies-hotfix-codelit.md` (primary - hotfix step-by-step, release branch rules), `research/external/2026-02-17-release-branch-pattern-azure-devops.md` (cherry-pick-back pattern, Azure DevOps official), `research/external/2026-05-20-release-hotfix-branch-patterns.md` (2026 synthesis).
+**Research sources:** `research/external/2026-03-29-branching-strategies-hotfix-codelit.md` (primary - hotfix step-by-step, release branch rules), `research/external/2026-02-17-release-branch-pattern-azure-devops.md` (cherry-pick-back pattern, Azure DevOps official), `research/external/2026-05-20-release-hotfix-branch-patterns.md` (source-repository research, not shipped) (2026 synthesis).
 
 **Example:** `examples/happy-path-github-flow.md` (hotfix in GitHub Flow context)
 
@@ -34,7 +34,7 @@ When a production bug requires an emergency fix that cannot wait for the next re
 4. **Merge to main AND to develop.** First merge to main and tag a new patch version (`v2.4.1`). Then merge (or cherry-pick) to develop to prevent regression in the next planned release.
 5. **Notify the release branch (if active).** If a `release/2.5.0` branch is currently in stabilization, cherry-pick the hotfix there too.
 
-**Source:** `research/external/2026-03-29-branching-strategies-hotfix-codelit.md`
+**Source:** `research/external/2026-03-29-branching-strategies-hotfix-codelit.md` (source-repository research, not shipped)
 
 ---
 
@@ -47,7 +47,7 @@ In trunk-based or GitHub Flow teams, hotfix branches are usually unnecessary:
 3. **Merge and deploy immediately.** CI must pass. Deploy right after merge.
 4. **Protect against regression.** If the bug exposed a missing test, add it in the same PR.
 
-"In trunk-based development, a hotfix is simply a fast-tracked PR to main with an expedited review." - `research/external/2026-03-29-branching-strategies-hotfix-codelit.md`
+"In trunk-based development, a hotfix is simply a fast-tracked PR to main with an expedited review." - `research/external/2026-03-29-branching-strategies-hotfix-codelit.md` (source-repository research, not shipped)
 
 ---
 
@@ -59,7 +59,7 @@ Cherry-picking back hotfixes to the integration branch is the most commonly skip
 - Use CI automation: add a branch protection rule that requires a matching commit SHA or a linked PR in develop before closing the hotfix branch.
 - If cherry-pick produces conflicts, resolve them immediately - do not defer. The longer you wait, the harder the resolution.
 
-**Source:** `research/external/2026-02-17-release-branch-pattern-azure-devops.md`
+**Source:** `research/external/2026-02-17-release-branch-pattern-azure-devops.md` (source-repository research, not shipped)
 
 ---
 

@@ -15,7 +15,7 @@ Best-fit ICP: D2C e-commerce (18-44), mobile app installs, B2C consumer products
 | Smart+ outperformance vs manual | 80% of tests |
 | Smart+ adoption (US campaigns Q3 2025) | 42% |
 
-*Source: `research/external/2026-05-20-tiktok-smart-plus-playbook-2026.md`*
+*Source: `research/external/2026-05-20-tiktok-smart-plus-playbook-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -35,7 +35,7 @@ Best-fit ICP: D2C e-commerce (18-44), mobile app installs, B2C consumer products
 
 **Smart+ learning phase requirement:** $50/day minimum budget. Below this, the learning phase cannot complete and performance will be unstable. This is the TikTok MVS floor. See `guides/00-principles.md`.
 
-*Source: `research/external/2026-05-20-tiktok-smart-plus-playbook-2026.md`, `research/external/2026-05-20-tiktok-capi-funnel-guide.md`*
+*Source: `research/external/2026-05-20-tiktok-smart-plus-playbook-2026.md`, `research/external/2026-05-20-tiktok-capi-funnel-guide.md` (source-repository research, not shipped)*
 
 ---
 
@@ -50,7 +50,7 @@ TikTok's pixel-only attribution is significantly degraded by iOS 14.5+. The reco
 
 For full CAPI wiring steps, see `guides/12-capi-wiring.md` TikTok section.
 
-*Source: `research/external/2026-05-20-tiktok-conversion-api-setup-guide.md`*
+*Source: `research/external/2026-05-20-tiktok-conversion-api-setup-guide.md` (source-repository research, not shipped)*
 
 ---
 
@@ -81,4 +81,4 @@ TikTok is primarily a demand-creation platform. Direct-response B2B CPLs on TikT
 
 Do not recommend TikTok as a B2B direct-response platform unless the product has strong consumer/prosumer crossover appeal.
 
-*Source: `research/external/2026-05-20-tiktok-smart-plus-playbook-2026.md`*
+*Source: `research/external/2026-05-20-tiktok-smart-plus-playbook-2026.md` (source-repository research, not shipped)*

@@ -1,6 +1,6 @@
-# 03. Quality in standalone-audit mode
+# 03. Quality without a single plan document
 
-Load this guide for `full` and `mario`. `quality-stinger` normally audits an implementation against its PRD or IRD. An Audit My Code run usually has no single plan document, so quality runs in standalone mode with a different yardstick.
+Load this guide for `full` and `mario`. `quality-stinger` normally audits an implementation against its PRD or IRD. An Audit My Code run usually has no single plan document, and `quality-stinger` defines no separate mode for that case. The arming line therefore states the constraints directly (report only, fix nothing, write only to `03-quality/`) and points it at the yardstick below.
 
 References: [arming-lines.md](../references/arming-lines.md) (the quality line); [audit-contract.md](../references/audit-contract.md) sections 5 and 6.
 

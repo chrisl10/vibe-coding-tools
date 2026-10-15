@@ -1,6 +1,6 @@
 # 02: Multi-arch builds
 
-When to ship `linux/amd64` + `linux/arm64`, when not to, and how to make it cheap. Source: `research/2026-04-25-multi-arch-build-cost.md`.
+When to ship `linux/amd64` + `linux/arm64`, when not to, and how to make it cheap. Source: `research/2026-04-25-multi-arch-build-cost.md` (source-repository research, not shipped).
 
 ---
 
@@ -68,7 +68,7 @@ Then a final job uses `docker buildx imagetools create` to merge the per-arch ta
     push: true
 ```
 
-Depot runs each arch on native silicon (Intel + Graviton) with persistent NVMe layer cache shared across builds. No QEMU. No matrix gymnastics. Source: `research/2026-04-25-depot-build-push-action.md`.
+Depot runs each arch on native silicon (Intel + Graviton) with persistent NVMe layer cache shared across builds. No QEMU. No matrix gymnastics. Source: `research/2026-04-25-depot-build-push-action.md` (source-repository research, not shipped).
 
 ## Build-cost math
 
@@ -78,7 +78,7 @@ Depot runs each arch on native silicon (Intel + Graviton) with persistent NVMe l
 | Native matrix on GH-hosted | 3-4 min per arch (parallel) | 1-2 min per arch | Medium (manifest merge) |
 | Depot multi-arch | 1-3 min | 20-60 sec | Low (drop-in) |
 
-For >5 builds/day with arm64 in scope, Depot's drop-in pays for itself. Source: `research/2026-04-25-depot-vs-github-runners.md`.
+For >5 builds/day with arm64 in scope, Depot's drop-in pays for itself. Source: `research/2026-04-25-depot-vs-github-runners.md` (source-repository research, not shipped).
 
 ## Compose for multi-arch
 

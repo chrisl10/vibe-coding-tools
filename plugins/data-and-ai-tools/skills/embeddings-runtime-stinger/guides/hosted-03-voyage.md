@@ -1,6 +1,6 @@
 # Hosted provider: Voyage AI
 
-Grounded in `references/research/raw/voyageai--text-embeddings-model-choices.md`, `references/research/raw/voyageai--flexible-dimensions-and-quantization.md`, and `references/research/raw/voyageai--pricing.md`.
+Grounded in `references/research/raw/voyageai--text-embeddings-model-choices.md`, `references/research/raw/voyageai--flexible-dimensions-and-quantization.md`, and `references/research/raw/voyageai--pricing.md` (source-repository research, not shipped).
 
 ## Models
 
@@ -29,7 +29,7 @@ Embeddings generated with and without `input_type` are technically comparable, b
 
 ## Dimension and quantization
 
-`output_dimension` (voyage-4 family, `voyage-code-3`, `voyage-3-large`, `voyage-3.5` family): `2048`, `1024` (default), `512`, `256`, via Matryoshka Representation Learning. `output_dtype`: `float` (default), `int8`, `uint8`, `binary`, `ubinary`. Binary/ubinary pack 8 quantized single-bit values per byte, a returned array 1/8 the nominal dimension, using an offset-binary encoding for the signed `binary` variant. Combined with dimension truncation, quantization can cut storage 4x (int8) to 32x (binary) versus float32 at full width; see `references/research/raw/voyageai--flexible-dimensions-and-quantization.md` for the exact packing mechanics if implementing manual quantization on already-generated vectors.
+`output_dimension` (voyage-4 family, `voyage-code-3`, `voyage-3-large`, `voyage-3.5` family): `2048`, `1024` (default), `512`, `256`, via Matryoshka Representation Learning. `output_dtype`: `float` (default), `int8`, `uint8`, `binary`, `ubinary`. Binary/ubinary pack 8 quantized single-bit values per byte, a returned array 1/8 the nominal dimension, using an offset-binary encoding for the signed `binary` variant. Combined with dimension truncation, quantization can cut storage 4x (int8) to 32x (binary) versus float32 at full width; see `references/research/raw/voyageai--flexible-dimensions-and-quantization.md` (source-repository research, not shipped) for the exact packing mechanics if implementing manual quantization on already-generated vectors.
 
 ## Request limits
 

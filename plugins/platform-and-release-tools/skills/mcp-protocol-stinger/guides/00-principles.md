@@ -80,4 +80,4 @@ This pair (`mcp-protocol-stinger` / `mcp-protocol-wasp-drone`) owns MCP protocol
 
 ---
 
-*Sources: `research/distilled-mcp-protocol.md`, `research/2026-06-16-mcp-spec-lifecycle.md`, `research/2026-06-16-mcp-sdk-typescript.md`, `research/2026-06-16-jsonrpc-error-model.md`, `research/external/mcp-spec-architecture.md`, `research/external/mcp-spec-tools-primitive.md`*
+*Sources: `research/distilled-mcp-protocol.md`, `research/2026-06-16-mcp-spec-lifecycle.md`, `research/2026-06-16-mcp-sdk-typescript.md`, `research/2026-06-16-jsonrpc-error-model.md`, `research/external/mcp-spec-architecture.md`, `research/external/mcp-spec-tools-primitive.md` (source-repository research, not shipped)*

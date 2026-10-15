@@ -5,4 +5,4 @@
 4. Retain existing shared-state architecture. Recommend Pinia only when a real shared-state need exists; approval is required to add a dependency. Keep caches scoped to the accepted app/session boundary, never a request-shared SSR singleton.
 5. Record the minimum vertical slice: route entry, loading, empty, success, failure, submit interaction and its application checks. Use [architecture record](../references/templates/architecture-record.md).
 
-Grounding: [reactivity](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/vue-stinger/references/research/raw/reactivity.txt), [composables](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/vue-stinger/references/research/raw/composables.txt), [state](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/vue-stinger/references/research/raw/state.txt). Folder boundaries are a project recommendation, not a mandatory Vue convention.
+Grounding: reactivity, composables, state. Folder boundaries are a project recommendation, not a mandatory Vue convention.

@@ -2,7 +2,7 @@
 
 Configuration, plugins, session management, and the decision matrix for choosing between tmux and Zellij.
 
-Source: `research/external/03-tmux-zellij.md`
+Source: `research/external/03-tmux-zellij.md` (source-repository research, not shipped)
 
 See also: `examples/happy-path.md` for a full tmux setup walkthrough.
 

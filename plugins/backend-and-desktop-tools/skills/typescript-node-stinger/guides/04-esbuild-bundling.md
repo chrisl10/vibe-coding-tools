@@ -51,4 +51,4 @@ To ship a new hook or worker (see `examples/08`):
 
 - `esbuild.config.mjs`, `scripts/sync-versions.mjs` in the repo.
 - `package.json` `scripts` (`prebuild`, `build`, `bundle`).
-- `research/2026-06-16-esbuild-multi-target-bundling.md`.
+- `research/2026-06-16-esbuild-multi-target-bundling.md` (source-repository research, not shipped).

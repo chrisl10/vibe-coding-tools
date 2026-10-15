@@ -11,4 +11,4 @@ Create a source-linked tour that lets a new coder locate the entry point and und
 7. Reuse Technical Explainer's fidelity criteria: actor, action, object, permission, conditions, order, result, status and uncertainty. Place the exact factual account alongside any analogy. Preserve private paths and source details only in the authorized internal audience.
 8. Review the rendered tour against each ledger row. Ask one teach-back question about a meaningful boundary, such as whether sign-in alone proves access to another workspace. Keep reader understanding pending until the reader responds. Source-link checks establish traceability, not comprehension or security correctness.
 
-Grounding: [update digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/knowledge-stinger/references/research/novice-explanation/digest.md). The local digest and dated capture ledger preserve the update provenance.
+Grounding: update digest. The local digest and dated capture ledger preserve the update provenance.

@@ -1,6 +1,6 @@
 # 07: Payload Admin Setup
 
-Source PRD: `research/source-prds/prd-phase-07-payload-admin.md`
+Source PRD: `research/source-prds/prd-phase-07-payload-admin.md` (source-repository research, not shipped)
 
 This guide replaces the retired `guides/07-admin-spa.md` (Vite SPA). Payload's built-in React admin panel is the content management interface. No separate Vite SPA is scaffolded.
 

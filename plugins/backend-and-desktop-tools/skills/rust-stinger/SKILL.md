@@ -90,7 +90,7 @@ Produce a Rust implementation handoff from `templates/implementation-handoff.md`
 
 ## Research and refresh points
 
-For current toolchain, Cargo, security, nightly, or upstream AI-policy claims, read `references/research/distilled-rust-current.md` first. Its raw archive separates bounded primary-source captures from Stinger interpretation and cites every current source record. For the broader architecture corpus, read `research/research-summary.md` and `research/evidence-synthesis.md`, then use `research/index.md` to locate the legacy primary notes. Re-fetch the Rust release/platform matrix, Tokio support policy, the selected SQLx transaction API, stable rustls APIs, cargo-dist behavior, and RustSec data at the point of use. Both research dates are snapshots, not permanent defaults.
+For current toolchain, Cargo, security, nightly, or upstream AI-policy claims, read `references/research/distilled-rust-current.md` first. Its raw archive separates bounded primary-source captures from Stinger interpretation and cites every current source record. For the broader architecture corpus, read `research/research-summary.md` and `research/evidence-synthesis.md`; the index and legacy primary notes behind them are source-repository research, not shipped with the plugin. Re-fetch the Rust release/platform matrix, Tokio support policy, the selected SQLx transaction API, stable rustls APIs, cargo-dist behavior, and RustSec data at the point of use. Both research dates are snapshots, not permanent defaults.
 
 ## Human decisions that remain open
 
@@ -118,17 +118,17 @@ This Stinger is paired with `rust-wasp-drone`.
 - `references/NIGHTLY-WATCHLIST.md` - load when the user asks about upcoming Rust features; never use it as stable production guidance.
 - `references/UPSTREAM-RUST-LLM-POLICY.md` - load only for AI-assisted contributions to `rust-lang/rust` in a team covered by the upstream policy.
 - `references/research/distilled-rust-current.md` - load when a current domain claim needs verification or sources disagree.
-- `references/research/raw/` - load to trace the current distillation to official primary-source notes.
-- `research/research-summary.md`, `research/evidence-synthesis.md`, and `research/index.md` - load for the broader 2026-07-24 architecture and tooling corpus retained from the original pair.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
+- `research/research-summary.md` and `research/evidence-synthesis.md` - load for the broader 2026-07-24 architecture and tooling corpus retained from the original pair. The index and the per-topic primary notes are source-repository research, not shipped with the plugin.
 - `scripts/inspect-rust-workspace.py` - run for a deterministic static Cargo/version/unsafe inventory before planning a workspace change.
 - `guides/10-refresh-current-rust.md` - load for any request using "latest", "current", "upgrade Rust", "MSRV", or nightly language.
 
 ## Related drones and stingers
 
 - [tauri-stinger](../tauri-stinger) - Tauri 2 app-shell, IPC, capability, sidecar, plugin, updater, and distribution work built on Rust.
-- [dependency-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/dependency-audit-stinger) - dependency advisories, lockfile hygiene, license decisions, SBOMs, and supply-chain risk.
-- [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - independent vulnerability review and security acceptance.
-- [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/db-stinger) - database schema, migration, and indexing authority.
+- [dependency-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/dependency-audit-stinger) - dependency advisories, lockfile hygiene, license decisions, SBOMs, and supply-chain risk.
+- [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - independent vulnerability review and security acceptance.
+- [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/data-and-ai-tools/skills/db-stinger) - database schema, migration, and indexing authority.
 - [rust-wasp-drone](../../agents/rust-wasp-drone.md) - the paired implementation and review agent for this Stinger.
 
 ## Critical Directive
@@ -137,8 +137,8 @@ This Stinger is paired with `rust-wasp-drone`.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [tauri-stinger](../tauri-stinger) - Tauri 2 application integration and AI desktop/mobile shell patterns.
-  - [dependency-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/dependency-audit-stinger) - Rust dependency, advisory, license, and supply-chain decisions.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Independent security audit and remediation.
+  - [dependency-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/dependency-audit-stinger) - Rust dependency, advisory, license, and supply-chain decisions.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Independent security audit and remediation.
 
 ## Ship Gate
 

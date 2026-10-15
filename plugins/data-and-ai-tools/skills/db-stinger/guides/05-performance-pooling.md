@@ -2,7 +2,7 @@
 
 Autovacuum, bloat, `EXPLAIN (ANALYZE, BUFFERS)`, PgBouncer transaction vs session mode.
 
-Source: `research/2026-04-25-autovacuum-explain-pgbouncer.md`.
+Source: `research/2026-04-25-autovacuum-explain-pgbouncer.md` (source-repository research, not shipped).
 
 ## Reading `EXPLAIN (ANALYZE, BUFFERS)`
 

@@ -4,12 +4,12 @@ This is a new composition of existing canonical procedures, inspected 2026-10-07
 
 | Owner capability | Derived workflow rule | Evidence |
 |---|---|---|
-| `knowledge-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/references/outcome-commands/explain-repository/references/research/raw/knowledge-stinger.md) |
-| `technical-writing-craft-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/references/outcome-commands/explain-repository/references/research/raw/technical-writing-craft-stinger.md) |
-| `library-packets-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/references/outcome-commands/explain-repository/references/research/raw/library-packets-stinger.md) |
-| `pest-controller-suit` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/references/outcome-commands/explain-repository/references/research/raw/pest-controller-suit.md) |
+| `knowledge-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
+| `technical-writing-craft-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
+| `library-packets-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
+| `pest-controller-suit` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
 
-Installed dispatch must use the selected registry and checked owner; missing prerequisites block only dependent work. [Pest Controller capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/references/outcome-commands/explain-repository/references/research/raw/pest-controller-suit.md).
+Installed dispatch must use the selected registry and checked owner; missing prerequisites block only dependent work. Pest Controller capture.
 
 The topic-specific sequence below is a proposed orchestration contract, not a verbatim upstream command. Domain facts remain the owning specialist's responsibility.
 

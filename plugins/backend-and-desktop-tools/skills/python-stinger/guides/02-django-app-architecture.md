@@ -1,6 +1,6 @@
 # 02: Django App Architecture
 
-How a Django project should be organized once it's past hello-world. Encodes the HackSoftware Django Styleguide's services + selectors pattern (`research/2026-05-03-hacksoftware-styleguide.md`) and the canonical settings split.
+How a Django project should be organized once it's past hello-world. Encodes the HackSoftware Django Styleguide's services + selectors pattern (`research/2026-05-03-hacksoftware-styleguide.md` [source-repository research, not shipped]) and the canonical settings split.
 
 ## Project layout
 
@@ -251,6 +251,6 @@ Each app exports a `router` object from `apps/<name>/api.py`. The root `urls.py`
 
 ## Sources
 
-- `research/2026-05-03-hacksoftware-styleguide.md`
+- `research/2026-05-03-hacksoftware-styleguide.md` (source-repository research, not shipped)
 - https://github.com/HackSoftware/Django-StyleGuide
 - "Two Scoops of Django" (canonical reference; cite chapter when relevant)

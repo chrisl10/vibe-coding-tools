@@ -1,6 +1,6 @@
 # Guide 04: Custom SVG Component
 
-Source: `research/external/icon-accessibility.md`, `research/external/lucide-react.md`
+Source: `research/external/icon-accessibility.md`, `research/external/lucide-react.md` (source-repository research, not shipped)
 
 When the project needs icons not available in a standard library, or requires branded SVGs that must match an existing icon API, author a typed React SVG wrapper following these conventions.
 

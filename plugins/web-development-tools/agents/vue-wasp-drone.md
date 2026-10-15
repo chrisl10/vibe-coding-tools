@@ -1,7 +1,7 @@
 ---
 name: vue-wasp-drone
 description: "Implement Vue SFC, composable, state, form and client-route slices after Vue is selected. Use for Vue-native application work; hand Nuxt SSR, design and backend contracts to their owners."
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write, Bash, Skill, WebSearch, WebFetch
 model: inherit
 ---
 

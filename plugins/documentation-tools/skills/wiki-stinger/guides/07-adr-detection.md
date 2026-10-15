@@ -113,6 +113,6 @@ Parallel ingestion: multiple wiki-wasp-drone invocations may run concurrently ag
 
 ## Source
 
-- Tier classification: `research/2026-04-29-conventional-commits-decisions.md` (BREAKING CHANGE footer rule, switch-verb regex set).
-- ADR shape: `research/2026-04-29-adr-format.md` (Nygard 5-section template), aligned to the schema-v2 `library/knowledge/private/architecture/ADR-<n>-<slug>.md` convention.
+- Tier classification: `research/2026-04-29-conventional-commits-decisions.md` (source-repository research, not shipped) (BREAKING CHANGE footer rule, switch-verb regex set).
+- ADR shape: `research/2026-04-29-adr-format.md` (source-repository research, not shipped) (Nygard 5-section template), aligned to the schema-v2 `library/knowledge/private/architecture/ADR-<n>-<slug>.md` convention.
 - Numbering scheme: serial driver-side allocation in the snapshot post-pass.

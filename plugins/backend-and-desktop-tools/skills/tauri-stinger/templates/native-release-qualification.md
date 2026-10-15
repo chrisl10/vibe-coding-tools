@@ -31,4 +31,4 @@ Installed version -> candidate; schema version before/after; forward/backward co
 
 ## Qualification
 
-Source guidance / synthetic bookkeeping / native artifact check / packaged installation / external service acceptance are separate evidence levels. List unsupported rows and unresolved peer handoffs. Security, Quality and repository-health reports in required order; Mario's publication decision separately.
+Source guidance / synthetic bookkeeping / native artifact check / packaged installation / external service acceptance are separate evidence levels. List unsupported rows and unresolved peer handoffs. Security, Quality and repository-health reports in required order; the release owner's publication decision separately.

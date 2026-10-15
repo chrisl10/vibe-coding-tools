@@ -15,4 +15,4 @@ These are source review scenarios, not executed UI tests. Every browser/device r
 | A flashing banner has a pause button and a reduced-mode rule. | Pause/preference is mistaken for flash safety. | Assess SC2.3.1 separately; unmeasured thresholds remain unknown. |
 | A diagram's essential moving relationship cannot be paused. | Essentialness is asserted without an alternate information path. | Require the specific information-loss rationale and assess alternatives before any exception conclusion. |
 
-These cases apply the [motion guide](../guides/12-motion-and-interaction.md), grounded in [the nine-source digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/impeccable-stinger/references/research/motion-accessibility/digest.md). They establish coverage intent, not a browser, screen-reader, native or legal conformance result.
+These cases apply the [motion guide](../guides/12-motion-and-interaction.md), grounded in the nine-source digest. They establish coverage intent, not a browser, screen-reader, native or legal conformance result.

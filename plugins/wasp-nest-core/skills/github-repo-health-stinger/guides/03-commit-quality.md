@@ -1,6 +1,6 @@
 # 03 - Commit History Quality Audit
 
-*Research basis: `research/external/02-conventional-commits-spec.md`*
+*Research basis: `research/external/02-conventional-commits-spec.md` (source-repository research, not shipped)*
 
 ## What to inspect (last 100 commits)
 

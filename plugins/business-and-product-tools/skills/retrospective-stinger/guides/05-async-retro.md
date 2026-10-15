@@ -1,6 +1,6 @@
 # 05: Async Retro Design
 
-*Derived from `research/external/2026-05-20-async-retro-retroflow.md` and `research/external/2026-05-20-async-retro-remote-retroflow.md`.*
+*Derived from `research/external/2026-05-20-async-retro-retroflow.md` and `research/external/2026-05-20-async-retro-remote-retroflow.md` (source-repository research, not shipped).*
 
 ---
 
@@ -47,7 +47,7 @@ Tool options:
 - **Miro / Mural:** Canvas tools: flexible but require more facilitation setup.
 - **Notion / Google Docs:** Minimal tooling; works for simple formats. Loses structure for clustering.
 
-Note: As of 2026, GoRetro and EasyRetro do not have native async modes. Parabol is the only mainstream agile tool with meaningful async retro support. See `research/external/2026-05-20-tools-landscape-2026.md`.
+Note: As of 2026, GoRetro and EasyRetro do not have native async modes. Parabol is the only mainstream agile tool with meaningful async retro support. See `research/external/2026-05-20-tools-landscape-2026.md` (source-repository research, not shipped).
 
 ### Day 2-3 (async): Clustering and voting
 

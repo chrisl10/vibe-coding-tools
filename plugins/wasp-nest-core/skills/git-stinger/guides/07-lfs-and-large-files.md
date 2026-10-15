@@ -206,4 +206,4 @@ git rev-list --all --objects | \
   head -10
 ```
 
-Sources: research/external/04-git-lfs.md
+Sources: research/external/04-git-lfs.md (source-repository research, not shipped)

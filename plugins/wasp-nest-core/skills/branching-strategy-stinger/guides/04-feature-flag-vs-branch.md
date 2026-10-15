@@ -1,6 +1,6 @@
 # Feature Flag vs Feature Branch: The Decision Framework
 
-**Research sources:** `research/external/2026-02-25-feature-flags-vs-branches-rollgate.md` (decision framework), `research/external/2019-classic-feature-toggles-martinfowler.md` (canonical taxonomy), `research/external/2025-01-19-long-lived-branches-worst-berridge.md` (real flag costs, honest pushback), `research/external/2026-04-06-feature-flag-driven-development-viprasol.md` (flag lifecycle), `research/external/2026-03-29-branching-strategies-hotfix-codelit.md` (6-dimension comparison table).
+**Research sources:** `research/external/2026-02-25-feature-flags-vs-branches-rollgate.md` (decision framework), `research/external/2019-classic-feature-toggles-martinfowler.md` (canonical taxonomy), `research/external/2025-01-19-long-lived-branches-worst-berridge.md` (real flag costs, honest pushback), `research/external/2026-04-06-feature-flag-driven-development-viprasol.md` (flag lifecycle), `research/external/2026-03-29-branching-strategies-hotfix-codelit.md` (source-repository research, not shipped) (6-dimension comparison table).
 
 **Example:** `examples/edge-case-gitflow-justified.md` (contrasting scenario)
 
@@ -24,7 +24,7 @@ A long-lived branch exhibits the following failure mode:
 4. The feature is still not done. Day 8: the branch is now "risky to touch" - no one is sure what the full impact of merging is. The branch is put on ice.
 5. Eventually, a big-bang merge creates a production incident.
 
-"Branches older than 3 days generate exponentially more merge conflicts." - `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md`
+"Branches older than 3 days generate exponentially more merge conflicts." - `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md` (source-repository research, not shipped)
 
 The trap is caused by feature scope, not the branch model. The branch model is just where the symptoms appear.
 
@@ -32,7 +32,7 @@ The trap is caused by feature scope, not the branch model. The branch model is j
 
 ## Feature flag taxonomy (Fowler/Hodgson)
 
-The canonical four-category framework from Pete Hodgson's article on martinfowler.com (`research/external/2019-classic-feature-toggles-martinfowler.md`):
+The canonical four-category framework from Pete Hodgson's article on martinfowler.com (`research/external/2019-classic-feature-toggles-martinfowler.md` [source-repository research, not shipped]):
 
 | Type | Purpose | Expected lifetime | Cleanup discipline |
 |---|---|---|---|
@@ -56,7 +56,7 @@ The canonical four-category framework from Pete Hodgson's article on martinfowle
 | **Technical debt** | Branch divergence (resolved on merge) | Stale flags in codebase (ongoing) |
 | **Schema change support** | Full - any migration runs on merge | Limited - non-additive changes cannot be hidden behind a flag |
 
-*Adapted from `research/external/2026-03-29-branching-strategies-hotfix-codelit.md`*
+*Adapted from `research/external/2026-03-29-branching-strategies-hotfix-codelit.md` (source-repository research, not shipped)*
 
 ---
 
@@ -64,7 +64,7 @@ The canonical four-category framework from Pete Hodgson's article on martinfowle
 
 Most vendor-authored content underplays flag costs. The research corpus provides the corrective:
 
-**From `research/external/2025-01-19-long-lived-branches-worst-berridge.md` (Kevin Berridge):**
+**From `research/external/2025-01-19-long-lived-branches-worst-berridge.md` (source-repository research, not shipped) (Kevin Berridge):**
 
 1. **Schema changes that are non-additive cannot be hidden behind a flag.** If your feature requires dropping a column, renaming a field, or changing a table constraint, the database change cannot be wrapped in a runtime toggle. You need a two-phase migration (expand: add new column → migrate data → contract: remove old column) regardless of flags.
 

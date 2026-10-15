@@ -1,13 +1,13 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "highlevel",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Integrate HighLevel, build with AI Studio and map exported workflows.",
   "author": {
     "name": "Legion Code Inc."
   },
   "license": "AGPL-3.0-or-later",
-  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "repository": "https://github.com/legioncodeinc/vibe-coding-tools",
   "extensions": {
     "com.openai": {
       "interface": {

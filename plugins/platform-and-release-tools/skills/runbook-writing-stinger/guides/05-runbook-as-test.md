@@ -1,6 +1,6 @@
 # Runbook-as-Test: Game Day Methodology
 
-> **Research source:** `research/external/2026-01-30-oneuptime-game-day-exercises.md`, `research/external/2026-sre-google-being-on-call-chapter.md`
+> **Research source:** `research/external/2026-01-30-oneuptime-game-day-exercises.md`, `research/external/2026-sre-google-being-on-call-chapter.md` (source-repository research, not shipped)
 > **Principle:** `guides/00-principles.md` Principle 5 ("Runbook-as-Test Mandate")
 
 An untested runbook is a hypothesis. This guide covers how to schedule, execute, and capture results from runbook exercises so every runbook earns its READY status.
@@ -51,7 +51,7 @@ Choose based on risk tolerance and environment availability:
 
 **Who:** On-call team + facilitator. Optional: chaos engineering tool (AWS FIS, Chaos Monkey, Litmus) to inject the failure.
 
-**Source:** AWS FIS blog (July 2025): AWS reduced game day execution from days to hours via repeatable templates and now runs weekly. See `research/external/2026-01-30-oneuptime-game-day-exercises.md`.
+**Source:** AWS FIS blog (July 2025): AWS reduced game day execution from days to hours via repeatable templates and now runs weekly. See `research/external/2026-01-30-oneuptime-game-day-exercises.md` (source-repository research, not shipped).
 
 ---
 

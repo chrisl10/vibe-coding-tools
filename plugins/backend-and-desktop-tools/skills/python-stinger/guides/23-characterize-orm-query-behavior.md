@@ -1,6 +1,6 @@
 # 23: Characterize and repair ORM query behavior
 
-Use for O132, N+1 remediation or a serializer that keeps querying after the selector returns. Read [the research digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/python-stinger/references/research/orm-query-behavior/digest.md), [ORM patterns](03-django-orm.md) and [test discipline](10-pytest-discipline.md). Preserve existing behavior before reducing queries.
+Use for O132, N+1 remediation or a serializer that keeps querying after the selector returns. Read the research digest, [ORM patterns](03-django-orm.md) and [test discipline](10-pytest-discipline.md). Preserve existing behavior before reducing queries.
 
 ## Establish the boundary
 
@@ -25,7 +25,7 @@ Use [the characterization worksheet](../templates/orm-query-characterization.md)
 | only/defer plus serializer access | remove unsuitable deferral or load consumed fields | hidden per-instance fetch, required relation connectors; async cannot lazy-load deferred fields |
 | Large export | bounded pagination or measured iterator chunks | in Django 5.2 explicit chunk_size is required with prefetch; each chunk may query |
 
-Reference: [QuerySet archive](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/python-stinger/references/research/orm-query-behavior/raw/querysets.html), select_related, prefetch_related, only, defer and iterator sections. Generic relations and multiple database routing have different counts; do not apply a universal two-query budget.
+Reference: QuerySet archive, select_related, prefetch_related, only, defer and iterator sections. Generic relations and multiple database routing have different counts; do not apply a universal two-query budget.
 
 Keep the application's established permission predicate in the base queryset. Apply the existing child visibility policy to the prefetch queryset too. A join or cached related list does not check object permissions. Do not replace an established selector with Model.objects.all() to make the example fit.
 
@@ -33,7 +33,7 @@ Keep the application's established permission predicate in the base queryset. Ap
 
 Run a characterization test with fixture creation outside the measured block. With the project's existing pytest-django dependency, django_assert_num_queries may wrap the selector plus serializer. Django's assertNumQueries is another supported measurement surface. Select the actual database alias. Write a budget only after observing the known fixture; do not copy hypothetical numbers from [the example](../examples/09-orm-query-characterization.md).
 
-Then measure the complete request including authentication and pagination. Counts must not grow per parent for the repaired path. Account for empty pages, totals and batch chunks explicitly. Also compare elapsed time, peak memory, rows transferred and query plan on representative bounded data; one giant joined response can be worse than several small queries. Source: [optimization archive](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/python-stinger/references/research/orm-query-behavior/raw/optimization.html), Profile first.
+Then measure the complete request including authentication and pagination. Counts must not grow per parent for the repaired path. Account for empty pages, totals and batch chunks explicitly. Also compare elapsed time, peak memory, rows transferred and query plan on representative bounded data; one giant joined response can be worse than several small queries. Source: optimization archive, Profile first.
 
 Accept when response parity and visibility tests pass, observed counts match the documented fixture budget, measured performance meets the user's requirement, and the responsible Security then Quality checks finish. Keep a small selector/consumer patch that can be reverted under the user's Git policy. Never edit an applied migration as part of this fix.
 

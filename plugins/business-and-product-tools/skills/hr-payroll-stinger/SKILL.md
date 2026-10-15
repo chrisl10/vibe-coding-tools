@@ -40,7 +40,7 @@ These are non-negotiable. Every recommendation must honor them, regardless of wh
 
 ## Research foundation
 
-This Stinger was built from 13 external source notes in `research/external/` covering all major platform comparison surfaces, EOR pricing intelligence, worker classification law, and 2026 regulatory changes. Key data points:
+This Stinger was built from 13 external source notes in the source research archive (not shipped; the shipped distillation summarizes it) covering all major platform comparison surfaces, EOR pricing intelligence, worker classification law, and 2026 regulatory changes. Key data points:
 
 - **Domestic payroll pricing (2026):** Gusto Simple ~$40-$49 + $6-12/employee; Rippling ~$8 base + modules, typical $20-$30 total/employee; Justworks ~$59-$99/employee (PEO, health benefits bundled); Paychex Flex — enterprise custom pricing.
 - **EOR pricing (2026):** Deel ~$599/employee/month; Remote.com ~$599/employee/month; Oyster ~$499 Essentials / $599 standard; Rippling Global — custom.

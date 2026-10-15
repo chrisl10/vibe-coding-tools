@@ -6,13 +6,13 @@ The #NoEstimates movement argues that replacing story-point estimation with thro
 
 Vasco Duarte's 2012-2026 body of work makes a falsifiable empirical claim: for teams with 6+ months of cycle-time data, historical throughput (items completed per sprint/week) predicts future delivery more accurately than story-point velocity. The mechanism is the outside view applied at the item level rather than the size level.
 
-The central empirical finding (2025 interview, Maria Chec): "We looked at real team data: 3-point stories taking anywhere from a day to 100+ days. Replacing all story point values with '1' only changed the forecast by 8%." See `research/external/01-noestimates.md`.
+The central empirical finding (2025 interview, Maria Chec): "We looked at real team data: 3-point stories taking anywhere from a day to 100+ days. Replacing all story point values with '1' only changed the forecast by 8%." See `research/external/01-noestimates.md` (source-repository research, not shipped).
 
 This means: story-point precision (distinguishing 3-point from 5-point stories) accounts for approximately 8% of forecast accuracy. The other 92% comes from throughput: how many items the team finishes per time unit. This is the statistical justification for NoEstimates.
 
 ### The Nokia case study
 
-Vasco Duarte at Nokia: tracked system-level throughput across 500 people on 100 teams. Six months into a 12-month program, throughput data showed the project would be at least 6 months late. He reported this. The PM emailed all 100 teams asking if they'd finish on time. All 100 said yes. The project was cancelled at 18 months. The throughput signal was correct; the team consensus was the commitment trap at scale. See `research/external/01-noestimates.md`.
+Vasco Duarte at Nokia: tracked system-level throughput across 500 people on 100 teams. Six months into a 12-month program, throughput data showed the project would be at least 6 months late. He reported this. The PM emailed all 100 teams asking if they'd finish on time. All 100 said yes. The project was cancelled at 18 months. The throughput signal was correct; the team consensus was the commitment trap at scale. See `research/external/01-noestimates.md` (source-repository research, not shipped).
 
 ## What NoEstimates is NOT
 
@@ -85,5 +85,5 @@ When to recommend NOT (yet):
 
 ---
 
-*Cited research: `research/external/01-noestimates.md`, `research/external/02-story-points-fibonacci.md`*
+*Cited research: `research/external/01-noestimates.md`, `research/external/02-story-points-fibonacci.md` (source-repository research, not shipped)*
 *Example: `examples/monte-carlo-forecast.md` (shows what throughput forecasting produces)*

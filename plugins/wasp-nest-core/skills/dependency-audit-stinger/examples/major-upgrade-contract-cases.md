@@ -8,7 +8,7 @@ Synthetic client v1 retries zero times; v2 retries three times while keeping req
 
 ## Svelte migration with unexamined consumers
 
-The [official migration snapshot](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/dependency-audit-stinger/references/research/release-evidence/raw/svelte-migration.txt) documents Svelte 5 changes and compatibility paths. A candidate updates one component but leaves an internal consumer unexamined. Decision: needs migration work until the actual consumed APIs, events and behavior have baseline/candidate evidence. This is a source-review case; no Svelte application was compiled here.
+The official migration snapshot documents Svelte 5 changes and compatibility paths. A candidate updates one component but leaves an internal consumer unexamined. Decision: needs migration work until the actual consumed APIs, events and behavior have baseline/candidate evidence. This is a source-review case; no Svelte application was compiled here.
 
 ## Rollback blocked by persistent format
 

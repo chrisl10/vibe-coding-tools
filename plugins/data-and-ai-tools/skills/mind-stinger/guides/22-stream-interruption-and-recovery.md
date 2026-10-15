@@ -1,6 +1,6 @@
 # 22: Separate streaming, cancellation and business completion
 
-Use for O186 together with [Svelte endpoint mechanics](svelte-streaming-endpoints.md). [AI SDK stop](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/mind-stinger/references/research/agent-boundaries-20261007/raw/ai-sdk-stop.html), [AI SDK resume](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/mind-stinger/references/research/agent-boundaries-20261007/raw/ai-sdk-resume.html) and [SSE framing](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/mind-stinger/references/research/agent-boundaries-20261007/raw/whatwg-sse.html) ground the protocol distinctions. These are design and evidence procedures, not a deployed endpoint.
+Use for O186 together with [Svelte endpoint mechanics](svelte-streaming-endpoints.md). AI SDK stop, AI SDK resume and SSE framing ground the protocol distinctions. These are design and evidence procedures, not a deployed endpoint.
 
 ## Define the three states before wiring abort
 

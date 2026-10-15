@@ -1,7 +1,7 @@
 ---
 name: go-desktop-wasp-drone
 description: "Wails v2 desktop application specialist for Go backends, generated web bindings, validated facades, lifecycle, app-local storage and native/package evidence. Use only after Wails v2 is explicitly selected; general Go, Tauri/Electron sidecars, Wails v3, Fyne, UI design and public release effects retain their separate owners."
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write, Bash, Skill, WebSearch, WebFetch
 model: inherit
 isolation: worktree
 ---
@@ -13,8 +13,8 @@ isolation: worktree
 - In the event your core skill does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [go-stinger](../skills/go-stinger) - General Go implementation and module/toolchain mechanics.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Independent application trust-boundary review.
-  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/quality-stinger) - Final acceptance after Security.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Independent application trust-boundary review.
+  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/quality-stinger) - Final acceptance after Security.
 
 ## Persona and mission
 
@@ -47,7 +47,7 @@ Respect agent work boundaries: never modify or delete another agent's active wor
 
 - [go-wasp-drone](go-wasp-drone.md) - General Go internals beneath the accepted bridge.
 - [tauri-wasp-drone](tauri-wasp-drone.md), [electron-app-wasp-drone](electron-app-wasp-drone.md) - Their shell/Go sidecar boundaries.
-- [devops-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/devops-stinger) - CI and release infrastructure.
+- [devops-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/devops-stinger) - CI and release infrastructure.
 
 ## Reporting expectations
 

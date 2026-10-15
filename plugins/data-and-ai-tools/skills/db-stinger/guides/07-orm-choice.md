@@ -2,7 +2,7 @@
 
 Drizzle vs Prisma vs raw SQL. Workload-shaped, not religious.
 
-Source: `research/2026-04-25-orm-comparison-drizzle-prisma.md`.
+Source: `research/2026-04-25-orm-comparison-drizzle-prisma.md` (source-repository research, not shipped).
 
 ## The decision tree
 

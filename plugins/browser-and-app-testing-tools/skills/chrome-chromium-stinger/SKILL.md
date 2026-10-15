@@ -27,7 +27,7 @@ Guide Chrome developer tooling and Chromium engineering: isolated browser profil
 
 - Playwright or Puppeteer test authoring, use [browser-automation-stinger](../browser-automation-stinger).
 - Browser extension product design or web application UI work without protocol or engine concerns.
-- Electron application process and IPC work, use [electron-app-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/electron-app-stinger).
+- Electron application process and IPC work, use [electron-app-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/backend-and-desktop-tools/skills/electron-app-stinger).
 
 ## Procedure
 
@@ -41,14 +41,14 @@ Guide Chrome developer tooling and Chromium engineering: isolated browser profil
 
 - [references/REFERENCE.md](references/REFERENCE.md), load for CDP and source-build decisions.
 - [references/research/distilled-chrome-chromium.md](references/research/distilled-chrome-chromium.md), load to verify facts.
-- `references/research/raw/`, load for primary-source captures.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - [guides/01-devtools-and-chromium-workflow.md](guides/01-devtools-and-chromium-workflow.md), load before work.
 
 ## Related drones and stingers
 
 - [chrome-chromium-wasp-drone](../../agents/chrome-chromium-wasp-drone.md) - paired implementation specialist.
 - [browser-automation-stinger](../browser-automation-stinger) - Playwright and Puppeteer owner.
-- [electron-app-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/electron-app-stinger) - Electron app boundary owner.
+- [electron-app-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/backend-and-desktop-tools/skills/electron-app-stinger) - Electron app boundary owner.
 
 ## Critical Directive
 
@@ -56,7 +56,7 @@ Guide Chrome developer tooling and Chromium engineering: isolated browser profil
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [browser-automation-stinger](../browser-automation-stinger) - browser automation clients.
-  - [electron-app-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/electron-app-stinger) - Electron-specific integration.
+  - [electron-app-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/backend-and-desktop-tools/skills/electron-app-stinger) - Electron-specific integration.
 
 ## Ship Gate
 

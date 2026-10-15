@@ -1,6 +1,7 @@
 ---
 name: saas-pricing-wasp-drone
 description: "Recommend one provisional SaaS price/model with buyer value, current evidence, cost feasibility, limits and a test plan. Use for seats, tiers, usage, credits or initial pricing."
+tools: Read, Grep, Glob, Write, WebSearch, WebFetch, Skill
 model: inherit
 ---
 
@@ -30,8 +31,6 @@ Deliver price-model/unit/currency/period, one provisional recommendation, buyer/
 
 For O281 load the paired skill's [fair-limits guide](../skills/saas-pricing-stinger/guides/04-propose-fair-service-limits.md). Join entitlement, usage unit/window/aggregation, costs, legitimate high use, suspected abuse and incorrect blocking with a provisional limit/overflow/recovery/review, owner-selected fairness criteria and evidenced decision. Reuse Unit Economics calculation once; preserve Unknown rates, criteria and actual owners. Cost feasibility establishes neither fairness nor abuse-control effectiveness. Accepted Payments implementation and actual Security/platform controls require separate authorization and selected-owner evidence. Actual billing, legitimate-user behavior, fairness and native execution are NOT_RUN without scoped observed results.
 
-## Ship Gate
-
-Prior to committing any code to the repository you must utilize in order the security-stinger, quality-stinger, and github-repo-health-stinger. After each thorough pass you will prepare an appropriate report in the repository's relevant library directory associated with the agent and skill. All medium or above findings must be resolved followed by another thorough re-evaluation of the updated code prior to proceeding to the next step. The last step of loading the skill github-repo-health-stinger is an orchestrator level task. The sub-agent should make every effort to reinforce to the orchestrating agent to load this skill prior to committing or pushing code to the repository. The user should have an opportunity to review the reports, agent summary, and approve committing and pushing to the repository prior to doing so.
+Ship Gate removed: research-only Drone, produces advisory worksheets and reports and no committable application code. Branch, commit, PR, and merge are orchestrator steps with the owner's explicit authorization for each outward step.
 
 For supplied pricing results, load the paired skill's measurement guide and worksheet. Preserve cohort/period, refunds, costs, assignment and statistical limits. Economic comparison grants no price, flag, trial, billing or customer-contact action.

@@ -2,7 +2,7 @@
 
 Use this guide every time a user asks which product tour tool to use. Run the qualification checklist before naming a winner.
 
-Source: `research/external/2026-05-20-saas-platform-comparison.md`, `research/external/2026-05-20-oss-tour-libraries.md`.
+Source: `research/external/2026-05-20-saas-platform-comparison.md`, `research/external/2026-05-20-oss-tour-libraries.md` (source-repository research, not shipped).
 
 ---
 
@@ -29,7 +29,7 @@ Answer these four questions before opening the decision matrix:
 | **Shepherd.js** | Free (MIT) | No | No | No | High (code) | Engineers who want the most flexible, actively maintained OSS tour with full a11y |
 | **Intro.js** | Free (AGPL v3) / $199 commercial | No | No | No | High (code) | **Avoid for commercial SaaS**: AGPL v3 requires a paid license; maintenance slowing |
 
-*Pricing from `research/external/2026-05-20-saas-platform-comparison.md` (May 2026).*
+*Pricing from `research/external/2026-05-20-saas-platform-comparison.md` (source-repository research, not shipped) (May 2026).*
 
 ---
 
@@ -55,7 +55,7 @@ Answer these four questions before opening the decision matrix:
 - Use **Shepherd.js v15** for multi-step tours with accessibility requirements, custom renderers, and segment-gating hooks (`showOn`, `beforeShowPromise`).
 - Avoid **Intro.js** for commercial SaaS: AGPL v3 licensing requires a paid commercial license.
 
-**Key watch-out:** Open-source libraries accumulate hidden costs: teams must build their own targeting, analytics, localization, and A/B infrastructure on top (source: `research/external/2026-05-20-oss-tour-libraries.md`). When these needs emerge, the SaaS migration becomes attractive.
+**Key watch-out:** Open-source libraries accumulate hidden costs: teams must build their own targeting, analytics, localization, and A/B infrastructure on top (source: `research/external/2026-05-20-oss-tour-libraries.md` [source-repository research, not shipped]). When these needs emerge, the SaaS migration becomes attractive.
 
 ### Branch D: CSS-in-JS codebase with dynamic class generation
 

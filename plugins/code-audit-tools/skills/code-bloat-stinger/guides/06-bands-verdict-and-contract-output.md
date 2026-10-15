@@ -21,9 +21,9 @@ Rules:
 1. Answer first: "Mostly no", "Yes", "Partly". Then the reason in plain words.
 2. Separate the three kinds of bloat, because they have different causes and fixes: pasted code (duplication), dead code (unused files, exports, dependencies), and shape (giant files, giant functions, closures).
 3. Back every clause with a number from the measures.
-4. Name the vibe-coding cost only where the numbers show it. The pattern in WHIPT: little paste and little dead code, but "agents keep adding to whatever giant file they are already in", shown by the big-file share, the closure factories, and the largest function [../references/research/raw/gold--whipt-bloat-audit-method.md]. That pattern matches research that finds AI-involved code more verbose and layered, with less consolidation, while the duplication evidence is mixed [../references/research/raw/research--arxiv-2603-27130-ai-vs-human-duplication.md] [../references/research/raw/research--gitclear-2026-maintainability-gap.md].
-5. Do not claim a cause the repo cannot show. You cannot tell from the code who wrote it. Say "the shape is what agent-driven growth typically produces", not "the agent did this". Humans introduce most clone lineages in mixed projects [../references/research/raw/research--msr-2026-clone-genealogies.md].
-6. When duplication is low, add the limit in one clause: token-based detection does not catch the same logic written twice in different words [../references/research/raw/research--msr-2026-more-code-less-reuse.md].
+4. Name the vibe-coding cost only where the numbers show it. The pattern in WHIPT: little paste and little dead code, but "agents keep adding to whatever giant file they are already in", shown by the big-file share, the closure factories, and the largest function [../references/research/raw/gold--whipt-bloat-audit-method.md]. That pattern matches research that finds AI-involved code more verbose and layered, with less consolidation, while the duplication evidence is mixed [../references/research/raw/research--arxiv-2603-27130-ai-vs-human-duplication.md] [../references/research/raw/research--gitclear-2026-maintainability-gap.md (source-repository research, not shipped)].
+5. Do not claim a cause the repo cannot show. You cannot tell from the code who wrote it. Say "the shape is what agent-driven growth typically produces", not "the agent did this". Humans introduce most clone lineages in mixed projects [../references/research/raw/research--msr-2026-clone-genealogies.md (source-repository research, not shipped)].
+6. When duplication is low, add the limit in one clause: token-based detection does not catch the same logic written twice in different words [../references/research/raw/research--msr-2026-more-code-less-reuse.md (source-repository research, not shipped)].
 7. No jargon the reader has to look up. Say "copy-pasted", "unused", "one function that is 5,527 lines long", not "Type-2 clones" or "low cohesion".
 
 Shape to follow (WHIPT, paraphrased):
@@ -58,9 +58,11 @@ Next steps are the payoff. Order them by lines saved and risk, and name the conc
 
 ## Sources
 
-- [../references/research/raw/gold--whipt-bloat-audit-method.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/gold--whipt-bloat-audit-method.md)
-- [../references/research/raw/research--gitclear-2026-maintainability-gap.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/research--gitclear-2026-maintainability-gap.md)
-- [../references/research/raw/research--arxiv-2603-27130-ai-vs-human-duplication.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/research--arxiv-2603-27130-ai-vs-human-duplication.md)
-- [../references/research/raw/research--msr-2026-more-code-less-reuse.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/research--msr-2026-more-code-less-reuse.md)
-- [../references/research/raw/research--msr-2026-clone-genealogies.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/research--msr-2026-clone-genealogies.md)
-- [../references/research/raw/research--arxiv-2603-28592-ai-technical-debt.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/research--arxiv-2603-28592-ai-technical-debt.md)
+The notes listed below are source-repository research, not shipped.
+
+- ../references/research/raw/gold--whipt-bloat-audit-method.md (source-repository research, not shipped)
+- ../references/research/raw/research--gitclear-2026-maintainability-gap.md (source-repository research, not shipped)
+- ../references/research/raw/research--arxiv-2603-27130-ai-vs-human-duplication.md (source-repository research, not shipped)
+- ../references/research/raw/research--msr-2026-more-code-less-reuse.md (source-repository research, not shipped)
+- ../references/research/raw/research--msr-2026-clone-genealogies.md (source-repository research, not shipped)
+- ../references/research/raw/research--arxiv-2603-28592-ai-technical-debt.md (source-repository research, not shipped)

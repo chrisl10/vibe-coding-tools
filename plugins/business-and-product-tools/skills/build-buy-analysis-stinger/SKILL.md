@@ -31,7 +31,7 @@ Load Pest Controller before dispatch. Source uses plugin-catalog.json; installed
 
 ## Evidence map
 
-[Primary source hashes](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/build-buy-analysis-stinger/references/research/sources.json), [raw archive](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/build-buy-analysis-stinger/references/research/raw/purchasing.md) and [paired Drone](../../agents/build-buy-analysis-wasp-drone.md) support review. Harness formats reuse Queen's research; current installed-session availability requires separate proof.
+Primary source hashes, raw archive and [paired Drone](../../agents/build-buy-analysis-wasp-drone.md) support review. Harness formats reuse Queen's research; current installed-session availability requires separate proof.
 
 <!-- Ship Gate removed: research-only runtime, produces no application code or provider writes. Source component construction requires parent Security then Quality and orchestrator repository health before authorized commit/push. -->
 

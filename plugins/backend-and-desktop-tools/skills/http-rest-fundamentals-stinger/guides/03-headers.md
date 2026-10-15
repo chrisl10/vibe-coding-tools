@@ -129,4 +129,4 @@ Scope: only relevant for browser-facing responses.
 
 ---
 
-*Sources: RFC 9110 §7, RFC 9110 §12, `research/external/2026-05-20-content-negotiation-rest-apis.md`, `research/external/2026-05-20-vary-header-guide.md`, `research/external/2026-05-20-mdn-content-negotiation.md`*
+*Sources: RFC 9110 §7, RFC 9110 §12, `research/external/2026-05-20-content-negotiation-rest-apis.md`, `research/external/2026-05-20-vary-header-guide.md`, `research/external/2026-05-20-mdn-content-negotiation.md` (source-repository research, not shipped)*

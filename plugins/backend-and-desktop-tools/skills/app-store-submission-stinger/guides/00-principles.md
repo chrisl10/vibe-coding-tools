@@ -3,7 +3,7 @@
 
 > Historical May 2026 guidance. For current build, privacy and payment readiness use [guide 06](06-prepare-artifact-privacy-and-entitlement-evidence.md) and its October primary archive. Do not treat legacy numeric ASO claims, blanket regional restrictions or Billing 7 examples as current submission policy.
 
-*Source: synthesized from `research/external/2026-05-20-app-store-rejection-reasons-index.md`, `research/external/2026-05-20-app-store-review-times-2026.md`*
+*Source: synthesized from `research/external/2026-05-20-app-store-rejection-reasons-index.md`, `research/external/2026-05-20-app-store-review-times-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -58,7 +58,7 @@ Apple's rejection notes are frequently terse and sometimes misleading when read 
 
 ## Timeline reality in 2026
 
-Do not plan releases around Apple's stated "approximately 24 hours" average. As documented in `research/external/2026-05-20-app-store-review-times-2026.md`:
+Do not plan releases around Apple's stated "approximately 24 hours" average. As documented in `research/external/2026-05-20-app-store-review-times-2026.md` (source-repository research, not shipped):
 
 - New app submissions: 2-5 days (104% YoY volume increase in April 2026)
 - App updates: 24-72 hours

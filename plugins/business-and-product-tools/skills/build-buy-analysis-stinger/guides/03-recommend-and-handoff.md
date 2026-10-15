@@ -1,6 +1,6 @@
 # Recommend one bounded next decision
 
-Use the [worksheet](../references/templates/decision-worksheet.md), [fictional worked example](../examples/completed-decision.md) and [negative cases](../examples/negative-cases.md). This follows the small hard problem and lifecycle questions in [purchasing guidance](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/build-buy-analysis-stinger/references/research/raw/purchasing.md).
+Use the [worksheet](../references/templates/decision-worksheet.md), [fictional worked example](../examples/completed-decision.md) and [negative cases](../examples/negative-cases.md). This follows the small hard problem and lifecycle questions in purchasing guidance.
 
 1. Reject suitability claims when an option fails a required behavior; keep UNKNOWN separate from FAIL. Do not score away mandatory security, ownership, accessibility, integration or exit requirements with low prices.
 2. Present a three-column evidence comparison but make one recommendation. If required data is missing, recommend the single smallest decision-changing evidence task, not a purchase or invented winner. State its expected observation and falsifier, owner, permitted data, scope and status PLANNED / NOT_RUN. Preparing a trial does not authorize account creation, spend, credentials or execution.

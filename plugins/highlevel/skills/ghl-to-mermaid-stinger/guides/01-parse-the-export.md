@@ -1,6 +1,6 @@
 # Guide 01: Parse the export
 
-Grounded in `references/research/raw/supersnapshot--location-export-schema--observed.md`.
+Grounded in `references/research/raw/supersnapshot--location-export-schema--observed.md` (source-repository research, not shipped).
 
 ## Before anything, confirm what you have
 

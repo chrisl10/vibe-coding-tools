@@ -2,7 +2,7 @@
 
 The six-point contract that every overlay produced by `modal-toast-dialog-wasp-drone` must satisfy. Check each point before declaring an overlay done.
 
-*Derives from: `research/external/aria-apg-dialog.md` (normative W3C source).*
+*Derives from: `research/external/aria-apg-dialog.md` (source-repository research, not shipped) (normative W3C source).*
 
 ---
 

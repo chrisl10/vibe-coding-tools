@@ -2,6 +2,7 @@
 name: "source-command-choose-acquisition-channel"
 description: "Choose one acquisition channel from dated buyer evidence, operating constraints and a falsifiable experiment draft."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-choose-acquisition-channel

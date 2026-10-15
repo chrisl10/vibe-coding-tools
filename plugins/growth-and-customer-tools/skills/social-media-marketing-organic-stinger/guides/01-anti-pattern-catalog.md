@@ -20,7 +20,7 @@ Run this audit when: the founder has existing content to review, the founder say
 **After:**
 > "Three weeks ago a customer told me they almost cancelled. We'd shipped the wrong priority for 60 days. I wrote the thread about what we got wrong. 847 comments. Nothing I've published about what we got *right* has come close."
 
-**Research grounding:** `research/external/2026-05-20-ai-content-detection-linkedin.md`, `research/external/2026-05-20-anti-ai-backlash-algorithms.md`
+**Research grounding:** `research/external/2026-05-20-ai-content-detection-linkedin.md`, `research/external/2026-05-20-anti-ai-backlash-algorithms.md` (source-repository research, not shipped)
 
 ---
 
@@ -36,7 +36,7 @@ Run this audit when: the founder has existing content to review, the founder say
 
 **After:** LinkedIn post becomes a 5-tweet thread on X with numbers and a cliffhanger structure; the same insight becomes a 2-sentence Bluesky post that drops the context (because the community already has it).
 
-**Research grounding:** `research/external/2026-05-20-indie-hacker-x-strategy.md`, `research/external/2026-05-20-platform-algorithm-comparison.md`
+**Research grounding:** `research/external/2026-05-20-indie-hacker-x-strategy.md`, `research/external/2026-05-20-platform-algorithm-comparison.md` (source-repository research, not shipped)
 
 ---
 
@@ -48,7 +48,7 @@ Run this audit when: the founder has existing content to review, the founder say
 
 **The only path:** Slow down. Build the real audience. A 400-follower account with 7% engagement produces more qualified conversations than a 40,000-follower account with 0.01%.
 
-**Research grounding:** `research/external/2026-05-20-engagement-benchmarks-2026.md`
+**Research grounding:** `research/external/2026-05-20-engagement-benchmarks-2026.md` (source-repository research, not shipped)
 
 ---
 
@@ -64,7 +64,7 @@ Run this audit when: the founder has existing content to review, the founder say
 **After:**
 > "I shipped a feature for 6 months that nobody used. Talked to 12 customers last week. None of them mentioned it. Found out they'd been working around it with spreadsheets. Deleting the feature next week."
 
-**Research grounding:** `research/external/2026-05-20-founder-led-content-wins.md`, `research/external/2026-05-20-linkedin-vs-threads-founders.md`
+**Research grounding:** `research/external/2026-05-20-founder-led-content-wins.md`, `research/external/2026-05-20-linkedin-vs-threads-founders.md` (source-repository research, not shipped)
 
 ---
 
@@ -76,7 +76,7 @@ Run this audit when: the founder has existing content to review, the founder say
 
 **Remedy:** Default to 3 posts/week. That is the minimum viable cadence for LinkedIn and Bluesky. Don't post 8 times in a week after a launch — post consistently the weeks before and after. The launch post lands harder in an account with consistent presence.
 
-**Research grounding:** `research/external/2026-05-20-linkedin-vs-threads-founders.md`, `research/external/2026-05-20-build-in-public-x-playbook.md`
+**Research grounding:** `research/external/2026-05-20-linkedin-vs-threads-founders.md`, `research/external/2026-05-20-build-in-public-x-playbook.md` (source-repository research, not shipped)
 
 ---
 
@@ -88,7 +88,7 @@ Run this audit when: the founder has existing content to review, the founder say
 
 **Remedy:** Never post a question you won't spend 15 minutes replying to. Engage with every comment in the first hour of a post's life. That first-hour velocity is the X algorithm's primary quality signal.
 
-**Research grounding:** `research/external/2026-05-20-build-in-public-x-playbook.md`
+**Research grounding:** `research/external/2026-05-20-build-in-public-x-playbook.md` (source-repository research, not shipped)
 
 ---
 
@@ -100,7 +100,7 @@ Run this audit when: the founder has existing content to review, the founder say
 
 **Remedy:** 70/30 rule: 70% useful insights for anyone + honest process documentation, 30% product updates. Document your process, not just your highlights. "We shipped this" posts are the weakest content type. "Here's what we got wrong and why" posts are the strongest.
 
-**Research grounding:** `research/external/2026-05-20-build-in-public-x-playbook.md`, `research/external/2026-05-20-founder-led-content-wins.md`
+**Research grounding:** `research/external/2026-05-20-build-in-public-x-playbook.md`, `research/external/2026-05-20-founder-led-content-wins.md` (source-repository research, not shipped)
 
 ---
 
@@ -112,7 +112,7 @@ Run this audit when: the founder has existing content to review, the founder say
 
 **Remedy:** Track engagement rate (substantive comments + saves + DM shares) per post. This is the metric that predicts whether the social presence will generate actual business outcomes.
 
-**Research grounding:** `research/external/2026-05-20-engagement-benchmarks-2026.md`, `research/external/2026-05-20-anti-ai-backlash-algorithms.md`
+**Research grounding:** `research/external/2026-05-20-engagement-benchmarks-2026.md`, `research/external/2026-05-20-anti-ai-backlash-algorithms.md` (source-repository research, not shipped)
 
 ---
 
@@ -124,7 +124,7 @@ Run this audit when: the founder has existing content to review, the founder say
 
 **Remedy:** Ruthlessly narrow. One platform for 90 days. Build consistent presence. Add a second only when the first is sustainable.
 
-**Research grounding:** `research/external/2026-05-20-bluesky-vs-threads-founders.md`, `research/external/2026-05-20-platform-algorithm-comparison.md`
+**Research grounding:** `research/external/2026-05-20-bluesky-vs-threads-founders.md`, `research/external/2026-05-20-platform-algorithm-comparison.md` (source-repository research, not shipped)
 
 ---
 
@@ -136,4 +136,4 @@ Run this audit when: the founder has existing content to review, the founder say
 
 **Remedy:** 15-20 minutes/day replying to peer posts in your niche. Reply to every comment on your own posts within the first hour. See `guides/08-engagement-strategy.md` for the practical implementation.
 
-**Research grounding:** `research/external/2026-05-20-indie-hacker-x-strategy.md`, `research/external/2026-05-20-build-in-public-x-playbook.md`
+**Research grounding:** `research/external/2026-05-20-indie-hacker-x-strategy.md`, `research/external/2026-05-20-build-in-public-x-playbook.md` (source-repository research, not shipped)

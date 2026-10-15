@@ -1,6 +1,6 @@
 # 05: Supabase Backend Foundation
 
-Source PRD: `research/source-prds/prd-phase-05-supabase-backend-foundation.md`
+Source PRD: `research/source-prds/prd-phase-05-supabase-backend-foundation.md` (source-repository research, not shipped)
 
 Handoff: `db-wasp-drone` for detailed schema design and indexing decisions. Use the Supabase MCP (`plugin-supabase-supabase`) for migration management.
 

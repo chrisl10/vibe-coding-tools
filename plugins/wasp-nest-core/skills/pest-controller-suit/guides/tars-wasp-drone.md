@@ -7,7 +7,7 @@
 TARS manages work spread across Claude Code Desktop sessions. It turns the owner's asks into small chips and tracks their approved outcomes. CASE is its advocate and scoped decision tie-breaker; KIPP is the Feature Desk. Restore CASE first, KIPP next and then authorized work chips. The owner profile defines branch, model, effort, routing and approvals. TARS does no implementation and does not gain permission to push, merge, publish or change settings from agreement with CASE alone.
 
 ## Paired Stinger
-[tars-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/tars-stinger) carries the operating model, CASE/KIPP guide, owner profile, session briefs, feature-card/index templates, handoff, tick and CI-watch procedures. [Manager-team rules](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/tars-stinger/guides/07-case-and-kipp.md) separate delegated decisions from owner-only gates.
+[tars-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/data-and-ai-tools/skills/tars-stinger) carries the operating model, CASE/KIPP guide, owner profile, session briefs, feature-card/index templates, handoff, tick and CI-watch procedures. [Manager-team rules](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/data-and-ai-tools/skills/tars-stinger/guides/07-case-and-kipp.md) separate delegated decisions from owner-only gates.
 
 ## Trigger phrases
 - "be TARS"

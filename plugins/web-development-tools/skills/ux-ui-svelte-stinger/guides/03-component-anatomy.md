@@ -4,8 +4,8 @@
 > once (via Button), recognize it everywhere. This guide is the model-training
 > reference for what copy-in source looks like and how to read/edit it.
 
-**Research:** `../research/shadcn-svelte-button-component.md` (the canonical
-worked example), `../research/shadcn-svelte-tailwind-v4-migration.md` (the
+**Research:** `../research/shadcn-svelte-button-component.md` (source-repository research, not shipped) (the canonical
+worked example), `../research/shadcn-svelte-tailwind-v4-migration.md` (source-repository research, not shipped) (the
 v4 conventions).
 
 ## The four universal patterns
@@ -16,7 +16,7 @@ registry) or someone edited it incorrectly.
 
 ### Pattern 1: `tailwind-variants` (`tv`) is the variant engine
 
-From `../research/shadcn-svelte-button-component.md`: shadcn-svelte uses
+From `../research/shadcn-svelte-button-component.md` (source-repository research, not shipped): shadcn-svelte uses
 `tailwind-variants` where React shadcn uses `class-variance-authority` (CVA).
 The variant factory lives in a `<script module>` block:
 

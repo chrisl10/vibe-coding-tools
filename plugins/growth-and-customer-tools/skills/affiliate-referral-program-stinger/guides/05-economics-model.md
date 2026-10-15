@@ -1,6 +1,6 @@
 # Economics Model: EPC, LTV Payback, Break-Even Formula, and Benchmarks
 
-*Grounded in: `research/external/2026-05-20-rewardful-state-of-saas-affiliate-programs-report.md`*
+*Grounded in: `research/external/2026-05-20-rewardful-state-of-saas-affiliate-programs-report.md` (source-repository research, not shipped)*
 
 ## Why model before setting a commission rate
 

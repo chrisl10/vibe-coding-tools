@@ -58,8 +58,8 @@ own binding requirement, not a fully-sourced pattern in its own right.
    formatted red if the 8 weights no longer sum to 100 - a visible integrity check, the same
    discipline [raw/portfoliohub-io-blog-project-prioritization-template.md] recommends
    ("weight-check formula... doubles as a visible integrity check"). The rollup formulas will
-   still compute a mathematically valid answer even if the check goes red (the `/SUM(weights)`
-   divisor is self-correcting, per `01-rollup-procedure.md` section 2), but a red check means
+   still compute a mathematically valid answer even if the check goes red (the masked
+   weight-sum divisor is self-correcting, per `01-rollup-procedure.md` sections 2-4), but a red check means
    the weights no longer literally match the PRD's stated 100%-summing table, which should be
    a deliberate choice, not an accident.
 5. Every formula that reads this category's weight - the final SUMPRODUCT on

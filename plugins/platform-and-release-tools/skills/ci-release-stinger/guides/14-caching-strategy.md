@@ -21,7 +21,7 @@ Default: `actions/setup-node`'s built-in `cache: pnpm` input - lowest-maintenanc
 
 ## Playwright browser caching: fresh installation is the default
 
-Official Playwright docs recommend against browser-binary caching because restoration can take comparable time and OS dependencies still need installation. Start with fresh browser installation. Adopt the historical illustrative cache pattern below only when target-specific cold/hit/miss measurements support it and security boundaries remain intact. Prior community claims do not establish this target's savings. Source: [October Playwright capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/ci-release-stinger/references/research/ci-efficiency-2026-10-07/raw/playwright-ci.html), [guide 17](17-reduce-ci-work-with-proof.md). Example action tags must be replaced by verified full SHAs.
+Official Playwright docs recommend against browser-binary caching because restoration can take comparable time and OS dependencies still need installation. Start with fresh browser installation. Adopt the historical illustrative cache pattern below only when target-specific cold/hit/miss measurements support it and security boundaries remain intact. Prior community claims do not establish this target's savings. Source: October Playwright capture, [guide 17](17-reduce-ci-work-with-proof.md). Example action tags must be replaced by verified full SHAs.
 
 ```yaml
 - name: Get Playwright version
@@ -47,7 +47,7 @@ Key on the **Playwright version**, not the lockfile hash - a version bump should
 
 ## Turborepo remote cache (archived for future use - not applicable today)
 
-This source repository distributes components. Determine whether the target repository actually uses Turborepo before applying this material. For a qualifying target, the documented path is Vercel Remote Cache via OIDC (`vercel/setup-turborepo-remote-cache-action`, requires `permissions: id-token: write`), preferred over a long-lived Personal Access Token. Only task **outputs** are cached remotely, never source. Full detail: `references/research/raw/turborepo-remote-cache-github-actions.md`. Do not present this section's guidance as an immediate requirement for the current single-app layout.
+This source repository distributes components. Determine whether the target repository actually uses Turborepo before applying this material. For a qualifying target, the documented path is Vercel Remote Cache via OIDC (`vercel/setup-turborepo-remote-cache-action`, requires `permissions: id-token: write`), preferred over a long-lived Personal Access Token. Only task **outputs** are cached remotely, never source. Full detail: `references/research/raw/turborepo-remote-cache-github-actions.md` (source-repository research, not shipped). Do not present this section's guidance as an immediate requirement for the current single-app layout.
 
 ## Severity framing
 

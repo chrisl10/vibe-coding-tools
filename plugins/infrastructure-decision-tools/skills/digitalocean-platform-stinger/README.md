@@ -2,7 +2,7 @@
 
 This specialist recommends a DigitalOcean service topology from a supplied workload and operator capacity. Runtime is read-only research and advice. It does not provision DigitalOcean.
 
-Read [intake](guides/01-normalize-workload.md), [selection](guides/02-select-topology.md), and [cost/readiness handoff](guides/03-cost-and-readiness-handoff.md). Use the [worksheet](references/templates/topology-cost-readiness.md), [responsibility map](references/service-responsibilities.md), [fictional example](references/examples/fictional-fit.md), [negative cases](references/examples/negative-cases.md), [digest](references/research/distilled-digitalocean.md) and [source ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/infrastructure-decision-tools/skills/digitalocean-platform-stinger/references/research/source-ledger.json).
+Read [intake](guides/01-normalize-workload.md), [selection](guides/02-select-topology.md), and [cost/readiness handoff](guides/03-cost-and-readiness-handoff.md). Use the [worksheet](references/templates/topology-cost-readiness.md), [responsibility map](references/service-responsibilities.md), [fictional example](references/examples/fictional-fit.md), [negative cases](references/examples/negative-cases.md), [digest](references/research/distilled-digitalocean.md) and source ledger.
 
 ## Related owners and host support
 

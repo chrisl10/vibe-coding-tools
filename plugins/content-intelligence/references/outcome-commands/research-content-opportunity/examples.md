@@ -4,7 +4,7 @@
 
 Request: Find a repository topic for today using a supplied duplicate ledger.
 
-Expected: Verify a current spike, choose and vet one candidate, preserve exact receipts, and load the separate voice skill before voice-specific drafts.
+Expected: Verify a current spike, choose and vet one candidate, preserve exact receipts, and load the user's configured voice skill (from the preferences file) before voice-specific drafts; with none configured, label drafts as neutral voice.
 
 ## Boundary case
 

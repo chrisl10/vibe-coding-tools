@@ -3,7 +3,7 @@
 
 > Historical May 2026 guidance. For current build, privacy and payment readiness use [guide 06](06-prepare-artifact-privacy-and-entitlement-evidence.md) and its October primary archive. Do not treat legacy numeric ASO claims, blanket regional restrictions or Billing 7 examples as current submission policy.
 
-*Source: `research/external/2026-05-20-app-store-review-times-2026.md`, `research/external/2026-05-20-eu-dma-app-store-compliance-2026.md`*
+*Source: `research/external/2026-05-20-app-store-review-times-2026.md`, `research/external/2026-05-20-eu-dma-app-store-compliance-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -98,7 +98,7 @@ Expedited review is a real escalation path, but treat it as a scarce resource.
 2. Fill in: app name, App Store Connect link, version, reason for urgency, impact if delayed
 3. Apple's response is typically within 24 hours (approval or denial)
 
-**2026 reality:** Approval rate is down significantly. Research documents ~30% approval rate in 2026 vs ~55% in previous years. Use expedited review only when truly critical. See `research/external/2026-05-20-app-store-review-times-2026.md`.
+**2026 reality:** Approval rate is down significantly. Research documents ~30% approval rate in 2026 vs ~55% in previous years. Use expedited review only when truly critical. See `research/external/2026-05-20-app-store-review-times-2026.md` (source-repository research, not shipped).
 
 > **TODO: open question**: The "twice a year" hard limit for expedited review is cited in community sources but not confirmed in Apple's documentation, which says only "extenuating circumstances." Treat expedited review as effectively rate-limited regardless of the exact cap. (See `research/research-summary.md` open question #2.)
 

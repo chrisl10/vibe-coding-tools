@@ -1,6 +1,6 @@
 # Guide 7: Neon integration and preview branching
 
-Grounded in `references/research/distilled-vercel.md` §11, `references/research/raw/vercel--neon--integration-guide.md`.
+Grounded in `references/research/distilled-vercel.md` §11, `references/research/raw/vercel--neon--integration-guide.md` (source-repository research, not shipped).
 
 ## When to walk this guide
 

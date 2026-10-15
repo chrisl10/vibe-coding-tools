@@ -1,6 +1,6 @@
 # Alternative: managed / serverless vector services (Pinecone-style)
 
-Labeled alternative, not this repo's default. Reach for this guide only after the selection matrix (`00-selection-matrix.md`) points here: a team that wants vector search infrastructure owned entirely by a vendor. Sourced from `references/research/raw/devto--pgvector-vs-pinecone-vs-qdrant-when-dedicated-vector-db-worth-it.md` and `references/research/raw/kalviumlabs--vector-databases-compared-pgvector-pinecone-qdrant-weaviate-2026.md`. Pinecone is the reference example; the tradeoffs below generalize to any fully managed, closed-source, API-only vector database.
+Labeled alternative, not this repo's default. Reach for this guide only after the selection matrix (`00-selection-matrix.md`) points here: a team that wants vector search infrastructure owned entirely by a vendor. Sourced from `references/research/raw/devto--pgvector-vs-pinecone-vs-qdrant-when-dedicated-vector-db-worth-it.md` and `references/research/raw/kalviumlabs--vector-databases-compared-pgvector-pinecone-qdrant-weaviate-2026.md` (source-repository research, not shipped). Pinecone is the reference example; the tradeoffs below generalize to any fully managed, closed-source, API-only vector database.
 
 ## What it is
 

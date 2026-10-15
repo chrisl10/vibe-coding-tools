@@ -2,6 +2,7 @@
 name: "source-command-assess-product-risk"
 description: "Assess product assumptions, operational/security exposure and unresolved variables before a build decision."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-assess-product-risk

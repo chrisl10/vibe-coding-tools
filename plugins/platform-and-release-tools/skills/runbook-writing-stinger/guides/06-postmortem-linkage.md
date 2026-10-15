@@ -1,6 +1,6 @@
 # Postmortem-to-Runbook Linkage
 
-> **Research source:** `research/external/2026-03-29-devopsil-blameless-postmortems.md`, `research/external/2026-03-13-incidentio-postmortem-best-practices.md`
+> **Research source:** `research/external/2026-03-29-devopsil-blameless-postmortems.md`, `research/external/2026-03-13-incidentio-postmortem-best-practices.md` (source-repository research, not shipped)
 > **Principle:** `guides/00-principles.md` (closes the feedback loop between incidents and runbooks)
 
 The runbook-to-postmortem relationship is a closed loop: runbooks prevent incidents; postmortems improve runbooks. This guide covers how to link postmortems to runbooks, how to create runbook action items from postmortem findings, and how to track the loop to completion.
@@ -25,7 +25,7 @@ Updated runbook exercised in game day
 Runbook prevents next incident (or reduces MTTR)
 ```
 
-**Source:** The Good Shell (2026-04-22) names "Postmortem action item completion rate (runbook-related)" as the primary KPI for runbook program health. See `research/external/2026-04-22-thegoodshell-incident-runbook-template.md`.
+**Source:** The Good Shell (2026-04-22) names "Postmortem action item completion rate (runbook-related)" as the primary KPI for runbook program health. See `research/external/2026-04-22-thegoodshell-incident-runbook-template.md` (source-repository research, not shipped).
 
 ---
 
@@ -63,7 +63,7 @@ This is the correct format. Every runbook-related postmortem action item must ha
 
 Action items that lack any of these four attributes do not close the loop. They become technical debt.
 
-**Source:** `research/external/2026-03-29-devopsil-blameless-postmortems.md`.
+**Source:** `research/external/2026-03-29-devopsil-blameless-postmortems.md` (source-repository research, not shipped).
 
 ---
 
@@ -79,7 +79,7 @@ Postmortem action items map to three leverage categories. The category determine
 
 Most postmortem action items that create new runbooks are in the Mitigation category.
 
-**Source:** DevOpsil (2026-03-29) uses this three-category classification. See `research/external/2026-03-29-devopsil-blameless-postmortems.md`.
+**Source:** DevOpsil (2026-03-29) uses this three-category classification. See `research/external/2026-03-29-devopsil-blameless-postmortems.md` (source-repository research, not shipped).
 
 ---
 

@@ -50,4 +50,4 @@ The full security audit (secret scanning across history, injection-vector review
 ## Sources
 
 - `src/utils/sql.ts` (`sqlStr`, `sqlLike`, `sqlIdent`), `src/deeplake-api.ts` (auth headers), `src/config.ts` / `src/user-config.ts`.
-- `research/2026-06-16-deeplake-sql-api.md`.
+- `research/2026-06-16-deeplake-sql-api.md` (source-repository research, not shipped).

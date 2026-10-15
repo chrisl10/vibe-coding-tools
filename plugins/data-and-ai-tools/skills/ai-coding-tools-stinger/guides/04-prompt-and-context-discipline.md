@@ -1,6 +1,6 @@
 # Guide 04: Prompt and Context Discipline: Per-Tool Best Practices
 
-*Sources: `research/external/2026-05-20-claude-code-best-practices.md`, `research/external/2026-05-20-aider-llm-leaderboard.md`, `research/external/2026-05-20-bolt-new-webcontainer.md`*
+*Sources: `research/external/2026-05-20-claude-code-best-practices.md`, `research/external/2026-05-20-aider-llm-leaderboard.md`, `research/external/2026-05-20-bolt-new-webcontainer.md` (source-repository research, not shipped)*
 
 ---
 
@@ -43,7 +43,7 @@ Every tool's performance degrades when context is bloated or poorly structured. 
 
 Keep CLAUDE.md under 150 lines. Longer files dilute the signal; Claude reads the whole file on every interaction.
 
-Source: `research/external/2026-05-20-claude-code-best-practices.md`
+Source: `research/external/2026-05-20-claude-code-best-practices.md` (source-repository research, not shipped)
 
 ### Explore-Plan-Code workflow
 
@@ -81,7 +81,7 @@ read:                   # Additional files always in context
 show-diffs: true        # Always show diffs before applying
 ```
 
-Source: `research/external/2026-05-20-aider-llm-leaderboard.md`
+Source: `research/external/2026-05-20-aider-llm-leaderboard.md` (source-repository research, not shipped)
 
 ### Context discipline for Aider
 
@@ -155,7 +155,7 @@ Constraints:
 
 **After scaffold:** Bolt is not the right tool for incremental feature work on a complex codebase. If the scaffold is sound, move the code to a proper IDE tool (Cursor, Claude Code, Aider) for ongoing development. See `guides/05-footguns.md` for Bolt WebContainer limits.
 
-Source: `research/external/2026-05-20-bolt-new-webcontainer.md`
+Source: `research/external/2026-05-20-bolt-new-webcontainer.md` (source-repository research, not shipped)
 
 ---
 

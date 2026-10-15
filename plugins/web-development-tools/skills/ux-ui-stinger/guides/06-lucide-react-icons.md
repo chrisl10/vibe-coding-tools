@@ -2,7 +2,7 @@
 
 Lucide-react is the default icon library. Clean, consistent, stroke-based, tree-shakeable. Every Lucide icon is a 24×24 SVG with default `strokeWidth={2}`.
 
-Research: `research/2026-04-24-lucide-react-icons.md`.
+Research: `research/2026-04-24-lucide-react-icons.md` (source-repository research, not shipped).
 
 ## The Icon wrapper
 

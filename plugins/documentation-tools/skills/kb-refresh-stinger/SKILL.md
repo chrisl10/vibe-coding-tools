@@ -19,7 +19,7 @@ Turns a stale or thin `library/` into a current, receipt-carrying documentation 
 
 This capability belongs to `documentation-tools`. Keep Core installed and resolve `kb-refresh-stinger` through Core with the declared workflow key `kb-refresh full repository discovery` before a full refresh. That workflow also needs `code-audit-tools` for Swarm discovery. The repository's `refresh-repository-knowledge` installation profile selects all three packages.
 
-The resolver reads `~/.wasp-nest/installed-plugins.json`, checks matching versions and refuses missing owners or dependencies. Native marketplace installation is not proven to populate the registry. See the [layout guide](../../../../docs/PLUGIN-LAYOUT.md) for the required setup. Claude Code's native command is `/documentation-tools:kb-refresh`; a home installation also copies the flat command and generated command-wrapper skill. Use the host's actual skill or agent surface when native dispatch is unavailable.
+The resolver reads `~/.wasp-nest/installed-plugins.json`, checks matching versions and refuses missing owners or dependencies. After a Claude Code marketplace install the resolver falls back to Claude's own `~/.claude/plugins/installed_plugins.json`; other native marketplace installs are not proven to populate the registry. See the [layout guide](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/learn/reference/PLUGIN-LAYOUT.md) for the required setup. Claude Code's native command is `/documentation-tools:kb-refresh`; a home installation also copies the flat command and generated command-wrapper skill. Use the host's actual skill or agent surface when native dispatch is unavailable.
 
 ## When to use
 
@@ -62,7 +62,7 @@ The resolver reads `~/.wasp-nest/installed-plugins.json`, checks matching versio
 - `references/report-spec.md`, load when: writing the final work report or rendering the PDF. Contains the report structure, the HTML print-sheet recipe, and the exact Chrome command.
 - `references/ops-notes.md`, load when: pausing, resuming, or amending a running fleet, or when the provider throttles or caps.
 - `references/research/distilled-kb-refresh.md`, load when: a process claim needs its evidence or the reference run's numbers are needed; every statement cites a raw file.
-- `references/research/raw/`, load when: tracing a distilled claim to the archived handoff, scripts, gate summaries, and run statistics it came from.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - [Freshness and missing proof guide](guides/05-track-freshness-and-missing-proof.md), load when: deciding which material claims need refresh and what remains unsupported.
 - [Claim receipt worksheet](references/templates/documentation-freshness-receipts.md), load when: recording exact source pins, re-opens, proof types and unchecked coverage.
 - [Synthetic freshness examples](references/examples/documentation-freshness/worked-receipts.md), load when: distinguishing changed definitions, moved locators, missing receipts, historical formats and unresolved contradictions.
@@ -92,3 +92,5 @@ The resolver reads `~/.wasp-nest/installed-plugins.json`, checks matching versio
 Prior to committing any code to the repository you must utilize in order the security-stinger, quality-stinger, and github-repo-health-stinger. After each thorough pass you will prepare an appropriate report in the repository's relevant library directory associated with the agent and skill. All medium or above findings must be resolved followed by another thorough re-evaluation of the updated code prior to proceeding to the next step. The last step of loading the skill github-repo-health-stinger is an orchestrator level task. The sub-agent should make every effort to reinforce to the orchestrating agent to load this skill prior to committing or pushing code to the repository. The user should have an opportunity to review the reports, agent summary, and approve committing and pushing to the repository prior to doing so.
 
 In this pipeline the first two gates run per unit during step 3 (security, then quality, each with fix and recheck), and github-repo-health-stinger runs at orchestrator level once, before the final push wave. Nothing is committed or pushed without the owner reviewing the reports and giving the explicit yes.
+
+The kb-refresh Drone is research-only and carries no Ship Gate of its own. This gate belongs to the orchestrator that runs the pipeline and ships the unit PRs, and it applies to the documentation commits and PRs that step produces.

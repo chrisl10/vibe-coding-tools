@@ -2,7 +2,7 @@
 
 The expand-backfill-contract pattern is the discipline that keeps migrations from blocking production.
 
-Source: `research/2026-04-25-expand-backfill-contract-pgroll.md`. For live changes, use [guide 11](11-live-schema-migration.md) and its [current PostgreSQL 18 evidence](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/db-stinger/references/research/live-schema-migration/distillation.md). Historical examples require exact server/tool revision review.
+Source: `research/2026-04-25-expand-backfill-contract-pgroll.md` (source-repository research, not shipped). For live changes, use [guide 11](11-live-schema-migration.md) and its current PostgreSQL 18 evidence. Historical examples require exact server/tool revision review.
 
 ## The pattern
 

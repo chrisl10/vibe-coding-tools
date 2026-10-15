@@ -2,7 +2,7 @@
 
 Choosing the right cap-table platform before there is data to migrate is the highest-leverage decision in this domain. Re-migration is painful, time-consuming, and error-prone. Get it right the first time.
 
-Source: [`research/external/2026-05-20-carta-vs-pulley-vs-angellist-platform-comparison.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/external/2026-05-20-carta-vs-pulley-vs-angellist-platform-comparison.md), [`research/external/2026-05-20-cake-equity-vs-capdesk-international.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/external/2026-05-20-cake-equity-vs-capdesk-international.md)
+Source: `research/external/2026-05-20-carta-vs-pulley-vs-angellist-platform-comparison.md`, `research/external/2026-05-20-cake-equity-vs-capdesk-international.md` (source-repository research, not shipped)
 
 ---
 

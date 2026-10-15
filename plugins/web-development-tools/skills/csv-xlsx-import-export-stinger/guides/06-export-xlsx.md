@@ -2,7 +2,7 @@
 
 Server-side XLSX generation with styled headers, freeze pane, and the WorkbookWriter memory-leak workaround.
 
-*Derived from `research/external/2026-05-20-exceljs-github-readme.md`, `research/libraries/2026-05-20-exceljs-streaming-api.md`, `research/external/2026-05-20-sheetjs-vs-exceljs-comparison.md`.*
+*Derived from `research/external/2026-05-20-exceljs-github-readme.md`, `research/libraries/2026-05-20-exceljs-streaming-api.md`, `research/external/2026-05-20-sheetjs-vs-exceljs-comparison.md` (source-repository research, not shipped).*
 
 ---
 

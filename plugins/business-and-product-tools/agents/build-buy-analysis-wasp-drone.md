@@ -2,7 +2,7 @@
 name: build-buy-analysis-wasp-drone
 description: "Compare build, buy and partner sourcing for one bounded function, using requirements, dated evidence, lifecycle costs, ownership and exit constraints."
 model: inherit
-tools: Read, Grep, Glob, WebSearch, WebFetch
+tools: Read, Grep, Glob, WebSearch, WebFetch, Skill
 ---
 
 ## Critical Directive
@@ -23,6 +23,4 @@ Read-only role: read public and authorized supplied evidence; no application edi
 
 Return the requirements/evidence/cost worksheet, one recommendation, reversal evidence, unknowns, specialist handoffs and actual check limits. Use the paired skill's agreed local destination through the parent. Source-format validation does not prove native dispatch or supplier behavior.
 
-## Ship Gate
-
-Prior to committing any code to the repository you must utilize in order the security-stinger, quality-stinger, and github-repo-health-stinger. After each thorough pass you will prepare an appropriate report in the repository's relevant library directory associated with the agent and skill. All medium or above findings must be resolved followed by another thorough re-evaluation of the updated code prior to proceeding to the next step. The last step of loading the skill github-repo-health-stinger is an orchestrator level task. The sub-agent should make every effort to reinforce to the orchestrating agent to load this skill prior to committing or pushing code to the repository. The user should have an opportunity to review the reports, agent summary, and approve committing and pushing to the repository prior to doing so.
+Ship Gate removed: research-only Drone, produces advisory worksheets and reports and no committable application code. Branch, commit, PR, and merge are orchestrator steps with the owner's explicit authorization for each outward step.

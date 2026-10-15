@@ -69,14 +69,14 @@ Never label `DRAFT_WITH_GAPS` content as send-ready.
 - `references/templates/hot-lead-sequence.md` - complete H0 through H4 reusable sequence.
 - `references/templates/warm-lead-sequence.md` - complete W0 through W4 reusable sequence.
 - `references/research/distilled-lifecycle-email.md` - cited current research and evidence limits.
-- `references/research/raw/` - source-level provenance, including outside-window Google and FTC constraints.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 
 ## Related drones and stingers
 
 - [lifecycle-email-wasp-drone](../../agents/lifecycle-email-wasp-drone.md) - paired specialist for executing this workflow.
 - `support-response-stinger` (external skill, not bundled here) - provider-side support ticket follow-up and white-label technical responses.
 - `gohighlevel-stinger` in the optional `highlevel` pack - HighLevel API, workflow, webhook, and platform implementation.
-- [technical-writing-craft-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/technical-writing-craft-stinger) - deeper prose and documentation-quality review.
+- [technical-writing-craft-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/technical-writing-craft-stinger) - deeper prose and documentation-quality review.
 
 ## Critical Directive
 
@@ -85,6 +85,6 @@ Never label `DRAFT_WITH_GAPS` content as send-ready.
 - Additional related skills can be found here:
   - `support-response-stinger` (external skill, not bundled here) - Provider-side support ticket response and follow-up emails.
   - `gohighlevel-stinger` in the optional `highlevel` pack - HighLevel platform implementation and integration work.
-  - [technical-writing-craft-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/technical-writing-craft-stinger) - Technical writing quality and reader-focused revision.
+  - [technical-writing-craft-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/technical-writing-craft-stinger) - Technical writing quality and reader-focused revision.
 
 <!-- Ship Gate removed: research-only stinger, produces no committable code. -->

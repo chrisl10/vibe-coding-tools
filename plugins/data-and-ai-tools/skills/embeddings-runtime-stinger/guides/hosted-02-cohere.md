@@ -1,6 +1,6 @@
 # Hosted provider: Cohere embed-v3 / embed-v4
 
-Grounded in `references/research/raw/cohere--embed-api-v2-reference.md`.
+Grounded in `references/research/raw/cohere--embed-api-v2-reference.md` (source-repository research, not shipped).
 
 ## The one rule that matters: `input_type` discipline
 

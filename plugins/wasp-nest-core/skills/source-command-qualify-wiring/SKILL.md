@@ -2,6 +2,7 @@
 name: "source-command-qualify-wiring"
 description: "Qualify source, generated carriers, selected owners and native proof for skill, agent, command or plugin wiring using existing Wasp Nest tools."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-qualify-wiring

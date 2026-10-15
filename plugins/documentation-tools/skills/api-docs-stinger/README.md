@@ -11,4 +11,4 @@ Read `SKILL.md` first for the master index and tool comparison tables. Then foll
 
 ## Reusable SDK qualification
 
-Start with [guide 07](guides/07-qualify-reusable-sdk.md) for a stable API SDK. Fill the [contract packet](templates/sdk-contract-qualification.md), compare [worked consumer decisions](examples/sdk-consumer-contracts.md), and trace claims through the [2026-10-07 source digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/skills/api-docs-stinger/references/research/sdk-contracts/digest.md). The local synthetic exercise proves only its injected request/response cases. Parent Security and Quality review remain required for source promotion.
+Start with [guide 07](guides/07-qualify-reusable-sdk.md) for a stable API SDK. Fill the [contract packet](templates/sdk-contract-qualification.md), compare [worked consumer decisions](examples/sdk-consumer-contracts.md), and trace claims through the 2026-10-07 source digest. The local synthetic exercise proves only its injected request/response cases. Parent Security and Quality review remain required for source promotion.

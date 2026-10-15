@@ -1,6 +1,6 @@
 # Audit command coverage for selected packs
 
-Use for O299. Load [the digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/harness-integration-stinger/references/research/pack-hook-proof/distilled-pack-hook-proof.md) and fill [the coverage matrix](../templates/selected-command-coverage.md).
+Use for O299. Load the digest and fill [the coverage matrix](../templates/selected-command-coverage.md).
 
 1. Identify target task, host version and actual carrier. Record trusted Core root and explicit selected registry observation. A marketplace install, directory cache or source catalog is a separate layer. Never crawl cached siblings into the selection.
 2. For each selected owner, enumerate its live catalog commands, components and role classifications. Verify flat command file and required resources. Resolve each command with kind=command and each active workflow's exact prerequisite key. A command-only composition or standalone skill can be legitimate without native agents.

@@ -1,6 +1,6 @@
 # 05: Error Handling
 
-Source: `research/2026-04-24-bulletproof-react-error-handling-security.md`.
+Source: `research/2026-04-24-bulletproof-react-error-handling-security.md` (source-repository research, not shipped).
 
 ## The pillar
 

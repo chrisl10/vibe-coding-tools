@@ -2,7 +2,7 @@
 
 The Simple Agreement for Future Equity (SAFE) is the dominant pre-priced-round fundraising instrument for US startups. This guide covers the post-money YC SAFE -- the only version to use by default.
 
-Source: [`research/external/2026-05-20-pre-money-vs-post-money-safe-mechanics.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/external/2026-05-20-pre-money-vs-post-money-safe-mechanics.md), [`research/external/2026-05-20-yc-safe-post-money-standard.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/external/2026-05-20-yc-safe-post-money-standard.md), [`research/external/2026-05-20-safe-conversion-priced-round-yc.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/external/2026-05-20-safe-conversion-priced-round-yc.md)
+Source: `research/external/2026-05-20-pre-money-vs-post-money-safe-mechanics.md`, `research/external/2026-05-20-yc-safe-post-money-standard.md`, `research/external/2026-05-20-safe-conversion-priced-round-yc.md` (source-repository research, not shipped)
 
 ---
 

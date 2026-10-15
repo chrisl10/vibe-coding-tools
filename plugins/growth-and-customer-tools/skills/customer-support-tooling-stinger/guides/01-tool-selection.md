@@ -2,17 +2,17 @@
 guide: 01-tool-selection
 stinger: customer-support-tooling-stinger
 research_sources:
-  - research/external/2026-05-20-tool-comparison-matrix.md
-  - research/external/2026-05-20-plain-docs-overview.md
-  - research/external/2026-05-20-pylon-positioning.md
-  - research/external/2026-05-20-helpscout-pricing-pivot.md
-  - research/external/2026-05-20-front-shared-inbox.md
-  - research/external/2026-05-20-intercom-fin-ai.md
+  - research/external/2026-05-20-tool-comparison-matrix.md  # source-repository research, not shipped
+  - research/external/2026-05-20-plain-docs-overview.md  # source-repository research, not shipped
+  - research/external/2026-05-20-pylon-positioning.md  # source-repository research, not shipped
+  - research/external/2026-05-20-helpscout-pricing-pivot.md  # source-repository research, not shipped
+  - research/external/2026-05-20-front-shared-inbox.md  # source-repository research, not shipped
+  - research/external/2026-05-20-intercom-fin-ai.md  # source-repository research, not shipped
 ---
 
 # Tool Selection — Comparison Matrix and Decision Tree
 
-Source: `research/external/2026-05-20-tool-comparison-matrix.md`
+Source: `research/external/2026-05-20-tool-comparison-matrix.md` (source-repository research, not shipped)
 
 ## Pre-selection questions (always ask before recommending)
 
@@ -79,6 +79,6 @@ Score each tool 1-5 on:
 
 ## Price model traps to flag
 
-- **Help Scout:** Contact-based pricing since 2025 — evaluate total contact database size, not agent count. Source: `research/external/2026-05-20-helpscout-pricing-pivot.md`.
-- **Intercom:** Seat license PLUS $0.99/Fin-resolved conversation. At high deflection volumes, Fin adds $5-10K/month. Source: `research/external/2026-05-20-intercom-fin-ai.md`.
+- **Help Scout:** Contact-based pricing since 2025 — evaluate total contact database size, not agent count. Source: `research/external/2026-05-20-helpscout-pricing-pivot.md` (source-repository research, not shipped).
+- **Intercom:** Seat license PLUS $0.99/Fin-resolved conversation. At high deflection volumes, Fin adds $5-10K/month. Source: `research/external/2026-05-20-intercom-fin-ai.md` (source-repository research, not shipped).
 - **Plain enterprise:** Pro plan pricing for > 20 agents requires a sales call; no public rate card.

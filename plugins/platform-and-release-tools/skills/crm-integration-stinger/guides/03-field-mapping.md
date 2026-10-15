@@ -81,5 +81,5 @@ Some fields in the product don't map 1:1 to a CRM field. Document these separate
 
 ---
 
-*Sources: `research/external/2026-05-20-hubspot-api-rate-limits-webhooks.md`, `research/external/2026-05-20-salesforce-data-model-lead-contact-lifecycle.md`, `research/external/2026-05-20-attio-api-v2-rate-limits-stability.md`*
+*Sources: `research/external/2026-05-20-hubspot-api-rate-limits-webhooks.md`, `research/external/2026-05-20-salesforce-data-model-lead-contact-lifecycle.md`, `research/external/2026-05-20-attio-api-v2-rate-limits-stability.md` (source-repository research, not shipped)*
 *Demonstrates: `examples/hubspot-bidirectional-sync.md` (field mapping section)*

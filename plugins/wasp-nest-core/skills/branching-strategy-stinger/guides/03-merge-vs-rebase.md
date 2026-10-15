@@ -1,6 +1,6 @@
 # Merge vs Rebase: When Each Applies
 
-**Research sources:** `research/external/2026-02-17-release-branch-pattern-azure-devops.md` (merge method types, Azure official docs), `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md` (squash-merge as the modern default).
+**Research sources:** `research/external/2026-02-17-release-branch-pattern-azure-devops.md` (merge method types, Azure official docs), `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md` (source-repository research, not shipped) (squash-merge as the modern default).
 
 > TODO: open question - merge-vs-rebase guide sourcing. The current research corpus covers merge method types tangentially. A targeted search for "git squash merge vs rebase bisect impact 2026" would strengthen this guide's factual basis. (`research/research-summary.md` open question 3)
 
@@ -22,7 +22,7 @@
 - If a feature branch has 50 commits, bisecting into those commits later is impossible from `main`.
 - Acceptable for most features; not acceptable for large algorithmic changes where blame at line level inside the feature matters.
 
-**GitHub Flow standard:** "squash merges into main" is the mode that the 2026 research corpus identifies as the most common practice among SaaS teams. (Source: `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md`)
+**GitHub Flow standard:** "squash merges into main" is the mode that the 2026 research corpus identifies as the most common practice among SaaS teams. (Source: `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md` [source-repository research, not shipped])
 
 ---
 

@@ -8,7 +8,7 @@ The non-negotiables that govern every recommendation from `blogging-content-stra
 
 ### 1. Never recommend a cadence the team cannot sustain for six months
 
-**Why:** Consistent publishing beats high-volume bursts for topical authority. Google and AI systems reward freshness within a topic cluster, not a burst of posts followed by six months of silence. The research across three cadence sources (see `research/external/2026-05-20-averi-content-planning-startups-2026.md`, `research/external/2026-05-20-incremys-content-calendar-method-2026.md`) converges on one practical limit: for a solo founder without AI writing assistance, 2-4 posts per month at adequate quality is the sustainable upper bound. Recommending six posts per month to a solo founder produces three weeks of effort and nine months of burnout.
+**Why:** Consistent publishing beats high-volume bursts for topical authority. Google and AI systems reward freshness within a topic cluster, not a burst of posts followed by six months of silence. The research across three cadence sources (see `research/external/2026-05-20-averi-content-planning-startups-2026.md`, `research/external/2026-05-20-incremys-content-calendar-method-2026.md` [source-repository research, not shipped]) converges on one practical limit: for a solo founder without AI writing assistance, 2-4 posts per month at adequate quality is the sustainable upper bound. Recommending six posts per month to a solo founder produces three weeks of effort and nine months of burnout.
 
 **In practice:** Before recommending any cadence, confirm team size and weekly writing hours available. Then apply the capacity model in `guides/08-cadence-planning.md`. If the target is too high, say so explicitly and propose the sustainable alternative.
 
@@ -24,7 +24,7 @@ The non-negotiables that govern every recommendation from `blogging-content-stra
 
 ### 3. Always classify intent before recommending length
 
-**Why:** Word count is a function of what the reader came to accomplish, not a quality signal. A 350-word answer to a navigational query beats a 2,500-word essay because the reader wants one thing: the answer. The research (see `research/external/02-post-length-by-intent.md`) shows that SERP length distributions correlate with intent: informational posts that compete for AI Overviews or featured snippets are rewarded by specificity (40-60 word answer blocks, clear structure) more than raw word count.
+**Why:** Word count is a function of what the reader came to accomplish, not a quality signal. A 350-word answer to a navigational query beats a 2,500-word essay because the reader wants one thing: the answer. The research (see `research/external/02-post-length-by-intent.md` [source-repository research, not shipped]) shows that SERP length distributions correlate with intent: informational posts that compete for AI Overviews or featured snippets are rewarded by specificity (40-60 word answer blocks, clear structure) more than raw word count.
 
 **In practice:** For every post, assign an intent classification before discussing word count: informational, transactional, navigational, or commercial-investigation. Then apply the range from `guides/02-post-length-by-intent.md`. Never lead with "aim for 1,500 words" without first answering "why?"
 
@@ -32,7 +32,7 @@ The non-negotiables that govern every recommendation from `blogging-content-stra
 
 ### 4. CTA copy must answer "why now" without implying the reader owes anything
 
-**Why:** Beg-CTAs ("please subscribe," "if you enjoyed this, share it") repel precisely the high-intent reader the post is designed to attract. The research (see `research/external/2026-05-20-unbounce-cta-examples-2025.md`, `research/external/2026-05-20-automateed-blog-cta-ideas-strategies.md`) establishes that the most effective blog CTAs describe a specific outcome ("get the 10-step audit template") rather than soliciting commitment. The reader should feel they are receiving a clear offer, not granting a favor.
+**Why:** Beg-CTAs ("please subscribe," "if you enjoyed this, share it") repel precisely the high-intent reader the post is designed to attract. The research (see `research/external/2026-05-20-unbounce-cta-examples-2025.md`, `research/external/2026-05-20-automateed-blog-cta-ideas-strategies.md` [source-repository research, not shipped]) establishes that the most effective blog CTAs describe a specific outcome ("get the 10-step audit template") rather than soliciting commitment. The reader should feel they are receiving a clear offer, not granting a favor.
 
 **In practice:** For any CTA, apply the three-question test: (1) What specifically happens after clicking? (2) Why is this worth doing right now? (3) Does this imply the reader owes anything to the author? If question 3 is "yes," rewrite. See `guides/06-cta-rubric.md` for the full anti-beg protocol.
 
@@ -40,7 +40,7 @@ The non-negotiables that govern every recommendation from `blogging-content-stra
 
 ### 5. Run the 12-point review checklist before any post is marked publish-ready
 
-**Why:** Posts that skip the gate accumulate technical debt (missing alt text, thin internal linking, unchecked schema) that degrades domain authority over time. The research (see `research/external/2026-05-20-contentconquered-13-quality-standards-checklist.md`) shows that professional content teams apply sequential checks: content quality first, SEO second, final technical audit third. A rushed launch that saves 20 minutes costs weeks of organic authority.
+**Why:** Posts that skip the gate accumulate technical debt (missing alt text, thin internal linking, unchecked schema) that degrades domain authority over time. The research (see `research/external/2026-05-20-contentconquered-13-quality-standards-checklist.md` [source-repository research, not shipped]) shows that professional content teams apply sequential checks: content quality first, SEO second, final technical audit third. A rushed launch that saves 20 minutes costs weeks of organic authority.
 
 **In practice:** The canonical 12-point checklist is in `guides/07-pre-publish-checklist.md`. No post skips it, even for minor updates to existing posts. For updates, run only the sections relevant to the changed content.
 

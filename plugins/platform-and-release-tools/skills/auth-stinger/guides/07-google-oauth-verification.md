@@ -2,7 +2,7 @@
 
 The real-world journey. Sensitive vs restricted scopes, demo videos, security assessments, and the timeline you should plan for.
 
-Source: `research/2026-04-25-google-oauth-verification-journey.md`, https://developers.google.com/identity/protocols/oauth2/production-readiness/policy-compliance.
+Source: `research/2026-04-25-google-oauth-verification-journey.md` (source-repository research, not shipped), https://developers.google.com/identity/protocols/oauth2/production-readiness/policy-compliance.
 
 ## The verification matrix
 
@@ -39,7 +39,7 @@ Cite https://developers.google.com/identity/protocols/oauth2/policies for policy
 
 Plan accordingly. Don't promise launch dates with sensitive scopes in production-mode unless verification is already in flight.
 
-Source: `research/2026-04-25-google-oauth-verification-journey.md`, https://medium.com/@info.brightconstruct/the-real-oauth-journey-getting-a-google-workspace-add-on-verified-fc31bc4c9858.
+Source: `research/2026-04-25-google-oauth-verification-journey.md` (source-repository research, not shipped), https://medium.com/@info.brightconstruct/the-real-oauth-journey-getting-a-google-workspace-add-on-verified-fc31bc4c9858.
 
 ## The verification submission
 

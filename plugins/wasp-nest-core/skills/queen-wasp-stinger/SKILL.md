@@ -32,7 +32,7 @@ Do not use this skill for routing work to existing Drones. That is `pest-control
 
 ## Canonical source and selected installation
 
-Read the root [plugin catalog](../../../plugin-catalog.json) before authoring. Required Core lives in src; optional owners declared in the catalog live in `packs/<plugin-id>`. Choose the correct owner, preserve its prerequisites and pair classification, and update the source catalog with a new component. Core's six immutable foundation skills stay in Core.
+Read the root [plugin catalog](../../plugin-catalog.json) before authoring. Required Core lives in src; optional owners declared in the catalog live in `packs/<plugin-id>`. Choose the correct owner, preserve its prerequisites and pair classification, and update the source catalog with a new component. Core's six immutable foundation skills stay in Core.
 
 The source builder projects those files into host home trees and native plugins. Installed caches are outputs, not the forge's source. For installed dispatch, Core's resolver requires the explicit selected-plugin registry; a marketplace/UI install alone is not claimed to register optional global Codex roles.
 
@@ -51,7 +51,7 @@ The source builder projects those files into host home trees and native plugins.
 Seven stages, in order, no skipping. This is the same pipeline that built queen-wasp-stinger itself, and every component this skill forges goes through it. The stage a component is allowed to start at is the stage after the last one with verifiable artifacts on disk.
 
 1. **Topic.** Lock the domain before anything else: what the component does, when it triggers, which of the five types it is, which harnesses it must reach, and whether it is development-focused (Ship Gate) or research-only. A vague topic produces a vague component; stop and ask.
-2. **Research.** Run a fresh, time-bounded sweep (default: last 6 months, never past 12 without explicit consent) of primary sources for the component's DOMAIN. Archive raw source material into the new component's own `references/research/raw/`, one file per source, each headed with URL, fetch date, and source type. Official docs outrank vendor blogs outrank community posts. Do not author from training data; if it isn't in the archive, it isn't a fact yet. Harness FORMAT knowledge is the one exception: that research already lives in this skill's `references/research/` and does not need re-running per component.
+2. **Research.** Run a fresh, time-bounded sweep (default: last 6 months, never past 12 without explicit consent) of primary sources for the component's DOMAIN. Archive raw source material into the new component's own `references/research/raw/` (source-repository research, not shipped with the plugin), one file per source, each headed with URL, fetch date, and source type. Official docs outrank vendor blogs outrank community posts. Do not author from training data; if it isn't in the archive, it isn't a fact yet. Harness FORMAT knowledge is the one exception: that research already lives in this skill's `references/research/` and does not need re-running per component.
 3. **Distillation.** Re-ingest the raw archive fresh and write a distilled article into the component's `references/research/`: dense, tabular where possible, every claim ending with a citation to its raw file. Where sources conflict, state both readings and the preferred official one. Where research is thin, say so; never smooth a gap into a guess.
 4. **References.** Build the component's reference layer from the distillation: field tables, worked examples, reusable templates, deterministic scripts. This is the material the component loads on demand at runtime, so it earns its tokens or it goes.
 5. **Guides.** Write the procedural guides, one focused file per major verb the component performs, each grounded in the distillation and citing the raw files it derives from. Consult [guides/harness-support-matrix.md](guides/harness-support-matrix.md) and [guides/per-type-per-harness-specific-guide.md](guides/per-type-per-harness-specific-guide.md) for the format rules of every target harness; never author a harness surface from memory.
@@ -83,7 +83,7 @@ Load these on demand; do not read everything up front.
 | `references/templates/<type>/` | Starting any new component of that type |
 | `references/scripts/` | Validating or packaging any component |
 | `references/research/distilled-research-articles.md` | Verifying a harness claim or resolving a dispute |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 
 ## Quality bar
 

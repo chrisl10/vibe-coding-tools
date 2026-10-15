@@ -1,6 +1,6 @@
 # Make one scoped next decision
 
-Grounding: [research distillation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/discovery-research-stinger/references/research/demand-decision/distillation.md). This guide synthesizes pre-build discovery evidence against declared assumptions. It does not perform shipped-product analytics, infer statistical significance, write a PRD, or authorize implementation.
+Grounding: research distillation. This guide synthesizes pre-build discovery evidence against declared assumptions. It does not perform shipped-product analytics, infer statistical significance, write a PRD, or authorize implementation.
 
 1. Load the original test declaration, observation sources, assumption map, desired outcome, and current practical constraints. Check provenance, exposure/metric definitions, criteria changes, exclusions, and actual test status. A planned test has no observed result.
 2. Grade each evidence item using [evidence grades](../references/evidence-grades.md). Grade describes provenance/relationship to the claim, not confidence probability. Keep a public market statistic separate from customer behavior, and customer statements separate from observed commitments or usage. Read the referenced material before citing it.

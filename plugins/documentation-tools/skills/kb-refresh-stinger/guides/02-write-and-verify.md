@@ -5,7 +5,7 @@ The fleet stage. Writers produce grounded docs; verifiers try to break every cit
 ## Author the shard scripts
 
 1. Start from `swarm-audit-stinger`'s workflow template (`swarm-audit-stinger/references/templates/swarm-audit-workflow.js`). Keep `withRetry`, the coverage ledger, and the checkpoints. Replace the lenses and report specs with the per-unit chain below.
-2. Shard the unit list across parallel workflows when one workflow's concurrency cap would drag the wall clock. Each shard gets its own script file, its own run, and a disjoint unit slice. Reference implementation of one shard: `references/research/raw/kb-refresh--script--fleet-shard-D-2026-10-04.ts`.
+2. Shard the unit list across parallel workflows when one workflow's concurrency cap would drag the wall clock. Each shard gets its own script file, its own run, and a disjoint unit slice. Reference implementation of one shard: `references/research/raw/kb-refresh--script--fleet-shard-D-2026-10-04.ts` (source-repository research, not shipped).
 3. Width: start at the runtime cap (`min(16, CPUs - 2)` per swarm-audit's rule, and never more than 100 in-flight across every workflow). The provider may pace below that; expect run health like `concurrency=9/12 (rate_limited)`. Log the pacing; never respond to throttling by widening.
 4. Every agent ask embeds the grounding law from `references/grounding-law.md` verbatim, plus: the pinned commit, the unit's file list, the doc format (`knowledge-stinger`), the write paths, and the sus log path.
 

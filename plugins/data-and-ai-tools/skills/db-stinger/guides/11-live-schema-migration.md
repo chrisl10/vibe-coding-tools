@@ -1,6 +1,6 @@
 # 11: Preserve facts while changing a live schema
 
-Use this procedure for a live change with old and new clients. Start with the [migration packet](../templates/live-schema-migration-packet.md). The [research distillation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/db-stinger/references/research/live-schema-migration/distillation.md) establishes PostgreSQL 18 behavior and separates derived policy from server facts. The [worked cases](../examples/live-schema-cases.md) demonstrate decisions; the [SQL sketch](../examples/migration-review.sql) is unexecuted review material.
+Use this procedure for a live change with old and new clients. Start with the [migration packet](../templates/live-schema-migration-packet.md). The research distillation establishes PostgreSQL 18 behavior and separates derived policy from server facts. The [worked cases](../examples/live-schema-cases.md) demonstrate decisions; the [SQL sketch](../examples/migration-review.sql) is unexecuted review material.
 
 ## 1. Pin what exists
 

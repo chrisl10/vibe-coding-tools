@@ -104,7 +104,7 @@ After a slot change, the cache invalidation helper MUST be called from the SA ro
 
 Every retrieval query MUST include `tenant_id`, whether that query is a Qdrant point search with a payload filter or a Postgres `SELECT ... WHERE tenant_id = $1 ORDER BY embedding <=> $2` against a pgvector column. Missing `tenant_id` filtering on a query is a **security finding** (hand to `security-wasp-drone`). Per-user collections or tables were rejected at design time (memory or row overhead multiplies with user count); user isolation is via an indexed field, not a separate physical store per user.
 
-On this repo's default (Neon plus pgvector), carry `tenant_id` on both the `documents` and `chunks` tables even though it is derivable via a join: the hot retrieval query needs it directly for filtering, for a partial index or partition, and for Row-Level Security (source: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md`). On the alternative stack, the `tenant_id` payload field is belt-and-suspenders on top of tenant-scoped collection naming. See `guides/09-vector-payload-schema.md`.
+On this repo's default (Neon plus pgvector), carry `tenant_id` on both the `documents` and `chunks` tables even though it is derivable via a join: the hot retrieval query needs it directly for filtering, for a partial index or partition, and for Row-Level Security (source: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md` [source-repository research, not shipped]). On the alternative stack, the `tenant_id` payload field is belt-and-suspenders on top of tenant-scoped collection naming. See `guides/09-vector-payload-schema.md`.
 
 ### 6. Indexed-filter-only queries
 
@@ -112,13 +112,13 @@ Filtering on an unindexed field either gets rejected outright (Qdrant's `strict_
 
 ### 7. Two-stage retrieval (recall, then rerank) is non-optional past a small corpus
 
-Vector recall pulls a wider candidate set than the final answer needs; a reranking step (a hosted cross-encoder API or a local cross-encoder model) narrows it to what actually enters the prompt. Skipping the rerank stage is a finding regardless of which vendor sits underneath: a production write-up on this repo's default substrate cites a 10 to 15 percent relevance drop from dropping the rerank stage (source: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md`), the same order of magnitude the alternative stack's Cohere-specific guide cites for its own two-stage pipeline. See `guides/10-cohere-embedding-and-rerank.md` (alternative stack) and `guides/00-selection-and-defaults.md` (this repo's default).
+Vector recall pulls a wider candidate set than the final answer needs; a reranking step (a hosted cross-encoder API or a local cross-encoder model) narrows it to what actually enters the prompt. Skipping the rerank stage is a finding regardless of which vendor sits underneath: a production write-up on this repo's default substrate cites a 10 to 15 percent relevance drop from dropping the rerank stage (source: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md` [source-repository research, not shipped]), the same order of magnitude the alternative stack's Cohere-specific guide cites for its own two-stage pipeline. See `guides/10-cohere-embedding-and-rerank.md` (alternative stack) and `guides/00-selection-and-defaults.md` (this repo's default).
 
 ### 8. Fixed-size chunking is the default (Vectara NAACL 2025)
 
 Per the Vectara NAACL 2025 paper [*Is Semantic Chunking Worth the Computational Cost?*](https://arxiv.org/abs/2410.13070) (arXiv:2410.13070), recursive character splitting consistently performs as well or better than semantic chunking on realistic document sets. Vendor "semantic chunking" claims (15 to 40 percent lift) are typically on synthetic or hand-picked corpora; the Vectara result is on realistic ones. This finding is stack-neutral: it governs how text gets split before embedding regardless of which vector store or embedding model receives the chunks.
 
-**Implication:** if a contributor proposes adopting "semantic chunking" because of a vendor blog, the answer is "show me the eval lift on our corpus, or stay on recursive character." See `research/2026-04-25-vectara-naacl-2025-chunking.md`.
+**Implication:** if a contributor proposes adopting "semantic chunking" because of a vendor blog, the answer is "show me the eval lift on our corpus, or stay on recursive character." See `research/2026-04-25-vectara-naacl-2025-chunking.md` (source-repository research, not shipped).
 
 ### 9. Three-tier memory boundaries are load-bearing
 

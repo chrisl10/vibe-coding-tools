@@ -1,6 +1,6 @@
 # Caching: avoiding re-embedding identical text
 
-Embeddings are a pure function of `(model, model_version, exact text)`. Same input, same model, same vector, every time, with no sampling or context dependency. That determinism makes an embedding cache safe in a way an LLM-answer cache is not, a cache hit is behaviorally indistinguishable from a fresh call. Grounded in `references/research/raw/devto--caching-pre-computed-embeddings-ttl-versioning-cold-start.md` and `references/research/raw/devto--caching-embeddings-in-node-60-line-layer.md`.
+Embeddings are a pure function of `(model, model_version, exact text)`. Same input, same model, same vector, every time, with no sampling or context dependency. That determinism makes an embedding cache safe in a way an LLM-answer cache is not, a cache hit is behaviorally indistinguishable from a fresh call. Grounded in `references/research/raw/devto--caching-pre-computed-embeddings-ttl-versioning-cold-start.md` and `references/research/raw/devto--caching-embeddings-in-node-60-line-layer.md` (source-repository research, not shipped).
 
 ## The cache key
 

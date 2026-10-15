@@ -1315,13 +1315,16 @@
         "rust-stinger",
         "http-rest-fundamentals-stinger"
       ],
-      "implementation_target": "backend-language-fit",
-      "proposed_owner": "web-development-tools",
+      "implementation_target": "choose-backend",
+      "proposed_owner": "backend-and-desktop-tools",
       "capability_group": "backend-language-fit",
       "deliverable": "Backend choice tied to constraints and maintainability",
-      "scope_evidence": "audited description only; not runtime proof",
-      "state": "PROPOSED",
-      "workflow_command": "build-web-app"
+      "scope_evidence": "Outcome-specific source workflow is registered; inspect exact scope and current independent review. Native, financial, market and human results remain unproven.",
+      "state": "SOURCE_REGISTERED",
+      "workflow_command": "choose-backend",
+      "implementation_kind": "command",
+      "registered_owner": "backend-and-desktop-tools",
+      "registered_command": "choose-backend"
     },
     {
       "id": "O069",
@@ -1653,13 +1656,16 @@
         "http-rest-fundamentals-stinger",
         "db-stinger"
       ],
-      "implementation_target": "mobile-backend",
-      "proposed_owner": "mobile-development-tools",
+      "implementation_target": "build-mobile-backend",
+      "proposed_owner": "backend-and-desktop-tools",
       "capability_group": "mobile-backend",
       "deliverable": "Token refresh API contracts and unreliable-network tests",
-      "scope_evidence": "audited description only; not runtime proof",
-      "state": "PROPOSED",
-      "workflow_command": "build-mobile-app"
+      "scope_evidence": "Outcome-specific source workflow is registered; inspect exact scope and current independent review. Native, financial, market and human results remain unproven.",
+      "state": "SOURCE_REGISTERED",
+      "workflow_command": "build-mobile-backend",
+      "implementation_kind": "command",
+      "registered_owner": "backend-and-desktop-tools",
+      "registered_command": "build-mobile-backend"
     },
     {
       "id": "O087",
@@ -1745,13 +1751,16 @@
         "go-stinger",
         "rust-stinger"
       ],
-      "implementation_target": "desktop-stack-selection",
+      "implementation_target": "choose-desktop-stack",
       "proposed_owner": "backend-and-desktop-tools",
       "capability_group": "desktop-stack-selection",
       "deliverable": "Runtime capability update and distribution recommendation",
-      "scope_evidence": "audited description only; not runtime proof",
-      "state": "PROPOSED",
-      "workflow_command": "build-desktop-app"
+      "scope_evidence": "Outcome-specific source workflow is registered; inspect exact scope and current independent review. Native, financial, market and human results remain unproven.",
+      "state": "SOURCE_REGISTERED",
+      "workflow_command": "choose-desktop-stack",
+      "implementation_kind": "command",
+      "registered_owner": "backend-and-desktop-tools",
+      "registered_command": "choose-desktop-stack"
     },
     {
       "id": "O092",
@@ -2597,9 +2606,9 @@
       "existing_skills": [
         "dependency-audit-stinger"
       ],
-      "implementation_target": "vendor-maintenance",
+      "implementation_target": "component-vendoring",
       "proposed_owner": "repository-modernization-tools",
-      "capability_group": "vendor-maintenance",
+      "capability_group": "component-vendoring",
       "deliverable": "Upstream delta provenance patch and compatibility ledger",
       "scope_evidence": "Exact source promotion; final matching review/distribution pending. No actual refactor, deletion, legal or native result inferred.",
       "state": "SOURCE_REGISTERED",
@@ -3141,13 +3150,16 @@
         "db-stinger",
         "security-stinger"
       ],
-      "implementation_target": "privacy-engineering",
+      "implementation_target": "prepare-privacy-implementation",
       "proposed_owner": "platform-and-release-tools",
       "capability_group": "privacy-engineering",
       "deliverable": "Policy-to-code inventory and exerciseable data-rights workflow",
-      "scope_evidence": "audited description only; not runtime proof",
-      "state": "PROPOSED",
-      "workflow_command": "secure-my-app"
+      "scope_evidence": "Outcome-specific source workflow is registered; inspect exact scope and current independent review. Native, financial, market and human results remain unproven.",
+      "state": "SOURCE_REGISTERED",
+      "workflow_command": "prepare-privacy-implementation",
+      "implementation_kind": "command",
+      "registered_owner": "platform-and-release-tools",
+      "registered_command": "prepare-privacy-implementation"
     },
     {
       "id": "O164",
@@ -3200,13 +3212,16 @@
         "devops-stinger",
         "runbook-writing-stinger"
       ],
-      "implementation_target": "release-readiness",
+      "implementation_target": "design-release-pipeline",
       "proposed_owner": "platform-and-release-tools",
       "capability_group": "release-readiness",
       "deliverable": "Candidate evidence promotion rules and rollback drill",
-      "scope_evidence": "audited description only; not runtime proof",
-      "state": "PROPOSED",
-      "workflow_command": "prepare-release"
+      "scope_evidence": "Outcome-specific source workflow is registered; inspect exact scope and current independent review. Native, financial, market and human results remain unproven.",
+      "state": "SOURCE_REGISTERED",
+      "workflow_command": "design-release-pipeline",
+      "implementation_kind": "command",
+      "registered_owner": "platform-and-release-tools",
+      "registered_command": "design-release-pipeline"
     },
     {
       "id": "O167",
@@ -3441,13 +3456,16 @@
         "tauri-stinger",
         "app-store-submission-stinger"
       ],
-      "implementation_target": "native-release",
+      "implementation_target": "prepare-native-release",
       "proposed_owner": "platform-and-release-tools",
       "capability_group": "native-release",
       "deliverable": "Platform artifact signing identity and install-proof matrix",
-      "scope_evidence": "audited description only; not runtime proof",
-      "state": "PROPOSED",
-      "workflow_command": "prepare-release"
+      "scope_evidence": "Outcome-specific source workflow is registered; inspect exact scope and current independent review. Native, financial, market and human results remain unproven.",
+      "state": "SOURCE_REGISTERED",
+      "workflow_command": "prepare-native-release",
+      "implementation_kind": "command",
+      "registered_owner": "platform-and-release-tools",
+      "registered_command": "prepare-native-release"
     },
     {
       "id": "O180",

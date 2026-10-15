@@ -29,4 +29,4 @@ Each PRD gets the knowledge doc in its Related section and a first implementatio
 ## Sources
 
 - Knowledge rules: `knowledge-stinger` guides and templates (core skill)
-- [research/raw/test--characterization-tests.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/remediation-planning-stinger/references/research/raw/test--characterization-tests.md) (documenting actual behavior, not wished-for behavior)
+- research/raw/test--characterization-tests.md (source-repository research, not shipped) (documenting actual behavior, not wished-for behavior)

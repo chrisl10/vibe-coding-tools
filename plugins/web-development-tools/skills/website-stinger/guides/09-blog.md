@@ -1,6 +1,6 @@
 # 09: Blog & Content Management
 
-Source PRD: `research/source-prds/prd-phase-09-blog-content-management.md`
+Source PRD: `research/source-prds/prd-phase-09-blog-content-management.md` (source-repository research, not shipped)
 
 ---
 

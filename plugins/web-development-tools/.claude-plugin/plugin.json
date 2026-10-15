@@ -1,13 +1,13 @@
 {
   "name": "web-development-tools",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Build web interfaces and sites with React, Svelte, design systems and accessible components.",
   "author": {
     "name": "Legion Code Inc.",
     "url": "https://www.legioncodeinc.com"
   },
   "license": "AGPL-3.0-or-later",
-  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "repository": "https://github.com/legioncodeinc/vibe-coding-tools",
   "skills": [
     "./skills/"
   ],

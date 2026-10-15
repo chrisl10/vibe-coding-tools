@@ -76,9 +76,9 @@ Codex can use the named skill or its generated `source-command-<name>` wrapper w
 ## Prerequisites and boundaries
 
 - `web frontend in a desktop app` also needs `web-development-tools`.
-- `build-desktop-app-ui` also needs `web-development-tools`.
-- `build-mobile-backend-data` also needs `data-and-ai-tools`.
-- `build-mobile-backend-identity` also needs `platform-and-release-tools`.
+- `build-desktop-app (web frontend)` also needs `web-development-tools`.
+- `build-mobile-backend (data layer)` also needs `data-and-ai-tools`.
+- `build-mobile-backend (identity layer)` also needs `platform-and-release-tools`.
 
 Core supplies shared routing and review methods. Native Codex role registration requires the explicit installed-plugin registry and trusted Core hook; a marketplace selection alone is not proof of registration. Read the linked skill before work. Missing source, browser, connector, renderer or account access is a reported gap. Installation does not authorize sending, publishing, paid work or live settings changes.
 <!-- wasp-pack-guide:end -->

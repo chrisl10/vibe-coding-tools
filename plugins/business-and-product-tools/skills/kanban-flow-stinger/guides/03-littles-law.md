@@ -1,6 +1,6 @@
 # 03. Little's Law: Diagnostics and Forecasting
 
-*Sources: `research/external/2026-05-20-littles-law-abstract-algorithms.md`; `research/external/2026-05-20-littles-law-agile-application.md`*
+*Sources: `research/external/2026-05-20-littles-law-abstract-algorithms.md`; `research/external/2026-05-20-littles-law-agile-application.md` (source-repository research, not shipped)*
 
 ---
 
@@ -17,7 +17,7 @@ Where:
 
 In software delivery terms: **WIP = Throughput × Cycle Time**
 
-Source: `research/external/2026-05-20-littles-law-abstract-algorithms.md`
+Source: `research/external/2026-05-20-littles-law-abstract-algorithms.md` (source-repository research, not shipped)
 
 ---
 
@@ -33,7 +33,7 @@ Each rearrangement answers a different question:
 
 **The WIP limit setter is the most actionable form for Kanban practitioners.** It directly answers "what WIP limit do I need?" from the data the team already has.
 
-### Worked example (from `research/external/2026-05-20-littles-law-agile-application.md`)
+### Worked example (from `research/external/2026-05-20-littles-law-agile-application.md` [source-repository research, not shipped])
 
 > Team throughput: 8 items/week. Current WIP: 20 items. Current cycle time: 20/8 = 2.5 weeks.
 > Target cycle time: 1 week.
@@ -44,7 +44,7 @@ Each rearrangement answers a different question:
 
 ## The cascade effect
 
-From `research/external/2026-05-20-littles-law-abstract-algorithms.md`:
+From `research/external/2026-05-20-littles-law-abstract-algorithms.md` (source-repository research, not shipped):
 
 When large or slow-moving items stay in the system, they inflate L without contributing to λ. This creates the cascade effect:
 
@@ -60,7 +60,7 @@ When large or slow-moving items stay in the system, they inflate L without contr
 
 ## Steady-state requirement: when NOT to apply
 
-Little's Law requires steady state: the arrival rate, throughput, and WIP must be stable over the measurement window. From `research/external/2026-05-20-littles-law-abstract-algorithms.md`:
+Little's Law requires steady state: the arrival rate, throughput, and WIP must be stable over the measurement window. From `research/external/2026-05-20-littles-law-abstract-algorithms.md` (source-repository research, not shipped):
 
 **Do NOT apply Little's Law when:**
 
@@ -88,7 +88,7 @@ Tools: ActionableAgile Analytics (https://actionableagile.com/), Troy Magennis F
 
 ## Little's Law applied to a CI/CD pipeline
 
-From `research/external/2026-05-20-littles-law-abstract-algorithms.md`, the law applies to any queued system, including automated pipelines:
+From `research/external/2026-05-20-littles-law-abstract-algorithms.md` (source-repository research, not shipped), the law applies to any queued system, including automated pipelines:
 
 | System | L (WIP) | λ (throughput) | W (cycle time) |
 |---|---|---|---|

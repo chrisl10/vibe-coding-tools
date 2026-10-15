@@ -1,6 +1,6 @@
 # 03 — Iterate Phase (bounded rounds)
 
-Derived from `research/03-command-vocabulary.md`, `research/08-live-mode.md`.
+Derived from `research/03-command-vocabulary.md`, `research/08-live-mode.md` (source-repository research, not shipped).
 
 ## Named commands (when the edit has a name)
 

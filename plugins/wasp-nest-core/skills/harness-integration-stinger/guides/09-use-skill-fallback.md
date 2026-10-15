@@ -1,6 +1,6 @@
 # Use the paired skill without inventing a native agent
 
-Use for O289 when a requested skill exists but this session cannot dispatch its paired native role. Grounding: [digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/harness-integration-stinger/references/research/availability-proof/distilled-availability.md). Fill [the fallback record](../templates/skill-fallback-record.md).
+Use for O289 when a requested skill exists but this session cannot dispatch its paired native role. Grounding: digest. Fill [the fallback record](../templates/skill-fallback-record.md).
 
 1. Resolve and read the actual selected paired SKILL.md and the required guides/resources. Source authoring may read canonical source explicitly; identify that mode and do not call it installed dispatch. Read the skill's scope, exclusions, effects, prerequisites and independent-review requirements before choosing a fallback.
 2. State the missing surface and exact retained behavior: the current agent can follow the skill's procedure and produce a local draft within existing task authority. The fallback creates no worker identity, separate context, isolation, simultaneous execution or independent reviewer. A manually read Drone identity does not create a native agent.

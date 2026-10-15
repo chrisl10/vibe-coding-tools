@@ -16,7 +16,7 @@ The most useful framing for alternative paid channels comes from the demand capt
 
 **Why it matters:** Many teams waste budget running demand-creation platforms (LinkedIn) with demand-capture KPIs (direct CPL targets). LinkedIn CPLs will always look bad vs Google Search CPLs. The right comparison is pipeline influenced and brand recall, not same-session form fills.
 
-*Source: `research/external/2026-05-20-b2b-paid-media-channel-selection-framework.md`*
+*Source: `research/external/2026-05-20-b2b-paid-media-channel-selection-framework.md` (source-repository research, not shipped)*
 
 ---
 
@@ -44,7 +44,7 @@ For each candidate platform, score across 5 dimensions on a 1-3 scale. Total max
 | Developer tools / technical audience | Reddit Ads | Quora (comparison queries) + Bing | Pinterest, Spotify |
 | Brand awareness / thought leadership | LinkedIn (Thought Leader Ads) | YouTube TrueView | Quora (scale too small) |
 
-*Source: `research/external/2026-05-20-b2b-paid-media-channel-selection-framework.md`, `research/external/2026-05-20-emerging-b2b-paid-channels-2026-lever-digital.md`*
+*Source: `research/external/2026-05-20-b2b-paid-media-channel-selection-framework.md`, `research/external/2026-05-20-emerging-b2b-paid-channels-2026-lever-digital.md` (source-repository research, not shipped)*
 
 ---
 
@@ -61,7 +61,7 @@ From the B2B paid media channel selection framework research, the recommended se
 
 **Shortcut for founders with <$3K/month budget:** Start with one channel only. Pick the one with the highest audience density score for your ICP. Master it. Add the second channel when CPL is stable and optimization velocity drops below 15% improvement per quarter.
 
-*Source: `research/external/2026-05-20-powerful-b2b-ad-channels-framework-2026.md`*
+*Source: `research/external/2026-05-20-powerful-b2b-ad-channels-framework-2026.md` (source-repository research, not shipped)*
 
 ---
 

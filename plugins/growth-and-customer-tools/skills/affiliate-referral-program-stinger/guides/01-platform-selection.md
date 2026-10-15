@@ -1,6 +1,6 @@
 # Platform Selection: Decision Matrix from SMB to Enterprise
 
-*Grounded in: `research/external/2026-05-20-rewardful-vs-firstpromoter-vs-tolt-detailed.md`, `research/external/2026-05-20-partnerstack-review-pricing-bootstrap-trap.md`, `research/external/2026-05-20-partnerstack-vs-impact-enterprise-comparison.md`, `research/external/2026-05-20-firstpromoter-vs-rewardful-setup-payout-tax.md`, `research/external/2026-05-20-smb-platform-comparison-rewardful-firstpromoter-tolt.md`*
+*Grounded in: `research/external/2026-05-20-rewardful-vs-firstpromoter-vs-tolt-detailed.md`, `research/external/2026-05-20-partnerstack-review-pricing-bootstrap-trap.md`, `research/external/2026-05-20-partnerstack-vs-impact-enterprise-comparison.md`, `research/external/2026-05-20-firstpromoter-vs-rewardful-setup-payout-tax.md`, `research/external/2026-05-20-smb-platform-comparison-rewardful-firstpromoter-tolt.md` (source-repository research, not shipped)*
 
 ## The two-tier market
 

@@ -1,6 +1,6 @@
 # Principles: Affiliate vs Referral Taxonomy, Economic Levers, and Evaluation Criteria
 
-*Grounded in: `research/external/2026-05-20-rewardful-state-of-saas-affiliate-programs-report.md`, `research/external/2026-05-20-rewardful-vs-firstpromoter-vs-tolt-detailed.md`*
+*Grounded in: `research/external/2026-05-20-rewardful-state-of-saas-affiliate-programs-report.md`, `research/external/2026-05-20-rewardful-vs-firstpromoter-vs-tolt-detailed.md` (source-repository research, not shipped)*
 
 ## 1. The affiliate vs referral distinction
 

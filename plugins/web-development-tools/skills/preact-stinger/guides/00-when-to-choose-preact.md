@@ -1,6 +1,6 @@
 # Guide 00: When to Choose Preact
 
-> Source: `research/external/2026-05-20-preact-vs-react-bundle-size.md`
+> Source: `research/external/2026-05-20-preact-vs-react-bundle-size.md` (source-repository research, not shipped)
 
 Preact is the right choice in a small number of concrete scenarios. This guide is the entry point for all `preact-wasp-drone` invocations involving evaluation or architecture decisions. Read it before any other guide.
 
@@ -52,4 +52,4 @@ If none of these are true, use React. Preact's switching costs (team familiarity
 
 If the team wants signals but isn't ready to switch to Preact, `@preact/signals-react` 3.10.1 (May 2026) provides the signals primitives in a React codebase. This is a valid incremental path before a full Preact migration.
 
-> See `research/external/2026-05-20-signals-api-v2-guide.md` for the signals API.
+> See `research/external/2026-05-20-signals-api-v2-guide.md` (source-repository research, not shipped) for the signals API.

@@ -2,7 +2,7 @@
 
 Every read and write goes through `DeeplakeApi` in `src/deeplake-api.ts`. It is a thin, hardened client over the Activeloop HTTP SQL API. Dynamic SQL fragments are guarded by `sqlStr` / `sqlLike` / `sqlIdent` from `src/utils/sql`.
 
-Source: `research/2026-06-16-deeplakeapi-retry-semaphore-402.md`.
+Source: `research/2026-06-16-deeplakeapi-retry-semaphore-402.md` (source-repository research, not shipped).
 
 ## The access pattern
 

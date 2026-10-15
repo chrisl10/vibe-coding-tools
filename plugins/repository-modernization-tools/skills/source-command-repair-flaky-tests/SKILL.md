@@ -2,6 +2,7 @@
 name: "source-command-repair-flaky-tests"
 description: "Diagnose observed flaky failures and repair a bounded causal defect while preserving test assertions and evidence."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-repair-flaky-tests

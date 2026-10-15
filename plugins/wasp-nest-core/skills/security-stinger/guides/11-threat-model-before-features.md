@@ -1,6 +1,6 @@
 # 11. Threat model before feature implementation
 
-Use [the worksheet](../templates/security-design/threat-model.md), [synthetic cases](../examples/security-design/source-cases.md) and [captured facts](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/security-stinger/references/research/security-design/distillation.md). O151. This prepares a security design packet; it does not replace architecture ownership or a later audit.
+Use [the worksheet](../templates/security-design/threat-model.md), [synthetic cases](../examples/security-design/source-cases.md) and captured facts. O151. This prepares a security design packet; it does not replace architecture ownership or a later audit.
 
 1. Pin the proposed feature, repository revision, environment and scope. Identify unavailable facts instead of inventing a stack. Inventory assets and their confidentiality/integrity/availability needs: money, tenant documents, sessions, provider tokens, uploaded files and published artifacts.
 2. Identify actors and authority separately: anonymous visitor, ordinary tenant member, administrator, service principal, provider webhook sender and operator. Authentication proves identity, not authority over every object. Record membership source, revocation semantics and who may assert tenant context.
@@ -9,4 +9,4 @@ Use [the worksheet](../templates/security-design/threat-model.md), [synthetic ca
 5. Record assumptions and unresolved questions: role source, provider signature contract, data retention, privileged support and unavailable runtime. Choose a concrete denial or effect invariant for every material scenario and hand it to [guide 15](15-verify-actual-risk.md).
 6. Revisit after a data flow, identity, permission or provider changes. Library owns the accepted feature/contract documentation. Resolve optional DB/Auth/Payments owners through selected-plugin registration before dispatch; absence is a gap, not permission to invent their engines.
 
-Sources: [OWASP threat model](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/security-stinger/references/research/security-design/raw/owasp-threat.md), [authorization](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/security-stinger/references/research/security-design/raw/owasp-authorization.md). Scope/authority and owner handoff are derived Wasp Nest policies.
+Sources: OWASP threat model, authorization. Scope/authority and owner handoff are derived Wasp Nest policies.

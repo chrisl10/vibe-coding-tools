@@ -40,7 +40,7 @@ Source work resolves this owner's `source_root` through `plugin-catalog.json`. I
 
 ## Evidence and reporting
 
-Ground claims in [the distillation](references/research/distilled-operating-cost.md), [source ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/software-economics-tools/skills/operating-cost-stinger/references/research/source-ledger.json) and its raw archive. Rates in official pages are never defaults; capture current region/plan/contract evidence for each actual estimate. Write runtime reports under `library/requirements/reports/operating-cost/<date>-<topic>.md`, or an agreed local destination when Library is absent. Retain assumptions and computed JSON with the worksheet. Calculator construction requires parent Security then Quality review; runtime remains advisory.
+Ground claims in [the distillation](references/research/distilled-operating-cost.md), source ledger and its raw archive. Rates in official pages are never defaults; capture current region/plan/contract evidence for each actual estimate. Write runtime reports under `library/requirements/reports/operating-cost/<date>-<topic>.md`, or an agreed local destination when Library is absent. Retain assumptions and computed JSON with the worksheet. Calculator construction requires parent Security then Quality review; runtime remains advisory.
 
 <!-- Ship Gate removed: research-only runtime produces no implementation code or provider writes. The bundled calculator construction requires the parent Ship Gate. -->
 

@@ -42,14 +42,14 @@ This stinger audits Lovable-built applications on Supabase backends: Postgres/RL
 - `references/worked-examples.md` — load when: a probe sequence needs its validated shape before execution; six worked sequences with observed outcomes.
 - `references/reporting.md` — load when: shaping findings into the report; ledger schema, tier mapping, skeleton, grounding line.
 - `references/research/distillation.md` — load when: a domain claim needs verification or a dispute needs settling; the cited distillation of this component's own archive.
-- `references/research/raw/` — load when: tracing any distilled claim back to its primary source, official or empirical.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `guides/` (six verb guides) — load when: executing a specific audit verb; each states preconditions, procedure, validated expected shapes, anti-patterns.
 
 ## Related drones and stingers
 
-- [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) — general security audit passes; owns non-Supabase surface and the Ship Gate's first gate.
-- [auth-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/auth-stinger) — authentication-flow deep work; this stinger stops at posture readout and defers flow-level analysis.
-- [pest-controller-suit](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/pest-controller-suit) — roster and routing; owns dispatch decisions and hosts this pair's registration.
+- [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) — general security audit passes; owns non-Supabase surface and the Ship Gate's first gate.
+- [auth-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/auth-stinger) — authentication-flow deep work; this stinger stops at posture readout and defers flow-level analysis.
+- [pest-controller-suit](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/pest-controller-suit) — roster and routing; owns dispatch decisions and hosts this pair's registration.
 - [lovable-audit-wasp-drone](../../agents/lovable-audit-wasp-drone.md) — the paired worker agent; the orchestrator delegates sustained audit waves to it rather than running them inline.
 
 ## Critical Directive
@@ -57,8 +57,8 @@ This stinger audits Lovable-built applications on Supabase backends: Postgres/RL
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) — general security audit; first gate of the Ship Gate pipeline.
-  - [auth-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/auth-stinger) — authentication-flow analysis and remediation design.
-  - [pest-controller-suit](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/pest-controller-suit) — roster and routing for the Wasp Swarm.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) — general security audit; first gate of the Ship Gate pipeline.
+  - [auth-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/auth-stinger) — authentication-flow analysis and remediation design.
+  - [pest-controller-suit](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/pest-controller-suit) — roster and routing for the Wasp Swarm.
 
 <!-- Ship Gate removed: research-only stinger, produces no committable code. -->

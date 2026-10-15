@@ -70,4 +70,4 @@ Flag a transport-change proposal (escalate, do not silently implement) whenever 
 
 ---
 
-*Sources: `research/distilled-mcp-protocol.md`, `research/2026-06-16-mcp-spec-lifecycle.md`, `research/2026-06-16-mcp-sdk-typescript.md`, `research/external/mcp-spec-architecture.md`, `research/external/mcp-spec-authorization.md`, `research/external/mcp-testing-debugging-veprompts.md`, `research/external/mcp-testing-three-layers-autonoma.md`*
+*Sources: `research/distilled-mcp-protocol.md`, `research/2026-06-16-mcp-spec-lifecycle.md`, `research/2026-06-16-mcp-sdk-typescript.md`, `research/external/mcp-spec-architecture.md`, `research/external/mcp-spec-authorization.md`, `research/external/mcp-testing-debugging-veprompts.md`, `research/external/mcp-testing-three-layers-autonoma.md` (source-repository research, not shipped)*

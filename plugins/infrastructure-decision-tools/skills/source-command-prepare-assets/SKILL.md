@@ -2,6 +2,7 @@
 name: "source-command-prepare-assets"
 description: "Prepare the minimum launch assets and accounts with owners, environments, dated costs, prerequisites and blockers."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-prepare-assets

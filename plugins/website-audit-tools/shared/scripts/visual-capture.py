@@ -1,6 +1,20 @@
 #!/usr/bin/env python3
-"""> STUB: structural placeholder only, created at build-sequence step 3/4. Forge stages 2-6 (research, distillation, references, guides, final skill authorship) are not yet run for this pair. Do not treat any claim below as researched fact until those stages complete.
+"""visual-capture.py - not implemented.
 
-Placeholder for visual-capture.py. Harness-portable, no absolute paths, per build plan section 6. Real implementation lands in step 4/5."""
+Planned in the original build plan as a shared helper for visual-funnel-stinger, but never
+built. Nothing in this pack calls it. It exits with status 2 and tells the
+Drone what to do instead, so a run never mistakes it for a working step.
 
-raise NotImplementedError("visual-capture.py is a step-3 folder-tree placeholder; implemented in step 4/5.")
+Instead: Capture the desktop and mobile checkpoint screenshots with the harness's own browser tool, configured from skills/visual-funnel-stinger/references/scripts/playwright-viewport-config.js, as skills/visual-funnel-stinger/guides/03-capture-checkpoint-screenshots.md describes.
+"""
+
+import sys
+
+MESSAGE = (
+    "visual-capture.py is not implemented. "
+    "Capture the desktop and mobile checkpoint screenshots with the harness's own browser tool, configured from skills/visual-funnel-stinger/references/scripts/playwright-viewport-config.js, as skills/visual-funnel-stinger/guides/03-capture-checkpoint-screenshots.md describes."
+)
+
+if __name__ == "__main__":
+    print(MESSAGE, file=sys.stderr)
+    sys.exit(2)

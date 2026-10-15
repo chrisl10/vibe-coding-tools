@@ -2,7 +2,7 @@
 
 Goal: give the owner one brief and a set of files that let Claude Design explore or refine the design without losing the decisions already made.
 
-Grounding: [Claude Design help article](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/claude-design--support-get-started.md), [launch announcement](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/claude-design--anthropic-launch-announcement.md), [design-sync coverage](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/claude-design--aicatchup-design-sync.md), webapp-capture handoff conventions (repo: `packs/browser-and-app-testing-tools/skills/webapp-capture-stinger/references/prompts/claude-design-handoff.md`, `guides/02-component-library-capture.md` stage 8). Distilled: [section 1](../references/research/distilled-product-design.md).
+Grounding: Claude Design help article, launch announcement, design-sync coverage, webapp-capture handoff conventions (repo: `packs/browser-and-app-testing-tools/skills/webapp-capture-stinger/references/prompts/claude-design-handoff.md`, `guides/02-component-library-capture.md` stage 8). Distilled: [section 1](../references/research/distilled-product-design.md).
 
 ## What is confirmed about Claude Design (read before promising anything)
 

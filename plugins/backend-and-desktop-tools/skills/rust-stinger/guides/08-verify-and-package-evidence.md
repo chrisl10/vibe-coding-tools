@@ -18,17 +18,17 @@ cargo metadata --format-version 1
 cargo tree --workspace -e features
 ```
 
-Add declared minimal/default/all-feature builds, MSRV checks, target builds, migration/concurrency/crash/fake-provider tests, property/model tests, benchmarks, and soak checks. Clippy guidance recommends `-Dwarnings` with the same compiler toolchain as compilation; new lints make the result toolchain-specific ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/rust-cargo/2026-07-24-clippy-ci.md)). Nextest does not run doctests, so retain a separate doc-test step ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/testing/2026-07-24-nextest.md)).
+Add declared minimal/default/all-feature builds, MSRV checks, target builds, migration/concurrency/crash/fake-provider tests, property/model tests, benchmarks, and soak checks. Clippy guidance recommends `-Dwarnings` with the same compiler toolchain as compilation; new lints make the result toolchain-specific (research). Nextest does not run doctests, so retain a separate doc-test step (research).
 
 ## Evidence layers
 
 - Unit/contract: pure logic and direct Tower/Axum calls.
-- Deterministic time: Tokio paused clock for time-driven behavior ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/testing/2026-07-24-tokio-time-testing.md)).
+- Deterministic time: Tokio paused clock for time-driven behavior (research).
 - Property/state: proptest with saved seeds.
-- Model concurrency: Loom only for small primitives expressed with Loom types ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/testing/2026-07-24-loom.md)).
+- Model concurrency: Loom only for small primitives expressed with Loom types (research).
 - Persistence/process: real SQLite, multiple writers, fault injection, kill/restart.
 - Provider/stream: fake servers and transcript fixtures.
-- Benchmark: Criterion on a controlled host; statistics do not remove noisy-host risk ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/testing/2026-07-24-criterion-analysis.md)).
+- Benchmark: Criterion on a controlled host; statistics do not remove noisy-host risk (research).
 - Soak: purpose-built fake-provider run with periodic RSS, task, queue, DB/WAL, handle, throughput, and error telemetry.
 
 > TODO: human decision before release qualification - define quantitative soak thresholds; no universal off-the-shelf eight-hour harness or product threshold exists in the research packet.
@@ -37,13 +37,13 @@ Add declared minimal/default/all-feature builds, MSRV checks, target builds, mig
 
 Populate `templates/release-evidence-manifest.yaml` with target artifacts, hashes, toolchain/lockfile, tests, SBOM, advisory/license/source scans, install/uninstall transcripts, and verification commands.
 
-- Revalidate cargo-dist before generating archives/installers; it supports target artifacts, checksums, and several installers, while checksums alone are unsigned integrity values ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/supply-chain/2026-07-24-cargo-dist-config.md)).
-- Generate target/feature-aware SBOM evidence and record tool version; cargo-cyclonedx added reproducible timestamp and target support in its retrieval-time release ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/supply-chain/2026-07-24-cargo-cyclonedx.md)).
-- Record advisory database time and lockfile/artifact hash because RustSec findings are point-in-time ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/supply-chain/2026-07-24-rustsec.md)).
-- Treat cargo-deny output as evidence for the dependency owner, not license/legal clearance ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/supply-chain/2026-07-24-cargo-deny-license-limitations.md)).
-- Treat Cargo's native SBOM precursor as optional/nightly until stabilized ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/supply-chain/2026-07-24-cargo-sbom-unstable.md)).
-- Do not confuse `cargo package` verification with provenance; Cargo states provenance is not verified ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/supply-chain/2026-07-24-cargo-package-verification.md)).
-- Do not sign or publish. Cosign signing can create identity/transparency-log effects and needs explicit authorization ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/supply-chain/2026-07-24-sigstore-cosign-blob.md)).
+- Revalidate cargo-dist before generating archives/installers; it supports target artifacts, checksums, and several installers, while checksums alone are unsigned integrity values (research).
+- Generate target/feature-aware SBOM evidence and record tool version; cargo-cyclonedx added reproducible timestamp and target support in its retrieval-time release (research).
+- Record advisory database time and lockfile/artifact hash because RustSec findings are point-in-time (research).
+- Treat cargo-deny output as evidence for the dependency owner, not license/legal clearance (research).
+- Treat Cargo's native SBOM precursor as optional/nightly until stabilized (research).
+- Do not confuse `cargo package` verification with provenance; Cargo states provenance is not verified (research).
+- Do not sign or publish. Cosign signing can create identity/transparency-log effects and needs explicit authorization (research).
 
 ## Open decision checkpoints
 

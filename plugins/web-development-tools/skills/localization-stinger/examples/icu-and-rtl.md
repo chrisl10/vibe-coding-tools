@@ -1,5 +1,5 @@
 # Constructed ICU and RTL examples
-These illustrate integration shape, not an executed framework app or reviewed Arabic translation. Grounding: [ICU](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/localization-stinger/references/research/raw/icu-messages.html), [W3C](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/localization-stinger/references/research/raw/w3c-direction.html), [logical CSS](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/localization-stinger/references/research/raw/mdn-logical.html).
+These illustrate integration shape, not an executed framework app or reviewed Arabic translation. Grounding: ICU, W3C, logical CSS.
 
 ```text
 {count, plural, =0 {No files} one {# file} other {# files}}

@@ -62,4 +62,4 @@ When a request blends reference docs with protocol internals, prose-craft review
 4. **Sync check passes** - the doc-sync diff (see `guides/04-doc-sync.md`) reports no drift, or every drift is explicitly listed.
 5. **Done checklist** - all items in `guides/06-done-checklist.md` pass.
 
-*Sources: `research/distilled-mcp-tool-docs.md` (2026-08-14 general pass); `research/research-summary.md`, `research/external/2026-06-16-mcp-tool-resource-documentation.md`, `research/external/2026-06-16-typedoc-typescript-api-docs.md` (original Hivemind-anchored pass).*
+*Sources: `research/distilled-mcp-tool-docs.md` (2026-08-14 general pass); `research/research-summary.md`, `research/external/2026-06-16-mcp-tool-resource-documentation.md`, `research/external/2026-06-16-typedoc-typescript-api-docs.md` (source-repository research, not shipped) (original Hivemind-anchored pass).*

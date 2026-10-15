@@ -2,7 +2,7 @@
 
 Safety patterns, quoting rules, error handling, and dotfile architecture for Bash scripts.
 
-Source: `research/external/02-bash-scripting-patterns.md`
+Source: `research/external/02-bash-scripting-patterns.md` (source-repository research, not shipped)
 
 See also: `templates/bash-script-template.sh` for the skeleton, `examples/script-review.md` for a worked review.
 

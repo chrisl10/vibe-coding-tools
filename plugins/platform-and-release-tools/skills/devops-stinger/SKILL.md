@@ -39,12 +39,12 @@ You are equipping **devops-wasp-drone**, the Wasp Nest's container build + CI/CD
 These restate the Command Brief's SUBAGENT CRITICAL DIRECTIVES. Each links to the guide where the full reasoning lives.
 
 1. **Least privilege everywhere.** Workflows declare `permissions:` per job at minimum. Containers run as non-root. No `pull_request_target` with checkout of `head.sha` from a fork. See `guides/06-actions-security.md` and `guides/01-dockerfile-patterns.md`.
-2. **Cache is a first-class architectural concern.** Every build defines its cache backend. "Cache is king": see `guides/08-caching-strategies.md` and `research/2026-04-25-cache-is-king-gha.md`.
+2. **Cache is a first-class architectural concern.** Every build defines its cache backend. "Cache is king": see `guides/08-caching-strategies.md` and `research/2026-04-25-cache-is-king-gha.md` (source-repository research, not shipped with the plugin).
 3. **Parity > convenience.** Local and CI invoke the same recipe (Docker Bake + make targets). See `guides/10-local-ci-parity.md`.
 4. **Secrets never via `ARG`/`ENV`.** Use BuildKit `--mount=type=secret`. In Compose, `secrets:`. In Actions, OIDC. See `guides/01-dockerfile-patterns.md` §5 and `guides/06-actions-security.md` §4.
-5. **Multi-stage by default.** Even for "simple" Node apps. Up to 80% size reduction is documented baseline. See `guides/01-dockerfile-patterns.md` §1 and `research/2026-04-25-multi-stage-size-reduction.md`.
-6. **Pin everything.** Base image to digest or minor+patch tag (never `:latest`). Actions to commit SHA with version comment. See `guides/06-actions-security.md` §2 and `research/2026-04-25-actions-pin-to-sha.md`.
-7. **OIDC > long-lived cloud credentials.** AWS, GCP, Azure, DO, Cloudflare: all federate. Static keys in repo secrets are a finding. See `guides/06-actions-security.md` §4 and `research/2026-04-25-oidc-cloud-federation.md`.
+5. **Multi-stage by default.** Even for "simple" Node apps. Up to 80% size reduction is documented baseline. See `guides/01-dockerfile-patterns.md` §1 and `research/2026-04-25-multi-stage-size-reduction.md` (source-repository research, not shipped with the plugin).
+6. **Pin everything.** Base image to digest or minor+patch tag (never `:latest`). Actions to commit SHA with version comment. See `guides/06-actions-security.md` §2 and `research/2026-04-25-actions-pin-to-sha.md` (source-repository research, not shipped with the plugin).
+7. **OIDC > long-lived cloud credentials.** AWS, GCP, Azure, DO, Cloudflare: all federate. Static keys in repo secrets are a finding. See `guides/06-actions-security.md` §4 and `research/2026-04-25-oidc-cloud-federation.md` (source-repository research, not shipped with the plugin).
 8. **Depot is a drop-in.** `depot/build-push-action` swaps in for `docker/build-push-action` with one `project:` field. Migration is 5-line diff per workflow. See `guides/07-depot-integration.md`.
 9. **Healthchecks are mandatory in Compose dev stacks.** `depends_on: condition: service_healthy` is the only correct way to wait for Postgres/Redis/migration jobs. See `guides/03-compose-for-dev.md`.
 10. **Cite everything.** Every finding references (a) file:line in the user's repo and (b) a guide section + research note or external URL.
@@ -105,7 +105,7 @@ Numbered so ordering is obvious. Read the principles guide first on any invocati
 ## Output conventions
 
 - **All file paths in findings are absolute** when referencing project files. Relative when referencing guides in this Stinger.
-- **Every claim is sourced.** Either a guide section + research note (`guides/06-actions-security.md §4` + `research/2026-04-25-oidc-cloud-federation.md`) or an external URL.
+- **Every claim is sourced.** Either a guide section + research note (`guides/06-actions-security.md §4` + `research/2026-04-25-oidc-cloud-federation.md` [source-repository research, not shipped with the plugin]) or an external URL.
 - **Do not invent action versions.** Pin to the SHA observed at audit time; comment the version alongside.
 - **Never approve a workflow that violates** one of the Hard Rules, but only block on Must-fix severity.
 - **Never approve an image that runs as root in a production stage**, even if the user insists. Surface the trade-off and require explicit justification documented in-repo.

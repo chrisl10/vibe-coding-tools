@@ -4,7 +4,7 @@ The token layer is the contract. The utility layer is the shorthand. Neither can
 
 ## The token layer
 
-A token is any design primitive with a name: a color, radius, shadow, spacing step, duration, easing curve, z-index, or typography scale. All tokens live in the product's master-tokens file (commonly `01-master-tokens.css`) as CSS custom properties under `:root` (or under Tailwind v4's `@theme` directive — see `research/2026-04-24-tailwind-v4-theme-tokens.md`).
+A token is any design primitive with a name: a color, radius, shadow, spacing step, duration, easing curve, z-index, or typography scale. All tokens live in the product's master-tokens file (commonly `01-master-tokens.css`) as CSS custom properties under `:root` (or under Tailwind v4's `@theme` directive — see `research/2026-04-24-tailwind-v4-theme-tokens.md` [source-repository research, not shipped]).
 
 ```css
 :root {
@@ -45,7 +45,7 @@ Each hit is a review finding: "Line X re-implements `.glass-surface`; replace in
 Before adding a token, audit:
 
 1. Is this genuinely new, or is there a close-enough existing token? (Brutal — "close enough" is the default answer.)
-2. Does the new token belong in the base layer (raw value) or the semantic layer (purpose-driven)? Follow the product's token hierarchy. See `research/2026-04-24-tailwind-v4-theme-tokens.md` for the three-layer pattern: base → semantic → component.
+2. Does the new token belong in the base layer (raw value) or the semantic layer (purpose-driven)? Follow the product's token hierarchy. See `research/2026-04-24-tailwind-v4-theme-tokens.md` (source-repository research, not shipped) for the three-layer pattern: base → semantic → component.
 3. Does the new token need a tenant-theme override path? If so, register the `[data-tenant="..."]` selector alongside the base.
 
 Commit message: `ux-ui-wasp-drone: tokens: add --<name>` (or whatever convention the deploying product's knowledge-base specifies).
@@ -82,4 +82,4 @@ Components use CSS logical properties (`padding-inline-start`, not `padding-left
 
 *Worked example:* `examples/review-output-example.md` includes a hex-literal-with-token-available violation.
 
-*Source:* `research/2026-04-24-tailwind-v4-theme-tokens.md`.
+*Source:* `research/2026-04-24-tailwind-v4-theme-tokens.md` (source-repository research, not shipped).

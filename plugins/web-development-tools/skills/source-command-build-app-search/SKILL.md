@@ -2,6 +2,7 @@
 name: "source-command-build-app-search"
 description: "Build tenant-safe application search with an accepted query/result contract, stable pagination and measured retrieval quality."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-build-app-search

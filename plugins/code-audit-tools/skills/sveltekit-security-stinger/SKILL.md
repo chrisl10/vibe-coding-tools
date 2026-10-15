@@ -34,7 +34,7 @@ Audit a Svelte or SvelteKit codebase for security problems the way an attacker w
 ## When not to use
 
 - The repository's own stack-specific gate (SvelteKit with Neon, WorkOS, Stripe, Vercel, Doppler, GoHighLevel) before a commit: `security-stinger`, which also remediates
-- Secrets in git history, generic dependency triage, webhook signature checks, database row-level security: `security-wasp-drone` generic pass (`security-stinger` in audit mode)
+- Secrets in git history, generic dependency triage, webhook signature checks, database row-level security: `security-wasp-drone` generic pass (`security-stinger`, armed report-only)
 - React or Next.js code: `react-security-stinger` or `nextjs-security-stinger`; back ends in other languages: `polyglot-security-stinger`
 - Fixing the findings: this skill is report-only; remediation planning belongs to the `mario` tier
 - A live, external scan of a deployed site with no source: `web-security-posture-stinger`
@@ -62,7 +62,7 @@ Throughout: no finding without evidence; `possible` never above `medium`; redact
 | [references/advisory-table.md](references/advisory-table.md) | Guide 00, and explaining a version finding |
 | [references/severity-guide.md](references/severity-guide.md) | Assigning severity and confidence; guide 06 |
 | [references/research/distilled-sveltekit-security.md](references/research/distilled-sveltekit-security.md) | Verifying a claim, resolving a conflict, checking a thin spot |
-| [references/research/raw/](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw) | Tracing a distilled claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | [scripts/sveltekit_audit_scan.py](scripts/sveltekit_audit_scan.py) | Once per run in guide 00 |
 | [scripts/advisories.json](scripts/advisories.json) | Data for the scanner; refresh when older than 30 days |
 
@@ -70,7 +70,7 @@ Throughout: no finding without evidence; `possible` never above `medium`; redact
 
 - [sveltekit-security-wasp-drone](../../agents/sveltekit-security-wasp-drone.md) - The paired agent in this pack; the orchestrator dispatches it with this skill.
 - [audit-my-code-stinger](../audit-my-code-stinger) - The run orchestrator and the contract this skill writes against.
-- `security-stinger` (core) - Stack-specific Ship Gate security pass for SvelteKit with Neon, WorkOS, Stripe, Vercel, Doppler; the generic security pass in Audit My Code runs it in audit mode beside this skill.
+- `security-stinger` (core) - Stack-specific Ship Gate security pass for SvelteKit with Neon, WorkOS, Stripe, Vercel, Doppler; the generic security pass in Audit My Code runs it report-only beside this skill.
 - `react-security-stinger`, `nextjs-security-stinger`, `polyglot-security-stinger` (this pack) - Framework-deep passes for other stacks in a monorepo.
 - `svelte-stinger` in `web-development-tools` (confirm installed) - Svelte 5 and SvelteKit 2 language and runtime details when a finding's fix needs them.
 - `dependency-audit-stinger` (core) - Lockfile and supply-chain work beyond framework advisories.

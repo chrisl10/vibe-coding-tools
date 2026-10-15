@@ -21,13 +21,13 @@ References: [checks-supply-chain-and-ai.md](../references/checks-supply-chain-an
 
 ## Sources
 
-- [raw/router--react-router-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/router--react-router-advisories.md)
-- [raw/router--waku-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/router--waku-advisories.md)
-- [raw/xss--mdx-next-mdx-remote-cve-2026-0969.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--mdx-next-mdx-remote-cve-2026-0969.md)
-- [raw/xss--dompurify-readme-and-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--dompurify-readme-and-advisories.md)
-- [raw/ssr--serialize-javascript-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/ssr--serialize-javascript-advisories.md)
-- [raw/secrets--cra-env-and-sunset.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/secrets--cra-env-and-sunset.md)
-- [raw/xss--html-react-parser-readme.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--html-react-parser-readme.md)
-- [raw/rsc--react-release-notes-19-2-x-and-19-3.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-release-notes-19-2-x-and-19-3.md)
-- [raw/ai--vibe-coded-apps-security-studies.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/ai--vibe-coded-apps-security-studies.md)
-- [raw/owasp--top10-2025-and-cwe-mapping.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--top10-2025-and-cwe-mapping.md)
+- raw/router--react-router-advisories.md
+- raw/router--waku-advisories.md
+- raw/xss--mdx-next-mdx-remote-cve-2026-0969.md
+- raw/xss--dompurify-readme-and-advisories.md
+- raw/ssr--serialize-javascript-advisories.md
+- raw/secrets--cra-env-and-sunset.md
+- raw/xss--html-react-parser-readme.md
+- raw/rsc--react-release-notes-19-2-x-and-19-3.md
+- raw/ai--vibe-coded-apps-security-studies.md
+- raw/owasp--top10-2025-and-cwe-mapping.md

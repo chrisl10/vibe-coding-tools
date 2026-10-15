@@ -2,6 +2,7 @@
 name: "source-command-plan-traffic-capacity"
 description: "Prepare measured traffic-spike capacity, SLO, cost, admission and recovery proposals from supplied evidence."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-plan-traffic-capacity

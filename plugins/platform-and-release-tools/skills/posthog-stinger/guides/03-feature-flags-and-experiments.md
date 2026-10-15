@@ -1,6 +1,6 @@
 # 03. Feature flags and experiments
 
-First use [guide 07](07-roll-out-and-retire-flags.md) for owner, expiry, SDK/config versions, fallback, kill and removal proof. Historical snippets below require installed-version qualification. Current docs distinguish full-definition and unchanged ETag polling costs and identify `secretKey` for recent Node SDKs; do not treat this historical table as current billing or API compatibility proof. See [the current digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/posthog-stinger/references/research/flag-lifecycle-20261007/distilled.md).
+First use [guide 07](07-roll-out-and-retire-flags.md) for owner, expiry, SDK/config versions, fallback, kill and removal proof. Historical snippets below require installed-version qualification. Current docs distinguish full-definition and unchanged ETag polling costs and identify `secretKey` for recent Node SDKs; do not treat this historical table as current billing or API compatibility proof. See the current digest.
 
 ## Remote vs local evaluation - pick based on where the check happens
 

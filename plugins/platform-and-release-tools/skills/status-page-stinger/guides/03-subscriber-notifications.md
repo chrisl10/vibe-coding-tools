@@ -1,6 +1,6 @@
 # Guide 03: Subscriber Notifications
 
-*Source: `research/external/2026-05-20-subscriber-notifications-channels.md`, `research/external/2026-05-20-gdpr-canspam-compliance.md`*
+*Source: `research/external/2026-05-20-subscriber-notifications-channels.md`, `research/external/2026-05-20-gdpr-canspam-compliance.md` (source-repository research, not shipped)*
 
 ---
 
@@ -52,7 +52,7 @@ Email is the default subscription channel and the most reliable delivery method.
   - STOP keyword handling: must respond to STOP with an unsubscribe confirmation
   - Quiet hours rules per-carrier
   - DLT registration (India, if applicable)
-- See `research/external/2026-05-20-gdpr-canspam-compliance.md` for the full compliance checklist
+- See `research/external/2026-05-20-gdpr-canspam-compliance.md` (source-repository research, not shipped) for the full compliance checklist
 
 ---
 

@@ -151,4 +151,4 @@ Run this against every endpoint:
 
 ---
 
-*Sources: RFC 9110 §15, RFC 9457, `research/external/2026-05-20-rest-status-codes-2026.md`, `research/external/2026-05-20-api-error-handling-status-codes.md`*
+*Sources: RFC 9110 §15, RFC 9457, `research/external/2026-05-20-rest-status-codes-2026.md`, `research/external/2026-05-20-api-error-handling-status-codes.md` (source-repository research, not shipped)*

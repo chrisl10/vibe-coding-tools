@@ -2,6 +2,7 @@
 name: "source-command-choose-outcome"
 description: "Find the qualified owner for a desired result. Use for choosing skills or packs; distinguish proposed coverage, source presence and selected installed capabilities."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-choose-outcome

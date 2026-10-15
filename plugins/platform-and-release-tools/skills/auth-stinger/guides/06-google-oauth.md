@@ -2,7 +2,7 @@
 
 The deep dive. The Google Auth Platform reality, scope discipline, GIS migration, and the **October 2025 unused-client deletion policy**.
 
-Source: `research/2026-04-25-google-oauth-scopes-and-policies.md`, `research/2026-04-25-google-identity-services-migration.md`, `research/2026-04-25-october-2025-oauth-deletion-policy.md`, https://developers.google.com/identity/protocols/oauth2.
+Source: `research/2026-04-25-google-oauth-scopes-and-policies.md`, `research/2026-04-25-google-identity-services-migration.md`, `research/2026-04-25-october-2025-oauth-deletion-policy.md` (source-repository research, not shipped), https://developers.google.com/identity/protocols/oauth2.
 
 ## The Google Auth Platform: three pages
 
@@ -106,7 +106,7 @@ The defenses:
 2. **A health-check item in the runbook.** Production-critical OAuth clients are listed in the ops doc with their last-used date; quarterly review confirms each has had traffic.
 3. **Email subscription.** Google sends a notification email 30 days before deletion to the project owner. Confirm the email is monitored and routes to a real human.
 
-Cite https://support.google.com/cloud/answer/13463073 (Google Cloud: OAuth client deletion) and `research/2026-04-25-october-2025-oauth-deletion-policy.md`.
+Cite https://support.google.com/cloud/answer/13463073 (Google Cloud: OAuth client deletion) and `research/2026-04-25-october-2025-oauth-deletion-policy.md` (source-repository research, not shipped).
 
 ## Service accounts (machine-to-machine)
 

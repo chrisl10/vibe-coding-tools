@@ -1,6 +1,6 @@
 # OpenSSF Scorecard mapping
 
-Which Scorecard checks the Foundation audit approximates, and how. Source: [research/raw/scorecard--checks-reference.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/scorecard--checks-reference.md), [research/raw/scorecard--cli-local-mode.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/scorecard--cli-local-mode.md).
+Which Scorecard checks the Foundation audit approximates, and how. Source: research/raw/scorecard--checks-reference.md, research/raw/scorecard--cli-local-mode.md.
 
 | Scorecard check (risk) | Foundation check | Mode | Limit |
 | --- | --- | --- | --- |

@@ -1,6 +1,6 @@
 # Guide 02: Benchmark Data: What the Numbers Actually Mean
 
-*Sources: `research/external/2026-05-20-swe-bench-leaderboard.md`, `research/external/2026-05-20-aider-llm-leaderboard.md`*
+*Sources: `research/external/2026-05-20-swe-bench-leaderboard.md`, `research/external/2026-05-20-aider-llm-leaderboard.md` (source-repository research, not shipped)*
 *Last verified: 2026-05-20: **always cite this date and note scores change monthly***
 
 ---
@@ -14,7 +14,7 @@ No single benchmark covers everything. Use both together:
 | **SWE-bench Verified** | Python repos only, 500 real GitHub issues | Official (Princeton/CMU) | https://www.swebench.com/verified |
 | **Aider polyglot leaderboard** | Multiple languages, edit format accuracy | Official (Aider project) | https://aider.chat/docs/leaderboards |
 
-**Critical caveat:** SWE-bench measures raw LLM capability at the model level, not the scaffolded tool performance. A tool like Cursor or Aider adds UX, context management, and workflow integration ON TOP of the model score. The tool's UX quality matters beyond the benchmark number. Source: `research/external/2026-05-20-swe-bench-leaderboard.md`.
+**Critical caveat:** SWE-bench measures raw LLM capability at the model level, not the scaffolded tool performance. A tool like Cursor or Aider adds UX, context management, and workflow integration ON TOP of the model score. The tool's UX quality matters beyond the benchmark number. Source: `research/external/2026-05-20-swe-bench-leaderboard.md` (source-repository research, not shipped).
 
 ---
 
@@ -50,7 +50,7 @@ The benchmark has improved 41x from its October 2023 baseline of 1.96%.
 
 **Practical production ceiling: ~80%.** The 93.90% score (Claude Mythos Preview) is a research artifact not available in any production tool as of 2026-05-20.
 
-Source: `research/external/2026-05-20-swe-bench-leaderboard.md`
+Source: `research/external/2026-05-20-swe-bench-leaderboard.md` (source-repository research, not shipped)
 
 ---
 
@@ -66,7 +66,7 @@ Aider's leaderboard tests across multiple programming languages: a critical comp
 | Gemini 2.5 Pro | 83.1% |
 | GPT-5 (low reasoning) | 81.3% |
 
-Source: `research/external/2026-05-20-aider-llm-leaderboard.md`
+Source: `research/external/2026-05-20-aider-llm-leaderboard.md` (source-repository research, not shipped)
 
 ---
 
@@ -80,7 +80,7 @@ The following scores come from a practitioner-authored real-world comparison, no
 | Aider | 8.4/10 | Best efficiency ratio |
 | Cline | 8.3/10 | Comparable to Aider but more reliability issues |
 
-Source: `research/external/2026-05-20-claude-code-aider-cline-comparison.md`
+Source: `research/external/2026-05-20-claude-code-aider-cline-comparison.md` (source-repository research, not shipped)
 
 ---
 

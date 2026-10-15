@@ -31,7 +31,7 @@ Do not choose a framework, locale policy, translation provider, currency convers
 6. Complete the Ship Gate before any approved commit/push. Preserve other workers' files and task scope.
 
 ## References
-- [Digest](references/research/distillation.md) and [raw manifest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/localization-stinger/references/research/raw/manifest.json): resolve domain claims.
+- [Digest](references/research/distillation.md) and raw manifest: resolve domain claims.
 - [Resource contract](references/contract.md) and [examples](examples/icu-and-rtl.md): bounded assumptions and unexecuted integration shape.
 - [Node proof](examples/contract-proof.mjs): synthetic locale/resource/Intl mechanics only.
 
@@ -46,6 +46,6 @@ Prior to committing any code to the repository you must utilize in order the sec
 - Additional related skills can be found here:
   - [impeccable-stinger](../impeccable-stinger) - Preserve UI context and design direction.
   - [typography-font-stinger](../typography-font-stinger) - Technical font/glyph/loading ownership.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - First formal gate and resource/rendering risk.
-  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/quality-stinger) - Second formal gate.
-  - [github-repo-health-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/github-repo-health-stinger) - Orchestrator final gate.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - First formal gate and resource/rendering risk.
+  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/quality-stinger) - Second formal gate.
+  - [github-repo-health-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/github-repo-health-stinger) - Orchestrator final gate.

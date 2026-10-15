@@ -1,6 +1,6 @@
 # Guide 05: OAuth Multi-Workspace Installation
 
-**Sources:** `research/external/2026-05-20-oauth-multi-workspace.md`
+**Sources:** `research/external/2026-05-20-oauth-multi-workspace.md` (source-repository research, not shipped)
 
 ---
 
@@ -34,7 +34,7 @@ App stores Installation object in InstallationStore
   → Ready to receive events from this workspace
 ```
 
-> Source: `research/external/2026-05-20-oauth-multi-workspace.md`
+> Source: `research/external/2026-05-20-oauth-multi-workspace.md` (source-repository research, not shipped)
 
 ---
 

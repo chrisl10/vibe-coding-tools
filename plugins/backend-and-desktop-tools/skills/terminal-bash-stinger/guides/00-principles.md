@@ -2,7 +2,7 @@
 
 Core rules that govern every invocation of `terminal-bash-wasp-drone`. Read before any other guide.
 
-Sources: `research/internal/01-command-brief.md`, `research/external/02-bash-scripting-patterns.md`
+Sources: `research/internal/01-command-brief.md`, `research/external/02-bash-scripting-patterns.md` (source-repository research, not shipped)
 
 ---
 
@@ -70,7 +70,7 @@ Bootstrap scripts run at shell startup or on system setup. They must not accumul
 
 ## The "explain the gotcha" rule
 
-When recommending a modern CLI tool, always surface the primary gotcha alongside the recommendation. Reference `research/external/01-modern-cli-tools.md` for the full list. Minimum:
+When recommending a modern CLI tool, always surface the primary gotcha alongside the recommendation. Reference `research/external/01-modern-cli-tools.md` (source-repository research, not shipped) for the full list. Minimum:
 
 - `rg`: ignores hidden files and `.gitignore`-excluded files by default.
 - `fd`: skips dotfiles by default.

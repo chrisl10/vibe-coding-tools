@@ -1,6 +1,6 @@
 # Runtime support table (as of 2026-09-30)
 
-Re-read the source pages before reporting if the run is later than this date. Sources: [research/raw/nodejs--release-status.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/nodejs--release-status.md), [research/raw/python--version-status.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/python--version-status.md).
+Re-read the source pages before reporting if the run is later than this date. Sources: research/raw/nodejs--release-status.md, research/raw/python--version-status.md.
 
 | Runtime | Status | Audit action |
 | --- | --- | --- |

@@ -177,4 +177,4 @@ If a self-hosted font file is larger than 80 kB after subsetting for Latin-only 
 - `guides/01-font-display-decision-matrix.md`: `font-display` values to use in the `@font-face` rules produced by subsetting
 - `guides/06-performance-checklist.md`: file size targets and subsetting verification steps
 - `examples/edge-case-self-hosted-variable.md`: full pipeline: pyftsubset + @font-face + metric-matched fallback
-- `research/external/`: variable font subsetting sources, fonttools documentation
+- `research/external/` (source-repository research, not shipped): variable font subsetting sources, fonttools documentation

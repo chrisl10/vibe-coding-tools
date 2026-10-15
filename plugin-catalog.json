@@ -1,5 +1,5 @@
 {
-  "version": "3.0.0",
+  "version": "3.0.1",
   "immutable_core": [
     "get-started-stinger",
     "library-stinger",
@@ -1400,13 +1400,13 @@
         "web frontend in a desktop app": [
           "web-development-tools"
         ],
-        "build-desktop-app-ui": [
+        "build-desktop-app (web frontend)": [
           "web-development-tools"
         ],
-        "build-mobile-backend-data": [
+        "build-mobile-backend (data layer)": [
           "data-and-ai-tools"
         ],
-        "build-mobile-backend-identity": [
+        "build-mobile-backend (identity layer)": [
           "platform-and-release-tools"
         ]
       },
@@ -1823,6 +1823,18 @@
         ],
         "prepare-native-release-platform": [
           "backend-and-desktop-tools"
+        ],
+        "prepare-privacy-implementation (legal documents)": [
+          "business-and-product-tools"
+        ],
+        "plan-traffic-capacity (operating-cost model)": [
+          "software-economics-tools"
+        ],
+        "plan-traffic-capacity (staffing capacity)": [
+          "business-and-product-tools"
+        ],
+        "plan-traffic-capacity (database and pool design)": [
+          "data-and-ai-tools"
         ]
       },
       "mandatory": false,
@@ -2346,8 +2358,11 @@
         "wasp-nest-core"
       ],
       "optional_workflow_requirements": {
-        "validate-idea-market": [
+        "validate-idea (market and competitor research)": [
           "growth-and-customer-tools"
+        ],
+        "software-licensing (vendored component changes)": [
+          "web-development-tools"
         ]
       },
       "mandatory": false,
@@ -3088,6 +3103,9 @@
       "optional_workflow_requirements": {
         "library-packets": [
           "documentation-tools"
+        ],
+        "builder-readiness (idea validation)": [
+          "business-and-product-tools"
         ]
       },
       "mandatory": false,
@@ -3191,7 +3209,17 @@
       "requires": [
         "wasp-nest-core"
       ],
-      "optional_workflow_requirements": {},
+      "optional_workflow_requirements": {
+        "price-my-product (competitor comparison)": [
+          "growth-and-customer-tools"
+        ],
+        "price-my-product (billing and price-test instrumentation)": [
+          "platform-and-release-tools"
+        ],
+        "price-my-product and quote-project (effort estimation and legal review)": [
+          "business-and-product-tools"
+        ]
+      },
       "mandatory": false,
       "counts": {
         "skill": 4,
@@ -3540,6 +3568,9 @@
         ],
         "pricing": [
           "software-economics-tools"
+        ],
+        "plan-product (build handoff to /tars and KIPP)": [
+          "data-and-ai-tools"
         ]
       },
       "mandatory": false,

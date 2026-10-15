@@ -1,6 +1,6 @@
 # 07: Performance
 
-Sources: `research/2026-04-24-bulletproof-react-performance.md`, `research/2026-04-24-react-compiler-1.md`.
+Sources: `research/2026-04-24-bulletproof-react-performance.md`, `research/2026-04-24-react-compiler-1.md` (source-repository research, not shipped).
 
 ## The principle
 
@@ -45,7 +45,7 @@ Source: bulletproof-react. This is the first-reach performance pattern.
 
 ### 4. React Compiler (if eligible)
 
-If React 17+ and code is Rules-of-React compliant, enable the Compiler. It automatically memoizes components and hooks. See `research/2026-04-24-react-compiler-1.md`.
+If React 17+ and code is Rules-of-React compliant, enable the Compiler. It automatically memoizes components and hooks. See `research/2026-04-24-react-compiler-1.md` (source-repository research, not shipped).
 
 Adoption:
 

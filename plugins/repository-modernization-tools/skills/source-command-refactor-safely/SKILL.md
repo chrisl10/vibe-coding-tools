@@ -2,6 +2,7 @@
 name: "source-command-refactor-safely"
 description: "Convert bloat evidence into bounded behavior-preserving repairs with baseline and rollback proof."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-refactor-safely

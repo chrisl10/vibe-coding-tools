@@ -2,7 +2,7 @@
 
 How a streaming LLM completion gets from a SvelteKit server route to a Svelte 5 component on this repo's stack (SvelteKit, Vercel). Read this for any `coach-change`, `onboarding-flow`, or `prompt-change` invocation that touches a `+server.ts` route handler, and for any `rag-audit` that needs to confirm a retrieval-augmented response actually streams.
 
-> **Doc reference:** grounded in `references/research/distilled-mind-svelte-neon.md` and the raw sources under `references/research/raw/`. This is new, repo-specific coverage; the pre-existing 21 numbered guides predate SvelteKit's adoption on this repo and don't cover this pattern.
+> **Doc reference:** grounded in `references/research/distilled-mind-svelte-neon.md` and the raw sources under `references/research/raw/` (source-repository research, not shipped). This is new, repo-specific coverage; the pre-existing 21 numbered guides predate SvelteKit's adoption on this repo and don't cover this pattern.
 
 ---
 
@@ -10,13 +10,13 @@ How a streaming LLM completion gets from a SvelteKit server route to a Svelte 5 
 
 The code snippets below are historical mechanism sketches, not complete or copy-ready endpoints. They omit authentication, complete input checks, tracing, cancellation and durable effect handling; provider/model examples must come from the host's configured slots. Match the pinned SDK's actual API before implementing. [Guide 22](22-stream-interruption-and-recovery.md) now governs interruption, resume and proof. A client stop alone may leave server generation running; live platform cancellation requires observed adapter/runtime/config support.
 
-A SvelteKit `+server.ts` route handler is, per the framework's own description, a function that turns a `Request` into a `Response`, built on standard Web APIs (source: `references/research/raw/sveltekit--kit-web-standards-stream-apis.md`). The `Response` constructor accepts a `ReadableStream` as its body. That single fact is the entire mechanism: retrieval happens first (query the retrieval substrate per `guides/00-selection-and-defaults.md`), then the LLM call streams its output through that `ReadableStream`, and the client reads it incrementally instead of waiting for the full response.
+A SvelteKit `+server.ts` route handler is, per the framework's own description, a function that turns a `Request` into a `Response`, built on standard Web APIs (source: `references/research/raw/sveltekit--kit-web-standards-stream-apis.md` [source-repository research, not shipped]). The `Response` constructor accepts a `ReadableStream` as its body. That single fact is the entire mechanism: retrieval happens first (query the retrieval substrate per `guides/00-selection-and-defaults.md`), then the LLM call streams its output through that `ReadableStream`, and the client reads it incrementally instead of waiting for the full response.
 
 Two implementation paths, both grounded in archived sources; pick one per feature, don't mix them within a single endpoint.
 
 ### Path one: the Vercel AI SDK (`ai` plus `@ai-sdk/svelte`)
 
-The documented pattern (source: `references/research/raw/ai-sdk-dev--svelte-quickstart-streamtext.md`):
+The documented pattern (source: `references/research/raw/ai-sdk-dev--svelte-quickstart-streamtext.md` [source-repository research, not shipped]):
 
 ```ts
 // src/routes/api/chat/+server.ts
@@ -54,7 +54,7 @@ export async function POST({ request }) {
 
 ### Path two: raw `ReadableStream` / Server-Sent Events, no SDK
 
-For a case that doesn't fit the AI SDK's message protocol (a custom event stream, a non-chat use case), the reference pattern the SvelteKit ecosystem has converged on (source: `references/research/raw/sveltejs-kit--issue-5344-sse-readablestream-examples.md`):
+For a case that doesn't fit the AI SDK's message protocol (a custom event stream, a non-chat use case), the reference pattern the SvelteKit ecosystem has converged on (source: `references/research/raw/sveltejs-kit--issue-5344-sse-readablestream-examples.md` [source-repository research, not shipped]):
 
 ```ts
 // src/routes/api/stream/+server.ts
@@ -79,7 +79,7 @@ export async function GET() {
 }
 ```
 
-**A chunk-boundary gotcha that is a must-fix if missed:** `ReadableStream` chunks are not guaranteed to end at convenient boundaries. A UTF-8 multi-byte sequence, a full SSE frame, or a complete JSON token from an upstream provider's stream can be split arbitrarily across reads (source: `references/research/raw/sveltejs-kit--issue-5344-sse-readablestream-examples.md`). Code that assumes one `read()` equals one complete logical unit will intermittently corrupt output under real network conditions. Any hand-rolled stream parser needs a small buffering/reassembly layer; interpreting raw chunks as complete events is a finding. Byte-preserving forwarding without semantic interpretation may be valid; the receiving parser still reassembles frames.
+**A chunk-boundary gotcha that is a must-fix if missed:** `ReadableStream` chunks are not guaranteed to end at convenient boundaries. A UTF-8 multi-byte sequence, a full SSE frame, or a complete JSON token from an upstream provider's stream can be split arbitrarily across reads (source: `references/research/raw/sveltejs-kit--issue-5344-sse-readablestream-examples.md` [source-repository research, not shipped]). Code that assumes one `read()` equals one complete logical unit will intermittently corrupt output under real network conditions. Any hand-rolled stream parser needs a small buffering/reassembly layer; interpreting raw chunks as complete events is a finding. Byte-preserving forwarding without semantic interpretation may be valid; the receiving parser still reassembles frames.
 
 ### The client side (Svelte 5)
 
@@ -112,16 +112,16 @@ Component shape, Suspense-equivalent boundaries, and optimistic-update patterns 
 
 ### Default to the Node.js runtime, not Edge
 
-As of the current Vercel documentation, Vercel itself recommends migrating away from the Edge runtime to the Node.js runtime "for improved performance and reliability" (source: `references/research/raw/vercel--edge-runtime-official-docs.md`), a reversal of the platform's earlier position that favored Edge specifically for streaming. Two reasons this matters concretely for this repo:
+As of the current Vercel documentation, Vercel itself recommends migrating away from the Edge runtime to the Node.js runtime "for improved performance and reliability" (source: `references/research/raw/vercel--edge-runtime-official-docs.md` [source-repository research, not shipped]), a reversal of the platform's earlier position that favored Edge specifically for streaming. Two reasons this matters concretely for this repo:
 
 1. **Fluid compute erased the old cold-start/idle-cost tradeoff** that used to justify choosing Edge over serverless Node.js.
-2. **The Edge runtime is Web-Standard-APIs-only.** A number of database drivers that assume a Node socket layer will not run there (source: `references/research/raw/digitalmatters--vercel-edge-vs-serverless-2026.md`), which is a direct problem for a Neon Postgres connection running inside the same request that streams a retrieval-augmented completion. Reach for the Neon serverless HTTP driver specifically if an Edge deployment is genuinely required for a given route; otherwise, don't opt into `export const config = { runtime: 'edge' }` at all.
+2. **The Edge runtime is Web-Standard-APIs-only.** A number of database drivers that assume a Node socket layer will not run there (source: `references/research/raw/digitalmatters--vercel-edge-vs-serverless-2026.md` [source-repository research, not shipped]), which is a direct problem for a Neon Postgres connection running inside the same request that streams a retrieval-augmented completion. Reach for the Neon serverless HTTP driver specifically if an Edge deployment is genuinely required for a given route; otherwise, don't opt into `export const config = { runtime: 'edge' }` at all.
 
-**Streaming does work on Vercel's default Node.js runtime**, despite that runtime being Lambda-backed and Lambda having no native streaming support. Vercel built a dedicated bridge (a socket connection from inside the Lambda invocation back to Vercel's own invocation service) specifically to make this work (source: `references/research/raw/vercel--functions-streaming-serverless-node-edge-and-duration.md`). This is why the generic SvelteKit-docs caveat, "streaming doesn't work on platforms that buffer responses, like AWS Lambda" (source: `references/research/raw/sveltekit--kit-routing-streaming-response.md`), does not apply to Vercel even though Vercel's compute is Lambda-based underneath.
+**Streaming does work on Vercel's default Node.js runtime**, despite that runtime being Lambda-backed and Lambda having no native streaming support. Vercel built a dedicated bridge (a socket connection from inside the Lambda invocation back to Vercel's own invocation service) specifically to make this work (source: `references/research/raw/vercel--functions-streaming-serverless-node-edge-and-duration.md`). This is why the generic SvelteKit-docs caveat, "streaming doesn't work on platforms that buffer responses, like AWS Lambda" (source: `references/research/raw/sveltekit--kit-routing-streaming-response.md` [source-repository research, not shipped]), does not apply to Vercel even though Vercel's compute is Lambda-based underneath.
 
 ### Duration limits to design against
 
-Current Vercel Function duration limits: Hobby 300s max; Pro/Enterprise 300s default, extendable to 800s, with a 1800s (30 minute) extended maximum in beta on supported runtimes (source: `references/research/raw/vercel--functions-streaming-serverless-node-edge-and-duration.md`). A long-running agentic or multi-step response that could approach these windows needs an explicit `maxDuration` route config on a paid plan, or should move to a background/async architecture rather than holding a single request open.
+Current Vercel Function duration limits: Hobby 300s max; Pro/Enterprise 300s default, extendable to 800s, with a 1800s (30 minute) extended maximum in beta on supported runtimes (source: `references/research/raw/vercel--functions-streaming-serverless-node-edge-and-duration.md` [source-repository research, not shipped]). A long-running agentic or multi-step response that could approach these windows needs an explicit `maxDuration` route config on a paid plan, or should move to a background/async architecture rather than holding a single request open.
 
 ### Connection liveness on long streams
 

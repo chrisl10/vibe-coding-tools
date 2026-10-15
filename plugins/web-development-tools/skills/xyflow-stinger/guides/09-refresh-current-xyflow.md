@@ -24,5 +24,5 @@ The svelteflow.dev "what's new" page has lagged the registry (C3); prefer the re
 1. Record the date and the exact commands or URLs used.
 2. Compare against the snapshot: new stable versions, peer range changes, breaking changes, deprecations, advisories, and whether any `-next` line went stable.
 3. If a major changed or a prerelease went stable, stop and report before touching the consumer project.
-4. When the task authorizes maintaining this Stinger: archive each new source under `references/research/raw/` with the standard header, update `distilled-xyflow.md` with citations, then update `CURRENT-XYFLOW.md` and any guide row that changed. Never hand-edit a version without its source.
+4. When the task authorizes maintaining this Stinger: archive each new source under `references/research/raw/` (source-repository research, not shipped) with the standard header, update `distilled-xyflow.md` with citations, then update `CURRENT-XYFLOW.md` and any guide row that changed. Never hand-edit a version without its source.
 5. In consumer work, report the refreshed facts in the task report instead of editing this Stinger.

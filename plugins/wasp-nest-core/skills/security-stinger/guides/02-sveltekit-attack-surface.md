@@ -47,7 +47,7 @@ Svelte's own docs are blunt: "escape the passed string or only populate it with 
 
 ## Cookie flags and session fixation
 
-See [references/severity-rubric.md](../references/severity-rubric.md) and [OWASP Session Management Cheat Sheet source](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/security-stinger/references/research/raw/security--owasp--session-management-cookie-flags-fixation.md) for the full attribute-by-attribute rubric (`Secure`, `HttpOnly`, `SameSite`, `__Host-` prefix, narrow `Domain`/`Path`, non-persistent expiry). The core rule for this stack: only accept a session identifier via a cookie, never a URL parameter or hidden form field, and regenerate the session on login to prevent fixation.
+See [references/severity-rubric.md](../references/severity-rubric.md) and OWASP Session Management Cheat Sheet source for the full attribute-by-attribute rubric (`Secure`, `HttpOnly`, `SameSite`, `__Host-` prefix, narrow `Domain`/`Path`, non-persistent expiry). The core rule for this stack: only accept a session identifier via a cookie, never a URL parameter or hidden form field, and regenerate the session on login to prevent fixation.
 
 ## CSP nonce/hash strategy
 

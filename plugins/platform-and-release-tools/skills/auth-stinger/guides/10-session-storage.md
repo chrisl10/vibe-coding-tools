@@ -2,7 +2,7 @@
 
 Cookies, JWT vs opaque, refresh-token rotation, CSRF defense.
 
-Source: `research/2026-04-25-cookie-security-and-csrf.md`, `research/2026-04-25-oauth2-and-token-strategy.md`, OWASP Session Management Cheat Sheet.
+Source: `research/2026-04-25-cookie-security-and-csrf.md`, `research/2026-04-25-oauth2-and-token-strategy.md` (source-repository research, not shipped), OWASP Session Management Cheat Sheet.
 
 ## Token types: get the vocabulary right
 

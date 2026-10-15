@@ -6,7 +6,7 @@ References: [audit-contract.md](../references/audit-contract.md) section 2; [arm
 
 ## Rules
 
-1. **Always** dispatch `security-wasp-drone` for the generic pass: secrets, dependency advisories, OWASP Top 10 classes, and anything stack-agnostic. Its Stinger, `security-stinger`, is written for one specific stack, so the arming line tells it to apply only the parts that match this repository and to work in audit mode: report, do not remediate, and write to `02-security/` instead of `library/`.
+1. **Always** dispatch `security-wasp-drone` for the generic pass: secrets, dependency advisories, OWASP Top 10 classes, and anything stack-agnostic. Its Stinger, `security-stinger`, is written for one specific stack, so the arming line tells it to apply only the parts that match this repository. `security-stinger` has no built-in report-only mode, so the arming line states the constraint as a direct instruction: report findings only, remediate nothing, skip its Ship Gate and commit steps, and write nothing outside `02-security/` (not the repository, not `library/`).
 2. For each entry in `stacks`:
 
    | Stack id | Dispatch | Scope |

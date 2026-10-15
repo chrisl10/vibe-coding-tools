@@ -10,7 +10,7 @@ Claude Code exposes plugin commands. Codex receives corresponding Stinger wrappe
 
 ## An optional Codex role is missing
 
-Check the explicit `~/.wasp-nest/installed-plugins.json` selection and the actual package roots, required Core, matching versions and workflow prerequisites. Then check Core's trusted registration hook. A cached marketplace folder is not an enabled selection, and marketplace/UI installation alone is not proven to write the registry. The local installer records it automatically.
+Check the explicit `~/.wasp-nest/installed-plugins.json` selection and the actual package roots, required Core, matching versions and workflow prerequisites. Then check Core's trusted registration hook. A cached marketplace folder is not an enabled selection, and marketplace/UI installation alone is not proven to write the registry. Skill and command resolution after a Claude Code `/plugin install` falls back to Claude's own `~/.claude/plugins/installed_plugins.json` when the Wasp Nest registry is absent; Codex role registration still needs the explicit registry. The local installer records it automatically.
 
 Use the matching installed Stinger when a native role is unavailable and report that limit. Do not copy a different plugin's role into place or invent a native selector.
 

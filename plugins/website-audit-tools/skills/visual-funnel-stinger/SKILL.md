@@ -12,8 +12,6 @@ metadata:
 
 # Visual Funnel Stinger
 
-> **Forge status:** stages 1-6 complete (Topic, Research, Distillation, References, Guides, final Skill/Drone authorship). Stage 7 (registration/validation sweep) has not run yet.
-
 You are equipping **visual-funnel-wasp-drone**, part of the Website Auditor by Legion Code Inc. plugin. Full scope and acceptance criteria: [prd-012-visual-funnel](../../library/requirements/backlog/prd-012-visual-funnel/prd-012-visual-funnel-index.md).
 
 ## Purpose
@@ -48,17 +46,17 @@ The 1440x900 and 390x844 viewport dimensions are a binding product decision from
 ## References map
 
 - `references/research/distilled-visual-funnel.md`, load when a domain claim (funnel methodology, checklist thresholds, device-emulation mechanics) needs verification or a dispute needs settling; every claim there cites its `raw/` source
-- `references/research/raw/`, load when tracing a distilled claim back to its primary source, or when a guide's citation needs the full original context
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `references/templates/checkpoint-log-template.md`, load when starting a new run's `05-funnel/checkpoint-log.md`
 - `references/templates/funnel-report-template.md`, load when assembling the final `05-funnel/funnel-report.md`
 - `references/templates/interactive-mode-opt-in-record.md`, load at intake, before the walk begins, to record the OFF/ON decision
 - `references/scripts/playwright-viewport-config.js`, load/copy when configuring the harness's browser tool for the two required viewports; see `guides/02-configure-device-emulation.md`
-- `references/scripts/README.md`, points to `shared/scripts/visual-capture.py` for this pair's centrally-planned deterministic script
+- `references/scripts/README.md`, explains why this pair captures with the harness browser tool rather than a shared script
 
 ## Related drones and stingers
 
 - [visual-funnel-wasp-drone](../../agents/visual-funnel-wasp-drone.md) - this Stinger's paired Drone
-- [lighthouse-pagespeed-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/browser-and-app-testing-tools/skills/lighthouse-pagespeed-stinger) - consult for Core Web Vitals measurement discipline during the walk; does not own this pair's screenshot/UX scoring
+- [lighthouse-pagespeed-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/browser-and-app-testing-tools/skills/lighthouse-pagespeed-stinger) - consult for Core Web Vitals measurement discipline during the walk; does not own this pair's screenshot/UX scoring
 - [performance-cwv-stinger](../performance-cwv-stinger) - owns Core Web Vitals field-data scoring for this plugin specifically; this Stinger only notes load feel as checkpoint context
 - [icp-positioning-stinger](../icp-positioning-stinger) - produces the funnel definition this Stinger consumes from `02-positioning/`
 - [audit-scoring-stinger](../audit-scoring-stinger) - consumes this Stinger's scored, evidenced `05-funnel/funnel-report.md`
@@ -69,7 +67,7 @@ The 1440x900 and 390x844 viewport dimensions are a binding product decision from
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [visual-funnel-wasp-drone](../../agents/visual-funnel-wasp-drone.md) - this Stinger's paired Drone.
-  - [lighthouse-pagespeed-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/browser-and-app-testing-tools/skills/lighthouse-pagespeed-stinger) - consult for CWV methodology context during the visual walk, does not own this pair's screenshot/UX scoring
+  - [lighthouse-pagespeed-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/browser-and-app-testing-tools/skills/lighthouse-pagespeed-stinger) - consult for CWV methodology context during the visual walk, does not own this pair's screenshot/UX scoring
 
 ## Ship Gate decision
 

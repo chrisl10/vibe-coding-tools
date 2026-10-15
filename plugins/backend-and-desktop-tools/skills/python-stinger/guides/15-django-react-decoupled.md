@@ -205,7 +205,7 @@ Discuss the React tooling choice with `react-wasp-drone`.
 
 ## Sources
 
-- `research/2026-05-03-django-react-decoupled.md`
+- `research/2026-05-03-django-react-decoupled.md` (source-repository research, not shipped)
 - https://github.com/adamchainz/django-cors-headers
 - https://joshkaramuth.com/blog/django-allauth-react
 - https://jeffroche.online/notes/django-next-auth

@@ -20,7 +20,7 @@ WHERE account_id = ?2
 RETURNING reserved_microunits;
 ```
 
-Convert the requested amount into a validated positive domain type before the transaction. Keep `?1 > 0` in the conditional update as a database-level defense against a negative reservation increasing the available balance. Run the eligibility check, conditional update, reservation row, and idempotency record inside one tracked write transaction. SQLite permits one writer and `BEGIN IMMEDIATE` acquires write intent before the read/modify/write sequence ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/persistence/2026-07-24-sqlite-transactions.md)); SQLx 0.9 documents `begin_with`, but the selected version must be revalidated before using that API ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/persistence/2026-07-24-sqlx-custom-transactions.md)).
+Convert the requested amount into a validated positive domain type before the transaction. Keep `?1 > 0` in the conditional update as a database-level defense against a negative reservation increasing the available balance. Run the eligibility check, conditional update, reservation row, and idempotency record inside one tracked write transaction. SQLite permits one writer and `BEGIN IMMEDIATE` acquires write intent before the read/modify/write sequence (research); SQLx 0.9 documents `begin_with`, but the selected version must be revalidated before using that API (research).
 
 ## Failure-focused proof
 
@@ -32,7 +32,7 @@ cargo test -p router-state kill_before_commit_recovers_all_or_none
 cargo test -p router-state busy_timeout_returns_structured_contention
 ```
 
-Use two real SQLite connections/processes; a process-local lock is not sufficient. Preserve database and WAL/SHM/journal companions in the crash fixture because recovery semantics depend on them ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/persistence/2026-07-24-sqlite-atomic-commit.md)).
+Use two real SQLite connections/processes; a process-local lock is not sufficient. Preserve database and WAL/SHM/journal companions in the crash fixture because recovery semantics depend on them (research).
 
 ## Output
 

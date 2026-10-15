@@ -2,7 +2,7 @@
 
 Row-level error model, the "N imported / M failed" summary, partial import, and the downloadable error report.
 
-*Derived from `research/external/2026-05-20-row-level-error-messages.md`, `research/external/2026-05-20-downloadable-error-reports.md`, `research/external/2026-05-20-partial-import-valid-rows.md`, `research/external/2026-05-20-import-ux-design-guide.md`.*
+*Derived from `research/external/2026-05-20-row-level-error-messages.md`, `research/external/2026-05-20-downloadable-error-reports.md`, `research/external/2026-05-20-partial-import-valid-rows.md`, `research/external/2026-05-20-import-ux-design-guide.md` (source-repository research, not shipped).*
 
 ---
 

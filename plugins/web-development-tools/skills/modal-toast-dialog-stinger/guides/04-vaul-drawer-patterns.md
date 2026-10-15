@@ -2,7 +2,7 @@
 
 Complete implementation guide for Vaul drawers in Next.js App Router with Tailwind CSS.
 
-*Derives from: `research/external/vaul-drawer.md`.*
+*Derives from: `research/external/vaul-drawer.md` (source-repository research, not shipped).*
 
 ---
 

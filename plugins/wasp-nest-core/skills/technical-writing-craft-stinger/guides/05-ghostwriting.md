@@ -1,6 +1,6 @@
 # 05 - Ghostwriting
 
-> Source: synthesized from Command Brief, `research/external/03-google-developer-style-guide.md`, `research/external/07-stripe-docs-approach.md`
+> Source: synthesized from Command Brief, `research/external/03-google-developer-style-guide.md`, `research/external/07-stripe-docs-approach.md` (source-repository research, not shipped)
 > Note: No external source was identified specifically for voice-matching methodology (`research/research-summary.md` open question 5). This guide synthesizes from first principles grounded in the Google style guide and Stripe approach.
 
 Ghostwriting mode activates when the user asks the Drone to *write* a document rather than *review* one. The rules are different: in review mode, the Drone is an editor. In ghostwriting mode, the Drone is the author -- and must apply its own rubric to its own output before delivering.
@@ -27,7 +27,7 @@ Do not start writing until these four are confirmed. A wrong mode is not fixable
 
 ### Drafting a tutorial
 
-The tutorial structure (source: `research/external/02-diataxis-four-modes-deep.md`):
+The tutorial structure (source: `research/external/02-diataxis-four-modes-deep.md` [source-repository research, not shipped]):
 
 ```
 1. Introduction: what the reader will build/achieve (one paragraph).

@@ -1,6 +1,6 @@
 # 08 — Quora Ads
 
-Best-fit ICP: B2B SaaS buyers in the research/comparison stage — "X vs Y" queries, "how to choose between A and B", technical tool evaluations. Poor fit for mass consumer, high-volume lead generation.
+Best-fit ICP: B2B SaaS buyers in the research/comparison (source-repository research, not shipped) stage — "X vs Y" queries, "how to choose between A and B", technical tool evaluations. Poor fit for mass consumer, high-volume lead generation.
 
 ---
 
@@ -15,7 +15,7 @@ Quora has evolved significantly since the rise of AI-generated answers (ChatGPT,
 
 **Scale expectation:** Quora is a niche supplement, not a volume channel. Expect lower volume than LinkedIn or Google — this is expected and acceptable when CPMs are $8-15 vs LinkedIn's $75-90.
 
-*Source: `research/external/2026-05-20-quora-ads-b2b-strategic-framework.md`*
+*Source: `research/external/2026-05-20-quora-ads-b2b-strategic-framework.md` (source-repository research, not shipped)*
 
 ---
 
@@ -32,7 +32,7 @@ Quora has evolved significantly since the rise of AI-generated answers (ChatGPT,
 - monday.com: 20% CVR (conversion rate) on Quora-driven traffic
 - Atlassian: 92% lower CPC vs LinkedIn for the same technical ICP
 
-*Source: `research/external/2026-05-20-quora-ads-b2b-case-studies-2026.md`*
+*Source: `research/external/2026-05-20-quora-ads-b2b-case-studies-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -56,7 +56,7 @@ Quora's research-validated positioning for B2B: your ad is not just capturing a 
 
 This is the conceptual reason why Quora CPLs look high at first glance but deliver better downstream close rates for B2B SaaS when measured at pipeline or revenue level.
 
-*Source: `research/external/2026-05-20-quora-ads-b2b-strategic-framework.md`*
+*Source: `research/external/2026-05-20-quora-ads-b2b-strategic-framework.md` (source-repository research, not shipped)*
 
 ---
 

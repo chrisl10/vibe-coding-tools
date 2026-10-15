@@ -1,6 +1,6 @@
 # Desktop capability decision exercises
 
-All records are SYNTHETIC supplied-case reviews; outcomes below are expected review decisions, not executed native verdicts. Source basis: [digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/desktop-capabilities-20261007/distilled-desktop-capabilities.md).
+All records are SYNTHETIC supplied-case reviews; outcomes below are expected review decisions, not executed native verdicts. Source basis: digest.
 
 | Outcome | Supplied synthetic record | Review decision | Required evidence or action |
 |---|---|---|---|

@@ -762,5 +762,4 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/littlebird-mcp-reference.md` | Tool inventory, parameters, return shapes, known limitations, the Routines-observe Cowork-acts pattern |
 | `references/evidence-standards.md` | Receipts, the four kinds of line, confidence ratings, attribution guardrail, partial rosters, confirmation gates, empty retrieval |
 | `references/research/distilled-weekly-review-design.md` | Cited distillation: what the monitoring evidence supports and what it does not, the cost that gets abandoned, self-assessment accuracy, the task-versus-self reading of the feedback literature, the setback asymmetry, the run chart thresholds and the live conflict inside them, why scorecards get abandoned, the mere urgency effect, the timing argument, the individual retrospective problem, seven fenced numbers, seven named gaps |
-| `references/research/README.md` | Archive layout, sweep coverage against every required target, source quality ranking, four things to know first |
-| `references/research/raw/` | Seventeen archived sources, each with title, URL, fetch date, and source type |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |

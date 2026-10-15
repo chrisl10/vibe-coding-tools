@@ -16,7 +16,7 @@ This means two things:
 
 ## The 15-20 minute daily engagement practice
 
-From `research/external/2026-05-20-indie-hacker-x-strategy.md`:
+From `research/external/2026-05-20-indie-hacker-x-strategy.md` (source-repository research, not shipped):
 
 "Spend 15-20 minutes daily replying to accounts with 5K-50K followers in your niche. Thoughtful, additive replies in front of engaged audiences build your follower count faster than almost any other tactic."
 
@@ -102,4 +102,4 @@ None of these activate algorithmic distribution. They are noise at best, reputat
 
 ---
 
-**Research grounding:** `research/external/2026-05-20-indie-hacker-x-strategy.md`, `research/external/2026-05-20-build-in-public-x-playbook.md`, `research/external/2026-05-20-anti-ai-backlash-algorithms.md`
+**Research grounding:** `research/external/2026-05-20-indie-hacker-x-strategy.md`, `research/external/2026-05-20-build-in-public-x-playbook.md`, `research/external/2026-05-20-anti-ai-backlash-algorithms.md` (source-repository research, not shipped)

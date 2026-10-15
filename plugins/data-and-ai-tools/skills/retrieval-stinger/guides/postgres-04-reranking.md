@@ -2,7 +2,7 @@
 
 An optional cross-encoder reranking stage layered after fusion (`postgres-03-rrf-fusion.md`). This guide covers when reranking earns its cost and when it's wasted latency.
 
-> Ground truth: `references/research/raw/cohere--rerank--model-docs-and-v3-5-announcement.md` (Cohere `rerank-v3.5`/`rerank-v4.0` as the concrete example), cross-referenced with the evaluation sources in `references/research/raw/exploreagentic--rag-evaluation--gold-set-component-ablation.md`. Synthesis: `references/research/distilled-retrieval.md`.
+> Ground truth: `references/research/raw/cohere--rerank--model-docs-and-v3-5-announcement.md` (Cohere `rerank-v3.5`/`rerank-v4.0` as the concrete example), cross-referenced with the evaluation sources in `references/research/raw/exploreagentic--rag-evaluation--gold-set-component-ablation.md` (source-repository research, not shipped). Synthesis: `references/research/distilled-retrieval.md`.
 
 ---
 

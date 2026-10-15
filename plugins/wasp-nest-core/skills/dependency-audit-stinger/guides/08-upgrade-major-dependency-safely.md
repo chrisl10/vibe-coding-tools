@@ -1,6 +1,6 @@
 # Upgrade a major dependency with explicit contracts
 
-Use this guide for O111. Start with [target audit](05-target-repository-audit.md), [release digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/dependency-audit-stinger/references/research/release-evidence/digest.md) and the [upgrade worksheet](../templates/major-upgrade-evidence.md). This procedure prepares or executes only the scope the owner authorized.
+Use this guide for O111. Start with [target audit](05-target-repository-audit.md), release digest and the [upgrade worksheet](../templates/major-upgrade-evidence.md). This procedure prepares or executes only the scope the owner authorized.
 
 ## Capture the baseline before changing dependencies
 

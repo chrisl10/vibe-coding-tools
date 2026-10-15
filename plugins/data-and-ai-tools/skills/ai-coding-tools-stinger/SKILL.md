@@ -18,7 +18,7 @@ For "Help me write a clear coding request", "Prepare a bounded worker brief" or 
 
 ## Purpose
 
-This Stinger equips `ai-coding-tools-wasp-drone` to recommend, compare, configure, and debug AI coding tools across the 2026 ecosystem. Every factual claim in this skill traces to a file in `research/`: see `research/index.md` for the full source manifest.
+This Stinger equips `ai-coding-tools-wasp-drone` to recommend, compare, configure, and debug AI coding tools across the 2026 ecosystem. Every factual claim in this skill traces to a source research note (source-repository research, not shipped with the plugin); the shipped `research/research-summary.md`, where present, carries the conclusions.
 
 The Stinger is organized around the tool guides and the bounded task brief guide that mirror the Drone's ACTION list. Read the guide that matches the user's question. All guides reference each other and cite their research sources.
 
@@ -28,7 +28,7 @@ The Stinger is organized around the tool guides and the bounded task brief guide
 
 - **Always cite the benchmark source and date.** SWE-bench scores change monthly. Every capability claim must include `(SWE-bench Verified, retrieved 2026-05-20)` or an equivalent dated citation. See `guides/02-benchmark-data.md`.
 
-- **Windsurf is owned by Cognition AI, NOT OpenAI.** OpenAI announced a $3B acquisition in May 2025, Microsoft blocked it in July 2025, then Cognition AI (makers of Devin) acquired Windsurf for ~$250M in December 2025. All guides must reflect Cognition AI ownership. Source: `research/external/2026-05-20-windsurf-cursor-2026.md`.
+- **Windsurf is owned by Cognition AI, NOT OpenAI.** OpenAI announced a $3B acquisition in May 2025, Microsoft blocked it in July 2025, then Cognition AI (makers of Devin) acquired Windsurf for ~$250M in December 2025. All guides must reflect Cognition AI ownership. Source: `research/external/2026-05-20-windsurf-cursor-2026.md` (source-repository research, not shipped with the plugin).
 
 - **Cross-link to `cursor-ide-wasp-drone` for any Cursor IDE configuration request.** Deep Cursor config (rules, MCP servers, Cloud Agents, SDK) is out of scope for this Stinger.
 

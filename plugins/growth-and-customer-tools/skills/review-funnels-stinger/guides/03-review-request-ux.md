@@ -17,7 +17,7 @@ Never ask for a public platform review without first checking happiness. The two
 
 Why: Batch-sending review requests without the happiness filter yields response rates under 3%. Adding the happiness filter and targeting promoters lifts response rates to 12-18%.
 
-Source: `research/external/2026-05-20-review-request-timing-ux.md`
+Source: `research/external/2026-05-20-review-request-timing-ux.md` (source-repository research, not shipped)
 
 ---
 
@@ -40,7 +40,7 @@ Source: `research/external/2026-05-20-review-request-timing-ux.md`
 3. Transactional email triggered within 24h of the event
 4. Standalone review-request email (lowest, use only for NPS promoter list)
 
-Source: `research/external/2026-05-20-review-request-timing-ux.md`
+Source: `research/external/2026-05-20-review-request-timing-ux.md` (source-repository research, not shipped)
 
 ---
 

@@ -2,7 +2,7 @@
 
 Email infrastructure is the foundation everything else runs on. Since Google's November 2025 enforcement change, getting this wrong means permanent 550 rejections, not temporary deferrals. Fix infrastructure before touching copy, sequences, or personalization.
 
-**Research grounding:** `research/external/2026-05-20-cold-email-deliverability-2026-rules.md`, `research/external/2026-05-20-google-bulk-sender-official-faq.md`, `research/external/2026-05-20-email-warmup-tools-comparison.md`
+**Research grounding:** `research/external/2026-05-20-cold-email-deliverability-2026-rules.md`, `research/external/2026-05-20-google-bulk-sender-official-faq.md`, `research/external/2026-05-20-email-warmup-tools-comparison.md` (source-repository research, not shipped)
 
 ---
 
@@ -63,7 +63,7 @@ Warmup is the process of building sending reputation for a new domain and mailbo
 Scale horizontally: add more mailboxes rather than increasing volume per mailbox.
 
 ### Warmup tools comparison (2026)
-Based on `research/external/2026-05-20-email-warmup-tools-comparison.md`:
+Based on `research/external/2026-05-20-email-warmup-tools-comparison.md` (source-repository research, not shipped):
 - **Smartlead built-in warmup:** 97% deliverability benchmark, included in Smartlead plans
 - **Instantly warmup network:** included in Instantly plans, large warmup pool
 - Both tools provide adequate warmup for standard use cases. No need for a separate warmup tool if already using Instantly or Smartlead.

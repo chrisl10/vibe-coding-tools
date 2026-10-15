@@ -6,4 +6,4 @@
 4. Preserve deferred features and one trigger for adding them. Keep platform-specific unknowns: device persistence for native, authorization/retries for integration, public content/navigation for website.
 5. Hand the slice to the actual selected implementation owner only with accepted scope/action authority. This readiness workflow does not scaffold, install or execute it.
 
-Grounding: [start small](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/builder-readiness-stinger/references/research/raw/mdn-first.html), [planning](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/builder-readiness-stinger/references/research/raw/mdn-plan.html), [review workflow](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/builder-readiness-stinger/references/research/raw/github-flow.html). Slice risk/acceptance contract derives from the topic.
+Grounding: start small, planning, review workflow. Slice risk/acceptance contract derives from the topic.

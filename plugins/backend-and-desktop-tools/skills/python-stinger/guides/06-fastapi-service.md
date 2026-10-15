@@ -186,4 +186,4 @@ async def value_error_handler(request: Request, exc: ValueError):
 - https://fastapi.tiangolo.com/
 - https://fastapi.tiangolo.com/advanced/events/: lifespan events
 - https://www.python-httpx.org/async/: AsyncClient lifecycle
-- `research/2026-05-03-httpx-async-production.md`
+- `research/2026-05-03-httpx-async-production.md` (source-repository research, not shipped)

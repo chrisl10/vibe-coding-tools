@@ -48,4 +48,4 @@ To reproduce, resolve the selected Operating Cost or Unit Economics skill, open 
 
 All four Unknown fixtures returned exit 2 and `Input error: numeric field: expected unsigned decimal notation`, with empty stdout. Unknown is not zero.
 
-Grounding: [update digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/ai-tools-platform-stinger/references/research/feature-margin/digest.md).
+Grounding: update digest.

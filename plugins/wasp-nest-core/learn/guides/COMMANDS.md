@@ -4,7 +4,7 @@ A command gives a repeatable job a short name. It answers **what whole workflow 
 
 ## Choose the right command
 
-The catalog defines fourteen source commands: seven in Core and seven in optional plugins. The Core commands below are shown by short name; native Claude uses the `wasp-nest-core:` prefix. Local home installations also expose flat commands.
+The catalog defines seventy-seven source commands: nine in Core and sixty-eight in optional plugins. The tables below list the main entry points; `plugin-catalog.json` has the complete list per plugin. The Core commands below are shown by short name; native Claude uses the `wasp-nest-core:` prefix. Local home installations also expose flat commands.
 
 | Command | Use it when | Expected result |
 | --- | --- | --- |
@@ -15,6 +15,8 @@ The catalog defines fourteen source commands: seven in Core and seven in optiona
 | [`/register`](../../commands/register.md) | A new Drone/Stinger pair exists but is not discoverable. | Pairing, roster guide, cross-links, and validation. |
 | [`/drift-audit`](../../commands/drift-audit.md) | The roster may disagree with shipped files. | A findings report; it does not silently fix drift. |
 | [`/re-research`](../../commands/re-research.md) | A Stinger's external facts need a dated refresh. | Updated evidence and distillation for that one Stinger. |
+| [`/choose-outcome`](../../commands/choose-outcome.md) | You know the result you want but not which pack or skill owns it. | One recommended route that separates proposed coverage, source presence and installed availability. |
+| [`/qualify-wiring`](../../commands/qualify-wiring.md) | A skill, agent, command or plugin was added or rewired. | A qualification of source, generated carriers, selected owners and native proof. |
 
 ## Optional command owners
 

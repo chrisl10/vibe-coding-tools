@@ -1,6 +1,6 @@
 # 24: Authority for tools and durable effects
 
-Use for O188 and orchestration/onboarding changes. [MCP tools](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/mind-stinger/references/research/agent-boundaries-20261007/raw/mcp-tools-20251125.html) specifies schemas, untrusted annotations and tool/protocol errors; [provider safety](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/mind-stinger/references/research/agent-boundaries-20261007/raw/openai-agent-safety.html) describes approval and dataflow risks. Protocol compliance does not authorize an action.
+Use for O188 and orchestration/onboarding changes. MCP tools specifies schemas, untrusted annotations and tool/protocol errors; provider safety describes approval and dataflow risks. Protocol compliance does not authorize an action.
 
 ## Establish the executor boundary
 

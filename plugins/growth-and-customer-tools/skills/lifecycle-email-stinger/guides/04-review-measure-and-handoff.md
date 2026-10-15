@@ -17,9 +17,9 @@ Return `HOLD` for any unresolved live-send blocker. Do not silently repair a mis
 
 ## 2. Verify compliance boundaries
 
-For covered United States commercial email, the FTC guide includes accurate routing and subjects, a postal address, a clear opt-out method, and timely opt-out handling. This is outside-window evergreen guidance and not legal advice. [../references/research/raw/outside-window-ftc-can-spam.md]
+For covered United States commercial email, the FTC guide includes accurate routing and subjects, a postal address, a clear opt-out method, and timely opt-out handling. This is outside-window evergreen guidance and not legal advice. [../references/research/raw/outside-window-ftc-can-spam.md (source-repository research, not shipped)]
 
-Google's current sender page requires authentication and adds alignment plus one-click unsubscribe duties for covered bulk marketing traffic. This is also outside-window evergreen guidance. [../references/research/raw/outside-window-google-email-sender-guidelines.md]
+Google's current sender page requires authentication and adds alignment plus one-click unsubscribe duties for covered bulk marketing traffic. This is also outside-window evergreen guidance. [../references/research/raw/outside-window-google-email-sender-guidelines.md (source-repository research, not shipped)]
 
 Do not declare the sequence compliant across jurisdictions. Record the owner who approved message class, permission basis, and launch readiness.
 
@@ -45,7 +45,7 @@ Reporting fields:
 Launch approver:
 ```
 
-HighLevel documents threaded steps, delays, conditions, stop-on-reply, and step-level reporting. Implementation belongs to `gohighlevel-stinger`, not this content skill. [../references/research/raw/2026-06-11-highlevel-email-sequences.md]
+HighLevel documents threaded steps, delays, conditions, stop-on-reply, and step-level reporting. Implementation belongs to `gohighlevel-stinger`, not this content skill. [../references/research/raw/2026-06-11-highlevel-email-sequences.md (source-repository research, not shipped)]
 
 ## 4. Define measurement before launch
 
@@ -59,7 +59,7 @@ Open `../references/measurement-framework.md`.
 - Keep opens and clicks diagnostic.
 - Label observational attribution honestly.
 
-Belkins measures cumulative sequence contribution, while current community evidence cautions against treating raw engagement telemetry as verified human action. [../references/research/raw/2026-06-26-belkins-sales-follow-up-statistics.md] [../references/research/raw/2026-06-29-reddit-highlevel-bot-engagement.md]
+Belkins measures cumulative sequence contribution, while current community evidence cautions against treating raw engagement telemetry as verified human action. [../references/research/raw/2026-06-26-belkins-sales-follow-up-statistics.md] [../references/research/raw/2026-06-29-reddit-highlevel-bot-engagement.md (source-repository research, not shipped)]
 
 ## 5. Final output
 

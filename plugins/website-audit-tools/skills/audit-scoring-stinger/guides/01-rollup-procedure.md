@@ -40,12 +40,15 @@ documented common defect per [raw/portfoliohub-io-blog-project-prioritization-te
 The actual formula written into every sub-audit rollup cell (column L) is:
 
 ```
-=IF(SUMPRODUCT(--(E{first}:E{last}>0),H{first}:H{last})=0,"N/A",
-   SUMPRODUCT(--(E{first}:E{last}>0),E{first}:E{last},H{first}:H{last})
-   /(6*SUMPRODUCT(--(E{first}:E{last}>0),H{first}:H{last})))
+=IF(SUMPRODUCT(ISNUMBER(E{first}:E{last})*(E{first}:E{last}>0),H{first}:H{last})=0,"N/A",
+   SUMPRODUCT(ISNUMBER(E{first}:E{last})*(E{first}:E{last}>0),E{first}:E{last},H{first}:H{last})
+   /(6*SUMPRODUCT(ISNUMBER(E{first}:E{last})*(E{first}:E{last}>0),H{first}:H{last})))
 ```
 
-`{first}:{last}` is that sub-audit's own contiguous leaf-row range. `H` is the per-leaf weight
+`{first}:{last}` is that sub-audit's own contiguous leaf-row range. The mask is
+`ISNUMBER(E)*(E>0)` rather than the build plan's bare `--(E>0)` because Excel compares any
+text as greater than any number (`"N/A">0` is TRUE), so a typed "N/A" would otherwise slip
+into the denominator; `ISNUMBER` keeps a 0, a blank and any text cell out of both sides. `H` is the per-leaf weight
 column (defaults to 1 for every leaf; see `03-nesting-structure-design.md` for why leaf
 weights are plain cell values rather than named ranges). The outer `IF(...=0,"N/A",...)` is
 the zero-denominator guard from [raw/exceljet-net-formulas-weighted-average.md]
@@ -59,8 +62,8 @@ source's documented mechanism [raw/datacamp-com-tutorial-sumproduct.md]. If only
 numerator excluded N/A rows while the denominator kept summing every row's weight
 unconditionally, an N/A leaf's weight would still deflate the result even though its score no
 longer contributes to the numerator - the average would be silently wrong, dragged down by
-criteria that do not apply. The formula above uses `--(E{first}:E{last}>0)` as the mask in
-BOTH `SUMPRODUCT` calls for exactly this reason. Hand-verify this yourself before trusting a
+criteria that do not apply. The formula above uses the same mask in every `SUMPRODUCT` call
+for exactly this reason, and the category and final formulas below do the same. Hand-verify this yourself before trusting a
 retuned formula: change one leaf to 0 (N/A) and confirm the sub-audit rollup does not move
 unless every other leaf's relative weight also changes.
 
@@ -88,11 +91,21 @@ per sub-audit, each cell a plain formula pulling that sub-audit's own rollup val
 category's `SubWt_<key>` named range on `Rubric`, the category rollup formula can then do:
 
 ```
-=IF(SUM(SubWt_<key>)=0,"N/A",
-   SUMPRODUCT(L{mirror_first}:L{mirror_last},SubWt_<key>)/SUM(SubWt_<key>))
+=IF(SUMPRODUCT(--ISNUMBER(L{mirror_first}:L{mirror_last}),SubWt_<key>)=0,"N/A",
+   SUMPRODUCT(--ISNUMBER(L{mirror_first}:L{mirror_last}),L{mirror_first}:L{mirror_last},SubWt_<key>)
+   /SUMPRODUCT(--ISNUMBER(L{mirror_first}:L{mirror_last}),SubWt_<key>))
 ```
 
-matching build plan section 4.3's formula exactly, with the same zero-denominator guard.
+This is build plan section 4.3's formula with the same N/A mask as level one applied to both
+sides. A sub-audit whose leaves are all N/A rolls up to the text "N/A". A bare
+`SUMPRODUCT(...)/SUM(SubWt_<key>)` would count that text as 0 in the numerator (Excel and
+LibreOffice both treat text in a SUMPRODUCT array as 0) while its weight stayed in the
+denominator, dragging the category down for a sub-audit that does not apply.
+`--ISNUMBER(...)` drops it from both sides, so the category is the weighted average of the
+sub-audits that were actually scored. When every sub-audit is N/A the masked weight sum is 0
+and the category shows "N/A" rather than `#DIV/0!`. The formula uses only separate array
+arguments to `SUMPRODUCT` and a `--ISNUMBER` mask (no `IF` inside `SUMPRODUCT`), so it needs
+no Ctrl+Shift+Enter array entry in any Excel or LibreOffice version.
 
 ## 4. Final rollup
 
@@ -109,10 +122,22 @@ cross-sheet reference, and whose weight is the `CategoryWeights` named range fro
 directly:
 
 ```
-=SUMPRODUCT(C{first}:C{last},CategoryWeights)/SUM(CategoryWeights)
+=IF(SUMPRODUCT(--ISNUMBER(C{first}:C{last}),CategoryWeights)=0,"N/A",
+   SUMPRODUCT(--ISNUMBER(C{first}:C{last}),C{first}:C{last},CategoryWeights)
+   /SUMPRODUCT(--ISNUMBER(C{first}:C{last}),CategoryWeights))
 ```
 
-The `/SUM(CategoryWeights)` divisor is the same self-correcting pattern as level one; the
+An N/A category (for example, Content Score on a site with no content to score) is excluded
+from both sides, exactly as at the category level, so the final score is the weighted average
+of the categories that were scored. The downstream cells follow suit: each category's
+"Contribution" cell shows "N/A" for an N/A category, and the effective score and letter grade
+show "N/A" only when every category is N/A
+(`=IF(ISNUMBER(C{final}),IF(C{override},MIN(C{final},SecurityOverrideCapPct),C{final}),"N/A")`
+and `=IF(ISNUMBER(C{effective}),VLOOKUP(C{effective},GradeTable,2,TRUE),"N/A")`). The critical
+security override is unchanged: it still fires on any Security leaf scored exactly 1, which
+can only happen when Security itself is scored.
+
+The masked weight sum is the same self-correcting divisor pattern as level one; the
 `Rubric` sheet's own "Check: should equal 100" cell (conditionally formatted red if it drifts)
 is a second, visible integrity check on top of it, directly modelled on
 [raw/portfoliohub-io-blog-project-prioritization-template.md]'s "weight-check formula" and
@@ -137,6 +162,18 @@ override in `02-critical-security-override.md`):
   low leaf, correctly averaged against its six other sub-audits at 100% each).
 - The raw final score (before the override) computed to 99.2%, which is what triggered the
   demonstration in the next guide.
+
+The N/A-masked category and final formulas (2026-10-13) were recalculated with the `pycel`
+formula engine (LibreOffice was not available on that machine) and compared with
+`shared/scripts/score-rollup.py` on the same leaves. Every category, the raw and effective
+final score, the override flag and the letter grade matched in five cases: the template demo
+above (unchanged: 96.03%, 99.2%, capped to C), a run with an all-N/A sub-audit plus two
+all-N/A categories (one scored 0, one left blank), the same run with the override firing, an
+all-N/A run (every rollup, the final score and the grade show "N/A"), and a random mix of
+blanks, N/A and 1-6 scores. Before the fix the second case scored 50.1% (F) in the workbook
+against 68.1% (D) in the script. `shared/scripts/test_score_rollup.py` now also checks that
+every rollup formula in the committed template carries the mask on both sides. A LibreOffice
+recalculation with the commands below is still the reference check.
 
 Re-run this verification any time the generator script changes:
 

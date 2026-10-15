@@ -183,4 +183,4 @@ git config --global gc.reflogExpireUnreachable 60
 
 Increasing these values gives more time to recover from mistakes before gc cleans them up.
 
-Sources: research/external/02-reflog-recovery.md
+Sources: research/external/02-reflog-recovery.md (source-repository research, not shipped)

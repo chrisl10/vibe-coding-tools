@@ -163,7 +163,7 @@ Use `templates/orm-query-characterization.md` and `examples/09-orm-query-charact
 
 ## Research
 
-`research/research-plan.md` plus 15 dated `2026-05-03-*.md` notes: every active guide cites at least one. The notes are the load-bearing documentation behind every Hard Rule.
+`research/research-plan.md` (source-repository research, not shipped with the plugin) plus 15 dated `2026-05-03-*.md` notes: every active guide cites at least one. The notes are the load-bearing documentation behind every Hard Rule.
 
 ---
 

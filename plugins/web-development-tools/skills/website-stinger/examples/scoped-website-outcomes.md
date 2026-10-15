@@ -9,7 +9,7 @@ Request: three public pages for a repair shop, supplied licensed images/copy, ow
 Request: two approved editor roles managing articles for a separate SvelteKit consumer; no customer login. Contract: Payload/Next CMS owns articles, media and editor Users. Public API includes title/slug/excerpt/public image, `_status=published` access, depth 0 and page-bound navigation. Author email is excluded. User role fields require accepted admin policy on create and update. No SaaS subscriptions/leads/app_settings copied. Public page SSR freshness and authenticated no-store preview are separate checks. Anonymous direct draft ID request must deny even if the browser omitted its normal published query. Runtime requests/build/upload/cache checks remain pending.
 
 ## Required Vue public client
-Website owner implements SvelteKit public sites. Prepare independent Payload contract and CMS work if authorized; report missing selected Vue implementer for the public site. Do not claim a Svelte template satisfies Vue.
+Website owner implements SvelteKit public sites. Prepare independent Payload contract and CMS work if authorized; use `vue-stinger` or `nuxt-stinger` for the public site and report them as a gap if they are not selected. Do not claim a Svelte template satisfies Vue.
 
 ## New CMS drafts with a published record
 Existing published title A, editor saves draft title B. Anonymous requests must return only published version A; preview requires authenticated editor context. Unpublish must remove public access and cached A. Verify direct ID, REST list, relationship expansion and preview cache separately. A front-end status filter alone fails this case.

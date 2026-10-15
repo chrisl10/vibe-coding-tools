@@ -46,4 +46,4 @@ Both `deeplake` (native bits) and `@huggingface/transformers` belong in the esbu
 ## Sources
 
 - `package.json` (`deeplake` dep, `@huggingface/transformers` optional dep), `src/embeddings/`, `src/deeplake-schema.ts` (embedding columns), `esbuild.config.mjs` (externals).
-- `research/2026-06-16-optional-native-deps.md`.
+- `research/2026-06-16-optional-native-deps.md` (source-repository research, not shipped).

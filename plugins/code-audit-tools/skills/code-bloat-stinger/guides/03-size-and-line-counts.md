@@ -12,7 +12,7 @@ Loads: [../references/tool-commands.md](../references/tool-commands.md) (Line co
 | scc 4.1.0 | faster, single binary, no Perl | download the release tarball for the OS into `.scratch/tools/`, verify against `checksums.txt` | large-file caps only with `--no-large`; duplicate files kept unless `-d` |
 | `size_profile.py --root` | neither tool can run | built in | no comment detection: "code" means non-blank lines; say so |
 
-Sources: [../references/research/raw/cloc--readme-and-cli-help.md] [../references/research/raw/scc--readme-and-cli-help.md].
+Sources: [../references/research/raw/cloc--readme-and-cli-help.md] [../references/research/raw/scc--readme-and-cli-help.md (source-repository research, not shipped)].
 
 ## 2. Count by file
 
@@ -35,7 +35,7 @@ The headline measure is `big_file_share`: share of core code lines in files over
 
 ## 4. Reconcile with jscpd
 
-jscpd counts raw lines including comments and blanks; cloc counts code only. They compare only roughly (WHIPT: 1.08M raw lines in the duplication scope, 977K core code lines) [../references/research/raw/gold--whipt-bloat-audit-method.md]. Put that footnote in `notes.md`. Use cloc or scc code lines as the denominator for the dead-code percentage (guide 05) and for `big_file_share`; use jscpd's own lines for the duplication percentages.
+jscpd counts raw lines including comments and blanks; cloc counts code only. They compare only roughly (WHIPT: 1.08M raw lines in the duplication scope, 977K core code lines) [../references/research/raw/gold--whipt-bloat-audit-method.md (source-repository research, not shipped)]. Put that footnote in `notes.md`. Use cloc or scc code lines as the denominator for the dead-code percentage (guide 05) and for `big_file_share`; use jscpd's own lines for the duplication percentages.
 
 If the file sets differ by more than a few percent, the scopes drifted. Fix the excludes, do not explain it away.
 
@@ -45,6 +45,8 @@ Band `big_file_share` with [../references/bands.md](../references/bands.md): und
 
 ## Sources
 
-- [../references/research/raw/cloc--readme-and-cli-help.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/cloc--readme-and-cli-help.md)
-- [../references/research/raw/scc--readme-and-cli-help.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/scc--readme-and-cli-help.md)
-- [../references/research/raw/gold--whipt-bloat-audit-method.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/gold--whipt-bloat-audit-method.md)
+The notes listed below are source-repository research, not shipped.
+
+- ../references/research/raw/cloc--readme-and-cli-help.md (source-repository research, not shipped)
+- ../references/research/raw/scc--readme-and-cli-help.md (source-repository research, not shipped)
+- ../references/research/raw/gold--whipt-bloat-audit-method.md (source-repository research, not shipped)

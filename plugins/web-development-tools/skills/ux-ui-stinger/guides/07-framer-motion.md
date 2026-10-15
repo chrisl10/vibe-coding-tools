@@ -2,7 +2,7 @@
 
 Framer Motion is the declarative React animation library. It's powerful — and therefore easy to ship bespoke garbage with. Discipline: every motion uses a named bucket; reduced-motion is the default posture.
 
-Research: `research/2026-04-24-framer-motion-reduced-motion.md`.
+Research: `research/2026-04-24-framer-motion-reduced-motion.md` (source-repository research, not shipped).
 
 > **Note on naming:** Framer Motion was rebranded to **Motion** (package `motion`, import path `motion/react`). The conceptual APIs are unchanged. This guide uses "Framer Motion" and "Motion" interchangeably.
 

@@ -1,6 +1,6 @@
 # 09: TypeScript Patterns
 
-Source: `research/2026-04-24-forms-rhf-zod.md`, `research/2026-04-24-bulletproof-react-api-layer.md`.
+Source: `research/2026-04-24-forms-rhf-zod.md`, `research/2026-04-24-bulletproof-react-api-layer.md` (source-repository research, not shipped).
 
 ## `tsconfig.json` baseline (non-negotiable)
 

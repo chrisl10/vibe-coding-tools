@@ -1,7 +1,7 @@
 ---
 name: project-learning-wasp-drone
 description: "Teach web fundamentals through small projects, or prepare an exercise and criterion rubric from one supplied technical source revision. Use actual attempts, feedback and teach-back. Read-only tutoring."
-tools: Read, Grep, Glob, WebFetch, WebSearch
+tools: Read, Grep, Glob, WebFetch, WebSearch, Skill
 model: inherit
 ---
 

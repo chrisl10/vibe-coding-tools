@@ -1,6 +1,6 @@
 # Blur Placeholders: LQIP, BlurHash, ThumbHash
 
-> Derived from: `research/external/2026-05-20-blur-placeholders-web-mux.md`, `research/external/2026-05-20-blurhash-lqip-placeholders.md`, `research/external/2026-05-20-blurhash-css-unpic-placeholder.md`, `research/external/2026-05-20-thumbhash-vs-blurhash.md`, `research/external/2026-05-20-plaiceholder-nextjs-blurdataurl.md`, `research/external/2026-05-20-sanity-lqip-hashes-gradient-nayankyada.md`
+> Derived from: `research/external/2026-05-20-blur-placeholders-web-mux.md`, `research/external/2026-05-20-blurhash-lqip-placeholders.md`, `research/external/2026-05-20-blurhash-css-unpic-placeholder.md`, `research/external/2026-05-20-thumbhash-vs-blurhash.md`, `research/external/2026-05-20-plaiceholder-nextjs-blurdataurl.md`, `research/external/2026-05-20-sanity-lqip-hashes-gradient-nayankyada.md` (source-repository research, not shipped)
 
 ---
 
@@ -78,7 +78,7 @@ const blurDataURL = await generateLQIP('./public/hero.jpg');
 
 **Recommended library for Next.js:** `plaiceholder` (`npm i plaiceholder sharp`): provides `getPlaiceholder()` which returns a `base64` LQIP string ready for `blurDataURL`. Pairs cleanly with App Router data fetching.
 
-> Source: `research/external/2026-05-20-plaiceholder-nextjs-blurdataurl.md`
+> Source: `research/external/2026-05-20-plaiceholder-nextjs-blurdataurl.md` (source-repository research, not shipped)
 
 ---
 
@@ -109,7 +109,7 @@ const gradient = blurhashToCssGradientString('L6PZfSi_.AyE_3t7t7R**0o#DgR4');
 />
 ```
 
-> Source: `research/external/2026-05-20-blurhash-css-unpic-placeholder.md`
+> Source: `research/external/2026-05-20-blurhash-css-unpic-placeholder.md` (source-repository research, not shipped)
 
 ---
 
@@ -127,7 +127,7 @@ Use ThumbHash when:
 
 **Library:** `thumbhash` on npm. Generate at build time with Node.js; decode in the browser with a tiny decoder (~3KB gzip).
 
-> Source: `research/external/2026-05-20-thumbhash-vs-blurhash.md`
+> Source: `research/external/2026-05-20-thumbhash-vs-blurhash.md` (source-repository research, not shipped)
 
 ---
 

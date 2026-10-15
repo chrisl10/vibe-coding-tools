@@ -2,7 +2,7 @@
 
 Step 5: Set up accounting and bookkeeping after banking is in place.
 
-*Derived from: `research/external/pilot-vs-bench-bookkeeping-2026.md`*
+*Derived from: `research/external/pilot-vs-bench-bookkeeping-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -48,7 +48,7 @@ Below this threshold, DIY with QuickBooks Online ($30/month) is reasonable.
 
 **Pricing range:** $499/month (Core) to custom enterprise pricing for revenue recognition complexity.
 
-Source: `research/external/pilot-vs-bench-bookkeeping-2026.md`
+Source: `research/external/pilot-vs-bench-bookkeeping-2026.md` (source-repository research, not shipped)
 
 ---
 
@@ -65,7 +65,7 @@ Source: `research/external/pilot-vs-bench-bookkeeping-2026.md`
 - Dedicated bookkeeper
 - Bench-proprietary platform (not QuickBooks portable)
 
-Source: `research/external/pilot-vs-bench-bookkeeping-2026.md`
+Source: `research/external/pilot-vs-bench-bookkeeping-2026.md` (source-repository research, not shipped)
 
 ---
 

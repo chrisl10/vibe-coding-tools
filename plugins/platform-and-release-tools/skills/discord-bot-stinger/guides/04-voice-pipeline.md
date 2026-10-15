@@ -2,7 +2,7 @@
 
 Setting up voice playback using Lavalink 4 and DAVE-compliant client libraries.
 
-*Sources: `research/external/2026-05-20-lavalink-clients-2026.md`, `research/external/2026-05-20-wavelink-deprecated.md`, `research/external/2026-05-20-discord-changelog-2026.md`*
+*Sources: `research/external/2026-05-20-lavalink-clients-2026.md`, `research/external/2026-05-20-wavelink-deprecated.md`, `research/external/2026-05-20-discord-changelog-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -14,7 +14,7 @@ Discord's E2EE audio protocol (DAVE) became mandatory for all voice channels on 
 
 ## Wavelink is ABANDONED: do not use
 
-The `research/external/2026-05-20-wavelink-deprecated.md` source note confirms the official `PythonistaGuild/Wavelink` repository states "Wavelink is no longer maintained." The `wavelink.dev` documentation URL in the Command Brief no longer reflects an actively maintained library. **Remove any existing wavelink references from bot code.**
+The `research/external/2026-05-20-wavelink-deprecated.md` (source-repository research, not shipped) source note confirms the official `PythonistaGuild/Wavelink` repository states "Wavelink is no longer maintained." The `wavelink.dev` documentation URL in the Command Brief no longer reflects an actively maintained library. **Remove any existing wavelink references from bot code.**
 
 ---
 

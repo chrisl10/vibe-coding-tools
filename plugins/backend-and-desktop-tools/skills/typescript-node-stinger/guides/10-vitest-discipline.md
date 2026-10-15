@@ -68,4 +68,4 @@ Note the `.js` extension on the relative import even in a test - same ESM rule a
 
 - `package.json` (`test`, `ci` scripts; `vitest`, `@vitest/coverage-v8` devDeps).
 - `tests/` tree in the repo.
-- `research/2026-06-16-vitest-esm-discipline.md`.
+- `research/2026-06-16-vitest-esm-discipline.md` (source-repository research, not shipped).

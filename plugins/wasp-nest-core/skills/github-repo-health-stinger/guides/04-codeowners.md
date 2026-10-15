@@ -1,6 +1,6 @@
 # 04 - CODEOWNERS Audit
 
-*Research basis: `research/external/03-codeowners-docs.md`*
+*Research basis: `research/external/03-codeowners-docs.md` (source-repository research, not shipped)*
 
 ## What to check
 
@@ -50,7 +50,7 @@ EOF
 
 ## Scoring rubric
 
-See `research/external/03-codeowners-docs.md` for full rubric. Summary:
+See `research/external/03-codeowners-docs.md` (source-repository research, not shipped) for full rubric. Summary:
 
 | Condition | Score |
 |---|---|

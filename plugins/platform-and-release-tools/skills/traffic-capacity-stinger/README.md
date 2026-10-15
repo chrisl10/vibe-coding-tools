@@ -8,6 +8,6 @@ O173 measured traffic-spike planning. Specialist owner: platform-and-release-too
 | Admission, recovery, future acceptance | [guide 03](guides/03-propose-admission-recovery-and-validation.md) |
 | Complete field contract | [worksheet](references/templates/measurement-worksheet.md) |
 | Arithmetic and negative branches | [fictional packet](examples/fictional-spike.md) |
-| Facts and provenance | [digest](references/research/distillation.md), [ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/traffic-capacity-stinger/references/research/sources.json) |
+| Facts and provenance | [digest](references/research/distillation.md), ledger |
 
 Resolve installed owners through trusted Core's selected-plugin registry before handoff: Sentry for instrumentation/sampling/alerts, Vercel and DevOps for platform/implementation, Operating Cost for dated billing model, DB for query/pool design, Security for privacy/tenant/abuse policy. Missing optional selection is a gap, not implicit installation. Source work consults root plugin-catalog.json. No new benchmark framework, probe, load execution, provision/autoscaler change, spending or credential access is authorized by this skill. Construction checks remain separate from native and target execution.

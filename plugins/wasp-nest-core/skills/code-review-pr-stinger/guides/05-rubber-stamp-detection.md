@@ -2,7 +2,7 @@
 
 Signals of rubber-stamp review culture, how to diagnose it from PR timelines, and a remediation playbook.
 
-Sources: `research/external/2026-05-20-codepulsehq-toxic-culture-signs.md`, `research/external/2026-05-20-stackfyi-best-practices-guide.md`, `research/external/2026-05-20-octopus-mentorship-ai-loop.md`.
+Sources: `research/external/2026-05-20-codepulsehq-toxic-culture-signs.md`, `research/external/2026-05-20-stackfyi-best-practices-guide.md`, `research/external/2026-05-20-octopus-mentorship-ai-loop.md` (source-repository research, not shipped).
 
 ---
 

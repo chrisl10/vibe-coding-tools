@@ -44,7 +44,7 @@ await stripe.subscriptions.update(
 );
 ```
 
-`proration_behavior`: `create_prorations` creates eligible prorations, `none` suppresses prorations, and `always_invoice` invoices eligible prorations immediately. `none` does not itself defer a price change to the next period; future effective timing requires an explicitly scheduled change. Negative prorations are not automatic cash refunds. Use Stripe's preview with the actual pinned API/billing mode and approved action. [Current proration evidence](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/payments-stinger/references/research/billing-access-update/raw/prorations.md)
+`proration_behavior`: `create_prorations` creates eligible prorations, `none` suppresses prorations, and `always_invoice` invoices eligible prorations immediately. `none` does not itself defer a price change to the next period; future effective timing requires an explicitly scheduled change. Negative prorations are not automatic cash refunds. Use Stripe's preview with the actual pinned API/billing mode and approved action. Current proration evidence
 
 ## Customer Portal vs custom UI: the actual boundary
 

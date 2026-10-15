@@ -66,7 +66,7 @@ A publish that runs `--ignore-scripts` skips both and is a **Must-fix**.
 
 ## Cross-reference
 
-- `research/2026-06-16-npm-files-allowlist-prepack.md` - the allowlist + prepack/prepare lifecycle.
-- `research/2026-06-16-pack-check-secret-scan.md` - scanning a pack for secrets.
+- `research/2026-06-16-npm-files-allowlist-prepack.md` (source-repository research, not shipped) - the allowlist + prepack/prepare lifecycle.
+- `research/2026-06-16-pack-check-secret-scan.md` (source-repository research, not shipped) - scanning a pack for secrets.
 - `guides/05-release-flow.md` - where these run in the release.
 - `templates/bundle-audit.md` - the allowlist/bundle audit skeleton.

@@ -2,7 +2,7 @@
 
 An un-searchable docs site is worse than no docs site. Choose the right search solution and configure it before declaring the site done.
 
-> Source: `research/external/2026-05-20-pagefind-self-hosted-search.md`
+> Source: `research/external/2026-05-20-pagefind-self-hosted-search.md` (source-repository research, not shipped)
 
 ---
 

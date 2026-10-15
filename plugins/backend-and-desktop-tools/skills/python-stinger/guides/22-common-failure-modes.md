@@ -245,7 +245,9 @@ Severity: must-fix.
 
 ## Sources
 
-- `research/2026-05-03-hacksoftware-styleguide.md`
-- `research/2026-05-03-django-orm-n-plus-one.md`
-- `research/2026-05-03-celery-django-redis.md`
+The notes listed below are source-repository research, not shipped.
+
+- `research/2026-05-03-hacksoftware-styleguide.md` (source-repository research, not shipped)
+- `research/2026-05-03-django-orm-n-plus-one.md` (source-repository research, not shipped)
+- `research/2026-05-03-celery-django-redis.md` (source-repository research, not shipped)
 - All preceding guides in this Stinger

@@ -1,6 +1,6 @@
 # 07: Depot integration
 
-Depot is the fastest path to fast Docker builds without managing your own BuildKit infrastructure. Drop-in for `docker/build-push-action`, persistent NVMe layer cache shared across team + local + CI, native Intel + ARM builders, OIDC auth, and now also GitHub Actions runners. Source: `research/2026-04-25-depot-build-push-action.md`, `research/2026-04-25-depot-vs-github-runners.md`.
+Depot is the fastest path to fast Docker builds without managing your own BuildKit infrastructure. Drop-in for `docker/build-push-action`, persistent NVMe layer cache shared across team + local + CI, native Intel + ARM builders, OIDC auth, and now also GitHub Actions runners. Source: `research/2026-04-25-depot-build-push-action.md`, `research/2026-04-25-depot-vs-github-runners.md` (source-repository research, not shipped).
 
 ---
 
@@ -33,7 +33,7 @@ Depot version:
 
 **That's the migration.** Drop `docker/setup-buildx-action`, swap `docker/build-push-action` to `depot/build-push-action`, add `project: <id>`. Cache becomes Depot's persistent NVMe (no `cache-from`/`cache-to` needed, Depot handles it).
 
-5-line diff per workflow. Source: `research/2026-04-25-depot-build-push-action.md`.
+5-line diff per workflow. Source: `research/2026-04-25-depot-build-push-action.md` (source-repository research, not shipped).
 
 ## 2. OIDC auth: no static tokens
 
@@ -111,7 +111,7 @@ Claims:
 - Half the cost of GitHub-hosted runners.
 - Ephemeral ARM runners (Graviton).
 
-Source: `research/2026-04-25-depot-vs-github-runners.md`.
+Source: `research/2026-04-25-depot-vs-github-runners.md` (source-repository research, not shipped).
 
 **When to migrate:**
 

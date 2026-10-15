@@ -1,4 +1,4 @@
-# Proposed Pest registration, parent-owned
+# Pest registration: Vultr platform
 
 O055 Select Vultr for a suitable workload.
 Owner: infrastructure-decision-tools.
@@ -7,5 +7,5 @@ Trigger: supplied-workload Vultr CPU/GPU/VM/physical-server fit, retained duties
 Output: one provisional/supported/unsupported advisory recommendation, eligibility/duty/recovery worksheet, dated cost-owner inputs and proof gaps.
 Exclusions: account/API probes, credentials, provision/install/settings/spend/deploy/migration/restore/deletion, universal price/performance/availability guarantees and broad provider selection.
 Related routing: Infrastructure Fit owns topology; selected Operating Cost owns arithmetic. Resolve optional installed owners through trusted Core; no cache inference.
-Proposed command: parent owns assess-vultr creation and catalog/outcome registration. Worker authored no canonical registration or global metadata.
-Source and static-format evidence only; installed/native/provider/customer tests unexecuted. Parent must perform Security then independent Quality then parent Health before any authorized source commit.
+Command: `assess-vultr` in infrastructure-decision-tools.
+Source and static-format evidence only; installed/native/provider/customer tests unexecuted. Source commits go through Security, then independent Quality, then Health review.

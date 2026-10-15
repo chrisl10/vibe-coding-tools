@@ -2,7 +2,7 @@
 guide: 06-founder-as-support
 stinger: customer-support-tooling-stinger
 research_sources:
-  - research/external/2026-05-20-founder-as-support.md
+  - research/external/2026-05-20-founder-as-support.md  # source-repository research, not shipped
 ---
 
 # Founder-as-Support — 0-to-First-Hire Playbook
@@ -10,7 +10,7 @@ research_sources:
 Before using numeric targets, reply templates or configuration examples below, load [support obligation guide 07](07-plan-support-and-renewal-obligations.md). Those historical examples are unapproved illustrations. Use actual accepted terms, staffed coverage, a supplied calendar and current selected-provider evidence. Do not send templated ETAs, publish promises or enable settings without the exact required approval.
 
 
-Source: `research/external/2026-05-20-founder-as-support.md`
+Source: `research/external/2026-05-20-founder-as-support.md` (source-repository research, not shipped)
 
 ## When this guide applies
 

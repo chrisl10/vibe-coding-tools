@@ -1,5 +1,5 @@
 ---
-description: Drive a set of PRDs to 100% completion using the Wasp Swarm. Spawns armed wasp-drone sub-agents in waves, tracks every acceptance criterion to zero open items, runs the security/quality close-out, and ships via commit-push-PR-CI. Trigger with "run the PRDs", "execute the PRDs", "smoke it", "complete the acceptance criteria", "finish everything in the PRD".
+description: Drive a set of PRDs to 100% completion using the Wasp Swarm. Spawns armed wasp-drone sub-agents in waves, tracks every acceptance criterion to zero open items, runs the security/quality close-out, and prepares the final candidate, committing or pushing only within the approval already given. Trigger with "run the PRDs", "execute the PRDs", "smoke it", "complete the acceptance criteria", "finish everything in the PRD".
 ---
 
 # /smoke-it - PRD Completion Orchestrator

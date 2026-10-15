@@ -74,7 +74,7 @@ Web is the default domain. When `PRODUCT.md` declares `ios`, `android`, or `adap
 
 ## Motion and interaction
 
-For animate, transitions or motion accessibility, read [the motion guide](guides/12-motion-and-interaction.md) and use [the evidence worksheet](templates/motion-interaction-evidence.md). Preserve the static task path and keyboard/focus behavior independently of motion. Record actual browser observations and unrun manual/device checks. Reduced-motion preference and detector success do not establish WCAG conformance. The [research digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/impeccable-stinger/references/research/motion-accessibility/digest.md) separates criteria levels and primitive guidance.
+For animate, transitions or motion accessibility, read [the motion guide](guides/12-motion-and-interaction.md) and use [the evidence worksheet](templates/motion-interaction-evidence.md). Preserve the static task path and keyboard/focus behavior independently of motion. Record actual browser observations and unrun manual/device checks. Reduced-motion preference and detector success do not establish WCAG conformance. The research digest separates criteria levels and primitive guidance.
 
 ## References to skill files
 

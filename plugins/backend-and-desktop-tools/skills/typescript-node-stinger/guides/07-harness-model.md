@@ -55,4 +55,4 @@ See `examples/06`. The steps:
 
 - `esbuild.config.mjs`, `scripts/sync-versions.mjs`, `package.json#files`.
 - `harnesses/` tree in the repo.
-- `research/2026-06-16-esbuild-multi-target-bundling.md`.
+- `research/2026-06-16-esbuild-multi-target-bundling.md` (source-repository research, not shipped).

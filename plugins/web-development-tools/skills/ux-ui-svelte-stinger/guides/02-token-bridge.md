@@ -6,15 +6,15 @@
 > and the whole library inherits the OSPRY look; get it wrong and you have two
 > parallel design systems fighting each other.
 
-**Research:** `../research/shadcn-svelte-theming.md` (the fixed token
-vocabulary), `../research/tailwind-v4-theme-variables.md` (the `@theme inline`
-mechanism), `../research/shadcn-svelte-tailwind-v4-migration.md` (the
+**Research:** `../research/shadcn-svelte-theming.md` (source-repository research, not shipped) (the fixed token
+vocabulary), `../research/tailwind-v4-theme-variables.md` (source-repository research, not shipped) (the `@theme inline`
+mechanism), `../research/shadcn-svelte-tailwind-v4-migration.md` (source-repository research, not shipped) (the
 destination `app.css` shape).
 
 ## The three-layer model
 
 Understand this before touching anything. shadcn-svelte v4 theming is three
-layers stacked (per `../research/shadcn-svelte-tailwind-v4-migration.md`):
+layers stacked (per `../research/shadcn-svelte-tailwind-v4-migration.md` [source-repository research, not shipped]):
 
 ```
 Layer 3:  @layer base { body { background: var(--color-background); } }
@@ -36,7 +36,7 @@ Layer 2 to an OSPRY token.
 
 ## Why `inline` is non-negotiable
 
-From `../research/tailwind-v4-theme-variables.md`:
+From `../research/tailwind-v4-theme-variables.md` (source-repository research, not shipped):
 
 > When defining theme variables that reference other variables, use the `inline`
 > option. Without `inline`, your utility classes might resolve to unexpected

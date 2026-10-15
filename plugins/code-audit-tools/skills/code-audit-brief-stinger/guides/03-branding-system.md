@@ -21,15 +21,15 @@ The brief reproduces the Field Guide's look. All brand values live in one file, 
 | `brand-green`, `brand-green-ink`, `brand-mint` | #18A968, #0E6D43, #EBF6F0 | #3DDC97, #5FE3A8, #11291E | index number, REMEMBER, timeline |
 | `brand-amber`, `brand-amber-soft` | #C77A00, #FAF2E8 | #E39A2D, #2A1F0E | cover bar, tool-limit box |
 
-Light values come from pixel sampling [../references/research/raw/design--legion-field-guide-pdf.md]. Dark values are derived (the guide has only its closing dark band, #121212, and the dark logo's #3DDC97 cap); treat them as this skill's design.
+Light values come from pixel sampling [../references/research/raw/design--legion-field-guide-pdf.md (source-repository research, not shipped)]. Dark values are derived (the guide has only its closing dark band, #121212, and the dark logo's #3DDC97 cap); treat them as this skill's design.
 
 Severity (`--sev-*`) and band (`--band-*`) tokens are separate from brand tokens on purpose. Never point a severity at a brand token: a rebrand must not change what "critical" looks like.
 
 ## Type
 
-- Sans: Inter from Google Fonts with the `opsz` axis, so big headlines get the Inter Display cut automatically [../references/research/raw/fonts--google-fonts-inter-metadata.md] [../references/research/raw/fonts--mdn-font-optical-sizing.md]. Headlines weight 800 to 850, letter-spacing about -0.05em.
-- Mono: JetBrains Mono for eyebrows (uppercase, 0.14em tracking), paths, numbers, and the footer [../references/research/raw/fonts--google-fonts-jetbrains-mono-metadata.md].
-- Load string follows the CSS2 API rules (alphabetical axes, `..` ranges, `display=swap`) [../references/research/raw/fonts--google-fonts-css2-api.md]. Offline, system fonts take over.
+- Sans: Inter from Google Fonts with the `opsz` axis, so big headlines get the Inter Display cut automatically [../references/research/raw/fonts--google-fonts-inter-metadata.md] [../references/research/raw/fonts--mdn-font-optical-sizing.md (source-repository research, not shipped)]. Headlines weight 800 to 850, letter-spacing about -0.05em.
+- Mono: JetBrains Mono for eyebrows (uppercase, 0.14em tracking), paths, numbers, and the footer [../references/research/raw/fonts--google-fonts-jetbrains-mono-metadata.md (source-repository research, not shipped)].
+- Load string follows the CSS2 API rules (alphabetical axes, `..` ranges, `display=swap`) [../references/research/raw/fonts--google-fonts-css2-api.md (source-repository research, not shipped)]. Offline, system fonts take over.
 
 ## Components and where they appear
 
@@ -46,17 +46,19 @@ Severity (`--sev-*`) and band (`--band-*`) tokens are separate from brand tokens
 
 ## Theme and print
 
-Dark tokens apply under `@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) }` and under `:root[data-theme="dark"]` [../references/research/raw/theme--mdn-prefers-color-scheme.md]; `color-scheme` follows so scrollbars match [../references/research/raw/theme--mdn-color-scheme.md]. Print always uses the light set, keeps meaning colors with `print-color-adjust: exact` [../references/research/raw/print--mdn-print-color-adjust.md], starts each part on a new page, and keeps callouts, cards, and rows whole [../references/research/raw/print--mdn-break-after.md] [../references/research/raw/print--mdn-break-inside.md].
+Dark tokens apply under `@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) }` and under `:root[data-theme="dark"]` [../references/research/raw/theme--mdn-prefers-color-scheme.md]; `color-scheme` follows so scrollbars match [../references/research/raw/theme--mdn-color-scheme.md]. Print always uses the light set, keeps meaning colors with `print-color-adjust: exact` [../references/research/raw/print--mdn-print-color-adjust.md], starts each part on a new page, and keeps callouts, cards, and rows whole [../references/research/raw/print--mdn-break-after.md] [../references/research/raw/print--mdn-break-inside.md (source-repository research, not shipped)].
 
 ## Sources
 
-- [../references/research/raw/design--legion-field-guide-pdf.md]
-- [../references/research/raw/fonts--google-fonts-inter-metadata.md]
-- [../references/research/raw/fonts--google-fonts-jetbrains-mono-metadata.md]
-- [../references/research/raw/fonts--google-fonts-css2-api.md]
-- [../references/research/raw/fonts--mdn-font-optical-sizing.md]
-- [../references/research/raw/theme--mdn-prefers-color-scheme.md]
-- [../references/research/raw/theme--mdn-color-scheme.md]
-- [../references/research/raw/print--mdn-print-color-adjust.md]
-- [../references/research/raw/print--mdn-break-after.md]
-- [../references/research/raw/print--mdn-break-inside.md]
+The notes listed below are source-repository research, not shipped.
+
+- [../references/research/raw/design--legion-field-guide-pdf.md (source-repository research, not shipped)]
+- [../references/research/raw/fonts--google-fonts-inter-metadata.md (source-repository research, not shipped)]
+- [../references/research/raw/fonts--google-fonts-jetbrains-mono-metadata.md (source-repository research, not shipped)]
+- [../references/research/raw/fonts--google-fonts-css2-api.md (source-repository research, not shipped)]
+- [../references/research/raw/fonts--mdn-font-optical-sizing.md (source-repository research, not shipped)]
+- [../references/research/raw/theme--mdn-prefers-color-scheme.md (source-repository research, not shipped)]
+- [../references/research/raw/theme--mdn-color-scheme.md (source-repository research, not shipped)]
+- [../references/research/raw/print--mdn-print-color-adjust.md (source-repository research, not shipped)]
+- [../references/research/raw/print--mdn-break-after.md (source-repository research, not shipped)]
+- [../references/research/raw/print--mdn-break-inside.md (source-repository research, not shipped)]

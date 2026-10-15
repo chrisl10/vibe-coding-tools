@@ -90,4 +90,4 @@ pub async fn summarize_document(
 - Return stable errors without provider bodies, tokens, or internal URLs.
 - For streamed output, combine this boundary with [01-typed-ai-channel.md](01-typed-ai-channel.md).
 
-Source basis: [Process model](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--process-model.md), [CSP](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--content-security-policy.md), and [command transport](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--calling-rust.md).
+Source basis: Process model, CSP, and command transport.

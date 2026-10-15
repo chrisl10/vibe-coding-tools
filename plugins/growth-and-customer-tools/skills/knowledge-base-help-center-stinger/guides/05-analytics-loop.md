@@ -2,7 +2,7 @@
 
 ## The CRAVA Framework
 
-Source: `research/external/2026-05-20-kb-analytics-content-gap.md`
+Source: `research/external/2026-05-20-kb-analytics-content-gap.md` (source-repository research, not shipped)
 
 CRAVA is a five-KPI KB health scorecard. Track all five weekly.
 
@@ -87,7 +87,7 @@ If the fallthrough rate is high:
 
 ## Document360 Eddy AI citation analytics
 
-Source: `research/external/2026-05-20-document360-2026-features.md`
+Source: `research/external/2026-05-20-document360-2026-features.md` (source-repository research, not shipped)
 
 Document360 Business+ tracks which articles appear in each Eddy AI response (citation analytics). This is the most sophisticated content-gap instrument available in 2026:
 - Articles cited frequently but rated poorly → rewrite priority.
@@ -96,4 +96,4 @@ Document360 Business+ tracks which articles appear in each Eddy AI response (cit
 
 ---
 
-*Sources: `research/external/2026-05-20-kb-analytics-content-gap.md`, `research/external/2026-05-20-document360-2026-features.md`.*
+*Sources: `research/external/2026-05-20-kb-analytics-content-gap.md`, `research/external/2026-05-20-document360-2026-features.md` (source-repository research, not shipped).*

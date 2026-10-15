@@ -1,6 +1,6 @@
 # Guide 01: Selection Rubric: Which Tool Fits Your Workflow?
 
-*Sources: `research/external/2026-05-20-claude-code-aider-cline-comparison.md`, `research/external/2026-05-20-devin-replit-agent.md`, `research/external/2026-05-20-continue-dev-open-source.md`*
+*Sources: `research/external/2026-05-20-claude-code-aider-cline-comparison.md`, `research/external/2026-05-20-devin-replit-agent.md`, `research/external/2026-05-20-continue-dev-open-source.md` (source-repository research, not shipped)*
 
 ---
 
@@ -26,7 +26,7 @@ Rate 0-5 where 0 = "I want to approve every line" and 5 = "I want to open my lap
 | $100+/month | Claude Code Max ($100/month) or Devin (ACU-based pricing) |
 | Flexible API | Aider or Cline with any provider |
 
-Source: `research/external/2026-05-20-claude-code-aider-cline-comparison.md`
+Source: `research/external/2026-05-20-claude-code-aider-cline-comparison.md` (source-repository research, not shipped)
 
 **Key cost data point:** Claude Code uses 3x more tokens than Aider for marginally better results on real-world benchmarks (55.5% vs 52.7% combined score). If budget matters, Aider with the architect/editor pattern is the better default. See `guides/03-model-routing.md`.
 

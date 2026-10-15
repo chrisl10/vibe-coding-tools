@@ -115,8 +115,8 @@ Hand off to `design-system-wasp-drone` per `guides/09-system-level-escalation.md
 - `guides/00-principles.md` rule #4 — APG floor.
 - `guides/11-wcag-2-2-baseline.md` — the technical floor the EAA legally requires.
 - `guides/09-system-level-escalation.md` — handoff conditions.
-- `research/2026-04-25-eaa.md` — research note.
-- `research/2026-04-24-wai-aria-apg.md` — APG floor research.
+- `research/2026-04-25-eaa.md` (source-repository research, not shipped) — research note.
+- `research/2026-04-24-wai-aria-apg.md` (source-repository research, not shipped) — APG floor research.
 
 ---
 

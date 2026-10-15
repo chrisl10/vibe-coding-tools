@@ -8,7 +8,7 @@ Load when: you need to explain a version finding, check a version by hand (prere
 
 | Advisory | Sev | Affected (per minor line) | Fixed | Precondition | Raw |
 | --- | --- | --- | --- | --- | --- |
-| CVE-2025-55182 / GHSA-fv66-9v8q-g76r, RCE, CWE-502 | critical | 19.0.0; 19.1.0, 19.1.1; 19.2.0 | 19.0.1, 19.1.2, 19.2.1 | RSC server running | [rsc--github-react-security-advisories](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--github-react-security-advisories.md) |
+| CVE-2025-55182 / GHSA-fv66-9v8q-g76r, RCE, CWE-502 | critical | 19.0.0; 19.1.0, 19.1.1; 19.2.0 | 19.0.1, 19.1.2, 19.2.1 | RSC server running | rsc--github-react-security-advisories |
 | CVE-2025-55183 / GHSA-925w-6v3x-g4j4, source exposure, CWE-497 | medium | below 19.0.2, 19.1.3, 19.2.2 | 19.0.2, 19.1.3, 19.2.2 | RSC server | same |
 | CVE-2025-55184 / GHSA-2m3v-v2m8-q956, DoS, CWE-400 | high | below 19.0.2, 19.1.3, 19.2.2 | same | RSC server | same |
 | CVE-2025-67779 / GHSA-7gmr-mq3h-m5h9, DoS, CWE-400 | high | exactly 19.0.2, 19.1.3, 19.2.2 | 19.0.3, 19.1.4, 19.2.3 | RSC server | same |
@@ -17,7 +17,7 @@ Load when: you need to explain a version finding, check a version by hand (prere
 | CVE-2026-23870 / GHSA-rv78-f8rc-xrxh, DoS, CWE-770 | high | below 19.0.6, 19.1.7, 19.2.6 | 19.0.6, 19.1.7, 19.2.6 | RSC server | same |
 | CVE-2026-44907 / GHSA-wx67-qw84-cm4g, DoS, CWE-770 | high | below 19.0.8, 19.1.9, 19.2.8 | 19.0.8, 19.1.9, 19.2.8 | RSC server | same |
 
-Safe floor: 19.0.8, 19.1.9, 19.2.8, or any 19.3.x. Note that npm deprecation flags stop at 19.x.5 even though later versions are affected [rsc--npm-registry-react-server-dom-versions](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--npm-registry-react-server-dom-versions.md).
+Safe floor: 19.0.8, 19.1.9, 19.2.8, or any 19.3.x. Note that npm deprecation flags stop at 19.x.5 even though later versions are affected rsc--npm-registry-react-server-dom-versions.
 
 ## @vitejs/plugin-rsc (vendors react-server-dom-webpack)
 
@@ -31,11 +31,11 @@ Safe floor: 19.0.8, 19.1.9, 19.2.8, or any 19.3.x. Note that npm deprecation fla
 | CVE-2026-23870 / GHSA-w94c-4vhp-22gx | high | through 0.5.25 | 0.5.26 | none |
 | CVE-2026-44907 / GHSA-p2w6-cmq4-qjfj | high | through 0.5.28 | 0.5.29 | none |
 
-Raw: [rsc--vite-plugin-rsc-advisories](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--vite-plugin-rsc-advisories.md).
+Raw: rsc--vite-plugin-rsc-advisories.
 
 ## React Router and Remix packages
 
-All from [router--react-router-advisories](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/router--react-router-advisories.md). The script groups them by fixed floor; the table lists each.
+All from router--react-router-advisories. The script groups them by fixed floor; the table lists each.
 
 | Advisory | Sev | Package and range | Fixed | Mode precondition |
 | --- | --- | --- | --- | --- |
@@ -67,25 +67,25 @@ Mode detection: Framework Mode has `@react-router/dev` and a `react-router.confi
 
 | Advisory | Sev | Vulnerable | Fixed | Raw |
 | --- | --- | --- | --- | --- |
-| CVE-2026-49455 / GHSA-75w3-gmqx-993q, CSRF on Server Action dispatch | medium | through 1.0.0-beta.0 | 1.0.0-beta.1 | [router--waku-advisories](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/router--waku-advisories.md) |
+| CVE-2026-49455 / GHSA-75w3-gmqx-993q, CSRF on Server Action dispatch | medium | through 1.0.0-beta.0 | 1.0.0-beta.1 | router--waku-advisories |
 | CVE-2026-49456 / GHSA-43fc-v873-qw85, open redirect helper | low | through 1.0.0-beta.0 | 1.0.0-beta.1 | same |
 
 ## Content, sanitizer, and serialization libraries
 
 | Package | Advisory | Sev | Vulnerable | Fixed | Precondition | Raw |
 | --- | --- | --- | --- | --- | --- | --- |
-| next-mdx-remote | CVE-2026-0969 / GHSA-g4xw-jxrg-5f6m, CWE-94 | high | 4.3.0 below 6.0.0 | 6.0.0 (breaking: `blockJS` default) | untrusted MDX compiled | [xss--mdx-next-mdx-remote-cve-2026-0969](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--mdx-next-mdx-remote-cve-2026-0969.md) |
-| marked | CVE-2026-41680 / GHSA-6v9c-7cg6-27q7, CWE-674* | high | 18.0.0, 18.0.1 | 18.0.2 | untrusted markdown | [xss--marked-readme-and-advisories](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--marked-readme-and-advisories.md) |
-| dompurify | CVE-2026-47423 / GHSA-87xg-pxx2-7hvx, CWE-79 | high | 3.4.4 | 3.4.5 | none | [xss--dompurify-readme-and-advisories](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--dompurify-readme-and-advisories.md) |
+| next-mdx-remote | CVE-2026-0969 / GHSA-g4xw-jxrg-5f6m, CWE-94 | high | 4.3.0 below 6.0.0 | 6.0.0 (breaking: `blockJS` default) | untrusted MDX compiled | xss--mdx-next-mdx-remote-cve-2026-0969 |
+| marked | CVE-2026-41680 / GHSA-6v9c-7cg6-27q7, CWE-674* | high | 18.0.0, 18.0.1 | 18.0.2 | untrusted markdown | xss--marked-readme-and-advisories |
+| dompurify | CVE-2026-47423 / GHSA-87xg-pxx2-7hvx, CWE-79 | high | 3.4.4 | 3.4.5 | none | xss--dompurify-readme-and-advisories |
 | dompurify | 11 medium advisories 2026-03 to 2026-05 (see raw) | medium | below 3.4.7 | 3.4.7 (latest 3.4.16) | risky options or modes in use | same |
-| serialize-javascript | GHSA-5c6j-r48x-rmvq (RCE), GHSA-qj8w-gfj5-8c6v / CVE-2026-34043 (DoS) | high | below 7.0.5 | 7.0.5 | attacker-influenced objects serialized | [ssr--serialize-javascript-advisories](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/ssr--serialize-javascript-advisories.md) |
+| serialize-javascript | GHSA-5c6j-r48x-rmvq (RCE), GHSA-qj8w-gfj5-8c6v / CVE-2026-34043 (DoS) | high | below 7.0.5 | 7.0.5 | attacker-influenced objects serialized | ssr--serialize-javascript-advisories |
 
 ## Unmaintained or deprecated (low, CWE-1104)
 
 | Package | Signal | Raw |
 | --- | --- | --- |
-| react-scripts | Create React App deprecated 2025-02-14, no active maintainers | [secrets--cra-env-and-sunset](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/secrets--cra-env-and-sunset.md) |
-| react-html-parser | last release 2017-11-29, no sanitization | [xss--html-react-parser-readme](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--html-react-parser-readme.md) |
+| react-scripts | Create React App deprecated 2025-02-14, no active maintainers | secrets--cra-env-and-sunset |
+| react-html-parser | last release 2017-11-29, no sanitization | xss--html-react-parser-readme |
 | draft-js | repository archived | same |
 
 react-helmet (last release 2020) and react-quill (last release 2022) are recorded in the raw file as age signals only; the script does not report them.

@@ -6,4 +6,4 @@
 4. Fill the readiness worksheet with reported versus observed experience and exact missing decisions. Do not collect credentials, identity documents or live user data.
 5. Return a compact question batch and continue only independent advisory work. When all material inputs exist, move to one representative slice rather than asking a new generic questionnaire.
 
-Grounding: [MDN planning](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/builder-readiness-stinger/references/research/raw/mdn-plan.html), [Audience context](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/builder-readiness-stinger/references/research/raw/google-audience.html). Scope/questions are the topic contract.
+Grounding: MDN planning, Audience context. Scope/questions are the topic contract.

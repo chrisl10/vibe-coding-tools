@@ -3,7 +3,7 @@
 
 > Historical May 2026 guidance. For current build, privacy and payment readiness use [guide 06](06-prepare-artifact-privacy-and-entitlement-evidence.md) and its October primary archive. Do not treat legacy numeric ASO claims, blanket regional restrictions or Billing 7 examples as current submission policy.
 
-*Source: `research/external/2026-05-20-privacy-manifest-requirements-2026.md`, `research/external/2026-05-20-apple-privacy-nutrition-labels-2026.md`, `research/external/2026-05-20-google-play-policy-updates-april-2026.md`*
+*Source: `research/external/2026-05-20-privacy-manifest-requirements-2026.md`, `research/external/2026-05-20-apple-privacy-nutrition-labels-2026.md`, `research/external/2026-05-20-google-play-policy-updates-april-2026.md` (source-repository research, not shipped)*
 
 ---
 

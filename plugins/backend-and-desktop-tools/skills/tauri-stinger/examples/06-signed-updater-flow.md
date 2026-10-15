@@ -67,4 +67,4 @@ export async function installAvailableUpdate(): Promise<boolean> {
 - On macOS, verify application signature, notarization, stapling, updater artifact, and signature.
 - Do not use this updater flow for Android or iOS. Use platform distribution systems.
 
-Source basis: [Updater docs](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--updater-plugin.md), [Updater 2.11.0](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--release--updater-2.11.0.md), [CLI notes](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--release--cli-changelog.md), and [Bundler 2.9.3](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--release--bundler-2.9.3.md).
+Source basis: Updater docs, Updater 2.11.0, CLI notes, and Bundler 2.9.3.

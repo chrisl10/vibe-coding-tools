@@ -1,7 +1,7 @@
 ---
 name: "chrome-chromium-wasp-drone"
 description: "Chrome DevTools Protocol and Chromium specialist for remote debugging, developer profiles, protocol inspection, source builds, and browser-engine diagnosis. Use for Chrome or Chromium work."
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write, Bash, Skill, WebSearch, WebFetch
 model: inherit
 ---
 

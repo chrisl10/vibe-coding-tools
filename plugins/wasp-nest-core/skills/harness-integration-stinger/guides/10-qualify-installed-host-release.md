@@ -1,6 +1,6 @@
 # Qualify release claims against installed-host receipts
 
-Use for O300. The [claim digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/harness-integration-stinger/references/research/availability-proof/distilled-availability.md) supplies primary-source boundaries. Reuse [the host receipt matrix](../templates/installed-host-release-matrix.md); packaging and release-CI implementation belong to `ci-release-stinger`.
+Use for O300. The claim digest supplies primary-source boundaries. Reuse [the host receipt matrix](../templates/installed-host-release-matrix.md); packaging and release-CI implementation belong to `ci-release-stinger`.
 
 1. Pin the exact candidate: source commit or source manifest hash, built owner version, artifact hash and retained resources. Record what structural/build checks actually passed. Such checks qualify source/package content only.
 2. For each Claude Code, Cursor, Codex and Cowork target, record carrier, host version, install/selection observation, exact owner and prerequisites, native discovery and supported invocation path. Use [selected-availability proof](08-prove-selected-availability.md). Every absent observation stays UNEXECUTED or UNKNOWN; no blanket all-host claim from one build.

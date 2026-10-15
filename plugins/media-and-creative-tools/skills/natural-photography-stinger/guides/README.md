@@ -53,7 +53,7 @@ each one can be read, corrected and extended on its own.
 
 Everything in them traces back to `references/research/`. A claim in a guide
 carries a citation like `[distilled-photographic-craft.md]`, and that file
-carries a citation to a specific file in `references/research/raw/`, which
+carries a citation to a specific file in `references/research/raw/` (source-repository research, not shipped), which
 carries the URL it was fetched from and the date. If a number looks wrong,
 that chain is how you check it.
 

@@ -13,7 +13,7 @@ Reddit Ads in 2026 provide **dual value** that no other platform in this stinger
 
 This compound effect means a Reddit campaign that influences community perception of your product creates lasting brand visibility in AI research queries — not just while the campaign runs.
 
-*Source: `research/external/2026-05-20-reddit-ads-b2b-saas-community-targeting-2026.md`*
+*Source: `research/external/2026-05-20-reddit-ads-b2b-saas-community-targeting-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -28,7 +28,7 @@ This compound effect means a Reddit campaign that influences community perceptio
 
 The CPC advantage vs LinkedIn is 3-10x for technical B2B buyers who are active on Reddit. This makes Reddit an exceptionally high-value complement for technical-ICP campaigns where LinkedIn budgets are constrained.
 
-*Source: `research/external/2026-05-20-reddit-ads-b2b-saas-community-targeting-2026.md`, `research/external/2026-05-20-reddit-ads-saas-settings-playbook.md`*
+*Source: `research/external/2026-05-20-reddit-ads-b2b-saas-community-targeting-2026.md`, `research/external/2026-05-20-reddit-ads-saas-settings-playbook.md` (source-repository research, not shipped)*
 
 ---
 
@@ -50,7 +50,7 @@ Community targeting is Reddit's strongest differentiator — no other ad platfor
 
 **Interest targeting** is available as a broader alternative but produces lower engagement and higher CPCs — use it for audience expansion tests after community targeting campaigns are optimized.
 
-*Source: `research/external/2026-05-20-reddit-ads-targeting-official-docs.md`*
+*Source: `research/external/2026-05-20-reddit-ads-targeting-official-docs.md` (source-repository research, not shipped)*
 
 ---
 
@@ -73,7 +73,7 @@ Reddit audiences do not convert at the same rate as search-intent channels. Expe
 
 **Implication:** Do not evaluate Reddit Ads at 30 days. If CPL is still above 3x benchmark at day 30, do not kill the campaign — optimize creative, audit the subreddit selection, and evaluate at day 60 and day 90.
 
-*Source: `research/external/2026-05-20-reddit-ads-saas-settings-playbook.md`*
+*Source: `research/external/2026-05-20-reddit-ads-saas-settings-playbook.md` (source-repository research, not shipped)*
 
 ---
 

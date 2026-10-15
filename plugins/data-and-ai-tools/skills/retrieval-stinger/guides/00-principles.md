@@ -2,7 +2,7 @@
 
 The non-negotiables for retrieval, regardless of which stack implements it. Read this first on every invocation, before any implementation-specific guide.
 
-> **Ground truth:** for this repo's default stack (Neon Postgres, full-text search, pgvector, RRF fusion), see `references/research/distilled-retrieval.md` and the raw sources under `references/research/raw/`. For the Deep Lake/Hivemind implementation, ground truth is Hivemind source under `src/shell/`, `src/hooks/`, `src/skillify/`, `src/graph/`, and `src/embeddings/columns.ts` - see `research/` for that trail. If a finding contradicts the source or the cited research, read it again - it wins.
+> **Ground truth:** for this repo's default stack (Neon Postgres, full-text search, pgvector, RRF fusion), see `references/research/distilled-retrieval.md` and the raw sources under `references/research/raw/` (source-repository research, not shipped). For the Deep Lake/Hivemind implementation, ground truth is Hivemind source under `src/shell/`, `src/hooks/`, `src/skillify/`, `src/graph/`, and `src/embeddings/columns.ts` - see `research/` for that trail. If a finding contradicts the source or the cited research, read it again - it wins.
 
 ---
 

@@ -2,7 +2,7 @@
 
 Use this guide when reply rate has dropped, emails are landing in spam, bounce rate is climbing, or the program has stalled. Start with infrastructure, then move to list, then copy.
 
-**Research grounding:** `research/external/2026-05-20-cold-email-deliverability-2026-rules.md`, `research/external/2026-05-20-cold-email-reply-rate-benchmarks-2026.md`
+**Research grounding:** `research/external/2026-05-20-cold-email-deliverability-2026-rules.md`, `research/external/2026-05-20-cold-email-reply-rate-benchmarks-2026.md` (source-repository research, not shipped)
 
 ---
 

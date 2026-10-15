@@ -2,7 +2,7 @@
 
 Turn an idea into a buildable plan: product strategy, Claude-Design-grade UX, a PRD map, a wave plan and a Definition of Done. Run `/product-studio:plan-product` to go through strategy, design and planning in order, approving each stage. New feature ideas that arrive mid-build go to KIPP in the TARS desk instead.
 
-Requires `wasp-nest-core`. See [How We Build](../../learn/guides/HOW-WE-BUILD.md) for where this fits in the full workflow.
+Requires `wasp-nest-core`. Running the build afterwards with `/tars` also needs `data-and-ai-tools` and Claude Code Desktop (see the prerequisites below); without them, use `/smoke-it` from Core once the PRDs and contracts exist. See the [How We Build](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/learn/guides/HOW-WE-BUILD.md) guide in `wasp-nest-core` for where this fits in the full workflow.
 
 <!-- wasp-pack-guide:start -->
 ## Choose a capability
@@ -34,7 +34,7 @@ Other clients use their plugin selection UI or discovered skill selector. Instal
 Run /product-studio:plan-product for [product idea or repository]. Interview me for the strategy first, then design, then the build plan, and wait for my approval at each stage.
 ```
 
-Expected result: An owner-approved Product Strategy, UX package with prototypes, PRD map, saved wave plan, project Definition of Done and a handoff packet for Library and Contract Writing; no PRDs, contracts or code are written by this command.
+Expected result: An owner-approved Product Strategy, UX package with prototypes, PRD map, saved wave plan, project Definition of Done and a handoff packet. After your approval the packet goes to Library to write the PRDs and to Contract Writing to draft the contracts; this command writes no application code.
 
 
 
@@ -60,6 +60,7 @@ Codex can use the named skill or its generated `source-command-<name>` wrapper w
 - `design-system-and-polish` also needs `web-development-tools`.
 - `live-app-capture-for-claude-design` also needs `browser-and-app-testing-tools`.
 - `pricing` also needs `software-economics-tools`.
+- `plan-product (build handoff to /tars and KIPP)` also needs `data-and-ai-tools`.
 
 Core supplies shared routing and review methods. Native Codex role registration requires the explicit installed-plugin registry and trusted Core hook; a marketplace selection alone is not proof of registration. Read the linked skill before work. Missing source, browser, connector, renderer or account access is a reported gap. Installation does not authorize sending, publishing, paid work or live settings changes.
 <!-- wasp-pack-guide:end -->

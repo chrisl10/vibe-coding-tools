@@ -29,15 +29,15 @@ You are the procedural arsenal for `telegram-bot-wasp-drone`. The research is in
 
 These are non-negotiable facts that every guide assumes:
 
-1. **Bot API 10.0 is current (May 8, 2026).** New in 10.0: guest mode (bots respond in chats without being a member), Managed Bots (bots that create other bots), bot-to-bot chat, live photos. See `research/bot-api/2026-05-20-bot-api-10-guest-mode.md`.
+1. **Bot API 10.0 is current (May 8, 2026).** New in 10.0: guest mode (bots respond in chats without being a member), Managed Bots (bots that create other bots), bot-to-bot chat, live photos. See `research/bot-api/2026-05-20-bot-api-10-guest-mode.md` (source-repository research, not shipped with the plugin).
 
-2. **grammY is v1.43.0 (NOT v2).** No breaking changes from v1. Telegraf is abandoned. grammY is the TypeScript recommendation. See `research/frameworks/2026-05-20-grammy-latest-version.md`.
+2. **grammY is v1.43.0 (NOT v2).** No breaking changes from v1. Telegraf is abandoned. grammY is the TypeScript recommendation. See `research/frameworks/2026-05-20-grammy-latest-version.md` (source-repository research, not shipped with the plugin).
 
-3. **aiogram v3.28.2 supports Bot API 10.0.** Five releases in 2026. No v4 announced. See `research/frameworks/2026-05-20-aiogram-3x-pypi-status.md`.
+3. **aiogram v3.28.2 supports Bot API 10.0.** Five releases in 2026. No v4 announced. See `research/frameworks/2026-05-20-aiogram-3x-pypi-status.md` (source-repository research, not shipped with the plugin).
 
-4. **Telegram Stars (XTR) are MANDATORY for all digital goods.** Apple/Google compliance enforcement. Empty `provider_token` (`""`) for Stars. Physical goods can still use fiat. See `research/payments/2026-05-20-telegram-stars-official-payments.md`.
+4. **Telegram Stars (XTR) are MANDATORY for all digital goods.** Apple/Google compliance enforcement. Empty `provider_token` (`""`) for Stars. Physical goods can still use fiat. See `research/payments/2026-05-20-telegram-stars-official-payments.md` (source-repository research, not shipped with the plugin).
 
-5. **initData has TWO validation paths.** HMAC-SHA256 (traditional, requires bot secret token) and Ed25519 (new in Bot API 9.5, March 2026: validates with bot ID only). See `research/mini-apps/2026-05-20-initdata-validation-official.md`.
+5. **initData has TWO validation paths.** HMAC-SHA256 (traditional, requires bot secret token) and Ed25519 (new in Bot API 9.5, March 2026: validates with bot ID only). See `research/mini-apps/2026-05-20-initdata-validation-official.md` (source-repository research, not shipped with the plugin).
 
 ---
 

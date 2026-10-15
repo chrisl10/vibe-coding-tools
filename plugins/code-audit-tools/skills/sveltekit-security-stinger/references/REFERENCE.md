@@ -7,7 +7,7 @@
 | [advisory-table.md](advisory-table.md) | Every published advisory for svelte, @sveltejs/kit, devalue and adapters, with ranges and preconditions | Guide 00, and when a version finding needs explaining |
 | [severity-guide.md](severity-guide.md) | Confidence rules, severity anchors, adjusters, verdict | Guide 06, and any time a severity is in doubt |
 | [research/distilled-sveltekit-security.md](research/distilled-sveltekit-security.md) | Cited summary of all research, with conflicts and thin spots | Verifying a claim before it goes into a finding |
-| [research/raw/](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw) | One file per primary source | Tracing a claim to its source |
+| research/raw/ | One file per primary source | Tracing a claim to its source |
 | [../scripts/sveltekit_audit_scan.py](../scripts/sveltekit_audit_scan.py) | Deterministic version match and surface inventory | Guide 00, once per run |
 | [../scripts/advisories.json](../scripts/advisories.json) | The advisory data the scanner reads | Refreshing advisories |
 

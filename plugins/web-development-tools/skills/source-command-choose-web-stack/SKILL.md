@@ -2,6 +2,7 @@
 name: "source-command-choose-web-stack"
 description: "Recommend one web framework from product, rendering, team and hosting needs, with backend boundaries and owner gaps."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-choose-web-stack

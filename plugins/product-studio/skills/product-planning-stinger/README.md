@@ -32,7 +32,7 @@ The owner approves each one, by exact revision, before anyone uses it.
 - [Artifact paths, owners and status words](references/artifact-paths.md)
 - Templates: [PRD Map](references/templates/prd-map.md), [Wave Plan](references/templates/wave-plan.md), [Definition of Done](references/templates/definition-of-done.md), [Handoff Packet](references/templates/handoff-packet.md)
 - Worked example: [PRD Map](references/examples/example-prd-map.md) and [Wave Plan](references/examples/example-wave-plan.md)
-- [Research distillation](references/research/distilled-product-planning.md) and its [raw sources](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-planning-stinger/references/research/raw)
+- [Research distillation](references/research/distilled-product-planning.md) and its raw sources
 - [Wave Plan checker](scripts/check_wave_plan.py): `python3 scripts/check_wave_plan.py wave-plan.md --prd-map prd-map.md`
 
 ## Where it sits in Product Studio

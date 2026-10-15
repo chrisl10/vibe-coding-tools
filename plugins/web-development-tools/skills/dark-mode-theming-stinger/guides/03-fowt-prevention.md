@@ -2,7 +2,7 @@
 
 *Covers: blocking inline script strategy, App Router placement, Pages Router placement, CSP nonce, CDN caching edge cases.*
 
-*Sources: `research/external/2026-05-20-next-themes-api.md`, `research/external/2026-05-20-ssr-color-scheme-detection.md`*
+*Sources: `research/external/2026-05-20-next-themes-api.md`, `research/external/2026-05-20-ssr-color-scheme-detection.md` (source-repository research, not shipped)*
 
 ---
 

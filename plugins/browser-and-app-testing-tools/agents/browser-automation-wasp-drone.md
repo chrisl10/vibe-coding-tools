@@ -1,7 +1,7 @@
 ---
 name: "browser-automation-wasp-drone"
 description: "Playwright and Puppeteer automation specialist for browser tests, scripts, traces, screenshots, browser installs, and CI reliability. Use for browser automation work."
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write, Bash, Skill, WebSearch, WebFetch
 model: inherit
 ---
 

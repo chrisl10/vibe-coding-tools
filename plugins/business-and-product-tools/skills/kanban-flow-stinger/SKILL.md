@@ -40,19 +40,19 @@ Do NOT activate for:
 
 These are non-negotiable before proceeding with any recommendation:
 
-1. **Surface WIP limits first.** Without WIP limits, what you are looking at is a task list, not Kanban. Every recommendation starts here. Source: `research/internal/command-brief-summary.md`.
+1. **Surface WIP limits first.** Without WIP limits, what you are looking at is a task list, not Kanban. Every recommendation starts here. Source: `research/internal/command-brief-summary.md` (source-repository research, not shipped with the plugin).
 
-2. **Never set a WIP limit without data.** Arbitrary limits ("just use 3") create false confidence. Ask for historical WIP or throughput data. If none exists, explain how to gather two weeks of data first. See `guides/01-wip-limits.md`. Source: `research/external/2026-05-20-wip-limits-agile-flow-consulting.md`.
+2. **Never set a WIP limit without data.** Arbitrary limits ("just use 3") create false confidence. Ask for historical WIP or throughput data. If none exists, explain how to gather two weeks of data first. See `guides/01-wip-limits.md`. Source: `research/external/2026-05-20-wip-limits-agile-flow-consulting.md` (source-repository research, not shipped with the plugin).
 
-3. **Always distinguish cycle time from lead time.** Define which clock starts and ends for each. Conflation is the most common flow-metric error. See `guides/02-flow-metrics.md`. Source: `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md`.
+3. **Always distinguish cycle time from lead time.** Define which clock starts and ends for each. Conflation is the most common flow-metric error. See `guides/02-flow-metrics.md`. Source: `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md` (source-repository research, not shipped with the plugin).
 
-4. **Apply Little's Law only in steady state.** If >20% of WIP is blocked or the expedite queue is active, flag non-steady-state before running L = λW. See `guides/03-littles-law.md`. Source: `research/external/2026-05-20-littles-law-abstract-algorithms.md`.
+4. **Apply Little's Law only in steady state.** If >20% of WIP is blocked or the expedite queue is active, flag non-steady-state before running L = λW. See `guides/03-littles-law.md`. Source: `research/external/2026-05-20-littles-law-abstract-algorithms.md` (source-repository research, not shipped with the plugin).
 
 5. **Respect the Toyota lineage without dogmatism.** Kanban evolved from TPS, but software teams are not car factories. Use the theory to explain *why* practices work, not to shame adaptation.
 
 6. **Distinguish the Kanban Method from a Kanban board.** A Scrum team using a board is NOT practising Kanban (no explicit policies, no WIP limits, no cadence meetings). Correct this politely but clearly.
 
-7. **Confirm the target tool before prescribing configuration.** Linear (no native WIP limits), Jira (swimlane WIP bug), and GitHub Projects (visual-only limits) all behave differently. See `guides/08-tool-implementation.md`. Source: `research/external/2026-05-20-tool-wip-limits-honest-review.md`.
+7. **Confirm the target tool before prescribing configuration.** Linear (no native WIP limits), Jira (swimlane WIP bug), and GitHub Projects (visual-only limits) all behave differently. See `guides/08-tool-implementation.md`. Source: `research/external/2026-05-20-tool-wip-limits-honest-review.md` (source-repository research, not shipped with the plugin).
 
 ---
 
@@ -98,7 +98,7 @@ Use these stubs to produce deliverables for the user:
 
 ## Key benchmarks (2026 practitioner data)
 
-These numbers come from `research/external/2026-05-20-value-stream-metrics-axify.md` and should be cited when calibrating expectations:
+These numbers come from `research/external/2026-05-20-value-stream-metrics-axify.md` (source-repository research, not shipped with the plugin) and should be cited when calibrating expectations:
 
 - **Typical software team flow efficiency:** 5-20% (15-20% is mature/WIP-limited; single-digits is common in unoptimized teams)
 - **Elite cycle time (p75):** 1.8 days
@@ -110,7 +110,7 @@ These numbers come from `research/external/2026-05-20-value-stream-metrics-axify
 
 ## Tool WIP limit status (2026)
 
-From `research/external/2026-05-20-tool-wip-limits-honest-review.md`, confirmed April 2026:
+From `research/external/2026-05-20-tool-wip-limits-honest-review.md` (source-repository research, not shipped with the plugin), confirmed April 2026:
 
 | Tool | Native WIP limit enforcement | Notes |
 |---|---|---|

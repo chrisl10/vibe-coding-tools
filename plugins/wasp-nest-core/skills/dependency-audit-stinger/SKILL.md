@@ -78,7 +78,7 @@ These are the non-negotiables. The full rationale lives in each guide.
 | **Syft + CycloneDX** | SBOM for the published npm package in CycloneDX 1.6 JSON; CI-ready with Sigstore attestation | Does not scan vulnerabilities; pairs with Grype for that |
 | **npm `--provenance`** | Sigstore-backed provenance on publish; verifiable with `npm audit signatures` | Transport guarantee only - does not vouch for source-code trust |
 
-> **Key 2026 insight:** `npm audit` is a CVE compliance tool, not a supply-chain security tool. The March 2026 axios maintainer account hijack published a backdoor in 40 minutes with no CVE at time of attack - `npm audit` showed clean throughout. For this package the equivalent nightmare is a tampered tree-sitter grammar running install-time code via `postinstall`. socket.dev behavioral analysis and Renovate `minimumReleaseAge` are the controls that address this class. See `research/external/04-npm-provenance-sigstore-2026.md`.
+> **Key 2026 insight:** `npm audit` is a CVE compliance tool, not a supply-chain security tool. The March 2026 axios maintainer account hijack published a backdoor in 40 minutes with no CVE at time of attack - `npm audit` showed clean throughout. For this package the equivalent nightmare is a tampered tree-sitter grammar running install-time code via `postinstall`. socket.dev behavioral analysis and Renovate `minimumReleaseAge` are the controls that address this class. See `research/external/04-npm-provenance-sigstore-2026.md` (source-repository research, not shipped with the plugin).
 
 ---
 

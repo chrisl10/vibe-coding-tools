@@ -2,7 +2,7 @@
 
 The feature-based folder layout from bulletproof-react. Follow it. Deviations need justification.
 
-Source: `research/2026-04-24-bulletproof-react-project-structure.md`
+Source: `research/2026-04-24-bulletproof-react-project-structure.md` (source-repository research, not shipped)
 
 ## The canonical tree
 

@@ -142,7 +142,7 @@ For Channels (WebSockets co-existing), use `daphne`: see `guides/18-deployment-r
 
 ## Sources
 
-- `research/2026-05-03-django-async-views.md`
+- `research/2026-05-03-django-async-views.md` (source-repository research, not shipped)
 - https://docs.djangoproject.com/en/stable/topics/async/
 - https://docs.djangoproject.com/en/stable/howto/deployment/asgi/
 - https://fly.io/blog/running-tasks-concurrently-in-django-asynchronous-views/

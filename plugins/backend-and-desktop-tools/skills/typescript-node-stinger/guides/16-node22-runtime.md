@@ -41,4 +41,4 @@ The runtime is the reason for the import rules in `guides/01` / `guides/02`:
 
 - `package.json` (`engines.node >= 22`), `tsconfig.json` (`target: ES2022`).
 - `src/deeplake-api.ts` (global `fetch`), `esbuild.config.mjs` (top-level await).
-- `research/2026-06-16-esm-node16-resolution.md`.
+- `research/2026-06-16-esm-node16-resolution.md` (source-repository research, not shipped).

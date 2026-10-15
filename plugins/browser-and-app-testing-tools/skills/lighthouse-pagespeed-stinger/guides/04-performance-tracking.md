@@ -1,6 +1,6 @@
 # Guide 04: Performance Tracking Over Time
 
-> Research source: `research/external/2026-05-20-speedcurve-treo-comparison.md`, `research/external/2026-05-20-psi-crux-integration.md`
+> Research source: `research/external/2026-05-20-speedcurve-treo-comparison.md`, `research/external/2026-05-20-psi-crux-integration.md` (source-repository research, not shipped)
 
 Three approaches for tracking Lighthouse and field performance over time: free (self-hosted LHCI server or CrUX Vis), mid-tier (Treo), and enterprise (SpeedCurve).
 
@@ -72,7 +72,7 @@ SpeedCurve was acquired by Embrace (mobile observability platform) in November 2
 | Growth | $576 | 13-month data retention, priority testing |
 | Enterprise | $1,680 | SSO, private agents, consulting |
 
-> Source: `research/external/2026-05-20-speedcurve-treo-comparison.md`
+> Source: `research/external/2026-05-20-speedcurve-treo-comparison.md` (source-repository research, not shipped)
 
 **Critical note:** SpeedCurve Synthetic always loads from a **completely empty cache** on consistent Amazon EC2 hardware. This is equivalent to Lighthouse's cold-cache behavior. SpeedCurve LUX (RUM) captures actual user sessions including repeat visitors with warm caches, similar to CrUX.
 

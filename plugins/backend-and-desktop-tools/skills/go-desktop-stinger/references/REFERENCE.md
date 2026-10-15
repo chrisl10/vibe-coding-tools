@@ -1,6 +1,6 @@
 # Go desktop boundary reference
 
-DERIVED contract, grounded in [the digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/go-desktop-stinger/references/research/digest.md).
+DERIVED contract, grounded in the digest.
 
 | Boundary | Owner | Required artifact |
 |---|---|---|

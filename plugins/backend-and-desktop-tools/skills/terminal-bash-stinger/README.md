@@ -4,7 +4,7 @@ The procedural arsenal for `terminal-bash-wasp-drone`, the Wasp Nest's specialis
 
 This stinger encodes playbooks for Bash/Zsh/Fish configuration, modern CLI tool adoption, shell scripting safety patterns, dotfile architecture, tmux/Zellij setup, and just/make task automation. Every guide cites at least one file in `research/`.
 
-**Source plan:** `research/research-plan.md`
+**Source plan:** `research/research-plan.md` (source-repository research, not shipped with the plugin)
 **Research summary:** `research/research-summary.md`
 
 Forged 2026-05-20 from a shallow-tier literature sweep.

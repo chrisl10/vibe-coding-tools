@@ -1,8 +1,8 @@
 # Library Packets Wasp Drone
 
-**Drone:** [library-packets-wasp-drone](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/documentation-tools/agents/library-packets-wasp-drone.md)
-**Stinger:** [library-packets-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/documentation-tools/skills/library-packets-stinger/SKILL.md)
-**Command:** [library-packets](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/documentation-tools/commands/library-packets.md)
+**Drone:** [library-packets-wasp-drone](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/documentation-tools/agents/library-packets-wasp-drone.md)
+**Stinger:** [library-packets-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/documentation-tools/skills/library-packets-stinger/SKILL.md)
+**Command:** [library-packets](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/documentation-tools/commands/library-packets.md)
 **Trigger policy:** on-demand
 
 **Plugin owner:** `documentation-tools`. **Required selection:** wasp-nest-core. Resolve the selected installed owner before dispatch; use the source link for the canonical procedure.
@@ -38,4 +38,4 @@ Supported documents in Markdown, editable Word, PDF and audience-safe citation l
 
 At top level, arm the Drone with its paired Stinger path, scoped library/output files, user answers and output/inspection checks. It does not spawn a nested fleet. The orchestrator may assign separate research, writing or review lanes with explicit ownership when that improves the agreed packet.
 
-Runtime is research/document production with no application-code commit. Independent source/publication and page review remain mandatory; a research-only label never waives them. No source mutation, paid account creation, dependency install, configuration change, external send or publication is implied.
+Runtime is research/document (source-repository research, not shipped) production with no application-code commit. Independent source/publication and page review remain mandatory; a research-only label never waives them. No source mutation, paid account creation, dependency install, configuration change, external send or publication is implied.

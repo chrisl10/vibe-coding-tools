@@ -2,7 +2,7 @@
 
 Per-row Zod validation, error shape, and the abort-vs-collect-all decision.
 
-*Derived from `research/external/2026-05-20-row-level-error-messages.md`, `research/external/2026-05-20-partial-import-valid-rows.md`, `research/external/2026-05-20-deterministic-import-pipeline.md`.*
+*Derived from `research/external/2026-05-20-row-level-error-messages.md`, `research/external/2026-05-20-partial-import-valid-rows.md`, `research/external/2026-05-20-deterministic-import-pipeline.md` (source-repository research, not shipped).*
 
 ---
 

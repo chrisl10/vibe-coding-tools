@@ -6,4 +6,4 @@
 4. Record hard constraints before preferences. Treat user concerns about AWS price/GCP complexity as constraints to evaluate through the actual services and skill burden.
 5. Return the normalized worksheet and only blockers that change selection. Do not interrogate the user about irrelevant services.
 
-Grounding: [Cloud Run workload types](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/infrastructure-decision-tools/skills/infrastructure-fit-stinger/references/research/raw/gcp-cloud-run.html), [Workers CPU/wall limits](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/infrastructure-decision-tools/skills/infrastructure-fit-stinger/references/research/raw/cloudflare-workers.html), [AWS architectural review](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/infrastructure-decision-tools/skills/infrastructure-fit-stinger/references/research/raw/aws-framework.html). Intake design derives from the locked topic.
+Grounding: Cloud Run workload types, Workers CPU/wall limits, AWS architectural review. Intake design derives from the locked topic.

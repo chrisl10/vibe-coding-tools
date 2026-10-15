@@ -2,7 +2,7 @@
 
 Core architectural decisions every Discord bot engineer should lock in before writing any code.
 
-*Sources: `research/external/2026-05-20-discord-interactions-official.md`, `research/external/2026-05-20-discord-intents-explainer.md`*
+*Sources: `research/external/2026-05-20-discord-interactions-official.md`, `research/external/2026-05-20-discord-intents-explainer.md` (source-repository research, not shipped)*
 
 ---
 

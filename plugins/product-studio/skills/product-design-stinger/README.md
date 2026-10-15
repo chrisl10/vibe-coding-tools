@@ -34,7 +34,7 @@ Part of the `product-studio` pack, between `product-strategy-stinger` (input) an
 
 ## Research
 
-[Distilled article](references/research/distilled-product-design.md) with 24 dated raw sources in [references/research/raw/](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw) and hashes in [source-ledger.json](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/source-ledger.json). Claude Design export internals (the .zip layout and the Claude Code handoff bundle) are not documented by Anthropic as of 2026-10-12; the distillation says exactly what is confirmed, what is secondary, and what is unknown.
+[Distilled article](references/research/distilled-product-design.md) with 24 dated raw sources in references/research/raw/ (source-repository research, not shipped with the plugin) and hashes in source-ledger.json. Claude Design export internals (the .zip layout and the Claude Code handoff bundle) are not documented by Anthropic as of 2026-10-12; the distillation says exactly what is confirmed, what is secondary, and what is unknown.
 
 ## Related owners
 

@@ -1,6 +1,6 @@
 # 14 - Qualify React primitives inside the product system
 
-Grounding: [C01-C05 and conflicts](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/ux-ui-stinger/references/research/2026-10-07-flow-contracts/digest.md). This is component-contract guidance. Actual UI implementation, redesign or refinement uses the selected Impeccable owner and its PRODUCT.md, DESIGN.md and surface brief.
+Grounding: C01-C05 and conflicts. This is component-contract guidance. Actual UI implementation, redesign or refinement uses the selected Impeccable owner and its PRODUCT.md, DESIGN.md and surface brief.
 
 ## Intake before prescribing a primitive
 
@@ -20,7 +20,7 @@ Use [primitive acceptance](../templates/primitive-acceptance-contract.md). A wra
 
 Inspect default, hover, keyboard focus, disabled, loading, empty, error, success and overflow states that apply. Use explicit N/A reasons, not missing rows. Confirm accessible name, label/error relationships, semantic button/link choice, focus-visible style, event composition and ref access. Ensure loading prevents duplicate work without concealing status. Document how errors recover and whether input survives dismissal/navigation.
 
-For modal dialogs, review initial focus, tab containment, Escape, visible close/cancel, accessible name, outside inertness and return to the invoker or a documented logical successor. Avoid nested interactive controls produced by incorrect composition. Match the actual APG pattern, not a generic checklist imposed on every widget. Source: [APG](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/ux-ui-stinger/references/research/2026-10-07-flow-contracts/raw/wai-modal-dialog.html), [Radix](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/ux-ui-stinger/references/research/2026-10-07-flow-contracts/raw/radix-composition.html).
+For modal dialogs, review initial focus, tab containment, Escape, visible close/cancel, accessible name, outside inertness and return to the invoker or a documented logical successor. Avoid nested interactive controls produced by incorrect composition. Match the actual APG pattern, not a generic checklist imposed on every widget. Source: APG, Radix.
 
 ## Acceptance and handoff
 

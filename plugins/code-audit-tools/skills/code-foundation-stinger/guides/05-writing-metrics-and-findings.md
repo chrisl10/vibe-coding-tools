@@ -42,6 +42,8 @@ Report: verdict, counts by severity, the measures that landed in `at-risk` or `c
 
 ## Sources
 
-- [research/raw/openssf--best-practices-criteria.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/openssf--best-practices-criteria.md)
-- [research/raw/scorecard--checks-reference.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/scorecard--checks-reference.md)
-- [research/raw/wasp-nest--get-started-assess-map.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/wasp-nest--get-started-assess-map.md)
+The notes listed below are source-repository research, not shipped.
+
+- research/raw/openssf--best-practices-criteria.md (source-repository research, not shipped)
+- research/raw/scorecard--checks-reference.md (source-repository research, not shipped)
+- research/raw/wasp-nest--get-started-assess-map.md (source-repository research, not shipped)

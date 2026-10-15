@@ -1,6 +1,6 @@
 # Projection consistency, evaluation and exit
 
-Grounding: [primary digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/vector-store-stinger/references/research/2026-10-data-fit/distilled.md). No two-store atomicity is assumed.
+Grounding: primary digest. No two-store atomicity is assumed.
 
 1. Define authoritative records, projection id/version/model stamp, accepted event/CDC/outbox source, ordering, deduplication, retries, deletion tombstones, tenant/visibility updates and reconciliation. Contract-writing-stinger drafts shared provider/consumer agreements; Library pins their exact accepted revisions. No guessed backfill, implicit dual-write atomicity or assigning retained records to a tenant by inference.
 2. Define visible consistency semantics: when a write is searchable, what acknowledgement means, stale-result handling, deletion/revocation deadline and permitted read failures. Qdrant consistency/read/write-ordering controls are separate knobs; use official current behavior and measured tests. A completed local vector write does not prove the authoritative relational transaction and projection are synchronized.
