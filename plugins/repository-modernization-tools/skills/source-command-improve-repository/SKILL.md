@@ -2,6 +2,7 @@
 name: "source-command-improve-repository"
 description: "Establish a repository baseline and prepare evidence-backed, owned repair batches."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-improve-repository

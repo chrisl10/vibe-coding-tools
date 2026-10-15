@@ -2,7 +2,7 @@
 
 Model supplied software economics and costs with explicit scenarios and evidence.
 
-Requires `wasp-nest-core`. This is a source candidate; no installation or native-host qualification is implied.
+Requires `wasp-nest-core`.
 
 <!-- wasp-pack-guide:start -->
 ## Choose a capability
@@ -61,7 +61,9 @@ Codex can use the named skill or its generated `source-command-<name>` wrapper w
 
 ## Prerequisites and boundaries
 
-No extra workflow-specific pack prerequisite is declared. Tool and account requirements remain in each skill.
+- `price-my-product (competitor comparison)` also needs `growth-and-customer-tools`.
+- `price-my-product (billing and price-test instrumentation)` also needs `platform-and-release-tools`.
+- `price-my-product and quote-project (effort estimation and legal review)` also needs `business-and-product-tools`.
 
 Core supplies shared routing and review methods. Native Codex role registration requires the explicit installed-plugin registry and trusted Core hook; a marketplace selection alone is not proof of registration. Read the linked skill before work. Missing source, browser, connector, renderer or account access is a reported gap. Installation does not authorize sending, publishing, paid work or live settings changes.
 <!-- wasp-pack-guide:end -->

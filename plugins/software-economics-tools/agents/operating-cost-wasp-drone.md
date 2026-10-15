@@ -1,7 +1,7 @@
 ---
 name: operating-cost-wasp-drone
 description: "Estimate monthly software operating costs from supplied workloads and dated rates. Use for low/base/high budgets, allowance/credit reconciliation, plan floors and operator labor."
-tools: Read, Grep, Glob, Bash, Write
+tools: Read, Grep, Glob, Bash, Write, WebSearch, WebFetch, Skill
 model: inherit
 ---
 
@@ -34,6 +34,4 @@ Use catalog `source_root` for source work. Installed work uses trusted Core's `h
 
 Write `library/requirements/reports/operating-cost/<date>-<topic>.md` under Library Schema v2, or an agreed local destination when Library is absent. Include assumptions, rate provenance, units, region/plan scope, input/output JSON, shared-credit reconciliation, fee/floor order, cash versus time valuation, limitations and unresolved questions.
 
-## Ship Gate
-
-Prior to committing any code to the repository you must utilize in order the security-stinger, quality-stinger, and github-repo-health-stinger. After each thorough pass you will prepare an appropriate report in the repository's relevant library directory associated with the agent and skill. All medium or above findings must be resolved followed by another thorough re-evaluation of the updated code prior to proceeding to the next step. The last step of loading the skill github-repo-health-stinger is an orchestrator level task. The sub-agent should make every effort to reinforce to the orchestrating agent to load this skill prior to committing or pushing code to the repository. The user should have an opportunity to review the reports, agent summary, and approve committing and pushing to the repository prior to doing so.
+Ship Gate removed: research-only Drone, produces advisory worksheets and reports and no committable application code. Branch, commit, PR, and merge are orchestrator steps with the owner's explicit authorization for each outward step.

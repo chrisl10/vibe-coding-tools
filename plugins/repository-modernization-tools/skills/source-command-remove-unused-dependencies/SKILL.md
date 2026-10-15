@@ -2,6 +2,7 @@
 name: "source-command-remove-unused-dependencies"
 description: "Remove manually qualified unused dependencies within exact approved package and lockfile scope, with before/after import and build proof."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-remove-unused-dependencies
