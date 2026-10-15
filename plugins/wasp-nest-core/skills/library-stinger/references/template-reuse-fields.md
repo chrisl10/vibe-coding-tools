@@ -1,6 +1,6 @@
 # Template reuse field contract
 
-Use these fields inside an existing PRD or IRD, or adapt them to the repository's existing knowledge template. They are a reference fragment, not another document lifecycle. Basis: [distillation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/library-stinger/references/research/template-reuse/distillation.md).
+Use these fields inside an existing PRD or IRD, or adapt them to the repository's existing knowledge template. They are a reference fragment, not another document lifecycle. Basis: distillation.
 
 | Field | Required content | Failure condition |
 |---|---|---|

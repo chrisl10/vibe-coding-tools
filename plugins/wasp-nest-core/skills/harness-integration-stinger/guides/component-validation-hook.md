@@ -1,6 +1,6 @@
 # Qualify component validation without activating a hook
 
-For O292, also use [host-version contract proof](13-prove-hook-contract.md). Load the [current source contract](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/harness-integration-stinger/references/research/component-hook-update/distillation.md) and the installed host's event/payload documentation before treating a configured handler as available. This update changes only the existing post-edit advisory code; it does not enable a new binding or alter tool permissions.
+For O292, also use [host-version contract proof](13-prove-hook-contract.md). Load the current source contract and the installed host's event/payload documentation before treating a configured handler as available. This update changes only the existing post-edit advisory code; it does not enable a new binding or alter tool permissions.
 
 1. Inspect the selected carrier's actual post-edit payload. Supported source shapes are nested `tool_input`/`toolInput` with `file_path`/`filePath`/`path`, or apply-patch headers in that nested input's `command`. A top-level path is not currently parsed. Unsupported shapes or missing events remain untested.
 2. Run [the offline payload fixtures](../../../../scripts/test_component_validate_hook.py) from the source checkout. They use an owned synthetic validator and temporary roots; do not install the hook to run them.

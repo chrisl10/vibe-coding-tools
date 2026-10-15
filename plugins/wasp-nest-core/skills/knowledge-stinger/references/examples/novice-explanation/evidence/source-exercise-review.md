@@ -4,7 +4,7 @@ These reviews compare actual source files and rendered Markdown, not a list of p
 
 ## Draft PRD: preserve the permission and sending sequence
 
-Source: [invoice-note PRD](../fixtures/prd/PRD-001-invoice-notes.md). Reader manuscript: [plain PRD explanation](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/documentation-tools/skills/library-packets-stinger/examples/plain-invoice-prd.md).
+Source: [invoice-note PRD](../fixtures/prd/PRD-001-invoice-notes.md). Reader manuscript: [plain PRD explanation](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/documentation-tools/skills/library-packets-stinger/examples/plain-invoice-prd.md).
 
 The source gives owners exclusive approval authority in their own workspace, orders review before approval before an explicit send request, and explicitly separates approval from sending. The rendered second paragraph retains all of those requirements. The third paragraph keeps members' narrower read-only authority. The opening retains Draft status; the fourth paragraph leaves automated reminders in future work and retention unresolved. Review: Pass for source fidelity. Human understanding: Pending.
 
@@ -20,7 +20,7 @@ Rejected candidate wording: “The permissions function guarantees that signed-i
 
 ## Actual Wasp Nest builder: keep selection separate from native execution
 
-Source: [builder snapshot](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/knowledge-stinger/references/research/novice-explanation/raw/actual-build.py), [selection snapshot](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/knowledge-stinger/references/research/novice-explanation/raw/actual-plugin-topology.py). Reader manuscript: [actual build journey](../../../../examples/actual-build-journey.md).
+Source: builder snapshot, selection snapshot. Reader manuscript: [actual build journey](../../../../examples/actual-build-journey.md).
 
 The tour follows the actual main/build entrypoint and imported resolve_plugins function, including Core, prerequisites and unknown/cycle error branches. The ledger preserves exact locations and hashes from the dirty working tree. It describes wrapper/manifest writer functions without claiming those files were built, validated, installed or discovered by a native client in this exercise. Review: Pass for source fidelity. Native execution and learner understanding: Unproven/Pending.
 
