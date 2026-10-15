@@ -1,6 +1,6 @@
 # 11 — Pre-Flight Sync Check (upstream always in sync)
 
-Derived from `research/09-maintenance-doctor.md`, `research/11-license-provenance.md`, and the user decision (2026-08-06): "make sure the upstream is always in sync before a task is done. If it is current it is skipped."
+Derived from `research/09-maintenance-doctor.md`, `research/11-license-provenance.md` (source-repository research, not shipped), and the user decision (2026-08-06): "make sure the upstream is always in sync before a task is done. If it is current it is skipped."
 
 ## The mechanism
 

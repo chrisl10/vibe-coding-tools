@@ -2,7 +2,7 @@
 
 Complete implementation guide for the cmdk command palette in Next.js with shadcn/ui.
 
-*Derives from: `research/external/cmdk-command.md`.*
+*Derives from: `research/external/cmdk-command.md` (source-repository research, not shipped).*
 
 ---
 

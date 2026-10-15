@@ -2,7 +2,7 @@
 
 Before selecting a primitive, classify the feedback event. The wrong classification produces UX failures that are invisible in development but damaging in production.
 
-*Derives from: `research/external/toast-taxonomy.md`, `research/external/sonner-toast.md`, `research/external/aria-apg-dialog.md`.*
+*Derives from: `research/external/toast-taxonomy.md`, `research/external/sonner-toast.md`, `research/external/aria-apg-dialog.md` (source-repository research, not shipped).*
 
 ---
 

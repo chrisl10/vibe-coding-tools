@@ -9,4 +9,4 @@ ICU compile/render result:
 Human translation review result and unresolved critical copy:
 Security -> Quality -> orchestrator Repository Health report links:
 Unperformed route/hydration/browser/accessibility/translation/native/host checks: NOT_RUN until evidence exists.
-Status/Delivered/Verified/Not done/Questions for Mario/Out of scope:
+Status/Delivered/Verified/Not done/Questions for the owner/Out of scope:

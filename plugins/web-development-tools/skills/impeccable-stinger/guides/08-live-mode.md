@@ -1,6 +1,6 @@
 # 08 — Live Mode (opt-in browser iteration, alpha)
 
-Derived from `research/08-live-mode.md`.
+Derived from `research/08-live-mode.md` (source-repository research, not shipped).
 
 ## What it is
 
