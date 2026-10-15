@@ -1,6 +1,6 @@
 # Guide 04: Take-Home Test Ethics and Design
 
-Source: `research/external/2026-05-20-take-home-test-ethics.md`
+Source: `research/external/2026-05-20-take-home-test-ethics.md` (source-repository research, not shipped)
 
 ---
 
@@ -71,7 +71,7 @@ Greenhouse published data showing that anonymous take-home grading (graders cann
 | Portfolio review | High for senior roles | Best (no extra work) | Low |
 | Game-based / short assessment | Moderate | Best (4.44/5 satisfaction, 88% 4-5 stars) | Lowest (equitable across backgrounds) |
 
-Game-based assessments (Equalture data from 87,000 experiences): no meaningful experience gap between different candidate backgrounds. Worth mentioning as an emerging third option for teams concerned about both validity and equity. Source: `research/external/2026-05-20-take-home-test-ethics.md`
+Game-based assessments (Equalture data from 87,000 experiences): no meaningful experience gap between different candidate backgrounds. Worth mentioning as an emerging third option for teams concerned about both validity and equity. Source: `research/external/2026-05-20-take-home-test-ethics.md` (source-repository research, not shipped)
 
 ---
 

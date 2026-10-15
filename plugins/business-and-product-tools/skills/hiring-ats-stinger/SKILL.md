@@ -75,7 +75,7 @@ Six platforms dominate the 2026 market. Full decision matrix: `guides/00-platfor
 
 **Rippling shortcut:** If the user is already on Rippling HRIS, ask whether Rippling Recruiting meets their needs before evaluating other platforms. It eliminates the handoff problem entirely.
 
-Source: `research/external/2026-05-20-ats-platform-comparison.md`
+Source: `research/external/2026-05-20-ats-platform-comparison.md` (source-repository research, not shipped with the plugin)
 
 ---
 
@@ -89,7 +89,7 @@ Structured interviews with behaviorally-anchored scorecards have 0.51 predictive
 3. Free-form comment fields are an EEOC discovery risk. Restrict to "evidence of behavior" prompts only.
 4. Run calibration sessions at the start of each new role and periodically during active loops.
 
-Source: `research/external/2026-05-20-scorecards-calibration.md`
+Source: `research/external/2026-05-20-scorecards-calibration.md` (source-repository research, not shipped with the plugin)
 
 ---
 
@@ -101,13 +101,13 @@ Full framework: `guides/04-take-home-test-ethics.md`.
 
 **Anonymous grading:** Greenhouse published data showing anonymous grading increases pass-through rates by 6.5-10% for all candidates. Enable this whenever the ATS supports it.
 
-Source: `research/external/2026-05-20-take-home-test-ethics.md`
+Source: `research/external/2026-05-20-take-home-test-ethics.md` (source-repository research, not shipped with the plugin)
 
 ---
 
 ## Critical time-sensitive fact (2026)
 
-> **Greenhouse Harvest API v1/v2 is deprecated and unavailable after August 31, 2026.** Any team with existing Greenhouse integrations (sourcing tools, HRIS handoff, custom workflows) built on v1/v2 MUST migrate to Harvest API v3 by this date. Source: `research/external/2026-05-20-greenhouse-api-updates.md`
+> **Greenhouse Harvest API v1/v2 is deprecated and unavailable after August 31, 2026.** Any team with existing Greenhouse integrations (sourcing tools, HRIS handoff, custom workflows) built on v1/v2 MUST migrate to Harvest API v3 by this date. Source: `research/external/2026-05-20-greenhouse-api-updates.md` (source-repository research, not shipped with the plugin)
 
 Surface this warning proactively any time the user mentions Greenhouse integrations.
 

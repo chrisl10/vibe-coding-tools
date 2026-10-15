@@ -12,7 +12,7 @@ Monte Carlo simulation is the most defensible method for producing probabilistic
 
 4. **Output: probability distribution over completion dates.** Sort the trial results. P50 is the date by which 50% of simulations completed; P85 is 85%, P95 is 95%.
 
-Key technical note: Monte Carlo does NOT require normally distributed data. Skewed cycle-time distributions (common in real teams, where occasionally items take much longer than typical) are correctly modeled by sampling with replacement. This is a major advantage over PERT and three-point estimation. See `research/external/03-monte-carlo-forecasting.md`.
+Key technical note: Monte Carlo does NOT require normally distributed data. Skewed cycle-time distributions (common in real teams, where occasionally items take much longer than typical) are correctly modeled by sampling with replacement. This is a major advantage over PERT and three-point estimation. See `research/external/03-monte-carlo-forecasting.md` (source-repository research, not shipped).
 
 ## Confidence percentile interpretation
 
@@ -24,7 +24,7 @@ Key technical note: Monte Carlo does NOT require normally distributed data. Skew
 
 The delta between P50 and P85 is a productive conversation starter: "We're 85% confident by April 2, but only 50% by March 15. What would it take to close that gap? Scope reduction? Added capacity? Risk acceptance?"
 
-Quote: "Most teams present both the median (P50) and a safer commitment level such as P85. The delta between them is a great conversation starter about scope trade-offs, staffing, or risk mitigation." (ScopeCone, 2026). See `research/external/03-monte-carlo-forecasting.md`.
+Quote: "Most teams present both the median (P50) and a safer commitment level such as P85. The delta between them is a great conversation starter about scope trade-offs, staffing, or risk mitigation." (ScopeCone, 2026). See `research/external/03-monte-carlo-forecasting.md` (source-repository research, not shipped).
 
 ## Minimum data requirements
 
@@ -35,7 +35,7 @@ Quote: "Most teams present both the median (P50) and a safer commitment level su
 
 ## 2026 free tooling landscape
 
-All tools below are free or have a meaningful free tier as of May 2026. See `research/external/03-monte-carlo-forecasting.md` for the full landscape.
+All tools below are free or have a meaningful free tier as of May 2026. See `research/external/03-monte-carlo-forecasting.md` (source-repository research, not shipped) for the full landscape.
 
 ### For quick demos and stakeholder conversations
 
@@ -82,9 +82,9 @@ When a team lacks cycle-time data (< 20 items), PERT provides a lightweight alte
 
 **Apply per story or per epic, then sum.** PERT does NOT substitute for Monte Carlo: it requires normally-distributed variation, which software work rarely exhibits. Use it as a temporary tool while building cycle-time history.
 
-From `research/external/04-planning-fallacy.md`: PERT is the "Cone of Uncertainty" at the task level. It explicitly captures uncertainty range, which is its main advantage over single-point estimates.
+From `research/external/04-planning-fallacy.md` (source-repository research, not shipped): PERT is the "Cone of Uncertainty" at the task level. It explicitly captures uncertainty range, which is its main advantage over single-point estimates.
 
 ---
 
-*Cited research: `research/external/03-monte-carlo-forecasting.md`, `research/external/04-planning-fallacy.md`*
+*Cited research: `research/external/03-monte-carlo-forecasting.md`, `research/external/04-planning-fallacy.md` (source-repository research, not shipped)*
 *Example: `examples/monte-carlo-forecast.md`*

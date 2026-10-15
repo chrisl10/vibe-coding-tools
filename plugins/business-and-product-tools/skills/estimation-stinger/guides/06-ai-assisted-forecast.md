@@ -14,7 +14,7 @@ Use completed comparable work to choose effort ranges when it exists. Otherwise 
 
 For each bounded scenario, add engineering, learning, verification and rework hours. These categories must be mutually exclusive. Divide their total by the supplied usable fraction, then by N daily scheduled hours. Round required working days upward. A usable fraction describes interruptions and nonproject time, not review already counted in the numerator. Scheduled owner hours include the whole reserved project block; disclose that convention when valuing the owner's time.
 
-Keep verification and rework explicit: generated suggestions and automated review need validation. A zero value requires an explanation rather than an assumption that AI removes the activity. [Official inline guidance](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/estimation-stinger/references/ai-assisted-forecast/research/raw/github-inline.md), [official agent guidance](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/estimation-stinger/references/ai-assisted-forecast/research/raw/github-agents.md).
+Keep verification and rework explicit: generated suggestions and automated review need validation. A zero value requires an explanation rather than an assumption that AI removes the activity. Official inline guidance, official agent guidance.
 
 Optional deterministic calculator, relative to this skill directory:
 

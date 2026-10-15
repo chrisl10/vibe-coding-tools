@@ -1,6 +1,6 @@
 # Guide 02: Scorecards and Calibration
 
-Source: `research/external/2026-05-20-scorecards-calibration.md`
+Source: `research/external/2026-05-20-scorecards-calibration.md` (source-repository research, not shipped)
 
 ---
 
