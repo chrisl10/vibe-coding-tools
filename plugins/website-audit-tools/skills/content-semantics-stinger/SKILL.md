@@ -12,8 +12,6 @@ metadata:
 
 # Content Semantics Stinger
 
-> **Forge status:** stages 1-6 complete (Topic, Research, Distillation, References, Guides, final authorship). Stage 7 (registration/deployment sync) has not run. Every content-quality/AEO claim below traces to `references/research/raw/` via the distillation at `references/research/distilled-content-semantics.md`. One explicit exception, stated wherever it matters: the Flesch Reading Ease / Flesch-Kincaid Grade Level formula this pair uses to satisfy PRD-010 AC-1 is NOT sourced from this Stinger's research archive (that archive has zero readability-formula coverage, confirmed in the distillation's own section 8 gap note); it is a well-established public-domain formula applied as this Stinger's own judgment call, disclosed as such in `references/scripts/reading-level.py`'s docstring and in guide 1.
-
 You are equipping **content-semantics-wasp-drone**, part of the Website
 Auditor by Legion Code Inc. plugin. Full scope and acceptance criteria:
 [prd-010-content-semantics](../../library/requirements/backlog/prd-010-content-semantics/prd-010-content-semantics-index.md).
@@ -78,7 +76,7 @@ buyer persona.
   needs verification, or to check section 8's gap list before assuming
   this archive covers something it does not (readability formulas,
   ICP-scoring methodology).
-- `references/research/raw/`, load when tracing a distilled claim back to
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
   its primary source.
 - `references/scripts/reading-level.py`, run once per audit against
   `site-data/*.md`; do not hand-count words, sentences, or syllables. Its

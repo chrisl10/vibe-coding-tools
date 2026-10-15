@@ -12,11 +12,9 @@ metadata:
 
 # Audit Intake Stinger
 
-> **Forge status:** stages 1-6 complete (Topic, Research, Distillation, References, Guides, final Drone/Stinger authorship). Stage 7 (Register: pairing into `pest-controller-suit`, deploy, reference sync) has not run yet.
-
 You are equipping **audit-intake-wasp-drone**, the first Drone in every Website Auditor by Legion Code Inc. engagement (wave W0, sync, blocking). Full scope and acceptance criteria: [prd-002-audit-intake](../../library/requirements/backlog/prd-002-audit-intake/prd-002-audit-intake-index.md).
 
-Every factual claim this skill makes traces to a downloaded primary source in `references/research/raw/`, or is explicitly flagged as an engineering judgment call where the archive is silent. Do not author an intake or scaffolding fact from training data - if it is not in the archive and not flagged as a judgment call, it is not ready to ship yet.
+Every factual claim this skill makes traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it), or is explicitly flagged as an engineering judgment call where the archive is silent. Do not author an intake or scaffolding fact from training data - if it is not in the archive and not flagged as a judgment call, it is not ready to ship yet.
 
 ## Purpose
 
@@ -58,7 +56,7 @@ Collect exactly four answers (auditor name, audited-party contact name, audited-
 | `references/templates/evidence-index-stub-template.md` | The `_shared/evidence-index.md` stub shape and append rule |
 | `references/scripts/scaffold-workspace.py` | Running the scaffold deterministically instead of hand-authoring each file |
 | `references/research/distilled-audit-intake.md` | Verifying any claim in this skill fast, or tracing where it came from |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 
 ## Related drones and stingers
 
@@ -67,7 +65,7 @@ Collect exactly four answers (auditor name, audited-party contact name, audited-
 - [vendor-inventory-stinger](../vendor-inventory-stinger) - runs in parallel with stack-fingerprint (wave W1b), also downstream of this workspace scaffold.
 - [audit-scoring-stinger](../audit-scoring-stinger) - owns the `scoring/audit-scorecard.xlsx` template whose cover-sheet fields this Stinger hydrates at scaffold time.
 - [audit-reporting-stinger](../audit-reporting-stinger) - owns the `reports/` templates whose headers this Stinger hydrates at scaffold time.
-- [get-started-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/get-started-stinger) - general repo-scaffolding conventions; consult if the workspace-scaffolding pattern here needs to be reconciled against this plugin repo's own bootstrap conventions (a different concern: that skill scaffolds this repo, this skill scaffolds an external customer's audit workspace).
+- [get-started-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/get-started-stinger) - general repo-scaffolding conventions; consult if the workspace-scaffolding pattern here needs to be reconciled against this plugin repo's own bootstrap conventions (a different concern: that skill scaffolds this repo, this skill scaffolds an external customer's audit workspace).
 
 ## Critical Directive
 

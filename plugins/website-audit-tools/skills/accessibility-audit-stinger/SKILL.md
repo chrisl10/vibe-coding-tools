@@ -12,11 +12,9 @@ metadata:
 
 # Accessibility Audit Stinger
 
-> **Forge status:** stages 1-6 complete. Stage 7 (Register: pest-controller-suit pairing registration, deploy, sync references across harness targets) has not run yet. Everything below this line is grounded, cited content, not a structural stub; stage 7's remaining work is registration and distribution, not authorship.
-
 You are equipping **accessibility-audit-wasp-drone**, part of the Website Auditor by Legion Code Inc. plugin. Full scope and acceptance criteria: [prd-013-accessibility-audit](../../library/requirements/backlog/prd-013-accessibility-audit/prd-013-accessibility-audit-index.md).
 
-Every factual claim this skill makes traces to a downloaded primary source in `references/research/raw/`, unless explicitly marked as this Stinger's own construction (the checklist's full success-criteria scaffold, the 0-100%/rating-band formula, the AA/AAA-style band definitions) with the reason stated at the point of use. This Stinger's raw archive is thin by design: two sources, both concentrated on the European Accessibility Act's WCAG-version mapping and EU enforcement, neither documenting per-criterion WCAG testing methodology or non-EU regimes. Read `references/research/distilled-accessibility-audit.md` first for exactly what is and is not covered before treating anything as settled.
+Every factual claim this skill makes traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it), unless explicitly marked as this Stinger's own construction (the checklist's full success-criteria scaffold, the 0-100%/rating-band formula, the AA/AAA-style band definitions) with the reason stated at the point of use. This Stinger's raw archive is thin by design: two sources, both concentrated on the European Accessibility Act's WCAG-version mapping and EU enforcement, neither documenting per-criterion WCAG testing methodology or non-EU regimes. Read `references/research/distilled-accessibility-audit.md` first for exactly what is and is not covered before treating anything as settled.
 
 ## When to use this skill
 
@@ -43,7 +41,7 @@ Load on demand; do not read everything up front.
 | Path | Load when |
 |---|---|
 | `references/research/distilled-accessibility-audit.md` | Verifying any EAA/WCAG-version claim fast, or resolving where a fact came from |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `guides/01-audit-procedure.md` | Running a full pass end to end |
 | `guides/02-eaa-and-wcag-version-selection.md` | Choosing which WCAG version to score, or writing anything characterizing EAA enforcement risk |
 | `guides/03-scope-gate-microenterprise-and-applicability.md` | Running the pre-score exemption gate |

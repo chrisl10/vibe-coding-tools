@@ -12,13 +12,11 @@ metadata:
 
 # Blog Content Stinger
 
-> **Forge status:** stages 1-6 complete (Topic, Research, Distillation, References, Guides, Component authorship). Stage 7 (Register: pair registration in `pest-controller-suit`, deploy, sync references) has not run yet. Every claim below traces to `references/research/raw/` or to this repo's own plan/PRD documents, cited inline; two named research gaps carry through (see `references/research/distilled-blog-content.md` section 6) and are flagged wherever they matter rather than silently papered over.
-
 ## Purpose
 
 Equips **blog-content-wasp-drone** to run a bonus, conditional audit of a target site's 10 most recent blog posts: a deterministic word count per post, a `[subjective]` semantic/quality read per post, and an AI-authorship-probability analysis per post. The AI-authorship analysis is this Stinger's binding, non-negotiable conduct rule: it is reported strictly as a probability band with the stated detection method and its documented error rate, and never, under any framing, as a flat verdict ("this post was AI-written"). Full scope and acceptance criteria: [prd-018-blog-content](../../library/requirements/backlog/prd-018-blog-content/prd-018-blog-content-index.md).
 
-Every factual claim this skill makes about AI-content detection traces to a downloaded primary source in `references/research/raw/`. This archive is thin by design (two sources, both academic-integrity studies, neither studies blog or marketing content directly), and that thinness is itself load-bearing for why the probability-band discipline exists, see [guides/03-ai-authorship-probability-band-reporting.md](guides/03-ai-authorship-probability-band-reporting.md).
+Every factual claim this skill makes about AI-content detection traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it). This archive is thin by design (two sources, both academic-integrity studies, neither studies blog or marketing content directly), and that thinness is itself load-bearing for why the probability-band discipline exists, see [guides/03-ai-authorship-probability-band-reporting.md](guides/03-ai-authorship-probability-band-reporting.md).
 
 ## When to use
 
@@ -44,7 +42,7 @@ Every factual claim this skill makes about AI-content detection traces to a down
 ## References map
 
 - `references/research/distilled-blog-content.md`, load when verifying any AI-content-detection claim fast, or resolving where a figure came from.
-- `references/research/raw/`, load when tracing a distilled claim back to its primary source (two files: an arXiv detector-benchmark preprint, a Springer peer-reviewed detector-accuracy study).
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `references/templates/post-finding-template.md`, load when writing any single post's finding, the exact required shape for word count, `[subjective]` read, and AI-authorship band.
 - `references/templates/11-blog-summary-template.md`, load when assembling the run-level `11-blog/` output.
 - `references/scripts/select-recent-posts.py`, run once per run against `site-data/` to select posts and compute word counts, see `references/scripts/README.md`.
