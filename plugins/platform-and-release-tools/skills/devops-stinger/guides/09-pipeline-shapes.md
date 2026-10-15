@@ -1,6 +1,6 @@
 # 09: Pipeline shapes
 
-The four canonical pipelines every Node/Next.js repo needs. Source: `research/2026-04-25-pipeline-shapes-pr-main-release.md`.
+The four canonical pipelines every Node/Next.js repo needs. Source: `research/2026-04-25-pipeline-shapes-pr-main-release.md` (source-repository research, not shipped).
 
 ---
 

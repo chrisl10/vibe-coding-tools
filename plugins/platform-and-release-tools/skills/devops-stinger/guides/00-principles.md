@@ -16,19 +16,19 @@ Before recommending *anything*, capture:
 
 A recommendation written without reading the existing pipeline is wrong advice.
 
-Source: `research/2026-04-25-research-plan.md` lists the canonical inventory checklist.
+Source: `research/2026-04-25-research-plan.md` (source-repository research, not shipped) lists the canonical inventory checklist.
 
 ### 2. Least privilege everywhere
 
 Three surfaces, one rule:
 
-- **Containers.** Run as a non-root user (`USER node` / dedicated UID). Never `USER root` in the runtime stage. Source: OWASP Docker Cheatsheet and `research/2026-04-25-owasp-docker-cheatsheet.md`.
-- **`GITHUB_TOKEN`.** Set repo default to "Read repository contents permission" in Settings → Actions → General. Each job declares an explicit `permissions:` block with only what it needs (`contents: read` for builds, `id-token: write` for OIDC, `packages: write` only for the publish job). Source: `research/2026-04-25-actions-permissions-hardening.md`.
-- **Cloud auth.** OIDC federation, not long-lived keys. Source: `research/2026-04-25-oidc-cloud-federation.md`.
+- **Containers.** Run as a non-root user (`USER node` / dedicated UID). Never `USER root` in the runtime stage. Source: OWASP Docker Cheatsheet and `research/2026-04-25-owasp-docker-cheatsheet.md` (source-repository research, not shipped).
+- **`GITHUB_TOKEN`.** Set repo default to "Read repository contents permission" in Settings → Actions → General. Each job declares an explicit `permissions:` block with only what it needs (`contents: read` for builds, `id-token: write` for OIDC, `packages: write` only for the publish job). Source: `research/2026-04-25-actions-permissions-hardening.md` (source-repository research, not shipped).
+- **Cloud auth.** OIDC federation, not long-lived keys. Source: `research/2026-04-25-oidc-cloud-federation.md` (source-repository research, not shipped).
 
 ### 3. Cache is a first-class architectural concern
 
-Every build defines its cache backend explicitly. The "cache is king" principle (see `research/2026-04-25-cache-is-king-gha.md`) is the basis for every "build is slow" finding:
+Every build defines its cache backend explicitly. The "cache is king" principle (see `research/2026-04-25-cache-is-king-gha.md` [source-repository research, not shipped]) is the basis for every "build is slow" finding:
 
 - BuildKit named cache mounts for package managers (`--mount=type=cache,target=/root/.npm`).
 - Layer cache backend chosen deliberately: Depot persistent NVMe (best), registry cache (good), GHA cache backend (acceptable, 10 GB cap), no cache (finding).
@@ -50,7 +50,7 @@ A build that runs locally but not in CI (or vice versa) is a finding. Standardiz
 - Compose: `secrets:` block with file-based secrets, mounted as files at `/run/secrets/`.
 - Actions: OIDC for cloud auth; for things that genuinely require static creds, scope tightly with environment-protected secrets.
 
-Source: `research/2026-04-25-buildkit-secret-mounts.md`.
+Source: `research/2026-04-25-buildkit-secret-mounts.md` (source-repository research, not shipped).
 
 ### 6. Multi-stage by default
 
@@ -58,24 +58,24 @@ Even for a "simple" Node app:
 
 - **Builder stage** carries dev deps, runs `pnpm install`, produces the build artifact.
 - **Runtime stage** copies only the artifact + production deps. Final image is up to 80% smaller (well-documented baseline).
-- Source: `research/2026-04-25-multi-stage-size-reduction.md`.
+- Source: `research/2026-04-25-multi-stage-size-reduction.md` (source-repository research, not shipped).
 
 ### 7. Pin everything
 
 - Base image: minor + patch tag minimum (`node:20.18.1-alpine3.20`). For compliance-critical builds, pin to digest (`@sha256:...`). Never `:latest`.
 - Actions: commit SHA with version comment alongside (`uses: actions/checkout@<sha> # v4.2.2`). Tags can be retagged; SHAs are immutable.
-- Source: `research/2026-04-25-actions-pin-to-sha.md`.
+- Source: `research/2026-04-25-actions-pin-to-sha.md` (source-repository research, not shipped).
 
 ### 8. OIDC over long-lived cloud credentials
 
-AWS, GCP, Azure, DigitalOcean, Cloudflare: all support OIDC federation from GitHub Actions. The Action requests a short-lived token via `id-token: write` permission; the cloud provider trusts the OIDC issuer. Repo secrets shrink from "long-lived AWS access keys" to nothing. Source: `research/2026-04-25-oidc-cloud-federation.md`.
+AWS, GCP, Azure, DigitalOcean, Cloudflare: all support OIDC federation from GitHub Actions. The Action requests a short-lived token via `id-token: write` permission; the cloud provider trusts the OIDC issuer. Repo secrets shrink from "long-lived AWS access keys" to nothing. Source: `research/2026-04-25-oidc-cloud-federation.md` (source-repository research, not shipped).
 
 ### 9. Cite every finding
 
 Two citations per finding:
 
 - **Where in the user's repo**: `Dockerfile:14`, `.github/workflows/deploy.yml:31`, `docker-compose.yml:42`.
-- **Why it's a finding**: guide section + research note (`guides/06-actions-security.md §3` + `research/2026-04-25-actions-permissions-hardening.md`) or external URL.
+- **Why it's a finding**: guide section + research note (`guides/06-actions-security.md §3` + `research/2026-04-25-actions-permissions-hardening.md` [source-repository research, not shipped]) or external URL.
 
 ### 10. Severity discipline
 

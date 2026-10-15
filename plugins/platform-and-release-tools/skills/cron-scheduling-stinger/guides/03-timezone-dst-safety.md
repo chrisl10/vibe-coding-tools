@@ -1,6 +1,6 @@
 # Guide 03: Timezone and DST Safety
 
-*Research sources: `research/external/2026-05-20-cron-timezone-dst-production-patterns.md`*
+*Research sources: `research/external/2026-05-20-cron-timezone-dst-production-patterns.md` (source-repository research, not shipped)*
 
 ---
 

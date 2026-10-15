@@ -14,24 +14,24 @@ Equips `discord-bot-wasp-drone` to build, review, and audit Discord bots and app
 
 ## Quick-reference: critical API facts (May 2026)
 
-| Fact | Value | Source |
+| Fact | Value | Source (source-repository research, not shipped with the plugin) |
 |------|-------|--------|
-| discord.js stable | **v14.25.1** (v15 pre-release, ~94% milestone; not production-ready) | `research/external/2026-05-20-discordjs-v15-status.md` |
-| discord.py stable | **v2.x** (CommandTree + app_commands) | `research/external/2026-05-20-discordpy-app-commands.md` |
-| Wavelink status | **ABANDONED**: do not recommend | `research/external/2026-05-20-wavelink-deprecated.md` |
-| Voice clients (Python) | **Mafic** or **lavalink.py** (both DAVE-compliant) | `research/external/2026-05-20-lavalink-clients-2026.md` |
-| Voice clients (Node.js) | **Shoukaku** or **Lavalink-Client** (both DAVE-compliant) | `research/external/2026-05-20-lavalink-clients-2026.md` |
-| Lavalink version | **v4** | `research/external/2026-05-20-lavalink-clients-2026.md` |
-| DAVE protocol | Mandatory in all voice channels since **March 1, 2026** | `research/external/2026-05-20-discord-changelog-2026.md` |
-| Discord API version | **v10** (Gateway v10) | `research/external/2026-05-20-discord-api-v10-changes-2026.md` |
-| Sharding required at | **2,500 guilds** (hard enforcement) | `research/external/2026-05-20-discord-sharding-guide.md` |
-| Privileged intent gate | Apply at **75 servers**; hard block at **100** | `research/external/2026-05-20-discord-privileged-intents.md` |
-| Data retention limit | **30 days** max for privileged intent approval | `research/external/2026-05-20-discord-privileged-intents.md` |
-| Global command propagation | **~1 hour** | `research/external/2026-05-20-discord-application-commands-spec.md` |
-| Guild command propagation | **Instant**: use in dev | `research/external/2026-05-20-discord-application-commands-spec.md` |
-| Modal custom_id max | **100 characters** | `research/external/2026-05-20-discord-components-modals.md` |
-| Buttons per message | **25 max** (5 action rows × 5 buttons) | `research/external/2026-05-20-discord-components-modals.md` |
-| Node.js minimum | **22.12.0** for discord.js | `research/external/2026-05-20-discordjs-v14-slash-commands.md` |
+| discord.js stable | **v14.25.1** (v15 pre-release, ~94% milestone; not production-ready) | `research/external/2026-05-20-discordjs-v15-status.md` (source-repository research, not shipped with the plugin) |
+| discord.py stable | **v2.x** (CommandTree + app_commands) | `research/external/2026-05-20-discordpy-app-commands.md` (source-repository research, not shipped with the plugin) |
+| Wavelink status | **ABANDONED**: do not recommend | `research/external/2026-05-20-wavelink-deprecated.md` (source-repository research, not shipped with the plugin) |
+| Voice clients (Python) | **Mafic** or **lavalink.py** (both DAVE-compliant) | `research/external/2026-05-20-lavalink-clients-2026.md` (source-repository research, not shipped with the plugin) |
+| Voice clients (Node.js) | **Shoukaku** or **Lavalink-Client** (both DAVE-compliant) | `research/external/2026-05-20-lavalink-clients-2026.md` (source-repository research, not shipped with the plugin) |
+| Lavalink version | **v4** | `research/external/2026-05-20-lavalink-clients-2026.md` (source-repository research, not shipped with the plugin) |
+| DAVE protocol | Mandatory in all voice channels since **March 1, 2026** | `research/external/2026-05-20-discord-changelog-2026.md` (source-repository research, not shipped with the plugin) |
+| Discord API version | **v10** (Gateway v10) | `research/external/2026-05-20-discord-api-v10-changes-2026.md` (source-repository research, not shipped with the plugin) |
+| Sharding required at | **2,500 guilds** (hard enforcement) | `research/external/2026-05-20-discord-sharding-guide.md` (source-repository research, not shipped with the plugin) |
+| Privileged intent gate | Apply at **75 servers**; hard block at **100** | `research/external/2026-05-20-discord-privileged-intents.md` (source-repository research, not shipped with the plugin) |
+| Data retention limit | **30 days** max for privileged intent approval | `research/external/2026-05-20-discord-privileged-intents.md` (source-repository research, not shipped with the plugin) |
+| Global command propagation | **~1 hour** | `research/external/2026-05-20-discord-application-commands-spec.md` (source-repository research, not shipped with the plugin) |
+| Guild command propagation | **Instant**: use in dev | `research/external/2026-05-20-discord-application-commands-spec.md` (source-repository research, not shipped with the plugin) |
+| Modal custom_id max | **100 characters** | `research/external/2026-05-20-discord-components-modals.md` (source-repository research, not shipped with the plugin) |
+| Buttons per message | **25 max** (5 action rows × 5 buttons) | `research/external/2026-05-20-discord-components-modals.md` (source-repository research, not shipped with the plugin) |
+| Node.js minimum | **22.12.0** for discord.js | `research/external/2026-05-20-discordjs-v14-slash-commands.md` (source-repository research, not shipped with the plugin) |
 
 ---
 

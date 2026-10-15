@@ -1,6 +1,6 @@
 # 10: Local-CI parity
 
-The only sustainable answer to "works on my machine" is "the same recipe runs locally and in CI". Source: `research/2026-04-25-docker-bake-hcl.md`.
+The only sustainable answer to "works on my machine" is "the same recipe runs locally and in CI". Source: `research/2026-04-25-docker-bake-hcl.md` (source-repository research, not shipped).
 
 ---
 
