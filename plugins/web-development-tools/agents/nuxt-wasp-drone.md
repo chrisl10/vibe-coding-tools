@@ -1,7 +1,7 @@
 ---
 name: nuxt-wasp-drone
 description: "Implement accepted Nuxt apps: routing, SSR/data, Nitro routes, request state, private config and cache/auth integration. Vue, design, backend and provider owners keep their boundaries."
-tools: Read, Grep, Glob, Edit, Write, Bash, WebFetch, WebSearch
+tools: Read, Grep, Glob, Edit, Write, Bash, WebFetch, WebSearch, Skill
 model: inherit
 ---
 

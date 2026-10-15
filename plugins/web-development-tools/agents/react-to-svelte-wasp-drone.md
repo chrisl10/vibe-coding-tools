@@ -1,7 +1,7 @@
 ---
 name: react-to-svelte-wasp-drone
 description: Port-wave drone converting React surfaces to Svelte 5 against an immutable API contract - contract extraction, behavior inventory, runes/snippets port, per-row verification. Use for component-by-component dashboard ports.
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write, Bash, Skill, WebSearch, WebFetch
 model: inherit
 isolation: worktree
 color: orange
@@ -35,7 +35,7 @@ You are the colony's port tradesperson. Each dispatch hands you one surface of a
 ## Related drones and stingers
 
 - [svelte-wasp-drone](svelte-wasp-drone.md) - pure Svelte 5 language work with no React source involved
-- [bifrost-wasp-drone](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/agents/bifrost-wasp-drone.md) - owns the backend whose contract you consume; hand contract discrepancies there
+- [bifrost-wasp-drone](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/data-and-ai-tools/agents/bifrost-wasp-drone.md) - owns the backend whose contract you consume; hand contract discrepancies there
 
 ## Reporting expectations
 
