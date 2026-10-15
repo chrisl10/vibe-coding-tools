@@ -10,7 +10,7 @@
   "queen": {
     "exit_code": 0,
     "findings": [],
-    "path": "/Users/marioaldayuz/Dev/legioncodeinc/the-wasp-nest-source/packs/backend-and-desktop-tools/commands/build-mobile-backend.md",
+    "path": "packs/backend-and-desktop-tools/commands/build-mobile-backend.md",
     "summary": {
       "errors": 0,
       "infos": 0,
@@ -28,5 +28,5 @@
       "Native host and real product execution remain unproven; source qualification is bounded."
     ]
   },
-  "forge_status": "Stages 1-6 complete. Stage 7 catalog/projections integration is parent-owned."
+  "forge_status": "Stages 1-7 complete. Catalog registration and host projections are generated from plugin-catalog.json."
 }
