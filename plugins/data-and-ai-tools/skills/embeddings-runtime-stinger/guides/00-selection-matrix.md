@@ -1,6 +1,6 @@
 # Selection matrix: which embedding model and which runtime
 
-Walk this before writing any embedding call. Grounded in `references/research/raw/openai--vector-embeddings-guide.md`, `references/research/raw/cohere--embed-api-v2-reference.md`, `references/research/raw/voyageai--text-embeddings-model-choices.md`, `references/research/raw/voyageai--pricing.md`, and `references/research/raw/qdrant--how-to-choose-an-embedding-model.md`.
+Walk this before writing any embedding call. Grounded in `references/research/raw/openai--vector-embeddings-guide.md`, `references/research/raw/cohere--embed-api-v2-reference.md`, `references/research/raw/voyageai--text-embeddings-model-choices.md`, `references/research/raw/voyageai--pricing.md`, and `references/research/raw/qdrant--how-to-choose-an-embedding-model.md` (source-repository research, not shipped).
 
 ## First question: hosted provider or self-hosted?
 
@@ -39,7 +39,7 @@ See `guides/hosted-01-openai.md`, `guides/hosted-02-cohere.md`, and `guides/host
 
 ## Self-hosted local option
 
-The local-daemon material in `guides/local-daemon-*.md` (transformers.js + nomic-embed-text-v1.5, 768-dim, q8, Unix-socket daemon) is one fully documented self-hosted implementation, proven in production for the Wasp Nestmind product. `guides/local-daemon-06-local-vs-hosted.md` is the Wasp Nestmind-specific worked example of this same local-vs-hosted decision. For a from-scratch self-hosted setup on a different embedding model, `references/research/raw/huggingface--transformersjs-node-server-side-inference.md` documents the general transformers.js server-side pattern (singleton warm pipeline, `env.cacheDir`, `env.localModelPath`, `env.allowRemoteModels = false` for fully offline operation) independent of which model is loaded into it.
+The local-daemon material in `guides/local-daemon-*.md` (transformers.js + nomic-embed-text-v1.5, 768-dim, q8, Unix-socket daemon) is one fully documented self-hosted implementation, proven in production for the Wasp Nestmind product. `guides/local-daemon-06-local-vs-hosted.md` is the Wasp Nestmind-specific worked example of this same local-vs-hosted decision. For a from-scratch self-hosted setup on a different embedding model, `references/research/raw/huggingface--transformersjs-node-server-side-inference.md` (source-repository research, not shipped) documents the general transformers.js server-side pattern (singleton warm pipeline, `env.cacheDir`, `env.localModelPath`, `env.allowRemoteModels = false` for fully offline operation) independent of which model is loaded into it.
 
 ## Quick decision table
 

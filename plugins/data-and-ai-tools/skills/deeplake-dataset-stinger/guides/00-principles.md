@@ -32,7 +32,7 @@ Before recommending anything, read:
 - The healing / index / query code that touches the table.
 - `package.json` for the Deep Lake / Activeloop client and Node / TS versions.
 
-A recommendation against the wrong schema shape is wrong advice. Source: `research/deeplake-stack-version-log.md`.
+A recommendation against the wrong schema shape is wrong advice. Source: `research/deeplake-stack-version-log.md` (source-repository research, not shipped).
 
 ### 2. Single-source the schema
 
@@ -42,13 +42,13 @@ Every column is one `ColumnDef` in `src/deeplake-schema.ts`. `buildCreateTableSq
 - Columns (a.k.a. tensors) are typed: `message` is JSONB; `message_embedding` / `summary_embedding` are `FLOAT4[]` (768-dim, nomic-embed-text-v1.5).
 - The SEVEN tables: memory, sessions, skills, rules, goals, kpis, codebase.
 
-Source: `research/2026-06-16-no-orm-columndef-deeplakeapi.md`.
+Source: `research/2026-06-16-no-orm-columndef-deeplakeapi.md` (source-repository research, not shipped).
 
 ### 3. Heal additively, never blanket
 
 `healMissingColumns()` runs one `SELECT column_name FROM information_schema.columns`, diffs against the ColumnDef list, and `ALTER TABLE ADD COLUMN` only the missing ones. Never blanket re-add. Never `ADD COLUMN IF NOT EXISTS` (Deep Lake returns HTTP 500, not 409). A blind add is a must-fix.
 
-Source: `research/2026-06-16-additive-schema-healing-500-not-409.md`. Detail: `guides/03-schema-healing.md`.
+Source: `research/2026-06-16-additive-schema-healing-500-not-409.md` (source-repository research, not shipped). Detail: `guides/03-schema-healing.md`.
 
 ### 4. Every NOT NULL column gets a DEFAULT
 
@@ -60,13 +60,13 @@ The heal procedure lives in `guides/03-schema-healing.md`.
 
 skills / rules / goals / kpis are append-only: INSERT version+1, read latest via `ORDER BY version DESC`. A true UPDATE hits a Deep Lake UPDATE-coalescing quirk and silently loses writes.
 
-Source: `research/2026-06-16-deeplake-types-jsonb-embedding-versioning.md`. Detail: `guides/06-embeddings-jsonb-versioning.md`.
+Source: `research/2026-06-16-deeplake-types-jsonb-embedding-versioning.md` (source-repository research, not shipped). Detail: `guides/06-embeddings-jsonb-versioning.md`.
 
 ### 6. Guard every dynamic SQL fragment
 
 `sqlStr()` / `sqlLike()` / `sqlIdent()` from `src/utils/sql`. Table names go through `sqlIdent`, which rejects anything not `[A-Za-z_][A-Za-z0-9_]*`. Raw interpolation is an injection and a 500.
 
-Source: `research/2026-06-16-deeplakeapi-retry-semaphore-402.md`. Detail: `guides/05-querying-deeplakeapi.md`.
+Source: `research/2026-06-16-deeplakeapi-retry-semaphore-402.md` (source-repository research, not shipped). Detail: `guides/05-querying-deeplakeapi.md`.
 
 ### 7. Pick the right search operator
 
@@ -77,14 +77,14 @@ Source: `research/2026-06-16-deeplakeapi-retry-semaphore-402.md`. Detail: `guide
 | Semantic similarity | `<#>` cosine on a `FLOAT4[]` column |
 | Both relevance and similarity | `deeplake_hybrid_record($vec::float4[], $text, w1, w2)` |
 
-No single operator is universally right. Source: `research/2026-06-16-deeplake-indexing-bm25-vector-hybrid.md`.
+No single operator is universally right. Source: `research/2026-06-16-deeplake-indexing-bm25-vector-hybrid.md` (source-repository research, not shipped).
 
 ### 8. Cite every finding
 
 Two citations per finding:
 
 - **Where in the schema / code** - `src/deeplake-schema.ts:42`.
-- **Why it's a finding** - guide section (`guides/02-indexing.md SShybrid`), research note (`research/2026-06-16-deeplake-indexing-bm25-vector-hybrid.md`), or Deep Lake / Activeloop docs URL.
+- **Why it's a finding** - guide section (`guides/02-indexing.md SShybrid`), research note (`research/2026-06-16-deeplake-indexing-bm25-vector-hybrid.md` [source-repository research, not shipped]), or Deep Lake / Activeloop docs URL.
 
 ### 9. Severity discipline
 

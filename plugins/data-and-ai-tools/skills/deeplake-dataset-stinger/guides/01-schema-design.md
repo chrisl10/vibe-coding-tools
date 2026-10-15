@@ -2,7 +2,7 @@
 
 Single-source schema. Every column is a `ColumnDef` in `src/deeplake-schema.ts`; the type system is the contract.
 
-Source: `research/2026-06-16-no-orm-columndef-deeplakeapi.md`, `research/2026-06-16-deeplake-types-jsonb-embedding-versioning.md`.
+Source: `research/2026-06-16-no-orm-columndef-deeplakeapi.md`, `research/2026-06-16-deeplake-types-jsonb-embedding-versioning.md` (source-repository research, not shipped).
 
 ## The 7 tables
 
@@ -51,7 +51,7 @@ export interface ColumnDef {
 
 ### `JSONB` vs columns
 
-Apply the 80/20 test from `research/2026-06-16-deeplake-types-jsonb-embedding-versioning.md`:
+Apply the 80/20 test from `research/2026-06-16-deeplake-types-jsonb-embedding-versioning.md` (source-repository research, not shipped):
 
 | Use JSONB when | Use columns when |
 |---|---|

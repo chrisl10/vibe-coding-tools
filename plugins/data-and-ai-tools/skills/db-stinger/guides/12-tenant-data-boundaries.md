@@ -1,6 +1,6 @@
 # 12: design tenant data boundaries and prepare denial proof
 
-Use the [boundary worksheet](../templates/tenant-boundary-proof.md), [source cases](../examples/tenant-boundary-cases.md) and [captured facts](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/db-stinger/references/research/tenant-boundaries/distillation.md). This is architecture and verification preparation. Security accepts the control design and conducts the security audit; Quality executes the approved proof after Security.
+Use the [boundary worksheet](../templates/tenant-boundary-proof.md), [source cases](../examples/tenant-boundary-cases.md) and captured facts. This is architecture and verification preparation. Security accepts the control design and conducts the security audit; Quality executes the approved proof after Security.
 
 ## 1. Name identity and every access path
 

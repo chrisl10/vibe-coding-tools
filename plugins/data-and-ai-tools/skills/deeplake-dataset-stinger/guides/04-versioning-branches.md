@@ -2,7 +2,7 @@
 
 Deep Lake datasets carry git-like version history. Hivemind uses it to snapshot, branch, and roll back the dataset as a whole - distinct from the per-row append-only version-bump on skills / rules / goals / kpis (that lives in `guides/06-embeddings-jsonb-versioning.md`).
 
-Source: `research/2026-06-16-versioning-branches-tags.md`.
+Source: `research/2026-06-16-versioning-branches-tags.md` (source-repository research, not shipped).
 
 ## The operations
 

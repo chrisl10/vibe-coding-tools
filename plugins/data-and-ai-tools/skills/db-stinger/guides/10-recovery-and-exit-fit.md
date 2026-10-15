@@ -1,6 +1,6 @@
 # Recovery and exit qualification
 
-Read [primary digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/db-stinger/references/research/2026-10-data-fit/distilled.md). Source-file preparation is distinct from restoration/provider writes.
+Read primary digest. Source-file preparation is distinct from restoration/provider writes.
 
 1. Define acceptable recovery point and recovery time with the owner, data classes, regions, retention and actual business continuity dependency. Record goals as requirements, not vendor guarantees. Identify database rows, uploaded objects, auth/session configuration, search projection, queue state and operational secrets by purpose, never values.
 2. Verify what each provider backup includes, where it is retained, available restoration targets and downtime behavior. Supabase database backups exclude Storage API object bytes; a database restore alone cannot meet an uploaded-file recovery goal. For every candidate, record restore rehearsal evidence, date/size/config and untested boundaries.
