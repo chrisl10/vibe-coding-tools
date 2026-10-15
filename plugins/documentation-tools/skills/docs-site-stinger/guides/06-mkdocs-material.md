@@ -2,7 +2,7 @@
 
 **Status: MAINTENANCE MODE since November 2025.** No new features. Security and critical bug fixes only until approximately November 2026. The creator (Martin Donath) is building Zensical as the successor (no public release date).
 
-> Source: `research/external/2026-05-20-mkdocs-material-maintenance-mode.md`
+> Source: `research/external/2026-05-20-mkdocs-material-maintenance-mode.md` (source-repository research, not shipped)
 
 ---
 

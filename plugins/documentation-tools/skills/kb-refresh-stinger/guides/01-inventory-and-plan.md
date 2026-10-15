@@ -32,7 +32,7 @@ At inventory time, commit-age comparison is a cheap triage signal. Before choosi
 - Group by domain (auth, data, integrations, operations, and so on), matching the repo's existing domain folders. `knowledge-stinger`'s domain taxonomy is the default when the repo has none.
 - Each unit is a disjoint set of file paths. Disjoint is non-negotiable: two units touching one file means two agents writing one file, which means clobbered work and unreadable diffs.
 - Include a root or overview unit last if shared files (README, index, cross-domain overview) need touching. It merges after the domain units so its links resolve.
-- Write the unit-to-files map to disk as JSON (see `raw/kb-refresh--evidence--unit-split-2026-10-04.json` in this stinger's research for the shape). Every later stage reads units from that file, never from memory.
+- Write the unit-to-files map to disk as JSON (the reference run's map, `raw/kb-refresh--evidence--unit-split-2026-10-04.json`, is source-repository research, not shipped; do not require it: one entry per unit naming its domain and its non-overlapping file list is enough). Every later stage reads units from that file, never from memory.
 
 ## Plan presentation
 

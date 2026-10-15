@@ -2,7 +2,7 @@
 
 Docs that work treat documentation as four distinct kinds of content: each with a different purpose, different audience state, and different authoring pattern. Confusing the kinds produces the "one big guide" anti-pattern: a document that is 40% tutorial, 30% reference, and 30% conceptual explanation that serves none of its readers well.
 
-> Source: `research/external/2026-05-20-diataxis-framework.md`
+> Source: `research/external/2026-05-20-diataxis-framework.md` (source-repository research, not shipped)
 
 ---
 

@@ -2,7 +2,7 @@
 
 Documentation without a CI gate drifts. The goal: every docs PR goes through the same quality gate as code PRs.
 
-> Source: `research/external/2026-05-20-docs-as-code-vale-lychee-ci.md`
+> Source: `research/external/2026-05-20-docs-as-code-vale-lychee-ci.md` (source-repository research, not shipped)
 
 ---
 

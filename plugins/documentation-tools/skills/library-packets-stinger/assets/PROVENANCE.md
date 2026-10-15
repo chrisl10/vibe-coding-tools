@@ -4,6 +4,6 @@ The bundled `legion-logo.svg` is the original approved horizontal Legion Code In
 
 `legion-footer.png` is a 1040-pixel-wide raster render of that SVG, preserving geometry and colours on its intended dark background. It includes the icon and LEGION word mark. Rendered October 6, 2026; visually inspected. The footer also names Legion Code Inc. as the report preparer, without claiming ownership of a third-party subject.
 
-The current official company site corroborates the brand and canonical logo URL. [Official branding capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/skills/library-packets-stinger/references/research/raw/legion-official-branding.md)
+The current official company site corroborates the brand and canonical logo URL. Official branding capture
 
 Use the supplied asset as a logo, not a made-up text substitute. Preserve its aspect ratio and legibility. Subject-brand assets are separate and must come from the packet user's approved files.

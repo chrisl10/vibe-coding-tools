@@ -2,7 +2,7 @@
 
 Starlight is the **recommended greenfield choice for 2026**. Built on Astro v6, 8K+ GitHub stars, 200K+ weekly npm downloads, 300+ contributors. The v0.x semver means breaking changes per minor release: pin your versions.
 
-> Source: `research/external/2026-05-20-starlight-astro-v6-stable.md`
+> Source: `research/external/2026-05-20-starlight-astro-v6-stable.md` (source-repository research, not shipped)
 
 ---
 

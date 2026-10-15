@@ -2,7 +2,7 @@
 
 Docusaurus v3.10 (April 2026) is the final v3.x release. v4 is incoming and will require React 19. Start all new Docusaurus projects in v4-ready mode.
 
-> Source: `research/external/2026-05-20-docusaurus-v3-react19-v4-roadmap.md`
+> Source: `research/external/2026-05-20-docusaurus-v3-react19-v4-roadmap.md` (source-repository research, not shipped)
 
 ---
 
