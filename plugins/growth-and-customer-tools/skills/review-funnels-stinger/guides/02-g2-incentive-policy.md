@@ -7,7 +7,7 @@
 
 > **Critical:** The original command brief URL `https://sell.g2.com/resources/what-are-the-rules-for-collecting-reviews-on-g2` returns a 404 as of May 2026. Always link to the current page above.
 
-Source: `research/external/2026-05-20-g2-review-incentive-policy.md`, `research/external/2026-05-20-ftc-endorsement-guidelines-reviews.md`
+Source: `research/external/2026-05-20-g2-review-incentive-policy.md`, `research/external/2026-05-20-ftc-endorsement-guidelines-reviews.md` (source-repository research, not shipped)
 
 ---
 

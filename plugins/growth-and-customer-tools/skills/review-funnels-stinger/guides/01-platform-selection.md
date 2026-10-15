@@ -15,7 +15,7 @@ Use this matrix to prioritize platforms for a new SaaS product. Score each relev
 
 **2026 note:** G2 acquired Capterra, Software Advice, and GetApp. Capterra and Software Advice are now G2-family. Treat as one vendor relationship but separate databases/audiences.
 
-Source: `research/external/2026-05-20-g2-capterra-trustpilot-platform-strategy.md`, `research/external/2026-05-20-g2-capterra-acquisition-consolidation.md`
+Source: `research/external/2026-05-20-g2-capterra-trustpilot-platform-strategy.md`, `research/external/2026-05-20-g2-capterra-acquisition-consolidation.md` (source-repository research, not shipped)
 
 ---
 
@@ -81,4 +81,4 @@ See `guides/04-product-hunt-launch.md` for the full playbook. Pre-launch checkli
 - [ ] Draft the "first comment" from the Maker (authentic, personal, explains origin story)
 - [ ] Schedule: select a Tuesday-Thursday for maximum upvote potential; avoid Mondays and Fridays
 
-Source: `research/external/2026-05-20-product-hunt-launch-playbook.md`
+Source: `research/external/2026-05-20-product-hunt-launch-playbook.md` (source-repository research, not shipped)

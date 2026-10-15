@@ -110,4 +110,4 @@ Post timing (2026 data): Weekdays 8-10 AM EST. Tuesday/Wednesday highest engagem
 ---
 
 **See example:** `examples/content-calendar-solo-dev.md` (BIP posts are the "build update" type in the calendar)
-**Research grounding:** `research/external/2026-05-20-build-in-public-x-playbook.md`, `research/external/2026-05-20-indie-hacker-x-strategy.md`
+**Research grounding:** `research/external/2026-05-20-build-in-public-x-playbook.md`, `research/external/2026-05-20-indie-hacker-x-strategy.md` (source-repository research, not shipped)
