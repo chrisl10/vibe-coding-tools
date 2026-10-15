@@ -1,6 +1,6 @@
 # Selection matrix: which vector store
 
-Walk this before writing any schema. Grounded in `references/research/raw/devto--pgvector-vs-pinecone-vs-qdrant-when-dedicated-vector-db-worth-it.md` and `references/research/raw/kalviumlabs--vector-databases-compared-pgvector-pinecone-qdrant-weaviate-2026.md`.
+Walk this before writing any schema. Grounded in `references/research/raw/devto--pgvector-vs-pinecone-vs-qdrant-when-dedicated-vector-db-worth-it.md` and `references/research/raw/kalviumlabs--vector-databases-compared-pgvector-pinecone-qdrant-weaviate-2026.md` (source-repository research, not shipped).
 
 ## Default for this repo: Neon Postgres + pgvector
 

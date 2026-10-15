@@ -2,6 +2,7 @@
 name: "source-command-build-rag-feature"
 description: "Build a bounded RAG feature against an accepted corpus, access contract, and measured retrieval and answer evaluation."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-build-rag-feature

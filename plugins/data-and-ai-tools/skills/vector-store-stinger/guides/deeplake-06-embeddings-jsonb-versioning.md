@@ -2,7 +2,7 @@
 
 Three intertwined storage decisions: how embeddings are stored (`FLOAT4[]`), how schemaless payloads are stored (JSONB `message`), and how edits are recorded (append-only version-bump). vector-store-wasp-drone owns the storage shape; retrieval is `retrieval-wasp-drone`.
 
-Source: `research/2026-06-16-deeplake-types-jsonb-embedding-versioning.md`.
+Source: `research/2026-06-16-deeplake-types-jsonb-embedding-versioning.md` (source-repository research, not shipped).
 
 ## Embeddings - `FLOAT4[768]`
 

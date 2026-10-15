@@ -1,6 +1,6 @@
 # Evidence-led Postgres vectors versus Qdrant
 
-Read [current primary digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/vector-store-stinger/references/research/2026-10-data-fit/distilled.md), then the existing principles and store-specific schema/index procedures. Treat old fixed vector-count thresholds and isolated benchmark numbers as dated secondary context, never automatic migration triggers.
+Read current primary digest, then the existing principles and store-specific schema/index procedures. Treat old fixed vector-count thresholds and isolated benchmark numbers as dated secondary context, never automatic migration triggers.
 
 1. Read actual store/schema/extension versions, embedding model/dimension/distance, source records, tenants/visibility, corpus size/chunks/update/delete rates and query/filter distribution. Capture workload growth as forecast, not measured data. A multimodal label does not establish compatible text/image embeddings or a need for another store.
 2. Normalize search objectives: top-k, required relevance/recall metric, p50/p95/p99 latency, concurrency, write/backfill load, freshness, deletion/revocation latency and budget/operator capacity. Keep missing inputs explicit. Agree thresholds with the product owner; do not invent a success budget to make one engine win.
