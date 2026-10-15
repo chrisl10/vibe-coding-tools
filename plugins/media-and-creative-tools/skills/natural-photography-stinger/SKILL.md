@@ -7,7 +7,7 @@ metadata:
   domain: photography
   pairs_with: natural-photography-wasp-drone
   research_archive: references/research/
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch
+allowed-tools: Read, Glob, Grep, WebFetch
 ---
 
 # natural-photography-stinger
@@ -148,7 +148,7 @@ Load on demand. Do not read everything up front.
 | `references/research/distilled-photographic-craft.md` | Optics, lighting, sensor and skin-tone findings, cited |
 | `references/research/distilled-image-models.md` | Platform parameters, limits, prompting doctrine, cited |
 | `references/research/distilled-metadata-and-provenance.md` | ExifTool, IPTC, C2PA, regulation, cited |
-| `references/research/raw/` | 73 primary sources behind the above |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `references/scripts/` | `preflight.py`, `exif_apply.py` |
 | `references/templates/exif-profiles/` | CASE B scene profiles |
 | `models/` | The roster, the ledger and the template |
@@ -181,6 +181,6 @@ Everything else the photographer asks for is in scope.
 - Run the gate before every job. A non-zero exit code stops the job.
 - Classify the metadata case before building the prompt, not after.
 - Related Stingers:
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass. Run before any commit that touches this skill's scripts.
-  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/quality-stinger) - Quality assurance pass. Runs after security.
-  - [library-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/library-stinger) - PRD and IRD authorship if this skill's scope changes.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass. Run before any commit that touches this skill's scripts.
+  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/quality-stinger) - Quality assurance pass. Runs after security.
+  - [library-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/library-stinger) - PRD and IRD authorship if this skill's scope changes.

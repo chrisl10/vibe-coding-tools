@@ -7,4 +7,4 @@
 5. Compare the proposed scope to selected existing owners. Evidence planning belongs here. Actual live recording goes to webapp-capture-wasp-drone; narration integration to ElevenLabs; avatar integration to HeyGen. Resolve each optional owner through selected Core or the source catalog. Missing owners block only their production stage.
 6. Save or return the claim worksheet and a short decision record. Re-open affected claims when source, flags, permissions, plan/tier, environment, dependency or media edits change. A newer source revision does not inherit old runtime proof.
 
-Grounding: [distillation](../references/research/distilled-product-demo.md), current [capture contract](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/media-and-creative-tools/skills/product-demo-stinger/references/research/raw/capture-foundation.md). Claim classification and publication policy are local editorial requirements.
+Grounding: [distillation](../references/research/distilled-product-demo.md), current capture contract. Claim classification and publication policy are local editorial requirements.
