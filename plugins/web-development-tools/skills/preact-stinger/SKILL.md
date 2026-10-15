@@ -72,7 +72,7 @@ These are non-negotiables for `preact-wasp-drone`. Each has a one-line "why".
 | @astrojs/preact | 5.1.2 | **require >= 5.0.1** (useId bug fixed) |
 | Fresh | 2.2.2 | Vite-based; Fresh 1.x is esbuild |
 
-> Source: `research/internal/2026-05-20-stinger-folder-context.md`
+> Source: `research/internal/2026-05-20-stinger-folder-context.md` (source-repository research, not shipped with the plugin)
 
 ---
 

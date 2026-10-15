@@ -1,6 +1,6 @@
 # Guide 03: Third-Party Embed Widget
 
-> Source: `research/external/2026-05-20-embed-widget-shadow-dom.md`
+> Source: `research/external/2026-05-20-embed-widget-shadow-dom.md` (source-repository research, not shipped)
 
 This guide covers building a Preact-powered widget that is embedded on third-party pages (chat widget, feedback form, booking button, etc.) where you do not control the host page's CSS or JavaScript.
 

@@ -1,6 +1,6 @@
 # Guide 04: Astro + Preact Integration
 
-> Source: `research/external/2026-05-20-astro-preact-integration.md`
+> Source: `research/external/2026-05-20-astro-preact-integration.md` (source-repository research, not shipped)
 
 ---
 

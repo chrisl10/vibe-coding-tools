@@ -1,6 +1,6 @@
 # Guide 01: Signals API
 
-> Source: `research/external/2026-05-20-signals-api-v2-guide.md`
+> Source: `research/external/2026-05-20-signals-api-v2-guide.md` (source-repository research, not shipped)
 
 `@preact/signals` is a reactive state primitive that works both inside and outside the Preact vdom. This guide covers the v1 core primitives and the v2 model pattern.
 
