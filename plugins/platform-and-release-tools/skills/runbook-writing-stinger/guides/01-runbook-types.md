@@ -1,6 +1,6 @@
 # Runbook Types: Break-Fix, Scheduled Operation, Diagnostic
 
-> **Research source:** `research/external/2026-03-08-incop-oncall-runbook-best-practices.md`, `research/external/2026-04-22-thegoodshell-incident-runbook-template.md`
+> **Research source:** `research/external/2026-03-08-incop-oncall-runbook-best-practices.md`, `research/external/2026-04-22-thegoodshell-incident-runbook-template.md` (source-repository research, not shipped)
 
 Three types. Three templates. Pick the wrong type and your runbook will be missing critical sections. This guide explains when to use each type and what distinguishes them structurally.
 
@@ -36,7 +36,7 @@ If you are unsure, use break-fix. It is the most complete template and covers th
 
 **One scenario per runbook rule:** A break-fix runbook covers exactly one alert or failure mode. If "Payment service degraded" can mean three different root causes, write three runbooks and a parent router runbook that routes to each.
 
-**Source:** Incident Copilot (2026-03-08): "One scenario per runbook is the most important structural rule for break-fix runbooks." See `research/external/2026-03-08-incop-oncall-runbook-best-practices.md`.
+**Source:** Incident Copilot (2026-03-08): "One scenario per runbook is the most important structural rule for break-fix runbooks." See `research/external/2026-03-08-incop-oncall-runbook-best-practices.md` (source-repository research, not shipped).
 
 **Template:** `templates/break-fix-runbook.md`
 **Example:** `examples/happy-path-break-fix.md`
@@ -89,4 +89,4 @@ Per The Good Shell (2026-04-22):
 
 This stinger authors **runbooks**. If the user asks for a "playbook," confirm whether they mean a specific procedure (runbook) or a strategic overview (playbook). The strategic overview is out of scope; route to `library-wasp-drone`.
 
-**Source:** `research/external/2026-04-22-thegoodshell-incident-runbook-template.md`.
+**Source:** `research/external/2026-04-22-thegoodshell-incident-runbook-template.md` (source-repository research, not shipped).

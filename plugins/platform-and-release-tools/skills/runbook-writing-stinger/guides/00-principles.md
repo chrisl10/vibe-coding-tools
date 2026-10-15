@@ -1,6 +1,6 @@
 # Principles: The Six Laws of Operational Runbooks
 
-> **Research sources:** `research/external/2026-03-08-incop-oncall-runbook-best-practices.md`, `research/external/2026-sre-google-being-on-call-chapter.md`, `research/external/2026-04-22-thegoodshell-incident-runbook-template.md`, `research/external/2026-02-15-sreschool-runbook-definition-maturity.md`
+> **Research sources:** `research/external/2026-03-08-incop-oncall-runbook-best-practices.md`, `research/external/2026-sre-google-being-on-call-chapter.md`, `research/external/2026-04-22-thegoodshell-incident-runbook-template.md`, `research/external/2026-02-15-sreschool-runbook-definition-maturity.md` (source-repository research, not shipped)
 
 These six principles are the non-negotiables. Every guide in this stinger derives from them. Every checklist item in `guides/07-done-checklist.md` traces back to at least one.
 
@@ -22,7 +22,7 @@ These six principles are the non-negotiables. Every guide in this stinger derive
 > ```
 > If you see `rate limit` or `429`, proceed to Step 6 (Throttle and Resume). If you see `401`, proceed to Step 5 (Restart with Fresh Key). If neither pattern appears, escalate per Step 10."
 
-**Source:** Incident Copilot (2026-03-08) provides this exact anti-pattern/correction pair verbatim. See `research/external/2026-03-08-incop-oncall-runbook-best-practices.md`.
+**Source:** Incident Copilot (2026-03-08) provides this exact anti-pattern/correction pair verbatim. See `research/external/2026-03-08-incop-oncall-runbook-best-practices.md` (source-repository research, not shipped).
 
 ---
 
@@ -45,7 +45,7 @@ Step 3: Lower embed concurrency
   npm run embeddings:config -- --set concurrency=2
 ```
 
-**Source:** SRE School (2026-02-15) confirms exact commands are one of 9 quality attributes for production-ready runbooks. See `research/external/2026-02-15-sreschool-runbook-definition-maturity.md`.
+**Source:** SRE School (2026-02-15) confirms exact commands are one of 9 quality attributes for production-ready runbooks. See `research/external/2026-02-15-sreschool-runbook-definition-maturity.md` (source-repository research, not shipped).
 
 ---
 
@@ -66,7 +66,7 @@ Step 3: Lower embed concurrency
   Expected response: within 15 minutes
 ```
 
-**Source:** PagerDuty official docs recommend a three-tier escalation structure for most services. See `research/external/2026-pagerduty-escalation-policies-three-tier.md`. Full architecture guide: `guides/03-escalation-path-architecture.md`.
+**Source:** PagerDuty official docs recommend a three-tier escalation structure for most services. See `research/external/2026-pagerduty-escalation-policies-three-tier.md` (source-repository research, not shipped). Full architecture guide: `guides/03-escalation-path-architecture.md`.
 
 ---
 
@@ -109,7 +109,7 @@ Step 3: Lower embed concurrency
 > Next scheduled exercise: 2026-07-15
 ```
 
-**Source:** Google SRE Book Ch. 11 defines the Wheel of Misfortune pattern. OneUptime (2026-01-30) documents the full quarterly game day methodology. See `research/external/2026-01-30-oneuptime-game-day-exercises.md`. Full guide: `guides/05-runbook-as-test.md`.
+**Source:** Google SRE Book Ch. 11 defines the Wheel of Misfortune pattern. OneUptime (2026-01-30) documents the full quarterly game day methodology. See `research/external/2026-01-30-oneuptime-game-day-exercises.md` (source-repository research, not shipped). Full guide: `guides/05-runbook-as-test.md`.
 
 ---
 
@@ -124,7 +124,7 @@ Step 3: Lower embed concurrency
 - Runbooks must live at stable, predictable URLs. Git-backed runbooks should be served via a docs site (Backstage, GitBook, Notion public link), not browsed via GitHub raw.
 - If a runbook is split into sub-runbooks, the alert links to the parent runbook which routes to sub-runbooks within its decision tree.
 
-**Source:** The Good Shell (2026-04-22) names this as a storage requirement: "Your alert should link directly to the specific runbook." See `research/external/2026-04-22-thegoodshell-incident-runbook-template.md`.
+**Source:** The Good Shell (2026-04-22) names this as a storage requirement: "Your alert should link directly to the specific runbook." See `research/external/2026-04-22-thegoodshell-incident-runbook-template.md` (source-repository research, not shipped).
 
 ---
 
