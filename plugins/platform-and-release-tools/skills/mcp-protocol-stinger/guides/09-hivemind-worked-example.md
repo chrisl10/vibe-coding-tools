@@ -108,4 +108,4 @@ npm run typecheck   # tsc --noEmit
 
 ---
 
-*This guide preserves, relabeled as a worked example, the ground truth and multi-harness contract material that was previously this pair's entire scope. Nothing here was deleted when the pair was broadened - see `research/2026-06-16-*.md` for the original dated research this material traces to, and `guides/00-08` for the general principles it exercises.*
+*This guide preserves, relabeled as a worked example, the ground truth and multi-harness contract material that was previously this pair's entire scope. Nothing here was deleted when the pair was broadened - see `research/2026-06-16-*.md` (source-repository research, not shipped) for the original dated research this material traces to, and `guides/00-08` for the general principles it exercises.*

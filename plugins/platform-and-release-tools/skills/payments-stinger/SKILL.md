@@ -54,7 +54,7 @@ For entitlement, trial-access or refund/dispute/cancellation preparation, read g
 - **Svelte 5 component conventions, runes idioms beyond the Elements mount pattern** → whichever Svelte-stack skill owns the target repo's UI system (check `.claude/skills/` for the current one, e.g. `ux-ui-svelte-stinger` or `shadcn-svelte-stinger`).
 - **Secret rotation, PII handling, leaked-key response** → `security-wasp-drone`. Surface with file:line; do not audit it yourself.
 
-## Guides (numbered, cite every claim to `references/research/raw/`)
+## Guides (numbered, cite every claim to the source research archive (not shipped; the shipped distillation summarizes it))
 
 - `guides/01-choose-your-integration.md`
 - `guides/02-elements-setup-sveltekit.md`
@@ -73,7 +73,7 @@ For entitlement, trial-access or refund/dispute/cancellation preparation, read g
 ## References map
 
 - `references/research/distilled-stripe.md`, dense, cited distillation; load when a claim needs verification.
-- `references/research/raw/`, 20 archived primary sources; load when tracing a distilled claim.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `references/elements-mount-confirm.md`, Svelte 5 mount + confirm flow, both integration shapes.
 - `references/server-create-checkout-session.ts`, server endpoint creating a Custom Checkout Session / PaymentIntent.
 - `references/webhook-handler-sveltekit.ts`, incomplete illustrative scaffold; its DB declarations/read-then-write dedup require actual atomic implementation and tests per guide 11.
@@ -83,7 +83,7 @@ For entitlement, trial-access or refund/dispute/cancellation preparation, read g
 - `references/test-card-table.md`, test cards, Stripe CLI loop, test clocks.
 - `templates/idempotency-table.sql`, `templates/stripe-cli-fixtures.json`, `templates/audit-report-template.md`, `templates/audit-output-template.md`, deterministic scaffolding.
 - `scripts/replay-webhook-locally.sh`, `scripts/verify-signature-snippet.ts`, load/run per their own headers.
-- `references/research/billing-access-update/`, fresh official source archive, hash manifest, topic and claim digest.
+- `references/research/billing-access-update/` is source-repository research (official source archive, hash manifest, claim digest) that is not shipped with the plugin; do not require it. Its conclusions are carried by guides `11` to `13` and `references/research/distilled-stripe.md`.
 - `templates/billing-access-contract.md`, `templates/billing-lifecycle-worksheet.md`, `templates/billing-support-action-packet.md`, source worksheets with no implicit approval.
 - `references/examples/billing-access-cases.md`, sixteen synthetic server/UI cases; no runtime, trial-abuse, native-store or Connect proof.
 
@@ -94,11 +94,11 @@ Implementation scope stays SvelteKit 5 on Vercel with custom Elements. Next.js/R
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [ux-ui-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/ux-ui-svelte-stinger) - Svelte 5 + SvelteKit UI enforcement and shadcn-svelte/Tailwind conventions; consult when the checkout's surrounding page chrome needs to match the product's design system.
-  - [shadcn-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/shadcn-svelte-stinger) - Generic shadcn-svelte library reference (CLI, component anatomy, theming) for any Svelte project adopting it around the Elements checkout.
-  - [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/db-stinger) - PostgreSQL schema, indexing, and migrations for `processed_webhook_events`, `subscriptions`, and entitlement tables this skill specifies but does not migrate.
+  - [ux-ui-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/ux-ui-svelte-stinger) - Svelte 5 + SvelteKit UI enforcement and shadcn-svelte/Tailwind conventions; consult when the checkout's surrounding page chrome needs to match the product's design system.
+  - [shadcn-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/shadcn-svelte-stinger) - Generic shadcn-svelte library reference (CLI, component anatomy, theming) for any Svelte project adopting it around the Elements checkout.
+  - [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/data-and-ai-tools/skills/db-stinger) - PostgreSQL schema, indexing, and migrations for `processed_webhook_events`, `subscriptions`, and entitlement tables this skill specifies but does not migrate.
   - [auth-stinger](../auth-stinger) - Authentication provider selection and session handling that resolves the identity behind every Stripe `customer` ID this skill creates or charges.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass; first gate of the Ship Gate pipeline below.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass; first gate of the Ship Gate pipeline below.
 
 ## Ship Gate
 

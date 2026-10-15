@@ -18,7 +18,7 @@ A short list of AWS/Lambda-runtime-internal names cannot be synced through Doppl
 
 ## Sensitive vs. Encrypted variable type
 
-Vercel recommends all secrets be stored as **Sensitive** (unreadable back via Vercel's own dashboard/API once set). Doppler defaults new syncs to Sensitive. If an existing sync predates Vercel's Sensitive-variable support, it's still on the older Encrypted type and needs a manual delete-and-recreate (choosing "Delete all secrets in Vercel" on the old sync, then Sensitive on the new one) to upgrade - see the step-by-step in `references/research/raw/doppler--vercel--integration-and-marketplace.md`. Note a delete/recreate can trigger a Vercel redeploy if the project auto-deploys on env var change - do this deliberately, not mid-incident.
+Vercel recommends all secrets be stored as **Sensitive** (unreadable back via Vercel's own dashboard/API once set). Doppler defaults new syncs to Sensitive. If an existing sync predates Vercel's Sensitive-variable support, it's still on the older Encrypted type and needs a manual delete-and-recreate (choosing "Delete all secrets in Vercel" on the old sync, then Sensitive on the new one) to upgrade - see the step-by-step in `references/research/raw/doppler--vercel--integration-and-marketplace.md` (source-repository research, not shipped). Note a delete/recreate can trigger a Vercel redeploy if the project auto-deploys on env var change - do this deliberately, not mid-incident.
 
 ## Common failure: name collision with a manually-added Vercel variable
 
