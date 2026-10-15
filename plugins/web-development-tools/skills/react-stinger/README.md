@@ -18,7 +18,7 @@ react-stinger/
   examples/             ADR, code review, refactor proposal
   templates/            ADR, project-structure, provider-stack, error-boundary, test-setup, eslint config, review-output template
   scripts/              scan-anti-patterns, bundle-budget-check, react-version-audit
-  research/             Dated research notes + react-version-log
+  research/ (source-repository research, not shipped with the plugin)             Dated research notes + react-version-log
 ```
 
 ## Output convention
@@ -36,4 +36,4 @@ Reports are written into the host repo's `library/` tree, never into this Stinge
 - [Measure emitted bundle weight](guides/23-measure-bundle-weight.md)
 - [Simplify state without races](guides/24-simplify-state-without-races.md)
 
-[Worked records](examples/outcome-modernization.md), [official-source archive and digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/react-stinger/references/research/outcome-modernization/distillation.md).
+[Worked records](examples/outcome-modernization.md), official-source archive and digest.

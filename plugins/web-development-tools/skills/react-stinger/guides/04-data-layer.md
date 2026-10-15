@@ -1,6 +1,6 @@
 # 04: Data Layer
 
-Sources: `research/2026-04-24-bulletproof-react-api-layer.md`, `research/2026-04-24-data-layer-tanstack-query-vs-rsc.md`.
+Sources: `research/2026-04-24-bulletproof-react-api-layer.md`, `research/2026-04-24-data-layer-tanstack-query-vs-rsc.md` (source-repository research, not shipped).
 
 ## Picking the data strategy
 
@@ -52,7 +52,7 @@ Three parts:
 2. **Fetcher**: uses the single shared `api` client. Can be called from RSC, route loaders, prefetch, tests.
 3. **Hook**: the component-facing API. Wraps the fetcher in `useQuery` / `useMutation`.
 
-Source: `research/2026-04-24-bulletproof-react-api-layer.md`.
+Source: `research/2026-04-24-bulletproof-react-api-layer.md` (source-repository research, not shipped).
 
 ## The API client
 

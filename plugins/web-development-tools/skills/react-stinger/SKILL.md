@@ -109,7 +109,7 @@ Numbered so ordering is obvious. Read the principles guide first on any invocati
 
 ## Outcome modernization
 
-Guides21-24 provide focused procedures for separate browser/API deployment, preserving component identity, explicit emitted-bundle measurement and race-safe state simplification. Start with [the current-source digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/react-stinger/references/research/outcome-modernization/distillation.md) and [worked records](examples/outcome-modernization.md). Use [boundary](templates/outcome-boundary-record.md) and [comparison](templates/outcome-comparison-record.md) records. Static/pure exercises do not establish mounted React behavior or application performance.
+Guides21-24 provide focused procedures for separate browser/API deployment, preserving component identity, explicit emitted-bundle measurement and race-safe state simplification. Start with the current-source digest and [worked records](examples/outcome-modernization.md). Use [boundary](templates/outcome-boundary-record.md) and [comparison](templates/outcome-comparison-record.md) records. Static/pure exercises do not establish mounted React behavior or application performance.
 
 ## Templates, scripts, examples
 

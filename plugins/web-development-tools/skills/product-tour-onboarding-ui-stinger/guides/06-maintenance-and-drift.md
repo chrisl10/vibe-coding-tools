@@ -2,7 +2,7 @@
 
 Use this guide when a tour is broken after a UI change, when establishing a maintenance protocol for new tours, or when running a tour health audit.
 
-Source: `research/external/2026-05-20-tour-maintenance-unbreakable.md` (primary), `research/external/2026-05-20-driverjs-react-integration.md`.
+Source: `research/external/2026-05-20-tour-maintenance-unbreakable.md` (primary), `research/external/2026-05-20-driverjs-react-integration.md` (source-repository research, not shipped).
 
 ---
 
