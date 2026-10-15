@@ -1,6 +1,6 @@
 # Guide 00: Platform Selection
 
-*Source: `research/external/2026-05-20-platform-comparison-2026.md`, `research/external/2026-05-20-better-stack-platform-pricing.md`, `research/external/2026-05-20-atlassian-statuspage-pricing.md`, `research/external/2026-05-20-instatus-platform-pricing.md`, `research/external/2026-05-20-cachet-v3-stability.md`*
+*Source: `research/external/2026-05-20-platform-comparison-2026.md`, `research/external/2026-05-20-better-stack-platform-pricing.md`, `research/external/2026-05-20-atlassian-statuspage-pricing.md`, `research/external/2026-05-20-instatus-platform-pricing.md`, `research/external/2026-05-20-cachet-v3-stability.md` (source-repository research, not shipped)*
 
 ---
 
@@ -38,7 +38,7 @@ Does the team have an OSS-only mandate?
 | Cachet | Free (self-hosted) | N/A | N/A | N/A |
 | OpenStatus | Yes (cloud + self-host) | $30/mo | Custom | Custom |
 
-**Better Stack cost warning:** The base $29/month plan is deceptive. Teams needing SMS notifications, higher monitor counts, and on-call features add modules that can combine to $800+/month for an enterprise-scale deployment. Source: `research/external/2026-05-20-better-stack-platform-pricing.md`.
+**Better Stack cost warning:** The base $29/month plan is deceptive. Teams needing SMS notifications, higher monitor counts, and on-call features add modules that can combine to $800+/month for an enterprise-scale deployment. Source: `research/external/2026-05-20-better-stack-platform-pricing.md` (source-repository research, not shipped).
 
 ---
 
@@ -109,7 +109,7 @@ Does the team have an OSS-only mandate?
 - Active community; Docker deployment well documented
 
 **Weaknesses:**
-- **v3.x is NOT production-ready as of May 2026.** Subscribers/notifications feature is absent from v3.x. The GNOME project uses v3.x in production but it is not formally GA. See `research/external/2026-05-20-cachet-v3-stability.md`.
+- **v3.x is NOT production-ready as of May 2026.** Subscribers/notifications feature is absent from v3.x. The GNOME project uses v3.x in production but it is not formally GA. See `research/external/2026-05-20-cachet-v3-stability.md` (source-repository research, not shipped).
 - Use v2.4.1 (last release November 2023) for production deployments requiring subscriber email notifications
 - No built-in monitoring (requires external monitoring to feed via API)
 - Requires self-hosting infrastructure, maintenance, and backup responsibility

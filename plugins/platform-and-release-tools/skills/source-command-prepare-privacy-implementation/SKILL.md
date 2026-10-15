@@ -2,6 +2,7 @@
 name: "source-command-prepare-privacy-implementation"
 description: "Prepare a privacy engineering inventory, implementation boundaries, and proof requirements from actual product data flows."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-prepare-privacy-implementation

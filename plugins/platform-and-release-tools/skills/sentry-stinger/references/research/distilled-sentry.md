@@ -74,7 +74,7 @@ Dense, cited reference distilled from `raw/`. Every claim ends with `[raw/<file>
 
 ## 6. Alerting without noise
 
-**Current narrow update, 7 October 2026:** use [actionable-alerts/digest.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/sentry-stinger/references/research/actionable-alerts/digest.md) and guide 07 for recipient fallback, trigger/filter compatibility and response qualification. The current preferred-channel fallback is Recently Active Members by default; frequency/event filters require new-issue or event/activity triggers. The older paging-default synthesis below is historical, not adopted urgency policy. Other SDK/provider sections retain their August research date.
+**Current narrow update, 7 October 2026:** use actionable-alerts/digest.md and guide 07 for recipient fallback, trigger/filter compatibility and response qualification. The current preferred-channel fallback is Recently Active Members by default; frequency/event filters require new-issue or event/activity triggers. The older paging-default synthesis below is historical, not adopted urgency policy. Other SDK/provider sections retain their August research date.
 
 - Model: **trigger** (WHEN, issue-state event, multiple run under `ANY`) + **filter** (IF, `ANY`/`ALL` grouping) + **action** (THEN: Slack/Teams/Discord, email, PagerDuty/Opsgenie, Jira/Linear/Azure DevOps, webhook) [raw/sentry--alerts--issue-alert-rules-noise.md].
 - Newer terminology: a **Monitor** defines what to track and when to create an issue; an **Alert** defines who gets notified - one Alert can serve many Monitors [raw/sentry--alerts--issue-alert-rules-noise.md].

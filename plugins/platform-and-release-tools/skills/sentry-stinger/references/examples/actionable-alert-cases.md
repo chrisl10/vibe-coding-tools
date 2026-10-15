@@ -1,6 +1,6 @@
 # Actionable-alert worked cases
 
-All services, traffic, releases and policies here are synthetic. These are manual decision exercises, not executed Sentry rules, notification tests or production recommendations. Read [guide 07](../../guides/07-qualify-actionable-alerts.md) and use the [worksheet](../templates/actionable-alert-worksheet.md). Product mechanics and sampling limits derive from the [digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/sentry-stinger/references/research/actionable-alerts/digest.md).
+All services, traffic, releases and policies here are synthetic. These are manual decision exercises, not executed Sentry rules, notification tests or production recommendations. Read [guide 07](../../guides/07-qualify-actionable-alerts.md) and use the [worksheet](../templates/actionable-alert-worksheet.md). Product mechanics and sampling limits derive from the digest.
 
 ## A. Checkout failures have a usable denominator
 
