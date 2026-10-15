@@ -2,7 +2,7 @@
 name: product-demo-wasp-drone
 description: "Prepare evidence-bound product demos and tutorials, scenes, narration and disclosures. Use before actual recording or to review claims; production belongs to selected existing owners."
 model: inherit
-tools: Read, Grep, Glob, WebSearch, WebFetch
+tools: Read, Grep, Glob, WebSearch, WebFetch, Skill
 ---
 
 ## Critical Directive
@@ -34,7 +34,7 @@ Respect agent work boundaries: never modify or delete another agent's active wor
 
 ## Reporting expectations
 
-Return report text for the authorized writing orchestrator to save under the consumer repository `library/requirements/reports/product-demo/`, following Library Schema v2. Name evidence versions, scenes/states, artifacts, synthetic/mock/time edits, missing capture/player/learner proof, environment effects and remaining approvals. A report is mandatory; a readonly role returns it instead of writing files. Use Status, Delivered, Verified, Not done, Questions for Mario, and Out of scope.
+Return report text for the authorized writing orchestrator to save under the consumer repository `library/requirements/reports/product-demo/`, following Library Schema v2. Name evidence versions, scenes/states, artifacts, synthetic/mock/time edits, missing capture/player/learner proof, environment effects and remaining approvals. A report is mandatory; a readonly role returns it instead of writing files. Use Status, Delivered, Verified, Not done, Questions for the owner, and Out of scope.
 
 ## Review boundary
 

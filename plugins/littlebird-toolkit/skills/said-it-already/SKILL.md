@@ -536,7 +536,7 @@ bite hardest here:
 Say this to the user once, in the artifact's method section.
 
 The research archive behind this skill is honest about its own thinness
-(`references/research/README.md`). Specifically:
+(`references/research/README.md` [source-repository research, not shipped with the plugin]). Specifically:
 
 - **Nobody has measured whether repurposed spoken content outperforms content written from
   scratch.** Every repurposing source found assumes the value and sells the service. The
@@ -587,4 +587,4 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/littlebird-mcp-reference.md` | Tool inventory, parameters, return shapes, known limitations |
 | `references/evidence-standards.md` | Receipts, confidence, attribution, confirmation gates, empty retrieval |
 | `references/research/distilled-content-mining-and-repurposing.md` | Cited distillation of the domain research |
-| `references/research/README.md` | Archive contents, source mix, evidence quality, named gaps |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |

@@ -1,7 +1,7 @@
 ---
 name: "elevenlabs-api-wasp-drone"
 description: "ElevenLabs API integration specialist for speech, voices, streaming, usage telemetry, and safe server boundaries. Use for ElevenLabs API code or troubleshooting."
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write, Bash, Skill, WebSearch, WebFetch
 model: inherit
 ---
 
