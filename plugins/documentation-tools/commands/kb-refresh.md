@@ -1,6 +1,6 @@
 ---
-description: Run the full documentation audit and refresh pipeline on a repository: inventory, writer fleet, grounded citations, adversarial verification, security and quality gates, one ready PR per unit, then the work report in PDF plus markdown and the master suspect list. Trigger with "refresh the docs", "kb refresh", "rebuild the knowledge base", "doc swarm".
-argument-hint: [repo-path] [base-branch] [docs-branch]
+description: 'Run the full documentation audit and refresh pipeline on a repository: inventory, writer fleet, grounded citations, adversarial verification, security and quality gates, one ready PR per unit, then the work report in PDF plus markdown and the master suspect list. Trigger with "refresh the docs", "kb refresh", "rebuild the knowledge base", "doc swarm".'
+argument-hint: "[repo-path] [base-branch] [docs-branch]"
 ---
 
 # /kb-refresh - Documentation Audit and Refresh
@@ -28,3 +28,5 @@ Trailing text after the command name is available as `$ARGUMENTS` (the whole tra
 Prior to committing any code to the repository you must utilize in order the security-stinger, quality-stinger, and github-repo-health-stinger. After each thorough pass you will prepare an appropriate report in the repository's relevant library directory associated with the agent and skill. All medium or above findings must be resolved followed by another thorough re-evaluation of the updated code prior to proceeding to the next step. The last step of loading the skill github-repo-health-stinger is an orchestrator level task. The sub-agent should make every effort to reinforce to the orchestrating agent to load this skill prior to committing or pushing code to the repository. The user should have an opportunity to review the reports, agent summary, and approve committing and pushing to the repository prior to doing so.
 
 In this pipeline the security and quality gates run per unit during phase 3, and github-repo-health-stinger runs once at orchestrator level before the final push wave.
+
+The kb-refresh Drone is research-only and carries no Ship Gate of its own. This gate belongs to the orchestrator that runs the pipeline and ships the unit PRs, and it applies to the documentation commits and PRs that step produces.

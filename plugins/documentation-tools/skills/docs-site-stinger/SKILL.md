@@ -20,7 +20,7 @@ Opinionated playbook for `docs-site-wasp-drone`. Equips the Drone to select, set
 | **GitBook** | Active, per-site pricing | Non-technical authors, block editor UX | Recommend for mixed-audience docs |
 | **Fern** | Active; MCP + llms.txt auto-gen 2026 | API-first docs + SDK generation combined | Recommend for API portals |
 
-> **Critical 2026 finding:** MkDocs Material entered maintenance mode in November 2025. No new features; security fixes only until November 2026. Do NOT start new projects on MkDocs Material. Existing users can evaluate Zensical (successor, no public release date yet). Source: `research/external/2026-05-20-mkdocs-material-maintenance-mode.md`.
+> **Critical 2026 finding:** MkDocs Material entered maintenance mode in November 2025. No new features; security fixes only until November 2026. Do NOT start new projects on MkDocs Material. Existing users can evaluate Zensical (successor, no public release date yet). Source: `research/external/2026-05-20-mkdocs-material-maintenance-mode.md` (source-repository research, not shipped with the plugin).
 
 ## Entry point for any invocation
 
@@ -66,7 +66,7 @@ docs-site-stinger/
 
 ## Critical directives
 
-- **Always check platform status before recommending.** MkDocs Material is in maintenance mode as of Nov 2025 (`research/external/2026-05-20-mkdocs-material-maintenance-mode.md`). Docusaurus v4 is incoming; start v3.10 with future flags. Do not recommend stale platforms without flagging the risk.
+- **Always check platform status before recommending.** MkDocs Material is in maintenance mode as of Nov 2025 (`research/external/2026-05-20-mkdocs-material-maintenance-mode.md` [source-repository research, not shipped with the plugin]). Docusaurus v4 is incoming; start v3.10 with future flags. Do not recommend stale platforms without flagging the risk.
 - **Run the decision tree before picking a platform.** Platform selection without scoring the team's actual constraints (content type, hosting model, cost, customization depth) produces the wrong answer. See `guides/00-platform-selection.md`.
 - **Default to docs-as-code.** PR-gated, lint-checked, preview-deployed documentation is the minimum. See `guides/02-docs-as-code.md`.
 - **Treat search as required, not optional.** An undiscoverable docs site is worse than no docs site. See `guides/03-search.md`.

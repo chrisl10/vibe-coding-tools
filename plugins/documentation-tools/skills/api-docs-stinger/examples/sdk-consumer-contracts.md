@@ -4,15 +4,15 @@ These cases demonstrate the [SDK qualification procedure](../guides/07-qualify-r
 
 ## Stable wire, broken package
 
-A fictional API keeps `GET /projects` unchanged. A regenerated TypeScript package adds an export map but omits the old `client/models` import. The old consumer's import now fails. Record the wire version unchanged and package change `[BREAKING]`; either preserve the promised import or obtain an approved migration decision. A successful generator run cannot close this case. Node's export-map behavior is documented in the [primary archive](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/skills/api-docs-stinger/references/research/sdk-contracts/raw/node22-packages.md).
+A fictional API keeps `GET /projects` unchanged. A regenerated TypeScript package adds an export map but omits the old `client/models` import. The old consumer's import now fails. Record the wire version unchanged and package change `[BREAKING]`; either preserve the promised import or obtain an approved migration decision. A successful generator run cannot close this case. Node's export-map behavior is documented in the primary archive.
 
 ## Timed-out mutation
 
-A fictional `POST /jobs` times out after sending the body. Neither the spec nor supplied observation establishes idempotency-key retention or duplicate suppression. Recommendation: surface the uncertain outcome and do not add automatic mutation replay. Ask the API owner for the accepted semantics before promising retry safety. The SDK still needs a total deadline, cancellation policy and caller retry ownership. [HTTP idempotence](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/skills/api-docs-stinger/references/research/sdk-contracts/raw/http-semantics.html)
+A fictional `POST /jobs` times out after sending the body. Neither the spec nor supplied observation establishes idempotency-key retention or duplicate suppression. Recommendation: surface the uncertain outcome and do not add automatic mutation replay. Ask the API owner for the accepted semantics before promising retry safety. The SDK still needs a total deadline, cancellation policy and caller retry ownership. HTTP idempotence
 
 ## Unsupported stream or dialect
 
-A team supplies an OAS 3.2.1 stream description; its installed generator's relevant stream support has not been characterized. Recommendation: mark stream generation and runtime behavior unverified, retain the accepted description, and produce the compatibility gap. Do not downgrade the spec or substitute buffered JSON to get a green compile. [OAS](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/skills/api-docs-stinger/references/research/sdk-contracts/raw/openapi-3.2.1.html), [selected generator feature table](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/skills/api-docs-stinger/references/research/sdk-contracts/raw/typescript-fetch.html)
+A team supplies an OAS 3.2.1 stream description; its installed generator's relevant stream support has not been characterized. Recommendation: mark stream generation and runtime behavior unverified, retain the accepted description, and produce the compatibility gap. Do not downgrade the spec or substitute buffered JSON to get a green compile. OAS, selected generator feature table
 
 ## Actual local exercise: synthetic request/response characterization
 

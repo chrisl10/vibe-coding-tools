@@ -18,7 +18,7 @@ Never recommend a documentation tool without a scored comparison for the specifi
 
 Every endpoint must have at least one JSON request example and one JSON response example before docs go live. Document what examples are missing before writing any other config.
 
-**Why it matters:** Developers copy-paste examples. Missing examples are the most common complaint in API usability surveys (see `research/external/scalar-openapi-extensions-reference.md`).
+**Why it matters:** Developers copy-paste examples. Missing examples are the most common complaint in API usability surveys (see `research/external/scalar-openapi-extensions-reference.md` [source-repository research, not shipped]).
 
 ## 4. Breaking-change discipline
 
@@ -57,4 +57,4 @@ When a request blends API reference and narrative docs, do the API reference lay
 4. **SDK generation smoke test**: if SDKs are configured, `make sdk` runs to completion.
 5. **Done checklist**: all 10 items in `guides/06-done-checklist.md` pass.
 
-*Source: `research/external/scalar-openapi-extensions-reference.md`, `research/external/bump-sh-changelog-breaking-changes.md`*
+*Source: `research/external/scalar-openapi-extensions-reference.md`, `research/external/bump-sh-changelog-breaking-changes.md` (source-repository research, not shipped)*

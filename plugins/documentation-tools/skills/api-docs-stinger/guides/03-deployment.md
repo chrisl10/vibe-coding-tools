@@ -1,6 +1,6 @@
 # 03: Deployment
 
-Hosting patterns for API documentation. Read `research/external/github-pages-openapi-deployment.md` before running this guide.
+Hosting patterns for API documentation. Read `research/external/github-pages-openapi-deployment.md` (source-repository research, not shipped) before running this guide.
 
 ## GitHub Pages (recommended for OSS and small teams)
 
@@ -119,4 +119,4 @@ Every push generates a diff view at `bump.sh/YOUR_DOC_ID/changes`.
 | Mintlify | Teams that want zero-ops | $150+/mo | 20 min |
 | Bump.sh | Changelog + CI diff gate | Free tier / $149+/mo | 20 min |
 
-*Source: `research/external/github-pages-openapi-deployment.md`, `research/external/bump-sh-changelog-breaking-changes.md`*
+*Source: `research/external/github-pages-openapi-deployment.md`, `research/external/bump-sh-changelog-breaking-changes.md` (source-repository research, not shipped)*
