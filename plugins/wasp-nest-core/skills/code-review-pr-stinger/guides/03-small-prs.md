@@ -2,7 +2,7 @@
 
 The 400-line threshold, split strategies, the trunk-based discipline, and how AI-assisted coding has made small PRs more urgent in 2025-2026.
 
-Sources: `research/external/2026-05-20-gitautoreview-pr-size-metrics.md`, `research/external/2026-05-20-ardura-implementation-guide.md`, `research/external/2026-05-20-codecraftdiary-trunk-based-dev.md`, `research/external/2026-05-20-stackfyi-best-practices-guide.md`.
+Sources: `research/external/2026-05-20-gitautoreview-pr-size-metrics.md`, `research/external/2026-05-20-ardura-implementation-guide.md`, `research/external/2026-05-20-codecraftdiary-trunk-based-dev.md`, `research/external/2026-05-20-stackfyi-best-practices-guide.md` (source-repository research, not shipped).
 
 ---
 
@@ -78,7 +78,7 @@ Short-lived feature branches (1-2 days) are the structural enforcement of small 
 - [ ] Diff is against `main`/`trunk` directly? Stacking on other feature branches creates hidden size.
 - [ ] All CI checks pass on trunk at the point the branch was cut? If not, the PR review will be contaminated by pre-existing failures.
 
-Source: `research/external/2026-05-20-codecraftdiary-trunk-based-dev.md`.
+Source: `research/external/2026-05-20-codecraftdiary-trunk-based-dev.md` (source-repository research, not shipped).
 
 ---
 

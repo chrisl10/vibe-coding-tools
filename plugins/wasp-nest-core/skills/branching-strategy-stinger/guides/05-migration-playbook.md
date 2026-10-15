@@ -1,6 +1,6 @@
 # Migration Playbook: Moving Between Branching Models
 
-**Research sources:** `research/external/2026-03-29-branching-strategies-hotfix-codelit.md` (3-rule migration guidance), `research/external/2026-04-04-tbd-discipline-codecraftdiary.md` (3-rule TBD discipline for active repos).
+**Research sources:** `research/external/2026-03-29-branching-strategies-hotfix-codelit.md` (3-rule migration guidance), `research/external/2026-04-04-tbd-discipline-codecraftdiary.md` (source-repository research, not shipped) (3-rule TBD discipline for active repos).
 
 > TODO: open question - migration playbook depth. The current research corpus has only brief treatments of GitFlow-to-trunk migration in active repos. A targeted search for "GitFlow to trunk-based migration active repo 2025 2026" would produce better source material. The playbook below is based on research available but should be considered a starting point, not a comprehensive guide. (`research/research-summary.md` open question 5)
 
@@ -42,7 +42,7 @@ This is the most common migration. The team has no formal branching conventions 
 4. **Merge `develop` into `main` when it is empty.** Once all feature branches have migrated to start from `main`, merge `develop` to `main` and delete `develop`. This is the flag-day moment - coordinate with the release team.
 5. **Archive `develop`.** Rename it to `archive/develop-pre-migration-YYYY-MM-DD` and set it to protected/read-only. Do not delete it - the history is auditable.
 
-*Source: "Gradually shorten feature branch lifetimes. Introduce feature flags for incomplete work. Merge develop into main and delete develop once the team is comfortable." - `research/external/2026-03-29-branching-strategies-hotfix-codelit.md`*
+*Source: "Gradually shorten feature branch lifetimes. Introduce feature flags for incomplete work. Merge develop into main and delete develop once the team is comfortable." - `research/external/2026-03-29-branching-strategies-hotfix-codelit.md` (source-repository research, not shipped)*
 
 **Handle the `release/` and `hotfix/` branches:**
 - Existing `release/X.Y.Z` branches: let them complete their current lifecycle normally. Do not merge them to main early.
@@ -66,7 +66,7 @@ This is the most common migration. The team has no formal branching conventions 
 4. **Graduate to direct commits to main for small changes.** Once the team is comfortable with step 3, encourage committing small changes (typos, config, dependency bumps) directly to main without a branch.
 5. **Enforce CI on every commit to main.** Direct commits mean your main protection must be extremely strong: required CI checks that cannot be bypassed by admins for new commits.
 
-*"The three disciplines of TBD: (1) Every engineer merges to main at least daily. (2) Feature flags gate incomplete work. (3) CI is the gatekeeper - no human can merge failing code." - `research/external/2026-04-04-tbd-discipline-codecraftdiary.md`*
+*"The three disciplines of TBD: (1) Every engineer merges to main at least daily. (2) Feature flags gate incomplete work. (3) CI is the gatekeeper - no human can merge failing code." - `research/external/2026-04-04-tbd-discipline-codecraftdiary.md` (source-repository research, not shipped)*
 
 ---
 

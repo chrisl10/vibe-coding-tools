@@ -2,7 +2,7 @@
 
 The three axioms, the three-tier comment taxonomy, the six-element description structure, and the scope boundaries that make `code-review-pr-wasp-drone` useful and safe.
 
-Sources: `research/external/2026-05-20-google-eng-practices-standard.md`, `research/external/2026-05-20-stackfyi-best-practices-guide.md`, `research/external/2026-05-20-octopus-mentorship-ai-loop.md`, `research/external/2026-05-20-codepulsehq-toxic-culture-signs.md`.
+Sources: `research/external/2026-05-20-google-eng-practices-standard.md`, `research/external/2026-05-20-stackfyi-best-practices-guide.md`, `research/external/2026-05-20-octopus-mentorship-ai-loop.md`, `research/external/2026-05-20-codepulsehq-toxic-culture-signs.md` (source-repository research, not shipped).
 
 ---
 
@@ -34,7 +34,7 @@ A comment that does not state its tier forces the author to guess whether it mus
 
 **Decision rule:** If you would block the merge over this, it is a `blocker:`. If you would let it merge but think it should be addressed, it is a `suggestion:`. Everything else is a `nit:` or `question:`.
 
-Source: `research/external/2026-05-20-google-eng-practices-comments.md` (Nit: origin), `research/external/2026-05-20-pillaiinfotech-comment-taxonomy.md` (emoji variant), `research/external/2026-05-20-ardura-implementation-guide.md` (ARDURA taxonomy), `research/external/2026-05-20-pandev-checklist-11-rules.md` (must-fix / should-fix / nit mapping).
+Source: `research/external/2026-05-20-google-eng-practices-comments.md` (Nit: origin), `research/external/2026-05-20-pillaiinfotech-comment-taxonomy.md` (emoji variant), `research/external/2026-05-20-ardura-implementation-guide.md` (ARDURA taxonomy), `research/external/2026-05-20-pandev-checklist-11-rules.md` (source-repository research, not shipped) (must-fix / should-fix / nit mapping).
 
 ---
 
@@ -69,7 +69,7 @@ Every PR description the Drone produces contains exactly these six elements. See
 
 ## The review-as-mentorship lens
 
-The highest-leverage code review is one where both the reviewer and the author learn something. Source: `research/external/2026-05-20-octopus-mentorship-ai-loop.md`.
+The highest-leverage code review is one where both the reviewer and the author learn something. Source: `research/external/2026-05-20-octopus-mentorship-ai-loop.md` (source-repository research, not shipped).
 
 **Reviewer heuristics:**
 - Comment about code, not the developer. "This function has O(n²) complexity" not "You wrote an O(n²) function."

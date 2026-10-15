@@ -1,6 +1,6 @@
 # GitHub Merge Queue: Setup, Modes, and Real-World Adoption
 
-**Research sources:** `research/external/2026-03-17-github-merge-queue-official-docs.md` (primary - official GitHub docs, updated 2026-03-17), `research/external/2024-03-06-github-merge-queue-at-scale-blog.md` (GitHub's own internal usage, scale stats), `research/external/2025-04-29-merge-queue-operations-guide.md` (operations guide, gotchas).
+**Research sources:** `research/external/2026-03-17-github-merge-queue-official-docs.md` (primary - official GitHub docs, updated 2026-03-17), `research/external/2024-03-06-github-merge-queue-at-scale-blog.md` (GitHub's own internal usage, scale stats), `research/external/2025-04-29-merge-queue-operations-guide.md` (source-repository research, not shipped) (operations guide, gotchas).
 
 ---
 
@@ -12,7 +12,7 @@ A merge queue serializes PR merges to a protected branch, ensuring that every me
 
 **How it solves it:** The queue assembles a temporary branch for each merge group containing `base-branch + all queued PRs ahead + this PR`. CI runs against the temporary branch. Only if CI passes does the merge happen.
 
-**Scale proof:** GitHub itself uses its own merge queue to ship ~2,500 PRs/month with 500+ engineers, reporting a 33% reduction in merge wait time. (Source: `research/external/2024-03-06-github-merge-queue-case-study.md`)
+**Scale proof:** GitHub itself uses its own merge queue to ship ~2,500 PRs/month with 500+ engineers, reporting a 33% reduction in merge wait time. (Source: `research/external/2024-03-06-github-merge-queue-case-study.md` [source-repository research, not shipped])
 
 ---
 
@@ -73,7 +73,7 @@ It is probably NOT worth it when:
 
 ## GitLab merge trains
 
-> TODO: open question - GitLab merge trains differ from GitHub's queue in that trains build sequentially without the "rebuild-all" behavior of GitHub's queue-reordering. The research corpus has limited coverage (`research/external/2026-05-20-gitlab-merge-trains.md`). Teams on GitLab should consult GitLab's official merge train documentation directly; this guide covers GitHub Merge Queue only. (`research/research-summary.md` open question 1)
+> TODO: open question - GitLab merge trains differ from GitHub's queue in that trains build sequentially without the "rebuild-all" behavior of GitHub's queue-reordering. The research corpus has limited coverage (`research/external/2026-05-20-gitlab-merge-trains.md` [source-repository research, not shipped]). Teams on GitLab should consult GitLab's official merge train documentation directly; this guide covers GitHub Merge Queue only. (`research/research-summary.md` open question 1)
 
 ---
 
