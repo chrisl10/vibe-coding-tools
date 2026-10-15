@@ -4,9 +4,9 @@
 > migrates one surface at a time. This guide is the per-surface procedure and
 > the upstream-sync discipline.
 
-**Research:** `../research/shadcn-svelte-cli.md` (the `add` and `diff`
-commands), `../research/shadcn-svelte-button-component.md` (the copy-in
-shape), `../research/shadcn-svelte-theming.md`.
+**Research:** `../research/shadcn-svelte-cli.md` (source-repository research, not shipped) (the `add` and `diff`
+commands), `../research/shadcn-svelte-button-component.md` (source-repository research, not shipped) (the copy-in
+shape), `../research/shadcn-svelte-theming.md` (source-repository research, not shipped).
 
 ## The migration unit
 
@@ -34,7 +34,7 @@ cd apps/<app>
 npx shadcn-svelte@latest add <component>
 ```
 
-Per `../research/shadcn-svelte-cli.md`, this writes to
+Per `../research/shadcn-svelte-cli.md` (source-repository research, not shipped), this writes to
 `$lib/components/ui/<component>/`. If the component is already present (from a
 prior surface migration), skip this step: reuse the existing copy.
 
@@ -157,7 +157,7 @@ patches via the registry. Periodically check for updates:
 npx shadcn-svelte@latest diff
 ```
 
-Per `../research/shadcn-svelte-cli.md`, `diff` shows what changed in the
+Per `../research/shadcn-svelte-cli.md` (source-repository research, not shipped), `diff` shows what changed in the
 registry since your copy was made. When a relevant patch ships (an
 accessibility fix, a security patch, a behavior bug):
 

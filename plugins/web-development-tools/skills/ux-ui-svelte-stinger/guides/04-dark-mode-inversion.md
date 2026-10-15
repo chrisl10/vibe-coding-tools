@@ -5,12 +5,12 @@
 > the `[data-theme="light"]` attribute selector (the convention `tokens.css`
 > already uses). This guide is now prescriptive, not exploratory.
 
-**Research:** `../research/shadcn-svelte-dark-mode.md` (the `.dark` class
-strategy, `mode-watcher`, OSPRY inversion analysis), `../research/shadcn-svelte-theming.md`.
+**Research:** `../research/shadcn-svelte-dark-mode.md` (source-repository research, not shipped) (the `.dark` class
+strategy, `mode-watcher`, OSPRY inversion analysis), `../research/shadcn-svelte-theming.md` (source-repository research, not shipped).
 
 ## The mismatch, and how Option A resolves it
 
-shadcn-svelte's convention (per `../research/shadcn-svelte-dark-mode.md`):
+shadcn-svelte's convention (per `../research/shadcn-svelte-dark-mode.md` [source-repository research, not shipped]):
 
 - `:root` carries the LIGHT theme tokens.
 - `.dark` (a class on `<html>` or an ancestor) carries the DARK theme tokens.
