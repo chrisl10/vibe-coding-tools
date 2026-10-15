@@ -4,7 +4,7 @@ Goal: turn hundreds of findings into a small number of units of work, each with 
 
 ## The rule
 
-One work package per root cause and code area. Never one PRD per finding. A dozen duplicated adapter files are one package ("one shared adapter base"). Fifteen missing-auth-check findings across routes are one package ("one auth guard, applied everywhere"). [research/raw/debt--fowler-code-smell.md]
+One work package per root cause and code area. Never one PRD per finding. A dozen duplicated adapter files are one package ("one shared adapter base"). Fifteen missing-auth-check findings across routes are one package ("one auth guard, applied everywhere"). [research/raw/debt--fowler-code-smell.md (source-repository research, not shipped)]
 
 ## Steps
 
@@ -31,6 +31,8 @@ The `items` array in `plan.json` (fields in `references/plan-schema.md`), with `
 
 ## Sources
 
-- [research/raw/debt--fowler-code-smell.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/remediation-planning-stinger/references/research/raw/debt--fowler-code-smell.md)
-- [research/raw/refactor--fowler-branch-by-abstraction.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/remediation-planning-stinger/references/research/raw/refactor--fowler-branch-by-abstraction.md)
-- [research/raw/vuln--cwe-top25-2025.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/remediation-planning-stinger/references/research/raw/vuln--cwe-top25-2025.md)
+The notes listed below are source-repository research, not shipped.
+
+- research/raw/debt--fowler-code-smell.md (source-repository research, not shipped)
+- research/raw/refactor--fowler-branch-by-abstraction.md (source-repository research, not shipped)
+- research/raw/vuln--cwe-top25-2025.md (source-repository research, not shipped)

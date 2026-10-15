@@ -65,7 +65,7 @@ This is the last analysis step of the Mario Audit. It takes every finding writte
 | `references/acceptance-criteria-patterns.md` | Writing measurable criteria |
 | `references/owner-routing.md` | Choosing the owner Drone |
 | `references/research/distilled-remediation-planning.md` | Verifying a claim or settling a dispute |
-| `references/research/raw/` | Tracing a distilled claim to its source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `templates/roadmap-template.md`, `templates/consent-request.md` | Writing the roadmap and asking for approval |
 | `scripts/build_plan.py` | Step 1, first-cut plan; `python3 scripts/test_build_plan.py` checks it |
 

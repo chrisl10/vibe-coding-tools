@@ -2,6 +2,7 @@
 name: "source-command-audit-my-code"
 description: "Audit a codebase the way Legion Code Inc. does: foundation health, duplication and dead code, framework-deep security, quality, and a remediation plan, delivered as a branded brief."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-audit-my-code
