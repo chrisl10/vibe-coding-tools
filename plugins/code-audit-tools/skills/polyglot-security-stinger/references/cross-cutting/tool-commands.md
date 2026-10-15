@@ -22,7 +22,7 @@ mkdir -p "$RAW" "$WS/.scratch/home"
 SCRATCH_HOME="$WS/.scratch/home"
 # Copy creation is owned by the orchestrator (contract section 3: git archive, never git worktree add,
 # which writes metadata into the audited repository's .git). If it is missing:
-#   mkdir -p "$COPY" && git -C "<repo>" archive HEAD | tar -x -C "$COPY"
+#   python3 "<audit-my-code-stinger>/scripts/make_scratch_copy.py" "<repo>" "$COPY"
 # The archive copy has no history. For history scans make a separate bare clone; cloning only reads the source:
 HIST="$WS/.scratch/history.git"
 #   git clone --bare --no-local --quiet "<repo>" "$HIST"

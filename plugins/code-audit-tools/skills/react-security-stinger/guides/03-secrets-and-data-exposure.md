@@ -24,11 +24,11 @@ References: [checks-secrets-and-data.md](../references/checks-secrets-and-data.m
 
 ## Sources
 
-- [raw/secrets--vite-env-and-envprefix.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/secrets--vite-env-and-envprefix.md)
-- [raw/secrets--cra-env-and-sunset.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/secrets--cra-env-and-sunset.md)
-- [raw/secrets--gitleaks-default-rules.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/secrets--gitleaks-default-rules.md)
-- [raw/secrets--ai-sdk-dangerously-allow-browser.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/secrets--ai-sdk-dangerously-allow-browser.md)
-- [raw/owasp--cheatsheet-html5-security.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-html5-security.md)
-- [raw/ssr--redux-server-rendering-security.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/ssr--redux-server-rendering-security.md)
-- [raw/rsc--react-docs-taint-apis.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-docs-taint-apis.md)
-- [raw/ai--vibe-coded-apps-security-studies.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/ai--vibe-coded-apps-security-studies.md)
+- raw/secrets--vite-env-and-envprefix.md
+- raw/secrets--cra-env-and-sunset.md
+- raw/secrets--gitleaks-default-rules.md
+- raw/secrets--ai-sdk-dangerously-allow-browser.md
+- raw/owasp--cheatsheet-html5-security.md
+- raw/ssr--redux-server-rendering-security.md
+- raw/rsc--react-docs-taint-apis.md
+- raw/ai--vibe-coded-apps-security-studies.md

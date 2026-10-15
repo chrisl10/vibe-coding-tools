@@ -46,9 +46,9 @@ The stack table is in notes, version findings are reviewed and copied, every cap
 
 ## Sources
 
-- [raw/rsc--react-blog-cve-2025-55182.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-blog-cve-2025-55182.md)
-- [raw/rsc--github-react-security-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--github-react-security-advisories.md)
-- [raw/rsc--npm-registry-react-server-dom-versions.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--npm-registry-react-server-dom-versions.md)
-- [raw/rsc--vite-plugin-rsc-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--vite-plugin-rsc-advisories.md)
-- [raw/router--react-router-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/router--react-router-advisories.md)
-- [raw/lockfile--npm-pnpm-yarn-formats.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/lockfile--npm-pnpm-yarn-formats.md)
+- raw/rsc--react-blog-cve-2025-55182.md
+- raw/rsc--github-react-security-advisories.md
+- raw/rsc--npm-registry-react-server-dom-versions.md
+- raw/rsc--vite-plugin-rsc-advisories.md
+- raw/router--react-router-advisories.md
+- raw/lockfile--npm-pnpm-yarn-formats.md

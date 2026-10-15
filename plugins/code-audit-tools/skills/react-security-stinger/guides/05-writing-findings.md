@@ -31,6 +31,6 @@ References: [finding-rules.md](../references/finding-rules.md) (fields, confiden
 
 ## Sources
 
-- [raw/owasp--top10-2025-and-cwe-mapping.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--top10-2025-and-cwe-mapping.md)
-- [raw/rsc--github-react-security-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--github-react-security-advisories.md)
-- [raw/secrets--gitleaks-default-rules.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/secrets--gitleaks-default-rules.md)
+- raw/owasp--top10-2025-and-cwe-mapping.md
+- raw/rsc--github-react-security-advisories.md
+- raw/secrets--gitleaks-default-rules.md
