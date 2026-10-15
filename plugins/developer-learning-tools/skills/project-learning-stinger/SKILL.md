@@ -39,10 +39,10 @@ For supplied-source preparation, Core Knowledge supplies repository facts, Techn
 
 ## References
 
-- [Source preparation digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/project-learning-stinger/references/research/source-exercise/digest.md): current primary teaching captures, owner snapshots and authored policy limits.
+- Source preparation digest: current primary teaching captures, owner snapshots and authored policy limits.
 - [Fictional exercise](references/examples/fictional-source-exercise.md) and [negative cases](references/examples/source-exercise-negative-cases.md): no actual learner or runtime qualification.
 
-- [Research digest](references/research/distilled-project-learning.md) and [source ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/project-learning-stinger/references/research/source-ledger.json): current MDN facts, exact raw archives and limits.
+- [Research digest](references/research/distilled-project-learning.md) and source ledger: current MDN facts, exact raw archives and limits.
 - [Constructed cases](references/examples/routing-cases.md): policy scenarios, not completed student trials.
 - [Paired Drone](../../agents/project-learning-wasp-drone.md): read-only tutor delegation.
 
