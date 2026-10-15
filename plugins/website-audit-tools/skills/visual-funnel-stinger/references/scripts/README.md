@@ -1,4 +1,4 @@
-Deterministic scripts for this audit domain live in the shared `shared/scripts/` folder at the plugin root, not duplicated per Stinger. See that folder's README for the full script list and which pairs use which script. This pair's shared script is `shared/scripts/visual-capture.py`.
+This pair has no deterministic capture script. Screenshots are taken with the harness's own browser tool per `guides/03-capture-checkpoint-screenshots.md`. The planned shared `shared/scripts/visual-capture.py` was never implemented; it exits with status 2 and points back to that guide.
 
 One reference snippet is kept local to this Stinger instead of the shared folder, because it is not a deterministic script this Drone invokes but a copy-ready configuration block for whatever browser-automation surface the harness provides:
 

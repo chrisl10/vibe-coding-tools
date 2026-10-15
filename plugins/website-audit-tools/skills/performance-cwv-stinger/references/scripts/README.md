@@ -1,8 +1,8 @@
 Most deterministic scripts for this plugin live in the shared `shared/scripts/` folder at the plugin root, per the build plan's "shared where the use case is genuinely shared" instruction. See that folder's README for the full centrally-planned list.
 
-`cwv-collect.py` is this pair's centrally-planned Core Web Vitals collection script (lab-data collection, per the build plan's per-website-category script list). As of this Stinger's stage 4/5/6 forge pass, that shared script is still a step-3 folder-tree placeholder (`raise NotImplementedError`), it is not this pair's own stage-4 deliverable, implementing it is a plugin-wide effort shared with other Wave-5 pairs' own CWV-adjacent needs. Do not duplicate CWV lab-collection logic in this folder; when `shared/scripts/cwv-collect.py` is implemented, this Stinger consumes it rather than re-implementing it.
+Core Web Vitals collection is a Drone step, not a script: follow `guides/01-audit-procedure.md` step 3. The planned shared `shared/scripts/cwv-collect.py` was never implemented; it exits with status 2 and points back to that step.
 
-This folder carries one local script specific to this pair's own scope, the half of this Stinger's audit that `cwv-collect.py` does not cover:
+This folder carries one local script specific to this pair's own scope, the caching and CDN half of this Stinger's audit:
 
 | Script | Purpose |
 |---|---|

@@ -17,7 +17,7 @@ Same subject matter at the metric level (LCP, INP, CLS, the same published thres
 
 ## How to phrase the cross-link in a finding
 
-When a finding touches something `lighthouse-pagespeed-stinger` already covers in depth, name it and stop rather than re-deriving it: "General Lighthouse/PSI methodology and CWV threshold provenance: see `lighthouse-pagespeed-stinger`. This finding covers only what's specific to assessing `[domain]` from the outside with no source access." Do not copy that Stinger's guide content into this one; if a specific claim genuinely needs restating here, it needs its own primary-source citation in this Stinger's own `references/research/raw/`, not a borrowed one.
+When a finding touches something `lighthouse-pagespeed-stinger` already covers in depth, name it and stop rather than re-deriving it: "General Lighthouse/PSI methodology and CWV threshold provenance: see `lighthouse-pagespeed-stinger`. This finding covers only what's specific to assessing `[domain]` from the outside with no source access." Do not copy that Stinger's guide content into this one; if a specific claim genuinely needs restating here, it needs its own primary-source citation in this Stinger's own `references/research/raw/` (source-repository research, not shipped), not a borrowed one.
 
 ## A concrete scenario, to make the boundary unambiguous
 

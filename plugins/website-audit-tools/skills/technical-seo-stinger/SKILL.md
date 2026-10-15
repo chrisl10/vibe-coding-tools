@@ -12,11 +12,9 @@ metadata:
 
 # Technical Seo Stinger
 
-> **Forge status:** stages 1-6 of the seven-stage forge pipeline complete for this pair (Topic, Research, Distillation, References, Guides, final Skill/Drone authorship). Stage 7 (Register: pest-controller-suit registration, harness deployment, repo-reference sync) has not run yet. Everything below this line is grounded against the research archive in `references/research/`; every factual claim traces to a raw source in `references/research/raw/` or is explicitly flagged as this Stinger's own judgment call where the archive has a documented gap.
-
 You are equipping **technical-seo-wasp-drone**, part of the Website Auditor by Legion Code Inc. plugin. Full scope and acceptance criteria: [prd-008-technical-seo](../../library/requirements/backlog/prd-008-technical-seo/prd-008-technical-seo-index.md).
 
-Every factual claim this skill makes traces to a downloaded primary source in `references/research/raw/`, cited inline as `[raw/<file>.md]`. Two checkpoint categories - keyword-frequency analysis and long-tail semantic analysis - have **no source coverage** in this archive (`references/research/distilled-technical-seo.md` Section 12). Those two are built as clearly-flagged, uncited judgment calls (guides 07-08), never presented as researched fact.
+Every factual claim this skill makes traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it), cited inline as `[raw/<file>.md]`. Two checkpoint categories - keyword-frequency analysis and long-tail semantic analysis - have **no source coverage** in this archive (`references/research/distilled-technical-seo.md` Section 12). Those two are built as clearly-flagged, uncited judgment calls (guides 07-08), never presented as researched fact.
 
 ## When to use this skill
 
@@ -55,7 +53,7 @@ Load on demand; do not read everything up front.
 | Path | Load when |
 |---|---|
 | `references/research/distilled-technical-seo.md` | Verifying any technical-SEO claim fast, or checking whether a number is a disclosed standard vs. a vendor heuristic |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `guides/01-audit-procedure.md` | Running a full pass end to end |
 | `guides/02` through `guides/06` | Depth on a specific quantified checkpoint category |
 | `guides/07`, `guides/08` | The two explicitly-uncited judgment-call checkpoints |
@@ -70,7 +68,7 @@ Load on demand; do not read everything up front.
 
 ## References map
 
-- **Research**: `references/research/distilled-technical-seo.md` (dense, cited synthesis) and `references/research/raw/` (5 primary sources: ECOSIRE's 47-point checklist, Seoxpert's discovery-to-rank-ordered audit, Digital Codex's log-file-analysis guide, Google Search Central's changelog, Semrush's recap of Google's generative-AI guide).
+- **Research**: `references/research/distilled-technical-seo.md` (dense, cited synthesis) and `references/research/raw/` (source-repository research, not shipped with the plugin) (5 primary sources: ECOSIRE's 47-point checklist, Seoxpert's discovery-to-rank-ordered audit, Digital Codex's log-file-analysis guide, Google Search Central's changelog, Semrush's recap of Google's generative-AI guide).
 - **Templates**: page-level scorecard, audit-register row, keyword-frequency worksheet, long-tail semantic-gap worksheet, section-report skeleton - all in `references/templates/`.
 - **Scripts**: `shared/scripts/seo-technical.py` (stdlib-only Python, robots.txt/sitemap/canonical validation), pointed to from `references/scripts/README.md`.
 - **Guides**: `guides/01` through `guides/10`, one per checkpoint category, run in the order listed above.
