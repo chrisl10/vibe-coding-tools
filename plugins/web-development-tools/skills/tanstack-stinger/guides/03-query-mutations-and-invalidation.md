@@ -1,6 +1,6 @@
 # Guide 3: TanStack Query mutations, invalidation, and optimistic updates
 
-Grounded in `references/research/distilled-tanstack.md` §2, `references/research/raw/tanstack--query--mutations-optimistic-updates.md`.
+Grounded in `references/research/distilled-tanstack.md` §2, `references/research/raw/tanstack--query--mutations-optimistic-updates.md` (source-repository research, not shipped).
 
 ## When to walk this guide
 

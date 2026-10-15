@@ -60,7 +60,7 @@ This stinger is grounded in:
 - **Fibonacci + #NoEstimates research** (2026): calibration tables and velocity gaming anti-pattern list
 - **Framework comparison matrix** (Scrum vs ScrumBan vs Kanban vs Shape Up): data-backed selection heuristics
 
-Research manifest: `research/index.md`. Executive summary: `research/research-summary.md`.
+Executive summary: the shipped `research/research-summary.md`. The research manifest, `research/index.md`, is source-repository research, not shipped with the plugin.
 
 ---
 

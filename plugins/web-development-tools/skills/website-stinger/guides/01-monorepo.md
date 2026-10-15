@@ -1,6 +1,6 @@
 # 01: Monorepo Architecture
 
-Source PRD: `research/source-prds/prd-phase-01-monorepo-architecture.md`
+Source PRD: `research/source-prds/prd-phase-01-monorepo-architecture.md` (source-repository research, not shipped)
 
 ---
 

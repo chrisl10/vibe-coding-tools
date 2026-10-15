@@ -2,6 +2,7 @@
 name: "source-command-library-packets"
 description: "Produce cited audience documents from a library in Markdown, Word and branded PDF. Check source coverage, public boundaries and every final page."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-library-packets

@@ -2,7 +2,7 @@
 
 Goal: turn the Product Strategy into design inputs and get the owner to pick one direction before any high-fidelity work.
 
-Grounding: [prototype fidelity](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-prototype-fidelity.md), [critique needs agreed objectives](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-design-critiques.md), Impeccable context contract (repo: `packs/web-development-tools/skills/impeccable-stinger/guides/01-context-contract.md`).
+Grounding: prototype fidelity, critique needs agreed objectives, Impeccable context contract (repo: `packs/web-development-tools/skills/impeccable-stinger/guides/01-context-contract.md`).
 
 ## 1. Preconditions
 

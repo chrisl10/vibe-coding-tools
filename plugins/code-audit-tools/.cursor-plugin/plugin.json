@@ -1,12 +1,12 @@
 {
   "name": "code-audit-tools",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Audit repositories and app security, measure bloat, inspect branches and plan remediation.",
   "author": {
     "name": "Legion Code Inc."
   },
   "license": "AGPL-3.0-or-later",
-  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "repository": "https://github.com/legioncodeinc/vibe-coding-tools",
   "skills": [
     "./skills/"
   ],

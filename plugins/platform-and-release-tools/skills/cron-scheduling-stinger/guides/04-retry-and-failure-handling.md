@@ -1,6 +1,6 @@
 # Guide 04: Retry and Failure Handling
 
-*Research sources: `research/external/2026-05-20-distributed-cron-exactly-once-patterns.md`, `research/external/2026-05-20-vercel-cron-jobs-official-docs.md`*
+*Research sources: `research/external/2026-05-20-distributed-cron-exactly-once-patterns.md`, `research/external/2026-05-20-vercel-cron-jobs-official-docs.md` (source-repository research, not shipped)*
 
 ---
 

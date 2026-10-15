@@ -2,7 +2,7 @@
 
 How to calibrate OKR ambition level and grade OKRs honestly.
 
-*Sources: `research/external/2026-05-20-ambitious-vs-sandbagged-calibration.md`, `research/external/2026-05-20-grove-doerr-okr-canon.md`, `research/external/2026-05-20-google-rework-okr-guide.md`*
+*Sources: `research/external/2026-05-20-ambitious-vs-sandbagged-calibration.md`, `research/external/2026-05-20-grove-doerr-okr-canon.md`, `research/external/2026-05-20-google-rework-okr-guide.md` (source-repository research, not shipped)*
 
 ---
 
@@ -46,7 +46,7 @@ The rule from Google's application of Doerr's framework:
 
 ## The sandbagging problem
 
-Research documents that 89% of teams under compensation linkage pressure set sandbagged targets (see `research/external/2026-05-20-ambitious-vs-sandbagged-calibration.md`). Even without compensation linkage, sandbagging is the default human tendency.
+Research documents that 89% of teams under compensation linkage pressure set sandbagged targets (see `research/external/2026-05-20-ambitious-vs-sandbagged-calibration.md` [source-repository research, not shipped]). Even without compensation linkage, sandbagging is the default human tendency.
 
 **Signs of sandbagging:**
 - Every OKR scores 0.9-1.0 every cycle

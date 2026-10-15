@@ -73,4 +73,4 @@ The client and schema module expose `isMissingTableError(msg)` and `isMissingCol
 - `src/deeplake-api.ts` (the client, `Semaphore`, `RETRYABLE_CODES`, retry loop).
 - `src/utils/sql.ts` (the guards).
 - `src/mcp/server.ts` (real call sites).
-- `research/2026-06-16-deeplake-sql-api.md`.
+- `research/2026-06-16-deeplake-sql-api.md` (source-repository research, not shipped).

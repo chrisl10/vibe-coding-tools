@@ -4,9 +4,9 @@
 it. Get this right and the rest falls into place.
 
 > Template: `../templates/master-tokens.css` (pulled from starter kit).
-> Research backing: `../research/2026-04-24-tailwind-v4-theme.md`,
-> `../research/2026-04-24-oklch-color-space.md`,
-> `../research/2026-04-24-design-tokens-dtcg.md`.
+> Research backing: `../research/2026-04-24-tailwind-v4-theme.md` (source-repository research, not shipped),
+> `../research/2026-04-24-oklch-color-space.md` (source-repository research, not shipped),
+> `../research/2026-04-24-design-tokens-dtcg.md` (source-repository research, not shipped).
 
 ## File structure
 
@@ -110,7 +110,7 @@ Always define at least:
 - New palette colors you chose (greys, semantic greens/reds) → `oklch()`
   for perceptual uniformity.
 
-See `../research/2026-04-24-oklch-color-space.md`.
+See `../research/2026-04-24-oklch-color-space.md` (source-repository research, not shipped).
 
 ## Spacing
 
@@ -238,7 +238,7 @@ Token layer consumes via `var(--tenant-primary, #1B2B4B)`.
 
 The canonical source of truth is the CSS file, not DTCG JSON. If the
 product needs DTCG for Figma sync, emit it from the CSS via a small
-script. See `../research/2026-04-24-design-tokens-dtcg.md`.
+script. See `../research/2026-04-24-design-tokens-dtcg.md` (source-repository research, not shipped).
 
 ## Common mistakes
 

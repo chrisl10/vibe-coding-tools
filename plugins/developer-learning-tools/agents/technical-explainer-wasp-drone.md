@@ -1,7 +1,7 @@
 ---
 name: technical-explainer-wasp-drone
 description: "Explain technical documents, posts, messages, errors or generated code at grade 8 with consistent analogies, glossary, source claims and teach-back. Use for understanding, not implementation."
-tools: Read, Grep, Glob, WebFetch, WebSearch
+tools: Read, Grep, Glob, WebFetch, WebSearch, Skill
 model: inherit
 ---
 

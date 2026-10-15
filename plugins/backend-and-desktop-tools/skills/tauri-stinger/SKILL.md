@@ -34,10 +34,10 @@ Equip `tauri-wasp-drone` to inspect, migrate, implement, secure, test, and distr
 ## When not to use
 
 - General Rust language, Cargo, async, unsafe, or library architecture unrelated to Tauri; use [rust-stinger](../rust-stinger).
-- Frontend-framework component design or reactivity; use the relevant framework Stinger such as [svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/svelte-stinger) or [react-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/react-stinger).
-- Formal security audit of the resulting implementation; use [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) after Tauri implementation work.
-- CI platform architecture or release automation beyond Tauri-specific integration; use [ci-release-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/ci-release-stinger) or [devops-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/devops-stinger).
-- Dependency vulnerability triage, SBOMs, or update-bot policy; use [dependency-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/dependency-audit-stinger).
+- Frontend-framework component design or reactivity; use the relevant framework Stinger such as [svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/svelte-stinger) or [react-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/react-stinger).
+- Formal security audit of the resulting implementation; use [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) after Tauri implementation work.
+- CI platform architecture or release automation beyond Tauri-specific integration; use [ci-release-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/ci-release-stinger) or [devops-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/devops-stinger).
+- Dependency vulnerability triage, SBOMs, or update-bot policy; use [dependency-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/dependency-audit-stinger).
 
 ## Procedure
 
@@ -54,7 +54,7 @@ Equip `tauri-wasp-drone` to inspect, migrate, implement, secure, test, and distr
 
 ## Desktop capability qualification update
 
-For sidecar credentials use [guide 13](guides/13-qualify-sidecars-and-credential-brokers.md); for local schema upgrades and recoverable data use [guide 14](guides/14-qualify-local-data-migrations.md); for updater key/version/data transitions use [guide 15](guides/15-qualify-updater-trust-and-recovery.md); for tray, shortcuts and notifications use [guide 16](guides/16-qualify-tray-shortcuts-and-notifications.md); for real app acceptance beyond browser tests use [guide 17](guides/17-qualify-native-tests-beyond-the-browser.md). Read the [2026-10-07 evidence digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/desktop-capabilities-20261007/distilled-desktop-capabilities.md), complete [the record](templates/desktop-capability-evidence.md), and distinguish [synthetic decisions](examples/08-desktop-capability-decisions.md) and the [temporary SQLite exercise](examples/09-sqlite-recovery-exercise.py) from native app proof.
+For sidecar credentials use [guide 13](guides/13-qualify-sidecars-and-credential-brokers.md); for local schema upgrades and recoverable data use [guide 14](guides/14-qualify-local-data-migrations.md); for updater key/version/data transitions use [guide 15](guides/15-qualify-updater-trust-and-recovery.md); for tray, shortcuts and notifications use [guide 16](guides/16-qualify-tray-shortcuts-and-notifications.md); for real app acceptance beyond browser tests use [guide 17](guides/17-qualify-native-tests-beyond-the-browser.md). Read the 2026-10-07 evidence digest, complete [the record](templates/desktop-capability-evidence.md), and distinguish [synthetic decisions](examples/08-desktop-capability-decisions.md) and the [temporary SQLite exercise](examples/09-sqlite-recovery-exercise.py) from native app proof.
 
 ## References map
 
@@ -64,7 +64,7 @@ For sidecar credentials use [guide 13](guides/13-qualify-sidecars-and-credential
 - [references/AI-ARCHITECTURE-REFERENCE.md](references/AI-ARCHITECTURE-REFERENCE.md), load when choosing hosted, local, native, or mobile AI architecture and stream contracts.
 - [references/RELEASE-CHECKLIST.md](references/RELEASE-CHECKLIST.md), load before packaging, signing, updating, publishing, or claiming release readiness.
 - [references/research/distilled-tauri-2.md](references/research/distilled-tauri-2.md), load when a domain claim needs verification or a conflict needs resolution.
-- `references/research/raw/`, load when tracing a distilled claim to its official or upstream primary source note.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `examples/`, load the one example matching the task: typed AI Channel, hosted command boundary, local sidecar, least-privilege capability, v1 migration, or signed updater flow.
 - `templates/`, copy the relevant inspection, AI decision, capability review, upgrade plan, or release evidence template into the consumer repository's planning or report location.
 - `scripts/inspect-tauri-project.py`, run for deterministic read-only discovery or with `--self-test` after maintaining the script.
@@ -74,14 +74,14 @@ For sidecar credentials use [guide 13](guides/13-qualify-sidecars-and-credential
 - [tauri-wasp-drone](../../agents/tauri-wasp-drone.md) - Paired implementation specialist for Tauri-specific project work.
 - [rust-stinger](../rust-stinger) - General Rust and Cargo architecture beneath Tauri integration.
 - [typescript-node-stinger](../typescript-node-stinger) - TypeScript boundaries, package tooling, and test infrastructure around the WebView frontend.
-- [svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/svelte-stinger) - Svelte 5 and SvelteKit frontend behavior when the Tauri WebView uses Svelte.
-- [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Formal review of IPC authorization, filesystem and shell exposure, remote origins, credentials, and update trust.
-- [ci-release-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/ci-release-stinger) - CI and release workflow architecture beyond Tauri-specific bundle integration.
-- [dependency-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/dependency-audit-stinger) - Dependency vulnerabilities, lockfile policy, update automation, and SBOM evidence.
+- [svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/svelte-stinger) - Svelte 5 and SvelteKit frontend behavior when the Tauri WebView uses Svelte.
+- [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Formal review of IPC authorization, filesystem and shell exposure, remote origins, credentials, and update trust.
+- [ci-release-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/ci-release-stinger) - CI and release workflow architecture beyond Tauri-specific bundle integration.
+- [dependency-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/dependency-audit-stinger) - Dependency vulnerabilities, lockfile policy, update automation, and SBOM evidence.
 
 ## Local file safety update
 
-For O105 use [bounded import](guides/18-qualify-local-import.md), [safe export](guides/19-qualify-safe-export.md) and [app-data uninstall](guides/20-qualify-app-data-uninstall.md). Read the [2026-10-08 digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/file-safety-20261008/digest.md), fill the [evidence worksheet](templates/file-safety-evidence.md), and review the [fictional plan](examples/10-fictional-file-safety-plan.md) and [negative decisions](examples/11-file-safety-negative-cases.md). File selection is not arbitrary file authority. Require operation-specific approval, native identity/race review, bounded parsing, qualified publication and app-owned cleanup provenance. User documents/exports remain retained. Constructed cases are NOT_RUN; current runtime/plugin/OS support and native durability/uninstall proof remain consumer obligations.
+For O105 use [bounded import](guides/18-qualify-local-import.md), [safe export](guides/19-qualify-safe-export.md) and [app-data uninstall](guides/20-qualify-app-data-uninstall.md). Read the 2026-10-08 digest, fill the [evidence worksheet](templates/file-safety-evidence.md), and review the [fictional plan](examples/10-fictional-file-safety-plan.md) and [negative decisions](examples/11-file-safety-negative-cases.md). File selection is not arbitrary file authority. Require operation-specific approval, native identity/race review, bounded parsing, qualified publication and app-owned cleanup provenance. User documents/exports remain retained. Constructed cases are NOT_RUN; current runtime/plugin/OS support and native durability/uninstall proof remain consumer obligations.
 
 ## Critical Directive
 
@@ -90,12 +90,12 @@ For O105 use [bounded import](guides/18-qualify-local-import.md), [safe export](
 - Additional related skills can be found here:
   - [rust-stinger](../rust-stinger) - General Rust architecture, Cargo, async, testing, and unsafe-code guidance below the Tauri layer.
   - [typescript-node-stinger](../typescript-node-stinger) - TypeScript and package-tooling guidance for the frontend half of a Tauri application.
-  - [svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/svelte-stinger) - Svelte 5 and SvelteKit guidance when that framework renders the WebView.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Required first Ship Gate audit and formal review of Tauri authority and secret boundaries.
-  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/quality-stinger) - Required independent Quality gate after Security findings are resolved.
-  - [github-repo-health-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/github-repo-health-stinger) - Required orchestrator-level repository-health gate before commit or push.
-  - [ci-release-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/ci-release-stinger) - CI and release workflow architecture for signed multi-platform delivery.
-  - [dependency-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/dependency-audit-stinger) - Dependency, advisory, lockfile, SBOM, and provenance review.
+  - [svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/svelte-stinger) - Svelte 5 and SvelteKit guidance when that framework renders the WebView.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Required first Ship Gate audit and formal review of Tauri authority and secret boundaries.
+  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/quality-stinger) - Required independent Quality gate after Security findings are resolved.
+  - [github-repo-health-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/github-repo-health-stinger) - Required orchestrator-level repository-health gate before commit or push.
+  - [ci-release-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/ci-release-stinger) - CI and release workflow architecture for signed multi-platform delivery.
+  - [dependency-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/dependency-audit-stinger) - Dependency, advisory, lockfile, SBOM, and provenance review.
 
 ## Ship Gate
 

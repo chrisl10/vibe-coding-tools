@@ -5,8 +5,8 @@
 > in mechanism. This guide is the verification and the rules that keep that
 > true.
 
-**Research:** `../research/shadcn-svelte-theming.md` (tokens flow through
-everywhere), `../research/tailwind-v4-theme-variables.md` (the `inline`
+**Research:** `../research/shadcn-svelte-theming.md` (source-repository research, not shipped) (tokens flow through
+everywhere), `../research/tailwind-v4-theme-variables.md` (source-repository research, not shipped) (the `inline`
 propagation that makes white-label work).
 
 ## The existing white-label contract

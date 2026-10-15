@@ -15,7 +15,7 @@ Use this when the output must remain a standard Sites asset.
 7. Review SEO fields and brand language.
 8. Publish through the standard builder.
 
-Funnel & Website AI is documented as free with a 1,000-prompt daily limit per location in the 2026-09-02 pricing snapshot. Confirm current in-app treatment before promising it. [../references/research/raw/funnel-website-ai.md], [../references/research/raw/ai-product-pricing.md]
+Funnel & Website AI is documented as free with a 1,000-prompt daily limit per location in the 2026-09-02 pricing snapshot. Confirm current in-app treatment before promising it. [../references/research/raw/funnel-website-ai.md], [../references/research/raw/ai-product-pricing.md (source-repository research, not shipped)]
 
 ## WordPress AI-Powered Page Builder
 
@@ -30,17 +30,17 @@ Use this when the destination is HighLevel-hosted WordPress and Elementor.
 7. Continue in Elementor when needed.
 8. Preview, then publish or unpublish.
 
-The archived allowance is twelve AI page-generation credits per site per month. Draft, Preview, Publish, and Unpublish require LeadConnector plugin 4.0.3 or later. [../references/research/raw/wordpress-ai-page-builder.md]
+The archived allowance is twelve AI page-generation credits per site per month. Draft, Preview, Publish, and Unpublish require LeadConnector plugin 4.0.3 or later. [../references/research/raw/wordpress-ai-page-builder.md (source-repository research, not shipped)]
 
 ## Content AI and Edit with Ask AI in Social Planner
 
-Use Content AI to create a first social-post draft from guided inputs. Use Quick AI Actions for preset changes such as grammar, length, or simplification. Use Edit with Ask AI for custom conversational revision, preview, copy, or replacement. Always review the final post before saving, scheduling, or publishing. [../references/research/raw/social-planner-ask-ai.md]
+Use Content AI to create a first social-post draft from guided inputs. Use Quick AI Actions for preset changes such as grammar, length, or simplification. Use Edit with Ask AI for custom conversational revision, preview, copy, or replacement. Always review the final post before saving, scheduling, or publishing. [../references/research/raw/social-planner-ask-ai.md (source-repository research, not shipped)]
 
-The current broad product overview says Content AI generates social posts, emails, website headlines, blogs, and other content. Detailed older Content AI pages fall outside this research window, so inspect the target account rather than assuming legacy field names. [../references/research/raw/ai-tools-overview.md]
+The current broad product overview says Content AI generates social posts, emails, website headlines, blogs, and other content. Detailed older Content AI pages fall outside this research window, so inspect the target account rather than assuming legacy field names. [../references/research/raw/ai-tools-overview.md (source-repository research, not shipped)]
 
 ## Ask AI
 
-Use Ask AI for general branded content, images, platform questions, and supported cross-module actions. Configure Brand Voice for branded work. Confirm writes before execution and respect current limitations: Workflows and Campaigns are read-only, and the full standard Website Builder is not directly connected. [../references/research/raw/ask-ai-overview.md], [../references/research/raw/brand-voice.md]
+Use Ask AI for general branded content, images, platform questions, and supported cross-module actions. Configure Brand Voice for branded work. Confirm writes before execution and respect current limitations: Workflows and Campaigns are read-only, and the full standard Website Builder is not directly connected. [../references/research/raw/ask-ai-overview.md], [../references/research/raw/brand-voice.md (source-repository research, not shipped)]
 
 ## Blog Post AI
 
@@ -51,7 +51,7 @@ Use Ask AI for general branded content, images, platform questions, and supporte
 5. Review facts, claims, links, metadata, and images.
 6. Save as Draft, Schedule, or Publish.
 
-The current standard Blog Editor also documents Content AI, so do not claim that Blog Post AI has replaced it. Route by the interface the user actually sees. [../references/research/raw/blog-post-ai.md], [../references/research/raw/standard-create-blog-posts.md]
+The current standard Blog Editor also documents Content AI, so do not claim that Blog Post AI has replaced it. Route by the interface the user actually sees. [../references/research/raw/blog-post-ai.md], [../references/research/raw/standard-create-blog-posts.md (source-repository research, not shipped)]
 
 ## Email AI
 
@@ -64,9 +64,9 @@ The current standard Blog Editor also documents Content AI, so do not claim that
 7. Verify links, responsive layout, compliance content, and translation quality.
 8. Save the template, then use the normal campaign workflow.
 
-Reference-based Email AI produces an editable approximation, not exact HTML or CSS, and does not carry complex scripts or tracking pixels from a reference. [../references/research/raw/email-ai.md]
+Reference-based Email AI produces an editable approximation, not exact HTML or CSS, and does not carry complex scripts or tracking pixels from a reference. [../references/research/raw/email-ai.md (source-repository research, not shipped)]
 
 ## Agent Studio boundary
 
-If the request involves start triggers, connected nodes, routing logic, knowledge search, API calls, MCP nodes, or content generated during agent execution, it is Agent Studio work. Do not apply AI Studio project guidance to it. [../references/research/raw/agent-studio-overview-distinction.md]
+If the request involves start triggers, connected nodes, routing logic, knowledge search, API calls, MCP nodes, or content generated during agent execution, it is Agent Studio work. Do not apply AI Studio project guidance to it. [../references/research/raw/agent-studio-overview-distinction.md (source-repository research, not shipped)]
 

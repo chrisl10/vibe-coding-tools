@@ -1,6 +1,6 @@
 # Recover the same work unit after context compaction
 
-Use the [canonical operating instructions](agent-instructions.md), especially sections 2, 4, 5, 8 and 10. This worksheet applies those rules; it does not replace them or create another allowance. [The dated source digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/time-blocked-turns/references/research/context-recovery/distillation.md) records its basis.
+Use the [canonical operating instructions](agent-instructions.md), especially sections 2, 4, 5, 8 and 10. This worksheet applies those rules; it does not replace them or create another allowance. The dated source digest records its basis.
 
 ## Recover facts before the next dependent action
 

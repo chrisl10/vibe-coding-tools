@@ -30,7 +30,7 @@ No supplied workload means provisional choice or a batched question. This is rea
 ## Procedure
 
 1. Read [README.md](README.md) and [qualify workload](guides/01-qualify-workload.md). Fill the [worksheet](references/templates/fit-worksheet.md) with supplied facts and unknowns.
-2. Apply the sourced runtime, volume/replica, job cadence/exit, private-network and region constraints. Trace disputed facts to the [digest](references/research/distilled-railway.md), [ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/infrastructure-decision-tools/skills/railway-platform-stinger/references/research/source-ledger.json) and raw archive. Refresh sources for a real task.
+2. Apply the sourced runtime, volume/replica, job cadence/exit, private-network and region constraints. Trace disputed facts to the [digest](references/research/distilled-railway.md), ledger and raw archive. Refresh sources for a real task.
 3. Follow [cost envelope](guides/02-cost-envelope.md). Preserve units, scenarios and aggregate plan-floor semantics; resolve selected Operating Cost for arithmetic. Unknown costs remain unpriced.
 4. Follow [decision and handoff](guides/03-decision-and-handoff.md). Give one supported or provisional recommendation, operator responsibilities, RPO/RTO/export proof, reassessment triggers and actual implementation-owner gap.
 5. Review the [fictional case](references/examples/fictional-case.md) and [negative cases](references/examples/negative-cases.md). Return report text; the authorized caller saves it. Source review proves no native/customer behavior.
@@ -40,7 +40,7 @@ No supplied workload means provisional choice or a batched question. This is rea
 - [Paired Drone](../../agents/railway-platform-wasp-drone.md) - Read-only Railway research and decision report.
 - [Owner resolution](README.md#ownership-and-host-scope) - Infrastructure Fit, Operating Cost, Network Boundaries, DB/security and authorized deployment owners.
 
-Runtime is research-only. Source forge promotion, registration and ordered review remain parent-owned.
+Runtime is research-only. Source changes go through ordered Security, Quality and Health review.
 
 ## Critical Directive
 

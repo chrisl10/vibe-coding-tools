@@ -531,7 +531,7 @@ bite hardest here:
 Say this to the user once, in the artifact's method section.
 
 The research archive is honest about its own thinness
-(`references/research/README.md`). This domain is written almost entirely by the companies
+(`references/research/README.md` [source-repository research, not shipped with the plugin]). This domain is written almost entirely by the companies
 selling the service, and the headline numbers do not survive a provenance check. One widely
 circulated article states that repurposed content saves "up to 60%" of budget, reaches "80%
 more" audience, and gets "92% more traffic than original content", and names no study, no
@@ -588,7 +588,7 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/littlebird-mcp-reference.md` | Tool inventory, parameters, return shapes, known limitations |
 | `references/evidence-standards.md` | Receipts, confidence, attribution, partial rosters, confirmation gates, empty retrieval |
 | `references/research/distilled-repurposing-and-format-adaptation.md` | Cited distillation of the domain research |
-| `references/research/README.md` | Archive contents, source mix, evidence quality, named gaps, retrieval failures |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `../said-it-already/references/spoken-to-written.md` | The spoken-to-written rebuild, used when the source is a call, a webinar, or a Loom |
 | `../said-it-already/references/attribution-screening.md` | The surface ladder for proving who said a line in a transcript |
 | `../said-it-already/references/confidentiality-screen.md` | The hard list, the scrub list, and the do-not-publish output format |

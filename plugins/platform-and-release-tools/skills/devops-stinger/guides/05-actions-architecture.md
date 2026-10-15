@@ -1,6 +1,6 @@
 # 05: GitHub Actions architecture
 
-How to shape workflows so they scale beyond a single `.github/workflows/ci.yml`. Source: `research/2026-04-25-actions-reusable-workflows.md`.
+How to shape workflows so they scale beyond a single `.github/workflows/ci.yml`. Source: `research/2026-04-25-actions-reusable-workflows.md` (source-repository research, not shipped).
 
 ---
 
@@ -170,7 +170,7 @@ The `environment:` block ties a job to a GitHub Environment, which can require m
 | `depot-ubuntu-24.04` (Depot managed) | When you want Depot's runner improvements (10x cache, 30% faster CPU, sub-5s cold start) |
 | `self-hosted` | Avoid unless you have a real reason: you own the security model |
 
-Source: `research/2026-04-25-depot-vs-github-runners.md`.
+Source: `research/2026-04-25-depot-vs-github-runners.md` (source-repository research, not shipped).
 
 ## 7. Workflow file split
 

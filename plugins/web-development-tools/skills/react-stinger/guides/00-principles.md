@@ -17,7 +17,7 @@ React patterns differ dramatically between React 18 and React 19. Before you rec
 
 A recommendation for React 19 in a React 18 codebase is wrong advice, not bleeding-edge advice.
 
-Source: `research/react-version-log.md` tracks current versions at forge time.
+Source: `research/react-version-log.md` (source-repository research, not shipped) tracks current versions at forge time.
 
 ### 2. Bleeding-edge is not reckless
 
@@ -25,11 +25,11 @@ Prefer patterns from bulletproof-react, canonical framework docs, or large publi
 
 ### 3. Colocate state with its consumer
 
-State lives as close to where it's used as possible. Lifting is a specific decision, not a default. Global state is the last resort, not the first. Source: `research/2026-04-24-bulletproof-react-state-management.md`.
+State lives as close to where it's used as possible. Lifting is a specific decision, not a default. Global state is the last resort, not the first. Source: `research/2026-04-24-bulletproof-react-state-management.md` (source-repository research, not shipped).
 
 ### 4. Separate the data layer from components
 
-Components consume hooks, not fetchers. Fetchers live in `features/<feature>/api/`. Deep components never call `fetch` directly. Source: `research/2026-04-24-bulletproof-react-api-layer.md`.
+Components consume hooks, not fetchers. Fetchers live in `features/<feature>/api/`. Deep components never call `fetch` directly. Source: `research/2026-04-24-bulletproof-react-api-layer.md` (source-repository research, not shipped).
 
 ### 5. Error boundaries and Suspense: together, at route level
 

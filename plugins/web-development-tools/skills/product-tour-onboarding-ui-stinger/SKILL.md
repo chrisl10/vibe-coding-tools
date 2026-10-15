@@ -90,17 +90,17 @@ Read these files in order before producing any output:
 
 ## Research foundation
 
-All factual claims in this stinger's guides trace to files in `research/external/`. The research index is at `research/index.md`. The summary of the five most influential sources is at `research/research-summary.md`. Refresh annually or on a major platform version bump.
+All factual claims in this stinger's guides trace to files in the source research archive (not shipped; the shipped distillation summarizes it). The research index is at `research/index.md` (source-repository research, not shipped with the plugin). The summary of the five most influential sources is at `research/research-summary.md`. Refresh annually or on a major platform version bump.
 
-Key sources:
-- Platform pricing + features: `research/external/2026-05-20-saas-platform-comparison.md`
-- OSS library comparison: `research/external/2026-05-20-oss-tour-libraries.md`
-- Maintenance + drift prevention: `research/external/2026-05-20-tour-maintenance-unbreakable.md`
-- Segment triggers: `research/external/2026-05-20-segment-triggers-feature-flags.md`
-- Checklist activation: `research/external/2026-05-20-checklist-activation-gamification.md`
-- Shepherd.js integration: `research/external/2026-05-20-shepherdjs-react-integration.md`
-- Driver.js integration: `research/external/2026-05-20-driverjs-react-integration.md`
-- Tour analytics ROI: `research/external/2026-05-20-tour-analytics-effectiveness.md`
+Key sources (source-repository research, not shipped with the plugin):
+- Platform pricing + features: `research/external/2026-05-20-saas-platform-comparison.md` (source-repository research, not shipped with the plugin)
+- OSS library comparison: `research/external/2026-05-20-oss-tour-libraries.md` (source-repository research, not shipped with the plugin)
+- Maintenance + drift prevention: `research/external/2026-05-20-tour-maintenance-unbreakable.md` (source-repository research, not shipped with the plugin)
+- Segment triggers: `research/external/2026-05-20-segment-triggers-feature-flags.md` (source-repository research, not shipped with the plugin)
+- Checklist activation: `research/external/2026-05-20-checklist-activation-gamification.md` (source-repository research, not shipped with the plugin)
+- Shepherd.js integration: `research/external/2026-05-20-shepherdjs-react-integration.md` (source-repository research, not shipped with the plugin)
+- Driver.js integration: `research/external/2026-05-20-driverjs-react-integration.md` (source-repository research, not shipped with the plugin)
+- Tour analytics ROI: `research/external/2026-05-20-tour-analytics-effectiveness.md` (source-repository research, not shipped with the plugin)
 
 ---
 

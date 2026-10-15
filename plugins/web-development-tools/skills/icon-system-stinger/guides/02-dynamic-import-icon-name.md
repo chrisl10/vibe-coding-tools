@@ -1,6 +1,6 @@
 # Guide 02: Dynamic Import by Icon Name
 
-Source: `research/external/lucide-react.md`, `research/external/iconify-react.md`
+Source: `research/external/lucide-react.md`, `research/external/iconify-react.md` (source-repository research, not shipped)
 
 The dynamic-import-by-name pattern lets a component accept an icon name as a string prop and render the correct icon without bundling every icon.
 

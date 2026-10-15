@@ -4,11 +4,11 @@ This is a new composition of existing canonical procedures, inspected 2026-10-07
 
 | Owner capability | Derived workflow rule | Evidence |
 |---|---|---|
-| `repo-radar-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before use. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/content-intelligence/references/outcome-commands/research-content-opportunity/references/research/raw/repo-radar-stinger.md) |
-| `viral-news-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before use. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/content-intelligence/references/outcome-commands/research-content-opportunity/references/research/raw/viral-news-stinger.md) |
-| `pest-controller-suit` | Retain its actual scope, required inputs, artifact and verification procedure; load before use. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/content-intelligence/references/outcome-commands/research-content-opportunity/references/research/raw/pest-controller-suit.md) |
+| `repo-radar-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before use. | captured procedure |
+| `viral-news-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before use. | captured procedure |
+| `pest-controller-suit` | Retain its actual scope, required inputs, artifact and verification procedure; load before use. | captured procedure |
 
-Installed dispatch must use the selected registry and checked owner; missing prerequisites block only dependent work. [Pest Controller capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/content-intelligence/references/outcome-commands/research-content-opportunity/references/research/raw/pest-controller-suit.md).
+Installed dispatch must use the selected registry and checked owner; missing prerequisites block only dependent work. Pest Controller capture.
 
 The topic-specific sequence below is a proposed orchestration contract, not a verbatim upstream command. Domain facts remain the owning specialist's responsibility.
 

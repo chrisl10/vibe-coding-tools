@@ -62,4 +62,4 @@ This means most capability-negotiation defects are *omissions or mismatches*, no
 
 ---
 
-*Sources: `research/distilled-mcp-protocol.md`, `research/2026-06-16-mcp-spec-lifecycle.md`, `research/2026-06-16-mcp-sdk-typescript.md`, `research/external/mcp-spec-architecture.md`*
+*Sources: `research/distilled-mcp-protocol.md`, `research/2026-06-16-mcp-spec-lifecycle.md`, `research/2026-06-16-mcp-sdk-typescript.md`, `research/external/mcp-spec-architecture.md` (source-repository research, not shipped)*

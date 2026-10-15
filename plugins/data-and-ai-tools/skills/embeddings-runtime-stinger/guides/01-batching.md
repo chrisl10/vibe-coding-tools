@@ -1,6 +1,6 @@
 # Batching strategy
 
-Applies to hosted-provider calls and the self-hosted daemon alike: batching bulk embedding work is close to mandatory, not an optimization to consider later. Grounded in `references/research/raw/speedtesthq--embedding-api-networking.md` and `references/research/raw/voyageai--pricing.md`.
+Applies to hosted-provider calls and the self-hosted daemon alike: batching bulk embedding work is close to mandatory, not an optimization to consider later. Grounded in `references/research/raw/speedtesthq--embedding-api-networking.md` and `references/research/raw/voyageai--pricing.md` (source-repository research, not shipped).
 
 ## Why batching matters more for embeddings than for LLM completions
 

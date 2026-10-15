@@ -1,6 +1,6 @@
 # Guide 7: When NOT to use TanStack in SvelteKit
 
-Grounded in `references/research/distilled-tanstack.md` §5, `references/research/raw/sveltekit--load-functions--universal-vs-server.md`, `references/research/raw/sveltekit--remote-functions--query-form-command.md`.
+Grounded in `references/research/distilled-tanstack.md` §5, `references/research/raw/sveltekit--load-functions--universal-vs-server.md`, `references/research/raw/sveltekit--remote-functions--query-form-command.md` (source-repository research, not shipped).
 
 ## When to walk this guide
 

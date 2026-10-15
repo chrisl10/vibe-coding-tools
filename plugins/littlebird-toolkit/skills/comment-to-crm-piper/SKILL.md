@@ -37,24 +37,24 @@ sells it, and this skill says so rather than repeating a slogan:
 
 - The foundational study measured leads "captured through a web form, and attempted or
   called at least one time", by phone, across six companies in 2007
-  [references/research/raw/piper--speed-to-lead--oldroyd-mit-insidesales-2007.md]. That is
+  [references/research/raw/piper--speed-to-lead--oldroyd-mit-insidesales-2007.md (source-repository research, not shipped with the plugin)]. That is
   where 100x contact odds and 21x qualify odds come from.
 - A 2025 to 2026 dataset of 939 companies puts the effect at a 32% close rate under five
   minutes against 12% at 24 hours or more, roughly 2.7x
-  [references/research/raw/piper--speed-to-lead--digitalapplied-benchmarks-2026.md].
+  [references/research/raw/piper--speed-to-lead--digitalapplied-benchmarks-2026.md (source-repository research, not shipped with the plugin)].
 - The best available summary of the literature is "strong on direction and rough magnitude,
   and weaker on exact figures"
-  [references/research/raw/piper--speed-to-lead--leadsource-evidence-review.md].
+  [references/research/raw/piper--speed-to-lead--leadsource-evidence-review.md (source-repository research, not shipped with the plugin)].
 - **No source in the research archive isolates outcomes for social hand-raisers.** Every
   figure describes form-fill leads worked by phone or B2B demo requests
-  [references/research/raw/piper--speed-to-lead--digitalapplied-benchmarks-2026.md]. The
+  [references/research/raw/piper--speed-to-lead--digitalapplied-benchmarks-2026.md (source-repository research, not shipped with the plugin)]. The
   direction transfers to a Facebook commenter. The magnitudes do not, and quoting them at
   one is dishonest.
 
 One finding does transfer cleanly, because it is about teams rather than buyers: having a
 WRITTEN response-time target is associated with hitting it, 54.9% meeting a 15 minute
 target with a formal target against 29.5% without
-[references/research/raw/piper--speed-to-lead--digitalapplied-benchmarks-2026.md]. So the
+[references/research/raw/piper--speed-to-lead--digitalapplied-benchmarks-2026.md (source-repository research, not shipped with the plugin)]. So the
 skill asks the user to name a target and then measures against it.
 
 ---
@@ -233,7 +233,7 @@ name, then fuzzy name. Auto-decide only at the top confidence band. Everything i
 middle goes to the user. A "new" verdict that rests on a name-only search is recorded as
 `new (name-only search)`, because most social hand-raisers arrive with a display name and
 nothing else, and deterministic matching alone misses an estimated 30 to 40% of real
-duplicates [references/research/raw/piper--dedupe--digitalapplied-merge-framework-2026.md].
+duplicates [references/research/raw/piper--dedupe--digitalapplied-merge-framework-2026.md (source-repository research, not shipped with the plugin)].
 
 If an existing contact carries a DND or opt-out marker: skip them entirely, queue nothing,
 and say why in the dedupe report.
@@ -342,15 +342,15 @@ What follows from it:
 - Public availability is not permission. The UK regulator states that a person seeking a
   large audience for a social post does not thereby make their personal information
   available for direct marketing
-  [references/research/raw/piper--consent--ico-collect-information-and-generate-leads.md].
+  [references/research/raw/piper--consent--ico-collect-information-and-generate-leads.md (source-repository research, not shipped with the plugin)].
   The governing test is reasonable expectation, and the skill stays inside it by fulfilling
   the specific request the person made and enrolling nobody in a sequence.
 - The source goes on the record, because recording the source of indirectly obtained data
   is a regulatory disclosure obligation, not CRM hygiene
-  [references/research/raw/piper--consent--ico-collect-information-and-generate-leads.md].
+  [references/research/raw/piper--consent--ico-collect-information-and-generate-leads.md (source-repository research, not shipped with the plugin)].
 - An existing contact with DND set is skipped entirely. Objection to direct marketing is
   absolute and immediate
-  [references/research/raw/piper--consent--usercentrics-gdpr-legitimate-interest.md].
+  [references/research/raw/piper--consent--usercentrics-gdpr-legitimate-interest.md (source-repository research, not shipped with the plugin)].
 - **Never auto-send.** Every first message is queued as a draft for the user to send by
   hand, in every tier, including tier 1 where a connector might technically allow it. The
   platform prohibitions on automated messaging are documented in
@@ -358,12 +358,12 @@ What follows from it:
   The consent
   research adds a second, independent reason: CAN-SPAM penalties attach per email, up to
   $53,088 each
-  [references/research/raw/piper--consent--ftc-can-spam-compliance-guide.md], so an
+  [references/research/raw/piper--consent--ftc-can-spam-compliance-guide.md (source-repository research, not shipped with the plugin)], so an
   automated blast off a partly verified roster multiplies the exposure by the row count.
 - Jurisdiction is surfaced, never decided. The US default is opt-out under CAN-SPAM
-  [references/research/raw/piper--consent--ftc-can-spam-compliance-guide.md]; the UK default
+  [references/research/raw/piper--consent--ftc-can-spam-compliance-guide.md (source-repository research, not shipped with the plugin)]; the UK default
   for email to individual subscribers is consent or the soft opt-in
-  [references/research/raw/piper--consent--ico-choosing-lawful-basis-direct-marketing.md].
+  [references/research/raw/piper--consent--ico-choosing-lawful-basis-direct-marketing.md (source-repository research, not shipped with the plugin)].
   Say which is in play. Do not give legal advice.
 
 Full treatment in `references/consent-and-tagging.md`.
@@ -553,4 +553,4 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/littlebird-mcp-reference.md` | Tool inventory, parameters, return shapes, known limitations |
 | `references/evidence-standards.md` | Receipts, confidence, attribution, partial rosters, confirmation gates |
 | `references/research/distilled-lead-capture-and-crm-intake.md` | Cited distillation of the domain research |
-| `references/research/README.md` | Archive contents, source mix, conflicts carried forward, named gaps |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |

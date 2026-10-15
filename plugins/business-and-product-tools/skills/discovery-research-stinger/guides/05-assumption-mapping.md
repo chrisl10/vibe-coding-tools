@@ -2,7 +2,7 @@
 
 How to enumerate, score, and prioritize assumptions for a proposed solution before building.
 
-**Research source:** `research/external/2026-05-20-assumption-mapping-dvf-2x2-2026.md`
+**Research source:** `research/external/2026-05-20-assumption-mapping-dvf-2x2-2026.md` (source-repository research, not shipped)
 
 ---
 
@@ -17,7 +17,7 @@ Every solution rests on assumptions across four axes:
 
 Most teams naturally focus on Feasibility. Desirability is the axis most often unchecked — and the most common cause of building the right thing badly.
 
-(Source: `research/external/2026-05-20-assumption-mapping-dvf-2x2-2026.md`)
+(Source: `research/external/2026-05-20-assumption-mapping-dvf-2x2-2026.md` [source-repository research, not shipped])
 
 ---
 

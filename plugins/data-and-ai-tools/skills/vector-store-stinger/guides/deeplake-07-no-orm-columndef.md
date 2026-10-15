@@ -2,7 +2,7 @@
 
 Hivemind has no ORM. There is no Drizzle, no Prisma, no Kysely, no generated client. The schema is one `readonly ColumnDef[]` in `src/deeplake-schema.ts`, and `buildCreateTableSql` renders it to `USING deeplake` DDL. This guide explains why, and how to work within it.
 
-Source: `research/2026-06-16-no-orm-columndef-deeplakeapi.md`.
+Source: `research/2026-06-16-no-orm-columndef-deeplakeapi.md` (source-repository research, not shipped).
 
 ## Why no ORM
 

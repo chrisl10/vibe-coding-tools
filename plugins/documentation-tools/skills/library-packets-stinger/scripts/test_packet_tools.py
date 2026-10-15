@@ -246,6 +246,49 @@ class PacketTests(unittest.TestCase):
             with self.assertRaisesRegex(pt.Blocked, "missing installed renderer"):
                 pt.render(self.manifest, self.root / "new-output")
 
+    def test_branding_defaults_and_overrides(self):
+        with patch.dict(pt.os.environ, {}, clear=True):
+            self.assertEqual(pt.resolve_branding(), ("Legion Code Inc.", "Legion Code Inc."))
+            self.assertEqual(pt.resolve_branding("Acme Co.", None), ("Acme Co.", "Acme Co."))
+            self.assertEqual(pt.resolve_branding("Acme Co.", "Jo Writer"), ("Acme Co.", "Jo Writer"))
+        env = {pt.PREPARED_BY_ENV: "Env Co.", pt.AUTHOR_ENV: "Env Author"}
+        with patch.dict(pt.os.environ, env, clear=True):
+            self.assertEqual(pt.resolve_branding(), ("Env Co.", "Env Author"))
+            self.assertEqual(pt.resolve_branding("Arg Co.", "Arg Author"), ("Arg Co.", "Arg Author"))
+        with self.assertRaises(pt.PacketError):
+            pt.resolve_branding("Two\nLines")
+
+    def test_docx_footer_and_author_use_branding(self):
+        try:
+            import docx
+        except ImportError:
+            self.skipTest("python-docx not installed")
+        self.result()
+        doc = pt.validate(self.manifest)["documents"][0]
+        target = self.root / "branded.docx"
+        pt.write_docx(doc, doc["markdown"], self.assets / "legion-footer.png", target,
+                      self.root, "Acme Co.", "Jo Writer")
+        saved = docx.Document(str(target))
+        self.assertIn("Prepared by Acme Co. | Page", saved.sections[0].footer.paragraphs[0].text)
+        self.assertEqual(saved.core_properties.author, "Jo Writer")
+
+    def test_soffice_discovery_order_and_windows_paths(self):
+        exe = self.root / "LibreOffice" / "program" / "soffice.exe"
+        exe.parent.mkdir(parents=True)
+        exe.write_bytes(b"")
+        with patch.object(pt.shutil, "which", return_value=None):
+            with patch.dict(pt.os.environ, {"ProgramFiles": str(self.root)}, clear=True):
+                self.assertEqual(pt.find_soffice(), str(exe))
+            with patch.dict(pt.os.environ, {pt.SOFFICE_ENV: "/env/soffice"}, clear=True):
+                self.assertEqual(pt.find_soffice(), "/env/soffice")
+                self.assertEqual(pt.find_soffice("/arg/soffice"), "/arg/soffice")
+            with patch.dict(pt.os.environ, {}, clear=True):
+                self.assertIsNone(pt.find_soffice())
+        with patch.object(pt.shutil, "which", side_effect=lambda n: "C:/x/soffice.exe" if n == "soffice.exe" else None):
+            with patch.dict(pt.os.environ, {}, clear=True):
+                self.assertEqual(pt.find_soffice(), "C:/x/soffice.exe")
+        self.assertIn("soffice.exe", pt.SOFFICE_NAMES)
+
     def test_public_alias_approval(self):
         self.public_packet()
         self.packet["sources"][0]["public"]["approved"] = False

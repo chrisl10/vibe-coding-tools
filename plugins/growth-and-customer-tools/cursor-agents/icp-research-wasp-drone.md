@@ -11,8 +11,8 @@ description: "Ideal Customer Profile researcher: starts from a company domain, s
 - Additional related skills can be found here:
   - [competitive-research-stinger](../skills/competitive-research-stinger) - Market mapping and battlecards that build on the market lane.
   - [cold-outreach-stinger](../skills/cold-outreach-stinger) - Outbound sequences aimed at the resulting ICP.
-  - [crm-integration-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/crm-integration-stinger) - CRM fields and fit scores derived from ICP tiers.
-  - [discovery-research-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/business-and-product-tools/skills/discovery-research-stinger) - Interviews that validate ICP hypotheses with real buyers.
+  - [crm-integration-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/crm-integration-stinger) - CRM fields and fit scores derived from ICP tiers.
+  - [discovery-research-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/business-and-product-tools/skills/discovery-research-stinger) - Interviews that validate ICP hypotheses with real buyers.
 
 ## Persona and mission
 
@@ -55,3 +55,7 @@ Respect agent work boundaries: never modify or delete another agent's active wor
 Write outputs to the run directory named in the brief (by default the consumer repository's `library/research/icp/<domain>/<date>/`). Report back: the run directory, lanes completed and missing with reasons, item and domain counts, grade counts, spend versus cap, validation output, the primary ICP in two sentences with its confidence, the positioning gap, and recommended hand-offs. For a single-lane dispatch, report the lane file path, validation output, item count, spend, and anything blocked.
 
 Ship Gate removed: research-only Drone, produces research dossiers and evidence ledgers, never committable application code.
+
+## Cursor compatibility
+
+- Cursor cannot enforce the Claude tool allowlist. Follow the file scope above and ask before using broader tools.

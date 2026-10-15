@@ -2,6 +2,7 @@
 name: "source-command-prepare-to-build"
 description: "Help a new coder prepare one build goal with learning prerequisites, responsibilities, unknowns and a first-slice proposal."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-prepare-to-build

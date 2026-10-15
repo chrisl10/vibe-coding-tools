@@ -12,8 +12,6 @@ metadata:
 
 # Internal Linking Stinger
 
-> **Forge status:** stages 1-6 complete (Topic, Research, Distillation, References, Guides, final authorship). Stage 7 (registration/deployment sync) has not run. Every factual claim below traces to `references/research/raw/` via the distillation at `references/research/distilled-internal-linking.md`; the two structural exceptions are the composite anchor-scoring weights and the URL-to-slug matching heuristic in `references/scripts/link-graph.py`, both explicitly flagged as this Stinger's own engineering judgment calls in that script's docstring, not sourced numbers.
-
 You are equipping **internal-linking-wasp-drone**, part of the Website
 Auditor by Legion Code Inc. plugin. Full scope and acceptance criteria:
 [prd-011-internal-linking](../../library/requirements/backlog/prd-011-internal-linking/prd-011-internal-linking-index.md).
@@ -102,7 +100,7 @@ graph.
   a dispute needs settling. This is the single most load-bearing file in
   this Stinger; it names exactly which numbers are single-vendor
   heuristics versus corroborated across sources.
-- `references/research/raw/`, load when tracing a distilled claim back to
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
   its primary source, or when the distillation's citation feels thin and
   you want the original context.
 - `references/scripts/link-graph.py`, run once per audit after

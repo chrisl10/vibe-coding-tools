@@ -1,6 +1,6 @@
 # 09 — Native Surfaces (iOS / Android / adaptive)
 
-Derived from `research/10-native-platforms-harnesses.md`.
+Derived from `research/10-native-platforms-harnesses.md` (source-repository research, not shipped).
 
 ## Rules
 

@@ -1,6 +1,6 @@
 # Data Processing Agreement (DPA): GDPR Article 28 Checklist
 
-**Source:** `research/external/2026-05-20-dpa-gdpr-art28-template.md` + `research/external/2026-05-20-eu-us-dpf-cross-border-transfers.md`
+**Source:** `research/external/2026-05-20-dpa-gdpr-art28-template.md` + `research/external/2026-05-20-eu-us-dpf-cross-border-transfers.md` (source-repository research, not shipped)
 
 ---
 

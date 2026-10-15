@@ -88,8 +88,8 @@ Read guides in order for a full orientation. Jump directly to the relevant guide
 Populated by `scripture-historian` on 2026-05-20 (normal depth, 6-month window, 32 source files).
 
 - `research/research-summary.md`: executive summary, 5 most influential sources, 5 open questions.
-- `research/index.md`: full manifest of all 32 source files.
-- `research/external/`: 32 source notes from official docs, practitioner blogs, GitHub READMEs, and specs.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
+- `research/external/` (source-repository research, not shipped with the plugin): 32 source notes from official docs, practitioner blogs, GitHub READMEs, and specs.
 
 Key sources: caniuse.com/avif (browser support), Mux blog (LQIP/BlurHash tradeoff), Next.js official docs (next/image API + Next.js 16 changes), web.dev/articles/optimize-lcp (LCP priority framing), krunkit.me (DPR-aware srcset algorithm).
 

@@ -1,6 +1,6 @@
 # Read-only GitHub calls
 
-`foundation_scan.py --gh` calls only these paths, always as `gh api --method GET`, and refuses any other path. The Drone follows the same allowlist when it calls `gh` itself. Sources: [research/raw/gh-cli--api-manual.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/gh-cli--api-manual.md) and the github-api raw files.
+`foundation_scan.py --gh` calls only these paths, always as `gh api --method GET`, and refuses any other path. The Drone follows the same allowlist when it calls `gh` itself. Sources: research/raw/gh-cli--api-manual.md and the github-api raw files.
 
 | Path | Used for | Failure meaning |
 | --- | --- | --- |

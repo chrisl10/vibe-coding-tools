@@ -31,4 +31,4 @@ Agents already know how to `grep`, `ls`, `cat`. Rather than teach every harness 
 
 - `src/shell/deeplake-shell.ts`, `src/mcp/server.ts` (`buildGrepSearchOptions`, `searchDeeplakeTables`).
 - `just-bash` `^2.14`.
-- `research/2026-06-16-just-bash-vfs.md`.
+- `research/2026-06-16-just-bash-vfs.md` (source-repository research, not shipped).

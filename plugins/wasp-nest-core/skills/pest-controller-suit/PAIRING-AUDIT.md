@@ -4,16 +4,16 @@ Current membership comes from the root plugin-catalog.json and actual src/packs 
 
 ## Canonical totals
 
-- Sixteen plugins: one required Core and fifteen optional plugins.
-- 190 canonical skills, 151 paired specialist agents and fourteen canonical commands.
-- Core: eighteen skills, fourteen agents and seven commands.
+- Twenty-one plugins: one required Core and twenty optional plugins.
+- 223 canonical skills, 184 paired specialist agents and seventy-seven canonical commands.
+- Core: eighteen skills, fourteen agents and nine commands.
 - Core's unpaired skills: three orchestrators (Pest Controller, Queen and Get Started) plus standalone Time Blocks.
 - The other 35 skill-only entries use explicit standalone/orchestrator classifications in their owning optional plugins.
-- Fourteen derived command-wrapper skills adapt the source commands for Codex; they are not additional canonical capabilities.
+- Seventy-seven derived command-wrapper skills (one per source command) adapt the commands for Codex; they are not additional canonical capabilities.
 
 ## Routing coverage
 
-Pest Controller directly routes 131 Drones: fourteen in Core and 117 in optional plugins. Website Audit's own orchestrator dispatches its twenty additional Drones.
+Pest Controller directly routes 164 Drones: fourteen in Core and 150 in optional plugins. Website Audit's own orchestrator dispatches its twenty additional Drones.
 Each directly routed Drone has a real routing guide under guides/. Website leaves follow their saved-site engagement workflow.
 A roster entry identifies a capability; it does not prove that the owning optional plugin is installed.
 

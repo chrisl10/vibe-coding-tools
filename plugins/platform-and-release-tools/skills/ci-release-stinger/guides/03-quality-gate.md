@@ -57,6 +57,6 @@ This is a hard fact about the repo. The quality gate is **tsc + jscpd + vitest +
 
 ## Cross-reference
 
-- `research/2026-06-16-vitest-coverage-v8-ci.md` - coverage-v8 + the PR-comment action.
-- `research/2026-06-16-jscpd-duplication-gate.md` - jscpd thresholds and gating.
+- `research/2026-06-16-vitest-coverage-v8-ci.md` (source-repository research, not shipped) - coverage-v8 + the PR-comment action.
+- `research/2026-06-16-jscpd-duplication-gate.md` (source-repository research, not shipped) - jscpd thresholds and gating.
 - `guides/04-workflows.md` - how `test` / `duplication` map to CI jobs.

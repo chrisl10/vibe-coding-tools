@@ -2,7 +2,7 @@
 
 > Preserved Hivemind npm case. Read [target repository audit](05-target-repository-audit.md) first; use the package-specific paths, guards and commands below only when the inspected target has them. Recheck vendor/version claims against current primary documentation before recommending or changing tools.
 
-> **Research sources:** `research/external/01-renovate-vs-dependabot-2026.md` (CRITICAL), `research/external/02-socket-dev-supply-chain-2026.md` (CRITICAL)
+> **Research sources:** `research/external/01-renovate-vs-dependabot-2026.md` (CRITICAL), `research/external/02-socket-dev-supply-chain-2026.md` (source-repository research, not shipped) (CRITICAL)
 > **Example:** `examples/happy-path-node-scanner-setup.md`
 
 This package is a single npm package: ESM, TypeScript ^6, Node `>=22`, installed with `npm ci` against `package-lock.json`, built and published from GitHub Actions. The supply-chain tooling decision is therefore narrow - this guide picks the right combination for an npm-only repo and ignores the broader multi-ecosystem landscape.
@@ -27,7 +27,7 @@ Both watch `package.json` / `package-lock.json` and open PRs when new versions p
 
 The retained case selected Renovate. A current comparison must account for [Dependabot groups and cooldown](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference); do not reject Dependabot on the old claim that grouping or update delay is absent. Match the target's required semantics and authorized automation policy.
 
-> **Key finding (2026-02-20):** Renovate grouping cut PR volume 3-5x in measured deployments, and `minimumReleaseAge: "7 days"` directly counters the "rush the merge window" attack pattern. Source: `research/external/01-renovate-vs-dependabot-2026.md`.
+> **Key finding (2026-02-20):** Renovate grouping cut PR volume 3-5x in measured deployments, and `minimumReleaseAge: "7 days"` directly counters the "rush the merge window" attack pattern. Source: `research/external/01-renovate-vs-dependabot-2026.md` (source-repository research, not shipped).
 
 See `templates/renovate-base-config.json` for the drop-in config, including the guarded rule that prevents the pinned tree-sitter grammars (`tree-sitter-c`, `tree-sitter-python`, `tree-sitter-rust`) from being auto-bumped past their `overrides` pins.
 

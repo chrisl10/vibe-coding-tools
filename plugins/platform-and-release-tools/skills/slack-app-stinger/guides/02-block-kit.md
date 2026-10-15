@@ -1,6 +1,6 @@
 # Guide 02: Block Kit Composition
 
-**Sources:** `research/external/2026-05-20-block-kit-modals.md`, `research/external/2026-05-20-slash-commands-interactive.md`
+**Sources:** `research/external/2026-05-20-block-kit-modals.md`, `research/external/2026-05-20-slash-commands-interactive.md` (source-repository research, not shipped)
 
 > TODO: open question, verify the Block Kit component list against `https://docs.slack.dev/reference/block-kit/blocks` at the time of each app submission. Slack has not published deprecation notices for Block Kit components in the 6-month research window (Nov 2025 - May 2026), but the inventory may change.
 
@@ -24,7 +24,7 @@ Block limits:
 - Messages: up to **50 blocks**
 - Modals and App Home tabs: up to **100 blocks**
 
-Source: `research/external/2026-05-20-block-kit-modals.md`
+Source: `research/external/2026-05-20-block-kit-modals.md` (source-repository research, not shipped)
 
 ---
 

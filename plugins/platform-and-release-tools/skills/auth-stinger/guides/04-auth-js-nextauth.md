@@ -2,7 +2,7 @@
 
 OSS, Next.js-native, the long-time default. v5 (formerly NextAuth.js v5) is the version to use in 2026.
 
-Source: `research/2026-04-25-authjs-v5-status.md`, https://authjs.dev.
+Source: `research/2026-04-25-authjs-v5-status.md` (source-repository research, not shipped), https://authjs.dev.
 
 ## When Auth.js wins
 

@@ -1,6 +1,6 @@
 # 20: File Uploads & Tree UIs
 
-Source: `research/2026-04-25-file-uploads-and-trees.md`. File uploads are easy to ship and easy to ship wrong (no resumability, no chunking, no progress, no cancellation). Tree UIs are easy to ship and easy to crash with virtualization gone wrong. This guide picks both.
+Source: `research/2026-04-25-file-uploads-and-trees.md` (source-repository research, not shipped). File uploads are easy to ship and easy to ship wrong (no resumability, no chunking, no progress, no cancellation). Tree UIs are easy to ship and easy to crash with virtualization gone wrong. This guide picks both.
 
 ## TL;DR pick
 

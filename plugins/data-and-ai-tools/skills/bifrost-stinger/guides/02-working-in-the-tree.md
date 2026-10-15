@@ -14,7 +14,7 @@ Verb: "add an endpoint", "change the log schema", "add a provider", "wire the se
    - Governance (VKs, budgets, teams, customers) -> `plugins/governance/` plus `handlers/governance.go`
    - Semantic cache -> `plugins/semanticcache/` plus `framework/vectorstore/` and `handlers/cache.go`
    - Live logs -> `transports/bifrost-http/websocket/` and `handlers/websocket.go`/`ws_ticket.go`
-   - Dashboard -> `ui/` (React/TanStack/RTK; see `references/research/raw/06-ui-stack.md`)
+   - Dashboard -> `ui/` (React/TanStack/RTK; see `references/research/raw/06-ui-stack.md` [source-repository research, not shipped])
 3. Exact endpoint shapes: extract from `docs/openapi/` in the tree you are running. Never quote shapes from memory or from the live docs site when a frozen tree exists; the site tracks upstream latest, your deployment runs the pin.
 
 ## Change discipline in a frozen fork

@@ -1,6 +1,6 @@
 # Principles: FOIT, FOUT, FOFT, and font-display
 
-*Sources: `research/external/2026-05-20-foit-fout-font-display.md`, `research/external/2026-05-20-mdn-font-display.md`, `research/external/2026-05-20-web-dev-font-best-practices.md`*
+*Sources: `research/external/2026-05-20-foit-fout-font-display.md`, `research/external/2026-05-20-mdn-font-display.md`, `research/external/2026-05-20-web-dev-font-best-practices.md` (source-repository research, not shipped)*
 
 ---
 
@@ -22,7 +22,7 @@ When a browser encounters text before the custom font is available, it exhibits 
 
 **When it happens:** `font-display: swap`. Infinite swap period; the browser shows fallback text indefinitely until the custom font loads or fails.
 
-**Fix for CLS from swap:** Use `size-adjust`, `ascent-override`, `descent-override`, and `line-gap-override` in the fallback `@font-face` declaration to match the custom font's metrics. This eliminates layout shift while still showing text. See `research/external/2026-05-20-foit-fout-font-display.md` for the CSS pattern.
+**Fix for CLS from swap:** Use `size-adjust`, `ascent-override`, `descent-override`, and `line-gap-override` in the fallback `@font-face` declaration to match the custom font's metrics. This eliminates layout shift while still showing text. See `research/external/2026-05-20-foit-fout-font-display.md` (source-repository research, not shipped) for the CSS pattern.
 
 ### FOFT - Flash of Faux Text
 
@@ -46,7 +46,7 @@ When a browser encounters text before the custom font is available, it exhibits 
 | `fallback` | Very short (100ms) | 3 seconds | Balanced: shows text quickly, does not swap late |
 | `optional` | Very short (100ms) | None | Performance-first: uses font only if cached; no swap |
 
-**Opinionated defaults for 2026 (from `research/external/2026-05-20-web-dev-font-best-practices.md`):**
+**Opinionated defaults for 2026 (from `research/external/2026-05-20-web-dev-font-best-practices.md` [source-repository research, not shipped]):**
 
 - **Body text:** `font-display: optional` + preload. Best for LCP and CLS. Users on slow connections see the system font; returning users see the custom font from cache. This is the `next/font` default.
 - **Heading/display text:** `font-display: swap` + `size-adjust` override on the fallback. Ensures text is always visible; the swap is tolerated if metric-matched.

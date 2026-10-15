@@ -38,7 +38,7 @@ Focus indicators are a shared token (`--focus-ring`) and utility class, not besp
 
 *Why:* accessibility is not an enhancement. A design system that ships inaccessible components ships bugs.
 
-See `research/2026-04-24-wai-aria-apg.md`.
+See `research/2026-04-24-wai-aria-apg.md` (source-repository research, not shipped).
 
 ## 5. System-level changes escalate
 

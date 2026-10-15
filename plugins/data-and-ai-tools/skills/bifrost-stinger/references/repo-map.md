@@ -1,6 +1,6 @@
 # Bifrost repo map
 
-Grounded in [raw/01](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/bifrost-stinger/references/research/raw/01-repo-layout.md) and [raw/06](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/bifrost-stinger/references/research/raw/06-ui-stack.md). Paths are relative to the monorepo root.
+Grounded in raw/01 and raw/06. Paths are relative to the monorepo root.
 
 | Path | What it is | When you touch it |
 |---|---|---|

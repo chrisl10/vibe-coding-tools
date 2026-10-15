@@ -172,7 +172,7 @@ Run beat as a separate process: `celery -A config worker -l INFO -Q default,emai
 
 ## Sources
 
-- `research/2026-05-03-celery-django-redis.md`
+- `research/2026-05-03-celery-django-redis.md` (source-repository research, not shipped)
 - https://docs.celeryq.dev/en/stable/userguide/tasks.html
 - https://docs.celeryq.dev/en/stable/django/first-steps-with-django.html
 - https://vintasoftware.com/blog/guide-django-celery-tasks

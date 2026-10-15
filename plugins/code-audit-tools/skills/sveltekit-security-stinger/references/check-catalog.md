@@ -25,7 +25,7 @@ Contents: [Versions (V)](#versions-v) · [Boundary (B)](#boundary-b) · [Actions
 "@sveltejs/kit": "^2.70.3"
 ```
 
-- **Refs:** CWE-1395, OWASP A03:2025, GHSA/CVE ids from the table. [raw/advisory--github-advisory-db-svelte-ecosystem.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/advisory--github-advisory-db-svelte-ecosystem.md)
+- **Refs:** CWE-1395, OWASP A03:2025, GHSA/CVE ids from the table. raw/advisory--github-advisory-db-svelte-ecosystem.md
 
 ### SVK-V2 SvelteKit below 2.70.0 built with a non-production NODE_ENV
 
@@ -44,7 +44,7 @@ Contents: [Versions (V)](#versions-v) · [Boundary (B)](#boundary-b) · [Actions
 ```
 
 (Upgrade kit to 2.70.0 or later as well; `--mode` sets Vite's mode without changing `NODE_ENV`.)
-- **Refs:** CWE-352, CWE-1188, OWASP A01:2025. [raw/kit-source--csrf-implementation-and-prs.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-source--csrf-implementation-and-prs.md)
+- **Refs:** CWE-352, CWE-1188, OWASP A01:2025. raw/kit-source--csrf-implementation-and-prs.md
 
 ---
 
@@ -74,7 +74,7 @@ export const load = async ({ locals }) => ({
 });
 ```
 
-- **Refs:** CWE-200, CWE-359, OWASP A01:2025. [raw/kit-docs--load.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--load.md)
+- **Refs:** CWE-200, CWE-359, OWASP A01:2025. raw/kit-docs--load.md
 
 ### SVK-B2 Root or shared layout load leaks data to every child page
 
@@ -95,7 +95,7 @@ export const load = ({ locals }) => ({
 });
 ```
 
-- **Refs:** CWE-200, OWASP A01:2025. [raw/kit-docs--load.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--load.md)
+- **Refs:** CWE-200, OWASP A01:2025. raw/kit-docs--load.md
 
 ### SVK-B3 Secret exposed through a public env name
 
@@ -114,7 +114,7 @@ import { PUBLIC_STRIPE_SECRET_KEY } from '$env/static/public'; // bundled into e
 import { STRIPE_SECRET_KEY } from '$env/static/private';
 ```
 
-- **Refs:** CWE-540, CWE-798, OWASP A02:2025. [raw/kit-docs--server-only-modules-and-env.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--server-only-modules-and-env.md), [raw/vite-docs--env-variables-prefix.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/vite-docs--env-variables-prefix.md)
+- **Refs:** CWE-540, CWE-798, OWASP A02:2025. raw/kit-docs--server-only-modules-and-env.md, raw/vite-docs--env-variables-prefix.md
 
 ### SVK-B4 Universal load does privileged work
 
@@ -140,7 +140,7 @@ export const load = async ({ fetch, locals }) => {
 };
 ```
 
-- **Refs:** CWE-798, CWE-602, OWASP A04:2025, OWASP A06:2025. [raw/kit-docs--load.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--load.md)
+- **Refs:** CWE-798, CWE-602, OWASP A04:2025, OWASP A06:2025. raw/kit-docs--load.md
 
 ### SVK-B5 Shared module-level state on the server
 
@@ -167,7 +167,7 @@ export const load = ({ locals }) => { currentUser.set(locals.user); return {}; }
 {@render children()}
 ```
 
-- **Refs:** CWE-488, CWE-668, OWASP A01:2025. [raw/kit-docs--state-management-and-stores.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--state-management-and-stores.md)
+- **Refs:** CWE-488, CWE-668, OWASP A01:2025. raw/kit-docs--state-management-and-stores.md
 
 ### SVK-B6 Server-only boundary bypassed
 
@@ -188,7 +188,7 @@ import { DATABASE_URL } from '$env/static/private';
 export const db = drizzle(postgres(DATABASE_URL));
 ```
 
-- **Refs:** CWE-540, CWE-200, OWASP A02:2025. [raw/kit-docs--server-only-modules-and-env.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--server-only-modules-and-env.md)
+- **Refs:** CWE-540, CWE-200, OWASP A02:2025. raw/kit-docs--server-only-modules-and-env.md
 
 ### SVK-B7 Buffers or typed arrays returned from a server load (devalue shared memory)
 
@@ -206,7 +206,7 @@ export const load = () => ({ logo: readFileSync('static/logo.svg') }); // Buffer
 export const load = () => ({ logo: readFileSync('static/logo.svg', 'utf8') });
 ```
 
-- **Refs:** CWE-200, OWASP A01:2025, GHSA-j22f-vq7h-c4qm, CVE-2026-92708. [raw/advisory--devalue-repo-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/advisory--devalue-repo-advisories.md)
+- **Refs:** CWE-200, OWASP A01:2025, GHSA-j22f-vq7h-c4qm, CVE-2026-92708. raw/advisory--devalue-repo-advisories.md
 
 ---
 
@@ -240,7 +240,7 @@ export const actions = {
 };
 ```
 
-- **Refs:** CWE-862, OWASP A01:2025. [raw/kit-docs--form-actions-and-routing.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--form-actions-and-routing.md), [raw/kit-docs--load.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--load.md)
+- **Refs:** CWE-862, OWASP A01:2025. raw/kit-docs--form-actions-and-routing.md, raw/kit-docs--load.md
 
 ### SVK-E2 +server endpoint without authorization
 
@@ -262,7 +262,7 @@ export const GET = async ({ locals }) => {
 };
 ```
 
-- **Refs:** CWE-862, CWE-306, OWASP A01:2025. [raw/kit-docs--form-actions-and-routing.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--form-actions-and-routing.md)
+- **Refs:** CWE-862, CWE-306, OWASP A01:2025. raw/kit-docs--form-actions-and-routing.md
 
 ### SVK-E3 Remote function without authorization
 
@@ -285,7 +285,7 @@ export const getInvoices = query(v.string(), async (orgId) => {
 });
 ```
 
-- **Refs:** CWE-862, CWE-639, OWASP A01:2025. [raw/kit-docs--remote-functions.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--remote-functions.md)
+- **Refs:** CWE-862, CWE-639, OWASP A01:2025. raw/kit-docs--remote-functions.md
 
 ### SVK-E4 Remote function argument not validated
 
@@ -309,7 +309,7 @@ export const updateProfile = command(Patch, async (patch) => {
 });
 ```
 
-- **Refs:** CWE-20, CWE-915, OWASP A05:2025, OWASP A08:2025. [raw/kit-docs--remote-functions.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--remote-functions.md)
+- **Refs:** CWE-20, CWE-915, OWASP A05:2025, OWASP A08:2025. raw/kit-docs--remote-functions.md
 
 ### SVK-E5 Object id from the client used without an ownership check (IDOR)
 
@@ -331,7 +331,7 @@ export const load = async ({ params, locals }) => {
 };
 ```
 
-- **Refs:** CWE-639, OWASP A01:2025. [raw/owasp--top10-2025-categories-and-cwes.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/owasp--top10-2025-categories-and-cwes.md)
+- **Refs:** CWE-639, OWASP A01:2025. raw/owasp--top10-2025-categories-and-cwes.md
 
 ### SVK-E6 Remote function authorises from `url`, `route` or `params`
 
@@ -357,7 +357,7 @@ export const getOrg = query(async () => {
 });
 ```
 
-- **Refs:** CWE-807, CWE-863, OWASP A01:2025. [raw/kit-docs--remote-functions.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--remote-functions.md)
+- **Refs:** CWE-807, CWE-863, OWASP A01:2025. raw/kit-docs--remote-functions.md
 
 ### SVK-E7 CSRF protection weakened or bypassed
 
@@ -376,7 +376,7 @@ kit: { csrf: { trustedOrigins: ['*'] } }
 kit: { csrf: { trustedOrigins: ['https://checkout.stripe.com'] } }
 ```
 
-- **Refs:** CWE-352, CWE-346, CWE-942, OWASP A01:2025. [raw/kit-docs--configuration-csrf-csp-paths-env.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--configuration-csrf-csp-paths-env.md), [raw/kit-source--csrf-implementation-and-prs.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-source--csrf-implementation-and-prs.md), [raw/owasp--cheatsheets-csrf-ssrf-redirects.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/owasp--cheatsheets-csrf-ssrf-redirects.md)
+- **Refs:** CWE-352, CWE-346, CWE-942, OWASP A01:2025. raw/kit-docs--configuration-csrf-csp-paths-env.md, raw/kit-source--csrf-implementation-and-prs.md, raw/owasp--cheatsheets-csrf-ssrf-redirects.md
 
 ### SVK-E8 Mass assignment from form data
 
@@ -401,7 +401,7 @@ save: async ({ request, locals }) => {
 }
 ```
 
-- **Refs:** CWE-915, OWASP A08:2025. [raw/owasp--top10-2025-categories-and-cwes.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/owasp--top10-2025-categories-and-cwes.md)
+- **Refs:** CWE-915, OWASP A08:2025. raw/owasp--top10-2025-categories-and-cwes.md
 
 ### SVK-E9 Unbounded work per request
 
@@ -419,7 +419,7 @@ for (const { query } of requested(getPosts, Infinity)) query.refresh();
 await requested(getPosts, 5).refreshAll();
 ```
 
-- **Refs:** CWE-770, CWE-400, OWASP A10:2025 (interpretation, see the mapping note). [raw/kit-docs--remote-functions.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--remote-functions.md), [raw/kit-docs--adapter-node.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--adapter-node.md)
+- **Refs:** CWE-770, CWE-400, OWASP A10:2025 (interpretation, see the mapping note). raw/kit-docs--remote-functions.md, raw/kit-docs--adapter-node.md
 
 ---
 
@@ -450,7 +450,7 @@ export const handle = async ({ event, resolve }) => {
 // remote functions still check locals themselves: route.id is client-chosen for remote calls (SVK-H2)
 ```
 
-- **Refs:** CWE-862, OWASP A01:2025. [raw/kit-docs--load.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--load.md), [raw/kit-docs--form-actions-and-routing.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--form-actions-and-routing.md)
+- **Refs:** CWE-862, OWASP A01:2025. raw/kit-docs--load.md, raw/kit-docs--form-actions-and-routing.md
 
 ### SVK-H2 Path check in `handle` misses routes
 
@@ -471,7 +471,7 @@ if (!PUBLIC.has(event.route.id ?? '') && !event.locals.user) redirect(303, '/log
 // admin rights are still checked inside each admin action, endpoint and remote function
 ```
 
-- **Refs:** CWE-863, CWE-807, OWASP A01:2025. [raw/kit-docs--hooks.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--hooks.md), [raw/kit-docs--remote-functions.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--remote-functions.md), [raw/kit-source--csrf-implementation-and-prs.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-source--csrf-implementation-and-prs.md)
+- **Refs:** CWE-863, CWE-807, OWASP A01:2025. raw/kit-docs--hooks.md, raw/kit-docs--remote-functions.md, raw/kit-source--csrf-implementation-and-prs.md
 
 ### SVK-H3 `event.locals` populated from untrusted input
 
@@ -490,7 +490,7 @@ const { payload } = await jwtVerify(event.cookies.get('token') ?? '', JWKS, { is
 event.locals.user = await getUserById(payload.sub!);
 ```
 
-- **Refs:** CWE-347, CWE-565, CWE-290, OWASP A07:2025, OWASP A04:2025. [raw/kit-docs--hooks.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--hooks.md), [raw/owasp--top10-2025-categories-and-cwes.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/owasp--top10-2025-categories-and-cwes.md)
+- **Refs:** CWE-347, CWE-565, CWE-290, OWASP A07:2025, OWASP A04:2025. raw/kit-docs--hooks.md, raw/owasp--top10-2025-categories-and-cwes.md
 
 ### SVK-H4 Server fetch to a user-controlled URL, or credentials forwarded to other hosts
 
@@ -514,7 +514,7 @@ export const GET = async ({ url, fetch }) => {
 };
 ```
 
-- **Refs:** CWE-918, OWASP A01:2025. [raw/kit-docs--hooks.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--hooks.md), [raw/owasp--cheatsheets-csrf-ssrf-redirects.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/owasp--cheatsheets-csrf-ssrf-redirects.md)
+- **Refs:** CWE-918, OWASP A01:2025. raw/kit-docs--hooks.md, raw/owasp--cheatsheets-csrf-ssrf-redirects.md
 
 ### SVK-H5 `filterSerializedResponseHeaders` serialises sensitive headers
 
@@ -532,7 +532,7 @@ return resolve(event, { filterSerializedResponseHeaders: () => true });
 return resolve(event, { filterSerializedResponseHeaders: (name) => name === 'content-range' });
 ```
 
-- **Refs:** CWE-200, OWASP A01:2025. [raw/kit-docs--hooks.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--hooks.md)
+- **Refs:** CWE-200, OWASP A01:2025. raw/kit-docs--hooks.md
 
 ### SVK-H6 Error details shown to users
 
@@ -554,7 +554,7 @@ export const handleError = ({ error, event }) => {
 };
 ```
 
-- **Refs:** CWE-209, OWASP A10:2025. [raw/kit-docs--hooks.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--hooks.md)
+- **Refs:** CWE-209, OWASP A10:2025. raw/kit-docs--hooks.md
 
 ### SVK-H7 Open redirect
 
@@ -574,7 +574,7 @@ const safe = next.startsWith('/') && !next.startsWith('//') && !next.startsWith(
 redirect(303, safe);
 ```
 
-- **Refs:** CWE-601, OWASP A01:2025, CVE-2026-40074. [raw/owasp--cheatsheets-csrf-ssrf-redirects.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/owasp--cheatsheets-csrf-ssrf-redirects.md), [raw/advisory--kit-repo-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/advisory--kit-repo-advisories.md)
+- **Refs:** CWE-601, OWASP A01:2025, CVE-2026-40074. raw/owasp--cheatsheets-csrf-ssrf-redirects.md, raw/advisory--kit-repo-advisories.md
 
 ---
 
@@ -607,7 +607,7 @@ export const load = async ({ params }) => {
 <div class="bio">{@html data.bioHtml}</div>
 ```
 
-- **Refs:** CWE-79, CWE-116, OWASP A05:2025. [raw/svelte-docs--html-attach-use-hydratable.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/svelte-docs--html-attach-use-hydratable.md), [raw/markdown--mdsvex-marked-dompurify.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/markdown--mdsvex-marked-dompurify.md)
+- **Refs:** CWE-79, CWE-116, OWASP A05:2025. raw/svelte-docs--html-attach-use-hydratable.md, raw/markdown--mdsvex-marked-dompurify.md
 
 ### SVK-X2 Markdown pipeline without sanitising
 
@@ -625,7 +625,7 @@ return { html: marked.parse(post.body) };
 return { html: purify.sanitize(await marked.parse(post.body)) };
 ```
 
-- **Refs:** CWE-79, OWASP A05:2025. [raw/markdown--mdsvex-marked-dompurify.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/markdown--mdsvex-marked-dompurify.md)
+- **Refs:** CWE-79, OWASP A05:2025. raw/markdown--mdsvex-marked-dompurify.md
 
 ### SVK-X3 Action, attachment or script writes raw HTML into the DOM
 
@@ -651,7 +651,7 @@ export function tooltip(node: HTMLElement, text: string) {
 }
 ```
 
-- **Refs:** CWE-79, OWASP A05:2025. [raw/svelte-docs--html-attach-use-hydratable.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/svelte-docs--html-attach-use-hydratable.md)
+- **Refs:** CWE-79, OWASP A05:2025. raw/svelte-docs--html-attach-use-hydratable.md
 
 ### SVK-X4 Spreading untrusted objects as attributes or tags
 
@@ -669,7 +669,7 @@ export function tooltip(node: HTMLElement, text: string) {
 <a href={safeHref(block.href)} class={block.variant === 'primary' ? 'btn' : 'link'}>{block.label}</a>
 ```
 
-- **Refs:** CWE-79, OWASP A05:2025, GHSA-pr6f-5x2q-rwfp, GHSA-rcqx-6q8c-2c42. [raw/advisory--svelte-repo-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/advisory--svelte-repo-advisories.md)
+- **Refs:** CWE-79, OWASP A05:2025, GHSA-pr6f-5x2q-rwfp, GHSA-rcqx-6q8c-2c42. raw/advisory--svelte-repo-advisories.md
 
 ### SVK-X5 Content Security Policy missing or weak
 
@@ -687,7 +687,7 @@ kit: { csp: { directives: { 'script-src': ['self', 'unsafe-inline'] } } }
 kit: { csp: { mode: 'auto', directives: { 'script-src': ['self'], 'object-src': ['none'], 'base-uri': ['self'] } } }
 ```
 
-- **Refs:** CWE-693, CWE-1021, OWASP A02:2025. [raw/kit-docs--configuration-csrf-csp-paths-env.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--configuration-csrf-csp-paths-env.md)
+- **Refs:** CWE-693, CWE-1021, OWASP A02:2025. raw/kit-docs--configuration-csrf-csp-paths-env.md
 
 ### SVK-X6 Session cookie protections turned off
 
@@ -705,7 +705,7 @@ cookies.set('session', id, { path: '/', httpOnly: false, sameSite: 'none', secur
 cookies.set('session', id, { path: '/', httpOnly: true, secure: true, sameSite: 'lax', maxAge: 60 * 60 * 24 * 7 });
 ```
 
-- **Refs:** CWE-1004, CWE-614, CWE-1275, OWASP A02:2025, OWASP A01:2025. [raw/kit-docs--cookies-api-reference.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--cookies-api-reference.md)
+- **Refs:** CWE-1004, CWE-614, CWE-1275, OWASP A02:2025, OWASP A01:2025. raw/kit-docs--cookies-api-reference.md
 
 ### SVK-X7 Tokens or secrets kept in browser storage or stores
 
@@ -724,7 +724,7 @@ localStorage.setItem('access_token', res.token);
 cookies.set('session', res.sessionId, { path: '/', httpOnly: true, secure: true, sameSite: 'lax' });
 ```
 
-- **Refs:** CWE-922, OWASP A01:2025. [raw/ai--vibe-coded-app-security-studies-2026.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/ai--vibe-coded-app-security-studies-2026.md)
+- **Refs:** CWE-922, OWASP A01:2025. raw/ai--vibe-coded-app-security-studies-2026.md
 
 ---
 
@@ -752,7 +752,7 @@ export const load = async ({ locals }) => {
 };
 ```
 
-- **Refs:** CWE-200, CWE-524, OWASP A01:2025. [raw/kit-docs--page-options-prerender-service-workers.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--page-options-prerender-service-workers.md)
+- **Refs:** CWE-200, CWE-524, OWASP A01:2025. raw/kit-docs--page-options-prerender-service-workers.md
 
 ### SVK-C2 Vercel ISR on personalised routes, weak bypass token
 
@@ -771,7 +771,7 @@ import { BYPASS_TOKEN } from '$env/static/private';
 export const config = { isr: { expiration: 60, bypassToken: BYPASS_TOKEN } }; // on /blog only
 ```
 
-- **Refs:** CWE-524, CWE-798, OWASP A01:2025, CVE-2026-27118. [raw/kit-docs--adapter-vercel-and-cloudflare.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--adapter-vercel-and-cloudflare.md)
+- **Refs:** CWE-524, CWE-798, OWASP A01:2025, CVE-2026-27118. raw/kit-docs--adapter-vercel-and-cloudflare.md
 
 ### SVK-C3 adapter-node trusts headers it should not, or has no origin
 
@@ -790,7 +790,7 @@ if (!ADMIN_IPS.includes(ip)) error(403);
 const ip = event.getClientAddress(); // with ADDRESS_HEADER=X-Forwarded-For and XFF_DEPTH = number of trusted proxies
 ```
 
-- **Refs:** CWE-348, CWE-290, OWASP A07:2025. [raw/kit-docs--adapter-node.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--adapter-node.md)
+- **Refs:** CWE-348, CWE-290, OWASP A07:2025. raw/kit-docs--adapter-node.md
 
 ### SVK-C4 Platform bindings or env passed to the client
 
@@ -808,7 +808,7 @@ export const load = ({ platform }) => ({ config: platform?.env });
 export const load = ({ platform }) => ({ siteName: platform?.env.SITE_NAME });
 ```
 
-- **Refs:** CWE-200, CWE-497, OWASP A02:2025. [raw/kit-docs--adapter-vercel-and-cloudflare.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--adapter-vercel-and-cloudflare.md)
+- **Refs:** CWE-200, CWE-497, OWASP A02:2025. raw/kit-docs--adapter-vercel-and-cloudflare.md
 
 ### SVK-C5 Service worker caches authenticated responses
 
@@ -828,13 +828,13 @@ const cacheable = url.origin === self.location.origin && !url.pathname.startsWit
 if (cacheable && response.status === 200 && !response.headers.get('cache-control')?.includes('no-store')) cache.put(event.request, response.clone());
 ```
 
-- **Refs:** CWE-525, OWASP A06:2025. [raw/kit-docs--page-options-prerender-service-workers.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--page-options-prerender-service-workers.md)
+- **Refs:** CWE-525, OWASP A06:2025. raw/kit-docs--page-options-prerender-service-workers.md
 
 ### SVK-C6 Config context items (info)
 
 - **Detect:** Scan `svelte_config[]`: `dangerZone_present`, `paths_relative_false`, `env_publicPrefix`, `serviceWorker_register_false`, `prerender_handleHttpError`.
 - **Confirm and severity:** `dangerZone` in a SvelteKit 2 config is dead configuration: `info`. A changed `publicPrefix` (for example empty string) widens what reaches the client: treat as SVK-B3 if secrets match it. `paths.relative` is not a security control: mention only when a `<base>` tag or external `paths.assets` host is present (`info`).
-- **Refs:** [raw/kit-docs--cookies-api-reference.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--cookies-api-reference.md), [raw/kit-docs--configuration-csrf-csp-paths-env.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--configuration-csrf-csp-paths-env.md)
+- **Refs:** raw/kit-docs--cookies-api-reference.md, raw/kit-docs--configuration-csrf-csp-paths-env.md
 
 ---
 
@@ -865,7 +865,7 @@ export const load = async ({ locals }) => {
 };
 ```
 
-- **Refs:** CWE-602, OWASP A06:2025. [raw/svelte-docs--html-attach-use-hydratable.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/svelte-docs--html-attach-use-hydratable.md), [raw/ai--vibe-coded-app-security-studies-2026.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/ai--vibe-coded-app-security-studies-2026.md)
+- **Refs:** CWE-602, OWASP A06:2025. raw/svelte-docs--html-attach-use-hydratable.md, raw/ai--vibe-coded-app-security-studies-2026.md
 
 ### SVK-A2 Guard that fails open (swallowed redirect or error)
 
@@ -895,22 +895,22 @@ try {
 }
 ```
 
-- **Refs:** CWE-636, OWASP A10:2025. [raw/kit-docs--load.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--load.md), [raw/ai--svelte-llm-failure-patterns.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/ai--svelte-llm-failure-patterns.md)
+- **Refs:** CWE-636, OWASP A10:2025. raw/kit-docs--load.md, raw/ai--svelte-llm-failure-patterns.md
 
 ### SVK-A3 Svelte 4 store idioms holding user data on the server
 
 - **Detect:** Same as SVK-B5, plus imports of `svelte/store` or `$app/stores` in modules that server code imports. Commands: [detection-patterns.md](detection-patterns.md), section "AI-generated patterns", line marked A3.
 - **Confirm and severity:** as SVK-B5.
-- **Refs:** CWE-488, OWASP A01:2025. [raw/kit-docs--state-management-and-stores.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/kit-docs--state-management-and-stores.md), [raw/ai--svelte-llm-failure-patterns.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/ai--svelte-llm-failure-patterns.md)
+- **Refs:** CWE-488, OWASP A01:2025. raw/kit-docs--state-management-and-stores.md, raw/ai--svelte-llm-failure-patterns.md
 
 ### SVK-A4 One `+server` endpoint per feature, none guarded
 
 - **Detect:** Scan: many `kind: endpoint` routes with `auth_hint_found: false`, especially POST handlers used by forms in the same app.
 - **Confirm and severity:** as SVK-E2. Note in `why_it_matters` that a form action would have kept the logic next to the page; the fix is the guard, not the refactor.
-- **Refs:** CWE-862, OWASP A01:2025. [raw/ai--svelte-llm-failure-patterns.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/ai--svelte-llm-failure-patterns.md)
+- **Refs:** CWE-862, OWASP A01:2025. raw/ai--svelte-llm-failure-patterns.md
 
 ### SVK-A5 Mixed Svelte 4 and 5 syntax (signal, not a finding)
 
 - **Detect:** Svelte 4 syntax (`export let`, `$:`, `on:click`, `createEventDispatcher`) in files that also use `$state(` or `$props(`. Commands: [detection-patterns.md](detection-patterns.md), section "AI-generated patterns", line marked A5.
 - **Use:** Not a security finding by itself. Record it in notes as a sign the code was generated in pieces; read guards in those files with extra care.
-- **Refs:** [raw/ai--svelte-llm-failure-patterns.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/ai--svelte-llm-failure-patterns.md)
+- **Refs:** raw/ai--svelte-llm-failure-patterns.md

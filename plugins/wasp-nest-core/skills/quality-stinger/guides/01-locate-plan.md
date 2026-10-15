@@ -100,4 +100,4 @@ Do not produce a report anyway. The value of the audit is the plan comparison.
 ## See also
 
 - Example: `examples/01-happy-path-clean-audit.md` shows the plan location as `library/requirements/<lifecycle>/prd-007-result-mode-label/prd-007-result-mode-label-index.md` and the report reflects that in its heading.
-- Research: plans and requirements traceability, `research/2026-04-24-traceability-matrix.md`.
+- Research: plans and requirements traceability, `research/2026-04-24-traceability-matrix.md` (source-repository research, not shipped).

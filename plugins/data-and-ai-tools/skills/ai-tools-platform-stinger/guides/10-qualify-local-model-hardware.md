@@ -1,6 +1,6 @@
 # Qualify a local model against the actual machine and workload
 
-Use this for “will a local model fit?”, “what hardware do I need?” or “can this run offline?”. Read [the current digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/ai-tools-platform-stinger/references/research/request-budgets/digest.md), then fill [the fit worksheet](../templates/local-model-fit.md). Do not guess the user's device or recommend a purchase from parameter count alone.
+Use this for “will a local model fit?”, “what hardware do I need?” or “can this run offline?”. Read the current digest, then fill [the fit worksheet](../templates/local-model-fit.md). Do not guess the user's device or recommend a purchase from parameter count alone.
 
 1. Collect intended task, output quality rubric, latency/throughput target, input/output/context lengths, simultaneous requests and simultaneously loaded models. Separate interactive development from production serving. An open-weight license does not mean zero operating cost or universal redistribution permission.
 2. Collect supplied hardware evidence: machine/CPU architecture, OS version, physical and presently available RAM, unified versus separate GPU memory, exact GPU(s), VRAM/free VRAM, driver/backend versions, supported instructions and storage space. Capture measured load/other-process headroom only when authorized; do not run probes or invent it in a source-only exercise. Check current runtime OS/GPU eligibility first.

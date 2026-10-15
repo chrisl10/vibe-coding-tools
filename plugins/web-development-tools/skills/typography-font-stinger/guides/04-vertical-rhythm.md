@@ -1,6 +1,6 @@
 # Vertical Rhythm and Line-Height Tokens
 
-*Sources: `research/external/2026-05-20-type-scale-tokens.md`, `research/external/2026-05-20-fluid-type-clamp.md`*
+*Sources: `research/external/2026-05-20-type-scale-tokens.md`, `research/external/2026-05-20-fluid-type-clamp.md` (source-repository research, not shipped)*
 
 ---
 

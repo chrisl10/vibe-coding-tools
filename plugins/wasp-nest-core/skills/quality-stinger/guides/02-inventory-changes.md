@@ -6,7 +6,7 @@ Capture every file added, modified, or deleted by the implementation. No silent 
 
 ## Primary invocation
 
-Use the three-dot `git diff` against the base branch. This matches what the PR page shows. (Source: `research/2026-04-24-git-diff-pr-review.md`.)
+Use the three-dot `git diff` against the base branch. This matches what the PR page shows. (Source: `research/2026-04-24-git-diff-pr-review.md` [source-repository research, not shipped].)
 
 ```bash
 # Name + status per file (A=added, M=modified, D=deleted, R=renamed)
@@ -100,4 +100,4 @@ Any of the above that were not mentioned in the plan should appear in the report
 ## See also
 
 - Example of an inventory walk: `examples/02-blocker-heavy-audit.md` Section "Files Changed".
-- Research: `research/2026-04-24-git-diff-pr-review.md`.
+- Research: `research/2026-04-24-git-diff-pr-review.md` (source-repository research, not shipped).

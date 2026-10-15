@@ -2,7 +2,7 @@
 
 Hivemind has NO migrations framework. Schema evolution is additive healing: `healMissingColumns()` brings a live table up to the `ColumnDef` contract by adding only the columns that are missing.
 
-Source: `research/2026-06-16-additive-schema-healing-500-not-409.md`.
+Source: `research/2026-06-16-additive-schema-healing-500-not-409.md` (source-repository research, not shipped).
 
 ## Why healing, not migrations
 
@@ -67,7 +67,7 @@ On a duplicate column add, Deep Lake returns **HTTP 500**, not the 409 a normal 
 
 The correct guard is the **diff in step 2**, not `IF NOT EXISTS`. Compute the missing set first; only add what is genuinely absent. An `ADD COLUMN IF NOT EXISTS` in a heal is a must-fix.
 
-Source: `research/2026-06-16-additive-schema-healing-500-not-409.md`.
+Source: `research/2026-06-16-additive-schema-healing-500-not-409.md` (source-repository research, not shipped).
 
 ## Step 4 - validateSchema()
 

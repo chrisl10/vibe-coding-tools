@@ -23,7 +23,7 @@ prompt.** A routine can have scope, false-positive discipline, a length ceiling,
 explicit clause telling it not to manufacture anxiety, and still flag the identical item for
 sixteen consecutive days, because it is missing two clauses that are invisible in the prompt
 and obvious in the reports
-[references/research/raw/routine--grounding--littlebird-live-account-2026-08-17.md].
+[references/research/raw/routine--grounding--littlebird-live-account-2026-08-17.md (source-repository research, not shipped with the plugin)].
 
 ---
 
@@ -186,7 +186,7 @@ Six of the nine failure modes are invisible in the prompt text. The prompt state
 reports are the evidence of whether the intent survived contact with real data. A routine
 whose prompt says "keep the total output under 200 words" can produce reports that run past
 it, and the only way to know is to measure them
-[references/research/raw/routine--grounding--littlebird-live-account-2026-08-17.md].
+[references/research/raw/routine--grounding--littlebird-live-account-2026-08-17.md (source-repository research, not shipped with the plugin)].
 
 Every diagnosis you present carries a quoted report line with its date
 (`references/evidence-standards.md` rule 1). The score is an opinion. The quoted line is the
@@ -214,7 +214,7 @@ Modes 1 and 2 are separate on purpose. Memory without escalation produces a rout
 it is repeating and repeats anyway, louder. The live grounding case does exactly that: it
 wrote "It's been the #1 item for three days straight", then the next day "This has been the #1
 item for four straight days", with the recommended action unchanged
-[references/research/raw/routine--grounding--littlebird-live-account-2026-08-17.md].
+[references/research/raw/routine--grounding--littlebird-live-account-2026-08-17.md (source-repository research, not shipped with the plugin)].
 
 ---
 
@@ -342,7 +342,7 @@ until the thing it was watching has already happened.
    calling UPDATE.** Not a description of the change, the text
    (`references/evidence-standards.md` rule 6). Editing live automation is exactly the class
    of action first-party guidance puts behind a confirmation gate
-   [references/research/raw/routine--prompt-craft--claude-platform-docs-prompting.md].
+   [references/research/raw/routine--prompt-craft--claude-platform-docs-prompting.md (source-repository research, not shipped with the plugin)].
 
 Show, in order: the diagnosis with its receipts, the full current prompt, the full replacement
 prompt, a change list naming what was added, removed, and **kept**, and a one-sentence
@@ -442,7 +442,7 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/evidence-standards.md` | Always, first. |
 | `references/littlebird-mcp-reference.md` | Always, first. |
 | `references/research/distilled-routine-prompt-craft.md` | When you need the citation behind a rule, or to check whether a claim is evidenced at all. Section 9 is the claim map. |
-| `references/research/README.md` | Source inventory and the archive's six named gaps. |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 
 **Three things in this skill are design decisions rather than researched practice**, and they
 are labelled as such wherever they appear: the three-occurrence escalation threshold, the

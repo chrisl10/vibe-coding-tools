@@ -1,6 +1,6 @@
 # 23: Memory consent, provenance and retention
 
-Use for O187 with [memory tiers](12-three-tier-memory.md). [Framework persistence](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/mind-stinger/references/research/agent-boundaries-20261007/raw/langgraph-persistence.html) distinguishes thread checkpoints from long-term stores; [memory operations](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/mind-stinger/references/research/agent-boundaries-20261007/raw/langgraph-memory.html) provide separate message and checkpoint removal. Those capabilities are not a privacy or retention decision.
+Use for O187 with [memory tiers](12-three-tier-memory.md). Framework persistence distinguishes thread checkpoints from long-term stores; memory operations provide separate message and checkpoint removal. Those capabilities are not a privacy or retention decision.
 
 ## Define allowed memory before persistence
 

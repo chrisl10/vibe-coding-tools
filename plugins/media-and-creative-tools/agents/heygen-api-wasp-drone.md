@@ -1,7 +1,7 @@
 ---
 name: "heygen-api-wasp-drone"
 description: "HeyGen API integration specialist for asynchronous video jobs, avatars, assets, webhooks, limits, and safe delivery. Use for HeyGen API code or troubleshooting."
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write, Bash, Skill, WebSearch, WebFetch
 model: inherit
 ---
 

@@ -2,6 +2,7 @@
 name: "source-command-build-nextjs-app"
 description: "Build or extend a Next.js app using current App Router, server/client, data, mutation and cache boundaries with explicit verification."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-build-nextjs-app

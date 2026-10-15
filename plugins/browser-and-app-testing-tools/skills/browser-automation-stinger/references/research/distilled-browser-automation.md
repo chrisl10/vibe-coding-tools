@@ -2,8 +2,8 @@
 
 | Claim | Evidence |
 |---|---|
-| Playwright's initializer offers to install browsers and add a GitHub Actions workflow. | [raw/playwright-installation.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/browser-and-app-testing-tools/skills/browser-automation-stinger/references/research/raw/playwright-installation.md) |
-| Playwright documents UI mode with watch mode, step view, time-travel debugging, and trace integration. | [raw/playwright-ui-mode.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/browser-and-app-testing-tools/skills/browser-automation-stinger/references/research/raw/playwright-ui-mode.md) |
-| Puppeteer identifies browser support as a discrete concern in its documentation. | [raw/puppeteer-overview.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/browser-and-app-testing-tools/skills/browser-automation-stinger/references/research/raw/puppeteer-overview.md) |
+| Playwright's initializer offers to install browsers and add a GitHub Actions workflow. | raw/playwright-installation.md |
+| Playwright documents UI mode with watch mode, step view, time-travel debugging, and trace integration. | raw/playwright-ui-mode.md |
+| Puppeteer identifies browser support as a discrete concern in its documentation. | raw/puppeteer-overview.md |
 
 The exact package versions and supported browser revisions are mutable. Consult current official docs or the installed package before pinning them.

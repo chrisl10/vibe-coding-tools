@@ -547,5 +547,4 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/littlebird-mcp-reference.md` | Tool inventory, parameters, return shapes, known limitations |
 | `references/evidence-standards.md` | Receipts, the four kinds of line, confidence ratings, attribution guardrail, confirmation gates |
 | `references/research/distilled-call-preparation.md` | Cited distillation of the call preparation research, including the conflict on whether preparation helps and the list of numbers this skill refuses to restate |
-| `references/research/README.md` | Archive layout, sweep coverage, source quality |
-| `references/research/raw/` | Twelve archived sources, each with title, URL, fetch date, source type |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |

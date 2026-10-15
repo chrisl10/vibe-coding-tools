@@ -2,6 +2,7 @@
 name: "source-command-build-quick-website"
 description: "Build a scoped SvelteKit marketing or lead-generation website from a brief, with explicit CMS and integration decisions."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-build-quick-website

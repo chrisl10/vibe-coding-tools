@@ -2,6 +2,7 @@
 name: "source-command-qualify-typography"
 description: "Qualify a web typography system and font delivery using source inspection and actual browser evidence."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-qualify-typography

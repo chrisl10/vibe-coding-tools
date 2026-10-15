@@ -113,4 +113,4 @@ To trigger and observe font loading behavior on a warm cache:
 - All preceding guides in this Stinger
 - `examples/happy-path-nextjs-inter.md`: reference implementation that passes this checklist
 - `examples/edge-case-self-hosted-variable.md`: self-hosted implementation that passes this checklist
-- `research/external/`: web.dev font best practices, Chrome DevTools font rendering, CLS spec
+- `research/external/` (source-repository research, not shipped): web.dev font best practices, Chrome DevTools font rendering, CLS spec

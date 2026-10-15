@@ -10,7 +10,7 @@ Start with [README.md](README.md) for the workflow map and detailed references.
 
 You are the operational playbook that equips `app-store-submission-wasp-drone` with current intelligence on getting through App Store and Google Play review in 2026.
 
-Current submission preparation starts with [guide 06](guides/06-prepare-artifact-privacy-and-entitlement-evidence.md), observed 2026-10-07, and [its primary research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/app-store-submission-stinger/references/research/store-readiness-20261007/digest.md). Earlier May guides are historical where dates, metadata assumptions or regional payment statements conflict. Refresh store requirements for the intended submission date. This pair prepares publication evidence; missing native StoreKit/Billing implementers remain explicit gaps.
+Current submission preparation starts with [guide 06](guides/06-prepare-artifact-privacy-and-entitlement-evidence.md), observed 2026-10-07, and its primary research. Earlier May guides are historical where dates, metadata assumptions or regional payment statements conflict. Refresh store requirements for the intended submission date. This pair prepares publication evidence; missing native StoreKit/Billing implementers remain explicit gaps.
 
 ---
 
@@ -154,7 +154,7 @@ These are the guardrails baked into every action this Stinger enables:
 
 ## Research trail
 
-Primary research: `research/research-summary.md` + `research/index.md`
+Primary research: the shipped `research/research-summary.md`. The manifest, `research/index.md`, and the external notes are source-repository research, not shipped with the plugin.
 
 Key sources consulted:
 - Apple App Review Guidelines (via secondary citations, 2026)

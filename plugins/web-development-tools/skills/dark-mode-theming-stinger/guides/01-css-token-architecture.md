@@ -2,7 +2,7 @@
 
 *Covers: `:root` / `.dark` variable layout, semantic naming convention, multi-brand block pattern, `color-scheme` property.*
 
-*Sources: `research/external/2026-05-20-css-variables-dark-mode.md`, `research/external/2026-05-20-multi-brand-css-runtime-swap.md`*
+*Sources: `research/external/2026-05-20-css-variables-dark-mode.md`, `research/external/2026-05-20-multi-brand-css-runtime-swap.md` (source-repository research, not shipped)*
 
 ---
 

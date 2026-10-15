@@ -82,4 +82,4 @@ For layer 3 (integration), the SDK's in-memory transport pair is the lighter-wei
 
 ---
 
-*Sources: `research/distilled-mcp-protocol.md`, `research/2026-06-16-vitest-mcp-testing.md`, `research/2026-06-16-mcp-sdk-typescript.md`, `research/external/mcp-testing-three-layers-autonoma.md`, `research/external/mcp-server-testing-production-guide-yaw.md`, `research/external/mcp-testing-debugging-veprompts.md`*
+*Sources: `research/distilled-mcp-protocol.md`, `research/2026-06-16-vitest-mcp-testing.md`, `research/2026-06-16-mcp-sdk-typescript.md`, `research/external/mcp-testing-three-layers-autonoma.md`, `research/external/mcp-server-testing-production-guide-yaw.md`, `research/external/mcp-testing-debugging-veprompts.md` (source-repository research, not shipped)*

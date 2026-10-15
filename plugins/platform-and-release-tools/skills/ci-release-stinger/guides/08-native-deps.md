@@ -39,5 +39,5 @@ Hivemind parses code with tree-sitter, which means native bindings, which means 
 
 ## Cross-reference
 
-- `research/2026-06-16-tree-sitter-native-abi-healing.md` - the ABI/arch problem space and the heal pattern.
+- `research/2026-06-16-tree-sitter-native-abi-healing.md` (source-repository research, not shipped) - the ABI/arch problem space and the heal pattern.
 - `guides/07-failure-modes.md` §4 - native-dep ABI break diagnosis.

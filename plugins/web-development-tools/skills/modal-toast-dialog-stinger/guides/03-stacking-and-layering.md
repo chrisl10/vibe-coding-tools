@@ -2,7 +2,7 @@
 
 Overlays from different primitives coexist in the same DOM. This guide covers the z-index strategy, portal coexistence, and nested overlay patterns.
 
-*Derives from: `research/external/radix-dialog.md`, `research/external/vaul-drawer.md`, `research/external/sonner-toast.md`.*
+*Derives from: `research/external/radix-dialog.md`, `research/external/vaul-drawer.md`, `research/external/sonner-toast.md` (source-repository research, not shipped).*
 
 ---
 

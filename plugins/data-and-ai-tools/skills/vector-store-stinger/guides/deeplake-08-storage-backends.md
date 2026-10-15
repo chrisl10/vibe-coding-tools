@@ -2,7 +2,7 @@
 
 Deep Lake datasets are bring-your-own-cloud. The same dataset can live on Activeloop-managed storage, your own object store, or local / in-memory. vector-store-wasp-drone picks the backend and the credential model; `security-wasp-drone` audits the secrets.
 
-Source: `research/2026-06-16-storage-backends-creds.md`.
+Source: `research/2026-06-16-storage-backends-creds.md` (source-repository research, not shipped).
 
 ## The backends
 

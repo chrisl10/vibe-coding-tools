@@ -35,15 +35,17 @@ Check that installs are reproducible, that updates are proposed automatically, t
 
 ## Sources
 
-- [research/raw/npm--ci.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/npm--ci.md)
-- [research/raw/pnpm--frozen-lockfile.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/pnpm--frozen-lockfile.md)
-- [research/raw/uv--project-layout-lockfile.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/uv--project-layout-lockfile.md)
-- [research/raw/dependabot--options-reference.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/dependabot--options-reference.md)
-- [research/raw/dependabot--features-overview.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/dependabot--features-overview.md)
-- [research/raw/renovate--config-file-locations.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/renovate--config-file-locations.md)
-- [research/raw/nvm--nvmrc.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/nvm--nvmrc.md)
-- [research/raw/nodejs--release-status.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/nodejs--release-status.md)
-- [research/raw/python--version-status.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/python--version-status.md)
-- [research/raw/python-packaging--pyproject-toml.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/python-packaging--pyproject-toml.md)
-- [research/raw/git--gitignore.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/git--gitignore.md)
-- [research/raw/github-api--secret-scanning-overview.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/github-api--secret-scanning-overview.md)
+The notes listed below are source-repository research, not shipped.
+
+- research/raw/npm--ci.md (source-repository research, not shipped)
+- research/raw/pnpm--frozen-lockfile.md (source-repository research, not shipped)
+- research/raw/uv--project-layout-lockfile.md (source-repository research, not shipped)
+- research/raw/dependabot--options-reference.md (source-repository research, not shipped)
+- research/raw/dependabot--features-overview.md (source-repository research, not shipped)
+- research/raw/renovate--config-file-locations.md (source-repository research, not shipped)
+- research/raw/nvm--nvmrc.md (source-repository research, not shipped)
+- research/raw/nodejs--release-status.md (source-repository research, not shipped)
+- research/raw/python--version-status.md (source-repository research, not shipped)
+- research/raw/python-packaging--pyproject-toml.md (source-repository research, not shipped)
+- research/raw/git--gitignore.md (source-repository research, not shipped)
+- research/raw/github-api--secret-scanning-overview.md (source-repository research, not shipped)

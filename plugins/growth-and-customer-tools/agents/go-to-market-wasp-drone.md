@@ -1,7 +1,7 @@
 ---
 name: go-to-market-wasp-drone
 description: "Choose one acquisition channel for a specific buyer from evidence and constraints. Use before paid, organic, outbound or partner execution; return a falsifiable experiment draft."
-tools: Read, Glob, Grep
+tools: Read, Glob, Grep, WebSearch, WebFetch, Skill
 model: inherit
 ---
 

@@ -11,7 +11,7 @@
 | [ai-failure-patterns.md](ai-failure-patterns.md) | AI-01 to AI-20 sweep, each pointing at its owning check | End of guides 02 to 05 |
 | [finding-templates.md](finding-templates.md) | Severity mapping, example `findings-nextjs-security-wasp-drone.jsonl` lines, `metrics-nextjs-security-wasp-drone.json` and `notes-nextjs-security-wasp-drone.md` shapes | Guide 06 |
 | [research/distilled-nextjs-security.md](research/distilled-nextjs-security.md) | Cited distillation of the research archive | Verifying a claim or settling a dispute |
-| [research/raw/](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/nextjs-security-stinger/references/research/raw) | 31 archived sources (advisories, official docs, auth library docs, standards, AI-code studies) | Tracing a claim to its source |
+| research/raw/ | 31 archived sources (advisories, official docs, auth library docs, standards, AI-code studies) | Tracing a claim to its source |
 
 ## Script
 

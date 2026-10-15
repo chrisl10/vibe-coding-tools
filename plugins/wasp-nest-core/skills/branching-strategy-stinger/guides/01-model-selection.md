@@ -1,6 +1,6 @@
 # Model Selection: Decision Tree and Migration Paths
 
-**Research sources:** `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md` (primary - 9-factor matrix, DORA stats, mobile SDK case study), `research/external/2026-04-18-gitflow-github-flow-comparison-palakorn.md` (80/15/4/1 split confirmation).
+**Research sources:** `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md` (primary - 9-factor matrix, DORA stats, mobile SDK case study), `research/external/2026-04-18-gitflow-github-flow-comparison-palakorn.md` (source-repository research, not shipped) (80/15/4/1 split confirmation).
 
 **Example:** `examples/happy-path-github-flow.md`, `examples/edge-case-gitflow-justified.md`
 
@@ -70,7 +70,7 @@ Does the team support multiple live product versions simultaneously?
 
 **Do not recommend TBD** if any prerequisite is unmet. A team that adopts the TBD label without the prerequisites ends up with disguised GitHub Flow at best, or a broken trunk at worst.
 
-**Reference:** `research/external/2026-02-26-tbd-elite-teams-javacodegeeks.md`, `research/external/2026-04-04-tbd-discipline-codecraftdiary.md`
+**Reference:** `research/external/2026-02-26-tbd-elite-teams-javacodegeeks.md`, `research/external/2026-04-04-tbd-discipline-codecraftdiary.md` (source-repository research, not shipped)
 
 ---
 
@@ -80,7 +80,7 @@ GitFlow is justified ONLY for:
 - Mobile SDK / desktop software teams managing simultaneous support for v2, v3, v4.
 - Projects with external release gates (App Store review, hardware firmware, enterprise "release train" contracts).
 
-**The mobile SDK case study** (from `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md`): A 25-engineer mobile SDK team used GitFlow's release branch model during App Store review cycles. The external constraint (app approval can take 3-14 days) forced a stabilization window. GitFlow's release branch was a natural fit. The team acknowledged TBD + feature flags + a release train approach could have achieved the same outcome but required more upfront investment.
+**The mobile SDK case study** (from `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md` [source-repository research, not shipped]): A 25-engineer mobile SDK team used GitFlow's release branch model during App Store review cycles. The external constraint (app approval can take 3-14 days) forced a stabilization window. GitFlow's release branch was a natural fit. The team acknowledged TBD + feature flags + a release train approach could have achieved the same outcome but required more upfront investment.
 
 **GitFlow branch map:**
 - `main` - production-ready code, tagged at each release
@@ -100,4 +100,4 @@ Quick reference:
 - **GitFlow → GitHub Flow:** Gradually shorten feature branch lifetimes, introduce feature flags for incomplete work, merge develop into main and delete develop once the team is comfortable. See `guides/05-migration-playbook.md` for the 5-step sequence.
 - **GitHub Flow → TBD:** Deploy feature flag infrastructure first. Do not attempt until flag infra is live.
 
-> TODO: open question - GitLab Merge Trains coverage. The Command Brief notes Merge Queue availability varies by platform. Teams on GitLab need guidance on merge trains, which differ from GitHub's queue. See `research/external/2026-05-20-gitlab-merge-trains.md` for the limited coverage available. A targeted search is recommended before advising GitLab teams on merge trains specifically. (`research/research-summary.md` open question 1)
+> TODO: open question - GitLab Merge Trains coverage. The Command Brief notes Merge Queue availability varies by platform. Teams on GitLab need guidance on merge trains, which differ from GitHub's queue. See `research/external/2026-05-20-gitlab-merge-trains.md` (source-repository research, not shipped) for the limited coverage available. A targeted search is recommended before advising GitLab teams on merge trains specifically. (`research/research-summary.md` open question 1)

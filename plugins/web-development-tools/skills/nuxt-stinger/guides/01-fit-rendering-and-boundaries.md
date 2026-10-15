@@ -6,4 +6,4 @@
 4. Resolve the accepted backend/API/DTO/tenant/session contracts. Preserve auth/data providers and external services. Impeccable owns PRODUCT.md, DESIGN.md and surface direction; Vue owns component/reactivity architecture. Nuxt owns routing, SSR integration, data composables and Nitro glue. Do not rewrite contracts to fit a starter.
 5. Use the rendering worksheet and request tests before calling the model appropriate. Keep server endpoints out of a static-only promise.
 
-Grounding: [R1/R2](../references/research/distilled-nuxt.md), [rendering](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/nuxt-stinger/references/research/raw/rendering.md), [deployment](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/nuxt-stinger/references/research/raw/deployment.md). Selection, contract preservation and ownership are workflow policy.
+Grounding: [R1/R2](../references/research/distilled-nuxt.md), rendering, deployment. Selection, contract preservation and ownership are workflow policy.

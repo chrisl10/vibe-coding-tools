@@ -19,7 +19,7 @@ The generic `security-wasp-drone` scans the whole repository and git history for
     headers: { Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}` }, ...
   ```
 - **Fixed:** move the call behind your own server route that holds `OPENAI_API_KEY` (no `VITE_` prefix), authenticates the user, and rate limits; rotate the exposed key.
-- **Refs:** CWE-798, CWE-200, OWASP A07:2025, [raw/secrets--vite-env-and-envprefix.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/secrets--vite-env-and-envprefix.md), [raw/secrets--cra-env-and-sunset.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/secrets--cra-env-and-sunset.md).
+- **Refs:** CWE-798, CWE-200, OWASP A07:2025, raw/secrets--vite-env-and-envprefix.md, raw/secrets--cra-env-and-sunset.md.
 
 ## SD-02 Hardcoded credentials in client code
 
@@ -29,7 +29,7 @@ The generic `security-wasp-drone` scans the whole repository and git history for
 - **Severity:** as SD-01.
 - **Vulnerable:** `const stripe = new Stripe('sk_live_51H****');` in a component file.
 - **Fixed:** delete from code, rotate the key, call Stripe from a server route.
-- **Refs:** CWE-798, OWASP A07:2025, [raw/secrets--gitleaks-default-rules.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/secrets--gitleaks-default-rules.md).
+- **Refs:** CWE-798, OWASP A07:2025, raw/secrets--gitleaks-default-rules.md.
 
 ## SD-03 Build config that exposes all environment variables
 
@@ -38,7 +38,7 @@ The generic `security-wasp-drone` scans the whole repository and git history for
 - **Severity:** whole `process.env` defined into the client build: `critical` if the build environment holds server secrets (CI usually does), else `high`. Broad prefix: `medium`.
 - **Vulnerable:** `export default defineConfig({ define: { 'process.env': process.env } })`
 - **Fixed:** `define: { 'process.env.NODE_ENV': JSON.stringify(mode) }` and expose specific public values with `VITE_` names.
-- **Refs:** CWE-200, CWE-526 (A02:2025 maps it), [raw/secrets--vite-env-and-envprefix.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/secrets--vite-env-and-envprefix.md). The `define` leak is an inference from Vite's docs (see the distillation's thin spots).
+- **Refs:** CWE-200, CWE-526 (A02:2025 maps it), raw/secrets--vite-env-and-envprefix.md. The `define` leak is an inference from Vite's docs (see the distillation's thin spots).
 
 ## SD-04 Auth tokens in web storage
 
@@ -48,7 +48,7 @@ The generic `security-wasp-drone` scans the whole repository and git history for
 - **Severity:** refresh token or long-lived access token in localStorage: `medium`; `high` when the app also has a confirmed XSS (note the chain in both findings).
 - **Vulnerable:** `localStorage.setItem('authToken', data.accessToken);`
 - **Fixed:** have the server set the session in an `HttpOnly; Secure; SameSite=Lax` cookie and add CSRF protection (AR-05); keep only non-secret state in storage.
-- **Refs:** CWE-922, OWASP A01:2025, [raw/owasp--cheatsheet-html5-security.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-html5-security.md).
+- **Refs:** CWE-922, OWASP A01:2025, raw/owasp--cheatsheet-html5-security.md.
 
 ## SD-05 Overfetching: the client receives data it should not
 
@@ -67,7 +67,7 @@ The generic `security-wasp-drone` scans the whole repository and git history for
 - **Severity:** `low`; `medium` when the maps contain secrets or internal endpoints.
 - **Vulnerable:** `build: { sourcemap: true }` with maps served from the CDN.
 - **Fixed:** `sourcemap: 'hidden'` and upload maps to the error tracker only, or disable them.
-- **Refs:** CWE-540 (A01:2025 maps it), [raw/ai--vibe-coded-apps-security-studies.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/ai--vibe-coded-apps-security-studies.md).
+- **Refs:** CWE-540 (A01:2025 maps it), raw/ai--vibe-coded-apps-security-studies.md.
 
 ## SD-07 Cross-request state leakage on the SSR server
 
@@ -76,7 +76,7 @@ The generic `security-wasp-drone` scans the whole repository and git history for
 - **Severity:** user data shared across requests: `high`.
 - **Vulnerable:** `const store = createStore(reducer); app.get('*', (req, res) => { store.dispatch(setUser(req.user)); render(store); });`
 - **Fixed:** create the store inside the request handler (Redux docs pattern).
-- **Refs:** CWE-200, [raw/ssr--redux-server-rendering-security.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/ssr--redux-server-rendering-security.md).
+- **Refs:** CWE-200, raw/ssr--redux-server-rendering-security.md.
 
 ## SD-08 AI provider SDK running in the browser
 
@@ -85,7 +85,7 @@ The generic `security-wasp-drone` scans the whole repository and git history for
 - **Severity:** `critical` with a live key (key exposed to every visitor and billable); `high` if the key comes from user input at runtime (users' own keys, still stored or proxied unsafely).
 - **Vulnerable:** `const client = new OpenAI({ apiKey: import.meta.env.VITE_OPENAI_API_KEY, dangerouslyAllowBrowser: true });`
 - **Fixed:** call the provider from a server route with the key in a server-only variable.
-- **Refs:** CWE-798, CWE-522, [raw/secrets--ai-sdk-dangerously-allow-browser.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/secrets--ai-sdk-dangerously-allow-browser.md).
+- **Refs:** CWE-798, CWE-522, raw/secrets--ai-sdk-dangerously-allow-browser.md.
 
 ## SD-09 Secrets in client logs or error screens
 

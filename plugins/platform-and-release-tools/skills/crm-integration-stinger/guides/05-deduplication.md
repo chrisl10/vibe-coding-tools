@@ -105,5 +105,5 @@ AI/ML-based fuzzy matching can surface candidate pairs that rule-based systems m
 
 ---
 
-*Sources: `research/external/2026-05-20-crm-deduplication-strategy.md`, `research/external/2026-05-20-bidirectional-sync-architecture.md`*
+*Sources: `research/external/2026-05-20-crm-deduplication-strategy.md`, `research/external/2026-05-20-bidirectional-sync-architecture.md` (source-repository research, not shipped)*
 *See also: `examples/hubspot-bidirectional-sync.md` (dedup section)*

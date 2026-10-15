@@ -2,7 +2,7 @@
 
 Mantine 7.x ships a fuller kit than shadcn: date pickers, rich forms, notifications, complex tables, hooks (`useHotkeys`, `useDisclosure`, `useDebouncedValue`, many others). Use it where rebuilding would cost weeks; keep it out of the product's core visual surfaces.
 
-Research: `research/2026-04-24-mantine-theme-tokens.md`.
+Research: `research/2026-04-24-mantine-theme-tokens.md` (source-repository research, not shipped).
 
 ## Decision tree
 

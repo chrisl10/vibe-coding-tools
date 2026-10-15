@@ -28,7 +28,7 @@ If `makemigrations` produces a file you don't understand, stop. Read the diff. A
 
 ## The expand → backfill → contract pattern
 
-The five-phase rule (`research/2026-05-03-django-zero-downtime-migrations.md`):
+The five-phase rule (`research/2026-05-03-django-zero-downtime-migrations.md` [source-repository research, not shipped]):
 
 1. **Expand**: add the new shape (column, table) **alongside** the old. Nullable, with a default if writes from the old code path need it.
 2. **Dual-write**: application writes both old and new shapes. Code lands; old code (writing only the old shape) is still rolling out.
@@ -183,7 +183,7 @@ Findings:
 
 ## Sources
 
-- `research/2026-05-03-django-zero-downtime-migrations.md`
+- `research/2026-05-03-django-zero-downtime-migrations.md` (source-repository research, not shipped)
 - https://docs.djangoproject.com/en/stable/howto/writing-migrations/
 - https://palakorn.com/blog/zero-downtime-database-migrations/
 - https://github.com/django-pg-zero-downtime-migrations/django-pg-zero-downtime-migrations

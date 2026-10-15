@@ -1,7 +1,7 @@
 ---
 name: react-security-wasp-drone
 description: Deep, evidence-backed security audit of React 18 and 19 code for /audit-my-code. Use when stack routing sends react (or nextjs, for client patterns), or when asked to check XSS sinks, SSR injection, RSC runtime CVEs such as React2Shell, Server Functions, bundle secrets, client-side trust, or AI-built React apps. Do NOT use for Next.js server surfaces, generic OWASP or git-history secret scans, other frameworks, or fixing code.
-tools: Read, Grep, Glob, Bash, Write
+tools: Read, Grep, Glob, Bash, Write, Skill, WebSearch, WebFetch
 model: opus
 ---
 

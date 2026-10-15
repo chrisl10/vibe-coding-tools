@@ -2,7 +2,7 @@
 
 Word count is a function of search intent, not a quality signal. This guide encodes the intent classification taxonomy and the word-count ranges that follow from each class. Never recommend a word count without first classifying intent.
 
-> Research sources: `research/external/02-post-length-by-intent.md`, `research/external/2026-05-20-seo-content-clusters-topical-authority.md`
+> Research sources: `research/external/02-post-length-by-intent.md`, `research/external/2026-05-20-seo-content-clusters-topical-authority.md` (source-repository research, not shipped)
 
 ---
 

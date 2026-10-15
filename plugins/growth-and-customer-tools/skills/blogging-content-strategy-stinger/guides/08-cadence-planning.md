@@ -2,7 +2,7 @@
 
 A publishing cadence is only useful if it is sustainable. This guide gives you the capacity model to set a cadence the team can maintain for six months, and the structural rules that make that cadence effective.
 
-> Research sources: `research/external/2026-05-20-averi-content-planning-startups-2026.md`, `research/external/2026-05-20-incremys-content-calendar-method-2026.md`, `research/external/2026-05-20-averi-content-calendar-that-works.md`
+> Research sources: `research/external/2026-05-20-averi-content-planning-startups-2026.md`, `research/external/2026-05-20-incremys-content-calendar-method-2026.md`, `research/external/2026-05-20-averi-content-calendar-that-works.md` (source-repository research, not shipped)
 
 ---
 
@@ -51,7 +51,7 @@ D+7:  GSC indexing confirmed; submit URL via Search Console if not indexed
 
 ## Realistic domain authority ramp
 
-These are the realistic organic growth timelines from the research (see `research/external/2026-05-20-seo-content-clusters-topical-authority.md`):
+These are the realistic organic growth timelines from the research (see `research/external/2026-05-20-seo-content-clusters-topical-authority.md` [source-repository research, not shipped]):
 
 | Phase | Timeline | What to expect |
 |---|---|---|

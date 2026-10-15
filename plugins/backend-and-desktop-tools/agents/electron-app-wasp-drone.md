@@ -1,7 +1,7 @@
 ---
 name: "electron-app-wasp-drone"
 description: "Electron desktop application specialist for main, preload, renderer, IPC, sandbox, permissions, packaging, and native verification. Use for Electron application work."
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write, Bash, Skill, WebSearch, WebFetch
 model: inherit
 ---
 

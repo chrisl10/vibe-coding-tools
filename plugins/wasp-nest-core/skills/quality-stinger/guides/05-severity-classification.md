@@ -2,7 +2,7 @@
 
 The Command Brief uses three tiers: Critical / Warning / Suggestion. This guide turns that into a decision tree so classification is reproducible across audits.
 
-Anchoring source: industry bug-severity norms (`research/2026-04-24-bug-severity-levels.md`), adapted for plan-relative auditing.
+Anchoring source: industry bug-severity norms (`research/2026-04-24-bug-severity-levels.md` [source-repository research, not shipped]), adapted for plan-relative auditing.
 
 ---
 
@@ -128,4 +128,4 @@ Record separately. Different severities are fine. Example: line 28 has both a mi
 ## See also
 
 - Worked examples with severity rationale: `examples/01-happy-path-clean-audit.md`, `examples/02-blocker-heavy-audit.md`.
-- Research: `research/2026-04-24-bug-severity-levels.md`.
+- Research: `research/2026-04-24-bug-severity-levels.md` (source-repository research, not shipped).

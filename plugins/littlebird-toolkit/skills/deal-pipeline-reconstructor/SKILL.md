@@ -483,4 +483,4 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/littlebird-mcp-reference.md` | Tool inventory, parameters, return shapes, retrieval patterns, known limitations |
 | `references/evidence-standards.md` | Receipts, observed versus inferred, confidence, attribution, partial rosters, confirmation gates |
 | `references/research/distilled-b2b-pipeline-management.md` | Cited distillation of the domain research, with conflicts kept as conflicts |
-| `references/research/README.md` | Archive contents, source mix, access limitations, and named research gaps |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |

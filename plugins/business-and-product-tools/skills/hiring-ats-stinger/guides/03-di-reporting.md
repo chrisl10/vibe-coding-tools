@@ -1,6 +1,6 @@
 # Guide 03: D&I Reporting and EEOC Compliance
 
-Source: `research/external/2026-05-20-di-reporting-eeoc.md`
+Source: `research/external/2026-05-20-di-reporting-eeoc.md` (source-repository research, not shipped)
 
 ---
 
@@ -69,7 +69,7 @@ EEOC self-ID data must be collected on a voluntary basis. The following setup ru
 
 Some ATS platforms use AI-powered screening or scoring. NYC Local Law 144 (the first AEDT law) requires annual bias audits for AI tools used in hiring decisions. Similar regulations are emerging in other jurisdictions in 2026.
 
-> **This is a rapidly evolving legal area.** Do NOT give specific jurisdiction-by-jurisdiction guidance. Recommend users verify current AEDT requirements with legal counsel for the states and countries where they hire. Source: `research/external/2026-05-20-di-reporting-eeoc.md`
+> **This is a rapidly evolving legal area.** Do NOT give specific jurisdiction-by-jurisdiction guidance. Recommend users verify current AEDT requirements with legal counsel for the states and countries where they hire. Source: `research/external/2026-05-20-di-reporting-eeoc.md` (source-repository research, not shipped)
 
 ---
 

@@ -6,7 +6,7 @@
 
 Biome (a single Rust binary replacing ESLint + Prettier + import organization) measures roughly 30-40x faster than combined ESLint+Prettier in practitioner benchmarks - about 0.09s vs 2.9s on a 50-file project, about 0.4s vs 14s on 300 files. This matters concretely for pre-commit hooks (a slow hook is the single most common reason developers reach for `git commit --no-verify`) and CI wall-clock time. But speed alone doesn't settle the decision - the coverage gap does.
 
-Source: `references/research/raw/biome-vs-eslint-prettier--2026-tradeoffs.md`.
+Source: `references/research/raw/biome-vs-eslint-prettier--2026-tradeoffs.md` (source-repository research, not shipped).
 
 ## The actual decision axis: plugin/rule coverage
 
@@ -44,5 +44,5 @@ Given the React-specific nature of the most commonly cited ESLint-retention reas
 
 ## Sources
 
-- `references/research/raw/biome-vs-eslint-prettier--2026-tradeoffs.md`
+- `references/research/raw/biome-vs-eslint-prettier--2026-tradeoffs.md` (source-repository research, not shipped)
 - `references/research/distilled-typescript-node.md` section 6

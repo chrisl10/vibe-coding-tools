@@ -2,7 +2,7 @@
 
 Primary entry point for all legal document generation tasks. Choose the right tool before generating; switching after is costly.
 
-**Source:** `research/external/2026-05-20-termly-vs-iubenda-comparison.md` + `research/external/2026-05-20-generator-landscape-2026.md`
+**Source:** `research/external/2026-05-20-termly-vs-iubenda-comparison.md` + `research/external/2026-05-20-generator-landscape-2026.md` (source-repository research, not shipped)
 
 ---
 

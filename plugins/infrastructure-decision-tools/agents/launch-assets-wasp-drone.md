@@ -1,7 +1,7 @@
 ---
 name: launch-assets-wasp-drone
 description: "Prepare platform-specific launch accounts, assets and owners. Use for readiness ledgers, dated costs, prerequisites and blockers for web, desktop, mobile or integrations, without provider changes."
-tools: Read, Grep, Glob, WebFetch, WebSearch
+tools: Read, Grep, Glob, WebFetch, WebSearch, Skill
 model: inherit
 ---
 

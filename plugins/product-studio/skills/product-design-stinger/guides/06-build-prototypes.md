@@ -2,7 +2,7 @@
 
 Goal: real, clickable, single-file HTML prototypes of the key screens that look finished enough to judge, in light and dark, with every state reachable.
 
-Grounding: [prototype fidelity](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-prototype-fidelity.md), [light-dark()](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/css--mdn-light-dark.md), [reduced motion](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/css--mdn-prefers-reduced-motion.md), [WCAG 2.2 new criteria](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/a11y--w3c-wai-new-in-22.md), [visual hierarchy](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-visual-hierarchy.md). Distilled: sections [5 and 9](../references/research/distilled-product-design.md).
+Grounding: prototype fidelity, light-dark(), reduced motion, WCAG 2.2 new criteria, visual hierarchy. Distilled: sections [5 and 9](../references/research/distilled-product-design.md).
 
 Precondition: Gate A is recorded in `direction.md`. If it is not, stop and go back to guide 01.
 

@@ -1,6 +1,6 @@
 # 04: Analytics & Tracking Stack
 
-Source PRD: `research/source-prds/prd-phase-04-analytics-tracking-stack.md`
+Source PRD: `research/source-prds/prd-phase-04-analytics-tracking-stack.md` (source-repository research, not shipped)
 
 ---
 

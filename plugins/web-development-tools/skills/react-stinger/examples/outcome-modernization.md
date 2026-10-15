@@ -1,6 +1,6 @@
 # React outcome worked records
 
-These are authored scenarios, not customer apps. Source mechanisms are in the [digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/react-stinger/references/research/outcome-modernization/distillation.md), with [claim hashes and excerpts](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/react-stinger/references/research/outcome-modernization/source-claims.json).
+These are authored scenarios, not customer apps. Source mechanisms are in the digest, with claim hashes and excerpts.
 
 ## Separate backend
 

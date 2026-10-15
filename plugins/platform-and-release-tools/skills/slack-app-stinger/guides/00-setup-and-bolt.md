@@ -1,6 +1,6 @@
 # Guide 00: Bolt SDK Setup and HTTP vs Socket Mode
 
-**Sources:** `research/external/2026-05-20-bolt-sdk-setup-patterns.md`, `research/external/2026-05-20-socket-mode-vs-http.md`, `research/external/2026-05-20-app-manifest-reference.md`
+**Sources:** `research/external/2026-05-20-bolt-sdk-setup-patterns.md`, `research/external/2026-05-20-socket-mode-vs-http.md`, `research/external/2026-05-20-app-manifest-reference.md` (source-repository research, not shipped)
 
 ---
 
@@ -26,7 +26,7 @@ Will this app be listed in the Slack Marketplace?
 ```
 
 > Note: You can switch between modes at any time in App Settings without reinstalling.
-> Source: `research/external/2026-05-20-socket-mode-vs-http.md`
+> Source: `research/external/2026-05-20-socket-mode-vs-http.md` (source-repository research, not shipped)
 
 ---
 
@@ -67,7 +67,7 @@ settings:
   token_rotation_enabled: false
 ```
 
-> Source: `research/external/2026-05-20-app-manifest-reference.md`
+> Source: `research/external/2026-05-20-app-manifest-reference.md` (source-repository research, not shipped)
 
 ---
 
@@ -83,7 +83,7 @@ After creating the app and installing it to your test workspace, collect three c
 
 Store these in a `.env` file (never commit to version control). For production, use a secrets manager.
 
-> Source: `research/external/2026-05-20-bolt-sdk-setup-patterns.md`
+> Source: `research/external/2026-05-20-bolt-sdk-setup-patterns.md` (source-repository research, not shipped)
 
 ---
 
@@ -150,7 +150,7 @@ if __name__ == "__main__":
 ```
 
 > Bolt Python uses `AsyncApp` + `asyncio` for non-blocking handler execution: important for respecting the 3-second ACK deadline under load.
-> Source: `research/external/2026-05-20-bolt-sdk-setup-patterns.md`
+> Source: `research/external/2026-05-20-bolt-sdk-setup-patterns.md` (source-repository research, not shipped)
 
 ---
 

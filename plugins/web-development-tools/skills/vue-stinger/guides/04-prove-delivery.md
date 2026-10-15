@@ -5,6 +5,6 @@
 4. With the existing browser harness, exercise direct route refresh, not-found handling, real backend boundaries and the entire authorized flow. Record exact commands, version, changed artifact hashes and outcomes; mocks cannot prove provider/auth deployment behavior.
 5. Return [delivery evidence](../references/templates/delivery-evidence.md). Use PASS, FAIL or NOT_RUN. If Vue runtime/compiler/vue-tsc is unavailable, mark those checks NOT_RUN and report what blocks acceptance. Follow ordered Security then Quality then orchestrator Health before any separately authorized commit/push.
 
-Grounding: [testing](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/vue-stinger/references/research/raw/testing.txt), [watchers](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/vue-stinger/references/research/raw/watchers.txt), [accessibility](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/vue-stinger/references/research/raw/accessibility.txt), [history](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/vue-stinger/references/research/raw/router-history.txt).
+Grounding: testing, watchers, accessibility, history.
 
-The [component spec](../references/templates/RecordForm.spec.ts) follows [Vue Test Utils forms](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/vue-stinger/references/research/raw/test-utils-forms.txt). Its runtime is NOT_RUN in this forge.
+The [component spec](../references/templates/RecordForm.spec.ts) follows Vue Test Utils forms. Its runtime is NOT_RUN in this forge.

@@ -1,6 +1,6 @@
 # No-Implied-Context Audit Protocol
 
-> **Research source:** `research/external/2026-03-08-incop-oncall-runbook-best-practices.md`, `research/external/2026-02-15-sreschool-runbook-definition-maturity.md`
+> **Research source:** `research/external/2026-03-08-incop-oncall-runbook-best-practices.md`, `research/external/2026-02-15-sreschool-runbook-definition-maturity.md` (source-repository research, not shipped)
 > **Principle:** `guides/00-principles.md` Principle 1 and 2
 
 This guide is the step-by-step protocol for auditing any runbook (new or existing) against the no-implied-context rule. Run it on every runbook before marking it READY FOR PRODUCTION.
@@ -154,7 +154,7 @@ If the command errors: proceed to Step 6.
 
 **Correction:** Replace with a reference to the secret store: `$(op read "op://Engineering/Hivemind-Prod/embeddings-api-key")`
 
-**Source:** SRE School quality attribute #9 (security-aware). See `research/external/2026-02-15-sreschool-runbook-definition-maturity.md`.
+**Source:** SRE School quality attribute #9 (security-aware). See `research/external/2026-02-15-sreschool-runbook-definition-maturity.md` (source-repository research, not shipped).
 
 ---
 

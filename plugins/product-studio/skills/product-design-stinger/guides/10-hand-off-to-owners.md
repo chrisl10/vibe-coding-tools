@@ -2,7 +2,7 @@
 
 Goal: close the package so sibling and downstream owners can act on it without re-reading the whole folder.
 
-Grounding: repo owners named in the locked topic ([topic.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/topic.md)); design-system bootstrap scope (repo: `packs/web-development-tools/skills/design-system-stinger/SKILL.md`); enforcement scope (repo: `packs/web-development-tools/skills/ux-ui-stinger/SKILL.md`); Impeccable implementation routing (repo: `src/skills/pest-controller-suit/SKILL.md`, "Frontend design / UI implementation").
+Grounding: repo owners named in the locked topic (topic.md); design-system bootstrap scope (repo: `packs/web-development-tools/skills/design-system-stinger/SKILL.md`); enforcement scope (repo: `packs/web-development-tools/skills/ux-ui-stinger/SKILL.md`); Impeccable implementation routing (repo: `src/skills/pest-controller-suit/SKILL.md`, "Frontend design / UI implementation").
 
 Precondition: Gate B is recorded, or the owner explicitly asked for a handoff of a draft (record that).
 

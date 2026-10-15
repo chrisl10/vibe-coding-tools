@@ -1,6 +1,6 @@
 # Guide 02: preact/compat Migration
 
-> Sources: `research/external/2026-05-20-preact-compat-compatibility.md`, `research/external/2026-05-20-preact11-breaking-changes.md`
+> Sources: `research/external/2026-05-20-preact-compat-compatibility.md`, `research/external/2026-05-20-preact11-breaking-changes.md` (source-repository research, not shipped)
 
 `preact/compat` is the compatibility shim that maps React's API to Preact's implementation. This guide covers alias setup, known gaps, and a step-by-step migration checklist.
 

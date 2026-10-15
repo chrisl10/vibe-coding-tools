@@ -2,6 +2,7 @@
 name: "source-command-scope-first-version"
 description: "Turn a validated opportunity into one bounded first-version PRD with measurable acceptance and deferred scope."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-scope-first-version

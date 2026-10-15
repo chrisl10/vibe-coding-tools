@@ -33,8 +33,10 @@ On 2026-09-03, official Rust sources identify 1.98.1 as stable. It supersedes 1.
 
 ## Sources
 
-- Current release and compiler fix: `../references/research/raw/rust--releases--rust-1-98-1.md`.
-- Intervening release inventory: `../references/research/raw/rust--releases--stable-release-notes.md`.
-- MSRV contract: `../references/research/raw/rust--cargo--rust-version.md`.
-- Resolver behavior: `../references/research/raw/rust--cargo--dependency-resolver.md`.
+The notes listed below are source-repository research, not shipped.
+
+- Current release and compiler fix: `../references/research/raw/rust--releases--rust-1-98-1.md` (source-repository research, not shipped).
+- Intervening release inventory: `../references/research/raw/rust--releases--stable-release-notes.md` (source-repository research, not shipped).
+- MSRV contract: `../references/research/raw/rust--cargo--rust-version.md` (source-repository research, not shipped).
+- Resolver behavior: `../references/research/raw/rust--cargo--dependency-resolver.md` (source-repository research, not shipped).
 - Recent Cargo and supply-chain security notices: `../references/research/distilled-rust-current.md`.

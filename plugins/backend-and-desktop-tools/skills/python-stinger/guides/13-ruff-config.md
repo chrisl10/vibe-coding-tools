@@ -149,6 +149,6 @@ See `references/black-isort-flake8-comparison.md` for the full migration map.
 
 ## Sources
 
-- `research/2026-05-03-ruff-config.md`
+- `research/2026-05-03-ruff-config.md` (source-repository research, not shipped)
 - https://docs.astral.sh/ruff/configuration/
 - https://docs.astral.sh/ruff/linter/

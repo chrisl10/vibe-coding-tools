@@ -1,7 +1,7 @@
 ---
 name: pwa-wasp-drone
 description: "Implement scoped browser PWA manifest, service-worker lifecycle and public offline assets. Preserve private-request bypass, accepted sync/auth contracts and actual browser proof."
-tools: Read, Grep, Glob, Edit, Write, Bash, WebFetch, WebSearch
+tools: Read, Grep, Glob, Edit, Write, Bash, WebFetch, WebSearch, Skill
 model: inherit
 ---
 

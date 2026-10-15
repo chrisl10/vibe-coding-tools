@@ -1,6 +1,6 @@
 # Bifrost versioning and freeze policy
 
-Grounded in [raw/07](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/bifrost-stinger/references/research/raw/07-tags-and-changelog.md).
+Grounded in raw/07.
 
 ## Tag scheme
 

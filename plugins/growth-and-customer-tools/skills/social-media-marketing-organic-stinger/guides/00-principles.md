@@ -6,13 +6,13 @@ The six non-negotiables that govern every engagement. Not preferences — these 
 
 ## 1. Authenticity-first: the irreplaceable competitive advantage
 
-"In a world where everyone has access to the same AI tools, your unfakeable human experience is the differentiator." — For The Love of Socials (see `research/external/2026-05-20-founder-led-content-wins.md`)
+"In a world where everyone has access to the same AI tools, your unfakeable human experience is the differentiator." — For The Love of Socials (see `research/external/2026-05-20-founder-led-content-wins.md` [source-repository research, not shipped])
 
 AI can study a million posts and produce passable imitations. It cannot manufacture the credibility a founder builds by showing up as themselves — the specific customer conversation they had on a Tuesday, the product decision they regretted, the milestone they hit that still felt hollow. Founder-led content is irreplaceable because it is inherently unreplicable.
 
 This does not mean "never use AI tools." It means the AI cannot be the voice. AI can structure, draft, or suggest — the founder's specificity, contractions, and personal data anchors make the post authentic. The test is simple: does this post contain something no AI could have fabricated?
 
-**Research grounding:** See `research/external/2026-05-20-founder-led-content-wins.md` for the authenticity competitive advantage framing. See `research/external/2026-05-20-ai-content-detection-linkedin.md` for the LinkedIn 360Brew model's practical definition of hybrid vs. lazy AI use.
+**Research grounding:** See `research/external/2026-05-20-founder-led-content-wins.md` for the authenticity competitive advantage framing. See `research/external/2026-05-20-ai-content-detection-linkedin.md` (source-repository research, not shipped) for the LinkedIn 360Brew model's practical definition of hybrid vs. lazy AI use.
 
 ---
 
@@ -24,7 +24,7 @@ A founder with 400 genuine followers and a 5% engagement rate has a more valuabl
 
 **Never recommend:** bought followers, engagement pods ("comment groups" that artificially inflate comment counts), automation bots that auto-follow/unfollow.
 
-**Research grounding:** `research/external/2026-05-20-engagement-benchmarks-2026.md`
+**Research grounding:** `research/external/2026-05-20-engagement-benchmarks-2026.md` (source-repository research, not shipped)
 
 ---
 
@@ -38,7 +38,7 @@ Each platform has fundamentally different audience expectations, content format 
 
 **The distinction that matters:** Repurposing is fine. Cross-posting automation is not. Repurposing means rewriting the core insight in each platform's native register. Cross-posting means hitting "share everywhere" and calling it done.
 
-**Research grounding:** `research/external/2026-05-20-indie-hacker-x-strategy.md` ("adapt it for LinkedIn" vs. automated syndication), `research/external/2026-05-20-platform-algorithm-comparison.md` (X link suppression 30-50%).
+**Research grounding:** `research/external/2026-05-20-indie-hacker-x-strategy.md` ("adapt it for LinkedIn" vs. automated syndication), `research/external/2026-05-20-platform-algorithm-comparison.md` (source-repository research, not shipped) (X link suppression 30-50%).
 
 ---
 
@@ -53,7 +53,7 @@ Realistic 2026 benchmarks:
 
 Sub-1,000-follower accounts should optimize for engagement rate, not follower count. A 7.84% engagement rate at nano-tier (LinkedIn/Bluesky) means the audience that exists genuinely cares. That's the asset.
 
-**Research grounding:** `research/external/2026-05-20-engagement-benchmarks-2026.md`, `research/external/2026-05-20-bluesky-vs-threads-founders.md`
+**Research grounding:** `research/external/2026-05-20-engagement-benchmarks-2026.md`, `research/external/2026-05-20-bluesky-vs-threads-founders.md` (source-repository research, not shipped)
 
 ---
 
@@ -67,7 +67,7 @@ Instagram: shifted to weight DM shares and watch time over like counts.
 
 These are not arbitrary changes. They are platforms trying to surface content people actually want to read. The founder who writes authentically never needed to adapt.
 
-**Research grounding:** `research/external/2026-05-20-anti-ai-backlash-algorithms.md`, `research/external/2026-05-20-ai-content-detection-linkedin.md`
+**Research grounding:** `research/external/2026-05-20-anti-ai-backlash-algorithms.md`, `research/external/2026-05-20-ai-content-detection-linkedin.md` (source-repository research, not shipped)
 
 ---
 
@@ -83,4 +83,4 @@ The recommendation: pick one primary platform where the target audience lives an
 
 For tech/SaaS solo founders in 2026: start with LinkedIn (B2B leads, 2.94% ER, 3-day content lifespan) or Bluesky (dev/tech audience, 4.2% ER, early-mover advantage). Add the other when consistent.
 
-**Research grounding:** `research/external/2026-05-20-platform-algorithm-comparison.md` ("Focus 60% effort on one primary platform"), `research/external/2026-05-20-bluesky-vs-threads-founders.md`
+**Research grounding:** `research/external/2026-05-20-platform-algorithm-comparison.md` ("Focus 60% effort on one primary platform"), `research/external/2026-05-20-bluesky-vs-threads-founders.md` (source-repository research, not shipped)

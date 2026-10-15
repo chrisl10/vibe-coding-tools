@@ -15,7 +15,7 @@ Best-fit ICP: D2C e-commerce in visual categories (home, garden, fashion, food, 
 | Catalog integration ROAS uplift | +30-50% vs manual product ads |
 | Attribution window | 70-90 days (longer than most platforms) |
 
-*Source: `research/external/2026-05-20-pinterest-roas-benchmarks-2026.md`*
+*Source: `research/external/2026-05-20-pinterest-roas-benchmarks-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -29,7 +29,7 @@ Pinterest users use the platform for **planning and discovery**, not impulse buy
 
 **Implication:** Never evaluate Pinterest ROAS at 30 days. The 90-day window is the correct measurement horizon.
 
-*Source: `research/external/2026-05-20-pinterest-roas-benchmarks-2026.md`*
+*Source: `research/external/2026-05-20-pinterest-roas-benchmarks-2026.md` (source-repository research, not shipped)*
 
 ---
 

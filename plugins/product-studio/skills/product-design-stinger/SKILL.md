@@ -61,7 +61,7 @@ Take the Product Strategy at `library/knowledge/private/product/product-strategy
 - [package-layout.md](references/package-layout.md): output tree, IDs, status values.
 - [references/templates/](references/templates): every artifact's starting shape.
 - [distilled-product-design.md](references/research/distilled-product-design.md): cited facts, including the confirmed, secondary and unknown Claude Design tables. Load when a claim needs checking.
-- [references/research/raw/](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw) and [source-ledger.json](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/source-ledger.json): dated primary sources.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - [scripts/check-design-package.py](scripts/check-design-package.py): run after every authoring pass and on every import.
 - [Paired Drone](../../agents/product-design-wasp-drone.md): delegation contract.
 

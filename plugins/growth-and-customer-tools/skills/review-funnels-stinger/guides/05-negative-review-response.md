@@ -6,7 +6,7 @@ Every negative review deserves a response. Unanswered negative reviews lower con
 
 **48-hour SLA:** Respond within 48 hours of a review appearing. G2 and Trustpilot both surface "last responded" timestamps.
 
-Source: `research/external/2026-05-20-negative-review-response-strategy.md`
+Source: `research/external/2026-05-20-negative-review-response-strategy.md` (source-repository research, not shipped)
 
 ---
 

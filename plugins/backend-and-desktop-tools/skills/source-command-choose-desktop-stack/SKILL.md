@@ -2,6 +2,7 @@
 name: "source-command-choose-desktop-stack"
 description: "Choose one desktop architecture with native boundary, operating-system support, persistence, update and release evidence."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-choose-desktop-stack

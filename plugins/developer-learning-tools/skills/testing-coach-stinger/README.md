@@ -6,7 +6,7 @@ Learn how to write an observable assertion, interpret a failure and check a chan
 - [Practice](guides/practice-and-change-a-condition.md): prediction, actual attempt, hint, retry and transfer.
 - [Record evidence](guides/read-failure-and-record-evidence.md): expected versus actual, support and uncertainty.
 - [Worksheet](references/templates/lesson-worksheet.md), [completed exercise](references/examples/seat-contract.md) and [fixed synthetic fixture](references/examples/seat-fixture.py).
-- [Topic](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/testing-coach-stinger/references/research/topic.md), [digest](references/research/distilled-testing-coach.md), [source ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/testing-coach-stinger/references/research/source-ledger.json) and raw captures.
+- Topic, [digest](references/research/distilled-testing-coach.md), source ledger and raw captures.
 - [Ten constructed cases](references/examples/negative-policy-cases.md): NOT_RUN real runtime cases.
 
 ## Related owners and host support

@@ -81,4 +81,4 @@ Method semantics, safety, idempotency, and common misuse patterns.
 
 ---
 
-*Sources: RFC 9110 §9, RFC 5789 (PATCH), `research/external/2026-05-20-rest-status-codes-2026.md`*
+*Sources: RFC 9110 §9, RFC 5789 (PATCH), `research/external/2026-05-20-rest-status-codes-2026.md` (source-repository research, not shipped)*

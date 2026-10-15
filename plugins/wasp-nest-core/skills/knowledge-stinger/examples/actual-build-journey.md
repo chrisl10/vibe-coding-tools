@@ -4,7 +4,7 @@
 
 This source tour helps a new coder locate the Wasp Nest builder and understand how a requested plugin becomes part of its selected package list. It describes inspected source, with no claim that a native client installed or ran the result.
 
-**Related:** [builder snapshot](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/knowledge-stinger/references/research/novice-explanation/raw/actual-build.py), [selection snapshot](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/knowledge-stinger/references/research/novice-explanation/raw/actual-plugin-topology.py), [journey ledger](../references/examples/novice-explanation/evidence/actual-build-ledger.json).
+**Related:** builder snapshot, selection snapshot, [journey ledger](../references/examples/novice-explanation/evidence/actual-build-ledger.json).
 
 ## Where the request enters
 

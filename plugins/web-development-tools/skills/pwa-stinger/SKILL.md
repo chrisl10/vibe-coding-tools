@@ -38,7 +38,7 @@ Implement approved browser PWA/offline behavior with an exact public static asse
 
 ## References map
 
-- [Digest](references/research/distilled-pwa.md), [ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/pwa-stinger/references/research/source-ledger.json), [exact locators](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/pwa-stinger/references/research/claim-locators.json): official grounding.
+- [Digest](references/research/distilled-pwa.md), ledger, exact locators: official grounding.
 - [Contract](references/templates/offline-contract.md), [templates and fixture map](README.md): bounded fail-closed starters and evidence limits.
 - [Negative cases](references/examples/negative-cases.md): disallowed unsafe substitutions.
 - [Paired Drone](../../agents/pwa-wasp-drone.md): scope and delivery contract.

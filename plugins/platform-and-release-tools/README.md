@@ -107,6 +107,10 @@ Codex can use the named skill or its generated `source-command-<name>` wrapper w
 - `build-integration-api` also needs `backend-and-desktop-tools`.
 - `build-integration-data` also needs `data-and-ai-tools`.
 - `prepare-native-release-platform` also needs `backend-and-desktop-tools`.
+- `prepare-privacy-implementation (legal documents)` also needs `business-and-product-tools`.
+- `plan-traffic-capacity (operating-cost model)` also needs `software-economics-tools`.
+- `plan-traffic-capacity (staffing capacity)` also needs `business-and-product-tools`.
+- `plan-traffic-capacity (database and pool design)` also needs `data-and-ai-tools`.
 
 Core supplies shared routing and review methods. Native Codex role registration requires the explicit installed-plugin registry and trusted Core hook; a marketplace selection alone is not proof of registration. Read the linked skill before work. Missing source, browser, connector, renderer or account access is a reported gap. Installation does not authorize sending, publishing, paid work or live settings changes.
 <!-- wasp-pack-guide:end -->

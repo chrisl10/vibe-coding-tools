@@ -83,15 +83,15 @@ csv-xlsx-import-export-stinger/
 
 These are not in the official docs but emerged from the 2026 literature sweep:
 
-1. **SheetJS cannot stream-read XLSX.** The ZIP container requires buffering the full file. Use a Web Worker to keep the main thread responsive. `xlsx-stream-rows` (maintenance status unverified -- check before recommending as primary solution) offers true bounded-memory iteration. See `guides/01-streaming-parse-large-files.md` and `research/external/2026-05-20-sheetjs-streaming-api.md`.
+1. **SheetJS cannot stream-read XLSX.** The ZIP container requires buffering the full file. Use a Web Worker to keep the main thread responsive. `xlsx-stream-rows` (maintenance status unverified -- check before recommending as primary solution) offers true bounded-memory iteration. See `guides/01-streaming-parse-large-files.md` and `research/external/2026-05-20-sheetjs-streaming-api.md` (source-repository research, not shipped with the plugin).
 
-2. **ExcelJS WorkbookWriter memory leak.** Issue #2916, PR #2558 pending for v5.0. Workaround: call `row.commit()` on every row immediately after writing. Do NOT accumulate rows in memory. See `guides/06-export-xlsx.md` and `research/external/2026-05-20-exceljs-github-readme.md`.
+2. **ExcelJS WorkbookWriter memory leak.** Issue #2916, PR #2558 pending for v5.0. Workaround: call `row.commit()` on every row immediately after writing. Do NOT accumulate rows in memory. See `guides/06-export-xlsx.md` and `research/external/2026-05-20-exceljs-github-readme.md` (source-repository research, not shipped with the plugin).
 
-3. **Tab-prefix CSV injection survives Excel save/reopen ~90% of the time; single-quote does not.** Layer all three defenses (cell sanitization + correct Content-Type + Content-Disposition). See `guides/04-csv-injection-prevention.md` and `research/external/2026-05-20-csv-injection-dead-ends.md`.
+3. **Tab-prefix CSV injection survives Excel save/reopen ~90% of the time; single-quote does not.** Layer all three defenses (cell sanitization + correct Content-Type + Content-Disposition). See `guides/04-csv-injection-prevention.md` and `research/external/2026-05-20-csv-injection-dead-ends.md` (source-repository research, not shipped with the plugin).
 
 4. **react-spreadsheet-import (RSI) adds Chakra UI.** For shadcn/ui stacks, this means ~200KB+ bundle addition. Prefer the hand-rolled wizard from `examples/column-mapping-wizard.tsx` or the `bow-react-spreadsheet-import` fork for Chakra-free teams. See `guides/02-column-mapping-ux.md`.
 
-5. **Dromo processes data client-side (Private Mode) on all plans.** OneSchema and Flatfile process server-side. This matters for GDPR/HIPAA -- only Dromo guarantees PII never leaves the browser. See `guides/02-column-mapping-ux.md` and `research/external/2026-05-20-oneschema-vs-dromo-comparison.md`.
+5. **Dromo processes data client-side (Private Mode) on all plans.** OneSchema and Flatfile process server-side. This matters for GDPR/HIPAA -- only Dromo guarantees PII never leaves the browser. See `guides/02-column-mapping-ux.md` and `research/external/2026-05-20-oneschema-vs-dromo-comparison.md` (source-repository research, not shipped with the plugin).
 
 ---
 

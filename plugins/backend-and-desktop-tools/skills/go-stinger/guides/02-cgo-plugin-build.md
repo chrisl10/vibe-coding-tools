@@ -2,7 +2,7 @@
 
 Verb: "build the plugin", "the .so won't load", "plugin crashes the binary", "rebuild plugins against the new core".
 
-Full constraint table: `references/plugin-abi-constraints.md` (grounded in [raw/02](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/go-stinger/references/research/raw/02-plugin-package.md)).
+Full constraint table: `references/plugin-abi-constraints.md` (grounded in raw/02).
 
 ## The one-pipeline rule
 

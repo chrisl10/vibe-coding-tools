@@ -1,6 +1,6 @@
 # Guide 04: Events API
 
-**Sources:** `research/external/2026-05-20-events-api-verification.md`, `research/external/2026-05-20-bolt-sdk-setup-patterns.md`
+**Sources:** `research/external/2026-05-20-events-api-verification.md`, `research/external/2026-05-20-bolt-sdk-setup-patterns.md` (source-repository research, not shipped)
 
 ---
 
@@ -44,7 +44,7 @@ async def slack_events(request: Request):
     # ... process other events
 ```
 
-> Source: `research/external/2026-05-20-events-api-verification.md`
+> Source: `research/external/2026-05-20-events-api-verification.md` (source-repository research, not shipped)
 
 ---
 
@@ -80,7 +80,7 @@ function verifySlackSignature(signingSecret: string, headers: Headers, body: str
 }
 ```
 
-> Source: `research/external/2026-05-20-events-api-verification.md`
+> Source: `research/external/2026-05-20-events-api-verification.md` (source-repository research, not shipped)
 
 ---
 
@@ -115,7 +115,7 @@ app.post('/slack/events', (req, res) => {
 });
 ```
 
-> Source: `research/external/2026-05-20-events-api-verification.md`
+> Source: `research/external/2026-05-20-events-api-verification.md` (source-repository research, not shipped)
 
 ---
 

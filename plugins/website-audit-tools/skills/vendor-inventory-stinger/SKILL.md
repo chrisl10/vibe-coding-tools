@@ -12,10 +12,6 @@ metadata:
 
 # Vendor Inventory Stinger
 
-> **Forge status:** stages 1-6 complete (Topic, Research, Distillation, References, Guides, final
-> Skill/Drone authorship). Stage 7 (Register: pest-controller-suit registration and cross-harness deploy)
-> has not run yet.
-
 ## Purpose
 
 Equips **vendor-inventory-wasp-drone**, wave W1b of every Website Auditor by Legion Code Inc.
@@ -26,7 +22,7 @@ peers) as its own category. Full scope and acceptance criteria:
 [prd-004-vendor-inventory](../../library/requirements/backlog/prd-004-vendor-inventory/prd-004-vendor-inventory-index.md).
 
 Every factual claim this skill makes traces to a downloaded primary source in
-`references/research/raw/` or to this pair's PRD/the build plan. The archive covers only Google Tag
+`references/research/raw/` (source-repository research, not shipped with the plugin) or to this pair's PRD/the build plan. The archive covers only Google Tag
 Manager and Search Atlas in real depth, two sources total; everywhere else (the broader vendor
 lookup table's judgment-call rows, and the Search Atlas detection signature itself, which the
 vendor's own page never documents) that gap is named explicitly, never smoothed into an unstated
@@ -85,7 +81,7 @@ guess. See `references/research/distilled-vendor-inventory.md` and
   per-vendor row shape before writing the markdown report
 - `references/research/distilled-vendor-inventory.md`, load when a domain claim needs verification
   or this Stinger's coverage gaps need checking before making a claim
-- `references/research/raw/`, load when tracing a distilled claim back to its primary source
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `references/scripts/README.md` and `shared/scripts/vendor-census.py`, load/run for the
   deterministic classifier that drives steps 3-5 of the procedure above
 

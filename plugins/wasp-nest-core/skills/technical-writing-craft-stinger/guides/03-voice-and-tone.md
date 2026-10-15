@@ -1,6 +1,6 @@
 # 03 - Voice and Tone
 
-> Source: `research/external/03-google-developer-style-guide.md`, `research/external/07-stripe-docs-approach.md`
+> Source: `research/external/03-google-developer-style-guide.md`, `research/external/07-stripe-docs-approach.md` (source-repository research, not shipped)
 
 Voice and tone rules determine how the text sounds to the reader. The goal is not to impose a single style on all documentation but to enforce *consistency within a document* and *house style adherence when a style guide is provided*.
 
@@ -10,7 +10,7 @@ Voice and tone rules determine how the text sounds to the reader. The goal is no
 
 ## Default style (apply when no house style is supplied)
 
-These defaults are grounded in the Google Developer Documentation Style Guide (`research/external/03-google-developer-style-guide.md`), which is the most widely adopted public developer documentation style.
+These defaults are grounded in the Google Developer Documentation Style Guide (`research/external/03-google-developer-style-guide.md` [source-repository research, not shipped]), which is the most widely adopted public developer documentation style.
 
 ### Active voice
 
@@ -90,4 +90,4 @@ When a house style is supplied:
 4. If the house style is ambiguous or silent on a specific rule, apply the default and note in the report which default was applied.
 5. If the document contradicts the house style, flag as Blocker (if the contradiction is systematic) or Suggestion (if isolated).
 
-**Note on Stripe:** Stripe does not publish a traditional public style guide document. Stripe's principles must be inferred from the Markdoc blog post (stripe.dev/blog/markdoc) and third-party analyses (`research/external/07-stripe-docs-approach.md`). When asked to match Stripe style, apply: second person, imperative mood, short sentences, concrete code before prose, minimal theory. Cite these as inferred principles, not a direct URL.
+**Note on Stripe:** Stripe does not publish a traditional public style guide document. Stripe's principles must be inferred from the Markdoc blog post (stripe.dev/blog/markdoc) and third-party analyses (`research/external/07-stripe-docs-approach.md` [source-repository research, not shipped]). When asked to match Stripe style, apply: second person, imperative mood, short sentences, concrete code before prose, minimal theory. Cite these as inferred principles, not a direct URL.

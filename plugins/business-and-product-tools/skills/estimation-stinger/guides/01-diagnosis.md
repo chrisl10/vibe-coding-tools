@@ -11,7 +11,7 @@ Always diagnose before recommending. The wrong framework applied to the wrong dy
 - "We give estimates and then the manager adjusts them to fit the roadmap."
 - "Story points always end up at what it takes to fit the sprint."
 
-**Root cause:** Organizational pressure causes estimates to be tweaked toward a pre-set target rather than reflecting genuine complexity assessment. This is Flyvbjerg's "strategic misrepresentation" pattern. See `research/external/04-planning-fallacy.md`.
+**Root cause:** Organizational pressure causes estimates to be tweaked toward a pre-set target rather than reflecting genuine complexity assessment. This is Flyvbjerg's "strategic misrepresentation" pattern. See `research/external/04-planning-fallacy.md` (source-repository research, not shipped).
 
 **Recommended intervention:** Introduce estimation sessions BEFORE roadmap dates are set. Use Planning Poker or T-shirt sizing to produce independently anchored estimates, then let the roadmap adapt. If that is politically impossible, pivot to probabilistic forecasting (Monte Carlo) as the honest conversation tool with stakeholders. See `guides/04-monte-carlo.md`.
 
@@ -37,7 +37,7 @@ Always diagnose before recommending. The wrong framework applied to the wrong dy
 - "A '3' story for developer A takes 2 hours; a '3' for developer B takes 3 days."
 - "Our burndown charts are meaningless because points are inconsistent."
 
-**Root cause:** Story-point calibration drifts as team composition changes, work type shifts, or the reference story is forgotten. This is why the Maria Chec/Duarte research found that replacing all story points with "1" changed the forecast by only 8%: the size signal had already decayed. See `research/external/01-noestimates.md`.
+**Root cause:** Story-point calibration drifts as team composition changes, work type shifts, or the reference story is forgotten. This is why the Maria Chec/Duarte research found that replacing all story points with "1" changed the forecast by only 8%: the size signal had already decayed. See `research/external/01-noestimates.md` (source-repository research, not shipped).
 
 **Recommended intervention:** Re-anchor with a calibration session (explicit reference stories at 1, 3, 5, 8). If the team has 6+ months of cycle-time data, evaluate switching from story-point velocity to throughput-based forecasting. The data may show the points were never adding accuracy.
 
@@ -50,7 +50,7 @@ Always diagnose before recommending. The wrong framework applied to the wrong dy
 - "Developers are scared to give honest estimates because they'll be held to them."
 - "Velocity gaming: we inflate points so we 'hit' the sprint."
 
-**Root cause:** The commitment trap from `guides/00-principles.md`. When estimates are contractualized, developers rationally optimize for hitting the number, not for accuracy. The Nokia failure case (Vasco Duarte, 100 teams all said yes) is the enterprise-scale version of this exact pattern. See `research/external/01-noestimates.md`.
+**Root cause:** The commitment trap from `guides/00-principles.md`. When estimates are contractualized, developers rationally optimize for hitting the number, not for accuracy. The Nokia failure case (Vasco Duarte, 100 teams all said yes) is the enterprise-scale version of this exact pattern. See `research/external/01-noestimates.md` (source-repository research, not shipped).
 
 **Recommended intervention:** This is an organizational behavior problem, not a framework problem. Changing the framework while keeping the commitment culture will fail. Introduce probabilistic communication ("70% confident we'll finish in 4 weeks; 90% confident in 6 weeks") as a concrete alternative. Monte Carlo output in P50/P85/P95 form is the most defensible format for stakeholder conversations. See `guides/04-monte-carlo.md`.
 
@@ -87,4 +87,4 @@ If organizational culture treats estimates as commitments, treat that as Categor
 ---
 
 *Worked examples demonstrating this diagnosis process: `examples/fibonacci-estimation-session.md`, `examples/monte-carlo-forecast.md`*
-*Cited research: `research/external/01-noestimates.md`, `research/external/04-planning-fallacy.md`, `research/external/05-t-shirt-sizing.md`*
+*Cited research: `research/external/01-noestimates.md`, `research/external/04-planning-fallacy.md`, `research/external/05-t-shirt-sizing.md` (source-repository research, not shipped)*

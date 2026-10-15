@@ -2,7 +2,7 @@
 
 After the traceability table is filled, evaluate the implementation along these five axes. Each axis yields a row in the Scorecard and may yield findings at any severity.
 
-The five axes are: **Completeness**, **Correctness**, **Alignment**, **Gaps**, **Detrimental Patterns**. They map roughly onto Google's eight reviewer dimensions (see `research/2026-04-24-google-code-review-standard.md`), compressed for this Drone's plan-relative scope.
+The five axes are: **Completeness**, **Correctness**, **Alignment**, **Gaps**, **Detrimental Patterns**. They map roughly onto Google's eight reviewer dimensions (see `research/2026-04-24-google-code-review-standard.md` [source-repository research, not shipped]), compressed for this Drone's plan-relative scope.
 
 ---
 
@@ -56,7 +56,7 @@ Checks:
 
 Findings: usually Warning for naming/placement. Critical for module-boundary violations (e.g., a public package entrypoint importing a `src/internal/*` module, leaks private API into the published `@deeplake/hivemind` surface).
 
-TypeScript/Node/ESM specifics (general best practice, plus `research/2026-04-24-google-code-review-standard.md`):
+TypeScript/Node/ESM specifics (general best practice, plus `research/2026-04-24-google-code-review-standard.md` [source-repository research, not shipped]):
 
 - ESM import paths carry explicit extensions where the build requires them; no CommonJS `require` in ESM modules.
 - `package.json` `exports` map is not widened to leak internal paths.
@@ -90,7 +90,7 @@ Findings produced: mostly Warning. Critical only when a gap is directly ship-blo
 Checks:
 
 ### Regressions
-- For every modified function signature, grep the repo for callers. Any caller unvisited by the diff that relied on the old contract is a regression candidate. (Source: `research/2026-04-24-regression-without-tests.md`.)
+- For every modified function signature, grep the repo for callers. Any caller unvisited by the diff that relied on the old contract is a regression candidate. (Source: `research/2026-04-24-regression-without-tests.md` [source-repository research, not shipped].)
 - For every deleted file, grep for remaining imports.
 
 ### Security smells
@@ -101,7 +101,7 @@ Checks:
 - (Deep security audit is `security-wasp-drone`'s job; here, flag obvious smells only.)
 
 ### Performance anti-patterns
-- **N+1 dataset reads** (general ORM/dataset pattern, source: `research/2026-04-24-prisma-n-plus-one.md`):
+- **N+1 dataset reads** (general ORM/dataset pattern, source: `research/2026-04-24-prisma-n-plus-one.md` [source-repository research, not shipped]):
   - `for (const id of ids) { await dataset.get(id) }`, loop-over-single-read instead of one batched read.
   - A list read followed by a per-item lookup in `.map()` that re-queries the dataset per element.
   - Repeated re-embedding of the same document in a loop instead of a single batch embed.
@@ -141,4 +141,4 @@ Use consistent emoji. Do not mix ✅/✔️ or ❌/✖️.
 - Severity classification for each finding: `05-severity-classification.md`.
 - Common gap catalog: `07-common-gaps.md`.
 - Examples: `examples/01-happy-path-clean-audit.md` (clean scorecard), `examples/02-blocker-heavy-audit.md` (failing scorecard).
-- Research: `research/2026-04-24-google-code-review-standard.md`, `research/2026-04-24-react-nextjs-review-checklist.md`, `research/2026-04-24-prisma-n-plus-one.md`, `research/2026-04-24-regression-without-tests.md`.
+- Research: `research/2026-04-24-google-code-review-standard.md`, `research/2026-04-24-react-nextjs-review-checklist.md`, `research/2026-04-24-prisma-n-plus-one.md`, `research/2026-04-24-regression-without-tests.md` (source-repository research, not shipped).

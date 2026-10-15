@@ -2,14 +2,14 @@
 guide: 05-integrations
 stinger: customer-support-tooling-stinger
 research_sources:
-  - research/external/2026-05-20-slack-linear-integration.md
-  - research/external/2026-05-20-plain-docs-overview.md
-  - research/external/2026-05-20-front-shared-inbox.md
+  - research/external/2026-05-20-slack-linear-integration.md  # source-repository research, not shipped
+  - research/external/2026-05-20-plain-docs-overview.md  # source-repository research, not shipped
+  - research/external/2026-05-20-front-shared-inbox.md  # source-repository research, not shipped
 ---
 
 # Integrations — Slack Sync, Linear Escalation, Notion KB Surfacing
 
-Source: `research/external/2026-05-20-slack-linear-integration.md`
+Source: `research/external/2026-05-20-slack-linear-integration.md` (source-repository research, not shipped)
 
 ## Slack bi-directional sync
 
@@ -27,7 +27,7 @@ Intercom's native Slack integration fires notifications to a designated Slack ch
 - Conversation assigned
 - SLA breach (if configured)
 
-Full bi-directional sync requires Runbear middleware or a custom Intercom webhook → Slack Bolt app. See `research/external/2026-05-20-slack-linear-integration.md` for the Runbear pattern.
+Full bi-directional sync requires Runbear middleware or a custom Intercom webhook → Slack Bolt app. See `research/external/2026-05-20-slack-linear-integration.md` (source-repository research, not shipped) for the Runbear pattern.
 
 ### Help Scout / Front + Slack
 
@@ -43,7 +43,7 @@ Both tools support Slack notifications (not bi-directional). Configure in Settin
 4. Linear issue is created with a link back to the Plain thread.
 5. When the Linear issue is closed, Plain thread is auto-resolved.
 
-This is the cleanest pattern. No middleware. No sync drift. Source: `research/external/2026-05-20-plain-docs-overview.md`.
+This is the cleanest pattern. No middleware. No sync drift. Source: `research/external/2026-05-20-plain-docs-overview.md` (source-repository research, not shipped).
 
 ### Intercom + Linear (via Zapier/Make)
 
@@ -62,7 +62,7 @@ Notion can be surfaced as a knowledge base within support tools using these patt
 
 ### Pattern 1: Notion + Front (built-in integration)
 
-Front has a Notion integration in its Marketplace. Agents can search Notion pages from within the conversation sidebar. Copy link or inline content into replies. Source: `research/external/2026-05-20-front-shared-inbox.md`.
+Front has a Notion integration in its Marketplace. Agents can search Notion pages from within the conversation sidebar. Copy link or inline content into replies. Source: `research/external/2026-05-20-front-shared-inbox.md` (source-repository research, not shipped).
 
 ### Pattern 2: Notion + Plain (via API/webhook)
 

@@ -148,5 +148,5 @@ Use `local('Arial')` as the most universally available option. Avoid platform-sp
 - `guides/00-principles.md`: CLS → font-swap consequence chain
 - `guides/01-font-display-decision-matrix.md`: why `swap` requires this guide's technique
 - `guides/04-nextjs-font.md`: `adjustFontFallback` option in next/font
-- `research/external/`: fontpie, capsizefitter, web.dev CLS, Chrome DevTools font rendering
+- `research/external/` (source-repository research, not shipped): fontpie, capsizefitter, web.dev CLS, Chrome DevTools font rendering
 - `examples/edge-case-self-hosted-variable.md`: full implementation including fontpie values

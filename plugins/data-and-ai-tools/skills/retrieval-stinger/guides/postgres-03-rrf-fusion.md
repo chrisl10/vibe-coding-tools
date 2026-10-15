@@ -2,7 +2,7 @@
 
 Combining the full-text arm (`postgres-01-full-text-search.md`) and the pgvector arm (`postgres-02-pgvector-recall.md`) into one ranked result, in one Postgres query, no second service.
 
-> Ground truth: `references/research/raw/supabase--hybrid-search--reciprocal-rank-fusion-official-docs.md` (the reference implementation this guide follows), `references/research/raw/weaviate--hybrid-search--fusion-alpha-official-docs.md` (a second, independent fusion implementation used to name the RRF tradeoff explicitly). Synthesis: `references/research/distilled-retrieval.md`.
+> Ground truth: `references/research/raw/supabase--hybrid-search--reciprocal-rank-fusion-official-docs.md` (the reference implementation this guide follows), `references/research/raw/weaviate--hybrid-search--fusion-alpha-official-docs.md` (source-repository research, not shipped) (a second, independent fusion implementation used to name the RRF tradeoff explicitly). Synthesis: `references/research/distilled-retrieval.md`.
 
 ---
 

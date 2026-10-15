@@ -23,7 +23,7 @@ Fix, then re-run the gate. Medium or above findings must be resolved before ship
 
 ## Ship (per unit)
 
-The rule: never ship from a worktree a writer can touch. The reference scripts live in `references/research/raw/` (`kb-refresh--script--ship-unit-2026-10-04.sh` is the superseded pattern; `kb-refresh--script--ship-shard-2026-10-04.sh` is the working one).
+The rule: never ship from a worktree a writer can touch. The reference scripts live in `references/research/raw/` (source-repository research, not shipped) (`kb-refresh--script--ship-unit-2026-10-04.sh` is the superseded pattern; `kb-refresh--script--ship-shard-2026-10-04.sh` is the working one).
 
 ```
 1. git worktree add --detach <tmp>/ship-wt <pinned-base-commit>

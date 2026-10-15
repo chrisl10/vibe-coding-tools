@@ -1,10 +1,10 @@
 # Plugin catalog
 
-Generated from the built Wasp Nest v3.0.0 plugins. This is the complete shipped roster; the [README](../../README.md#what-ships) is the short install guide.
+Generated from the built Wasp Nest v3.0.1 plugins. This is the complete shipped roster; the [README](../../README.md#what-ships) is the short install guide.
 
 ## wasp-nest-core
 
-Version `3.0.0`. 18 Stingers, 14 Drones. [Pack overview](../../plugins/wasp-nest-core/README.md).
+Version `3.0.1`. 18 Stingers, 14 Drones. [Pack overview](../../plugins/wasp-nest-core/README.md).
 
 ### Stingers
 
@@ -54,7 +54,7 @@ Version `3.0.0`. 18 Stingers, 14 Drones. [Pack overview](../../plugins/wasp-nest
 - `/wasp-nest-core:re-research` ([procedure](../../plugins/wasp-nest-core/commands/re-research.md)): Refresh one Stinger's research archive on the six-month window by re-running the forge pipeline's Research and Distillation stages, then flag which guides now rest on claims the refreshed research contradicts or no longer supports. Trigger with "re-research the payments stinger", "refresh research for X-stinger", "is Y-stinger's research stale", "update the research archive for Z", "the six-month window is up on this stinger".
 - `/wasp-nest-core:register` ([procedure](../../plugins/wasp-nest-core/commands/register.md)): Walk the pest-controller registration checklist for a finished Drone and Stinger pair, verifying naming and the Critical Directive blocks, adding the roster row, authoring the routing guide, cross-linking related skills, wiring multi-Drone sequences, validating, and regenerating harnesses. Trigger with "register this drone", "register the new stinger pair", "add X to the roster", "finish registering Y", "the pair is built, wire it in".
 - `/wasp-nest-core:ship-gate` ([procedure](../../plugins/wasp-nest-core/commands/ship-gate.md)): Run the Ship Gate on demand against the current diff, security-stinger first, then quality-stinger, then a hard reminder to load github-repo-health-stinger. Trigger with "run the ship gate", "gate this before I commit", "security and quality pass on this branch", "is this safe to push", "check my diff before I ship it".
-- `/wasp-nest-core:smoke-it` ([procedure](../../plugins/wasp-nest-core/commands/smoke-it.md)): Drive a set of PRDs to 100% completion using the Wasp Swarm. Spawns armed wasp-drone sub-agents in waves, tracks every acceptance criterion to zero open items, runs the security/quality close-out, and ships via commit-push-PR-CI.
+- `/wasp-nest-core:smoke-it` ([procedure](../../plugins/wasp-nest-core/commands/smoke-it.md)): Drive a set of PRDs to 100% completion using the Wasp Swarm. Spawns armed wasp-drone sub-agents in waves, tracks every acceptance criterion to zero open items, runs the security/quality close-out, and prepares the final candidate, committing or pushing only within the approval already given.
 
 Use the named skill or generated command wrapper where the host does not expose this Claude Code command. Source-authoring commands require the writable source checkout.
 
@@ -74,7 +74,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## app-primer-zero
 
-Version `3.0.0`. 1 Stingers, 0 Drones. [Pack overview](../../plugins/app-primer-zero/README.md).
+Version `3.0.1`. 1 Stingers, 0 Drones. [Pack overview](../../plugins/app-primer-zero/README.md).
 
 ### Stingers
 
@@ -94,7 +94,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## backend-and-desktop-tools
 
-Version `3.0.0`. 10 Stingers, 10 Drones. [Pack overview](../../plugins/backend-and-desktop-tools/README.md).
+Version `3.0.1`. 10 Stingers, 10 Drones. [Pack overview](../../plugins/backend-and-desktop-tools/README.md).
 
 ### Stingers
 
@@ -142,7 +142,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## browser-and-app-testing-tools
 
-Version `3.0.0`. 4 Stingers, 4 Drones. [Pack overview](../../plugins/browser-and-app-testing-tools/README.md).
+Version `3.0.1`. 4 Stingers, 4 Drones. [Pack overview](../../plugins/browser-and-app-testing-tools/README.md).
 
 ### Stingers
 
@@ -172,7 +172,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## business-and-product-tools
 
-Version `3.0.0`. 15 Stingers, 15 Drones. [Pack overview](../../plugins/business-and-product-tools/README.md).
+Version `3.0.1`. 15 Stingers, 15 Drones. [Pack overview](../../plugins/business-and-product-tools/README.md).
 
 ### Stingers
 
@@ -236,7 +236,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## code-audit-tools
 
-Version `3.0.0`. 12 Stingers, 11 Drones. [Pack overview](../../plugins/code-audit-tools/README.md).
+Version `3.0.1`. 12 Stingers, 11 Drones. [Pack overview](../../plugins/code-audit-tools/README.md).
 
 ### Stingers
 
@@ -281,12 +281,12 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## content-intelligence
 
-Version `3.0.0`. 2 Stingers, 0 Drones. [Pack overview](../../plugins/content-intelligence/README.md).
+Version `3.0.1`. 2 Stingers, 0 Drones. [Pack overview](../../plugins/content-intelligence/README.md).
 
 ### Stingers
 
-- [repo-radar-stinger](../../plugins/content-intelligence/skills/repo-radar-stinger/SKILL.md): Scan GitHub for repos trending in the last 24 hours (vibe coding, AI coding, AI memory, vulnerabilities) via Exa/Firecrawl MCP, vet ONE, and output post options in Mario's voice with receipts.
-- [viral-news-stinger](../../plugins/content-intelligence/skills/viral-news-stinger/SKILL.md): Mine the last 24 hours of trending news via Exa/Firecrawl MCP, fact-check ONE topic, and output viral-ready post options in Mario's voice with receipts. Use for scheduled news-post Routine runs.
+- [repo-radar-stinger](../../plugins/content-intelligence/skills/repo-radar-stinger/SKILL.md): Scan GitHub for repos trending in the last 24 hours (vibe coding, AI coding, AI memory, vulnerabilities) via Exa/Firecrawl MCP, vet ONE, and output post options in the user's voice with receipts.
+- [viral-news-stinger](../../plugins/content-intelligence/skills/viral-news-stinger/SKILL.md): Mine the last 24 hours of trending news via Exa/Firecrawl MCP, fact-check ONE topic, and output viral-ready post options in the user's voice with receipts. Use for scheduled news-post Routine runs.
 
 ### Commands
 
@@ -302,7 +302,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## data-and-ai-tools
 
-Version `3.0.0`. 12 Stingers, 12 Drones. [Pack overview](../../plugins/data-and-ai-tools/README.md).
+Version `3.0.1`. 12 Stingers, 12 Drones. [Pack overview](../../plugins/data-and-ai-tools/README.md).
 
 ### Stingers
 
@@ -354,7 +354,7 @@ TARS, CASE and KIPP require Claude Code Desktop; an adapter in Codex, Cursor or 
 
 ## developer-learning-tools
 
-Version `3.0.0`. 4 Stingers, 4 Drones. [Pack overview](../../plugins/developer-learning-tools/README.md).
+Version `3.0.1`. 4 Stingers, 4 Drones. [Pack overview](../../plugins/developer-learning-tools/README.md).
 
 ### Stingers
 
@@ -392,7 +392,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## documentation-tools
 
-Version `3.0.0`. 8 Stingers, 8 Drones. [Pack overview](../../plugins/documentation-tools/README.md).
+Version `3.0.1`. 8 Stingers, 8 Drones. [Pack overview](../../plugins/documentation-tools/README.md).
 
 ### Stingers
 
@@ -434,7 +434,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## growth-and-customer-tools
 
-Version `3.0.0`. 15 Stingers, 15 Drones. [Pack overview](../../plugins/growth-and-customer-tools/README.md).
+Version `3.0.1`. 15 Stingers, 15 Drones. [Pack overview](../../plugins/growth-and-customer-tools/README.md).
 
 ### Stingers
 
@@ -488,7 +488,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## highlevel
 
-Version `3.0.0`. 3 Stingers, 3 Drones. [Pack overview](../../plugins/highlevel/README.md).
+Version `3.0.1`. 3 Stingers, 3 Drones. [Pack overview](../../plugins/highlevel/README.md).
 
 ### Stingers
 
@@ -516,7 +516,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## infrastructure-decision-tools
 
-Version `3.0.0`. 6 Stingers, 6 Drones. [Pack overview](../../plugins/infrastructure-decision-tools/README.md).
+Version `3.0.1`. 6 Stingers, 6 Drones. [Pack overview](../../plugins/infrastructure-decision-tools/README.md).
 
 ### Stingers
 
@@ -560,7 +560,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## littlebird-toolkit
 
-Version `3.0.0`. 30 Stingers, 0 Drones. [Pack overview](../../plugins/littlebird-toolkit/README.md).
+Version `3.0.1`. 30 Stingers, 0 Drones. [Pack overview](../../plugins/littlebird-toolkit/README.md).
 
 ### Stingers
 
@@ -609,7 +609,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## media-and-creative-tools
 
-Version `3.0.0`. 4 Stingers, 4 Drones. [Pack overview](../../plugins/media-and-creative-tools/README.md).
+Version `3.0.1`. 4 Stingers, 4 Drones. [Pack overview](../../plugins/media-and-creative-tools/README.md).
 
 ### Stingers
 
@@ -639,7 +639,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## platform-and-release-tools
 
-Version `3.0.0`. 20 Stingers, 20 Drones. [Pack overview](../../plugins/platform-and-release-tools/README.md).
+Version `3.0.1`. 20 Stingers, 20 Drones. [Pack overview](../../plugins/platform-and-release-tools/README.md).
 
 ### Stingers
 
@@ -713,7 +713,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## product-studio
 
-Version `3.0.0`. 3 Stingers, 3 Drones. [Pack overview](../../plugins/product-studio/README.md).
+Version `3.0.1`. 3 Stingers, 3 Drones. [Pack overview](../../plugins/product-studio/README.md).
 
 ### Stingers
 
@@ -741,7 +741,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## repository-modernization-tools
 
-Version `3.0.0`. 1 Stingers, 1 Drones. [Pack overview](../../plugins/repository-modernization-tools/README.md).
+Version `3.0.1`. 1 Stingers, 1 Drones. [Pack overview](../../plugins/repository-modernization-tools/README.md).
 
 ### Stingers
 
@@ -775,7 +775,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## software-economics-tools
 
-Version `3.0.0`. 4 Stingers, 4 Drones. [Pack overview](../../plugins/software-economics-tools/README.md).
+Version `3.0.1`. 4 Stingers, 4 Drones. [Pack overview](../../plugins/software-economics-tools/README.md).
 
 ### Stingers
 
@@ -811,7 +811,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## web-development-tools
 
-Version `3.0.0`. 30 Stingers, 30 Drones. [Pack overview](../../plugins/web-development-tools/README.md).
+Version `3.0.1`. 30 Stingers, 30 Drones. [Pack overview](../../plugins/web-development-tools/README.md).
 
 ### Stingers
 
@@ -834,13 +834,13 @@ Version `3.0.0`. 30 Stingers, 30 Drones. [Pack overview](../../plugins/web-devel
 - [react-stinger](../../plugins/web-development-tools/skills/react-stinger/SKILL.md): Review and refactor React 18/19 architecture. Use for state layers, Server Components, Suspense, Actions, data boundaries, or testing.
 - [react-to-svelte-stinger](../../plugins/web-development-tools/skills/react-to-svelte-stinger/SKILL.md): React-to-Svelte 5 porting: hooks-to-runes translation, TanStack Router to SvelteKit, RTK Query and Radix conversion, contract-first port waves. Use when porting React components or dashboards.
 - [seo-aeo-stinger](../../plugins/web-development-tools/skills/seo-aeo-stinger/SKILL.md): SEO and AEO for SvelteKit (Svelte 5) + Payload CMS + Vercel. Covers metadata, sitemap/robots, JSON-LD, Payload SEO fields, Core Web Vitals, llms.txt/AI citation, E-E-A-T, and indexation playbooks.
-- [shadcn-svelte-stinger](../../plugins/web-development-tools/skills/shadcn-svelte-stinger/SKILL.md): The shadcn-svelte library itself for any Svelte project: CLI, copy-in model, anatomy, registry, theming, forms, upgrades. Not OSPRY's design system on portal/web/wl (ux-ui-svelte-stinger owns that).
+- [shadcn-svelte-stinger](../../plugins/web-development-tools/skills/shadcn-svelte-stinger/SKILL.md): The shadcn-svelte library itself for any Svelte project: CLI, copy-in model, anatomy, registry, theming, forms, upgrades. A project's design system or brand contract belongs to ux-ui-svelte-stinger.
 - [svelte-stinger](../../plugins/web-development-tools/skills/svelte-stinger/SKILL.md): Svelte 5 specialist for runes, snippets, lifecycle, universal reactivity, SvelteKit 2 load/actions/remote functions, and Svelte 4 migration. Use for any .svelte, .svelte.js, or .svelte.ts work.
 - [tailwind-stinger](../../plugins/web-development-tools/skills/tailwind-stinger/SKILL.md): Tailwind CSS v4 the framework itself, CSS-first config, @theme, the Vite plugin, v3-to-v4 migration, dark mode, container queries, class ordering. Generic, any codebase, not OSPRY-specific.
 - [tanstack-stinger](../../plugins/web-development-tools/skills/tanstack-stinger/SKILL.md): TanStack libraries in SvelteKit (Svelte 5) - Query SSR/caching/mutations, Table runes state, Form snippet validation, Virtual; states plainly that Router and Start have no official Svelte support.
 - [typography-font-stinger](../../plugins/web-development-tools/skills/typography-font-stinger/SKILL.md): Build a web typography system. Use for variable fonts, font loading, fluid scales, vertical rhythm, or type tokens.
 - [ux-ui-stinger](../../plugins/web-development-tools/skills/ux-ui-stinger/SKILL.md): Enforce an existing design system. Use for component specs, token drift, library wrappers, motion rulings, or visual deltas.
-- [ux-ui-svelte-stinger](../../plugins/web-development-tools/skills/ux-ui-svelte-stinger/SKILL.md): Enforce OSPRY's SvelteKit UI standard. Use for shadcn-svelte, Tailwind token bridge, white-label branding, or markup styling.
+- [ux-ui-svelte-stinger](../../plugins/web-development-tools/skills/ux-ui-svelte-stinger/SKILL.md): Enforce and implement a SvelteKit UI standard: shadcn-svelte, Tailwind v4 token bridge, brand theming, markup styling. OSPRY's ADR-007 is the worked example.
 - [vue-stinger](../../plugins/web-development-tools/skills/vue-stinger/SKILL.md): Build Vue application slices with SFCs, composables, typed props/events, state, forms, routing and delivery evidence. Use after Vue is chosen; hand Nuxt SSR to its selected owner.
 - [web-stack-selection-stinger](../../plugins/web-development-tools/skills/web-stack-selection-stinger/SKILL.md): Recommend one web framework from product, rendering, team and hosting needs. Separate backend choices and expose implementation-owner gaps.
 - [website-stinger](../../plugins/web-development-tools/skills/website-stinger/SKILL.md): Build a SvelteKit marketing site from a brief. Use for site scaffolding, Payload CMS, Supabase, lead capture, blog, or conversion.
@@ -872,7 +872,7 @@ Version `3.0.0`. 30 Stingers, 30 Drones. [Pack overview](../../plugins/web-devel
 - [tailwind-wasp-drone](../../plugins/web-development-tools/agents/tailwind-wasp-drone.md): Tailwind CSS v4 framework specialist, CSS-first configuration, @theme mechanics, utility generation, the Vite plugin, v3-to-v4 migration, dark mode variants via @custom-variant, container queries, class ordering and tooling, and Oxide-engine performance, for ANY codebase.
 - [tanstack-wasp-drone](../../plugins/web-development-tools/agents/tanstack-wasp-drone.md): TanStack-in-SvelteKit (Svelte 5) specialist - TanStack Query SSR/caching/prefetching/mutations, TanStack Table runes-native setup and feature registration, TanStack Form snippet-based validation, TanStack Virtual, and drawing the line on TanStack Router/Start having no official Svelte support.
 - [typography-font-wasp-drone](../../plugins/web-development-tools/agents/typography-font-wasp-drone.md): Typography and font-loading specialist for web products: variable fonts, Google Fonts vs Fontsource vs self-host, the FOIT/FOUT/FOFT loading story, font-display semantics, fluid type scales via clamp(), vertical rhythm, and the type-token architecture.
-- [ux-ui-svelte-wasp-drone](../../plugins/web-development-tools/agents/ux-ui-svelte-wasp-drone.md): Enforces and implements the OSPRY SvelteKit UI standard (ADR-007): shadcn-svelte 1.x on Bits UI v2 + Melt UI, Tailwind v4, the @theme token bridge to the PRD-071 design tokens, and the white-label brand contract.
+- [ux-ui-svelte-wasp-drone](../../plugins/web-development-tools/agents/ux-ui-svelte-wasp-drone.md): General Svelte 5 / SvelteKit UI owner: enforces and implements UI work with shadcn-svelte 1.x on Bits UI v2 + Melt UI and Tailwind v4, the @theme token bridge to a project's design tokens, and brand or white-label theming.
 - [ux-ui-wasp-drone](../../plugins/web-development-tools/agents/ux-ui-wasp-drone.md): Enforces a product's design system from its source-of-truth folder (tokens, utilities, components, screens) and governs integration with shadcn/ui, Mantine, Lucide-react, and Framer Motion.
 - [vue-wasp-drone](../../plugins/web-development-tools/agents/vue-wasp-drone.md): Implement Vue SFC, composable, state, form and client-route slices after Vue is selected.
 - [web-stack-selection-wasp-drone](../../plugins/web-development-tools/agents/web-stack-selection-wasp-drone.md): Recommend one web framework using product, rendering, team, backend and hosting constraints.
@@ -915,7 +915,7 @@ These are derived adapters for the source commands, not additional canonical ski
 
 ## website-audit-tools
 
-Version `3.0.0`. 21 Stingers, 20 Drones. [Pack overview](../../plugins/website-audit-tools/README.md).
+Version `3.0.1`. 21 Stingers, 20 Drones. [Pack overview](../../plugins/website-audit-tools/README.md).
 
 ### Stingers
 
@@ -966,7 +966,7 @@ Version `3.0.0`. 21 Stingers, 20 Drones. [Pack overview](../../plugins/website-a
 
 ### Commands
 
-- `/website-audit-tools:perform-website-audit` ([procedure](../../plugins/website-audit-tools/commands/perform-website-audit.md)): Runs a full Website Auditor by Legion Code Inc. engagement end to end: intake through branded reports, sequencing all 20 Drone/Stinger pairs per the dependency graph.
+- `/website-audit-tools:perform-website-audit` ([procedure](../../plugins/website-audit-tools/commands/perform-website-audit.md)): Run a full Website Auditor by Legion Code Inc. engagement end to end: intake through scored, branded reports, dispatching the 20 Drone/Stinger pairs in dependency order.
 
 Use the named skill or generated command wrapper where the host does not expose this Claude Code command. Source-authoring commands require the writable source checkout.
 

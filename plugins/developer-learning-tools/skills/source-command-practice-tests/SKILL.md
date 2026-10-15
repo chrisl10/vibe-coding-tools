@@ -2,6 +2,7 @@
 name: "source-command-practice-tests"
 description: "Teach independent tests from a stated contract with prediction, observed attempts, failure interpretation and changed-condition practice."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-practice-tests

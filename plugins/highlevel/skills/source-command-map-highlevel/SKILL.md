@@ -2,6 +2,7 @@
 name: "source-command-map-highlevel"
 description: "Turn a supplied HighLevel export into traceable workflow maps, asset links, and an honest gaps report."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-map-highlevel

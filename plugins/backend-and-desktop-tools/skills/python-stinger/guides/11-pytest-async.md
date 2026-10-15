@@ -126,4 +126,4 @@ async def test_external_call(async_client):
 - https://pytest-asyncio.readthedocs.io/
 - https://www.python-httpx.org/advanced/transports/: `ASGITransport`
 - https://channels.readthedocs.io/en/stable/topics/testing.html
-- `research/2026-05-03-django-async-views.md`
+- `research/2026-05-03-django-async-views.md` (source-repository research, not shipped)

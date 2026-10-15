@@ -12,7 +12,7 @@ Generated lead and booking interfaces are front-end drafts until their HighLevel
 6. Confirm the expected contact exists.
 7. Confirm the submission appears under `Sites > Forms > Submissions > External Forms` where applicable.
 
-A visible form alone does not collect into HighLevel. The connection step is explicit, and the connected CRM stores the resulting contact and submission data rather than the AI Studio project. [../references/research/raw/ai-studio-forms-calendars.md], [../references/research/raw/ai-studio-overview.md]
+A visible form alone does not collect into HighLevel. The connection step is explicit, and the connected CRM stores the resulting contact and submission data rather than the AI Studio project. [../references/research/raw/ai-studio-forms-calendars.md], [../references/research/raw/ai-studio-overview.md (source-repository research, not shipped)]
 
 ## 2. Configure the dedicated form workflow trigger
 
@@ -34,7 +34,7 @@ Then:
 6. Publish the workflow.
 7. Submit another live test and inspect execution evidence.
 
-Selecting the project first narrows other filter values. With no filters, the trigger can accept submissions from all AI Studio projects in the account. [../references/research/raw/ai-studio-form-trigger.md]
+Selecting the project first narrows other filter values. With no filters, the trigger can accept submissions from all AI Studio projects in the account. [../references/research/raw/ai-studio-form-trigger.md (source-repository research, not shipped)]
 
 ## 3. Migrate an older connected form only when needed
 
@@ -48,7 +48,7 @@ Existing forms can continue on External Tracking. If the user wants the dedicate
 6. Refresh the workflow builder.
 7. Configure and test `AI Studio Form Submitted`.
 
-Do not reconnect every existing form by default. The current documentation says External Tracking remains supported. [../references/research/raw/ai-studio-form-trigger.md]
+Do not reconnect every existing form by default. The current documentation says External Tracking remains supported. [../references/research/raw/ai-studio-form-trigger.md (source-repository research, not shipped)]
 
 ## 4. Connect a calendar
 
@@ -61,7 +61,7 @@ Do not reconnect every existing form by default. The current documentation says 
 7. Book a real test slot.
 8. Confirm the meeting, timezone, availability, reminders, and follow-up behavior.
 
-The connected HighLevel calendar remains the source of availability, confirmations, reminders, meetings, and calendar automation. AI Studio supplies the front-end experience. [../references/research/raw/ai-studio-forms-calendars.md]
+The connected HighLevel calendar remains the source of availability, confirmations, reminders, meetings, and calendar automation. AI Studio supplies the front-end experience. [../references/research/raw/ai-studio-forms-calendars.md (source-repository research, not shipped)]
 
 ## 5. Protect data and consent
 

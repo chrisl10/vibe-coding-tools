@@ -1,6 +1,6 @@
 # Guide 05: Fresh 2.x Framework
 
-> Source: `research/external/2026-05-20-fresh-framework-islands.md`
+> Source: `research/external/2026-05-20-fresh-framework-islands.md` (source-repository research, not shipped)
 
 Fresh is a Deno-native, server-first web framework built on Preact. It uses islands architecture: the server renders full HTML; only explicitly marked components hydrate on the client.
 

@@ -2,6 +2,7 @@
 name: "source-command-assess-railway"
 description: "Assess Railway workload fit with dated service, operating, recovery and cost constraints."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-assess-railway

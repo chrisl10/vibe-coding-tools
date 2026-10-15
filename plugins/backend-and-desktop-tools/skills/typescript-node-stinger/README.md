@@ -41,7 +41,7 @@ typescript-node-stinger/
   scripts/                6 audit scripts + README
   examples/               6 worked examples (zod MCP tool, Deep Lake query, Vitest suite, healMissingColumns, harness wiring, esbuild entry)
   references/             5 demoted-alternatives files + README
-  research/               Research plan + dated notes
+  research/ (source-repository research, not shipped with the plugin)               Research plan + dated notes
 ```
 
 ## Reading order

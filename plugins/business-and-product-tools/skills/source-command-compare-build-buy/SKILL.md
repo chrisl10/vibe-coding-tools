@@ -2,6 +2,7 @@
 name: "source-command-compare-build-buy"
 description: "Compare build, licensed vendor and partner approaches for one bounded functional slice using dated evidence and lifecycle responsibilities."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-compare-build-buy

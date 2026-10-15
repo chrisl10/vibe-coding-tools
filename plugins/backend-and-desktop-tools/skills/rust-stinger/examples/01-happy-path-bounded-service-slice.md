@@ -32,7 +32,7 @@ impl RuntimeOwner {
 }
 ```
 
-The bounded queue and reservation-before-send pattern follows Tokio's documented backpressure and cancellation behavior ([bounded MPSC](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-tokio-mpsc.md), [`reserve`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-tokio-send-reserve.md)). The implementation also owns listener shutdown separately from joined background work ([Axum shutdown](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-axum-graceful-shutdown.md), [Tokio shutdown](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-tokio-graceful-shutdown.md)).
+The bounded queue and reservation-before-send pattern follows Tokio's documented backpressure and cancellation behavior (bounded MPSC, `reserve`). The implementation also owns listener shutdown separately from joined background work (Axum shutdown, Tokio shutdown).
 
 ## Focused proof
 
@@ -43,7 +43,7 @@ cargo test -p router-daemon --test shutdown drains_accepted_turns
 cargo clippy -p router-daemon -p provider-fake --all-targets -- -D warnings
 ```
 
-The contract test calls the Axum Router as a Tower service; a separate loopback test proves bind and shutdown ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-axum-service-testing.md)).
+The contract test calls the Axum Router as a Tower service; a separate loopback test proves bind and shutdown (research).
 
 ## Output
 

@@ -6,11 +6,11 @@ Loads: [../references/tool-commands.md](../references/tool-commands.md) (Functio
 
 ## 1. Measure functions
 
-1. Run lizard 1.24.0 from the scratch venv on the copy, with `--csv`, the languages in scope (`-l typescript -l tsx -l javascript`, or `-l python`, `-l go`, `-l rust`), and excludes for generated and vendor folders. Run it single-threaded: a `-t 4` run hung on macOS in testing while the plain run finished in seconds; if you try `-t` and nothing prints within a minute, kill it and rerun without. Save to `raw/lizard.csv` [../references/research/raw/lizard--readme-and-csv-test.md].
-2. Run `scripts/function_profile.py --lizard-csv raw/lizard.csv --strip-prefix <copy> --closure-min 1000 --json-out raw/functions.json`. For JS and TS always add `--cross-check <copy>`: on a real tree lizard overstated four of the five largest JavaScript function spans (for example 233 lines for a 16-line function next to regex literals), while the brace-matching heuristic matched the real span [../references/research/raw/lizard--readme-and-csv-test.md]. Every WARNING it prints means: read the file to the closing brace and use the real end line.
+1. Run lizard 1.24.0 from the scratch venv on the copy, with `--csv`, the languages in scope (`-l typescript -l tsx -l javascript`, or `-l python`, `-l go`, `-l rust`), and excludes for generated and vendor folders. Run it single-threaded: a `-t 4` run hung on macOS in testing while the plain run finished in seconds; if you try `-t` and nothing prints within a minute, kill it and rerun without. Save to `raw/lizard.csv` [../references/research/raw/lizard--readme-and-csv-test.md (source-repository research, not shipped)].
+2. Run `scripts/function_profile.py --lizard-csv raw/lizard.csv --strip-prefix <copy> --closure-min 1000 --json-out raw/functions.json`. For JS and TS always add `--cross-check <copy>`: on a real tree lizard overstated four of the five largest JavaScript function spans (for example 233 lines for a 16-line function next to regex literals), while the brace-matching heuristic matched the real span [../references/research/raw/lizard--readme-and-csv-test.md (source-repository research, not shipped)]. Every WARNING it prints means: read the file to the closing brace and use the real end line.
 3. Without lizard (no Python venv possible), run `function_profile.py --heuristic <copy>` for JS and TS only. Label every number from it "heuristic". It is approximate too: a type annotation with braces before the body, or unusual syntax, can shift a span.
 
-Why lizard, despite that: it covers about 27 languages, reports nested and arrow functions as their own rows, and its `start`-`end` span for an outer function includes the inner ones. So the span measures a closure's size and the rows inside it are its inner functions [../references/research/raw/lizard--readme-and-csv-test.md].
+Why lizard, despite that: it covers about 27 languages, reports nested and arrow functions as their own rows, and its `start`-`end` span for an outer function includes the inner ones. So the span measures a closure's size and the rows inside it are its inner functions [../references/research/raw/lizard--readme-and-csv-test.md (source-repository research, not shipped)].
 
 The script reports:
 
@@ -22,7 +22,7 @@ The script reports:
 For the five to eight largest files (from `size-profile.json`), read the file's outline yourself. Do not split from numbers alone.
 
 1. List the top-level structure: module helpers, then a factory, a router, a schema block, a class.
-2. If a factory closure holds most of the file, write: "helpers, then a N-line closure with M inner functions", and name the two or three largest inner functions with their sizes. This is the WHIPT shape: four services were single closures of 5K to 19K lines, one with 179 inner functions and a 5,527-line function inside [../references/research/raw/gold--whipt-bloat-audit-method.md].
+2. If a factory closure holds most of the file, write: "helpers, then a N-line closure with M inner functions", and name the two or three largest inner functions with their sizes. This is the WHIPT shape: four services were single closures of 5K to 19K lines, one with 179 inner functions and a 5,527-line function inside [../references/research/raw/gold--whipt-bloat-audit-method.md (source-repository research, not shipped)].
 3. Note pure data files (schemas, OpenAPI specs, route tables). They are easy to split and low risk.
 4. Note files that already use separate top-level functions. They split by moving code only.
 5. Pull each file's duplication at 50 and 100 tokens from the recount. A high figure that drops at 100 tokens points at a helper that would absorb short repeated snippets (for example a shared "load the record and check access" helper in a route file).
@@ -60,6 +60,8 @@ Without step 1, any estimate of how easily the file splits is wrong.
 
 ## Sources
 
-- [../references/research/raw/lizard--readme-and-csv-test.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/lizard--readme-and-csv-test.md)
-- [../references/research/raw/gold--whipt-bloat-audit-method.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/gold--whipt-bloat-audit-method.md)
-- [../references/research/raw/research--arxiv-2603-27130-ai-vs-human-duplication.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/research--arxiv-2603-27130-ai-vs-human-duplication.md)
+The notes listed below are source-repository research, not shipped.
+
+- ../references/research/raw/lizard--readme-and-csv-test.md (source-repository research, not shipped)
+- ../references/research/raw/gold--whipt-bloat-audit-method.md (source-repository research, not shipped)
+- ../references/research/raw/research--arxiv-2603-27130-ai-vs-human-duplication.md (source-repository research, not shipped)

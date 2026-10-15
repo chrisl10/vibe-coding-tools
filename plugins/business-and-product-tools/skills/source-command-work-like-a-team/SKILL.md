@@ -2,6 +2,7 @@
 name: "source-command-work-like-a-team"
 description: "Turn a solo or small-team development goal into a five-area responsibility map, a working queue, a Definition of Done, and a review rhythm."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-work-like-a-team

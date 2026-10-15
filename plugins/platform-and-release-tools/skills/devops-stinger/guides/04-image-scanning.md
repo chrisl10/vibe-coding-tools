@@ -1,6 +1,6 @@
 # 04: Image scanning
 
-How to gate on CVE scan results in CI. Source: `research/2026-04-25-trivy-vs-scout.md`.
+How to gate on CVE scan results in CI. Source: `research/2026-04-25-trivy-vs-scout.md` (source-repository research, not shipped).
 
 ---
 
@@ -109,7 +109,7 @@ With `docker/build-push-action`:
     push: true
 ```
 
-Consumers (security scanners, supply chain tooling) can verify what's in the image and how it was built. Source: `research/2026-04-25-sbom-provenance-attestation.md`.
+Consumers (security scanners, supply chain tooling) can verify what's in the image and how it was built. Source: `research/2026-04-25-sbom-provenance-attestation.md` (source-repository research, not shipped).
 
 ## 6. Dockerfile linting: Hadolint
 

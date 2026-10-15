@@ -1,6 +1,6 @@
 # Bifrost API surface notes
 
-Grounded in [raw/01](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/bifrost-stinger/references/research/raw/01-repo-layout.md), [raw/04](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/bifrost-stinger/references/research/raw/04-virtual-keys-governance.md), [raw/07](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/bifrost-stinger/references/research/raw/07-tags-and-changelog.md). Definitive shapes come from `docs/openapi/` in your frozen tree - always extract from the tag you run, not from this file.
+Grounded in raw/01, raw/04, raw/07. Definitive shapes come from `docs/openapi/` in your frozen tree - always extract from the tag you run, not from this file.
 
 ## Two API planes
 

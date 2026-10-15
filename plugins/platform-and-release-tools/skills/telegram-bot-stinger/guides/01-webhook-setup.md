@@ -1,6 +1,6 @@
 # Guide 01: Webhook Setup
 
-> Sources: `research/architecture/2026-05-20-grammy-deployment-types.md`, `research/architecture/2026-05-20-webhook-setup-production.md`, `research/architecture/2026-05-20-webhook-vs-polling-benchmarks.md`, `research/architecture/2026-05-20-rate-limits-production.md`
+> Sources: `research/architecture/2026-05-20-grammy-deployment-types.md`, `research/architecture/2026-05-20-webhook-setup-production.md`, `research/architecture/2026-05-20-webhook-vs-polling-benchmarks.md`, `research/architecture/2026-05-20-rate-limits-production.md` (source-repository research, not shipped)
 
 ---
 

@@ -1,6 +1,6 @@
 # Privacy Policy: Required Sections and Data Inventory
 
-**Source:** `research/external/2026-05-20-saas-tos-checklist.md` + `research/external/2026-05-20-generator-landscape-2026.md` + research-summary.md
+**Source:** `research/external/2026-05-20-saas-tos-checklist.md` + `research/external/2026-05-20-generator-landscape-2026.md` (source-repository research, not shipped) + research-summary.md
 
 ---
 

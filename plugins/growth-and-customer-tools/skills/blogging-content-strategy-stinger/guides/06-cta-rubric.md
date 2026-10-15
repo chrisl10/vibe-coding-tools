@@ -2,7 +2,7 @@
 
 A CTA (call-to-action) is a specific offer to a reader who has just consumed content. It is not a request for a favor, a plea for a like, or a generic invitation to "learn more." Every CTA must pass the "why now" test before it goes on the page.
 
-> Research sources: `research/external/2026-05-20-unbounce-cta-examples-2025.md`, `research/external/2026-05-20-automateed-blog-cta-ideas-strategies.md`
+> Research sources: `research/external/2026-05-20-unbounce-cta-examples-2025.md`, `research/external/2026-05-20-automateed-blog-cta-ideas-strategies.md` (source-repository research, not shipped)
 
 ---
 

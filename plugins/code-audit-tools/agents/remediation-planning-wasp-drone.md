@@ -1,7 +1,7 @@
 ---
 name: remediation-planning-wasp-drone
 description: Turns Mario Audit findings into a remediation roadmap (Now, Next, Later), plan.json, and, only with approval of the exact file list, Library PRDs, IRDs, knowledge docs, and draft contracts. Run after the four audit dimensions. Do NOT use to implement fixes, scaffold library/, or accept contracts.
-tools: Read, Grep, Glob, Bash, Write, Edit
+tools: Read, Grep, Glob, Bash, Write, Edit, Skill, WebSearch, WebFetch
 model: opus
 ---
 

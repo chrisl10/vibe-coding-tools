@@ -181,8 +181,8 @@ class Page(Generic[T], BaseModel):
 
 ## Sources
 
-- `research/2026-05-03-pyright-vs-mypy.md`
-- `research/2026-05-03-pydantic-v2-ninja-schemas.md`
+- `research/2026-05-03-pyright-vs-mypy.md` (source-repository research, not shipped)
+- `research/2026-05-03-pydantic-v2-ninja-schemas.md` (source-repository research, not shipped)
 - https://microsoft.github.io/pyright/
 - https://docs.pydantic.dev/latest/
 - https://djangocfg.com/docs/guides/module-design/type-checking/

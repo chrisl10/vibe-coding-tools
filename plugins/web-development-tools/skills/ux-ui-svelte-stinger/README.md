@@ -1,23 +1,26 @@
 # ux-ui-svelte-stinger
 
-The Svelte 5 + SvelteKit UI enforcement and implementation skill for the OSPRY
-SvelteKit apps (portal, web, wl). Owns the shadcn-svelte 1.x + Tailwind v4
-standard adopted in ADR-007, including the `@theme` token bridge to the existing
-PRD-071 design tokens and the white-label brand contract preservation.
+The Svelte 5 + SvelteKit UI enforcement and implementation skill. Owns the
+shadcn-svelte 1.x + Tailwind v4 standard for a SvelteKit project, including the
+`@theme` token bridge to the project's design tokens and any brand or
+white-label contract preservation. It applies the project's own UI decision
+record when one exists. The guides use OSPRY (ADR-007, PRD-071 tokens, and the
+`apps/portal`, `apps/web` and `apps/wl` apps) as the worked example.
 
 ## Why this skill exists
 
-The portal, web, and wl SvelteKit apps have poor UI standardization: 199
-`.svelte` files in the portal alone, 66 with bespoke `<style>` blocks, ad-hoc
-button/control classes scattered across routes. ADR-007 adopts shadcn-svelte +
-Tailwind v4 as the standard, rolled out in phases. This skill is the procedural
-arsenal that enforces and implements that decision.
+SvelteKit apps drift into bespoke `<style>` blocks and ad-hoc button and control
+classes scattered across routes. A UI standard of shadcn-svelte plus Tailwind v4,
+rolled out in phases, fixes that, and this skill is the procedural arsenal that
+enforces and implements it. In OSPRY the starting point was 199 `.svelte` files
+in the portal alone, 66 with bespoke `<style>` blocks, and ADR-007 adopted the
+standard.
 
 ## Source documents
 
-- **Decision:** `library/knowledge/private/architecture/ADR-007-shadcn-svelte-and-tailwind-v4-as-ui-standard.md` in the target OSPRY repository
+- **Decision:** the project's UI decision record (OSPRY example: `library/knowledge/private/architecture/ADR-007-shadcn-svelte-and-tailwind-v4-as-ui-standard.md` in the OSPRY repository)
 - **Research manifest:** [`research/research-summary.md`](research/research-summary.md)
-- **Existing token system:** `apps/portal/src/lib/styles/{tokens,brand,base,shell}.css`
+- **Existing token system:** the project's token files (OSPRY example: `apps/portal/src/lib/styles/{tokens,brand,base,shell}.css`)
 
 ## Structure
 
@@ -51,9 +54,9 @@ procedural arsenal.
 
 ## Maintenance
 
-Researched against the versions in `research/library-versions.md`. When a major
+Researched against the versions in `research/library-versions.md` (source-repository research, not shipped with the plugin). When a major
 version of shadcn-svelte, Tailwind, or Bits UI ships:
 
-1. Write a fresh `research/YYYY-MM-DD-<library>-vX-migration.md` note.
+1. Write a fresh `research/YYYY-MM-DD-<library>-vX-migration.md` (source-repository research, not shipped with the plugin) note.
 2. Update the affected guide(s).
-3. Update `research/library-versions.md`.
+3. Update `research/library-versions.md` (source-repository research, not shipped with the plugin).

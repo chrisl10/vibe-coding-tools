@@ -2,7 +2,7 @@
 
 Generalizes the "recall is measured, not vibed" principle this Stinger has always enforced (previously only written for the Deep Lake pipeline, see `deeplake-08-recall-quality-eval.md`) into a methodology for a multi-component Postgres retrieval pipeline: chunker, embedding model, full-text arm, RRF fusion, optional reranker.
 
-> Ground truth: `references/research/raw/aisuffer--rag-evaluation--recall-precision-golden-set.md` and `references/research/raw/exploreagentic--rag-evaluation--gold-set-component-ablation.md`. Synthesis: `references/research/distilled-retrieval.md`.
+> Ground truth: `references/research/raw/aisuffer--rag-evaluation--recall-precision-golden-set.md` and `references/research/raw/exploreagentic--rag-evaluation--gold-set-component-ablation.md` (source-repository research, not shipped). Synthesis: `references/research/distilled-retrieval.md`.
 
 ---
 

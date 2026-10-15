@@ -2,7 +2,7 @@
 
 Pick the right library stack before writing any code. The wrong choice is expensive to swap.
 
-*Derived from `research/external/2026-05-20-sheetjs-vs-exceljs-comparison.md`, `research/external/2026-05-20-papaparse-vs-csvparse-vs-fastcsv.md`, `research/external/2026-05-20-sheetjs-licensing.md`, `research/libraries/2026-05-20-sheetjs-vs-exceljs-streaming.md`.*
+*Derived from `research/external/2026-05-20-sheetjs-vs-exceljs-comparison.md`, `research/external/2026-05-20-papaparse-vs-csvparse-vs-fastcsv.md`, `research/external/2026-05-20-sheetjs-licensing.md`, `research/libraries/2026-05-20-sheetjs-vs-exceljs-streaming.md` (source-repository research, not shipped).*
 
 ---
 

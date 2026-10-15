@@ -14,8 +14,8 @@ The canonical [paired Drone](../../agents/quality-wasp-drone.md) lives in Core's
 
 ## Verification artifact companion
 
-[Bind verification to the exact candidate](guides/08-verification-artifacts.md), use the [packet template](templates/verification-artifacts.md) alongside the existing QA report, and inspect [constructed cases](examples/04-verification-artifact-cases.md). Current primary captures and claim limits are in [the research digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/quality-stinger/references/research/verification-artifacts/distillation.md).
+[Bind verification to the exact candidate](guides/08-verification-artifacts.md), use the [packet template](templates/verification-artifacts.md) alongside the existing QA report, and inspect [constructed cases](examples/04-verification-artifact-cases.md). Current primary captures and claim limits are in the research digest.
 
 ## Current plugin owner
 
-This capability stays in required Wasp Nest Core. Its canonical source is src/skills, with canonical ownership recorded in the root [plugin catalog](../../../plugin-catalog.json). Its SKILL.md metadata declares any standalone/orchestrator exception; specialist agents keep their actual paired Stinger. Host home/plugin files are generated carriers. Use [the layout and selection guide](../../../docs/PLUGIN-LAYOUT.md) when a workflow calls an optional specialist; source references alone do not enable an installed plugin.
+This capability stays in required Wasp Nest Core. Its canonical source is src/skills, with canonical ownership recorded in the root [plugin catalog](../../plugin-catalog.json). Its SKILL.md metadata declares any standalone/orchestrator exception; specialist agents keep their actual paired Stinger. Host home/plugin files are generated carriers. Use [the layout and selection guide](../../learn/reference/PLUGIN-LAYOUT.md) when a workflow calls an optional specialist; source references alone do not enable an installed plugin.

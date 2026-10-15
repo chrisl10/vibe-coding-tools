@@ -34,7 +34,7 @@ Owns the identification, documentation, acceptance, revision, and drift review o
 - The feature brief and any related PRD indexes or sub-PRDs.
 - Existing code, schemas, ADRs, and `CTR` records for the boundary.
 - Names of the provider and known consumers, or a clearly marked open question if they are not known.
-- Mario's decision on any proposed normative term before marking a revision Accepted.
+- The owner's decision on any proposed normative term before marking a revision Accepted.
 
 ## Outputs
 
@@ -52,4 +52,4 @@ Owns the identification, documentation, acceptance, revision, and drift review o
 
 - Never infer acceptance from a draft, a sample payload, or contributor agreement.
 - Keep contract content in the `CTR` record and PRD content with Library.
-- Preserve the previously accepted revision until Mario accepts a changed norm.
+- Preserve the previously accepted revision until the owner accepts a changed norm.

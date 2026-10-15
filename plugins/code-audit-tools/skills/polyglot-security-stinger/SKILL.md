@@ -68,7 +68,7 @@ Audit the parts of a codebase that are not React, Next.js, or SvelteKit (those h
 | `references/cross-cutting/ai-failure-patterns.md` | Guide 13 |
 | `references/cross-cutting/contract-output-rules.md` | Guide 14, or any question about severity, confidence, or file shape |
 | `references/research/distilled-polyglot-security.md` | Verifying a claim, or checking a known thin spot before asserting a framework default |
-| `references/research/raw/` | Tracing a distilled claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `scripts/detect_ecosystems.py` | Guide 00; also reusable by the orchestrator for `intake.json.stacks` |
 | `scripts/secrets_fallback.py` | Guide 09 when gitleaks and trufflehog cannot run |
 | `scripts/validate_findings.py` | Guide 14, before returning |

@@ -2,7 +2,7 @@
 
 The 5-layer model. Pick the right tool per layer. Mixing layers (e.g., storing server data in Zustand) is always a finding.
 
-Source: `research/2026-04-24-bulletproof-react-state-management.md`, `research/2026-04-24-state-libraries-decision.md`.
+Source: `research/2026-04-24-bulletproof-react-state-management.md`, `research/2026-04-24-state-libraries-decision.md` (source-repository research, not shipped).
 
 ## The decision tree
 
@@ -76,7 +76,7 @@ const [page, setPage] = useQueryState('page', parseAsInteger.withDefault(1));
 const [q, setQ] = useQueryState('q', parseAsString.withDefault(''));
 ```
 
-See `research/2026-04-24-nuqs-url-state.md`. Use for filters, pagination, sort, tabs, search inputs: anything a user might bookmark.
+See `research/2026-04-24-nuqs-url-state.md` (source-repository research, not shipped). Use for filters, pagination, sort, tabs, search inputs: anything a user might bookmark.
 
 ### Layer 5: Form state → React Hook Form + Zod
 

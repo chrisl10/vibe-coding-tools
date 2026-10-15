@@ -47,4 +47,4 @@ Prefer the single batched SQL statement when the reads hit the same table; use `
 
 - `src/deeplake-api.ts` (`Semaphore`, `MAX_CONCURRENCY`).
 - `esbuild.config.mjs` (detached-worker comments).
-- `research/2026-06-16-deeplake-sql-api.md`.
+- `research/2026-06-16-deeplake-sql-api.md` (source-repository research, not shipped).

@@ -1,6 +1,6 @@
 # Guide 02: Bot Features
 
-> Sources: `research/bot-api/2026-05-20-bot-api-10-guest-mode.md`, `research/frameworks/2026-05-20-grammy-latest-version.md`, `research/frameworks/2026-05-20-aiogram-3x-pypi-status.md`, `research/architecture/2026-05-20-rate-limits-production.md`
+> Sources: `research/bot-api/2026-05-20-bot-api-10-guest-mode.md`, `research/frameworks/2026-05-20-grammy-latest-version.md`, `research/frameworks/2026-05-20-aiogram-3x-pypi-status.md`, `research/architecture/2026-05-20-rate-limits-production.md` (source-repository research, not shipped)
 
 ---
 
@@ -191,7 +191,7 @@ bot.on("guest_message", async (ctx) => {
 
 ## Rate limits
 
-From `research/architecture/2026-05-20-rate-limits-production.md`:
+From `research/architecture/2026-05-20-rate-limits-production.md` (source-repository research, not shipped):
 
 | Limit | Value |
 |---|---|

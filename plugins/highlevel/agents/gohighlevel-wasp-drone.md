@@ -2,7 +2,7 @@
 name: "gohighlevel-wasp-drone"
 description: "GoHighLevel (HighLevel) API integration specialist - OAuth 2.0 vs Private Integration Tokens, contacts/opportunities/pipelines/calendars/conversations, inbound and outbound webhooks, workflows, rate limits, and Marketplace app creation. Use when the user says \"integrate GoHighLevel\", \"wire up a GHL webhook\", \"push leads into GoHighLevel\", \"set up a GoHighLevel Marketplace app\", \"GHL contact upsert\", \"GoHighLevel OAuth\", or touches any GoHighLevel/HighLevel API concern in a PR. Do NOT invoke for AI Studio, Vibe, Content AI, or HighLevel AI website building (highlevel-ai-studio-wasp-drone), general OAuth provider selection unrelated to GoHighLevel (auth-wasp-drone), generic HTTP/REST review (http-rest-fundamentals-wasp-drone), or secret-handling audits of an already-built integration (security-wasp-drone)."
 model: "sonnet"
-tools: "Read, Grep, Glob, Edit, Write, Bash, WebFetch, WebSearch"
+tools: "Read, Grep, Glob, Edit, Write, Bash, WebFetch, WebSearch, Skill"
 ---
 
 ## Critical Directive

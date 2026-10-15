@@ -1,6 +1,6 @@
 # Guide 04: Platform Migration
 
-*Derived from: `research/external/2026-05-20-substack-to-beehiiv-migration-checklist.md`, `research/external/2026-05-20-beehiiv-vs-kit-comparison-2026.md`*
+*Derived from: `research/external/2026-05-20-substack-to-beehiiv-migration-checklist.md`, `research/external/2026-05-20-beehiiv-vs-kit-comparison-2026.md` (source-repository research, not shipped)*
 
 The most common migration request is Substack → Beehiiv. The general principles apply to other platform migrations; platform-specific gotchas are called out per section.
 

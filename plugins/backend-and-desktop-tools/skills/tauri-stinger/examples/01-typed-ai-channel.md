@@ -138,4 +138,4 @@ export async function generate(prompt: string): Promise<void> {
 - Remove secrets, raw prompts, and provider payloads from errors and logs.
 - Test Channel closure, cancellation races, renderer reload, and application shutdown.
 
-Source basis: [Calling Rust](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--calling-rust.md), [Calling the frontend](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--calling-frontend.md), and [Serde container attributes](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/serde--docs--container-attributes.md).
+Source basis: Calling Rust, Calling the frontend, and Serde container attributes.

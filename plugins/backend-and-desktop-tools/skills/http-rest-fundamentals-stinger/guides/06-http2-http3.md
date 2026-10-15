@@ -98,4 +98,4 @@ None required. Methods, status codes, and headers are identical to HTTP/1.1 and 
 
 ---
 
-*Sources: RFC 9113 (HTTP/2), RFC 9114 (HTTP/3), RFC 9000 (QUIC), `research/external/2026-05-20-http3-quic-production-guide.md`, `research/external/2026-05-20-http3-adoption-stats.md`, `research/external/2026-05-20-http3-open-source-gap.md`*
+*Sources: RFC 9113 (HTTP/2), RFC 9114 (HTTP/3), RFC 9000 (QUIC), `research/external/2026-05-20-http3-quic-production-guide.md`, `research/external/2026-05-20-http3-adoption-stats.md`, `research/external/2026-05-20-http3-open-source-gap.md` (source-repository research, not shipped)*

@@ -1,7 +1,7 @@
 ---
 name: sveltekit-security-wasp-drone
 description: Deep, evidence-backed, read-only security audit of Svelte 4/5 and SvelteKit 2 apps (and plain Svelte + Vite SPAs) on any stack, for an /audit-my-code run. Use when intake.json lists the svelte or sveltekit stack, or when asked whether a SvelteKit app's versions, load functions, form actions, +server endpoints, remote functions, hooks, XSS sinks, CSRF settings, cookies, adapters, or prerendering are safe. Writes SEC-SVELTE findings to the run workspace. Do NOT use to fix code, for the repo's own Ship Gate pass (security-wasp-drone with security-stinger), for git-history secrets, webhook signatures or database row-level security (security-wasp-drone), or for React, Next.js, or non-Svelte back ends.
-tools: Read, Grep, Glob, Bash, Write
+tools: Read, Grep, Glob, Bash, Write, Skill, WebSearch, WebFetch
 model: opus
 ---
 

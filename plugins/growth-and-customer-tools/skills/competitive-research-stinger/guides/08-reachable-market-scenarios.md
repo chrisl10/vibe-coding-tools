@@ -1,6 +1,6 @@
 # Bottom-up reachable market worksheet
 
-Read [distillation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/growth-and-customer-tools/skills/competitive-research-stinger/references/research/2026-10-outcome-enhancement/distilled.md) and [schema](../references/competitive-evidence-schema.md). This is supplied-input scenario arithmetic within competitive research, not valuation, TAM invention or a sales forecast.
+Read distillation and [schema](../references/competitive-evidence-schema.md). This is supplied-input scenario arithmetic within competitive research, not valuation, TAM invention or a sales forecast.
 
 1. Fix geography, segment, buying unit and sales horizon. Obtain an eligible account count or bounded range with source year and coverage. Distinguish firms, establishments, users, seats and households. Document overlap/deduplication/exclusions. Official population counts may be older than today's retrieval; freshness of fetch does not change dataset year.
 2. Record eligible accounts, reachable fraction in the stated horizon, conditional conversion fraction among reached eligible accounts, maximum service/onboarding capacity, and annual price per account. Each input is measured/assumed/unknown, with evidence or assumption rationale. Use currency and period explicitly. Do not mix seats with accounts or MRR with annual price. Unknown inputs remain null; no result is computed for that scenario.

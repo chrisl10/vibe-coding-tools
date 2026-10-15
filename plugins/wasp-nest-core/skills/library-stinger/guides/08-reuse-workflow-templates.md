@@ -2,7 +2,7 @@
 
 Trigger: "turn this workflow into a reusable template", "reuse our real process", or "make templates from these completed documents". Library owns template structure and PRD/IRD authoring; deep narrative docs route to Knowledge, QA findings to Quality, and CTR terms to Contract Writing. Existing repository restrictions and human approval always apply.
 
-Grounding: [distillation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/library-stinger/references/research/template-reuse/distillation.md), [field contract](../references/template-reuse-fields.md). Purpose selection follows [Diátaxis](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/library-stinger/references/research/template-reuse/raw/diataxis-start.html); source pinning follows [GitHub](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/library-stinger/references/research/template-reuse/raw/github-permalinks.html). The procedure below is local Wasp Nest adaptation policy.
+Grounding: distillation, [field contract](../references/template-reuse-fields.md). Purpose selection follows Diátaxis; source pinning follows GitHub. The procedure below is local Wasp Nest adaptation policy.
 
 ## Observe before generalizing
 

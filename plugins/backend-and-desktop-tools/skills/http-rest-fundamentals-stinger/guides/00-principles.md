@@ -75,4 +75,4 @@ This pattern originated in SOAP (which used HTTP as a dumb transport) and has no
 
 ---
 
-*Sources: `research/internal/2026-05-20-rfc9110-http-semantics.md`, `research/internal/2026-05-20-fielding-dissertation.md`*
+*Sources: `research/internal/2026-05-20-rfc9110-http-semantics.md`, `research/internal/2026-05-20-fielding-dissertation.md` (source-repository research, not shipped)*

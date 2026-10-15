@@ -2,7 +2,7 @@
 name: vultr-platform-wasp-drone
 description: "Use for read-only Vultr compute/workload fit, retained operations, data/recovery and dated cost handoff. No provisioning or account access."
 model: inherit
-tools: Read, Glob, Grep, WebFetch, WebSearch
+tools: Read, Glob, Grep, WebFetch, WebSearch, Skill
 ---
 
 ## Critical Directive

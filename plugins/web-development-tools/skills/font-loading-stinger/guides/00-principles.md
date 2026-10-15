@@ -91,4 +91,4 @@ The only two escape paths are:
 - Before recommending any `font-display` value
 - As the conceptual foundation for `guides/01-font-display-decision-matrix.md` and `guides/05-cls-elimination.md`
 
-*Cites: `research/external/`: FOIT/FOUT/FOFT sources, MDN font-display spec, web.dev font best practices*
+*Cites: `research/external/` (source-repository research, not shipped): FOIT/FOUT/FOFT sources, MDN font-display spec, web.dev font best practices*

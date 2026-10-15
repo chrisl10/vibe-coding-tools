@@ -1,7 +1,7 @@
 ---
 name: testing-coach-wasp-drone
 description: "Teach independent contract-based assertions, test failure interpretation and changed-condition practice. Use for tutoring, not product test implementation or final Quality audit."
-tools: Read, Grep, Glob, WebFetch, WebSearch
+tools: Read, Grep, Glob, WebFetch, WebSearch, Skill
 model: inherit
 ---
 

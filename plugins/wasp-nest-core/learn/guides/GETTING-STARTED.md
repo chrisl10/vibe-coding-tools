@@ -20,6 +20,8 @@ codex plugin add wasp-nest-core@wasp-nest
 
 Purge the previous Wasp Nest installation before adopting v3; no legacy aliases or command bridge are provided. Keep Core enabled. The [public README](https://github.com/legioncodeinc/vibe-coding-tools#what-ships) lists the current optional packs and their command homes. Install the `highlevel` pack only when you need HighLevel API, AI Studio, or workflow-export work, for example. A pack contains its own Stingers and, where applicable, Drones.
 
+**Python on Windows:** commands in these docs are written as `python3`. On Windows, use `py -3` (or `python`) in their place, for example `py -3 scripts/validate.py`. If `python3` opens the Microsoft Store instead, turn off its app-execution alias under Settings, Apps, Advanced app settings, App execution aliases.
+
 For native Codex roles, first review `~/.wasp-nest/installed-plugins.json` with actual roots for Core and the enabled optional plugins. The local installer writes it; a marketplace/UI install alone is not proven to do so. Then open `/hooks`, trust Core's registration hook and start a new local session. It registers declared roles from that explicit selection under `$CODEX_HOME/agents` (normally `~/.codex/agents`). If a same-name definition has changed, it is backed up before replacement. Role registration requires both the explicit selection and hook trust. Installed Stingers remain their own entry points. [Harness Capabilities](../reference/HARNESS-CAPABILITIES.md) explains why a Claude command appears as a wrapper skill in Codex.
 
 ## Decide whether to set up your home

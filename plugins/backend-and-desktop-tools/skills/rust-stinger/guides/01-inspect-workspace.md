@@ -23,11 +23,11 @@ Also inspect `Cargo.toml`, `Cargo.lock`, `rust-toolchain*`, `.cargo/config*`, `b
 - Draw the crate dependency direction and identify public type owners.
 - Record workspace edition, resolver, toolchain pin, declared `rust-version`, default features, optional providers/TUI, targets, and binary entry points.
 - Find all `unsafe`, panic/unwrap/expect paths in daemon/adapter/state/migration boundaries, global mutable state, spawned tasks, channels, `select!`, retries, time access, raw SQL, logging macros, secret exposure, TLS customization, and migrations.
-- Locate every task owner and shutdown join path; Axum listener shutdown does not join arbitrary background tasks ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-axum-graceful-shutdown.md)).
-- Locate every bounded and unbounded queue; bounded Tokio MPSC expresses backpressure while unbounded channels do not encode a memory limit ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-tokio-mpsc.md)).
-- Verify effective SQLite journal, synchronous, foreign-key, busy-timeout, and checkpoint policy; SQLx does not select a journal mode by default ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/persistence/2026-07-24-sqlx-connect-options.md)).
-- Separate current stable from declared MSRV. Cargo's `rust-version` participates in resolution but still needs CI proof across advertised features ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/rust-cargo/2026-07-24-cargo-rust-version.md)).
-- Treat compiler target tiers as compiler guarantees, not product install/runtime proof ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/rust-cargo/2026-07-24-platform-support.md)).
+- Locate every task owner and shutdown join path; Axum listener shutdown does not join arbitrary background tasks (research).
+- Locate every bounded and unbounded queue; bounded Tokio MPSC expresses backpressure while unbounded channels do not encode a memory limit (research).
+- Verify effective SQLite journal, synchronous, foreign-key, busy-timeout, and checkpoint policy; SQLx does not select a journal mode by default (research).
+- Separate current stable from declared MSRV. Cargo's `rust-version` participates in resolution but still needs CI proof across advertised features (research).
+- Treat compiler target tiers as compiler guarantees, not product install/runtime proof (research).
 
 ## Revalidation record
 

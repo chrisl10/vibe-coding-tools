@@ -22,4 +22,4 @@ app-store-submission-stinger/
 
 ## Current store readiness route
 
-Start with [guide 06](guides/06-prepare-artifact-privacy-and-entitlement-evidence.md), [worksheet](templates/store-evidence-worksheet.md), [cases](examples/store-evidence-readiness-cases.md) and [2026-10-07 primary findings](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/app-store-submission-stinger/references/research/store-readiness-20261007/digest.md). Historical May billing/metadata/payment examples do not override current dated requirements. Native build and billing implementation remain separate owners.
+Start with [guide 06](guides/06-prepare-artifact-privacy-and-entitlement-evidence.md), [worksheet](templates/store-evidence-worksheet.md), [cases](examples/store-evidence-readiness-cases.md) and 2026-10-07 primary findings. Historical May billing/metadata/payment examples do not override current dated requirements. Native build and billing implementation remain separate owners.

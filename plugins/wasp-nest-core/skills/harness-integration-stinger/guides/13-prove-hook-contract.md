@@ -1,6 +1,6 @@
 # Prove a hook contract on the actual host
 
-Use for O292. Load [the digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/harness-integration-stinger/references/research/pack-hook-proof/distilled-pack-hook-proof.md), [the source advisory procedure](component-validation-hook.md), then [the hook receipt](../templates/hook-contract-receipt.md).
+Use for O292. Load the digest, [the source advisory procedure](component-validation-hook.md), then [the hook receipt](../templates/hook-contract-receipt.md).
 
 1. Identify purpose: advisory observation or intentional authorization/integrity gate. Record host version, carrier, selected owner version, handler hash, registered event/matcher, root substitution, interpreter, trust decision and permission scope. Unknown fields stay UNKNOWN; source settings do not prove active settings.
 2. Obtain a redacted event-specific native payload through an authorized observation surface. Record actual nesting, types, path semantics, cwd and stdin/transport. Never copy transcript content, tokens or personal data into a fixture. Unsupported or absent payload/event is a gap, not successful degradation.

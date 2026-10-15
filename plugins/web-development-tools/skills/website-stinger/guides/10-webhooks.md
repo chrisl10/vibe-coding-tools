@@ -1,6 +1,6 @@
 # 10: Webhook & Outbound Integration System
 
-Source PRD: `research/source-prds/prd-phase-10-webhook-integration-system.md`
+Source PRD: `research/source-prds/prd-phase-10-webhook-integration-system.md` (source-repository research, not shipped)
 
 ---
 

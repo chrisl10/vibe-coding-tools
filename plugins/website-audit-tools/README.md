@@ -63,7 +63,7 @@ Claude Code plugin command names:
 
 | Command | What it does |
 | --- | --- |
-| `/website-audit-tools:perform-website-audit` ([procedure](commands/perform-website-audit.md)) | Runs a full Website Auditor by Legion Code Inc. engagement end to end: intake through branded reports, sequencing all 20 Drone/Stinger pairs per the dependency graph. |
+| `/website-audit-tools:perform-website-audit` ([procedure](commands/perform-website-audit.md)) | Run a full Website Auditor by Legion Code Inc. engagement end to end: intake through scored, branded reports, dispatching the 20 Drone/Stinger pairs in dependency order. |
 
 ## Agent responsibilities
 

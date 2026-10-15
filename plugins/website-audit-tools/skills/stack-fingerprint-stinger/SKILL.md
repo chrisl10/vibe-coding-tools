@@ -12,10 +12,6 @@ metadata:
 
 # Stack Fingerprint Stinger
 
-> **Forge status:** stages 1-6 complete (Topic, Research, Distillation, References, Guides, final
-> Skill/Drone authorship). Stage 7 (Register: pest-controller-suit registration and cross-harness deploy)
-> has not run yet.
-
 ## Purpose
 
 Equips **stack-fingerprint-wasp-drone**, wave W1a of every Website Auditor by Legion Code Inc.
@@ -25,7 +21,7 @@ every later Drone reads instead of re-detecting anything itself. Full scope and 
 [prd-003-stack-fingerprint](../../library/requirements/backlog/prd-003-stack-fingerprint/prd-003-stack-fingerprint-index.md).
 
 Every factual claim this skill makes traces to a downloaded primary source in
-`references/research/raw/` or to this pair's PRD/the build plan; anywhere the archive runs thin
+`references/research/raw/` (source-repository research, not shipped with the plugin) or to this pair's PRD/the build plan; anywhere the archive runs thin
 (React+Vite, SvelteKit specifically versus Svelte generally, Magento, and the render-mode comparison
 heuristic itself all have no dedicated source), that gap is named explicitly rather than smoothed
 into an unstated guess. See `references/research/distilled-stack-fingerprint.md` section 8 and
@@ -73,7 +69,7 @@ into an unstated guess. See `references/research/distilled-stack-fingerprint.md`
   `01-recon/stack-fingerprint.md`
 - `references/research/distilled-stack-fingerprint.md`, load when a domain claim needs verification
   or this Stinger's coverage gaps need checking before making a claim
-- `references/research/raw/`, load when tracing a distilled claim back to its primary source
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `references/scripts/README.md` and `shared/scripts/fingerprint.py`, load/run for the deterministic
   matcher that drives steps 3-4 of the procedure above
 
@@ -88,7 +84,7 @@ into an unstated guess. See `references/research/distilled-stack-fingerprint.md`
   `target-profile.json` to select its platform-specific crawl strategy without re-detecting anything
 - [audit-intake-stinger](../audit-intake-stinger) - wave W0, scaffolds the workspace this Stinger
   reads `00-intake/` from
-- [seo-aeo-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/seo-aeo-stinger) - internal-repo SEO/AEO reference; consult for standard
+- [seo-aeo-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/seo-aeo-stinger) - internal-repo SEO/AEO reference; consult for standard
   definitions this external audit's technical-seo pair also relies on
 
 ## Critical Directive

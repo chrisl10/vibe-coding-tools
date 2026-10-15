@@ -17,7 +17,7 @@ Infrastructure problems are upstream of everything. Before assessing copy, seque
 
 If any of these fail, the correct action is to fix infrastructure first. No other optimization matters until the email physically reaches the inbox.
 
-**Research grounding:** `research/external/2026-05-20-cold-email-deliverability-2026-rules.md`
+**Research grounding:** `research/external/2026-05-20-cold-email-deliverability-2026-rules.md` (source-repository research, not shipped)
 
 ---
 
@@ -43,7 +43,7 @@ The test: read the sequence to 10 people who fit the ICP description. If the pro
 
 Send rate and optimization pressure on a bad list burns sender reputation and provides misleading signal about what is or is not working.
 
-**Research grounding:** `research/external/2026-05-20-apollo-vs-lemlist-tool-decision.md`
+**Research grounding:** `research/external/2026-05-20-apollo-vs-lemlist-tool-decision.md` (source-repository research, not shipped)
 
 ---
 
@@ -63,7 +63,7 @@ Genuine personalization references something specific to that prospect:
 
 The Clay Claygent SKIP rule is the operational implementation of this principle: the prompt instructs Claygent to return "SKIP" (not a generic line) if it cannot find a specific insight. See `guides/04-clay-personalization.md`.
 
-**Research grounding:** `research/external/2026-05-20-clay-claygent-personalization-anti-slop.md`
+**Research grounding:** `research/external/2026-05-20-clay-claygent-personalization-anti-slop.md` (source-repository research, not shipped)
 
 ---
 
@@ -80,7 +80,7 @@ The canonical metrics for cold email:
 
 If a user presents open rate data as the main success measure, correct this before analyzing the data.
 
-**Research grounding:** `research/external/2026-05-20-cold-email-reply-rate-benchmarks-2026.md`
+**Research grounding:** `research/external/2026-05-20-cold-email-reply-rate-benchmarks-2026.md` (source-repository research, not shipped)
 
 ---
 
@@ -99,4 +99,4 @@ GDPR Article 6(1)(f) (legitimate interest) is the legal basis most commonly clai
 
 CAN-SPAM (US) and CASL (Canada) are less restrictive but still require: physical address in the email, unsubscribe mechanism, and for CASL, implied or express consent. Surface these requirements in the list hygiene step.
 
-**Research grounding:** `research/external/2026-05-20-apollo-search-filters-list-building.md` (compliance notes)
+**Research grounding:** `research/external/2026-05-20-apollo-search-filters-list-building.md` (source-repository research, not shipped) (compliance notes)

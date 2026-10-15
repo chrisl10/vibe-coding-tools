@@ -4,7 +4,7 @@ The canonical API layer. Pydantic v2 schemas + decorator-per-endpoint + automati
 
 ## Why Ninja over DRF
 
-See `research/2026-05-03-django-ninja-vs-drf.md` and `references/drf-comparison.md`. Short version:
+See `research/2026-05-03-django-ninja-vs-drf.md` (source-repository research, not shipped) and `references/drf-comparison.md`. Short version:
 
 - DRF requires a `Serializer` + `ViewSet` + `Router` per endpoint family. Lots of ceremony.
 - Ninja: one decorated function per endpoint with type-hinted Pydantic schemas. Validation, serialization, OpenAPI docs are automatic.
@@ -221,6 +221,6 @@ See `examples/07-drf-to-django-ninja-migration.md` for the phased plan + parity 
 
 ## Sources
 
-- `research/2026-05-03-django-ninja-vs-drf.md`
-- `research/2026-05-03-pydantic-v2-ninja-schemas.md`
+- `research/2026-05-03-django-ninja-vs-drf.md` (source-repository research, not shipped)
+- `research/2026-05-03-pydantic-v2-ninja-schemas.md` (source-repository research, not shipped)
 - https://django-ninja.dev/

@@ -1,6 +1,6 @@
 # Guide 06: App Directory and Marketplace
 
-**Sources:** `research/external/2026-05-20-app-directory-marketplace.md`, `research/external/2026-05-20-dev-policy-update.md`, `research/external/2026-05-20-socket-mode-vs-http.md`
+**Sources:** `research/external/2026-05-20-app-directory-marketplace.md`, `research/external/2026-05-20-dev-policy-update.md`, `research/external/2026-05-20-socket-mode-vs-http.md` (source-repository research, not shipped)
 
 ---
 
@@ -12,7 +12,7 @@
 | Public distribution (unlisted) | Anyone with a direct install link | No | Yes (if commercial scale) |
 | Slack Marketplace | Anyone via Marketplace search | Yes | Yes |
 
-> **December 2024 policy update:** Apps intended for commercial distribution at scale (even unlisted) must now go through Marketplace review. The old loophole of distributing at scale while keeping the app unlisted is explicitly closed. Source: `research/external/2026-05-20-dev-policy-update.md`
+> **December 2024 policy update:** Apps intended for commercial distribution at scale (even unlisted) must now go through Marketplace review. The old loophole of distributing at scale while keeping the app unlisted is explicitly closed. Source: `research/external/2026-05-20-dev-policy-update.md` (source-repository research, not shipped)
 
 ---
 
@@ -65,7 +65,7 @@ Work through this checklist before submitting to the Marketplace. Incomplete ite
 
 ## LLM training prohibition (critical)
 
-> Source: `research/external/2026-05-20-dev-policy-update.md`
+> Source: `research/external/2026-05-20-dev-policy-update.md` (source-repository research, not shipped)
 
 The December 2024 Slack App Developer Policy update added an explicit, absolute prohibition:
 

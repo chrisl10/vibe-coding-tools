@@ -74,4 +74,4 @@ These must hold for any Next.js implementation this stinger produces:
 3. No `useTheme()` call that renders differently based on `resolvedTheme` without a `mounted` guard: the server has no resolved theme.
 4. `meta[name="color-scheme"]` in `<head>` to tell the browser which scheme to use for OS-native chrome (scrollbars, form inputs) before CSS loads.
 
-*Sources: `research/external/2026-05-20-ssr-color-scheme-detection.md`, `research/external/2026-05-20-next-themes-api.md`*
+*Sources: `research/external/2026-05-20-ssr-color-scheme-detection.md`, `research/external/2026-05-20-next-themes-api.md` (source-repository research, not shipped)*

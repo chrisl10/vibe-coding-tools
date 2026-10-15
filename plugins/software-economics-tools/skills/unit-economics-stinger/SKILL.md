@@ -46,7 +46,7 @@ Write runtime reports under the user's repository `library/requirements/reports/
 
 ## References
 
-- [Research distillation](references/research/distilled-unit-economics.md), [source ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/software-economics-tools/skills/unit-economics-stinger/references/research/source-ledger.json), and [raw archive](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/software-economics-tools/skills/unit-economics-stinger/references/research/raw): verify domain claims.
+- [Research distillation](references/research/distilled-unit-economics.md), source ledger, and raw archive: verify domain claims.
 - [Worked examples](examples/fictional-scenarios.md): check the difference between contribution and gross margin.
 - [Paired Drone](../../agents/unit-economics-wasp-drone.md): specialist invocation.
 
@@ -54,12 +54,12 @@ Write runtime reports under the user's repository `library/requirements/reports/
 
 ## Fair service limits
 
-For O281 use [the focused guide](guides/04-fair-service-limits.md), [integrated worksheet](references/templates/fair-service-limits-worksheet.md), [dated mechanism research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/software-economics-tools/skills/unit-economics-stinger/references/research/fair-limits/distillation.md) and [completed fictional cases](examples/fair-service-limits-cases.md). Join entitlement usage/window/aggregation and cost scenarios with proposed limits, overflow/recovery/review, owner-selected fairness criteria and evidenced decisions. Reuse the calculator once; Unknown rates/owners/criteria stay Unknown. Selected SaaS Pricing owns value tradeoffs. Separately accepted Payments and actual Security/platform implementation require their own evidence. Costs prove neither fairness nor working abuse controls.
+For O281 use [the focused guide](guides/04-fair-service-limits.md), [integrated worksheet](references/templates/fair-service-limits-worksheet.md), dated mechanism research and [completed fictional cases](examples/fair-service-limits-cases.md). Join entitlement usage/window/aggregation and cost scenarios with proposed limits, overflow/recovery/review, owner-selected fairness criteria and evidenced decisions. Reuse the calculator once; Unknown rates/owners/criteria stay Unknown. Selected SaaS Pricing owns value tradeoffs. Separately accepted Payments and actual Security/platform implementation require their own evidence. Costs prove neither fairness nor working abuse controls.
 
 ## Critical Directive
 
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [pest-controller-suit](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/pest-controller-suit/SKILL.md) - Source roster and selected-owner routing. In installed plugins resolve Core's skill rather than assuming this source-tree relative path.
+  - [pest-controller-suit](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/pest-controller-suit/SKILL.md) - Source roster and selected-owner routing. In installed plugins resolve Core's skill rather than assuming this source-tree relative path.
   - Payments, Estimation, and platform specialists - Resolve their catalog names through trusted Core's selected-plugin resolver before loading any optional owner.

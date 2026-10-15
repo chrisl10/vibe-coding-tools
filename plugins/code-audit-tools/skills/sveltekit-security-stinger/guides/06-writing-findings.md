@@ -62,4 +62,4 @@ Do not write `02-security/findings.jsonl` or `metrics.json`; the orchestrator's 
 
 ## Sources
 
-[raw/owasp--top10-2025-categories-and-cwes.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/owasp--top10-2025-categories-and-cwes.md), [raw/cwe--core-entries.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/cwe--core-entries.md), [raw/advisory--github-advisory-db-svelte-ecosystem.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/sveltekit-security-stinger/references/research/raw/advisory--github-advisory-db-svelte-ecosystem.md).
+raw/owasp--top10-2025-categories-and-cwes.md, raw/cwe--core-entries.md, raw/advisory--github-advisory-db-svelte-ecosystem.md.

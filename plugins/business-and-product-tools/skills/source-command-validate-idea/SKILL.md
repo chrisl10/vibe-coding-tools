@@ -2,6 +2,7 @@
 name: "source-command-validate-idea"
 description: "Test an app or business idea against customer evidence, current alternatives, and a falsifiable experiment."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-validate-idea

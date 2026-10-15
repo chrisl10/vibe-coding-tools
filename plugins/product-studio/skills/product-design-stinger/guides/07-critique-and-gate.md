@@ -2,7 +2,7 @@
 
 Goal: score the work honestly against the approved direction before the owner sees it, fix in bounded rounds, then get Gate B.
 
-Grounding: [design critiques](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-design-critiques.md), [visual hierarchy](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-visual-hierarchy.md), [empty states](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-empty-states.md), [error messages](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-error-messages.md), [WCAG 2.2](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/a11y--w3c-wcag22-recommendation.md), Impeccable detector gate and bounded passes (repo: `impeccable-stinger/guides/06-detector-gate.md`, `impeccable-stinger/SKILL.md`). Distilled: [section 4](../references/research/distilled-product-design.md).
+Grounding: design critiques, visual hierarchy, empty states, error messages, WCAG 2.2, Impeccable detector gate and bounded passes (repo: `impeccable-stinger/guides/06-detector-gate.md`, `impeccable-stinger/SKILL.md`). Distilled: [section 4](../references/research/distilled-product-design.md).
 
 ## 1. Prepare evidence
 

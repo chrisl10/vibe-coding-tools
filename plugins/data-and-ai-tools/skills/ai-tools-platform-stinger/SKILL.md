@@ -68,13 +68,13 @@ ai-tools-platform-stinger/
 
 ## Feature margin workflow
 
-For feature margin, read [guide 08](guides/08-protect-feature-margin.md), [the incomplete ledger](examples/hypothetical-ledger.md), and [the complete synthetic exercise](examples/synthetic-feature-margin.md). Resolve selected Operating Cost and Unit Economics owners before using their existing calculators. Unknown inputs block dependent totals; alerts/rate limits require observed enforcement evidence before any hard financial-control claim. Provider facts are grounded in the [update digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/ai-tools-platform-stinger/references/research/feature-margin/digest.md).
+For feature margin, read [guide 08](guides/08-protect-feature-margin.md), [the incomplete ledger](examples/hypothetical-ledger.md), and [the complete synthetic exercise](examples/synthetic-feature-margin.md). Resolve selected Operating Cost and Unit Economics owners before using their existing calculators. Unknown inputs block dependent totals; alerts/rate limits require observed enforcement evidence before any hard financial-control claim. Provider facts are grounded in the update digest.
 
 ## Request budgets and local hardware fit
 
 For token/tool/retry/fallback/concurrency/money/latency bounds, load [guide 09](guides/09-bound-request-retries-and-fallbacks.md), [contract worksheet](templates/request-budget-contract.md) and [review cases](examples/request-budget-cases.md). Resolve existing Economics owners through guide 08; Unknown rates block estimates. SDK/application/gateway retries, uncertain billing and atomic in-flight reservations need observed implementation proof before enforcement claims.
 
-For local-model hardware, load [guide 10](guides/10-qualify-local-model-hardware.md), [fit worksheet](templates/local-model-fit.md) and [source cases](examples/local-model-fit-cases.md). Require actual artifact/hash, quantization, runtime/context, CPU/GPU/RAM/VRAM/OS/load/concurrency and quality/latency evidence; no universal fit, free-inference or zero-egress promise. Inherit native host model settings. Provider calls, downloads, installs, purchases, configuration and spend require task-specific authorization. [Current digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/ai-tools-platform-stinger/references/research/request-budgets/digest.md) takes precedence over conflicting historical estimates below for these workflows.
+For local-model hardware, load [guide 10](guides/10-qualify-local-model-hardware.md), [fit worksheet](templates/local-model-fit.md) and [source cases](examples/local-model-fit-cases.md). Require actual artifact/hash, quantization, runtime/context, CPU/GPU/RAM/VRAM/OS/load/concurrency and quality/latency evidence; no universal fit, free-inference or zero-egress promise. Inherit native host model settings. Provider calls, downloads, installs, purchases, configuration and spend require task-specific authorization. Current digest takes precedence over conflicting historical estimates below for these workflows.
 
 ## Canonical stack defaults
 

@@ -2,7 +2,7 @@
 
 > Read this before any other guide. These are the non-negotiables.
 
-*Derived from: `research/external/keep-a-changelog.md`, `research/external/semver.md`, `research/external/changelog-copy-craft.md`, `research/internal/command-brief-notes.md`*
+*Derived from: `research/external/keep-a-changelog.md`, `research/external/semver.md`, `research/external/changelog-copy-craft.md`, `research/internal/command-brief-notes.md` (source-repository research, not shipped)*
 
 ---
 
@@ -20,7 +20,7 @@ The goal of `changelog-release-notes-wasp-drone` is a human-authored, accurate, 
 
 ### 1. The CHANGELOG is for the person installing or upgrading, not for machines
 
-*Source: `research/external/keep-a-changelog.md`*
+*Source: `research/external/keep-a-changelog.md` (source-repository research, not shipped)*
 
 > "Don't let your friends dump git logs into changelogs."
 
@@ -39,7 +39,7 @@ Lead with the most meaningful change. If the biggest thing is "capture is now 5x
 
 ### 4. Get the semver bump right - it is a contract, not a vibe
 
-*Source: `research/external/semver.md`*
+*Source: `research/external/semver.md` (source-repository research, not shipped)*
 
 @deeplake/hivemind is depended on by harnesses and agents. The breaking-change surface is wider than most libraries: CLI flags and commands, library exports, the **harness contracts**, the **MCP tool surface**, and the **Deep Lake schema**. A change to any of those that is not backward compatible is a **major**. Mislabeling it as a patch or minor breaks downstream silently. See `guides/02-semver-decisions.md`.
 

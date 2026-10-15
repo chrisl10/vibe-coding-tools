@@ -1,6 +1,6 @@
 # Measure emitted bundle weight
 
-Treat before/after output as the result, not dependency declarations or filename guesses. [Grounding](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/react-stinger/references/research/outcome-modernization/distillation.md#build-measurement)
+Treat before/after output as the result, not dependency declarations or filename guesses. Grounding
 
 1. Record commit/tree identity, lockfile, build command, mode, target, relevant env names without values and runtime versions. Run the existing production build with its normal configuration. No install or configuration change is implied by this skill.
 2. Obtain the actual Vite manifest when already emitted. The standard enabled manifest is `.vite/manifest.json`; a custom manifest path can differ. Map the selected manifest entry and static imports, deduplicate shared assets, and list dynamic entries separately. If missing, request a reviewed manifest configuration change or inspect an existing analyzer; do not infer routes from hashes.

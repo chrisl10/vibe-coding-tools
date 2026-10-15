@@ -1,6 +1,6 @@
 # Responsive Images: srcset and sizes
 
-> Derived from: `research/external/2026-05-20-mdn-responsive-images.md`, `research/external/2026-05-20-responsive-images-complete-guide-krunkit.md`, `research/external/2026-05-20-srcset-sizes-picovert.md`, `research/external/2026-05-20-webdev-responsive-images.md`, `research/external/2026-05-20-responsive-srcset-sizes-lcp.md`
+> Derived from: `research/external/2026-05-20-mdn-responsive-images.md`, `research/external/2026-05-20-responsive-images-complete-guide-krunkit.md`, `research/external/2026-05-20-srcset-sizes-picovert.md`, `research/external/2026-05-20-webdev-responsive-images.md`, `research/external/2026-05-20-responsive-srcset-sizes-lcp.md` (source-repository research, not shipped)
 
 ---
 
@@ -70,7 +70,7 @@ Create a new size variant when the file size would drop by ~20-30 KB compared to
 320w, 480w, 640w, 768w, 1024w, 1280w, 1600w, 1920w, 2400w, 3840w
 ```
 
-> Source: `research/external/2026-05-20-responsive-images-complete-guide-krunkit.md`
+> Source: `research/external/2026-05-20-responsive-images-complete-guide-krunkit.md` (source-repository research, not shipped)
 
 ---
 
@@ -128,4 +128,4 @@ Use `<picture>` + `<source media="...">` when the image needs to be **cropped di
 
 When you omit `sizes` in `next/image`, it defaults to `100vw`, which is the #1 next/image performance bug in production. Always provide `sizes` for non-full-width images.
 
-> Source: `research/external/2026-05-20-nextjs-image-component-api.md`
+> Source: `research/external/2026-05-20-nextjs-image-component-api.md` (source-repository research, not shipped)

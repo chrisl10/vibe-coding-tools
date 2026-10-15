@@ -2,7 +2,7 @@
 
 How to author application commands (slash, user-context, message-context), register them, and handle interactions correctly.
 
-*Sources: `research/external/2026-05-20-discord-application-commands-spec.md`, `research/external/2026-05-20-discordjs-v14-slash-commands.md`, `research/external/2026-05-20-discordpy-app-commands.md`*
+*Sources: `research/external/2026-05-20-discord-application-commands-spec.md`, `research/external/2026-05-20-discordjs-v14-slash-commands.md`, `research/external/2026-05-20-discordpy-app-commands.md` (source-repository research, not shipped)*
 
 ---
 

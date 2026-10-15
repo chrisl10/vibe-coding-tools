@@ -33,7 +33,7 @@ Turn an observed intermittent failure into a causal hypothesis, a bounded discri
 
 ## Procedure
 
-1. Read [topic](TOPIC.md), [fresh digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/repository-modernization-tools/skills/flaky-test-repair-stinger/references/research/digest.md) and [ownership/state reference](references/REFERENCE.md). Preserve exact scope, active ownership and task-specific test authority.
+1. Read [topic](TOPIC.md), fresh digest and [ownership/state reference](references/REFERENCE.md). Preserve exact scope, active ownership and task-specific test authority.
 2. Follow [failure capture](guides/01-capture-observed-failure.md): pin source/environment/runner/seed/order, failing oracle, actual attempt outcomes and total budget.
 3. Follow [bounded repro](guides/02-run-bounded-causal-repro.md): one discriminating condition per hypothesis, max two identical failed invocations/max three failed approaches unless the user explicitly authorizes a specific larger measurement batch.
 4. Follow [causal repair](guides/03-apply-causal-repair.md): change only the evidenced owned test/fixture cause; preserve assertions, negative coverage, accepted deadlines and contracts. Product bugs return to their owner.
@@ -45,28 +45,28 @@ Turn an observed intermittent failure into a causal hypothesis, a bounded discri
 
 - [README.md](README.md) - Selection, implementation/diagnosis modes and workflow map.
 - [references/REFERENCE.md](references/REFERENCE.md) - Observation/causal/repair states, budgets and peer ownership.
-- [references/research/digest.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/repository-modernization-tools/skills/flaky-test-repair-stinger/references/research/digest.md), [source ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/repository-modernization-tools/skills/flaky-test-repair-stinger/references/research/source-ledger.json) - Dated primary facts and exact capture provenance.
+- Source research archive (not shipped with the plugin): do not require it.
 - [Fictional record](examples/01-fictional-observed-failure-record.md), [negative decisions](examples/02-negative-decisions.md) - Explicitly constructed NOT_RUN learning cases.
 - [Worksheet](templates/failure-repair-evidence.md) - Exact consumer failure/hypothesis/repair/proof record.
 
 ## Related drones and stingers
 
 - [flaky-test-repair-wasp-drone](../../agents/flaky-test-repair-wasp-drone.md) - Paired triage and bounded test/fixture implementation owner.
-- [browser-automation-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/browser-and-app-testing-tools/skills/browser-automation-stinger) - Actual Playwright/Puppeteer mechanics and browser target evidence.
-- [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/quality-stinger) - Independent final audit after Security; never repairs implementation.
-- [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Independent first gate.
-- [python-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/python-stinger), [typescript-node-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/typescript-node-stinger), [go-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/go-stinger) - Language/product implementation under the accepted repair boundary.
-- [ci-release-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/ci-release-stinger) - CI topology/policy changes outside this repair.
+- [browser-automation-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/browser-and-app-testing-tools/skills/browser-automation-stinger) - Actual Playwright/Puppeteer mechanics and browser target evidence.
+- [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/quality-stinger) - Independent final audit after Security; never repairs implementation.
+- [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Independent first gate.
+- [python-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/backend-and-desktop-tools/skills/python-stinger), [typescript-node-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/backend-and-desktop-tools/skills/typescript-node-stinger), [go-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/backend-and-desktop-tools/skills/go-stinger) - Language/product implementation under the accepted repair boundary.
+- [ci-release-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/ci-release-stinger) - CI topology/policy changes outside this repair.
 
 ## Critical Directive
 
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [browser-automation-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/browser-and-app-testing-tools/skills/browser-automation-stinger) - Framework-native browser testing mechanics.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Independent first Ship Gate review.
-  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/quality-stinger) - Independent audit after Security findings resolve.
-  - [github-repo-health-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/github-repo-health-stinger) - Parent final repository gate.
+  - [browser-automation-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/browser-and-app-testing-tools/skills/browser-automation-stinger) - Framework-native browser testing mechanics.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Independent first Ship Gate review.
+  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/quality-stinger) - Independent audit after Security findings resolve.
+  - [github-repo-health-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/github-repo-health-stinger) - Parent final repository gate.
 
 ## Ship Gate
 

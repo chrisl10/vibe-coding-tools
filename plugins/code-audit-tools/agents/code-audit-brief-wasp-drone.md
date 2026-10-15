@@ -1,7 +1,7 @@
 ---
 name: code-audit-brief-wasp-drone
 description: Renders the Audit My Code brief, one self-contained Field Guide styled HTML file per run, from the run workspace. Use as the final step of /audit-my-code, to re-render after a Drone fixes its output, or to rebrand the brief. Do NOT use to run or re-score any audit dimension, or to write into the audited repository.
-tools: Read, Grep, Glob, Bash, Write
+tools: Read, Grep, Glob, Bash, Write, Skill, WebSearch, WebFetch
 model: sonnet
 ---
 

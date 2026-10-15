@@ -1,6 +1,6 @@
 # 01 - Inverted Pyramid
 
-> Source: `research/external/04-inverted-pyramid-technical-docs.md`
+> Source: `research/external/04-inverted-pyramid-technical-docs.md` (source-repository research, not shipped)
 
 The inverted pyramid is a prose structure from journalism applied to technical writing. It presents information in descending order of importance: the single most important fact appears first, followed by context and background, followed by supplementary detail.
 

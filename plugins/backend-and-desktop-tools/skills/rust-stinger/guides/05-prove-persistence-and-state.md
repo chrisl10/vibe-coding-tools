@@ -6,28 +6,28 @@ Make SQLx/SQLite transactions, locking, migrations, crash recovery, and state tr
 
 ## Transaction rules
 
-1. Acquire write intent before reading mutable budget/quota state when the operation must serialize. SQLite allows one writer; deferred transactions can fail on read-to-write upgrade, while `BEGIN IMMEDIATE` attempts write acquisition at the start ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/persistence/2026-07-24-sqlite-transactions.md)).
+1. Acquire write intent before reading mutable budget/quota state when the operation must serialize. SQLite allows one writer; deferred transactions can fail on read-to-write upgrade, while `BEGIN IMMEDIATE` attempts write acquisition at the start (research).
 2. Keep eligibility, reservation, aggregate update, and idempotency record in one transaction.
 3. Use a conditional SQL update/constraint as the final oversubscription guard; an in-process mutex does not coordinate other processes.
 4. Treat `SQLITE_BUSY` as a bounded, observable result. A timeout is not authority for invisible unbounded retry.
-5. Use the selected SQLx version's tracked transaction API. `Connection::begin_with` is documented for SQLx 0.9; revalidate or design a version-specific alternative for other lines ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/persistence/2026-07-24-sqlx-custom-transactions.md)).
-6. Centralize and verify journal mode, synchronous level, foreign keys, busy timeout, and checkpoint policy. WAL improves reader/writer concurrency but still permits one writer and can grow under long readers ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/persistence/2026-07-24-sqlite-wal.md)).
-7. Match product durability language to the chosen PRAGMAs; WAL with `synchronous=NORMAL` does not provide recent-transaction durability across power loss ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/persistence/2026-07-24-sqlite-pragma-durability.md)).
+5. Use the selected SQLx version's tracked transaction API. `Connection::begin_with` is documented for SQLx 0.9; revalidate or design a version-specific alternative for other lines (research).
+6. Centralize and verify journal mode, synchronous level, foreign keys, busy timeout, and checkpoint policy. WAL improves reader/writer concurrency but still permits one writer and can grow under long readers (research).
+7. Match product durability language to the chosen PRAGMAs; WAL with `synchronous=NORMAL` does not provide recent-transaction durability across power loss (research).
 
 ## Migration rules
 
 - Embed migrations only after the database peer approves schema direction.
 - Keep migrations forward-only; test old binary/new schema compatibility as required.
 - Test interrupted migration, repeated startup, partial files, and crash/restart recovery.
-- Preserve database, WAL, SHM, and journal companions together during recovery; SQLite's atomicity evidence relies on journal/WAL recovery and fault testing ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/persistence/2026-07-24-sqlite-atomic-commit.md)).
-- Use compile-checked queries or checked-in offline metadata where practical; `migrate!` embeds migrations but does not replace compatibility/crash policy ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/persistence/2026-07-24-sqlx-migrations-queries.md)).
+- Preserve database, WAL, SHM, and journal companions together during recovery; SQLite's atomicity evidence relies on journal/WAL recovery and fault testing (research).
+- Use compile-checked queries or checked-in offline metadata where practical; `migrate!` embeds migrations but does not replace compatibility/crash policy (research).
 
 ## State-machine proof
 
 - Persist explicit tagged states/events and schema versions.
 - Keep invalid transitions unconstructible through private types and consumed proof tokens.
 - Model reservation, reconciliation, breaker, quota, pin, replay, recovery, and promotion in a reference state machine.
-- Generate valid transition sequences, assert postconditions/invariants, shrink failures, and save regression seeds; upstream proptest state-machine support is sequential, so add independent concurrency evidence ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/testing/2026-07-24-proptest-state-machines.md)).
+- Generate valid transition sequences, assert postconditions/invariants, shrink failures, and save regression seeds; upstream proptest state-machine support is sequential, so add independent concurrency evidence (research).
 - Inject fake time, stale observations, duplicate commands, process crashes, busy writers, and restart recovery.
 
 ## Open decision checkpoints

@@ -2,7 +2,7 @@
 
 The semantic half of retrieval on this repo's stack: pgvector similarity search. This guide owns *recall tuning* over the vector arm - which distance operator to query with, when to weight the arm up or down, when it's worth running at all. It does NOT own the column shape, dimension, or index type - that is `vector-store-wasp-drone`'s (`vector-store-stinger/guides/pgvector-01-schema-and-drizzle.md` and `pgvector-02-indexing.md`).
 
-> Ground truth: `vector-store-stinger/references/research/raw/neon--pgvector--extension-official-docs.md` and `neon--pgvector--optimize-vector-search-hnsw-ivfflat.md` (the storage/index side); this Stinger's own `references/research/raw/supabase--hybrid-search--reciprocal-rank-fusion-official-docs.md` for the recall-query shape.
+> Ground truth: `vector-store-stinger/references/research/raw/neon--pgvector--extension-official-docs.md` and `neon--pgvector--optimize-vector-search-hnsw-ivfflat.md` (the storage/index side); this Stinger's own `references/research/raw/supabase--hybrid-search--reciprocal-rank-fusion-official-docs.md` (source-repository research, not shipped) for the recall-query shape.
 
 ---
 

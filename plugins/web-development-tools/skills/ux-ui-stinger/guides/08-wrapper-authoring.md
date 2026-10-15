@@ -2,7 +2,7 @@
 
 The canonical shape of a library-wrapper component. Any component in `components/<product>/*` that wraps a shadcn / Radix / Mantine / Lucide primitive follows this pattern.
 
-Research: `research/2026-04-24-cva-variant-architecture.md`, `research/2026-04-24-radix-primitives-composition.md`.
+Research: `research/2026-04-24-cva-variant-architecture.md`, `research/2026-04-24-radix-primitives-composition.md` (source-repository research, not shipped).
 
 ## Purpose of wrapping
 
@@ -73,7 +73,7 @@ export { buttonVariants }
 
 ## The six wrapper-authoring rules
 
-1. **Ref access + passed props.** Preserve both to the underlying semantic node. This example uses legacy-compatible `forwardRef`; React19 ref-prop syntax can also satisfy the contract. Inspect and test installed React/primitive/types. See [current C03-C04](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/ux-ui-stinger/references/research/2026-10-07-flow-contracts/digest.md).
+1. **Ref access + passed props.** Preserve both to the underlying semantic node. This example uses legacy-compatible `forwardRef`; React19 ref-prop syntax can also satisfy the contract. Inspect and test installed React/primitive/types. See current C03-C04.
 
 2. **Expose compatible composition only for the selected primitive family.** Radix wrappers may use `asChild` with an installed Slot dependency. Do not add it to a Base UI wrapper by assumption or install dependencies from this example.
 
@@ -92,7 +92,7 @@ Every wrapper has an accompanying markdown doc in `<design-system-folder>/03-com
 - **Purpose.** What the component does in the product's terms.
 - **Contract.** Props and variants, typed.
 - **Why wrap.** Which of the three translations (tokens / variants / motion) this wrapper performs.
-- **Built on.** Library name and version pinned in `research/library-versions.md`.
+- **Built on.** Library name and version pinned in `research/library-versions.md` (source-repository research, not shipped).
 - **Replaces (in current code).** Paths that should migrate to this wrapper.
 - **Accessibility.** APG pattern (if any), focus-ring behavior, keyboard expectations.
 

@@ -16,7 +16,7 @@ Rust Stinger equips `rust-wasp-drone` to implement and review production Cargo w
 
 ## Native background work
 
-Use [guide 11](guides/11-native-background-work.md) for CPU versus async/blocking boundaries, bounded queues, cooperative cancellation, joined shutdown, storage and IPC ownership. Fill the [worksheet](templates/native-background-worksheet.md), then read the [worked example](examples/06-native-background-worker.md). Its standard-only fixture is an owned learning exercise; its tests do not certify a native application or Tokio integration. The [2026-10-07 digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/references/research/native-background/digest.md) links the fresh primary archive and records evidence limits.
+Use [guide 11](guides/11-native-background-work.md) for CPU versus async/blocking boundaries, bounded queues, cooperative cancellation, joined shutdown, storage and IPC ownership. Fill the [worksheet](templates/native-background-worksheet.md), then read the [worked example](examples/06-native-background-worker.md). Its standard-only fixture is an owned learning exercise; its tests do not certify a native application or Tokio integration. The 2026-10-07 digest links the fresh primary archive and records evidence limits.
 
 ## Maintenance
 

@@ -1,6 +1,6 @@
 # Fluid Type Scale with clamp()
 
-*Sources: `research/external/2026-05-20-fluid-type-clamp.md`, `research/external/2026-05-20-utopia-fluid-type.md`, `research/external/2026-05-20-modular-scale-ratios.md`*
+*Sources: `research/external/2026-05-20-fluid-type-clamp.md`, `research/external/2026-05-20-utopia-fluid-type.md`, `research/external/2026-05-20-modular-scale-ratios.md` (source-repository research, not shipped)*
 
 ---
 
@@ -41,7 +41,7 @@ In CSS:
 font-size: clamp(1rem, 0.857rem + 0.446vw, 1.5rem);
 ```
 
-**Source:** `research/external/2026-05-20-fluid-type-clamp.md` (Modern CSS Tools, January 2026)
+**Source:** `research/external/2026-05-20-fluid-type-clamp.md` (source-repository research, not shipped) (Modern CSS Tools, January 2026)
 
 ### WCAG 1.4.4 compliance
 
@@ -72,7 +72,7 @@ A modular scale multiplies each step by a ratio. Common ratios:
 | 1.333 | Perfect Fourth | 1, 1.33, 1.78, 2.37... |
 | 1.618 | Golden Ratio | 1, 1.62, 2.62, 4.24... |
 
-**Recommended default:** Major Third (1.25) for most web products. Provides clear visual hierarchy without overpowering the body text. Perfect Fourth (1.33) for display-heavy designs (portfolios, landing pages). Source: `research/external/2026-05-20-modular-scale-ratios.md`.
+**Recommended default:** Major Third (1.25) for most web products. Provides clear visual hierarchy without overpowering the body text. Perfect Fourth (1.33) for display-heavy designs (portfolios, landing pages). Source: `research/external/2026-05-20-modular-scale-ratios.md` (source-repository research, not shipped).
 
 ---
 
@@ -104,7 +104,7 @@ Then alias to semantic names in a separate layer:
 --font-size-h1:      var(--step-5);
 ```
 
-This two-tier approach (primitive steps + semantic aliases) lets you remap semantic names to different steps without changing component CSS. Source: `research/external/2026-05-20-utopia-fluid-type.md`.
+This two-tier approach (primitive steps + semantic aliases) lets you remap semantic names to different steps without changing component CSS. Source: `research/external/2026-05-20-utopia-fluid-type.md` (source-repository research, not shipped).
 
 ---
 

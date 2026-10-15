@@ -1,6 +1,6 @@
 # 02 - Branch Protection and Rulesets Audit
 
-*Research basis: `research/external/01-github-rulesets-docs.md`*
+*Research basis: `research/external/01-github-rulesets-docs.md` (source-repository research, not shipped)*
 
 ## Context: legacy rules vs. Rulesets (2025 GA)
 

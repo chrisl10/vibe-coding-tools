@@ -1,7 +1,7 @@
 ---
 name: network-boundaries-wasp-drone
 description: "Choose firewall, WAF and rate-limit layers from actual flows. Use for control placement, proxy identity, burst/outage decisions and owner/proof gaps; read-only advice."
-tools: Read, Grep, Glob, WebFetch, WebSearch
+tools: Read, Grep, Glob, WebFetch, WebSearch, Skill
 model: inherit
 ---
 

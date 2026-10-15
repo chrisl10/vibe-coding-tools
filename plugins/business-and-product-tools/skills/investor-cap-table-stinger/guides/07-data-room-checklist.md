@@ -2,7 +2,7 @@
 
 A Series A data room is the document package investors review during due diligence after signing a term sheet. 68% of failed Series A deals cite documentation problems. Start preparing 3-6 months before you expect to raise.
 
-Source: [`research/external/2026-05-20-series-a-data-room-checklist-2026.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/external/2026-05-20-series-a-data-room-checklist-2026.md), [`research/external/2026-05-20-carta-data-room-docsend-2026.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/external/2026-05-20-carta-data-room-docsend-2026.md), [`research/external/2026-05-20-60-document-data-room-standard-2026.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/external/2026-05-20-60-document-data-room-standard-2026.md)
+Source: `research/external/2026-05-20-series-a-data-room-checklist-2026.md`, `research/external/2026-05-20-carta-data-room-docsend-2026.md`, `research/external/2026-05-20-60-document-data-room-standard-2026.md` (source-repository research, not shipped)
 
 ---
 

@@ -2,7 +2,7 @@
 
 Composition beats configuration. Small, focused components beat large flexible ones.
 
-Source: `research/2026-04-24-bulletproof-react-components-styling.md`.
+Source: `research/2026-04-24-bulletproof-react-components-styling.md` (source-repository research, not shipped).
 
 ## Five rules
 
@@ -84,7 +84,7 @@ export function Input({ ref, ...props }: { ref?: Ref<HTMLInputElement> } & Input
 }
 ```
 
-Source: `research/2026-04-24-react-19-actions-hooks.md`.
+Source: `research/2026-04-24-react-19-actions-hooks.md` (source-repository research, not shipped).
 
 ## Styling: pick one
 

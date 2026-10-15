@@ -2,7 +2,7 @@
 
 A priced round is the first issuance of preferred stock. The term sheet captures the economic and governance terms that will govern the company's cap structure for years. This guide translates the key provisions into plain language and flags the founder-unfavorable terms.
 
-Source: [`research/external/2026-05-20-series-a-term-sheet-mechanics-2026.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/external/2026-05-20-series-a-term-sheet-mechanics-2026.md)
+Source: `research/external/2026-05-20-series-a-term-sheet-mechanics-2026.md` (source-repository research, not shipped)
 
 ---
 

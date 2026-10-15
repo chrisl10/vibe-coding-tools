@@ -1,7 +1,7 @@
 ---
 name: polyglot-security-wasp-drone
 description: Deep, read-only security audit of non-React, non-Next.js, non-SvelteKit code (Node servers, Python, Go, Rust, Rails, PHP, Spring, .NET) plus secrets, dependencies, static analysis, and CI/CD and infrastructure, writing SEC-POLY findings in the Audit My Code contract shape. Use when an /audit-my-code run detects node-server, python, go, rust, ruby, php, java-kotlin, dotnet, or other stacks, or when asked to security-audit a backend service or monorepo in those ecosystems. Do NOT use for React, Next.js, or SvelteKit code (their own security Drones), for fixing findings, or for a Ship Gate pass before commit (security-wasp-drone).
-tools: Read, Grep, Glob, Bash, Write
+tools: Read, Grep, Glob, Bash, Write, Skill, WebSearch, WebFetch
 model: opus
 ---
 

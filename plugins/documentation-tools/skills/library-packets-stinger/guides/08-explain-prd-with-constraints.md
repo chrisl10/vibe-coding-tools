@@ -10,4 +10,4 @@ Explain the selected PRD so a new coder can describe the intended behavior, limi
 6. Apply the existing semantic claim review to the rendered paragraphs and diagrams, not just quote presence. Verify that the reader can recover every material ledger field. If simplification drops an actor restriction, exception or status, revise the passage before format rendering. Use the existing packet build/review pipeline for requested formats; a Markdown draft cannot stand in for inspected Word/PDF.
 7. Include one teach-back question, with reader response and understanding pending until a human answers. Retain unanswered requirements questions in the private gap record. Record readability estimates only if computed with a stated method; never treat a grade estimate as proof of comprehension.
 
-Grounding: [update digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/skills/library-packets-stinger/references/research/novice-explanation/digest.md). Its dated capture and exact-source ledgers preserve this workflow's provenance.
+Grounding: update digest. Its dated capture and exact-source ledgers preserve this workflow's provenance.

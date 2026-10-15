@@ -2,7 +2,7 @@
 
 Pick the right index and search operator per query shape + column type. Choosing wrong is one of the top causes of slow reads and wasted Activeloop balance.
 
-Source: `research/2026-06-16-deeplake-indexing-bm25-vector-hybrid.md`, `research/2026-06-16-deeplake-search-hybrid-weighting.md`.
+Source: `research/2026-06-16-deeplake-indexing-bm25-vector-hybrid.md`, `research/2026-06-16-deeplake-search-hybrid-weighting.md` (source-repository research, not shipped).
 
 ## The decision tree
 
@@ -71,7 +71,7 @@ ORDER BY deeplake_hybrid_record(
 LIMIT $k;
 ```
 
-The two weights `w1` / `w2` trade similarity against relevance. Tuning them is the heart of `research/2026-06-16-deeplake-search-hybrid-weighting.md`: start at 0.7 / 0.3, push toward text when exact terms matter, toward vector when paraphrase recall matters. On the memory table, hybrid still works because the vector arm carries it even though the standalone BM25 index is disabled.
+The two weights `w1` / `w2` trade similarity against relevance. Tuning them is the heart of `research/2026-06-16-deeplake-search-hybrid-weighting.md` (source-repository research, not shipped): start at 0.7 / 0.3, push toward text when exact terms matter, toward vector when paraphrase recall matters. On the memory table, hybrid still works because the vector arm carries it even though the standalone BM25 index is disabled.
 
 ## Choosing between them
 

@@ -2,7 +2,7 @@
 
 The lexical half of retrieval on this repo's stack: Postgres's built-in `tsvector`/`tsquery` full-text search. This is the arm that catches exact identifiers, error strings, SKUs, and rare tokens that an embedding blurs together.
 
-> Ground truth: `references/research/raw/postgres--full-text-search--functions-and-operators-official-docs.md` and `references/research/raw/postgres--full-text-search--controlling-text-search-ranking-official-docs.md` (official Postgres docs), synthesized in `references/research/distilled-retrieval.md`.
+> Ground truth: `references/research/raw/postgres--full-text-search--functions-and-operators-official-docs.md` and `references/research/raw/postgres--full-text-search--controlling-text-search-ranking-official-docs.md` (source-repository research, not shipped) (official Postgres docs), synthesized in `references/research/distilled-retrieval.md`.
 
 ---
 

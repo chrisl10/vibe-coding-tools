@@ -174,7 +174,7 @@ For multiple Daphne instances on the same machine, use a process supervisor that
 
 ## Sources
 
-- `research/2026-05-03-channels-v4-daphne.md`
+- `research/2026-05-03-channels-v4-daphne.md` (source-repository research, not shipped)
 - https://channels.readthedocs.io/en/stable/
 - https://channels.readthedocs.io/en/stable/topics/consumers.html
 - https://channels.readthedocs.io/en/stable/deploying.html

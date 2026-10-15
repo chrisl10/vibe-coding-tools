@@ -2,7 +2,7 @@
 
 The 6-tool replacement matrix and installation/configuration instructions for each.
 
-Source: `research/external/01-modern-cli-tools.md`
+Source: `research/external/01-modern-cli-tools.md` (source-repository research, not shipped)
 
 See also: `examples/happy-path.md` for the full bootstrap script.
 

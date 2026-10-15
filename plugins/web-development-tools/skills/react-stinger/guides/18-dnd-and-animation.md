@@ -1,6 +1,6 @@
 # 18: Drag-and-Drop & Animation
 
-Source: `research/2026-04-25-dnd-and-animation.md`. Drag-and-drop and motion are the things that make a UI *feel* premium, and the things most likely to break accessibility. This guide picks libraries and enforces the a11y floor.
+Source: `research/2026-04-25-dnd-and-animation.md` (source-repository research, not shipped). Drag-and-drop and motion are the things that make a UI *feel* premium, and the things most likely to break accessibility. This guide picks libraries and enforces the a11y floor.
 
 ## TL;DR pick
 

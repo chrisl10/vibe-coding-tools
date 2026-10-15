@@ -1,6 +1,6 @@
 # Principles: Image Optimization Non-Negotiables
 
-> Derived from: `research/research-summary.md`, `research/external/2026-05-20-webdev-optimize-lcp.md`, `research/external/2026-05-20-avif-caniuse.md`, `research/external/2026-05-20-blur-placeholders-web-mux.md`
+> Derived from: `research/research-summary.md`, `research/external/2026-05-20-webdev-optimize-lcp.md`, `research/external/2026-05-20-avif-caniuse.md`, `research/external/2026-05-20-blur-placeholders-web-mux.md` (source-repository research, not shipped)
 
 These five rules apply to every image in every project. No exceptions without explicit user justification.
 
@@ -19,7 +19,7 @@ WebP remains necessary as a fallback for iOS devices running Safari <16.4 and fo
 
 **Exception:** Images that require alpha channel: WebP supports alpha at smaller file sizes than AVIF for many cases; test both. SVG is always preferred over raster for logos and diagrams.
 
-> Source: `research/external/2026-05-20-avif-caniuse.md` (caniuse.com), `research/external/2026-05-20-avif-vs-webp-filemint.md`
+> Source: `research/external/2026-05-20-avif-caniuse.md` (caniuse.com), `research/external/2026-05-20-avif-vs-webp-filemint.md` (source-repository research, not shipped)
 
 ---
 
@@ -46,7 +46,7 @@ WebP remains necessary as a fallback for iOS devices running Safari <16.4 and fo
 
 **Identifying the LCP candidate:** It is almost always the above-the-fold hero image, product image, or full-width banner on the page. When in doubt, run a Lighthouse audit: the LCP element is labeled.
 
-> Source: `research/external/2026-05-20-webdev-optimize-lcp.md`, `research/external/2026-05-20-webdev-fetch-priority-lcp.md`
+> Source: `research/external/2026-05-20-webdev-optimize-lcp.md`, `research/external/2026-05-20-webdev-fetch-priority-lcp.md` (source-repository research, not shipped)
 
 ---
 
@@ -60,7 +60,7 @@ WebP remains necessary as a fallback for iOS devices running Safari <16.4 and fo
 - Card grid (3 columns above 1024px): `sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"`
 - Fixed-width component: `sizes="300px"` (or `width={300}` in `next/image` which handles it automatically)
 
-A mismatched `sizes` value is the #1 `next/image` performance bug in production codebases (per `research/external/2026-05-20-nextjs-image-component-api.md`).
+A mismatched `sizes` value is the #1 `next/image` performance bug in production codebases (per `research/external/2026-05-20-nextjs-image-component-api.md` [source-repository research, not shipped]).
 
 ---
 
@@ -77,7 +77,7 @@ A mismatched `sizes` value is the #1 `next/image` performance bug in production 
 
 **The rule:** default to LQIP via Sharp (generate a 16px WebP thumbnail, encode as base64, use as `src` with `style="filter: blur(20px)"` on the wrapping div). Use BlurHash-as-CSS-gradient for hero images where color fidelity matters. Avoid client-side BlurHash decode in production web contexts.
 
-> Source: `research/external/2026-05-20-blur-placeholders-web-mux.md` (Mux, definitive tradeoff analysis)
+> Source: `research/external/2026-05-20-blur-placeholders-web-mux.md` (source-repository research, not shipped) (Mux, definitive tradeoff analysis)
 
 ---
 
@@ -87,4 +87,4 @@ If the host product uses Cloudflare Image Resizing, Vercel Image Optimization, I
 
 This is the highest-leverage path for teams that are already on these CDNs. Document it in the README and implementation notes so developers don't spend time on manual format conversion when the CDN handles it.
 
-> Source: `research/external/2026-05-20-adaptive-image-loading-avif-xictron.md`
+> Source: `research/external/2026-05-20-adaptive-image-loading-avif-xictron.md` (source-repository research, not shipped)

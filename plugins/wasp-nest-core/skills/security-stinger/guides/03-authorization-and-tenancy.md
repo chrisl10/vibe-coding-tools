@@ -23,7 +23,7 @@ Four pieces, and the source is explicit that all four matter together - skipping
 ALTER TABLE invoices ENABLE ROW LEVEL SECURITY;
 ALTER TABLE invoices FORCE ROW LEVEL SECURITY;
 ```
-`FORCE` is the line most tutorials skip. Without it, the table's owner role bypasses RLS by default (a documented Postgres carve-out) - and the role Drizzle migrations run as is very often the same role the application connects with, so skipping `FORCE` can mean RLS is enabled but silently not enforced for the app's own connection. FORCE still does not constrain superusers or BYPASSRLS roles, per the [current PostgreSQL capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/security-stinger/references/research/security-design/raw/postgres-rls.html).
+`FORCE` is the line most tutorials skip. Without it, the table's owner role bypasses RLS by default (a documented Postgres carve-out) - and the role Drizzle migrations run as is very often the same role the application connects with, so skipping `FORCE` can mean RLS is enabled but silently not enforced for the app's own connection. FORCE still does not constrain superusers or BYPASSRLS roles, per the current PostgreSQL capture.
 
 2. **Set the tenant GUC inside a transaction, with `true` as the third argument:**
 ```ts
@@ -36,7 +36,7 @@ The `true` argument scopes the write to the transaction so it clears automatical
 CREATE POLICY tenant_isolation_select ON invoices FOR SELECT
   USING (tenant_id = current_setting('app.tenant_id', true)::uuid);
 ```
-The `true` second argument makes a missing setting return NULL, per [PostgreSQL settings functions](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/security-stinger/references/research/security-design/raw/postgres-settings.html). A present empty or malformed string can still raise an error on the UUID cast; a cast error is not zero rows. Fail closed and test the actual missing, empty, invalid and pooled-reuse cases without disclosing data. See [current DB boundary design](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/db-stinger/guides/12-tenant-data-boundaries.md) and [response boundary review](12-response-and-tenant-boundaries.md).
+The `true` second argument makes a missing setting return NULL, per PostgreSQL settings functions. A present empty or malformed string can still raise an error on the UUID cast; a cast error is not zero rows. Fail closed and test the actual missing, empty, invalid and pooled-reuse cases without disclosing data. See [current DB boundary design](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/data-and-ai-tools/skills/db-stinger/guides/12-tenant-data-boundaries.md) and [response boundary review](12-response-and-tenant-boundaries.md).
 
 4. **Index the tenant column.** The policy predicate runs on every query against that table; an unindexed policy column means every query on that table is a sequential scan.
 

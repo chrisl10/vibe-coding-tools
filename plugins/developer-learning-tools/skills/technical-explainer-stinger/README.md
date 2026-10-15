@@ -26,4 +26,4 @@ Runtime is research-only and does not change application code. The forge of thes
 
 ## Error and code evidence
 
-Use the [worksheet](references/templates/error-code-worksheet.md), [worked cases](references/examples/error-code-cases.md) and [fresh diagnostic findings](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/technical-explainer-stinger/references/research/error-code/digest.md) for O005 and O009. Error checks are suggestions inside read scope. Runtime execution and fixes stay with their selected owners. Controlled fixture receipts establish only the archived examples, with learner teach-back pending.
+Use the [worksheet](references/templates/error-code-worksheet.md), [worked cases](references/examples/error-code-cases.md) and fresh diagnostic findings for O005 and O009. Error checks are suggestions inside read scope. Runtime execution and fixes stay with their selected owners. Controlled fixture receipts establish only the archived examples, with learner teach-back pending.

@@ -12,4 +12,4 @@ Before starting, confirm repository/revision, assignment goal, authorized audien
 6. Ask the receiver to acknowledge the exact packet revision, understood scope, accepted responsibility and unresolved questions when communication is separately authorized. A local draft acknowledgment request is not a send or an acknowledgment receipt. Keep receiver acknowledgment pending until actual source evidence identifies the receiver, date, revision and response. No acknowledgment silently approves deploy, spend or contract terms.
 7. Check every packet dimension is complete or explicitly blocked; verify source links and commands against the pinned source. Record actual setup and check results separately from structural packet checks. Deliver `contractor-handoff.md` alongside contributor instructions and setup proof.
 
-Grounding: [current project digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/repository-modernization-tools/references/contractor-handoff/research/digest.md). [Cases](cases.md) are synthetic and NOT_RUN.
+Grounding: current project digest. [Cases](cases.md) are synthetic and NOT_RUN.

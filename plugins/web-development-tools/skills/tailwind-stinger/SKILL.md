@@ -14,12 +14,12 @@ You are holding the knowledge for Tailwind CSS v4, the framework and engine itse
 
 ## Scope boundary (read this first)
 
-This skill is about Tailwind CSS v4 the framework, general knowledge usable on any project. It is a sibling to, and explicitly not a replacement for, `ux-ui-svelte-stinger`, which owns the OSPRY-specific PRD-071 design-token contract, the `@theme inline` bridge into `apps/portal`, `apps/web`, and `apps/wl`, and the white-label `--brand-*` chain under ADR-007.
+This skill is about Tailwind CSS v4 the framework, general knowledge usable on any project. It is a sibling to, and explicitly not a replacement for, `ux-ui-svelte-stinger`, which owns a project's own design-token contract, the `@theme inline` bridge into its apps, and any white-label brand chain. OSPRY's PRD-071 tokens, the bridge into `apps/portal`, `apps/web` and `apps/wl`, and the `--brand-*` chain under ADR-007 are the worked example.
 
 - **This skill answers**: "How does `@theme` work?", "How do I migrate this project from v3 to v4?", "How do I wire up the Vite plugin in SvelteKit?", "How do container queries work?", "Why isn't my dark mode class toggle doing anything?"
-- **`ux-ui-svelte-stinger` answers**: "What should `--interactive` resolve to for OSPRY?", "Is this component on-brief?", "Does the white-label still work?", "How do I copy in a shadcn-svelte Button?"
+- **`ux-ui-svelte-stinger` answers**: "What should `--interactive` resolve to in this project (OSPRY is the worked example)?", "Is this component on-brief?", "Does the white-label still work?", "How do I copy in a shadcn-svelte Button?"
 
-If a task touches an OSPRY app's actual token values or brand contract, read `ux-ui-svelte-stinger` first. If a task is about Tailwind v4 mechanics that would be true on any codebase, this skill is the source of truth.
+If a task touches a project's actual token values or brand contract, read `ux-ui-svelte-stinger` first. If a task is about Tailwind v4 mechanics that would be true on any codebase, this skill is the source of truth.
 
 ## When to use this skill
 
@@ -34,7 +34,7 @@ For choosing Tailwind and framework-compatible component primitives, start with 
 - Setting up class ordering (`prettier-plugin-tailwindcss`) or reviewing for utility-soup / premature `@apply` anti-patterns
 - Explaining the Oxide engine's performance model
 
-Do NOT use this skill for the OSPRY token contract or product-surface enforcement (`ux-ui-svelte-stinger`), Svelte component/runes architecture (`svelte-stinger`), or shadcn-svelte component internals (`shadcn-svelte-stinger`).
+Do NOT use this skill for a project's own token contract or product-surface enforcement (`ux-ui-svelte-stinger`), Svelte component/runes architecture (`svelte-stinger`), or shadcn-svelte component internals (`shadcn-svelte-stinger`).
 
 ## File map
 
@@ -55,18 +55,18 @@ Load on demand; do not read everything up front.
 | `references/v3-to-v4-migration-cheatsheet.md` | Full side-by-side breaking-change table |
 | `references/sveltekit-vite-setup.md` | Exact copy-paste Vite config + `app.css` + `+layout.svelte` |
 | `references/research/distilled-tailwind.md` | Verifying a claim or resolving a research conflict |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 
 ## Quality bar
 
-Every factual claim in this skill's guides and references traces to `references/research/raw/`. Where the archive disagrees with itself, or a claim comes from a single community source rather than official docs, the distillation and guides say so explicitly rather than presenting it as settled fact.
+Every factual claim in this skill's guides and references traces to the source research archive (not shipped; the shipped distillation summarizes it). Where the archive disagrees with itself, or a claim comes from a single community source rather than official docs, the distillation and guides say so explicitly rather than presenting it as settled fact.
 
 ## Critical Directive
 
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [ux-ui-svelte-stinger](../ux-ui-svelte-stinger) - The OSPRY-specific enforcement layer: PRD-071 token bridge, white-label brand contract, shadcn-svelte rollout across apps/portal, apps/web, apps/wl.
+  - [ux-ui-svelte-stinger](../ux-ui-svelte-stinger) - The project-level UI enforcement layer: token bridge, white-label brand contract, shadcn-svelte rollout (OSPRY's PRD-071 and apps/portal, apps/web, apps/wl as the worked example).
   - [svelte-stinger](../svelte-stinger) - Svelte 5 runes, component architecture, and SvelteKit patterns beyond styling.
   - [shadcn-svelte-stinger](../shadcn-svelte-stinger) - shadcn-svelte component library specifics: copy-in anatomy, Bits UI v2, Melt UI internals.
   - [dark-mode-theming-stinger](../dark-mode-theming-stinger) - Cross-framework dark mode and theming patterns beyond Tailwind's `@custom-variant` mechanics.

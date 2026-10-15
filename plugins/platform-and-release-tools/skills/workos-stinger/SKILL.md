@@ -14,7 +14,7 @@ metadata:
 
 You are equipping **workos-wasp-drone**, the Wasp Nest's WorkOS specialist. This skill covers WorkOS end to end, weighted hard toward **AuthKit** since that is the primary surface most Wasp Nest apps touch: the hosted UI, sessions, RBAC, SSO/SCIM, MFA/passkeys/Magic Auth, webhooks, and the Node SDK. Target stack context is SvelteKit (Svelte 5) on Vercel - guides favor framework-agnostic and SvelteKit-applicable patterns over Next.js-only material, though Next.js/Remix facts are noted where the research surfaced them.
 
-Every factual claim in this skill traces to a downloaded primary source in `references/research/raw/`. Do not author a WorkOS fact from training data - if it is not in the archive, it is not a fact yet.
+Every factual claim in this skill traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it). Do not author a WorkOS fact from training data - if it is not in the archive, it is not a fact yet.
 
 ## When to use this skill
 
@@ -36,7 +36,7 @@ Load on demand; do not read everything up front.
 | Path | Load when |
 | --- | --- |
 | `references/research/distilled-workos.md` | Verifying any WorkOS claim fast, or resolving a conflict (see its Gaps section) |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `guides/01-choose-your-authkit-mode.md` | Deciding hosted UI vs. headless vs. standalone SSO |
 | `guides/02-authkit-integration-sveltekit.md` | Wiring AuthKit into a SvelteKit app for the first time |
 | `guides/03-sessions-and-jwt-verification.md` | Session refresh/logout behavior, or raw JWT verification for a separate service |
@@ -55,11 +55,11 @@ Load on demand; do not read everything up front.
 
 ## Known open conflict - read before scaffolding SvelteKit
 
-Two sources both claim to be the official SvelteKit AuthKit SDK, under different npm scopes (`@workos-inc/authkit-sveltekit` vs. `@workos/authkit-sveltekit`). This skill defaults to the CLI-installer-table name but instructs verifying npm directly before install. Full comparison: `references/research/distilled-workos.md` §5 and `references/research/raw/workos--authkit--sveltekit-sdk.md`.
+Two sources both claim to be the official SvelteKit AuthKit SDK, under different npm scopes (`@workos-inc/authkit-sveltekit` vs. `@workos/authkit-sveltekit`). This skill defaults to the CLI-installer-table name but instructs verifying npm directly before install. Full comparison: `references/research/distilled-workos.md` §5 and `references/research/raw/workos--authkit--sveltekit-sdk.md` (source-repository research, not shipped with the plugin).
 
 ## Quality bar
 
-A WorkOS task run through this skill is done when: the relevant guide(s) were read in order (not skipped), every factual claim used in the output traces to `references/research/raw/`, the security checklist in `guides/09-security-checklist.md` was run, and - for anything development-focused - the Ship Gate below completed with user approval before commit or push.
+A WorkOS task run through this skill is done when: the relevant guide(s) were read in order (not skipped), every factual claim used in the output traces to the source research archive (not shipped; the shipped distillation summarizes it), the security checklist in `guides/09-security-checklist.md` was run, and - for anything development-focused - the Ship Gate below completed with user approval before commit or push.
 
 ## Critical Directive
 
@@ -67,10 +67,10 @@ A WorkOS task run through this skill is done when: the relevant guide(s) were re
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [auth-stinger](../auth-stinger) - Provider-agnostic authentication implementation: provider selection, Google OAuth, MFA/passkeys, RBAC, session storage, and B2B SSO across Clerk/Better Auth/Auth.js/Supabase Auth/WorkOS/Stack Auth/Kinde/Stytch. Consult when WorkOS is being compared against alternatives, or when a non-WorkOS auth concern comes up mid-task.
-  - [website-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/website-stinger) - Builds production-grade SvelteKit (Svelte 5) + Payload CMS + Supabase websites end-to-end. Consult for the surrounding SvelteKit app structure this skill's auth layer plugs into.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass, first gate of the Ship Gate pipeline below.
-  - [ux-ui-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/ux-ui-svelte-stinger) - Svelte 5 + SvelteKit UI enforcement (shadcn-svelte, Tailwind v4). Consult when the AuthKit branding/custom-CSS surface needs to match the app's design system, or when building a custom sign-in screen's markup.
-  - [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/db-stinger) - PostgreSQL schema, indexing, and migrations. Consult for the `users`/`organizations`/webhook-event-log tables this skill's patterns write to.
+  - [website-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/website-stinger) - Builds production-grade SvelteKit (Svelte 5) + Payload CMS + Supabase websites end-to-end. Consult for the surrounding SvelteKit app structure this skill's auth layer plugs into.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass, first gate of the Ship Gate pipeline below.
+  - [ux-ui-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/ux-ui-svelte-stinger) - Svelte 5 + SvelteKit UI enforcement (shadcn-svelte, Tailwind v4). Consult when the AuthKit branding/custom-CSS surface needs to match the app's design system, or when building a custom sign-in screen's markup.
+  - [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/data-and-ai-tools/skills/db-stinger) - PostgreSQL schema, indexing, and migrations. Consult for the `users`/`organizations`/webhook-event-log tables this skill's patterns write to.
 
 ## Ship Gate
 

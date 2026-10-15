@@ -1,6 +1,6 @@
 # Three migration decisions
 
-These are synthetic review cases, not executed migrations. PostgreSQL behavior traces to the [distillation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/db-stinger/references/research/live-schema-migration/distillation.md); the product invariants are declared scenario inputs.
+These are synthetic review cases, not executed migrations. PostgreSQL behavior traces to the distillation; the product invariants are declared scenario inputs.
 
 ## A. Introduce an observed timestamp
 

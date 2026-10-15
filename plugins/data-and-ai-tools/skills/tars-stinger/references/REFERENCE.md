@@ -54,7 +54,7 @@ Outside the effort folder, TARS also reads (never writes) the lifecycle beacon, 
 
 The desktop `local_...` id is not the hook's `session_id`. The hook gets the CLI session id (the transcript file name under `~/.claude/projects/`). Resolve it per managed session, in this order:
 
-1. `cliSessionId` in `~/Library/Application Support/Claude/claude-code-sessions/*/*/<local id>.json` (macOS; an undocumented app file, so treat a missing field as "unresolved", not an error).
+1. `cliSessionId` in `<app data>/claude-code-sessions/*/*/<local id>.json`, where `<app data>` is the Claude desktop app folder for the platform: macOS `~/Library/Application Support/Claude`, Windows `%APPDATA%\Claude`, Linux `${XDG_CONFIG_HOME:-~/.config}/Claude`. Check the folder that exists for the current OS; if none has the file, go to step 2. It is an undocumented app file, so treat a missing field as "unresolved", not an error.
 2. Fallback: the heartbeat whose `cwd` equals the session's `worktreePath` (or `cwd`) from `get_session`, and whose `branch` matches. If more than one matches, it is unresolved.
 
 Record the resolved id next to the `local_...` id in the ledger. Re-resolve when the heartbeat stops moving while `list_events` shows activity: a clear or fork can start a new CLI id.

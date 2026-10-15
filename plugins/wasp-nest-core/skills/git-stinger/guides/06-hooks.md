@@ -194,4 +194,4 @@ git push --no-verify
 
 Server-side hooks (`pre-receive`, `update`, `post-receive`) run on the remote Git server. They enforce rules that clients cannot bypass. Configuration depends on the hosting platform (GitHub, GitLab, Bitbucket, Gitea). Escalate to `ci-release-wasp-drone` for server-side hook setup.
 
-Sources: research/external/01-interactive-rebase.md (autosquash section mentions hooks)
+Sources: research/external/01-interactive-rebase.md (source-repository research, not shipped) (autosquash section mentions hooks)

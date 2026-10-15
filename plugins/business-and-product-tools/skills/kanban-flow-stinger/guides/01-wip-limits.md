@@ -1,6 +1,6 @@
 # 01. WIP Limits: Setting, Enforcing, and Iterating
 
-*Sources: `research/external/2026-05-20-wip-limits-agile-flow-consulting.md`; `research/external/2026-05-20-wip-limits-uplevel-engineering.md`; `research/external/2026-05-20-wip-limits-atlassian-official.md`*
+*Sources: `research/external/2026-05-20-wip-limits-agile-flow-consulting.md`; `research/external/2026-05-20-wip-limits-uplevel-engineering.md`; `research/external/2026-05-20-wip-limits-atlassian-official.md` (source-repository research, not shipped)*
 
 ---
 
@@ -14,7 +14,7 @@ The Atlassian Kanban documentation names four goals WIP limits achieve:
 3. **Enable flow optimization**: you cannot diagnose a system that never constrains itself.
 4. **Make capacity explicit**: limits reveal how much the team can actually handle vs how much they want to start.
 
-Source: `research/external/2026-05-20-wip-limits-atlassian-official.md`
+Source: `research/external/2026-05-20-wip-limits-atlassian-official.md` (source-repository research, not shipped)
 
 ---
 
@@ -26,7 +26,7 @@ Arbitrary WIP limits ("let's try 3") are worse than no limits because they creat
 
 ### Method 1: Throughput-derived (preferred when data exists)
 
-Formula from `research/external/2026-05-20-wip-limits-agile-flow-consulting.md`:
+Formula from `research/external/2026-05-20-wip-limits-agile-flow-consulting.md` (source-repository research, not shipped):
 
 > WIP limit = throughput per week × target cycle time in weeks
 
@@ -34,7 +34,7 @@ Example: team completes 8 items/week, wants a target cycle time of 1 week. WIP l
 
 ### Method 2: Capacity-based (for active-work columns)
 
-Formula from `research/external/2026-05-20-wip-limits-uplevel-engineering.md`:
+Formula from `research/external/2026-05-20-wip-limits-uplevel-engineering.md` (source-repository research, not shipped):
 
 > Active work WIP limit = number of people serving that stage × 1.5 (or 2 for pairing tolerance)
 
@@ -42,7 +42,7 @@ Rationale: 1 item per person guarantees serial focus. The 0.5 slack accommodates
 
 ### Method 3: Empirical quickstart (no data available)
 
-From `research/external/2026-05-20-wip-limits-agile-flow-consulting.md`:
+From `research/external/2026-05-20-wip-limits-agile-flow-consulting.md` (source-repository research, not shipped):
 
 > Set the limit to current average WIP minus one.
 
@@ -56,7 +56,7 @@ Observe for two weeks. If the limit is never hit, reduce by one again. Repeat un
 
 **Global WIP limits** (total in-flight across all active stages) are a useful additional signal for leadership dashboards, but they do not replace per-stage limits because they cannot locate the bottleneck.
 
-**Swimlane WIP** (per class of service per stage): see `guides/06-class-of-service.md`. The Jira swimlane bug (see `research/external/2026-05-20-tool-wip-limits-honest-review.md`) counts total WIP across all swimlanes for a column, not per swimlane. This means Jira's WIP limit display is unreliable when swimlanes are active.
+**Swimlane WIP** (per class of service per stage): see `guides/06-class-of-service.md`. The Jira swimlane bug (see `research/external/2026-05-20-tool-wip-limits-honest-review.md` [source-repository research, not shipped]) counts total WIP across all swimlanes for a column, not per swimlane. This means Jira's WIP limit display is unreliable when swimlanes are active.
 
 ---
 
@@ -75,7 +75,7 @@ For Linear-specific implementation of API enforcement, see `guides/08-tool-imple
 
 ## WIP limit rollout sequence
 
-From `research/external/2026-05-20-wip-limits-uplevel-engineering.md`:
+From `research/external/2026-05-20-wip-limits-uplevel-engineering.md` (source-repository research, not shipped):
 
 1. **Week 0-1:** Visualize current WIP. Do not add limits yet. Measure baseline cycle time and throughput.
 2. **Week 2:** Set limits using Method 3 (current WIP minus one) or Method 1 if data is available. Communicate the *why* to the team.
@@ -86,7 +86,7 @@ From `research/external/2026-05-20-wip-limits-uplevel-engineering.md`:
 
 ## The WIP limit case study
 
-From `research/external/2026-05-20-wip-limits-agile-flow-consulting.md`:
+From `research/external/2026-05-20-wip-limits-agile-flow-consulting.md` (source-repository research, not shipped):
 
 > A 12-person software delivery team implemented throughput-derived WIP limits over 6 weeks. Result: p85 cycle time fell from 62 days to 36 days, a 42% reduction. No additional headcount. No process change other than the WIP limits.
 

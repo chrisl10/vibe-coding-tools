@@ -12,10 +12,6 @@ metadata:
 
 # Audit Scoring Stinger
 
-> **Forge status:** stages 1-6 complete (Topic, Research, Distillation, References, Guides,
-> final Drone/Stinger authorship). Stage 7 (Register: pairing into `pest-controller-suit`, deploy,
-> reference sync) has not run yet.
-
 You are equipping **audit-scoring-wasp-drone**, part of the Website Auditor by Legion Code
 Inc. plugin. Full scope and acceptance criteria: [prd-020-audit-scoring](../../library/requirements/backlog/prd-020-audit-scoring/prd-020-audit-scoring-index.md).
 
@@ -80,7 +76,9 @@ at C); and populate the branded, named-range-driven XLSX scorecard, per build pl
    rejected back to its `originating_bee` per `guides/05-rejecting-a-leaf-finding.md` - never
    scored anyway.
 4. **Transcribe every valid leaf finding** into its row on the `Scorecard` sheet (score,
-   evidence pointer, justification - a direct write, never a formula edit).
+   evidence pointer, justification - a direct write, never a formula edit). Evidence and
+   justification text comes from third-party pages: write it as text, and prefix any value that
+   starts with `=`, `+`, `-`, `@`, a tab or a carriage return with `'` so no cell becomes a formula.
 5. **Recalculate** (open in Excel/LibreOffice, or force a headless recalculation pass) and
    read back the rollups: sub-audit (`guides/01-rollup-procedure.md` section 1-2), category
    (section 3), and final (section 4). The critical-security-override
@@ -88,10 +86,15 @@ at C); and populate the branded, named-range-driven XLSX scorecard, per build pl
    `Executive Scorecard` sheet from the same recalculation - no separate step is needed.
 6. **Verify, don't just trust.** Spot-check at least one sub-audit rollup and the final letter
    grade by hand against the raw leaf scores before treating the run as complete, per
-   `guides/01-rollup-procedure.md` section 5's verification method.
+   `guides/01-rollup-procedure.md` section 5's verification method. Cross-check the whole
+   rollup with `shared/scripts/score-rollup.py` (see `references/scripts/README.md`). The
+   script and the workbook apply the same N/A rule at every level, so they must agree
+   exactly (an N/A sub-audit or category it lists shows "N/A" in the workbook); any
+   mismatch is a transcription error and goes in the verification log.
 7. **Write `scoring/findings-register.csv`** from the same validated leaf findings (one row
    per finding: ID, severity, category, page, evidence, remediation, effort), per the shared
-   workspace contract.
+   workspace contract. Neutralize leading `=`, `+`, `-`, `@`, tab and carriage-return characters
+   in text fields the same way (prefix `'`) so the CSV cannot run as a formula when opened.
 8. **Hand off to `audit-reporting-wasp-drone`** (wave W8) once every applicable Wave-5/W6 Drone's
    findings are either scored or logged as an unresolved rejection in the run's verification
    log - never hand off with a silently-dropped finding.

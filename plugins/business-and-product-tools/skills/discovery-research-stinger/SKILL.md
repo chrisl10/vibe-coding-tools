@@ -81,18 +81,18 @@ On demand, produce a one-page weekly discovery summary using `templates/weekly-s
 
 ## Critical directives
 
-- **Never recommend building without at least one validated assumption test.** Why: the "build less, learn more" loop exists to prevent building on wrong assumptions; skipping it is the failure mode continuous discovery is designed to catch. (Source: `research/external/2026-05-20-torres-2026-roadmap-ai-discovery.md`)
-- **Always anchor work to a single desired outcome.** Why: OSTs without a defined outcome become wish lists. (Source: `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md`)
-- **Distinguish opportunities (problems/desires) from solutions (product ideas).** Why: conflating the two is the most common discovery anti-pattern. (Source: `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md`)
-- **Use Torres' weekly cadence as the default structure.** Why: continuous discovery requires rhythm; ad-hoc interviews generate anecdotes, not patterns. (Source: `research/external/2026-05-20-continuous-discovery-habits-operationalized-2026.md`)
-- **Ask "what's the story?" before coding any interview insight.** Why: JTBD is story-based; jumping to themes before hearing the full narrative misses the motivation structure. (Source: `research/external/2026-05-20-jtbd-switch-interview-moesta-method.md`)
+- **Never recommend building without at least one validated assumption test.** Why: the "build less, learn more" loop exists to prevent building on wrong assumptions; skipping it is the failure mode continuous discovery is designed to catch. (Source: `research/external/2026-05-20-torres-2026-roadmap-ai-discovery.md` [source-repository research, not shipped with the plugin])
+- **Always anchor work to a single desired outcome.** Why: OSTs without a defined outcome become wish lists. (Source: `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md` [source-repository research, not shipped with the plugin])
+- **Distinguish opportunities (problems/desires) from solutions (product ideas).** Why: conflating the two is the most common discovery anti-pattern. (Source: `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md` [source-repository research, not shipped with the plugin])
+- **Use Torres' weekly cadence as the default structure.** Why: continuous discovery requires rhythm; ad-hoc interviews generate anecdotes, not patterns. (Source: `research/external/2026-05-20-continuous-discovery-habits-operationalized-2026.md` [source-repository research, not shipped with the plugin])
+- **Ask "what's the story?" before coding any interview insight.** Why: JTBD is story-based; jumping to themes before hearing the full narrative misses the motivation structure. (Source: `research/external/2026-05-20-jtbd-switch-interview-moesta-method.md` [source-repository research, not shipped with the plugin])
 - **Do not produce a PRD or implementation plan.** Why: that is `library-wasp-drone`'s job; hand off a validated opportunity + winning solution, not a spec.
 
 ---
 
 ## Additive evidence and qualification
 
-Use `references/research/demand-decision/manifest.json` and its cited distillation for the 2026-10-07 living-primary refresh. Preserve the original `research/` archive. `examples/demand-decision-cases.md` contains labeled synthetic weak-evidence, counterevidence, missing-data, small-test, and economic-stop cases. Run `python <checked-skill-root>/scripts/check-demand-record.py <approved-record-path>` for bounded bookkeeping; the unfilled template intentionally requires completion. `scripts/test-demand-record.py` verifies malformed and boundary input handling. Neither script authenticates sources or proves an experiment ran.
+The 2026-10-07 living-primary refresh is recorded in `references/research/demand-decision/` (manifest and cited distillation). That folder is source-repository research that is not shipped with the plugin, so do not require it; `guides/07-test-demand-before-building.md` and `research/research-summary.md` carry the shipped conclusions. Preserve the original `research/` archive. `examples/demand-decision-cases.md` contains labeled synthetic weak-evidence, counterevidence, missing-data, small-test, and economic-stop cases. Run `python <checked-skill-root>/scripts/check-demand-record.py <approved-record-path>` for bounded bookkeeping; the unfilled template intentionally requires completion. `scripts/test-demand-record.py` verifies malformed and boundary input handling. Neither script authenticates sources or proves an experiment ran.
 
 ## Folder layout
 

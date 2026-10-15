@@ -2,6 +2,7 @@
 name: "source-command-design-release-pipeline"
 description: "Design a scoped release graph, evidence gates, promotion rules, and rollback drill from the actual pipeline."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-design-release-pipeline

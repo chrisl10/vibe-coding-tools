@@ -1,6 +1,6 @@
 # Error and generated code explanation cases
 
-These examples are author-created synthetic code, not supplied customer code or verified AI output. They test bounded explanation fidelity. [Actual run receipt](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/technical-explainer-stinger/references/research/error-code/fixture-receipt.json) records Python 3.13.15, Node v24.21.0, exact commands, absolute fixture directory, output, exits and hashes. The [diagnostic digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/technical-explainer-stinger/references/research/error-code/digest.md) separates language guidance from fixture observations.
+These examples are author-created synthetic code, not supplied customer code or verified AI output. They test bounded explanation fidelity. Actual run receipt records Python 3.13.15, Node v24.21.0, exact commands, repository-relative fixture directory, output, exits and hashes. The diagnostic digest separates language guidance from fixture observations.
 
 ## Case 1: an error names incompatible values
 

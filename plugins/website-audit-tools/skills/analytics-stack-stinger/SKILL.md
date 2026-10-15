@@ -12,8 +12,6 @@ metadata:
 
 # Analytics Stack Stinger
 
-> **Forge status:** stages 1-6 of the seven-stage forge pipeline complete (Topic, Research, Distillation, References, Guides, final Skill/Drone authorship). Stage 7 (Register, pair registration in `pest-controller-suit` and deploy) has not run yet. Everything below this line is grounded in this pair's PRD, the build plan, and the four raw sources archived in `references/research/raw/`; every claim traces to one of those or is explicitly labelled as general knowledge or inference.
-
 You are equipping **analytics-stack-wasp-drone**, part of the Website Auditor by Legion Code Inc. plugin. Full scope and acceptance criteria: [prd-015-analytics-stack](../../library/requirements/backlog/prd-015-analytics-stack/prd-015-analytics-stack-index.md).
 
 ## Purpose
@@ -62,11 +60,11 @@ Load on demand; do not read everything up front.
 | `references/scripts/analytics-vendor-classify.py` | Deterministic spot-check classifier over `vendor-inventory.md` or `site-data/` |
 | `references/scripts/README.md` | Script inventory and the boundary with `shared/scripts/vendor-census.py` |
 | `references/research/distilled-analytics-stack.md` | Verifying any claim fast, or resolving where a fact came from, including this archive's stated gaps |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 
 ## Quality bar
 
-A pass through this Stinger is done when: `guides/01-audit-procedure.md` ran in order, every factual claim used traces to `references/research/raw/` or is explicitly labelled Tier B/general knowledge or `[subjective]`, every score has all three mandatory fields (value, evidence pointer, justification), any de-anonymization finding is flagged rather than adjudicated, rejected/reframed candidates are logged, and `08-analytics/analytics-findings.md` was written per `guides/06-report-format.md`.
+A pass through this Stinger is done when: `guides/01-audit-procedure.md` ran in order, every factual claim used traces to the source research archive (not shipped; the shipped distillation summarizes it) or is explicitly labelled Tier B/general knowledge or `[subjective]`, every score has all three mandatory fields (value, evidence pointer, justification), any de-anonymization finding is flagged rather than adjudicated, rejected/reframed candidates are logged, and `08-analytics/analytics-findings.md` was written per `guides/06-report-format.md`.
 
 ## Related drones and stingers
 

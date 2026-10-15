@@ -1,12 +1,12 @@
 # Guide 05: Footguns: Known Failure Modes and How to Avoid Them
 
-*Sources: `research/external/2026-05-20-cline-footguns.md`, `research/external/2026-05-20-aider-llm-leaderboard.md`, `research/external/2026-05-20-devin-replit-agent.md`, `research/external/2026-05-20-bolt-new-webcontainer.md`*
+*Sources: `research/external/2026-05-20-cline-footguns.md`, `research/external/2026-05-20-aider-llm-leaderboard.md`, `research/external/2026-05-20-devin-replit-agent.md`, `research/external/2026-05-20-bolt-new-webcontainer.md` (source-repository research, not shipped)*
 
 ---
 
 ## Cline failure modes (HIGH priority: read before recommending Cline)
 
-Five documented failure modes from GitHub issues as of 2026-05-20. Source: `research/external/2026-05-20-cline-footguns.md`.
+Five documented failure modes from GitHub issues as of 2026-05-20. Source: `research/external/2026-05-20-cline-footguns.md` (source-repository research, not shipped).
 
 > **TODO: open question**: Verify which of these failure modes have been resolved in Cline releases after May 2026. The issue report dates span 2025-early 2026.
 
@@ -57,7 +57,7 @@ Aider auto-commits every accepted change to git by default (`auto-commits: true`
 - **Fix:** Always review diffs before accepting (`show-diffs: true` in config; this is the default). Set `auto-commits: false` if you prefer to commit manually.
 - **Prevention:** Keep `show-diffs: true` and treat Aider's diff view as a mandatory review gate, not a notification.
 
-Source: `research/external/2026-05-20-aider-llm-leaderboard.md`
+Source: `research/external/2026-05-20-aider-llm-leaderboard.md` (source-repository research, not shipped)
 
 ### Context-loss on large repos (Severity: MEDIUM)
 
@@ -78,7 +78,7 @@ Devin is a fully-autonomous agent with repo write access. Given an open-ended ta
 - **Prevention:** Configure Devin's GitHub App with the narrowest repo scope needed. Review every PR Devin opens before merging; do not enable auto-merge.
 - **When to escalate:** If the user is considering Devin for a production repo, surface the scope-creep risk explicitly before recommending.
 
-Source: `research/external/2026-05-20-devin-replit-agent.md`
+Source: `research/external/2026-05-20-devin-replit-agent.md` (source-repository research, not shipped)
 
 ---
 
@@ -100,7 +100,7 @@ Bolt runs entirely in a browser-based WebContainer. Hard limits as of 2026:
 - **Consequence:** Projects that grow beyond 300MB of dependencies (common in monorepos) will hit storage limits.
 - **Fix:** Use Bolt only for web-first prototypes without native dependencies. Migrate to a proper development environment (Cursor, Claude Code, Aider) as soon as native dependencies are needed.
 
-Source: `research/external/2026-05-20-bolt-new-webcontainer.md`
+Source: `research/external/2026-05-20-bolt-new-webcontainer.md` (source-repository research, not shipped)
 
 ---
 

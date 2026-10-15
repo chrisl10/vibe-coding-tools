@@ -9,7 +9,12 @@ Deterministic, harness-portable scripts shared across multiple Stingers, per the
 | `aeo-technical.py` | aeo-audit-stinger |
 | `a11y-scan.py` | accessibility-audit-stinger |
 | `security-headers.py` | web-security-posture-stinger |
-| `cwv-collect.py` | performance-cwv-stinger |
-| `visual-capture.py` | visual-funnel-stinger |
-| `score-rollup.py` | audit-scoring-stinger |
-| `xlsx-populate.py` | audit-scoring-stinger |
+| `score-rollup.py` | audit-scoring-stinger (independent cross-check of the scorecard rollups; tested by `test_score_rollup.py`) |
+
+Not implemented. These planned helpers exit with status 2 and a message naming what the Drone does instead. No guide or skill depends on them:
+
+| Script | Owner | The Drone does instead |
+|---|---|---|
+| `cwv-collect.py` | performance-cwv-stinger | Collects field and lab Core Web Vitals itself (guide 01, step 3) |
+| `visual-capture.py` | visual-funnel-stinger | Captures checkpoint screenshots with the harness browser tool (guide 03) |
+| `xlsx-populate.py` | audit-scoring-stinger | Transcribes validated leaves into a copy of the scorecard template (SKILL.md steps 1 and 4) |

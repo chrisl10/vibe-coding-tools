@@ -26,19 +26,19 @@ The Slack developer playbook for `slack-app-wasp-drone`. Encodes opinionated, re
 
 These are the non-negotiables. Violating any of them is the most common cause of production Slack app failures. See the relevant guide for code patterns.
 
-1. **Acknowledge Slack payloads within 3 seconds, then dispatch async for long-running work.** Slack retries unacknowledged payloads up to 3 times and flags unreliable apps. This applies to slash commands, interactive component actions, and Events API deliveries equally. Source: `research/external/2026-05-20-events-api-verification.md`, `research/external/2026-05-20-slash-commands-interactive.md`.
+1. **Acknowledge Slack payloads within 3 seconds, then dispatch async for long-running work.** Slack retries unacknowledged payloads up to 3 times and flags unreliable apps. This applies to slash commands, interactive component actions, and Events API deliveries equally. Source: `research/external/2026-05-20-events-api-verification.md`, `research/external/2026-05-20-slash-commands-interactive.md` (source-repository research, not shipped with the plugin).
 
-2. **Verify Slack request signatures before processing any payload.** Bolt does this automatically. Custom HTTP handlers (Express, FastAPI routes) must implement HMAC-SHA256 verification manually using the app's signing secret. Source: `research/external/2026-05-20-events-api-verification.md`.
+2. **Verify Slack request signatures before processing any payload.** Bolt does this automatically. Custom HTTP handlers (Express, FastAPI routes) must implement HMAC-SHA256 verification manually using the app's signing secret. Source: `research/external/2026-05-20-events-api-verification.md` (source-repository research, not shipped with the plugin).
 
-3. **Never store Slack tokens in plaintext config files or committed environment variables.** Bot tokens (`xoxb-`) and signing secrets go in an environment variable manager or secrets vault. Source: `research/external/2026-05-20-bolt-sdk-setup-patterns.md`.
+3. **Never store Slack tokens in plaintext config files or committed environment variables.** Bot tokens (`xoxb-`) and signing secrets go in an environment variable manager or secrets vault. Source: `research/external/2026-05-20-bolt-sdk-setup-patterns.md` (source-repository research, not shipped with the plugin).
 
-4. **Always validate the `state` parameter in OAuth callbacks.** Bolt auto-generates and validates `state` via `stateSecret`. Bypassing this validation is a CSRF vulnerability that allows workspace installation hijacking. Source: `research/external/2026-05-20-oauth-multi-workspace.md`.
+4. **Always validate the `state` parameter in OAuth callbacks.** Bolt auto-generates and validates `state` via `stateSecret`. Bypassing this validation is a CSRF vulnerability that allows workspace installation hijacking. Source: `research/external/2026-05-20-oauth-multi-workspace.md` (source-repository research, not shipped with the plugin).
 
-5. **Deduplicate Events API payloads using `event_id` before processing.** Slack delivers events at-least-once. Store the `event_id` (Redis SETNX, DB unique constraint) and discard duplicates. Source: `research/external/2026-05-20-events-api-verification.md`.
+5. **Deduplicate Events API payloads using `event_id` before processing.** Slack delivers events at-least-once. Store the `event_id` (Redis SETNX, DB unique constraint) and discard duplicates. Source: `research/external/2026-05-20-events-api-verification.md` (source-repository research, not shipped with the plugin).
 
-6. **If the app will be distributed commercially at scale, use HTTP mode and plan for Marketplace submission from the start.** Socket Mode apps cannot be listed in the Slack Marketplace. Apps intended for commercial distribution must go through Marketplace review (December 2024 policy update). Source: `research/external/2026-05-20-socket-mode-vs-http.md`, `research/external/2026-05-20-dev-policy-update.md`.
+6. **If the app will be distributed commercially at scale, use HTTP mode and plan for Marketplace submission from the start.** Socket Mode apps cannot be listed in the Slack Marketplace. Apps intended for commercial distribution must go through Marketplace review (December 2024 policy update). Source: `research/external/2026-05-20-socket-mode-vs-http.md`, `research/external/2026-05-20-dev-policy-update.md` (source-repository research, not shipped with the plugin).
 
-7. **Never use Slack data to train LLMs.** This is an explicit, absolute prohibition in the December 2024 Slack App Developer Policy update ("under any circumstances"). AI-powered Slack bots must not route user message content through LLM training pipelines. Source: `research/external/2026-05-20-dev-policy-update.md`.
+7. **Never use Slack data to train LLMs.** This is an explicit, absolute prohibition in the December 2024 Slack App Developer Policy update ("under any circumstances"). AI-powered Slack bots must not route user message content through LLM training pipelines. Source: `research/external/2026-05-20-dev-policy-update.md` (source-repository research, not shipped with the plugin).
 
 ## Scope note
 

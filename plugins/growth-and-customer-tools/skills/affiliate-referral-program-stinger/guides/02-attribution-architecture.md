@@ -1,6 +1,6 @@
 # Attribution Architecture: Cookie-Based vs First-Party vs S2S Postback
 
-*Grounded in: `research/external/2026-05-20-itp-first-party-cookie-7day-limit-explanation.md`, `research/external/2026-05-20-cookieless-affiliate-tracking-s2s-postback-guide.md`, `research/external/2026-05-20-google-cookie-reversal-2026-what-happened.md`*
+*Grounded in: `research/external/2026-05-20-itp-first-party-cookie-7day-limit-explanation.md`, `research/external/2026-05-20-cookieless-affiliate-tracking-s2s-postback-guide.md`, `research/external/2026-05-20-google-cookie-reversal-2026-what-happened.md` (source-repository research, not shipped)*
 
 ## The 2026 attribution landscape
 

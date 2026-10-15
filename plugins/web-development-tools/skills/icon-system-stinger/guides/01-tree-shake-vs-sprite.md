@@ -1,6 +1,6 @@
 # Guide 01: Tree-Shake vs SVG Sprite
 
-Source: `research/external/icon-sprite-patterns.md`, `research/external/lucide-react.md`
+Source: `research/external/icon-sprite-patterns.md`, `research/external/lucide-react.md` (source-repository research, not shipped)
 
 ## Decision matrix
 

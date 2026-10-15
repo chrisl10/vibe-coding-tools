@@ -2,7 +2,7 @@
 
 Step-by-step guide to the Discord bot verification process for bots approaching or exceeding 100 server installations.
 
-*Sources: `research/external/2026-05-20-discord-privileged-intents.md`, `research/external/2026-05-20-discord-privileged-intents-best-practices.md`*
+*Sources: `research/external/2026-05-20-discord-privileged-intents.md`, `research/external/2026-05-20-discord-privileged-intents-best-practices.md` (source-repository research, not shipped)*
 
 ---
 

@@ -2,9 +2,9 @@
 guide: 02-shared-inbox-config
 stinger: customer-support-tooling-stinger
 research_sources:
-  - research/external/2026-05-20-plain-docs-overview.md
-  - research/external/2026-05-20-front-shared-inbox.md
-  - research/external/2026-05-20-sla-tracking-patterns.md
+  - research/external/2026-05-20-plain-docs-overview.md  # source-repository research, not shipped
+  - research/external/2026-05-20-front-shared-inbox.md  # source-repository research, not shipped
+  - research/external/2026-05-20-sla-tracking-patterns.md  # source-repository research, not shipped
 ---
 
 # Shared Inbox Configuration — Routing, Tags, SLA Tier Mapping
@@ -74,5 +74,5 @@ Keep the tag list flat and < 20 tags. Tags that multiply without governance beco
 Configure breach alerts per tool:
 - **Plain:** Workflow trigger on SLA > 80% → assign to senior queue + Slack alert.
 - **Intercom:** SLA policy → breach notification to team lead.
-- **Help Scout:** Requires Zapier for Slack alert on breach (not native). Source: `research/external/2026-05-20-sla-tracking-patterns.md`.
+- **Help Scout:** Requires Zapier for Slack alert on breach (not native). Source: `research/external/2026-05-20-sla-tracking-patterns.md` (source-repository research, not shipped).
 - **Front:** Built-in SLA escalation rules → auto-reassign to team lead queue.

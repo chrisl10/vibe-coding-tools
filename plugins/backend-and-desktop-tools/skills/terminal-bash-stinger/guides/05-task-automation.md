@@ -2,7 +2,7 @@
 
 `just` vs `make` decision matrix, justfile patterns, and migration guide.
 
-Source: `research/external/04-just-vs-make.md`
+Source: `research/external/04-just-vs-make.md` (source-repository research, not shipped)
 
 See also: `templates/justfile-template.md` for a ready-to-use starter, `examples/happy-path.md` for a worked migration.
 

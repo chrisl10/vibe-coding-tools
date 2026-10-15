@@ -1,6 +1,6 @@
 # Evidence grades
 
-Derived bookkeeping rubric from the [distillation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/discovery-research-stinger/references/research/demand-decision/distillation.md). Do not convert these labels into a probability or an automatic decision.
+Derived bookkeeping rubric from the distillation. Do not convert these labels into a probability or an automatic decision.
 
 | Grade | Meaning | Claim limit |
 |---|---|---|

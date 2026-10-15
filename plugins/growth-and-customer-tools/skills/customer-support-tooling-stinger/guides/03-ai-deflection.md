@@ -2,8 +2,8 @@
 guide: 03-ai-deflection
 stinger: customer-support-tooling-stinger
 research_sources:
-  - research/external/2026-05-20-intercom-fin-ai.md
-  - research/external/2026-05-20-ai-deflection-benchmarks.md
+  - research/external/2026-05-20-intercom-fin-ai.md  # source-repository research, not shipped
+  - research/external/2026-05-20-ai-deflection-benchmarks.md  # source-repository research, not shipped
 ---
 
 # AI Deflection — Tier Selection, KB Dependency, Escalation Protocol
@@ -17,7 +17,7 @@ research_sources:
 | **Copilot (agent-assist)** | Help Scout AI Assist, Front AI, Pylon AI, Plain AI (beta) | Included in seat | None | N/A (assists, not resolves) |
 | **Rule-based FAQ bot** | Crisp Bot, Tidio, Dialogflow | Flat fee or free | 10+ | 25-40% deflection |
 
-Source: `research/external/2026-05-20-ai-deflection-benchmarks.md`
+Source: `research/external/2026-05-20-ai-deflection-benchmarks.md` (source-repository research, not shipped)
 
 ## Pre-condition checklist before enabling Fin or any LLM-agent
 
@@ -28,7 +28,7 @@ Source: `research/external/2026-05-20-ai-deflection-benchmarks.md`
 - [ ] A human agent is available during business hours for immediate escalation
 - [ ] Budget approved for outcome-based pricing ($0.99/resolution for Fin)
 
-**Do not enable Fin without passing all six checks.** Source: `research/external/2026-05-20-intercom-fin-ai.md`.
+**Do not enable Fin without passing all six checks.** Source: `research/external/2026-05-20-intercom-fin-ai.md` (source-repository research, not shipped).
 
 ## Fin 2.0 configuration steps (Intercom)
 

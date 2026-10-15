@@ -23,6 +23,11 @@ Orchestrator-tier skill with no paired Drone, the same pattern as `pest-controll
 
 Every path below is relative to the folder that contains this `SKILL.md`. In Claude Code that folder is `${CLAUDE_SKILL_DIR}`. If that text was not replaced with a real path, find the folder with Glob (`**/audit-my-code-stinger/SKILL.md`) and use it as the skill directory in every command.
 
+## Requirements
+
+- `git` and Python 3.9 or newer on every platform. The orchestrator's own steps (`scripts/make_scratch_copy.py`, `check_workspace.py`, `merge_security.py`, `build_evidence_index.py`) are plain Python and run on macOS, Linux, and Windows.
+- The bloat Drone's tool commands (`code-bloat-stinger/references/tool-commands.md`) and some security Drone commands are bash. On Windows, run those Drones from Git Bash or WSL; PowerShell and cmd cannot run them. Node 20 and npx are needed for jscpd and knip.
+
 ## Purpose
 
 Audit a codebase the way Mario audits one by hand: measure before judging, rule out false alarms before reporting, lift every tool limit that would hide the worst code, and answer the question the person actually asked. The user picks a tier; this skill dispatches the Drones that tier needs, verifies their output against one shared contract, and hands the result to the brief renderer. It never audits code itself and never changes the audited repository, except for the `library/` documents a Mario Audit user approves by name.
@@ -35,15 +40,15 @@ Audit a codebase the way Mario audits one by hand: measure before judging, rule 
 
 ## When not to use
 
-- Auditing a live website from the outside: that is `perform-website-audit` and `master-website-auditor` in this same pack
-- Capturing a running web app's UI: `webapp-capture` in this same pack
+- Auditing a live website from the outside: that is `/perform-website-audit` and `master-website-auditor` in the `website-audit-tools` pack
+- Capturing a running web app's UI: `/webapp-capture` and `webapp-capture-stinger` in the `browser-and-app-testing-tools` pack
 - Fixing the findings: route the remediation PRDs through `/smoke-it` and IRDs through `/pest-controller`
 - Reviewing a single diff before commit: `/ship-gate`
 
 ## Procedure
 
 1. Read [references/audit-contract.md](references/audit-contract.md) in full. Every step below depends on it.
-2. Intake: [guides/00-tier-menu-and-intake.md](guides/00-tier-menu-and-intake.md). Resolve the tier (show the menu if none), resolve the repository, ask the intake questions, detect stacks, create the workspace and the throwaway copy, write `intake.json`.
+2. Intake: [guides/00-tier-menu-and-intake.md](guides/00-tier-menu-and-intake.md). Resolve the tier (show the menu if none), resolve the repository, ask the intake questions, detect stacks, create the workspace and the throwaway copy (`scripts/make_scratch_copy.py`), write `intake.json`.
 3. Dispatch W1 per [guides/01-wave-dispatch.md](guides/01-wave-dispatch.md), with security routing from [guides/02-security-routing.md](guides/02-security-routing.md) for `basic` and above. Merge security output with `scripts/merge_security.py`.
 4. Verify each Drone's output per [guides/05-verify-and-deliver.md](guides/05-verify-and-deliver.md) with `scripts/check_workspace.py`.
 5. For `full` and `mario`, run W2 quality per [guides/03-quality-standalone.md](guides/03-quality-standalone.md).
@@ -60,7 +65,8 @@ Audit a codebase the way Mario audits one by hand: measure before judging, rule 
 | `references/intake-script.md` | Asking the intake questions |
 | `references/arming-lines.md` | Dispatching any Drone |
 | `references/forge-brief-for-builders.md` | Maintaining or adding a Drone and Stinger pair to this audit |
-| `references/research/README.md` | Checking where this orchestrator's rules come from |
+| `references/grounding.md` | Checking where this orchestrator's rules come from |
+| `scripts/make_scratch_copy.py` | Making the throwaway copy at intake (guide 00, step 6) |
 | `scripts/check_workspace.py` | After every Drone returns, and before the brief |
 | `scripts/merge_security.py` | After the security Drones in W1 return |
 | `scripts/build_evidence_index.py` | After each wave, and before the brief |

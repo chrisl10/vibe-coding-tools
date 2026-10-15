@@ -6,4 +6,4 @@
 4. Distinguish source format/links/archive checks, pure mechanics, app build/runtime, provider and native-harness evidence. Mark each missing category NOT_RUN and state its prerequisite.
 5. Submit code and evidence to independent Core Security first, then independent Quality. Resolve findings and re-evaluate before advancing. Parent runs repository health. User review and explicit authorization precede commits, pushes or release.
 
-Grounding: [deployment](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/nuxt-stinger/references/research/raw/deployment.md), [rendering](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/nuxt-stinger/references/research/raw/rendering.md), [sessions](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/nuxt-stinger/references/research/raw/sessions.md). Gate and authorization boundaries are Wasp Nest workflow policy.
+Grounding: deployment, rendering, sessions. Gate and authorization boundaries are Wasp Nest workflow policy.

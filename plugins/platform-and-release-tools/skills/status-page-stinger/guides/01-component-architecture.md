@@ -1,6 +1,6 @@
 # Guide 01: Component Architecture
 
-*Source: `research/external/2026-05-20-component-architecture-patterns.md`*
+*Source: `research/external/2026-05-20-component-architecture-patterns.md` (source-repository research, not shipped)*
 
 ---
 
@@ -64,7 +64,7 @@ Use customer-language names, not engineering names.
 
 ## Critical: Statuspage component status vs. incidents
 
-> **This is the most common Statuspage misconfiguration.** Source: `research/external/2026-05-20-component-architecture-patterns.md`
+> **This is the most common Statuspage misconfiguration.** Source: `research/external/2026-05-20-component-architecture-patterns.md` (source-repository research, not shipped)
 
 On Atlassian Statuspage, **changing a component's status (Operational → Degraded Performance → Partial Outage → Major Outage) does NOT trigger subscriber notifications.** Only creating an incident triggers subscriber notifications.
 

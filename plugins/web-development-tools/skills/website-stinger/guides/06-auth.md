@@ -1,6 +1,6 @@
 # 06: Authentication & User Management
 
-Source PRD: `research/source-prds/prd-phase-06-authentication-user-management.md`
+Source PRD: `research/source-prds/prd-phase-06-authentication-user-management.md` (source-repository research, not shipped)
 
 ---
 

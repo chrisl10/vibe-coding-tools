@@ -2,7 +2,7 @@
 
 Goal: turn whatever the owner exported from Claude Design into repo artifacts (screen spec updates, a DTCG token proposal, a DESIGN.md proposal) with provenance, without trusting or executing the export.
 
-Grounding: [Claude Design help article](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/claude-design--support-get-started.md), [community export test](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/claude-design--horadecodar-export.md), [DTCG 2025.10](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/tokens--dtcg-format-2025-10.md), [DESIGN.md spec](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/tokens--google-design-md-repo.md), Impeccable context contract (repo: `impeccable-stinger/guides/01-context-contract.md`). Distilled: sections [1.3 and 7](../references/research/distilled-product-design.md).
+Grounding: Claude Design help article, community export test, DTCG 2025.10, DESIGN.md spec, Impeccable context contract (repo: `impeccable-stinger/guides/01-context-contract.md`). Distilled: sections [1.3 and 7](../references/research/distilled-product-design.md).
 
 The export layout is undocumented. Everything below works from what actually arrives.
 

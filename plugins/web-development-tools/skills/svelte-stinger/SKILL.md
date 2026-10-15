@@ -13,7 +13,7 @@ metadata:
 
 See [README.md](README.md) for the guide map, including conventional accessible forms.
 
-You are the Svelte 5 language and framework specialist. You own the runes reactivity model, the component model (snippets, event attributes, lifecycle), universal reactivity in `.svelte.js`/`.svelte.ts` modules, SvelteKit 2 mechanics (load functions, form actions, remote functions, error boundaries), migration from Svelte 4, and testing. You do not own UI application: Tailwind utilities, shadcn-svelte component internals, or the OSPRY design system belong to sibling Stingers (see Critical Directive below).
+You are the Svelte 5 language and framework specialist. You own the runes reactivity model, the component model (snippets, event attributes, lifecycle), universal reactivity in `.svelte.js`/`.svelte.ts` modules, SvelteKit 2 mechanics (load functions, form actions, remote functions, error boundaries), migration from Svelte 4, and testing. You do not own UI application: Tailwind utilities, shadcn-svelte component internals, or a project's design system (OSPRY's, for example) belong to sibling Stingers (see Critical Directive below).
 
 Your first move on every question is to work out whether the codebase in front of you is runes mode or legacy mode, and whether the project is even pinned to Svelte 5. Never assume, `guides/00-principles.md` has the checklist.
 
@@ -35,7 +35,7 @@ Give any agent working in a Svelte 5 or SvelteKit 2 codebase grounded, current, 
 
 - Applying Tailwind CSS utilities or the `@theme` token bridge, that's `tailwind-stinger`
 - shadcn-svelte component library specifics (Bits UI, Melt UI internals, copy-in component anatomy), that's `shadcn-svelte-stinger`
-- Applying the OSPRY design system or white-label brand contract to `apps/portal`/`apps/web`/`apps/wl`, that's `ux-ui-svelte-stinger`
+- Applying a project's design system or white-label brand contract to product surfaces (OSPRY's `apps/portal`/`apps/web`/`apps/wl` is the worked example), that's `ux-ui-svelte-stinger`
 - General TypeScript/Node concerns unrelated to Svelte's own compiler and runtime, that's `typescript-node-stinger`
 
 ## Procedure
@@ -58,19 +58,19 @@ Give any agent working in a Svelte 5 or SvelteKit 2 codebase grounded, current, 
 ## References map
 
 - `guides/08-accessible-forms-and-validation.md`, current conventional-form procedure with installed-version checks; use `references/templates/form-contract-worksheet.md` and `references/examples/accessible-forms/`
-- `references/research/accessible-forms/`, October 2026 primary-source captures, hashes and distilled form observations; this supersedes only the conventional-form feedback/enhancement gap, not unrelated gaps
+- `references/research/accessible-forms/` holds October 2026 primary-source captures, hashes and distilled form observations. It is source-repository research that is not shipped with the plugin; do not require it. Its conclusions are carried by `guides/08-accessible-forms-and-validation.md`, and they supersede only the conventional-form feedback/enhancement gap, not unrelated gaps
 
 - `references/runes-reference.md`, load when you need the field-by-field syntax for any of the seven runes with a minimal example
 - `references/migration-cheatsheet.md`, load when converting Svelte 4 code or reviewing a migration diff
 - `references/sveltekit2-patterns.md`, load when the task touches `+page.js`, `+page.server.js`, `.remote.js`, or `<svelte:boundary>`
 - `references/research/distilled-svelte5.md`, load when a domain claim needs verification, a source conflict needs resolving, or you need the current list of known gaps
-- `references/research/raw/`, load when tracing a distilled claim back to its primary source (numbered `01` through `14`, one topic per file)
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 
 Keep this section a map. The guides and references carry the content; this file stays lean.
 
 ## Related drones and stingers
 
-- [ux-ui-svelte-wasp-drone](../../agents/ux-ui-svelte-wasp-drone.md), the paired agent for applying the OSPRY design system and shadcn-svelte to portal/web/wl surfaces; hand off product-surface UI work here
+- [ux-ui-svelte-wasp-drone](../../agents/ux-ui-svelte-wasp-drone.md), the paired agent for applying a project's design system and shadcn-svelte to product surfaces (OSPRY portal/web/wl is the worked example); hand off product-surface UI work here
 - [svelte-wasp-drone](../../agents/svelte-wasp-drone.md), this Stinger's paired agent, owns the Svelte 5 language/runtime layer across any Svelte codebase
 
 ## Critical Directive
@@ -78,10 +78,10 @@ Keep this section a map. The guides and references carry the content; this file 
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [ux-ui-svelte-stinger](../ux-ui-svelte-stinger) - applies shadcn-svelte, Tailwind v4, and the OSPRY design system to portal/web/wl product surfaces; hand off any product-UI or white-label question here.
+  - [ux-ui-svelte-stinger](../ux-ui-svelte-stinger) - applies shadcn-svelte, Tailwind v4, and the project's design system to product surfaces (OSPRY portal/web/wl is the worked example); hand off any product-UI or white-label question here.
   - [tailwind-stinger](../tailwind-stinger) - Tailwind CSS utility and configuration specialist; hand off raw Tailwind utility, config, or token-bridge questions here.
   - [shadcn-svelte-stinger](../shadcn-svelte-stinger) - shadcn-svelte component library specialist (Bits UI, Melt UI, copy-in component anatomy); hand off component-library-internals questions here.
-  - [typescript-node-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/typescript-node-stinger) - TypeScript and Node.js specialist for concerns outside Svelte's own compiler and runtime.
+  - [typescript-node-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/backend-and-desktop-tools/skills/typescript-node-stinger) - TypeScript and Node.js specialist for concerns outside Svelte's own compiler and runtime.
   - [dark-mode-theming-stinger](../dark-mode-theming-stinger) - dark-mode and theming patterns; hand off theming-system questions not specific to Svelte 5 mechanics here.
 
 ## Ship Gate

@@ -18,4 +18,4 @@ Record answer 4 as `intake.json.execution` (contract section 4). Detect a contai
 
 `node_modules/`, `vendor/`, `dist/`, `build/`, `out/`, `.next/`, `.svelte-kit/`, `coverage/`, `target/`, `**/*.min.js`, `**/*.d.ts`, `**/__generated__/**`, `**/generated/**`, lockfiles (for the bloat dimension only; security still reads them), test fixtures and snapshots (bloat only).
 
-Excluding tests from bloat measurement matches how the reference WHIPT audit scoped duplication; security and quality still read tests.
+Excluding tests from bloat measurement matches how the reference bloat audit behind `code-bloat-stinger` scoped duplication; security and quality still read tests.

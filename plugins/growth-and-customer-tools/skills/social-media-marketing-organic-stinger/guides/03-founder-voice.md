@@ -87,4 +87,4 @@ Post reads as generic insight with no specificity. Could have been written about
 
 **Used in:** `guides/05-authenticity-checklist.md` (the checklist items derive from voice markers)
 **See also:** `guides/04-build-in-public.md` (process documentation is a voice-native format)
-**Research grounding:** `research/external/2026-05-20-founder-led-content-wins.md`, `research/external/2026-05-20-ai-content-detection-linkedin.md`
+**Research grounding:** `research/external/2026-05-20-founder-led-content-wins.md`, `research/external/2026-05-20-ai-content-detection-linkedin.md` (source-repository research, not shipped)

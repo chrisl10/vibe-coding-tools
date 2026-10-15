@@ -1,6 +1,6 @@
 # 25: Evaluate the user's multimodal task
 
-Use for O191 with [pipeline](14-multimodal-pipeline.md) and [evaluation discipline](17-evaluation-discipline.md). [Official eval practices](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/mind-stinger/references/research/agent-boundaries-20261007/raw/openai-evals.html) grounds task-specific, representative evaluation; [OWASP](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/mind-stinger/references/research/agent-boundaries-20261007/raw/owasp-injection.html) covers cross-modal instruction attacks. Existing vision/transcription/retrieval/embedding owners keep implementation ownership.
+Use for O191 with [pipeline](14-multimodal-pipeline.md) and [evaluation discipline](17-evaluation-discipline.md). Official eval practices grounds task-specific, representative evaluation; OWASP covers cross-modal instruction attacks. Existing vision/transcription/retrieval/embedding owners keep implementation ownership.
 
 ## Write the task contract before scores
 

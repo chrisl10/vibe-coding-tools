@@ -34,7 +34,7 @@ fn classify(trace: &TurnTrace) -> Recovery {
 }
 ```
 
-Keep the proof-token constructor private so callers cannot manufacture replay eligibility; rustls uses private verification markers for the same omitted-check defense ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/security/2026-07-24-rustls-verification-markers.md)). Use an explicit tagged durable representation rather than an ambiguous untagged enum ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/boundaries/2026-07-24-serde-enum-representations.md)).
+Keep the proof-token constructor private so callers cannot manufacture replay eligibility; rustls uses private verification markers for the same omitted-check defense (research). Use an explicit tagged durable representation rather than an ambiguous untagged enum (research).
 
 ## Failure-focused proof
 
@@ -45,7 +45,7 @@ cargo test -p provider-fake tool_call_visibility_disables_replay
 cargo test -p router-daemon dropped_body_cancels_upstream_and_releases_permit
 ```
 
-The last test matters because an Axum body is pull-driven and only preserves the desired backpressure if upstream production stops on disconnect ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-axum-streaming-body.md)). Each selected future is reviewed individually because Tokio cancellation safety is operation-specific ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-tokio-select-cancellation.md)).
+The last test matters because an Axum body is pull-driven and only preserves the desired backpressure if upstream production stops on disconnect (research). Each selected future is reviewed individually because Tokio cancellation safety is operation-specific (research).
 
 ## Output
 

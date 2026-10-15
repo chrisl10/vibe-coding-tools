@@ -2,7 +2,7 @@
 
 Hosted, prebuilt UI, B2C-leaning, with Organizations for B2B basics. Best DX in the 2026 hosted-provider space.
 
-Source: `research/2026-04-25-provider-decision-matrix.md`, https://clerk.com/docs.
+Source: `research/2026-04-25-provider-decision-matrix.md` (source-repository research, not shipped), https://clerk.com/docs.
 
 ## When Clerk wins
 

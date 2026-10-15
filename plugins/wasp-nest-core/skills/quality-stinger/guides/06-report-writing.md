@@ -171,4 +171,4 @@ Then write the file. Then stop.
 
 - Templates: `templates/qa-report.md`, `templates/traceability-table.md`.
 - Examples: `examples/01-happy-path-clean-audit.md`, `examples/02-blocker-heavy-audit.md`, `examples/03-ordering-violation-escalation.md`.
-- Research on AI-reviewer output shape: `research/2026-04-24-ai-code-review-tools.md`.
+- Research on AI-reviewer output shape: `research/2026-04-24-ai-code-review-tools.md` (source-repository research, not shipped).

@@ -24,3 +24,7 @@ Use the paired worksheet and deliver one provisional recommendation with reasons
 ## Construction gates
 
 Runtime is advisory preparation. Changes to this source pair require parent Security then Quality, followed by the orchestrator loading Github Repo Health, before separately authorized commit or push. This pair itself authorizes no commit, push or provider effect.
+
+## Cursor compatibility
+
+- Cursor cannot enforce the Claude tool allowlist. Follow the file scope above and ask before using broader tools.

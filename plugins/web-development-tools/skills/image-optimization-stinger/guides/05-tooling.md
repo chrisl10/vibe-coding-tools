@@ -1,6 +1,6 @@
 # Image Optimization Tooling
 
-> Derived from: `research/external/2026-05-20-sharp-image-processing.md`, `research/external/2026-05-20-squoosh-cli-npm.md`, `research/external/2026-05-20-squoosh-cli-avif-webp.md`, `research/external/2026-05-20-sharp-squoosh-tooling-2026.md`, `research/external/2026-05-20-lqip-sharp-npm-blur-images.md`
+> Derived from: `research/external/2026-05-20-sharp-image-processing.md`, `research/external/2026-05-20-squoosh-cli-npm.md`, `research/external/2026-05-20-squoosh-cli-avif-webp.md`, `research/external/2026-05-20-sharp-squoosh-tooling-2026.md`, `research/external/2026-05-20-lqip-sharp-npm-blur-images.md` (source-repository research, not shipped)
 
 ---
 
@@ -155,4 +155,4 @@ const { base64 } = await getPlaiceholder(file);
 
 Install: `npm install plaiceholder sharp`
 
-> Source: `research/external/2026-05-20-plaiceholder-nextjs-blurdataurl.md`
+> Source: `research/external/2026-05-20-plaiceholder-nextjs-blurdataurl.md` (source-repository research, not shipped)

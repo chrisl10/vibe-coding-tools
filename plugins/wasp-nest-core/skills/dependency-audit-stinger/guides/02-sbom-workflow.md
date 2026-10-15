@@ -2,7 +2,7 @@
 
 > Preserved Hivemind npm case. Read [target repository audit](05-target-repository-audit.md) first; use the package-specific paths, guards and commands below only when the inspected target has them. Recheck vendor/version claims against current primary documentation before recommending or changing tools.
 
-> **Research source:** `research/external/03-sbom-cyclonedx-spdx-2026.md` (CRITICAL)
+> **Research source:** `research/external/03-sbom-cyclonedx-spdx-2026.md` (source-repository research, not shipped) (CRITICAL)
 > **Template:** `templates/github-actions-sbom-workflow.yml`
 
 A Software Bill of Materials (SBOM) records identified components and their relationships within a stated scope. For the retained Hivemind case the release subject is the npm tarball. Coverage, schema conformance, legal requirements and procurement acceptance need separate evidence. Follow [artifact binding and coverage](07-bind-sbom-to-release-artifact.md) for current work.
@@ -22,7 +22,7 @@ The retained case uses CycloneDX JSON. Select the exact format/version the consu
 | The published npm tarball / built `bundle/` | `anchore/syft` (`anchore/sbom-action`) - native CycloneDX output, widest support |
 | Single npm package (alternative) | `@cyclonedx/cyclonedx-npm` |
 
-**Key rule:** generate from the **packed tarball or built bundle**, not the raw source tree. The `files` allowlist (`bundle`, `harnesses/*/bundle`, `mcp/bundle`, `scripts`, etc.) decides what actually ships - a source-tree SBOM would list devDependencies and unbundled source that never reach consumers, overstating the surface. Run `npm pack` (or build the bundle) first, then point Syft at the result. Source: `research/external/03-sbom-cyclonedx-spdx-2026.md`.
+**Key rule:** generate from the **packed tarball or built bundle**, not the raw source tree. The `files` allowlist (`bundle`, `harnesses/*/bundle`, `mcp/bundle`, `scripts`, etc.) decides what actually ships - a source-tree SBOM would list devDependencies and unbundled source that never reach consumers, overstating the surface. Run `npm pack` (or build the bundle) first, then point Syft at the result. Source: `research/external/03-sbom-cyclonedx-spdx-2026.md` (source-repository research, not shipped).
 
 ---
 

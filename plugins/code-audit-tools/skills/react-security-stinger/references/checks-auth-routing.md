@@ -1,6 +1,6 @@
 # Checks: auth, routing, and client trust (AR)
 
-Load when: running guide 04. A React SPA runs on the user's machine; anything it decides can be changed with dev tools. Every client-side check must have a matching server-side check, which is CWE-602 (A06:2025) when missing [raw/owasp--top10-2025-and-cwe-mapping.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--top10-2025-and-cwe-mapping.md).
+Load when: running guide 04. A React SPA runs on the user's machine; anything it decides can be changed with dev tools. Every client-side check must have a matching server-side check, which is CWE-602 (A06:2025) when missing raw/owasp--top10-2025-and-cwe-mapping.md.
 
 ---
 
@@ -47,7 +47,7 @@ Load when: running guide 04. A React SPA runs on the user's machine; anything it
   }
   window.location.assign(safeNext(new URLSearchParams(location.search).get('next')));
   ```
-- **Refs:** CWE-601, OWASP A01:2025, CVE-2026-22029, CVE-2025-68470, [raw/owasp--cheatsheet-xss-dom-xss-redirects.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-xss-dom-xss-redirects.md), [raw/router--react-router-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/router--react-router-advisories.md).
+- **Refs:** CWE-601, OWASP A01:2025, CVE-2026-22029, CVE-2025-68470, raw/owasp--cheatsheet-xss-dom-xss-redirects.md, raw/router--react-router-advisories.md.
 
 ## AR-04 postMessage without origin checks
 
@@ -68,7 +68,7 @@ Load when: running guide 04. A React SPA runs on the user's machine; anything it
     if (msg.success) setToken(msg.data.token);
   });
   ```
-- **Refs:** CWE-346, CWE-79, OWASP A07:2025, [raw/browser--mdn-postmessage.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/browser--mdn-postmessage.md), [raw/owasp--cheatsheet-html5-security.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-html5-security.md).
+- **Refs:** CWE-346, CWE-79, OWASP A07:2025, raw/browser--mdn-postmessage.md, raw/owasp--cheatsheet-html5-security.md.
 
 ## AR-05 CSRF on cookie-authenticated calls
 
@@ -78,7 +78,7 @@ Load when: running guide 04. A React SPA runs on the user's machine; anything it
 - **Severity:** `high` with `SameSite=None` or no SameSite and no other defense; `medium` behind `SameSite=Lax` (contract example).
 - **Vulnerable:** cookie session, `app.post('/api/transfer', handler)` with no CSRF check, and `fetch('/api/transfer', { method: 'POST', credentials: 'include', body })` in the client.
 - **Fixed:** server rejects cross-site requests (`Sec-Fetch-Site` with Origin fallback) and sets `SameSite=Lax` or `Strict`; or require a custom header such as `X-Requested-With` on JSON APIs.
-- **Refs:** CWE-352, OWASP A01:2025, [raw/owasp--cheatsheet-csrf.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-csrf.md).
+- **Refs:** CWE-352, OWASP A01:2025, raw/owasp--cheatsheet-csrf.md.
 
 ## AR-06 Tokens in URLs
 

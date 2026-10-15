@@ -90,4 +90,4 @@ During the 90 days: post at cadence, engage daily, produce at least one piece of
 
 **Used in:** `guides/06-content-calendar.md` (cadence depends on platform selection)
 **See also:** `guides/07-growth-benchmarks.md` (per-platform ER benchmarks)
-**Research grounding:** `research/external/2026-05-20-platform-algorithm-comparison.md`, `research/external/2026-05-20-linkedin-vs-threads-founders.md`, `research/external/2026-05-20-bluesky-vs-threads-founders.md`
+**Research grounding:** `research/external/2026-05-20-platform-algorithm-comparison.md`, `research/external/2026-05-20-linkedin-vs-threads-founders.md`, `research/external/2026-05-20-bluesky-vs-threads-founders.md` (source-repository research, not shipped)

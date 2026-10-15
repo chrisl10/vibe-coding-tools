@@ -44,7 +44,7 @@ See `guides/00-platform-selection.md` for the full decision matrix with subscrib
 ### Beehiiv
 Best-in-class for newsletter operators who want to monetize from the audience directly. Native Ad Network, Boosts, paid subscriptions at 0% fee, referral program. The only platform with a marketplace of 30,000+ publishers for cross-promotion. Requires Scale plan ($49/mo) for monetization features; free plan limited to 2,500 subscribers.
 
-- Median time to first dollar: 66 days (2026 platform data; see `research/external/2026-05-20-beehiiv-ad-network-monetization-2026.md`)
+- Median time to first dollar: 66 days (2026 platform data; see `research/external/2026-05-20-beehiiv-ad-network-monetization-2026.md` [source-repository research, not shipped with the plugin])
 - $19M in paid subscription revenue paid to creators in 2025 (138% YoY)
 - Ad Network eligibility: 1,000+ active subscribers, 20%+ open rate
 
@@ -57,7 +57,7 @@ Best for creators who sell digital products (courses, ebooks) and need deep auto
 ### Loops
 Best for SaaS companies that want one platform for transactional + marketing email. API-first, TypeScript SDK, event-triggered automations. No landing pages, no referral program, no ad network — purely a product-email platform.
 
-- At 5K contacts: Loops $49/mo vs Kit $89/mo vs (Resend $20 + ConvertKit $79) = $99/mo (see `research/external/2026-05-20-loops-saas-email-platform-2026.md`)
+- At 5K contacts: Loops $49/mo vs Kit $89/mo vs (Resend $20 + ConvertKit $79) = $99/mo (see `research/external/2026-05-20-loops-saas-email-platform-2026.md` [source-repository research, not shipped with the plugin])
 - Use Loops when the question is "how do I email users based on their behavior in my product."
 - Do NOT use Loops as a newsletter-growth platform.
 
@@ -88,7 +88,7 @@ The API route handler pattern is the correct default for any product that wants 
 
 Four revenue streams, in order of effort:
 
-1. **Ad Network** — passive; approve offers from Beehiiv's real-time marketplace. CPM $15-$50 depending on niche. Requires 1K subs, 20%+ open rate. (Data: `research/external/2026-05-20-beehiiv-ad-network-monetization-2026.md`)
+1. **Ad Network** — passive; approve offers from Beehiiv's real-time marketplace. CPM $15-$50 depending on niche. Requires 1K subs, 20%+ open rate. (Data: `research/external/2026-05-20-beehiiv-ad-network-monetization-2026.md` [source-repository research, not shipped with the plugin])
 2. **Boosts** — earn $1-$3 per subscriber you send to other newsletters. Zero writing required.
 3. **Paid subscriptions** — platform-native; 0% transaction fee on Beehiiv Scale. Gate archive posts or Discord access.
 4. **Direct sponsorships** — self-sold, highest CPM (3-5x Ad Network rates). Requires a media kit. Benchmarks: 5K subs = $500-$1,500/placement; 10K subs = $1,000-$3,000/placement.

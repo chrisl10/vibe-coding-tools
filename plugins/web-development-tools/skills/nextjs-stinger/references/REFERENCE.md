@@ -1,7 +1,7 @@
 # Reference index
 
 - [Digest](research/distillation.md): date, upstream version mismatch and exact archive citations.
-- [Raw archive](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/nextjs-stinger/references/research/raw): fifteen official Next.js Markdown responses. Raw upstream links are retained as source content and are not authored package links.
+- Raw archive: fifteen official Next.js Markdown responses. Raw upstream links are retained as source content and are not authored package links.
 - [Starter README](../templates/starter/README.md): adaptation prerequisites and NOT_RUN limits.
 - [Boundary record](../templates/boundary-record.md): version/config, cache/private-data and acceptance evidence.
 - [Negative cases](../examples/negative-cases.md): future runtime denial and freshness requirements.

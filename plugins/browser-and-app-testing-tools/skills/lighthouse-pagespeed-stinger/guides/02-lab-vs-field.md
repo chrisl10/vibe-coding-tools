@@ -1,6 +1,6 @@
 # Guide 02: Lab vs Field Data
 
-> Research source: `research/external/2026-05-20-lab-vs-field-data-differences.md`, `research/external/2026-05-20-psi-crux-integration.md`, `research/external/2026-05-20-debugbear-lab-field-gap.md`
+> Research source: `research/external/2026-05-20-lab-vs-field-data-differences.md`, `research/external/2026-05-20-psi-crux-integration.md`, `research/external/2026-05-20-debugbear-lab-field-gap.md` (source-repository research, not shipped)
 > Example: `examples/lab-field-reconciliation.md`
 
 **The single most important conceptual guide in this stinger.** Read before interpreting any Lighthouse score alongside CrUX data.
@@ -19,7 +19,7 @@
 | Cache state | Always cold | Mixed (new and repeat visitors) |
 | Use for | Debugging and regression detection | Prioritization and real-user impact |
 
-> "As a general rule, if you have both field data and lab data for a given page, field data is what you should use to prioritize your efforts." (`research/external/2026-05-20-lab-vs-field-data-differences.md`)
+> "As a general rule, if you have both field data and lab data for a given page, field data is what you should use to prioritize your efforts." (`research/external/2026-05-20-lab-vs-field-data-differences.md` [source-repository research, not shipped])
 
 ---
 
@@ -34,7 +34,7 @@
 | User interaction (Lighthouse doesn't interact) | INP | INP unavailable in lab |
 | bfcache / platform optimizations | LCP | Field benefits from bfcache; lab cannot replicate |
 
-> Source: `research/external/2026-05-20-lab-vs-field-data-differences.md`
+> Source: `research/external/2026-05-20-lab-vs-field-data-differences.md` (source-repository research, not shipped)
 
 ---
 
@@ -44,7 +44,7 @@ TBT measures blocking tasks during page load. INP measures the full interaction 
 
 **A page can have excellent TBT (< 200ms) and still fail INP (> 200ms).**
 
-Why: "This delay counts toward a page's INP because it contributes to the real input latency that users experience. But since this delay is not technically a Long Task, it doesn't affect a page's TBT." (web.dev, `research/external/2026-05-20-lab-vs-field-data-differences.md`)
+Why: "This delay counts toward a page's INP because it contributes to the real input latency that users experience. But since this delay is not technically a Long Task, it doesn't affect a page's TBT." (web.dev, `research/external/2026-05-20-lab-vs-field-data-differences.md` [source-repository research, not shipped])
 
 Real-world example from the research: Discord homepage has 3+ seconds TBT but INP of 81ms. The reverse is also true and more common.
 
@@ -65,7 +65,7 @@ The `loadingExperience` block falls back from URL-level to origin-level if insuf
 GET https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https://example.com&strategy=mobile&key=YOUR_KEY
 ```
 
-> Source: `research/external/2026-05-20-psi-crux-integration.md`
+> Source: `research/external/2026-05-20-psi-crux-integration.md` (source-repository research, not shipped)
 
 ---
 
@@ -110,4 +110,4 @@ When a user reports "Lighthouse says 90 but CrUX says I'm failing":
 
 Field data passes a metric if the **p75 (75th percentile)** is in the "Good" bucket. 3 of every 4 user sessions must be Good.
 
-As of April 2026: 56.4% of origins pass all three Core Web Vitals. (`research/external/2026-05-20-crux-release-notes-2026.md`)
+As of April 2026: 56.4% of origins pass all three Core Web Vitals. (`research/external/2026-05-20-crux-release-notes-2026.md` [source-repository research, not shipped])

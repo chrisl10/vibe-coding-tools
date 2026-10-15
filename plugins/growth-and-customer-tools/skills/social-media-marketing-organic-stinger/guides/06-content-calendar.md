@@ -114,4 +114,4 @@ When adding a second platform: repurpose (rewrite natively), do not cross-post. 
 
 **Template:** `templates/content-calendar-4-week.md`
 **See also:** `guides/04-build-in-public.md` (build update post types), `guides/03-founder-voice.md` (insight post writing)
-**Research grounding:** `research/external/2026-05-20-linkedin-vs-threads-founders.md`, `research/external/2026-05-20-bluesky-vs-threads-founders.md`, `research/external/2026-05-20-build-in-public-x-playbook.md`
+**Research grounding:** `research/external/2026-05-20-linkedin-vs-threads-founders.md`, `research/external/2026-05-20-bluesky-vs-threads-founders.md`, `research/external/2026-05-20-build-in-public-x-playbook.md` (source-repository research, not shipped)

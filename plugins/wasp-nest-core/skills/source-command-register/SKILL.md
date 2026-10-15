@@ -2,6 +2,7 @@
 name: "source-command-register"
 description: "Walk the pest-controller registration checklist for a finished Drone and Stinger pair, verifying naming and the Critical Directive blocks, adding the roster row, authoring the routing guide, cross-linking related skills, wiring multi-Drone sequences, validating, and regenerating harnesses. Trigger with \"register this drone\", \"register the new stinger pair\", \"add X to the roster\", \"finish registering Y\", \"the pair is built, wire it in\"."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-register

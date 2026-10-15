@@ -26,7 +26,7 @@ Each platform requires a minimum budget to produce optimizable data. Below these
 
 **Enforcement:** When user budget is below the MVS for their target platform, state the threshold explicitly, explain why optimization requires it, and offer two options: (a) delay launch until budget is available, (b) test at reduced scale knowing results will be directional only.
 
-*Source: `research/external/2026-05-20-linkedin-b2b-saas-pipeline-guide-growthspree.md`, `research/external/2026-05-20-tiktok-smart-plus-playbook-2026.md`*
+*Source: `research/external/2026-05-20-linkedin-b2b-saas-pipeline-guide-growthspree.md`, `research/external/2026-05-20-tiktok-smart-plus-playbook-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -36,7 +36,7 @@ Browser pixels are ~60-70% accurate for attribution post-iOS 14.5 (2021), macOS 
 
 **Enforcement:** When setting up any TikTok, LinkedIn, or Microsoft/Bing campaign, always include CAPI wiring instructions. Never deliver a pixel-only setup as the complete implementation. See `guides/12-capi-wiring.md`.
 
-*Source: `research/external/2026-05-20-tiktok-conversion-api-setup-guide.md`, `research/external/2026-05-20-tiktok-capi-funnel-guide.md`*
+*Source: `research/external/2026-05-20-tiktok-conversion-api-setup-guide.md`, `research/external/2026-05-20-tiktok-capi-funnel-guide.md` (source-repository research, not shipped)*
 
 ---
 
@@ -50,7 +50,7 @@ Under-resourced multi-channel setups produce mediocre results everywhere. A foun
 3. Never recommend more than 3 platforms simultaneously for a team smaller than 3 marketers.
 4. State the optimization cadence each platform requires (LinkedIn: 2-week review cycles; TikTok: 3-5 day creative refresh).
 
-*Source: `research/external/2026-05-20-b2b-paid-media-channel-selection-framework.md`*
+*Source: `research/external/2026-05-20-b2b-paid-media-channel-selection-framework.md` (source-repository research, not shipped)*
 
 ---
 
@@ -61,7 +61,7 @@ Published CPL benchmarks reflect mature, optimized campaigns run by experienced 
 - Explicitly tell the user that 2-3x above benchmark is normal for the first 30-90 days.
 - Define a success threshold for the test budget that accounts for this (e.g., "if CPL is under 3x benchmark after 30 days, continue optimizing").
 
-*Source: `research/external/2026-05-20-linkedin-ads-benchmarks-2026-by-industry.md`*
+*Source: `research/external/2026-05-20-linkedin-ads-benchmarks-2026-by-industry.md` (source-repository research, not shipped)*
 
 ---
 

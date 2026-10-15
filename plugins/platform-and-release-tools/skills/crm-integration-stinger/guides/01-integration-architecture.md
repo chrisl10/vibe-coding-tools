@@ -81,5 +81,5 @@ The four-tier decision framework for how to connect a product to a CRM. Apply th
 
 ---
 
-*Sources: `research/external/2026-05-20-merge-dev-unified-crm-api.md`, `research/external/2026-05-20-unified-api-comparison.md`, `research/external/2026-05-20-crm-platform-comparison.md`*
+*Sources: `research/external/2026-05-20-merge-dev-unified-crm-api.md`, `research/external/2026-05-20-unified-api-comparison.md`, `research/external/2026-05-20-crm-platform-comparison.md` (source-repository research, not shipped)*
 *Demonstrates: `examples/hubspot-bidirectional-sync.md` (Option A), `examples/salesforce-lead-contact-migration.md` (Option A, Salesforce-specific)*

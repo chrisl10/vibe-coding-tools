@@ -96,7 +96,7 @@ Do NOT use `React.lazy` per-icon for above-the-fold content. See `guides/02-dyna
 | Semantic (standalone, no text) | `aria-label` on container OR `role="img"` + `<title>` on SVG |
 | Interactive (icon button) | `aria-label` on `<button>`; SVG gets `aria-hidden="true"` |
 
-See `guides/03-accessibility-contract.md` for implementation details and axe-core failure modes. Source: `research/external/icon-accessibility.md`.
+See `guides/03-accessibility-contract.md` for implementation details and axe-core failure modes. Source: `research/external/icon-accessibility.md` (source-repository research, not shipped with the plugin).
 
 ---
 

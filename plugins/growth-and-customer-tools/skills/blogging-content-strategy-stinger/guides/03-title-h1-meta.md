@@ -2,7 +2,7 @@
 
 Three distinct text slots. Each serves a different system. Conflating them is one of the most common blog optimization errors.
 
-> Research sources: `research/external/2026-05-20-incremys-meta-description-guide.md`, `research/external/2026-05-20-w3era-meta-description-ctr-guide.md`
+> Research sources: `research/external/2026-05-20-incremys-meta-description-guide.md`, `research/external/2026-05-20-w3era-meta-description-ctr-guide.md` (source-repository research, not shipped)
 
 ---
 
@@ -61,7 +61,7 @@ The H1 version is more extractable by AI systems because it leads with the subje
 
 ## Meta description: the Promise + Proof + Benefit + CTA framework
 
-The canonical meta description framework (from `research/external/2026-05-20-incremys-meta-description-guide.md`):
+The canonical meta description framework (from `research/external/2026-05-20-incremys-meta-description-guide.md` [source-repository research, not shipped]):
 
 1. **Promise**: State what the reader will get. "Learn how to map a content cluster in 30 minutes."
 2. **Proof**: A factual element that is actually on the page. "With the same architecture that helped [domain X] hit 30% more organic traffic."

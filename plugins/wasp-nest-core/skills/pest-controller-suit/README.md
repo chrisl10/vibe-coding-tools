@@ -8,7 +8,7 @@ Pest-Controller-Suit routes work to the right specialist Drone, arms that Drone 
 - [`PAIRING-AUDIT.md`](PAIRING-AUDIT.md) records the verified Drone, Stinger, and routing-guide totals.
 - [`guides/`](guides) contains one detailed routing guide for every registered Drone.
 
-The live roster directly routes 131 of the 151 Drones. Fourteen pairs stay in Core; the rest belong to the catalog's optional owners, with twenty Website leaves dispatched by that engagement's own orchestrator. Read the root plugin-catalog.json for ownership and use Core's resolver for selected installed availability. The roster identifies a capability without enabling it.
+The live roster directly routes 164 of the 184 Drones. Fourteen pairs stay in Core; the rest belong to the catalog's optional owners, with twenty Website leaves dispatched by that engagement's own orchestrator. Read the root plugin-catalog.json for ownership and use Core's resolver for selected installed availability. The roster identifies a capability without enabling it.
 
 ## Add or update a Drone
 

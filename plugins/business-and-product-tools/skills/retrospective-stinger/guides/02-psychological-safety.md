@@ -1,6 +1,6 @@
 # 02: Psychological Safety: The Safety Gate
 
-*Derived from `research/external/2026-05-20-psychological-safety-retroflow.md` and `research/external/2026-05-20-psychological-safety-agile-kollabe.md`.*
+*Derived from `research/external/2026-05-20-psychological-safety-retroflow.md` and `research/external/2026-05-20-psychological-safety-agile-kollabe.md` (source-repository research, not shipped).*
 
 ---
 
@@ -8,7 +8,7 @@
 
 A team that doesn't feel safe won't say what's actually wrong. They'll produce the retro board equivalent of a performance review: technically complete, substantively empty. Psychological safety is not a nice-to-have; it is a load-bearing prerequisite for retro honesty.
 
-The research anchor: 42% higher participation from introverted team members when input is anonymous (source: `research/external/2026-05-20-psychological-safety-retroflow.md`). Safety doesn't just help the nervous: it helps anyone who holds a minority view.
+The research anchor: 42% higher participation from introverted team members when input is anonymous (source: `research/external/2026-05-20-psychological-safety-retroflow.md` [source-repository research, not shipped]). Safety doesn't just help the nervous: it helps anyone who holds a minority view.
 
 ---
 
@@ -70,7 +70,7 @@ Use a tool that accepts input without attribution during the brainstorm phase:
 - **Sync:** FunRetro, EasyRetro, GoRetro (all have anonymous card modes), or Mentimeter.
 - **Async:** Parabol, Neatro, or a simple shared Google Doc with a "write your thoughts here" prompt.
 
-Important caveat from `research/external/2026-05-20-psychological-safety-agile-kollabe.md`: anonymity is a bridge technique, not a permanent solution. Anonymous tools can mask culture problems and prevent the team from building the authentic trust that makes retros valuable long-term. Use anonymity to get the team talking, but explicitly set a goal of moving toward attributed feedback as safety improves.
+Important caveat from `research/external/2026-05-20-psychological-safety-agile-kollabe.md` (source-repository research, not shipped): anonymity is a bridge technique, not a permanent solution. Anonymous tools can mask culture problems and prevent the team from building the authentic trust that makes retros valuable long-term. Use anonymity to get the team talking, but explicitly set a goal of moving toward attributed feedback as safety improves.
 
 ### Technique 2: Pre-mortem framing
 

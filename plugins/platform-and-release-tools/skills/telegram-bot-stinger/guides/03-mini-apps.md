@@ -1,6 +1,6 @@
 # Guide 03: Telegram Mini Apps
 
-> Sources: `research/mini-apps/2026-05-20-initdata-validation-official.md`, `research/mini-apps/2026-05-20-tma-js-init-data-node.md`, `research/mini-apps/2026-05-20-mini-apps-official-webapps.md`
+> Sources: `research/mini-apps/2026-05-20-initdata-validation-official.md`, `research/mini-apps/2026-05-20-tma-js-init-data-node.md`, `research/mini-apps/2026-05-20-mini-apps-official-webapps.md` (source-repository research, not shipped)
 
 ---
 
@@ -16,7 +16,7 @@ The Telegram WebApp SDK passes user data to your Mini App via `Telegram.WebApp.i
 
 ### Validation algorithm (HMAC-SHA256: standard path)
 
-From `research/mini-apps/2026-05-20-initdata-validation-official.md`:
+From `research/mini-apps/2026-05-20-initdata-validation-official.md` (source-repository research, not shipped):
 
 1. Parse `initData` as a URL query string.
 2. Extract `hash` from the parsed object. Remove `hash` from the remaining fields.

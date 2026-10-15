@@ -2,7 +2,7 @@
 
 The output-vs-input discipline, KR patterns, anti-patterns, and the rewrite heuristic.
 
-*Sources: `research/external/2026-05-20-output-vs-input-key-results.md`, `research/external/2026-05-20-grove-doerr-okr-canon.md`, `research/external/2026-05-20-15five-okr-methodology.md`*
+*Sources: `research/external/2026-05-20-output-vs-input-key-results.md`, `research/external/2026-05-20-grove-doerr-okr-canon.md`, `research/external/2026-05-20-15five-okr-methodology.md` (source-repository research, not shipped)*
 
 ---
 

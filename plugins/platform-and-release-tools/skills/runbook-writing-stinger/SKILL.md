@@ -22,7 +22,7 @@ These govern every decision in this stinger. Full justification with failure mod
 4. **Rollback before you ship.** Every state-changing step has an undo step or an explicit irreversibility acknowledgment. Rollback is never improvised during an incident.
 5. **Runbook-as-test mandate.** An untested runbook is a hypothesis. Exercise runbooks quarterly (game day) and on every postmortem action item. Mark untested runbooks prominently.
 
-**Research anchor:** Google SRE Book Chapter 11 defines on-call as requiring co-equal resources: clear escalation paths, well-defined procedures, and blameless postmortem culture. All five principles map directly to this triad. See `research/external/2026-sre-google-being-on-call-chapter.md`.
+**Research anchor:** Google SRE Book Chapter 11 defines on-call as requiring co-equal resources: clear escalation paths, well-defined procedures, and blameless postmortem culture. All five principles map directly to this triad. See `research/external/2026-sre-google-being-on-call-chapter.md` (source-repository research, not shipped with the plugin).
 
 ---
 

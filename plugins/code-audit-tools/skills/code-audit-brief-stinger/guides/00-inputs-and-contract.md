@@ -15,7 +15,7 @@ The brief renders the run workspace and nothing else. Read this before every ren
 
 | Situation | Behavior |
 | --- | --- |
-| A line in `findings.jsonl` is not valid JSON | Skipped and listed under Data checks with file and line number [../references/research/raw/data--jsonlines-format.md] |
+| A line in `findings.jsonl` is not valid JSON | Skipped and listed under Data checks with file and line number [../references/research/raw/data--jsonlines-format.md (source-repository research, not shipped)] |
 | Two findings share a path, overlapping lines, and a CWE | Merged; higher severity kept; merged ids shown (contract 5.4) |
 | `coverage.caps` missing | "Not reported" in Coverage and caps, and a Data check |
 | Severity or confidence outside the enum | Shown with a neutral pill, sorted last, Data check |
@@ -23,5 +23,5 @@ The brief renders the run workspace and nothing else. Read this before every ren
 
 ## Sources
 
-- [../references/research/raw/data--jsonlines-format.md]
-- [../references/research/raw/escape--owasp-xss-prevention.md]
+- [../references/research/raw/data--jsonlines-format.md (source-repository research, not shipped)]
+- [../references/research/raw/escape--owasp-xss-prevention.md (source-repository research, not shipped)]

@@ -2,7 +2,7 @@
 
 How to conduct a Jobs-to-be-Done switch interview using the Five-Act structure.
 
-**Research source:** `research/external/2026-05-20-jtbd-switch-interview-moesta-method.md`, `research/external/2026-05-20-user-interview-script-structure-2026.md`
+**Research source:** `research/external/2026-05-20-jtbd-switch-interview-moesta-method.md`, `research/external/2026-05-20-user-interview-script-structure-2026.md` (source-repository research, not shipped)
 
 ---
 
@@ -39,7 +39,7 @@ The goal is to elicit the four forces (Moesta's model):
 - **F2 Pull:** the attraction to the new approach (what it promised).
 - **F3 Anxiety:** the hesitation or fear about switching.
 - **F4 Habit:** the inertia of the current approach (even if imperfect).
-(Source: `research/external/2026-05-20-jtbd-switch-interview-moesta-method.md`)
+(Source: `research/external/2026-05-20-jtbd-switch-interview-moesta-method.md` [source-repository research, not shipped])
 
 ### Act 4 — Mental-model probes (5 min)
 Dig into how they think about the problem space.

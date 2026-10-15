@@ -57,4 +57,4 @@ The graph builds at SessionEnd (`graph-on-stop`), gated on a 10-min rate limit, 
 ## Sources
 
 - `package.json` (`optionalDependencies`, `overrides`), `src/graph/`, `esbuild.config.mjs` (externals), `scripts/ensure-tree-sitter.mjs`.
-- `research/2026-06-16-optional-native-deps.md`.
+- `research/2026-06-16-optional-native-deps.md` (source-repository research, not shipped).

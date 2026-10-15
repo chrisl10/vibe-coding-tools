@@ -18,6 +18,11 @@ import zipfile
 from xml.etree import ElementTree
 
 SCHEMA_VERSION = 1
+DEFAULT_PREPARED_BY = "Legion Code Inc."
+PREPARED_BY_ENV = "LIBRARY_PACKETS_PREPARED_BY"
+AUTHOR_ENV = "LIBRARY_PACKETS_AUTHOR"
+SOFFICE_ENV = "SOFFICE_PATH"
+SOFFICE_NAMES = {"soffice", "soffice.bin", "soffice.exe", "libreoffice"}
 MAX_FILE_BYTES = 50 * 1024 * 1024
 MAX_ZIP_BYTES = 128 * 1024 * 1024
 KINDS = {"fact", "intent", "inference", "proposal"}
@@ -39,6 +44,35 @@ class PacketError(Exception):
 
 class Blocked(PacketError):
     pass
+
+
+def resolve_branding(prepared_by=None, author=None):
+    """Footer preparer and DOCX author. Precedence: argument, environment, default."""
+    prepared = (prepared_by or os.environ.get(PREPARED_BY_ENV) or DEFAULT_PREPARED_BY).strip()
+    docx_author = (author or os.environ.get(AUTHOR_ENV) or prepared).strip()
+    if not prepared or not docx_author:
+        raise PacketError("Prepared-by and author text cannot be empty")
+    if "\n" in prepared or "|" in prepared:
+        raise PacketError("Prepared-by text must be one line without a pipe character")
+    return prepared, docx_author
+
+
+def find_soffice(explicit=None):
+    """Locate an installed LibreOffice. Argument, SOFFICE_PATH, PATH, then common Windows installs."""
+    for candidate in (explicit, os.environ.get(SOFFICE_ENV)):
+        if candidate:
+            return candidate
+    for name in ("soffice", "soffice.exe", "libreoffice"):
+        found = shutil.which(name)
+        if found:
+            return found
+    for variable in ("ProgramFiles", "ProgramFiles(x86)", "ProgramW6432"):
+        base = os.environ.get(variable)
+        if base:
+            path = Path(base) / "LibreOffice" / "program" / "soffice.exe"
+            if path.is_file():
+                return str(path)
+    return None
 
 
 def digest(path):
@@ -554,7 +588,7 @@ def add_inline(paragraph, text):
             r.font.name = "Courier New"
 
 
-def write_docx(doc, markdown, logo, target, assets):
+def write_docx(doc, markdown, logo, target, assets, prepared_by=DEFAULT_PREPARED_BY, author=None):
     dx = optional("docx")
     from docx.shared import Inches, Pt, RGBColor
     from docx.oxml import OxmlElement
@@ -591,7 +625,7 @@ def write_docx(doc, markdown, logo, target, assets):
     footer = sec.footer.paragraphs[0]
     footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
     footer.add_run().add_picture(str(logo), width=Inches(1.5))
-    footer.add_run("\nPrepared by Legion Code Inc. | Page ").font.size = Pt(8)
+    footer.add_run(f"\nPrepared by {prepared_by} | Page ").font.size = Pt(8)
     fld = OxmlElement("w:fldSimple")
     fld.set(qn("w:instr"), "PAGE")
     footer._p.append(fld)
@@ -647,11 +681,11 @@ def write_docx(doc, markdown, logo, target, assets):
             else:
                 add_inline(para, data)
     d.core_properties.title = doc["spec"]["title"]
-    d.core_properties.author = "Legion Code Inc."
+    d.core_properties.author = author or prepared_by
     d.save(target)
 
 
-def inspect_pdf(pdf, docx, folder):
+def inspect_pdf(pdf, docx, folder, prepared_by=DEFAULT_PREPARED_BY):
     pi = optional("pypdfium2")
     pdfdoc = pi.PdfDocument(str(pdf))
     pages = []
@@ -674,12 +708,12 @@ def inspect_pdf(pdf, docx, folder):
                              for x0, y0, x1, y1 in images)
         png = folder / f"page-{i + 1:03}.png"
         page.render(scale=1.5).to_pil().save(png)
-        remaining_footer = re.sub(r"Prepared by Legion Code Inc\.\s*\|\s*Page\s*\d+", "",
+        remaining_footer = re.sub(r"Prepared by\s+" + re.escape(normalized(prepared_by)) + r"\s*\|\s*Page\s*\d+", "",
                                   normalized(footer)).strip()
         pages.append({"page": i + 1, "png": png.name, "png_sha256": digest(png),
                       "out_of_page_glyphs": outside,
                       "out_of_page_images": outside_images,
-                      "footer_text_present": "Prepared by Legion Code Inc." in footer,
+                      "footer_text_present": f"Prepared by {prepared_by}" in footer,
                       "footer_logo_detected": bool(logos),
                       "footer_region_extra_text": remaining_footer,
                       "missing_glyphs": "\ufffd" in txt,
@@ -694,17 +728,19 @@ def inspect_pdf(pdf, docx, folder):
             "complete": False}
 
 
-def render(packet_path, output, soffice=None, allow_library_output=False):
+def render(packet_path, output, soffice=None, allow_library_output=False,
+           prepared_by=None, author=None):
     result = validate(packet_path)
     if not result["valid"]:
         raise PacketError("\n".join(result["errors"]))
     optional("docx")
     optional("pypdfium2")
-    binary = soffice or shutil.which("soffice") or shutil.which("libreoffice")
+    prepared_by, author = resolve_branding(prepared_by, author)
+    binary = find_soffice(soffice)
     if not binary or not Path(binary).is_file() or not os.access(binary, os.X_OK):
-        raise Blocked("Installed Word renderer unavailable; provide --soffice")
+        raise Blocked("Installed Word renderer unavailable; provide --soffice or set " + SOFFICE_ENV)
     binary_path = Path(binary).resolve()
-    if (Path(binary).name not in {"soffice", "soffice.bin", "libreoffice"} or
+    if (Path(binary).name.lower() not in SOFFICE_NAMES or
             binary_path.is_relative_to(result["library"]) or
             binary_path.is_relative_to(result["assets"]) or
             binary_path.is_relative_to(result["manifest_path"].parent)):
@@ -756,7 +792,7 @@ def render(packet_path, output, soffice=None, allow_library_output=False):
         json_write(folder / "citations.json", projection)
         word = folder / f"{did}.docx"
         try:
-            write_docx(doc, canonical, result["logo"], word, folder)
+            write_docx(doc, canonical, result["logo"], word, folder, prepared_by, author)
         except Exception as e:
             raise Blocked(f"DOCX construction failed: {e}") from e
         with tempfile.TemporaryDirectory(prefix="word-render-", dir=internal) as td:
@@ -770,7 +806,7 @@ def render(packet_path, output, soffice=None, allow_library_output=False):
         review_folder = internal / "reviews" / did
         review_folder.mkdir(parents=True)
         try:
-            inspection = inspect_pdf(pdf, word, review_folder)
+            inspection = inspect_pdf(pdf, word, review_folder, prepared_by)
         except Exception as e:
             raise Blocked(f"Rendered-page inspection failed: {e}") from e
         inspection.update({"id": did, "audience": spec["audience"],
@@ -850,7 +886,9 @@ def main(argv=None):
     ren = sub.add_parser("render")
     ren.add_argument("packet")
     ren.add_argument("--output", required=True)
-    ren.add_argument("--soffice")
+    ren.add_argument("--soffice", help="LibreOffice executable (default: $SOFFICE_PATH, PATH, then Windows install paths)")
+    ren.add_argument("--prepared-by", help="Footer preparer text (default: $LIBRARY_PACKETS_PREPARED_BY or Legion Code Inc.)")
+    ren.add_argument("--author", help="DOCX author property (default: $LIBRARY_PACKETS_AUTHOR or the prepared-by text)")
     ren.add_argument("--allow-library-output", action="store_true")
     rev = sub.add_parser("review-complete")
     rev.add_argument("output")
@@ -866,7 +904,8 @@ def main(argv=None):
             print(json.dumps(data, indent=2))
             return 0 if r["valid"] else 1
         elif args.command == "render":
-            data = render(args.packet, args.output, args.soffice, args.allow_library_output)
+            data = render(args.packet, args.output, args.soffice, args.allow_library_output,
+                          args.prepared_by, args.author)
         else:
             data = review_complete(args.output, args.attestation)
         print(json.dumps(data, indent=2))

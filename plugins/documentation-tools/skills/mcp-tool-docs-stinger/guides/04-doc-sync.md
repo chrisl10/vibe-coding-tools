@@ -54,4 +54,4 @@ Docs land with the code that changes them. A docs-only catch-up PR is a sign the
 
 `templates/docs-sync-workflow.yml` is the Wasp Nestmind-flavored instance of the hand-rolled CI gate above: it runs `npm run docs:api` (TypeDoc, `treatWarningsAsErrors` set in `typedoc.json`), checks `CHANGELOG.md`'s top version against `package.json` (single-sourced by `scripts/sync-versions.mjs`), and greps `src/mcp/server.ts` for `registerTool(...)` names against `docs/mcp-tools.md`. Adjust the `DOCS_GLOB` and tool-name pattern for a different project's layout, or replace step 3 with a drift-detection tool if the project's TypeScript surface has grown past what a grep-based check can reliably catch.
 
-*Source: `research/distilled-mcp-tool-docs.md` (section 4); `research/external/2026-08-14-typescript-docs-drift-detection.md`.*
+*Source: `research/distilled-mcp-tool-docs.md` (section 4); `research/external/2026-08-14-typescript-docs-drift-detection.md` (source-repository research, not shipped).*

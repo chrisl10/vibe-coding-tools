@@ -115,7 +115,7 @@ Locked-down dependencies (the canonical stack):
 - `openai` (used as OpenRouter client): version pinned.
 - `@deepgram/sdk`: version pinned. Verify it exposes `nova-3` model + `paragraphs` / `utterances` / `punctuate` features.
 
-When a dep is bumped, the corresponding research note in `research/` is updated. See `research/2026-04-25-qdrant-hnsw-tuning.md`, `research/2026-04-25-cohere-rerank-v3-5.md`, etc.
+When a dep is bumped, the corresponding research note in `research/` is updated. See `research/2026-04-25-qdrant-hnsw-tuning.md`, `research/2026-04-25-cohere-rerank-v3-5.md` (source-repository research, not shipped), etc.
 
 ---
 

@@ -2,7 +2,7 @@
 
 Pick the right index family per workload + column type. Choosing wrong is one of the top three causes of "we need a bigger database".
 
-Source: `research/2026-04-25-index-families-decision-tree.md`.
+Source: `research/2026-04-25-index-families-decision-tree.md` (source-repository research, not shipped).
 
 ## The decision tree
 

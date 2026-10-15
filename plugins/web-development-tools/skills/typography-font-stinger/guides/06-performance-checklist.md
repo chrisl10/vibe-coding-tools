@@ -1,12 +1,12 @@
 # Font Performance Checklist
 
-*Sources: `research/external/2026-05-20-font-performance-preload.md`, `research/external/2026-05-20-web-dev-font-best-practices.md`, `research/external/2026-05-20-foit-fout-font-display.md`*
+*Sources: `research/external/2026-05-20-font-performance-preload.md`, `research/external/2026-05-20-web-dev-font-best-practices.md`, `research/external/2026-05-20-foit-fout-font-display.md` (source-repository research, not shipped)*
 
 ---
 
 ## The 2026 font performance targets
 
-From `research/external/2026-05-20-font-performance-preload.md` (WebPerf Clinic, February 2026):
+From `research/external/2026-05-20-font-performance-preload.md` (source-repository research, not shipped) (WebPerf Clinic, February 2026):
 
 | Metric | Target |
 |--------|--------|

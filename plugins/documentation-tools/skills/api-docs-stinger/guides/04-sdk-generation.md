@@ -1,6 +1,6 @@
 # 04: SDK Generation
 
-Generating typed client SDKs from an OpenAPI spec. Read `research/external/sdk-generators-comparison-speakeasy-fern-openapi.md`, `research/external/fern-sdk-generator-github.md`, and `research/external/openapi-generator-cli-reference.md` before running this guide.
+Generating typed client SDKs from an OpenAPI spec. Read `research/external/sdk-generators-comparison-speakeasy-fern-openapi.md`, `research/external/fern-sdk-generator-github.md`, and `research/external/openapi-generator-cli-reference.md` (source-repository research, not shipped) before running this guide.
 
 ## Stable API and compatibility gate
 
@@ -17,7 +17,7 @@ For reusable SDK work, first follow [07-qualify-reusable-sdk.md](07-qualify-reus
 **Default recommendation:**
 - **TypeScript:** Speakeasy or Fern (both produce idiomatic TS with proper types and error handling)
 - **Python:** Fern (idiomatic Pydantic models) or openapi-generator-cli v7.22.0+
-- **Go:** openapi-generator-cli + `oapi-codegen` (see `research/external/speakeasy-go-sdk-comparison.md`)
+- **Go:** openapi-generator-cli + `oapi-codegen` (see `research/external/speakeasy-go-sdk-comparison.md` [source-repository research, not shipped])
 
 ## openapi-generator-cli
 
@@ -130,4 +130,4 @@ Generators produce better code when the spec has:
 
 Fix these before running generation. See `guides/02-examples.md` for example enrichment.
 
-*Source: `research/external/sdk-generators-comparison-speakeasy-fern-openapi.md`, `research/external/openapi-generator-cli-reference.md`, `research/external/fern-sdk-generator-github.md`, `research/external/speakeasy-go-sdk-comparison.md`*
+*Source: `research/external/sdk-generators-comparison-speakeasy-fern-openapi.md`, `research/external/openapi-generator-cli-reference.md`, `research/external/fern-sdk-generator-github.md`, `research/external/speakeasy-go-sdk-comparison.md` (source-repository research, not shipped)*

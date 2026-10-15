@@ -27,7 +27,7 @@ Severity words follow the contract (section 7) and [finding-rules.md](finding-ru
   }
   ```
   Better still, render text (`{user.bio}`) or markdown through react-markdown without raw HTML.
-- **Refs:** CWE-79, OWASP A05:2025, [raw/xss--react-docs-dangerouslysetinnerhtml.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--react-docs-dangerouslysetinnerhtml.md), [raw/owasp--cheatsheet-xss-dom-xss-redirects.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-xss-dom-xss-redirects.md).
+- **Refs:** CWE-79, OWASP A05:2025, raw/xss--react-docs-dangerouslysetinnerhtml.md, raw/owasp--cheatsheet-xss-dom-xss-redirects.md.
 
 ## RX-02 Dynamic URLs in href, src, action, formAction, xlinkHref, data, srcDoc
 
@@ -49,7 +49,7 @@ Severity words follow the contract (section 7) and [finding-rules.md](finding-ru
   }
   <a href={safeHref(profile.website)} rel="noopener noreferrer">Website</a>
   ```
-- **Refs:** CWE-79, OWASP A05:2025, [raw/xss--react-dom-url-sanitization-source.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--react-dom-url-sanitization-source.md), [raw/owasp--cheatsheet-xss-dom-xss-redirects.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-xss-dom-xss-redirects.md).
+- **Refs:** CWE-79, OWASP A05:2025, raw/xss--react-dom-url-sanitization-source.md, raw/owasp--cheatsheet-xss-dom-xss-redirects.md.
 
 ## RX-03 Raw HTML written to the DOM through refs or document
 
@@ -66,7 +66,7 @@ Severity words follow the contract (section 7) and [finding-rules.md](finding-ru
   useEffect(() => { ref.current!.textContent = props.message; }, [props.message]);
   // or simply: <p>{props.message}</p>
   ```
-- **Refs:** CWE-79, OWASP A05:2025, [raw/owasp--cheatsheet-xss-dom-xss-redirects.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-xss-dom-xss-redirects.md), [raw/xss--mdn-trusted-types.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--mdn-trusted-types.md).
+- **Refs:** CWE-79, OWASP A05:2025, raw/owasp--cheatsheet-xss-dom-xss-redirects.md, raw/xss--mdn-trusted-types.md.
 
 ## RX-04 Strings evaluated as code
 
@@ -76,7 +76,7 @@ Severity words follow the contract (section 7) and [finding-rules.md](finding-ru
 - **Severity:** untrusted input: `high` (client) or `critical` (server). Fixed strings: not a finding.
 - **Vulnerable:** `const fn = new Function('row', `return ${userFormula}`);`
 - **Fixed:** parse the formula with a dedicated expression parser that has no access to globals, or offer a fixed set of operations.
-- **Refs:** CWE-94, CWE-95 (A05:2025 maps CWE-95), [raw/owasp--cheatsheet-xss-dom-xss-redirects.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-xss-dom-xss-redirects.md).
+- **Refs:** CWE-94, CWE-95 (A05:2025 maps CWE-95), raw/owasp--cheatsheet-xss-dom-xss-redirects.md.
 
 ## RX-05 Markdown rendered as raw HTML
 
@@ -96,7 +96,7 @@ Severity words follow the contract (section 7) and [finding-rules.md](finding-ru
   <Markdown rehypePlugins={[rehypeRaw, rehypeSanitize]}>{comment.body}</Markdown>
   <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(marked.parse(comment.body) as string) }} />
   ```
-- **Refs:** CWE-79, OWASP A05:2025, [raw/xss--react-markdown-readme-security.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--react-markdown-readme-security.md), [raw/xss--marked-readme-and-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--marked-readme-and-advisories.md).
+- **Refs:** CWE-79, OWASP A05:2025, raw/xss--react-markdown-readme-security.md, raw/xss--marked-readme-and-advisories.md.
 
 ## RX-06 Untrusted MDX compiled or evaluated
 
@@ -109,7 +109,7 @@ Severity words follow the contract (section 7) and [finding-rules.md](finding-ru
   const mdx = await serialize(await db.posts.body(id), { blockJS: false });
   ```
 - **Fixed:** keep `blockJS: true` (default in next-mdx-remote 6), upgrade to 6.0.0 or later, and accept only markdown (not MDX) from users, rendered with react-markdown.
-- **Refs:** CWE-94, OWASP A05:2025, CVE-2026-0969, [raw/xss--mdx-next-mdx-remote-cve-2026-0969.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--mdx-next-mdx-remote-cve-2026-0969.md).
+- **Refs:** CWE-94, OWASP A05:2025, CVE-2026-0969, raw/xss--mdx-next-mdx-remote-cve-2026-0969.md.
 
 ## RX-07 HTML-to-React parsers on untrusted HTML
 
@@ -119,7 +119,7 @@ Severity words follow the contract (section 7) and [finding-rules.md](finding-ru
 - **Severity:** as RX-01.
 - **Vulnerable:** `return <>{parse(ticket.htmlBody)}</>;`
 - **Fixed:** `return <>{parse(DOMPurify.sanitize(ticket.htmlBody))}</>;`
-- **Refs:** CWE-79, CWE-1104 (react-html-parser), [raw/xss--html-react-parser-readme.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--html-react-parser-readme.md).
+- **Refs:** CWE-79, CWE-1104 (react-html-parser), raw/xss--html-react-parser-readme.md.
 
 ## RX-08 Sanitizer misuse
 
@@ -133,7 +133,7 @@ Severity words follow the contract (section 7) and [finding-rules.md](finding-ru
   html = html.replace('{{name}}', user.name);   // reintroduces raw input after sanitizing
   ```
 - **Fixed:** substitute first, sanitize last: `DOMPurify.sanitize(input.replace('{{name}}', escapeHtml(user.name)))`.
-- **Refs:** CWE-79, CWE-1395 (outdated version), [raw/xss--dompurify-readme-and-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--dompurify-readme-and-advisories.md).
+- **Refs:** CWE-79, CWE-1395 (outdated version), raw/xss--dompurify-readme-and-advisories.md.
 
 ## RX-09 Trusted Types policy that passes input through
 
@@ -143,7 +143,7 @@ Severity words follow the contract (section 7) and [finding-rules.md](finding-ru
 - **Severity:** passthrough `default` policy: `medium` (it disables a defense the team believes is on). Trusted Types simply absent: not a finding here (header posture belongs to the generic pass).
 - **Vulnerable:** `trustedTypes.createPolicy('default', { createHTML: (s) => s });`
 - **Fixed:** `trustedTypes.createPolicy('default', { createHTML: (s) => DOMPurify.sanitize(s, { RETURN_TRUSTED_TYPE: false }) });` and on React 19.3.0+ pass `TrustedHTML` objects directly.
-- **Refs:** CWE-79, [raw/xss--mdn-trusted-types.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--mdn-trusted-types.md), [raw/rsc--react-release-notes-19-2-x-and-19-3.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-release-notes-19-2-x-and-19-3.md).
+- **Refs:** CWE-79, raw/xss--mdn-trusted-types.md, raw/rsc--react-release-notes-19-2-x-and-19-3.md.
 
 ## RX-10 CSS built from untrusted values
 
@@ -153,7 +153,7 @@ Severity words follow the contract (section 7) and [finding-rules.md](finding-ru
 - **Severity:** user-controlled stylesheet: `medium` (UI redress and data exfiltration by CSS); URL value only: `low`, `possible` until reproduced.
 - **Vulnerable:** `<div style={{ backgroundImage: `url(${banner.url})` }} />`
 - **Fixed:** `<div style={{ backgroundImage: `url(${JSON.stringify(safeHref(banner.url) ?? '')})` }} />`
-- **Refs:** CWE-79, [raw/owasp--cheatsheet-xss-dom-xss-redirects.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-xss-dom-xss-redirects.md).
+- **Refs:** CWE-79, raw/owasp--cheatsheet-xss-dom-xss-redirects.md.
 
 ## RX-11 target="_blank" on user-supplied links without rel
 
@@ -162,7 +162,7 @@ Severity words follow the contract (section 7) and [finding-rules.md](finding-ru
 - **Severity:** `low` hygiene.
 - **Vulnerable:** `<a href={post.link} target="_blank">`
 - **Fixed:** `<a href={safeHref(post.link)} target="_blank" rel="noopener noreferrer">`
-- **Refs:** CWE-1022 (A06:2025 maps it), [raw/lint--eslint-plugin-react-security-rules.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/lint--eslint-plugin-react-security-rules.md).
+- **Refs:** CWE-1022 (A06:2025 maps it), raw/lint--eslint-plugin-react-security-rules.md.
 
 ---
 
@@ -181,7 +181,7 @@ Severity words follow the contract (section 7) and [finding-rules.md](finding-ru
   const json = JSON.stringify(state).replace(/</g, '\\u003c');
   res.send(`<script>window.__INITIAL_STATE__ = ${json}</script>`);
   ```
-- **Refs:** CWE-79, OWASP A05:2025, [raw/ssr--redux-server-rendering-security.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/ssr--redux-server-rendering-security.md), [raw/ssr--serialize-javascript-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/ssr--serialize-javascript-advisories.md).
+- **Refs:** CWE-79, OWASP A05:2025, raw/ssr--redux-server-rendering-security.md, raw/ssr--serialize-javascript-advisories.md.
 
 ## RS-02 bootstrapScriptContent or inline scripts built from request data
 
@@ -191,7 +191,7 @@ Severity words follow the contract (section 7) and [finding-rules.md](finding-ru
 - **Severity:** request data interpolated: `high` (reflected XSS on every page).
 - **Vulnerable:** ``bootstrapScriptContent: `window.__LANG = "${req.query.lang}"` ``
 - **Fixed:** ``bootstrapScriptContent: `window.__LANG = ${JSON.stringify(String(req.query.lang ?? 'en')).replace(/</g, '\\u003c')}` `` plus an allow-list of languages.
-- **Refs:** CWE-79, CWE-94, [raw/ssr--react-dom-server-stream-options-and-escaping.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/ssr--react-dom-server-stream-options-and-escaping.md).
+- **Refs:** CWE-79, CWE-94, raw/ssr--react-dom-server-stream-options-and-escaping.md.
 
 ## RS-03 HTML shell built with string templates
 
@@ -204,4 +204,4 @@ Severity words follow the contract (section 7) and [finding-rules.md](finding-ru
   html = template.replace('<!--app-head-->', `<title>${post.title}</title>`)
   ```
 - **Fixed:** render the head with React (`<title>{post.title}</title>`), or HTML-escape every inserted value with a tested escaper.
-- **Refs:** CWE-79, OWASP A05:2025, [raw/ssr--redux-server-rendering-security.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/ssr--redux-server-rendering-security.md).
+- **Refs:** CWE-79, OWASP A05:2025, raw/ssr--redux-server-rendering-security.md.

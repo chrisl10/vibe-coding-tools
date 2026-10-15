@@ -2,7 +2,7 @@
 
 How to produce or audit a PR description using the six-element structure. Covers the anti-patterns to eliminate, the "What did NOT change" section design, and the scoring rubric.
 
-Sources: `research/external/2026-05-20-pullpanda-pr-description-templates.md`, `research/external/2026-05-20-tenthirtyam-pr-template-guide.md`, `research/external/2026-05-20-gitautoreview-pr-size-metrics.md`.
+Sources: `research/external/2026-05-20-pullpanda-pr-description-templates.md`, `research/external/2026-05-20-tenthirtyam-pr-template-guide.md`, `research/external/2026-05-20-gitautoreview-pr-size-metrics.md` (source-repository research, not shipped).
 
 Example: `examples/happy-path-pr-review.md`
 
@@ -100,4 +100,4 @@ Run the audit table before proposing any rewrites. Emit pass/fail/warn per eleme
 
 ## The compounding returns of good descriptions
 
-Companies that adopt PR description standards report 30-50% faster time-to-merge. Source: `research/external/2026-05-20-tenthirtyam-pr-template-guide.md`. The mechanism: a complete description allows async review without back-and-forth, which is the primary source of review latency.
+Companies that adopt PR description standards report 30-50% faster time-to-merge. Source: `research/external/2026-05-20-tenthirtyam-pr-template-guide.md` (source-repository research, not shipped). The mechanism: a complete description allows async review without back-and-forth, which is the primary source of review latency.

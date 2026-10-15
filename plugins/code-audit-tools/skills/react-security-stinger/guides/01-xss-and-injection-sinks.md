@@ -30,15 +30,15 @@ Every RX and RS candidate is either a finding, a "Not confirmed" note with the r
 
 ## Sources
 
-- [raw/xss--react-docs-dangerouslysetinnerhtml.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--react-docs-dangerouslysetinnerhtml.md)
-- [raw/xss--react-dom-url-sanitization-source.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--react-dom-url-sanitization-source.md)
-- [raw/xss--react-markdown-readme-security.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--react-markdown-readme-security.md)
-- [raw/xss--marked-readme-and-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--marked-readme-and-advisories.md)
-- [raw/xss--mdx-next-mdx-remote-cve-2026-0969.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--mdx-next-mdx-remote-cve-2026-0969.md)
-- [raw/xss--dompurify-readme-and-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--dompurify-readme-and-advisories.md)
-- [raw/xss--html-react-parser-readme.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--html-react-parser-readme.md)
-- [raw/xss--mdn-trusted-types.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/xss--mdn-trusted-types.md)
-- [raw/ssr--react-dom-server-stream-options-and-escaping.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/ssr--react-dom-server-stream-options-and-escaping.md)
-- [raw/ssr--redux-server-rendering-security.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/ssr--redux-server-rendering-security.md)
-- [raw/owasp--cheatsheet-xss-dom-xss-redirects.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-xss-dom-xss-redirects.md)
-- [raw/rsc--react-release-notes-19-2-x-and-19-3.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-release-notes-19-2-x-and-19-3.md)
+- raw/xss--react-docs-dangerouslysetinnerhtml.md
+- raw/xss--react-dom-url-sanitization-source.md
+- raw/xss--react-markdown-readme-security.md
+- raw/xss--marked-readme-and-advisories.md
+- raw/xss--mdx-next-mdx-remote-cve-2026-0969.md
+- raw/xss--dompurify-readme-and-advisories.md
+- raw/xss--html-react-parser-readme.md
+- raw/xss--mdn-trusted-types.md
+- raw/ssr--react-dom-server-stream-options-and-escaping.md
+- raw/ssr--redux-server-rendering-security.md
+- raw/owasp--cheatsheet-xss-dom-xss-redirects.md
+- raw/rsc--react-release-notes-19-2-x-and-19-3.md

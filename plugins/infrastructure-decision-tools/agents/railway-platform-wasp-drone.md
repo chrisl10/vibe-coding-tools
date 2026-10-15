@@ -1,7 +1,7 @@
 ---
 name: railway-platform-wasp-drone
 description: Assess Railway fit for supplied runtime, state, jobs, network, region, cost and recovery requirements. Use for Railway selection advice and explicit deployment-owner gaps.
-tools: Read, Glob, Grep, WebFetch, WebSearch
+tools: Read, Glob, Grep, WebFetch, WebSearch, Skill
 model: inherit
 ---
 
@@ -27,4 +27,4 @@ Use the core skill's related-owner resolution map. Infrastructure Fit decides th
 
 ## Reporting expectations
 
-Return report text with decision, supplied facts, cited constraints, provisional/blocked status, unknown cost inputs, operator/recovery duties and implementation owner/gap. The authorized caller saves it under Library Schema v2 at library/requirements/reports/railway/<date>-<topic>.md or the agreed local destination. Do not claim source review as native/customer proof. Source forge gates are parent-owned; runtime is research-only.
+Return report text with decision, supplied facts, cited constraints, provisional/blocked status, unknown cost inputs, operator/recovery duties and implementation owner/gap. The authorized caller saves it under Library Schema v2 at library/requirements/reports/railway/<date>-<topic>.md or the agreed local destination. Do not claim source review as native/customer proof. Runtime is research-only.

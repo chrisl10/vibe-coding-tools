@@ -45,14 +45,14 @@ Help a reader understand one technical source using plain language, a familiar e
 
 ## Error and generated code inputs
 
-Use [explain-error](guides/explain-error.md) for exact error/runner context, observed versus hypothesized meaning and one suggested safe next check. Use [explain-generated-code](guides/explain-generated-code.md) for caller trust, input, conditions, permission order, pending results, state and effects. Fill the [worksheet](references/templates/error-code-worksheet.md) and retain unknown helpers and execution evidence. These are explanation workflows: no supplied code execution, installation or repair follows implicitly. See [bounded cases](references/examples/error-code-cases.md) and [diagnostic research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/technical-explainer-stinger/references/research/error-code/digest.md).
+Use [explain-error](guides/explain-error.md) for exact error/runner context, observed versus hypothesized meaning and one suggested safe next check. Use [explain-generated-code](guides/explain-generated-code.md) for caller trust, input, conditions, permission order, pending results, state and effects. Fill the [worksheet](references/templates/error-code-worksheet.md) and retain unknown helpers and execution evidence. These are explanation workflows: no supplied code execution, installation or repair follows implicitly. See [bounded cases](references/examples/error-code-cases.md) and diagnostic research.
 
 ## References map
 
 - [Research digest](references/research/distilled-technical-explanation.md): grounding and limits.
 - [Document guide](guides/explain-document.md), [repository guide](guides/explain-repository-flow.md), [message guide](guides/explain-message.md): input-specific procedures.
 - [Worked cases](references/examples/worked-cases.md): permitted and denied requests, proposed cache, source instruction injection and missing code evidence.
-- [Source ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/technical-explainer-stinger/references/research/source-ledger.json): retrieval/hash records.
+- Source ledger: retrieval/hash records.
 - [Evidence checker](scripts/check-evidence.py): run when reviewing this skill's archive, links or encoded fixtures; it does not assess a user's understanding.
 - [Paired Drone](../../agents/technical-explainer-wasp-drone.md): delegation contract.
 

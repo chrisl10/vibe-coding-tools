@@ -2,7 +2,7 @@
 
 A cold outreach list is a precision instrument, not a contact dump. A dirty list — wrong titles, bounced emails, unverified contacts, or the wrong companies — burns sending reputation, wastes personalization budget, and produces misleading signal about what is or is not working.
 
-**Research grounding:** `research/external/2026-05-20-email-verification-zerobounce-neverbounce.md`, `research/external/2026-05-20-apollo-search-filters-list-building.md`
+**Research grounding:** `research/external/2026-05-20-email-verification-zerobounce-neverbounce.md`, `research/external/2026-05-20-apollo-search-filters-list-building.md` (source-repository research, not shipped)
 
 ---
 
@@ -34,7 +34,7 @@ Apollo provides filters that dramatically improve list quality:
 
 After applying filters, review the first 50 contacts manually. Does the list look like your ICP? If titles are off, adjust the filter. Never export a 500-contact list without a 50-contact spot check.
 
-**Research grounding:** `research/external/2026-05-20-apollo-search-filters-list-building.md`
+**Research grounding:** `research/external/2026-05-20-apollo-search-filters-list-building.md` (source-repository research, not shipped)
 
 ---
 
@@ -53,7 +53,7 @@ All contact lists require email verification before sending. Unverified lists pr
 
 **Recommendation:** Run ZeroBounce or NeverBounce on any list before loading into your sending platform. The Apollo/Instantly native verification is adequate for quick checks but not for campaigns with >100 contacts.
 
-**Research grounding:** `research/external/2026-05-20-email-verification-zerobounce-neverbounce.md`
+**Research grounding:** `research/external/2026-05-20-email-verification-zerobounce-neverbounce.md` (source-repository research, not shipped)
 
 ### Verification results to handle
 

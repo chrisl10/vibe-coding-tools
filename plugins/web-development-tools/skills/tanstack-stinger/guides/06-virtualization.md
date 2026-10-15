@@ -1,6 +1,6 @@
 # Guide 6: Virtualization with TanStack Virtual
 
-Grounded in `references/research/distilled-tanstack.md` §3 and §6, `references/research/raw/tanstack--virtual--svelte-adapter.md`.
+Grounded in `references/research/distilled-tanstack.md` §3 and §6, `references/research/raw/tanstack--virtual--svelte-adapter.md` (source-repository research, not shipped).
 
 ## When to walk this guide
 

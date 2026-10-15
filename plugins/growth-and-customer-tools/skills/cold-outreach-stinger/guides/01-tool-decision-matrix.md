@@ -2,7 +2,7 @@
 
 The cold email tooling ecosystem has fragmented into two distinct layers: **data/sourcing** and **sending/deliverability**. Most founders fail because they conflate these layers or use the wrong tool in each slot.
 
-**Research grounding:** `research/external/2026-05-20-apollo-vs-lemlist-tool-decision.md`, `research/external/2026-05-20-instantly-vs-smartlead-feature-comparison.md`, `research/external/2026-05-20-instantly-vs-smartlead-multichannel.md`
+**Research grounding:** `research/external/2026-05-20-apollo-vs-lemlist-tool-decision.md`, `research/external/2026-05-20-instantly-vs-smartlead-feature-comparison.md`, `research/external/2026-05-20-instantly-vs-smartlead-multichannel.md` (source-repository research, not shipped)
 
 ---
 

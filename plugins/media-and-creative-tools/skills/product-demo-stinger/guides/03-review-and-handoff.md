@@ -9,4 +9,4 @@
 
 Use [negative cases](../references/negative-cases.json) as review scenarios. Their expected decisions are guidance, not claims of executed browser or learner tests.
 
-Grounding: [distillation](../references/research/distilled-product-demo.md), [capture foundation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/media-and-creative-tools/skills/product-demo-stinger/references/research/raw/capture-foundation.md), [media command](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/media-and-creative-tools/skills/product-demo-stinger/references/research/raw/media-command.md).
+Grounding: [distillation](../references/research/distilled-product-demo.md), capture foundation, media command.

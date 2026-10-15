@@ -2,6 +2,7 @@
 name: "source-command-prepare-release"
 description: "Prepare a release candidate, evidence checklist, honest notes, and a release decision without publishing it."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-prepare-release

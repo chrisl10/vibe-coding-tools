@@ -2,6 +2,7 @@
 name: "source-command-build-nuxt-app"
 description: "Build or extend a Nuxt app using current Nuxt routing, SSR, Nitro, data and cache boundaries with explicit verification."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-build-nuxt-app

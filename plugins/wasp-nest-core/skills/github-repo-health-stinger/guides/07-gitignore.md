@@ -1,6 +1,6 @@
 # 07 - .gitignore Coverage Audit
 
-*Research basis: `research/external/07-gitignore-canonical.md` (github/gitignore canonical templates)*
+*Research basis: `research/external/07-gitignore-canonical.md` (source-repository research, not shipped) (github/gitignore canonical templates)*
 
 ## What to check
 

@@ -15,7 +15,7 @@ No other search platform offers LinkedIn Profile Targeting (LPT). Microsoft Adve
 
 This makes Microsoft Advertising uniquely powerful for B2B search intent campaigns where the buyer persona can be defined by LinkedIn attributes.
 
-*Source: `research/external/2026-05-20-microsoft-ads-linkedin-profile-targeting-b2b.md`*
+*Source: `research/external/2026-05-20-microsoft-ads-linkedin-profile-targeting-b2b.md` (source-repository research, not shipped)*
 
 ---
 
@@ -30,7 +30,7 @@ This makes Microsoft Advertising uniquely powerful for B2B search intent campaig
 
 > **Important:** LinkedIn Profile Targeting uses "bid modifier" (observation) mode by default. Switch to "Target Only" only for highly targeted ABM campaigns where you explicitly want to exclude non-LPT traffic. For most campaigns, bid modifier mode is correct.
 
-*Source: `research/external/2026-05-20-microsoft-ads-linkedin-targeting-implementation.md`*
+*Source: `research/external/2026-05-20-microsoft-ads-linkedin-targeting-implementation.md` (source-repository research, not shipped)*
 
 ---
 
@@ -75,7 +75,7 @@ For server-side CAPI with Microsoft Advertising (Enhanced Conversions), see `gui
 | Audience demographics | Older (35+), higher household income, Microsoft workplace users |
 | Market share (US search) | ~6-9% vs Google's ~89% |
 
-*Source: `research/external/2026-05-20-microsoft-ads-linkedin-profile-targeting-b2b.md`*
+*Source: `research/external/2026-05-20-microsoft-ads-linkedin-profile-targeting-b2b.md` (source-repository research, not shipped)*
 
 ---
 

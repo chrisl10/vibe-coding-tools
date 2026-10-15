@@ -81,4 +81,4 @@ Servers **MUST** validate all tool inputs, implement access controls, rate-limit
 
 ---
 
-*Sources: `research/distilled-mcp-protocol.md`, `research/2026-06-16-mcp-sdk-typescript.md`, `research/2026-06-16-mcp-spec-lifecycle.md`, `research/external/mcp-spec-tools-primitive.md`, `research/external/mcp-spec-architecture.md`. Worked example: `guides/09-hivemind-worked-example.md`.*
+*Sources: `research/distilled-mcp-protocol.md`, `research/2026-06-16-mcp-sdk-typescript.md`, `research/2026-06-16-mcp-spec-lifecycle.md`, `research/external/mcp-spec-tools-primitive.md`, `research/external/mcp-spec-architecture.md` (source-repository research, not shipped). Worked example: `guides/09-hivemind-worked-example.md`.*

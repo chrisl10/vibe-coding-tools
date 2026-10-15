@@ -11,7 +11,7 @@ Platform policies change. Tactical advice built on top of a misread policy leads
 The canonical G2 policy source (as of 2026) is: `https://sell.g2.com/review-validity`
 The canonical FTC source: `https://www.ftc.gov/business-guidance/resources/ftc-endorsement-guides-what-people-are-asking`
 
-Source: `research/external/2026-05-20-g2-review-incentive-policy.md`, `research/external/2026-05-20-ftc-endorsement-guidelines-reviews.md`
+Source: `research/external/2026-05-20-g2-review-incentive-policy.md`, `research/external/2026-05-20-ftc-endorsement-guidelines-reviews.md` (source-repository research, not shipped)
 
 ---
 
@@ -26,7 +26,7 @@ Never route a user directly to a public review platform. Always check sentiment 
 
 Why this matters: asking unhappy users for public reviews produces negative reviews that are then permanent. The two-step filter is not optional; it is the difference between a 4.6-star profile and a 3.2-star profile.
 
-Source: `research/external/2026-05-20-review-request-timing-ux.md`
+Source: `research/external/2026-05-20-review-request-timing-ux.md` (source-repository research, not shipped)
 
 ---
 
@@ -44,7 +44,7 @@ Not all badges carry equal weight for every audience:
 
 Note (2026): G2 Leader/High Performer require paid subscription (~$2,999+/year). Free profiles: "Users Love Us" only (20 reviews, 4.0+ rating).
 
-Source: `research/external/2026-05-20-g2-badges-social-proof-conversion.md`
+Source: `research/external/2026-05-20-g2-badges-social-proof-conversion.md` (source-repository research, not shipped)
 
 ---
 
@@ -61,7 +61,7 @@ These are civil-penalty violations, not just TOS violations. Non-negotiable: do 
 
 Incentivized reviews ARE legal when: (a) the incentive is disclosed in the review, (b) the incentive is not conditioned on a specific star rating, and (c) the platform's own policy permits incentivized reviews.
 
-Source: `research/external/2026-05-20-ftc-endorsement-guidelines-reviews.md`
+Source: `research/external/2026-05-20-ftc-endorsement-guidelines-reviews.md` (source-repository research, not shipped)
 
 ---
 
@@ -74,4 +74,4 @@ On February 5, 2026, G2 acquired Capterra, Software Advice, and GetApp ($110M). 
 - Reviews collected on Capterra do NOT appear on G2 (separate databases), but the vendor relationship is now unified.
 - Cross-platform budgets should be allocated to G2 (primary) + Trustpilot (secondary) + PH (launch events), not G2 + Capterra.
 
-Source: `research/external/2026-05-20-g2-capterra-acquisition-consolidation.md`
+Source: `research/external/2026-05-20-g2-capterra-acquisition-consolidation.md` (source-repository research, not shipped)

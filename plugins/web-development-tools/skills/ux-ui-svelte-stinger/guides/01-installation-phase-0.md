@@ -4,9 +4,9 @@
 > must have Tailwind v4 wired and the `@theme` token bridge in place. This
 > guide is the install procedure per app.
 
-**Research:** `../research/shadcn-svelte-installation-sveltekit.md` (canonical
-flow), `../research/tailwind-v4-upgrade-guide.md` (the `@tailwindcss/vite`
-plugin, the `@reference` coexistence rule), `../research/shadcn-svelte-cli.md`
+**Research:** `../research/shadcn-svelte-installation-sveltekit.md` (source-repository research, not shipped) (canonical
+flow), `../research/tailwind-v4-upgrade-guide.md` (source-repository research, not shipped) (the `@tailwindcss/vite`
+plugin, the `@reference` coexistence rule), `../research/shadcn-svelte-cli.md` (source-repository research, not shipped)
 (what `init` writes).
 
 ## Scope of Phase 0
@@ -30,7 +30,7 @@ grep -E '"(svelte|@sveltejs/kit|vite|tailwind)"' apps/<app>/package.json
 ```
 
 Expected: `svelte: ^5.33`, `@sveltejs/kit: ^2.21`, `vite: ^6.3`. Tailwind should
-NOT yet be present. See `../research/library-versions.md` for the version pins.
+NOT yet be present. See `../research/library-versions.md` (source-repository research, not shipped) for the version pins.
 
 ### Step 2: Add Tailwind v4 via the `sv` CLI
 
@@ -39,7 +39,7 @@ cd apps/<app>
 npx sv add tailwind
 ```
 
-What this does (per `../research/shadcn-svelte-installation-sveltekit.md`):
+What this does (per `../research/shadcn-svelte-installation-sveltekit.md` [source-repository research, not shipped]):
 
 - Installs `tailwindcss` + `@tailwindcss/vite` + `tailwind-merge` + `clsx` + `tailwind-variants`.
 - Adds the `@tailwindcss/vite` plugin to `vite.config.ts`.
@@ -76,7 +76,7 @@ Accept the defaults, with these OSPRY-specific answers:
 - **Utils alias:** `$lib/utils`.
 - **CSS file:** `src/app.css`.
 
-What `init` writes (per `../research/shadcn-svelte-cli.md`):
+What `init` writes (per `../research/shadcn-svelte-cli.md` [source-repository research, not shipped]):
 
 - `$lib/utils.ts` with the `cn()` helper (clsx + tailwind-merge).
 - Updates `src/app.css` with the `:root` / `.dark` token blocks, the `@theme inline` block, and the `@layer base` block.
@@ -115,7 +115,7 @@ Before declaring Phase 0 done:
 ## The coexistence rule (critical during rollout)
 
 Tailwind v4 and the hand-rolled CSS coexist. Two specifics from
-`../research/tailwind-v4-upgrade-guide.md`:
+`../research/tailwind-v4-upgrade-guide.md` (source-repository research, not shipped):
 
 1. **Import order in `+layout.svelte`:**
    ```svelte

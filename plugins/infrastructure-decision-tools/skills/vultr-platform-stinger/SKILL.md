@@ -43,8 +43,8 @@ Select one provisional or documented Vultr compute/service form for a supplied w
 
 ## References map
 
-- [Raw source ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/infrastructure-decision-tools/skills/vultr-platform-stinger/references/research/source-ledger.json): own fetched URLs, timestamps and hashes.
-- [Raw archive](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/infrastructure-decision-tools/skills/vultr-platform-stinger/references/research/raw): substantive body provenance and fetch-failure evidence.
+- Raw source ledger: own fetched URLs, timestamps and hashes.
+- Raw archive: substantive body provenance and fetch-failure evidence.
 - [Paired Drone](../../agents/vultr-platform-wasp-drone.md): bounded read-only delegation.
 
 Runtime is research-only. Ship Gate removed: this advisory workflow produces no application-code or provider changes. Parent owns source promotion, registration, ordered Security, independent Quality and parent Health reviews and any separately authorized commit.

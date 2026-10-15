@@ -1,6 +1,6 @@
 # Guide 01: Slash Commands
 
-**Sources:** `research/external/2026-05-20-slash-commands-interactive.md`, `research/external/2026-05-20-block-kit-modals.md`
+**Sources:** `research/external/2026-05-20-slash-commands-interactive.md`, `research/external/2026-05-20-block-kit-modals.md` (source-repository research, not shipped)
 
 ---
 
@@ -67,7 +67,7 @@ async function generateReport(userId: string, respond: RespondFn) {
 }
 ```
 
-> Source: `research/external/2026-05-20-slash-commands-interactive.md`
+> Source: `research/external/2026-05-20-slash-commands-interactive.md` (source-repository research, not shipped)
 
 ---
 

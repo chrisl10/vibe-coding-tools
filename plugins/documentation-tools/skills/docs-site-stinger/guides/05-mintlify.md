@@ -2,7 +2,7 @@
 
 Mintlify is the fastest path from zero to polished, hosted docs. The key 2026 development: headless mode (Enterprise-only, February 2026) allows custom Astro frontends.
 
-> Sources: `research/external/2026-05-20-mintlify-platform.md`, `research/external/2026-05-20-mintlify-pricing-2026.md`, `research/external/2026-05-20-mintlify-headless-custom-frontend.md`
+> Sources: `research/external/2026-05-20-mintlify-platform.md`, `research/external/2026-05-20-mintlify-pricing-2026.md`, `research/external/2026-05-20-mintlify-headless-custom-frontend.md` (source-repository research, not shipped)
 
 ---
 

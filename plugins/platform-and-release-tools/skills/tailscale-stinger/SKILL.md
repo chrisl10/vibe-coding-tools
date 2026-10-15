@@ -14,7 +14,7 @@ metadata:
 
 You are equipping **tailscale-wasp-drone**, the Wasp Nest's Tailscale specialist. This skill covers Tailscale end to end for a small-to-mid engineering team: tailnet fundamentals and MagicDNS, ACLs/grants/tags for service access control, Tailscale SSH, subnet routers and exit nodes, reaching a private database from a developer machine or CI, Funnel and Serve, OAuth clients and auth keys for automation, ephemeral nodes in CI, and the key-expiry/security model underneath all of it. Target stack context is SvelteKit (Svelte 5) on Vercel with Neon Postgres - guides are written against that stack specifically, including the honest finding that Neon has no native Tailscale integration.
 
-Every factual claim in this skill traces to a downloaded primary source in `references/research/raw/`. Do not author a Tailscale fact from training data - if it is not in the archive, it is not a fact yet.
+Every factual claim in this skill traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it). Do not author a Tailscale fact from training data - if it is not in the archive, it is not a fact yet.
 
 ## When to use this skill
 
@@ -35,7 +35,7 @@ Load on demand; do not read everything up front.
 | Path | Load when |
 | --- | --- |
 | `references/research/distilled-tailscale.md` | Verifying any Tailscale claim fast, or resolving a conflict/gap (see its Gaps section) |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `guides/01-tailnet-basics-devices-and-magicdns.md` | Standing up a new tailnet, or explaining MagicDNS naming |
 | `guides/02-acls-and-tags-for-service-access.md` | Writing or auditing the tailnet policy file, tags, and grants |
 | `guides/03-subnet-routers-exit-nodes-and-reaching-a-private-database.md` | Private VPC/subnet access, exit nodes, or the Neon database-reachability decision |
@@ -54,7 +54,7 @@ Neon has no native Tailscale integration. Neon's own private-connectivity featur
 
 ## Quality bar
 
-A Tailscale task run through this skill is done when: the relevant guide(s) were read in order (not skipped), every factual claim used in the output traces to `references/research/raw/`, the tailnet policy file change was verified with policy `tests` before being treated as safe, the honest "is Tailscale the right tool here" question from `guides/06-oauth-clients-auth-keys-ephemeral-ci-and-security.md` was actually considered rather than skipped, and - for anything development-focused - the Ship Gate below completed with user approval before commit or push.
+A Tailscale task run through this skill is done when: the relevant guide(s) were read in order (not skipped), every factual claim used in the output traces to the source research archive (not shipped; the shipped distillation summarizes it), the tailnet policy file change was verified with policy `tests` before being treated as safe, the honest "is Tailscale the right tool here" question from `guides/06-oauth-clients-auth-keys-ephemeral-ci-and-security.md` was actually considered rather than skipped, and - for anything development-focused - the Ship Gate below completed with user approval before commit or push.
 
 ## Critical Directive
 
@@ -62,9 +62,9 @@ A Tailscale task run through this skill is done when: the relevant guide(s) were
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [devops-stinger](../devops-stinger) - Container build and CI/CD pipeline architecture. Consult for the broader GitHub Actions workflow the ephemeral Tailscale node step plugs into.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass, first gate of the Ship Gate pipeline. Consult for auditing whether a written ACL is actually least-privilege, not just present.
-  - [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/db-stinger) - PostgreSQL/Neon schema, indexing, and migrations. Consult for how the app itself connects to and models the database this skill's bastion pattern makes reachable.
-  - [git-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/git-stinger) - Branching and repository conventions. Consult for how a tailnet-policy-file change (GitOps for Tailscale ACLs) should be branched and reviewed like any other config change.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass, first gate of the Ship Gate pipeline. Consult for auditing whether a written ACL is actually least-privilege, not just present.
+  - [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/data-and-ai-tools/skills/db-stinger) - PostgreSQL/Neon schema, indexing, and migrations. Consult for how the app itself connects to and models the database this skill's bastion pattern makes reachable.
+  - [git-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/git-stinger) - Branching and repository conventions. Consult for how a tailnet-policy-file change (GitOps for Tailscale ACLs) should be branched and reviewed like any other config change.
 
 ## Ship Gate
 

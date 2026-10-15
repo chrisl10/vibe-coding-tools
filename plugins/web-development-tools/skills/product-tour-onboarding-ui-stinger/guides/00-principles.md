@@ -18,7 +18,7 @@ Three non-negotiables that govern every output this Drone produces. These are th
 <button data-tour="main-save-button">Save</button>
 ```
 
-**Bonus:** `data-tour` attributes are identical to `data-testid` in Playwright/Cypress. Adding them for tours also improves automated test coverage: a "two-for-one" (source: `research/external/2026-05-20-tour-maintenance-unbreakable.md`).
+**Bonus:** `data-tour` attributes are identical to `data-testid` in Playwright/Cypress. Adding them for tours also improves automated test coverage: a "two-for-one" (source: `research/external/2026-05-20-tour-maintenance-unbreakable.md` [source-repository research, not shipped]).
 
 **Escalation:** If the codebase uses a framework where you cannot add `data-tour` (e.g., a third-party embedded component), use text targeting as a fallback, not class-based targeting. Document the fallback explicitly in the selector registry.
 
@@ -44,7 +44,7 @@ See the full decision matrix in `guides/01-platform-selection.md`.
 
 **Rule:** Every tour implementation must produce a selector registry and a CI smoke test alongside the tour content itself. Do not declare a tour "done" without these.
 
-**Why:** *"A broken tour that goes undetected is worse than no tour at all. It erodes user trust and creates blind spots in your adoption data."* (Source: `research/external/2026-05-20-tour-maintenance-unbreakable.md`.) Teams report spending 10+ hours building a tour only to watch it break after the next deploy. The selector registry and CI check are the engineering discipline that prevents this.
+**Why:** *"A broken tour that goes undetected is worse than no tour at all. It erodes user trust and creates blind spots in your adoption data."* (Source: `research/external/2026-05-20-tour-maintenance-unbreakable.md` [source-repository research, not shipped].) Teams report spending 10+ hours building a tour only to watch it break after the next deploy. The selector registry and CI check are the engineering discipline that prevents this.
 
 **Minimum viable maintenance deliverables:**
 - `templates/data-tour-registry.json` populated with one entry per tour-targeted element.

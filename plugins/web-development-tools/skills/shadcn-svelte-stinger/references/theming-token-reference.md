@@ -1,6 +1,6 @@
 # Theming token reference
 
-The generic shadcn-svelte CSS variable vocabulary, grounded in [distilled-shadcn-svelte.md](research/distilled-shadcn-svelte.md) section 7, citing [raw/05-theming-tokens.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/shadcn-svelte-stinger/references/research/raw/05-theming-tokens.md) and [raw/06-tailwind-v4-migration.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/shadcn-svelte-stinger/references/research/raw/06-tailwind-v4-migration.md).
+The generic shadcn-svelte CSS variable vocabulary, grounded in [distilled-shadcn-svelte.md](research/distilled-shadcn-svelte.md) section 7, citing raw/05-theming-tokens.md and raw/06-tailwind-v4-migration.md.
 
 This is the library's own generic token set. It is NOT the OSPRY-specific token bridge, PRD-071 system, or `--brand-*` white-label contract; those belong to `ux-ui-svelte-stinger`. See the [Boundary section in SKILL.md](../SKILL.md).
 

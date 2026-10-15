@@ -1,6 +1,6 @@
 # 06 - Docs Presence Audit
 
-*Research basis: `research/external/04-issue-pr-templates-docs.md`*
+*Research basis: `research/external/04-issue-pr-templates-docs.md` (source-repository research, not shipped)*
 
 ## Community health files checklist
 
@@ -34,7 +34,7 @@ This check is opt-in for large monorepos (> 20 packages) to avoid noise.
 
 ## Scoring rubric
 
-See `research/external/04-issue-pr-templates-docs.md` for full rubric. Summary:
+See `research/external/04-issue-pr-templates-docs.md` (source-repository research, not shipped) for full rubric. Summary:
 
 | Files present | Score |
 |---|---|

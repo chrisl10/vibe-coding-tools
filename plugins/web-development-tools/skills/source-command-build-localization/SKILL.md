@@ -2,6 +2,7 @@
 name: "source-command-build-localization"
 description: "Build or extend a localization app using current locale, resource, plural, formatting and RTL boundaries with explicit verification."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-build-localization

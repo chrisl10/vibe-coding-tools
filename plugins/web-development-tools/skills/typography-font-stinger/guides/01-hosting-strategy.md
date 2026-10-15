@@ -1,6 +1,6 @@
 # Font Hosting Strategy Decision Tree
 
-*Sources: `research/external/2026-05-20-nextjs-font-optimization.md`, `research/external/2026-05-20-fontsource-docs.md`, `research/external/2026-05-20-fontsource-manual-fontface.md`, `research/external/2026-05-20-web-dev-font-best-practices.md`*
+*Sources: `research/external/2026-05-20-nextjs-font-optimization.md`, `research/external/2026-05-20-fontsource-docs.md`, `research/external/2026-05-20-fontsource-manual-fontface.md`, `research/external/2026-05-20-web-dev-font-best-practices.md` (source-repository research, not shipped)*
 
 ---
 
@@ -69,7 +69,7 @@ h1   { font-family: var(--font-playfair), Georgia, serif; }
 - `weight`: For static fonts, specify the weights you use. For variable fonts, omit (all weights included in the range).
 - `adjustFontFallback`: `true` by default. Generates size-adjust/metric-override CSS for the fallback font to minimize CLS.
 
-**Source:** `research/external/2026-05-20-nextjs-font-optimization.md`
+**Source:** `research/external/2026-05-20-nextjs-font-optimization.md` (source-repository research, not shipped)
 
 ---
 
@@ -101,7 +101,7 @@ export const brandVariable = localFont({
 
 Place font files in `public/fonts/`. Use `.woff2` format exclusively for modern browsers.
 
-**Source:** `research/external/2026-05-20-nextjs-font-optimization.md`
+**Source:** `research/external/2026-05-20-nextjs-font-optimization.md` (source-repository research, not shipped)
 
 ---
 
@@ -127,7 +127,7 @@ body { font-family: 'Inter Variable', system-ui, sans-serif; }
 
 **Advanced: manual @font-face to reduce declarations**
 
-The default Fontsource import includes ~12 `@font-face` rules covering many subsets and weights. Roy Portas (March 2026) documents reducing this to 3 manual declarations for a 60% reduction in CSS payload (`research/external/2026-05-20-fontsource-manual-fontface.md`):
+The default Fontsource import includes ~12 `@font-face` rules covering many subsets and weights. Roy Portas (March 2026) documents reducing this to 3 manual declarations for a 60% reduction in CSS payload (`research/external/2026-05-20-fontsource-manual-fontface.md` [source-repository research, not shipped]):
 
 ```css
 @font-face {
@@ -143,7 +143,7 @@ The default Fontsource import includes ~12 `@font-face` rules covering many subs
 
 Use the manual pattern when you need precise control over which subsets are loaded.
 
-**Source:** `research/external/2026-05-20-fontsource-docs.md`, `research/external/2026-05-20-fontsource-manual-fontface.md`
+**Source:** `research/external/2026-05-20-fontsource-docs.md`, `research/external/2026-05-20-fontsource-manual-fontface.md` (source-repository research, not shipped)
 
 ---
 
@@ -158,7 +158,7 @@ Steps:
 4. Write `@font-face` declarations with explicit `font-display`, `unicode-range`, and `font-variation-settings`.
 5. Add `<link rel="preload">` in `<head>` for the critical font file.
 
-**Source:** `research/external/2026-05-20-variable-font-subsetting.md`, `research/external/2026-05-20-web-dev-font-best-practices.md`
+**Source:** `research/external/2026-05-20-variable-font-subsetting.md`, `research/external/2026-05-20-web-dev-font-best-practices.md` (source-repository research, not shipped)
 
 ---
 

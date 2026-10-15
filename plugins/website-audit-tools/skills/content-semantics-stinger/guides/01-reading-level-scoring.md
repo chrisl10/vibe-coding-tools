@@ -16,7 +16,7 @@ Flesch Reading Ease and Flesch-Kincaid Grade Level formulas this pair uses
 are therefore this Stinger's own judgment call (a well-established
 public-domain formula applied because it satisfies AC-1's "formula and
 inputs shown" requirement), not a claim traced to
-`references/research/raw/`. State this plainly in the report's section 1
+`references/research/raw/` (source-repository research, not shipped). State this plainly in the report's section 1
 header rather than presenting the formula as archive-grounded; do not
 fabricate a citation for it.
 

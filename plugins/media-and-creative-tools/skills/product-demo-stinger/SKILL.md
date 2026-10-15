@@ -45,7 +45,7 @@ Return an evidence-bound storyboard, tutorial, narration and caption draft, clai
 
 - [Reference map](references/REFERENCE.md): worksheets, example, review cases and exact archive.
 - [Dated distillation](references/research/distilled-product-demo.md): validate domain claims and local policy boundaries.
-- [Raw manifest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/media-and-creative-tools/skills/product-demo-stinger/references/research/raw/manifest.json): trace current official docs and source snapshots.
+- Raw manifest: trace current official docs and source snapshots.
 - [Paired Drone](../../agents/product-demo-wasp-drone.md): scoped read-only planning.
 
 ## Related drones and stingers

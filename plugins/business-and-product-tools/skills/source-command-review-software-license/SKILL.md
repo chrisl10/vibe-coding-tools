@@ -2,6 +2,7 @@
 name: "source-command-review-software-license"
 description: "Explain and inventory software license evidence, distribution boundaries and unresolved review questions without relabeling rights."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-review-software-license

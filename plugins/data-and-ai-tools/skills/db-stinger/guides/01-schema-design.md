@@ -2,7 +2,7 @@
 
 Postgres-first schema. Use the type system; don't reinvent it in app code.
 
-Source: `research/2026-04-25-schema-types-jsonb-arrays-enums.md`.
+Source: `research/2026-04-25-schema-types-jsonb-arrays-enums.md` (source-repository research, not shipped).
 
 ## Default scaffolding for any new table
 
@@ -40,7 +40,7 @@ CREATE TABLE example (
 
 ### `jsonb` vs columns
 
-Apply the 80/20 test from `research/2026-04-25-schema-types-jsonb-arrays-enums.md`:
+Apply the 80/20 test from `research/2026-04-25-schema-types-jsonb-arrays-enums.md` (source-repository research, not shipped):
 
 | Use `jsonb` when | Use columns when |
 |---|---|

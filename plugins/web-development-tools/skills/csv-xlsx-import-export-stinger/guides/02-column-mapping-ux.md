@@ -2,7 +2,7 @@
 
 This guide covers the 5-stage import wizard pattern, the managed importer comparison matrix, and the self-hosted alternative (react-spreadsheet-import + hand-rolled).
 
-*Derived from `research/external/2026-05-20-import-ux-design-guide.md`, `research/external/2026-05-20-oneschema-vs-dromo-comparison.md`, `research/external/2026-05-20-flatfile-vs-oneschema-filefeed.md`, `research/external/2026-05-20-react-spreadsheet-import.md`, `research/ux-patterns/2026-05-20-column-mapping-ux.md`, `research/managed-platforms/2026-05-20-flatfile-react-embed.md`, `research/managed-platforms/2026-05-20-oneschema-column-mapping.md`, `research/managed-platforms/2026-05-20-dromo-platform.md`.*
+*Derived from `research/external/2026-05-20-import-ux-design-guide.md`, `research/external/2026-05-20-oneschema-vs-dromo-comparison.md`, `research/external/2026-05-20-flatfile-vs-oneschema-filefeed.md`, `research/external/2026-05-20-react-spreadsheet-import.md`, `research/ux-patterns/2026-05-20-column-mapping-ux.md`, `research/managed-platforms/2026-05-20-flatfile-react-embed.md`, `research/managed-platforms/2026-05-20-oneschema-column-mapping.md`, `research/managed-platforms/2026-05-20-dromo-platform.md` (source-repository research, not shipped).*
 
 ---
 
@@ -19,7 +19,7 @@ Rule of thumb:
 
 ## The 5-stage import wizard (canonical UX pattern)
 
-From `research/external/2026-05-20-import-ux-design-guide.md`:
+From `research/external/2026-05-20-import-ux-design-guide.md` (source-repository research, not shipped):
 
 ```
 1. Pre-import     Upload the file; show preview (first 10 rows) + sheet selector for XLSX

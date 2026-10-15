@@ -2,7 +2,7 @@
 
 The canonical 12-point gate. No post goes live without passing this checklist. For updates to existing posts, run only the sections relevant to the changed content.
 
-> Research sources: `research/external/2026-05-20-contentconquered-13-quality-standards-checklist.md`, `research/external/2026-05-20-quetext-content-quality-check-8-steps.md`
+> Research sources: `research/external/2026-05-20-contentconquered-13-quality-standards-checklist.md`, `research/external/2026-05-20-quetext-content-quality-check-8-steps.md` (source-repository research, not shipped)
 
 ---
 
