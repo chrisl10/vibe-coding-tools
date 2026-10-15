@@ -1,8 +1,8 @@
 # Next.js advisory table (affected and patched versions)
 
-Generated from `next-advisories.json`, which is a normalized copy of the GitHub Security Advisories for `vercel/next.js` fetched 2026-09-30 ([raw/advisory--ghsa-index-vercel-next-js.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/nextjs-security-stinger/references/research/raw/advisory--ghsa-index-vercel-next-js.md)). Ranges: lower bound inclusive, upper bound exclusive (the first patched version). "not stated" means the advisory did not list a patched version at fetch time; never fill it in by guessing. "no patch in line" means the advisory lists no fix for that major line.
+Generated from `next-advisories.json`, which is a normalized copy of the GitHub Security Advisories for `vercel/next.js` fetched 2026-09-30 (raw/advisory--ghsa-index-vercel-next-js.md). Ranges: lower bound inclusive, upper bound exclusive (the first patched version). "not stated" means the advisory did not list a patched version at fetch time; never fill it in by guessing. "no patch in line" means the advisory lists no fix for that major line.
 
-Newest releases at research time (npm, [raw/next--npm-dist-tags-2026-09-30.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/nextjs-security-stinger/references/research/raw/next--npm-dist-tags-2026-09-30.md)): 16.x `16.3.8`, 15.x `15.5.27`, 14.x `14.2.35` (unsupported), 13.x `13.5.11` (unsupported).
+Newest releases at research time (npm, raw/next--npm-dist-tags-2026-09-30.md): 16.x `16.3.8`, 15.x `15.5.27`, 14.x `14.2.35` (unsupported), 13.x `13.5.11` (unsupported).
 
 Labels: CVE-2025-29927 and everything published before 2025-09-30 is older than 12 months; it stays in the table because unpatched installs are still affected.
 
@@ -78,4 +78,4 @@ Preconditions are the codes the scan script evaluates (see `precondition_help` i
 - On 15.x: anything below 15.5.24 is exposed to the AVIF optimizer RCE and the Windows RCE; anything below 15.5.7 (or its per-minor equivalent) is exposed to React2Shell (CVE-2025-55182); anything below 15.2.3 is exposed to CVE-2025-29927.
 - On 14.x and 13.x: the 2026 advisories list no patch. The fix is a major upgrade.
 
-Sources: [raw/advisory--ghsa-index-vercel-next-js.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/nextjs-security-stinger/references/research/raw/advisory--ghsa-index-vercel-next-js.md), [raw/next--npm-dist-tags-2026-09-30.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/nextjs-security-stinger/references/research/raw/next--npm-dist-tags-2026-09-30.md), [raw/next--support-policy.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/nextjs-security-stinger/references/research/raw/next--support-policy.md).
+Sources: raw/advisory--ghsa-index-vercel-next-js.md, raw/next--npm-dist-tags-2026-09-30.md, raw/next--support-policy.md.

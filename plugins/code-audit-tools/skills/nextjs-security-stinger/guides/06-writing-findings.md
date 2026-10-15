@@ -60,4 +60,4 @@ Goal: every confirmed issue becomes one valid `findings-nextjs-security-wasp-dro
 
 ## Sources
 
-Contract: `audit-my-code-stinger/references/audit-contract.md`. [raw/standard--cwe-entries.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/nextjs-security-stinger/references/research/raw/standard--cwe-entries.md), [raw/standard--owasp-top-10-2025.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/nextjs-security-stinger/references/research/raw/standard--owasp-top-10-2025.md), [raw/next--data-security-guide.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/nextjs-security-stinger/references/research/raw/next--data-security-guide.md).
+Contract: `audit-my-code-stinger/references/audit-contract.md`. raw/standard--cwe-entries.md, raw/standard--owasp-top-10-2025.md, raw/next--data-security-guide.md.
