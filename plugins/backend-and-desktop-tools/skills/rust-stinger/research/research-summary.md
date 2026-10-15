@@ -35,11 +35,11 @@
 
 ## Five most influential sources
 
-1. [`async/2026-07-24-tokio-select-cancellation.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-tokio-select-cancellation.md) - establishes that cancellation safety is an operation-level property and identifies the central replay/data-loss review boundary.
-2. [`async/2026-07-24-tower-service-readiness.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-tower-service-readiness.md) - makes backpressure a resource-reservation contract and exposes the readiness-to-call cancellation edge.
-3. [`persistence/2026-07-24-sqlite-transactions.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/persistence/2026-07-24-sqlite-transactions.md) plus [`persistence/2026-07-24-sqlx-custom-transactions.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/persistence/2026-07-24-sqlx-custom-transactions.md) - together establish the one-writer rule and the SQLx 0.9 mechanism for tracked `BEGIN IMMEDIATE` transactions.
-4. [`security/2026-07-24-rustls-verification-markers.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/security/2026-07-24-rustls-verification-markers.md) - supplies upstream precedent for private proof tokens preventing skipped safety checks.
-5. [`testing/2026-07-24-proptest-state-machines.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/testing/2026-07-24-proptest-state-machines.md) - supplies the reference-model, invariant, shrinking, and regression-seed pattern for quota/breaker/promotion state.
+1. `async/2026-07-24-tokio-select-cancellation.md` - establishes that cancellation safety is an operation-level property and identifies the central replay/data-loss review boundary.
+2. `async/2026-07-24-tower-service-readiness.md` - makes backpressure a resource-reservation contract and exposes the readiness-to-call cancellation edge.
+3. `persistence/2026-07-24-sqlite-transactions.md` plus `persistence/2026-07-24-sqlx-custom-transactions.md` - together establish the one-writer rule and the SQLx 0.9 mechanism for tracked `BEGIN IMMEDIATE` transactions.
+4. `security/2026-07-24-rustls-verification-markers.md` - supplies upstream precedent for private proof tokens preventing skipped safety checks.
+5. `testing/2026-07-24-proptest-state-machines.md` - supplies the reference-model, invariant, shrinking, and regression-seed pattern for quota/breaker/promotion state.
 
 ## Open questions that survived research
 

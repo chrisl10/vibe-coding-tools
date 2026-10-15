@@ -2,6 +2,7 @@
 name: "source-command-build-desktop-app"
 description: "Scope and build an authorized desktop-app slice with an explicit native boundary and native verification."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-build-desktop-app

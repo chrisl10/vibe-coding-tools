@@ -9,10 +9,10 @@ Implement provider and harness edges without granting providers agency or invent
 1. Import approved protocol/domain types into edge crates; do not leak SDK types inward.
 2. Normalize provider chunks, usage, finish reasons, and errors into the approved internal contract.
 3. Preserve correlation, ordering, visibility, tool-call, retry, reservation, and cancellation facts explicitly.
-4. Inject credentials only through approved secret-reference interfaces. Secret wrappers require explicit exposure and reduce accidental Debug/copying, but do not replace the secret store ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/security/2026-07-24-secrecy.md)).
-5. Start provider/request functions with `#[instrument(skip_all)]` and add only allowlisted fields; function arguments are captured by default otherwise ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/observability/2026-07-24-tracing-instrument.md)).
-6. Let libraries emit structured events while daemon/CLI binaries own subscriber and sink initialization; tracing advises libraries not to set a global subscriber ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/observability/2026-07-24-tracing-subscriber.md)).
-7. Use stable rustls safe builders and approved roots. Custom verifier APIs are deliberately dangerous and require Security review ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/security/2026-07-24-rustls-config-builder.md)).
+4. Inject credentials only through approved secret-reference interfaces. Secret wrappers require explicit exposure and reduce accidental Debug/copying, but do not replace the secret store (research).
+5. Start provider/request functions with `#[instrument(skip_all)]` and add only allowlisted fields; function arguments are captured by default otherwise (research).
+6. Let libraries emit structured events while daemon/CLI binaries own subscriber and sink initialization; tracing advises libraries not to set a global subscriber (research).
+7. Use stable rustls safe builders and approved roots. Custom verifier APIs are deliberately dangerous and require Security review (research).
 8. Keep unsupported, unauthorized, and unconfigured routes disabled.
 
 ## Fake-first contract suite
@@ -26,7 +26,7 @@ Use fake HTTP servers and fixtures for:
 - usage/reservation/reconciliation and duplicate idempotency keys;
 - secret/header/prompt redaction in logs, crashes, metrics, diagnostics, and support exports.
 
-Direct Router/Tower calls cover most HTTP contracts without a live listener ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-axum-service-testing.md)); keep a narrow loopback test for bind/shutdown/stream disconnect.
+Direct Router/Tower calls cover most HTTP contracts without a live listener (research); keep a narrow loopback test for bind/shutdown/stream disconnect.
 
 ## Prohibited effects
 

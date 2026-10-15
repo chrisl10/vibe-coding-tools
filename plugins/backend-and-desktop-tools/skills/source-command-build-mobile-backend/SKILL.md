@@ -2,6 +2,7 @@
 name: "source-command-build-mobile-backend"
 description: "Build the server side of a mobile product with accepted identity, API compatibility and unreliable-network contracts."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-build-mobile-backend

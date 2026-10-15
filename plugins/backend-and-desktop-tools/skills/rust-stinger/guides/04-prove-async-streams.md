@@ -11,12 +11,12 @@ For native computation, blocking I/O and persistent workers, classify the bounda
 1. Name the root owner of every spawned task.
 2. Define admission stop, cooperative cancellation signal, drain policy, join deadline, escalation, and cleanup.
 3. Use bounded channels on hot paths and state the capacity rationale.
-4. Review every `select!` awaited operation for documented cancellation safety; dropping and recreating a future must not lose observable work ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-tokio-select-cancellation.md)).
-5. Reserve channel capacity before expensive/fallible message construction when cancellation could otherwise lose the message; Tokio documents that cancelled `send` loses the message and queue position ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-tokio-send-reserve.md)).
-6. Call Tower readiness before dispatch and prove reserved capacity is released if dispatch/future is dropped ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-tower-service-readiness.md)).
-7. Record Tower layer order and test saturation, timeout, load shedding, and error mapping because layer order changes observable behavior ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-tower-service-builder.md)).
-8. Stop upstream production when an Axum response body is dropped; HTTP pull-based framing only provides backpressure if the producer is bounded and cancellation-aware ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-axum-streaming-body.md)).
-9. Detect shutdown, notify owned work, and wait for completion as separate phases ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-tokio-graceful-shutdown.md)).
+4. Review every `select!` awaited operation for documented cancellation safety; dropping and recreating a future must not lose observable work (research).
+5. Reserve channel capacity before expensive/fallible message construction when cancellation could otherwise lose the message; Tokio documents that cancelled `send` loses the message and queue position (research).
+6. Call Tower readiness before dispatch and prove reserved capacity is released if dispatch/future is dropped (research).
+7. Record Tower layer order and test saturation, timeout, load shedding, and error mapping because layer order changes observable behavior (research).
+8. Stop upstream production when an Axum response body is dropped; HTTP pull-based framing only provides backpressure if the producer is bounded and cancellation-aware (research).
+9. Detect shutdown, notify owned work, and wait for completion as separate phases (research).
 
 ## Replay boundary
 
