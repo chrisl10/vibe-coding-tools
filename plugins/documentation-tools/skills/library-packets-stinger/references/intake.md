@@ -27,4 +27,4 @@ Use clear English and Letter portrait only when no contrary preference was suppl
 
 Do not request reconfirmation of Markdown/Word/PDF/citation output, the Legion footer, plain language or no em dashes; those are this command's standing output contract. A user may narrow optional content, but missing required formats means the packet remains incomplete.
 
-Basis: owner requirements W01-W08 and derived evidence/publication decisions D01/D08 in [the domain distillation](research/distilled-library-packets.md). Citation mechanics supply locations, not authorization or truth. [Primary citation source](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/skills/library-packets-stinger/references/research/raw/anthropic-citations.md)
+Basis: owner requirements W01-W08 and derived evidence/publication decisions D01/D08 in [the domain distillation](research/distilled-library-packets.md). Citation mechanics supply locations, not authorization or truth. Primary citation source
