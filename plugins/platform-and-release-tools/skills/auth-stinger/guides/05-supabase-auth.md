@@ -2,13 +2,13 @@
 
 When already on Supabase. Pairs with Postgres Row-Level Security (RLS): that's the lever.
 
-Source: `research/2026-04-25-supabase-auth-and-rls.md`, https://supabase.com/docs/guides/auth.
+Source: `research/2026-04-25-supabase-auth-and-rls.md` (source-repository research, not shipped), https://supabase.com/docs/guides/auth.
 
 ## When Supabase Auth wins
 
 - The data layer is already Supabase Postgres. Running a second auth provider against a Supabase DB is friction.
 - You want RLS as your primary authorization mechanism (`auth.uid()` directly in policies).
-- Multi-tenancy via tenant_id on rows + an RLS policy is the model. Source: `research/2026-04-25-rbac-and-multitenancy.md`.
+- Multi-tenancy via tenant_id on rows + an RLS policy is the model. Source: `research/2026-04-25-rbac-and-multitenancy.md` (source-repository research, not shipped).
 
 ## When Supabase Auth loses
 

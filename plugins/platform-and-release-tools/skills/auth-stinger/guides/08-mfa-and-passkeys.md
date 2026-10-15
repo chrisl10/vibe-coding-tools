@@ -2,7 +2,7 @@
 
 The factor hierarchy. Default to passkeys (WebAuthn); TOTP as the universal fallback; SMS only as a recovery channel; magic links with discipline.
 
-Source: `research/2026-04-25-webauthn-and-totp.md`, https://www.w3.org/TR/webauthn-3/, RFC 6238 (TOTP).
+Source: `research/2026-04-25-webauthn-and-totp.md` (source-repository research, not shipped), https://www.w3.org/TR/webauthn-3/, RFC 6238 (TOTP).
 
 ## The factor hierarchy (best to worst)
 
@@ -81,9 +81,9 @@ Store `secret` encrypted at rest. Never log it. On disable, delete the row.
 
 ## Recovery codes
 
-Use the pinned provider's reviewed saved recovery-code implementation. The former sketch used an unsupported Node `base32` Buffer encoding and supplied no verified assurance policy. It is archived in [the before snapshot](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/auth-stinger/references/research/account-recovery/before/guides__08-mfa-and-passkeys.md); [Node's encoding list](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/auth-stinger/references/research/account-recovery/raw/node-buffer.html) documents the encoding limitation.
+Use the pinned provider's reviewed saved recovery-code implementation. The former sketch used an unsupported Node `base32` Buffer encoding and supplied no verified assurance policy. It is archived in the before snapshot; Node's encoding list documents the encoding limitation.
 
-Document secure generation/storage, account binding, atomic consumption and replacement invalidation using [guide 12](12-account-recovery.md). Saved recovery codes and short-lived issued codes have different requirements. Do not treat “ten codes” or an arbitrary character count as an assurance proof. [NIST recovery guidance](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/auth-stinger/references/research/account-recovery/raw/nist-800-63b-4.html), section 4.2, governs deployments that claim that standard.
+Document secure generation/storage, account binding, atomic consumption and replacement invalidation using [guide 12](12-account-recovery.md). Saved recovery codes and short-lived issued codes have different requirements. Do not treat “ten codes” or an arbitrary character count as an assurance proof. NIST recovery guidance, section 4.2, governs deployments that claim that standard.
 
 ## Magic links
 

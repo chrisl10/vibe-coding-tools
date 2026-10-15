@@ -29,7 +29,7 @@ You are equipping **ci-release-wasp-drone** - the Wasp Nest's authority on how t
 
 **Opinionation is the product.** Say "gate the Drizzle migration against an ephemeral Neon branch before it ever touches production, per `guides/12-migration-gating-drizzle-neon.md`" with reasoning + a source - not "here are options".
 
-Every factual claim in the new (app-on-Vercel) portion of this skill traces to a downloaded primary source in `references/research/raw/`. Do not author a GitHub Actions or Vercel fact from training data - if it is not in the archive, it is not a fact yet. The legacy npm-package portion's facts trace to the pre-existing dated `research/2026-06-16-*.md` archive, which stays in place unchanged.
+Every factual claim in the new (app-on-Vercel) portion of this skill traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it). Do not author a GitHub Actions or Vercel fact from training data - if it is not in the archive, it is not a fact yet. The legacy npm-package portion's facts trace to the pre-existing dated `research/2026-06-16-*.md` (source-repository research, not shipped with the plugin) archive, which stays in place unchanged.
 
 **The legacy case, in full:** Hivemind ships as the npm package `@deeplake/hivemind` (bin `hivemind` -> `bundle/cli.js`). TypeScript ^6, Node >=22, pure ESM. There is no container and no web framework in that project - the deliverable is a set of esbuild bundles published to npm. This is the case this skill was originally forged for, still fully supported for that use case, but it is no longer the only reality this skill assumes on a new invocation - see `guides/00-principles.md`'s classification step.
 
@@ -86,7 +86,7 @@ App-on-Vercel rows first (primary case). npm-package rows below, clearly labeled
 6. **The version is single-sourced.** `prebuild` runs `scripts/sync-versions.mjs`, which propagates one version into every manifest, and esbuild `define` inlines it into the bundles. Never hand-edit a version in a per-harness manifest. See `guides/02-sync-versions.md`.
 7. **The build is `tsc && node esbuild.config.mjs`.** Both run. Do not propose shipping un-bundled `dist/` or skipping the type-check. See `guides/01-build-and-bundle.md`.
 8. **What ships is the `files` allowlist, not what's on disk.** `prepack` rebuilds; `scripts/pack-check.mjs` blocks publishing secrets. See `guides/06-npm-release.md`.
-9. **Pin Actions, pin Node.** For new authoring use verified full action commit SHAs and supported pinned toolchains. Historical tag snippets are illustrative; exact version tags are mutable too. Current governing source: [October secure-use capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/ci-release-stinger/references/research/ci-efficiency-2026-10-07/raw/github-security.html). Never a floating action major or a floating `node-version`, in either case. See `guides/04-workflows.md` (legacy) and `guides/09-github-actions-job-shapes-sveltekit.md` (primary).
+9. **Pin Actions, pin Node.** For new authoring use verified full action commit SHAs and supported pinned toolchains. Historical tag snippets are illustrative; exact version tags are mutable too. Current governing source: October secure-use capture. Never a floating action major or a floating `node-version`, in either case. See `guides/04-workflows.md` (legacy) and `guides/09-github-actions-job-shapes-sveltekit.md` (primary).
 10. **Cite everything.** Every finding references (a) file:line in the user's repo and (b) a guide section + research citation or external URL.
 
 ---
@@ -136,7 +136,7 @@ Numbered so ordering is obvious within each case; not a stable public API. New g
 - `guides/14-caching-strategy.md` - pnpm store caching, Playwright browser caching, Turborepo remote cache (archived for future use).
 - `guides/15-required-status-checks.md` - making a required check actually satisfiable; the three skipped-but-required traps; `merge_group`.
 - `guides/16-release-automation-decision.md` - changesets vs semantic-release vs no versioning for a continuously-deployed app.
-- `guides/17-reduce-ci-work-with-proof.md` - measured baseline/proposed graph, producer-consumer contracts, trigger/path proof, cancellation/rerun/artifact identity and unknown-input costs. October [topic and research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/ci-release-stinger/references/research/ci-efficiency-2026-10-07/TOPIC.md).
+- `guides/17-reduce-ci-work-with-proof.md` - measured baseline/proposed graph, producer-consumer contracts, trigger/path proof, cancellation/rerun/artifact identity and unknown-input costs. October topic and research.
 
 **Secondary (npm-package publishing, legacy):**
 
@@ -154,9 +154,9 @@ Numbered so ordering is obvious within each case; not a stable public API. New g
 ## Research archive
 
 - `references/research/distilled-ci-release.md` - the app-on-Vercel case's synthesis, citing every raw source.
-- `references/research/raw/` - 11 archived primary sources for the app-on-Vercel case, fetched 2026-08-14 (GitHub Actions/SvelteKit job shapes, Vercel-Actions interaction, environment promotion, Neon migration gating, Doppler/OIDC, caching, required status checks, changesets vs semantic-release, Turborepo remote cache).
-- `research/2026-06-16-*.md` - the pre-existing flat archive for the npm-package (legacy) case. Stays in place, unmoved, per this skill's own preservation mandate.
-- `research/open-questions.md`, `research/research-plan.md` - legacy-case research provenance.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
+- `research/2026-06-16-*.md` (source-repository research, not shipped with the plugin) - the pre-existing flat archive for the npm-package (legacy) case. Stays in place, unmoved, per this skill's own preservation mandate.
+- `research/open-questions.md`, `research/research-plan.md` (source-repository research, not shipped with the plugin) - legacy-case research provenance.
 
 ---
 
@@ -170,7 +170,7 @@ Numbered so ordering is obvious within each case; not a stable public API. New g
 
 ## Quality bar
 
-A CI/release task run through this skill is done when: the relevant guide(s) were read (not skipped), every factual claim used in the output traces to `references/research/raw/` (app case) or the dated `research/2026-06-16-*.md` archive (legacy case), and - for anything development-focused - the Ship Gate below completed with user approval before commit or push.
+A CI/release task run through this skill is done when: the relevant guide(s) were read (not skipped), every factual claim used in the output traces to the source research archive (not shipped; the shipped distillation summarizes it) (app case) or the dated `research/2026-06-16-*.md` (source-repository research, not shipped with the plugin) archive (legacy case), and - for anything development-focused - the Ship Gate below completed with user approval before commit or push.
 
 ## Critical Directive
 
@@ -178,16 +178,16 @@ A CI/release task run through this skill is done when: the relevant guide(s) wer
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [vercel-stinger](../vercel-stinger) - Vercel's own build/preview-deploy model, adapter-vercel config, runtime choice, ISR/caching, env vars, images, firewall, cost control. Consult before writing any Vercel-facing recommendation; this skill owns the GitHub Actions side and the two systems' interaction, not Vercel's own configuration.
-  - [neon-drizzle-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/neon-drizzle-stinger) - Drizzle schema design, migration command semantics, connection pooling, RLS, the Neon-Managed vs Vercel-Managed integration choice. Consult for migration mechanics; this skill owns only the CI gating logic around them.
+  - [neon-drizzle-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/data-and-ai-tools/skills/neon-drizzle-stinger) - Drizzle schema design, migration command semantics, connection pooling, RLS, the Neon-Managed vs Vercel-Managed integration choice. Consult for migration mechanics; this skill owns only the CI gating logic around them.
   - [doppler-stinger](../doppler-stinger) - Doppler's project/config model, rotation, audit logs, the Vercel sync integration. Its own `guides/05-cicd-in-github-actions.md` is the deeper version of this skill's secrets guide; link to it rather than re-deriving it.
-  - [github-repo-health-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/github-repo-health-stinger) - branch protection/ruleset settings configuration and the repo-hygiene scoring rubric. Also part of the Ship Gate below.
-  - [svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/svelte-stinger) - Svelte 5 runes/component correctness. Consult on overlap for testing guidance (Vitest/Playwright-Svelte specifics); this skill owns the CI job wiring around those tests, not Svelte idiom itself.
-  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/quality-stinger) - post-implementation audit against a source plan. Runs after this skill's pipeline changes ship, as part of the close-out chain.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - security audit pass, first gate of the Ship Gate pipeline below.
-  - [branching-strategy-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/branching-strategy-stinger) - branching model selection (trunk-based, GitHub Flow, GitFlow), merge-vs-rebase, feature-flag-vs-branch. Consult when a CI/release design question is actually a branching-strategy question in disguise.
+  - [github-repo-health-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/github-repo-health-stinger) - branch protection/ruleset settings configuration and the repo-hygiene scoring rubric. Also part of the Ship Gate below.
+  - [svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/svelte-stinger) - Svelte 5 runes/component correctness. Consult on overlap for testing guidance (Vitest/Playwright-Svelte specifics); this skill owns the CI job wiring around those tests, not Svelte idiom itself.
+  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/quality-stinger) - post-implementation audit against a source plan. Runs after this skill's pipeline changes ship, as part of the close-out chain.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - security audit pass, first gate of the Ship Gate pipeline below.
+  - [branching-strategy-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/branching-strategy-stinger) - branching model selection (trunk-based, GitHub Flow, GitFlow), merge-vs-rebase, feature-flag-vs-branch. Consult when a CI/release design question is actually a branching-strategy question in disguise.
   - [changelog-release-notes-stinger](../changelog-release-notes-stinger) - release-notes prose and announcement copy for the npm-package (legacy) case. This skill owns the cut mechanics; that skill owns the words.
   - [devops-stinger](../devops-stinger) - Docker/Compose/Depot pipelines and general GitHub Actions security/caching architecture for Node/Next.js stacks. Consult for general Actions security hardening patterns (OIDC, pinning, least-privilege `permissions:`) that apply regardless of Docker; this skill's own job-shape guides are SvelteKit/Vercel-specific and don't duplicate devops-stinger's container-focused content.
-  - [tars-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/tars-stinger) - the session manager that watches CI every minute and hands red checks to the owning chip. When TARS reports red, the chip fixing it uses this skill.
+  - [tars-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/data-and-ai-tools/skills/tars-stinger) - the session manager that watches CI every minute and hands red checks to the owning chip. When TARS reports red, the chip fixing it uses this skill.
 
 ## Ship Gate
 

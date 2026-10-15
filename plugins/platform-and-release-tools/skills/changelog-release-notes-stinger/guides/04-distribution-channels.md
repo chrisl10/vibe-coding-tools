@@ -2,7 +2,7 @@
 
 > Use after drafting an entry. Always produce a distribution checklist alongside the entry.
 
-*Derived from: `research/external/changelog-copy-craft.md`*
+*Derived from: `research/external/changelog-copy-craft.md` (source-repository research, not shipped)*
 
 ---
 

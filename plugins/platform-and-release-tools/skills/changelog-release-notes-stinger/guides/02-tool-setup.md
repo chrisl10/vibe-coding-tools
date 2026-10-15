@@ -2,7 +2,7 @@
 
 > Use after tool selection is confirmed. Provides the minimum integration steps for each platform.
 
-*Derived from: `research/external/headway-app.md`, `research/external/featurebase.md`, `research/external/productlane.md`, `research/external/beamer.md`*
+*Derived from: `research/external/headway-app.md`, `research/external/featurebase.md`, `research/external/productlane.md`, `research/external/beamer.md` (source-repository research, not shipped)*
 
 ---
 

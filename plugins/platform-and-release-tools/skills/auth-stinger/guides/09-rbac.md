@@ -2,7 +2,7 @@
 
 Roles, permissions, ABAC, multi-tenancy, and the **two-layer enforcement** rule.
 
-Source: `research/2026-04-25-rbac-and-multitenancy.md`, OWASP Authorization Cheat Sheet.
+Source: `research/2026-04-25-rbac-and-multitenancy.md` (source-repository research, not shipped), OWASP Authorization Cheat Sheet.
 
 ## The vocabulary
 
@@ -32,7 +32,7 @@ Why both:
 - Data-layer-only leaks side-channel info ("403 vs 404"); middleware fronts it.
 - A single layer is a single point of failure.
 
-Source: `research/2026-04-25-rbac-and-multitenancy.md`, OWASP A01:2021 Broken Access Control.
+Source: `research/2026-04-25-rbac-and-multitenancy.md` (source-repository research, not shipped), OWASP A01:2021 Broken Access Control.
 
 ## Pattern: middleware layer (Next.js)
 
