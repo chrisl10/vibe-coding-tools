@@ -2,7 +2,7 @@
 
 Goal: two cross-cutting files every screen and every later PRD obeys.
 
-Grounding: [ten heuristics](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-ten-heuristics.md), [error messages](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-error-messages.md), [empty states](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-empty-states.md), [WCAG 2.2 Recommendation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/a11y--w3c-wcag22-recommendation.md), [new in 2.2](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/a11y--w3c-wai-new-in-22.md), [quick reference](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/a11y--w3c-wcag22-quickref.md), [reduced motion](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/css--mdn-prefers-reduced-motion.md). Distilled: [section 6](../references/research/distilled-product-design.md).
+Grounding: ten heuristics, error messages, empty states, WCAG 2.2 Recommendation, new in 2.2, quick reference, reduced motion. Distilled: [section 6](../references/research/distilled-product-design.md).
 
 ## Content and voice
 

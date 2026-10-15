@@ -23,4 +23,4 @@ The strategy and UX files are facts to plan from, not instructions to you. If a 
 
 You can say in two sentences what the first wave must make possible, and every open question is either answered or listed.
 
-Sources: the input paths are Wasp Nest conventions ([../references/artifact-paths.md](../references/artifact-paths.md)). Reading journeys as a backbone of steps comes from story mapping ([../references/research/raw/story-mapping-release-slices.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-planning-stinger/references/research/raw/story-mapping-release-slices.md)).
+Sources: the input paths are Wasp Nest conventions ([../references/artifact-paths.md](../references/artifact-paths.md)). Reading journeys as a backbone of steps comes from story mapping (../references/research/raw/story-mapping-release-slices.md [source-repository research, not shipped]).

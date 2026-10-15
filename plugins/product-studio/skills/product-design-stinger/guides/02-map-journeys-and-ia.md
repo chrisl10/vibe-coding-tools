@@ -2,7 +2,7 @@
 
 Goal: one journey map per primary actor and goal, then an IA and screen map that every later artifact references by ID.
 
-Grounding: [journey mapping](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-journey-mapping-101.md), [journeys vs flows](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-journeys-vs-flows.md), [IA vs navigation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-ia-vs-navigation.md), [Mermaid flowchart](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/diagram--mermaid-flowchart.md), [Mermaid accessibility](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/diagram--mermaid-accessibility.md). Distilled: [section 2](../references/research/distilled-product-design.md).
+Grounding: journey mapping, journeys vs flows, IA vs navigation, Mermaid flowchart, Mermaid accessibility. Distilled: [section 2](../references/research/distilled-product-design.md).
 
 ## Journeys
 
