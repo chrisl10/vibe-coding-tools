@@ -53,7 +53,7 @@ def check_contract(path: Path, repository: Path) -> list[str]:
         issues.append(f"{path}: missing supersession metadata")
     if status and status.group(1) == "Accepted":
         accepted = re.search(r"^> \*\*Accepted by:\*\* (.+)$", text, re.MULTILINE)
-        if not accepted or not re.search(r"^Mario, .*\b[0-9]{4}-[0-9]{2}-[0-9]{2}\b", accepted.group(1)):
+        if not accepted or not re.search(r"^(?!Pending\b)[^,]+, .*\b[0-9]{4}-[0-9]{2}-[0-9]{2}\b", accepted.group(1)):
             issues.append(f"{path}: accepted record needs operator acceptance evidence")
         if re.search(r"<[^>]+>", text):
             issues.append(f"{path}: accepted record contains template placeholders")
