@@ -23,7 +23,7 @@ test('Multiplier', () => {
 });
 ```
 
-If the code under test uses `$effect`, wrap the test body in `$effect.root(() => {...})` and call `flushSync()` after state changes, since effects normally run in a batched microtask and the test needs them to run synchronously to make assertions [raw/07-testing.md]. See `references/research/raw/07-testing.md` for the full worked `logger.svelte.js` example.
+If the code under test uses `$effect`, wrap the test body in `$effect.root(() => {...})` and call `flushSync()` after state changes, since effects normally run in a batched microtask and the test needs them to run synchronously to make assertions [raw/07-testing.md]. See `references/research/raw/07-testing.md` (source-repository research, not shipped) for the full worked `logger.svelte.js` example.
 
 ### Component testing: low-level vs. library-assisted
 
