@@ -2,7 +2,7 @@
 
 Files over 5 MB require a streaming or worker-based strategy. This guide covers the three production patterns.
 
-*Derived from `research/external/2026-05-20-sheetjs-streaming-api.md`, `research/libraries/2026-05-20-papaparse-streaming-worker.md`, `research/libraries/2026-05-20-exceljs-streaming-api.md`, `research/external/2026-05-20-deterministic-import-pipeline.md`.*
+*Derived from `research/external/2026-05-20-sheetjs-streaming-api.md`, `research/libraries/2026-05-20-papaparse-streaming-worker.md`, `research/libraries/2026-05-20-exceljs-streaming-api.md`, `research/external/2026-05-20-deterministic-import-pipeline.md` (source-repository research, not shipped).*
 
 ---
 

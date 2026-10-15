@@ -24,7 +24,7 @@ Read [README.md](README.md) and the relevant guide. Prefer reuse when the existi
 
 ## Reference map
 
-[Research digest](references/research/distillation.md), [source index](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/component-vendoring-stinger/references/research/source-index.json), [negative cases](references/negative-cases.md), [fictional plan](examples/fictional-copy-plan.md), [synthetic fixture check](scripts/check-fixture.py). Fixture checks qualify only fixture integrity; they prove no application behavior, accessibility or license compatibility.
+[Research digest](references/research/distillation.md), source index, [negative cases](references/negative-cases.md), [fictional plan](examples/fictional-copy-plan.md), [synthetic fixture check](scripts/check-fixture.py). Fixture checks qualify only fixture integrity; they prove no application behavior, accessibility or license compatibility.
 
 ## Ship Gate
 
