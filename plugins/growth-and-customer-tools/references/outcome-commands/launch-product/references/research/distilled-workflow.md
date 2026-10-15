@@ -4,13 +4,13 @@ This is a new composition of existing canonical procedures, inspected 2026-10-07
 
 | Owner capability | Derived workflow rule | Evidence |
 |---|---|---|
-| `icp-research-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/growth-and-customer-tools/references/outcome-commands/launch-product/references/research/raw/icp-research-stinger.md) |
-| `review-funnels-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/growth-and-customer-tools/references/outcome-commands/launch-product/references/research/raw/review-funnels-stinger.md) |
-| `social-media-marketing-organic-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/growth-and-customer-tools/references/outcome-commands/launch-product/references/research/raw/social-media-marketing-organic-stinger.md) |
-| `newsletter-platform-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/growth-and-customer-tools/references/outcome-commands/launch-product/references/research/raw/newsletter-platform-stinger.md) |
-| `pest-controller-suit` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/growth-and-customer-tools/references/outcome-commands/launch-product/references/research/raw/pest-controller-suit.md) |
+| `icp-research-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
+| `review-funnels-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
+| `social-media-marketing-organic-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
+| `newsletter-platform-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
+| `pest-controller-suit` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
 
-Installed dispatch must use the selected registry and checked owner; missing prerequisites block only dependent work. [Pest Controller capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/growth-and-customer-tools/references/outcome-commands/launch-product/references/research/raw/pest-controller-suit.md).
+Installed dispatch must use the selected registry and checked owner; missing prerequisites block only dependent work. Pest Controller capture.
 
 The topic-specific sequence below is a proposed orchestration contract, not a verbatim upstream command. Domain facts remain the owning specialist's responsibility.
 
