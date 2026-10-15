@@ -1,6 +1,6 @@
 # Guide 04: Capability Detection and Graceful Degradation
 
-**Sources:** `research/distilled-harness-integration.md` §4; `research/external/2026-08-14-skills-compat-capability-detection.md`; `research/external/2026-08-14-hookbridge-loss-report-pattern.md`; `research/external/2026-08-14-cross-host-compiler-degradation-model.md`; `research/external/2026-08-14-mcp-capability-negotiation.md`
+**Sources:** `research/distilled-harness-integration.md` §4; `research/external/2026-08-14-skills-compat-capability-detection.md`; `research/external/2026-08-14-hookbridge-loss-report-pattern.md`; `research/external/2026-08-14-cross-host-compiler-degradation-model.md`; `research/external/2026-08-14-mcp-capability-negotiation.md` (source-repository research, not shipped)
 
 ---
 
@@ -14,7 +14,7 @@ Before wiring a capability into a harness, decide whether that harness is even p
 
 ### 1. Prefer a live capability signal over a hardcoded table
 
-MCP's own handshake carries this information when the harness offers it: "Platform detection happens automatically via the MCP handshake (`clientInfo.name`)... if your agent platform supports self-reporting via `capabilities.experimental[...]` in the MCP initialize handshake, its capabilities are used directly and take priority over the static profile" (`research/external/2026-08-14-skills-compat-capability-detection.md`). Whenever a harness can self-report what it supports, trust that signal over an assumption baked into your integration ahead of time - harness capabilities change between releases, and a live signal stays correct without a code update.
+MCP's own handshake carries this information when the harness offers it: "Platform detection happens automatically via the MCP handshake (`clientInfo.name`)... if your agent platform supports self-reporting via `capabilities.experimental[...]` in the MCP initialize handshake, its capabilities are used directly and take priority over the static profile" (`research/external/2026-08-14-skills-compat-capability-detection.md` [source-repository research, not shipped]). Whenever a harness can self-report what it supports, trust that signal over an assumption baked into your integration ahead of time - harness capabilities change between releases, and a live signal stays correct without a code update.
 
 ### 2. Fall back to cheap, side-effect-free filesystem probing
 
@@ -36,7 +36,7 @@ A detection step that mutates state runs on every check and corrupts idempotency
 
 ## Historical static profiles are not current capability evidence
 
-The August 2026 third-party scanner snapshot in `research/external/2026-08-14-skills-compat-capability-detection.md` is retained as historical research. Its static table and statement that Codex has no built-in web search must not control current dispatch. Inspect the actual session's exposed tools, permissions, version and selected resources. [Fresh official/source evidence](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/harness-integration-stinger/references/research/availability-proof/distilled-availability.md) supports separate skill, subagent and permission surfaces; it does not certify this session's network access or native role activation.
+The August 2026 third-party scanner snapshot in `research/external/2026-08-14-skills-compat-capability-detection.md` (source-repository research, not shipped) is retained as historical research. Its static table and statement that Codex has no built-in web search must not control current dispatch. Inspect the actual session's exposed tools, permissions, version and selected resources. Fresh official/source evidence supports separate skill, subagent and permission surfaces; it does not certify this session's network access or native role activation.
 
 A home/config directory proves presence, not selection or successful discovery. MCP handshake fields describe a negotiated connection and declared capabilities, not every host-local skill, role, account permission or free worker slot.
 
@@ -48,7 +48,7 @@ Two compatible vocabularies - pick whichever fits the moment the gap is discover
 
 ### Build-time / authoring-time gap
 
-From two independent cross-host compiler projects (`research/external/2026-08-14-hookbridge-loss-report-pattern.md`, `research/external/2026-08-14-cross-host-compiler-degradation-model.md`):
+From two independent cross-host compiler projects (`research/external/2026-08-14-hookbridge-loss-report-pattern.md`, `research/external/2026-08-14-cross-host-compiler-degradation-model.md` [source-repository research, not shipped]):
 
 | Outcome | Meaning |
 |---|---|
@@ -61,7 +61,7 @@ Worked example, straight from the research: a `commands`-shaped capability "comp
 
 ### Run-time gap, discovered mid-session
 
-From a working MCP-based capability scanner (`research/external/2026-08-14-skills-compat-capability-detection.md`): **OK** / **DEGRADED** / **BLOCKED**, surfaced to the agent as a structured delta before the capability's own instructions load, so the agent or user can decide how to proceed rather than the capability silently misbehaving:
+From a working MCP-based capability scanner (`research/external/2026-08-14-skills-compat-capability-detection.md` [source-repository research, not shipped]): **OK** / **DEGRADED** / **BLOCKED**, surfaced to the agent as a structured delta before the capability's own instructions load, so the agent or user can decide how to proceed rather than the capability silently misbehaving:
 
 ```
 Status: DEGRADED

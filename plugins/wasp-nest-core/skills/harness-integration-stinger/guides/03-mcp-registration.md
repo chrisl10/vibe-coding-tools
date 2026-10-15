@@ -1,6 +1,6 @@
 # Guide 03: MCP Server Registration, Per Harness
 
-**Sources:** `research/distilled-harness-integration.md` §3; queen-wasp-stinger distilled-research-articles.md, Claude Code §Plugins→Plugin MCP servers; Cursor §Plugins→MCP inside a plugin vs. standalone `mcp.json`; ChatGPT Codex §Plugins→MCP config location and structure; Claude Cowork §Plugins ("What a plugin bundles" and security gotcha); `research/external/2026-08-14-mcp-capability-negotiation.md`
+**Sources:** `research/distilled-harness-integration.md` §3; queen-wasp-stinger distilled-research-articles.md, Claude Code §Plugins→Plugin MCP servers; Cursor §Plugins→MCP inside a plugin vs. standalone `mcp.json`; ChatGPT Codex §Plugins→MCP config location and structure; Claude Cowork §Plugins ("What a plugin bundles" and security gotcha); `research/external/2026-08-14-mcp-capability-negotiation.md` (source-repository research, not shipped)
 
 ---
 
@@ -50,7 +50,7 @@ Determine where the current MCP client executes. A local desktop/plugin client m
 
 ## Capability negotiation is the protocol mechanism underneath registration
 
-Per the official MCP specification (`research/external/2026-08-14-mcp-capability-negotiation.md`): "clients and servers explicitly declare their supported features during initialization... capabilities determine which protocol features and primitives are available during a session." Registering a server identically in two harnesses does not guarantee identical behavior, because the *harness* is the MCP host/client and it is what negotiates which protocol features (resource subscriptions, sampling, elicitation) are actually in play for that session. When a registered server behaves inconsistently across harnesses, check what the harness declared as a client before assuming the server itself is broken.
+Per the official MCP specification (`research/external/2026-08-14-mcp-capability-negotiation.md` [source-repository research, not shipped]): "clients and servers explicitly declare their supported features during initialization... capabilities determine which protocol features and primitives are available during a session." Registering a server identically in two harnesses does not guarantee identical behavior, because the *harness* is the MCP host/client and it is what negotiates which protocol features (resource subscriptions, sampling, elicitation) are actually in play for that session. When a registered server behaves inconsistently across harnesses, check what the harness declared as a client before assuming the server itself is broken.
 
 A newer draft `server/discover` operation lets a client query a server's supported protocol versions and capabilities before any other request - an explicit pattern for probing cheaply before committing to a transport or feature assumption. Apply the same discipline one level up when deciding how to register a server across harnesses: detect what each harness's MCP client actually supports (transport types, OAuth flows, elicitation) rather than assuming the newest or richest harness's behavior is the floor.
 
