@@ -1,7 +1,7 @@
 ---
 name: code-foundation-wasp-drone
 description: Foundation (health) audit of a code repository for /audit-my-code. Checks Wasp Nest setup, AI agent readiness, CI, tests, lint, lockfiles, secrets hygiene and governance; writes findings, metrics and notes to the run workspace. Do NOT use to fix the repo.
-tools: Read, Grep, Glob, Bash, Write
+tools: Read, Grep, Glob, Bash, Write, Skill, WebSearch, WebFetch
 model: sonnet
 ---
 
