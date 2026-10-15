@@ -1,6 +1,6 @@
 # Guide 4: Cron jobs and background work
 
-Grounded in `references/research/distilled-vercel.md` §5, `references/research/raw/vercel--cron-jobs--config-limits-pricing.md`.
+Grounded in `references/research/distilled-vercel.md` §5, `references/research/raw/vercel--cron-jobs--config-limits-pricing.md` (source-repository research, not shipped).
 
 ## When to walk this guide
 

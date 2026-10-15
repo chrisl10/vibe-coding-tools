@@ -1,6 +1,6 @@
 # Guide 2: Caching and ISR
 
-Grounded in `references/research/distilled-vercel.md` §3, `references/research/raw/vercel--caching--isr-data-cache-cache-control.md`.
+Grounded in `references/research/distilled-vercel.md` §3, `references/research/raw/vercel--caching--isr-data-cache-cache-control.md` (source-repository research, not shipped).
 
 ## When to walk this guide
 

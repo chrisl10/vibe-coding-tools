@@ -1,6 +1,6 @@
 # Guide 8: Deployments, domains, rollbacks, and cost control
 
-Grounded in `references/research/distilled-vercel.md` §9-10, §12-14, `references/research/raw/vercel--deployments--rollback-promote-domains.md`, `references/research/raw/vercel--pricing--cost-model-function-bandwidth-images.md`, `references/research/raw/vercel--monorepos--turborepo-deploy.md`.
+Grounded in `references/research/distilled-vercel.md` §9-10, §12-14, `references/research/raw/vercel--deployments--rollback-promote-domains.md`, `references/research/raw/vercel--pricing--cost-model-function-bandwidth-images.md`, `references/research/raw/vercel--monorepos--turborepo-deploy.md` (source-repository research, not shipped).
 
 ## When to walk this guide
 
