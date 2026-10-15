@@ -13,7 +13,7 @@ metadata:
 
 ## Purpose
 
-GoHighLevel (also branded HighLevel) exposes its whole platform through a REST API served from `services.leadconnectorhq.com`, authenticated either by OAuth 2.0 (Marketplace apps) or Private Integration Tokens (internal tools), and versioned by a `Version` header. This stinger is the grounded reference for building or auditing any integration against that API: auth token selection, contacts/opportunities/pipelines/calendars/conversations, inbound and outbound webhooks, the (narrow) workflows API surface, rate limits, and Marketplace app creation and distribution. Every factual claim in this stinger traces to a downloaded primary source in `references/research/raw/`.
+GoHighLevel (also branded HighLevel) exposes its whole platform through a REST API served from `services.leadconnectorhq.com`, authenticated either by OAuth 2.0 (Marketplace apps) or Private Integration Tokens (internal tools), and versioned by a `Version` header. This stinger is the grounded reference for building or auditing any integration against that API: auth token selection, contacts/opportunities/pipelines/calendars/conversations, inbound and outbound webhooks, the (narrow) workflows API surface, rate limits, and Marketplace app creation and distribution. Every factual claim in this stinger traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it).
 
 ## When to use
 
@@ -52,7 +52,7 @@ GoHighLevel (also branded HighLevel) exposes its whole platform through a REST A
 - `references/field-mapping-worksheet.md` -- load when mapping an external system's lead/contact fields onto GHL contact fields, custom fields, tags, and attribution
 - `references/request-examples.md` -- load when you need a ready-to-adapt curl or TypeScript `fetch` call for token exchange, contact upsert, opportunity creation, sending a message, or workflow enrollment
 - `references/research/distilled-gohighlevel.md` -- load when a domain claim needs verification or a source conflict needs resolving; every line cites its raw file
-- `references/research/raw/` -- load when tracing a distilled claim back to its primary source (20 archived sources, official docs preferred over vendor/community)
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `guides/01-auth-and-tokens.md` through `guides/08-troubleshooting.md` -- load the matching guide per the Procedure section above
 
 ## Related drones and stingers

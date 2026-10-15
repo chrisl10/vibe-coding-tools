@@ -1,7 +1,7 @@
 ---
 name: ghl-to-mermaid-wasp-drone
 description: Turns HighLevel account exports into per-workflow JSON and readable Mermaid charts. Use for GHL automation maps, email and tag ties, or oversized workflow diagrams.
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write, Bash, Skill, WebSearch, WebFetch
 model: sonnet
 ---
 
