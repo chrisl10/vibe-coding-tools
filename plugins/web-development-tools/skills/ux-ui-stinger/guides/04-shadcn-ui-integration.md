@@ -2,7 +2,7 @@
 
 shadcn/ui distributes editable component source. Copied components may still import package dependencies. Inspect the actual source family, imports and pinned versions before adopting Radix-specific composition instructions; current official documentation includes Radix and Base UI dialog families. Product wrappers and tokens are this skill's policy, not an upstream requirement. Record source provenance and upgrade deltas using `guides/14-react-primitive-contracts.md`.
 
-Research: `research/2026-04-24-shadcn-ui-wrapping.md`.
+Research: `research/2026-04-24-shadcn-ui-wrapping.md` (source-repository research, not shipped).
 
 ## Decision tree
 
@@ -39,9 +39,9 @@ Feature code imports `@/components/<product>/Button`, never `@/components/ui/but
 
 ## Wrapping rules
 
-1. **Preserve ref and props behavior.** Radix composition requires the underlying node to receive its ref and passed props/event handlers. React 19 can accept ref as a prop; older-compatible wrappers may use `forwardRef`. Choose syntax from the installed React/primitive/types, and test behavior rather than mandate one syntax. See [current C03-C04](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/ux-ui-stinger/references/research/2026-10-07-flow-contracts/digest.md).
+1. **Preserve ref and props behavior.** Radix composition requires the underlying node to receive its ref and passed props/event handlers. React 19 can accept ref as a prop; older-compatible wrappers may use `forwardRef`. Choose syntax from the installed React/primitive/types, and test behavior rather than mandate one syntax. See current C03-C04.
 
-2. **Use CVA for variants.** Export a `<component>Variants` CVA factory. Match shadcn's convention so upstream updates re-merge cleanly. See `research/2026-04-24-cva-variant-architecture.md`.
+2. **Use CVA for variants.** Export a `<component>Variants` CVA factory. Match shadcn's convention so upstream updates re-merge cleanly. See `research/2026-04-24-cva-variant-architecture.md` (source-repository research, not shipped).
 
 3. **Map to product tokens via Tailwind v4 `@theme`.** shadcn's default Tailwind config uses CSS variables for every color — point those at product tokens in `globals.css`:
 
@@ -54,7 +54,7 @@ Feature code imports `@/components/<product>/Button`, never `@/components/ui/but
    }
    ```
 
-   The shadcn primitive keeps its `bg-primary text-primary-foreground` classes; the tokens resolve to product values. See `research/2026-04-24-tailwind-v4-theme-tokens.md`.
+   The shadcn primitive keeps its `bg-primary text-primary-foreground` classes; the tokens resolve to product values. See `research/2026-04-24-tailwind-v4-theme-tokens.md` (source-repository research, not shipped).
 
 4. **For selected Radix parts supporting `asChild`, compose with it** when placing a product button inside a Radix Trigger, Menu Item, or similar:
 

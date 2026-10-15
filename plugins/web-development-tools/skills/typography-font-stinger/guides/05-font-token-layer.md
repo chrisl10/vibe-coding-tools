@@ -1,6 +1,6 @@
 # Font Token Layer
 
-*Sources: `research/external/2026-05-20-type-scale-tokens.md`, `research/external/2026-05-20-utopia-fluid-type.md`, `research/external/2026-05-20-variable-fonts-production.md`*
+*Sources: `research/external/2026-05-20-type-scale-tokens.md`, `research/external/2026-05-20-utopia-fluid-type.md`, `research/external/2026-05-20-variable-fonts-production.md` (source-repository research, not shipped)*
 
 ---
 

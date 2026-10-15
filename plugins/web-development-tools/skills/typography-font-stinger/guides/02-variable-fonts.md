@@ -1,6 +1,6 @@
 # Variable Fonts: Configuration and Subsetting
 
-*Sources: `research/external/2026-05-20-variable-fonts-production.md`, `research/external/2026-05-20-variable-font-subsetting.md`, `research/external/2026-05-20-fontsource-manual-fontface.md`*
+*Sources: `research/external/2026-05-20-variable-fonts-production.md`, `research/external/2026-05-20-variable-font-subsetting.md`, `research/external/2026-05-20-fontsource-manual-fontface.md` (source-repository research, not shipped)*
 
 ---
 
@@ -75,7 +75,7 @@ Although variable font support is now ~97% globally (Baseline Widely Available),
 }
 ```
 
-**Source:** `research/external/2026-05-20-variable-fonts-production.md`
+**Source:** `research/external/2026-05-20-variable-fonts-production.md` (source-repository research, not shipped)
 
 ---
 
@@ -91,7 +91,7 @@ h1 { font-weight: 700; }
 .display { font-variation-settings: 'GRAD' 100, 'opsz' 32; }
 ```
 
-`font-variation-settings` does not cascade partially: if you set two axes in a rule and then override in a child, you must repeat all axes. See `research/external/2026-05-20-variable-fonts-production.md` for the cascade pitfall detail.
+`font-variation-settings` does not cascade partially: if you set two axes in a rule and then override in a child, you must repeat all axes. See `research/external/2026-05-20-variable-fonts-production.md` (source-repository research, not shipped) for the cascade pitfall detail.
 
 ---
 
@@ -118,7 +118,7 @@ pyftsubset \
   --unicodes="U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
 ```
 
-**Result:** Inter goes from ~300 kB to ~35 kB. Source: `research/external/2026-05-20-variable-font-subsetting.md` (Botmonster, April 2026).
+**Result:** Inter goes from ~300 kB to ~35 kB. Source: `research/external/2026-05-20-variable-font-subsetting.md` (source-repository research, not shipped) (Botmonster, April 2026).
 
 ### CI integration pattern
 
@@ -157,4 +157,4 @@ body {
 
 The override values are font-specific. Use https://deploy-preview-27205--next-site.netlify.app/font-metrics to generate them for your font, or derive them from font metrics in `pyftsubset --verbose` output.
 
-**Source:** `research/external/2026-05-20-foit-fout-font-display.md`
+**Source:** `research/external/2026-05-20-foit-fout-font-display.md` (source-repository research, not shipped)
