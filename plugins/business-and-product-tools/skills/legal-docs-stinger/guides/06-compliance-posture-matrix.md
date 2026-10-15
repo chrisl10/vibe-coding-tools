@@ -1,6 +1,6 @@
 # Multi-Regime Compliance Posture Matrix
 
-**Source:** `research/external/2026-05-20-quebec-law25-saas-compliance.md` + `research/external/2026-05-20-eu-us-dpf-cross-border-transfers.md` + `research/external/2026-05-20-generator-landscape-2026.md`
+**Source:** `research/external/2026-05-20-quebec-law25-saas-compliance.md` + `research/external/2026-05-20-eu-us-dpf-cross-border-transfers.md` + `research/external/2026-05-20-generator-landscape-2026.md` (source-repository research, not shipped)
 
 ---
 

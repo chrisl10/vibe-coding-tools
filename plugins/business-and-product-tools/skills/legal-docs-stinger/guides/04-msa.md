@@ -1,6 +1,6 @@
 # Master Service Agreement (MSA): Structure and Startup Defaults
 
-**Source:** `research/external/2026-05-20-msa-saas-template-structure.md` + `research/external/2026-05-20-saas-tos-enterprise-template.md`
+**Source:** `research/external/2026-05-20-msa-saas-template-structure.md` + `research/external/2026-05-20-saas-tos-enterprise-template.md` (source-repository research, not shipped)
 
 ---
 

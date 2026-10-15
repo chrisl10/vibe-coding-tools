@@ -1,6 +1,6 @@
 # 04. Cumulative Flow Diagram: Reading Shapes and Spotting Anti-Patterns
 
-*Sources: `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md`; `research/external/2026-05-20-value-stream-metrics-axify.md`; `research/internal/command-brief-summary.md`*
+*Sources: `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md`; `research/external/2026-05-20-value-stream-metrics-axify.md`; `research/internal/command-brief-summary.md` (source-repository research, not shipped)*
 
 ---
 
@@ -17,7 +17,7 @@ A healthy CFD has:
 
 ## The seven canonical anti-pattern shapes
 
-These shapes and their diagnoses are sourced from Vacanti's *Actionable Agile Metrics* framework (the canonical CFD anti-pattern catalog). They are referenced in `research/internal/command-brief-summary.md` and partially corroborated by `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md`.
+These shapes and their diagnoses are sourced from Vacanti's *Actionable Agile Metrics* framework (the canonical CFD anti-pattern catalog). They are referenced in `research/internal/command-brief-summary.md` and partially corroborated by `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md` (source-repository research, not shipped).
 
 | Shape name | What it looks like | What it means |
 |---|---|---|

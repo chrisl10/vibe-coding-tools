@@ -1,6 +1,6 @@
 # 06. Class of Service: Four Tiers and Queue-Bypass Rules
 
-*Sources: `research/internal/command-brief-summary.md`; `research/external/2026-05-20-wip-limits-atlassian-official.md`*
+*Sources: `research/internal/command-brief-summary.md`; `research/external/2026-05-20-wip-limits-atlassian-official.md` (source-repository research, not shipped)*
 
 ---
 

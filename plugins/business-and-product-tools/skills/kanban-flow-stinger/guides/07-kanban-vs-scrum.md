@@ -1,12 +1,12 @@
 # 07. Kanban vs Scrum: Decision Framework and Migration Path
 
-*Sources: `research/external/2026-05-20-kanban-vs-scrum-decision-eitt.md`; `research/external/2026-05-20-kanban-vs-scrum-atlassian.md`*
+*Sources: `research/external/2026-05-20-kanban-vs-scrum-decision-eitt.md`; `research/external/2026-05-20-kanban-vs-scrum-atlassian.md` (source-repository research, not shipped)*
 
 ---
 
 ## 2026 adoption context
 
-From `research/external/2026-05-20-kanban-vs-scrum-decision-eitt.md`, State of Agile Report 2026:
+From `research/external/2026-05-20-kanban-vs-scrum-decision-eitt.md` (source-repository research, not shipped), State of Agile Report 2026:
 
 - 94% of IT teams use some form of Agile
 - Scrum: 70% adoption
@@ -19,7 +19,7 @@ This means "Kanban vs Scrum" is often the wrong framing. The real question is: w
 
 ## The three-path decision framework
 
-From `research/external/2026-05-20-kanban-vs-scrum-decision-eitt.md`:
+From `research/external/2026-05-20-kanban-vs-scrum-decision-eitt.md` (source-repository research, not shipped):
 
 ### Path 1: Scrum (Sprint-based)
 
@@ -81,7 +81,7 @@ Shape Up is not a formal competitor to Kanban; they are designed for different c
 
 ## Migration timeline from Scrum to Kanban
 
-From `research/external/2026-05-20-kanban-vs-scrum-decision-eitt.md`:
+From `research/external/2026-05-20-kanban-vs-scrum-decision-eitt.md` (source-repository research, not shipped):
 
 | Week | Action |
 |---|---|

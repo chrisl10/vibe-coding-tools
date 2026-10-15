@@ -2,7 +2,7 @@
 
 How to author aspirational, well-formed Objectives that pass the Grove/Doerr quality bar.
 
-*Sources: `research/external/2026-05-20-grove-doerr-okr-canon.md`, `research/external/2026-05-20-okr-writing-objectives.md`, `research/external/2026-05-20-google-rework-okr-guide.md`*
+*Sources: `research/external/2026-05-20-grove-doerr-okr-canon.md`, `research/external/2026-05-20-okr-writing-objectives.md`, `research/external/2026-05-20-google-rework-okr-guide.md` (source-repository research, not shipped)*
 
 ---
 

@@ -1,6 +1,6 @@
 # 05. Board Design: Columns, Policies, and Replenishment
 
-*Sources: `research/internal/command-brief-summary.md`; `research/external/2026-05-20-wip-limits-atlassian-official.md`; `research/external/2026-05-20-jira-kanban-setup-guide.md`*
+*Sources: `research/internal/command-brief-summary.md`; `research/external/2026-05-20-wip-limits-atlassian-official.md`; `research/external/2026-05-20-jira-kanban-setup-guide.md` (source-repository research, not shipped)*
 
 ---
 
