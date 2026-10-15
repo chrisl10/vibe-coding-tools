@@ -26,7 +26,7 @@ The active guides recommend one tool per slot. Substitution requires an ADR with
 
 ### 3. Django Ninja over DRF
 
-When new API code goes in, the answer is Django Ninja with a Pydantic schema. DRF in legacy code stays until a deliberate migration. DRF in new code is a **should-refactor** finding (or a **must-fix** if the project has Ninja already adopted). Source: `research/2026-05-03-django-ninja-vs-drf.md`, `guides/05-django-ninja-api.md`.
+When new API code goes in, the answer is Django Ninja with a Pydantic schema. DRF in legacy code stays until a deliberate migration. DRF in new code is a **should-refactor** finding (or a **must-fix** if the project has Ninja already adopted). Source: `research/2026-05-03-django-ninja-vs-drf.md` (source-repository research, not shipped), `guides/05-django-ninja-api.md`.
 
 ### 4. Django ORM is default; raw SQL needs a reason
 
@@ -34,11 +34,11 @@ When new API code goes in, the answer is Django Ninja with a Pydantic schema. DR
 
 ### 5. N+1 is must-fix
 
-Any view, serializer, schema resolver, or template that triggers per-object queries gets `select_related` (forward FK / OneToOne) or `prefetch_related` (reverse FK / M2M). Cite the offending site + the fix. Source: `research/2026-05-03-django-orm-n-plus-one.md`.
+Any view, serializer, schema resolver, or template that triggers per-object queries gets `select_related` (forward FK / OneToOne) or `prefetch_related` (reverse FK / M2M). Cite the offending site + the fix. Source: `research/2026-05-03-django-orm-n-plus-one.md` (source-repository research, not shipped).
 
 ### 6. Migrations are sacred
 
-Never edit an applied migration. Schema-with-data changes use the **expand → backfill → contract** pattern over multiple deploys. CI runs `manage.py migrate --check`. Source: `guides/04-django-migrations.md`, `research/2026-05-03-django-zero-downtime-migrations.md`.
+Never edit an applied migration. Schema-with-data changes use the **expand → backfill → contract** pattern over multiple deploys. CI runs `manage.py migrate --check`. Source: `guides/04-django-migrations.md`, `research/2026-05-03-django-zero-downtime-migrations.md` (source-repository research, not shipped).
 
 ### 7. Pydantic v2 at every boundary
 
@@ -46,7 +46,7 @@ API requests and responses are Pydantic models (Django Ninja and FastAPI carry t
 
 ### 8. pyright basic minimum, strict on new code
 
-`typeCheckingMode: "basic"` everywhere; `"strict"` on new files; ratchet up file-by-file as files are touched. mypy is acceptable in legacy or when its Django/SQLAlchemy plugins are doing load-bearing work. Source: `research/2026-05-03-pyright-vs-mypy.md`.
+`typeCheckingMode: "basic"` everywhere; `"strict"` on new files; ratchet up file-by-file as files are touched. mypy is acceptable in legacy or when its Django/SQLAlchemy plugins are doing load-bearing work. Source: `research/2026-05-03-pyright-vs-mypy.md` (source-repository research, not shipped).
 
 ### 9. Ruff replaces Black + isort + flake8
 
