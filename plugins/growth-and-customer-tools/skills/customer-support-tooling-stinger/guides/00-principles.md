@@ -37,7 +37,7 @@ When a concern crosses into a peer's domain, surface the flag and hand off. Do n
 
 Never enable autonomous AI deflection (Fin 2.0, Ari, or any LLM-agent) until the product's help center has at least 20 published articles. Below this threshold, deflection resolution rates fall to < 30% and hallucinated answers actively damage customer trust.
 
-The research at `research/external/2026-05-20-ai-deflection-benchmarks.md` demonstrates the knowledge-base dependency curve. Enforce this rule as a hard pre-condition in the AI-deflection guide.
+The research at `research/external/2026-05-20-ai-deflection-benchmarks.md` (source-repository research, not shipped) demonstrates the knowledge-base dependency curve. Enforce this rule as a hard pre-condition in the AI-deflection guide.
 
 ## SLA alerts must have a staffed channel
 

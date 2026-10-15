@@ -2,9 +2,9 @@
 guide: 04-sla-design
 stinger: customer-support-tooling-stinger
 research_sources:
-  - research/external/2026-05-20-sla-tracking-patterns.md
-  - research/external/2026-05-20-plain-docs-overview.md
-  - research/external/2026-05-20-front-shared-inbox.md
+  - research/external/2026-05-20-sla-tracking-patterns.md  # source-repository research, not shipped
+  - research/external/2026-05-20-plain-docs-overview.md  # source-repository research, not shipped
+  - research/external/2026-05-20-front-shared-inbox.md  # source-repository research, not shipped
 ---
 
 # SLA Design — Tier Definitions, Breach Alerts, CSAT Collection
@@ -12,7 +12,7 @@ research_sources:
 Before using numeric targets, reply templates or configuration examples below, load [support obligation guide 07](07-plan-support-and-renewal-obligations.md). Those historical examples are unapproved illustrations. Use actual accepted terms, staffed coverage, a supplied calendar and current selected-provider evidence. Do not send templated ETAs, publish promises or enable settings without the exact required approval.
 
 
-Source: `research/external/2026-05-20-sla-tracking-patterns.md`
+Source: `research/external/2026-05-20-sla-tracking-patterns.md` (source-repository research, not shipped)
 
 ## Standard three-tier SLA model (B2B SaaS default)
 

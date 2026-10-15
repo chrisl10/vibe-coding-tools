@@ -5,4 +5,4 @@
 4. Date evidence and distinguish direct observation, user assertion, platform procedure and inference. Recheck volatile mechanics/prices from official sources before advising on execution. Fetch date is not a publication date.
 5. Record product/support readiness, assets, jurisdiction and permission blockers. A marketing channel does not cure an absent offer or unserviceable customer promise.
 
-Grounding: search's demand-capture mechanism [digest](../references/research/distillation.md), [raw Google](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/growth-and-customer-tools/skills/go-to-market-stinger/references/research/raw/google-search.txt); professional targeting [raw LinkedIn](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/growth-and-customer-tools/skills/go-to-market-stinger/references/research/raw/linkedin-audience.txt). These sources do not supply buyer interviews, demand or operating capacity.
+Grounding: search's demand-capture mechanism [digest](../references/research/distillation.md), raw Google; professional targeting raw LinkedIn. These sources do not supply buyer interviews, demand or operating capacity.
