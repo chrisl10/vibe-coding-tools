@@ -72,4 +72,4 @@ On any TS/Node review here, scan in this order: (1) hand-rolled Deep Lake fetch,
 ## Sources
 
 - Every guide cross-referenced above.
-- `research/2026-06-16-ts-esm-footguns.md`.
+- `research/2026-06-16-ts-esm-footguns.md` (source-repository research, not shipped).

@@ -12,7 +12,7 @@ Unlike the Wasp Nestmind case (npm, because the lockfile/lifecycle scripts/publi
 - **Monorepo support.** Described as "the strongest option... not particularly close" among npm/pnpm/Yarn/Bun - the `workspace:*` protocol is a hard local-only guarantee (auto-rewritten to the real published version at publish time), and each workspace package gets its own strict, isolated `node_modules`.
 - **Vercel compatibility.** Vercel's Turborepo auto-detection and build-command inference work natively with pnpm workspaces - confirmed independently in this repo's `vercel-stinger` research archive.
 
-Source: `references/research/raw/package-managers--npm-pnpm-yarn-bun--2026-comparison.md`.
+Source: `references/research/raw/package-managers--npm-pnpm-yarn-bun--2026-comparison.md` (source-repository research, not shipped).
 
 ## What this does NOT mean
 
@@ -38,7 +38,7 @@ packages:
 
 Vercel auto-detects a Turborepo monorepo and sets Build Command to `turbo run build` (or a filtered variant) and Root Directory to the specific app automatically. Payload CMS's own first-party integration story is Next.js-centric, not SvelteKit-centric - a SvelteKit+Payload monorepo runs Payload as its own standalone server (Express or Payload's Node adapter) alongside, not embedded inside, the SvelteKit app. This is confirmed by community example repos pairing SvelteKit with a separate Payload+tRPC server inside one Turborepo/pnpm workspace, not by an official Payload SvelteKit integration (none exists as of this research pass).
 
-Source: `references/research/raw/monorepo--turborepo-pnpm-sveltekit-example.md`.
+Source: `references/research/raw/monorepo--turborepo-pnpm-sveltekit-example.md` (source-repository research, not shipped).
 
 ## Nx: know when it earns its place, don't default to it prematurely
 
@@ -48,7 +48,7 @@ These advantages become load-bearing specifically at a scale this repo may not y
 
 **This skill's guidance**: default to pnpm workspaces + Turborepo for this repo's current shape. Revisit toward Nx specifically if/when the monorepo grows to need distributed CI across many machines, adds non-JS services, or gets a dedicated platform team - the trigger conditions Nx's own comparison names, not a default recommendation to adopt it now.
 
-Source: `references/research/raw/monorepo--nx-vs-turborepo--official-comparison.md`.
+Source: `references/research/raw/monorepo--nx-vs-turborepo--official-comparison.md` (source-repository research, not shipped).
 
 ## Common findings
 
@@ -59,8 +59,10 @@ Source: `references/research/raw/monorepo--nx-vs-turborepo--official-comparison.
 
 ## Sources
 
-- `references/research/raw/package-managers--npm-pnpm-yarn-bun--2026-comparison.md`
-- `references/research/raw/monorepo--turborepo-pnpm-sveltekit-example.md`
-- `references/research/raw/monorepo--nx-vs-turborepo--official-comparison.md`
+The notes listed below are source-repository research, not shipped.
+
+- `references/research/raw/package-managers--npm-pnpm-yarn-bun--2026-comparison.md` (source-repository research, not shipped)
+- `references/research/raw/monorepo--turborepo-pnpm-sveltekit-example.md` (source-repository research, not shipped)
+- `references/research/raw/monorepo--nx-vs-turborepo--official-comparison.md` (source-repository research, not shipped)
 - `references/research/distilled-typescript-node.md` sections 7-8
 - `references/npm-vs-pnpm.md` for the contrasting Hivemind-case reasoning (why THAT package stays on npm)

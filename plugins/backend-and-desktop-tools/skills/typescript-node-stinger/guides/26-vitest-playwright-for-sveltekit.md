@@ -4,7 +4,7 @@
 
 ## The 2026 consensus setup
 
-Vitest for unit and component tests; `@testing-library/svelte` or `vitest-browser-svelte` for component-level behavior tests; Playwright for end-to-end. This is the current recommended split for a SvelteKit app - not a Hivemind-specific choice, this repo's actual testing stack. Source: `references/research/raw/sveltekit--testing-split--vitest-vs-playwright-recommended-boundary.md`.
+Vitest for unit and component tests; `@testing-library/svelte` or `vitest-browser-svelte` for component-level behavior tests; Playwright for end-to-end. This is the current recommended split for a SvelteKit app - not a Hivemind-specific choice, this repo's actual testing stack. Source: `references/research/raw/sveltekit--testing-split--vitest-vs-playwright-recommended-boundary.md` (source-repository research, not shipped).
 
 ## The decision rule: mocked vs unmocked, not "small vs big"
 
@@ -173,7 +173,7 @@ Vitest and Playwright together still miss: a third-party API a `load` function d
 
 ## Sources
 
-- `references/research/raw/sveltekit--testing--vitest-browser-svelte-component-testing.md`
-- `references/research/raw/sveltekit--testing-split--vitest-vs-playwright-recommended-boundary.md`
+- `references/research/raw/sveltekit--testing--vitest-browser-svelte-component-testing.md` (source-repository research, not shipped)
+- `references/research/raw/sveltekit--testing-split--vitest-vs-playwright-recommended-boundary.md` (source-repository research, not shipped)
 - `references/research/distilled-typescript-node.md` section 5
 - `guides/10-vitest-discipline.md`, `guides/11-vitest-async-fixtures.md` for the npm-library/CLI Vitest discipline that still applies to plain `.ts` code in this app too

@@ -10,7 +10,7 @@
 
 Vercel only ever honors the **major** version from `engines.node` - it automatically rolls minor/patch versions forward within that major, including for security fixes. Pinning an exact patch (`"22.11.0"`) is not meaningful on Vercel specifically; the platform still only reads and enforces the major. An `engines.node` entry with an unbounded range (`>=18`, `>=16.x`) is a **should-refactor**: it silently opts into whatever major Vercel considers "latest" once a new one ships, which is a real behavior change (new Node major = potential breaking changes) sneaking in with no code change or review on this repo's side.
 
-Source: `references/research/raw/vercel--node-js-version-policy.md`.
+Source: `references/research/raw/vercel--node-js-version-policy.md` (source-repository research, not shipped).
 
 ## Currently available versions and the Node 20 cutover
 
@@ -38,6 +38,6 @@ A team that changed the dashboard setting but left an older value in `package.js
 
 ## Sources
 
-- `references/research/raw/vercel--node-js-version-policy.md`
+- `references/research/raw/vercel--node-js-version-policy.md` (source-repository research, not shipped)
 - `references/research/distilled-typescript-node.md` section 9
-- [vercel-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/vercel-stinger) for Vercel platform configuration beyond the Node-version field itself
+- [vercel-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/vercel-stinger) for Vercel platform configuration beyond the Node-version field itself
