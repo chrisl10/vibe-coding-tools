@@ -59,4 +59,4 @@ See `examples/05`. The steps:
 ## Sources
 
 - `src/deeplake-schema.ts` (`ColumnDef`, `MEMORY_COLUMNS`, `SESSIONS_COLUMNS`, `buildCreateTableSql`, `healMissingColumns`, `isMissingColumnError`).
-- `research/2026-06-16-deeplake-schema-healing.md`.
+- `research/2026-06-16-deeplake-schema-healing.md` (source-repository research, not shipped).

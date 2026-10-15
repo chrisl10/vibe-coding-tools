@@ -74,4 +74,4 @@ See `examples/01`. The skeleton: `registerTool(name, { description, inputSchema 
 
 - `src/mcp/server.ts` (the real tools, `errorResult`, the zod/v3 import).
 - `@modelcontextprotocol/sdk` `^1.29`.
-- `research/2026-06-16-mcp-sdk-zod-v3.md`.
+- `research/2026-06-16-mcp-sdk-zod-v3.md` (source-repository research, not shipped).

@@ -51,4 +51,4 @@ This `err instanceof Error ? err.message : String(err)` pattern is used througho
 - `src/mcp/server.ts` (the narrowing idiom, `errorResult`).
 - `src/deeplake-schema.ts` (the documented already-exists race).
 - `src/utils/sql.ts` (`sqlIdent` throwing).
-- `research/2026-06-16-strict-error-narrowing.md`.
+- `research/2026-06-16-strict-error-narrowing.md` (source-repository research, not shipped).

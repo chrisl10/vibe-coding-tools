@@ -67,4 +67,4 @@ const fetchSpy = vi.spyOn(globalThis, "fetch")
 ## Sources
 
 - `tests/` (real mocking patterns), `src/deeplake-api.ts`, `src/deeplake-schema.ts`.
-- `research/2026-06-16-vitest-esm-discipline.md`.
+- `research/2026-06-16-vitest-esm-discipline.md` (source-repository research, not shipped).

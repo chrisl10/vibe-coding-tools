@@ -61,4 +61,4 @@ Bump `package.json#version`; `sync-versions` propagates it and esbuild `define` 
 
 - `package.json` (`files`, `bin`, lifecycle scripts, `publishConfig`).
 - `guides/18-publish-and-pack-check.md`.
-- `research/2026-06-16-npm-publish-files-allowlist.md`.
+- `research/2026-06-16-npm-publish-files-allowlist.md` (source-repository research, not shipped).

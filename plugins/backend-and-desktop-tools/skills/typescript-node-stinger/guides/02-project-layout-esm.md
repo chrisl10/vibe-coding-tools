@@ -80,4 +80,4 @@ Route-generated types (`RouteParams`, `PageData`, `Actions`, etc.) come from `./
 ## Sources
 
 - `src/` tree in the repo.
-- `research/2026-06-16-esm-node16-resolution.md`.
+- `research/2026-06-16-esm-node16-resolution.md` (source-repository research, not shipped).

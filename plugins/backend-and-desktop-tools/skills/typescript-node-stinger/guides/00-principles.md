@@ -65,7 +65,7 @@ Empty `catch {}` or a `catch` that drops the error without a documented reason i
 
 ### 12. Never state a fact you didn't archive
 
-Every claim in every guide in this skill traces to either a research file (`references/research/raw/` for the current pass, `research/` for the original Hivemind pass) or a file actually in the target repo. If you're recalling something from training data and it isn't archived, go fetch a source before asserting it as fact.
+Every claim in every guide in this skill traces to either a research file (`references/research/raw/` [source-repository research, not shipped] for the current pass, `research/` for the original Hivemind pass) or a file actually in the target repo. If you're recalling something from training data and it isn't archived, go fetch a source before asserting it as fact.
 
 ---
 
