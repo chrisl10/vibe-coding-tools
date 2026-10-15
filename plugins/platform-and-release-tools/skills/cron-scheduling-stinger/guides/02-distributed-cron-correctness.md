@@ -1,7 +1,7 @@
 # Guide 02: Distributed Cron Correctness
 
 *Cited by: `examples/distributed-duplicate-prevention.md`*
-*Research sources: `research/external/2026-05-20-distributed-cron-exactly-once-patterns.md`*
+*Research sources: `research/external/2026-05-20-distributed-cron-exactly-once-patterns.md` (source-repository research, not shipped)*
 
 ---
 

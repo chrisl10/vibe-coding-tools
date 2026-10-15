@@ -46,7 +46,7 @@ Use `templates/new-actions-job.yaml` and the walkthrough in `examples/add-ci-job
 
 ## Cross-reference
 
-- `research/2026-06-16-github-actions-node-matrix.md` - setup-node, the Node matrix, cross-node install canary pattern.
-- `research/2026-06-16-codeql-js-ts.md` - CodeQL for javascript-typescript.
+- `research/2026-06-16-github-actions-node-matrix.md` (source-repository research, not shipped) - setup-node, the Node matrix, cross-node install canary pattern.
+- `research/2026-06-16-codeql-js-ts.md` (source-repository research, not shipped) - CodeQL for javascript-typescript.
 - `guides/05-release-flow.md` - release.yaml in depth.
 - `guides/06-npm-release.md` - pack-check + audit:openclaw as the publish-surface scanners.

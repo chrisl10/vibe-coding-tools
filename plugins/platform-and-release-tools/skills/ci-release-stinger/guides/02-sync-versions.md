@@ -32,4 +32,4 @@ Run `scripts/check-version-sync.sh`: it reads the root `package.json` version an
 
 - `guides/01-build-and-bundle.md` - how `define` consumes the synced version.
 - `guides/05-release-flow.md` - how the release workflow bumps root version then builds.
-- `research/2026-06-16-version-single-sourcing.md` - the single-sourcing pattern and why generated-not-edited config wins.
+- `research/2026-06-16-version-single-sourcing.md` (source-repository research, not shipped) - the single-sourcing pattern and why generated-not-edited config wins.

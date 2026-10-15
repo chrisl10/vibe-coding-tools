@@ -1,7 +1,7 @@
 # Guide 01: Platform Limits
 
 *Cited by: `examples/vercel-cron-happy-path.md`, `examples/github-actions-drift-mitigation.md`*
-*Research sources: `research/external/2026-05-20-vercel-cron-jobs-official-docs.md`, `research/external/2026-05-20-cloudflare-cron-triggers-official-docs.md`, `research/external/2026-05-20-github-actions-schedule-event-docs.md`, `research/external/2026-05-20-github-actions-schedule-drift-community.md`*
+*Research sources: `research/external/2026-05-20-vercel-cron-jobs-official-docs.md`, `research/external/2026-05-20-cloudflare-cron-triggers-official-docs.md`, `research/external/2026-05-20-github-actions-schedule-event-docs.md`, `research/external/2026-05-20-github-actions-schedule-drift-community.md` (source-repository research, not shipped)*
 
 ---
 
