@@ -1,6 +1,6 @@
 ---
 name: "shadcn-svelte-stinger"
-description: "The shadcn-svelte library itself for any Svelte project: CLI, copy-in model, anatomy, registry, theming, forms, upgrades. Not OSPRY's design system on portal/web/wl (ux-ui-svelte-stinger owns that)."
+description: "The shadcn-svelte library itself for any Svelte project: CLI, copy-in model, anatomy, registry, theming, forms, upgrades. A project's design system or brand contract belongs to ux-ui-svelte-stinger."
 license: AGPL-3.0-or-later
 compatibility: Claude Code, Cursor, ChatGPT Codex, Claude Cowork. Any Svelte 5 + SvelteKit or Vite project adopting shadcn-svelte.
 metadata:
@@ -20,9 +20,9 @@ Read this before doing anything else.
 
 **This skill owns the shadcn-svelte library itself, generically**: `npx shadcn-svelte@latest init`/`add`/`apply`, the copy-in-your-repo model and why it matters for upgrades, component anatomy (`$props()`, `tv()`, `cn()`, `data-slot`), the registry system (`registry.json`, `registry-item.json`, custom/private registries), the generic CSS-variable theming vocabulary and its `@theme inline` bridge into Tailwind v4, dark mode mechanics (`mode-watcher`), forms (Formsnap + Superforms + Zod), customization patterns that survive upstream re-syncs, and accessibility inherited from Bits UI.
 
-**`ux-ui-svelte-stinger` owns applying the OSPRY-specific design system built on top of this library**: enforcement of ADR-007 on `apps/portal`, `apps/web`, `apps/wl` specifically; the PRD-071 token bridge into `@theme`; the white-label `--brand-*` contract; OSPRY's dark-first inversion; per-surface migration workflow; and PR review of shadcn-svelte usage in those three apps.
+**`ux-ui-svelte-stinger` owns applying a project's design system built on top of this library**: enforcement of the project's UI standard on its apps; its token bridge into `@theme`; its brand or white-label contract; its dark-mode polarity; per-surface migration workflow; and PR review of shadcn-svelte usage in those apps. OSPRY is the worked example: ADR-007 on `apps/portal`, `apps/web`, `apps/wl`, the PRD-071 token bridge, the `--brand-*` contract and its dark-first inversion.
 
-If a question names `apps/portal`, `apps/web`, `apps/wl`, OSPRY branding, white-label, or ADR-007, it belongs to `ux-ui-svelte-stinger`, not here. If the question is about the library mechanics that would apply to any Svelte project, it's here. Full statement and rationale: [guides/00-principles.md](guides/00-principles.md).
+If a question names a project's UI decision record, token contract, brand or white-label rules (in OSPRY: `apps/portal`, `apps/web`, `apps/wl`, ADR-007), it belongs to `ux-ui-svelte-stinger`, not here. If the question is about the library mechanics that would apply to any Svelte project, it's here. Full statement and rationale: [guides/00-principles.md](guides/00-principles.md).
 
 ## When to use this skill
 
@@ -36,13 +36,13 @@ If a question names `apps/portal`, `apps/web`, `apps/wl`, OSPRY branding, white-
 - Reviewing whether a piece of code correctly exercises Bits UI's accessibility contract.
 - Answering "does shadcn-svelte have component X" or "what's different from shadcn/ui React."
 
-Do not use for applying OSPRY's design system to portal/web/wl (`ux-ui-svelte-stinger`), for the Svelte 5 language/runes layer itself (`svelte-stinger`), or for Tailwind v4 mechanics in general outside the shadcn-svelte token bridge (`tailwind-stinger`).
+Do not use for applying a project's design system to its product surfaces (`ux-ui-svelte-stinger`; OSPRY portal/web/wl is the worked example), for the Svelte 5 language/runes layer itself (`svelte-stinger`), or for Tailwind v4 mechanics in general outside the shadcn-svelte token bridge (`tailwind-stinger`).
 
 ## Procedure
 
 | Step | Action | Guide |
 |---|---|---|
-| 1 | Confirm the question is generic-library, not OSPRY-specific. If OSPRY-specific, hand off. | [guides/00-principles.md](guides/00-principles.md) |
+| 1 | Confirm the question is generic-library, not project-design-system-specific (OSPRY's, for example). If it is, hand off. | [guides/00-principles.md](guides/00-principles.md) |
 | 2 | If it's install/setup or a CLI command, follow the CLI procedure. | [guides/01-installation-and-cli.md](guides/01-installation-and-cli.md) |
 | 3 | If reading or editing a copied-in component, apply the anatomy pattern. | [guides/02-component-anatomy.md](guides/02-component-anatomy.md) |
 | 4 | If theming or CSS variables are in question, apply the token/bridge mechanics. | [guides/03-theming-and-css-variables.md](guides/03-theming-and-css-variables.md) |
@@ -71,7 +71,7 @@ Do not use for applying OSPRY's design system to portal/web/wl (`ux-ui-svelte-st
 
 ## Research foundation
 
-This Stinger was forged from a dedicated primary-source archive, not training data. Fourteen raw sources (official shadcn-svelte docs, Bits UI docs, Melt UI docs, GitHub releases/discussions, and corroborating community write-ups) live in `references/research/raw/`, each headed with its URL, fetch date, and source type. The distilled, cited synthesis is `references/research/distilled-shadcn-svelte.md`; it flags every conflict between sources and every gap where research was thin rather than smoothing them into a guess. If a guide states a fact, it traces back through that file to a raw source.
+This Stinger was forged from a dedicated primary-source archive, not training data. Fourteen raw sources (official shadcn-svelte docs, Bits UI docs, Melt UI docs, GitHub releases/discussions, and corroborating community write-ups) live in the source research archive (not shipped; the shipped distillation summarizes it), each headed with its URL, fetch date, and source type. The distilled, cited synthesis is `references/research/distilled-shadcn-svelte.md`; it flags every conflict between sources and every gap where research was thin rather than smoothing them into a guess. If a guide states a fact, it traces back through that file to a raw source.
 
 ## Critical Directive
 
@@ -82,7 +82,7 @@ This Stinger was forged from a dedicated primary-source archive, not training da
   - [modal-toast-dialog-stinger](../modal-toast-dialog-stinger) - Modal, toast, and dialog UX patterns generically, complementing the Bits UI dialog-family accessibility mechanics covered here.
   - [design-system-stinger](../design-system-stinger) - Bootstrapping a new design system from scratch, for when a project needs more than shadcn-svelte's defaults.
   - [tailwind-stinger](../tailwind-stinger) - Tailwind v4 mechanics in general, beyond the shadcn-svelte `@theme inline` token bridge covered here.
-  - [ux-ui-svelte-stinger](../ux-ui-svelte-stinger) - Owns applying the OSPRY-specific design system, PRD-071 token bridge, and white-label brand contract built on top of this library to apps/portal, apps/web, apps/wl specifically.
+  - [ux-ui-svelte-stinger](../ux-ui-svelte-stinger) - Owns applying a project's design system, token bridge, and white-label brand contract built on top of this library to its product surfaces (OSPRY's PRD-071 bridge on apps/portal, apps/web, apps/wl is the worked example).
 
 ## Ship Gate
 

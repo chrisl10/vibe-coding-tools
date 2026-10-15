@@ -1,6 +1,6 @@
 # CLI command reference
 
-Every shadcn-svelte CLI command and flag, grounded in [distilled-shadcn-svelte.md](research/distilled-shadcn-svelte.md) section 4, citing [raw/01-cli-command-reference.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/shadcn-svelte-stinger/references/research/raw/01-cli-command-reference.md) and [raw/02-installation-sveltekit-and-components-json.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/shadcn-svelte-stinger/references/research/raw/02-installation-sveltekit-and-components-json.md).
+Every shadcn-svelte CLI command and flag, grounded in [distilled-shadcn-svelte.md](research/distilled-shadcn-svelte.md) section 4, citing raw/01-cli-command-reference.md and raw/02-installation-sveltekit-and-components-json.md.
 
 All commands work through any package-manager runner: `pnpm dlx`, `npx`, `bun x` (yarn is equivalent). Examples below use `npx`; swap the runner as needed.
 
