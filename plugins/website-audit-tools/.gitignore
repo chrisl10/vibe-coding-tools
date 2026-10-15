@@ -4,11 +4,9 @@
 # unless your stack genuinely differs from Node/TypeScript.
 
 # ---- Environment / secrets ----
-# Never commit real .env files. .env.example is the one exception, since it
-# documents required variables without holding real values.
+# Never commit real .env files.
 .env
 .env.*
-!.env.example
 
 # ---- Dependencies ----
 node_modules/

@@ -1,6 +1,6 @@
 # 11: Landing Page Conversion Optimization
 
-Source PRD: `research/source-prds/prd-phase-11-landing-page-conversion-optimization.md`
+Source PRD: `research/source-prds/prd-phase-11-landing-page-conversion-optimization.md` (source-repository research, not shipped)
 
 The CRO science in this guide is framework-agnostic. Principles derive from A/B testing meta-analyses and behavioral psychology research. Svelte component patterns replace the Next.js / React patterns from the previous iteration.
 

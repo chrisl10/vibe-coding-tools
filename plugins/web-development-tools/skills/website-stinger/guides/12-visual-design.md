@@ -1,6 +1,6 @@
 # 12: Visually Stunning Design System
 
-Source PRD: `research/source-prds/prd-phase-12-visually-stunning-design.md`
+Source PRD: `research/source-prds/prd-phase-12-visually-stunning-design.md` (source-repository research, not shipped)
 
 Svelte animation sources:
 - [sv-animations: Animated Beam + 50+ components](https://sv-animations.vercel.app/magic/docs/components/animated-beam): Magic UI ported to Svelte; CLI install via `pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/<component>.json`
