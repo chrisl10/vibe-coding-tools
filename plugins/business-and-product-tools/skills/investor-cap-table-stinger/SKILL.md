@@ -93,7 +93,7 @@ Do NOT load for company formation (that is `incorporation-startup-stack-stinger`
 
 ## Research trail
 
-All primary sources are in [`research/`](research). See [`research/index.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/index.md) for the full manifest and [`research/research-summary.md`](research/research-summary.md) for the executive summary and open questions.
+The primary-source notes and the manifest, `research/index.md`, are source-repository research, not shipped with the plugin. The shipped [`research/research-summary.md`](research/research-summary.md) carries the executive summary and open questions.
 
 Researched by `scripture-historian` on 2026-05-20 at normal depth (6-month window, 13 queries, 20 source files).
 

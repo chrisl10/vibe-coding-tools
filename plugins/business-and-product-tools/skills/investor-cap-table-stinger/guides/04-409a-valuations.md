@@ -2,7 +2,7 @@
 
 A 409A is a valuation of the company's common stock for tax purposes, required under IRS Section 409A before granting stock options. Getting this wrong exposes employees to 20% federal excise taxes on top of ordinary income tax. Getting the timing wrong can produce the same result.
 
-Source: [`research/external/2026-05-20-409a-valuation-triggers-validity-2026.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/external/2026-05-20-409a-valuation-triggers-validity-2026.md), [`research/external/2026-05-20-409a-provider-comparison-2026.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/external/2026-05-20-409a-provider-comparison-2026.md)
+Source: `research/external/2026-05-20-409a-valuation-triggers-validity-2026.md`, `research/external/2026-05-20-409a-provider-comparison-2026.md` (source-repository research, not shipped)
 
 ---
 

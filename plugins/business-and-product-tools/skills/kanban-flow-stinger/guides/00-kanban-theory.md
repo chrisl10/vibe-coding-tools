@@ -1,6 +1,6 @@
 # 00. Kanban Theory: Foundations and the Toyota Lineage
 
-*Sources: `research/internal/command-brief-summary.md`; `research/external/2026-05-20-wip-limits-atlassian-official.md`; `research/external/2026-05-20-kanban-vs-scrum-atlassian.md`*
+*Sources: `research/internal/command-brief-summary.md`; `research/external/2026-05-20-wip-limits-atlassian-official.md`; `research/external/2026-05-20-kanban-vs-scrum-atlassian.md` (source-repository research, not shipped)*
 
 ---
 

@@ -2,7 +2,7 @@
 
 Step 6: Complete the minimum founder paperwork after the entity is formed.
 
-*Derived from: `research/external/83b-election-guide-2026.md`, `research/external/founder-paperwork-minimum-checklist-2026.md`*
+*Derived from: `research/external/83b-election-guide-2026.md`, `research/external/founder-paperwork-minimum-checklist-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -51,7 +51,7 @@ The 83(b) election deadline makes the order non-negotiable. Complete stock agree
 
 When a founder receives restricted stock subject to vesting, the IRS treats it as income as it vests — not at the time of grant. An 83(b) election tells the IRS: "I want to recognize income now, at the low grant price, not later when the stock is worth more."
 
-**Example savings:** A typical founder equity grant can save $46,000+ in taxes with an 83(b) election. Source: `research/external/83b-election-guide-2026.md` (citing Pulley analysis).
+**Example savings:** A typical founder equity grant can save $46,000+ in taxes with an 83(b) election. Source: `research/external/83b-election-guide-2026.md` (source-repository research, not shipped) (citing Pulley analysis).
 
 ### How to file in 2026
 
