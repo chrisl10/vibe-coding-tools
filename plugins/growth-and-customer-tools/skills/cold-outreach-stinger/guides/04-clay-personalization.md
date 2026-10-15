@@ -2,7 +2,7 @@
 
 Clay is an enrichment and personalization platform that connects 150+ data sources to AI workflows, enabling 500+ contacts/hour of personalized outreach at $0.02-0.05 per contact. It is the state-of-the-art tool for scaling genuine personalization beyond what a human researcher can produce manually.
 
-**Research grounding:** `research/external/2026-05-20-clay-ai-personalization-workflow.md`, `research/external/2026-05-20-clay-claygent-personalization-anti-slop.md`, `research/external/2026-05-20-clay-signal-based-prospecting.md`
+**Research grounding:** `research/external/2026-05-20-clay-ai-personalization-workflow.md`, `research/external/2026-05-20-clay-claygent-personalization-anti-slop.md`, `research/external/2026-05-20-clay-signal-based-prospecting.md` (source-repository research, not shipped)
 
 ---
 
@@ -38,11 +38,11 @@ Prospeo (source 1)
 
 Coverage: 70-85% of contacts will have a verified email found. Better than any single-source approach (40-60%).
 
-> TODO: Verify current Clay waterfall provider options at docs.clay.com. The specific providers listed above were current as of May 2026 per `research/external/2026-05-20-clay-ai-personalization-workflow.md`, but Clay adds and removes providers. Always check the current Clay integrations page.
+> TODO: Verify current Clay waterfall provider options at docs.clay.com. The specific providers listed above were current as of May 2026 per `research/external/2026-05-20-clay-ai-personalization-workflow.md` (source-repository research, not shipped), but Clay adds and removes providers. Always check the current Clay integrations page.
 
 ### Step 3: Signal enrichment (optional but high-value)
 For signal-based campaigns, add enrichment columns for:
-- **Job change signal:** LinkedIn recent activity or job change data provider. VP-level job changes = 3x higher buy probability within 90 days of starting new role. (Research: `research/external/2026-05-20-clay-signal-based-prospecting.md`)
+- **Job change signal:** LinkedIn recent activity or job change data provider. VP-level job changes = 3x higher buy probability within 90 days of starting new role. (Research: `research/external/2026-05-20-clay-signal-based-prospecting.md` [source-repository research, not shipped])
 - **Funding event:** Crunchbase or PitchBook integration. New funding = budget available + need to scale.
 - **Tech stack:** BuiltWith or Clearbit. Know what they already use to position your product relative to their existing stack.
 - **Job postings:** LinkedIn job scrape. Companies hiring for a role you help with = active pain point.

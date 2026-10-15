@@ -4,7 +4,7 @@ AEO (Answer Engine Optimization) is formatting posts so that AI systems — Goog
 
 In 2026, AEO is a 4-surface problem. Optimizing for featured snippets alone addresses only ~10% of the opportunity.
 
-> Research sources: `research/external/2026-05-20-verityscore-aeo-guide-2026.md`, `research/external/2026-05-20-cxl-answer-engine-optimization-guide.md`, `research/external/2026-05-20-yarnit-featured-snippets-ai-overview-2026.md`
+> Research sources: `research/external/2026-05-20-verityscore-aeo-guide-2026.md`, `research/external/2026-05-20-cxl-answer-engine-optimization-guide.md`, `research/external/2026-05-20-yarnit-featured-snippets-ai-overview-2026.md` (source-repository research, not shipped)
 
 ---
 

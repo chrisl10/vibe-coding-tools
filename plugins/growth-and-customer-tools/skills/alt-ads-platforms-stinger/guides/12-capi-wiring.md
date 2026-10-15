@@ -43,7 +43,7 @@ User converts on website
 
 **Test event verification:** Add `test_event_code` parameter (from TikTok Events Manager) to test API calls before going live.
 
-*Source: `research/external/2026-05-20-tiktok-conversion-api-setup-guide.md`*
+*Source: `research/external/2026-05-20-tiktok-conversion-api-setup-guide.md` (source-repository research, not shipped)*
 
 ---
 
@@ -75,7 +75,7 @@ Microsoft Advertising's server-side solution is called Enhanced Conversions.
 3. Follow Microsoft's Enhanced Conversions implementation guide to send hashed user data (email, phone, address) via JavaScript or server-side API alongside standard conversion pings.
 4. Microsoft matches hashed user data to Microsoft account profiles for improved attribution accuracy.
 
-*Source: `research/external/2026-05-20-microsoft-ads-linkedin-targeting-implementation.md`*
+*Source: `research/external/2026-05-20-microsoft-ads-linkedin-targeting-implementation.md` (source-repository research, not shipped)*
 
 ---
 

@@ -2,7 +2,7 @@
 
 The sequence is the cadence of touchpoints you send to a prospect from first contact to either a positive reply or a polite conclusion. Most founders default to the wrong structure: too many steps, too many words, too much about the product, not enough about the prospect's problem.
 
-**Research grounding:** `research/external/2026-05-20-cold-email-sequence-length-benchmarks.md`, `research/external/2026-05-20-cold-email-reply-rate-benchmarks-2026.md`, `research/external/2026-05-20-b2b-cold-email-sequence-build.md`, `research/external/2026-05-20-cold-email-follow-up-sequences-guide.md`
+**Research grounding:** `research/external/2026-05-20-cold-email-sequence-length-benchmarks.md`, `research/external/2026-05-20-cold-email-reply-rate-benchmarks-2026.md`, `research/external/2026-05-20-b2b-cold-email-sequence-build.md`, `research/external/2026-05-20-cold-email-follow-up-sequences-guide.md` (source-repository research, not shipped)
 
 ---
 
@@ -69,7 +69,7 @@ Step 2 should read like a reply in a real email thread, not like a reminder that
 
 | Dimension | Recommendation | Research basis |
 |---|---|---|
-| Day of week | Wednesday peak; Tuesday-Thursday window | `research/external/2026-05-20-b2b-cold-email-sequence-build.md` |
+| Day of week | Wednesday peak; Tuesday-Thursday window | `research/external/2026-05-20-b2b-cold-email-sequence-build.md` (source-repository research, not shipped) |
 | Time of day | 7-11 AM recipient local time | Most email platforms support timezone-aware sending |
 | Avoid | Monday (inbox flood), Friday (weekend mindset) | Standard industry guidance |
 

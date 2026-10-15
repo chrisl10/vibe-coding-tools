@@ -2,7 +2,7 @@
 
 Keyword research is a scoping tool, not a writing tool. Its job is to validate or invalidate a cluster hypothesis. Stop when you have enough data to make a go/no-go decision — the marginal value of the 50th keyword in a cluster is near zero.
 
-> Research sources: `research/external/2026-05-20-devtoolpicks-ahrefs-vs-semrush-indie-hackers.md`, `research/external/2026-05-20-devtoolpicks-ahrefs-alternatives-indie-hackers.md`
+> Research sources: `research/external/2026-05-20-devtoolpicks-ahrefs-vs-semrush-indie-hackers.md`, `research/external/2026-05-20-devtoolpicks-ahrefs-alternatives-indie-hackers.md` (source-repository research, not shipped)
 
 ---
 
