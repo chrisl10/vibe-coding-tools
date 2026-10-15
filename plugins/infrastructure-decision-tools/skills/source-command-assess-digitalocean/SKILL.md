@@ -2,6 +2,7 @@
 name: "source-command-assess-digitalocean"
 description: "Assess DigitalOcean service fit with dated responsibilities, eligibility, scaling, recovery and cost inputs for a supplied workload."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-assess-digitalocean

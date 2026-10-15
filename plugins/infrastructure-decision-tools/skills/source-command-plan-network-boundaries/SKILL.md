@@ -2,6 +2,7 @@
 name: "source-command-plan-network-boundaries"
 description: "Choose network firewall, WAF and application rate-limit layers from actual trust boundaries, protocols and operating constraints."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-plan-network-boundaries

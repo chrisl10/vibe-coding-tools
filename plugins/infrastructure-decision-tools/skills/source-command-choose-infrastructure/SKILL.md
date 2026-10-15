@@ -2,6 +2,7 @@
 name: "source-command-choose-infrastructure"
 description: "Recommend one infrastructure topology from workload, budget and operator capacity, with sourced constraints and recovery/cost handoffs."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-choose-infrastructure

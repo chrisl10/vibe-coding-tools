@@ -1,6 +1,6 @@
 {
   "name": "littlebird-toolkit",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Turn Littlebird memory into evidence-backed operating work.",
   "author": {
     "name": "Mario Aldayuz",
@@ -8,7 +8,7 @@
     "url": "https://littlebird.ai"
   },
   "license": "AGPL-3.0-or-later",
-  "repository": "https://github.com/legioncodeinc/littlebird-skills",
+  "repository": "https://github.com/legioncodeinc/vibe-coding-tools",
   "homepage": "https://github.com/legioncodeinc/littlebird-skills",
   "skills": [
     "./skills/"
