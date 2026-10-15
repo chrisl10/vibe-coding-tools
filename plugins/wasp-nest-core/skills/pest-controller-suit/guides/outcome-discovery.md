@@ -14,4 +14,4 @@ Example: "explain this technical post" should shortlist a technical explanation 
 
 Example failure: a queried desktop outcome may identify Tauri as an adjacent owner, but a host without a selected desktop pack cannot launch its native workflow. Explain the missing prerequisite and preserve the user's scope.
 
-Grounding: [local primary distillation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/pest-controller-suit/references/research/outcome-routing/distillation.md). Host command projection limits come from [Queen's current harness guide](../../queen-wasp-stinger/guides/harness-support-matrix.md).
+Grounding: local primary distillation. Host command projection limits come from [Queen's current harness guide](../../queen-wasp-stinger/guides/harness-support-matrix.md).
