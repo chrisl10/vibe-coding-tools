@@ -50,5 +50,5 @@ Lease-style timeline Now, Next, Later from `plan.json.waves`, a REMEMBER line fo
 
 ## Sources
 
-- [../references/research/raw/design--whipt-bloat-audit-html.md]
-- [../references/research/raw/design--legion-field-guide-pdf.md]
+- [../references/research/raw/design--whipt-bloat-audit-html.md (source-repository research, not shipped)]
+- [../references/research/raw/design--legion-field-guide-pdf.md (source-repository research, not shipped)]

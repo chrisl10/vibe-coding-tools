@@ -23,7 +23,7 @@ Every tier argument is matched case-insensitively (`Mario`, `MARIO`, `Full`). An
 | foundation | `00-foundation/` | `code-foundation-wasp-drone` | `get-started-stinger` (assess mode, never writes) |
 | bloat | `01-bloat/` | `code-bloat-wasp-drone` | none (jscpd, knip, cloc, plus language fallbacks) |
 | security | `02-security/` | `security-wasp-drone` (generic pass), plus one framework Drone per detected stack: `react-security-wasp-drone`, `nextjs-security-wasp-drone`, `sveltekit-security-wasp-drone`, `polyglot-security-wasp-drone` | `security-stinger` |
-| quality | `03-quality/` | `quality-wasp-drone` | `quality-stinger` (standalone-audit mode) |
+| quality | `03-quality/` | `quality-wasp-drone` | `quality-stinger` (report only, no single PRD; yardstick in guide 03) |
 | remediation | `04-remediation/` | `remediation-planning-wasp-drone` | `library-stinger`, `knowledge-stinger` |
 | brief | `brief/` | `code-audit-brief-wasp-drone` | none |
 
@@ -51,7 +51,7 @@ The audited repository's files are never modified by `foundation`, `vibe`, `basi
   brief/          brief.html
 ```
 
-The user may choose another workspace path at intake. Tools that need to install or write (jscpd, knip, cloc via npx) run against a throwaway copy at `<workspace>/.scratch/repo-copy/` made with `git archive HEAD | tar -x` (not `git worktree add`, which writes metadata into the audited repository's `.git`), and the copy is removed at the end of the run. Raw tool output goes in that dimension's `raw/` folder.
+The user may choose another workspace path at intake. Tools that need to install or write (jscpd, knip, cloc via npx) run against a throwaway copy at `<workspace>/.scratch/repo-copy/` made with `git archive` (see `scripts/make_scratch_copy.py`; not `git worktree add`, which writes metadata into the audited repository's `.git`), and the copy is removed at the end of the run. Raw tool output goes in that dimension's `raw/` folder.
 
 Only the `mario` tier writes inside the audited repository, only into `library/`, and only after the user approves the exact list of files at the remediation step.
 
@@ -61,8 +61,8 @@ Only the `mario` tier writes inside the audited repository, only into `library/`
 {
   "contract": "1.0",
   "tier": "full",
-  "repo": {"name": "whipt", "path": "/abs/path", "remote": "git@github.com:org/whipt.git", "branch": "staging", "sha": "42d1611e"},
-  "requested_by": "Mario Aldayuz",
+  "repo": {"name": "example-repo", "path": "/abs/path", "remote": "git@github.com:example-org/example-repo.git", "branch": "staging", "sha": "42d1611e"},
+  "requested_by": "Example Owner",
   "started_at": "2026-09-30T12:35:00-05:00",
   "stacks": [
     {"id": "nextjs", "version": "15.5.2", "paths": ["apps/web"]},
@@ -70,9 +70,9 @@ Only the `mario` tier writes inside the audited repository, only into `library/`
   ],
   "languages": ["TypeScript", "JavaScript"],
   "scope": {"include": ["server", "ui", "packages"], "exclude": ["vendor", "dist", "**/*.d.ts"]},
-  "tools": {"jscpd": "4.3.0", "knip": "5.88.1", "cloc": "2.06"},
+  "tools": {"jscpd": "5.4.0", "knip": "6.39.0", "cloc": "2.06"},
   "execution": {"allowed": false, "mode": "none", "asked_at": "2026-09-30T12:36:00-05:00"},
-  "workspace": "/abs/path/whipt-code-audit/2026-09-30-full"
+  "workspace": "/abs/path/example-repo-code-audit/2026-09-30-full"
 }
 ```
 
@@ -125,7 +125,7 @@ Rules that every Drone follows:
   "verdict": "moderate",
   "summary": "One or two sentences that answer the user's real question for this dimension.",
   "measures": [
-    {"key": "dup_std_50", "label": "Duplication, jscpd standard metric, 50 tokens", "value": 3.58, "unit": "%", "band": "healthy", "threshold": "<5% healthy, >10% bloated", "source": "jscpd 4.3.0"}
+    {"key": "dup_std_50", "label": "Duplication, jscpd standard metric, 50 tokens", "value": 3.58, "unit": "%", "band": "healthy", "threshold": "<5% healthy, >10% bloated", "source": "jscpd 5.4.0"}
   ],
   "coverage": {"files_scanned": 3171, "lines_scanned": 1079239, "skipped": ["vendor/", "dist/"], "caps": []}
 }
