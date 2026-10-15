@@ -45,7 +45,7 @@ Prepare the minimum accounts, assets and accountable owners needed for the user'
 
 - [Web](guides/prepare-web.md), [desktop](guides/prepare-desktop.md), [mobile](guides/prepare-mobile.md), [integration](guides/prepare-integration.md): preparation procedures.
 - [Worked scenarios](references/examples/scenarios.md) and [fictional CSV](references/examples/fictional-ledger.csv): conditional inclusions and readiness failure cases.
-- [Research digest](references/research/distilled-launch-readiness.md) and [source ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/infrastructure-decision-tools/skills/launch-assets-stinger/references/research/source-ledger.json): current official captures, dates and fetch limits.
+- [Research digest](references/research/distilled-launch-readiness.md) and source ledger: current official captures, dates and fetch limits.
 - [Paired Drone](../../agents/launch-assets-wasp-drone.md): delegation contract.
 
 Runtime is research-only. Ship Gate removed: this workflow prepares readiness documents and does not implement application code. Source-component forging and any later commits receive separately authorized ordered review gates.

@@ -37,7 +37,7 @@ Hosting topology belongs to Infrastructure Fit; actual provider/WAF/ACL/OS chang
 
 ## References map
 
-- [Distillation](references/research/distillation.md) and [raw ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/infrastructure-decision-tools/skills/network-boundaries-stinger/references/research/source-ledger.json): current primary captures and evidence gaps.
+- [Distillation](references/research/distillation.md) and raw ledger: current primary captures and evidence gaps.
 - [Paired Drone](../../agents/network-boundaries-wasp-drone.md): exact advice scope.
 
 Runtime is research-only. Ship Gate removed: advice produces no application code or provider configuration. Parent owns source promotion, registration and ordered forge gates before any separately authorized commit.
