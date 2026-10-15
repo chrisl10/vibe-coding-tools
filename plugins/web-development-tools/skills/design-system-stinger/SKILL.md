@@ -179,7 +179,7 @@ design-system-stinger/
 ├── examples/
 │   ├── 01-glass-on-beige-bootstrap.md
 │   └── 02-migration-from-ad-hoc.md
-└── research/
+└── research/ (source-repository research, not shipped with the plugin)
     ├── research-plan.md
     ├── 2026-04-24-tailwind-v4-theme.md
     ├── 2026-04-24-oklch-color-space.md

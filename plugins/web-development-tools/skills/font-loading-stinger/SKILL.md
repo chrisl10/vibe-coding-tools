@@ -84,5 +84,5 @@ Templates:
 Research trail:
 
 - `research/research-summary.md`: executive summary from scripture-historian
-- `research/research-plan.md`: depth tier, queries, page budget
-- `research/index.md`: manifest of all source files
+- `research/research-plan.md` (source-repository research, not shipped with the plugin): depth tier, queries, page budget
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.

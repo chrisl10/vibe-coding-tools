@@ -38,7 +38,7 @@ that uses colors or radii absent from `01-master-tokens.css` is a bug.
 ## Universal taste rules (from Refactoring UI)
 
 These sit underneath every product-specific non-negotiable. See
-`../research/2026-04-24-refactoring-ui-principles.md` for the full list.
+`../research/2026-04-24-refactoring-ui-principles.md` (source-repository research, not shipped) for the full list.
 
 1. **Visual hierarchy is everything.** Combine size, weight, and color:
    never one of those alone.
@@ -57,18 +57,18 @@ These sit underneath every product-specific non-negotiable. See
 
 1. **`oklch()` for new palettes.** Brand colors can be hex for tenant
    round-trip; derivations should use `oklch()` or `color-mix()` so the
-   palette stays extensible. See `../research/2026-04-24-oklch-color-space.md`.
+   palette stays extensible. See `../research/2026-04-24-oklch-color-space.md` (source-repository research, not shipped).
 2. **`color-mix(in srgb, ...)` for shadow tints.** Never hardcode shadow
    rgba. Every shadow tints toward the brand primary.
 3. **`@theme` for Tailwind v4 bridge.** If the product uses Tailwind v4,
    tokens live inside `@theme` so utilities auto-generate. See
-   `../research/2026-04-24-tailwind-v4-theme.md`.
+   `../research/2026-04-24-tailwind-v4-theme.md` (source-repository research, not shipped).
 4. **`@layer utilities` for the utility layer.** Lets component styles win
    cleanly over utility defaults.
 5. **`@supports` fallback for `backdrop-filter`.** Always. See
-   `../research/2026-04-24-glassmorphism-production.md`.
+   `../research/2026-04-24-glassmorphism-production.md` (source-repository research, not shipped).
 6. **`@media (prefers-reduced-motion: reduce)`** at the bottom of every
-   utility CSS file. See `../research/2026-04-24-accessibility-media-queries.md`.
+   utility CSS file. See `../research/2026-04-24-accessibility-media-queries.md` (source-repository research, not shipped).
 
 ## The aesthetic is not invented, it is extracted
 
