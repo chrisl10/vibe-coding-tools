@@ -88,4 +88,4 @@ A `CHANGELOG.md` at the repo root (or one per package in a monorepo), one sectio
 
 `examples/changelog-entry.md` is a complete, worked changelog entry tied to a real `@deeplake/hivemind` version bump, including a before/after showing why "Updated search and index tools / Bug fixes" fails every rule above (no version, no `[BREAKING]` tag, no migration guidance, unparseable). It also walks the Wasp Nestmind-specific version chain: bump `package.json`, let the `prebuild` hook run `scripts/sync-versions.mjs` to propagate the version to every manifest, and set the changelog's top heading to match. Read it for the hand-written, impact-first path applied end to end; adopt the Conventional-Commits-driven automation path instead if the project already enforces commit-message discipline.
 
-*Source: `research/distilled-mcp-tool-docs.md` (section 5); `research/external/2026-08-14-keep-a-changelog.md`.*
+*Source: `research/distilled-mcp-tool-docs.md` (section 5); `research/external/2026-08-14-keep-a-changelog.md` (source-repository research, not shipped).*

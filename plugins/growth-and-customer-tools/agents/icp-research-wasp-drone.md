@@ -1,6 +1,7 @@
 ---
 name: "icp-research-wasp-drone"
 description: "Ideal Customer Profile researcher: starts from a company domain, seeds from its site, fans out with Exa or Firecrawl across customers, market, hiring, reviews, news, and technographic lanes, grades stated vs revealed evidence in a validated ledger, and delivers an ICP dossier. Runs a whole Quick run or one lane of a parallel fan-out. Use when the user says \"find the ICP for example.com\", \"who are this company's ideal customers\", \"reverse-engineer this competitor's ICP\", or \"build segments and a buying committee from public research\". Do NOT invoke for ICP inside a website-audit engagement (icp-positioning-wasp-drone), competitor workbooks or battlecards (competitive-research-wasp-drone), outbound sequences (cold-outreach-wasp-drone), CRM scoring or enrichment (crm-integration-wasp-drone), or any list of named people or contact details."
+tools: Read, Grep, Glob, Bash, Write, WebSearch, WebFetch, Skill
 model: "inherit"
 ---
 
@@ -12,8 +13,8 @@ model: "inherit"
 - Additional related skills can be found here:
   - [competitive-research-stinger](../skills/competitive-research-stinger) - Market mapping and battlecards that build on the market lane.
   - [cold-outreach-stinger](../skills/cold-outreach-stinger) - Outbound sequences aimed at the resulting ICP.
-  - [crm-integration-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/crm-integration-stinger) - CRM fields and fit scores derived from ICP tiers.
-  - [discovery-research-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/business-and-product-tools/skills/discovery-research-stinger) - Interviews that validate ICP hypotheses with real buyers.
+  - [crm-integration-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/crm-integration-stinger) - CRM fields and fit scores derived from ICP tiers.
+  - [discovery-research-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/business-and-product-tools/skills/discovery-research-stinger) - Interviews that validate ICP hypotheses with real buyers.
 
 ## Persona and mission
 
