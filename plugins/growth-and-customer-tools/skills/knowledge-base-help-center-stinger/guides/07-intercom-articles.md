@@ -12,7 +12,7 @@
 
 **Pricing:** Per-seat ($) + per-resolution Fin fee ($$). Opaque total; 2-4x Help Scout at equivalent team size for most SMBs.
 
-Source: `research/external/2026-05-20-ai-deflection-patterns.md`
+Source: `research/external/2026-05-20-ai-deflection-patterns.md` (source-repository research, not shipped)
 
 ---
 
@@ -72,4 +72,4 @@ This reduces incoming tickets for common setup questions without requiring the u
 
 ---
 
-*Sources: `research/external/2026-05-20-ai-deflection-patterns.md`, `research/external/2026-05-20-helpscout-vs-intercom-cost-model.md`.*
+*Sources: `research/external/2026-05-20-ai-deflection-patterns.md`, `research/external/2026-05-20-helpscout-vs-intercom-cost-model.md` (source-repository research, not shipped).*

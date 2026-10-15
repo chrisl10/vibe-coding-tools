@@ -2,7 +2,7 @@
 
 ## The three deflection patterns (2026)
 
-Sources: `research/external/2026-05-20-ai-deflection-patterns.md`
+Sources: `research/external/2026-05-20-ai-deflection-patterns.md` (source-repository research, not shipped)
 
 ---
 
@@ -63,7 +63,7 @@ Sources: `research/external/2026-05-20-ai-deflection-patterns.md`
 
 ## llms.txt — Day 1 implementation
 
-Source: `research/external/2026-05-20-llmstxt-standard.md`
+Source: `research/external/2026-05-20-llmstxt-standard.md` (source-repository research, not shipped)
 
 Google Lighthouse now validates `llms.txt` as of May 20, 2026. Add it to every KB setup.
 
@@ -104,4 +104,4 @@ Google Lighthouse now validates `llms.txt` as of May 20, 2026. Add it to every K
 
 ---
 
-*Sources: `research/external/2026-05-20-ai-deflection-patterns.md`, `research/external/2026-05-20-llmstxt-standard.md`, `research/external/2026-05-20-document360-mcp-release-notes.md`.*
+*Sources: `research/external/2026-05-20-ai-deflection-patterns.md`, `research/external/2026-05-20-llmstxt-standard.md`, `research/external/2026-05-20-document360-mcp-release-notes.md` (source-repository research, not shipped).*

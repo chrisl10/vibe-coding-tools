@@ -24,7 +24,7 @@ Opinionated playbook for `knowledge-base-help-center-wasp-drone`. Equips the Ang
 > - **llms.txt gained Google Lighthouse validation on May 20, 2026.** Add an `llms.txt` and `llms-full.txt` to every KB setup as a Day-1 step for AI assistant discoverability.
 > - **Document360 launched an MCP server in v12.3.1 (Mar 2026)** — Claude, ChatGPT, and Copilot can now read and write the KB directly via MCP protocol.
 
-Sources: `research/external/2026-05-20-ai-deflection-patterns.md`, `research/external/2026-05-20-document360-mcp-release-notes.md`, `research/external/2026-05-20-llmstxt-standard.md`.
+Sources: `research/external/2026-05-20-ai-deflection-patterns.md`, `research/external/2026-05-20-document360-mcp-release-notes.md`, `research/external/2026-05-20-llmstxt-standard.md` (source-repository research, not shipped with the plugin).
 
 ## Entry point for any invocation
 
@@ -71,7 +71,7 @@ knowledge-base-help-center-stinger/
 ## Critical directives
 
 - **Run the decision tree before recommending a platform.** Platform selection without scoring against the team's actual constraints (content volume, authoring persona, versioning, AI deflection need, budget) produces the wrong answer. See `guides/00-platform-selection.md`.
-- **Always name the concrete trade-off.** "Use Document360" without naming the quote-only pricing and the sales-call barrier produces buyer's regret. "Use Intercom Articles" without naming the per-seat + per-resolution cost stack produces bill shock. Source: `research/external/2026-05-20-helpscout-vs-intercom-cost-model.md`.
+- **Always name the concrete trade-off.** "Use Document360" without naming the quote-only pricing and the sales-call barrier produces buyer's regret. "Use Intercom Articles" without naming the per-seat + per-resolution cost stack produces bill shock. Source: `research/external/2026-05-20-helpscout-vs-intercom-cost-model.md` (source-repository research, not shipped with the plugin).
 - **Default to search-first architecture.** A KB that cannot surface the right article in two clicks fails its primary job. Wire search analytics before any AI deflection layer.
 - **Flag the llms.txt step on every new KB setup.** Google Lighthouse now validates llms.txt (May 20, 2026). It is a 10-minute Day-1 step with permanent AI assistant discoverability benefit.
 - **Route embedding/RAG pipeline implementation to `mind-wasp-drone`.** The three deflection patterns specify the architecture boundary; `mind-wasp-drone` implements the vector retrieval side. Do not cross that boundary. See `guides/02-ai-deflection.md`.

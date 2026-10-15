@@ -62,7 +62,7 @@ Score each candidate 1-5 on each dimension. Highest total wins.
 
 ## Pricing reality check (2026)
 
-Source: `research/external/2026-05-20-helpscout-vs-intercom-cost-model.md`
+Source: `research/external/2026-05-20-helpscout-vs-intercom-cost-model.md` (source-repository research, not shipped)
 
 **Worked example: 10-person team, 2,000 conversations/month**
 
@@ -84,4 +84,4 @@ No 2026 sources were found for HelpJuice in the research sweep. HelpJuice is pos
 
 ---
 
-*Sources: `research/external/2026-05-20-helpscout-vs-intercom-cost-model.md`, `research/external/2026-05-20-document360-2026-features.md`, `research/external/2026-05-20-ai-deflection-patterns.md`.*
+*Sources: `research/external/2026-05-20-helpscout-vs-intercom-cost-model.md`, `research/external/2026-05-20-document360-2026-features.md`, `research/external/2026-05-20-ai-deflection-patterns.md` (source-repository research, not shipped).*

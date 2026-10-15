@@ -1,6 +1,6 @@
 # Guide 01: Embedded Newsletter Signup Integration
 
-*Derived from: `research/external/2026-05-20-newsletter-signup-nextjs-loops.md`, `research/external/2026-05-20-beehiiv-embedded-subscribe-form.md`, `research/external/2026-05-20-beehiiv-api-v2-developer-docs.md`, `research/external/2026-05-20-resend-audiences-newsletter-management.md`*
+*Derived from: `research/external/2026-05-20-newsletter-signup-nextjs-loops.md`, `research/external/2026-05-20-beehiiv-embedded-subscribe-form.md`, `research/external/2026-05-20-beehiiv-api-v2-developer-docs.md`, `research/external/2026-05-20-resend-audiences-newsletter-management.md` (source-repository research, not shipped)*
 
 Three integration patterns exist. Use Pattern A (API route handler) as the default for any product that needs source attribution or server-side logic.
 
@@ -12,7 +12,7 @@ The recommended production pattern. Your Next.js Route Handler calls the platfor
 
 ### Loops implementation (production-ready)
 
-Source: `research/external/2026-05-20-newsletter-signup-nextjs-loops.md`
+Source: `research/external/2026-05-20-newsletter-signup-nextjs-loops.md` (source-repository research, not shipped)
 
 ```typescript
 // src/app/api/subscribe/route.ts
@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
 
 ### Beehiiv API implementation
 
-Source: `research/external/2026-05-20-beehiiv-api-v2-developer-docs.md`
+Source: `research/external/2026-05-20-beehiiv-api-v2-developer-docs.md` (source-repository research, not shipped)
 
 ```typescript
 // src/app/api/subscribe/route.ts (Beehiiv variant)
@@ -219,7 +219,7 @@ Usage: `<NewsletterForm source="homepage-hero" />`
 
 ## Pattern B: Beehiiv iframe embed
 
-Source: `research/external/2026-05-20-beehiiv-embedded-subscribe-form.md`
+Source: `research/external/2026-05-20-beehiiv-embedded-subscribe-form.md` (source-repository research, not shipped)
 
 The fastest path for Beehiiv users. No backend code needed; no API key exposure.
 
@@ -253,7 +253,7 @@ Best when: you are in early validation mode and do not yet have a product to emb
 
 All three platforms require custom sending domain verification before they will send on your behalf:
 
-**Loops** (from `research/external/2026-05-20-newsletter-signup-nextjs-loops.md`):
+**Loops** (from `research/external/2026-05-20-newsletter-signup-nextjs-loops.md` [source-repository research, not shipped]):
 1. Loops → Settings → Domain → Add your domain
 2. Add 3x CNAME (DKIM), 1x MX, 2x TXT (SPF + DMARC)
 3. Wait 1-6 hours; click Verify
