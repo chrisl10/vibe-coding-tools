@@ -71,7 +71,7 @@ A common pattern among high-productivity developers in 2026 is to combine Tier 1
 4. Set up Cursor or Claude Code with a CLAUDE.md capturing the scaffold's architecture
 5. Continue feature development in the IDE tool
 
-**Why this works:** Bolt is optimized for initial generation speed, not ongoing development. Its WebContainer limits (300MB, no native modules) make it unsuitable for complex ongoing work. The scaffold is the artifact; the IDE tool takes over from there. Source: `research/external/2026-05-20-bolt-new-webcontainer.md`.
+**Why this works:** Bolt is optimized for initial generation speed, not ongoing development. Its WebContainer limits (300MB, no native modules) make it unsuitable for complex ongoing work. The scaffold is the artifact; the IDE tool takes over from there. Source: `research/external/2026-05-20-bolt-new-webcontainer.md` (source-repository research, not shipped).
 
 ---
 

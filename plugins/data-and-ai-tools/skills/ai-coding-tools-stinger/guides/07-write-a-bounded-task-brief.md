@@ -12,4 +12,4 @@ Give the assistant a goal it can complete and evidence you can review, with the 
 8. Specify checks that prove the acceptance criteria using present authorized tooling and the actual budget. Record the final candidate revision. Reuse the existing Security → affected reruns → Quality → repository-health close-out and user review before authorized commits. A self-review, queued job or stale green run is not final proof.
 9. Deliver the completed brief or missing-decision question, then the actual handoff: changed paths, evidence/results, unresolved work, risk and first authorized dependent action. Review the brief against the supplied request so simplification does not change its scope. Do not execute a preparation-only brief automatically.
 
-Grounding: [research digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/ai-coding-tools-stinger/references/research/task-briefs/digest.md). Resolve installed peer resources against their actual selected roots, not this staging layout.
+Grounding: research digest. Resolve installed peer resources against their actual selected roots, not this staging layout.
