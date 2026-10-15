@@ -1,6 +1,6 @@
 # Worked security-design cases
 
-All cases are synthetic design reviews, not runtime results or claims about a real repository. Facts derive from [the nine captured primary sources](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/security-stinger/references/research/security-design/distillation.md). The judgments below are Wasp Nest derived policy. Expected outcomes are deliberately separate from actual results.
+All cases are synthetic design reviews, not runtime results or claims about a real repository. Facts derive from the nine captured primary sources. The judgments below are Wasp Nest derived policy. Expected outcomes are deliberately separate from actual results.
 
 ## O151: exported invoice threat model
 

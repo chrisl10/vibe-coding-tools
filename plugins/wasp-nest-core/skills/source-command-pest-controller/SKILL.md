@@ -2,6 +2,7 @@
 name: "source-command-pest-controller"
 description: "Orchestrate the Wasp Swarm. Routes a task through the pest-controller-suit roster and dispatches wasp-drone sub-agents, each armed with its paired Stinger skill before it starts."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-pest-controller

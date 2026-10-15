@@ -2,6 +2,7 @@
 name: "source-command-drift-audit"
 description: "Validate every Wasp Nest component and diff the pest-controller-suit roster against the filesystem in both directions, check pairing integrity, guide coverage, dead references, stale paths, prose dash violations, and Cowork upload readiness, then produce a findings report with a prioritized fix list. Trigger with \"audit the nest\", \"drift check\", \"is the roster in sync with the filesystem\", \"find orphaned drones\", \"check for unregistered skills\"."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-drift-audit
