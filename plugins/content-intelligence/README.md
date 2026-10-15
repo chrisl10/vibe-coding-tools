@@ -4,7 +4,22 @@ Two research and drafting skills for finding a current topic worth covering. [Re
 
 Both are direct-use standalone skills, explicitly marked in frontmatter. They do not claim companion Drones and do not need one to run in the current assistant or an approved Routine.
 
-These skills retain Mario's editorial preferences and require his separate `mario-voice-skill`, a shared topic ledger, and Exa or Firecrawl MCP access. Installing this pack alone does not supply those dependencies or authorize unattended publication.
+These skills need a shared topic ledger and Exa or Firecrawl MCP access. For voice-matched drafts they also use your own separate voice skill (optional; without one they write in a neutral voice and say so). Installing this pack alone does not supply those dependencies or authorize unattended publication.
+
+## Configure your preferences
+
+Each skill reads one user-editable file at the start of every run, so the skills stay self-contained:
+
+- [repo-radar-stinger preferences](skills/repo-radar-stinger/references/editorial-preferences.md)
+- [viral-news-stinger preferences](skills/viral-news-stinger/references/editorial-preferences.md)
+
+Edit these before your first run (keep the two files consistent if you want both skills to behave alike):
+
+1. **Voice skill.** Replace `none` with the name of your own voice skill, for example `<name>-voice-skill`. When set and installed, the skill loads it before drafting and its rules win. When left at `none`, drafts are written in a neutral, clear voice and labeled as such; no persona is invented.
+2. **Beats and audience.** The shipped beats are examples. Replace them with the subjects and audience you actually cover.
+3. **Editorial policy (optional).** The default is politically neutral: no partisan advocacy, claims fact-checked, contested issues presented fairly. Add topics to avoid or emphasize if you have a policy. Preferences steer which candidates are picked; they never relax the fact-check and vetting gates.
+
+The `voice-skill` metadata value in each `SKILL.md` is a placeholder; the preferences file is the setting the skills actually read.
 
 First-party instructions are licensed under [AGPL-3.0-or-later](LICENSE.md). The source tree retains research captures for provenance; built plugins ship the distillations, not those raw captures. See [third-party notices](THIRD-PARTY-NOTICES.md).
 
@@ -15,8 +30,8 @@ This pack contains 2 skills, 0 agents and 1 source command. The table explains e
 
 | Skill | What it does and when to use it |
 | --- | --- |
-| [repo-radar-stinger](skills/repo-radar-stinger/SKILL.md) | Scan GitHub for repos trending in the last 24 hours (vibe coding, AI coding, AI memory, vulnerabilities) via Exa/Firecrawl MCP, vet ONE, and output post options in Mario's voice with receipts. |
-| [viral-news-stinger](skills/viral-news-stinger/SKILL.md) | Mine the last 24 hours of trending news via Exa/Firecrawl MCP, fact-check ONE topic, and output viral-ready post options in Mario's voice with receipts. Use for scheduled news-post Routine runs. |
+| [repo-radar-stinger](skills/repo-radar-stinger/SKILL.md) | Scan GitHub for repos trending in the last 24 hours (vibe coding, AI coding, AI memory, vulnerabilities) via Exa/Firecrawl MCP, vet ONE, and output post options in the user's voice with receipts. |
+| [viral-news-stinger](skills/viral-news-stinger/SKILL.md) | Mine the last 24 hours of trending news via Exa/Firecrawl MCP, fact-check ONE topic, and output viral-ready post options in the user's voice with receipts. Use for scheduled news-post Routine runs. |
 
 ## Start one task
 
