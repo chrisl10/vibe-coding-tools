@@ -1,6 +1,6 @@
 # Hypothetical before/after tenant cases
 
-No SQL, app or provider was executed. These are architecture decisions derived from [captured server facts](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/db-stinger/references/research/tenant-boundaries/distillation.md) and [guide 12](../guides/12-tenant-data-boundaries.md). Native proof is pending for every case.
+No SQL, app or provider was executed. These are architecture decisions derived from captured server facts and [guide 12](../guides/12-tenant-data-boundaries.md). Native proof is pending for every case.
 
 | Case | Before | Reviewed after design | Native evidence still needed |
 |---|---|---|---|

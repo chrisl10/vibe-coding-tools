@@ -1,6 +1,6 @@
 # Bound one customer operation and every attempt beneath it
 
-Use this for “limit agent tokens”, “budget retries”, “cap fallback spend” or “keep one slow request from running forever”. Complete the [contract worksheet](../templates/request-budget-contract.md). Source basis: [digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/ai-tools-platform-stinger/references/research/request-budgets/digest.md).
+Use this for “limit agent tokens”, “budget retries”, “cap fallback spend” or “keep one slow request from running forever”. Complete the [contract worksheet](../templates/request-budget-contract.md). Source basis: digest.
 
 1. Name operation, tenant, feature, admission owner, contract version, currency, approved spending authority and window. Keep monthly money, per-operation attempts, concurrency, token ceilings, output, tool calls and wall-clock latency separate. A user asking for research or advice has not approved paid execution. Host/model settings remain inherited.
 2. Enumerate the call graph: primary request, SDK transport retries, application retries, gateway retries, fallbacks, tool/provider operations and continuation loops. Record bounded maxima and who owns each. Retries at multiple layers can multiply. Count failed/timeout/partial stream attempts and unresolved invoice status, not just successful answers. Never retry a spend-cap failure as a transient 429 automatically; classify the actual provider error and billing terms.

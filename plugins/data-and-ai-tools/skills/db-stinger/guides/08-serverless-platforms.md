@@ -2,7 +2,7 @@
 
 Workload-to-platform matching across Supabase, Neon, Turso, PlanetScale, CockroachDB Serverless, and Tiger Data.
 
-Source: `research/2026-04-25-serverless-platforms-comparison.md`.
+Source: `research/2026-04-25-serverless-platforms-comparison.md` (source-repository research, not shipped).
 
 ## The choice tree
 
