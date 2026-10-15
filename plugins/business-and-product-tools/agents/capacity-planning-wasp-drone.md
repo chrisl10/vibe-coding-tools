@@ -1,6 +1,7 @@
 ---
 name: capacity-planning-wasp-drone
 description: "Recommend when to hire or buy services from demand, actual capacity, skill gaps and dated quotes. Owns operational preparation; excludes payroll, classification and procurement."
+tools: Read, Grep, Glob, Write, WebSearch, WebFetch, Skill
 model: inherit
 ---
 

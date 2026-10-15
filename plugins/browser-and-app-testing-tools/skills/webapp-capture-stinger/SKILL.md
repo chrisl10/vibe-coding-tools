@@ -45,7 +45,7 @@ Capture a running, authenticated web application from the outside, the way a use
 ## Procedure
 
 1. **Read `guides/00-foundation.md` in full.** Confirm origin, environment (prefer local, staging, or a seeded account), theme, and output paths with the user.
-2. **Install and configure.** Run `npm install` in this skill's `scripts/` folder (and `npx playwright install chromium` if needed). Copy `scripts/capture.config.example.json` into the target repo, fill it in, and gitignore the `auth.storageState` path and its `.session.json` sidecar. Run `scripts/doctor.mjs` and fix every ERROR before continuing.
+2. **Install and configure.** Check this skill's runtime requirements first. If dependencies or Chromium are missing, show the user the exact command and folder (`npm install` in this skill's `scripts/` folder, `npx playwright install chromium`) and run it only when installation is explicitly authorized for this task. Copy `scripts/capture.config.example.json` into the target repo, fill it in, and gitignore the `auth.storageState` path and its `.session.json` sidecar. Run `scripts/doctor.mjs` and fix every ERROR before continuing.
 3. **Get a session without touching credentials.** Run `scripts/save-session.mjs`; the user logs in in the visible window. Never type passwords, tokens, or keys yourself, and never script it.
 4. **Dry run.** Capture 3 or 4 routes. Check for setting pickers exposed as tabs, theme flips, naming collisions, and blind spots. Update `tabs.noTabsOnRoutes`, `tabs.notATabLabel`, and `routes.exclude`. Reload any settings page a tab click touched and confirm nothing persisted.
 5. **Pick the route** and follow its guide end to end:
@@ -70,7 +70,7 @@ Capture a running, authenticated web application from the outside, the way a use
 - `references/prompts/`, describe, merge, reconcile, Claude Design handoff, and shadcn map and theme templates; filled by the `inventory/prepare-*`, `design-handoff`, and `shadcn-prepare` scripts, never by hand
 - `scripts/`, run as documented in the guides: `doctor.mjs`, `save-session.mjs`, `parallel.mjs`, `screenshots.mjs`, `inventory/*.mjs`, `demo/record-demo.mjs`, `audit/*.mjs`, `lib/common.mjs`
 - `references/research/distilled-webapp-capture.md`, load to verify a claim about Playwright, DTCG, color math, WCAG, ffmpeg, or linting, or to settle a dispute
-- `references/research/raw/`, load when tracing a distilled claim to its primary source
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 
 ## Related drones and stingers
 

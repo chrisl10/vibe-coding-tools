@@ -1,6 +1,6 @@
 # Guide 03: CI Integration (GitHub Actions + LHCI)
 
-> Research source: `research/external/2026-05-20-lhci-github-actions-guide.md`
+> Research source: `research/external/2026-05-20-lhci-github-actions-guide.md` (source-repository research, not shipped)
 > Template: `templates/lighthouserc-starter.yaml`
 > Example: `examples/happy-path-lhci-setup.md`
 
@@ -40,7 +40,7 @@ jobs:
 
 **`fetch-depth: 20` is non-negotiable.** Without it, LHCI's ancestor detection (used for base branch comparison and PR comments) throws "Could not find hash" errors. The default shallow clone (`fetch-depth: 1`) breaks this.
 
-> Source: `research/external/2026-05-20-lhci-github-actions-guide.md`: "Critical: Always set `fetch-depth: 20` or higher. Shallow clones break LHCI's ancestor detection."
+> Source: `research/external/2026-05-20-lhci-github-actions-guide.md` (source-repository research, not shipped): "Critical: Always set `fetch-depth: 20` or higher. Shallow clones break LHCI's ancestor detection."
 
 ---
 

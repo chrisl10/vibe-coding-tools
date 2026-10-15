@@ -1,6 +1,6 @@
 # Guide 06: Audit Category Glossary
 
-> Research source: `research/external/2026-05-20-lighthouse-performance-scoring.md`, `research/external/2026-05-20-lab-vs-field-data-differences.md`
+> Research source: `research/external/2026-05-20-lighthouse-performance-scoring.md`, `research/external/2026-05-20-lab-vs-field-data-differences.md` (source-repository research, not shipped)
 
 Quick reference for the four Lighthouse 12 audit categories and the most important individual audits within each.
 
@@ -26,7 +26,7 @@ Quick reference for the four Lighthouse 12 audit categories and the most importa
 
 TBT is the lab proxy for INP, but the correlation is imperfect. TBT only measures Long Tasks during load. INP measures the full interaction lifecycle (input delay + processing time + presentation delay) at any point in the session, including after load.
 
-**Good TBT does NOT guarantee good INP.** Always check field INP separately via PSI or CrUX API. (`research/external/2026-05-20-lab-vs-field-data-differences.md`)
+**Good TBT does NOT guarantee good INP.** Always check field INP separately via PSI or CrUX API. (`research/external/2026-05-20-lab-vs-field-data-differences.md` [source-repository research, not shipped])
 
 ### Desktop vs mobile thresholds differ
 
@@ -46,7 +46,7 @@ Key audits:
 - `document-title`: `<title>` element is present
 - `html-has-lang`: `<html>` element has `lang` attribute
 
-**Aggregation method for CI:** use `"pessimistic"`: accessibility failures are binary and you want the strictest gate. (`research/external/2026-05-20-lhci-budget-assertions.md`)
+**Aggregation method for CI:** use `"pessimistic"`: accessibility failures are binary and you want the strictest gate. (`research/external/2026-05-20-lhci-budget-assertions.md` [source-repository research, not shipped])
 
 ---
 
@@ -77,7 +77,7 @@ Key audits:
 - `tap-targets`: touch targets are properly sized and spaced
 - `structured-data`: structured data is valid (informational only, no score weight)
 
-**Aggregation method for CI:** use `"pessimistic"`: SEO technical audits are binary. (`research/external/2026-05-20-lhci-budget-assertions.md`)
+**Aggregation method for CI:** use `"pessimistic"`: SEO technical audits are binary. (`research/external/2026-05-20-lhci-budget-assertions.md` [source-repository research, not shipped])
 
 ---
 
@@ -85,4 +85,4 @@ Key audits:
 
 The Progressive Web App category was removed from Lighthouse 12 (May 2024). If you see five-category reports in older documentation or tooling, they are from Lighthouse 8-11. Current reports have four categories.
 
-> Source: `research/external/2026-05-20-lhci-github-actions-guide.md`
+> Source: `research/external/2026-05-20-lhci-github-actions-guide.md` (source-repository research, not shipped)

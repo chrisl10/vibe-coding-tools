@@ -1,6 +1,6 @@
 # Guide 00: Runner Selection
 
-> Research source: `research/external/2026-05-20-lhci-github-actions-guide.md`, `research/external/2026-05-20-psi-crux-integration.md`
+> Research source: `research/external/2026-05-20-lhci-github-actions-guide.md`, `research/external/2026-05-20-psi-crux-integration.md` (source-repository research, not shipped)
 > Example: `examples/happy-path-lhci-setup.md`
 
 Before choosing any Lighthouse tool, answer three questions:
@@ -63,7 +63,7 @@ Lighthouse mobile simulation defaults (LHCI default):
 - Network: 1.6 Mbps download, 750 Kbps upload, 150ms RTT
 - This simulates the **slowest 5-10% of user experiences**, not the median
 
-> Source: `research/external/2026-05-20-lhci-budget-assertions.md`: "Lighthouse CI runs mobile audits by default. Mobile simulates a slower device with 4x CPU slowdown and slow 3G network conditions."
+> Source: `research/external/2026-05-20-lhci-budget-assertions.md` (source-repository research, not shipped): "Lighthouse CI runs mobile audits by default. Mobile simulates a slower device with 4x CPU slowdown and slow 3G network conditions."
 
 Desktop override in LHCI collect block:
 ```json
@@ -78,4 +78,4 @@ Desktop override in LHCI collect block:
 
 The fifth Lighthouse category (Progressive Web App, PWA) was removed in Lighthouse 12 (May 2024). If you see five-category reports in older documentation, those are from Lighthouse 8-11. Current reports have four categories: Performance, Accessibility, Best Practices, SEO.
 
-> Source: `research/external/2026-05-20-lhci-github-actions-guide.md`: "The PWA category was removed in Lighthouse 12 (May 2024)."
+> Source: `research/external/2026-05-20-lhci-github-actions-guide.md` (source-repository research, not shipped): "The PWA category was removed in Lighthouse 12 (May 2024)."

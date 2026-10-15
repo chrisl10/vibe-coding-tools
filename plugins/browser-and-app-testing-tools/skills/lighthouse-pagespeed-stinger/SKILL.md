@@ -54,7 +54,7 @@ These are non-negotiables. They protect reproducibility, team trust, and the lab
 
 ## Lighthouse 12 / LHCI 0.15.x facts (encoded from research)
 
-> Source: `research/external/2026-05-20-lighthouse-performance-scoring.md`
+> Source: `research/external/2026-05-20-lighthouse-performance-scoring.md` (source-repository research, not shipped with the plugin)
 
 **Current version:** Lighthouse 12.6.1 (LHCI 0.15.x). Node 18+ required.
 
