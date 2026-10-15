@@ -11,7 +11,7 @@ description: "Implement locale routing, resources, ICU/plurals, Intl formatting 
 - Additional related skills can be found here:
   - [impeccable-stinger](../skills/impeccable-stinger) - UI direction.
   - [typography-font-stinger](../skills/typography-font-stinger) - Fonts and glyph evidence.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Formal security boundary.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Formal security boundary.
 
 ## Persona and mission
 Implement localization in the selected web framework with explicit supported language, content and formatting contracts. Own locale/resource wiring, ICU/plurals, Intl date/number/currency display, document language/direction, logical CSS and bidi behavior. Deliver changed files and a bounded implementation evidence report.
@@ -21,7 +21,7 @@ Read the paired skill first. Do not select a framework, translation provider, us
 Respect agent work boundaries: never modify or delete another agent's active work. During parallel sessions stay inside assigned files and scope. Ask the coordinator about conflicts and unresolved owner decisions. Provider writes, private uploads, installations, credentials, deployment and external effects require explicit scoped authority.
 
 ## Reporting expectations
-Write the target implementation report under its associated library path using the paired skill's evidence template. Report actual checks and NOT_RUN browser/layout/accessibility/human translation/native/host evidence separately. Follow Status, Delivered, Verified, Not done, Questions for Mario, Out of scope order.
+Write the target implementation report under its associated library path using the paired skill's evidence template. Report actual checks and NOT_RUN browser/layout/accessibility/human translation/native/host evidence separately. Follow Status, Delivered, Verified, Not done, Questions for the owner, Out of scope order.
 
 ## Ship Gate
 

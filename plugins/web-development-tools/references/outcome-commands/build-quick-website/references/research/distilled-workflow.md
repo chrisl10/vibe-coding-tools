@@ -4,11 +4,11 @@ This is a new composition of existing canonical procedures, inspected 2026-10-07
 
 | Owner capability | Derived workflow rule | Evidence |
 |---|---|---|
-| `website-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/references/outcome-commands/build-quick-website/references/research/raw/website-stinger.md) |
-| `svelte-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/references/outcome-commands/build-quick-website/references/research/raw/svelte-stinger.md) |
-| `pest-controller-suit` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/references/outcome-commands/build-quick-website/references/research/raw/pest-controller-suit.md) |
+| `website-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
+| `svelte-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
+| `pest-controller-suit` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
 
-Installed dispatch must use the selected registry and checked owner; missing prerequisites block only dependent work. [Pest Controller capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/references/outcome-commands/build-quick-website/references/research/raw/pest-controller-suit.md).
+Installed dispatch must use the selected registry and checked owner; missing prerequisites block only dependent work. Pest Controller capture.
 
 The topic-specific sequence below is a proposed orchestration contract, not a verbatim upstream command. Domain facts remain the owning specialist's responsibility.
 
