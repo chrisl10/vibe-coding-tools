@@ -7,17 +7,17 @@ Match test depth to the native behavior, authority boundary, and delivery risk b
 ## Verification ladder
 
 1. Run pure frontend unit tests for rendering and state transitions.
-2. Use Tauri frontend mocks for `invoke`, events, and window APIs, and clear mocks after every test. [../references/research/raw/tauri--docs--mocking.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--mocking.md)
+2. Use Tauri frontend mocks for `invoke`, events, and window APIs, and clear mocks after every test. ../references/research/raw/tauri--docs--mocking.md (source-repository research, not shipped)
 3. Run Rust unit and integration tests for validators, command services, state transitions, scope enforcement, persistence, sidecar protocol parsing, and error mapping.
 4. Add IPC contract tests that assert frontend key casing, request limits, serialized success and errors, Channel variants, cancellation, and exactly one terminal state.
-5. Run WebdriverIO with the Tauri service or another native application driver on supported desktop targets. [../references/research/raw/tauri--docs--webdriver.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--webdriver.md)
+5. Run WebdriverIO with the Tauri service or another native application driver on supported desktop targets. ../references/research/raw/tauri--docs--webdriver.md (source-repository research, not shipped)
 6. Label browser-mode WebdriverIO as renderer-only because it does not launch a Tauri binary.
 7. Build final package types and smoke test install, first launch, restart, update, rollback or rejection, and uninstall.
 8. Test platform integrations on real supported operating systems, not only one development host.
 9. For Android and iOS, use simulators for fast loops and physical devices for release evidence. Test permission denial, backgrounding, suspend, resume, offline behavior, and store-format artifacts.
 10. Record commands, target versions, runner or device identity, artifact hashes, results, and remaining OPEN or EXTERNAL evidence.
 
-Tauri's mock runtime does not execute native WebView libraries, which is why native and package layers remain necessary. [../references/research/raw/tauri--docs--tests-overview.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--tests-overview.md)
+Tauri's mock runtime does not execute native WebView libraries, which is why native and package layers remain necessary. ../references/research/raw/tauri--docs--tests-overview.md (source-repository research, not shipped)
 
 ## AI and sidecar matrix
 

@@ -54,5 +54,5 @@ commands.allow = ["cancel_generation"]
 
 Keep `remote` absent. If another capability also names `main`, inspect the merged permission union. If a command receives a custom scope, retrieve and enforce the scope inside Rust.
 
-Source basis: [Capabilities](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--capabilities.md), [Permissions](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--permissions.md), and [Scopes](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--command-scopes.md).
+Source basis: Capabilities, Permissions, and Scopes.
 
