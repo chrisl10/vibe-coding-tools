@@ -1,6 +1,6 @@
 # 05 — Maintain Phase (cohesion)
 
-Derived from `research/09-maintenance-doctor.md`.
+Derived from `research/09-maintenance-doctor.md` (source-repository research, not shipped).
 
 ## The two commands that close the gap
 

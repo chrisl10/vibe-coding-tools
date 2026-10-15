@@ -1,6 +1,6 @@
 # 06 — Detector Gate (59 deterministic rules)
 
-Derived from `research/06-detector-rules.md`.
+Derived from `research/06-detector-rules.md` (source-repository research, not shipped).
 
 ## CLI usage
 

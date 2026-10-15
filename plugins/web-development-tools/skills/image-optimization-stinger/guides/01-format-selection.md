@@ -1,6 +1,6 @@
 # Format Selection: AVIF, WebP, JPEG, PNG, SVG
 
-> Derived from: `research/external/2026-05-20-avif-caniuse.md`, `research/external/2026-05-20-avif-vs-webp-filemint.md`, `research/external/2026-05-20-image-formats-decision-tree-wuxwebtools.md`, `research/external/2026-05-20-avif-browser-support-iloveavif.md`, `research/external/2026-05-20-avif-vs-webp-format-comparison.md`
+> Derived from: `research/external/2026-05-20-avif-caniuse.md`, `research/external/2026-05-20-avif-vs-webp-filemint.md`, `research/external/2026-05-20-image-formats-decision-tree-wuxwebtools.md`, `research/external/2026-05-20-avif-browser-support-iloveavif.md`, `research/external/2026-05-20-avif-vs-webp-format-comparison.md` (source-repository research, not shipped)
 
 ---
 
@@ -81,7 +81,7 @@ Teams on the following CDNs get AVIF delivery for free via `Accept` header negot
 
 If the product is on one of these CDNs, recommend enabling CDN-level negotiation as the primary path before spending time on manual format conversion pipelines.
 
-> Source: `research/external/2026-05-20-adaptive-image-loading-avif-xictron.md`
+> Source: `research/external/2026-05-20-adaptive-image-loading-avif-xictron.md` (source-repository research, not shipped)
 
 ---
 

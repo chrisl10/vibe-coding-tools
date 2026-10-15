@@ -1,6 +1,6 @@
 # Guide 03: Accessibility Contract
 
-Source: `research/external/icon-accessibility.md`
+Source: `research/external/icon-accessibility.md` (source-repository research, not shipped)
 
 Every icon in a React application falls into one of three categories. The category determines the required ARIA attributes.
 

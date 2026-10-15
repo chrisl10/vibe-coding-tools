@@ -1,6 +1,6 @@
 # 01 — Context Contract
 
-Derived from `research/02-context-contract.md`.
+Derived from `research/02-context-contract.md` (source-repository research, not shipped).
 
 ## Files the Drone owns per project
 
