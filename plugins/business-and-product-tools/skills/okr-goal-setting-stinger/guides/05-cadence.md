@@ -2,7 +2,7 @@
 
 The mechanics of running a healthy OKR cycle from kickoff through retrospective.
 
-*Sources: `research/external/05-okr-quarterly-cadence-playbook.md`, `research/external/06-okr-cfr-companion-practice.md`, `research/external/2026-05-20-okr-quarterly-cadence.md`*
+*Sources: `research/external/05-okr-quarterly-cadence-playbook.md`, `research/external/06-okr-cfr-companion-practice.md`, `research/external/2026-05-20-okr-quarterly-cadence.md` (source-repository research, not shipped)*
 
 ---
 
@@ -107,4 +107,4 @@ See `guides/06-small-team-adaptation.md` for the lightweight variant. Key differ
 
 ---
 
-*This guide cites `research/external/05-okr-quarterly-cadence-playbook.md` and `research/external/06-okr-cfr-companion-practice.md`.*
+*This guide cites `research/external/05-okr-quarterly-cadence-playbook.md` and `research/external/06-okr-cfr-companion-practice.md` (source-repository research, not shipped).*

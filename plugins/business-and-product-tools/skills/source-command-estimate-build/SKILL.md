@@ -2,6 +2,7 @@
 name: "source-command-estimate-build"
 description: "Forecast one person's AI-assisted software project at N hours daily, with learning, verification, external waits and separate cash/time scenarios."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-estimate-build

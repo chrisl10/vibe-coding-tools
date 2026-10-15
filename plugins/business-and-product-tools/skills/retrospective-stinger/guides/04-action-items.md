@@ -1,6 +1,6 @@
 # 04: Action-Item Discipline
 
-*Derived from `research/external/2026-05-20-action-items-follow-through-scrumtool.md` and `research/external/2026-05-20-action-items-agile-coach-medium.md`.*
+*Derived from `research/external/2026-05-20-action-items-follow-through-scrumtool.md` and `research/external/2026-05-20-action-items-agile-coach-medium.md` (source-repository research, not shipped).*
 
 ---
 
@@ -45,7 +45,7 @@ If any answer is missing, the item is either refined on the spot or removed from
 
 ## Backlog placement is non-negotiable
 
-Action items that live in a retro doc, a shared notes file, or a separate "actions" board have a dramatically lower completion rate than items in the team's main sprint backlog. This is not opinion; it is the ScrumTool structural finding (2026-04-11, `research/external/2026-05-20-action-items-follow-through-scrumtool.md`).
+Action items that live in a retro doc, a shared notes file, or a separate "actions" board have a dramatically lower completion rate than items in the team's main sprint backlog. This is not opinion; it is the ScrumTool structural finding (2026-04-11, `research/external/2026-05-20-action-items-follow-through-scrumtool.md` [source-repository research, not shipped]).
 
 During the retro, as each action item is confirmed: open the sprint backlog tool and add it before moving on. Do not defer: the probability of adding it later drops sharply.
 
