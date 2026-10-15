@@ -1,6 +1,6 @@
 # Bind the SBOM to the release artifact
 
-Use this guide for O274. Start with [target audit](05-target-repository-audit.md) and the [release digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/dependency-audit-stinger/references/research/release-evidence/digest.md). Produce the [release evidence worksheet](../templates/release-artifact-evidence.md).
+Use this guide for O274. Start with [target audit](05-target-repository-audit.md) and the release digest. Produce the [release evidence worksheet](../templates/release-artifact-evidence.md).
 
 ## Identify what the consumer receives
 

@@ -130,4 +130,4 @@ git worktree lock ../feature-a --reason "On external drive"
 git worktree unlock ../feature-a
 ```
 
-Sources: research/external/03-worktrees.md
+Sources: research/external/03-worktrees.md (source-repository research, not shipped)

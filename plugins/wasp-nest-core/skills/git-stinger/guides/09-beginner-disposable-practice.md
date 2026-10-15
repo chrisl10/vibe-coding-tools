@@ -1,6 +1,6 @@
 # Learn Git with a disposable practice repository
 
-Grounding: [fresh command distillation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/git-stinger/references/research/beginner-practice/distillation.md).
+Grounding: fresh command distillation.
 
 ## Before practice
 

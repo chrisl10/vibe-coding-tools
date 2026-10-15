@@ -2,7 +2,7 @@
 
 > Preserved Hivemind npm case. Read [target repository audit](05-target-repository-audit.md) first; use the package-specific paths, guards and commands below only when the inspected target has them. Recheck vendor/version claims against current primary documentation before recommending or changing tools.
 
-> **Research source:** `research/external/04-npm-provenance-sigstore-2026.md` (HIGH)
+> **Research source:** `research/external/04-npm-provenance-sigstore-2026.md` (source-repository research, not shipped) (HIGH)
 
 Two things protect the integrity of what `@deeplake/hivemind` ships: npm provenance (proof of where the package was built) and the repo's own publish-time guards (proof that nothing unexpected got into the tarball). This guide covers both.
 
@@ -24,7 +24,7 @@ Requirements:
 - Generates a Sigstore attestation automatically - no signing keys to manage
 - The attestation is stored in the npm registry and visible at `npmjs.com/package/@deeplake/hivemind/v/<version>`
 
-Treat those paths as retained case facts. Verify actual runner/provider, repository metadata, package visibility, publish method and authorization. Current npm trusted publishing can generate provenance automatically without the flag; see the [fresh release digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/dependency-audit-stinger/references/research/release-evidence/digest.md). Do not change release configuration or publish from this guide alone.
+Treat those paths as retained case facts. Verify actual runner/provider, repository metadata, package visibility, publish method and authorization. Current npm trusted publishing can generate provenance automatically without the flag; see the fresh release digest. Do not change release configuration or publish from this guide alone.
 
 ### Verifying provenance as a consumer
 
@@ -36,7 +36,7 @@ npm audit signatures
 npm audit signatures --json --include-attestations
 ```
 
-The current npm audit manual documents signature checks and include-attestations output. Verify the installed CLI supports those flags and preserve actual output; the [fresh audit capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/dependency-audit-stinger/references/research/release-evidence/raw/npm-audit.txt) is documentation, not an executed consumer verification.
+The current npm audit manual documents signature checks and include-attestations output. Verify the installed CLI supports those flags and preserve actual output; the fresh audit capture is documentation, not an executed consumer verification.
 
 ### What provenance does and does not tell you
 
