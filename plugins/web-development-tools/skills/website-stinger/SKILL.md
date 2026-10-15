@@ -31,7 +31,7 @@ Do not invoke for: one-page copy tweaks, Lighthouse audits on existing sites, de
 
 ## Scoped outcome entry
 
-Load [quick website guide14](guides/14-scope-a-quick-website.md) for O062 and `/build-quick-website`; load [independent Payload guide15](guides/15-build-an-independent-payload-cms.md) for O070 and CMS-only work. These guides supersede full-template requirements when no auth, database, tracking or managed editing was accepted. Use the [scope worksheet](templates/website-scope.md), [CMS contract](templates/payload-content-contract.md) and [constructed cases](examples/scoped-website-outcomes.md). Domain claims trace to [fresh own research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/website-stinger/references/research/scoped-website/distilled.md). Missing framework implementers and pending runtime proof stay explicit.
+Load [quick website guide14](guides/14-scope-a-quick-website.md) for O062 and `/build-quick-website`; load [independent Payload guide15](guides/15-build-an-independent-payload-cms.md) for O070 and CMS-only work. These guides supersede full-template requirements when no auth, database, tracking or managed editing was accepted. Use the [scope worksheet](templates/website-scope.md), [CMS contract](templates/payload-content-contract.md) and [constructed cases](examples/scoped-website-outcomes.md). Domain claims trace to fresh own research. Missing framework implementers and pending runtime proof stay explicit.
 
 ## CMS mode selection
 
@@ -51,7 +51,7 @@ Document the choice in the Build Report (Inputs section) and in the Phase 1 comm
 1. **Read `guides/00-principles.md` first.** It encodes the architectural commitments that downstream phases depend on.
 2. **Collect inputs in one batched round.** Use `templates/inputs-checklist.md`. Include the CMS-mode question. Surface architectural consequences of any phase opt-out before scaffolding.
 3. **Initialize the Build Report.** Copy `templates/build-report.md` into the target repo as `build-report.md` and fill the Inputs section.
-4. **Execute phases in canonical order:** `1 → 2 → 5 → 6 → 7 → 3 → 4 → 8 → 9 → 10 → 12 → 11`. For each phase: read `guides/0N-<topic>.md`, glance at the source PRD in `research/source-prds/`, apply the changes, run the smoke check, update the Build Report row, prepare an appropriate phase commit only when authorized after the gates.
+4. **Execute phases in canonical order:** `1 → 2 → 5 → 6 → 7 → 3 → 4 → 8 → 9 → 10 → 12 → 11`. For each phase: read `guides/0N-<topic>.md`, apply the changes, run the smoke check, update the Build Report row, prepare an appropriate phase commit only when authorized after the gates.
 5. **Skip honestly.** When the brief opts out of a phase, mark it `skip` with a one-line rationale. Never silently downgrade.
 6. **Walk Risks and Open Questions** from the source PRDs into the Build Report's Next steps section.
 7. **Final pass.** Read the Build Report end to end. Anything that reads as "I forgot why I did that" gets the PRD citation now, not later.
@@ -107,9 +107,9 @@ Full rationale lives in `guides/00-principles.md`.
 
 ## Research
 
-- `research/research-plan.md`: source list, PRD-to-guide mapping, SvelteKit + Payload + animation sources
-- `research/README.md`: index and pointer to website-stinger/research/ for Payload-specific deep research
-- `research/source-prds/`: the canonical 12-phase guide bundled as source PRDs
+- `research/research-plan.md` (source-repository research, not shipped with the plugin): source list, PRD-to-guide mapping, SvelteKit + Payload + animation sources
+- Source research archive (not shipped with the plugin): do not require it.
+- `research/source-prds/` (source-repository research, not shipped with the plugin): the canonical 12-phase guide bundled as source PRDs
 
 ---
 

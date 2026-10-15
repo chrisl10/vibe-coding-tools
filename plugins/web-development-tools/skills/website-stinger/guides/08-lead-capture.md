@@ -1,6 +1,6 @@
 # 08: Lead Capture & Contact Forms
 
-Source PRD: `research/source-prds/prd-phase-08-lead-capture-contact-forms.md`
+Source PRD: `research/source-prds/prd-phase-08-lead-capture-contact-forms.md` (source-repository research, not shipped)
 
 ---
 
