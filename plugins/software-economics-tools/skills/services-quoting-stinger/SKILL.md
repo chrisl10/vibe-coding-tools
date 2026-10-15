@@ -11,7 +11,7 @@ metadata:
 
 # Services quotations
 
-Prepare a reviewable proposed quote with acceptance scope, effort/cost evidence, uncertainty, pricing maths and separate maintenance coverage. Runtime is research/preparation; it does not send, accept or implement a contract.
+Prepare a reviewable proposed quote with acceptance scope, effort/cost evidence, uncertainty, pricing maths and separate maintenance coverage. Runtime is research/preparation (source-repository research, not shipped with the plugin); it does not send, accept or implement a contract.
 
 ## When to use
 
@@ -43,7 +43,7 @@ No market-hourly-rate guesses, public price changes, purchases, signatures, cust
 
 - [README](README.md): guide map.
 - [Executable sample input](references/example-input.json): supplied hypothetical website quote for the offline calculator.
-- [Research archive](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/software-economics-tools/skills/services-quoting-stinger/references/research/raw/sba-plan.md), [FAR context](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/software-economics-tools/skills/services-quoting-stinger/references/research/raw/far-application.md), [source hashes](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/software-economics-tools/skills/services-quoting-stinger/references/research/sources.json): grounding and limitations.
+- Research archive, FAR context, source hashes: grounding and limitations.
 - [Paired Drone](../../agents/services-quoting-wasp-drone.md): owning specialist.
 
 <!-- Ship Gate removed: research-only runtime, produces no application implementation or provider writes. Component construction still requires parent Security then Quality and repository health before authorized commit/push. -->

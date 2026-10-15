@@ -2,6 +2,7 @@
 name: "source-command-quote-project"
 description: "Prepare a scoped proposed website, app/integration or maintenance quote with effort/cost evidence, pricing maths and change boundaries."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-quote-project
