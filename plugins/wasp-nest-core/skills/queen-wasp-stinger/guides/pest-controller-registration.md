@@ -10,7 +10,7 @@ Skill folder names must exactly match the frontmatter `name` (a hard Cursor requ
 
 ## Source ownership and installed availability
 
-The root [plugin catalog](../../../../plugin-catalog.json) is the source of truth. Core retains the six immutable foundation skills; do not add a new specialist to Core by default. Choose its approved plugin owner and preserve the user's access/approval limits.
+The root [plugin catalog](../../../plugin-catalog.json) is the source of truth. Core retains the six immutable foundation skills; do not add a new specialist to Core by default. Choose its approved plugin owner and preserve the user's access/approval limits.
 
 For source work, resolve files from source_root and the component rows in that catalog. For installed work, use installed Core's hooks/resolve-component.py against the explicit selected-plugin registry and required workflow key. Never edit a cached install to forge a canonical component.
 

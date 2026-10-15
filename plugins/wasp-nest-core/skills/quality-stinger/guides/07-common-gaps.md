@@ -65,7 +65,7 @@ Each pattern below lists:
 ## Performance gaps
 
 ### N+1 dataset reads
-See `research/2026-04-24-prisma-n-plus-one.md` for the general ORM/dataset pattern.
+See `research/2026-04-24-prisma-n-plus-one.md` (source-repository research, not shipped) for the general ORM/dataset pattern.
 - **Gap:** One read for a list, then one read per item for related data.
 - **Signature:**
   - `for/map` over a list of ids calling a single-record `get`/`findUnique` per element.
@@ -164,4 +164,4 @@ Add new patterns to this file as they recur across audits. The file is a living 
 ## See also
 
 - Examples: `examples/02-blocker-heavy-audit.md` demonstrates several patterns from this catalog.
-- Research: `research/2026-04-24-react-nextjs-review-checklist.md`, `research/2026-04-24-prisma-n-plus-one.md`, `research/2026-04-24-regression-without-tests.md` (external source notes; the detection patterns are applied here to the TypeScript/Deep Lake stack).
+- Research: `research/2026-04-24-react-nextjs-review-checklist.md`, `research/2026-04-24-prisma-n-plus-one.md`, `research/2026-04-24-regression-without-tests.md` (source-repository research, not shipped) (external source notes; the detection patterns are applied here to the TypeScript/Deep Lake stack).

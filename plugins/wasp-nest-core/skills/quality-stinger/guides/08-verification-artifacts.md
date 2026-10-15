@@ -1,6 +1,6 @@
 # Bind verification to the candidate actually reviewed
 
-Use alongside inventory, traceability and report writing whenever a QA conclusion depends on executed checks, generated outputs or imported evidence. O293 extends the existing report; it grants no permission to run remote jobs or publish evidence. Start with the receiving plan and repository's existing tooling. [Research and limits](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/quality-stinger/references/research/verification-artifacts/distillation.md).
+Use alongside inventory, traceability and report writing whenever a QA conclusion depends on executed checks, generated outputs or imported evidence. O293 extends the existing report; it grants no permission to run remote jobs or publish evidence. Start with the receiving plan and repository's existing tooling. Research and limits.
 
 ## 1. Declare the claim and the scope
 
@@ -8,7 +8,7 @@ Write what this packet can establish: source guidance qualification, static anal
 
 ## 2. Pin the bytes and freeze the inputs
 
-Record resolved full base/head IDs and worktree identity. Inventory committed, staged, unstaged and untracked files with existing repository tools. A three-dot diff alone does not capture dirty inputs; retain the existing inventory procedure. See [Git reference](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/quality-stinger/references/research/verification-artifacts/raw/git-diff.html.txt).
+Record resolved full base/head IDs and worktree identity. Inventory committed, staged, unstaged and untracked files with existing repository tools. A three-dot diff alone does not capture dirty inputs; retain the existing inventory procedure. See Git reference.
 
 Reuse an existing candidate manifest. If none exists, record a deterministic sorted inventory of reviewed relative paths and exact-byte hashes using already available tools. State scope exclusions, deleted-path representation, modes and symlink policy. Include relevant plan, configuration, fixtures and lockfiles; do not collect secrets or unrelated customer files. Hash the manifest bytes. Keep the manifest/report outside its own subject set to avoid circular hashes. Record external inputs that cannot be pinned as limitations. Do not call a scoped manifest a full-repository identity.
 
@@ -29,13 +29,13 @@ Fill [verification-artifacts.md](../templates/verification-artifacts.md) with th
 | STALE | Recorded result applies to an older candidate or relevant changed input. |
 | UNKNOWN | A required fact was not observed; do not manufacture timestamps, counts or exits. |
 
-Keep runner labels such as xfail and xpass and their configured strictness. A green exit does not convert those cases into passed assertions. [pytest outcome semantics](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/quality-stinger/references/research/verification-artifacts/raw/pytest-skips.html.txt). For a negative test, record the expected refusal/error and actual assertion result; an ERROR line may be the expected fixture output. Inspect the terminal test summary and required assertion rather than guessing from one log line.
+Keep runner labels such as xfail and xpass and their configured strictness. A green exit does not convert those cases into passed assertions. pytest outcome semantics. For a negative test, record the expected refusal/error and actual assertion result; an ERROR line may be the expected fixture output. Inspect the terminal test summary and required assertion rather than guessing from one log line.
 
 ## 4. Identify generated artifacts and their producer
 
 Record source candidate, build command/version, inputs, invocation receipt and each output's actual digest. A successful build does not establish that the packaged output contains the reviewed bytes. Use existing distribution checks to compare expected contents, transformation rules and output identity. If a report imports external evidence, retain its subject, producer and verification basis; identify agent-authored summaries as summaries.
 
-SLSA separates outputs, build inputs, builder and run metadata. Use that separation without claiming conformance to its format. [Build provenance](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/quality-stinger/references/research/verification-artifacts/raw/slsa-build-provenance.html.txt). A local manifest has no signature or independent producer verification unless actually supplied. Hash equality is an integrity observation, not a trust, license or security verdict. Where signed provenance exists, record the verification result against the intended artifact and expected producer policy; absence stays NOT_PRESENT. [Attestation purpose](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/quality-stinger/references/research/verification-artifacts/raw/github-attestations.html.txt).
+SLSA separates outputs, build inputs, builder and run metadata. Use that separation without claiming conformance to its format. Build provenance. A local manifest has no signature or independent producer verification unless actually supplied. Hash equality is an integrity observation, not a trust, license or security verdict. Where signed provenance exists, record the verification result against the intended artifact and expected producer policy; absence stays NOT_PRESENT. Attestation purpose.
 
 ## 5. Close only the supported claims
 

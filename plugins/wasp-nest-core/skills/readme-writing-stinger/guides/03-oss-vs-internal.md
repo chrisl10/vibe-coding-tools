@@ -1,6 +1,6 @@
 # OSS vs Internal README
 
-> Source: `research/external/2026-05-20-readme-structure-best-practices.md`
+> Source: `research/external/2026-05-20-readme-structure-best-practices.md` (source-repository research, not shipped)
 
 Two audiences. Two registers. Two templates. Never mix them.
 

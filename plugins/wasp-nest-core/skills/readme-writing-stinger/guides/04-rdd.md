@@ -1,6 +1,6 @@
 # README-Driven Development (RDD)
 
-> Source: `research/external/2026-05-20-readme-driven-development.md`
+> Source: `research/external/2026-05-20-readme-driven-development.md` (source-repository research, not shipped)
 >
 > Note: The primary source for RDD is Tom Preston-Werner's `noffle/art-of-readme` manifesto (https://github.com/noffle/art-of-readme), which was not scraped in this shallow research pass. The findings below derive from secondary sources. Fetch the primary source directly when authoring high-fidelity RDD guidance.
 
@@ -10,7 +10,7 @@
 
 README-driven development is the practice of writing the README before writing implementation code. The README functions as a design document, an API spec, and a success criterion all in one.
 
-Quantitative evidence from 2026 team metrics (from `research/external/2026-05-20-readme-driven-development.md`):
+Quantitative evidence from 2026 team metrics (from `research/external/2026-05-20-readme-driven-development.md` [source-repository research, not shipped]):
 - 22% fewer rewrites when README is authored before code
 - 3x faster onboarding for new contributors
 - 34% reduction in "exploratory coding" time (building features that are then removed)
