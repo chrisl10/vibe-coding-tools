@@ -1,6 +1,6 @@
 ---
 name: code-foundation-stinger
-description: Read-only repo health audit: Wasp Nest setup, agent readiness, CI, tests, lint, lockfiles, secrets, governance. Writes contract-shaped foundation findings and measures. Never edits the repo.
+description: "Read-only repo health audit: Wasp Nest setup, agent readiness, CI, tests, lint, lockfiles, secrets, governance. Writes contract-shaped foundation findings and measures. Never edits the repo."
 license: AGPL-3.0-or-later
 compatibility: Claude Code 2.1 or newer, Cursor 2.4 or newer, Codex, Cowork. Scripts need Python 3.11 and git; gh is optional (read-only checks); project test commands run only in a throwaway copy.
 metadata:
@@ -62,7 +62,7 @@ Answer one question for the `/audit-my-code` run: is this repository set up so h
 | `references/runtime-eol-table.md` | End-of-life Node and Python pins |
 | `references/finding-templates.md` | Writing judgment findings |
 | `references/research/distilled-foundation.md` | Verifying a claim or resolving a conflict |
-| `references/research/raw/` | Tracing a distilled claim to its source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `scripts/foundation_scan.py` | Step 3: deterministic scan, read-only |
 | `scripts/run_in_copy.py` | Running project commands in the throwaway copy only |
 | `scripts/assemble_foundation.py` | Step 5: validate and write the three output files |

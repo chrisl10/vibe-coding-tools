@@ -1,6 +1,6 @@
 # Tool commands
 
-Copy-ready commands for every step. Variables:
+Copy-ready commands for every step. They are bash: on macOS and Linux run them as written; on Windows run them in Git Bash or WSL (PowerShell and cmd cannot run them). The copy and the Python helpers (`make_scratch_copy.py`, `size_profile.py`, `function_profile.py`, and the others in `scripts/`) are plain Python and run anywhere. Variables:
 
 - `WS`: the run workspace, for example `<parent>/<repo>-code-audit/2026-09-30-vibe`
 - `COPY`: `$WS/.scratch/repo-copy` (the throwaway copy, never the audited repo)
@@ -15,6 +15,8 @@ Copy-ready commands for every step. Variables:
    ```bash
    mkdir -p "$WS/.scratch/home" "$WS/.scratch/tmp"
    SAFE_ENV=(env -i PATH="$PATH" HOME="$WS/.scratch/home" TMPDIR="$WS/.scratch/tmp" LANG="${LANG:-C.UTF-8}" CI=1)
+   # Git Bash on Windows: Node, Python and Go fail without these system variables, which hold no credentials.
+   [ -n "${SYSTEMROOT:-}" ] && SAFE_ENV+=(SYSTEMROOT="$SYSTEMROOT" COMSPEC="${COMSPEC:-}" PATHEXT="${PATHEXT:-}" TEMP="$WS/.scratch/tmp" TMP="$WS/.scratch/tmp")
    ```
 
 2. **Consent before repository code runs.** jscpd, cloc, scc, lizard, vulture, and cargo-machete only read files. knip loads the project's own config files (`vitest.config.ts`, `playwright.config.ts`, `next.config.js`, and others) by executing them, installing dependencies runs package code, and `cargo check` runs `build.rs`. Run those only when `intake.json.execution.allowed` is true, in the consented mode (`container`: if knip plugins need the copy's dependencies, install them first in a container with network and scripts off, as in the contract's two-phase container mode; then run `docker run --rm --network none -v "$COPY":/w -v "$TOOLS":/tools -w /w node:<exact version> node /tools/node_modules/knip/bin/knip.js ...`; `host`: the commands below with `SAFE_ENV`). Use an exact image tag that matches the repository's runtime (from `.nvmrc`, `engines`, or `.tool-versions`, for example `node:22.12.0`), never a floating major tag, and record it in `raw/versions.txt`. When it is false, skip them and record the cap "unused-code analysis not run: knip executes the project's config files and the user declined code execution", with dead-code measures set to `not-run`.
@@ -25,8 +27,8 @@ Pin exact versions and record them. Versions below were current on 2026-09-30 [r
 
 ```bash
 mkdir -p "$WS/.scratch" "$TOOLS" "$RAW"
-# Throwaway copy: git archive never writes to the audited repo's .git
-mkdir -p "$COPY" && git -C "<repo>" archive --format=tar HEAD | tar -x -C "$COPY"
+# Throwaway copy (usually already made by the orchestrator): git archive, never writes to the audited repo's .git
+[ -d "$COPY" ] || python3 "<audit-my-code-stinger>/scripts/make_scratch_copy.py" "<repo>" "$COPY"
 git -C "<repo>" rev-parse HEAD > "$RAW/sha.txt"
 # Tools live outside the copy so the copy's package.json is untouched
 cd "$TOOLS" && npm init -y >/dev/null && "${SAFE_ENV[@]}" npm i --ignore-scripts --no-audit --no-fund jscpd@5.4.0 knip@6.39.0
@@ -117,8 +119,10 @@ The commands above verify the scc archive against the release's `checksums.txt` 
 ## Function size (guide 04)
 
 ```bash
-python3 -m venv "$WS/.scratch/venv" && "$WS/.scratch/venv/bin/pip" -q install lizard==1.24.0
-"${SAFE_ENV[@]}" "$WS/.scratch/venv/bin/lizard" --csv -l typescript -l tsx -l javascript -x "*/node_modules/*" -x "*/dist/*" "$COPY" > "$RAW/lizard.csv"
+python3 -m venv "$WS/.scratch/venv"
+VENV_BIN="$WS/.scratch/venv/bin"; [ -d "$WS/.scratch/venv/Scripts" ] && VENV_BIN="$WS/.scratch/venv/Scripts"   # Windows venvs use Scripts/
+"$VENV_BIN/pip" -q install lizard==1.24.0
+"${SAFE_ENV[@]}" "$VENV_BIN/lizard" --csv -l typescript -l tsx -l javascript -x "*/node_modules/*" -x "*/dist/*" "$COPY" > "$RAW/lizard.csv"
 python3 "$SKILL_DIR/scripts/function_profile.py" --lizard-csv "$RAW/lizard.csv" --strip-prefix "$COPY" --cross-check "$COPY" \
   --exclude '**/node_modules/**' --top 20 --closure-min 1000 --json-out "$RAW/functions.json"   # --cross-check for JS/TS
 # fallback for JS/TS without lizard (label as heuristic):
@@ -128,8 +132,8 @@ python3 "$SKILL_DIR/scripts/function_profile.py" --heuristic "$COPY" --exclude '
 ## Non-JS dead code (guide 02, section 6)
 
 ```bash
-"$WS/.scratch/venv/bin/pip" -q install vulture==2.16
-"${SAFE_ENV[@]}" "$WS/.scratch/venv/bin/vulture" "$COPY" --min-confidence 80 --sort-by-size --exclude "*/.venv/*,*/tests/*" > "$RAW/vulture.txt"
+"$VENV_BIN/pip" -q install vulture==2.16   # VENV_BIN as set in the function-size block
+"${SAFE_ENV[@]}" "$VENV_BIN/vulture" "$COPY" --min-confidence 80 --sort-by-size --exclude "*/.venv/*,*/tests/*" > "$RAW/vulture.txt"
 cd "$COPY" && "${SAFE_ENV[@]}" GOPATH="$WS/.scratch/gopath" GOCACHE="$WS/.scratch/gocache" go run golang.org/x/tools/cmd/deadcode@v0.50.0 ./... > "$RAW/deadcode.txt"
 cd "$COPY" && "${SAFE_ENV[@]}" GOPATH="$WS/.scratch/gopath" GOCACHE="$WS/.scratch/gocache" go run honnef.co/go/tools/cmd/staticcheck@2026.2.1 -checks U1000 ./... > "$RAW/staticcheck-u1000.txt"
 "${SAFE_ENV[@]}" CARGO_HOME="$WS/.scratch/cargo" cargo install --locked cargo-machete --version 0.9.2 && cd "$COPY" && "${SAFE_ENV[@]}" "$WS/.scratch/cargo/bin/cargo-machete" > "$RAW/cargo-machete.txt"

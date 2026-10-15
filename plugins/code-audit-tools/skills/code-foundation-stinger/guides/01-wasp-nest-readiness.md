@@ -40,8 +40,10 @@ Decide whether the repository looks like one that `get-started-stinger` has set 
 
 ## Sources
 
-- [research/raw/wasp-nest--get-started-assess-map.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/wasp-nest--get-started-assess-map.md)
-- [research/raw/wasp-nest--library-schema-v2.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/wasp-nest--library-schema-v2.md)
-- [research/raw/agents--agents-md-spec.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/agents--agents-md-spec.md)
-- [research/raw/claude-code--memory-claude-md.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/claude-code--memory-claude-md.md)
-- [research/raw/research--agents-md-efficiency-arxiv-2601-20404.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/research--agents-md-efficiency-arxiv-2601-20404.md)
+The notes listed below are source-repository research, not shipped.
+
+- research/raw/wasp-nest--get-started-assess-map.md (source-repository research, not shipped)
+- research/raw/wasp-nest--library-schema-v2.md (source-repository research, not shipped)
+- research/raw/agents--agents-md-spec.md (source-repository research, not shipped)
+- research/raw/claude-code--memory-claude-md.md (source-repository research, not shipped)
+- research/raw/research--agents-md-efficiency-arxiv-2601-20404.md (source-repository research, not shipped)

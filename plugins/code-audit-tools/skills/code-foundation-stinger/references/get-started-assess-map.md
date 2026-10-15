@@ -1,6 +1,6 @@
 # Get-started assess map
 
-How the Foundation audit uses `get-started-stinger` without ever running its write steps. Read `src/skills/get-started-stinger/` (SKILL.md, guides 01 to 08, scripts, templates) in the Wasp Nest source or the installed plugin when you need more than this map. Condensed source: [research/raw/wasp-nest--get-started-assess-map.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/wasp-nest--get-started-assess-map.md).
+How the Foundation audit uses `get-started-stinger` without ever running its write steps. Read `src/skills/get-started-stinger/` (SKILL.md, guides 01 to 08, scripts, templates) in the Wasp Nest source or the installed plugin when you need more than this map. Condensed source: research/raw/wasp-nest--get-started-assess-map.md.
 
 ## Assess-only rule
 

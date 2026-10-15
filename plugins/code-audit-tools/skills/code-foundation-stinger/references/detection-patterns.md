@@ -1,6 +1,6 @@
 # Detection patterns and code pairs
 
-Patterns for the checks the Drone does by hand (the script already applies the first set). Use ripgrep with `--no-config` against the repo, or Grep. Sources: [research/raw/actions--secure-use.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/actions--secure-use.md), [research/raw/scorecard--checks-reference.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/scorecard--checks-reference.md), [research/raw/git--gitignore.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/git--gitignore.md).
+Patterns for the checks the Drone does by hand (the script already applies the first set). Use ripgrep with `--no-config` against the repo, or Grep. Sources: research/raw/actions--secure-use.md, research/raw/scorecard--checks-reference.md, research/raw/git--gitignore.md.
 
 ## Workflow files (`.github/workflows/*.yml`)
 
