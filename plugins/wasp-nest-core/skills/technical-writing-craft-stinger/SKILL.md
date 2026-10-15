@@ -56,11 +56,11 @@ When asked to write rather than review:
 
 ## Audience document packets
 
-Use [library-packets-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/documentation-tools/skills/library-packets-stinger/SKILL.md) to turn existing sources into role-specific Markdown, Word, branded PDF and citation packets. Source authoring remains with this skill.
+Use [library-packets-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/documentation-tools/skills/library-packets-stinger/SKILL.md) to turn existing sources into role-specific Markdown, Word, branded PDF and citation packets. Source authoring remains with this skill.
 
 ## Critical directives
 
-- **Classify Diataxis mode before offering any prose feedback.** Mode-mixing is the root cause of most documentation confusion. Fixing prose before fixing structure wastes both parties' time. Source: `research/external/01-diataxis-framework-overview.md`.
+- **Classify Diataxis mode before offering any prose feedback.** Mode-mixing is the root cause of most documentation confusion. Fixing prose before fixing structure wastes both parties' time. Source: `research/external/01-diataxis-framework-overview.md` (source-repository research, not shipped with the plugin).
 - **Never produce a vague finding.** Every Blocker must include a specific rewrite proposal. "Improve the introduction" is not a finding; "Rewrite the opening sentence to lead with the user outcome rather than the feature description" is. Source: Command Brief SUBAGENT CRITICAL DIRECTIVES.
 - **Respect the supplied style guide; do not impose the stinger's default style when a house style exists.** Source: Command Brief.
 - **Do not recommend platform changes, folder moves, or metadata edits.** Those concerns belong to peer Drones.

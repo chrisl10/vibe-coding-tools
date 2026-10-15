@@ -1,6 +1,6 @@
 # 00 - Diataxis Framework
 
-> Source: `research/external/01-diataxis-framework-overview.md`, `research/external/02-diataxis-four-modes-deep.md`
+> Source: `research/external/01-diataxis-framework-overview.md`, `research/external/02-diataxis-four-modes-deep.md` (source-repository research, not shipped)
 
 Diataxis (from Greek: "across arrangement") is the organizing canon for this stinger. Every review starts with a mode classification. Every ghostwriting session starts with mode selection. Mode-mixing is the root cause of most "I don't understand this doc" complaints; fixing prose before fixing structure wastes everyone's time.
 
