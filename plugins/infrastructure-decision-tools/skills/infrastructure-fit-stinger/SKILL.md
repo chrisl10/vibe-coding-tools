@@ -43,11 +43,11 @@ Recommend one infrastructure topology from a normalized workload, budget and ope
 
 ## References map
 
-- [Research digest](references/research/distilled-infrastructure-fit.md), [raw ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/infrastructure-decision-tools/skills/infrastructure-fit-stinger/references/research/source-ledger.json): factual grounding and fetch limits.
+- [Research digest](references/research/distilled-infrastructure-fit.md), raw ledger: factual grounding and fetch limits.
 - [Envelope checker](scripts/check-envelope.py): archive/link and encoded contract checks; no current-cost calculation or runtime qualification.
 - [Paired Drone](../../agents/infrastructure-fit-wasp-drone.md): delegation scope.
 
-Runtime is research-only. Ship Gate removed: this workflow produces infrastructure advice rather than application-code changes. Source forge promotion/registration and commits receive parent-owned ordered review gates. A staging copy is not a selected installation.
+Runtime is research-only. Ship Gate removed: this workflow produces infrastructure advice rather than application-code changes. Source changes and commits receive ordered Security, Quality and Health review gates. A source checkout is not a selected installation.
 
 ## Critical Directive
 

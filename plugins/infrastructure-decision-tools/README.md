@@ -2,7 +2,7 @@
 
 Prepare platform assets and account dependencies without implicit setup actions.
 
-Requires `wasp-nest-core`. This is a source candidate; no installation or native-host qualification is implied.
+Requires `wasp-nest-core`.
 
 <!-- wasp-pack-guide:start -->
 ## Choose a capability
