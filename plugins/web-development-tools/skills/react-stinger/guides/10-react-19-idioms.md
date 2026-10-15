@@ -1,6 +1,6 @@
 # 10: React 19 Idioms
 
-Source: `research/2026-04-24-react-19-actions-hooks.md`, `research/2026-04-24-react-compiler-1.md`.
+Source: `research/2026-04-24-react-19-actions-hooks.md`, `research/2026-04-24-react-compiler-1.md` (source-repository research, not shipped).
 
 ## Applicability
 

@@ -1,6 +1,6 @@
 # Split a giant component while preserving behavior
 
-Use size as a navigation signal, not proof of a defect. Start with the existing characterization baseline and [comparison record](../templates/outcome-comparison-record.md). [Grounding](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/react-stinger/references/research/outcome-modernization/distillation.md#component-identity)
+Use size as a navigation signal, not proof of a defect. Start with the existing characterization baseline and [comparison record](../templates/outcome-comparison-record.md). Grounding
 
 1. Inventory visible states, inputs, forms, focus, accessible names, keys, draft persistence, selection, URL behavior, requests, analytics and effect setup/cleanup. Record source lines and actual existing checks. Missing critical characterization blocks a claim of preserved behavior.
 2. Pick one coherent presentation seam. Extract a module-level component with explicit props/events. Keep state and side effects in the existing owner for the first step. Do not define a new component type inside its parent's render. Keep DOM hierarchy, keys and controlled/uncontrolled input contracts; changing type, position or key may reset state.

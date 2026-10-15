@@ -1,6 +1,6 @@
 # 06: Forms
 
-Source: `research/2026-04-24-forms-rhf-zod.md`, `research/2026-04-24-react-19-actions-hooks.md`.
+Source: `research/2026-04-24-forms-rhf-zod.md`, `research/2026-04-24-react-19-actions-hooks.md` (source-repository research, not shipped).
 
 ## The default stack
 

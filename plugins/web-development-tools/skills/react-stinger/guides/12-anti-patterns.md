@@ -1,6 +1,6 @@
 # 12: Anti-Patterns Catalog
 
-Sources: `research/2026-04-24-anti-patterns-useeffect.md`, https://react.dev/learn/you-might-not-need-an-effect.
+Sources: `research/2026-04-24-anti-patterns-useeffect.md` (source-repository research, not shipped), https://react.dev/learn/you-might-not-need-an-effect.
 
 Twelve anti-patterns, their canonical fixes, and how `scripts/scan-anti-patterns.ts` detects them.
 

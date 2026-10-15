@@ -1,6 +1,6 @@
 # 19: Notifications & Toasts
 
-Source: `research/2026-04-25-notifications-and-toasts.md`. Notifications are three different problems wearing the same name. Pick by *channel*, not by library popularity.
+Source: `research/2026-04-25-notifications-and-toasts.md` (source-repository research, not shipped). Notifications are three different problems wearing the same name. Pick by *channel*, not by library popularity.
 
 ## The three notification surfaces
 

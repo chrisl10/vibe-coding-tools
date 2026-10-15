@@ -2,7 +2,7 @@
 
 Opinionated picks from awesome-react, filtered to one default per category. When you recommend a library to the user, pick from this table and cite it.
 
-Source: `research/2026-04-24-awesome-react-ecosystem.md`.
+Source: `research/2026-04-24-awesome-react-ecosystem.md` (source-repository research, not shipped).
 
 ## The catalog
 
@@ -61,7 +61,7 @@ Source: `research/2026-04-24-awesome-react-ecosystem.md`.
 
 ## Open question
 
-The Wasp Nest may want a dedicated **TanStack ecosystem Drone** later (Query + Router + Table + Form + Start). Flagged in `research/research-plan.md` for a future brief.
+The Wasp Nest may want a dedicated **TanStack ecosystem Drone** later (Query + Router + Table + Form + Start). Flagged in `research/research-plan.md` (source-repository research, not shipped) for a future brief.
 
 ## Common findings
 

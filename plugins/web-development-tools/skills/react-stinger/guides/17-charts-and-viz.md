@@ -1,6 +1,6 @@
 # 17: Charts & Data Visualization
 
-Source: `research/2026-04-25-charts-and-viz.md`. Charts are the visible tip of a long pipeline (data layer, color tokens, accessibility). Pick by *chart shape* and *customization depth*, not by what looks coolest in a marketing site.
+Source: `research/2026-04-25-charts-and-viz.md` (source-repository research, not shipped). Charts are the visible tip of a long pipeline (data layer, color tokens, accessibility). Pick by *chart shape* and *customization depth*, not by what looks coolest in a marketing site.
 
 ## TL;DR pick
 

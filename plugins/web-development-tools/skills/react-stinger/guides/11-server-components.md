@@ -1,6 +1,6 @@
 # 11: Server Components
 
-Source: `research/2026-04-24-server-components-boundary.md`.
+Source: `research/2026-04-24-server-components-boundary.md` (source-repository research, not shipped).
 
 ## The mental model
 
