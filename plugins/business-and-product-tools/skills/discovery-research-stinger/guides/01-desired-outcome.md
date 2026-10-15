@@ -2,7 +2,7 @@
 
 How to define and validate the single desired outcome that anchors an Opportunity Solution Tree.
 
-**Research source:** `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md`, `research/external/2026-05-20-torres-2026-roadmap-ai-discovery.md`
+**Research source:** `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md`, `research/external/2026-05-20-torres-2026-roadmap-ai-discovery.md` (source-repository research, not shipped)
 
 ---
 

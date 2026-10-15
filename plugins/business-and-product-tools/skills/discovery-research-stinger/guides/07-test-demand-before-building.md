@@ -1,6 +1,6 @@
 # Test demand before building
 
-Grounding: [distillation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/discovery-research-stinger/references/research/demand-decision/distillation.md), especially SBA/NSF direct research, Strategyzer experiment criteria, and the existing assumption guide.
+Grounding: distillation, especially SBA/NSF direct research, Strategyzer experiment criteria, and the existing assumption guide.
 
 1. Read the desired outcome and assumption map. Confirm one customer segment, concrete current problem, competing workaround, proposed offer, and the next decision the test changes. Do not generate interview evidence from public market descriptions.
 2. Select one high-risk desirability or viability assumption. Split "they need it and they will pay" into separate claims. Record what observation would contradict each. Read the existing experiment-design guide to choose an appropriate prototype or direct-research method.

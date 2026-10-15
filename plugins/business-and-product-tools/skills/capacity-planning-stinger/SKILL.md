@@ -36,7 +36,7 @@ Use the owner's agreed local destination, or library/requirements/reports/capaci
 
 ## References
 
-- [Source hashes and exact quotes](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/capacity-planning-stinger/references/research/sources.json): verify archived claims.
+- Source hashes and exact quotes: verify archived claims.
 - [Paired Drone](../../agents/capacity-planning-wasp-drone.md): owning specialist.
 
 ## Critical Directive

@@ -2,7 +2,7 @@
 
 How to design the smallest experiment that validates or invalidates the riskiest assumption of a solution.
 
-**Research source:** `research/external/2026-05-20-assumption-mapping-dvf-2x2-2026.md`, `research/external/2026-05-20-nielsen-five-users-heuristic-2026.md`
+**Research source:** `research/external/2026-05-20-assumption-mapping-dvf-2x2-2026.md`, `research/external/2026-05-20-nielsen-five-users-heuristic-2026.md` (source-repository research, not shipped)
 
 ---
 
@@ -15,7 +15,7 @@ How to design the smallest experiment that validates or invalidates the riskiest
 | **Concierge** | The team does the job manually for a small set of real users, with no product UI at all | Desirability validation; "will they pay for/value this?" | Days |
 | **Fake door / landing page** | A page or button that looks like a real feature but captures intent signals (clicks, sign-ups) before the feature exists | Demand signal for a new audience or feature; tests whether users want to engage | Hours to 1 day |
 
-(Source: `research/external/2026-05-20-assumption-mapping-dvf-2x2-2026.md`)
+(Source: `research/external/2026-05-20-assumption-mapping-dvf-2x2-2026.md` [source-repository research, not shipped])
 
 ---
 
@@ -54,7 +54,7 @@ It does NOT apply to:
 - JTBD discovery interviews — run until saturation (5-7+ with no new opportunity nodes), regardless of the 5-user rule.
 - A/B tests — require proper sample size calculation.
 
-(Source: `research/external/2026-05-20-nielsen-five-users-heuristic-2026.md`)
+(Source: `research/external/2026-05-20-nielsen-five-users-heuristic-2026.md` [source-repository research, not shipped])
 
 ---
 
