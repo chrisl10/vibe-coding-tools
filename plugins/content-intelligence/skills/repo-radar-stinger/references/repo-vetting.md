@@ -10,7 +10,9 @@ The freshness rule binds the SPIKE, not the repo's age. Acceptable evidence, any
 
 A repo that trended last week, or that is merely popular in general, fails the gate. No evidence of a current spike, no post.
 
-## Beats this skill hunts, in priority order
+## Default beats, in priority order
+
+These are the shipped defaults. The user's beats in `references/editorial-preferences.md` override this list.
 
 1. Vibe coding and AI-assisted development tools (agents, IDE tooling, Claude/Copilot/Cursor ecosystems, agent skills)
 2. AI coding models, frameworks, and benchmarks
@@ -31,5 +33,5 @@ Skip: crypto pump repos, star-farmed template collections, awesome-lists with no
 
 ## Editorial boundaries
 
-- No celebrity gossip crossovers, no Democrat-promoting briefs; same boundaries as the news skill's references/source-tiers.md editorial section, applied on the rare occasion a repo story is political.
+- Follow the editorial policy in `references/editorial-preferences.md` (politically neutral by default: no partisan advocacy, contested issues presented fairly), applied on the rare occasion a repo story is political.
 - Sharp and provocative, never fabricated. The post must survive its own receipts being opened.
