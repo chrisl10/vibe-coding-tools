@@ -33,7 +33,7 @@ Build a bounded Wails desktop slice with a narrow Go facade, generated frontend 
 
 ## Procedure
 
-1. Read [the topic](TOPIC.md), [owner reference](references/REFERENCE.md) and [fresh digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/go-desktop-stinger/references/research/digest.md). Preserve explicit scope, target and effect authority.
+1. Read [the topic](TOPIC.md), [owner reference](references/REFERENCE.md) and fresh digest. Preserve explicit scope, target and effect authority.
 2. Follow [inspection](guides/01-inspect-and-scope.md): resolve actual Go/Wails/frontend versions, existing bindings/assets and native prerequisites. Missing framework selection blocks that branch.
 3. Follow [bindings](guides/02-bind-and-validate.md): dedicated facade, bounded DTOs, backend validation, safe errors, origins/navigation and native resource policies.
 4. Follow [lifecycle/storage](guides/03-own-lifecycle-and-storage.md): readiness, bounded jobs, cancellation and completion joins, explicit storage contracts and recovery.
@@ -45,8 +45,7 @@ Build a bounded Wails desktop slice with a narrow Go facade, generated frontend 
 
 - [README.md](README.md) - Owner selection and workflow map.
 - [references/REFERENCE.md](references/REFERENCE.md) - Bridge operation record, state ownership and peer boundaries.
-- [references/research/digest.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/go-desktop-stinger/references/research/digest.md) - Dated documented facts, repository fallback and conflicts.
-- [references/research/source-ledger.json](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/go-desktop-stinger/references/research/source-ledger.json) and raw source notes - Exact URL/date/body-hash proof.
+- Source research archive (not shipped with the plugin): do not require it.
 - [Fictional plan](examples/01-fictional-go-desktop-plan.md), [negative decisions](examples/02-negative-decisions.md) - NOT_RUN constructed acceptance decisions.
 - [Worksheet](templates/desktop-app-evidence.md) - Actual consumer target/effect/evidence record.
 
@@ -54,10 +53,10 @@ Build a bounded Wails desktop slice with a narrow Go facade, generated frontend 
 
 - [go-stinger](../go-stinger) - General Go modules, tooling and service internals.
 - [tauri-stinger](../tauri-stinger) and [electron-app-stinger](../electron-app-stinger) - Their existing shells and Go sidecar integration.
-- [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Independent trust-boundary acceptance.
-- [dependency-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/dependency-audit-stinger) - Advisory, license and dependency disposition.
-- [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/quality-stinger) - Final implementation-to-contract acceptance after Security.
-- [devops-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/devops-stinger) - CI and distribution infrastructure.
+- [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Independent trust-boundary acceptance.
+- [dependency-audit-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/dependency-audit-stinger) - Advisory, license and dependency disposition.
+- [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/quality-stinger) - Final implementation-to-contract acceptance after Security.
+- [devops-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/devops-stinger) - CI and distribution infrastructure.
 
 - [go-desktop-wasp-drone](../../agents/go-desktop-wasp-drone.md) - Paired Wails boundary implementation owner.
 
@@ -67,9 +66,9 @@ Build a bounded Wails desktop slice with a narrow Go facade, generated frontend 
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [go-stinger](../go-stinger) - General Go mechanics beneath the Wails boundary.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Independent first Ship Gate review.
-  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/quality-stinger) - Independent second gate after Security findings resolve.
-  - [github-repo-health-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/github-repo-health-stinger) - Parent-owned final repository gate.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Independent first Ship Gate review.
+  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/quality-stinger) - Independent second gate after Security findings resolve.
+  - [github-repo-health-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/github-repo-health-stinger) - Parent-owned final repository gate.
 
 ## Ship Gate
 

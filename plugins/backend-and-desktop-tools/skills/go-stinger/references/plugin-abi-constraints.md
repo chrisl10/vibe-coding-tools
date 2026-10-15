@@ -1,6 +1,6 @@
 # Go plugin (.so) ABI constraint table
 
-Source: [raw/02](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/go-stinger/references/research/raw/02-plugin-package.md). These constraints are the reason the one-tag rule exists.
+Source: raw/02. These constraints are the reason the one-tag rule exists.
 
 | Constraint | Documented rule | Practical consequence |
 |---|---|---|
