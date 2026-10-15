@@ -630,5 +630,4 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/littlebird-mcp-reference.md` | Tool inventory, parameters, return shapes, known limitations |
 | `references/evidence-standards.md` | Receipts, the four kinds of line, confidence ratings, attribution guardrail, confirmation gates |
 | `references/research/distilled-daily-brief-design.md` | Cited distillation: why digests get abandoned, the silence-is-not-the-fix finding, the length numbers, briefing format norms, the single-priority conflict, the time-of-day conflict, named gaps and the numbers this skill refuses to restate |
-| `references/research/README.md` | Archive layout, sweep coverage, source quality |
-| `references/research/raw/` | Fourteen archived sources, each with title, URL, fetch date, source type |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |

@@ -566,7 +566,7 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/problem-solved-extraction.md` | Stage 8. The error sweep, episode bounding, the three-part entry, unresolved problems, decisions. |
 | `references/changelog-formats.md` | Stage 10. Session log structure, the Keep a Changelog block, the prose variant, the coverage note. |
 | `references/research/distilled-dev-logging.md` | When you need the citation behind a rule, or want to check whether a claim is evidenced at all. |
-| `references/research/README.md` | Source inventory and the archive's seven named gaps. |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `sop-forge/references/redaction-pass.md` | Stage 5. Always. Not rebuilt here. |
 | `sop-forge/scripts/dedupe_snapshots.py` | Stage 4, and again at stage 5 with `--scan-secrets`. Not rebuilt here. |
 

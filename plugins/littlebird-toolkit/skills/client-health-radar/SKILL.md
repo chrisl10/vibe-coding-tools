@@ -533,4 +533,4 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/littlebird-mcp-reference.md` | Tool names, parameters, return shapes, known limitations |
 | `references/evidence-standards.md` | Receipts, the four kinds, confidence ratings, confirmation gates |
 | `references/research/distilled-client-health.md` | Every domain claim in this skill, cited to a raw source |
-| `references/research/README.md` | The archive index, the window exceptions, and the named gaps |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |

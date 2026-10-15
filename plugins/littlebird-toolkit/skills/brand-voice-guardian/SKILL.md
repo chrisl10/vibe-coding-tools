@@ -530,4 +530,4 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/littlebird-mcp-reference.md` | Tool inventory, parameters, return shapes, known limitations |
 | `references/evidence-standards.md` | Receipts, confidence, attribution, partial rosters, confirmation gates, empty retrieval |
 | `references/research/distilled-ai-detection-and-stylometry.md` | Cited distillation of the domain research, every claim traced to a raw file |
-| `references/research/README.md` | Archive contents, source mix and weighting, research window, evidence quality, ten named gaps, retrieval failures, recorded conflicts |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |

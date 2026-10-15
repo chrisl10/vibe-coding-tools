@@ -555,8 +555,7 @@ REPEAT or ESCALATED go to the top of the verification gate, not to the top of a 
 | `references/evidence-standards.md` | Before writing any output. Every phase. |
 | `references/littlebird-mcp-reference.md` | Before calling any Littlebird tool. Parameters, return shapes, known limitations. |
 | `references/research/distilled-receivables-collection.md` | Any time a domain figure or a legal statement is about to be made. |
-| `references/research/README.md` | To find which raw file backs a claim. |
-| `references/research/raw/` | To check a citation back to its source. |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `scripts/aging_calc.py` | Phases 2 and 4. Collapse, due-date derivation, days overdue, buckets, per-currency totals. |
 
 Ship Gate removed, research-only skill, produces no committable code.
