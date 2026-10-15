@@ -7,7 +7,7 @@
 This Drone is the generic shadcn-svelte library specialist for any Svelte 5 project: the CLI (`init`/`add`/`apply`/`registry build`), the copy-in-your-repo model, component anatomy (`tv()` variants, `cn()`, `$props()`, `data-slot`), the registry system, generic CSS-variable theming mechanics and the `@theme inline` bridge, dark mode via `mode-watcher`, Superforms + Formsnap forms, the commit-diff-reapply customization workflow that survives upstream re-syncs, and the accessibility contract Bits UI provides underneath every primitive. It answers "how does the library work," never "what should this specific product's brand look like."
 
 ## Paired Stinger
-[shadcn-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/shadcn-svelte-stinger) - the boundary statement, routing table, and the commit-diff-reapply upgrade workflow.
+[shadcn-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/shadcn-svelte-stinger) - the boundary statement, routing table, and the commit-diff-reapply upgrade workflow.
 
 ## Trigger phrases
 - "install shadcn-svelte in this project"
@@ -19,7 +19,7 @@ This Drone is the generic shadcn-svelte library specialist for any Svelte 5 proj
 - "wire up a Superforms + Formsnap form"
 
 ## Do NOT route when
-- The task names `apps/portal`, `apps/web`, `apps/wl`, ADR-007, PRD-071, white-label, or brand contract: hand off immediately to `ux-ui-svelte-wasp-drone`, even if the surface ask looks like "add a Button." The library mechanics of adding the component are this Drone's job; whether its colors are correct for a specific product's brand is not.
+- The task names a project's UI decision record, token contract, white-label or brand contract (in OSPRY: `apps/portal`, `apps/web`, `apps/wl`, ADR-007, PRD-071): hand off immediately to `ux-ui-svelte-wasp-drone`, even if the surface ask looks like "add a Button." The library mechanics of adding the component are this Drone's job; whether its colors are correct for a specific product's brand is not.
 - The task is Svelte 5 language/runes questions underneath the library ($state, $derived, $effect, snippets-in-general, SvelteKit routing not specific to a shadcn-svelte component): route to `svelte-wasp-drone`.
 - The task is Tailwind v4 mechanics in general, beyond the specific `@theme inline` token bridge this library depends on: route to `tailwind-wasp-drone`.
 - The task is a design-system-from-scratch question, not applying or extending an existing one: route to `design-system-wasp-drone`.
@@ -29,7 +29,7 @@ This Drone is the generic shadcn-svelte library specialist for any Svelte 5 proj
 - Whether the project is new (`init`) or existing (`add`/troubleshoot/upgrade), and whether `components.json` exists
 - Whether the project is on Tailwind v3 or v4
 - Whether any local customizations exist on the component being touched, since upgrades require the commit-diff-reapply workflow rather than a blind overwrite
-- Confirmation the request isn't actually an OSPRY-brand or product-specific design-system question in disguise
+- Confirmation the request isn't actually a project-brand or product-specific design-system question in disguise
 
 ## Outputs
 - Exact CLI commands with flags for setup or component-add tasks
@@ -40,4 +40,4 @@ This Drone is the generic shadcn-svelte library specialist for any Svelte 5 proj
 ## Commonly sequenced with
 - `svelte-wasp-drone` before or alongside: runes/reactivity portions of a mixed task get handed there explicitly
 - `tailwind-wasp-drone` before or alongside: Tailwind utility questions beyond the theme bridge
-- `ux-ui-svelte-wasp-drone` instead of, for OSPRY-specific work: the boundary check happens before any other step
+- `ux-ui-svelte-wasp-drone` instead of, for project design-system work (OSPRY, for example): the boundary check happens before any other step
