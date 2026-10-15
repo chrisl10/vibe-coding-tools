@@ -11,7 +11,7 @@ WebView input
   -> typed result or ordered Channel stream
 ```
 
-Runtime Authority performs the framework-level dispatch check. Application code still owns data validation, tenant or user authorization, safe path handling, rate limits, and secret policy. [research/raw/tauri--docs--runtime-authority.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--runtime-authority.md) [research/raw/tauri--docs--command-scopes.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--command-scopes.md)
+Runtime Authority performs the framework-level dispatch check. Application code still owns data validation, tenant or user authorization, safe path handling, rate limits, and secret policy. research/raw/tauri--docs--runtime-authority.md research/raw/tauri--docs--command-scopes.md
 
 ## Command contract
 
@@ -26,7 +26,7 @@ For each privileged command, document and implement:
 7. Cancellation and timeout behavior for long-running work.
 8. Bounded output and logs with secrets and prompt content redacted by policy.
 
-Tauri command and capability facts: [research/raw/tauri--docs--calling-rust.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--calling-rust.md) [research/raw/tauri--docs--capabilities.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--capabilities.md)
+Tauri command and capability facts: research/raw/tauri--docs--calling-rust.md research/raw/tauri--docs--capabilities.md
 
 ## Commands, events, and Channels
 
@@ -39,7 +39,7 @@ Tauri command and capability facts: [research/raw/tauri--docs--calling-rust.md](
 | Capability role | Command access can be permissioned | Event API permission, not business authorization | Authorize the command that creates the Channel |
 | AI fit | Start, cancel, save, list | Model-ready or lifecycle notification | Tokens, tool progress, usage, terminal result |
 
-Source: [research/raw/tauri--docs--calling-rust.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--calling-rust.md) [research/raw/tauri--docs--calling-frontend.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--calling-frontend.md)
+Source: research/raw/tauri--docs--calling-rust.md research/raw/tauri--docs--calling-frontend.md
 
 ## Capability review
 
@@ -53,7 +53,7 @@ Source: [research/raw/tauri--docs--calling-rust.md](https://github.com/legioncod
 - Treat Linux and Android iframe origin ambiguity as part of the threat model.
 - Use generated desktop, mobile, and remote schemas while editing capability files.
 
-Source: [research/raw/tauri--docs--capabilities.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--capabilities.md) [research/raw/tauri--docs--command-scopes.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--command-scopes.md)
+Source: research/raw/tauri--docs--capabilities.md research/raw/tauri--docs--command-scopes.md
 
 ## Secret boundary
 
@@ -64,14 +64,14 @@ Source: [research/raw/tauri--docs--capabilities.md](https://github.com/legioncod
 - Keep publisher-owned provider keys behind a publisher-controlled service because a distributed desktop binary runs on a user-controlled machine.
 - Scan final frontend assets and packaged resources for secret identifiers and test canaries as a derived release safeguard.
 
-Source and derived policy: [research/raw/tauri--docs--process-model.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--process-model.md) [research/raw/tauri--docs--stronghold-plugin.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--stronghold-plugin.md) [research/raw/tauri--docs--content-security-policy.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--content-security-policy.md) [research/raw/vite--docs--environment-variables.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/vite--docs--environment-variables.md)
+Source and derived policy: research/raw/tauri--docs--process-model.md research/raw/tauri--docs--stronghold-plugin.md research/raw/tauri--docs--content-security-policy.md research/raw/vite--docs--environment-variables.md
 
 ## Sidecar boundary
 
-Prefer a Rust-owned lifecycle with no WebView shell permissions. If JavaScript must spawn a sidecar, permit only the named sidecar, the required method, and exact or validated arguments. Never use `args: true` for model-controlled or user-controlled input. [research/raw/tauri--docs--sidecars.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--sidecars.md) [research/raw/tauri--docs--shell-plugin.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--shell-plugin.md)
+Prefer a Rust-owned lifecycle with no WebView shell permissions. If JavaScript must spawn a sidecar, permit only the named sidecar, the required method, and exact or validated arguments. Never use `args: true` for model-controlled or user-controlled input. research/raw/tauri--docs--sidecars.md research/raw/tauri--docs--shell-plugin.md
 
-Sidecar stdout, stderr, and protocol messages are untrusted process input. Deserialize into bounded tagged messages, reject unknown protocol versions, cap retained diagnostics, surface read errors, and never execute returned text. Tauri Shell's default line reader buffers a complete line before emitting an event, so a post-event size guard limits retention and IPC only, not allocation. Require producer-side line limits or implement bounded framing over raw output. This is a derived hardening pattern. [research/raw/tauri--docs--sidecars.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--sidecars.md) [research/raw/tauri--source--shell-command-child-2.3.6.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--source--shell-command-child-2.3.6.md)
+Sidecar stdout, stderr, and protocol messages are untrusted process input. Deserialize into bounded tagged messages, reject unknown protocol versions, cap retained diagnostics, surface read errors, and never execute returned text. Tauri Shell's default line reader buffers a complete line before emitting an event, so a post-event size guard limits retention and IPC only, not allocation. Require producer-side line limits or implement bounded framing over raw output. This is a derived hardening pattern. research/raw/tauri--docs--sidecars.md research/raw/tauri--source--shell-command-child-2.3.6.md
 
 ## CSP and untrusted output
 
-Configure a restrictive CSP. A Rust-owned hosted-provider call normally keeps the provider origin out of WebView `connect-src`. Never feed model output to `WebviewWindow::eval`; render it as data through the frontend framework. [research/raw/tauri--docs--content-security-policy.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--content-security-policy.md) [research/raw/tauri--docs--calling-frontend.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--calling-frontend.md)
+Configure a restrictive CSP. A Rust-owned hosted-provider call normally keeps the provider origin out of WebView `connect-src`. Never feed model output to `WebviewWindow::eval`; render it as data through the frontend framework. research/raw/tauri--docs--content-security-policy.md research/raw/tauri--docs--calling-frontend.md

@@ -1,6 +1,6 @@
 # Derived AI Architecture Reference for Tauri 2
 
-Every pattern in this file is derived from official Tauri primitives. Tauri did not publish a first-party AI reference application in the source sweep. [research/raw/tauri--research--first-party-ai-gap.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--research--first-party-ai-gap.md)
+Every pattern in this file is derived from official Tauri primitives. Tauri did not publish a first-party AI reference application in the source sweep. research/raw/tauri--research--first-party-ai-gap.md
 
 ## Choose a topology
 
@@ -12,7 +12,7 @@ Every pattern in this file is derived from official Tauri primitives. Tauri did 
 | Native Rust library | The model runtime has a suitable Rust API and packaging footprint | Rust Core process | Channel | memory, CPU/GPU, native dependencies, cancellation |
 | Tauri plugin | The provider or inference bridge is reused or needs native mobile code | Plugin Rust plus Kotlin/Swift | command plus Channel or plugin event | permission design, multi-language versioning, platform divergence |
 
-Official bases: [research/raw/tauri--docs--process-model.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--process-model.md) [research/raw/tauri--docs--sidecars.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--sidecars.md) [research/raw/tauri--docs--plugin-development.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--plugin-development.md)
+Official bases: research/raw/tauri--docs--process-model.md research/raw/tauri--docs--sidecars.md research/raw/tauri--docs--plugin-development.md
 
 ## Hosted-provider flow
 
@@ -26,7 +26,7 @@ WebView GenerateRequest
   -> render event data, never execute it
 ```
 
-Do not put publisher-owned provider keys in the Tauri bundle. A Rust boundary reduces WebView exposure, but it cannot make a credential secret from the owner of the installed binary. This is a derived security conclusion based on the documented process and trust boundaries. [research/raw/tauri--docs--process-model.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--process-model.md) [research/raw/tauri--docs--security-overview.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--security-overview.md)
+Do not put publisher-owned provider keys in the Tauri bundle. A Rust boundary reduces WebView exposure, but it cannot make a credential secret from the owner of the installed binary. This is a derived security conclusion based on the documented process and trust boundaries. research/raw/tauri--docs--process-model.md research/raw/tauri--docs--security-overview.md
 
 ## Local-sidecar flow
 
@@ -42,7 +42,7 @@ Tauri startup or first generation
   -> cancel, drain, terminate, and reap on request or app shutdown
 ```
 
-This protocol, readiness, backpressure, and recovery behavior is derived application design. Tauri supplies target-specific bundling, child events, stdin access, managed state, and Channels, but not an AI subprocess protocol. [research/raw/tauri--docs--sidecars.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--sidecars.md) [research/raw/tauri--docs--state-management.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--state-management.md) [research/raw/tauri--docs--calling-frontend.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--calling-frontend.md)
+This protocol, readiness, backpressure, and recovery behavior is derived application design. Tauri supplies target-specific bundling, child events, stdin access, managed state, and Channels, but not an AI subprocess protocol. research/raw/tauri--docs--sidecars.md research/raw/tauri--docs--state-management.md research/raw/tauri--docs--calling-frontend.md
 
 ## Recommended stream contract
 
@@ -65,7 +65,7 @@ enum GenerationEvent {
 }
 ```
 
-The contract is derived. Keep terminal states mutually exclusive, never put credentials or raw provider responses in events, and bound token, error, and tool fields before sending them to the WebView. The tagged-enum transport pattern comes from Tauri's Channel example, while Serde documents the separate field-renaming attribute. [research/raw/tauri--docs--calling-frontend.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--calling-frontend.md) [research/raw/serde--docs--container-attributes.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/serde--docs--container-attributes.md)
+The contract is derived. Keep terminal states mutually exclusive, never put credentials or raw provider responses in events, and bound token, error, and tool fields before sending them to the WebView. The tagged-enum transport pattern comes from Tauri's Channel example, while Serde documents the separate field-renaming attribute. research/raw/tauri--docs--calling-frontend.md research/raw/serde--docs--container-attributes.md
 
 ## Persistence classes
 
@@ -77,7 +77,7 @@ The contract is derived. Keep terminal states mutually exclusive, never put cred
 | Active provider client, child process, cancellation handle | Managed Rust state | Ephemeral process resource |
 | Publisher provider key | Publisher-controlled service | Must not ship in the client |
 
-This is a derived data-classification pattern grounded in [research/raw/tauri--docs--store-plugin.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--store-plugin.md), [research/raw/tauri--docs--sql-plugin.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--sql-plugin.md), [research/raw/tauri--docs--stronghold-plugin.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--stronghold-plugin.md), and [research/raw/tauri--docs--state-management.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--state-management.md).
+This is a derived data-classification pattern grounded in research/raw/tauri--docs--store-plugin.md, research/raw/tauri--docs--sql-plugin.md, research/raw/tauri--docs--stronghold-plugin.md, and research/raw/tauri--docs--state-management.md.
 
 ## Failure modes to design first
 

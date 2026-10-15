@@ -1,6 +1,6 @@
 # Qualify updater trust and recovery
 
-Use for O100. DERIVED procedure based on [updater](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/desktop-capabilities-20261007/raw/updater-source.md) and [SQLite backup](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/desktop-capabilities-20261007/raw/sqlite-backup-source.md). Refresh the exact plugin/CLI graph and use existing platform signing guides before a real release.
+Use for O100. DERIVED procedure based on updater and SQLite backup. Refresh the exact plugin/CLI graph and use existing platform signing guides before a real release.
 
 1. Collect installed versions, OS/architecture/package route, current trusted public key, update channel ownership, persisted schema versions and effect authorization. Identify code signatures, installer trust, updater payload signatures, TLS transport and feed policy as separate evidence rows.
 2. Verify configuration embeds public key content, uses approved HTTPS endpoints and selects the intended target. Private key names/owners only belong in this record. Do not weaken transport or signature verification to bypass a failure. Artifact signature verifies the signed bytes; it does not by itself authenticate freshness, channel assignment, notes, destination policy or compatibility.
