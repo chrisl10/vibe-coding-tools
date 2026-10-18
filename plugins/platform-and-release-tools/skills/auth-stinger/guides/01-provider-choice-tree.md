@@ -2,7 +2,7 @@
 
 The 2026 decision tree. Pick on three axes: **B2C vs B2B**, **hosted vs self-host**, **prebuilt UI vs custom**.
 
-Source: `research/2026-04-25-provider-decision-matrix.md`, `research/2026-04-25-better-auth-momentum.md`.
+Source: `research/2026-04-25-provider-decision-matrix.md`, `research/2026-04-25-better-auth-momentum.md` (source-repository research, not shipped).
 
 ## The decision tree
 
@@ -45,7 +45,7 @@ Walk in this order. Stop at the first match.
 | **Kinde** | Yes | Yes | Yes | No | Yes | Steady | Startup-friendly hosted |
 | **Stytch** | Yes (passwordless-first) | B2B SDK | Yes | No | Yes | Strong | Passwordless / passkeys-first |
 
-Cite this matrix when justifying a pick. Source: `research/2026-04-25-provider-decision-matrix.md`.
+Cite this matrix when justifying a pick. Source: `research/2026-04-25-provider-decision-matrix.md` (source-repository research, not shipped).
 
 ## Common mismatches
 

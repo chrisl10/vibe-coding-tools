@@ -18,9 +18,7 @@
 5. Numbers in the post must match the receipts exactly. No rounding a number up to make it hit harder.
 6. If confirmation fails at any step, the topic is dead. State that it failed verification and end the run. Do not fall back to a second topic with a second research pass; the one-topic rule exists to protect token spend.
 
-## Editorial boundaries for this skill
+## Accuracy boundaries for this skill
 
-- No celebrity gossip. Entertainment-industry drama, relationships, and feuds are off-limits even when they dominate the trend list.
-- Mario is a Republican. Skip stories where the only honest post would amount to promoting Democrat positions or talking points. Stories critical of any politician are fine when the receipts hold; the filter is about which briefs are worth his voice, not about softening facts.
-- Sharp, provocative, and controversial framing is the point. Fabrication, fabricated quotes, invented numbers, and misleading edits are never the point. Every post must survive its own receipts being opened.
-- Preferred beats when available: AI, vibe coding and AI-assisted development, big tech moves, hot political fights, free speech, fraud getting exposed, government waste, veterans' issues.
+- Sharp framing of true facts is allowed. Fabrication, fabricated quotes, invented numbers, and misleading edits are never the point. Every post must survive its own receipts being opened.
+- Beats, topics to avoid or emphasize, and the editorial policy are the user's to set in `references/editorial-preferences.md`. The default policy is politically neutral (no partisan advocacy, contested issues presented fairly). Preferences change which candidates are picked; they never relax the fact-check standard above.

@@ -2,7 +2,7 @@
 
 OKRs are powerful and add overhead. This guide determines the minimum viable OKR practice for teams under 20 people and identifies when to skip OKRs entirely.
 
-*Sources: `research/external/03-radical-focus-wodtke-small-team.md`, `research/external/2026-05-20-okr-small-team-startup-adaptation.md`, `research/external/01-devokr-complete-okr-guide-2026.md`*
+*Sources: `research/external/03-radical-focus-wodtke-small-team.md`, `research/external/2026-05-20-okr-small-team-startup-adaptation.md`, `research/external/01-devokr-complete-okr-guide-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -104,4 +104,4 @@ This is the minimum functional OKR practice. It produces the cadence benefit (re
 
 ---
 
-*This guide cites `research/external/03-radical-focus-wodtke-small-team.md` and `research/external/2026-05-20-okr-small-team-startup-adaptation.md`.*
+*This guide cites `research/external/03-radical-focus-wodtke-small-team.md` and `research/external/2026-05-20-okr-small-team-startup-adaptation.md` (source-repository research, not shipped).*

@@ -112,5 +112,5 @@ Rationale: `fallback` balances visibility (100ms block, then system font) with a
 
 - `guides/00-principles.md`: FOIT/FOUT/FOFT definitions and the period model underlying this matrix
 - `guides/05-cls-elimination.md`: how to implement metric-matched fallbacks for `swap`
-- `research/external/`: MDN font-display spec, web.dev font best practices, Chrome DevTools font rendering
+- `research/external/` (source-repository research, not shipped): MDN font-display spec, web.dev font best practices, Chrome DevTools font rendering
 - `examples/happy-path-nextjs-inter.md`: shows `optional` for body + `swap` for headings in practice

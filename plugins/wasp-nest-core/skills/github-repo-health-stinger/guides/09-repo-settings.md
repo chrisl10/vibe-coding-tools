@@ -1,6 +1,6 @@
 # 09 - Repository Settings Audit
 
-*Research basis: `research/external/05-repo-security-settings.md`, `research/external/10-auto-delete-merge-settings.md`*
+*Research basis: `research/external/05-repo-security-settings.md`, `research/external/10-auto-delete-merge-settings.md` (source-repository research, not shipped)*
 
 ## Settings to audit
 
@@ -47,7 +47,7 @@ gh api /repos/{owner}/{repo} --jq '{
 
 ## Scoring rubric
 
-See `research/external/05-repo-security-settings.md`. Summary:
+See `research/external/05-repo-security-settings.md` (source-repository research, not shipped). Summary:
 
 | Condition | Score |
 |---|---|

@@ -1,6 +1,6 @@
 # product-demo-wasp-drone
 
-**Proposed plugin owner:** media-and-creative-tools. **Required selection:** wasp-nest-core. Resolve installed owner through trusted Core before dispatch. This staging record is not registration or installed proof.
+**Plugin owner:** media-and-creative-tools. **Required selection:** wasp-nest-core. Resolve installed owner through trusted Core before dispatch; this routing guide is not proof that the plugin is installed.
 
 ## Domain
 
@@ -8,7 +8,7 @@ Evidence-bound product-demo and tutorial planning. Returns claim worksheets, sto
 
 ## Paired Stinger
 
-product-demo-stinger in media-and-creative-tools; parent must replace this staging pointer with canonical source link on promotion.
+product-demo-stinger in media-and-creative-tools.
 
 ## Trigger phrases
 

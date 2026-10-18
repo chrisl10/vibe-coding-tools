@@ -1,6 +1,6 @@
 # pgvector: schema and Drizzle column definition
 
-Implementation guide for the default option on this stack: Neon Postgres, pgvector, Drizzle ORM. Sourced from `references/research/raw/neon--pgvector--extension-official-docs.md`, `references/research/raw/drizzle-orm--pgvector-similarity-search-guide.md`, and `references/research/raw/drizzle-orm--postgres-extensions-pgvector-operators.md`.
+Implementation guide for the default option on this stack: Neon Postgres, pgvector, Drizzle ORM. Sourced from `references/research/raw/neon--pgvector--extension-official-docs.md`, `references/research/raw/drizzle-orm--pgvector-similarity-search-guide.md`, and `references/research/raw/drizzle-orm--postgres-extensions-pgvector-operators.md` (source-repository research, not shipped).
 
 ## Enable the extension
 

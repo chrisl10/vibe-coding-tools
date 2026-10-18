@@ -14,7 +14,7 @@ metadata:
 
 You are equipping **sentry-wasp-drone**, the Wasp Nest's Sentry specialist. This skill covers Sentry error and performance monitoring end to end for the Wasp Nest's default stack: SvelteKit (Svelte 5) deployed on Vercel, with Neon Postgres as the database. It is weighted toward the practical wiring a SvelteKit app actually needs: client/server SDK setup, source maps and releases on Vercel, tracing sampling strategy, session replay with its privacy defaults, PII scrubbing, alert tuning, and cost control.
 
-Every factual claim in this skill traces to a downloaded primary source in `references/research/raw/`. Do not author a Sentry fact from training data - if it is not in the archive, it is not a fact yet. Where the research is thin or a source conflicts with another, the distillation says so explicitly - read `references/research/distilled-sentry.md`'s Gaps section before treating any single guide as exhaustive.
+Every factual claim in this skill traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it). Do not author a Sentry fact from training data - if it is not in the archive, it is not a fact yet. Where the research is thin or a source conflicts with another, the distillation says so explicitly - read `references/research/distilled-sentry.md`'s Gaps section before treating any single guide as exhaustive.
 
 ## When to use this skill
 
@@ -36,7 +36,7 @@ Load on demand; do not read everything up front.
 | Path | Load when |
 | --- | --- |
 | `references/research/distilled-sentry.md` | Verifying any Sentry claim fast, or resolving a conflict (see its Gaps section) |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `guides/01-sveltekit-sdk-setup.md` | First-time SDK install: client hooks, server hooks, the runtime constraint on Vercel Edge |
 | `guides/02-sourcemaps-and-releases-vercel.md` | Source map upload, the Vercel-integration auth-token failure mode, release/commit association |
 | `guides/03-performance-tracing-and-sampling.md` | Choosing `tracesSampleRate` vs. `tracesSampler`, and an actual number |
@@ -45,7 +45,7 @@ Load on demand; do not read everything up front.
 | `guides/07-qualify-actionable-alerts.md` | O171 intake, signal denominator/window, owner-approved routing, privacy and independent delivery/recovery evidence |
 | `references/templates/actionable-alert-worksheet.md` | Draft alert contract and acceptance record |
 | `references/examples/actionable-alert-cases.md` | Retry counts, sampled latency, absent owner, incompatible filters, privacy and missing telemetry cases |
-| `references/research/actionable-alerts/digest.md` | Current alert mechanics and narrow corrections to historical routing assumptions |
+| `references/research/actionable-alerts/digest.md` (source repository only, not shipped with the plugin) | Source-repository record of current alert mechanics and narrow corrections to historical routing assumptions; do not require it. `guides/05-alerting-without-noise.md` and `guides/07-qualify-actionable-alerts.md` carry the conclusions |
 | `guides/06-cost-control-and-triage.md` | Event quota, Spike Protection, sample-rate-vs-rate-limit tradeoffs, handled vs. unhandled triage |
 | `references/hooks-server-pattern.md` | Copy-paste `hooks.server.ts` + `instrumentation.server.ts` + `svelte.config.js` |
 | `references/hooks-client-pattern.md` | Copy-paste `hooks.client.ts` |
@@ -63,7 +63,7 @@ Profiling (`profilesSampleRate` and related configuration) was not researched fo
 
 ## Quality bar
 
-A Sentry task run through this skill is done when: the relevant guide(s) were read in order (not skipped), every factual claim used in the output traces to `references/research/raw/`, sampling and PII-scrubbing decisions were made deliberately against `references/sampling-rate-decision-table.md` and `references/before-send-pii-scrubbing.md` rather than defaulted blindly, and - for anything development-focused - the Ship Gate below completed with user approval before commit or push.
+A Sentry task run through this skill is done when: the relevant guide(s) were read in order (not skipped), every factual claim used in the output traces to the source research archive (not shipped; the shipped distillation summarizes it), sampling and PII-scrubbing decisions were made deliberately against `references/sampling-rate-decision-table.md` and `references/before-send-pii-scrubbing.md` rather than defaulted blindly, and - for anything development-focused - the Ship Gate below completed with user approval before commit or push.
 
 ## Critical Directive
 
@@ -72,9 +72,9 @@ A Sentry task run through this skill is done when: the relevant guide(s) were re
 - Additional related skills can be found here:
   - [posthog-stinger](../posthog-stinger) - Product analytics, feature flags, experiments, and product-behavior session replay. Sentry owns crashes, unhandled exceptions, and performance traces; both ship a replay feature, but Sentry's is for reproducing a bug and PostHog's is for understanding product usage. Do not conflate the two.
   - [devops-stinger](../devops-stinger) - Vercel build pipeline and CI/CD architecture. Consult for the general build/deploy pipeline this skill's Vite plugin step and source-map upload plug into.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass, first gate of the Ship Gate pipeline below, and the authority on PII-scrubbing policy questions this skill's `beforeSend` guidance surfaces but does not decide unilaterally.
-  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/quality-stinger) - Quality assurance pass, second gate of the Ship Gate pipeline below.
-  - [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/db-stinger) - PostgreSQL schema, indexing, and migrations. Consult when a Sentry-surfaced error traces back to a query or schema issue in the Neon database.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass, first gate of the Ship Gate pipeline below, and the authority on PII-scrubbing policy questions this skill's `beforeSend` guidance surfaces but does not decide unilaterally.
+  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/quality-stinger) - Quality assurance pass, second gate of the Ship Gate pipeline below.
+  - [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/data-and-ai-tools/skills/db-stinger) - PostgreSQL schema, indexing, and migrations. Consult when a Sentry-surfaced error traces back to a query or schema issue in the Neon database.
 
 ## Ship Gate
 

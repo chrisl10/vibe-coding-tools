@@ -1,6 +1,6 @@
 # Bound the sourcing decision
 
-Read the [distillation](../references/research/distillation.md) and complete the first section of the [worksheet](../references/templates/decision-worksheet.md). This procedure adapts the needs/capability questions in [official purchasing guidance](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/build-buy-analysis-stinger/references/research/raw/purchasing.md).
+Read the [distillation](../references/research/distillation.md) and complete the first section of the [worksheet](../references/templates/decision-worksheet.md). This procedure adapts the needs/capability questions in official purchasing guidance.
 
 1. Ask one compact batch for the user job, accepted requirements, decision owner, current system, volume, sensitive data, deadline, budget currency/period, supply options already considered and operational ownership. Missing inputs remain UNKNOWN. A fictional example supplies none of these for a real buyer.
 2. Limit the comparison to one function with observable acceptance criteria. Separate must-have IDs, desired IDs and explicitly deferred behavior. Do not rewrite Accepted contracts. Hand unclear demand to Discovery before recommending construction.

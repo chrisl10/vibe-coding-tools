@@ -1,6 +1,6 @@
 # 08 - Issue and PR Templates Audit
 
-*Research basis: `research/external/04-issue-pr-templates-docs.md`*
+*Research basis: `research/external/04-issue-pr-templates-docs.md` (source-repository research, not shipped)*
 
 ## Issue templates
 
@@ -33,7 +33,7 @@ Empty or placeholder PR templates ("Add description here") score 0 for quality a
 
 ## Scoring rubric
 
-See `research/external/04-issue-pr-templates-docs.md`. Summary:
+See `research/external/04-issue-pr-templates-docs.md` (source-repository research, not shipped). Summary:
 
 | Condition | Score |
 |---|---|

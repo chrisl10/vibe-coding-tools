@@ -1,6 +1,6 @@
 # Payout Design: Commission Structures, Hold Periods, and Payout Mechanics
 
-*Grounded in: `research/external/2026-05-20-rewardful-state-of-saas-affiliate-programs-report.md`, `research/external/2026-05-20-firstpromoter-vs-rewardful-setup-payout-tax.md`, `research/external/2026-05-20-partnerstack-vs-impact-enterprise-comparison.md`*
+*Grounded in: `research/external/2026-05-20-rewardful-state-of-saas-affiliate-programs-report.md`, `research/external/2026-05-20-firstpromoter-vs-rewardful-setup-payout-tax.md`, `research/external/2026-05-20-partnerstack-vs-impact-enterprise-comparison.md` (source-repository research, not shipped)*
 
 ## Commission type: percentage vs flat-fee
 

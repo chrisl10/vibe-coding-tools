@@ -28,6 +28,12 @@ Invoke `/library-packets` with the standalone Claude command installed, or use t
 - [Domain research](references/research/distilled-library-packets.md) with original primary-source captures
 - [Real footer asset provenance](assets/PROVENANCE.md)
 
+## Branding and platform support
+
+The footer reads "Prepared by Legion Code Inc." and the DOCX author is "Legion Code Inc." by default. To rebrand the text, pass `--prepared-by "Your Company"` (and optionally `--author "Name"`) to `render`, or set `LIBRARY_PACKETS_PREPARED_BY` and `LIBRARY_PACKETS_AUTHOR`. An argument wins over the environment, and the author defaults to the prepared-by text. The footer image comes from the packet's `logo` file in `asset_root`, so supply your own PNG there; the bundled Legion image is only the default.
+
+The renderer is found from `--soffice`, then `SOFFICE_PATH`, then `soffice`, `soffice.exe` or `libreoffice` on `PATH`, then `Program Files\LibreOffice\program\soffice.exe` (also `Program Files (x86)`). Windows status: renderer discovery accepts `soffice.exe` and those install paths, but the helper's private output writer still requires POSIX directory handles and no-follow opens, so `render` and `inventory` (which also write JSON) report blocked on native Windows. `validate` does not use that writer, but nothing here has been run on a Windows machine. macOS and Linux are the qualified platforms. See the [portability guide](guides/07-desktop-portability.md).
+
 ## Output contract
 
 Each document's folder contains its audience-safe `.md`, `.docx`, `.pdf`, `citations.md` and `citations.json`. The packet's `_internal` folder holds full provenance, quotes, source/status decisions and review records. Public delivery contains only the explicitly approved document folders and assets. The full internal output tree is not a public archive.

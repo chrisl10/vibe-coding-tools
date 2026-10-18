@@ -1,6 +1,6 @@
 # Guide 05: Automation Integration
 
-*Source: `research/external/2026-05-20-monitoring-automation-integration.md`*
+*Source: `research/external/2026-05-20-monitoring-automation-integration.md` (source-repository research, not shipped)*
 
 ---
 

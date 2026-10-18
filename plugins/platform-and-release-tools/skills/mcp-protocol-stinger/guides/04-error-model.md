@@ -84,4 +84,4 @@ A naive handler lets a raw backend error (an HTTP status, a driver exception, a 
 
 ---
 
-*Sources: `research/distilled-mcp-protocol.md`, `research/2026-06-16-jsonrpc-error-model.md`, `research/2026-06-16-mcp-sdk-typescript.md`, `research/external/mcp-spec-tools-primitive.md`. Worked example: `guides/09-hivemind-worked-example.md`.*
+*Sources: `research/distilled-mcp-protocol.md`, `research/2026-06-16-jsonrpc-error-model.md`, `research/2026-06-16-mcp-sdk-typescript.md`, `research/external/mcp-spec-tools-primitive.md` (source-repository research, not shipped). Worked example: `guides/09-hivemind-worked-example.md`.*

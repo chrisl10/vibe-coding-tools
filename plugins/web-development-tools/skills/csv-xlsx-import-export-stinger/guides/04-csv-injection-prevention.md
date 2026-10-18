@@ -2,7 +2,7 @@
 
 CSV injection is a real attack vector. This guide covers the full sanitization playbook, the tab-prefix defense, and the layered approach required because no single strategy is universally effective.
 
-*Derived from `research/external/2026-05-20-owasp-csv-injection.md`, `research/security/2026-05-20-owasp-csv-injection.md`, `research/security/2026-05-20-cwe-1236-formula-injection.md`, `research/external/2026-05-20-csv-injection-dead-ends.md`, `research/external/2026-05-20-handsontable-csv-sanitization.md`.*
+*Derived from `research/external/2026-05-20-owasp-csv-injection.md`, `research/security/2026-05-20-owasp-csv-injection.md`, `research/security/2026-05-20-cwe-1236-formula-injection.md`, `research/external/2026-05-20-csv-injection-dead-ends.md`, `research/external/2026-05-20-handsontable-csv-sanitization.md` (source-repository research, not shipped).*
 
 ---
 
@@ -94,7 +94,7 @@ Add a strict CSP that blocks `data:` and `blob:` URIs from untrusted origins to 
 
 A common approach is to prefix dangerous cells with `'` (single quote). **This does not work.** When a user opens the CSV in Excel and saves it, Excel strips the single-quote prefix automatically. The tab-prefix approach survives approximately 90% of save/reopen cycles empirically (vs 0% for single-quote). Neither approach is 100% safe -- the layered defense above is required.
 
-Source: `research/external/2026-05-20-csv-injection-dead-ends.md`
+Source: `research/external/2026-05-20-csv-injection-dead-ends.md` (source-repository research, not shipped)
 
 ---
 

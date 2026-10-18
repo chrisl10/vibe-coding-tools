@@ -1,6 +1,6 @@
 # Guide 05: Sourcing Tool Integrations
 
-Source: `research/external/2026-05-20-sourcing-tools-gem-hireez.md`, `research/external/2026-05-20-linkedin-rsc-integration.md`
+Source: `research/external/2026-05-20-sourcing-tools-gem-hireez.md`, `research/external/2026-05-20-linkedin-rsc-integration.md` (source-repository research, not shipped)
 
 ---
 
@@ -83,7 +83,7 @@ LinkedIn offers two integration tiers for ATS partners:
 
 ## Critical: Greenhouse Harvest API deprecation
 
-> **If the user's sourcing tool integration with Greenhouse was built on Harvest API v1 or v2:** These versions are deprecated and unavailable after **August 31, 2026**. The integration WILL break on that date. Migrate to Harvest API v3. Source: `research/external/2026-05-20-greenhouse-api-updates.md`
+> **If the user's sourcing tool integration with Greenhouse was built on Harvest API v1 or v2:** These versions are deprecated and unavailable after **August 31, 2026**. The integration WILL break on that date. Migrate to Harvest API v3. Source: `research/external/2026-05-20-greenhouse-api-updates.md` (source-repository research, not shipped)
 
 Surface this warning whenever the user mentions Greenhouse + any integration.
 

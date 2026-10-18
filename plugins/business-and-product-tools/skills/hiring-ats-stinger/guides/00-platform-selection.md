@@ -1,6 +1,6 @@
 # Guide 00: ATS Platform Selection Decision Matrix
 
-Source: `research/external/2026-05-20-ats-platform-comparison.md`, `research/external/2026-05-20-lever-pinpoint-comparison.md`, `research/external/2026-05-20-ashby-review-2026.md`
+Source: `research/external/2026-05-20-ats-platform-comparison.md`, `research/external/2026-05-20-lever-pinpoint-comparison.md`, `research/external/2026-05-20-ashby-review-2026.md` (source-repository research, not shipped)
 
 ---
 
@@ -65,7 +65,7 @@ Is the team's TA team profile generalist hiring managers (no dedicated TA)?
 > TODO: open question -- Ashby's LinkedIn RSC support status is not confirmed in LinkedIn's March 2026 partner documentation. Verify with Ashby before recommending for LinkedIn Recruiter-heavy teams. See `research/research-summary.md` Q1.
 
 ### Greenhouse
-- **Time-critical:** Harvest API v1/v2 is deprecated and unavailable after **August 31, 2026**. Any existing Greenhouse integrations on v1/v2 must migrate to Harvest API v3 by this date. Source: `research/external/2026-05-20-greenhouse-api-updates.md`
+- **Time-critical:** Harvest API v1/v2 is deprecated and unavailable after **August 31, 2026**. Any existing Greenhouse integrations on v1/v2 must migrate to Harvest API v3 by this date. Source: `research/external/2026-05-20-greenhouse-api-updates.md` (source-repository research, not shipped)
 - Hire Link for Workday launched March 2026 — the Greenhouse-native HRIS handoff path for Workday shops
 - Custom pricing only: de facto inaccessible to small teams and early-stage startups without dedicated TA budget
 

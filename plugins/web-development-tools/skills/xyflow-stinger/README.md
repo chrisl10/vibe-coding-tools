@@ -8,7 +8,7 @@ The root `SKILL.md` is intentionally lean. Detailed work lives here:
 - `references/REFERENCE.md` holds decision tables, red flags, and escalation.
 - `references/API-CROSSWALK.md` maps every captured React Flow name to its Svelte Flow counterpart.
 - `references/CURRENT-XYFLOW.md` is the dated version and release snapshot.
-- `references/research/raw/` archives one note per primary source; `references/research/distilled-xyflow.md` cites every claim to that archive and lists conflicts and gaps.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `examples/` holds a typed React flow, a typed Svelte flow, a Dagre layout, save and restore with import validation, and migration diffs.
 - `templates/` holds an inspection report, an architecture decision record, and a migration plan.
 - `scripts/inspect-xyflow-project.py` performs a deterministic, read-only first pass over a project and emits JSON.

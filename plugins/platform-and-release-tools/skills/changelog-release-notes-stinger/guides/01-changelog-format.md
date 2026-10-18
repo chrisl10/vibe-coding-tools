@@ -2,7 +2,7 @@
 
 > Use when setting up CHANGELOG.md from scratch or when you need the canonical structure for a new entry.
 
-*Derived from: `research/external/keep-a-changelog.md`, `research/external/semver.md`*
+*Derived from: `research/external/keep-a-changelog.md`, `research/external/semver.md` (source-repository research, not shipped)*
 
 ---
 

@@ -1,6 +1,6 @@
 # Guide 06: Cron Audit and Inventory
 
-*Research sources: `research/external/2026-05-20-vercel-cron-jobs-official-docs.md`, `research/external/2026-05-20-cloudflare-cron-triggers-official-docs.md`, `research/external/2026-05-20-github-actions-schedule-event-docs.md`*
+*Research sources: `research/external/2026-05-20-vercel-cron-jobs-official-docs.md`, `research/external/2026-05-20-cloudflare-cron-triggers-official-docs.md`, `research/external/2026-05-20-github-actions-schedule-event-docs.md` (source-repository research, not shipped)*
 
 ---
 

@@ -422,7 +422,7 @@ ESCALATED go to the top of the calendar regardless of their decision deadline.
   quote those dollar figures to a solo operator.
 - Nine of fifteen archived sources sell renewal tracking, SaaS management, certificate
   automation, contract tooling, or hosting, and each has a commercial interest in these
-  problems looking large [references/research/README.md]. Quote their figures as vendor
+  problems looking large [references/research/README.md (source-repository research, not shipped with the plugin)]. Quote their figures as vendor
   estimates.
 - Everything legal in this archive is United States law. A user with a European or United
   Kingdom vendor relationship gets nothing from it
@@ -449,4 +449,4 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/evidence-standards.md` | Before writing any output. Every phase |
 | `references/littlebird-mcp-reference.md` | Before calling any Littlebird tool. Parameters, return shapes, known limitations |
 | `references/research/distilled-renewal-and-expiry-practice.md` | Any time a domain figure or a legal statement is about to be made |
-| `references/research/raw/` | To check a citation back to its source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |

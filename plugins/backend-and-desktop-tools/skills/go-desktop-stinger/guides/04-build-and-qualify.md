@@ -1,6 +1,6 @@
 # Build and qualify a Go desktop application
 
-DERIVED procedure grounded in [CLI](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/go-desktop-stinger/references/research/raw/wails-cli-source.md), [build](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/go-desktop-stinger/references/research/raw/wails-build-source.md), [embed](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/go-desktop-stinger/references/research/raw/go-embed-source.md) and [requirements](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/go-desktop-stinger/references/research/raw/wails-setup-source.md).
+DERIVED procedure grounded in CLI, build, embed and requirements.
 
 1. Freeze source revision, module and frontend lock graphs, actual installed CLI/Go versions, flags, OS/architecture, package route and permitted commands. Inspect tooling before requesting installs. Generated bindings, remote templates, npm hooks and Go toolchain/module downloads are effects to account for.
 2. On an authorized equipped consumer target, run its existing Go format/vet/unit/contract checks and frontend checks. Use race detection only on supported toolchains/targets; record unsupported rows. Regenerate bindings if required and compare method/DTO inventory. These checks do not prove the native WebView.

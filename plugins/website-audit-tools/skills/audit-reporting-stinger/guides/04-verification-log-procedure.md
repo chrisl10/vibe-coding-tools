@@ -1,6 +1,6 @@
 # 04. Verification-log procedure
 
-Grounded in this plugin's own build plan and PRDs, not this pair's external research cluster (the five raw sources in `references/research/raw/` do not address verification logging - it is a Legion Code Inc. conduct rule, not an industry convention this research pass sourced). See [plan/website-auditor-build-plan.md section 7, conduct rule 4](../../../plan/website-auditor-build-plan.md) and [prd-021's Conduct rules applied section](../../../library/requirements/backlog/prd-021-audit-reporting/prd-021-audit-reporting-index.md).
+Grounded in this plugin's own build plan and PRDs, not this pair's external research cluster (the five raw sources in `references/research/raw/` [source-repository research, not shipped] do not address verification logging - it is a Legion Code Inc. conduct rule, not an industry convention this research pass sourced). See [plan/website-auditor-build-plan.md section 7, conduct rule 4](../../../plan/website-auditor-build-plan.md) and [prd-021's Conduct rules applied section](../../../library/requirements/backlog/prd-021-audit-reporting/prd-021-audit-reporting-index.md).
 
 ## Why this exists
 

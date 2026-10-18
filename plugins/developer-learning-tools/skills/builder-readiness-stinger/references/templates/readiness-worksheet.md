@@ -7,7 +7,7 @@ Constraints: [platform, budget, available hours, existing source/access, deadlin
 
 | Requirement or question | Supplied answer/evidence | Unknown/blocker | Accountable owner | Selected handoff |
 |---|---|---|---|---|
-| User/problem | [actual example] | [unsettled decision] | owner | Market Validation if requested |
+| User/problem | [actual example] | [unsettled decision] | owner | Discovery Research (`/validate-idea`) if requested |
 | Platform/native needs | [web/desktop/mobile/integration/tool] | [device/host behavior unknown] | owner | actual platform/stack owner |
 | Data/permissions | [what is stored, who may act] | [missing access boundary] | owner | contracts/auth/data/security |
 | Learning prerequisites | [specific next concept/exercise] | [understanding pending] | learner | Technical Explainer when selected |

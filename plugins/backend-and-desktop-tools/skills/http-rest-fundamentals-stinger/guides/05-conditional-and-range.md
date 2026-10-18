@@ -144,4 +144,4 @@ Content-Range: bytes */52428800
 
 ---
 
-*Sources: RFC 9110 §13 (conditional requests), RFC 9110 §14 (range requests), `research/external/2026-05-20-etag-conditional-requests.md`, `research/external/2026-05-20-http-caching-etag-cdn.md`*
+*Sources: RFC 9110 §13 (conditional requests), RFC 9110 §14 (range requests), `research/external/2026-05-20-etag-conditional-requests.md`, `research/external/2026-05-20-http-caching-etag-cdn.md` (source-repository research, not shipped)*

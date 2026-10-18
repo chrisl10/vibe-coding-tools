@@ -7,7 +7,7 @@ The Stinger that equips `website-wasp-drone` to build production-grade SvelteKit
 - [Quick website](guides/14-scope-a-quick-website.md): one public SvelteKit application, add only required runtime services.
 - [Independent Payload CMS](guides/15-build-an-independent-payload-cms.md): CMS content/access/API contract before product schema.
 - [Scope worksheet](templates/website-scope.md), [CMS contract](templates/payload-content-contract.md), [constructed cases](examples/scoped-website-outcomes.md).
-- [Fresh primary-source distillation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/website-stinger/references/research/scoped-website/distilled.md): grounding and version conflicts.
+- Fresh primary-source distillation: grounding and version conflicts.
 
 The stack below describes the historical full-template branch. These outcome guides supersede unconditional database/auth/analytics and copied CMS access examples. Phase excludes require accepted rationale; absent proof stays pending or fail. No fixed build duration is promised.
 
@@ -54,9 +54,9 @@ The stack below describes the historical full-template branch. These outcome gui
 
 ## Source PRDs
 
-`research/source-prds/` contains the 12-phase source PRDs. Every guide traces claims back to these files.
+`research/source-prds/` (source-repository research, not shipped with the plugin) contains the 12-phase source PRDs. Every guide traces claims back to these files.
 
-For current scoped-outcome research, see [the local archive](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/website-stinger/references/research/scoped-website/distilled.md).
+For current scoped-outcome research, see the local archive.
 
 ## Maintenance
 

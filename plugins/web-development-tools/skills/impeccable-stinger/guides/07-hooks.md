@@ -1,6 +1,6 @@
 # 07 — Hooks (per-edit + deep pass)
 
-Derived from `research/07-hooks-enforcement.md`.
+Derived from `research/07-hooks-enforcement.md` (source-repository research, not shipped).
 
 ## What the hook does
 

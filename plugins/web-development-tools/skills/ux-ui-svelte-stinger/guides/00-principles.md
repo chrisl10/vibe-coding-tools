@@ -3,6 +3,8 @@
 > Scope boundary, philosophy, and the critical directives for the SvelteKit
 > UI standard adopted in ADR-007. Read this first; every other guide assumes it.
 
+> **Worked example.** The guides describe the OSPRY standard (ADR-007, PRD-071 tokens, `apps/portal`, `apps/web`, `apps/wl`). For another SvelteKit project, apply the same procedure with that project's own UI decision record, token files and app paths. If it has no UI standard yet, propose this one for owner approval before enforcing it.
+
 ## What this Stinger owns
 
 The enforcement and implementation of the **shadcn-svelte 1.x + Tailwind v4**

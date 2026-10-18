@@ -2,7 +2,7 @@
 name: digitalocean-platform-wasp-drone
 description: "Use for DigitalOcean App Platform/Droplet workload fit, operations, data/recovery and dated cost handoff. Read-only advisory; no provisioning."
 model: inherit
-tools: Read, Glob, Grep, WebFetch, WebSearch
+tools: Read, Glob, Grep, WebFetch, WebSearch, Skill
 ---
 
 ## Critical Directive

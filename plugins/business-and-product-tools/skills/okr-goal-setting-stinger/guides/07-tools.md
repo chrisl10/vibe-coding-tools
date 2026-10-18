@@ -2,7 +2,7 @@
 
 How to configure OKR-specific fields in Lattice, 15Five, Weekdone, and Notion.
 
-*Sources: `research/external/08-weekdone-okr-methodology-tool.md`, `research/external/09-okr-tools-landscape-2026.md`, `research/external/2026-05-20-okr-tools-lattice-15five-weekdone.md`*
+*Sources: `research/external/08-weekdone-okr-methodology-tool.md`, `research/external/09-okr-tools-landscape-2026.md`, `research/external/2026-05-20-okr-tools-lattice-15five-weekdone.md` (source-repository research, not shipped)*
 
 ---
 
@@ -154,4 +154,4 @@ Regardless of tool:
 
 ---
 
-*This guide cites `research/external/09-okr-tools-landscape-2026.md` and `research/external/2026-05-20-okr-tools-lattice-15five-weekdone.md`. For current tool UX, verify against each tool's current documentation.*
+*This guide cites `research/external/09-okr-tools-landscape-2026.md` and `research/external/2026-05-20-okr-tools-lattice-15five-weekdone.md` (source-repository research, not shipped). For current tool UX, verify against each tool's current documentation.*

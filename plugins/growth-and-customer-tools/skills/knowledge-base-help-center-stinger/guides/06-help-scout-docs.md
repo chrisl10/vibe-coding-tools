@@ -12,7 +12,7 @@
 
 **Pricing:** Transparent, contact-based billing. ~$220/mo for a 10-person team at 2,000 conversations.
 
-Source: `research/external/2026-05-20-helpscout-vs-intercom-cost-model.md`
+Source: `research/external/2026-05-20-helpscout-vs-intercom-cost-model.md` (source-repository research, not shipped)
 
 ---
 
@@ -70,4 +70,4 @@ Help Scout Beacon can surface KB articles inline in the product UI before the us
 
 ---
 
-*Sources: `research/external/2026-05-20-helpscout-vs-intercom-cost-model.md`, `research/internal/command-brief-analysis.md`.*
+*Sources: `research/external/2026-05-20-helpscout-vs-intercom-cost-model.md`, `research/internal/command-brief-analysis.md` (source-repository research, not shipped).*

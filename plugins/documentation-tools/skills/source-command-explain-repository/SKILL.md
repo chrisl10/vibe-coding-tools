@@ -2,6 +2,7 @@
 name: "source-command-explain-repository"
 description: "Explain how a supplied repository works using source evidence, an eighth-grade reading level, and bounded analogies."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-explain-repository

@@ -2,7 +2,7 @@
 
 Declarative partitioning splits a logical table into physical child tables routed by a partition key. Worth it on tables > 100M rows or > 100 GB, when queries filter by the partition key.
 
-Source: `research/2026-04-25-partitioning.md`.
+Source: `research/2026-04-25-partitioning.md` (source-repository research, not shipped).
 
 ## When to partition
 

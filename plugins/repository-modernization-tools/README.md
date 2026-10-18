@@ -2,7 +2,7 @@
 
 Compose repository baseline, safe refactoring and contributor onboarding through selected specialist owners.
 
-Requires `wasp-nest-core`. This is a source candidate; no installation or native-host qualification is implied.
+Requires `wasp-nest-core`.
 
 <!-- wasp-pack-guide:start -->
 ## Choose a capability

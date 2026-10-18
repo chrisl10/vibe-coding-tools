@@ -1,6 +1,6 @@
 # 16: Data Grids & Tables
 
-Source: `research/2026-04-25-data-grids-and-tables.md`. The right table for 50 rows is the wrong table for 5 million. Pick by row count, edit depth, and license tolerance, not by which one you used last.
+Source: `research/2026-04-25-data-grids-and-tables.md` (source-repository research, not shipped). The right table for 50 rows is the wrong table for 5 million. Pick by row count, edit depth, and license tolerance, not by which one you used last.
 
 ## TL;DR pick
 

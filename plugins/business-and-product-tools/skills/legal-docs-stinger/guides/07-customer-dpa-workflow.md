@@ -1,6 +1,6 @@
 # Customer DPA Negotiation Workflow
 
-**Source:** `research/external/2026-05-20-customer-dpa-negotiation.md`
+**Source:** `research/external/2026-05-20-customer-dpa-negotiation.md` (source-repository research, not shipped)
 
 ---
 

@@ -123,7 +123,7 @@ If a project explicitly chases AAA (e.g., government client), the Angel surfaces
 - `guides/02-token-and-utility-enforcement.md` — where `--focus-ring`, hit-area utilities, and scroll-padding tokens live.
 - `guides/06-lucide-react-icons.md` — icon-button wrapper that enforces 24×24 floor.
 - `guides/12-eaa-compliance.md` — the legal regime that makes WCAG 2.2 AA the EU floor.
-- `research/2026-04-25-wcag-2-2.md` — research note.
+- `research/2026-04-25-wcag-2-2.md` (source-repository research, not shipped) — research note.
 
 ---
 

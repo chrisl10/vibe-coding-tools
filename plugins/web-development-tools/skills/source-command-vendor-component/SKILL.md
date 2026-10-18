@@ -2,6 +2,7 @@
 name: "source-command-vendor-component"
 description: "Select and prepare an authorized component vendoring plan with actual artifact provenance, notices, patches and update evidence."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-vendor-component

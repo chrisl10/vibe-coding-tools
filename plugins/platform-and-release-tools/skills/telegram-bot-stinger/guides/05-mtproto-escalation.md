@@ -1,6 +1,6 @@
 # Guide 05: MTProto Escalation
 
-> Sources: `research/bot-api/2026-05-20-bot-api-10-guest-mode.md` (Bot API limits context)
+> Sources: `research/bot-api/2026-05-20-bot-api-10-guest-mode.md` (source-repository research, not shipped) (Bot API limits context)
 >
 > TODO: Dedicated Telethon / TDLib research was not conducted in this research pass. The guide below reflects knowledge from the Command Brief and general MTProto architecture. Before implementing MTProto in production, re-run scripture-historian with query "Telethon 2026" and "TDLib TGCalls 2026" to pull current version information. Source: https://docs.telethon.dev/ and https://github.com/tdlib/td.
 

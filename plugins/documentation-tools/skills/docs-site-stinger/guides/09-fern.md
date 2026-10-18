@@ -2,7 +2,7 @@
 
 Fern is a purpose-built platform for API documentation that generates SDKs, MCP servers, and `llms.txt` from an OpenAPI spec. Best for teams that want docs and SDKs from a single source of truth.
 
-> Source: `research/external/2026-05-20-fern-api-docs-sdk-generation.md`
+> Source: `research/external/2026-05-20-fern-api-docs-sdk-generation.md` (source-repository research, not shipped)
 
 ---
 

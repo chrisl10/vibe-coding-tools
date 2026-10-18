@@ -14,16 +14,16 @@ Place preferences, structured history, secrets, and ephemeral runtime handles in
 | Active clients, child handles, locks, cancellation | Managed Rust state | Ephemeral process resources |
 | Publisher-owned provider credential | Publisher service | Must not ship in a user-controlled client |
 
-This is a derived application classification based on the official Store, SQL, Stronghold, and state APIs. [../references/research/raw/tauri--docs--store-plugin.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--store-plugin.md) [../references/research/raw/tauri--docs--sql-plugin.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--sql-plugin.md) [../references/research/raw/tauri--docs--stronghold-plugin.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--stronghold-plugin.md)
+This is a derived application classification based on the official Store, SQL, Stronghold, and state APIs. ../references/research/raw/tauri--docs--store-plugin.md ../references/research/raw/tauri--docs--sql-plugin.md ../references/research/raw/tauri--docs--stronghold-plugin.md (source-repository research, not shipped)
 
 ## Procedure
 
 1. Inventory every field and classify confidentiality, durability, size, query shape, retention, export, deletion, and sync requirements.
-2. Keep Store for small non-secret values. The plugin does not claim encryption, and `store:default` grants every operation. [../references/research/raw/tauri--docs--store-plugin.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--store-plugin.md)
+2. Keep Store for small non-secret values. The plugin does not claim encryption, and `store:default` grants every operation. ../references/research/raw/tauri--docs--store-plugin.md (source-repository research, not shipped)
 3. Decide explicit save versus debounced auto-save. Do not rely on graceful-exit persistence for crash-critical data.
-4. Use SQL migrations with unique versions and transactions. Keep SQL in files that can be reviewed and use bound parameters. [../references/research/raw/tauri--docs--sql-plugin.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--sql-plugin.md)
+4. Use SQL migrations with unique versions and transactions. Keep SQL in files that can be reviewed and use bound parameters. ../references/research/raw/tauri--docs--sql-plugin.md (source-repository research, not shipped)
 5. Grant `sql:allow-execute` only when the WebView truly needs generic writes. Prefer Rust domain commands for a stronger boundary.
-6. Use Stronghold or a platform credential store for a user-owned secret, and design password acquisition, unlock, timeout, rotation, revocation, backup, and recovery. [../references/research/raw/tauri--docs--stronghold-plugin.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--stronghold-plugin.md)
+6. Use Stronghold or a platform credential store for a user-owned secret, and design password acquisition, unlock, timeout, rotation, revocation, backup, and recovery. ../references/research/raw/tauri--docs--stronghold-plugin.md (source-repository research, not shipped)
 7. Never write credentials, private prompts, or raw provider bodies to logs by default.
 8. Keep ephemeral runtime objects in managed state, not serialized storage.
 9. Define data migration, rollback, corruption, partial write, interrupted shutdown, and concurrent access tests.

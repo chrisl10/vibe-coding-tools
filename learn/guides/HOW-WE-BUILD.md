@@ -149,7 +149,9 @@ Before it stops, the AI saves its work and writes down where things stand: what 
 
 ### The beacon
 
-A small background helper called the **beacon** writes a "heartbeat" file every time something happens in a session. It lives in `~/.wasp-nest/beacon/`. TARS reads these heartbeats to tell whether a session is still making progress. The beacon only watches. It never blocks anything.
+A small helper called the **beacon** writes a "heartbeat" file whenever one of the session events it is hooked to fires. It lives in `~/.wasp-nest/beacon/`. TARS reads these heartbeats to tell whether a session is still making progress. The beacon only watches. It never blocks anything.
+
+The beacon is bound by the home installs for Claude Code (`~/.claude/settings.json`), Codex (`~/.codex/hooks.json`) and ZCode. The native plugin installs do not bind it: the Claude, OpenAI and Cursor plugins carry no beacon hook, and the Cursor home install does not bind it either. Where it is not bound, there are no heartbeat files, so TARS has only the session list to go on. [`docs/HOOK-CATALOG.md`](../reference/HOOK-CATALOG.md) lists the bindings for each install.
 
 ### Writing style
 

@@ -2,7 +2,7 @@
 
 How to structure code reviews for remote and hybrid teams where reviewers may be in different time zones. Covers the review-window pattern, SLA expectations, async comment hygiene, and the escalation path to a synchronous session.
 
-Sources: `research/external/2026-05-20-propelcode-async-review-distributed.md`, `research/external/2026-05-20-viberails-remote-team-review.md`, `research/external/2026-05-20-stackfyi-best-practices-guide.md`.
+Sources: `research/external/2026-05-20-propelcode-async-review-distributed.md`, `research/external/2026-05-20-viberails-remote-team-review.md`, `research/external/2026-05-20-stackfyi-best-practices-guide.md` (source-repository research, not shipped).
 
 ---
 

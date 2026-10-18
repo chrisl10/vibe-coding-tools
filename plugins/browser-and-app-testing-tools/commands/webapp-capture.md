@@ -117,7 +117,7 @@ Browser stages run through `SKILL_DIR/scripts/parallel.mjs`, which caps shards b
 2. `audit/audit-visual.mjs` into `library/requirements/reports/<date>-visual-audit`.
 3. If source is available: `audit/audit-code.mjs` with `SRC=<repo>`.
 4. Connect every medium or higher visual finding to source (grep values and variables), so findings carry both evidence and a file and line.
-5. Contrast: recommend running axe-core's `color-contrast` rule in the same session; do not compute contrast from captured styles.
+5. Contrast: run `CAPTURE_CONFIG=<config> node SKILL_DIR/scripts/audit/audit-contrast.mjs` in the same saved session (guide 03). Report its failures and list every unmeasured entry as a blind spot; a pass is not a full WCAG conformance verdict. An already installed axe integration may supplement it only when authorized; do not install one for this route.
 6. Write `library/requirements/reports/<date>-ui-inconsistency-report.md` in the structure guide 03 defines.
 7. If a component library exists, run the Claude Design handoff step so the zip carries these findings.
 

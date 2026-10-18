@@ -1,6 +1,6 @@
 # 02: JSON Example Authoring
 
-Adding request and response examples to an OpenAPI spec. Read `research/external/scalar-openapi-extensions-reference.md` before running this guide.
+Adding request and response examples to an OpenAPI spec. Read `research/external/scalar-openapi-extensions-reference.md` (source-repository research, not shipped) before running this guide.
 
 ## Why examples are non-negotiable
 
@@ -126,4 +126,4 @@ Emit an audit table before writing:
 | GET /users/{id} | N/A | Yes | No |
 | ...
 
-*Source: `research/external/scalar-openapi-extensions-reference.md`*
+*Source: `research/external/scalar-openapi-extensions-reference.md` (source-repository research, not shipped)*

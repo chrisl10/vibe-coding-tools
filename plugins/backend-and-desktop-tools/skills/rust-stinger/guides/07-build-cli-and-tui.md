@@ -6,9 +6,9 @@ Build operable, scriptable, redacted operator clients without creating a second 
 
 ## CLI contract
 
-- Model commands and constrained arguments with Clap typed parsers and subcommands ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/cli-tui/2026-07-24-clap-parser.md)).
+- Model commands and constrained arguments with Clap typed parsers and subcommands (research).
 - Test parsing with non-exiting APIs; decide printing and process exit only at the binary boundary.
-- Keep human help/errors separate from stable JSON/stdout schemas. Clap exposes rendering and exit information, but human formatting is not a machine protocol ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/cli-tui/2026-07-24-clap-errors.md)).
+- Keep human help/errors separate from stable JSON/stdout schemas. Clap exposes rendering and exit information, but human formatting is not a machine protocol (research).
 - Define a domain exit-code taxonomy for operational failures.
 - Require a reviewed confirmation or explicit noninteractive policy for destructive or billable commands; keep them disabled if absent.
 - Make diagnostics/support exports previewable, double-redacted, and free of prompt bodies, code, raw credentials, headers, and unsalted account identifiers.
@@ -16,9 +16,9 @@ Build operable, scriptable, redacted operator clients without creating a second 
 ## Optional TUI contract
 
 - Keep the TUI feature-gated and thin over the same authenticated control client as the CLI.
-- Prefer the main Ratatui crate unless a lower-level crate is specifically required; upstream recommends this for ordinary applications ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/cli-tui/2026-07-24-ratatui-architecture.md)).
-- Use Ratatui's managed `run` lifecycle or explicitly handle fallible init/restore so success, error, panic, and cancellation restore the terminal ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/cli-tui/2026-07-24-ratatui-lifecycle.md)).
-- Unit-test widgets against buffers and integration-test the whole UI with `TestBackend` ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/cli-tui/2026-07-24-ratatui-test-backend.md)).
+- Prefer the main Ratatui crate unless a lower-level crate is specifically required; upstream recommends this for ordinary applications (research).
+- Use Ratatui's managed `run` lifecycle or explicitly handle fallible init/restore so success, error, panic, and cancellation restore the terminal (research).
+- Unit-test widgets against buffers and integration-test the whole UI with `TestBackend` (research).
 - Add narrow platform/real-terminal smoke tests only where the supported matrix requires them.
 
 ## Open decision checkpoint

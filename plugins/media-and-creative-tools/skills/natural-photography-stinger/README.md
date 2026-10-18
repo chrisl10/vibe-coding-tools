@@ -7,7 +7,7 @@ Research archive, executable scripts, and templates.
 ```
 references/
 ├── research/
-│   ├── raw/                                73 primary sources, one per file
+│   ├── raw/                                73 primary sources, one per file (source repository only, not shipped)
 │   ├── distilled-photographic-craft.md     694 lines
 │   ├── distilled-image-models.md           703 lines
 │   └── distilled-metadata-and-provenance.md 770 lines

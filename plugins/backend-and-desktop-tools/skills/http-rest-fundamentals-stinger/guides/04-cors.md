@@ -136,4 +136,4 @@ When CORS headers vary by origin (dynamic allowlist), the response MUST include 
 
 ---
 
-*Sources: WHATWG Fetch spec §3.2, `research/external/2026-05-20-cors-preflight-credentials.md`, `research/external/2026-05-20-cors-security-misconfigurations.md`*
+*Sources: WHATWG Fetch spec §3.2, `research/external/2026-05-20-cors-preflight-credentials.md`, `research/external/2026-05-20-cors-security-misconfigurations.md` (source-repository research, not shipped)*

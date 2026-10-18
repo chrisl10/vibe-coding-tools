@@ -504,7 +504,7 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/evidence-standards.md` | Always, first. |
 | `references/littlebird-mcp-reference.md` | Always, first. |
 | `references/research/distilled-automation-opportunity-identification.md` | When you need the citation behind a rule, or to check whether a claim is evidenced at all. Section 13 is the claim map. |
-| `references/research/README.md` | Source inventory and the archive's six named gaps. |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 
 **Three things in this skill are design decisions rather than researched practice**, and they
 are labelled as such wherever they appear.

@@ -14,7 +14,7 @@ metadata:
 
 You are equipping **typescript-node-wasp-drone**, the Wasp Nest's TypeScript/Node specialist. This skill covers modern TypeScript/Node practice as it actually applies to this repo's stack: SvelteKit (Svelte 5) deployed to Vercel with Neon Postgres and Drizzle ORM as the PRIMARY case, and it fully preserves the npm library/CLI publishing case (Hivemind) it was originally forged for as a SECONDARY, still-supported case.
 
-Every factual claim in the SvelteKit-case guides traces to a downloaded primary source in `references/research/raw/`. Do not author a TypeScript/Node fact from training data - if it is not archived, it is not a fact yet. The Wasp Nestmind-case guides trace to the earlier `research/` folder from the 2026-06-16 pass, preserved as-is.
+Every factual claim in the SvelteKit-case guides traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it). Do not author a TypeScript/Node fact from training data - if it is not archived, it is not a fact yet. The Wasp Nestmind-case guides trace to the earlier `research/` (source-repository research, not shipped with the plugin) folder from the 2026-06-16 pass, preserved as-is.
 
 **Opinionation is the product.** When you answer, say "do X, not Y" with reasoning and a citation - not "here are options." The one exception is the handful of genuinely current, still-open tradeoffs this pass researched (Biome vs ESLint, zod vs valibot, pnpm vs alternatives, Turborepo vs Nx) - those get a decision guide with a stated default, not a false sense of settled consensus.
 
@@ -230,15 +230,15 @@ Numbered so order is obvious. Read `00-principles.md` on every invocation - its 
 
 Two research trails, kept separate:
 
-- `references/research/raw/` + `references/research/distilled-typescript-node.md` - the 2026-08-14 SvelteKit/general-TypeScript pass. Every guide numbered `23`-`29`, plus the 2026-update section of `guides/12`, cites this trail.
-- `research/research-plan.md` + dated notes - the original 2026-06-16 Hivemind-era pass. Every Hivemind-case guide cites this trail. Untouched by this pass.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
+- `research/research-plan.md` (source-repository research, not shipped with the plugin) + dated notes - the original 2026-06-16 Hivemind-era pass. Every Hivemind-case guide cites this trail. Untouched by this pass.
 
 ---
 
 ## Output conventions
 
 - **All file paths in findings are absolute** when referencing project files. Relative when referencing guides in this Stinger.
-- **Every claim is sourced.** Either a guide section, a `references/research/raw/` file, or a file in the repo.
+- **Every claim is sourced.** Either a guide section, a `references/research/raw/` (source-repository research, not shipped with the plugin) file, or a file in the repo.
 - **Do not invent versions.** Read them from `package.json`.
 - **Never approve a PR that breaks a Hard Rule above** - but only block on Must-fix severity.
 
@@ -251,21 +251,21 @@ Two research trails, kept separate:
 
 ## Quality bar
 
-A TypeScript/Node task run through this skill is done when: the project type was classified correctly (SvelteKit app vs npm library/CLI) before any guide was applied, the relevant guide(s) were read in the right set (not mixing a Hivemind-case rule into the SvelteKit case or vice versa), every factual claim used in the output traces to `references/research/raw/` for the SvelteKit case (or `research/` for the Wasp Nestmind case), and - for anything development-focused - the Ship Gate below completed with user approval before commit or push.
+A TypeScript/Node task run through this skill is done when: the project type was classified correctly (SvelteKit app vs npm library/CLI) before any guide was applied, the relevant guide(s) were read in the right set (not mixing a Hivemind-case rule into the SvelteKit case or vice versa), every factual claim used in the output traces to the source research archive (not shipped; the shipped distillation summarizes it) for the SvelteKit case (or `research/` [source-repository research, not shipped with the plugin] for the Wasp Nestmind case), and - for anything development-focused - the Ship Gate below completed with user approval before commit or push.
 
 ## Critical Directive
 
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [vercel-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/vercel-stinger) - Vercel deploy/build specifics, Node version selection on Vercel, ISR/caching. Consult for anything beyond the `engines.node` field this skill owns.
-  - [neon-drizzle-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/neon-drizzle-stinger) - Drizzle schema design, migrations, connection pooling, RLS. This skill covers the TypeScript patterns AROUND Drizzle, not Drizzle itself.
-  - [svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/svelte-stinger) - Svelte 5 runes and component authoring. This skill covers the TypeScript/Node fundamentals underpinning SvelteKit, not component markup itself.
-  - [doppler-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/doppler-stinger) - secrets/env handling mechanics. Consult for the Doppler side of the env-typing guidance in this skill.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass, first gate of the Ship Gate pipeline below.
-  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/quality-stinger) - Post-implementation QA pass, second gate of the Ship Gate pipeline below.
-  - [github-repo-health-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/github-repo-health-stinger) - Repo hygiene audit, orchestrator-level final Ship Gate step below.
-  - [tanstack-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/tanstack-stinger) - TanStack Query/Table/Form usage in the same SvelteKit stack, when a page's data layer uses TanStack alongside SvelteKit's own `load`/remote functions.
+  - [vercel-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/vercel-stinger) - Vercel deploy/build specifics, Node version selection on Vercel, ISR/caching. Consult for anything beyond the `engines.node` field this skill owns.
+  - [neon-drizzle-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/data-and-ai-tools/skills/neon-drizzle-stinger) - Drizzle schema design, migrations, connection pooling, RLS. This skill covers the TypeScript patterns AROUND Drizzle, not Drizzle itself.
+  - [svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/svelte-stinger) - Svelte 5 runes and component authoring. This skill covers the TypeScript/Node fundamentals underpinning SvelteKit, not component markup itself.
+  - [doppler-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/doppler-stinger) - secrets/env handling mechanics. Consult for the Doppler side of the env-typing guidance in this skill.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass, first gate of the Ship Gate pipeline below.
+  - [quality-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/quality-stinger) - Post-implementation QA pass, second gate of the Ship Gate pipeline below.
+  - [github-repo-health-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/github-repo-health-stinger) - Repo hygiene audit, orchestrator-level final Ship Gate step below.
+  - [tanstack-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/tanstack-stinger) - TanStack Query/Table/Form usage in the same SvelteKit stack, when a page's data layer uses TanStack alongside SvelteKit's own `load`/remote functions.
 
 ## Ship Gate
 

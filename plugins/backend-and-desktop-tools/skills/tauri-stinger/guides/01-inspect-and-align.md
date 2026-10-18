@@ -15,8 +15,8 @@ Build an evidence-backed project inventory before choosing an upgrade, migration
 2. Save or summarize its JSON in the target repository's implementation report. Treat its limitations as required manual follow-up, not ignorable noise.
 3. Read `package.json` and the active frontend lockfile. Record `@tauri-apps/api`, the CLI package, every `@tauri-apps/plugin-*` package, scripts, frontend framework, and package manager.
 4. Read `src-tauri/Cargo.toml` and `Cargo.lock`. Record `tauri`, `tauri-build`, plugin crates, features, target-specific sections, Rust edition and MSRV policy, and the resolved runtime graph.
-5. Read the base Tauri configuration and every platform overlay. Platform arrays replace their base arrays under JSON Merge Patch; they do not append. [../references/research/raw/tauri--docs--configuration-files.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--configuration-files.md)
-6. Read `src-tauri/src/lib.rs`, command modules, state types, plugin initialization, and shutdown handlers. The shared mobile-ready entry point belongs in `lib.rs`. [../references/research/raw/tauri--docs--project-structure.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--project-structure.md)
+5. Read the base Tauri configuration and every platform overlay. Platform arrays replace their base arrays under JSON Merge Patch; they do not append. ../references/research/raw/tauri--docs--configuration-files.md (source-repository research, not shipped)
+6. Read `src-tauri/src/lib.rs`, command modules, state types, plugin initialization, and shutdown handlers. The shared mobile-ready entry point belongs in `lib.rs`. ../references/research/raw/tauri--docs--project-structure.md (source-repository research, not shipped)
 7. Inventory `capabilities/`, `permissions/`, `gen/schemas/`, and custom command declarations in `build.rs`.
 8. Inventory Store, SQL, Stronghold, sidecars, resources, mobile native modules, updater settings, signing settings, and release workflows.
 9. Apply version alignment rules:
@@ -25,7 +25,7 @@ Build an evidence-backed project inventory before choosing an upgrade, migration
    - Core package patch numbers may differ.
    - Wry and Tao behavior comes from the selected Tauri release or resolved lockfile.
 
-   The official dependency guide defines the first two rules. [../references/research/raw/tauri--docs--updating-dependencies.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--updating-dependencies.md)
+   The official dependency guide defines the first two rules. ../references/research/raw/tauri--docs--updating-dependencies.md (source-repository research, not shipped)
 
 10. Fill [../templates/inspection-report.md](../templates/inspection-report.md) and mark unsupported configuration formats, unresolved workspace dependencies, or missing lockfile data as OPEN.
 

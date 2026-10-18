@@ -36,7 +36,7 @@ The same `beforeSend`/`beforeSendTransaction`/`beforeSendSpan`/`beforeSendLog`/`
 
 Key principle: **prefer not sending PII over scrubbing it after the fact.** Hash sensitive tag values before calling `setTag`; identify users by internal ID (`Sentry.setUser({ id: user.id })`) rather than email. `beforeSend` is a backstop for what automatic instrumentation picks up, not the primary control for data explicitly attached in application code [raw/sentry--data-scrubbing--beforesend-pii.md].
 
-For actionable-alert evidence, error `beforeSend` is not a universal replay-recording scrubber. Review recording-event handling and replay-event URLs separately, and inspect what each alert integration sends. Internal IDs and hashes can still identify people; Security's policy governs their use. [Current privacy source](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/sentry-stinger/references/research/actionable-alerts/raw/sentry-replay-privacy.html), [guide 07](07-qualify-actionable-alerts.md).
+For actionable-alert evidence, error `beforeSend` is not a universal replay-recording scrubber. Review recording-event handling and replay-event URLs separately, and inspect what each alert integration sends. Internal IDs and hashes can still identify people; Security's policy governs their use. Current privacy source, [guide 07](07-qualify-actionable-alerts.md).
 
 ## Server-side scrubbing as a second, faster-to-change layer
 

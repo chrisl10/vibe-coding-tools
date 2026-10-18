@@ -1,6 +1,6 @@
 # Guide 05: Custom Lighthouse Plugins
 
-> Research source: `research/external/2026-05-20-lighthouse-plugin-api.md`
+> Research source: `research/external/2026-05-20-lighthouse-plugin-api.md` (source-repository research, not shipped)
 > Template: `templates/custom-plugin-starter.js`
 
 A Lighthouse plugin adds a new custom category to the Lighthouse report. Plugins have a stable semver API, are shareable on npm, and are the correct extension point when existing audits don't cover a domain-specific requirement.
@@ -20,7 +20,7 @@ A Lighthouse plugin adds a new custom category to the Lighthouse report. Plugins
 
 **Critical boundary:** Plugins CANNOT access custom Gatherers. If you need to run custom JavaScript in the page context or read non-standard page data, you need a full custom Lighthouse config, not a plugin.
 
-> "Plugins can only access a limited set of existing artifacts — they CANNOT use custom Gatherers. To collect custom page data, a full custom Lighthouse configuration (not a plugin) is required." (`research/external/2026-05-20-lighthouse-plugin-api.md`)
+> "Plugins can only access a limited set of existing artifacts — they CANNOT use custom Gatherers. To collect custom page data, a full custom Lighthouse configuration (not a plugin) is required." (`research/external/2026-05-20-lighthouse-plugin-api.md` [source-repository research, not shipped])
 
 Common audits achievable via plugin (using existing artifacts):
 - **CSP header presence**: uses `devtoolsLogs` to inspect response headers

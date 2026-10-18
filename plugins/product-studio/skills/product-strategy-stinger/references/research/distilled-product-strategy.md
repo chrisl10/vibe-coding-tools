@@ -1,6 +1,6 @@
 # Distilled research: product strategy for a new product
 
-Fetched 2026-10-13 (UTC). 21 raw sources in [raw/](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-strategy-stinger/references/research/raw), hashed in [source-ledger.json](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-strategy-stinger/references/research/source-ledger.json). Every claim below ends with the raw file it came from. Where sources disagree, both readings are shown.
+Fetched 2026-10-13 (UTC). 21 raw sources in raw/, hashed in source-ledger.json. Every claim below ends with the raw file it came from. Where sources disagree, both readings are shown.
 
 ## 0. How fresh is this archive
 

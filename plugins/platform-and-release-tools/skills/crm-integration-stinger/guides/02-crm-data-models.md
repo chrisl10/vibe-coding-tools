@@ -131,4 +131,4 @@ Most products model "people" and "companies" as flat records. CRMs add commercia
 
 ---
 
-*Sources: `research/external/2026-05-20-salesforce-data-model-lead-contact-lifecycle.md`, `research/external/2026-05-20-hubspot-api-rate-limits-webhooks.md`, `research/external/2026-05-20-attio-api-v2-rate-limits-stability.md`, `research/external/2026-05-20-folk-close-pipedrive-copper-api-comparison.md`, `research/external/2026-05-20-crm-platform-comparison.md`*
+*Sources: `research/external/2026-05-20-salesforce-data-model-lead-contact-lifecycle.md`, `research/external/2026-05-20-hubspot-api-rate-limits-webhooks.md`, `research/external/2026-05-20-attio-api-v2-rate-limits-stability.md`, `research/external/2026-05-20-folk-close-pipedrive-copper-api-comparison.md`, `research/external/2026-05-20-crm-platform-comparison.md` (source-repository research, not shipped)*

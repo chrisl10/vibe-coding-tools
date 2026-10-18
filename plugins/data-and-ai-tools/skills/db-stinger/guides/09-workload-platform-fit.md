@@ -1,6 +1,6 @@
 # Workload-led managed PostgreSQL choice
 
-Read [current digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/db-stinger/references/research/2026-10-data-fit/distilled.md) and [worksheet](../templates/platform-fit-decision.md). The older platform matrix is a historical snapshot; do not copy its versions, categorical service gaps, prepared-statement claims, uptime figures or price assumptions as current facts.
+Read current digest and [worksheet](../templates/platform-fit-decision.md). The older platform matrix is a historical snapshot; do not copy its versions, categorical service gaps, prepared-statement claims, uptime figures or price assumptions as current facts.
 
 1. Read existing schema, recent migrations, runtime/client/ORM, actual Postgres/provider metadata and non-secret architecture. Do not connect to a live database, expose a connection string or run EXPLAIN ANALYZE against production merely to choose a provider. Ask only for missing material constraints.
 2. Normalize workload: tenant/account rows and growth, transactions/write contention, hot query patterns, concurrent client connections, serverless bursts, long-lived sessions/LISTEN needs, background jobs, extension requirements, storage objects/egress, realtime fanout/message rates, region residency and user latency. Separate measured, forecast and unknown inputs; do not invent throughput from users.

@@ -112,7 +112,7 @@ try {
     } catch (error) {
       const output = `${error.stdout || ""}${error.stderr || ""}`;
       const count = output.split("\n").filter((line) => line.startsWith("ERROR")).length;
-      if (count) failures.push(`ERROR ${target}: validator reported ${count} error(s). Inspect them through explicit approved validation; component is unverified.`);
+      if (count) failures.push(`ERROR ${target}: validator reported ${count} error(s); component is unverified. Error text is not forwarded here. To read it, run: ${process.platform === "win32" ? (/^[A-Za-z0-9 _.:\\\/-]+$/.test(validator) ? `python "${validator}"` : "python <Core>\\skills\\queen-wasp-stinger\\references\\scripts\\per-type-validation.py") : `python3 '${validator.replace(/'/g, "'\\''")}'`} ${target} --type ${type} --harness all`);
       else failures.push(`Validation unavailable for ${target}: validator failed, timed out or exceeded its output bound; component is unverified.`);
     }
   }

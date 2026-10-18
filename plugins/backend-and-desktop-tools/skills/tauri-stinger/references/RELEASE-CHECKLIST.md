@@ -27,7 +27,7 @@ Evidence basis: [CURRENT-TAURI-2.md](CURRENT-TAURI-2.md).
 - [ ] Mobile changes run on a simulator where useful and a physical supported device before release.
 - [ ] Platform-specific configuration arrays are checked after merge.
 
-Evidence basis: [research/raw/tauri--docs--tests-overview.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--tests-overview.md) and [research/raw/tauri--docs--webdriver.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--webdriver.md). Physical-device and package checks are derived release policy.
+Evidence basis: research/raw/tauri--docs--tests-overview.md and research/raw/tauri--docs--webdriver.md. Physical-device and package checks are derived release policy.
 
 ## Authority and secrets
 
@@ -51,7 +51,7 @@ Evidence basis: [IPC-SECURITY-REFERENCE.md](IPC-SECURITY-REFERENCE.md).
 - [ ] Install and launch each supported Linux package type in a representative environment.
 - [ ] Confirm every bundled sidecar has the correct target triple, executable permissions, signature where applicable, and runtime dependency set.
 
-Evidence basis: [research/raw/tauri--docs--windows-signing.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--windows-signing.md), [research/raw/tauri--docs--macos-signing.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--macos-signing.md), and [research/raw/tauri--docs--sidecars.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--sidecars.md).
+Evidence basis: research/raw/tauri--docs--windows-signing.md, research/raw/tauri--docs--macos-signing.md, and research/raw/tauri--docs--sidecars.md.
 
 ## Updater
 
@@ -62,7 +62,7 @@ Evidence basis: [research/raw/tauri--docs--windows-signing.md](https://github.co
 - [ ] Verify operating-system signing separately from updater signing.
 - [ ] Preserve the updater key securely and document recovery and rotation limits.
 
-Evidence basis: [research/raw/tauri--docs--updater-plugin.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--updater-plugin.md) and [research/raw/tauri--release--updater-2.11.0.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--release--updater-2.11.0.md).
+Evidence basis: research/raw/tauri--docs--updater-plugin.md and research/raw/tauri--release--updater-2.11.0.md.
 
 ## Mobile and publication
 
@@ -72,7 +72,7 @@ Evidence basis: [research/raw/tauri--docs--updater-plugin.md](https://github.com
 - [ ] Treat Tauri Action mobile output as build evidence only, not store submission or acceptance evidence.
 - [ ] Complete the applicable app-store review workflow with the store specialist.
 
-Evidence basis: [research/raw/tauri--docs--mobile-plugin-development.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--mobile-plugin-development.md) and [research/raw/tauri--release--tauri-action-1.0.0.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--release--tauri-action-1.0.0.md).
+Evidence basis: research/raw/tauri--docs--mobile-plugin-development.md and research/raw/tauri--release--tauri-action-1.0.0.md.
 
 ## Evidence bundle
 
@@ -94,4 +94,4 @@ Evidence basis: [research/raw/tauri--docs--mobile-plugin-development.md](https:/
 - [ ] Linux package format is not universal libc/WebKit/architecture support proof.
 - [ ] Recovery is proven against persistence compatibility; automatic downgrade is never assumed.
 
-Source basis: [2026-10-07 digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/native-release-20261007/distilled-native-release.md).
+Source basis: 2026-10-07 digest.

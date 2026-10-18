@@ -1,6 +1,6 @@
 # 05: API Changelog Discipline
 
-Writing API changelogs that keep consumers informed. Read `research/external/bump-sh-changelog-breaking-changes.md` before running this guide.
+Writing API changelogs that keep consumers informed. Read `research/external/bump-sh-changelog-breaking-changes.md` (source-repository research, not shipped) before running this guide.
 
 ## The [BREAKING] convention
 
@@ -93,4 +93,4 @@ The diff appears as a PR comment. Configure `fail_on_breaking: true` to block me
 | Monorepo with multiple APIs | `api/CHANGELOG.md` per service |
 | Managed platform (Bump.sh, Mintlify) | Platform-native changelog; link from `CHANGELOG.md` |
 
-*Source: `research/external/bump-sh-changelog-breaking-changes.md`*
+*Source: `research/external/bump-sh-changelog-breaking-changes.md` (source-repository research, not shipped)*

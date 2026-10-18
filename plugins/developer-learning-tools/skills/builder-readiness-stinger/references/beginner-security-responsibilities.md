@@ -1,6 +1,6 @@
 # Security responsibilities in plain words
 
-Use alongside the [guide](../guides/explain-security-responsibilities.md) and [digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/builder-readiness-stinger/references/research/beginner-security/distillation.md). These are learning prompts, not a complete control checklist or an app verdict.
+Use alongside the [guide](../guides/explain-security-responsibilities.md) and digest. These are learning prompts, not a complete control checklist or an app verdict.
 
 | Boundary | What it means | Beginner/product decision | Actual owner work and evidence gap |
 |---|---|---|---|

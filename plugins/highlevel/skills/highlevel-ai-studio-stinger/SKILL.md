@@ -76,7 +76,7 @@ HighLevel changes quickly. The included research is a primary-source snapshot fe
 - `examples/ai-studio-lead-capture-worked-example.md`: load for an end-to-end AI Studio planning, connection, publish, and evidence example
 - `examples/routing-boundary-tests.md`: load when checking alias routing and scope handoffs
 - `references/research/distilled-highlevel-ai-studio.md`: load when a domain claim needs proof, conflict resolution, or a full product map
-- `references/research/raw/`: load when tracing a distilled claim to the archived official source
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `scripts/validate.py`: run after editing this Stinger package and before reporting it complete
 - `guides/01-choose-the-right-highlevel-ai-surface.md` through `guides/07-troubleshoot-access-usage-and-state.md`: load the guide matching the requested action
 

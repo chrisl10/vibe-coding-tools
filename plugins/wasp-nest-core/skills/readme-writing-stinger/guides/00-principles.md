@@ -1,6 +1,6 @@
 # Principles: README as Landing Page
 
-> Source: `research/external/2026-05-20-readme-structure-best-practices.md`, `research/external/2026-05-20-awesome-readme-gallery.md`
+> Source: `research/external/2026-05-20-readme-structure-best-practices.md`, `research/external/2026-05-20-awesome-readme-gallery.md` (source-repository research, not shipped)
 
 ---
 

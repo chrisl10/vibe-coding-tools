@@ -431,7 +431,7 @@ one fix, and one exception.
 | `references/evidence-standards.md` | Before writing any output. Every phase. |
 | `references/littlebird-mcp-reference.md` | Before calling any Littlebird tool. Parameters, return shapes, known limitations. |
 | `references/research/distilled-saas-spend-leakage.md` | Any time a domain figure is about to be quoted. |
-| `references/research/raw/` | To check a citation back to its source. |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `scripts/ledger_math.py` | Phase 2 and 3. Deduplication and run-rate arithmetic. |
 
 Ship Gate removed, research-only skill, produces no committable code.

@@ -1,6 +1,6 @@
 # Alternative: Qdrant
 
-Labeled alternative, not this repo's default. Reach for this guide only after the selection matrix (`00-selection-matrix.md`) points here: heavy metadata-filtered search at scale, or a corpus past pgvector's comfortable ceiling on a single Postgres instance. Sourced from `references/research/raw/devto--pgvector-vs-pinecone-vs-qdrant-when-dedicated-vector-db-worth-it.md` and `references/research/raw/kalviumlabs--vector-databases-compared-pgvector-pinecone-qdrant-weaviate-2026.md`.
+Labeled alternative, not this repo's default. Reach for this guide only after the selection matrix (`00-selection-matrix.md`) points here: heavy metadata-filtered search at scale, or a corpus past pgvector's comfortable ceiling on a single Postgres instance. Sourced from `references/research/raw/devto--pgvector-vs-pinecone-vs-qdrant-when-dedicated-vector-db-worth-it.md` and `references/research/raw/kalviumlabs--vector-databases-compared-pgvector-pinecone-qdrant-weaviate-2026.md` (source-repository research, not shipped).
 
 ## What it is
 

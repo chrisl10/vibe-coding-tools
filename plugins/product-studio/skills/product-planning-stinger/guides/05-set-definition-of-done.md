@@ -6,7 +6,7 @@ Template: [../references/templates/definition-of-done.md](../references/template
 
 ## Why one shared list
 
-Work that does not meet the Definition of Done does not count and cannot ship. When several teams or agents build one product, they all use the same Definition of Done. [Scrum Guide](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-planning-stinger/references/research/raw/scrum-guide-2020-definition-of-done.md) Without a saved, approved list, "done" means whatever the last agent said.
+Work that does not meet the Definition of Done does not count and cannot ship. When several teams or agents build one product, they all use the same Definition of Done. Scrum Guide Without a saved, approved list, "done" means whatever the last agent said.
 
 ## Steps
 
@@ -18,7 +18,7 @@ Work that does not meet the Definition of Done does not count and cannot ship. W
    4. Docs and Library knowledge updated; PRD folder in the right lifecycle place with its `qa/` evidence.
    5. Owner approval.
 3. **Add project items from the strategy and UX package.** For example, a phone-first product adds "works at the smallest supported phone width". Ask: "what would embarrass us if it shipped broken?" Turn each answer into a yes/no check.
-4. **Keep it short.** A DoD that nobody can meet gets ignored. Put checks that only matter for one PRD into that PRD's checklist instead. [Agile Alliance](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-planning-stinger/references/research/raw/agile-alliance-definition-of-done.md)
+4. **Keep it short.** A DoD that nobody can meet gets ignored. Put checks that only matter for one PRD into that PRD's checklist instead. Agile Alliance
 5. **Make every line pass/fail.** "Code is clean" is not checkable. "Lint passes with zero errors" is.
 6. **Fill the project-specific test commands** (build, type check, lint) from the repository if you can see them. If not, leave the placeholder and list it as an open question.
 7. **Write the PRD-level checklist block.** It links the project DoD revision and leaves lines for PRD-specific extras. Library pastes it into each PRD.

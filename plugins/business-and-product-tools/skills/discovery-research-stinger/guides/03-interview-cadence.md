@@ -2,7 +2,7 @@
 
 How to run continuous discovery interviews at the weekly frequency Teresa Torres prescribes.
 
-**Research source:** `research/external/2026-05-20-continuous-discovery-habits-operationalized-2026.md`, `research/external/2026-05-20-user-interview-script-structure-2026.md`
+**Research source:** `research/external/2026-05-20-continuous-discovery-habits-operationalized-2026.md`, `research/external/2026-05-20-user-interview-script-structure-2026.md` (source-repository research, not shipped)
 
 ---
 
@@ -10,7 +10,7 @@ How to run continuous discovery interviews at the weekly frequency Teresa Torres
 
 The target is one customer interview per week, conducted by the product trio (PM + designer + engineer). Each interview runs 20-30 minutes and is structured — not an open-ended "tell me about yourself" chat.
 
-**Reality check:** Fewer than 1 in 5 product trios hit weekly consistently. The primary cause is recruiting friction, not time. See "Recruit while you sleep" below. (Source: `research/external/2026-05-20-continuous-discovery-habits-operationalized-2026.md`)
+**Reality check:** Fewer than 1 in 5 product trios hit weekly consistently. The primary cause is recruiting friction, not time. See "Recruit while you sleep" below. (Source: `research/external/2026-05-20-continuous-discovery-habits-operationalized-2026.md` [source-repository research, not shipped])
 
 **Weekly time budget (~100 min/week for the trio):**
 - Recruitment / scheduling: ~20 min
@@ -66,4 +66,4 @@ After each interview:
 1. **Individual note review:** Each trio member re-reads their notes and identifies 1-3 candidate opportunity nodes (expressed as customer problems/desires, not solutions).
 2. **Debrief:** Combine the lists. Cluster duplicates. Debate whether each candidate belongs in the existing tree or opens a new branch.
 3. **OST update:** Add, refine, or validate nodes in `library/discovery/opportunity-solution-tree.md`. Note the date and interview context in the node's comment/annotation field.
-4. **Saturation signal:** When 5-7 interviews produce no new opportunity nodes for a given cluster, that cluster is saturated and can be considered for solution ideation. (Source: `research/external/2026-05-20-user-interview-script-structure-2026.md`)
+4. **Saturation signal:** When 5-7 interviews produce no new opportunity nodes for a given cluster, that cluster is saturated and can be considered for solution ideation. (Source: `research/external/2026-05-20-user-interview-script-structure-2026.md` [source-repository research, not shipped])

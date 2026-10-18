@@ -2,7 +2,7 @@
 
 ## What shadcn-svelte actually is
 
-shadcn-svelte is not a component library you `npm install` and import from `node_modules`. It's a copy-in system: the CLI writes real component source files directly into your repo. The project's own framing: "This is not a component library. It is how you build your component library" [research/raw/14-copy-in-philosophy-and-component-anatomy.md]. Five stated principles: Open Code, Composition, Distribution, Beautiful Defaults, AI-Ready [research/raw/14-copy-in-philosophy-and-component-anatomy.md].
+shadcn-svelte is not a component library you `npm install` and import from `node_modules`. It's a copy-in system: the CLI writes real component source files directly into your repo. The project's own framing: "This is not a component library. It is how you build your component library" [research/raw/14-copy-in-philosophy-and-component-anatomy.md]. Five stated principles: Open Code, Composition, Distribution, Beautiful Defaults, AI-Ready [research/raw/14-copy-in-philosophy-and-component-anatomy.md (source-repository research, not shipped)].
 
 Foundation: Bits UI (currently v2) provides the headless, WAI-ARIA-compliant primitives for most components; Melt UI inspired Bits UI's internal architecture and is used directly in some styles. Tailwind CSS v4 handles styling via CSS-first `@theme`/`@theme inline`. tailwind-variants composes variant classes; clsx + tailwind-merge (wrapped as `cn()`) merges them [research/distilled-shadcn-svelte.md sections 1-2].
 

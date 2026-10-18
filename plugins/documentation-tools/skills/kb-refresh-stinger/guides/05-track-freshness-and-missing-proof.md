@@ -1,6 +1,6 @@
 # Track freshness and missing proof
 
-Use a claim receipt to decide what needs refresh. Start inside the owner's named file set and pinned revision. Use the existing inventory, unit map, grounding law and adversarial verification chain; this guide adds evidence fields, not a second pipeline. [Research digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/skills/kb-refresh-stinger/references/research/documentation-freshness/distilled.md).
+Use a claim receipt to decide what needs refresh. Start inside the owner's named file set and pinned revision. Use the existing inventory, unit map, grounding law and adversarial verification chain; this guide adds evidence fields, not a second pipeline. Research digest.
 
 ## Read the receipt before the date
 

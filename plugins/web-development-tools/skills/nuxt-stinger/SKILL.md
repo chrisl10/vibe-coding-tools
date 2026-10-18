@@ -39,7 +39,7 @@ Build or extend an authorized Nuxt app when its accepted rendering/content requi
 
 ## References map
 
-- [Digest](references/research/distilled-nuxt.md), [ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/nuxt-stinger/references/research/source-ledger.json), [claim locators](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/nuxt-stinger/references/research/claim-locators.json): official grounding and version limits.
+- [Digest](references/research/distilled-nuxt.md), ledger, claim locators: official grounding and version limits.
 - [Rendering contract](references/templates/rendering-contract.md), [integration templates](README.md): bounded starters, not built app evidence.
 - [Negative cases](references/examples/negative-cases.md): required rejection and acceptance boundaries.
 - [Paired Drone](../../agents/nuxt-wasp-drone.md): scope and delivery contract.

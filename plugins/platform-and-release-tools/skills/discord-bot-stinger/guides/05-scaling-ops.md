@@ -2,7 +2,7 @@
 
 Sharding, REST-only mode, rate-limit handling, and container health patterns for production bots.
 
-*Sources: `research/external/2026-05-20-discord-sharding-guide.md`, `research/external/2026-05-20-discord-api-v10-changes-2026.md`*
+*Sources: `research/external/2026-05-20-discord-sharding-guide.md`, `research/external/2026-05-20-discord-api-v10-changes-2026.md` (source-repository research, not shipped)*
 
 ---
 

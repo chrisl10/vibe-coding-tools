@@ -1,6 +1,6 @@
 # Guide 03: Modals (Views)
 
-**Sources:** `research/external/2026-05-20-block-kit-modals.md`, `research/external/2026-05-20-slash-commands-interactive.md`
+**Sources:** `research/external/2026-05-20-block-kit-modals.md`, `research/external/2026-05-20-slash-commands-interactive.md` (source-repository research, not shipped)
 
 ---
 
@@ -51,7 +51,7 @@ const view = {
 };
 ```
 
-> `private_metadata` max: **3000 characters**. For larger payloads, store in a short-lived cache (Redis, etc.) and pass a lookup key in `private_metadata`. Source: `research/external/2026-05-20-block-kit-modals.md`
+> `private_metadata` max: **3000 characters**. For larger payloads, store in a short-lived cache (Redis, etc.) and pass a lookup key in `private_metadata`. Source: `research/external/2026-05-20-block-kit-modals.md` (source-repository research, not shipped)
 
 ---
 

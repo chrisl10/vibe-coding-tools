@@ -2,7 +2,7 @@
 
 Use this guide when wiring the logic that decides who sees a tour, when, and under what conditions.
 
-Source: `research/external/2026-05-20-segment-triggers-feature-flags.md`.
+Source: `research/external/2026-05-20-segment-triggers-feature-flags.md` (source-repository research, not shipped).
 
 ---
 
@@ -99,7 +99,7 @@ useEffect(() => {
 }, [router.pathname]);
 ```
 
-Behavioral triggers produce better completion rates because the user is already in context (source: `research/external/2026-05-20-checklist-activation-gamification.md`).
+Behavioral triggers produce better completion rates because the user is already in context (source: `research/external/2026-05-20-checklist-activation-gamification.md` [source-repository research, not shipped]).
 
 ---
 

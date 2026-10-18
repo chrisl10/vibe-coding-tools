@@ -2,6 +2,7 @@
 name: "source-command-design-data"
 description: "Design a source-grounded data model, access boundaries, indexes and a migration proposal without executing database changes."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-design-data

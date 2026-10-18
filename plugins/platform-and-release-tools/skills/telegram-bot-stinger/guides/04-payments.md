@@ -1,6 +1,6 @@
 # Guide 04: Telegram Payments
 
-> Sources: `research/payments/2026-05-20-telegram-stars-official-payments.md`, `research/payments/2026-05-20-stars-integration-tutorial.md`, `research/payments/2026-05-20-stars-dev-community-overview.md`
+> Sources: `research/payments/2026-05-20-telegram-stars-official-payments.md`, `research/payments/2026-05-20-stars-integration-tutorial.md`, `research/payments/2026-05-20-stars-dev-community-overview.md` (source-repository research, not shipped)
 
 ---
 

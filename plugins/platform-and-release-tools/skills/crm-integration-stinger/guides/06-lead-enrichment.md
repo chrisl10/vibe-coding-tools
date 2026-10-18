@@ -103,5 +103,5 @@ At >2,000 new contacts/month with high enrichment needs, evaluate Apollo Organiz
 
 ---
 
-*Sources: `research/external/2026-05-20-lead-enrichment-comparison.md`, `research/external/2026-05-20-crm-platform-comparison.md`*
+*Sources: `research/external/2026-05-20-lead-enrichment-comparison.md`, `research/external/2026-05-20-crm-platform-comparison.md` (source-repository research, not shipped)*
 *Open question: Verify Clearbit standalone API status at clearbit.com/docs before advising any non-HubSpot user on Clearbit. See `research/research-summary.md` Open Question #1.*

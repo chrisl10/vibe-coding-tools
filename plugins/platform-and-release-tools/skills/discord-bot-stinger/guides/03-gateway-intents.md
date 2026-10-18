@@ -2,7 +2,7 @@
 
 How to declare the minimum required intents, understand privileged vs standard intents, and navigate the verification gate.
 
-*Sources: `research/external/2026-05-20-discord-privileged-intents.md`, `research/external/2026-05-20-discordpy-intents-primer.md`, `research/external/2026-05-20-discord-intents-explainer.md`, `research/external/2026-05-20-discord-privileged-intents-best-practices.md`*
+*Sources: `research/external/2026-05-20-discord-privileged-intents.md`, `research/external/2026-05-20-discordpy-intents-primer.md`, `research/external/2026-05-20-discord-intents-explainer.md`, `research/external/2026-05-20-discord-privileged-intents-best-practices.md` (source-repository research, not shipped)*
 
 ---
 

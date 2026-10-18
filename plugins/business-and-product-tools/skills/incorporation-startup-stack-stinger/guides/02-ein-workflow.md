@@ -2,7 +2,7 @@
 
 Step 3: Acquire an Employer Identification Number (EIN) for the new entity.
 
-*Derived from: `research/external/irs-ein-workflow-official-2026.md`*
+*Derived from: `research/external/irs-ein-workflow-official-2026.md` (source-repository research, not shipped)*
 
 ---
 

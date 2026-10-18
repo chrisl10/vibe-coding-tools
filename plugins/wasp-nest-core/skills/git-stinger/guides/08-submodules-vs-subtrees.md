@@ -147,4 +147,4 @@ This is the lowest-friction approach when all code is owned by the same organiza
 3. **Dependency you modify frequently and push changes upstream** → subtree.
 4. **Third-party code you vendor and never push to** → copy the source (no submodule/subtree needed).
 
-Sources: research/external/03-worktrees.md (monorepo section)
+Sources: research/external/03-worktrees.md (source-repository research, not shipped) (monorepo section)

@@ -2,7 +2,7 @@
 
 Grounded in [raw/posthog--feature-flags--local-evaluation-bootstrapping.md]. Without bootstrapping, the client SDK's first `/flags` request is in flight during initial render, so a gated feature can flash its default/control state before flipping to the correct variant. Bootstrapping seeds the client with server-evaluated flag values at `init()` time, so first paint is already correct.
 
-For rollout or removal use [guide 07](../guides/07-roll-out-and-retire-flags.md). This historical sketch is not target SDK proof: qualify its bulk snapshot shape, approved properties, identity flow and lifecycle against installed versions. Current [bootstrap documentation](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/posthog-stinger/references/research/flag-lifecycle-20261007/raw/bootstrapping.md) distinguishes complete responses from partial/errored responses that preserve previous values. Do not assume a successful refresh cleared every old value or that a bootstrap value authorizes server effects.
+For rollout or removal use [guide 07](../guides/07-roll-out-and-retire-flags.md). This historical sketch is not target SDK proof: qualify its bulk snapshot shape, approved properties, identity flow and lifecycle against installed versions. Current bootstrap documentation distinguishes complete responses from partial/errored responses that preserve previous values. Do not assume a successful refresh cleared every old value or that a bootstrap value authorizes server effects.
 
 ## Pattern: evaluate flags server-side, pass into client `bootstrap`
 

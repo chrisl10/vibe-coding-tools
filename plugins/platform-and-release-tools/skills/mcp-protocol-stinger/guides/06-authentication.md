@@ -80,4 +80,4 @@ See `guides/07-testing-mcp.md` for how this fits into the broader testing layers
 
 ---
 
-*Sources: `research/distilled-mcp-protocol.md`, `research/external/mcp-spec-authorization.md`, `research/external/mcp-spec-architecture.md`, `research/external/mcp-testing-three-layers-autonoma.md`*
+*Sources: `research/distilled-mcp-protocol.md`, `research/external/mcp-spec-authorization.md`, `research/external/mcp-spec-architecture.md`, `research/external/mcp-testing-three-layers-autonoma.md` (source-repository research, not shipped)*

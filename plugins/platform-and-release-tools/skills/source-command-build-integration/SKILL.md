@@ -2,6 +2,7 @@
 name: "source-command-build-integration"
 description: "Build a scoped provider integration with explicit authorization, sync, retry, rate-limit and revocation contracts."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-build-integration

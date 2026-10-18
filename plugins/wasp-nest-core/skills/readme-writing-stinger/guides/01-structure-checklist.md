@@ -1,6 +1,6 @@
 # Structure Checklist: Canonical Section Order
 
-> Source: `research/external/2026-05-20-readme-structure-best-practices.md`
+> Source: `research/external/2026-05-20-readme-structure-best-practices.md` (source-repository research, not shipped)
 
 The 2026 consensus section order for a README, with pass/fail criteria for each section. Run this checklist in Step 2 (audit) and Step 7 (final validation) of the stinger procedure.
 

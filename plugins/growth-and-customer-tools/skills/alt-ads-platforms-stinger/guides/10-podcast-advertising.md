@@ -14,7 +14,7 @@ Podcast advertising spans two channels: **Spotify Ad Studio** (programmatic, sel
 | Spotify video completion rate | 40-60% |
 | Host-read podcast ad recall | 2-3x higher than produced ads |
 
-*Source: `research/external/2026-05-20-spotify-ads-benchmarks-2026.md`, `research/external/2026-05-20-spotify-podcast-ad-formats-official.md`*
+*Source: `research/external/2026-05-20-spotify-ads-benchmarks-2026.md`, `research/external/2026-05-20-spotify-podcast-ad-formats-official.md` (source-repository research, not shipped)*
 
 ---
 
@@ -48,7 +48,7 @@ Spotify's targeting uses behavioral listening data:
 - Background music is optional but helps with brand recall.
 - Spotify's free audio creation tool is available in Ad Studio (Voice Talent feature) for simple ads.
 
-*Source: `research/external/2026-05-20-spotify-podcast-ad-formats-official.md`*
+*Source: `research/external/2026-05-20-spotify-podcast-ad-formats-official.md` (source-repository research, not shipped)*
 
 ---
 

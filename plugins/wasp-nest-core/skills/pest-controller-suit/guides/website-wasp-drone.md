@@ -6,7 +6,7 @@
 
 ## Paired Stinger
 
-[`../skills/website-stinger/`](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/website-stinger)
+[`../skills/website-stinger/`](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/website-stinger)
 
 Read `../skills/website-stinger/SKILL.md` first: it is the master index for this Drone's arsenal.
 
@@ -16,7 +16,7 @@ Read `../skills/website-stinger/SKILL.md` first: it is the master index for this
 2. **Select outcome scope.** Load `guides/14-scope-a-quick-website.md` for quick websites and `guides/15-build-an-independent-payload-cms.md` for CMS-only or Payload contract work. Exclude unneeded auth/database/tracking/webhooks explicitly; require content/access/cache readiness evidence before claiming the CMS works. Another public framework requires its selected implementer.
 3. **Collect inputs in one batched round** using `templates/inputs-checklist.md`. Include the CMS-mode question. If the brief opts out of any phase, surface the architectural consequence before scaffolding.
 4. **Initialize the Build Report.** Copy `templates/build-report.md` into the target repo as `build-report.md` and fill the Inputs section.
-5. **Execute phases in canonical order: `1 → 2 → 5 → 6 → 7 → 3 → 4 → 8 → 9 → 10 → 12 → 11`.** For each phase: read the matching `guides/0N-<topic>.md`, glance at the source PRD in `research/source-prds/`, apply the changes, run the phase smoke check, mark the Build Report row pass/fail/skip, and prepare an appropriate commit only after gates and user authorization.
+5. **Execute phases in canonical order: `1 → 2 → 5 → 6 → 7 → 3 → 4 → 8 → 9 → 10 → 12 → 11`.** For each phase: read the matching `guides/0N-<topic>.md`, apply the changes, run the phase smoke check, mark the Build Report row pass/fail/skip, and prepare an appropriate commit only after gates and user authorization.
    - Phase 1: `guides/01-monorepo.md`: pnpm workspaces + apps/web (SvelteKit) + apps/cms (Payload) + Vercel.
    - Phase 2: `guides/02-performance-security.md`: svelte.config.js, enhanced-img, hooks.server.ts headers, fontsource.
    - Phase 5: `guides/05-supabase.md`: schema, RLS, dual Postgres namespace, hooks.server.ts client, generated types. **Handoff to `db-wasp-drone`** for detailed schema design and indexing.
@@ -106,9 +106,12 @@ The `SKILL.md` at the root is the master index: read it first.
 - `reports/README.md`: archive convention; active Build Report goes in the target repo
 
 ### Research trail (research/)
-- `research/research-plan.md`: source list, SvelteKit + Payload + Svelte animation sources
-- `research/README.md`: PRD-to-guide mapping and Payload deep-research pointer
-- `research/source-prds/`: canonical 12-phase site template PRDs (primary source for all guide claims)
+
+The notes listed below are source-repository research, not shipped.
+
+- `research/research-plan.md` (source-repository research, not shipped): source list, SvelteKit + Payload + Svelte animation sources
+- `research/README.md` (source-repository research, not shipped): PRD-to-guide mapping and Payload deep-research pointer
+- `research/source-prds/` (source-repository research, not shipped): canonical 12-phase site template PRDs (primary source for all guide claims)
 
 ---
 
@@ -117,11 +120,11 @@ The `SKILL.md` at the root is the master index: read it first.
 
 ## Critical Directive: paired skill
 
-- You must load your core skill now in advance of any planning or execution. Your core skill is: [website-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/website-stinger).
+- You must load your core skill now in advance of any planning or execution. Your core skill is: [website-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/website-stinger).
 - You must read all files and context contained within your skill.
 - In the event your core skill does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/svelte-stinger) - Svelte runtime implementation.
+  - [svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/svelte-stinger) - Svelte runtime implementation.
 
 ## Ship Gate
 

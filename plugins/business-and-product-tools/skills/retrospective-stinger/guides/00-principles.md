@@ -1,6 +1,6 @@
 # 00: Principles: Retros Are Behavior-Change Instruments
 
-*Derived from `research/external/2026-05-20-format-selection-meetgeek.md` and `research/external/2026-05-20-action-items-agile-coach-medium.md`.*
+*Derived from `research/external/2026-05-20-format-selection-meetgeek.md` and `research/external/2026-05-20-action-items-agile-coach-medium.md` (source-repository research, not shipped).*
 
 ---
 

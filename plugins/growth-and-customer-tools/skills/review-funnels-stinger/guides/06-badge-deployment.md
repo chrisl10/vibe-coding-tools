@@ -16,7 +16,7 @@
 
 **2025 policy change (Summer 2025):** Report-based badges (Leader, High Performer, etc.) now require a paid G2 Marketing Solutions subscription. Free-tier vendors can only display "Users Love Us."
 
-Source: `research/external/2026-05-20-g2-badges-social-proof-conversion.md`
+Source: `research/external/2026-05-20-g2-badges-social-proof-conversion.md` (source-repository research, not shipped)
 
 ### Trustpilot badge
 - TrustScore (1-5 stars aggregate): free to embed via Trustpilot widget script.
@@ -95,4 +95,4 @@ Download from your Maker dashboard post-launch. Link to your PH product page:
 | Trustpilot widget | Dynamic -- no manual update needed |
 | Product Hunt | One-time; update to higher tier (Week > Month) if you win |
 
-Source: `research/external/2026-05-20-g2-badges-social-proof-conversion.md`
+Source: `research/external/2026-05-20-g2-badges-social-proof-conversion.md` (source-repository research, not shipped)

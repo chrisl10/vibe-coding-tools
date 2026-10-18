@@ -1,6 +1,6 @@
 # Terminology and fidelity
 
-Use this starting vocabulary only when the source supports the concept. Define app-specific terms from the actual source. Plain language does not authorize removal of constraints. This reference applies the consistent terminology and audience principles in [Google Words](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/technical-explainer-stinger/references/research/raw/google-words.html) and [Google Audience](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/technical-explainer-stinger/references/research/raw/google-audience.html).
+Use this starting vocabulary only when the source supports the concept. Define app-specific terms from the actual source. Plain language does not authorize removal of constraints. This reference applies the consistent terminology and audience principles in Google Words and Google Audience.
 
 | Technical term | Plain-language wording | Preserve |
 |---|---|---|

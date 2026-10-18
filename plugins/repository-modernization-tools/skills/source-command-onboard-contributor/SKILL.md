@@ -2,6 +2,7 @@
 name: "source-command-onboard-contributor"
 description: "Prepare and exercise a contributor setup path, first contribution and complete contractor handoff packet when requested using actual repository evidence."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-onboard-contributor

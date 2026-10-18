@@ -1,6 +1,6 @@
 # 10 — Install & Verify (hybrid scope)
 
-Derived from `research/07-hooks-enforcement.md`, `research/09-maintenance-doctor.md`, `research/10-native-platforms-harnesses.md`, `research/11-license-provenance.md`.
+Derived from `research/07-hooks-enforcement.md`, `research/09-maintenance-doctor.md`, `research/10-native-platforms-harnesses.md`, `research/11-license-provenance.md` (source-repository research, not shipped).
 
 ## Global skill install (once per machine)
 

@@ -35,12 +35,14 @@ README, license, contribution and security documents, CODEOWNERS, branch protect
 
 ## Sources
 
-- [research/raw/github--codeowners.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/github--codeowners.md)
-- [research/raw/github-api--branch-protection.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/github-api--branch-protection.md)
-- [research/raw/github-api--rulesets-rules.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/github-api--rulesets-rules.md)
-- [research/raw/github-api--community-profile.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/github-api--community-profile.md)
-- [research/raw/github-api--get-repository.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/github-api--get-repository.md)
-- [research/raw/scorecard--checks-reference.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/scorecard--checks-reference.md)
-- [research/raw/scorecard--cli-local-mode.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/scorecard--cli-local-mode.md)
-- [research/raw/wasp-nest--github-repo-health-checks.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/wasp-nest--github-repo-health-checks.md)
-- [research/raw/openssf--best-practices-criteria.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/openssf--best-practices-criteria.md)
+The notes listed below are source-repository research, not shipped.
+
+- research/raw/github--codeowners.md (source-repository research, not shipped)
+- research/raw/github-api--branch-protection.md (source-repository research, not shipped)
+- research/raw/github-api--rulesets-rules.md (source-repository research, not shipped)
+- research/raw/github-api--community-profile.md (source-repository research, not shipped)
+- research/raw/github-api--get-repository.md (source-repository research, not shipped)
+- research/raw/scorecard--checks-reference.md (source-repository research, not shipped)
+- research/raw/scorecard--cli-local-mode.md (source-repository research, not shipped)
+- research/raw/wasp-nest--github-repo-health-checks.md (source-repository research, not shipped)
+- research/raw/openssf--best-practices-criteria.md (source-repository research, not shipped)

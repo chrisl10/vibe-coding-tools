@@ -25,7 +25,7 @@ X's What's-happening panel is mirrored hourly by several fetchable public sites;
 - Repeating viral formats: one-liner truth bomb, short story with payoff, numbered list, contrarian take, receipt/screenshot (raw/viral-post-craft.md).
 - Engagement bait is penalized by X's AI content scoring; a strong genuine position that invites debate is not bait, the line is intent (raw/viral-post-craft.md). This is why the skill demands sharp-but-accurate: fabrication is both an ethics failure and an algorithmic one.
 - Most posts' impression window closes within 24-48 hours, which is the mechanical argument for the 24-hour freshness gate: stale news cannot ride a wave that already crested (raw/viral-post-craft.md).
-- Hashtags on X 2026: one or two in the post body at most; stacks dilute the topical read. The separate 2-4 hashtag block this skill outputs is owner spec, offered apart from the post body so Mario chooses what to paste (raw/viral-post-craft.md).
+- Hashtags on X 2026: one or two in the post body at most; stacks dilute the topical read. The separate 2-4 hashtag block this skill outputs is owner spec, offered apart from the post body so the user chooses what to paste (raw/viral-post-craft.md).
 
 ## Flagged conflict
 

@@ -1,6 +1,6 @@
 # next/image Integration Guide
 
-> Derived from: `research/external/2026-05-20-nextjs-image-component-api.md`, `research/external/2026-05-20-nextjs-image-api-reference.md`, `research/external/2026-05-20-nextjs-image-remote-patterns.md`, `research/external/2026-05-20-nextjs-remotepatterns-security.md`, `research/external/2026-05-20-nextjs-image-optimization-strapi.md`
+> Derived from: `research/external/2026-05-20-nextjs-image-component-api.md`, `research/external/2026-05-20-nextjs-image-api-reference.md`, `research/external/2026-05-20-nextjs-image-remote-patterns.md`, `research/external/2026-05-20-nextjs-remotepatterns-security.md`, `research/external/2026-05-20-nextjs-image-optimization-strapi.md` (source-repository research, not shipped)
 
 ---
 
@@ -112,7 +112,7 @@ remotePatterns: [
 
 **Security note:** Wildcards (`**`) in `hostname` match any subdomain. Be as specific as possible: a wildcard on `**.example.com` allows any subdomain of example.com to serve images through your Next.js image optimization pipeline, which could be exploited if example.com is user-controlled.
 
-> Source: `research/external/2026-05-20-nextjs-remotepatterns-security.md`
+> Source: `research/external/2026-05-20-nextjs-remotepatterns-security.md` (source-repository research, not shipped)
 
 ---
 

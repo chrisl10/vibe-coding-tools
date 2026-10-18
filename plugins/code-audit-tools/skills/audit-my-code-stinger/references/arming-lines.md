@@ -14,16 +14,16 @@ Common block, prepended to every line:
 **code-bloat-wasp-drone**
 > Load `code-bloat-stinger` before any work. Measure duplication (jscpd at 50 and 100 tokens, with the large-file limit lifted), unused code (knip or the language equivalent, with a spot-check of at least 12 findings), line counts (cloc or scc), and structure (largest files and functions, split plan). Write `01-bloat/`, raw reports in `01-bloat/raw/`.
 
-**security-wasp-drone** (generic pass)
-> Load `security-stinger` before any work. Audit mode: report, do not remediate, and do not write to `library/`. Apply only the checks that match this repository's stack; the framework Drones running beside you go deep on React, Next.js, SvelteKit, and other ecosystems, so focus on secrets (working tree and history, read-only), dependency advisories, and stack-agnostic OWASP Top 10:2025 classes. Write `02-security/findings-security-wasp-drone.jsonl`, `02-security/metrics-security-wasp-drone.json`, and `02-security/notes-security-wasp-drone.md` in the contract shape.
+**security-wasp-drone** (generic pass, report only)
+> Load `security-stinger` before any work, and use its catalog and triage method only. This run overrides its remediation and reporting steps: report findings only; do not fix, patch, or remediate anything; do not run its Ship Gate or commit steps; write nothing outside `{workspace}/02-security/` (not the audited repository, not `library/`, not the throwaway copy). Apply only the checks that match this repository's stack; the framework Drones running beside you go deep on React, Next.js, SvelteKit, and other ecosystems, so focus on secrets (working tree and history, read-only), dependency advisories, and stack-agnostic OWASP Top 10:2025 classes. Write `02-security/findings-security-wasp-drone.jsonl`, `02-security/metrics-security-wasp-drone.json`, and `02-security/notes-security-wasp-drone.md` in the contract shape.
 
 **react-security-wasp-drone** / **nextjs-security-wasp-drone** / **sveltekit-security-wasp-drone** / **polyglot-security-wasp-drone**
 > Load `{drone stem}-stinger` (for example `nextjs-security-stinger`) before any work. Audit paths: `{stack paths}`. {For the React Drone on a Next.js app: "Skip Next.js server surfaces (proxy and middleware, Server Actions, route handlers, next.config); the Next.js Drone owns them."} Write `02-security/findings-{drone}.jsonl`, `02-security/metrics-{drone}.json`, and `02-security/notes-{drone}.md`.
 
 ## W2
 
-**quality-wasp-drone** (standalone mode)
-> Load `quality-stinger` before any work. Standalone audit mode per `audit-my-code-stinger/guides/03-quality-standalone.md`: there may be no single PRD; use the yardstick in that guide in priority order. Inputs from W1: `{workspace}/01-bloat/metrics.json`, `{workspace}/02-security/findings.jsonl`. Run test, lint, and typecheck only when `execution.allowed` is true, only in the throwaway copy, in the consented mode, with a timeout; otherwise record the cap. Report, do not fix. Write `03-quality/` in the contract shape instead of a `library/` report.
+**quality-wasp-drone** (no single PRD, report only)
+> Load `quality-stinger` before any work, and use its review method only. This run overrides its PRD-bound procedure: there may be no single PRD, so judge against the yardstick in `audit-my-code-stinger/guides/03-quality-standalone.md`, in that guide's priority order. Inputs from W1: `{workspace}/01-bloat/metrics.json`, `{workspace}/02-security/findings.jsonl`. Run test, lint, and typecheck only when `execution.allowed` is true, only in the throwaway copy, in the consented mode, with a timeout; otherwise record the cap. Report findings only; do not fix, refactor, or remediate anything, and do not run its Ship Gate or commit steps. Write nothing outside `{workspace}/03-quality/` (not the audited repository, not `library/`); write it in the contract shape instead of a `library/` report.
 
 ## W3 (mario)
 

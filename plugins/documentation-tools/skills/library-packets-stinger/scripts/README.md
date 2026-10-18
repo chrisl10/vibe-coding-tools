@@ -10,6 +10,7 @@ URLs, install packages or publish output. Source text remains untrusted data.
     python3 packet_tools.py inventory LIBRARY --exclude output --output inventory.json
     python3 packet_tools.py validate packet.json
     python3 packet_tools.py render packet.json --output NEW_OUTPUT --soffice EXISTING_SOFFICE
+    python3 packet_tools.py render packet.json --output NEW_OUTPUT --prepared-by "Your Company" --author "Name"
     python3 packet_tools.py review-complete NEW_OUTPUT --attestation reviewed-pages.json
     python3 -m unittest discover -s scripts -p 'test_packet_tools.py'
 
@@ -20,7 +21,13 @@ executed, interpreted as configuration or automatically unescaped. Quotes and
 locators refer to that exact extracted UTF-8 representation. Unknown binary
 types retain their hash/type and an explicit extraction error in inventory.
 PDF extraction requires installed pypdf. Rendering requires installed
-python-docx, pypdfium2 and Pillow plus an existing soffice/libreoffice executable.
+python-docx, pypdfium2 and Pillow plus an existing soffice/libreoffice executable,
+found from --soffice, SOFFICE_PATH, PATH (soffice, soffice.exe, libreoffice) or the
+standard Windows LibreOffice install folders. The footer preparer and DOCX author
+default to Legion Code Inc. and can be set with --prepared-by and --author or the
+LIBRARY_PACKETS_PREPARED_BY and LIBRARY_PACKETS_AUTHOR environment variables.
+The private JSON writer still requires POSIX no-follow opens, so render and inventory are
+blocked on native Windows.
 Imports are lazy. Missing required packages/rendering produce an explicit blocked
 result, never an alternate PDF layout. No dependencies are installed by this CLI.
 
@@ -139,7 +146,7 @@ Public diagrams additionally need exact approved asset records:
 
 Pixel content is not inferred from filenames or automatically certified.
 The footer requires the real nonempty asset_root/legion-footer.png image and
-“Prepared by Legion Code Inc.” plus page numbering. A missing/corrupt required
+“Prepared by <preparer>” (default Legion Code Inc., configurable as above) plus page numbering. A missing/corrupt required
 logo blocks output. No text-only substitute or product-ownership claim is used.
 
 ## Rendered outputs and final review

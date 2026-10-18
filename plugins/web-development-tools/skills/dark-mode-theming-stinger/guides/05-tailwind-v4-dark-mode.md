@@ -2,7 +2,7 @@
 
 *Covers: `@custom-variant dark`, selector strategy, Oxide engine compatibility, v3 → v4 migration, `darkMode` config deprecation.*
 
-*Sources: `research/external/2026-05-20-tailwind-v4-dark-mode.md`*
+*Sources: `research/external/2026-05-20-tailwind-v4-dark-mode.md` (source-repository research, not shipped)*
 
 ---
 

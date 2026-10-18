@@ -62,11 +62,8 @@ The practitioner arsenal for generating and maintaining the five core SaaS legal
 
 ### Research trail (research/)
 
-- `research/research-plan.md`  -  depth tier, time window, query plan
 - `research/research-summary.md`  -  executive summary, 5 most influential sources, 5 open questions
-- `research/index.md`  -  manifest of all source files
-- `research/internal/command-brief-notes.md`  -  brief extraction and scope decisions
-- `research/external/`  -  9 source notes (ToS, generator comparison, DPA, MSA, Quebec Law 25, DPF/SCCs, customer-DPA negotiation)
+- The research plan, source manifest, internal brief notes and the 9 external source notes (ToS, generator comparison, DPA, MSA, Quebec Law 25, DPF/SCCs, customer-DPA negotiation) are source-repository research, not shipped with the plugin.
 
 ---
 
@@ -97,4 +94,4 @@ Re-run scripture-historian at `shallow` tier when any of the following occur:
 
 *Paired Angel: `ai-tools/agents/legal-docs-wasp-drone.md`*
 *Command Brief: `ai-tools/command-briefs/legal-docs-wasp-drone-command-brief.md`*
-*Research: `packs/business-and-product-tools/skills/legal-docs-stinger/research/`*
+*Research: `packs/business-and-product-tools/skills/legal-docs-stinger/research/` (source-repository research, not shipped with the plugin)*

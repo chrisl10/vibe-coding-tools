@@ -1,6 +1,6 @@
 # 01 - Branching Strategy Audit
 
-*Research basis: `research/external/09-trunk-based-development.md`*
+*Research basis: `research/external/09-trunk-based-development.md` (source-repository research, not shipped)*
 
 ## What to assess
 

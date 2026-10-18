@@ -2,7 +2,7 @@
 
 The structural backbone of the entire content strategy. Every other guide — post length, title craft, AEO formatting, cadence planning — operates within the architecture defined here. Read this guide first, every time.
 
-> Research sources: `research/external/2026-05-20-seo-content-clusters-topical-authority.md`, `research/external/2026-05-20-topic-clusters-pillar-pages-complete-guide.md`, `research/external/2026-05-20-searchengineland-topic-clusters-guide.md`
+> Research sources: `research/external/2026-05-20-seo-content-clusters-topical-authority.md`, `research/external/2026-05-20-topic-clusters-pillar-pages-complete-guide.md`, `research/external/2026-05-20-searchengineland-topic-clusters-guide.md` (source-repository research, not shipped)
 
 ---
 
@@ -103,7 +103,7 @@ Internal linking is the mechanical expression of the cluster-pillar architecture
 
 **Publish the pillar page before any cluster content.**
 
-This is a non-negotiable rule supported by the research (see `research/external/2026-05-20-seo-content-clusters-topical-authority.md`): publishing the pillar first establishes the hub architecture, gets it indexed, and gives cluster articles a parent to link to on the day they publish. Cluster articles published before their pillar are orphaned until the pillar catches up — this delays both ranking and authority signals.
+This is a non-negotiable rule supported by the research (see `research/external/2026-05-20-seo-content-clusters-topical-authority.md` [source-repository research, not shipped]): publishing the pillar first establishes the hub architecture, gets it indexed, and gives cluster articles a parent to link to on the day they publish. Cluster articles published before their pillar are orphaned until the pillar catches up — this delays both ranking and authority signals.
 
 If the pillar cannot be written first (e.g., it requires research that is still in progress), publish a placeholder pillar (1,500 words minimum, clearly marked as "growing") with the plan to update it to full length within 60 days.
 

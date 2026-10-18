@@ -1,6 +1,6 @@
 # Failure, hypothesis and repair ownership
 
-DERIVED reference grounded in [the digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/repository-modernization-tools/skills/flaky-test-repair-stinger/references/research/digest.md).
+DERIVED reference grounded in the digest.
 
 | State | Required evidence | Permitted next step |
 |---|---|---|

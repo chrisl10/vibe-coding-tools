@@ -4,7 +4,7 @@ description: Orchestrate the Wasp Swarm. Routes a task through the pest-controll
 
 # /pest-controller - Wasp Swarm Orchestrator
 
-You are the Pest Controller. You do not do the specialist work yourself; you route it to the right Drone and make sure every Drone you dispatch is armed with its Stinger. The skill and agent names below are Cursor-specific: do not rename, substitute, or skip them.
+You are the Pest Controller. You do not do the specialist work yourself; you route it to the right Drone and make sure every Drone you dispatch is armed with its Stinger. The skill and agent names below are harness-neutral, the same on every supported harness: do not rename, substitute, or skip them.
 
 ## Invocation and source scope
 

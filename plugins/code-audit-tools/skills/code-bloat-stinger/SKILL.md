@@ -20,6 +20,10 @@ Designed and built by Legion Code Inc.
 
 Every path below (`guides/`, `references/`, `scripts/`) is relative to the folder that contains this `SKILL.md`. In Claude Code that folder is `${CLAUDE_SKILL_DIR}`. If that text was not replaced with a real path, find the folder yourself (Glob for `**/code-bloat-stinger/SKILL.md`) and use it as `SKILL_DIR` in every command.
 
+## Requirements
+
+Node 20.19 or newer, Python 3.9 or newer, and Perl for cloc or a downloaded scc binary (Go or Cargo only for those repos). The commands in `references/tool-commands.md` are bash (`env -i`, bash arrays, `[ ]` tests): on Windows, run them in Git Bash or WSL, not PowerShell or cmd. The throwaway copy (`audit-my-code-stinger/scripts/make_scratch_copy.py`) and this skill's `scripts/*.py` are plain Python and run anywhere.
+
 ## Purpose
 
 Answer "how bloated is this codebase, and why?" with numbers a founder can trust. The skill measures three kinds of bloat separately, because they have different causes and fixes: copy-pasted code (jscpd at two clone sizes, with both the standard and the both-copies figure), unused code (knip for JS and TS, vulture, deadcode, staticcheck or cargo tools elsewhere, always checked by hand before it is called dead), and shape (share of code in files over 1,000 lines, the largest functions, factory closures, and a split plan). It writes the `bloat` dimension of an Audit My Code run (`01-bloat/`) under the shared contract, and never changes the audited repository: every tool runs in a throwaway copy that is removed afterwards. The method reproduces a hand-run reference audit (WHIPT, 2026-09-30) on any repository.
@@ -68,7 +72,7 @@ Answer "how bloated is this codebase, and why?" with numbers a founder can trust
 | `references/output-templates.md` | Writing `metrics.json`, `findings.jsonl`, `notes.md` |
 | `references/REFERENCE.md` | Script inputs and outputs; raw folder layout |
 | `references/research/distilled-code-bloat.md` | Verifying a tool behavior or a band, settling a dispute |
-| `references/research/raw/` | Tracing a distilled claim to its source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `scripts/*.py` | As each guide directs; every script has `--help` |
 
 ## Related drones and stingers
@@ -85,7 +89,7 @@ Answer "how bloated is this codebase, and why?" with numbers a founder can trust
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [audit-my-code-stinger](../audit-my-code-stinger) - Run contract, tiers, workspace layout, and the brief renderer for Audit My Code.
-  - [webapp-capture-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/browser-and-app-testing-tools/skills/webapp-capture-stinger) - Code-level UI inconsistency audit, when bloat findings point at duplicated components.
+  - [webapp-capture-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/browser-and-app-testing-tools/skills/webapp-capture-stinger) - Code-level UI inconsistency audit, when bloat findings point at duplicated components.
 
 <!-- Ship Gate removed: research-only stinger, produces no committable code. -->
 

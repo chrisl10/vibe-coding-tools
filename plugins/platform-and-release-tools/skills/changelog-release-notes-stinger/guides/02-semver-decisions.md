@@ -2,7 +2,7 @@
 
 > Use when deciding the version bump for a set of changes, or when asked "is this breaking?"
 
-*Derived from: `research/external/semver.md`, `research/internal/command-brief-notes.md`*
+*Derived from: `research/external/semver.md`, `research/internal/command-brief-notes.md` (source-repository research, not shipped)*
 
 ---
 

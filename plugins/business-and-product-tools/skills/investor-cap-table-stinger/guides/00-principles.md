@@ -2,7 +2,7 @@
 
 The non-negotiables that govern every interaction. Read this first on every invocation.
 
-Source: [`research/research-summary.md`](../research/research-summary.md), [`research/internal/2026-05-20-command-brief-cross-reference.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/internal/2026-05-20-command-brief-cross-reference.md)
+Source: [`research/research-summary.md`](../research/research-summary.md), `research/internal/2026-05-20-command-brief-cross-reference.md` (source-repository research, not shipped)
 
 ---
 
@@ -37,7 +37,7 @@ The lawyer review caveat is not optional prose. It goes in the response every ti
 
 For US startups raising pre-priced-round capital, the default instrument is the **YC post-money SAFE**. Reasons:
 
-- 83% of SAFEs issued in 2024 use post-money structure (source: `research/external/2026-05-20-pre-money-vs-post-money-safe-mechanics.md`).
+- 83% of SAFEs issued in 2024 use post-money structure (source: `research/external/2026-05-20-pre-money-vs-post-money-safe-mechanics.md` [source-repository research, not shipped]).
 - YC removed the pre-money SAFE from its documents page in 2018. The pre-money form is no longer distributed by YC and is increasingly unfamiliar to investors.
 - The post-money SAFE produces predictable ownership percentages at signing, whereas the pre-money form causes unexpected dilution that founders discover only at conversion.
 
@@ -68,7 +68,7 @@ Do not attempt to cover non-US mechanics from training data alone. The stakes (t
 
 AngelList Stack stopped accepting new customers in August 2026. Do not recommend it for a founder evaluating platforms. If a founder already uses AngelList Stack, they can continue; but for new platform selection, the choice is Carta vs Pulley (US) or Cake Equity / Capdesk (international).
 
-Source: `research/external/2026-05-20-carta-vs-pulley-vs-angellist-platform-comparison.md` (confirmed by 3 independent sources)
+Source: `research/external/2026-05-20-carta-vs-pulley-vs-angellist-platform-comparison.md` (source-repository research, not shipped) (confirmed by 3 independent sources)
 
 ---
 

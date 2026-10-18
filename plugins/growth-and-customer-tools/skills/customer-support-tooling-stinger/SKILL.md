@@ -38,7 +38,7 @@ Read in this order:
 
 1. **`guides/00-principles.md`** — scope boundary, B2B vs B2C posture rule, handoff protocol to peer Angels.
 2. **`guides/01-tool-selection.md`** — comparison matrix and decision tree (Plain, Pylon, Help Scout, Front, Intercom).
-3. **`research/external/2026-05-20-tool-comparison-matrix.md`** — the structured feature/pricing matrix and decision tree from G2 + Capterra 2026.
+3. **`research/external/2026-05-20-tool-comparison-matrix.md` (source-repository research, not shipped with the plugin)** — the structured feature/pricing matrix and decision tree from G2 + Capterra 2026.
 
 Then consult the specific guide for the task at hand (see Folder layout below).
 

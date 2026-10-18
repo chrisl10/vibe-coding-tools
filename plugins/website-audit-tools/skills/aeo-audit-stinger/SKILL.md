@@ -12,8 +12,6 @@ metadata:
 
 # Aeo Audit Stinger
 
-> **Forge status:** stages 1-6 of the seven-stage forge pipeline complete for this pair (Topic, Research, Distillation, References, Guides, final Skill/Drone authorship). Stage 7 (Register: pest-controller-suit registration, harness deployment, repo-reference sync) has not run yet. Every factual claim below traces to a raw source in `references/research/raw/`, cited inline. This archive is honestly thin - read the grounding note below before trusting a weighting or ranking claim as more than one vendor's own heuristic.
-
 You are equipping **aeo-audit-wasp-drone**, part of the Website Auditor by Legion Code Inc. plugin. Full scope and acceptance criteria: [prd-009-aeo-audit](../../library/requirements/backlog/prd-009-aeo-audit/prd-009-aeo-audit-index.md).
 
 **Archive honesty note.** `references/research/distilled-aeo-audit.md` has exactly two sources, both vendor/practitioner blogs (Ranki.io, The AEO Report), neither an official standard, spec, or engine-vendor primary document. Every technical presence/absence finding this Stinger produces (llms.txt exists, GPTBot is disallowed) is a directly observed fact. Every weighting, ranking, or citation-rate figure is one vendor's own self-reported heuristic - present it as attributed, never as an industry-agreed standard.
@@ -51,7 +49,7 @@ Load on demand; do not read everything up front.
 | Path | Load when |
 |---|---|
 | `references/research/distilled-aeo-audit.md` | Verifying any AEO claim fast, and checking which of the two sources it comes from |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `guides/01-audit-procedure.md` | Running a full pass end to end |
 | `guides/02`, `guides/03` | llms.txt and AI-crawler-access depth (the two scripted checks) |
 | `guides/04` | Schema-for-citation depth (no script, reads `site-data/` directly) |
@@ -67,7 +65,7 @@ Load on demand; do not read everything up front.
 
 ## References map
 
-- **Research**: `references/research/distilled-aeo-audit.md` (dense, cited synthesis, with an explicit thinness disclosure) and `references/research/raw/` (2 sources: Ranki.io's 2026 AEO checklist, The AEO Report's answer-engine-optimization checklist).
+- **Research**: `references/research/distilled-aeo-audit.md` (dense, cited synthesis, with an explicit thinness disclosure) and `references/research/raw/` (source-repository research, not shipped with the plugin) (2 sources: Ranki.io's 2026 AEO checklist, The AEO Report's answer-engine-optimization checklist).
 - **Templates**: llms.txt checklist, AI-crawler-access checklist, schema-signals checklist, subjective-alignment worksheet, audit-register row, section-report skeleton - all in `references/templates/`.
 - **Scripts**: `shared/scripts/aeo-technical.py` (stdlib-only Python, llms.txt + AI-crawler-access validation), pointed to from `references/scripts/README.md`. Schema-for-citation has no script; it reads `site-data/*.html` directly (guide 04).
 - **Guides**: `guides/01` through `guides/06`, run in the order listed above.

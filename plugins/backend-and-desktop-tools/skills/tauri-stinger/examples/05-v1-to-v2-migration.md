@@ -75,5 +75,5 @@ Run after every slice:
 4. A native application launch and IPC smoke test.
 5. Existing v1-to-v2 update-path test when users already have v1.
 
-Source basis: [Official migration guide](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--v1-to-v2-migration.md).
+Source basis: Official migration guide.
 

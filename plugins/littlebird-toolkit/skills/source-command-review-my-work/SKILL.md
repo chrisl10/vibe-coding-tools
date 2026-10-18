@@ -2,6 +2,7 @@
 name: "source-command-review-my-work"
 description: "Build a private evidence-based review of a defined work period using available Littlebird reports and stated limits."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-review-my-work

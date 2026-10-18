@@ -1,6 +1,6 @@
 # Badge Discipline
 
-> Source: `research/external/2026-05-20-shields-io-badges.md`
+> Source: `research/external/2026-05-20-shields-io-badges.md` (source-repository research, not shipped)
 
 Badges are a professionalism signal, not a decoration surface. Three badges done right communicate: "this project is maintained, tested, and versioned." Eight badges with four vanity items communicate the opposite.
 

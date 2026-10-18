@@ -28,7 +28,7 @@ Help a new coder turn a product idea into one scoped readiness recommendation, l
 
 ## When not to use
 
-- Market validation, stack/infra choice, actual account preparation, pricing/cost calculation or completion forecasts: route to their actual selected owners.
+- Market validation (`/validate-idea`, Discovery Research), stack/infra choice, actual account preparation, pricing/cost calculation or completion forecasts: route to their actual selected owners.
 - App scaffold, implementation, installation or release: separate accepted scope and action authority required.
 - Declaring competence/security/production readiness: require actual understanding and review/runtime evidence.
 - Initializing a repository/library: Core/App Primer owners retain that work.
@@ -41,12 +41,12 @@ Help a new coder turn a product idea into one scoped readiness recommendation, l
 4. For product-form questions, use [choose product form](guides/choose-product-form.md) and its worksheet/cases. Recommend one provisional form from supplied job/constraints; selected platform/stack/integration owners retain feasibility and implementation.
 5. For beginner security questions, use [security responsibilities](guides/explain-security-responsibilities.md), the [map](references/beginner-security-responsibilities.md) and [worksheet](references/templates/security-responsibility-worksheet.md). Actual controls and reviews remain with selected owners; unknown roles/permissions and learner understanding stay pending.
 6. Follow [first slice](guides/choose-first-slice.md). Propose ONE useful behavior with input/output/failure and acceptance owner, scoped to learning or the supplied milestone. Defer irrelevant features/providers.
-7. Follow [route readiness](guides/route-readiness.md). Resolve actual selected Market Validation, Web Stack Selection, Launch Assets, Estimation/Pricing/Operating Cost and App Primer when their decisions are needed. Do not duplicate unavailable specialists or invent rates/durations.
+7. Follow [route readiness](guides/route-readiness.md). Resolve actual selected Discovery Research (`/validate-idea`), Web Stack Selection, Launch Assets, Estimation/Pricing/Operating Cost and App Primer when their decisions are needed. Do not duplicate unavailable specialists or invent rates/durations.
 8. Review against [worked cases](references/examples/cases.md). Return one advisory recommendation or the precise blocked question, learning next step, responsibilities, first-slice proposal and owner handoff. Ask one non-shaming teach-back question and mark understanding pending until a reader response supplies evidence.
 
 ## References map
 
-- [Digest](references/research/distilled-builder-readiness.md), [source ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/builder-readiness-stinger/references/research/source-ledger.json): grounding, dated captures and limits.
+- [Digest](references/research/distilled-builder-readiness.md), source ledger: grounding, dated captures and limits.
 - [Envelope checker](scripts/check-envelope.py): archive/links/encoded boundary checks, not assessment of a learner.
 - [Paired Drone](../../agents/builder-readiness-wasp-drone.md): delegation scope.
 

@@ -9,7 +9,7 @@ Write `report.md` per the structure in `references/report-spec.md`: header, scop
 ## PDF render
 
 1. Write `report.html`: a single print-styled sheet, Legion Code Inc. branding per `references/report-spec.md` (verified symbol SVG paths from the brand kit, mono labels, stat boxes).
-2. Run `scripts/md-to-pdf.sh report.html report.pdf`. It uses headless Chrome; no dependencies to install.
+2. Run `scripts/md-to-pdf.sh report.html report.pdf`. It uses headless Chrome; no dependencies to install. It finds the browser from `CHROME_PATH`, then Chrome, Chromium or Edge on `PATH`, then the macOS `/Applications` copies, then Program Files under Git Bash. Set `CHROME_PATH` for any other install.
 3. Keep the markdown as the canonical backup. The PDF is the artifact for people who do not read repos.
 
 ## Master suspect list
@@ -21,7 +21,7 @@ Write `report.md` per the structure in `references/report-spec.md`: header, scop
 
 ## Drift report
 
-Doc claims that contradict PRDs, IRDs, or ADRs go in a drift report (see `raw/kb-refresh--evidence--sus-list-whipt-2026-10-04.md` for the reference shape). Report only: no PRD edits, no IRD edits, no new issues. Link it from the report and the merge brief.
+Doc claims that contradict PRDs, IRDs, or ADRs go in a drift report (the reference run's list, `raw/kb-refresh--evidence--sus-list-whipt-2026-10-04.md`, is source-repository research, not shipped; follow `references/report-spec.md` instead). Report only: no PRD edits, no IRD edits, no new issues. Link it from the report and the merge brief.
 
 ## Close
 

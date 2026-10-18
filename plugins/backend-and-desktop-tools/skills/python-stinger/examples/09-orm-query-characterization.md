@@ -59,4 +59,4 @@ Let N be returned orders and M be returned visible open items. Assuming fresh Qu
 
 Prepare fixtures outside the query assertion. Compare before and after materialized dictionaries on the same fixture, then assert observed query budgets on fresh instances. Include unauthorized principal, other tenant, filtered rows, null relation, totals/pagination and nested-field cases. Native DB proof is pending because the forge runtime has no Django installed.
 
-Sources: [QuerySet API digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/python-stinger/references/research/orm-query-behavior/digest.md), [official query APIs](https://docs.djangoproject.com/en/5.2/ref/models/querysets/), [official measurement API](https://docs.djangoproject.com/en/5.2/topics/testing/tools/#django.test.TransactionTestCase.assertNumQueries).
+Sources: QuerySet API digest, [official query APIs](https://docs.djangoproject.com/en/5.2/ref/models/querysets/), [official measurement API](https://docs.djangoproject.com/en/5.2/topics/testing/tools/#django.test.TransactionTestCase.assertNumQueries).

@@ -4,7 +4,7 @@ The procedural arsenal for `git-wasp-drone`, the Wasp Nest's Git mastery special
 
 ## Current plugin owner
 
-This capability stays in required Wasp Nest Core. Its canonical source is src/skills, with canonical ownership recorded in the root [plugin catalog](../../../plugin-catalog.json). Its SKILL.md metadata declares any standalone/orchestrator exception; specialist agents keep their actual paired Stinger. Host home/plugin files are generated carriers. Use [the layout and selection guide](../../../docs/PLUGIN-LAYOUT.md) when a workflow calls an optional specialist; source references alone do not enable an installed plugin.
+This capability stays in required Wasp Nest Core. Its canonical source is src/skills, with canonical ownership recorded in the root [plugin catalog](../../plugin-catalog.json). Its SKILL.md metadata declares any standalone/orchestrator exception; specialist agents keep their actual paired Stinger. Host home/plugin files are generated carriers. Use [the layout and selection guide](../../learn/reference/PLUGIN-LAYOUT.md) when a workflow calls an optional specialist; source references alone do not enable an installed plugin.
 
 
 ## What this stinger covers
@@ -31,4 +31,4 @@ This capability stays in required Wasp Nest Core. Its canonical source is src/sk
 
 ## Beginner practice
 
-Start with [the disposable-repository lesson](guides/09-beginner-disposable-practice.md) and [worksheet](templates/beginner-git-worksheet.md). The [optional runner](scripts/practice-git.py) demonstrates status, diff, stage, commit, branch, byte-backed fixture restore, and reflog recovery in its own temporary repository. It does not commit to the user's repository or change global identity. [Fresh official command research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/git-stinger/references/research/beginner-practice/distillation.md) grounds the lesson. Read the [worked output limits](examples/beginner-git-practice.md) before treating an exercise as recovery proof.
+Start with [the disposable-repository lesson](guides/09-beginner-disposable-practice.md) and [worksheet](templates/beginner-git-worksheet.md). The [optional runner](scripts/practice-git.py) demonstrates status, diff, stage, commit, branch, byte-backed fixture restore, and reflog recovery in its own temporary repository. It does not commit to the user's repository or change global identity. Fresh official command research grounds the lesson. Read the [worked output limits](examples/beginner-git-practice.md) before treating an exercise as recovery proof.

@@ -133,5 +133,5 @@ When auditing an existing project, verify each `<link rel="preload" as="font">` 
 - `guides/00-principles.md`: why font fetches have CORS requirements
 - `guides/01-font-display-decision-matrix.md`: which fonts are critical-path (worth preloading)
 - `guides/04-nextjs-font.md`: how `next/font` automates preloading
-- `research/external/`: web.dev font best practices, Chrome DevTools font rendering
+- `research/external/` (source-repository research, not shipped): web.dev font best practices, Chrome DevTools font rendering
 - `examples/happy-path-nextjs-inter.md`: shows preload in context (or notes why next/font makes manual preload unnecessary)

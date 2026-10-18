@@ -39,7 +39,7 @@ For each wikilink in pages within this chunk's `prior_state`:
 - Look up the link target in `prior_state` + the pages this invocation just authored.
 - If not found IN this chunk's visible scope -> it MIGHT still resolve globally; emit as a `warning` (not error), category `unresolved-in-chunk`.
 
-The driver runs the global resolution pass with the full knowledge-area index - see `research/2026-04-29-wikilink-resolution.md` for the algorithm. The agent only flags what it can't resolve locally.
+The driver runs the global resolution pass with the full knowledge-area index - see `research/2026-04-29-wikilink-resolution.md` (source-repository research, not shipped) for the algorithm. The agent only flags what it can't resolve locally.
 
 ### 3. Pairing integrity
 
@@ -139,5 +139,5 @@ Lint mode reports findings. The agent (and the driver) NEVER auto-fix. The user 
 ## Source
 
 - Per-chunk catalog: scoped per the split lint authority (agent per-chunk, graph driver global).
-- Frontmatter validation: `research/2026-04-29-frontmatter-validation.md` (Zod safeParse pattern; YAML date gotcha).
-- Wikilink resolution: `research/2026-04-29
+- Frontmatter validation: `research/2026-04-29-frontmatter-validation.md` (source-repository research, not shipped) (Zod safeParse pattern; YAML date gotcha).
+- Wikilink resolution: `research/2026-04-29 (source-repository research, not shipped)

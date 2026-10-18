@@ -1,6 +1,6 @@
 # Guide 03: Code-First Libraries (Driver.js and Shepherd.js)
 
-Use this guide for open-source library implementations. Sources: `research/external/2026-05-20-driverjs-react-integration.md`, `research/external/2026-05-20-oss-tour-libraries.md`, `research/external/2026-05-20-shepherdjs-react-integration.md`.
+Use this guide for open-source library implementations. Sources: `research/external/2026-05-20-driverjs-react-integration.md`, `research/external/2026-05-20-oss-tour-libraries.md`, `research/external/2026-05-20-shepherdjs-react-integration.md` (source-repository research, not shipped).
 
 ---
 

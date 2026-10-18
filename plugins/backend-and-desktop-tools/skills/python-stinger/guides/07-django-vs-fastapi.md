@@ -68,4 +68,4 @@ The decision is about the request/response surface and the data layer, not the r
 
 - https://www.djangoproject.com/start/overview/
 - https://fastapi.tiangolo.com/features/
-- `research/2026-05-03-django-ninja-vs-drf.md`
+- `research/2026-05-03-django-ninja-vs-drf.md` (source-repository research, not shipped)

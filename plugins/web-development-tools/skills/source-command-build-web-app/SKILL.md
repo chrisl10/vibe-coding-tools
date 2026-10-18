@@ -2,6 +2,7 @@
 name: "source-command-build-web-app"
 description: "Scope and build an authorized web-app slice using an actual supported framework owner and verified boundaries."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-build-web-app

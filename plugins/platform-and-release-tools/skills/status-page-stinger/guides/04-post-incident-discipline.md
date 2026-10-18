@@ -1,6 +1,6 @@
 # Guide 04: Post-Incident Discipline
 
-*Source: `research/external/2026-05-20-post-incident-discipline.md`*
+*Source: `research/external/2026-05-20-post-incident-discipline.md` (source-repository research, not shipped)*
 
 ---
 

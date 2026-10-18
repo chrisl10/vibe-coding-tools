@@ -1,6 +1,6 @@
 # 03: Facilitation Playbook
 
-*Derived from `research/external/2026-05-20-sprint-retrospective-formats-comprehensive.md` and `research/external/2026-05-20-format-selection-meetgeek.md`.*
+*Derived from `research/external/2026-05-20-sprint-retrospective-formats-comprehensive.md` and `research/external/2026-05-20-format-selection-meetgeek.md` (source-repository research, not shipped).*
 
 ---
 

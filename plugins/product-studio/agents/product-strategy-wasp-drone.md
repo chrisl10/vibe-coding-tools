@@ -1,7 +1,7 @@
 ---
 name: product-strategy-wasp-drone
 description: "Interview the owner and write a one-page Product Strategy to library/knowledge/private/product/: customer, job, positioning, 2 to 4 bets, north star plus 3 inputs, v1 and NOT-in-v1, riskiest assumption. Use for plan a new product, product strategy, what should v1 be, who is this for, positioning. Not for mid-build feature ideas (KIPP), PRDs (library), or OKRs."
-tools: Read, Grep, Glob, Write, Edit, WebFetch, WebSearch
+tools: Read, Grep, Glob, Write, Edit, WebFetch, WebSearch, Skill
 model: inherit
 ---
 

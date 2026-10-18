@@ -1,6 +1,6 @@
 # Guide 03: Model Routing: LLM Defaults, Overrides, and Cost Patterns
 
-*Sources: `research/external/2026-05-20-aider-llm-leaderboard.md`, `research/external/2026-05-20-claude-code-aider-cline-comparison.md`, `research/external/2026-05-20-cursor-agent-mode-2026.md`*
+*Sources: `research/external/2026-05-20-aider-llm-leaderboard.md`, `research/external/2026-05-20-claude-code-aider-cline-comparison.md`, `research/external/2026-05-20-cursor-agent-mode-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -20,7 +20,7 @@ Always state the routing default explicitly in a recommendation. Defaults change
 | Bolt.new | Bolt model (proprietary) | HIGH | Not user-overridable |
 | Replit Agent | Proprietary | HIGH | Not user-overridable |
 
-Sources: `research/external/2026-05-20-claude-code-aider-cline-comparison.md` (Claude Code/Aider/Cline), `research/external/2026-05-20-cursor-agent-mode-2026.md` (Cursor)
+Sources: `research/external/2026-05-20-claude-code-aider-cline-comparison.md` (Claude Code/Aider/Cline), `research/external/2026-05-20-cursor-agent-mode-2026.md` (source-repository research, not shipped) (Cursor)
 
 ---
 
@@ -45,7 +45,7 @@ Aider's `--architect` flag routes the two phases of code modification to differe
 | Aider architect/editor (default) | ~$29-$99/month | Depends on usage volume |
 | Aider with phase detection (test/doc) | 70-90% reduction vs all-Opus | Includes test generation phases |
 
-Source: `research/external/2026-05-20-aider-llm-leaderboard.md`
+Source: `research/external/2026-05-20-aider-llm-leaderboard.md` (source-repository research, not shipped)
 
 **3-5x cost reduction is achievable** over single-premium-model usage. This is the strongest argument for Aider over Claude Code in cost-constrained workflows.
 
@@ -80,7 +80,7 @@ Claude Code is model-locked to Claude (Anthropic). There is no override. The tie
 - **Claude.ai Max ($100/month):** Opus-class models
 - **API key billing:** Billed per token; model selection via `--model` flag
 
-**Key implication:** Claude Code's inability to route to cheaper models (DeepSeek, Gemini Flash, Haiku) means it is 3x more expensive than Aider for comparable real-world benchmark performance. Source: `research/external/2026-05-20-claude-code-aider-cline-comparison.md`.
+**Key implication:** Claude Code's inability to route to cheaper models (DeepSeek, Gemini Flash, Haiku) means it is 3x more expensive than Aider for comparable real-world benchmark performance. Source: `research/external/2026-05-20-claude-code-aider-cline-comparison.md` (source-repository research, not shipped).
 
 ---
 

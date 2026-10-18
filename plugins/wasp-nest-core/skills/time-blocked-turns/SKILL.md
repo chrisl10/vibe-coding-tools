@@ -34,7 +34,7 @@ For an AI without skills, give it the complete [Agent operating instructions](re
 
 For a host that accepts a skill folder, this folder contains the entrypoint and its references. Keep those relative paths together. Installation and activation remain actions for the user or an expressly authorized task; this skill does not deploy itself elsewhere.
 
-Read [Origin, clarifications, and examples](references/origin-and-examples.md) only when explaining where the behavior came from, reviewing fidelity to Mario's rules, or checking an ambiguous cadence decision. That document also distinguishes observed behavior from untested promises.
+Read [Origin, clarifications, and examples](references/origin-and-examples.md) only when explaining where the behavior came from, reviewing fidelity to the owner's rules, or checking an ambiguous cadence decision. That document also distinguishes observed behavior from untested promises.
 
 Read [Session-start hooks](references/session-start-hooks.md) for how this cadence is auto-injected at session start in Claude Code, Devin CLI, and Cursor, without pasting the protocol in by hand each time.
 

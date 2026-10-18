@@ -30,13 +30,13 @@ Every Server Function in scope is classified (checked, finding, or not reachable
 
 ## Sources
 
-- [raw/rsc--react-blog-cve-2025-55182.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-blog-cve-2025-55182.md)
-- [raw/rsc--react-blog-dos-and-source-exposure.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-blog-dos-and-source-exposure.md)
-- [raw/rsc--github-react-security-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--github-react-security-advisories.md)
-- [raw/rsc--vite-plugin-rsc-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--vite-plugin-rsc-advisories.md)
-- [raw/rsc--vite-plugin-rsc-readme-closure-encryption.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--vite-plugin-rsc-readme-closure-encryption.md)
-- [raw/rsc--react-docs-use-server-and-server-functions.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-docs-use-server-and-server-functions.md)
-- [raw/rsc--react-docs-taint-apis.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-docs-taint-apis.md)
-- [raw/router--waku-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/router--waku-advisories.md)
-- [raw/router--react-router-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/router--react-router-advisories.md)
-- [raw/owasp--cheatsheet-csrf.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-csrf.md)
+- raw/rsc--react-blog-cve-2025-55182.md
+- raw/rsc--react-blog-dos-and-source-exposure.md
+- raw/rsc--github-react-security-advisories.md
+- raw/rsc--vite-plugin-rsc-advisories.md
+- raw/rsc--vite-plugin-rsc-readme-closure-encryption.md
+- raw/rsc--react-docs-use-server-and-server-functions.md
+- raw/rsc--react-docs-taint-apis.md
+- raw/router--waku-advisories.md
+- raw/router--react-router-advisories.md
+- raw/owasp--cheatsheet-csrf.md

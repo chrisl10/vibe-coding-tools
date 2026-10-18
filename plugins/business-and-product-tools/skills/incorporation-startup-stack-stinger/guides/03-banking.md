@@ -2,7 +2,7 @@
 
 Step 4: Open a business bank account after the entity is formed and the EIN is in hand.
 
-*Derived from: `research/external/mercury-vs-brex-banking-2026.md`*
+*Derived from: `research/external/mercury-vs-brex-banking-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -17,7 +17,7 @@ Mercury and Brex both offer FDIC pass-through insurance significantly above the 
 | Relay Financial | $250K (standard) up to $3M (sweep) | Emerging Mercury alternative |
 | Traditional banks | $250K | Chase, Bank of America, etc. |
 
-> **Updated from Command Brief:** The Command Brief listed Mercury's coverage as $3M. Research confirms it is now $5M as of 2026. Source: `research/external/mercury-vs-brex-banking-2026.md`.
+> **Updated from Command Brief:** The Command Brief listed Mercury's coverage as $3M. Research confirms it is now $5M as of 2026. Source: `research/external/mercury-vs-brex-banking-2026.md` (source-repository research, not shipped).
 
 ---
 
@@ -34,7 +34,7 @@ Mercury and Brex both offer FDIC pass-through insurance significantly above the 
 - Multi-user access, team permissions, virtual cards
 - International wire support
 
-**International founder warning:** Mercury executed mass account closures for founders holding passports from sanctioned countries in August 2024. If the founder's passport country is on the OFAC sanctions list or if there is any complexity around citizenship/residency, use **Relay Financial** instead. Source: `research/external/mercury-vs-brex-banking-2026.md`.
+**International founder warning:** Mercury executed mass account closures for founders holding passports from sanctioned countries in August 2024. If the founder's passport country is on the OFAC sanctions list or if there is any complexity around citizenship/residency, use **Relay Financial** instead. Source: `research/external/mercury-vs-brex-banking-2026.md` (source-repository research, not shipped).
 
 ---
 

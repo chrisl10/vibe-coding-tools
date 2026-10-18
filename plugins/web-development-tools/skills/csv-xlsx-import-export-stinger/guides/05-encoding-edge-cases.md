@@ -2,7 +2,7 @@
 
 UTF-8 BOM, CP1252, line-ending normalization, and the Excel-opening quirk.
 
-*Derived from `research/external/2026-05-20-csv-parse-bom-option.md`, `research/external/2026-05-20-altera-csv-bom-changelog.md`.*
+*Derived from `research/external/2026-05-20-csv-parse-bom-option.md`, `research/external/2026-05-20-altera-csv-bom-changelog.md` (source-repository research, not shipped).*
 
 ---
 

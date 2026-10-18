@@ -1,7 +1,7 @@
 ---
 name: code-bloat-wasp-drone
 description: Read-only code bloat audit for the bloat dimension of /audit-my-code. Measures copy-pasted code (jscpd), unused files, exports and dependencies (knip or language tools, spot-checked by hand), line counts (cloc or scc), and giant files, functions and closures (lizard), then writes 01-bloat findings, metrics and notes with a plain-language verdict. Use when asked "is this codebase bloated", "is it bloated because it was vibe coded", "how much is duplicated or dead", or when the orchestrator dispatches the bloat dimension. Do NOT use to delete or refactor code, for security or quality review, or to run anything inside the audited repository.
-tools: Read, Grep, Glob, Bash, Write
+tools: Read, Grep, Glob, Bash, Write, Skill, WebSearch, WebFetch
 model: sonnet
 ---
 

@@ -31,7 +31,7 @@ Identify observable agreements shared by independently authored PRDs, document t
 ## Procedure
 
 1. Read `guides/01-identify-boundaries.md` and inventory the shared boundaries, owners, existing agreements, and blockers.
-2. For each missing agreement, use `guides/02-draft-and-accept.md` and `templates/contract-template.md`. Keep it Draft until Mario accepts its exact terms.
+2. For each missing agreement, use `guides/02-draft-and-accept.md` and `templates/contract-template.md`. Keep it Draft until the owner accepts its exact terms.
 3. For every accepted agreement, use `guides/03-handoff-to-library.md` to pin the revision in each affected PRD and identify the provider and consumer checks.
 4. On any changed behavior or routine drift scan, use `guides/04-revise-and-audit.md`; report affected PRDs and compatibility before repinning.
 5. Run `python3 scripts/validate_contracts.py <repository-root>` after contract or PRD link changes. Report actual findings and remaining blocked work.
@@ -42,14 +42,14 @@ Identify observable agreements shared by independently authored PRDs, document t
 - `templates/boundary-inventory.md`: use for the pre-PRD boundary scan and author handoff.
 - `examples/prd-parallel-handoff.md`: load for an end-to-end PRD handoff example.
 - `references/research/distilled-contract-writing.md`: load to verify the domain reasoning and its limitations.
-- `references/research/raw/`: load to trace a domain claim to an official source.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `scripts/validate_contracts.py`: run after writing or relinking records.
 
 ## Related drones and stingers
 
 - [library-stinger](../library-stinger) and [library-wasp-drone](../../agents/library-wasp-drone.md) own PRD authoring, structure, and lifecycle.
 - [adr-writing-stinger](../adr-writing-stinger) and [adr-writing-wasp-drone](../../agents/adr-writing-wasp-drone.md) own closed architecture decisions.
-- [api-docs-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/documentation-tools/skills/api-docs-stinger) owns API reference publication and SDK documentation.
+- [api-docs-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/documentation-tools/skills/api-docs-stinger) owns API reference publication and SDK documentation.
 
 ## Critical Directive
 

@@ -1,6 +1,6 @@
 # Escalation Path Architecture
 
-> **Research source:** `research/external/2026-pagerduty-escalation-policies-three-tier.md`, `research/external/2026-sre-google-being-on-call-chapter.md`
+> **Research source:** `research/external/2026-pagerduty-escalation-policies-three-tier.md`, `research/external/2026-sre-google-being-on-call-chapter.md` (source-repository research, not shipped)
 > **Principle:** `guides/00-principles.md` Principle 3
 
 Every runbook must have an explicit escalation path. This guide covers how to name, format, and validate escalation paths so they work at 3am when the on-call engineer has been paging for 20 minutes with no resolution.
@@ -9,7 +9,7 @@ Every runbook must have an explicit escalation path. This guide covers how to na
 
 ## The three-tier model
 
-PagerDuty's recommended structure for most services (see `research/external/2026-pagerduty-escalation-policies-three-tier.md`):
+PagerDuty's recommended structure for most services (see `research/external/2026-pagerduty-escalation-policies-three-tier.md` [source-repository research, not shipped]):
 
 | Tier | Who | When to escalate | Contact method | Expected response |
 |---|---|---|---|---|

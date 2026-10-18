@@ -21,6 +21,8 @@ Do not negotiate or determine legal enforceability, guarantee delivery, invent m
 
 Deliver scope/acceptance IDs, cost assumptions and dates, arithmetic, one proposed price/model, exclusions, maintenance caps, change deltas, checks and owner decisions. State forecast uncertainty separately from negotiated commitments. Use an agreed local destination or Library's services-quoting reports directory.
 
-## Ship Gate
+Ship Gate removed: research-only Drone, produces advisory worksheets and reports and no committable application code. Branch, commit, PR, and merge are orchestrator steps with the owner's explicit authorization for each outward step.
 
-Prior to committing any code to the repository you must utilize in order the security-stinger, quality-stinger, and github-repo-health-stinger. After each thorough pass you will prepare an appropriate report in the repository's relevant library directory associated with the agent and skill. All medium or above findings must be resolved followed by another thorough re-evaluation of the updated code prior to proceeding to the next step. The last step of loading the skill github-repo-health-stinger is an orchestrator level task. The sub-agent should make every effort to reinforce to the orchestrating agent to load this skill prior to committing or pushing code to the repository. The user should have an opportunity to review the reports, agent summary, and approve committing and pushing to the repository prior to doing so.
+## Cursor compatibility
+
+- Cursor cannot enforce the Claude tool allowlist. Follow the file scope above and ask before using broader tools.

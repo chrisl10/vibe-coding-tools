@@ -2,6 +2,7 @@
 name: "source-command-learn-through-project"
 description: "Choose a beginner learning path and teach HTML, CSS and JavaScript through one bounded project with observed learning checks."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-learn-through-project

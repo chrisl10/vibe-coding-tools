@@ -11,20 +11,20 @@ Loads: [../references/tool-commands.md](../references/tool-commands.md) (Duplica
 | 4.x (4.3.0) | `--max-lines` 1000 lines, `--max-size` 100kb | `--max-lines 1000000 --max-size 100mb` |
 | 5.x (5.4.0) | `--max-size` 1mb (help text; the README shows no default) | `--max-size 100mb` |
 
-Verified locally: 4.3.0 dropped two 1,630-line files with no warning; 5.4.0 dropped a 1.5 MB file with no warning [../references/research/raw/jscpd--v4-large-file-skip-experiment.md]. In 5.x, `--max-lines` means lines per clone block, not per file, so do not set it [../references/research/raw/jscpd--v5-readme-and-cli-help.md].
+Verified locally: 4.3.0 dropped two 1,630-line files with no warning; 5.4.0 dropped a 1.5 MB file with no warning [../references/research/raw/jscpd--v4-large-file-skip-experiment.md]. In 5.x, `--max-lines` means lines per clone block, not per file, so do not set it [../references/research/raw/jscpd--v5-readme-and-cli-help.md (source-repository research, not shipped)].
 
 Always lift the caps, whatever version you run, and record each one in `coverage.caps` as "lifted".
 
 ## 2. Run at 50 and 100 tokens
 
-1. From `.scratch/tools/`, run jscpd on the copy with the scope's format list and ignore list, `--min-tokens 50`, the caps lifted, `--reporters json`, `--output raw/jscpd-50`. Repeat with `--min-tokens 100` into `raw/jscpd-100`. 50 is the default; 100 is the stricter view [../references/research/raw/jscpd--v4-readme-options.md].
+1. From `.scratch/tools/`, run jscpd on the copy with the scope's format list and ignore list, `--min-tokens 50`, the caps lifted, `--reporters json`, `--output raw/jscpd-50`. Repeat with `--min-tokens 100` into `raw/jscpd-100`. 50 is the default; 100 is the stricter view [../references/research/raw/jscpd--v4-readme-options.md (source-repository research, not shipped)].
 2. Keep the default mode (`mild`). Do not pass `--ignore-identifiers`, `--similarity` or `--semantic` for the headline figures; they change what counts as a clone. You may run `--ignore-identifiers` as an extra and report it separately.
 3. jscpd respects `.gitignore` by default; that is correct for the copy.
 4. Format names come from `npx jscpd --list` (for example `typescript`, `tsx`, `javascript`, `jsx`, `python`, `go`, `rust`).
 
 ## 3. Check the scan covered the scope
 
-jscpd 5.x leaves files with fewer tokens than `--min-tokens` out of `sources` and `lines` (on a real tree: 103 files at 5 tokens, 100 at 50, 97 at 100) [../references/research/raw/jscpd--asymmetric-clones-and-small-files-experiment.md]. So the 50-token report's `sources` cannot prove coverage on its own.
+jscpd 5.x leaves files with fewer tokens than `--min-tokens` out of `sources` and `lines` (on a real tree: 103 files at 5 tokens, 100 at 50, 97 at 100) [../references/research/raw/jscpd--asymmetric-clones-and-small-files-experiment.md (source-repository research, not shipped)]. So the 50-token report's `sources` cannot prove coverage on its own.
 
 1. Run one coverage pass: same formats, ignores and lifted caps, `--min-tokens 1`, output to `raw/jscpd-coverage`.
 2. Its `statistics.total.sources` must equal the number of in-scope files of those formats in `raw/file-list.txt`. If it is lower, a cap still applied or the lists differ. Fix and rerun. Do not report figures from a short scan.
@@ -38,7 +38,7 @@ The script gives you:
 
 | Output | Meaning |
 | --- | --- |
-| `jscpd_standard_pct` | jscpd's own metric: duplicated lines counted once per clone, over scanned lines [../references/research/raw/jscpd--json-report-shape.md] |
+| `jscpd_standard_pct` | jscpd's own metric: duplicated lines counted once per clone, over scanned lines [../references/research/raw/jscpd--json-report-shape.md (source-repository research, not shipped)] |
 | `both_copies_pct` | the union of lines covered by any clone, both sides, over scanned lines. Usually close to twice the standard figure |
 | `areas` | the both-copies figure per area, recounted from each clone's own range |
 | `big_files` / `small_files` | duplication in files over 1,000 lines versus the rest |
@@ -47,7 +47,7 @@ The script gives you:
 | `asymmetric_clone_sides` | sides whose own range differs from the clone's `lines`; kept as is, because each side's range is its real length |
 | `repaired_clone_sides` | sides with an invalid range (missing, reversed, past the end of the file), repaired from the clone's `lines` |
 
-Why recount: the WHIPT run found jscpd emitting some broken clone ranges, so per-area figures were recounted from each clone's real length [../references/research/raw/gold--whipt-bloat-audit-method.md]. On a real tree the cause reproduced as asymmetry: a clone's `lines` describes the first copy only, and the second copy can be the same tokens on fewer, longer lines [../references/research/raw/jscpd--asymmetric-clones-and-small-files-experiment.md]. Per-file and per-area figures built from `lines` are therefore wrong; built from each side's own range they are right. Report both counts in `notes.md`. If repaired sides are more than a few percent, say the per-area figures are approximate.
+Why recount: the WHIPT run found jscpd emitting some broken clone ranges, so per-area figures were recounted from each clone's real length [../references/research/raw/gold--whipt-bloat-audit-method.md]. On a real tree the cause reproduced as asymmetry: a clone's `lines` describes the first copy only, and the second copy can be the same tokens on fewer, longer lines [../references/research/raw/jscpd--asymmetric-clones-and-small-files-experiment.md (source-repository research, not shipped)]. Per-file and per-area figures built from `lines` are therefore wrong; built from each side's own range they are right. Report both counts in `notes.md`. If repaired sides are more than a few percent, say the per-area figures are approximate.
 
 The both-copies denominator is every in-scope file, including files too small to hold a clone, which jscpd leaves out of its own `lines`.
 
@@ -59,7 +59,7 @@ Use these readings, in plain words, in `notes.md`:
 - **Big versus small files.** If big files duplicate about as much as small ones, they are big, not pasted. If big files duplicate much more, they grew by pasting.
 - **By area.** One area far above the repo (for example 20 to 48% while the repo is under 5%) is a family of copied modules. Open the top pairs to confirm and name the family.
 - **Top pairs.** Look for three recurring shapes: forks of a package's own source in another folder, type or schema copies of a shared package, and an index or barrel repeating another file.
-- **Limit.** jscpd finds text and token clones. Agent-written redundancy is often the same logic written differently (Type-4), which it does not find [../references/research/raw/research--msr-2026-more-code-less-reuse.md]. Say this in the verdict when the figure is low.
+- **Limit.** jscpd finds text and token clones. Agent-written redundancy is often the same logic written differently (Type-4), which it does not find [../references/research/raw/research--msr-2026-more-code-less-reuse.md (source-repository research, not shipped)]. Say this in the verdict when the figure is low.
 
 ## 6. Band and record
 
@@ -70,11 +70,13 @@ Use these readings, in plain words, in `notes.md`:
 
 ## Sources
 
-- [../references/research/raw/jscpd--v4-readme-options.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/jscpd--v4-readme-options.md)
-- [../references/research/raw/jscpd--v4-large-file-skip-experiment.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/jscpd--v4-large-file-skip-experiment.md)
-- [../references/research/raw/jscpd--v5-readme-and-cli-help.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/jscpd--v5-readme-and-cli-help.md)
-- [../references/research/raw/jscpd--json-report-shape.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/jscpd--json-report-shape.md)
-- [../references/research/raw/jscpd--asymmetric-clones-and-small-files-experiment.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/jscpd--asymmetric-clones-and-small-files-experiment.md)
-- [../references/research/raw/jscpd--npm-release-timeline.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/jscpd--npm-release-timeline.md)
-- [../references/research/raw/gold--whipt-bloat-audit-method.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/gold--whipt-bloat-audit-method.md)
-- [../references/research/raw/research--msr-2026-more-code-less-reuse.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-bloat-stinger/references/research/raw/research--msr-2026-more-code-less-reuse.md)
+The notes listed below are source-repository research, not shipped.
+
+- ../references/research/raw/jscpd--v4-readme-options.md (source-repository research, not shipped)
+- ../references/research/raw/jscpd--v4-large-file-skip-experiment.md (source-repository research, not shipped)
+- ../references/research/raw/jscpd--v5-readme-and-cli-help.md (source-repository research, not shipped)
+- ../references/research/raw/jscpd--json-report-shape.md (source-repository research, not shipped)
+- ../references/research/raw/jscpd--asymmetric-clones-and-small-files-experiment.md (source-repository research, not shipped)
+- ../references/research/raw/jscpd--npm-release-timeline.md (source-repository research, not shipped)
+- ../references/research/raw/gold--whipt-bloat-audit-method.md (source-repository research, not shipped)
+- ../references/research/raw/research--msr-2026-more-code-less-reuse.md (source-repository research, not shipped)

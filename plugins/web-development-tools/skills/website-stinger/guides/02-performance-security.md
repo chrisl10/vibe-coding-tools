@@ -1,6 +1,6 @@
 # 02: SvelteKit Performance & Security
 
-Source PRD: `research/source-prds/prd-phase-02-sveltekit-performance-security.md`
+Source PRD: `research/source-prds/prd-phase-02-sveltekit-performance-security.md` (source-repository research, not shipped)
 
 ---
 

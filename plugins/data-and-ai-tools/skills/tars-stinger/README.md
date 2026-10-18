@@ -39,4 +39,4 @@ KIPP prepares local cards unless a docs PR is authorized. A no-CI docs lane need
 3. [Tick](guides/03-ten-minute-tick.md), [CI watch](guides/04-ci-watch.md) and [decisions](guides/05-questions-and-decisions.md).
 4. [Close-out](guides/06-close-out.md) and [manager handoff](references/templates/manager-handoff.md).
 
-[REFERENCE.md](references/REFERENCE.md) maps the dated tool names, authority and state. [SKILL.md](SKILL.md) is the agent entry; [TOPIC.md](TOPIC.md) records scope. [Research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/tars-stinger/references/research/README.md) preserves mechanism evidence. The [CI poller](scripts/ci-poll.sh) remains unchanged by the manager-role update.
+[REFERENCE.md](references/REFERENCE.md) maps the dated tool names, authority and state. [SKILL.md](SKILL.md) is the agent entry; [TOPIC.md](TOPIC.md) records scope. Research preserves mechanism evidence. The [CI poller](scripts/ci-poll.sh) remains unchanged by the manager-role update.

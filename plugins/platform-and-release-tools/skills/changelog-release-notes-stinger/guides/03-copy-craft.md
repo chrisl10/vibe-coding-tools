@@ -2,7 +2,7 @@
 
 > Use when writing a CHANGELOG entry or GitHub Release notes. Apply every time, regardless of release size.
 
-*Derived from: `research/external/changelog-copy-craft.md`, `research/external/keep-a-changelog.md`*
+*Derived from: `research/external/changelog-copy-craft.md`, `research/external/keep-a-changelog.md` (source-repository research, not shipped)*
 
 ---
 

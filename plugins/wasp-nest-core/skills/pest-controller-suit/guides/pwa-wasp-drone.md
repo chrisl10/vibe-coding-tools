@@ -1,6 +1,6 @@
 # pwa-wasp-drone routing proposal
 
-Owner web-development-tools. O072 development-focused pair pwa-stinger + pwa-wasp-drone. Parent owns command/catalog/roster/promotion.
+Owner web-development-tools. O072 development-focused pair pwa-stinger + pwa-wasp-drone.
 
 Trigger phrases: add a PWA; implement public offline fallback; add scoped service worker; fix PWA update lifecycle; review private request bypass.
 

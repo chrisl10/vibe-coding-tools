@@ -65,7 +65,7 @@ Find, confirm, and report the security weaknesses that are specific to React app
 | `references/detection-patterns.md` | ripgrep commands per check id |
 | `references/finding-rules.md` | before writing any finding, metrics, or notes |
 | `references/research/distilled-react-security.md` | verifying a domain claim or settling a dispute |
-| `references/research/raw/` | tracing a distilled claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `scripts/react_version_check.py` | guide 00, every run |
 | `scripts/sink_scan.py` | guide 00, every run; reruns with `--checks` to lift caps |
 | `scripts/test/run_tests.py` | after editing either script or the advisory table |

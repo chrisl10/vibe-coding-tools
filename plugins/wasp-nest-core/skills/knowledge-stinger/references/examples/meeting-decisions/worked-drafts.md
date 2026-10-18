@@ -1,6 +1,6 @@
 # Synthetic meeting handoff cases
 
-All cases use [fictional teaching notes](fixtures/teaching-notes.txt); none describe Mario's meetings, people, decisions or approvals. [Exact receipts](receipts.json) resolve from the eventual loaded skill root.
+All cases use [fictional teaching notes](fixtures/teaching-notes.txt); none describe the owner's meetings, people, decisions or approvals. [Exact receipts](receipts.json) resolve from the eventual loaded skill root.
 
 | Case | Source lines | Draft result |
 |---|---|---|

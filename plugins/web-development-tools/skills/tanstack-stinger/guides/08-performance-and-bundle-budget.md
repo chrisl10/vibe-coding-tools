@@ -1,6 +1,6 @@
 # Guide 8: Performance and bundle budget
 
-Grounded in `references/research/distilled-tanstack.md` §6, `references/research/raw/tanstack--query--devtools-and-bundle-size.md`.
+Grounded in `references/research/distilled-tanstack.md` §6, `references/research/raw/tanstack--query--devtools-and-bundle-size.md` (source-repository research, not shipped).
 
 ## When to walk this guide
 

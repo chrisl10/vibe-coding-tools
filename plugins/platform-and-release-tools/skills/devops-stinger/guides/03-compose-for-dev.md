@@ -1,6 +1,6 @@
 # 03: Compose for dev
 
-Docker Compose conventions for the local dev loop. Production-shape Compose is a separate concern: most teams deploy via the registry, not via Compose. Source: `research/2026-04-25-compose-profiles-healthchecks.md`.
+Docker Compose conventions for the local dev loop. Production-shape Compose is a separate concern: most teams deploy via the registry, not via Compose. Source: `research/2026-04-25-compose-profiles-healthchecks.md` (source-repository research, not shipped).
 
 ---
 

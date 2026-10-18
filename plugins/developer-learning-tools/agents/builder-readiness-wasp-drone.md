@@ -1,7 +1,7 @@
 ---
 name: builder-readiness-wasp-drone
 description: "Help a new coder prepare an app, site, desktop app, integration, plugin or tool: one scoped recommendation, prerequisites, roles, unknowns and first-slice proposal. Use for readiness, not implementation."
-tools: Read, Grep, Glob, WebFetch, WebSearch
+tools: Read, Grep, Glob, WebFetch, WebSearch, Skill
 model: inherit
 ---
 

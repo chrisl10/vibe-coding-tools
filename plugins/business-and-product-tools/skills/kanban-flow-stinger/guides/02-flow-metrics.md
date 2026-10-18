@@ -1,12 +1,12 @@
 # 02. Flow Metrics: Definitions, Calculation, and Benchmarks
 
-*Sources: `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md`; `research/external/2026-05-20-value-stream-metrics-axify.md`*
+*Sources: `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md`; `research/external/2026-05-20-value-stream-metrics-axify.md` (source-repository research, not shipped)*
 
 ---
 
 ## The four core flow metrics
 
-These definitions come from `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md`. Apply them exactly: conflation is the primary source of team confusion.
+These definitions come from `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md` (source-repository research, not shipped). Apply them exactly: conflation is the primary source of team confusion.
 
 ### 1. Cycle Time
 
@@ -50,13 +50,13 @@ Analogy: lead time starts when the customer places the order.
 > Flow Efficiency = (Time actively being worked on) / (Total lead time) × 100
 
 - "Actively worked on" = time in active-work columns, excluding queue/wait columns.
-- A team with 15% flow efficiency is spending 85% of lead time in queues. That is normal. It is a system problem, not a people problem. Source: `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md`.
+- A team with 15% flow efficiency is spending 85% of lead time in queues. That is normal. It is a system problem, not a people problem. Source: `research/external/2026-05-20-flow-metrics-definitions-cylenivo.md` (source-repository research, not shipped).
 
 ---
 
 ## 2026 Benchmarks
 
-From `research/external/2026-05-20-value-stream-metrics-axify.md`:
+From `research/external/2026-05-20-value-stream-metrics-axify.md` (source-repository research, not shipped):
 
 | Metric | Typical range | Elite (top quartile) |
 |---|---|---|
@@ -104,7 +104,7 @@ Most tools do not natively compute this. Methods:
 
 ## The DORA overlap
 
-Several sources (`research/external/2026-05-20-value-stream-metrics-axify.md`) discuss DORA metrics alongside Kanban flow metrics:
+Several sources (`research/external/2026-05-20-value-stream-metrics-axify.md` [source-repository research, not shipped]) discuss DORA metrics alongside Kanban flow metrics:
 
 - **Lead time for changes** (DORA) is a subset of Kanban lead time, scoped to the code-review-to-production segment.
 - **Deployment frequency** (DORA) is a throughput proxy scoped to deployments.

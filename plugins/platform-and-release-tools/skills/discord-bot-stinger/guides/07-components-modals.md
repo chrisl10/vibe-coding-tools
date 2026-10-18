@@ -2,7 +2,7 @@
 
 Buttons, select menus, modals: how to author, namespace, and handle interactive component flows.
 
-*Sources: `research/external/2026-05-20-discord-components-modals.md`, `research/external/2026-05-20-discord-interactions-official.md`*
+*Sources: `research/external/2026-05-20-discord-components-modals.md`, `research/external/2026-05-20-discord-interactions-official.md` (source-repository research, not shipped)*
 
 ---
 

@@ -69,4 +69,4 @@ If someone proposes adding a linter/formatter, that is an ADR-level decision (`g
 
 - `package.json` (`ci`, `dup`, `lint-staged`, `prepare`).
 - jscpd config (threshold 7, minLines 10, minTokens 60).
-- `research/2026-06-16-jscpd-husky-gate.md`.
+- `research/2026-06-16-jscpd-husky-gate.md` (source-repository research, not shipped).

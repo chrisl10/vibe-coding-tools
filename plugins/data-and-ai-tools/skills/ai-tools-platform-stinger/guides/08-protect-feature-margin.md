@@ -11,6 +11,6 @@ Build a complete usage ledger and qualify the selected spend controls before cla
 7. Compare the ledger with provider usage/invoice evidence only when supplied and authorized. Keep credential values out of artifacts. Test control behavior using authorized fake fixtures first; actual alerts/caps, queues, retry behavior and final revision need observed proof. Installing providers, changing billing/caching settings, buying credits or altering customer prices remain task-specific owner actions.
 8. Deliver usage/rate/evidence ledger, cost scenario outputs where complete, unresolved inputs, control proposal and one next decision. Do not describe a scenario as an observed bill, margin or realized saving.
 
-Grounding: [update digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/ai-tools-platform-stinger/references/research/feature-margin/digest.md). Mind owns feature architecture/evaluation, platform owns provider facts, Software Economics owns arithmetic, Security owns independent authorization/secret/control review.
+Grounding: update digest. Mind owns feature architecture/evaluation, platform owns provider facts, Software Economics owns arithmetic, Security owns independent authorization/secret/control review.
 
 Use the [incomplete ledger](../examples/hypothetical-ledger.md) to preserve Unknown fields, and the [complete synthetic exercise](../examples/synthetic-feature-margin.md) to check arithmetic without claiming current rates or enforcement.

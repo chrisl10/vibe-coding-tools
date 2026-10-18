@@ -1,6 +1,6 @@
 # 04 - The Reader Lens
 
-> Source: `research/external/10-every-page-is-page-one.md`, `research/external/04-inverted-pyramid-technical-docs.md`
+> Source: `research/external/10-every-page-is-page-one.md`, `research/external/04-inverted-pyramid-technical-docs.md` (source-repository research, not shipped)
 
 The reader lens asks: **"What does the reader already know, and is this document calibrated to that?"** It is the most human of the six review criteria -- it cannot be linted automatically. It requires the reviewer to model the reader's knowledge state and check whether the document meets them where they are.
 

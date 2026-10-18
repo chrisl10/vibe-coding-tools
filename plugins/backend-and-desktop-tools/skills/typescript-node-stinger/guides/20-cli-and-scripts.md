@@ -57,4 +57,4 @@ The `scripts/` folder in this Stinger (`audit-untyped-boundaries.mjs`, `audit-un
 ## Sources
 
 - `package.json` (`bin`, `cli`, `shell` scripts; `yargs-parser`), `src/cli/`, `src/commands/`, `scripts/sync-versions.mjs` (exported `syncVersions`).
-- `research/2026-06-16-hivemind-stack-survey.md`.
+- `research/2026-06-16-hivemind-stack-survey.md` (source-repository research, not shipped).

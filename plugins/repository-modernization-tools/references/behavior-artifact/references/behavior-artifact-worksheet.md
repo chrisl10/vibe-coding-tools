@@ -20,4 +20,4 @@ Constructed template; no real application measurements.
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Fill actual path | Actual values | Actual identities | Include dynamic/external use | Preserve if unresolved | Observed or NOT_RUN | Actual or UNKNOWN | Observed or NOT_RUN | PRESERVE / PRESERVE_UNKNOWN / PROPOSE_REMOVAL |
 
-Approval: exact list digest, task, Mario's decision and scope. No deletion command is included. Recheck hashes before authorized execution.
+Approval: exact list digest, task, the owner's decision and scope. No deletion command is included. Recheck hashes before authorized execution.

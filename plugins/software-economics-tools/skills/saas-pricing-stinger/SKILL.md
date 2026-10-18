@@ -31,7 +31,7 @@ Produce one provisional price/model recommendation, reviewable economic evidence
 
 ## Measure supplied price results
 
-For O045 read [measurement procedure](guides/03-measure-price-results.md), [dated measurement evidence](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/software-economics-tools/skills/saas-pricing-stinger/references/research/price-measurement/distillation.md), [measurement worksheet](references/templates/price-measurement-worksheet.md) and [fictional cases](examples/price-measurement-cases.md). Preserve assignment/exposure, cohort maturity, gross/net cash and contribution separately. Resolve selected PostHog for instrumentation and Payments for accepted billing implementation. Missing observations produce an evidence gap, not an uplift claim. No price or experiment write is authorized.
+For O045 read [measurement procedure](guides/03-measure-price-results.md), dated measurement evidence, [measurement worksheet](references/templates/price-measurement-worksheet.md) and [fictional cases](examples/price-measurement-cases.md). Preserve assignment/exposure, cohort maturity, gross/net cash and contribution separately. Resolve selected PostHog for instrumentation and Payments for accepted billing implementation. Missing observations produce an evidence gap, not an uplift claim. No price or experiment write is authorized.
 
 ## Selected-owner contract
 
@@ -44,7 +44,7 @@ Research/preparation runtime only. No provider billing/price writes, accounts, c
 ## References
 
 - [README](README.md): human guide map.
-- [Source archive and hashes](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/software-economics-tools/skills/saas-pricing-stinger/references/research/sources.json): maintained official evidence fetched 2026-10-07.
+- Source archive and hashes: maintained official evidence fetched 2026-10-07.
 - [Paired Drone](../../agents/saas-pricing-wasp-drone.md): owning specialist and selected-owner dispatch.
 
 <!-- Ship Gate removed: research-only runtime produces local advisory artifacts, not application implementation or provider writes. Construction remains subject to parent Security then Quality and repository health before any authorized commit/push. -->

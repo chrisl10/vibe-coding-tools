@@ -1,6 +1,6 @@
 # 06 - Docs-as-Code Review
 
-> Source: `research/external/05-docs-as-code-workflow.md`, `research/external/08-vale-linter-prose-quality.md`
+> Source: `research/external/05-docs-as-code-workflow.md`, `research/external/08-vale-linter-prose-quality.md` (source-repository research, not shipped)
 
 In a docs-as-code workflow, documentation changes travel through the same PR process as code changes. The Drone's role in this workflow is the *writing-quality review* -- the judgment calls that automated tools (Vale, link checkers, spell checkers) cannot make.
 
@@ -61,7 +61,7 @@ Note: No Diataxis-specific Vale ruleset exists as of May 2026 (`research/researc
 
 ## Documentation drift: the "docs in same PR" principle
 
-From `research/external/05-docs-as-code-workflow.md`: "Documentation changes should be reviewed alongside code changes in the same PR rather than separately, preventing documentation drift."
+From `research/external/05-docs-as-code-workflow.md` (source-repository research, not shipped): "Documentation changes should be reviewed alongside code changes in the same PR rather than separately, preventing documentation drift."
 
 When reviewing a code PR that also changes documentation:
 1. Verify the documentation change is scoped to what the code change actually affects.

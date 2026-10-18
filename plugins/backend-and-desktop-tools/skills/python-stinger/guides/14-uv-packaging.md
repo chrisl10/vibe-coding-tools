@@ -189,7 +189,7 @@ This refuses commits that change `pyproject.toml` without re-locking.
 
 ## Sources
 
-- `research/2026-05-03-uv-vs-poetry.md`
+- `research/2026-05-03-uv-vs-poetry.md` (source-repository research, not shipped)
 - https://docs.astral.sh/uv/
 - https://docs.astral.sh/uv/concepts/projects/
 - https://github.com/mkniewallner/migrate-to-uv

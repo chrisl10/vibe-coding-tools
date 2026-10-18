@@ -1,12 +1,12 @@
 # Forms: Superforms + Formsnap
 
-This is the current officially documented and recommended form pattern for shadcn-svelte [research/raw/10-forms-formsnap-superforms.md]. All code below is Svelte 5 runes idiom, matching the official `/docs/forms` page, not the (Svelte-4-flavored) formsnap package README example: see the version note at the end of this guide.
+This is the current officially documented and recommended form pattern for shadcn-svelte [research/raw/10-forms-formsnap-superforms.md (source-repository research, not shipped)]. All code below is Svelte 5 runes idiom, matching the official `/docs/forms` page, not the (Svelte-4-flavored) formsnap package README example: see the version note at the end of this guide.
 
 ## The stack
 
-Zod (schema, source of truth for shape + generates TS types) → `superValidate(zod4(schema))` in a `+page.server.ts` `load` → `superForm(initialForm, { validators: zod4Client(schema) })` on the client → `Form.Field` / `Form.Control` / `Form.Label` / `Form.Description` / `Form.FieldErrors` composition [research/raw/10-forms-formsnap-superforms.md].
+Zod (schema, source of truth for shape + generates TS types) → `superValidate(zod4(schema))` in a `+page.server.ts` `load` → `superForm(initialForm, { validators: zod4Client(schema) })` on the client → `Form.Field` / `Form.Control` / `Form.Label` / `Form.Description` / `Form.FieldErrors` composition [research/raw/10-forms-formsnap-superforms.md (source-repository research, not shipped)].
 
-Install the form primitives: `pnpm dlx shadcn-svelte@latest add form` [research/raw/10-forms-formsnap-superforms.md].
+Install the form primitives: `pnpm dlx shadcn-svelte@latest add form` [research/raw/10-forms-formsnap-superforms.md (source-repository research, not shipped)].
 
 ## Step by step
 
@@ -66,7 +66,7 @@ export const load: PageServerLoad = async () => {
 </form>
 ```
 
-The `props` object spread onto `Input` carries `name`, `id`, and every accessibility attribute; `Form.Label` auto-associates via `for` [research/raw/10-forms-formsnap-superforms.md].
+The `props` object spread onto `Input` carries `name`, `id`, and every accessibility attribute; `Form.Label` auto-associates via `for` [research/raw/10-forms-formsnap-superforms.md (source-repository research, not shipped)].
 
 ### 4. Page + action
 
@@ -92,7 +92,7 @@ export const actions: Actions = {
 };
 ```
 
-[research/raw/10-forms-formsnap-superforms.md]
+[research/raw/10-forms-formsnap-superforms.md (source-repository research, not shipped)]
 
 ## Select fields: control props go on the trigger
 
@@ -115,16 +115,16 @@ export const actions: Actions = {
 </Form.Field>
 ```
 
-[research/raw/10-forms-formsnap-superforms.md]
+[research/raw/10-forms-formsnap-superforms.md (source-repository research, not shipped)]
 
 ## Why `zod4`/`zod4Client`
 
-The adapter naming signals Superforms' current major depends on Zod v4's adapter API specifically; using the bare `zod`/`zodClient` adapters from older examples may target an earlier Superforms/Zod pairing. Match the adapter suffix to your installed Superforms version [research/raw/10-forms-formsnap-superforms.md].
+The adapter naming signals Superforms' current major depends on Zod v4's adapter API specifically; using the bare `zod`/`zodClient` adapters from older examples may target an earlier Superforms/Zod pairing. Match the adapter suffix to your installed Superforms version [research/raw/10-forms-formsnap-superforms.md (source-repository research, not shipped)].
 
 ## Version note: formsnap README is Svelte 4, don't copy it
 
-The `formsnap` npm package's own README still demonstrates Svelte 4 syntax (`export let data`, `let:attrs` slot props) [research/raw/10-forms-formsnap-superforms.md]. Do not use it as a Svelte 5 reference. The shadcn-svelte `/docs/forms` page (this guide's primary source) is the authoritative Svelte-5-runes-idiom version and should be preferred whenever the two disagree on syntax [research/raw/10-forms-formsnap-superforms.md].
+The `formsnap` npm package's own README still demonstrates Svelte 4 syntax (`export let data`, `let:attrs` slot props) [research/raw/10-forms-formsnap-superforms.md]. Do not use it as a Svelte 5 reference. The shadcn-svelte `/docs/forms` page (this guide's primary source) is the authoritative Svelte-5-runes-idiom version and should be preferred whenever the two disagree on syntax [research/raw/10-forms-formsnap-superforms.md (source-repository research, not shipped)].
 
 ## Accessibility payoff
 
-`Form.*` wrapper components apply correct `aria-*` attributes based on field validation state automatically, and wire label/input association via `for`/`id`, without you writing that logic by hand [research/raw/10-forms-formsnap-superforms.md]. See [guides/07-accessibility-and-gaps-vs-react.md](07-accessibility-and-gaps-vs-react.md).
+`Form.*` wrapper components apply correct `aria-*` attributes based on field validation state automatically, and wire label/input association via `for`/`id`, without you writing that logic by hand [research/raw/10-forms-formsnap-superforms.md (source-repository research, not shipped)]. See [guides/07-accessibility-and-gaps-vs-react.md](07-accessibility-and-gaps-vs-react.md).

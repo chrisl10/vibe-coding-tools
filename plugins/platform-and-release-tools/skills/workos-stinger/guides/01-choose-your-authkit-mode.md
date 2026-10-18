@@ -21,7 +21,7 @@ WorkOS's own decision framework, restated directly: if the ask is "change how a 
 ## What this means for a SvelteKit/Vercel stack specifically
 
 - Guide 02 (`02-authkit-integration-sveltekit.md`) wires the hosted UI via the SvelteKit SDK.
-- If a specific screen later needs the headless API, that screen alone calls the Authentication API endpoints directly (e.g. `authenticateWithPassword`, `authenticateWithMagicAuth` - see `references/research/raw/workos--authkit--mfa-passkeys-magic-auth.md` for the Magic Auth call shape as a worked example) while every other screen stays on the hosted UI. Don't rebuild the whole auth surface just because one screen needs custom UI.
+- If a specific screen later needs the headless API, that screen alone calls the Authentication API endpoints directly (e.g. `authenticateWithPassword`, `authenticateWithMagicAuth` - see `references/research/raw/workos--authkit--mfa-passkeys-magic-auth.md` [source-repository research, not shipped] for the Magic Auth call shape as a worked example) while every other screen stays on the hosted UI. Don't rebuild the whole auth surface just because one screen needs custom UI.
 
 ## Next
 

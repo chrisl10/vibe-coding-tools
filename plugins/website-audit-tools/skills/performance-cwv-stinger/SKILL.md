@@ -12,8 +12,6 @@ metadata:
 
 # Performance Cwv Stinger
 
-> **Forge status:** stages 1-6 of the seven-stage forge pipeline complete (Topic, Research, Distillation, References, Guides, final Skill/Drone authorship). Stage 7 (Register, pair registration in `pest-controller-suit` and deploy) has not run yet. Everything below this line is grounded in this pair's PRD, the build plan, and the two raw sources archived in `references/research/raw/`; every claim traces to one of those, is explicitly labelled as general/uncited HTTP-CDN knowledge, or is an explicit cross-link to `lighthouse-pagespeed-stinger`.
-
 You are equipping **performance-cwv-wasp-drone**, part of the Website Auditor by Legion Code Inc. plugin. Full scope and acceptance criteria: [prd-016-performance-cwv](../../library/requirements/backlog/prd-016-performance-cwv/prd-016-performance-cwv-index.md).
 
 ## Purpose
@@ -39,7 +37,7 @@ Score a site's CDN/edge-delivery presence, caching-header strategy, and Core Web
 
 1. Load `site-data/` and build the sampled page set.
 2. Capture CDN and caching headers with `references/scripts/cdn-header-scan.py` (fresh, read-only requests, since `site-data/`'s crawl capture does not preserve response headers).
-3. Collect Core Web Vitals: lab data via the shared `cwv-collect.py` script, field data via PageSpeed Insights/CrUX where coverage exists.
+3. Collect Core Web Vitals yourself: field data via PageSpeed Insights/CrUX where coverage exists, and lab data only from a tool already available and authorized in this session. The shared `cwv-collect.py` was never implemented; do not call it.
 4. Score the three leaves on the plugin-wide zero-to-six scale, every score with a numeric value, an evidence pointer, and a one-line justification.
 5. Cross-link `lighthouse-pagespeed-stinger` rather than re-deriving its methodology, per `guides/05-external-audit-vs-lighthouse-ci.md`.
 6. Log rejected/reframed candidates to the run's verification log.
@@ -62,13 +60,13 @@ Load on demand; do not read everything up front.
 | `references/templates/performance-findings-template.md` | The copy-ready output written to `09-performance/performance-findings.md` |
 | `references/templates/cdn-header-checklist.md` | The full CDN/caching-header list and what each one indicates (general HTTP/CDN knowledge, flagged as such) |
 | `references/scripts/cdn-header-scan.py` | Read-only HTTP header capture against the sampled page set |
-| `references/scripts/README.md` | Script inventory and the boundary with the shared, not-yet-implemented `cwv-collect.py` |
+| `references/scripts/README.md` | Script inventory, and why Core Web Vitals collection is a Drone step rather than a script |
 | `references/research/distilled-performance-cwv.md` | Verifying any claim fast, or resolving where a fact came from, including this archive's stated gap (section 7, CDN/caching-header audit is unresearched) |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 
 ## Quality bar
 
-A pass through this Stinger is done when: `guides/01-audit-procedure.md` ran in order, every factual claim used traces to `references/research/raw/` or is explicitly labelled general/uncited HTTP-CDN knowledge or `[subjective]`, every score has all three mandatory fields, any Lighthouse/PSI-adjacent question is cross-linked to `lighthouse-pagespeed-stinger` rather than re-derived, rejected/reframed candidates are logged, and `09-performance/performance-findings.md` was written per `guides/06-report-format.md`.
+A pass through this Stinger is done when: `guides/01-audit-procedure.md` ran in order, every factual claim used traces to the source research archive (not shipped; the shipped distillation summarizes it) or is explicitly labelled general/uncited HTTP-CDN knowledge or `[subjective]`, every score has all three mandatory fields, any Lighthouse/PSI-adjacent question is cross-linked to `lighthouse-pagespeed-stinger` rather than re-derived, rejected/reframed candidates are logged, and `09-performance/performance-findings.md` was written per `guides/06-report-format.md`.
 
 ## Related drones and stingers
 

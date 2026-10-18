@@ -1,6 +1,6 @@
 # Choose what kind of product to build
 
-Use [the worksheet](../references/templates/product-form-worksheet.md), [digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/builder-readiness-stinger/references/research/product-form/distillation.md) and [cases](../references/examples/product-form-cases.md). Start with the job people need to finish. Framework choices come later.
+Use [the worksheet](../references/templates/product-form-worksheet.md), digest and [cases](../references/examples/product-form-cases.md). Start with the job people need to finish. Framework choices come later.
 
 1. Read supplied context. Ask only missing facts that change the choice: who uses it, what they finish, where they use it, what must work without internet, device/files/background needs, an existing app it must live inside, data/services it must reach, distribution, learner experience and actual owner/permission constraints.
 2. Define terms near use. A website delivers linked pages. A web app lets people complete interactive work in a browser; the two can overlap. A desktop/mobile app is a device-delivered interface with platform needs to qualify. An integration moves data or actions between systems. A plugin works inside a named host. A command-line tool accepts typed commands. These forms can combine, but do not recommend a bundle without a real requirement.

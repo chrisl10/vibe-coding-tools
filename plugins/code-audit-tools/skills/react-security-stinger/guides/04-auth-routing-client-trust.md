@@ -23,10 +23,10 @@ References: [checks-auth-routing.md](../references/checks-auth-routing.md) (AR-0
 
 ## Sources
 
-- [raw/owasp--top10-2025-and-cwe-mapping.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--top10-2025-and-cwe-mapping.md)
-- [raw/owasp--cheatsheet-csrf.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-csrf.md)
-- [raw/owasp--cheatsheet-html5-security.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-html5-security.md)
-- [raw/owasp--cheatsheet-xss-dom-xss-redirects.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-xss-dom-xss-redirects.md)
-- [raw/browser--mdn-postmessage.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/browser--mdn-postmessage.md)
-- [raw/router--react-router-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/router--react-router-advisories.md)
-- [raw/ai--vibe-coded-apps-security-studies.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/ai--vibe-coded-apps-security-studies.md)
+- raw/owasp--top10-2025-and-cwe-mapping.md
+- raw/owasp--cheatsheet-csrf.md
+- raw/owasp--cheatsheet-html5-security.md
+- raw/owasp--cheatsheet-xss-dom-xss-redirects.md
+- raw/browser--mdn-postmessage.md
+- raw/router--react-router-advisories.md
+- raw/ai--vibe-coded-apps-security-studies.md

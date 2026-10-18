@@ -16,13 +16,13 @@ Turn an idea, or an existing repository's product, into a plan the Wasp Nest can
 5. **Stage 2, Design.** Dispatch `product-design-wasp-drone`, armed with `product-design-stinger`, with the approved strategy. It confirms a design direction with the owner before building prototypes, produces the UX package under `library/knowledge/private/product/design/`, scores it with the critique rubric, and offers the Claude Design brief (out) and import guide (back in). Present the package and wait for explicit approval.
 6. **Stage 3, Planning.** Dispatch `product-planning-wasp-drone`, armed with `product-planning-stinger`, with the approved strategy and design. It writes the PRD map, `library/requirements/plans/wave-plan.md`, `library/knowledge/private/standards/definition-of-done.md`, and the handoff packet. Present them and wait for explicit approval.
 7. **Handoff.** With approval, give the handoff packet to `library-wasp-drone` (armed with `library-stinger`) to write the PRDs, and to `contract-writing-wasp-drone` (armed with `contract-writing-stinger`) to draft each listed CTR. This command does not write PRDs, CTRs or application code itself. Contracts stay Draft until the owner accepts the exact revision.
-8. Report with the six-field closing report: what was approved, file paths, what is still pending owner approval, and the recommended next step (usually `/tars` to run the build, or `/smoke-it` once PRDs and contracts are ready).
+8. Report with the six-field closing report: what was approved, file paths, what is still pending owner approval, and the recommended next step (usually `/tars` to run the build, which needs the optional `data-and-ai-tools` pack, or `/smoke-it` once PRDs and contracts are ready).
 
 If a registered native role for a Drone is unavailable or delegation is not authorized, read the paired agent file and use its Stinger directly, and say so truthfully in the report.
 
 ## When not to use
 
-- A single new feature idea in the middle of a build goes to KIPP in the TARS feature desk, not here.
+- A single new feature idea in the middle of a build goes to KIPP in the TARS feature desk (`data-and-ai-tools`), not here.
 - Writing or revising one PRD goes to `library-stinger`.
 - Executing PRDs goes to `/smoke-it`.
 

@@ -2,6 +2,7 @@
 name: "source-command-app-primer-zero"
 description: "Prepare an app's Library, contracts, schema and bounded wave-plan handoff before implementation."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-app-primer-zero

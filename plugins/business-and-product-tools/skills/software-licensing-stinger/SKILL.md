@@ -29,4 +29,4 @@ Read-only advisory scope. No application edits, notice removal, relicensing, pub
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [Guide map](README.md) - Selected-owner handoffs to Dependency Audit, vendor-maintenance and Legal Docs; no implicit installation or authority.
+  - [Guide map](README.md) - Selected-owner handoffs to Dependency Audit, Component Vendoring and Legal Docs; no implicit installation or authority.

@@ -1,6 +1,6 @@
 # 15: Rich Text & Block Editors
 
-Source: `research/2026-04-25-rich-text-editors.md`. Choosing a rich-text editor is a 2-year decision: the data model leaks into the database, the API, exports, and AI pipelines. Pick once, pick right.
+Source: `research/2026-04-25-rich-text-editors.md` (source-repository research, not shipped). Choosing a rich-text editor is a 2-year decision: the data model leaks into the database, the API, exports, and AI pipelines. Pick once, pick right.
 
 ## TL;DR pick
 

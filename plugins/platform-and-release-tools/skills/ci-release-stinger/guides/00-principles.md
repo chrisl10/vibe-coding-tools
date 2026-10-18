@@ -33,7 +33,7 @@ Unlike the npm-package case (where the version is single-sourced and inlined via
 
 ### 4. For the npm-package case: the version is single-sourced (legacy)
 
-`prebuild` runs `scripts/sync-versions.mjs`, which propagates one version (from root `package.json`) into every harness manifest, and esbuild `define` (`__HIVEMIND_VERSION__`) inlines it into the bundles. Never hand-edit a version in a per-harness manifest - it will drift from the bundles and ship a lie. Source: `research/2026-06-16-version-single-sourcing.md` and `guides/02-sync-versions.md`.
+`prebuild` runs `scripts/sync-versions.mjs`, which propagates one version (from root `package.json`) into every harness manifest, and esbuild `define` (`__HIVEMIND_VERSION__`) inlines it into the bundles. Never hand-edit a version in a per-harness manifest - it will drift from the bundles and ship a lie. Source: `research/2026-06-16-version-single-sourcing.md` (source-repository research, not shipped) and `guides/02-sync-versions.md`.
 
 ### 5. For the npm-package case: the build is `tsc && node esbuild.config.mjs` - both run (legacy)
 
@@ -49,14 +49,14 @@ App case: prefer Doppler's OIDC-based Service Account Identity or GitHub's own O
 
 ### 8. Pin actions, pin Node, in both cases
 
-For new authoring, verify and pin actions to full commit SHAs from the official action repository, and pin the target-supported Node/toolchain versions. Version tags, including exact semantic-version tags, can move; historical snippets are not immutable pins. Source: [October secure-use capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/platform-and-release-tools/skills/ci-release-stinger/references/research/ci-efficiency-2026-10-07/raw/github-security.html). This holds identically for the app case's `guides/09-github-actions-job-shapes-sveltekit.md` jobs and the npm-package case's `guides/04-workflows.md` jobs.
+For new authoring, verify and pin actions to full commit SHAs from the official action repository, and pin the target-supported Node/toolchain versions. Version tags, including exact semantic-version tags, can move; historical snippets are not immutable pins. Source: October secure-use capture. This holds identically for the app case's `guides/09-github-actions-job-shapes-sveltekit.md` jobs and the npm-package case's `guides/04-workflows.md` jobs.
 
 ### 9. Cite every finding
 
 Two citations per finding:
 
 - **Where in the user's repo** - `package.json:18`, `.github/workflows/ci.yaml:107`, `svelte.config.js:12`.
-- **Why it's a finding** - guide section + research citation (`guides/12-migration-gating-drizzle-neon.md` + `references/research/raw/neon-drizzle-branch-per-pr-migration-gating.md` for the app case, or `guides/06-npm-release.md` + `research/2026-06-16-pack-check-secret-scan.md` for the legacy case) or an external URL.
+- **Why it's a finding** - guide section + research citation (`guides/12-migration-gating-drizzle-neon.md` + `references/research/raw/neon-drizzle-branch-per-pr-migration-gating.md` for the app case, or `guides/06-npm-release.md` + `research/2026-06-16-pack-check-secret-scan.md` [source-repository research, not shipped] for the legacy case) or an external URL.
 
 ### 10. Severity discipline
 

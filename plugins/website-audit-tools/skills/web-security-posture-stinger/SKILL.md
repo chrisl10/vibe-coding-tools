@@ -12,13 +12,11 @@ metadata:
 
 # Web Security Posture Stinger
 
-> **Forge status:** stages 1-6 complete. Stage 7 (Register: pest-controller-suit pairing registration, deploy, sync references across harness targets) has not run yet. Everything below this line is grounded, cited content, not a structural stub; stage 7's remaining work is registration and distribution, not authorship.
-
 You are equipping **web-security-posture-wasp-drone**, part of the Website Auditor by Legion Code Inc. plugin. Full scope and acceptance criteria: [prd-014-web-security-posture](../../library/requirements/backlog/prd-014-web-security-posture/prd-014-web-security-posture-index.md).
 
 **This Stinger audits an external, third-party site's public security posture as observed from the outside, at automated-plus-heuristic confidence. It does not audit this plugin's own codebase, and it is not the Wasp Nest's internal application-security specialist.** That role belongs to `security-wasp-drone`/`security-stinger`, which improves a repository this plugin's own operator owns: it reads source, proposes diffs, and runs the Ship Gate. This pair has no source access, no deploy rights, and a hard read-only constraint on the audited site; it cross-links to `security-stinger`'s research archive where the underlying OWASP/header guidance overlaps rather than re-researching or duplicating it (PRD-014 non-goal, PRD-001 non-goal, see `guides/07-relationship-to-internal-security-stinger.md`).
 
-Every factual claim this skill makes traces to a downloaded primary source in `references/research/raw/`, unless explicitly marked as this Stinger's own inference or construction, with the reason stated at the point of use. Read `references/research/distilled-web-security-posture.md` first: two research clusters, four sources, and two named, total gaps (TLS depth beyond one warning sentence, payment-path integrity not covered at all) that this Stinger reports honestly rather than filling from training data.
+Every factual claim this skill makes traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it), unless explicitly marked as this Stinger's own inference or construction, with the reason stated at the point of use. Read `references/research/distilled-web-security-posture.md` first: two research clusters, four sources, and two named, total gaps (TLS depth beyond one warning sentence, payment-path integrity not covered at all) that this Stinger reports honestly rather than filling from training data.
 
 ## When to use this skill
 
@@ -44,7 +42,7 @@ Load on demand; do not read everything up front.
 | Path | Load when |
 |---|---|
 | `references/research/distilled-web-security-posture.md` | Verifying any header/CSP/injection claim fast, or resolving where a fact came from |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `guides/01-audit-procedure.md` | Running a full pass end to end |
 | `guides/02-header-checklist-and-scoring.md` | Scoring any individual header or cookie checkpoint |
 | `guides/03-csp-strategy-nonce-vs-hash.md` | Judging a present CSP's actual strength, not just its presence |
@@ -63,7 +61,7 @@ Load on demand; do not read everything up front.
 ## Related drones and stingers
 
 - [web-security-posture-wasp-drone](../../agents/web-security-posture-wasp-drone.md) - this Stinger's paired Drone.
-- [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - the Wasp Nest's internal-repo application-security specialist; consult for the underlying OWASP/header research where this external, passive audit's scope overlaps, cross-link rather than duplicate its research archive, per `guides/07`.
+- [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - the Wasp Nest's internal-repo application-security specialist; consult for the underlying OWASP/header research where this external, passive audit's scope overlaps, cross-link rather than duplicate its research archive, per `guides/07`.
 - [vendor-inventory-stinger](../vendor-inventory-stinger) - upstream dependency; this pair reads `01-recon/vendor-inventory.md` that pair writes and does not re-detect vendors itself.
 - [site-crawler-stinger](../site-crawler-stinger) - upstream dependency; this pair reads `site-data/` that pair writes.
 - [audit-scoring-stinger](../audit-scoring-stinger) - reads this pair's `07-security/` output in wave W7 and applies the critical-security-override cap this pair flags but does not itself apply.
@@ -79,7 +77,7 @@ A pass is done when: `guides/01` through `guides/08` were followed in order, eve
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [web-security-posture-wasp-drone](../../agents/web-security-posture-wasp-drone.md) - this Stinger's paired Drone.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - internal-repo application-security specialist; consult for the underlying OWASP/header research where this external, passive audit's scope overlaps, do not re-research it from scratch.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - internal-repo application-security specialist; consult for the underlying OWASP/header research where this external, passive audit's scope overlaps, do not re-research it from scratch.
 
 ## Ship Gate decision
 

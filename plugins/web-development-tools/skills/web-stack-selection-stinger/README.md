@@ -9,6 +9,6 @@ Read [interview](guides/interview-product.md), [compare](guides/compare-framewor
 
 ## Related owners and host support
 
-Resolve Core routing/Knowledge/contracts/Library and actual selected React/Svelte/Preact/backend/UI/design/component/license/infrastructure/security owners through the trusted catalog/registry. Dedicated Next/Vue/Nuxt implementation ownership must be resolved rather than presumed. Security-only ownership does not qualify implementation. Missing owners remain explicit handoff gaps.
+Resolve Core routing/Knowledge/contracts/Library and actual selected React/Svelte/Preact/backend/UI/design/component/license/infrastructure/security owners through the trusted catalog/registry. Next.js, Nuxt and Vue implementation ownership (`nextjs-stinger`, `nuxt-stinger`, `vue-stinger`) must be resolved against the selected plugins rather than presumed. Security-only ownership does not qualify implementation. Missing owners remain explicit handoff gaps.
 
 The source catalog registers this pair under Web Development Tools. Parent build checks qualify generated Claude/Cowork, Cursor and Codex surfaces; source registration does not establish a selected installation or native execution. If a selected installation lacks native delegation, read the paired Drone and use the Stinger directly only within the authorized approach, reporting direct use. Runtime is research-only; independent grounding and Security then Quality apply to source construction and any separately authorized commit.

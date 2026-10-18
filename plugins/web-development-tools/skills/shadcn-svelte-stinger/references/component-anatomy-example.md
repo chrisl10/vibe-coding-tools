@@ -1,6 +1,6 @@
 # Component anatomy example (worked)
 
-A worked example of a copied-in component's structure, grounded in [distilled-shadcn-svelte.md](research/distilled-shadcn-svelte.md) section 13, citing [raw/14-copy-in-philosophy-and-component-anatomy.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/shadcn-svelte-stinger/references/research/raw/14-copy-in-philosophy-and-component-anatomy.md). All code below is Svelte 5 runes idiom: `$props()`, `$bindable()`, `{@render ...}` snippets, `onclick` handlers, never Svelte 4 store syntax and never `on:` directives.
+A worked example of a copied-in component's structure, grounded in [distilled-shadcn-svelte.md](research/distilled-shadcn-svelte.md) section 13, citing raw/14-copy-in-philosophy-and-component-anatomy.md. All code below is Svelte 5 runes idiom: `$props()`, `$bindable()`, `{@render ...}` snippets, `onclick` handlers, never Svelte 4 store syntax and never `on:` directives.
 
 ## Folder shape
 

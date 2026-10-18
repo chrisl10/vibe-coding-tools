@@ -20,7 +20,7 @@ This is the single highest-signal authenticity check. A specific detail could be
 "$847 MRR" is better than "early revenue."
 "A VP of Engineering at a fintech startup told me" is better than "a customer told me."
 
-**Research grounding:** `research/external/2026-05-20-ai-content-detection-linkedin.md` (LinkedIn 360Brew scans for personal data density)
+**Research grounding:** `research/external/2026-05-20-ai-content-detection-linkedin.md` (source-repository research, not shipped) (LinkedIn 360Brew scans for personal data density)
 
 ### 3. Does it sound like how the founder actually talks?
 
@@ -50,7 +50,7 @@ Not "would a random person agree with this" — the question is whether the post
 
 Before publishing, predict what kind of engagement this post will attract. A post that attracts only likes is algorithmically weaker than one that attracts replies. If the post has no obvious question, debate point, or surprising claim — it will likely get passive approval, not conversation.
 
-**Research grounding:** `research/external/2026-05-20-anti-ai-backlash-algorithms.md` ("50 substantive comments outranks 500 passive likes")
+**Research grounding:** `research/external/2026-05-20-anti-ai-backlash-algorithms.md` (source-repository research, not shipped) ("50 substantive comments outranks 500 passive likes")
 
 ### 10. Is it platform-native?
 
@@ -88,4 +88,4 @@ The portable version of this checklist lives at `templates/authenticity-checklis
 
 ---
 
-**Research grounding:** `research/external/2026-05-20-ai-content-detection-linkedin.md`, `research/external/2026-05-20-anti-ai-backlash-algorithms.md`, `research/external/2026-05-20-founder-led-content-wins.md`
+**Research grounding:** `research/external/2026-05-20-ai-content-detection-linkedin.md`, `research/external/2026-05-20-anti-ai-backlash-algorithms.md`, `research/external/2026-05-20-founder-led-content-wins.md` (source-repository research, not shipped)

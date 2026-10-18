@@ -2,7 +2,7 @@
 
 `pgvector` (storage decision), Postgres FTS, logical replication / CDC, TimescaleDB / Tiger Data for time-series.
 
-Source: `research/2026-04-25-pgvector-fts-timeseries.md`.
+Source: `research/2026-04-25-pgvector-fts-timeseries.md` (source-repository research, not shipped).
 
 ## `pgvector`: storage decision (db-wasp-drone's territory)
 

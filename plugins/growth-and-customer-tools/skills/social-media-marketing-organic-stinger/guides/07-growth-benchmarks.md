@@ -6,7 +6,7 @@
 
 ## 2026 median engagement rates by platform
 
-Source: SociaVault Labs (350,000+ accounts, fraudulent accounts excluded), Q1 2026. See `research/external/2026-05-20-engagement-benchmarks-2026.md`.
+Source: SociaVault Labs (350,000+ accounts, fraudulent accounts excluded), Q1 2026. See `research/external/2026-05-20-engagement-benchmarks-2026.md` (source-repository research, not shipped).
 
 | Platform | Median ER (2026) | YoY change | Trend |
 |---|---|---|---|
@@ -104,4 +104,4 @@ These signals usually indicate: wrong platform for the audience, voice that hasn
 
 ---
 
-**Research grounding:** `research/external/2026-05-20-engagement-benchmarks-2026.md`, `research/external/2026-05-20-platform-algorithm-comparison.md`, `research/external/2026-05-20-bluesky-vs-threads-founders.md`
+**Research grounding:** `research/external/2026-05-20-engagement-benchmarks-2026.md`, `research/external/2026-05-20-platform-algorithm-comparison.md`, `research/external/2026-05-20-bluesky-vs-threads-founders.md` (source-repository research, not shipped)

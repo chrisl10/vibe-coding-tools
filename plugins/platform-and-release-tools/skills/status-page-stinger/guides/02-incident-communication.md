@@ -1,6 +1,6 @@
 # Guide 02: Incident Communication
 
-*Source: `research/external/2026-05-20-incident-communication-templates.md`*
+*Source: `research/external/2026-05-20-incident-communication-templates.md` (source-repository research, not shipped)*
 
 ---
 

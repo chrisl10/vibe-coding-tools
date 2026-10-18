@@ -1,6 +1,6 @@
 # Guide 00: Framework Selection
 
-> Source: `research/frameworks/2026-05-20-grammy-latest-version.md`, `research/frameworks/2026-05-20-aiogram-3x-pypi-status.md`, `research/frameworks/2026-05-20-grammy-vs-aiogram-comparison.md`
+> Source: `research/frameworks/2026-05-20-grammy-latest-version.md`, `research/frameworks/2026-05-20-aiogram-3x-pypi-status.md`, `research/frameworks/2026-05-20-grammy-vs-aiogram-comparison.md` (source-repository research, not shipped)
 
 ---
 

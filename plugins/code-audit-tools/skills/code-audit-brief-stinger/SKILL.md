@@ -64,7 +64,7 @@ Turn a finished `/audit-my-code` run workspace into one HTML brief at `<workspac
 | `scripts/render_brief.py` | Run to render; `rollup_verdict` sits near the top |
 | `scripts/test_render_brief.py` | Run after any change to the script or the brand file |
 | `references/research/distilled-brief-rendering.md` | Verifying a claim about print, tables, escaping, fonts, or the design sources |
-| `references/research/raw/` | Tracing a distilled claim to its source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 
 ## Related drones and stingers
 

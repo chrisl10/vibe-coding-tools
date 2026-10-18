@@ -2,7 +2,7 @@
 
 *Covers: ThemeProvider config, `attribute`, `storageKey`, `enableSystem`, `disableTransitionOnChange`, `nonce`, `themes`, `useTheme` hook.*
 
-*Sources: `research/external/2026-05-20-next-themes-api.md`*
+*Sources: `research/external/2026-05-20-next-themes-api.md` (source-repository research, not shipped)*
 
 ---
 

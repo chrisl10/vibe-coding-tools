@@ -647,7 +647,7 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/entry-schema.md` | Stage 6. The template, every field's rule, the worked example. |
 | `references/staleness-and-versions.md` | Stage 1 for the check, and whenever a review outcome is decided. |
 | `references/research/distilled-personal-knowledge-capture.md` | When you need the citation behind a rule, or want to check whether a claim is evidenced at all. |
-| `references/research/README.md` | Source inventory and the archive's named gaps. |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `scripts/kb_index.py` | Stage 1 (`--stale`), stage 5 (`--check`), stage 8 (`--index`). `--tags` when tag drift is suspected. |
 
 Five of this skill's design decisions are **not** evidenced by the research archive and are

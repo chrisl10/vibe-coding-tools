@@ -20,7 +20,7 @@ Estimates become toxic when they are treated as commitments rather than probabil
 4. Developer feels pressure to game future estimates to protect themselves.
 5. Story points stop reflecting complexity and start reflecting political safety.
 
-This is the commitment trap. It is documented across the planning-fallacy literature (see `research/external/04-planning-fallacy.md`) and is the primary reason the #NoEstimates movement found a receptive audience.
+This is the commitment trap. It is documented across the planning-fallacy literature (see `research/external/04-planning-fallacy.md` [source-repository research, not shipped]) and is the primary reason the #NoEstimates movement found a receptive audience.
 
 **Directive:** Every advisory must surface the estimation-vs-commitment distinction explicitly. Before recommending any framework, ask: "Does your organization treat estimates as commitments?" If yes, the framework choice is secondary to changing that organizational behavior.
 
@@ -60,4 +60,4 @@ See `guides/05-planning-fallacy.md` for the full framework and remedies.
 
 ---
 
-*Cited research: `research/external/01-noestimates.md`, `research/external/04-planning-fallacy.md`*
+*Cited research: `research/external/01-noestimates.md`, `research/external/04-planning-fallacy.md` (source-repository research, not shipped)*

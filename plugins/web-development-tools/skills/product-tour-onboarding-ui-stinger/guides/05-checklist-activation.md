@@ -2,7 +2,7 @@
 
 Use this guide when building or auditing an onboarding checklist component with progress gamification.
 
-Source: `research/external/2026-05-20-checklist-activation-gamification.md`, `research/external/2026-05-20-tour-analytics-effectiveness.md`.
+Source: `research/external/2026-05-20-checklist-activation-gamification.md`, `research/external/2026-05-20-tour-analytics-effectiveness.md` (source-repository research, not shipped).
 
 ---
 

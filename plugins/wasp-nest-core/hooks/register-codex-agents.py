@@ -10,7 +10,14 @@ import re
 import shutil
 import sys
 import tempfile
-import tomllib
+
+if sys.version_info < (3, 11):
+    # SessionStart must not prevent the user's Codex session from starting, so report and exit 0.
+    print("Wasp Nest Codex agent registration skipped: register-codex-agents.py needs Python 3.11 or newer "
+          "(it reads TOML with tomllib). Install Python 3.11+ and rerun; on Windows use `py -3.11`.", file=sys.stderr)
+    sys.exit(0)
+
+import tomllib  # noqa: E402  (imported after the version check so older Python fails clearly)
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import unquote

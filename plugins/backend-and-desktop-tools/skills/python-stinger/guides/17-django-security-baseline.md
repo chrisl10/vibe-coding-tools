@@ -154,7 +154,7 @@ def stripe_webhook(request: HttpRequest):
 
 ## Sources
 
-- `research/2026-05-03-django-security-baseline.md`
+- `research/2026-05-03-django-security-baseline.md` (source-repository research, not shipped)
 - https://cheatsheetseries.owasp.org/cheatsheets/Django_Security_Cheat_Sheet.html
 - https://docs.djangoproject.com/en/stable/topics/security/
 - https://docs.djangoproject.com/en/stable/howto/deployment/checklist/

@@ -38,7 +38,7 @@ Without all four, the substitution is a finding. The `references/` folder is not
 - **Celery + Redis.** Mature, battle-tested, rich ecosystem (Flower, beat, prefork / gevent / eventlet pools), deep Django integration.
 - **Channels + Daphne.** Official Django integration; channels_redis is the only Django-maintained channel layer for production.
 - **pytest + pytest-django + factory_boy.** Discipline-friendly: explicit fixtures, `--reuse-db` for fast cycles, factories beat JSON fixtures every time.
-- **uv.** Single Rust binary replacing pyenv + virtualenv + pip + Poetry + pip-tools. ~80% faster on lock operations in real-world benchmarks (`research/2026-05-03-uv-vs-poetry.md`).
+- **uv.** Single Rust binary replacing pyenv + virtualenv + pip + Poetry + pip-tools. ~80% faster on lock operations in real-world benchmarks (`research/2026-05-03-uv-vs-poetry.md` [source-repository research, not shipped]).
 - **pyright.** 97.8% typing-spec conformance vs mypy's 58.3%. Pylance ships in VS Code. Strict mode on new files is the right ratchet.
 - **Ruff.** Single config block in `pyproject.toml`, autofix safely-fixable rules, runs in <1s on most repos.
 - **Pydantic v2.** Carried by Ninja and FastAPI for free. Single source of truth for boundary types.
@@ -109,8 +109,10 @@ When this guide drives the review:
 
 ## Sources
 
-- `research/2026-05-03-django-ninja-vs-drf.md`
-- `research/2026-05-03-uv-vs-poetry.md`
-- `research/2026-05-03-pyright-vs-mypy.md`
-- `research/2026-05-03-ruff-config.md`
-- `research/2026-05-03-httpx-async-production.md`
+The notes listed below are source-repository research, not shipped.
+
+- `research/2026-05-03-django-ninja-vs-drf.md` (source-repository research, not shipped)
+- `research/2026-05-03-uv-vs-poetry.md` (source-repository research, not shipped)
+- `research/2026-05-03-pyright-vs-mypy.md` (source-repository research, not shipped)
+- `research/2026-05-03-ruff-config.md` (source-repository research, not shipped)
+- `research/2026-05-03-httpx-async-production.md` (source-repository research, not shipped)

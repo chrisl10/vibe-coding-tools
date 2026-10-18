@@ -1,6 +1,6 @@
 # Guide 01: Pipeline Stage Design
 
-Source: `research/internal/command-brief-summary.md`, `research/external/2026-05-20-ats-platform-comparison.md`
+Source: `research/internal/command-brief-summary.md`, `research/external/2026-05-20-ats-platform-comparison.md` (source-repository research, not shipped)
 
 ---
 

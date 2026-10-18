@@ -46,7 +46,7 @@ The zod v4/v3 split above is a Hivemind-specific reason to pick zod (the MCP SDK
 
 A PR introducing valibot for server-side-only validation in this app, with no client-bundle justification, is a **should-refactor** - ask what problem it's solving; if the answer is "bundle size" for code that never ships to a browser, that's not a real justification here. A PR importing `zod/v3` anywhere in this app (as opposed to the Wasp Nestmind MCP-server case) is very likely copy-pasted from the wrong context - flag it.
 
-Sources: `references/research/raw/zod-vs-valibot--2026-tradeoffs.md`, `references/research/distilled-typescript-node.md` section 4. The existing `references/zod-vs-valibot.md` remains the Wasp Nestmind-era evidence trail for the MCP-SDK-coupling reasoning and is preserved as-is.
+Sources: `references/research/raw/zod-vs-valibot--2026-tradeoffs.md` (source-repository research, not shipped), `references/research/distilled-typescript-node.md` section 4. The existing `references/zod-vs-valibot.md` remains the Wasp Nestmind-era evidence trail for the MCP-SDK-coupling reasoning and is preserved as-is.
 
 ## Drizzle boundaries: link, don't duplicate
 
@@ -71,7 +71,7 @@ Prefer a guard (`function isRow(x: unknown): x is Row`) or a zod `.safeParse()` 
 ## Sources
 
 - `tsconfig.json` (`strict: true`), `package.json` (`zod ^4`), `src/mcp/server.ts` (`zod/v3`) - Hivemind case.
-- `research/2026-06-16-zod-v4-vs-v3-mcp.md` - Hivemind case.
-- `references/research/raw/zod-vs-valibot--2026-tradeoffs.md` - this repo's SvelteKit-stack update.
+- `research/2026-06-16-zod-v4-vs-v3-mcp.md` (source-repository research, not shipped) - Hivemind case.
+- `references/research/raw/zod-vs-valibot--2026-tradeoffs.md` (source-repository research, not shipped) - this repo's SvelteKit-stack update.
 - `references/research/distilled-typescript-node.md` section 4.
 - `guides/25-drizzle-type-inference-patterns.md` for the adjacent Drizzle inference boundary.

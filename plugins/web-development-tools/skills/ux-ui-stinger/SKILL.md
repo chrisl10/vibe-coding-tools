@@ -154,8 +154,8 @@ Current primitive guidance supersedes the historical Radix-only assumption: insp
 
 ## Maintenance
 
-This Stinger was researched against the library versions pinned in `research/library-versions.md`. Libraries drift. When a major version of shadcn/ui, Mantine, Lucide, Framer Motion, Tailwind, or Radix ships:
+This Stinger was researched against the library versions pinned in `research/library-versions.md` (source-repository research, not shipped with the plugin). Libraries drift. When a major version of shadcn/ui, Mantine, Lucide, Framer Motion, Tailwind, or Radix ships:
 
-1. Write a fresh `research/YYYY-MM-DD-<library>-vX-migration.md` note.
+1. Write a fresh `research/YYYY-MM-DD-<library>-vX-migration.md` (source-repository research, not shipped with the plugin) note.
 2. Update the affected guide(s).
-3. Update `research/library-versions.md`.
+3. Update `research/library-versions.md` (source-repository research, not shipped with the plugin).

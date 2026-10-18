@@ -1,6 +1,6 @@
 # Hosted provider: OpenAI text-embedding-3
 
-Grounded in `references/research/raw/openai--vector-embeddings-guide.md`.
+Grounded in `references/research/raw/openai--vector-embeddings-guide.md` (source-repository research, not shipped).
 
 ## Models
 

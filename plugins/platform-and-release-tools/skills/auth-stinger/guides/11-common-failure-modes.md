@@ -2,7 +2,7 @@
 
 The catalog. Each failure mode has a name, a signature, and a fix. Use as a check-list during code review and during the audit-handoff.
 
-Source: `research/2026-04-25-oauth-failure-modes.md`, OWASP Top 10 (A01: Broken Access Control, A02: Cryptographic Failures, A07: Identification and Authentication Failures).
+Source: `research/2026-04-25-oauth-failure-modes.md` (source-repository research, not shipped), OWASP Top 10 (A01: Broken Access Control, A02: Cryptographic Failures, A07: Identification and Authentication Failures).
 
 ## OAuth-specific failures
 

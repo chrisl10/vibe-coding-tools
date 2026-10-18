@@ -2,7 +2,7 @@
 
 The entity-type choice is Step 1 and determines everything downstream. Do not proceed to platform selection until this is resolved.
 
-*Derived from: `research/external/delaware-c-corp-vs-llc-2026.md` (April 24, 2026, primary source)*
+*Derived from: `research/external/delaware-c-corp-vs-llc-2026.md` (source-repository research, not shipped) (April 24, 2026, primary source)*
 
 ---
 
@@ -41,7 +41,7 @@ Ask the founder these questions in order. Stop at the first definitive branch.
 | Conversion cost if wrong | $8K–$15K in legal fees + phantom tax liability on appreciated stock | n/a |
 | Prevalence | 89% of US VC-backed companies (Carta 2024 dataset) | 11% |
 
-**The conversion cost argument:** Founders who form an LLC to save ~$150/year in franchise tax and later need to convert to C-Corp for a VC investment face $8K+ in legal costs and potential phantom income tax on stock appreciation. The Delaware C-Corp default prevents this. Source: `research/external/delaware-c-corp-vs-llc-2026.md`.
+**The conversion cost argument:** Founders who form an LLC to save ~$150/year in franchise tax and later need to convert to C-Corp for a VC investment face $8K+ in legal costs and potential phantom income tax on stock appreciation. The Delaware C-Corp default prevents this. Source: `research/external/delaware-c-corp-vs-llc-2026.md` (source-repository research, not shipped).
 
 ---
 
@@ -64,7 +64,7 @@ Delaware calculates franchise tax two ways. The state defaults to the **Authoriz
 
 > **Action:** Always check the box for Assumed Par Value Capital Method on the Delaware annual report. Formation platforms (Atlas, Clerky, Doola) typically handle this correctly, but verify.
 
-Source: `research/external/delaware-franchise-tax-official-2026.md`.
+Source: `research/external/delaware-franchise-tax-official-2026.md` (source-repository research, not shipped).
 
 ---
 

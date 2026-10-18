@@ -8,7 +8,7 @@ Relative sizing methods answer "how big is this work relative to other work we'v
 
 The Fibonacci sequence (1, 2, 3, 5, 8, 13, 21) reflects an important cognitive truth: as complexity grows, our uncertainty grows faster. The increasing gaps between Fibonacci numbers force teams to acknowledge that big stories are big in a non-linear way. A story estimated at 13 is not "1.3x bigger than 10"; it is "genuinely uncertain and probably needs splitting."
 
-The "Not in the Scrum Guide" note: story points are not a Scrum artifact. The Scrum Guide (2020) mentions them nowhere. They are a community convention that evolved from Extreme Programming. Teams that treat them as sacred Scrum objects confuse convention with requirement. See `research/external/02-story-points-fibonacci.md`.
+The "Not in the Scrum Guide" note: story points are not a Scrum artifact. The Scrum Guide (2020) mentions them nowhere. They are a community convention that evolved from Extreme Programming. Teams that treat them as sacred Scrum objects confuse convention with requirement. See `research/external/02-story-points-fibonacci.md` (source-repository research, not shipped).
 
 ### When story points apply
 
@@ -49,7 +49,7 @@ Specifically use T-shirt sizing when:
 - Sizing epics or features before sprint-level decomposition
 - Running "Now / Next / Later" roadmap conversations where relative investment signals matter more than dates
 
-From `research/external/05-t-shirt-sizing.md`: The Now/Next/Later roadmap format (Janna Bastow) pairs naturally with T-shirt sizing because it decouples the "what we're working on" conversation from date commitments.
+From `research/external/05-t-shirt-sizing.md` (source-repository research, not shipped): The Now/Next/Later roadmap format (Janna Bastow) pairs naturally with T-shirt sizing because it decouples the "what we're working on" conversation from date commitments.
 
 ### T-shirt size → story point conversion (optional)
 
@@ -95,5 +95,5 @@ Free tools: PlanningPoker.com, Agile Poker (free tier), Scrum Poker app. All sup
 
 ---
 
-*Cited research: `research/external/02-story-points-fibonacci.md`, `research/external/05-t-shirt-sizing.md`*
+*Cited research: `research/external/02-story-points-fibonacci.md`, `research/external/05-t-shirt-sizing.md` (source-repository research, not shipped)*
 *Example: `examples/fibonacci-estimation-session.md`*

@@ -21,7 +21,7 @@ Best-fit ICP: B2B buyers at companies with >50 employees; job title + seniority 
 - Professional Services: $60-$120
 - Recruiting / Staffing: $40-$100
 
-*Source: `research/external/2026-05-20-linkedin-ads-benchmarks-2026-by-industry.md`, `research/external/2026-05-20-linkedin-thought-leader-ads-zenabm-benchmarks.md`*
+*Source: `research/external/2026-05-20-linkedin-ads-benchmarks-2026-by-industry.md`, `research/external/2026-05-20-linkedin-thought-leader-ads-zenabm-benchmarks.md` (source-repository research, not shipped)*
 
 ---
 
@@ -31,7 +31,7 @@ Best-fit ICP: B2B buyers at companies with >50 employees; job title + seniority 
 **$3,000-$5,000/month** is the practical floor for meaningful A/B testing and audience segmentation.
 **$5,000+/month** required for proper account-based marketing (ABM) layers.
 
-*Sources: `research/external/2026-05-20-linkedin-b2b-saas-pipeline-guide-growthspree.md`*
+*Sources: `research/external/2026-05-20-linkedin-b2b-saas-pipeline-guide-growthspree.md` (source-repository research, not shipped)*
 
 ---
 
@@ -62,7 +62,7 @@ Campaign Group: [Product / Funnel Stage]
 
 **Avoid:** Interest-based targeting as a primary layer — it is too broad and wastes CPL budget. Use it only for awareness campaigns at scale.
 
-*Source: `research/external/2026-05-20-linkedin-b2b-account-influence-2026.md`*
+*Source: `research/external/2026-05-20-linkedin-b2b-account-influence-2026.md` (source-repository research, not shipped)*
 
 ---
 
@@ -76,7 +76,7 @@ Campaign Group: [Product / Funnel Stage]
 6. **Conversation Ads (Message Ads)** — LinkedIn DM-based ads. Effective for hyper-targeted ABM lists; banned in EU/UK under GDPR.
 7. **Dynamic Ads** — spotlight and follower ads. Lower priority; niche use cases.
 
-*Source: `research/external/2026-05-20-linkedin-thought-leader-ads-zenabm-benchmarks.md`*
+*Source: `research/external/2026-05-20-linkedin-thought-leader-ads-zenabm-benchmarks.md` (source-repository research, not shipped)*
 
 ---
 
@@ -101,4 +101,4 @@ For technical CAPI wiring including event deduplication, see `guides/12-capi-wir
 - **Account influence model:** LinkedIn recommends targeting across the full buyer committee, not just the decision-maker. Target 3-5 job titles per campaign (Champion + Economic Buyer + Technical Evaluator) at the same target companies.
 - **Dayparting signal:** 80% of LinkedIn impressions deliver within ±2 hours of business hours. Automatic dayparting is not available in LinkedIn's UI; budget naturally self-adjusts. Do not manually daypart unless running Conversation Ads.
 
-*Source: `research/external/2026-05-20-linkedin-b2b-account-influence-2026.md`*
+*Source: `research/external/2026-05-20-linkedin-b2b-account-influence-2026.md` (source-repository research, not shipped)*

@@ -24,8 +24,8 @@ PRD: list every `prd-*` folder in `library/requirements/backlog`, `in-work` and 
 3. Overview: the root cause and the impact in plain words.
 4. Goals and Non-Goals. Non-goals name what the package leaves for another package.
 5. Sub-features: use sub-PRDs (`prd-<###>a-...`) only when the package has independently shippable steps (for example expand, migrate, contract).
-6. Acceptance criteria: use `references/acceptance-criteria-patterns.md`. Each row names a finding id. Add the final verification row (re-run the audit dimension). [research/raw/criteria--cucumber-better-gherkin.md] [research/raw/test--fowler-test-coverage.md]
-7. Implementation notes: the finding `locations` and `remediation` text, the refactoring sequence, and the characterization-test step first when no tests exist. [research/raw/test--characterization-tests.md]
+6. Acceptance criteria: use `references/acceptance-criteria-patterns.md`. Each row names a finding id. Add the final verification row (re-run the audit dimension). [research/raw/criteria--cucumber-better-gherkin.md] [research/raw/test--fowler-test-coverage.md (source-repository research, not shipped)]
+7. Implementation notes: the finding `locations` and `remediation` text, the refactoring sequence, and the characterization-test step first when no tests exist. [research/raw/test--characterization-tests.md (source-repository research, not shipped)]
 8. `## Contract dependencies`: pin `CTR-<###> revision <n>` when a shared boundary has an accepted contract; write `- None; no shared boundary identified.` when none. A Draft contract blocks finalizing the PRD.
 9. Related: link the knowledge doc for the area, sibling PRDs this one depends on, and the audit workspace path (as text, not a link, since the workspace lives outside the repository).
 10. Add the roadmap's owner Drone and wave in the Overview so /smoke-it routes it (guide 05).

@@ -1,12 +1,12 @@
 {
   "name": "content-intelligence",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Find and verify current repository/news topics and prepare voice-matched drafts.",
   "author": {
     "name": "Mario Aldayuz"
   },
   "license": "AGPL-3.0-or-later",
-  "repository": "https://github.com/legioncodeinc/the-wasp-nest-source",
+  "repository": "https://github.com/legioncodeinc/vibe-coding-tools",
   "skills": [
     "./skills/"
   ],

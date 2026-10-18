@@ -1,6 +1,6 @@
 # Preserve behavior and authority in diagrams
 
-A useful diagram lets a reader predict the same branches and side effects as the inspected source. Read the [notation and evidence digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/knowledge-stinger/references/research/diagram-authority/digest.md), then use the [worksheet](../references/templates/source-grounded-diagram.md) and [worked fixtures](../references/examples/diagram-authority/worked-cases.md).
+A useful diagram lets a reader predict the same branches and side effects as the inspected source. Read the notation and evidence digest, then use the [worksheet](../references/templates/source-grounded-diagram.md) and [worked fixtures](../references/examples/diagram-authority/worked-cases.md).
 
 ## Lock the journey and evidence
 
@@ -25,7 +25,7 @@ Build an edge ledger with exact file, symbol, line range and a short quote. Hash
 | Concurrency and ordering | Use `par` or fork/join only when source supports concurrent operations. Record awaits, join conditions and independent failure paths; diagram position alone cannot prove cross-worker ordering. |
 | Money and sensitive data | Name only source-supported charge/provision/export actions and authorized field categories. Preserve human/provider gates. Omit secrets and unnecessary personal data from labels. |
 
-Mermaid supports the notation in the [official sequence](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/knowledge-stinger/references/research/diagram-authority/raw/mermaid-sequence.html), [flowchart](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/knowledge-stinger/references/research/diagram-authority/raw/mermaid-flowchart.html) and [state](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/knowledge-stinger/references/research/diagram-authority/raw/mermaid-state.html) captures. The semantics above require target evidence, not notation alone.
+Mermaid supports the notation in the official sequence, flowchart and state captures. The semantics above require target evidence, not notation alone.
 
 ## Choose the smallest representation
 

@@ -2,6 +2,7 @@
 name: "source-command-explain-this"
 description: "Explain a technical source at grade 8 with a bounded analogy, glossary, evidence and teach-back."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-explain-this

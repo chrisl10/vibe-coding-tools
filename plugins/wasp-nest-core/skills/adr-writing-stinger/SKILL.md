@@ -136,15 +136,16 @@ For tooling setup details, see `guides/05-tooling-integration.md`.
 
 ## References to research
 
-The research folder was populated by `scripture-historian` at normal depth (15 files, 12 external source notes). Key sources:
+The research folder was populated by `scripture-historian` at normal depth (15 files, 12 external source notes). Key sources (source-repository research, not shipped with the plugin):
 
-- Nygard original (2011, canonical): `research/external/01-nygard-original.md`
-- Practitioner guides 2025-2026: `research/external/02-specsource-2026.md`, `research/external/03-docsio-2026.md`, `research/external/04-archyl-2026.md`
-- Format comparison (arXiv 2026 empirical study): `research/external/07-arxiv-2026-adr-comparison.md`
-- Log4brains v1.1.0: `research/external/09-log4brains-github.md`
-- Google Cloud enterprise patterns: `research/external/11-google-cloud-adrs.md`
-- Full index: `research/index.md`
-- Executive summary: `research/research-summary.md`
+- Nygard original (2011, canonical): `research/external/01-nygard-original.md` (source-repository research, not shipped with the plugin)
+- Practitioner guides 2025-2026: `research/external/02-specsource-2026.md`, `research/external/03-docsio-2026.md`, `research/external/04-archyl-2026.md` (source-repository research, not shipped with the plugin)
+- Format comparison (arXiv 2026 empirical study): `research/external/07-arxiv-2026-adr-comparison.md` (source-repository research, not shipped with the plugin)
+- Log4brains v1.1.0: `research/external/09-log4brains-github.md` (source-repository research, not shipped with the plugin)
+- Google Cloud enterprise patterns: `research/external/11-google-cloud-adrs.md` (source-repository research, not shipped with the plugin)
+- Full index: `research/index.md` (source-repository research, not shipped with the plugin)
+
+The shipped executive summary is `research/research-summary.md`.
 
 ---
 

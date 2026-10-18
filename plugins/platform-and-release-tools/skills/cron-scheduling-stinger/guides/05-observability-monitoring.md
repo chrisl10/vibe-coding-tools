@@ -1,7 +1,7 @@
 # Guide 05: Observability and Monitoring
 
 *Cited by: `examples/vercel-cron-happy-path.md`, `examples/github-actions-drift-mitigation.md`*
-*Research sources: `research/external/2026-05-20-healthchecks-io-official-docs.md`, `research/external/2026-05-20-cronitor-monitoring-docs.md`, `research/external/2026-05-20-self-hosted-heartbeat-table.md`*
+*Research sources: `research/external/2026-05-20-healthchecks-io-official-docs.md`, `research/external/2026-05-20-cronitor-monitoring-docs.md`, `research/external/2026-05-20-self-hosted-heartbeat-table.md` (source-repository research, not shipped)*
 
 ---
 

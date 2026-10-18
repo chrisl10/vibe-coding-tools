@@ -6,7 +6,7 @@ Source companion to the existing `verify-refactor` command composition. The comm
 - [Prepare generated artifact removal proposals](guides/propose-generated-artifact-pruning.md)
 - [Evidence worksheet](references/behavior-artifact-worksheet.md)
 - [Ten designed negative cases, NOT_RUN](references/behavior-artifact-negative-cases.json)
-- [Dated primary-source digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/repository-modernization-tools/references/behavior-artifact/references/research/behavior-artifact/distillation.md)
-- [Retrieval metadata and hashes](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/repository-modernization-tools/references/behavior-artifact/references/research/behavior-artifact/source-index.json)
+- Dated primary-source digest
+- Retrieval metadata and hashes
 
 Actual checks stay with existing language/framework, contract and browser owners. Code Bloat measures and reports, Remediation Planning creates a roadmap, and `refactor-safely` routes approved implementation to the actual owners. This reference adds no specialist pair, cleanup engine, install, deletion or provider action.

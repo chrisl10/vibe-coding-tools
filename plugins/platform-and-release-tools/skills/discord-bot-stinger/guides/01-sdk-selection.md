@@ -2,7 +2,7 @@
 
 Choose the right SDK before writing any code. The choice drives the language, toolchain, and ecosystem you inherit.
 
-*Sources: `research/external/2026-05-20-discordjs-v14-slash-commands.md`, `research/external/2026-05-20-discordpy-app-commands.md`, `research/external/2026-05-20-discord-api-v10-changes-2026.md`*
+*Sources: `research/external/2026-05-20-discordjs-v14-slash-commands.md`, `research/external/2026-05-20-discordpy-app-commands.md`, `research/external/2026-05-20-discord-api-v10-changes-2026.md` (source-repository research, not shipped)*
 
 ---
 

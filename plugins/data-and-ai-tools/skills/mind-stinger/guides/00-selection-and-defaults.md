@@ -12,16 +12,16 @@ This repo already runs Neon Postgres with Drizzle ORM for every other table. Unl
 
 Why this wins by default here:
 
-- **No new system to provision, monitor, back up, or grant access to.** `CREATE EXTENSION IF NOT EXISTS vector;` and the column lives next to every other table (source: `references/research/raw/neon--vector-search-guide-pgvector.md`).
+- **No new system to provision, monitor, back up, or grant access to.** `CREATE EXTENSION IF NOT EXISTS vector;` and the column lives next to every other table (source: `references/research/raw/neon--vector-search-guide-pgvector.md` [source-repository research, not shipped]).
 - **Vector search can join and filter against relational data** (tenants, users, permissions, organizations) in the same query, same transaction, same connection pool. Per-tenant filtering, this stinger's rule 5 in `guides/00-principles.md`, is an ordinary indexed `WHERE tenant_id = $1`, not a payload-filter dialect specific to a vector database.
-- **One backup plan.** Point-in-time recovery, logical replication, and `pg_dump` already cover the embeddings the same way they cover everything else (source: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md`).
-- **Maturity at this repo's scale.** ANN-Benchmarks 2025 places pgvector with HNSW at the top of the open field; a named April 2026 Timescale benchmark reports `pgvectorscale` (an optional extension, not required by default) sustaining 471 QPS at 99 percent recall at 50 million vectors (source: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md`). This repo is nowhere near that scale.
+- **One backup plan.** Point-in-time recovery, logical replication, and `pg_dump` already cover the embeddings the same way they cover everything else (source: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md` [source-repository research, not shipped]).
+- **Maturity at this repo's scale.** ANN-Benchmarks 2025 places pgvector with HNSW at the top of the open field; a named April 2026 Timescale benchmark reports `pgvectorscale` (an optional extension, not required by default) sustaining 471 QPS at 99 percent recall at 50 million vectors (source: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md` [source-repository research, not shipped]). This repo is nowhere near that scale.
 
 The schema, indexing, and query implementation are owned by `vector-store-stinger` (schema and migrations) and `retrieval-stinger` (query shape and recall tuning); mind-wasp-drone's job is to confirm the cognitive-layer concepts (per-tenant isolation, two-stage retrieval, chunking discipline) are honored on top of whatever those two Stingers build. See `vector-store-stinger`'s `guides/pgvector-01-schema-and-drizzle.md` onward for the implementation, and `vector-store-stinger`'s `guides/00-selection-matrix.md` for the full vector-store decision tree (this file summarizes the cognitive-layer-relevant slice of it).
 
 ### The schema shape mind-wasp-drone expects to see
 
-A production-shaped pgvector RAG setup separates the document (the business/permissions unit) from the chunk (the retrieval unit), with `tenant_id` carried on both tables even though it's derivable via a join (source: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md`):
+A production-shaped pgvector RAG setup separates the document (the business/permissions unit) from the chunk (the retrieval unit), with `tenant_id` carried on both tables even though it's derivable via a join (source: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md` [source-repository research, not shipped]):
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS vector;
@@ -56,7 +56,7 @@ A missing `tenant_id` filter on the retrieval query against `chunks`, or a missi
 
 ### The one structural gap relative to the alternative stack, and its mitigation
 
-pgvector's HNSW index applies a metadata filter (like `tenant_id`) *after* building its top-k candidate set, not inside the graph traversal the way Qdrant does. A highly selective filter can leave far fewer results than requested, or none (source: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md`). Mitigations, in order of applicability:
+pgvector's HNSW index applies a metadata filter (like `tenant_id`) *after* building its top-k candidate set, not inside the graph traversal the way Qdrant does. A highly selective filter can leave far fewer results than requested, or none (source: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md` [source-repository research, not shipped]). Mitigations, in order of applicability:
 
 1. A partial index or a partition per tenant, when tenant is the dominant filter.
 2. Raising the runtime `hnsw.ef_search` GUC for moderately selective filters.
@@ -66,7 +66,7 @@ This is the primary escalation trigger toward the alternative stack; see the tab
 
 ### Two-stage retrieval still applies
 
-A wide, cheap HNSW cosine sweep for candidates, then a reranking step that narrows to the final top-N, is not optional past a small corpus on this substrate any more than it is on the alternative stack. Skipping the rerank stage costs 10 to 15 percent measured relevance on a cited production dataset (source: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md`). The reranker can be a local cross-encoder or a hosted API (Cohere Rerank is not exclusive to the Qdrant path; it works fine reranking pgvector's candidate set too).
+A wide, cheap HNSW cosine sweep for candidates, then a reranking step that narrows to the final top-N, is not optional past a small corpus on this substrate any more than it is on the alternative stack. Skipping the rerank stage costs 10 to 15 percent measured relevance on a cited production dataset (source: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md` [source-repository research, not shipped]). The reranker can be a local cross-encoder or a hosted API (Cohere Rerank is not exclusive to the Qdrant path; it works fine reranking pgvector's candidate set too).
 
 ### Targets for this repo's default substrate
 
@@ -74,7 +74,7 @@ A wide, cheap HNSW cosine sweep for candidates, then a reranking step that narro
 - Recall@10 at or above 0.85 on a held-out eval set, alert below 0.80.
 - A monitored cost-per-thousand-queries budget.
 
-(Source for all three: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md`.)
+(Source for all three: `references/research/raw/jacar-es--pgvector-production-poc-to-slo.md` [source-repository research, not shipped].)
 
 ---
 

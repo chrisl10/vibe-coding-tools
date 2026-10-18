@@ -8,7 +8,7 @@ Product Hunt resets its daily ranking at midnight Pacific. Any product posted af
 
 The first 6 hours drive ~65% of total day-of upvotes. The decision to win or lose #1 is often made by 6 AM PT.
 
-Source: `research/external/2026-05-20-product-hunt-algorithm-first-hours.md`, `research/external/2026-05-20-product-hunt-launch-playbook.md`
+Source: `research/external/2026-05-20-product-hunt-algorithm-first-hours.md`, `research/external/2026-05-20-product-hunt-launch-playbook.md` (source-repository research, not shipped)
 
 ---
 
@@ -102,6 +102,6 @@ Finding a hunter: search PH for users who have hunted products in your category;
 - Add the "Featured on Product Hunt" badge to your homepage (see `guides/06-badge-deployment.md`).
 - Send a follow-up email to your launch list with final ranking and a "thank you" 24-48h post-launch.
 
-Source: `research/external/2026-05-20-product-hunt-launch-playbook.md`
+Source: `research/external/2026-05-20-product-hunt-launch-playbook.md` (source-repository research, not shipped)
 
 Full day-of timeline as a printable checklist: `templates/product-hunt-launch-timeline.md`

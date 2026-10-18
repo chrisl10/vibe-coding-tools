@@ -2,7 +2,7 @@
 
 Nextra v4 (2025/2026) moved to Next.js App Router. Built-in pagefind search. Best for teams with a Next.js monorepo who want docs alongside their application code.
 
-> Source: `research/external/2026-05-20-nextra-v4-next-js.md`
+> Source: `research/external/2026-05-20-nextra-v4-next-js.md` (source-repository research, not shipped)
 
 ---
 

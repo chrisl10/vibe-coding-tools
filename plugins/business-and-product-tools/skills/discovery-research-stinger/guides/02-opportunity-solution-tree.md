@@ -2,7 +2,7 @@
 
 How to build, maintain, and read an Opportunity Solution Tree (OST).
 
-**Research source:** `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md`, `research/external/2026-05-20-torres-ai-ost-vistaly-synthesis.md`
+**Research source:** `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md`, `research/external/2026-05-20-torres-ai-ost-vistaly-synthesis.md` (source-repository research, not shipped)
 
 ---
 
@@ -39,7 +39,7 @@ Desired Outcome
 5. **Map experiments** under the most-promising solution: one experiment targeting the highest-risk assumption.
 6. **Mark the active path** — the team should be working on one opportunity → one solution → one experiment at a time.
 
-(Source: `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md`)
+(Source: `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md` [source-repository research, not shipped])
 
 ---
 
@@ -53,11 +53,11 @@ A tree that hasn't been touched in 3 weeks is likely stale and should be reviewe
 
 ## Three canonical failure modes
 
-1. **Solution nodes in the opportunity layer.** "Add a dashboard" is a solution, not an opportunity. Rephrase as the customer problem it solves: "Users can't see their progress at a glance." (Source: `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md`)
+1. **Solution nodes in the opportunity layer.** "Add a dashboard" is a solution, not an opportunity. Rephrase as the customer problem it solves: "Users can't see their progress at a glance." (Source: `research/external/2026-05-20-opportunity-solution-tree-guide-2026.md` [source-repository research, not shipped])
 
 2. **Too many active paths.** The team is "working on" five different opportunity-solution pairs simultaneously. This means nothing is actually being validated. Prune to one active path; keep others as backlog nodes.
 
-3. **AI-generated nodes without interview evidence.** Using AI to draft the initial OST from market analysis produces plausible-sounding but ungrounded trees. Every node in the opportunity layer must trace to at least one customer interview quote. AI can help structure the tree; AI cannot substitute for the interviews. (Source: `research/external/2026-05-20-torres-ai-ost-vistaly-synthesis.md`)
+3. **AI-generated nodes without interview evidence.** Using AI to draft the initial OST from market analysis produces plausible-sounding but ungrounded trees. Every node in the opportunity layer must trace to at least one customer interview quote. AI can help structure the tree; AI cannot substitute for the interviews. (Source: `research/external/2026-05-20-torres-ai-ost-vistaly-synthesis.md` [source-repository research, not shipped])
 
 ---
 

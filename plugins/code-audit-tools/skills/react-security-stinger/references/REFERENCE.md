@@ -15,7 +15,7 @@ Load when: you need to find which reference holds a check, a table, or a script 
 | [detection-patterns.md](detection-patterns.md) | ripgrep commands per check id | widening a search |
 | [finding-rules.md](finding-rules.md) | output files, ids, confidence, severity, example finding and metrics | guide 05, and before writing any finding |
 | [research/distilled-react-security.md](research/distilled-react-security.md) | cited distillation | verifying a claim |
-| [research/raw/](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw) | 34 archived sources | tracing a claim |
+| research/raw/ | 34 archived sources | tracing a claim |
 
 ## Scripts
 

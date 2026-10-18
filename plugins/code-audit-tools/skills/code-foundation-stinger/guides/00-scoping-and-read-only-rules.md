@@ -6,7 +6,7 @@ Start here on every run. This guide fixes what the Foundation audit may touch, w
 
 1. **Never modify the audited repository.** No file writes, no `git add`, `commit`, `checkout`, `stash`, `reset`, `clean`, no `git worktree add` against the audited repo, no `npm install` there, no running its scripts there. Reading files and read-only git (`ls-files`, `log`, `check-ignore`, `remote get-url`, `archive`) is fine.
 2. **Never run a get-started write step.** `get-started-stinger` is the source of the baseline (see [get-started-assess-map](../references/get-started-assess-map.md)). Where it would create something, record a finding that names the step. Do not run `mark-repo-started.py`, `install-global-instructions.py`, or copy a template.
-3. **Nothing that executes project code runs without consent.** Read `intake.json.execution` first. When `allowed` is false, run no project command at all and record the cap. When it is true, everything that executes project code runs in the throwaway copy `<workspace>/.scratch/repo-copy/`, in the consented mode: a no-network container, or on the host through `scripts/run_in_copy.py --execution-allowed` (allowlisted command shapes, timeout, no global installs, secrets stripped from the environment, not a sandbox). Never install a global tool. Never run `npx` or download-and-run commands. If the orchestrator did not make the copy, make it from `HEAD` with `git archive HEAD | tar -x -C <workspace>/.scratch/repo-copy` (read-only against the repo) and note "audited HEAD, not uncommitted work" as a cap.
+3. **Nothing that executes project code runs without consent.** Read `intake.json.execution` first. When `allowed` is false, run no project command at all and record the cap. When it is true, everything that executes project code runs in the throwaway copy `<workspace>/.scratch/repo-copy/`, in the consented mode: a no-network container, or on the host through `scripts/run_in_copy.py --execution-allowed` (allowlisted command shapes, timeout, no global installs, secrets stripped from the environment, not a sandbox). Never install a global tool. Never run `npx` or download-and-run commands. If the orchestrator did not make the copy, make it from `HEAD` with `python3 <audit-my-code-stinger>/scripts/make_scratch_copy.py <repo> <workspace>/.scratch/repo-copy` (read-only against the repo, portable to Windows) and note "audited HEAD, not uncommitted work" as a cap.
 4. **Write only inside the workspace** `<workspace>/00-foundation/` (and `raw/` under it). Never write to `library/` (that is the `mario` tier's remediation step, not this Drone's).
 5. **GitHub access is read-only.** Only the allowlist in [gh-readonly-calls](../references/gh-readonly-calls.md), only `--method GET`, only after `gh auth status` succeeds. If it fails, write a cap and continue with file checks. Never authenticate, never ask for a token.
 6. **Secrets.** Never print a secret value. In evidence keep the first 4 characters and write `****`. For env files list key names only. A confirmed live secret is handed to `security-wasp-drone`; your finding records presence and location.
@@ -51,8 +51,10 @@ A cap is a silent limit that you lifted or hit. Record each in `metrics.json` `c
 
 ## Sources
 
-- [research/raw/wasp-nest--get-started-assess-map.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/wasp-nest--get-started-assess-map.md)
-- [research/raw/wasp-nest--github-repo-health-checks.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/wasp-nest--github-repo-health-checks.md)
-- [research/raw/gh-cli--api-manual.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/gh-cli--api-manual.md)
-- [research/raw/github-api--get-repository.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/github-api--get-repository.md)
-- [research/raw/git--gitignore.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/git--gitignore.md)
+The notes listed below are source-repository research, not shipped.
+
+- research/raw/wasp-nest--get-started-assess-map.md (source-repository research, not shipped)
+- research/raw/wasp-nest--github-repo-health-checks.md (source-repository research, not shipped)
+- research/raw/gh-cli--api-manual.md (source-repository research, not shipped)
+- research/raw/github-api--get-repository.md (source-repository research, not shipped)
+- research/raw/git--gitignore.md (source-repository research, not shipped)

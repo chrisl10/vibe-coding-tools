@@ -13,8 +13,8 @@ Replace a stale version or behavior assumption with a dated, reproducible primar
 5. Check the official `tauri` and `plugins-workspace` security advisory pages.
 6. If runtime behavior depends on Wry or Tao, inspect the immutable runtime manifest at the selected Tauri tag and the target project's `Cargo.lock`.
 7. Read migration and breaking notes across every skipped release, not only the destination release.
-8. Compare Rust and npm halves separately. Core API aligns by major and minor; each plugin pair aligns exactly. [../references/research/raw/tauri--docs--updating-dependencies.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--docs--updating-dependencies.md)
-9. When a generated index and a package tag disagree, preserve both observations and prefer the package-specific official tag. This conflict occurred for multiple plugins on 2026-09-03. [../references/research/raw/tauri--release--ecosystem-index.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/tauri-stinger/references/research/raw/tauri--release--ecosystem-index.md)
+8. Compare Rust and npm halves separately. Core API aligns by major and minor; each plugin pair aligns exactly. ../references/research/raw/tauri--docs--updating-dependencies.md (source-repository research, not shipped)
+9. When a generated index and a package tag disagree, preserve both observations and prefer the package-specific official tag. This conflict occurred for multiple plugins on 2026-09-03. ../references/research/raw/tauri--release--ecosystem-index.md (source-repository research, not shipped)
 10. Record each fact in a raw note with URL, fetch date, source type, package identity, release date, and captured evidence.
 11. Update the cited distillation before changing any guide, reference, or root-skill claim.
 12. Label unresolved availability, source conflicts, or missing first-party examples as gaps.

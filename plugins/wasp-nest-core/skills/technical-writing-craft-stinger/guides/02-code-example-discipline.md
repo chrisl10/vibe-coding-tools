@@ -1,6 +1,6 @@
 # 02 - Code Example Discipline
 
-> Source: `research/external/06-code-example-discipline.md`, `research/external/07-stripe-docs-approach.md`
+> Source: `research/external/06-code-example-discipline.md`, `research/external/07-stripe-docs-approach.md` (source-repository research, not shipped)
 
 Code examples are often the best documentation: developers prefer working code over text explanations. The cardinal rule is that code examples must be **correct, runnable, and maintained as production code** -- never prioritize brevity over correctness.
 
@@ -104,7 +104,7 @@ Use realistic but obviously-example values: `example.com`, `sk_test_`, `user@exa
 
 ## Stripe's "working code on every page" philosophy
 
-Stripe represents the gold standard for code-example discipline. From `research/external/07-stripe-docs-approach.md`: "working code on every page" means every page that describes a feature also shows a complete, runnable implementation. The Quickstart structure (zero theory, install / run / see result) means a developer can reach their first success without reading any other page.
+Stripe represents the gold standard for code-example discipline. From `research/external/07-stripe-docs-approach.md` (source-repository research, not shipped): "working code on every page" means every page that describes a feature also shows a complete, runnable implementation. The Quickstart structure (zero theory, install / run / see result) means a developer can reach their first success without reading any other page.
 
 Apply this as an aspiration: when reviewing a feature page that has no code example, file it as a **Suggestion** finding. When a page's example requires reading three other pages to understand, file the context gap as a **Suggestion**.
 

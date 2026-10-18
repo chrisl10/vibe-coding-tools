@@ -4,14 +4,14 @@ This is a new composition of existing canonical procedures, inspected 2026-10-07
 
 | Owner capability | Derived workflow rule | Evidence |
 |---|---|---|
-| `db-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/references/outcome-commands/design-data/references/research/raw/db-stinger.md) |
-| `neon-drizzle-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/references/outcome-commands/design-data/references/research/raw/neon-drizzle-stinger.md) |
-| `vector-store-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/references/outcome-commands/design-data/references/research/raw/vector-store-stinger.md) |
-| `retrieval-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/references/outcome-commands/design-data/references/research/raw/retrieval-stinger.md) |
-| `security-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/references/outcome-commands/design-data/references/research/raw/security-stinger.md) |
-| `pest-controller-suit` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | [captured procedure](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/references/outcome-commands/design-data/references/research/raw/pest-controller-suit.md) |
+| `db-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
+| `neon-drizzle-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
+| `vector-store-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
+| `retrieval-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
+| `security-stinger` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
+| `pest-controller-suit` | Retain its actual scope, required inputs, artifact and verification procedure; load before dispatch. | captured procedure |
 
-Installed dispatch must use the selected registry and checked owner; missing prerequisites block only dependent work. [Pest Controller capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/references/outcome-commands/design-data/references/research/raw/pest-controller-suit.md).
+Installed dispatch must use the selected registry and checked owner; missing prerequisites block only dependent work. Pest Controller capture.
 
 The topic-specific sequence below is a proposed orchestration contract, not a verbatim upstream command. Domain facts remain the owning specialist's responsibility.
 

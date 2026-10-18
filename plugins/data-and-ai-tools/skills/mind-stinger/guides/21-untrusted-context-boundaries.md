@@ -1,6 +1,6 @@
 # 21: Keep documents and media as data
 
-Use for O160 and prompt/orchestration changes. Start with the host AI docs and committed stack. Read [fresh evidence](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/mind-stinger/references/research/agent-boundaries-20261007/digest.md), especially [provider safety](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/mind-stinger/references/research/agent-boundaries-20261007/raw/openai-agent-safety.html) and [OWASP indirect/multimodal injection](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/mind-stinger/references/research/agent-boundaries-20261007/raw/owasp-injection.html). Mind designs the context flow; Security owns independent adversarial and authorization review.
+Use for O160 and prompt/orchestration changes. Start with the host AI docs and committed stack. Read fresh evidence, especially provider safety and OWASP indirect/multimodal injection. Mind designs the context flow; Security owns independent adversarial and authorization review.
 
 ## Inspect the complete trust flow
 

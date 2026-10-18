@@ -2,7 +2,7 @@
 
 > Preserved Hivemind npm case. Read [target repository audit](05-target-repository-audit.md) first; use the package-specific paths, guards and commands below only when the inspected target has them. Recheck vendor/version claims against current primary documentation before recommending or changing tools.
 
-> **Research sources:** `research/external/01-renovate-vs-dependabot-2026.md` (HIGH), `research/external/04-npm-provenance-sigstore-2026.md` (HIGH)
+> **Research sources:** `research/external/01-renovate-vs-dependabot-2026.md` (HIGH), `research/external/04-npm-provenance-sigstore-2026.md` (source-repository research, not shipped) (HIGH)
 
 `package-lock.json` is the first line of defense in this package's supply chain. A repo that runs `npm install` in CI instead of `npm ci`, or that does not commit the lockfile, has no reproducible builds and no defense against a compromised registry serving a different package than what was tested. For `@deeplake/hivemind` the lockfile also pins the native tree-sitter grammars, which makes its integrity doubly important.
 

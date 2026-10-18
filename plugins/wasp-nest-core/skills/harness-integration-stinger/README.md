@@ -10,7 +10,7 @@ The cross-harness capability integration playbook for `harness-integration-wasp-
 - [Use direct skill fallback](guides/09-use-skill-fallback.md), preserving constraints and reporting independent-review loss.
 - [Qualify installed-host release claims](guides/10-qualify-installed-host-release.md), with a four-host receipt matrix.
 - [Prepare personal work](guides/11-prepare-personal-work.md), with scoped sources, draft-only artifacts and action-specific authority.
-- [Fresh availability research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/harness-integration-stinger/references/research/availability-proof/distilled-availability.md), topic locks and raw source hashes.
+- Fresh availability research, topic locks and raw source hashes.
 
 Read [the Drone identity](../../agents/harness-integration-wasp-drone.md) and [its routing guide](../pest-controller-suit/guides/harness-integration-wasp-drone.md) for scope and handoffs.
 

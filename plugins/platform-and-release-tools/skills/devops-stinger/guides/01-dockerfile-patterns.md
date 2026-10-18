@@ -1,6 +1,6 @@
 # 01: Dockerfile patterns
 
-The canonical patterns for Dockerfiles in Node / Next.js / TypeScript stacks. Source notes: `research/2026-04-25-multi-stage-size-reduction.md`, `research/2026-04-25-owasp-docker-cheatsheet.md`, `research/2026-04-25-buildkit-secret-mounts.md`.
+The canonical patterns for Dockerfiles in Node / Next.js / TypeScript stacks. Source notes: `research/2026-04-25-multi-stage-size-reduction.md`, `research/2026-04-25-owasp-docker-cheatsheet.md`, `research/2026-04-25-buildkit-secret-mounts.md` (source-repository research, not shipped).
 
 ---
 
@@ -42,7 +42,7 @@ EXPOSE 3000
 CMD ["node", "dist/server.js"]
 ```
 
-**Why:** the runtime stage carries no dev deps, no source, no toolchain. Up to 80% size reduction is the well-documented baseline (`research/2026-04-25-multi-stage-size-reduction.md`).
+**Why:** the runtime stage carries no dev deps, no source, no toolchain. Up to 80% size reduction is the well-documented baseline (`research/2026-04-25-multi-stage-size-reduction.md` [source-repository research, not shipped]).
 
 ## 2. Base image selection: Alpine vs. distroless
 
@@ -55,7 +55,7 @@ CMD ["node", "dist/server.js"]
 
 **Default:** `node:<version>-alpine3.20` for the runtime stage. Switch to `slim` if native-module pain. Switch to distroless only when the team has accepted no-shell debugging and CI is comfortable.
 
-Source: `research/2026-04-25-base-image-tradeoffs.md`.
+Source: `research/2026-04-25-base-image-tradeoffs.md` (source-repository research, not shipped).
 
 ## 3. Non-root user: mandatory
 
@@ -72,7 +72,7 @@ RUN addgroup -S app && adduser -S app -G app -u 10001
 USER app
 ```
 
-Containers running as root are a Must-fix finding per OWASP Docker Cheatsheet (`research/2026-04-25-owasp-docker-cheatsheet.md`).
+Containers running as root are a Must-fix finding per OWASP Docker Cheatsheet (`research/2026-04-25-owasp-docker-cheatsheet.md` [source-repository research, not shipped]).
 
 ## 4. HEALTHCHECK: mandatory in production stage
 
@@ -115,7 +115,7 @@ secrets:
     file: ./secrets/npm-token
 ```
 
-In CI, mount the secret from the runner's environment without echoing it. Source: `research/2026-04-25-buildkit-secret-mounts.md`.
+In CI, mount the secret from the runner's environment without echoing it. Source: `research/2026-04-25-buildkit-secret-mounts.md` (source-repository research, not shipped).
 
 ## 6. BuildKit cache mounts for package managers
 

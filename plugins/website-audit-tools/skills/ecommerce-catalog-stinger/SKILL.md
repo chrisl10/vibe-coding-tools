@@ -12,13 +12,11 @@ metadata:
 
 # Ecommerce Catalog Stinger
 
-> **Forge status:** stages 1-6 complete (Topic, Research, Distillation, References, Guides, Component authorship). Stage 7 (Register: pair registration in `pest-controller-suit`, deploy, sync references) has not run yet. Every claim below traces to `references/research/raw/` or to this repo's own plan/PRD documents, cited inline; the platform-coverage and sampling-allocation gaps named in `references/research/distilled-ecommerce-catalog.md` section 7 carry through and are flagged wherever they matter rather than silently papered over.
-
 ## Purpose
 
 Equips **ecommerce-catalog-wasp-drone** to run a bonus, conditional audit of up to 25 products, sampled across distinct categories, on a target commerce site. Splits findings into a quantified metadata-completeness axis (schema.org `Product` field presence by Google surface, on-page technical checks) and a `[subjective]` on-page copy and conversion-potential axis, kept strictly separate per this pair's conduct rules. Full scope and acceptance criteria: [prd-019-ecommerce-catalog](../../library/requirements/backlog/prd-019-ecommerce-catalog/prd-019-ecommerce-catalog-index.md).
 
-Every factual claim traces to a downloaded primary source in `references/research/raw/`: five sources covering a Shopify-specific UX/conversion checklist, a platform-agnostic technical/structured-data checklist, schema.org's own canonical `Product` vocabulary, an independent Google-surface required/recommended breakdown, and a whole-page conversion-copy architecture. Two named gaps carry through every guide and template that touches them: non-Shopify platforms are not directly sourced for the UX/copy checklist items, and no source specifies how to allocate the 25-product sample, this Stinger states its own sampling method explicitly for exactly that reason.
+Every factual claim traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it): five sources covering a Shopify-specific UX/conversion checklist, a platform-agnostic technical/structured-data checklist, schema.org's own canonical `Product` vocabulary, an independent Google-surface required/recommended breakdown, and a whole-page conversion-copy architecture. Two named gaps carry through every guide and template that touches them: non-Shopify platforms are not directly sourced for the UX/copy checklist items, and no source specifies how to allocate the 25-product sample, this Stinger states its own sampling method explicitly for exactly that reason.
 
 ## When to use
 
@@ -45,7 +43,7 @@ Every factual claim traces to a downloaded primary source in `references/researc
 ## References map
 
 - `references/research/distilled-ecommerce-catalog.md`, load when verifying any metadata-completeness or copy-quality claim fast, or resolving where a required/recommended field split came from.
-- `references/research/raw/`, load when tracing a distilled claim back to its primary source (five files: craftshift's Shopify checklist, Anglera's technical/agent-readability checklist, schema.org's own `Product` page, patrickstox.com's Google-surface breakdown, DTCskills' conversion-copy architecture).
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `references/templates/product-finding-template.md`, load when writing any single product's finding, the exact required shape for the quantified table and the `[subjective]` section.
 - `references/templates/12-ecommerce-summary-template.md`, load when assembling the run-level `12-ecommerce/` output.
 - `references/scripts/product-schema-checklist.py`, run once per sampled product's page against `site-data/`, see `references/scripts/README.md`.

@@ -1,7 +1,7 @@
 ---
 name: nextjs-wasp-drone
 description: "Implement Next.js App Router features, reads, Server Actions, Route Handlers, cache/private-data isolation and build/provider handoffs. React, UI, security and provider owners retain their boundaries."
-tools: Read, Grep, Glob, Edit, Write, Bash, WebFetch, WebSearch
+tools: Read, Grep, Glob, Edit, Write, Bash, WebFetch, WebSearch, Skill
 model: inherit
 ---
 

@@ -4,7 +4,7 @@ The canonical access pattern. ORM is default; raw SQL needs a documented reason.
 
 ## Source citations
 
-Anchor: `research/2026-05-03-django-orm-n-plus-one.md` + Django optimization docs (https://docs.djangoproject.com/en/stable/topics/db/optimization/) + QuerySet API reference.
+Anchor: `research/2026-05-03-django-orm-n-plus-one.md` (source-repository research, not shipped) + Django optimization docs (https://docs.djangoproject.com/en/stable/topics/db/optimization/) + QuerySet API reference.
 
 ## Hard rules
 
@@ -180,6 +180,6 @@ The `# raw-sql:` comment is the audit trail. Without it, raw SQL is a finding.
 
 ## Sources
 
-- `research/2026-05-03-django-orm-n-plus-one.md`
+- `research/2026-05-03-django-orm-n-plus-one.md` (source-repository research, not shipped)
 - https://docs.djangoproject.com/en/stable/topics/db/optimization/
 - https://docs.djangoproject.com/en/stable/ref/models/querysets/

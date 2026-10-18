@@ -1,6 +1,6 @@
 # nuxt-wasp-drone routing proposal
 
-Owner: web-development-tools. Pair: nuxt-stinger + nuxt-wasp-drone. O067 development-focused implementation; parent owns registration, command, promotion and gates.
+Owner: web-development-tools. Pair: nuxt-stinger + nuxt-wasp-drone. O067 development-focused implementation; the caller runs the review gates.
 
 Trigger phrases: build a Nuxt app; implement Nuxt SSR/data fetching; add a Nitro endpoint; fix Nuxt request state/hydration; review Nuxt routeRules/private-cache integration.
 

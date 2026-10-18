@@ -79,5 +79,5 @@ Schedule: nightly, during off-peak hours. Scope: records modified in the last 24
 
 ---
 
-*Sources: `research/external/2026-05-20-bidirectional-sync-architecture.md`, `research/external/2026-05-20-hubspot-api-rate-limits-webhooks.md`, `research/external/2026-05-20-attio-api-v2-rate-limits-stability.md`, `research/external/2026-05-20-salesforce-data-model-lead-contact-lifecycle.md`*
+*Sources: `research/external/2026-05-20-bidirectional-sync-architecture.md`, `research/external/2026-05-20-hubspot-api-rate-limits-webhooks.md`, `research/external/2026-05-20-attio-api-v2-rate-limits-stability.md`, `research/external/2026-05-20-salesforce-data-model-lead-contact-lifecycle.md` (source-repository research, not shipped)*
 *Demonstrates: `examples/hubspot-bidirectional-sync.md` (sync architecture section)*

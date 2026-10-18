@@ -2,7 +2,7 @@
 
 How to audit an existing shell configuration file (`.bashrc`, `.zshrc`, `config.fish`).
 
-Sources: `research/external/02-bash-scripting-patterns.md`, `research/internal/01-command-brief.md`
+Sources: `research/external/02-bash-scripting-patterns.md`, `research/internal/01-command-brief.md` (source-repository research, not shipped)
 
 See also: `examples/happy-path.md` for a worked dotfile setup from scratch.
 

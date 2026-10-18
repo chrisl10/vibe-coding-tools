@@ -4,14 +4,14 @@ These are actual written reviews of preserved source bytes. Case A reviews publi
 
 ## Case A: Documentation contract, not runtime proof
 
-Question: What must a research receipt distinguish when using Exa or Firecrawl? Domain scope: official `exa.ai` and `docs.firecrawl.dev` documentation, three exact public documentation URLs. Acquisition: public urllib GET, UTC timestamps/status/resolved URLs and hashes in the [manifest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/growth-and-customer-tools/skills/competitive-research-stinger/references/research/2026-10-web-evidence/raw/manifest.json). The native web tool opened the corresponding public pages separately for human-readable inspection; no provider API credential/request was used. The retained capture is the public documentation GET, not a saved provider response or full browser trace.
+Question: What must a research receipt distinguish when using Exa or Firecrawl? Domain scope: official `exa.ai` and `docs.firecrawl.dev` documentation, three exact public documentation URLs. Acquisition: public urllib GET, UTC timestamps/status/resolved URLs and hashes in the manifest. The native web tool opened the corresponding public pages separately for human-readable inspection; no provider API credential/request was used. The retained capture is the public documentation GET, not a saved provider response or full browser trace.
 
 | Claim | Class | Passage locator | Decision |
 |---|---|---|---|
-| Exa documentation exposes domain restrictions | vendor_claim about documented API | [Exa capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/growth-and-customer-tools/skills/competitive-research-stinger/references/research/2026-10-web-evidence/raw/exa-search.md), `includeDomains` schema | Supported as documentation, actual connector acceptance untested |
-| Firecrawl documents separate target page status | vendor_claim about documented API | [Scrape capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/growth-and-customer-tools/skills/competitive-research-stinger/references/research/2026-10-web-evidence/raw/firecrawl-scrape.md), Response metadata and status codes | API success does not establish target-page content |
+| Exa documentation exposes domain restrictions | vendor_claim about documented API | Exa capture, `includeDomains` schema | Supported as documentation, actual connector acceptance untested |
+| Firecrawl documents separate target page status | vendor_claim about documented API | Scrape capture, Response metadata and status codes | API success does not establish target-page content |
 | Firecrawl cache bypass proves the product's current state | unsupported inference | Same capture, Freshness and item status | Rejected: cache policy and represented state differ |
-| Both providers restrict domains in identical syntax | unsupported inference | Exa `includeDomains`; [Search capture](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/growth-and-customer-tools/skills/competitive-research-stinger/references/research/2026-10-web-evidence/raw/firecrawl-search.md), Domain Filters | Rejected: documented path handling differs |
+| Both providers restrict domains in identical syntax | unsupported inference | Exa `includeDomains`; Search capture, Domain Filters | Rejected: documented path handling differs |
 
 Retrieval date is known; original publication dates are unknown. Re-read actual available tool contracts before use. No claims about search quality, costs, coverage, account readiness or current competitor prices follow from this case.
 

@@ -2,6 +2,7 @@
 name: "source-command-create-product-media"
 description: "Create a product-media brief and supported consented photo or provider-media workflow with verifiable deliverables."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-create-product-media

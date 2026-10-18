@@ -2,6 +2,7 @@
 name: "source-command-launch-product"
 description: "Prepare an evidence-based product launch with customer fit, channel focus, review readiness, and measurable follow-up."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-launch-product

@@ -50,21 +50,21 @@ Give any agent working on a Bifrost deployment or fork a grounded map: which lay
 - `references/admin-api-surface.md`, load when wiring clients, proxies, or scoping layers to `/api/*` or `/v1/*`
 - `references/versioning-freeze-policy.md`, load when choosing tags or planning upgrades
 - `references/research/distilled-bifrost.md`, load when a domain claim needs verification or a gap needs checking
-- `references/research/raw/`, load when tracing a claim to its source (numbered 01 through 07)
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 
 ## Related drones and stingers
 
 - [bifrost-wasp-drone](../../agents/bifrost-wasp-drone.md), the paired agent for Bifrost implementation tasks
-- [go-wasp-drone](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/agents/go-wasp-drone.md) / [[go-stinger]], owns Go module mechanics and the plugin ABI constraints this skill relies on
+- [go-wasp-drone](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/backend-and-desktop-tools/agents/go-wasp-drone.md) / [[go-stinger]], owns Go module mechanics and the plugin ABI constraints this skill relies on
 
 ## Critical Directive
 
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [go-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/backend-and-desktop-tools/skills/go-stinger) - Go modules, toolchains, vendoring, and .so plugin ABI constraints.
-  - [react-to-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/react-to-svelte-stinger) - porting the Bifrost React dashboard to Svelte against the frozen API contract.
-  - [workos-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/workos-stinger) - WorkOS identity plane used in front of the gateway.
+  - [go-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/backend-and-desktop-tools/skills/go-stinger) - Go modules, toolchains, vendoring, and .so plugin ABI constraints.
+  - [react-to-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/react-to-svelte-stinger) - porting the Bifrost React dashboard to Svelte against the frozen API contract.
+  - [workos-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/workos-stinger) - WorkOS identity plane used in front of the gateway.
 
 ## Ship Gate
 

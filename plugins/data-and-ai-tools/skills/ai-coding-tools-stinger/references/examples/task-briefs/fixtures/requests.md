@@ -1,6 +1,6 @@
 # Synthetic request sources for the task-brief exercise
 
-These requests are illustrative inputs, not Mario's live authorization or proof a private repository exists.
+These requests are illustrative inputs, not the owner's live authorization or proof a private repository exists.
 
 ## Request A: vague work
 

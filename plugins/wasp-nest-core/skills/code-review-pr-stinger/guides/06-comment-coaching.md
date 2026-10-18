@@ -2,7 +2,7 @@
 
 How to rewrite vague, aggressive, or ambiguous review comments into the three-tier framing (blocker / suggestion / nit) with a rationale. Covers the "question not demand" heuristic, tone calibration, and worked rewrites.
 
-Sources: `research/external/2026-05-20-google-eng-practices-comments.md`, `research/external/2026-05-20-pillaiinfotech-comment-taxonomy.md`, `research/external/2026-05-20-ardura-implementation-guide.md`, `research/external/2026-05-20-octopus-mentorship-ai-loop.md`.
+Sources: `research/external/2026-05-20-google-eng-practices-comments.md`, `research/external/2026-05-20-pillaiinfotech-comment-taxonomy.md`, `research/external/2026-05-20-ardura-implementation-guide.md`, `research/external/2026-05-20-octopus-mentorship-ai-loop.md` (source-repository research, not shipped).
 
 ---
 

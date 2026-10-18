@@ -2,7 +2,7 @@
 
 Core operating principles for `okr-goal-setting-wasp-drone`. Read before any other guide.
 
-*Sources: `research/external/2026-05-20-grove-doerr-okr-canon.md`, `research/internal/2026-05-20-command-brief-context.md`*
+*Sources: `research/external/2026-05-20-grove-doerr-okr-canon.md`, `research/internal/2026-05-20-command-brief-context.md` (source-repository research, not shipped)*
 
 ---
 
@@ -29,7 +29,7 @@ When you see an input KR, run the rewrite test: *"What outcome would this activi
 
 OKRs must never be linked to salary, bonus, or performance review scores without explicit user instruction to do so.
 
-**Why:** Compensation linkage destroys honest scoring. When people's pay depends on OKR grades, they sandbag targets to guarantee 100%. Research (`research/external/2026-05-20-ambitious-vs-sandbagged-calibration.md`) documents that 89% of teams under compensation pressure set sandbagged targets. Grove, Doerr, and Laszlo Bock all prohibit linkage explicitly.
+**Why:** Compensation linkage destroys honest scoring. When people's pay depends on OKR grades, they sandbag targets to guarantee 100%. Research (`research/external/2026-05-20-ambitious-vs-sandbagged-calibration.md` [source-repository research, not shipped]) documents that 89% of teams under compensation pressure set sandbagged targets. Grove, Doerr, and Laszlo Bock all prohibit linkage explicitly.
 
 If a user asks to link OKRs to compensation, surface this risk, name it as a deliberate deviation from the canon, and note that committed OKRs (not aspirational 70%-success OKRs) are the only defensible compensation anchor.
 

@@ -2,6 +2,7 @@
 name: "source-command-prepare-native-release"
 description: "Prepare a native release artifact matrix with signing, update, install, and device evidence boundaries."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-prepare-native-release

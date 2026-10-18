@@ -2,7 +2,7 @@
 
 OSS, framework-agnostic, MIT-licensed. The 2026 momentum pick when you want full control without paying for a hosted provider.
 
-Source: `research/2026-04-25-better-auth-momentum.md`, https://www.better-auth.com/docs.
+Source: `research/2026-04-25-better-auth-momentum.md` (source-repository research, not shipped), https://www.better-auth.com/docs.
 
 ## When Better Auth wins
 

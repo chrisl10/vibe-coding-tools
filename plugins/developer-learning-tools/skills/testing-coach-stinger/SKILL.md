@@ -36,7 +36,7 @@ Read-only tutoring in chat. Project Learning owns web fundamentals, Core Quality
 
 ## References
 
-- [Digest](references/research/distilled-testing-coach.md) and [source ledger](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/developer-learning-tools/skills/testing-coach-stinger/references/research/source-ledger.json): official domain archive.
+- [Digest](references/research/distilled-testing-coach.md) and source ledger: official domain archive.
 - [Completed synthetic exercise](references/examples/seat-contract.md) and [constructed cases](references/examples/negative-policy-cases.md).
 - [Paired Drone](../../agents/testing-coach-wasp-drone.md): read-only tutor delegation.
 

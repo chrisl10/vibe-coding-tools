@@ -18,7 +18,7 @@ Prescriptive tool: when an estimate feels confident, ask: "What's the reference 
 
 ## The software evidence base
 
-From `research/external/04-planning-fallacy.md`:
+From `research/external/04-planning-fallacy.md` (source-repository research, not shipped):
 
 | Statistic | Source |
 |---|---|
@@ -72,5 +72,5 @@ Note from `research/research-summary.md`: Bent Flyvbjerg's reference class forec
 
 ---
 
-*Cited research: `research/external/04-planning-fallacy.md`*
+*Cited research: `research/external/04-planning-fallacy.md` (source-repository research, not shipped)*
 *See also: `guides/04-monte-carlo.md` (the data-driven remedy), `guides/03-noestimates.md` (the NoEstimates alternative)*

@@ -52,9 +52,11 @@ Find out whether automated checks exist, whether they are safe, and whether they
 
 ## Sources
 
-- [research/raw/actions--secure-use.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/actions--secure-use.md)
-- [research/raw/scorecard--checks-reference.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/scorecard--checks-reference.md)
-- [research/raw/openssf--best-practices-criteria.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/openssf--best-practices-criteria.md)
-- [research/raw/github-api--workflow-runs.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/github-api--workflow-runs.md)
-- [research/raw/npm--package-json-fields.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/npm--package-json-fields.md)
-- [research/raw/wasp-nest--get-started-assess-map.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/code-foundation-stinger/references/research/raw/wasp-nest--get-started-assess-map.md)
+The notes listed below are source-repository research, not shipped.
+
+- research/raw/actions--secure-use.md (source-repository research, not shipped)
+- research/raw/scorecard--checks-reference.md (source-repository research, not shipped)
+- research/raw/openssf--best-practices-criteria.md (source-repository research, not shipped)
+- research/raw/github-api--workflow-runs.md (source-repository research, not shipped)
+- research/raw/npm--package-json-fields.md (source-repository research, not shipped)
+- research/raw/wasp-nest--get-started-assess-map.md (source-repository research, not shipped)

@@ -50,7 +50,7 @@ See `guides/02-ein-workflow.md`. Online IRS application: ~4 business days. Compl
 
 ## Step 4 — Banking
 
-See `guides/03-banking.md`. 2026 FDIC pass-through update: Mercury = $5M, Brex Vault = $6M, Relay = $0–$30/month. Source: `research/external/mercury-vs-brex-banking-2026.md`.
+See `guides/03-banking.md`. 2026 FDIC pass-through update: Mercury = $5M, Brex Vault = $6M, Relay = $0–$30/month. Source: `research/external/mercury-vs-brex-banking-2026.md` (source-repository research, not shipped with the plugin).
 
 **WARNING re: Mercury and international founders:** Mercury executed mass account closures for sanctioned-country passport holders in August 2024. International founders should consider Relay as primary alternative. See `guides/03-banking.md`.
 
@@ -70,7 +70,7 @@ See `guides/05-founder-paperwork.md`. Correct order:
 
 > Entity formation → Stock purchase + vesting agreements → IP assignment (PIIA/CIIA) → **83(b) election within 30 calendar days** → Banking setup → Bookkeeping setup
 
-**CRITICAL: The 83(b) election is a 30-day hard deadline. No exceptions. IRS Form 15620 now enables electronic filing (available July 2025).** Source: `research/external/83b-election-guide-2026.md`.
+**CRITICAL: The 83(b) election is a 30-day hard deadline. No exceptions. IRS Form 15620 now enables electronic filing (available July 2025).** Source: `research/external/83b-election-guide-2026.md` (source-repository research, not shipped with the plugin).
 
 ---
 
@@ -99,8 +99,8 @@ See `guides/06-attorney-triggers.md`. Get a human attorney when: international h
 ## Critical directives
 
 - **Always lead with entity-type recommendation before platform selection.** See `guides/00-entity-type-decision.md`.
-- **Never present formation-platform marketing copy as neutral analysis.** Cite primary source fee schedules only. See `research/external/stripe-atlas-official-docs-2026.md`.
-- **Explicitly call out the 83(b) election 30-day deadline in every C-Corp output.** See `guides/05-founder-paperwork.md` and `research/external/83b-election-guide-2026.md`.
+- **Never present formation-platform marketing copy as neutral analysis.** Cite primary source fee schedules only. See `research/external/stripe-atlas-official-docs-2026.md` (source-repository research, not shipped with the plugin).
+- **Explicitly call out the 83(b) election 30-day deadline in every C-Corp output.** See `guides/05-founder-paperwork.md` and `research/external/83b-election-guide-2026.md` (source-repository research, not shipped with the plugin).
 - **Verify Bench operational status before recommending.** See `guides/04-bookkeeping.md` open question.
 - **State attorney-required triggers explicitly.** See `guides/06-attorney-triggers.md`.
 

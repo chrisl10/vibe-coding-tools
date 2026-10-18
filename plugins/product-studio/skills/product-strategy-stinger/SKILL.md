@@ -62,7 +62,7 @@ Write for an 8th-grade reader: short sentences, common words, terms explained on
 - [handoffs.md](references/handoffs.md): load when a section needs another owner, or at hand-off.
 - [examples/worked-example.md](references/examples/worked-example.md): load to show the owner a finished shape. It is made up.
 - [research/distilled-product-strategy.md](references/research/distilled-product-strategy.md): load to check a rule or settle a dispute. Section 0 states which sources are inside the research window.
-- [research/raw/](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-strategy-stinger/references/research/raw) and [research/source-ledger.json](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-strategy-stinger/references/research/source-ledger.json): load to trace a claim to its source.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - [scripts/check-strategy.py](scripts/check-strategy.py): run on the draft before saving. It checks shape only, not quality.
 
 ## Related drones and stingers

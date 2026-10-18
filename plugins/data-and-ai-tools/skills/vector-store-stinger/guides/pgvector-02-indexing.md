@@ -1,6 +1,6 @@
 # pgvector: indexing (HNSW vs IVFFlat, distance operators)
 
-Sourced from `references/research/raw/neon--pgvector--optimize-vector-search-hnsw-ivfflat.md`, `references/research/raw/pgvector-github--readme-distance-operators-types.md`, and `references/research/raw/deepwiki--pgvector-operator-classes.md`.
+Sourced from `references/research/raw/neon--pgvector--optimize-vector-search-hnsw-ivfflat.md`, `references/research/raw/pgvector-github--readme-distance-operators-types.md`, and `references/research/raw/deepwiki--pgvector-operator-classes.md` (source-repository research, not shipped).
 
 ## Distance operators
 

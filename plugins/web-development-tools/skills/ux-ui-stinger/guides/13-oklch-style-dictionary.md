@@ -1,6 +1,6 @@
 # 13 — OKLCH color tokens + Style Dictionary multi-platform export
 
-The product's master tokens already use OKLCH (see `guides/02-token-and-utility-enforcement.md` line 11–12 examples and `research/2026-04-24-tailwind-v4-theme-tokens.md`). This guide explains **why** OKLCH is the picking space, **how** to do it well (gamut, contrast, dark-mode), and how to ship the same tokens to non-CSS surfaces (iOS, Android, React Native, Figma) via **Style Dictionary**.
+The product's master tokens already use OKLCH (see `guides/02-token-and-utility-enforcement.md` line 11–12 examples and `research/2026-04-24-tailwind-v4-theme-tokens.md` [source-repository research, not shipped]). This guide explains **why** OKLCH is the picking space, **how** to do it well (gamut, contrast, dark-mode), and how to ship the same tokens to non-CSS surfaces (iOS, Android, React Native, Figma) via **Style Dictionary**.
 
 The Angel reviews against this guide whenever:
 
@@ -13,7 +13,7 @@ Sources:
 - Style Dictionary docs <https://styledictionary.com/> and repo <https://github.com/style-dictionary/style-dictionary>.
 - W3C Design Tokens Format Module 2025.10 (DTCG) — referenced indirectly via Style Dictionary v5 + tooling.
 - OKLCH-palette repo <https://github.com/graemegeorge/oklch-palette> (Aug 2025) — perceptual scale generation.
-- `research/2026-04-25-oklch-style-dictionary.md` (this Stinger's research note).
+- `research/2026-04-25-oklch-style-dictionary.md` (source-repository research, not shipped) (this Stinger's research note).
 
 ---
 
@@ -182,8 +182,8 @@ For multi-platform requests:
 
 - `guides/02-token-and-utility-enforcement.md` — the no-inline-color rule that this guide reinforces.
 - `guides/04-shadcn-ui-integration.md` — Tailwind v4 `@theme` directive that consumes these tokens.
-- `research/2026-04-24-tailwind-v4-theme-tokens.md` — why `@theme` plays well with OKLCH literals.
-- `research/2026-04-25-oklch-style-dictionary.md` — research note backing this guide.
+- `research/2026-04-24-tailwind-v4-theme-tokens.md` (source-repository research, not shipped) — why `@theme` plays well with OKLCH literals.
+- `research/2026-04-25-oklch-style-dictionary.md` (source-repository research, not shipped) — research note backing this guide.
 
 ---
 

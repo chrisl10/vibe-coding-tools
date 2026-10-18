@@ -2,7 +2,7 @@
 
 The employee equity pool (ESOP or option pool) is how startups compensate employees with equity. Sizing it correctly, refreshing it at the right time, and managing individual grants are all distinct skills.
 
-Source: [`research/external/2026-05-20-option-pool-sizing-refresh-dilution.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/external/2026-05-20-option-pool-sizing-refresh-dilution.md), [`research/external/2026-05-20-iso-vs-nso-tax-treatment-2026.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/investor-cap-table-stinger/research/external/2026-05-20-iso-vs-nso-tax-treatment-2026.md)
+Source: `research/external/2026-05-20-option-pool-sizing-refresh-dilution.md`, `research/external/2026-05-20-iso-vs-nso-tax-treatment-2026.md` (source-repository research, not shipped)
 
 ---
 
@@ -49,7 +49,7 @@ When the existing option pool is depleted (or close to it), the board approves a
 
 ### 2026 trend: milestone-based top-ups
 
-Source (`research/external/2026-05-20-option-pool-sizing-refresh-dilution.md`) notes a 2026 trend toward milestone-based pool top-ups rather than single large refreshes. Instead of a 15% expansion at Series A, companies create a 10% pool at Series A with automatic authority to add another 5% when the company hits a specified revenue or headcount milestone. This reduces dilution on day one while guaranteeing headroom for future grants.
+Source (`research/external/2026-05-20-option-pool-sizing-refresh-dilution.md` [source-repository research, not shipped]) notes a 2026 trend toward milestone-based pool top-ups rather than single large refreshes. Instead of a 15% expansion at Series A, companies create a 10% pool at Series A with automatic authority to add another 5% when the company hits a specified revenue or headcount milestone. This reduces dilution on day one while guaranteeing headroom for future grants.
 
 ---
 

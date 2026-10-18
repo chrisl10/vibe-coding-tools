@@ -19,11 +19,11 @@ Return acceptance-linked implementation evidence, limitations, recovery notes, a
 
 ## Evidence honesty rules
 
-- A current-stable toolchain is not a proven MSRV; Cargo requires verification of declared `rust-version` across supported functionality ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/rust-cargo/2026-07-24-cargo-rust-version.md)).
-- A compiler-supported target is not a product-supported install/runtime target ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/rust-cargo/2026-07-24-platform-support.md)).
-- Passing Loom is not general concurrency proof because unmodeled operations are invisible and state spaces are bounded ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/testing/2026-07-24-loom.md)).
-- A retry-only test success is flaky evidence, not a clean pass ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/testing/2026-07-24-nextest-retries.md)).
-- A generated checksum, SBOM, advisory scan, or license scan does not by itself prove signed provenance or peer acceptance ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/supply-chain/2026-07-24-cargo-dist-config.md), [research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/supply-chain/2026-07-24-cargo-deny-license-limitations.md)).
+- A current-stable toolchain is not a proven MSRV; Cargo requires verification of declared `rust-version` across supported functionality (research).
+- A compiler-supported target is not a product-supported install/runtime target (research).
+- Passing Loom is not general concurrency proof because unmodeled operations are invisible and state spaces are bounded (research).
+- A retry-only test success is flaky evidence, not a clean pass (research).
+- A generated checksum, SBOM, advisory scan, or license scan does not by itself prove signed provenance or peer acceptance (research, research).
 
 ## Blocked checkpoint
 

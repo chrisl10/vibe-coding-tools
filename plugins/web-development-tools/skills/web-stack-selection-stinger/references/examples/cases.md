@@ -22,7 +22,7 @@ Failure: "React19/Vite handles every Server Component and production API require
 
 Input: team experienced in React, public frequently updated product routes need request-produced HTML, paid signed-in routes, integrated React server/client boundary accepted, Node/container hosting available. Recommendation: React/Next.js App Router, conditional on exact framework/version/deployment and qualified server ownership. Official Next sources support the architecture/deployment distinction; they do not establish payment/tenant security.
 
-Handoff: React UI owner plus a genuinely qualified Next server implementation owner, data/auth/payments/security owners. If dedicated Next implementation ownership remains absent, record delivery blocked pending an authorized owner; the Next.js security auditor cannot silently fill it. Acceptance requests: initial public HTML, server/client secret boundary, mutation errors, auth/tenant denial, cache/private data behavior and actual host mode. No code or vertical slice is generated here.
+Handoff: `nextjs-stinger` for the Next server/client/data/cache boundaries, React UI owner for component architecture, data/auth/payments/security owners. If the pack that ships `nextjs-stinger` is not selected, record delivery blocked pending a selected owner and authorized scope; the Next.js security auditor cannot silently fill it. Acceptance requests: initial public HTML, server/client secret boundary, mutation errors, auth/tenant denial, cache/private data behavior and actual host mode. No code or vertical slice is generated here.
 
 Failure: "A Next security Drone exists, therefore full Next implementation is ready." Reject the owner substitution. A recommendation can be supported while delivery capability is missing.
 
@@ -30,13 +30,13 @@ Failure: "A Next security Drone exists, therefore full Next implementation is re
 
 Input: maintained Vue components, Vue-skilled team, public dynamic pages plus interactive signed-in routes, accepted Nuxt-compatible host. Recommendation: Vue/Nuxt with qualified universal/hybrid route delivery. Existing skills/code and rendering need are the decisive discriminator. Do not rewrite to React merely because its agent is already installed.
 
-Handoff: actual selected Vue/Nuxt implementation owners; if absent, name the gap and hold implementation. Component/design/backend owners retain their domains. Acceptance requests: initial HTML/hydration, browser-only API boundaries, direct navigation, mutations/access denial and host compatibility.
+Handoff: `vue-stinger` for Vue component work and `nuxt-stinger` for Nuxt rendering and Nitro; if the pack that ships them is not selected, name the gap and hold implementation. Component/design/backend owners retain their domains. Acceptance requests: initial HTML/hydration, browser-only API boundaries, direct navigation, mutations/access denial and host compatibility.
 
 Failure: "Nuxt will automatically reuse every Vue web component as native iOS UI." Reject unsupported target equivalence; actual native targets, contracts, platform features and owners require separate qualification.
 
 ## E: unsupported implementation request
 
-Input: user accepts C's Next recommendation and asks this advisory workflow to scaffold, install packages and deploy. Result: selection record can be delivered, but no implementation begins. Route the new requested work through Core, expose missing qualified owner and required action authority, and preserve the original decision. Do not manufacture a build-web-app role or treat a source command name as a registered tool.
+Input: user accepts C's Next recommendation and asks this advisory workflow to scaffold, install packages and deploy. Result: selection record can be delivered, but no implementation begins. Route the new requested work through Core, expose any unselected owner (`nextjs-stinger` for this case) and required action authority, and preserve the original decision. Do not manufacture a build-web-app role or treat a source command name as a registered tool.
 
 ## Exercise standard
 

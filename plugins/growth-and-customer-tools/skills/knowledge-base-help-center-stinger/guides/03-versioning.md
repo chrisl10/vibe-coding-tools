@@ -27,7 +27,7 @@ KB versioning is NOT necessary when:
 
 ## Document360 branch versioning (recommended for parallel versions)
 
-Source: `research/external/2026-05-20-document360-2026-features.md`
+Source: `research/external/2026-05-20-document360-2026-features.md` (source-repository research, not shipped)
 
 Document360 supports creating separate "versions" of the KB that map to product release cycles. Key behaviors:
 - Articles can be marked as "available in version X.x and above."
@@ -44,7 +44,7 @@ Document360 supports creating separate "versions" of the KB that map to product 
 
 ## ReadMe.com version control (Git-backed)
 
-Source: `research/external/2026-05-20-readme-com-2026-features.md`
+Source: `research/external/2026-05-20-readme-com-2026-features.md` (source-repository research, not shipped)
 
 ReadMe integrates with GitHub for docs-as-code version management:
 - Each product version maps to a git branch.
@@ -72,4 +72,4 @@ When a product version reaches end-of-life:
 
 ---
 
-*Sources: `research/external/2026-05-20-document360-2026-features.md`, `research/external/2026-05-20-readme-com-2026-features.md`.*
+*Sources: `research/external/2026-05-20-document360-2026-features.md`, `research/external/2026-05-20-readme-com-2026-features.md` (source-repository research, not shipped).*

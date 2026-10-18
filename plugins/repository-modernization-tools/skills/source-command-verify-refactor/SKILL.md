@@ -2,6 +2,7 @@
 name: "source-command-verify-refactor"
 description: "Compare pinned refactor behavior, performance, and accepted interfaces with explicit evidence limits."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-verify-refactor

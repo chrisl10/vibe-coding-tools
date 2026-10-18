@@ -54,4 +54,4 @@ Write the report per [10-report-format.md](10-report-format.md) to the correct `
 2. Financial (Stripe-adjacent) and PII findings are never downgraded below High to save time.
 3. Evidence over opinion - every finding cites `path/to/file.ts:LINE` and the exact vulnerable pattern.
 4. Degraded fidelity, not silence, outside this skill's researched stack - flag REDUCED COVERAGE and say so explicitly rather than inventing facts.
-5. Never state a security fact that isn't grounded in [references/research/raw/](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/security-stinger/references/research/raw) - if it isn't archived, it isn't a fact yet for this skill.
+5. Never state a security fact that isn't grounded in references/research/raw/ (source-repository research, not shipped) - if it isn't archived, it isn't a fact yet for this skill.

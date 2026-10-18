@@ -1,6 +1,6 @@
 # Own application work and app-local state
 
-DERIVED procedure using [runtime readiness](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/go-desktop-stinger/references/research/raw/wails-runtime-source.md), [hooks](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/go-desktop-stinger/references/research/raw/wails-options-source.md), [Go context](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/go-desktop-stinger/references/research/raw/go-context-source.md) and [OS storage](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/go-desktop-stinger/references/research/raw/go-fs-source.md).
+DERIVED procedure using runtime readiness, hooks, Go context and OS storage.
 
 1. Allocate service state in startup, record BOOTING/READY/FAILED and preserve startup errors without assuming a hook error return. Defer runtime UI calls until the qualified OnDomReady path. Reject bridge work before READY or after STOPPING. Inspect actual callback signatures; source prose conflicts are recorded in the digest.
 2. Give every long operation a unique bounded ID, context/deadline, cancellation function, completion signal and single state owner. Define queue and output limits, timeouts, duplicate IDs, retry/idempotency and partially visible results. Avoid locks across blocking UI/runtime calls. Wails app context is not an automatically cancellable per-request operation.

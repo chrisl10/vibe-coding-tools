@@ -2,7 +2,7 @@
 
 > Use when asked to review the existing CHANGELOG for quality, cadence, or accuracy.
 
-*Derived from: `research/external/changelog-copy-craft.md`, `research/external/keep-a-changelog.md`, `research/external/semver.md`*
+*Derived from: `research/external/changelog-copy-craft.md`, `research/external/keep-a-changelog.md`, `research/external/semver.md` (source-repository research, not shipped)*
 
 ---
 

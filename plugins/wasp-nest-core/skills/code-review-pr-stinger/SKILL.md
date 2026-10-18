@@ -33,11 +33,11 @@ Do NOT activate for security finding remediation, logic correctness review, CI p
 
 Everything in this skill flows from three axioms backed by the research corpus:
 
-1. **Small PRs are a forcing function for good design.** PRs of 200-400 lines achieve 75%+ defect detection; PRs over 1,000 lines drop to 31%. AI-assisted coding (2025 DORA Report) caused a 91% increase in review time, making this more urgent than ever. Source: `research/external/2026-05-20-gitautoreview-pr-size-metrics.md`.
+1. **Small PRs are a forcing function for good design.** PRs of 200-400 lines achieve 75%+ defect detection; PRs over 1,000 lines drop to 31%. AI-assisted coding (2025 DORA Report) caused a 91% increase in review time, making this more urgent than ever. Source: `research/external/2026-05-20-gitautoreview-pr-size-metrics.md` (source-repository research, not shipped with the plugin).
 
-2. **A PR description is a first-class communication artifact.** A description that explains the motivation, context, what changed, and what did NOT change lets reviewers do their job without a synchronous call. Source: `research/external/2026-05-20-tenthirtyam-pr-template-guide.md`, `research/external/2026-05-20-pullpanda-pr-description-templates.md`.
+2. **A PR description is a first-class communication artifact.** A description that explains the motivation, context, what changed, and what did NOT change lets reviewers do their job without a synchronous call. Source: `research/external/2026-05-20-tenthirtyam-pr-template-guide.md`, `research/external/2026-05-20-pullpanda-pr-description-templates.md` (source-repository research, not shipped with the plugin).
 
-3. **Review comments have tiers; ambiguous comments erode trust.** Every comment is either a blocker (must fix before merge), a suggestion (nice to have), or a nit (cosmetic / optional). A comment that does not state its tier forces the author to guess. Source: `research/external/2026-05-20-google-eng-practices-comments.md`, `research/external/2026-05-20-pillaiinfotech-comment-taxonomy.md`.
+3. **Review comments have tiers; ambiguous comments erode trust.** Every comment is either a blocker (must fix before merge), a suggestion (nice to have), or a nit (cosmetic / optional). A comment that does not state its tier forces the author to guess. Source: `research/external/2026-05-20-google-eng-practices-comments.md`, `research/external/2026-05-20-pillaiinfotech-comment-taxonomy.md` (source-repository research, not shipped with the plugin).
 
 ---
 
@@ -72,7 +72,7 @@ Every PR description the Drone produces contains these six elements. See `guides
 
 ## PR size heuristics (small-PR discipline)
 
-Default threshold: **400 changed lines**. This is configurable per team (300 for aggressive TBD teams). Source: `research/external/2026-05-20-gitautoreview-pr-size-metrics.md`, `research/external/2026-05-20-ardura-implementation-guide.md`.
+Default threshold: **400 changed lines**. This is configurable per team (300 for aggressive TBD teams). Source: `research/external/2026-05-20-gitautoreview-pr-size-metrics.md`, `research/external/2026-05-20-ardura-implementation-guide.md` (source-repository research, not shipped with the plugin).
 
 | Signal | Threshold | Action |
 |---|---|---|
@@ -113,11 +113,11 @@ These questions survived the scripture-historian sweep. They are documented rath
 
 ## Research trail
 
-All factual claims in this skill derive from sources in `research/`. See `research/index.md` for the full manifest and `research/research-summary.md` for the executive summary and the 5 most influential sources.
+All factual claims in this skill derive from source research notes (source-repository research, not shipped with the plugin). The shipped `research/research-summary.md` carries the executive summary and the 5 most influential sources; the full manifest, `research/index.md`, stays in the source repository.
 
-Key sources:
-- `research/external/2026-05-20-google-eng-practices-standard.md` -- canonical authority
-- `research/external/2026-05-20-google-eng-practices-comments.md` -- comment-writing norms
-- `research/external/2026-05-20-stackfyi-best-practices-guide.md` -- 2026 synthesis, rubber-stamp signals
-- `research/external/2026-05-20-gitautoreview-pr-size-metrics.md` -- 400-line threshold data, DORA 2025
-- `research/external/2026-05-20-pillaiinfotech-comment-taxonomy.md` -- five-tier taxonomy with worked rewrites
+Key sources (source-repository research, not shipped with the plugin):
+- `research/external/2026-05-20-google-eng-practices-standard.md` (source-repository research, not shipped with the plugin) -- canonical authority
+- `research/external/2026-05-20-google-eng-practices-comments.md` (source-repository research, not shipped with the plugin) -- comment-writing norms
+- `research/external/2026-05-20-stackfyi-best-practices-guide.md` (source-repository research, not shipped with the plugin) -- 2026 synthesis, rubber-stamp signals
+- `research/external/2026-05-20-gitautoreview-pr-size-metrics.md` (source-repository research, not shipped with the plugin) -- 400-line threshold data, DORA 2025
+- `research/external/2026-05-20-pillaiinfotech-comment-taxonomy.md` (source-repository research, not shipped with the plugin) -- five-tier taxonomy with worked rewrites

@@ -10,7 +10,7 @@
 | ReadMe.com | Partial | No | No | Manual |
 | Zendesk Guide | **Yes (native path routing)** | Partial | **Yes** | Phrase, Crowdin |
 
-Source: `research/external/2026-05-20-multi-language-kb-2026.md`
+Source: `research/external/2026-05-20-multi-language-kb-2026.md` (source-repository research, not shipped)
 
 ---
 
@@ -79,4 +79,4 @@ If RTL is a hard requirement, Document360 or Zendesk Guide are the only producti
 
 ---
 
-*Sources: `research/external/2026-05-20-multi-language-kb-2026.md`, `research/external/2026-05-20-document360-2026-features.md`.*
+*Sources: `research/external/2026-05-20-multi-language-kb-2026.md`, `research/external/2026-05-20-document360-2026-features.md` (source-repository research, not shipped).*

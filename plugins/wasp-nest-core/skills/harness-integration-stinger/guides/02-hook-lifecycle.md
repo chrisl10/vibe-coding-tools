@@ -1,6 +1,6 @@
 # Guide 02: Hooks and Lifecycle Events, Per Harness
 
-**Sources:** `research/distilled-harness-integration.md` §2; queen-wasp-stinger distilled-research-articles.md, Claude Code §Rules→Hooks; Cursor §Plugins→Hooks; ChatGPT Codex §Plugins→Hooks; Claude Cowork §Plugins ("What a plugin bundles"); `research/external/2026-08-14-hookbridge-loss-report-pattern.md`
+**Sources:** `research/distilled-harness-integration.md` §2; queen-wasp-stinger distilled-research-articles.md, Claude Code §Rules→Hooks; Cursor §Plugins→Hooks; ChatGPT Codex §Plugins→Hooks; Claude Cowork §Plugins ("What a plugin bundles"); `research/external/2026-08-14-hookbridge-loss-report-pattern.md` (source-repository research, not shipped)
 
 ---
 
@@ -21,7 +21,7 @@ Use [the host-version hook procedure](13-prove-hook-contract.md) and its receipt
 
 ## The gap is bigger than any one caveat
 
-An independent, code-verified cross-harness hook compiler (`research/external/2026-08-14-hookbridge-loss-report-pattern.md`) confirms: "Claude Code supports 26 events. Codex supports 5." Of Claude Code's 26, **21 have no Codex equivalent at all** - a hard limit, not an approximation. The real shared-event floor across Claude Code and Codex is small:
+An independent, code-verified cross-harness hook compiler (`research/external/2026-08-14-hookbridge-loss-report-pattern.md` [source-repository research, not shipped]) confirms: "Claude Code supports 26 events. Codex supports 5." Of Claude Code's 26, **21 have no Codex equivalent at all** - a hard limit, not an approximation. The real shared-event floor across Claude Code and Codex is small:
 
 | Event | Claude Code | Codex |
 |---|---|---|

@@ -1,7 +1,8 @@
 ---
 name: "source-command-perform-website-audit"
-description: "Runs a full Website Auditor by Legion Code Inc. engagement end to end: intake through branded reports, sequencing all 20 Drone/Stinger pairs per the dependency graph."
+description: "Run a full Website Auditor by Legion Code Inc. engagement end to end: intake through scored, branded reports, dispatching the 20 Drone/Stinger pairs in dependency order."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-perform-website-audit

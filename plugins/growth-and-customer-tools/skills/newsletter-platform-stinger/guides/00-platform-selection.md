@@ -1,6 +1,6 @@
 # Guide 00: Platform Selection Decision Matrix
 
-*Derived from: `research/external/2026-05-20-beehiiv-vs-kit-comparison-2026.md`, `research/external/2026-05-20-loops-saas-email-platform-2026.md`, `research/external/2026-05-20-newsletter-platform-full-comparison-2026.md`, `research/external/2026-05-20-beehiiv-vs-substack-vs-ghost.md`*
+*Derived from: `research/external/2026-05-20-beehiiv-vs-kit-comparison-2026.md`, `research/external/2026-05-20-loops-saas-email-platform-2026.md`, `research/external/2026-05-20-newsletter-platform-full-comparison-2026.md`, `research/external/2026-05-20-beehiiv-vs-substack-vs-ghost.md` (source-repository research, not shipped)*
 
 The single most important guide in this stinger. Read this first. Every recommendation flows from the answers to three questions:
 
@@ -17,7 +17,7 @@ You are building a standalone newsletter or audience as a business. Revenue will
 
 **→ Recommend Beehiiv (Scale plan, $49/mo)**
 
-Why: Only platform with a native ad network, boost earnings ($1-$3/referred subscriber), and a 30,000+ recommendation network. Paid subscriptions at 0% transaction fee. Median 66 days to first dollar. See `research/external/2026-05-20-beehiiv-ad-network-monetization-2026.md`.
+Why: Only platform with a native ad network, boost earnings ($1-$3/referred subscriber), and a 30,000+ recommendation network. Paid subscriptions at 0% transaction fee. Median 66 days to first dollar. See `research/external/2026-05-20-beehiiv-ad-network-monetization-2026.md` (source-repository research, not shipped).
 
 Beehiiv is cheaper than Kit at every scale point above 1,000 subscribers:
 - 5K subscribers: Beehiiv $49/mo vs Kit $89/mo
@@ -28,7 +28,7 @@ You are building a SaaS product and want one platform for welcome emails, drip c
 
 **→ Recommend Loops ($49/mo, free to 1K contacts)**
 
-Why: Loops unifies transactional (welcome, password reset, receipts) and marketing (newsletter, drip, re-engagement) in one API-first platform with event-based automation. Replacing a Resend + ConvertKit combo saves $50/mo at 5K contacts and eliminates dual contact-list management. See `research/external/2026-05-20-loops-saas-email-platform-2026.md`.
+Why: Loops unifies transactional (welcome, password reset, receipts) and marketing (newsletter, drip, re-engagement) in one API-first platform with event-based automation. Replacing a Resend + ConvertKit combo saves $50/mo at 5K contacts and eliminates dual contact-list management. See `research/external/2026-05-20-loops-saas-email-platform-2026.md` (source-repository research, not shipped).
 
 Loops is NOT a newsletter-growth platform: no referrals, no ad network, no landing pages. If the user needs subscriber acquisition tools, Loops is wrong.
 

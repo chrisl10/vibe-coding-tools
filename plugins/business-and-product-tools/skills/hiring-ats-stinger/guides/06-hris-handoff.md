@@ -1,6 +1,6 @@
 # Guide 06: ATS-to-HRIS Handoff
 
-Source: `research/external/2026-05-20-ats-hris-handoff-rippling.md`, `research/external/2026-05-20-greenhouse-api-updates.md`
+Source: `research/external/2026-05-20-ats-hris-handoff-rippling.md`, `research/external/2026-05-20-greenhouse-api-updates.md` (source-repository research, not shipped)
 
 ---
 
@@ -14,7 +14,7 @@ Is the team already on Rippling HRIS?
       → Configure ATS-to-HRIS handoff via integration (see below)
 ```
 
-Rippling's primary ATS value proposition is eliminating the handoff. The Forterra case study (Rippling customer): previously using Lever as ATS, recruiters drafted offer letters manually, errors were common, employee records were incomplete. After switching to Rippling unified platform, the fragmented process was eliminated. Source: `research/external/2026-05-20-ats-hris-handoff-rippling.md`
+Rippling's primary ATS value proposition is eliminating the handoff. The Forterra case study (Rippling customer): previously using Lever as ATS, recruiters drafted offer letters manually, errors were common, employee records were incomplete. After switching to Rippling unified platform, the fragmented process was eliminated. Source: `research/external/2026-05-20-ats-hris-handoff-rippling.md` (source-repository research, not shipped)
 
 ---
 
@@ -48,7 +48,7 @@ Greenhouse Rippling integration uses the Rippling webhook + Greenhouse API:
    - Employment type → Full-time / part-time / contractor (required for payroll classification)
 4. Validate with a test hire before enabling on all roles.
 
-**Critical:** Greenhouse Harvest API v1/v2 is deprecated and unavailable after **August 31, 2026**. Any Greenhouse-to-Rippling integration built on v1/v2 will break on that date. Migrate to Harvest API v3. Source: `research/external/2026-05-20-greenhouse-api-updates.md`
+**Critical:** Greenhouse Harvest API v1/v2 is deprecated and unavailable after **August 31, 2026**. Any Greenhouse-to-Rippling integration built on v1/v2 will break on that date. Migrate to Harvest API v3. Source: `research/external/2026-05-20-greenhouse-api-updates.md` (source-repository research, not shipped)
 
 ---
 

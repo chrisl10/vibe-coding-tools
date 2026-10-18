@@ -2,7 +2,7 @@
 
 Goal: one spec per screen that a designer, Claude Design, or an engineer can build from without guessing, including empty, loading, error and success.
 
-Grounding: [empty states](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-empty-states.md), [error messages](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-error-messages.md), [ten heuristics](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-ten-heuristics.md), [visual hierarchy](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/ux--nngroup-visual-hierarchy.md), [WCAG 2.2 quick reference](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/product-studio/skills/product-design-stinger/references/research/raw/a11y--w3c-wcag22-quickref.md). Distilled: [section 3](../references/research/distilled-product-design.md).
+Grounding: empty states, error messages, ten heuristics, visual hierarchy, WCAG 2.2 quick reference. Distilled: [section 3](../references/research/distilled-product-design.md).
 
 ## Procedure
 

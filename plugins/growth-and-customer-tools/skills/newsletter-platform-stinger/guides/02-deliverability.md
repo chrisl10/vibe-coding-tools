@@ -1,6 +1,6 @@
 # Guide 02: Deliverability — Managed SaaS vs Self-Hosted
 
-*Derived from: `research/external/2026-05-20-listmonk-self-hosted-newsletter-2026.md`, `research/external/2026-05-20-newsletter-platform-full-comparison-2026.md`, `research/external/2026-05-20-beehiiv-vs-substack-vs-ghost.md`*
+*Derived from: `research/external/2026-05-20-listmonk-self-hosted-newsletter-2026.md`, `research/external/2026-05-20-newsletter-platform-full-comparison-2026.md`, `research/external/2026-05-20-beehiiv-vs-substack-vs-ghost.md` (source-repository research, not shipped)*
 
 Deliverability is the percentage of your emails that reach the inbox. The three levers are: sender authentication, list hygiene, and sending behavior (volume, engagement, complaint rate).
 
@@ -54,7 +54,7 @@ Self-hosting your newsletter means owning the entire email stack. This includes:
 - DKIM, SPF, DMARC configuration for your domain
 - Active monitoring of spam complaint rates and bounce rates
 
-**Honest operational cost** (from `research/external/2026-05-20-listmonk-self-hosted-newsletter-2026.md`):
+**Honest operational cost** (from `research/external/2026-05-20-listmonk-self-hosted-newsletter-2026.md` [source-repository research, not shipped]):
 - Initial setup: 4-8 hours (VPS, SMTP relay, DNS records, app configuration)
 - Ongoing maintenance: 2-4 hours/week minimum (bounces, deliverability monitoring, ISP issues)
 - A single bad week of high bounce rates can take 2-4 weeks of careful warm-up to recover from

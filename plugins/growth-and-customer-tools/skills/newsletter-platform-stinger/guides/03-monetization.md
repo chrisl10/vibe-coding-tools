@@ -1,6 +1,6 @@
 # Guide 03: Monetization Options for Newsletter Operators
 
-*Derived from: `research/external/2026-05-20-beehiiv-ad-network-monetization-2026.md`, `research/external/2026-05-20-beehiiv-monetization-revenue-2026.md`, `research/external/2026-05-20-newsletter-monetization-revenue-study.md`, `research/external/2026-05-20-beehiiv-vs-kit-comparison-2026.md`*
+*Derived from: `research/external/2026-05-20-beehiiv-ad-network-monetization-2026.md`, `research/external/2026-05-20-beehiiv-monetization-revenue-2026.md`, `research/external/2026-05-20-newsletter-monetization-revenue-study.md`, `research/external/2026-05-20-beehiiv-vs-kit-comparison-2026.md` (source-repository research, not shipped)*
 
 Four revenue streams for newsletter operators. Stack them in this order: Ad Network first (passive, starts at 1K subs), Boosts second (zero writing, referral-based), then Paid Subscriptions, then Direct Sponsorships as you grow.
 
@@ -16,7 +16,7 @@ Beehiiv's Ad Network is the strongest argument for choosing Beehiiv over any oth
 - Revenue model: CPM (per 1,000 unique opens) or CPC (per click)
 - Payouts: 20th of each month for prior month's earnings, via Stripe Express
 
-**Eligibility requirements** (from `research/external/2026-05-20-beehiiv-ad-network-monetization-2026.md`):
+**Eligibility requirements** (from `research/external/2026-05-20-beehiiv-ad-network-monetization-2026.md` [source-repository research, not shipped]):
 - Minimum 1,000 active subscribers
 - Consistent 20%+ open rate
 - List grown through legitimate methods (no purchased lists)
@@ -74,7 +74,7 @@ All major platforms support paid newsletter tiers, but the mechanics differ:
 - You have exclusive content, archive access, or a community (Discord, Slack) to gate
 - Minimum viable: ~2,000 engaged subscribers before launching paid
 
-**Pricing benchmarks** (practitioner data from `research/external/2026-05-20-newsletter-monetization-revenue-study.md`):
+**Pricing benchmarks** (practitioner data from `research/external/2026-05-20-newsletter-monetization-revenue-study.md` [source-repository research, not shipped]):
 - B2B / niche professional newsletters: $15-$30/month or $100-$200/year
 - Consumer / general interest: $5-$10/month or $50-$100/year
 - Premium / coaching access: $50+/month
@@ -91,7 +91,7 @@ Paid subscribers: 150 × $10 = $1,500 MRR (before processor fees)
 
 Highest CPM revenue, but requires active sales effort. Appropriate when you have 5,000+ subscribers and a clear audience niche that advertisers pay to reach.
 
-**Pricing benchmarks** (from `research/external/2026-05-20-beehiiv-ad-network-monetization-2026.md`):
+**Pricing benchmarks** (from `research/external/2026-05-20-beehiiv-ad-network-monetization-2026.md` [source-repository research, not shipped]):
 - 1,000 subscribers: $100-$300 per placement
 - 5,000 subscribers: $500-$1,500 per placement
 - 10,000 subscribers: $1,000-$3,000 per placement
@@ -113,7 +113,7 @@ See `templates/media-kit-template.md` for a starter media kit structure.
 
 From practitioner research: newsletters that survive long-term typically have a diversified revenue mix rather than depending on a single stream.
 
-Example mix (reference: Girlboss-style diversification from `research/external/2026-05-20-newsletter-monetization-revenue-study.md`):
+Example mix (reference: Girlboss-style diversification from `research/external/2026-05-20-newsletter-monetization-revenue-study.md` [source-repository research, not shipped]):
 - 58%: newsletter ads/partnerships (Ad Network + direct sponsorships)
 - 30%: social media partnerships
 - 12%: affiliate/podcast

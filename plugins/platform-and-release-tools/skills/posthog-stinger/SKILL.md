@@ -14,7 +14,7 @@ metadata:
 
 You are equipping **posthog-wasp-drone**, the Wasp Nest's PostHog specialist. This skill covers PostHog end to end for a SvelteKit (Svelte 5) app on Vercel: client and server SDK install, pageview tracking under SvelteKit's router, autocapture vs manual events, event/property naming, identify/alias identity stitching, feature flags (client, server, local evaluation, bootstrapping), experiments, session replay privacy and cost, surveys, group analytics for B2B, the Vercel reverse proxy, EU/US data residency, and cost control.
 
-Every factual claim in this skill traces to a downloaded primary source in `references/research/raw/`. Do not author a PostHog fact from training data - if it is not in the archive, it is not a fact yet. Where the research surfaced a conflict or a gap (event-naming convention conflict, no confirmed sampling feature, SvelteKit-specific middleware interaction unconfirmed), it is stated plainly in `references/research/distilled-posthog.md` rather than smoothed into a guess.
+Every factual claim in this skill traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it). Do not author a PostHog fact from training data - if it is not in the archive, it is not a fact yet. Where the research surfaced a conflict or a gap (event-naming convention conflict, no confirmed sampling feature, SvelteKit-specific middleware interaction unconfirmed), it is stated plainly in `references/research/distilled-posthog.md` rather than smoothed into a guess.
 
 ## When to use this skill
 
@@ -40,13 +40,13 @@ Load on demand; do not read everything up front.
 | Path | Load when |
 | --- | --- |
 | `references/research/distilled-posthog.md` | Verifying any PostHog claim fast, or resolving a conflict (see its Gaps section) |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `guides/01-install-and-pageview-tracking.md` | First-time SvelteKit install, or SPA pageview tracking isn't working |
 | `guides/02-events-and-identify-alias.md` | Event/property naming, or identify/alias/anonymous-user stitching |
 | `guides/07-roll-out-and-retire-flags.md` | Rollout, expiry review, failure/cache behavior, kill convergence or removal (O175) |
 | `references/templates/flag-lifecycle.md` | Record owner, versions, authority, rollout and retirement evidence |
 | `references/examples/flag-lifecycle-cases.md` | Distinguish hypothetical reasoning from observed readiness |
-| `references/research/flag-lifecycle-20261007/distilled.md` | Current flag lifecycle claims and historical archive corrections |
+| `references/research/flag-lifecycle-20261007/distilled.md` (source repository only, not shipped with the plugin) | Source-repository record of flag lifecycle claims and archive corrections; do not require it. `guides/07-roll-out-and-retire-flags.md` carries the conclusions |
 | `guides/03-feature-flags-and-experiments.md` | Feature flags (client/server/local eval/bootstrap) or experiments |
 | `guides/04-session-replay-and-surveys.md` | Session replay privacy/cost, or surveys |
 | `guides/05-group-analytics-and-reverse-proxy.md` | B2B group analytics, or the Vercel reverse proxy |
@@ -70,7 +70,7 @@ For O175 load guide 07 before existing flag snippets. The 2026-10-07 archive sup
 
 ## Quality bar
 
-A PostHog task run through this skill is done when: the relevant guide(s) were read in order (not skipped), every factual claim used in the output traces to `references/research/raw/`, region consistency (EU/US) was checked across every endpoint touched, and - for anything development-focused - the Ship Gate below completed with user approval before commit or push.
+A PostHog task run through this skill is done when: the relevant guide(s) were read in order (not skipped), every factual claim used in the output traces to the source research archive (not shipped; the shipped distillation summarizes it), region consistency (EU/US) was checked across every endpoint touched, and - for anything development-focused - the Ship Gate below completed with user approval before commit or push.
 
 ## Critical Directive
 
@@ -79,9 +79,9 @@ A PostHog task run through this skill is done when: the relevant guide(s) were r
 - Additional related skills can be found here:
   - [sentry-stinger](../sentry-stinger) - Error and exception tracking, performance tracing, and error-context session replay. PostHog owns product analytics, feature flags, experiments, and product-behavior session replay; Sentry owns crashes, unhandled exceptions, and performance traces. Both ship a replay feature: PostHog's is for understanding product usage, Sentry's is for reproducing a bug. Do not conflate the two.
   - [devops-stinger](../devops-stinger) - Vercel reverse proxy rewrites, CI/CD, and general deployment pipeline concerns. Consult when the reverse proxy setup needs to be wired into the app's broader deployment/CI configuration, not just PostHog's own `vercel.json` block.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass, first gate of the Ship Gate pipeline below.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass, first gate of the Ship Gate pipeline below.
   - [auth-stinger](../auth-stinger) - Provider-agnostic authentication implementation. Consult when `identify()`/`alias()` timing needs to line up with the app's actual login/session flow, since PostHog's identity model assumes a stable ID sourced from auth.
-  - [ux-ui-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/ux-ui-svelte-stinger) - Svelte 5 + SvelteKit UI enforcement. Consult when building a custom survey UI, a feature-flag-gated UI variant, or reasoning about where `afterNavigate` pageview-tracking code belongs in the component tree.
+  - [ux-ui-svelte-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/ux-ui-svelte-stinger) - Svelte 5 + SvelteKit UI enforcement. Consult when building a custom survey UI, a feature-flag-gated UI variant, or reasoning about where `afterNavigate` pageview-tracking code belongs in the component tree.
 
 ## Ship Gate
 

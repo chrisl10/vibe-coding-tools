@@ -2,7 +2,7 @@
 
 Streaming CSV export from a Next.js route handler with correct headers and Excel BOM compatibility.
 
-*Derived from `research/external/2026-05-20-papaparse-official-docs.md`, `research/external/2026-05-20-owasp-csv-injection.md`.*
+*Derived from `research/external/2026-05-20-papaparse-official-docs.md`, `research/external/2026-05-20-owasp-csv-injection.md` (source-repository research, not shipped).*
 
 ---
 

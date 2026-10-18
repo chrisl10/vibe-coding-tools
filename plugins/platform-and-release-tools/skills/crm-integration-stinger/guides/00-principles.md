@@ -68,4 +68,4 @@ If in doubt, route to `security-wasp-drone` for GDPR compliance review. Never pr
 
 ---
 
-*Sources: `research/external/2026-05-20-bidirectional-sync-architecture.md`, `research/external/2026-05-20-merge-dev-unified-crm-api.md`, `research/external/2026-05-20-crm-deduplication-strategy.md`, `research/external/2026-05-20-hubspot-api-rate-limits-webhooks.md`*
+*Sources: `research/external/2026-05-20-bidirectional-sync-architecture.md`, `research/external/2026-05-20-merge-dev-unified-crm-api.md`, `research/external/2026-05-20-crm-deduplication-strategy.md`, `research/external/2026-05-20-hubspot-api-rate-limits-webhooks.md` (source-repository research, not shipped)*

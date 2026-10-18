@@ -1,6 +1,6 @@
 # 06: GitHub Actions security
 
-The hardening checklist. Every workflow goes through this. Source: `research/2026-04-25-actions-permissions-hardening.md`, `research/2026-04-25-actions-pin-to-sha.md`, `research/2026-04-25-oidc-cloud-federation.md`.
+The hardening checklist. Every workflow goes through this. Source: `research/2026-04-25-actions-permissions-hardening.md`, `research/2026-04-25-actions-pin-to-sha.md`, `research/2026-04-25-oidc-cloud-federation.md` (source-repository research, not shipped).
 
 ---
 
@@ -49,7 +49,7 @@ A workflow with unpinned `@v4` / `@main` references is a Must-fix finding for pr
 
 `scripts/pin-actions-to-sha.sh` rewrites tags to SHAs.
 
-Source: `research/2026-04-25-actions-pin-to-sha.md`.
+Source: `research/2026-04-25-actions-pin-to-sha.md` (source-repository research, not shipped).
 
 ## 3. `permissions:` block per job
 
@@ -65,7 +65,7 @@ Default is read-only at repo level (Section 1); each job grants only what it nee
 | Comment on PR | `pull-requests: write` |
 | Update issue / project | `issues: write` |
 
-Never use `permissions: write-all`. Never omit `permissions:` in a job that mutates state. Source: `research/2026-04-25-actions-permissions-hardening.md`.
+Never use `permissions: write-all`. Never omit `permissions:` in a job that mutates state. Source: `research/2026-04-25-actions-permissions-hardening.md` (source-repository research, not shipped).
 
 ## 4. OIDC for cloud: not long-lived credentials
 
@@ -102,7 +102,7 @@ OIDC federation:
     service_account: deployer@project.iam.gserviceaccount.com
 ```
 
-A pipeline that has OIDC available but uses static cloud credentials is a Must-fix finding. Source: `research/2026-04-25-oidc-cloud-federation.md`.
+A pipeline that has OIDC available but uses static cloud credentials is a Must-fix finding. Source: `research/2026-04-25-oidc-cloud-federation.md` (source-repository research, not shipped).
 
 ## 5. Fork PR safety: `pull_request` vs `pull_request_target`
 

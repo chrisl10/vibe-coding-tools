@@ -13,7 +13,7 @@ metadata:
 
 You are equipping **neon-drizzle-wasp-drone** for a stack migrating off Supabase onto Neon Postgres with Drizzle ORM, on SvelteKit (Svelte 5) deployed to Vercel. Migration guidance carries equal weight with greenfield guidance here, this skill assumes an existing Supabase app as often as it assumes a blank slate.
 
-Every fact in this skill traces to `references/research/raw/`, fetched 2026-08-14. Where the research is thin or conflicting, the distillation says so plainly. Do not extend a claim past what its citation supports.
+Every fact in this skill traces to the source research archive (not shipped; the shipped distillation summarizes it), fetched 2026-08-14. Where the research is thin or conflicting, the distillation says so plainly. Do not extend a claim past what its citation supports.
 
 ## When to use this skill
 
@@ -28,9 +28,9 @@ Every fact in this skill traces to `references/research/raw/`, fetched 2026-08-1
 ## When not to use this skill
 
 - Generic Postgres schema/indexing/partitioning theory not specific to Neon or Drizzle, that's [db-stinger](../db-stinger), which this skill's migration guide (03) explicitly defers to for expand-backfill-contract mechanics
-- WorkOS/AuthKit implementation depth beyond the database-migration touchpoints in guide 06, that's [workos-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/workos-stinger) and [auth-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/auth-stinger)
-- Svelte component architecture, routing, or UI concerns unrelated to the data layer, that's [website-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/website-stinger)
-- Security audit of RLS/PII/encryption-at-rest as a formal review, that's [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger); this skill designs the authorization approach, that skill audits it
+- WorkOS/AuthKit implementation depth beyond the database-migration touchpoints in guide 06, that's [workos-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/workos-stinger) and [auth-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/auth-stinger)
+- Svelte component architecture, routing, or UI concerns unrelated to the data layer, that's [website-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/website-stinger)
+- Security audit of RLS/PII/encryption-at-rest as a formal review, that's [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger); this skill designs the authorization approach, that skill audits it
 
 ## Procedure
 
@@ -48,7 +48,7 @@ Every fact in this skill traces to `references/research/raw/`, fetched 2026-08-1
 ## References map
 
 - `references/research/distilled-neon-drizzle.md`, load when a claim needs its citation traced, or a conflict/gap needs checking before you state something as fact
-- `references/research/raw/`, load when verifying a specific distilled claim against its primary source
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `references/schema-example.ts`, load when scaffolding a new table set
 - `references/migration-workflow-commands.md`, load when running or explaining any `drizzle-kit` command
 - `references/connection-pattern-decision-matrix.md`, load when choosing a driver/pooling strategy for a specific route
@@ -59,9 +59,9 @@ Every fact in this skill traces to `references/research/raw/`, fetched 2026-08-1
 
 - [db-wasp-drone](../../agents/db-wasp-drone.md) - Postgres-first architecture engineer; hand off generic schema/indexing/partitioning/pooling theory not specific to Neon or Drizzle.
 - [db-stinger](../db-stinger) - Provider-agnostic Postgres architecture: expand-backfill-contract mechanics, lock classes, indexing decision trees. This skill's migration guide cites it directly rather than re-deriving locking theory.
-- [website-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/website-stinger) - SvelteKit/Svelte 5 application concerns beyond the data layer: routing, components, UI state.
-- [workos-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/workos-stinger) - Deeper WorkOS/AuthKit implementation guidance beyond the database-migration touchpoints covered in guide 06.
-- [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Formal audit of RLS policies, PII handling, and encryption-at-rest; this skill designs the authorization approach, that skill audits it.
+- [website-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/website-stinger) - SvelteKit/Svelte 5 application concerns beyond the data layer: routing, components, UI state.
+- [workos-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/workos-stinger) - Deeper WorkOS/AuthKit implementation guidance beyond the database-migration touchpoints covered in guide 06.
+- [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Formal audit of RLS policies, PII handling, and encryption-at-rest; this skill designs the authorization approach, that skill audits it.
 
 ## Critical Directive
 
@@ -69,10 +69,10 @@ Every fact in this skill traces to `references/research/raw/`, fetched 2026-08-1
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
   - [db-stinger](../db-stinger) - Provider-agnostic Postgres architecture and migration-safety mechanics this skill builds on.
-  - [website-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/website-stinger) - SvelteKit/Svelte 5 application-layer guidance beyond the data layer.
-  - [workos-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/workos-stinger) - WorkOS/AuthKit implementation depth for the auth-replacement side of a Supabase migration.
-  - [auth-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/auth-stinger) - Broader authentication patterns beyond this stack's specific WorkOS integration.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass for RLS, PII, and encryption-at-rest.
+  - [website-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/website-stinger) - SvelteKit/Svelte 5 application-layer guidance beyond the data layer.
+  - [workos-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/workos-stinger) - WorkOS/AuthKit implementation depth for the auth-replacement side of a Supabase migration.
+  - [auth-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/auth-stinger) - Broader authentication patterns beyond this stack's specific WorkOS integration.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass for RLS, PII, and encryption-at-rest.
 
 ## Ship Gate
 

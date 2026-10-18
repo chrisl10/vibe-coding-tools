@@ -1,6 +1,6 @@
 # 08: Testing
 
-Sources: `research/2026-04-24-bulletproof-react-testing.md`, `research/2026-04-24-testing-stack.md`.
+Sources: `research/2026-04-24-bulletproof-react-testing.md`, `research/2026-04-24-testing-stack.md` (source-repository research, not shipped).
 
 ## The stack
 

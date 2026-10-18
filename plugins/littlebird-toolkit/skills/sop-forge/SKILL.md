@@ -24,7 +24,7 @@ the original capture. Not a generic tutorial.
 
 The published best practice for a first SOP draft is to observe the actual procedure being
 performed and write down every step in order
-[references/research/raw/sop--formats--psu-extension-writing-guide.md, via
+[references/research/raw/sop--formats--psu-extension-writing-guide.md (source-repository research, not shipped with the plugin), via
 references/research/distilled-sop-craft.md section 6]. This
 skill runs that observation against capture instead of standing behind someone with a
 clipboard.
@@ -400,7 +400,7 @@ Ship Gate removed, research-only skill, produces no committable code.
 | `references/evidence-standards.md` | Always, first. |
 | `references/littlebird-mcp-reference.md` | Always, first. |
 | `references/research/distilled-sop-craft.md` | When you need the citation behind a rule, or want to check whether a claim is evidenced at all. |
-| `references/research/README.md` | Source inventory and the archive's named gaps. |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `scripts/dedupe_snapshots.py` | Stage 3, and again at stage 5 with `--scan-secrets`. |
 
 Three of this skill's design decisions are **not** evidenced by the research archive and are

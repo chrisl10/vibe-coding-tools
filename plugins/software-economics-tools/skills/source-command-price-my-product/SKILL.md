@@ -2,6 +2,7 @@
 name: "source-command-price-my-product"
 description: "Prepare one provisional SaaS price/model recommendation with buyer evidence, workload economics, limits and an unexecuted price test."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-price-my-product

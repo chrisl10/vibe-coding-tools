@@ -6,7 +6,7 @@
 
 SvelteKit generates a `.d.ts` per route file under `.svelte-kit/types/`, deriving `RouteParams`, `PageLoad`/`PageServerLoad`/`LayoutLoad`/`LayoutServerLoad`, `PageData`/`LayoutData`, and `Actions`/`ActionData` directly from that route's actual file-system location. Hand-writing an equivalent type (e.g. a manual `{ slug: string }` for a `[slug]` route) is cumbersome and non-portable - rename the route directory and a hand-written type silently drifts from reality, while the generated one updates automatically on the next `svelte-kit sync`. Importing the wrong or a stale hand-rolled type instead of `./$types` is a **should-refactor**, escalating to **must-fix** if it's actively wrong (e.g. missing a param the route actually has).
 
-Source: `references/research/raw/sveltekit--types--generated-tsconfig-pagedata-actiondata.md`.
+Source: `references/research/raw/sveltekit--types--generated-tsconfig-pagedata-actiondata.md` (source-repository research, not shipped).
 
 ## `load` functions: universal vs server, and how to type them
 
@@ -43,7 +43,7 @@ Assuming a universal `load`'s return value automatically includes the server loa
 
 **Serialization**: server `load` return values must be `devalue`-serializable (JSON plus `BigInt`/`Date`/`Map`/`Set`/`RegExp`/cyclical references) because they cross the network boundary to the client. A server `load` returning a non-serializable value (a live DB connection, a class instance with methods) is a **must-fix**. Universal `load` functions have no such constraint.
 
-Source: `references/research/raw/sveltekit--load--universal-and-server-load-typing.md`.
+Source: `references/research/raw/sveltekit--load--universal-and-server-load-typing.md` (source-repository research, not shipped).
 
 ## `PageProps`/`LayoutProps` (SvelteKit 2.16.0+)
 
@@ -79,7 +79,7 @@ export const actions: Actions = {
 
 Client-side code deserializing an action's response (e.g. via `use:enhance` or a manual fetch to the action endpoint) must use the deserialize helper from `$app/forms`, not plain `JSON.parse()` - action results support the same `Date`/`BigInt`-inclusive types as `load` results, which raw `JSON.parse` can't reconstruct. A manual `JSON.parse(await res.text())` on an action response is a **must-fix**.
 
-Source: `references/research/raw/sveltekit--form-actions--typing-and-flow.md`.
+Source: `references/research/raw/sveltekit--form-actions--typing-and-flow.md` (source-repository research, not shipped).
 
 ## `+server.ts` endpoints and `App.Locals`/`App.PageData`
 
@@ -100,7 +100,9 @@ A `+server.ts` file exports HTTP-verb handlers (`GET`, `POST`, etc.) typed again
 
 ## Sources
 
-- `references/research/raw/sveltekit--types--generated-tsconfig-pagedata-actiondata.md`
-- `references/research/raw/sveltekit--load--universal-and-server-load-typing.md`
-- `references/research/raw/sveltekit--form-actions--typing-and-flow.md`
+The notes listed below are source-repository research, not shipped.
+
+- `references/research/raw/sveltekit--types--generated-tsconfig-pagedata-actiondata.md` (source-repository research, not shipped)
+- `references/research/raw/sveltekit--load--universal-and-server-load-typing.md` (source-repository research, not shipped)
+- `references/research/raw/sveltekit--form-actions--typing-and-flow.md` (source-repository research, not shipped)
 - `references/research/distilled-typescript-node.md` section 2

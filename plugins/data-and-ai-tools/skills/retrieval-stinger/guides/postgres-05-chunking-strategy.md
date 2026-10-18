@@ -2,7 +2,7 @@
 
 How source documents get split into retrievable units before embedding and indexing. This is upstream of every other guide in this section - a bad chunk boundary caps the recall ceiling no fusion or reranking step can fix.
 
-> Ground truth: `references/research/raw/arxiv--chunking-strategies--systematic-analysis-reliable-qa-2026.md` (fresh 2026 benchmark archived by this Stinger), cross-referenced with `.claude/skills/mind-stinger/research/2026-04-25-vectara-naacl-2025-chunking.md` and `.claude/skills/mind-stinger/references/vectara-naacl-2025-chunking-finding.md` (the Vectara NAACL 2025 finding, already load-bearing elsewhere in this Wasp Nest). Synthesis: `references/research/distilled-retrieval.md`.
+> Ground truth: `references/research/raw/arxiv--chunking-strategies--systematic-analysis-reliable-qa-2026.md` (fresh 2026 benchmark archived by this Stinger), cross-referenced with `.claude/skills/mind-stinger/research/2026-04-25-vectara-naacl-2025-chunking.md` (source-repository research, not shipped) and `.claude/skills/mind-stinger/references/vectara-naacl-2025-chunking-finding.md` (the Vectara NAACL 2025 finding, already load-bearing elsewhere in this Wasp Nest). Synthesis: `references/research/distilled-retrieval.md`.
 
 ---
 

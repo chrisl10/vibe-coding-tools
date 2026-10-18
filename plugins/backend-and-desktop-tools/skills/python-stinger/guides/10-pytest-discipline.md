@@ -226,7 +226,7 @@ Don't use it for:
 
 ## Sources
 
-- `research/2026-05-03-pytest-django-factory-boy.md`
+- `research/2026-05-03-pytest-django-factory-boy.md` (source-repository research, not shipped)
 - https://pytest-django.readthedocs.io/
 - https://factoryboy.readthedocs.io/
 - https://pytest-factoryboy.readthedocs.io/

@@ -108,4 +108,4 @@ This is additive to TypeDoc, not a replacement - the two commonly run side by si
 
 `examples/typedoc-setup.md` is a complete, worked TypeDoc setup for a real package: Hivemind (`@deeplake/hivemind`, TypeScript `^6`, ESM, Node `>=22`, built with `tsc` + `esbuild`). It walks install, config, doc comments, generation, and the CI gate end to end for that package's public API (`src/index.ts` as the deliberate entry point). If you are documenting Hivemind's TS API specifically, start there.
 
-*Source: `research/distilled-mcp-tool-docs.md` (section 2); `research/external/2026-06-16-typedoc-typescript-api-docs.md`; `research/external/2026-08-14-typedoc-vs-jsdoc-vs-api-extractor.md`.*
+*Source: `research/distilled-mcp-tool-docs.md` (section 2); `research/external/2026-06-16-typedoc-typescript-api-docs.md`; `research/external/2026-08-14-typedoc-vs-jsdoc-vs-api-extractor.md` (source-repository research, not shipped).*

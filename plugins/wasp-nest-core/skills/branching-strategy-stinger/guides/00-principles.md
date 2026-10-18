@@ -2,7 +2,7 @@
 
 These principles apply on every `branching-strategy-wasp-drone` invocation. They are the floor - no recommendation may violate them.
 
-**Research sources:** `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md` (DORA metric), `research/external/2026-02-26-tbd-elite-teams-javacodegeeks.md` (elite team profile), `research/external/2026-04-04-tbd-discipline-codecraftdiary.md` (branch discipline rules).
+**Research sources:** `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md` (DORA metric), `research/external/2026-02-26-tbd-elite-teams-javacodegeeks.md` (elite team profile), `research/external/2026-04-04-tbd-discipline-codecraftdiary.md` (source-repository research, not shipped) (branch discipline rules).
 
 ---
 
@@ -10,7 +10,7 @@ These principles apply on every `branching-strategy-wasp-drone` invocation. They
 
 **Rule:** Any branch that has not merged to main within 2 working days in an active codebase is in the long-lived-branch trap and is generating compounding merge debt.
 
-**Evidence:** The 2025 DORA report found elite teams have a branch lifetime median of 0.8 days. Multiple sources independently document exponential merge conflict growth beyond 3 days on any codebase with >5 active contributors. (Source: `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md`)
+**Evidence:** The 2025 DORA report found elite teams have a branch lifetime median of 0.8 days. Multiple sources independently document exponential merge conflict growth beyond 3 days on any codebase with >5 active contributors. (Source: `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md` [source-repository research, not shipped])
 
 **What to do with it:** Name the threshold explicitly in every model recommendation. Do not soften it. When a team's branches routinely exceed 2 days, the root cause is almost always: features that are too large, missing feature flag infrastructure, or inadequate CI speed - not an inherent property of the team's branching model.
 
@@ -25,7 +25,7 @@ These principles apply on every `branching-strategy-wasp-drone` invocation. They
 | **GitLab Flow** | Explicit environment promotion gates needed as first-class Git objects | NO - niche; recommend only when staging/UAT/prod promotion is the stated pain |
 | **GitFlow** | Team simultaneously supports multiple live product versions AND has an external release gate (App Store, enterprise upgrade cycles) | NEVER as default - explicitly antipattern for CD/SaaS teams |
 
-**Evidence for GitFlow skepticism:** In a 2024 GitKraken survey, 43% of teams using GitFlow reported "branching confusion" as a top friction point. A typical CI/CD workflow for GitFlow is 3-4x longer than a trunk-based equivalent. (Source: `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md`)
+**Evidence for GitFlow skepticism:** In a 2024 GitKraken survey, 43% of teams using GitFlow reported "branching confusion" as a top friction point. A typical CI/CD workflow for GitFlow is 3-4x longer than a trunk-based equivalent. (Source: `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md` [source-repository research, not shipped])
 
 ---
 
@@ -69,7 +69,7 @@ Feature flags are not free. Before recommending them as the solution to long-liv
 
 ## 5. "Most teams run something in between"
 
-The research corpus (notably `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md`) notes: "most teams in 2026 run something between trunk-based and GitFlow: short-lived branches (1-3 days), mandatory PR review, squash merges into main, and automated deployment on merge."
+The research corpus (notably `research/external/2026-03-31-tbd-vs-gitflow-comparison-novvista.md` [source-repository research, not shipped]) notes: "most teams in 2026 run something between trunk-based and GitFlow: short-lived branches (1-3 days), mandatory PR review, squash merges into main, and automated deployment on merge."
 
 Whether you call this "GitHub Flow" or "trunk-based with short-lived branches" is mostly a naming debate. The important invariants are:
 1. Branches are short-lived (≤ 2 working days)

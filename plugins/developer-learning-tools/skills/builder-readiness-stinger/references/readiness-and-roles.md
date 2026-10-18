@@ -11,7 +11,7 @@ This is a learning/advisory contract. It is not a competency certification or a 
 | Data/access | Which information is stored and who may read/change it | Unknown boundaries block a live-user recommendation |
 | Quality | Expected behavior, failure case and evidence | A passing screenshot alone does not prove all behavior |
 | Operations | Who answers users, monitors failures and restores data | Named owner or unresolved paid-user readiness |
-| Commercial | Budget/time availability and business uncertainty | Route pricing/estimation/market validation; no guessed totals |
+| Commercial | Budget/time availability and business uncertainty | Route pricing/estimation/market validation (`/validate-idea`); no guessed totals |
 
 ## Who is responsible
 

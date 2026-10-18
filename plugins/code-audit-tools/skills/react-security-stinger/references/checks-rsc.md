@@ -4,9 +4,9 @@ Load when: running guide 02. Applies to RSC outside Next.js: Vite with `@vitejs/
 
 Key facts every check leans on:
 
-- Every `'use server'` function is a network endpoint any client can call with arguments it chooses [raw/rsc--react-docs-use-server-and-server-functions.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-docs-use-server-and-server-functions.md).
+- Every `'use server'` function is a network endpoint any client can call with arguments it chooses raw/rsc--react-docs-use-server-and-server-functions.md.
 - A module-level `'use server'` turns every export of that file into an endpoint, including helpers nobody meant to expose.
-- Apps that support RSC were exposed to CVE-2025-55182 even with zero Server Functions [raw/rsc--react-blog-cve-2025-55182.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-blog-cve-2025-55182.md).
+- Apps that support RSC were exposed to CVE-2025-55182 even with zero Server Functions raw/rsc--react-blog-cve-2025-55182.md.
 
 ---
 
@@ -18,7 +18,7 @@ Key facts every check leans on:
 - **Severity:** per the advisory (CVE-2025-55182 range: `critical`; DoS only: `high`; source exposure only: `medium`).
 - **Vulnerable:** `"react-server-dom-webpack": "19.2.0"` resolved in `package-lock.json`.
 - **Fixed:** `"react-server-dom-webpack": "19.2.8"` (or 19.3.x), `react` and `react-dom` on the same version, lockfile regenerated; `@vitejs/plugin-rsc` 0.5.29 or later.
-- **Refs:** CVE-2025-55182, CVE-2025-55183, CVE-2025-55184, CVE-2025-67779, CVE-2026-23864, CVE-2026-23869, CVE-2026-23870, CVE-2026-44907, CWE-502, CWE-400, CWE-1395, OWASP A03:2025, OWASP A08:2025, [raw/rsc--github-react-security-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--github-react-security-advisories.md), [raw/rsc--vite-plugin-rsc-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--vite-plugin-rsc-advisories.md).
+- **Refs:** CVE-2025-55182, CVE-2025-55183, CVE-2025-55184, CVE-2025-67779, CVE-2026-23864, CVE-2026-23869, CVE-2026-23870, CVE-2026-44907, CWE-502, CWE-400, CWE-1395, OWASP A03:2025, OWASP A08:2025, raw/rsc--github-react-security-advisories.md, raw/rsc--vite-plugin-rsc-advisories.md.
 
 ## RC-02 Server Function with no authentication or authorization
 
@@ -43,7 +43,7 @@ Key facts every check leans on:
     await db.project.delete({ where: { id: project.id } });
   }
   ```
-- **Refs:** CWE-862, CWE-863, CWE-639, OWASP A01:2025, [raw/rsc--react-docs-use-server-and-server-functions.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-docs-use-server-and-server-functions.md).
+- **Refs:** CWE-862, CWE-863, CWE-639, OWASP A01:2025, raw/rsc--react-docs-use-server-and-server-functions.md.
 
 ## RC-03 Server Function trusts its arguments
 
@@ -68,7 +68,7 @@ Key facts every check leans on:
     await db.user.update({ where: { id: user.id }, data: input });
   }
   ```
-- **Refs:** CWE-20, CWE-915 (A08:2025 maps it), OWASP A05:2025, [raw/rsc--react-docs-use-server-and-server-functions.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-docs-use-server-and-server-functions.md).
+- **Refs:** CWE-20, CWE-915 (A08:2025 maps it), OWASP A05:2025, raw/rsc--react-docs-use-server-and-server-functions.md.
 
 ## RC-04 Unintended endpoints from module-level 'use server'
 
@@ -83,7 +83,7 @@ Key facts every check leans on:
   export async function signUp(fd: FormData) { /* ... */ }
   ```
 - **Fixed:** move `getUserByEmail` to a `server-only` module without the directive; keep only real actions in the `'use server'` file.
-- **Refs:** CWE-749 (A01:2025 maps it), CWE-200, [raw/rsc--react-docs-use-server-and-server-functions.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-docs-use-server-and-server-functions.md).
+- **Refs:** CWE-749 (A01:2025 maps it), CWE-200, raw/rsc--react-docs-use-server-and-server-functions.md.
 
 ## RC-05 Secrets hardcoded in or captured by Server Functions
 
@@ -108,7 +108,7 @@ Key facts every check leans on:
     await stripe(process.env.STRIPE_SECRET_KEY!).refund(await ownedOrder(orderId, user));
   }
   ```
-- **Refs:** CWE-798, CWE-497, CVE-2025-55183, OWASP A07:2025, [raw/rsc--react-blog-dos-and-source-exposure.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-blog-dos-and-source-exposure.md), [raw/rsc--vite-plugin-rsc-readme-closure-encryption.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--vite-plugin-rsc-readme-closure-encryption.md).
+- **Refs:** CWE-798, CWE-497, CVE-2025-55183, OWASP A07:2025, raw/rsc--react-blog-dos-and-source-exposure.md, raw/rsc--vite-plugin-rsc-readme-closure-encryption.md.
 
 ## RC-06 Server Components pass secrets or whole records to Client Components
 
@@ -126,7 +126,7 @@ Key facts every check leans on:
   const user = await db.user.findUnique({ where: { id }, select: { name: true, avatarUrl: true } });
   return <ProfileCard user={user} />;
   ```
-- **Refs:** CWE-200, OWASP A01:2025, [raw/rsc--react-docs-taint-apis.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-docs-taint-apis.md).
+- **Refs:** CWE-200, OWASP A01:2025, raw/rsc--react-docs-taint-apis.md.
 
 ## RC-07 No cross-site request protection on Server Function endpoints
 
@@ -151,7 +151,7 @@ Key facts every check leans on:
     // then decode and run
   });
   ```
-- **Refs:** CWE-352, CWE-346, OWASP A01:2025, CVE-2026-49455, CVE-2026-22030, [raw/owasp--cheatsheet-csrf.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/owasp--cheatsheet-csrf.md), [raw/router--waku-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/router--waku-advisories.md), [raw/router--react-router-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/router--react-router-advisories.md).
+- **Refs:** CWE-352, CWE-346, OWASP A01:2025, CVE-2026-49455, CVE-2026-22030, raw/owasp--cheatsheet-csrf.md, raw/router--waku-advisories.md, raw/router--react-router-advisories.md.
 
 ## RC-08 Server Function errors and return values leak internals
 
@@ -170,7 +170,7 @@ Key facts every check leans on:
 - **Severity:** `low` (defense-in-depth note); experimental React in production: `low` with CWE-1104.
 - **Vulnerable:** `taintObjectReference('no', user); return <Card user={{ ...user }} />; // clone is not tainted`
 - **Fixed:** select fields at the data layer (RC-06); keep taint as an extra layer only.
-- **Refs:** [raw/rsc--react-docs-taint-apis.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--react-docs-taint-apis.md).
+- **Refs:** raw/rsc--react-docs-taint-apis.md.
 
 ## RC-10 RSC development server reachable from the network
 
@@ -179,4 +179,4 @@ Key facts every check leans on:
 - **Severity:** dev server deployed to production with plugin-rsc below 0.5.6: `critical` (CVE-2025-67489 RCE). Bound to all interfaces only in local development: `low`, `possible`.
 - **Vulnerable:** `"start": "vite --host 0.0.0.0"` in production with `@vitejs/plugin-rsc@0.5.4`.
 - **Fixed:** build and run the production server (`vite build` then the framework's server entry); upgrade the plugin.
-- **Refs:** CVE-2025-67489, CVE-2025-68155, [raw/rsc--vite-plugin-rsc-advisories.md](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/code-audit-tools/skills/react-security-stinger/references/research/raw/rsc--vite-plugin-rsc-advisories.md).
+- **Refs:** CVE-2025-67489, CVE-2025-68155, raw/rsc--vite-plugin-rsc-advisories.md.

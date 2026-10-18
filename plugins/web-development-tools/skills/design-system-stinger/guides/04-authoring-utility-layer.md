@@ -7,7 +7,7 @@ product's look. For a glass aesthetic, this file is named
 `02-surfaces-and-borders.css`. The name follows the aesthetic.
 
 > Template: `../templates/utility-layer.css`.
-> Research backing: `../research/2026-04-24-glassmorphism-production.md`.
+> Research backing: `../research/2026-04-24-glassmorphism-production.md` (source-repository research, not shipped).
 
 ## File structure
 

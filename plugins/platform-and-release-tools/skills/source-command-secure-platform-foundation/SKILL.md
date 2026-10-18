@@ -2,6 +2,7 @@
 name: "source-command-secure-platform-foundation"
 description: "Prepare and implement an authorized platform foundation with identity, secrets, environment and data-access boundaries."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-secure-platform-foundation

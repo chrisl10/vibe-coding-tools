@@ -1,6 +1,6 @@
 # Guide 6: Routing Middleware and Firewall (WAF, rate limiting)
 
-Grounded in `references/research/distilled-vercel.md` §7-8, `references/research/raw/vercel--routing-middleware--edge-middleware.md`, `references/research/raw/vercel--firewall--waf-rate-limiting.md`.
+Grounded in `references/research/distilled-vercel.md` §7-8, `references/research/raw/vercel--routing-middleware--edge-middleware.md`, `references/research/raw/vercel--firewall--waf-rate-limiting.md` (source-repository research, not shipped).
 
 ## When to walk this guide
 

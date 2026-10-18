@@ -1,6 +1,6 @@
 # 03: SEO & AEO System
 
-Source PRD: `research/source-prds/prd-phase-03-seo-aeo-system.md`
+Source PRD: `research/source-prds/prd-phase-03-seo-aeo-system.md` (source-repository research, not shipped)
 
 ---
 

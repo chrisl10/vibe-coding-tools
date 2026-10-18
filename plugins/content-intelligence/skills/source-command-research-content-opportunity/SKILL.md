@@ -2,6 +2,7 @@
 name: "source-command-research-content-opportunity"
 description: "Vet one fresh content opportunity with receipts, source times, duplicate checks, and honest no-post exits."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-research-content-opportunity

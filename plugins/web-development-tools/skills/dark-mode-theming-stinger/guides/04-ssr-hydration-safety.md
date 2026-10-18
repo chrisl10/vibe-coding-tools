@@ -2,7 +2,7 @@
 
 *Covers: `suppressHydrationWarning`, `useIsomorphicLayoutEffect`, `mounted` guard pattern, `typeof window` guards, `ThemeWrapper` skeleton.*
 
-*Sources: `research/external/2026-05-20-ssr-color-scheme-detection.md`, `research/external/2026-05-20-next-themes-api.md`*
+*Sources: `research/external/2026-05-20-ssr-color-scheme-detection.md`, `research/external/2026-05-20-next-themes-api.md` (source-repository research, not shipped)*
 
 ---
 

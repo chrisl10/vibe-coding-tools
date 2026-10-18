@@ -1,6 +1,6 @@
 # Prepare international pricing for accountant and counsel review
 
-This guide prepares the facts needed for Terms/MSA currency, tax and refund disclosures. Legal Docs owns the document handoff, not tax advice or accounting determinations. Read the [research digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/business-and-product-tools/skills/legal-docs-stinger/references/research/international-pricing/distilled.md), then use the [packet](../templates/international-pricing-review-packet.md) and [cases](../examples/international-pricing-review-cases.md).
+This guide prepares the facts needed for Terms/MSA currency, tax and refund disclosures. Legal Docs owns the document handoff, not tax advice or accounting determinations. Read the research digest, then use the [packet](../templates/international-pricing-review-packet.md) and [cases](../examples/international-pricing-review-cases.md).
 
 ## Procedure
 

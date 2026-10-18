@@ -2,6 +2,7 @@
 name: "source-command-prepare-learning-exercise"
 description: "Prepare one source-linked technical exercise, teach-back and criterion-level evidence rubric without assuming mastery."
 license: "AGPL-3.0-or-later"
+disable-model-invocation: true
 ---
 
 # source-command-prepare-learning-exercise

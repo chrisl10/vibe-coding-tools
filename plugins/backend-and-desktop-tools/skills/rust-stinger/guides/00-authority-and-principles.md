@@ -26,11 +26,11 @@ Reconstruct why the change is authorized, which paths are owned, which gates are
 
 ## Non-negotiable implementation posture
 
-- Use typed, explicit state at boundaries. Serde ignores unknown fields by default, so strict local control/config inputs need an intentional rejection or validated-conversion policy ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/boundaries/2026-07-24-serde-container-attributes.md)).
-- Treat cancellation safety as a property of each awaited operation, not of async code generally ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/async/2026-07-24-tokio-select-cancellation.md)).
-- Default sensitive instrumentation to `skip_all` because `#[instrument]` otherwise records function arguments ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/observability/2026-07-24-tracing-instrument.md)).
-- Default to safe Rust and isolate any `unsafe` proof obligation behind the smallest safe abstraction ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/rust-cargo/2026-07-24-unsafe-rust.md)).
-- Never equate a passing license/advisory tool with final legal or security acceptance; cargo-deny itself documents limits to license discovery ([research](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/backend-and-desktop-tools/skills/rust-stinger/research/supply-chain/2026-07-24-cargo-deny-license-limitations.md)).
+- Use typed, explicit state at boundaries. Serde ignores unknown fields by default, so strict local control/config inputs need an intentional rejection or validated-conversion policy (research).
+- Treat cancellation safety as a property of each awaited operation, not of async code generally (research).
+- Default sensitive instrumentation to `skip_all` because `#[instrument]` otherwise records function arguments (research).
+- Default to safe Rust and isolate any `unsafe` proof obligation behind the smallest safe abstraction (research).
+- Never equate a passing license/advisory tool with final legal or security acceptance; cargo-deny itself documents limits to license discovery (research).
 
 ## Gate exit
 

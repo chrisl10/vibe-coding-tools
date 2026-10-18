@@ -12,14 +12,6 @@ metadata:
 
 # Keyword Intelligence Stinger
 
-> **Forge status:** stages 1-6 complete (Topic, Research, Distillation, References, Guides, final
-> Skill/Drone authorship). Stage 7 (Register: pest-controller-suit roster entry, deploy, cross-repo
-> reference sync) has not run yet. Every factual claim below traces to
-> `references/research/raw/` via `references/research/distilled-keyword-intelligence.md`, or is
-> flagged explicitly as a judgment call. See `guides/03-tier-3-ai-inference.md` in particular for a
-> binding sequencing note (Tier 3 cannot read `site-data/`, which does not exist yet at this wave)
-> that neither PRD states outright but follows directly from the two PRDs' own wave numbers.
-
 You are equipping **keyword-intelligence-wasp-drone**, part of the Website Auditor by Legion Code
 Inc. plugin. Full scope and acceptance criteria: [prd-006-keyword-intelligence](../../library/requirements/backlog/prd-006-keyword-intelligence/prd-006-keyword-intelligence-index.md).
 
@@ -83,7 +75,7 @@ Full decision logic: `guides/05-fallback-chain-and-provenance.md`. Deterministic
   auditable tier decision instead of reasoning it out fresh each time.
 - `references/research/distilled-keyword-intelligence.md`, load when a tier-mechanics claim needs
   verification or a dispute needs settling.
-- `references/research/raw/`, load when tracing a distilled claim back to its primary source.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 - `guides/01-tier-1-search-console.md` through `guides/05-fallback-chain-and-provenance.md`, load
   per-tier as described in each guide's own heading.
 

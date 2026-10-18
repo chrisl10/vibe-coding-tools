@@ -2,7 +2,7 @@
 
 Verb: "port the logs page", "port virtual keys to Svelte", "next wave", "verify this port against the contract".
 
-A port wave is one bounded batch of surfaces moved from the React reference to Svelte against an immutable backend contract. The motivating production case is the Bifrost dashboard port (source stack in [raw/04](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/web-development-tools/skills/react-to-svelte-stinger/references/research/raw/04-bifrost-ui-stack.md)); the procedure generalizes to any React reference.
+A port wave is one bounded batch of surfaces moved from the React reference to Svelte against an immutable backend contract. The motivating production case is the Bifrost dashboard port (source stack in raw/04); the procedure generalizes to any React reference.
 
 ## Wave anatomy (per surface)
 

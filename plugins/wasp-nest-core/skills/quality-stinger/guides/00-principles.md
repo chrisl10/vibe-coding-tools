@@ -14,7 +14,7 @@ When a plan is ambiguous, unclear, or contradictory:
 - Do **not** rewrite the plan.
 - **Do** note the ambiguity in the Notes column of the traceability table and, if material, escalate to `library-wasp-drone` in the report summary.
 
-Why: `library-wasp-drone` owns plan authorship. If `quality-wasp-drone` silently "fixes" plans by favorable reading, the audit loses its independence. (Source: `research/2026-04-24-google-code-review-standard.md`, reviewers verify design against intent, they don't re-author it.)
+Why: `library-wasp-drone` owns plan authorship. If `quality-wasp-drone` silently "fixes" plans by favorable reading, the audit loses its independence. (Source: `research/2026-04-24-google-code-review-standard.md` [source-repository research, not shipped], reviewers verify design against intent, they don't re-author it.)
 
 ## 2. Evidence over opinion
 
@@ -42,7 +42,7 @@ See `05-severity-classification.md` for the full rubric. In summary:
 - **Warning**, should fix. Merge-blocking is a judgment call; usually not.
 - **Suggestion**, consider improving. Never ship-blocking.
 
-Inflating severity burns the invoker's attention budget. If everything is Critical, nothing is. The canonical anchor: Critical = user-visible broken behavior OR a plan requirement absent OR a security/data-integrity risk. (Source: `research/2026-04-24-bug-severity-levels.md`.)
+Inflating severity burns the invoker's attention budget. If everything is Critical, nothing is. The canonical anchor: Critical = user-visible broken behavior OR a plan requirement absent OR a security/data-integrity risk. (Source: `research/2026-04-24-bug-severity-levels.md` [source-repository research, not shipped].)
 
 ## 4. No silent passes
 
@@ -89,4 +89,4 @@ Some checks are universal ("error handling exists"). Some are repo-specific ("ev
 ## See also
 
 - Example of each principle in action: `examples/01-happy-path-clean-audit.md`, `examples/02-blocker-heavy-audit.md`, `examples/03-ordering-violation-escalation.md`.
-- Research backing: `research/2026-04-24-google-code-review-standard.md`, `research/2026-04-24-bug-severity-levels.md`.
+- Research backing: `research/2026-04-24-google-code-review-standard.md`, `research/2026-04-24-bug-severity-levels.md` (source-repository research, not shipped).

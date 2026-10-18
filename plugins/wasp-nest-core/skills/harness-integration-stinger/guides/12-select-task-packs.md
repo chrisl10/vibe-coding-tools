@@ -1,6 +1,6 @@
 # Select the packs required by this task
 
-Use for O287. Read [the digest](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/src/skills/harness-integration-stinger/references/research/pack-hook-proof/distilled-pack-hook-proof.md) and complete [the selection receipt](../templates/task-pack-selection-receipt.md).
+Use for O287. Read the digest and complete [the selection receipt](../templates/task-pack-selection-receipt.md).
 
 1. Record the user outcome, target host/carrier, constraints and requested deliverable. Name actual components needed for each step. Classify each as specialist pair, standalone skill, orchestrator or command composition using the live catalog. A command-only pack need not acquire a fake agent.
 2. In source preparation, find exactly one catalog owner for every component. Reuse scripts/plugin_topology.py component_owner and resolve_plugins through the existing build tooling. Close unconditional requires recursively, include Core, and retain the selected branch's exact optional_workflow_requirements keys. The source resolver does not automatically close optional workflow dependencies. Add only the branches this task actually calls; record unchosen branches as inactive.

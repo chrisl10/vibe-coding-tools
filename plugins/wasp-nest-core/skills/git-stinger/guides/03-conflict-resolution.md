@@ -188,4 +188,4 @@ incoming version
 
 The ancestor block makes it much easier to understand what both sides changed from.
 
-Sources: research/external/01-interactive-rebase.md (rebase conflicts section)
+Sources: research/external/01-interactive-rebase.md (source-repository research, not shipped) (rebase conflicts section)

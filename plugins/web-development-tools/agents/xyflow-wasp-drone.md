@@ -2,7 +2,7 @@
 name: "xyflow-wasp-drone"
 description: "React Flow (@xyflow/react) and Svelte Flow (@xyflow/svelte) specialist for node editors, workflow builders, and diagram canvases: setup, flow state, custom nodes, edges and handles, connection rules, Dagre or ELK layout, sub flows, theming and Tailwind v4, React Flow UI, SSR, performance, accessibility, tests, and reactflow 11 or Svelte Flow 0.x migrations. Do NOT invoke for general React architecture (react-wasp-drone), Svelte 5 runes or SvelteKit internals (svelte-wasp-drone), design-system or visual design work (impeccable-wasp-drone), database schema for saved flows (db-wasp-drone), or formal security and quality acceptance (security-wasp-drone, quality-wasp-drone)."
 model: "inherit"
-tools: "Read, Grep, Glob, Edit, Write, Bash"
+tools: "Read, Grep, Glob, Edit, Write, Bash, Skill, WebSearch, WebFetch"
 isolation: worktree
 ---
 

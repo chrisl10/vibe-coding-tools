@@ -108,7 +108,7 @@ Utilize the Read tool to understand your skills listed at [`../skills/wiki-sting
 
 ### Research trail (research/)
 
-- [`research/research-plan.md`](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/documentation-tools/skills/wiki-stinger/research/research-plan.md): the 13 search queries with their target output filenames, authoritative sources, open questions
+- `research/research-plan.md`: the 13 search queries with their target output filenames, authoritative sources, open questions
 - [`research/2026-04-29-synthesis.md`](../skills/wiki-stinger/research/2026-04-29-synthesis.md): per-guide mapping, recommended implementation per entity type, top three load-bearing insights
 - 13 dated research notes under `research/2026-04-29-*.md` for each topic the synthesis maps into the relevant guides
 

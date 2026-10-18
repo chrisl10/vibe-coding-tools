@@ -14,7 +14,7 @@ metadata:
 
 You are equipping **vercel-wasp-drone**, the Wasp Nest's Vercel deployment specialist. This skill covers deploying and operating a SvelteKit (Svelte 5) app on Vercel with a Neon Postgres database: `@sveltejs/adapter-vercel` configuration, Node.js vs Edge runtime choice, ISR and Cache-Control precedence, environment variables per environment, cron jobs, image optimization (SvelteKit has no built-in Image component, unlike Next.js/Nuxt), Routing Middleware, WAF and rate limiting, the Vercel cost model and how to keep it from running away, `vercel.json`/Build Output API, Turborepo monorepo deploys, Instant Rollback, and the Vercel-Neon integration.
 
-Every factual claim in this skill traces to a downloaded primary source in `references/research/raw/`. Do not author a Vercel fact from training data - if it is not in the archive, it is not a fact yet.
+Every factual claim in this skill traces to a downloaded primary source in the source research archive (not shipped; the shipped distillation summarizes it). Do not author a Vercel fact from training data - if it is not in the archive, it is not a fact yet.
 
 ## When to use this skill
 
@@ -40,7 +40,7 @@ Load on demand; do not read everything up front.
 | Path | Load when |
 | --- | --- |
 | `references/research/distilled-vercel.md` | Verifying any Vercel claim fast, or resolving a conflict (see its gaps section) |
-| `references/research/raw/` | Tracing a claim to its primary source |
+| Source research archive (not shipped with the plugin) | Source-repository only; the shipped distillation summarizes it, do not require it |
 | `guides/01-adapter-setup-and-runtime-choice.md` | First-time `svelte.config.js`/`adapter-vercel` setup, or Node.js vs Edge decisions |
 | `guides/02-caching-and-isr.md` | ISR config, Cache-Control precedence, or reading `x-vercel-cache` |
 | `guides/03-environment-variables-and-secrets.md` | Adding, auditing, or debugging env vars across environments |
@@ -59,18 +59,18 @@ The research archive does not cover the exact current npm import paths for `@ver
 
 ## Quality bar
 
-A Vercel task run through this skill is done when: the relevant guide(s) were read in order (not skipped), every factual claim used in the output traces to `references/research/raw/`, a cost/spend-limit check ran for anything with variable-cost surfaces (Guide 8), and - for anything development-focused - the Ship Gate below completed with user approval before commit or push.
+A Vercel task run through this skill is done when: the relevant guide(s) were read in order (not skipped), every factual claim used in the output traces to the source research archive (not shipped; the shipped distillation summarizes it), a cost/spend-limit check ran for anything with variable-cost surfaces (Guide 8), and - for anything development-focused - the Ship Gate below completed with user approval before commit or push.
 
 ## Critical Directive
 
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/data-and-ai-tools/skills/db-stinger) - PostgreSQL schema, indexing, and migrations. Consult for the Neon database schema this skill's integration patterns connect to.
+  - [db-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/data-and-ai-tools/skills/db-stinger) - PostgreSQL schema, indexing, and migrations. Consult for the Neon database schema this skill's integration patterns connect to.
   - [cron-scheduling-stinger](../cron-scheduling-stinger) - Cron scheduling patterns beyond Vercel's own cron jobs. Consult when a scheduling need outgrows Vercel's plan limits.
-  - [image-optimization-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/image-optimization-stinger) - Broader image optimization practice. Consult alongside Guide 5 for non-Vercel-specific image pipeline decisions.
-  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass, first gate of the Ship Gate pipeline below.
-  - [tanstack-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/web-development-tools/skills/tanstack-stinger) - TanStack library usage in the same SvelteKit stack. Consult when a Vercel-deployed route also uses TanStack Query or Table.
+  - [image-optimization-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/image-optimization-stinger) - Broader image optimization practice. Consult alongside Guide 5 for non-Vercel-specific image pipeline decisions.
+  - [security-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/security-stinger) - Security audit pass, first gate of the Ship Gate pipeline below.
+  - [tanstack-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/web-development-tools/skills/tanstack-stinger) - TanStack library usage in the same SvelteKit stack. Consult when a Vercel-deployed route also uses TanStack Query or Table.
 
 ## Ship Gate
 

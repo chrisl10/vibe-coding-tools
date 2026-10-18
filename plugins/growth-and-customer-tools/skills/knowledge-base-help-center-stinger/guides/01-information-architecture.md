@@ -87,4 +87,4 @@ Most KB platforms expose an "article tags" or "keywords" field. Use it:
 
 ---
 
-*Sources: `research/external/2026-05-20-kb-analytics-content-gap.md`, `research/internal/command-brief-analysis.md`.*
+*Sources: `research/external/2026-05-20-kb-analytics-content-gap.md`, `research/internal/command-brief-analysis.md` (source-repository research, not shipped).*

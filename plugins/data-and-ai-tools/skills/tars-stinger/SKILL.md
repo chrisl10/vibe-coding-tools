@@ -49,26 +49,26 @@ Read [guides/07-case-and-kipp.md](guides/07-case-and-kipp.md) before starting or
 - [references/templates/](references/templates), load when writing a chip brief, the CASE and KIPP briefs, the tick prompt, or a new ledger.
 - [scripts/ci-poll.sh](scripts/ci-poll.sh), run under `Monitor` for the 1-minute CI poll; its header documents the watch file and states.
 - [references/research/distilled-tars.md](references/research/distilled-tars.md), load when a mechanism claim (timers, monitors, chips, messaging) needs verification.
-- [references/research/raw/](https://github.com/legioncodeinc/the-wasp-nest-source/blob/main/packs/data-and-ai-tools/skills/tars-stinger/references/research/raw), load when tracing a distilled claim to its source.
+- Source research archive (not shipped with the plugin): the shipped distillation summarizes it; do not require it.
 
 ## Related drones and stingers
 
-- [tars-wasp-drone](../../agents/tars-wasp-drone.md) - Paired Drone. In the desktop app the entry is `/tars`. Its `disallowedTools` (removing `Edit`, `NotebookEdit`, and `Workflow`) apply only when it runs as the main thread, and `claude --agent tars-wasp-drone` starts a terminal session that lacks the chip and session tools (D7, G3). `Write` and `Bash` stay either way (ledger, `gh`, poller), so "no implementation work" is enforced mostly by the rules, not the tool list.
-- [pest-controller-suit](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/pest-controller-suit) - The roster; use it to name which Drone a chip should arm itself with.
-- [kanban-flow-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/business-and-product-tools/skills/kanban-flow-stinger) - WIP limits and flow metrics when TARS is juggling many chips.
-- [ci-release-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/ci-release-stinger) - What the chips use to fix CI and release pipelines TARS reports as red.
-- [branching-strategy-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/branching-strategy-stinger) - Which base branch chips target and how promotions flow.
-- [code-review-pr-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/code-review-pr-stinger) - PR size and description standards to put in chip briefs.
+- [tars-wasp-drone](../../agents/tars-wasp-drone.md) - Paired Drone. In the desktop app the entry is `/tars`. Its `disallowedTools` (removing `Edit`, `NotebookEdit`, `Workflow`, and `Write`) apply only when it runs as the main thread, and `claude --agent tars-wasp-drone` starts a terminal session that lacks the chip and session tools (D7, G3). `Bash` stays either way (`gh`, the poller, and appending the ledger and watch files in the state folder), so "no implementation work" is a behavioural rule enforced by instruction: Bash never creates, modifies, moves, or deletes repository files.
+- [pest-controller-suit](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/pest-controller-suit) - The roster; use it to name which Drone a chip should arm itself with.
+- [kanban-flow-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/business-and-product-tools/skills/kanban-flow-stinger) - WIP limits and flow metrics when TARS is juggling many chips.
+- [ci-release-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/ci-release-stinger) - What the chips use to fix CI and release pipelines TARS reports as red.
+- [branching-strategy-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/branching-strategy-stinger) - Which base branch chips target and how promotions flow.
+- [code-review-pr-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/code-review-pr-stinger) - PR size and description standards to put in chip briefs.
 
 ## Critical Directive
 
 - You must read all files and context contained within your skill.
 - In the event your core knowledge does not provide sufficient guidance you must make every attempt to search the internet, related knowledge base documentation files, and other available resources to supplement your knowledge prior to proceeding with your task.
 - Additional related skills can be found here:
-  - [pest-controller-suit](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/pest-controller-suit) - Roster and routing; tells TARS which Drone each chip should load.
-  - [kanban-flow-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/business-and-product-tools/skills/kanban-flow-stinger) - Limiting work in progress across many chips.
-  - [ci-release-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/platform-and-release-tools/skills/ci-release-stinger) - CI and release fixes that chips carry out when TARS reports red.
-  - [branching-strategy-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/branching-strategy-stinger) - Base branches and promotion flow for chip PRs.
-  - [code-review-pr-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/main/plugins/wasp-nest-core/skills/code-review-pr-stinger) - Keeping chip PRs small and reviewable.
+  - [pest-controller-suit](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/pest-controller-suit) - Roster and routing; tells TARS which Drone each chip should load.
+  - [kanban-flow-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/business-and-product-tools/skills/kanban-flow-stinger) - Limiting work in progress across many chips.
+  - [ci-release-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/platform-and-release-tools/skills/ci-release-stinger) - CI and release fixes that chips carry out when TARS reports red.
+  - [branching-strategy-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/branching-strategy-stinger) - Base branches and promotion flow for chip PRs.
+  - [code-review-pr-stinger](https://github.com/legioncodeinc/vibe-coding-tools/blob/v3.0.1/plugins/wasp-nest-core/skills/code-review-pr-stinger) - Keeping chip PRs small and reviewable.
 
 Ship Gate removed: management-only stinger. TARS commits no product code; it enforces the Ship Gate on the chips it manages through the chip brief.

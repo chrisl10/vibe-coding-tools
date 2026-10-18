@@ -1,6 +1,6 @@
 # 01: Tool Selection
 
-Choosing the right API documentation renderer. Read `research/external/scalar-vs-swagger-redoc-comparison.md` and `research/external/managed-platform-comparison-mintlify-readme-stoplight.md` before running this guide.
+Choosing the right API documentation renderer. Read `research/external/scalar-vs-swagger-redoc-comparison.md` and `research/external/managed-platform-comparison-mintlify-readme-stoplight.md` (source-repository research, not shipped) before running this guide.
 
 ## The comparison matrix
 
@@ -29,7 +29,7 @@ Answer these questions in order. Stop at the first matching branch.
 
 ### Q3: Are you starting a new project in 2026 or choosing a self-hosted renderer?
 
-→ **Yes:** Default to **Scalar**. It has the best interactive console, React component integration, and theming flexibility. It is the 2026 community consensus for new projects. See `research/external/scalar-vs-swagger-redoc-comparison.md`.
+→ **Yes:** Default to **Scalar**. It has the best interactive console, React component integration, and theming flexibility. It is the 2026 community consensus for new projects. See `research/external/scalar-vs-swagger-redoc-comparison.md` (source-repository research, not shipped).
 → **No (migrating an existing Redoc setup):** Stay on **Redoc** unless the migration cost is justified. Redoc is production-proven and has no rough edges for existing deployments.
 
 ### Q4: Do you have a legacy Swagger UI deployment you don't want to migrate?
@@ -85,4 +85,4 @@ swagger-ui:
 | Any self-hosted → Mintlify | Medium (content migration, MDX) | Medium |
 | Mintlify → self-hosted | High (export, rebuild) | High |
 
-*Source: `research/external/scalar-vs-swagger-redoc-comparison.md`, `research/external/managed-platform-comparison-mintlify-readme-stoplight.md`*
+*Source: `research/external/scalar-vs-swagger-redoc-comparison.md`, `research/external/managed-platform-comparison-mintlify-readme-stoplight.md` (source-repository research, not shipped)*

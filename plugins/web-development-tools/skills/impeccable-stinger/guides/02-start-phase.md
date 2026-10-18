@@ -1,6 +1,6 @@
 # 02 — Start Phase (context + direction)
 
-Derived from `research/02-context-contract.md`, `research/03-command-vocabulary.md`, `research/04-new-work-direction.md`.
+Derived from `research/02-context-contract.md`, `research/03-command-vocabulary.md`, `research/04-new-work-direction.md` (source-repository research, not shipped).
 
 ## 1. Ensure context
 
