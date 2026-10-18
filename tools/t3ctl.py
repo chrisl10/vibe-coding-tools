@@ -12,13 +12,12 @@ registration, PKCE, and approval by a one-time pairing code minted on the
 environment's host with `t3 auth pairing create`. Tokens last 30 days and
 the flow re-runs automatically on expiry, so no browser is ever needed.
 
-Setup: none for the desk environment. The first command acquires and stores
-a credential at ~/.t3/t3ctl/<env>.mcp.json. For a remote environment whose
-host is reachable over ssh, point T3CTL_PAIRING_CMD at a command that prints
-the `t3 auth pairing create --json` output, for example:
-
-  T3CTL_PAIRING_CMD='ssh macdev ~/.t3/bin/t3 auth pairing create --json \
-      --ttl 5m --label t3ctl' t3ctl --env macdev auth
+Setup: none for the built-in environments. The first command acquires
+and stores a credential at ~/.t3/t3ctl/<env>.mcp.json, and renews it
+automatically on expiry (30-day tokens): desk mints its pairing code
+with the local t3 CLI, macdev mints over ssh (command baked into ENVS;
+override with T3CTL_PAIRING_CMD for other hosts). No browser is ever
+needed.
 
 Usage:
   t3ctl auth                          show or acquire the MCP credential
@@ -68,8 +67,20 @@ import urllib.parse
 import urllib.request
 
 ENVS = {
-    "desk": "http://127.0.0.1:3773",
-    "macdev": "http://127.0.0.1:38373",
+    "desk": {
+        "url": "http://127.0.0.1:3773",
+        # None: mint on this machine with the local t3 CLI.
+        "pairing_cmd": None,
+    },
+    "macdev": {
+        "url": "http://127.0.0.1:38373",
+        # Absolute paths: agent sandboxes often lack ssh on PATH, and the
+        # desk keyring needs IdentitiesOnly or ssh offers too many keys.
+        "pairing_cmd": "/usr/bin/ssh -o ConnectTimeout=8 -o IdentitiesOnly=yes"
+                       " -o BatchMode=yes -i /Users/chris.lyle/.ssh/id_ed25519"
+                       " macdev /Users/macdev/.t3/bin/t3 auth pairing create"
+                       " --json --ttl 5m --label t3ctl 2>/dev/null",
+    },
 }
 
 CRED_DIR = os.path.expanduser("~/.t3/t3ctl")
@@ -85,7 +96,7 @@ class Fail(Exception):
 def base_url(args) -> str:
     if args.url:
         return args.url.rstrip("/")
-    return ENVS[args.env].rstrip("/")
+    return ENVS[args.env]["url"].rstrip("/")
 
 
 def cred_path(args) -> str:
@@ -119,8 +130,10 @@ def http_json(url: str, method: str = "GET", payload=None, form=False,
 
 # ------------------------------------------------------- credential handling
 
-def mint_pairing_code() -> dict:
+def mint_pairing_code(env: str | None) -> dict:
     cmd = os.environ.get("T3CTL_PAIRING_CMD")
+    if not cmd and env and ENVS.get(env, {}).get("pairing_cmd"):
+        cmd = ENVS[env]["pairing_cmd"]
     if not cmd:
         t3 = shutil.which("t3") or os.path.expanduser("~/.t3/bin/t3")
         if not os.path.exists(t3):
@@ -143,7 +156,7 @@ def mint_pairing_code() -> dict:
         raise Fail(f"pairing command produced no JSON credential: {text[:200]}") from None
 
 
-def acquire_token(base: str) -> dict:
+def acquire_token(base: str, env: str | None = None) -> dict:
     """Full headless OAuth flow against one environment."""
     reg = http_json(base + "/oauth/mcp/register", "POST", {
         "client_name": CLIENT_NAME,
@@ -170,7 +183,7 @@ def acquire_token(base: str) -> dict:
         "resource": base + "/mcp",
     }
 
-    pairing = mint_pairing_code()
+    pairing = mint_pairing_code(env)
     access_mode = os.environ.get("T3CTL_MCP_ACCESS", "full-access")
     decision = http_json(base + "/oauth/mcp/decision", "POST", {
         "authorization": authorization,
@@ -214,7 +227,7 @@ def load_cred(args, allow_acquire=True) -> str:
             return cred["access_token"]
     if not allow_acquire:
         raise Fail(f"no credential at {path} and acquisition disabled")
-    cred = acquire_token(base_url(args))
+    cred = acquire_token(base_url(args), env=args.env)
     os.makedirs(CRED_DIR, exist_ok=True)
     with open(path, "w") as fh:
         json.dump(cred, fh, indent=1)
@@ -228,6 +241,7 @@ class Mcp:
     def __init__(self, args):
         self.base = base_url(args)
         self.args = args
+        self.env = args.env
         self.token = load_cred(args)
         self.session = None
         self._id = 0
@@ -266,7 +280,7 @@ class Mcp:
         except urllib.error.HTTPError as e:
             if e.code == 401 and not self._expired_retried:
                 self._expired_retried = True
-                cred = acquire_token(self.base)
+                cred = acquire_token(self.base, self.env)
                 self.token = cred["access_token"]
                 with open(cred_path(self.args), "w") as fh:
                     json.dump(cred, fh, indent=1)
