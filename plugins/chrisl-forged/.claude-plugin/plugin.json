@@ -1,6 +1,6 @@
 {
   "name": "chrisl-forged",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Locally forged specialist Drone+Stinger pairs: before and after captures, code structure, evidence testing, unslopping, Effect-TS v4, and production release execution and pipeline building.",
   "author": {
     "name": "Chris Lyle"
