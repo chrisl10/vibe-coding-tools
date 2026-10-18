@@ -511,6 +511,11 @@ def cmd_tasks(args):
 
 
 def cmd_task_create(args):
+    if args.bind:
+        print("warning: outside MCP clients cannot bind a task to an existing "
+              "thread; the server ignores threadId and creates a new thread "
+              "per run. Binding only works via bindToCurrentThread from "
+              "inside a T3 thread.", file=sys.stderr)
     mcp = Mcp(args).start()
     arguments = {"prompt": args.prompt,
                  "schedule": {"type": "interval", "everyMs": args.every_mins * 60000}}

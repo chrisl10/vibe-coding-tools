@@ -211,11 +211,21 @@ Projects: t3_project_list / _read / _create / _update / _delete / _clone.
 
 Scheduled tasks (server-side, survive restarts): schedule_task {prompt,
 schedule: {type: "interval", everyMs>=60000} | {type: "fixed_time", ...} |
-{type: "webhook", ...}, title?, projectId?, bindToCurrentThread?,
-threadId?}; list_scheduled_tasks; update_scheduled_task;
+{type: "webhook", ...}, title?, projectId?, bindToCurrentThread?};
+list_scheduled_tasks; update_scheduled_task;
 delete_scheduled_task {scheduledTaskId}; run_scheduled_task_now {taskId}
 (full access only). Tasks bound to a thread deliver the prompt to that
-thread; unbound tasks create a new thread per run.
+thread; unbound tasks create a new thread per run. PROVEN 2026-10-18,
+with three binding rules for outside MCP clients: a threadId argument is
+silently ignored (binding only works via bindToCurrentThread, which only
+in-T3 agents can use); projectId is required; and the project needs a
+defaultModelSelection, because outside callers cannot pass a task-level
+model. The scheduler keeps a per-task active-run guard: a scheduled
+trigger while the previous run is still executing is skipped silently
+(no stacking; manual/webhook triggers get an "already running" error
+instead). In-thread binding verified end to end: an agent-created task
+with bindToCurrentThread=true delivered its prompt into the bound thread
+each interval with clean replies.
 
 PR lane: link_pull_request {threadId, url}; unlink; list; watch; unwatch;
 write_pull_request_guides; read_pull_request_guide.
