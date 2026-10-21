@@ -14,6 +14,10 @@ harness installer; this script never writes into them.
 Usage:
   python3 tools/sync-wasp-nest.py [--plugins core,chrisl-forged,...]
   python3 tools/sync-wasp-nest.py --check
+
+The default selection is curated (see DEFAULT_PLUGINS); de-selected pack
+skills, drones, and Codex TOMLs are pruned from the flat surfaces so every
+harness session only discovers what the selection actually contains.
 """
 
 from __future__ import annotations
@@ -56,29 +60,19 @@ directly; on harnesses without one (Pi) route with this index and spawn the spec
 as a subagent through the controlling layer.
 """
 
+# Curated selection (2026-10-21): upstream prescribes selective installs
+# ("choose the packs your work needs"), and Codex 0.163 hard-caps discovered
+# skills at 300 per session before silently dropping descriptions. The full
+# 19-pack projection (333 in ~/.agents/skills + 27 in ~/.codex/skills) tripped
+# that cap with 60 skills dropped every session. Keep the flat surfaces small;
+# Claude and Codex can still pull other packs from the marketplace on demand.
+# Pi has no marketplace, so the flat projection is its only route.
 DEFAULT_PLUGINS = [
     "wasp-nest-core",
     "chrisl-forged",
-    "content-intelligence",
-    "highlevel",
-    "browser-and-app-testing-tools",
-    "website-audit-tools",
-    "data-and-ai-tools",
-    "product-studio",
-    "code-audit-tools",
-    "documentation-tools",
-    "backend-and-desktop-tools",
     "web-development-tools",
-    "platform-and-release-tools",
-    "growth-and-customer-tools",
-    "business-and-product-tools",
-    "media-and-creative-tools",
-    "app-primer-zero",
-    "developer-learning-tools",
-    "software-economics-tools",
-    "infrastructure-decision-tools",
-    "repository-modernization-tools",
-]  # full catalog minus littlebird-toolkit (owner-excluded 2026-10-13)
+    "code-audit-tools",
+]  # was the full catalog minus littlebird-toolkit until 2026-10-21
 
 
 def sha256(path: Path) -> str | None:
@@ -226,6 +220,73 @@ def deploy_stingers(roots: dict[str, Path], check: bool) -> int:
     return drift
 
 
+def _pack_skill_names(roots) -> set[str]:
+    names: set[str] = set()
+    for root in roots:
+        skills = root / "skills"
+        if skills.is_dir():
+            names.update(s.name for s in skills.iterdir()
+                         if s.is_dir() and (s / "SKILL.md").is_file())
+    return names
+
+
+def prune_stingers(roots: dict[str, Path], check: bool) -> int:
+    """Remove de-selected pack skills from the flat surfaces.
+
+    Only directory names that exist as pack skills somewhere in this checkout
+    are eligible, so personal skills that were never fork-managed are never
+    touched. Without this, shrinking the plugin selection would leave stale
+    copies bloating every session's skill discovery.
+    """
+    droppable = _pack_skill_names(PLUGINS_DIR.iterdir()) - _pack_skill_names(roots.values())
+    if not droppable:
+        return 0
+    removed = 0
+    for surface in (AGENTS_SKILLS, CLAUDE_SKILLS, CLOUDROOM_SKILLS):
+        if not surface.is_dir():
+            continue
+        for name in sorted(droppable):
+            target = surface / name
+            if target.is_dir():
+                removed += 1
+                if not check:
+                    shutil.rmtree(target)
+                    print(f"  pruned {surface.name}/{name}")
+    if check and removed:
+        print(f"  prune: DRIFT ({removed} stale pack skills present)")
+    return removed
+
+
+def prune_drone_agents(roots: dict[str, Path], check: bool) -> int:
+    """Same pruning for the flat agent dirs and Codex role TOMLs."""
+    def drone_names(pack_roots) -> set[str]:
+        names: set[str] = set()
+        for root in pack_roots:
+            agents = root / "agents"
+            if agents.is_dir():
+                names.update(a.name for a in agents.glob("*-wasp-drone.md"))
+        return names
+
+    droppable = drone_names(PLUGINS_DIR.iterdir()) - drone_names(roots.values())
+    if not droppable:
+        return 0
+    removed = 0
+    toml_droppable = {n[:-3] + ".toml" for n in droppable}
+    for surface in (CLAUDE_AGENTS, ZCODE_AGENTS, CODEX_HOME / "agents"):
+        if not surface.is_dir():
+            continue
+        for name in sorted(droppable | toml_droppable):
+            target = surface / name
+            if target.is_file():
+                removed += 1
+                if not check:
+                    target.unlink()
+                    print(f"  pruned {surface.name}/{name}")
+    if check and removed:
+        print(f"  agent prune: DRIFT ({removed} stale drone files present)")
+    return removed
+
+
 def deploy_drone_agents(roots: dict[str, Path], check: bool) -> int:
     if not CLAUDE_AGENTS.is_dir():
         return 0  # this device keeps ~/.claude/agents drone-free by choice
@@ -311,8 +372,10 @@ def main() -> int:
     drift = write_registry(roots, args.check)
     drift += generate_fleet_index(roots, args.check)
     drift += deploy_stingers(roots, args.check)
+    drift += prune_stingers(roots, args.check)
     drift += deploy_drone_agents(roots, args.check)
     drift += deploy_zcode_agents(roots, args.check)
+    drift += prune_drone_agents(roots, args.check)
     drift += run_register_hook(args.check)
 
     catalog = json.loads((PLUGINS_DIR / "wasp-nest-core/plugin-catalog.json").read_text())
