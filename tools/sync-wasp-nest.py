@@ -215,7 +215,11 @@ def deploy_stingers(roots: dict[str, Path], check: bool) -> int:
             drift += compare(skill, AGENTS_SKILLS / skill.name, f".agents/skills/{skill.name}", check)
             if CLAUDE_SKILLS.is_dir() or not check:
                 drift += compare(skill, CLAUDE_SKILLS / skill.name, f".claude/skills/{skill.name}", check)
-            if CODEX_SKILLS.is_dir() or not check:
+            # Codex enforces a skills context budget: a full fleet trips
+            # "Exceeded skills context budget" and strips every description.
+            # Deploy only the routing index; codex agents read specialist
+            # knowledge as files from ~/.agents/skills (per the drone TOMLs).
+            if skill.name == "wasp-fleet-index" and (CODEX_SKILLS.is_dir() or not check):
                 drift += compare(skill, CODEX_SKILLS / skill.name, f".codex/skills/{skill.name}", check)
             if CLOUDROOM_SKILLS.is_dir() or not check:
                 drift += compare(skill, CLOUDROOM_SKILLS / skill.name, f".cloudroom/skills/{skill.name}", check)
