@@ -42,6 +42,8 @@ CODEX_SKILLS = CODEX_HOME / "skills"
 CLOUDROOM_SKILLS = HOME / ".cloudroom/skills"
 CLAUDE_AGENTS = HOME / ".claude/agents"
 ZCODE_AGENTS = HOME / ".zcode/agents"
+AGENTS_COMMANDS = HOME / ".agents/commands"
+CLAUDE_COMMANDS = HOME / ".claude/commands"
 FLEET_INDEX = PLUGINS_DIR / "wasp-nest-core/skills/wasp-fleet-index/SKILL.md"
 
 FLEET_INDEX_HEADER = """---
@@ -287,6 +289,52 @@ def prune_drone_agents(roots: dict[str, Path], check: bool) -> int:
     return removed
 
 
+def _pack_command_names(roots) -> set[str]:
+    names: set[str] = set()
+    for root in roots:
+        commands = root / "commands"
+        if commands.is_dir():
+            names.update(c.name for c in commands.glob("*.md"))
+    return names
+
+
+def deploy_pack_commands(roots: dict[str, Path], check: bool) -> int:
+    """Deploy selected packs' command files flat (upstream: local installs
+    expose flat commands). Agents in cross-harness threads routinely probe
+    ~/.agents/commands/<name>.md first; without this projection that guess
+    fails and they burn turns hunting plugin caches. ~/.claude/commands also
+    surfaces them as native slash commands in Claude Code.
+    """
+    drift = 0
+    for name in sorted(_pack_command_names(roots.values())):
+        for pack_name, root in sorted(roots.items()):
+            src = root / "commands" / name
+            if not src.is_file():
+                continue
+            for surface in (AGENTS_COMMANDS, CLAUDE_COMMANDS):
+                dst = surface / name
+                if sha256(dst) == sha256(src):
+                    continue
+                drift += 1
+                if not check:
+                    dst.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(src, dst)
+                    print(f"  synced {surface.name}/{name}")
+    droppable = _pack_command_names(PLUGINS_DIR.iterdir()) - _pack_command_names(roots.values())
+    for surface in (AGENTS_COMMANDS, CLAUDE_COMMANDS):
+        if not surface.is_dir():
+            continue
+        for name in sorted(droppable):
+            target = surface / name
+            if target.is_file():
+                drift += 1
+                if not check:
+                    target.unlink()
+                    print(f"  pruned {surface.name}/{name}")
+    print(f"  commands: {'clean' if drift == 0 else f'{drift} changed'}")
+    return drift
+
+
 def deploy_drone_agents(roots: dict[str, Path], check: bool) -> int:
     if not CLAUDE_AGENTS.is_dir():
         return 0  # this device keeps ~/.claude/agents drone-free by choice
@@ -373,6 +421,7 @@ def main() -> int:
     drift += generate_fleet_index(roots, args.check)
     drift += deploy_stingers(roots, args.check)
     drift += prune_stingers(roots, args.check)
+    drift += deploy_pack_commands(roots, args.check)
     drift += deploy_drone_agents(roots, args.check)
     drift += deploy_zcode_agents(roots, args.check)
     drift += prune_drone_agents(roots, args.check)
